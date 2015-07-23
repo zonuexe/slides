@@ -1,0 +1,212 @@
+* Slide Options                           :noexport:
+# ======= Appear in cover-slide ====================
+#+TITLE: ぴくしぶとたのしいPHP
+#+SUBTITLE: pixiv & enjoing PHP!
+#+COMPANY: pixiv Inc.
+#+USE_MATHJAX: false
+#+USE_PRETTIFY: true
+#+USE_BUILDS: true
+#+OPTIONS: ^:{}
+
+
+* タイトルは適当
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    left
+  :ARTICLE:  flexbox vright auto-fadein
+  :END:
+* お前誰よ
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** お前誰よ
+   :PROPERTIES:
+   :ARTICLE:  large
+   :END:
+#+ATTR_HTML: :width 64px
+file:images/tadsan-icon.png
+#+ATTR_HTML: :class build
+- うさみけんた
+  #+ATTR_HTML: :class build
+  + 4年前はRuby札幌の方に居ました
+  + 3年前は無職で東京を放浪してました
+- プログラミング言語が好きだった
+  #+ATTR_HTML: :class build
+  + 好きなリスプは Emacs Lisp です
+* 趣味のプログラミング
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** ラムダ式を使ったDSL (2011年)
+#+BEGIN_SRC ruby
+scripter  = ->(*args){ ->{ puts args.join("n") } }
+title     = ->(text) { "『#{text}』n" }
+paragraph = ->(*args){ args.join("n") + "n" }
+chara     = ->(name) { ->(text){ "#{name}「#{text}」"} }
+ryu = chara[:リュウ] ; tak = chara[:たかし]
+script = scripter[title[:俺より強い奴に、会いに行く],
+	 paragraph[:ピンポーン, ryu[:こんにちは], tak[:はいどなた]],
+	 paragraph[ryu[:いまちょっといいですか], tak[:これから出かけます]],
+	 paragraph[ryu[:午後出勤ですか？], tak[:はい]],
+	 paragraph[ryu[:強そうですね], tak[:なにがですか]],
+	 paragraph[ryu[:態度が]],
+	 paragraph[:リュウは、自分より強そうな奴に、会いにいったのだった。 完]
+]
+script.()
+#+END_SRC
+** Matz Lisp (2013年)
+#+BEGIN_SRC ruby
+(Class.new do
+    (define_singleton_method :let, ->(*‌){‌})
+    (let [(display = ->(ary){
+            (puts  %(\nattendee: ) +
+                   %([) +
+                   (ary.send(:join, ?, + ' ') + %(])))}),
+          (guys = '(bash0C7 edvakf k1taj1 __chocomelon shige_nyan catatuy tadsan)
+             '),
+          (atnd = ->(‌){
+             (loop do
+                (let (‌‌= (‌.sample 5))) &&
+                  ((‌‌.include? :tadsan)?
+                   (break (‌‌)):
+                   (p (‌‌)))
+                (next) end)}.
+           (eval (?%+?i+ (guys)) || (atnd)))]
+     (display. (atnd))) end)
+#+END_SRC
+
+* 最近作ったもの
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** pixiv小説モバイル
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 250px
+[[file:images/ss_mobile.png]]
+#+END_CENTER
+** routerとか作った
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/ss_qiita.png]]
+#+END_CENTER
+
+* なぜピクシブに入ったか
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** なぜピクシブに入ったか
+   :PROPERTIES:
+   :ARTICLE:  large
+   :END:
+#+ATTR_HTML: :class build
+- やる夫スレとかWeb小説を読みまくってた
+- VOCALOIDとか同人音楽とかよく聴いてた
+- どうせなら創作活動に関係する仕事がしたかった
+* とは言っても枯れたサービスだし
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+  そんなにやることはないのでは? と思ってた
+** やることはいろいろあった
+   :PROPERTIES:
+   :ARTICLE:  large
+   :END:
+#+ATTR_HTML: :class build
+- 翻訳や文言の不統一を潰したり
+- コピペされたコードをどうにかまとめたり
+- 細部の見ためが破綻してるやつを直したり
+- セキュリティ的によくないやつを直したり
+* 案外みんな気がつかない
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** 2014年8月頃のプロフィールページ
+   :PROPERTIES:
+   :ARTICLE:  large
+   :END:
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/ss_old.png]]
+#+END_CENTER
+
+** 一部のユーザーの画面では…
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/ss_after.png]]
+#+END_CENTER
+
+** user_idの桁が8桁になったので
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/ss_num.png]]
+#+END_CENTER
+
+** 現在では
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 800px
+[[file:images/ss_now.png]]
+#+END_CENTER
+
+* PHPと私
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** 使ってみると悪くないPHP
+   :PROPERTIES:
+   :ARTICLE:  large
+   :END:
+#+ATTR_HTML: :class build
+- 高階函数がある！
+  + キャプチャする変数を明示するクロージャ
+- 静的解析しやすい文法
+- クラス・インターフェイス・トレイト
+- クラスのオートローディング
+** 処理系組み込みのWeb機能
+   :PROPERTIES:
+   :ARTICLE:  large
+   :END:
+#+ATTR_HTML: :class build
+- マイクロフレームワークの自作は気軽
+- middlewareの発達が遅れた側面はある
+  + 最近では [[http://stackphp.com/][Stack]] がある
+  + フレームワーク間の相互運用性を高める [[http://www.php-fig.org/][PSR]]
+
+* ヾ(〃＞＜)ﾉﾞ
+  :PROPERTIES:
+  :SLIDE:    thank-you-slide segue
+  :ASIDE:    right
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+# ======= Appear in thank-you-slide ================
+#+GOOGLE_PLUS: https://plus.google.com/+JisamiTsuguioFunakoshitadsan
+#+WWW: http://dt.hateblo.jp/
+#+GITHUB: http://github.com/zonuexe
+#+TWITTER: zonu_exe
+
+# ======= Appear under each slide ==================
+#+FAVICON: images/org-icon.png
+#+ICON: images/p.svg
+#+HASHTAG: Hash tag will appear at left-bottom
+
+# ======= Google Analytics =========================
+#+ANALYTICS: UA-000000000-0
+
+# ======= Org settings =========================
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: toc:nil num:nil
+
