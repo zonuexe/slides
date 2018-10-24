@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- 2015-07-22 Wed 20:48 -->
+<meta  charset="utf-8" />
+<meta  htto-equiv="X-UA-Compatible" content="chrome=1" />
+<meta  name="generator" content="Org-mode with org-ioslide" />
+<meta  name="author" content="Megurine Luka" />
+
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--This one seems to work all the time, but really small on ipad-->
+<!--<meta name="viewport" content="initial-scale=0.4">-->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" media="all" href="theme/css/default.css" />
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css" />
+<link rel="stylesheet" media="all" href="theme/css/small-icon.css" />
+<base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+<script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+   <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+</head>
+<body style="opacity: 0">
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+       <aside class="gdbar"><img src="images/p.svg"></aside>
+       <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+       <hgroup class="auto-fadein">
+         <h1 data-config-title><!-- populated from slide_config.json --></h1>
+         <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+         <p data-config-presenter><!-- populated from slide_config.json --></p>
+       </hgroup>
+    </slide>
+  <slide id="sec-1" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar left"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">タイトルは適当</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vright auto-fadein" id="text-1">
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-2" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">お前誰よ</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-2">
+
+
+</article>
+</slide>
+<slide id="sec-2-1"  >
+<hgroup class="">
+       <h2 class=" ">お前誰よ</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-2-1">
+
+<div class="figure">
+<p><img src="images/tadsan-icon.png" alt="tadsan-icon.png" width="64px" />
+</p>
+</div>
+<ul class="build">
+<li>うさみけんた
+<ul class="build">
+<li>4年前はRuby札幌の方に居ました
+</li>
+<li>3年前は無職で東京を放浪してました
+</li>
+</ul>
+</li>
+<li>プログラミング言語が好きだった
+<ul class="build">
+<li>好きなリスプは Emacs Lisp です
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-3" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">趣味のプログラミング</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-3">
+
+
+</article>
+</slide>
+<slide id="sec-3-1"  >
+<hgroup class="">
+       <h2 class=" ">ラムダ式を使ったDSL (2011年)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-3-1">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+scripter  = -&gt;(*args){ -&gt;{ puts args.join("n") } }
+title     = -&gt;(text) { "『#{text}』n" }
+paragraph = -&gt;(*args){ args.join("n") + "n" }
+chara     = -&gt;(name) { -&gt;(text){ "#{name}「#{text}」"} }
+ryu = chara[:リュウ] ; tak = chara[:たかし]
+script = scripter[title[:俺より強い奴に、会いに行く],
+         paragraph[:ピンポーン, ryu[:こんにちは], tak[:はいどなた]],
+         paragraph[ryu[:いまちょっといいですか], tak[:これから出かけます]],
+         paragraph[ryu[:午後出勤ですか？], tak[:はい]],
+         paragraph[ryu[:強そうですね], tak[:なにがですか]],
+         paragraph[ryu[:態度が]],
+         paragraph[:リュウは、自分より強そうな奴に、会いにいったのだった。 完]
+]
+script.()
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-3-2"  >
+<hgroup class="">
+       <h2 class=" ">Matz Lisp (2013年)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-3-2">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="ruby">
+(Class.new do
+    (define_singleton_method :let, -&gt;(*‌){‌})
+    (let [(display = -&gt;(ary){
+            (puts  %(\nattendee: ) +
+                   %([) +
+                   (ary.send(:join, ?, + ' ') + %(])))}),
+          (guys = '(bash0C7 edvakf k1taj1 __chocomelon shige_nyan catatuy tadsan)
+             '),
+          (atnd = -&gt;(‌){
+             (loop do
+                (let (‌‌= (‌.sample 5))) &amp;&amp;
+                  ((‌‌.include? :tadsan)?
+                   (break (‌‌)):
+                   (p (‌‌)))
+                (next) end)}.
+           (eval (?%+?i+ (guys)) || (atnd)))]
+     (display. (atnd))) end)
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+</slide>
+<slide id="sec-4" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">最近作ったもの</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-4">
+
+
+</article>
+</slide>
+<slide id="sec-4-1"  >
+<hgroup class="">
+       <h2 class=" ">pixiv小説モバイル</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-4-1">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/ss_mobile.png" alt="ss_mobile.png" width="250px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-4-2"  >
+<hgroup class="">
+       <h2 class=" ">routerとか作った</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-4-2">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/ss_qiita.png" alt="ss_qiita.png" width="800px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+</slide>
+<slide id="sec-5" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">なぜピクシブに入ったか</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-5">
+
+
+</article>
+</slide>
+<slide id="sec-5-1"  >
+<hgroup class="">
+       <h2 class=" ">なぜピクシブに入ったか</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-5-1">
+<ul class="build">
+<li>やる夫スレとかWeb小説を読みまくってた
+</li>
+<li>VOCALOIDとか同人音楽とかよく聴いてた
+</li>
+<li>どうせなら創作活動に関係する仕事がしたかった
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-6" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">とは言っても枯れたサービスだし</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-6">
+<p>
+そんなにやることはないのでは? と思ってた
+</p>
+
+
+</article>
+</slide>
+<slide id="sec-6-1"  >
+<hgroup class="">
+       <h2 class=" ">やることはいろいろあった</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-6-1">
+<ul class="build">
+<li>翻訳や文言の不統一を潰したり
+</li>
+<li>コピペされたコードをどうにかまとめたり
+</li>
+<li>細部の見ためが破綻してるやつを直したり
+</li>
+<li>セキュリティ的によくないやつを直したり
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+</slide>
+<slide id="sec-7" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">案外みんな気がつかない</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-7">
+
+
+</article>
+</slide>
+<slide id="sec-7-1"  >
+<hgroup class="">
+       <h2 class=" ">2014年8月頃のプロフィールページ</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-7-1">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/ss_old.png" alt="ss_old.png" width="800px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-7-2"  >
+<hgroup class="">
+       <h2 class=" ">一部のユーザーの画面では…</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-7-2">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/ss_after.png" alt="ss_after.png" width="800px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-7-3"  >
+<hgroup class="">
+       <h2 class=" ">user_idの桁が8桁になったので</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-7-3">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/ss_num.png" alt="ss_num.png" width="800px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-7-4"  >
+<hgroup class="">
+       <h2 class=" ">現在では</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-7-4">
+<article class="flexbox vcenter">
+
+<div class="figure">
+<p><img src="images/ss_now.png" alt="ss_now.png" width="800px" />
+</p>
+</div>
+</article>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+</slide>
+<slide id="sec-8" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/p.svg"></aside><hgroup class="">
+       <h2 class=" ">PHPと私</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-8">
+
+
+</article>
+</slide>
+<slide id="sec-8-1"  >
+<hgroup class="">
+       <h2 class=" ">使ってみると悪くないPHP</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-8-1">
+<ul class="build">
+<li>高階函数がある！
+<ul>
+<li>キャプチャする変数を明示するクロージャ
+</li>
+</ul>
+</li>
+<li>静的解析しやすい文法
+</li>
+<li>クラス・インターフェイス・トレイト
+</li>
+<li>クラスのオートローディング
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+</slide>
+<slide id="sec-8-2"  >
+<hgroup class="">
+       <h2 class=" ">処理系組み込みのWeb機能</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-8-2">
+<ul class="build">
+<li>マイクロフレームワークの自作は気軽
+</li>
+<li>middlewareの発達が遅れた側面はある
+<ul>
+<li>最近では <a href="http://stackphp.com/">Stack</a> がある
+</li>
+<li>フレームワーク間の相互運用性を高める <a href="http://www.php-fig.org/">PSR</a>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+</slide>
+<slide id="sec-9" class=" thank-you-slide segue nobackground" style="background-image: url(nil)">
+<aside class="gdbar right"><img src="images/p.svg"></aside><article class="flexbox vleft auto-fadein" id="text-9">
+<h2>
+  <p>ヾ(〃＞＜)ﾉﾞ</p>
+</h2>
+<br>
+<p class="auto-fadein" data-config-contact>
+</p>
+</article>
+
+</slide>
+<slide class="backdrop"></slide>
+</slides> 
+<script>
+var _gaq = _gaq || []; 
+_gaq.push(['_setAccount', 'UA-000000000-0']);
+_gaq.push(['_trackPageview']); 
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body> 
+
+</html>

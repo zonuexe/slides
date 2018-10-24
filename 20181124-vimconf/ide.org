@@ -1,0 +1,118 @@
+* Slide Options                           :noexport:
+# ======= Appear in cover-slide ====================
+#+TITLE: Modern editor-independent development environment for PHP
+#+COMPANY: pixiv Inc.
+#+AUTHOR: Kenta Usami @tadsan
+
+# ======= Appear in thank-you-slide ================
+#+WWW: https://tadsan.github.io
+#+GITHUB: https://github.com/zonuexe
+#+TWITTER: @tadsan
+
+# ======= Appear under each slide ==================
+#+FAVICON: images/emacs-icon.png
+#+ICON: images/org-icon.png
+#+HASHTAG: #vimconf
+
+# ======= Org settings =========================
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: toc:nil num:nil
+* First of all...
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** First of all...
+   #+ATTR_HTML: :class note
+#+BEGIN_QUOTE
+#+END_QUOTE
+   I hate all “religious wars”.  In particular, it is worthless about technical matters.
+   - *Windows* vs *UNIX*
+   - *Tab* vs *Space*
+   - *Statically typed* vs *Dynamic typing*
+   - /...and,/ *Emacs* vs *Vim*
+   There is no absolute difference between these superiorities.  Ridiculating other people 's hobbies is not professional behavior.
+** I recommend PhpStorm IDE for PHP Newbies
+   - It is almost unnecessary to “customize the editor”.
+   - It warns us a lot of anxiety for PHP.
+   - However, in our company, members choose Text Editor/IDE at their discretion.
+     - **Vim**, **Visual Studio Code**, and **PhpStorm**... etc.
+** Who am I?
+   - Kenta Usami (うさみけんた)
+     - *Twitter*: @tadsan
+     - *GitHub*: @zonuexe
+   - Languege hobyist, I love Lisp
+   - Web programmer in pixiv
+   - Founder of Emacs-PHP ([[https://github.com/emacs-php/][@emacs-php]])
+     - Current maintainer of *Emacs PHP Mode*
+   - Favorite text editors are...
+     - Vim, Emacs, micro, Maruo Editor(秀丸), Mery
+* About PHP
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** About PHP
+   #+ATTR_HTML: :class note
+#+BEGIN_QUOTE
+#+END_QUOTE
+   - As many of you know, it's a popular development environment for the Web.
+   - It is probably easiest to deploy web applications among the technologies known today.
+     - PHP is the successor to CGI, but you can choose an architecture with less performance penalty.
+   - Small web sites, many CMS (WordPress, Drupal, etc.), large-scale SNS are made up of PHP.
+   - Looking at PHP as a programming language, it is classified as "weak dynamic typing".
+     - PHP is procedural, but at the same time it has OOP feature.
+     - Several frameworks are based on object-oriented design.
+   - PHP is also a general purpose scripting language and can be used from the CLI.
+** Development environment for PHP
+   - Just put the file on the server, the PHP application will be published to Web.
+     - Even with traditional cheap web hosting transferring with FTP it still works
+   - *CGI*, *Apache module*, *FastCGI*... There are various server types.
+   - In Web programming it is not always execution on a coding PC.
+     - Many PHP in production environment runs on *GNU/Linux*.
+     - Many PHP programmers' PCs are *Windows* or *macOS*.
+** Development environment for PHP
+   - It has been considered that IDE for PHP is unnecessary until now.
+     - That is true even now.
+   - There have already been several IDEs for PHP.
+     - Eclipse(PDT), NetBeans, Zend Studio...
+   - In my personal experience, none of the people recommended IDE to me.
+     - Many colleagues used *Vim*, *Emacs*, and *Sublime Text 2*.
+     - Since we were logging in to the shared server with SSH, there were many people who emphasized editing on the text terminal.
+       - It took two choices between Vim and Emacs *Vim* and *Emacs*.
+* PhpStorm
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** PhpStorm
+   - It is proprietary and fare-paying IDE by JetBrains s.r.o in Czech.
+   - It has advanced PHP static analysis mechanism, type checker and useful tools.
+     - *on-the-fly error checker*, *method/property completion*, *navigating to declaration*, *popup hints*, *refactor tool*
+     - *debugger*, *HTTP client*, *auto deoployment*, *DB/SQL client*, *unit testing*
+** PhpStorm provides us “Modern” develoment enverinment
+** Importance of error checker
+* Modern PHP project
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+** Modern PHP project
+** PHPStan
+   #+ATTR_HTML: :class note
+#+BEGIN_QUOTE
+#+END_QUOTE
+*** PHPStan with Vim
+** Phpactor
+*** W
+* Thank you! ヾ(〃＞＜)ﾉﾞ☆
+  :PROPERTIES:
+  :SLIDE:    thank-you-slide segue
+  :ASIDE:    right
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+  ヾ(〃＞＜)ﾉﾞ☆
