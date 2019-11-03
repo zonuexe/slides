@@ -1,0 +1,140 @@
+* Slide Options                           :noexport:
+# ======= Appear in cover-slide ====================
+#+TITLE: Vim as a text processor
+#+COMPANY: pixiv Inc.
+#+AUTHOR: USAMI Kenta @tadsan
+
+# ======= Appear in thank-you-slide ================
+#+WWW: https://tadsan.github.io
+#+GITHUB: https://github.com/zonuexe
+#+TWITTER: @tadsan
+
+# ======= Appear under each slide ==================
+#+FAVICON: images/vim-icon.png
+#+ICON: images/org-icon.png
+#+HASHTAG: #VimConf2019 OR #vimconf
+
+# ======= Org settings =========================
+#+EXCLUDE_TAGS: noexport
+#+OPTIONS: toc:nil num:nil
+* About me
+  - *Kenta Usami* a.k.a. @tadsan
+    - *Usami* is my family name, call me *Kenta* or ~/たっ?どさん/~.
+  - Current maintainer of [[https://github.com/emacs-php/php-mode][Emacs PHP Mode]]
+  - I am Vim beginner since 2011
+  - I am Emacs user since 2013
+  - I am PHPer, Emacs Lisper and language hobyist
+  - I am member of [[https://emacs-jp.github.io/][Emacs JP]] community
+  #+BEGIN_SRC
+  % cat ~/.zsh_history | grep -v cd | grep -Eo 'emacs|vim|micro' | sort | uniq -c | sort -nr
+     2226 vim
+       78 emacs
+       64 micro
+  #+END_SRC
+* Vim is awesome!
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+* Background of this presentation
+  - I respect my colleague who has done complex refactoring with Vim script many times
+  - It is possible to write text processing in Lisp and run it in Emacs, but it is more verbose than Vim
+  - In my opinion, Vim is more efficient and reliable in text processing than Emacs
+* “Renewal of large-scale website URL”
+  - Presentation at **PHP Conference Japan 2017**
+  - We had to normalize many class and function names
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :height 380px
+  [[file:images/phpcon2017.png]]
+  #+END_CENTER
+* Why Vim script?
+  - Vim features are more powerful than AWK and sed
+    - Text object, macro, register, auto-indent, ...etc.
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :height 380px
+  [[file:images/why-vim-script.png]]
+  #+END_CENTER
+* Rename class name using Vim script
+  - This example is simple, so it can be done with shell script and ~sed~
+  - A complex refactoring of hundreds of files was actually handled by Vim script
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :height 380px
+  [[file:images/rename-class.png]]
+  #+END_CENTER
+* Prepare for text processing in Vim
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+* Read “Practical Vim” book (ja:実践Vim)
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :height 450px
+  [[file:images/practical-vim.png]]
+  #+END_CENTER
+* Read “Practical Vim” book (ja:実践Vim)
+  I read this book several times but I don't remember it almost because I have a weak memory...
+  #+BEGIN_CENTER
+  #+ATTR_HTML: :height 350px
+  [[file:images/practical-vim.png]]
+  #+END_CENTER
+* Execute Vim script from the shell
+  - Create a shell script
+  #+BEGIN_SRC bash
+  #!/bin/bash
+
+  vim -N -u NONE -i NONE -e -s -S "$0.vim" "$@"
+  #+END_SRC
+  - The combination of ~-e~ and ~-s~ means **start in ex mode** and **silent mode**
+  - Omitting that option during development will make debugging easier
+* Write vim script
+  - TIP 100: Alphabetize the Properties of Each Rule in a CSS File
+  #+BEGIN_SRC vimrc
+  global /{/ .+1, /}/-1 sort
+
+  " デバッグ中はここ
+  update  " 変更点があるファイルにすべて書き込む
+  qall!   " すべての終了
+  #+END_SRC
+* Write vim script
+  - Implement tac command with Vim script
+  #+BEGIN_SRC vimrc
+  let i = 1
+  let lines = line('$')
+  while i < lines
+      :$
+      normal! dd
+      execute ':' . i
+      normal! P
+      let i = i + 1
+  endwhile
+
+  update
+  qall!
+  #+END_SRC
+* Conclusion
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+* Conclusion
+  - Vim replaces text processing with sed and awk
+  - Describe your Vim operation in script and enable efficient text processing for multiple files
+  - I'm immature and still can't write complicated processes, but you can probably use headless Vim
+  - I have experience with Emacs buffer operations using Lisp, so writing a Vim script for text processing was a fun experience like a puzzle.
+* Thank you! ヾ(〃＞＜)ﾉﾞ☆
+  :PROPERTIES:
+  :SLIDE:    thank-you-slide segue
+  :ASIDE:    right
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+  ヾ(〃＞＜)ﾉﾞ☆
+* Reference document
+  - [[https://inside.pixiv.blog/tadsan/2899][pixivの基盤ノウハウ大公開！PHPカンファレンス2017登壇レポート - pixiv inside]]
+  - [[https://thinca.hatenablog.com/entry/20100201/1265009821][Vimスクリプト基礎文法最速マスター - 永遠に未完成]] by @thinka
+  - [[https://qiita.com/kana1/items/68b21838013bfd65b097][VimでPHPのコードをシュワルツ変換してソートする]] by @kana
+  - Powered by...
+    - Emacs [[https://github.com/mcandre/vimrc-mode][mcandre/vimrc-mode: Enables syntax highlighting for .vimrc/_vimrc files]]
+    - Emacs [[https://github.com/coldnew/org-ioslide][coldnew/org-ioslide: Export org-mode to Google I/O HTML5 slide.]]
