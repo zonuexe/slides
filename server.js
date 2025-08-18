@@ -7,7 +7,7 @@ import { stat } from "fs/promises";
 const app = new Hono();
 
 // スライド一覧ページ
-app.get("/", async (c) => {
+app.get("/slides/", async (c) => {
   try {
     const slides = await loadSlides();
 
