@@ -120,6 +120,51 @@ app.get("/slides/:slug/", async (c) => {
               font-size: 16px;
             }
             .slide-info { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+
+            /* 画面全体表示時のスタイル */
+            .pdf-container.expanded {
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              max-width: 100vw;
+              max-height: 100vh;
+              aspect-ratio: auto;
+              margin: 0;
+              z-index: 1000;
+              background: white;
+              overflow: hidden;
+            }
+
+            /* 画面全体表示時のボタン位置調整 */
+            .pdf-controls.expanded {
+              position: fixed;
+              top: 20px;
+              right: 20px;
+              z-index: 1001;
+            }
+
+            /* 画面全体表示時の縮小ボタンスタイル */
+            .pdf-controls.expanded .fullscreen-btn {
+              background: #6c757d;
+              color: white;
+              padding: 8px;
+              border-radius: 50%;
+              width: 40px;
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              min-width: auto;
+            }
+
+            .pdf-controls.expanded .fullscreen-btn:hover {
+              background: #5a6268;
+            }
+
+            .pdf-controls.expanded .fullscreen-btn i {
+              font-size: 14px;
+            }
             .slide-info h1 { margin-top: 0; color: #333; }
             .slide-info time { color: #666; font-weight: 500; }
             .download-btn { display: inline-flex; align-items: center; gap: 8px; background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.2s; }
@@ -130,42 +175,73 @@ app.get("/slides/:slug/", async (c) => {
             .hashtag:hover { background: #dee2e6; }
           </style>
           <script>
-            function toggleFullscreen() {
+            function toggleExpanded() {
               const iframe = document.querySelector('.pdf-container');
+              const controls = document.querySelector('.pdf-controls');
               const fullscreenBtn = document.querySelector('.fullscreen-btn');
               const icon = fullscreenBtn.querySelector('i');
 
-              if (!document.fullscreenElement) {
-                // フルスクリーンに切り替え
-                iframe.requestFullscreen().then(() => {
-                  icon.className = 'fa-solid fa-compress';
-                  fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>フルスクリーン解除';
-                }).catch(err => {
-                  console.error('フルスクリーンに切り替えできませんでした:', err);
-                });
+              if (!iframe.classList.contains('expanded')) {
+                // 画面全体表示に切り替え
+                iframe.classList.add('expanded');
+                controls.classList.add('expanded');
+
+                // 画面サイズに応じて適切なサイズを設定
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const aspectRatio = ${maxWidth} / ${maxHeight};
+
+                // アスペクト比を保ちながら画面に完全に収まるサイズを計算
+                let calculatedWidth, calculatedHeight;
+
+                if (viewportWidth / aspectRatio <= viewportHeight) {
+                  // 横幅基準で画面に収まる場合
+                  calculatedWidth = viewportWidth;
+                  calculatedHeight = viewportWidth / aspectRatio;
+                } else {
+                  // 縦幅基準で画面に収まる場合
+                  calculatedHeight = viewportHeight;
+                  calculatedWidth = viewportHeight * aspectRatio;
+                }
+
+                iframe.style.width = calculatedWidth + 'px';
+                iframe.style.height = calculatedHeight + 'px';
+
+                icon.className = 'fa-solid fa-compress';
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>';
               } else {
-                // フルスクリーン解除
-                document.exitFullscreen().then(() => {
-                  icon.className = 'fa-solid fa-expand';
-                  fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>フルスクリーン表示';
-                }).catch(err => {
-                  console.error('フルスクリーンを解除できませんでした:', err);
-                });
+                // 通常表示に戻す
+                iframe.classList.remove('expanded');
+                controls.classList.remove('expanded');
+                iframe.style.width = '';
+                iframe.style.height = '';
+                icon.className = 'fa-solid fa-expand';
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>画面全体表示';
               }
             }
 
-            // フルスクリーン状態の変更を監視
-            document.addEventListener('fullscreenchange', function() {
+            // ウィンドウリサイズ時にサイズを再調整
+            window.addEventListener('resize', function() {
               const iframe = document.querySelector('.pdf-container');
-              const fullscreenBtn = document.querySelector('.fullscreen-btn');
-              const icon = fullscreenBtn.querySelector('i');
+              if (iframe.classList.contains('expanded')) {
+                const viewportWidth = window.innerWidth;
+                const viewportHeight = window.innerHeight;
+                const aspectRatio = ${maxWidth} / ${maxHeight};
 
-              if (document.fullscreenElement) {
-                icon.className = 'fa-solid fa-compress';
-                fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>フルスクリーン解除';
-              } else {
-                icon.className = 'fa-solid fa-expand';
-                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>フルスクリーン表示';
+                let calculatedWidth, calculatedHeight;
+
+                if (viewportWidth / aspectRatio <= viewportHeight) {
+                  // 横幅基準で画面に収まる場合
+                  calculatedWidth = viewportWidth;
+                  calculatedHeight = viewportWidth / aspectRatio;
+                } else {
+                  // 縦幅基準で画面に収まる場合
+                  calculatedHeight = viewportHeight;
+                  calculatedWidth = viewportHeight * aspectRatio;
+                }
+
+                iframe.style.width = calculatedWidth + 'px';
+                iframe.style.height = calculatedHeight + 'px';
               }
             });
           </script>
@@ -174,12 +250,9 @@ app.get("/slides/:slug/", async (c) => {
           <div class="container">
             <iframe src="${pdfUrl}" class="pdf-container" title="${slide.title}"></iframe>
             <div class="pdf-controls">
-              <a href="${slidePath}" download="${slide.download}">
-                <button class="download-btn" ><i class="fa-solid fa-download"></i> Download PDF</button>
-              </a>
-              <button class="fullscreen-btn" onclick="toggleFullscreen()">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
-                フルスクリーン表示
+                画面全体表示
               </button>
             </div>
 
@@ -192,7 +265,15 @@ app.get("/slides/:slug/", async (c) => {
                   ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" rel="noopener noreferrer" class="hashtag">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
-          </div>
+
+              <div style="margin-top: 20px;">
+                <a href="${slidePath}" download="${slide.download}">
+                  <button class="download-btn">
+                    <i class="fa-solid fa-download"></i> Download PDF
+                  </button>
+                </a>
+              </div>
+            </div>
         </body>
       </html>
     `;
