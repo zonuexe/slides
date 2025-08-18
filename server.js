@@ -81,98 +81,12 @@ app.get("/slides/:slug/", async (c) => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>${slide.title}</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
-            body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
-            .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-            .pdf-container {
-              width: 100%;
-              max-width: ${maxWidth}px;
-              aspect-ratio: ${maxWidth} / ${maxHeight};
-              border: none;
-              margin: 0 auto 20px auto;
-              display: block;
+            :root {
+              --max-width: ${maxWidth}px;
+              --aspect-ratio: ${maxWidth} / ${maxHeight};
             }
-            .pdf-controls {
-              display: flex;
-              justify-content: center;
-              gap: 10px;
-              margin-bottom: 20px;
-            }
-            .fullscreen-btn {
-              display: inline-flex;
-              align-items: center;
-              gap: 8px;
-              background: #28a745;
-              color: white;
-              padding: 12px 24px;
-              text-decoration: none;
-              border-radius: 6px;
-              font-weight: 500;
-              transition: background-color 0.2s;
-              border: none;
-              cursor: pointer;
-              font-size: 14px;
-            }
-            .fullscreen-btn:hover {
-              background: #218838;
-            }
-            .fullscreen-btn i {
-              font-size: 16px;
-            }
-            .slide-info { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
-
-            /* 画面全体表示時のスタイル */
-            .pdf-container.expanded {
-              position: fixed;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              max-width: 100vw;
-              max-height: 100vh;
-              aspect-ratio: auto;
-              margin: 0;
-              z-index: 1000;
-              background: white;
-              overflow: hidden;
-            }
-
-            /* 画面全体表示時のボタン位置調整 */
-            .pdf-controls.expanded {
-              position: fixed;
-              top: 20px;
-              right: 20px;
-              z-index: 1001;
-            }
-
-            /* 画面全体表示時の縮小ボタンスタイル */
-            .pdf-controls.expanded .fullscreen-btn {
-              background: #6c757d;
-              color: white;
-              padding: 8px;
-              border-radius: 50%;
-              width: 40px;
-              height: 40px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              min-width: auto;
-            }
-
-            .pdf-controls.expanded .fullscreen-btn:hover {
-              background: #5a6268;
-            }
-
-            .pdf-controls.expanded .fullscreen-btn i {
-              font-size: 14px;
-            }
-            .slide-info h1 { margin-top: 0; color: #333; }
-            .slide-info time { color: #666; font-weight: 500; }
-            .download-btn { display: inline-flex; align-items: center; gap: 8px; background: #007bff; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.2s; }
-            .download-btn:hover { background: #0056b3; }
-            .download-btn i { font-size: 16px; }
-            .hashtags { margin-top: 10px; }
-            .hashtag { background: #e9ecef; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-right: 8px; text-decoration: none; color: #495057; transition: background-color 0.2s; }
-            .hashtag:hover { background: #dee2e6; }
           </style>
           <script>
             function toggleExpanded() {
@@ -285,6 +199,27 @@ app.get("/slides/:slug/", async (c) => {
   }
 });
 
+// CSSファイルの配信
+app.get("/slides/css/*", async (c) => {
+  const path = c.req.path.replace("/slides/css/", "");
+  try {
+    const filePath = `./css/${decodeURIComponent(path)}`;
+    const stats = await stat(filePath);
+
+    if (stats.isFile()) {
+      const contentType = path.endsWith(".css") ? "text/css" : "application/octet-stream";
+      const stream = createReadStream(filePath);
+      return new Response(stream, {
+        headers: { "Content-Type": contentType },
+      });
+    } else {
+      return c.text("ファイルが見つかりません", 404);
+    }
+  } catch (error) {
+    return c.text("ファイルが見つかりません", 404);
+  }
+});
+
 // 静的ファイルの配信
 app.get("/slides/pdf/*", async (c) => {
   const path = c.req.path.replace("/slides/pdf/", "");
@@ -355,44 +290,6 @@ app.get("/slide-pdf.js/*", async (c) => {
   } catch (error) {
     console.error(`Error serving file: ${error.message}`);
     return c.text("ファイルが見つかりません", 404);
-  }
-});
-
-// slide-pdf.js のルートディレクトリアクセス
-app.get("/slide-pdf.js/", async (c) => {
-  try {
-    const filePath = `../slide-pdf.js/index.html`;
-    const stats = await stat(filePath);
-
-    if (stats.isFile()) {
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": "text/html" },
-      });
-    } else {
-      return c.text("index.htmlが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("index.htmlが見つかりません", 404);
-  }
-});
-
-// slide-pdf.js のルートディレクトリアクセス（末尾スラッシュなし）
-app.get("/slide-pdf.js", async (c) => {
-  try {
-    const filePath = `../slide-pdf.js/index.html`;
-    const stats = await stat(filePath);
-
-    if (stats.isFile()) {
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": "text/html" },
-      });
-    } else {
-      return c.text("index.htmlが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("index.htmlが見つかりません", 404);
   }
 });
 
