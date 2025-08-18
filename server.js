@@ -8,10 +8,10 @@ const app = new Hono();
 
 // スライド一覧ページ
 app.get("/", async (c) => {
-    try {
-        const slides = await loadSlides();
+  try {
+    const slides = await loadSlides();
 
-        const html = `
+    const html = `
       <!DOCTYPE html>
       <html lang="ja">
         <head>
@@ -44,32 +44,36 @@ app.get("/", async (c) => {
       </html>
     `;
 
-        return c.html(html);
-    } catch (error) {
-        console.error('Error loading slides:', error);
-        return c.text('スライドの読み込みに失敗しました', 500);
-    }
+    return c.html(html);
+  } catch (error) {
+    console.error('Error loading slides:', error);
+    return c.text('スライドの読み込みに失敗しました', 500);
+  }
 });
 
 // 個別スライドページ（末尾スラッシュ付き）
 app.get("/slides/:slug/", async (c) => {
-    try {
-        const slug = c.req.param("slug");
-        const slide = await getSlideBySlug(slug);
+  try {
+    const slug = c.req.param("slug");
+    const slide = await getSlideBySlug(slug);
 
-        if (!slide) {
-            return c.text("スライドが見つかりません", 404);
-        }
+    if (!slide) {
+      return c.text("スライドが見つかりません", 404);
+    }
 
-        // 統一されたPDF URL（#を含むパスを正しくエンコード）
-        const slidePath = `/slides/${slide.file}`;
-        const pdfUrl = `/slide-pdf.js/?slide=${encodeURIComponent(slidePath)}`;
+    // 統一されたPDF URL（#を含むパスを正しくエンコード）
+    const slidePath = `/slides/${slide.file}`;
+    const pdfUrl = `/slide-pdf.js/?slide=${encodeURIComponent(slidePath)}`;
 
-        // 日付を日本語形式に変換
-        const date = new Date(slide.date);
-        const japaneseDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+    // 日付を日本語形式に変換
+    const date = new Date(slide.date);
+    const japaneseDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 
-        const html = `
+    // スライドの最大サイズを取得（デフォルト値も設定）
+    const maxWidth = slide.max_width || 1024;
+    const maxHeight = slide.max_height || 768;
+
+    const html = `
       <!DOCTYPE html>
       <html lang="ja">
         <head>
@@ -80,7 +84,14 @@ app.get("/slides/:slug/", async (c) => {
           <style>
             body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
             .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-            .pdf-container { width: 100%; height: 80vh; border: none; margin-bottom: 20px; }
+            .pdf-container {
+              width: 100%;
+              max-width: ${maxWidth}px;
+              aspect-ratio: ${maxWidth} / ${maxHeight};
+              border: none;
+              margin: 0 auto 20px auto;
+              display: block;
+            }
             .slide-info { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
             .slide-info h1 { margin-top: 0; color: #333; }
             .slide-info time { color: #666; font-weight: 500; }
@@ -95,17 +106,17 @@ app.get("/slides/:slug/", async (c) => {
         <body>
           <div class="container">
             <iframe src="${pdfUrl}" class="pdf-container" title="${slide.title}"></iframe>
-            
+
             <div class="slide-info">
               <h1>${slide.title}</h1>
               <p>公開日: <time datetime="${slide.date}">${japaneseDate}</time></p>
-              
+
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
                   ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" rel="noopener noreferrer" class="hashtag">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
-              
+
               <div style="margin-top: 20px;">
                 <a href="${slidePath}" download="${slide.download}">
                   <button class="download-btn" ><i class="fa-solid fa-download"></i> Download PDF</button>
@@ -117,128 +128,128 @@ app.get("/slides/:slug/", async (c) => {
       </html>
     `;
 
-        return c.html(html);
-    } catch (error) {
-        console.error('Error loading slide:', error);
-        return c.text('スライドの読み込みに失敗しました', 500);
-    }
+    return c.html(html);
+  } catch (error) {
+    console.error('Error loading slide:', error);
+    return c.text('スライドの読み込みに失敗しました', 500);
+  }
 });
 
 // 静的ファイルの配信
 app.get("/slides/pdf/*", async (c) => {
-    const path = c.req.path.replace("/slides/pdf/", "");
-    try {
-        const filePath = `./pdf/${decodeURIComponent(path)}`;
-        const stats = await stat(filePath);
+  const path = c.req.path.replace("/slides/pdf/", "");
+  try {
+    const filePath = `./pdf/${decodeURIComponent(path)}`;
+    const stats = await stat(filePath);
 
-        if (stats.isFile()) {
-            const contentType = path.endsWith(".pdf") ? "application/pdf" : "application/octet-stream";
-            const stream = createReadStream(filePath);
-            return new Response(stream, {
-                headers: { "Content-Type": contentType },
-            });
-        } else {
-            return c.text("ファイルが見つかりません", 404);
-        }
-    } catch (error) {
-        return c.text("ファイルが見つかりません", 404);
+    if (stats.isFile()) {
+      const contentType = path.endsWith(".pdf") ? "application/pdf" : "application/octet-stream";
+      const stream = createReadStream(filePath);
+      return new Response(stream, {
+        headers: { "Content-Type": contentType },
+      });
+    } else {
+      return c.text("ファイルが見つかりません", 404);
     }
+  } catch (error) {
+    return c.text("ファイルが見つかりません", 404);
+  }
 });
 
 // slide-pdf.js の静的ファイル配信
 app.get("/slide-pdf.js/*", async (c) => {
-    const path = c.req.path.replace("/slide-pdf.js/", "");
-    try {
-        // ../slide-pdf.js/ 以下のファイルを配信
-        const filePath = `../slide-pdf.js/${decodeURIComponent(path)}`;
-        console.log(`Requested path: ${c.req.path}, File path: ${filePath}`);
+  const path = c.req.path.replace("/slide-pdf.js/", "");
+  try {
+    // ../slide-pdf.js/ 以下のファイルを配信
+    const filePath = `../slide-pdf.js/${decodeURIComponent(path)}`;
+    console.log(`Requested path: ${c.req.path}, File path: ${filePath}`);
 
-        const stats = await stat(filePath);
+    const stats = await stat(filePath);
 
-        if (stats.isFile()) {
-            // ファイル拡張子に基づいてContent-Typeを設定
-            let contentType = "application/octet-stream";
-            if (path.endsWith(".js")) contentType = "application/javascript";
-            else if (path.endsWith(".css")) contentType = "text/css";
-            else if (path.endsWith(".html")) contentType = "text/html";
-            else if (path.endsWith(".json")) contentType = "application/json";
-            else if (path.endsWith(".png")) contentType = "image/png";
-            else if (path.endsWith(".jpg") || path.endsWith(".jpeg")) contentType = "image/jpeg";
-            else if (path.endsWith(".svg")) contentType = "image/svg+xml";
+    if (stats.isFile()) {
+      // ファイル拡張子に基づいてContent-Typeを設定
+      let contentType = "application/octet-stream";
+      if (path.endsWith(".js")) contentType = "application/javascript";
+      else if (path.endsWith(".css")) contentType = "text/css";
+      else if (path.endsWith(".html")) contentType = "text/html";
+      else if (path.endsWith(".json")) contentType = "application/json";
+      else if (path.endsWith(".png")) contentType = "image/png";
+      else if (path.endsWith(".jpg") || path.endsWith(".jpeg")) contentType = "image/jpeg";
+      else if (path.endsWith(".svg")) contentType = "image/svg+xml";
 
-            const stream = createReadStream(filePath);
-            return new Response(stream, {
-                headers: { "Content-Type": contentType },
-            });
-        } else if (stats.isDirectory()) {
-            // ディレクトリの場合は index.html を探す
-            const indexPath = `${filePath}/index.html`;
-            try {
-                const indexStats = await stat(indexPath);
-                if (indexStats.isFile()) {
-                    const stream = createReadStream(indexPath);
-                    return new Response(stream, {
-                        headers: { "Content-Type": "text/html" },
-                    });
-                }
-            } catch (indexError) {
-                console.log(`index.html not found in directory: ${filePath}`);
-            }
-            // index.html が存在しない場合は404エラー
-            console.log(`Directory access without index.html: ${filePath}`);
-            return c.text("ファイルが見つかりません", 404);
-        } else {
-            console.log(`File not found: ${filePath}`);
-            return c.text("ファイルが見つかりません", 404);
+      const stream = createReadStream(filePath);
+      return new Response(stream, {
+        headers: { "Content-Type": contentType },
+      });
+    } else if (stats.isDirectory()) {
+      // ディレクトリの場合は index.html を探す
+      const indexPath = `${filePath}/index.html`;
+      try {
+        const indexStats = await stat(indexPath);
+        if (indexStats.isFile()) {
+          const stream = createReadStream(indexPath);
+          return new Response(stream, {
+            headers: { "Content-Type": "text/html" },
+          });
         }
-    } catch (error) {
-        console.error(`Error serving file: ${error.message}`);
-        return c.text("ファイルが見つかりません", 404);
+      } catch (indexError) {
+        console.log(`index.html not found in directory: ${filePath}`);
+      }
+      // index.html が存在しない場合は404エラー
+      console.log(`Directory access without index.html: ${filePath}`);
+      return c.text("ファイルが見つかりません", 404);
+    } else {
+      console.log(`File not found: ${filePath}`);
+      return c.text("ファイルが見つかりません", 404);
     }
+  } catch (error) {
+    console.error(`Error serving file: ${error.message}`);
+    return c.text("ファイルが見つかりません", 404);
+  }
 });
 
 // slide-pdf.js のルートディレクトリアクセス
 app.get("/slide-pdf.js/", async (c) => {
-    try {
-        const filePath = `../slide-pdf.js/index.html`;
-        const stats = await stat(filePath);
+  try {
+    const filePath = `../slide-pdf.js/index.html`;
+    const stats = await stat(filePath);
 
-        if (stats.isFile()) {
-            const stream = createReadStream(filePath);
-            return new Response(stream, {
-                headers: { "Content-Type": "text/html" },
-            });
-        } else {
-            return c.text("index.htmlが見つかりません", 404);
-        }
-    } catch (error) {
-        return c.text("index.htmlが見つかりません", 404);
+    if (stats.isFile()) {
+      const stream = createReadStream(filePath);
+      return new Response(stream, {
+        headers: { "Content-Type": "text/html" },
+      });
+    } else {
+      return c.text("index.htmlが見つかりません", 404);
     }
+  } catch (error) {
+    return c.text("index.htmlが見つかりません", 404);
+  }
 });
 
 // slide-pdf.js のルートディレクトリアクセス（末尾スラッシュなし）
 app.get("/slide-pdf.js", async (c) => {
-    try {
-        const filePath = `../slide-pdf.js/index.html`;
-        const stats = await stat(filePath);
+  try {
+    const filePath = `../slide-pdf.js/index.html`;
+    const stats = await stat(filePath);
 
-        if (stats.isFile()) {
-            const stream = createReadStream(filePath);
-            return new Response(stream, {
-                headers: { "Content-Type": "text/html" },
-            });
-        } else {
-            return c.text("index.htmlが見つかりません", 404);
-        }
-    } catch (error) {
-        return c.text("index.htmlが見つかりません", 404);
+    if (stats.isFile()) {
+      const stream = createReadStream(filePath);
+      return new Response(stream, {
+        headers: { "Content-Type": "text/html" },
+      });
+    } else {
+      return c.text("index.htmlが見つかりません", 404);
     }
+  } catch (error) {
+    return c.text("index.htmlが見つかりません", 404);
+  }
 });
 
 console.log("🚀 Hono server is running on http://localhost:3000");
 
 // Node.js用のサーバー起動
 serve({
-    fetch: app.fetch,
-    port: 3000
+  fetch: app.fetch,
+  port: 3000
 });
