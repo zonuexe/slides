@@ -92,6 +92,33 @@ app.get("/slides/:slug/", async (c) => {
               margin: 0 auto 20px auto;
               display: block;
             }
+            .pdf-controls {
+              display: flex;
+              justify-content: center;
+              gap: 10px;
+              margin-bottom: 20px;
+            }
+            .fullscreen-btn {
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              background: #28a745;
+              color: white;
+              padding: 12px 24px;
+              text-decoration: none;
+              border-radius: 6px;
+              font-weight: 500;
+              transition: background-color 0.2s;
+              border: none;
+              cursor: pointer;
+              font-size: 14px;
+            }
+            .fullscreen-btn:hover {
+              background: #218838;
+            }
+            .fullscreen-btn i {
+              font-size: 16px;
+            }
             .slide-info { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
             .slide-info h1 { margin-top: 0; color: #333; }
             .slide-info time { color: #666; font-weight: 500; }
@@ -102,10 +129,59 @@ app.get("/slides/:slug/", async (c) => {
             .hashtag { background: #e9ecef; padding: 4px 8px; border-radius: 4px; font-size: 12px; margin-right: 8px; text-decoration: none; color: #495057; transition: background-color 0.2s; }
             .hashtag:hover { background: #dee2e6; }
           </style>
+          <script>
+            function toggleFullscreen() {
+              const iframe = document.querySelector('.pdf-container');
+              const fullscreenBtn = document.querySelector('.fullscreen-btn');
+              const icon = fullscreenBtn.querySelector('i');
+
+              if (!document.fullscreenElement) {
+                // フルスクリーンに切り替え
+                iframe.requestFullscreen().then(() => {
+                  icon.className = 'fa-solid fa-compress';
+                  fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>フルスクリーン解除';
+                }).catch(err => {
+                  console.error('フルスクリーンに切り替えできませんでした:', err);
+                });
+              } else {
+                // フルスクリーン解除
+                document.exitFullscreen().then(() => {
+                  icon.className = 'fa-solid fa-expand';
+                  fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>フルスクリーン表示';
+                }).catch(err => {
+                  console.error('フルスクリーンを解除できませんでした:', err);
+                });
+              }
+            }
+
+            // フルスクリーン状態の変更を監視
+            document.addEventListener('fullscreenchange', function() {
+              const iframe = document.querySelector('.pdf-container');
+              const fullscreenBtn = document.querySelector('.fullscreen-btn');
+              const icon = fullscreenBtn.querySelector('i');
+
+              if (document.fullscreenElement) {
+                icon.className = 'fa-solid fa-compress';
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>フルスクリーン解除';
+              } else {
+                icon.className = 'fa-solid fa-expand';
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>フルスクリーン表示';
+              }
+            });
+          </script>
         </head>
         <body>
           <div class="container">
             <iframe src="${pdfUrl}" class="pdf-container" title="${slide.title}"></iframe>
+            <div class="pdf-controls">
+              <a href="${slidePath}" download="${slide.download}">
+                <button class="download-btn" ><i class="fa-solid fa-download"></i> Download PDF</button>
+              </a>
+              <button class="fullscreen-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-expand"></i>
+                フルスクリーン表示
+              </button>
+            </div>
 
             <div class="slide-info">
               <h1>${slide.title}</h1>
@@ -116,13 +192,6 @@ app.get("/slides/:slug/", async (c) => {
                   ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" rel="noopener noreferrer" class="hashtag">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
-
-              <div style="margin-top: 20px;">
-                <a href="${slidePath}" download="${slide.download}">
-                  <button class="download-btn" ><i class="fa-solid fa-download"></i> Download PDF</button>
-                </a>
-              </div>
-            </div>
           </div>
         </body>
       </html>
