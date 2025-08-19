@@ -136,15 +136,17 @@ body {
 
 .download-btn {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
     background: #007bff;
     color: white;
-    padding: 12px 24px;
+    cursor: pointer;
+    /* <a>タグのデフォルトスタイルをリセット */
     text-decoration: none;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: background-color 0.2s;
+    outline: none;
+    /* ボタンと同じように動作 */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .download-btn:hover {
@@ -152,6 +154,55 @@ body {
 }
 
 .download-btn i {
+    font-size: 16px;
+}
+
+.download-btn,
+.download-image-btn,
+.copy-image-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 48px;
+    /* 高さを固定 */
+    box-sizing: border-box;
+    /* パディングとボーダーを高さに含める */
+    line-height: 1;
+    /* 行の高さを1に設定 */
+}
+
+.download-image-btn {
+    background: #28a745;
+    color: white;
+}
+
+.download-image-btn:hover {
+    background: #1e7e34;
+}
+
+.download-image-btn i {
+    font-size: 16px;
+}
+
+.copy-image-btn {
+    background: #6f42c1;
+    color: white;
+}
+
+.copy-image-btn:hover {
+    background: #5a32a3;
+}
+
+.copy-image-btn i {
     font-size: 16px;
 }
 

@@ -148,7 +148,116 @@ app.get("/slides/:slug/", async (c) => {
               }
             }
 
-                        // 現在の表示を画像としてダウンロード
+            // ファイル名から拡張子を取り除く関数
+            function base(filename) {
+              const lastDotIndex = filename.lastIndexOf('.');
+              return lastDotIndex > 0 ? filename.substring(0, lastDotIndex) : filename;
+            }
+
+            // 現在のページ番号を取得する関数
+            function getCurrentPageNumber() {
+              try {
+                const iframe = document.querySelector('.pdf-container');
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                // #pdf-container の data-page 属性からページ番号を取得
+                const pdfContainer = iframeDoc.getElementById('pdf-container');
+                if (pdfContainer && pdfContainer.dataset.page) {
+                  const pageNumber = parseInt(pdfContainer.dataset.page);
+                  if (!isNaN(pageNumber) && pageNumber > 0) {
+                    return pageNumber;
+                  }
+                }
+
+                // デフォルトは1ページ目
+                return 1;
+              } catch (error) {
+                console.error('ページ番号の取得に失敗しました:', error);
+                return 1;
+              }
+            }
+
+            // ページ変更を監視する関数
+            function watchPageChanges() {
+              const iframe = document.querySelector('.pdf-container');
+              if (!iframe) return;
+
+              // iframeの読み込み完了を待つ
+              iframe.addEventListener('load', function() {
+                try {
+                  const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                  // MutationObserverでページ変更を監視
+                  const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      if (mutation.type === 'childList' || mutation.type === 'attributes') {
+                        // ページ変更を検知したら、ボタンのファイル名を更新
+                        updateButtonFilenames();
+                      }
+                    });
+                  });
+
+                  // #pdf-container の data-page 属性の変更を監視
+                  const pdfContainer = iframeDoc.getElementById('pdf-container');
+                  if (pdfContainer) {
+                    observer.observe(pdfContainer, {
+                      attributes: true,
+                      attributeFilter: ['data-page']
+                    });
+                  }
+
+                  // ページ要素の変更を監視
+                  observer.observe(iframeDoc.body, {
+                    childList: true,
+                    subtree: true,
+                    attributes: true,
+                    attributeFilter: ['class', 'style']
+                  });
+
+                  // キーボードイベントでページ変更を監視
+                  iframeDoc.addEventListener('keydown', function(event) {
+                    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' ||
+                        event.key === 'PageUp' || event.key === 'PageDown') {
+                      // 少し遅延させてからファイル名を更新（PDF.jsの処理完了を待つ）
+                      setTimeout(updateButtonFilenames, 100);
+                    }
+                  });
+
+                  // クリックイベントでページ変更を監視
+                  iframeDoc.addEventListener('click', function(event) {
+                    // ナビゲーションボタンのクリックを検知
+                    if (event.target.closest('.navButton, .pageButton, [class*="nav"], [class*="page"]')) {
+                      setTimeout(updateButtonFilenames, 100);
+                    }
+                  });
+
+                } catch (error) {
+                  console.error('ページ変更監視の設定に失敗しました:', error);
+                }
+              });
+            }
+
+            // ボタンのファイル名を更新する関数
+            function updateButtonFilenames() {
+              const downloadBtn = document.querySelector('.download-image-btn');
+              const copyBtn = document.querySelector('.copy-image-btn');
+
+              if (downloadBtn && copyBtn) {
+                const slideDownload = '${slide.download}';
+                const baseName = base(slideDownload);
+                const pageNumber = getCurrentPageNumber();
+                const filename = baseName + '-' + pageNumber + '.png';
+
+                // ボタンのツールチップを更新（現在のページ番号を明確に表示）
+                downloadBtn.title = 'Save page ' + pageNumber + ' as: ' + filename;
+                copyBtn.title = 'Copy page ' + pageNumber + ' as: ' + filename;
+
+                // コンソールに現在のページ番号を表示（デバッグ用）
+                console.log('Current page:', pageNumber, 'Filename:', filename);
+              }
+            }
+
+            // 現在の表示を画像としてダウンロード
             function downloadCanvasAsImage() {
               try {
                 const iframe = document.querySelector('.pdf-container');
@@ -158,12 +267,18 @@ app.get("/slides/:slug/", async (c) => {
                 const canvas = iframeDoc.querySelector('canvas');
 
                 if (canvas) {
+                  // ファイル名を生成
+                  const slideDownload = '${slide.download}';
+                  const baseName = base(slideDownload);
+                  const pageNumber = getCurrentPageNumber();
+                  const filename = baseName + '-' + pageNumber + '.png';
+
                   // canvasを画像に変換
                   const dataURL = canvas.toDataURL('image/png');
 
                   // ダウンロードリンクを作成
                   const link = document.createElement('a');
-                  link.download = 'slide-image.png';
+                  link.download = filename;
                   link.href = dataURL;
 
                   // クリックしてダウンロード
@@ -258,6 +373,18 @@ app.get("/slides/:slug/", async (c) => {
                 iframe.style.height = calculatedHeight + 'px';
               }
             });
+
+            // ページ変更監視を開始（iframe読み込み完了後）
+            document.addEventListener('DOMContentLoaded', function() {
+              // iframeが既に読み込まれている場合
+              const iframe = document.querySelector('.pdf-container');
+              if (iframe && iframe.contentDocument) {
+                watchPageChanges();
+              } else {
+                // iframeの読み込み完了を待つ
+                iframe.addEventListener('load', watchPageChanges);
+              }
+            });
           </script>
         </head>
         <body>
@@ -283,16 +410,14 @@ app.get("/slides/:slug/", async (c) => {
               ` : ''}
 
               <div style="margin-top: 20px;">
-                <a href="${slidePath}" download="${slide.download}">
-                  <button class="download-btn">
-                    <i class="fa-solid fa-download"></i> Download PDF
-                  </button>
+                <a href="${slidePath}" download="${slide.download}" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
                 </a>
-                <button class="download-image-btn" onclick="downloadCanvasAsImage()" style="margin-left: 10px;">
-                  <i class="fa-solid fa-image"></i> Download Image
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
                 </button>
-                <button class="copy-image-btn" onclick="copyCanvasToClipboard()" style="margin-left: 10px;">
-                  <i class="fa-solid fa-copy"></i> Copy Image
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
             </div>
