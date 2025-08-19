@@ -86,6 +86,7 @@ app.get("/slides/:slug/", async (c) => {
             :root {
               --max-width: ${maxWidth}px;
               --aspect-ratio: ${maxWidth} / ${maxHeight};
+              --max-height: 66.67vh;
             }
           </style>
           <script>
@@ -99,6 +100,12 @@ app.get("/slides/:slug/", async (c) => {
                 // 画面全体表示に切り替え
                 iframe.classList.add('expanded');
                 controls.classList.add('expanded');
+
+                // スライド情報と戻るリンクを非表示
+                const slideInfo = document.querySelector('.slide-info');
+                const backLink = document.querySelector('.back-link');
+                if (slideInfo) slideInfo.classList.add('expanded');
+                if (backLink) backLink.classList.add('expanded');
 
                 // 画面サイズに応じて適切なサイズを設定
                 const viewportWidth = window.innerWidth;
@@ -127,11 +134,104 @@ app.get("/slides/:slug/", async (c) => {
                 // 通常表示に戻す
                 iframe.classList.remove('expanded');
                 controls.classList.remove('expanded');
+
+                // スライド情報と戻るリンクを再表示
+                const slideInfo = document.querySelector('.slide-info');
+                const backLink = document.querySelector('.back-link');
+                if (slideInfo) slideInfo.classList.remove('expanded');
+                if (backLink) backLink.classList.remove('expanded');
+
                 iframe.style.width = '';
                 iframe.style.height = '';
                 icon.className = 'fa-solid fa-expand';
-                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>画面全体表示';
+                fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
               }
+            }
+
+                        // 現在の表示を画像としてダウンロード
+            function downloadCanvasAsImage() {
+              try {
+                const iframe = document.querySelector('.pdf-container');
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                // iframe内のcanvas要素を探す
+                const canvas = iframeDoc.querySelector('canvas');
+
+                if (canvas) {
+                  // canvasを画像に変換
+                  const dataURL = canvas.toDataURL('image/png');
+
+                  // ダウンロードリンクを作成
+                  const link = document.createElement('a');
+                  link.download = 'slide-image.png';
+                  link.href = dataURL;
+
+                  // クリックしてダウンロード
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                } else {
+                  // canvasが見つからない場合の代替手段
+                  // html2canvas(iframe) は外部ライブラリが必要
+                  alert('画像のダウンロードに失敗しました。iframe内のcanvas要素が見つからないか、同一オリジンポリシーによりアクセスできません。');
+                }
+              } catch (error) {
+                console.error('画像ダウンロードに失敗しました:', error);
+                alert('画像のダウンロードに失敗しました。iframe内のコンテンツにアクセスできません。');
+              }
+            }
+
+            // 現在の表示をクリップボードにコピー
+            async function copyCanvasToClipboard() {
+              try {
+                const iframe = document.querySelector('.pdf-container');
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+
+                // iframe内のcanvas要素を探す
+                const canvas = iframeDoc.querySelector('canvas');
+
+                if (canvas) {
+                  // canvasをBlobに変換
+                  canvas.toBlob(async (blob) => {
+                    try {
+                      // クリップボードに画像をコピー
+                      await navigator.clipboard.write([
+                        new ClipboardItem({
+                          'image/png': blob
+                        })
+                      ]);
+                      showToast('画像がクリップボードにコピーされました！', 'success');
+                    } catch (clipboardError) {
+                      console.error('クリップボードへのコピーに失敗しました:', clipboardError);
+                      showToast('クリップボードへのコピーに失敗しました。ブラウザが対応していない可能性があります。', 'error');
+                    }
+                  }, 'image/png');
+                } else {
+                  // canvasが見つからない場合の代替手段
+                  // html2canvas(iframe) は外部ライブラリが必要
+                  showToast('画像のクリップボードコピーに失敗しました。iframe内のcanvas要素が見つからないか、同一オリジンポリシーによりアクセスできません。', 'error');
+                }
+              } catch (error) {
+                console.error('画像のクリップボードコピーに失敗しました:', error);
+                showToast('画像のクリップボードコピーに失敗しました。iframe内のコンテンツにアクセスできません。', 'error');
+              }
+            }
+
+            // Toast通知を表示する関数
+            function showToast(message, type = 'success') {
+              const toast = document.getElementById('toast');
+              toast.textContent = message;
+              toast.className = 'toast ' + type;
+
+              // 表示
+              setTimeout(() => {
+                toast.classList.add('show');
+              }, 100);
+
+              // 3秒後に自動で非表示
+              setTimeout(() => {
+                toast.classList.remove('show');
+              }, 3000);
             }
 
             // ウィンドウリサイズ時にサイズを再調整
@@ -166,9 +266,11 @@ app.get("/slides/:slug/", async (c) => {
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
-                画面全体表示
               </button>
             </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
 
             <div class="slide-info">
               <h1>${slide.title}</h1>
@@ -186,8 +288,21 @@ app.get("/slides/:slug/", async (c) => {
                     <i class="fa-solid fa-download"></i> Download PDF
                   </button>
                 </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()" style="margin-left: 10px;">
+                  <i class="fa-solid fa-image"></i> Download Image
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()" style="margin-left: 10px;">
+                  <i class="fa-solid fa-copy"></i> Copy Image
+                </button>
               </div>
             </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
         </body>
       </html>
     `;
