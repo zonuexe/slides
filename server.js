@@ -44,7 +44,7 @@ app.get("/slides/", async (c) => {
       </html>
     `;
 
-    return c.html(html);
+    return c.html(html.trim());
   } catch (error) {
     console.error('Error loading slides:', error);
     return c.text('スライドの読み込みに失敗しました', 500);
@@ -432,7 +432,7 @@ app.get("/slides/:slug/", async (c) => {
       </html>
     `;
 
-    return c.html(html);
+    return c.html(html.trim());
   } catch (error) {
     console.error('Error loading slide:', error);
     return c.text('スライドの読み込みに失敗しました', 500);
