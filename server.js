@@ -91,7 +91,7 @@ app.get("/slides/:slug/", async (c) => {
           </style>
           <script>
             function toggleExpanded() {
-              const iframe = document.querySelector('.pdf-container');
+              const iframe = document.getElementById('pdf-container');
               const controls = document.querySelector('.pdf-controls');
               const fullscreenBtn = document.querySelector('.fullscreen-btn');
               const icon = fullscreenBtn.querySelector('i');
@@ -157,7 +157,7 @@ app.get("/slides/:slug/", async (c) => {
             // 現在のページ番号を取得する関数
             function getCurrentPageNumber() {
               try {
-                const iframe = document.querySelector('.pdf-container');
+                const iframe = document.getElementById('pdf-container');
                 const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
                 // #pdf-container の data-page 属性からページ番号を取得
@@ -179,7 +179,7 @@ app.get("/slides/:slug/", async (c) => {
 
             // ページ変更を監視する関数
             function watchPageChanges() {
-              const iframe = document.querySelector('.pdf-container');
+              const iframe = document.getElementById('pdf-container');
               if (!iframe) return;
 
               // iframeの読み込み完了を待つ
@@ -260,7 +260,7 @@ app.get("/slides/:slug/", async (c) => {
             // 現在の表示を画像としてダウンロード
             function downloadCanvasAsImage() {
               try {
-                const iframe = document.querySelector('.pdf-container');
+                const iframe = document.getElementById('pdf-container');
                 const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
                 // iframe内のcanvas要素を探す
@@ -299,7 +299,7 @@ app.get("/slides/:slug/", async (c) => {
             // 現在の表示をクリップボードにコピー
             async function copyCanvasToClipboard() {
               try {
-                const iframe = document.querySelector('.pdf-container');
+                const iframe = document.getElementById('pdf-container');
                 const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
                 // iframe内のcanvas要素を探す
@@ -351,7 +351,7 @@ app.get("/slides/:slug/", async (c) => {
 
             // ウィンドウリサイズ時にサイズを再調整
             window.addEventListener('resize', function() {
-              const iframe = document.querySelector('.pdf-container');
+              const iframe = document.getElementById('pdf-container');
               if (iframe.classList.contains('expanded')) {
                 const viewportWidth = window.innerWidth;
                 const viewportHeight = window.innerHeight;
@@ -389,7 +389,7 @@ app.get("/slides/:slug/", async (c) => {
         </head>
         <body>
           <div class="container">
-            <iframe src="${pdfUrl}" class="pdf-container" title="${slide.title}"></iframe>
+            <iframe src="${pdfUrl}" id="pdf-container" title="${slide.title}"></iframe>
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
