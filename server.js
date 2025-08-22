@@ -174,7 +174,7 @@ app.get("/slides/:slug/oembed.json", async (c) => {
     }
 
     const currentUrl = `https://zonuexe.github.io/slides/${slug}/`;
-    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F${slide.file}`;
+    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=${encodeURIComponent(`https://zonuexe.github.io/slides/pdf/${slide.file}`)}`;
 
     const oembedData = {
       type: "rich",
@@ -208,7 +208,7 @@ app.get("/slides/:slug/oembed.xml", async (c) => {
     }
 
     const currentUrl = `https://zonuexe.github.io/slides/${slug}/`;
-    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F${slide.file}`;
+    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=${encodeURIComponent(`https://zonuexe.github.io/slides/pdf/${slide.file}`)}`;
 
     const oembedData = {
       type: "rich",
