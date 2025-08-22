@@ -79,6 +79,8 @@ app.get("/slides/:slug/", async (c) => {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="alternate" type="application/json+oembed" href="oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
           <title>${slide.title}</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
@@ -158,6 +160,92 @@ app.get("/slides/:slug/", async (c) => {
   } catch (error) {
     console.error('Error loading slide:', error);
     return c.text('スライドの読み込みに失敗しました', 500);
+  }
+});
+
+// oEmbed JSONエンドポイント
+app.get("/slides/:slug/oembed.json", async (c) => {
+  try {
+    const slug = c.req.param("slug");
+    const slide = await getSlideBySlug(slug);
+
+    if (!slide) {
+      return c.text("スライドが見つかりません", 404);
+    }
+
+    const currentUrl = `${c.req.url.replace('/oembed.json', '')}`;
+    const embedUrl = `${c.req.url.replace('/oembed.json', '')}`;
+
+    const oembedData = {
+      type: "rich",
+      version: "1.0",
+      title: slide.title,
+      url: embedUrl,
+      author_name: "tadsan",
+      author_url: "https://twitter.com/tadsan",
+      provider_name: "tadsan's slide deck",
+      provider_url: "https://zonuexe.github.io/slides/",
+      width: slide.max_width || 1024,
+      height: slide.max_height || 768,
+      html: `<iframe src="${embedUrl}" width="${slide.max_width || 1024}" height="${slide.max_height || 768}" frameborder="0" scrolling="no" title="${slide.title}"></iframe>`
+    };
+
+    return c.json(oembedData);
+  } catch (error) {
+    console.error('Error loading oEmbed JSON:', error);
+    return c.text('oEmbed JSONの読み込みに失敗しました', 500);
+  }
+});
+
+// oEmbed XMLエンドポイント
+app.get("/slides/:slug/oembed.xml", async (c) => {
+  try {
+    const slug = c.req.param("slug");
+    const slide = await getSlideBySlug(slug);
+
+    if (!slide) {
+      return c.text("スライドが見つかりません", 404);
+    }
+
+    const currentUrl = `${c.req.url.replace('/oembed.xml', '')}`;
+    const embedUrl = `${c.req.url.replace('/oembed.xml', '')}`;
+
+    const oembedData = {
+      type: "rich",
+      version: "1.0",
+      title: slide.title,
+      url: embedUrl,
+      author_name: "tadsan",
+      author_url: "https://twitter.com/tadsan",
+      provider_name: "tadsan's slide deck",
+      provider_url: "https://zonuexe.github.io/slides/",
+      width: slide.max_width || 1024,
+      height: slide.max_height || 768,
+      html: `<iframe src="${embedUrl}" width="${slide.max_width || 1024}" height="${slide.max_height || 768}" frameborder="0" scrolling="no" title="${slide.title}"></iframe>`
+    };
+
+    // XML形式で出力
+    const xml = `<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<oembed>
+  <type>${oembedData.type}</type>
+  <version>${oembedData.version}</version>
+  <title>${oembedData.title}</title>
+  <url>${oembedData.url}</url>
+  <author_name>${oembedData.author_name}</author_name>
+  <author_url>${oembedData.author_url}</author_url>
+  <provider_name>${oembedData.provider_name}</provider_name>
+  <provider_url>${oembedData.provider_url}</provider_url>
+  <width>${oembedData.width}</width>
+  <height>${oembedData.height}</height>
+  <html><![CDATA[${oembedData.html}]]></html>
+</oembed>`;
+
+    return new Response(xml, {
+      headers: { "Content-Type": "application/xml; charset=utf-8" }
+    });
+  } catch (error) {
+    console.error('Error loading oEmbed XML:', error);
+    return c.text('oEmbed XMLの読み込みに失敗しました', 500);
   }
 });
 
