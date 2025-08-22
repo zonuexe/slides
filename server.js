@@ -173,8 +173,8 @@ app.get("/slides/:slug/oembed.json", async (c) => {
       return c.text("スライドが見つかりません", 404);
     }
 
-    const currentUrl = `${c.req.url.replace('/oembed.json', '')}`;
-    const embedUrl = `${c.req.url.replace('/oembed.json', '')}`;
+    const currentUrl = `https://zonuexe.github.io/slides/${slug}/`;
+    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F${slide.file}`;
 
     const oembedData = {
       type: "rich",
@@ -207,8 +207,8 @@ app.get("/slides/:slug/oembed.xml", async (c) => {
       return c.text("スライドが見つかりません", 404);
     }
 
-    const currentUrl = `${c.req.url.replace('/oembed.xml', '')}`;
-    const embedUrl = `${c.req.url.replace('/oembed.xml', '')}`;
+    const currentUrl = `https://zonuexe.github.io/slides/${slug}/`;
+    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F${slide.file}`;
 
     const oembedData = {
       type: "rich",
