@@ -79,8 +79,8 @@ app.get("/slides/:slug/", async (c) => {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.xml">
           <title>${slide.title}</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
