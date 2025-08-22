@@ -306,8 +306,45 @@ function initializeSlide() {
     });
 }
 
+// Full screen APIを使った全画面表示の切り替え
+function toggleFullscreen() {
+    const iframe = document.getElementById('pdf-container');
+
+    if (!document.fullscreenElement) {
+        // 全画面表示に切り替え
+        iframe.requestFullscreen().catch(err => {
+            console.error('全画面表示に失敗しました:', err);
+            showToast('全画面表示に失敗しました。ブラウザが対応していない可能性があります。', 'error');
+        });
+    } else {
+        // 全画面表示を解除
+        document.exitFullscreen().catch(err => {
+            console.error('全画面表示の解除に失敗しました:', err);
+        });
+    }
+}
+
+// Web Share APIを使ったスライド共有
+function shareSlide() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            text: 'このスライドをチェックしてください！',
+            url: window.location.href
+        }).catch(err => {
+            console.error('共有に失敗しました:', err);
+            showToast('共有に失敗しました。', 'error');
+        });
+    } else {
+        // Web Share APIがサポートされていない場合
+        showToast('Web Share APIがサポートされていません。', 'error');
+    }
+}
+
 // グローバルスコープに関数を公開
 window.toggleExpanded = toggleExpanded;
+window.toggleFullscreen = toggleFullscreen;
+window.shareSlide = shareSlide;
 window.downloadCanvasAsImage = downloadCanvasAsImage;
 window.copyCanvasToClipboard = copyCanvasToClipboard;
 window.initializeSlide = initializeSlide;

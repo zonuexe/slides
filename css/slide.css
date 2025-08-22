@@ -63,6 +63,65 @@ body {
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.share-btn {
+    position: absolute;
+    top: 15px;
+    right: 65px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    min-width: auto;
+    z-index: 10;
+}
+
+.share-btn:hover {
+    background: #1e7e34;
+}
+
+.share-btn i {
+    font-size: 16px;
+}
+
+.fullscreen-info-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    min-width: auto;
+    z-index: 10;
+}
+
+.fullscreen-info-btn:hover {
+    background: #0056b3;
+}
+
+.fullscreen-info-btn i {
+    font-size: 16px;
 }
 
 .back-link {

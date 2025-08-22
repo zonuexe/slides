@@ -116,6 +116,12 @@ app.get("/slides/:slug/", async (c) => {
             <div id="toast" class="toast"></div>
 
             <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
               <h1>${slide.title}</h1>
               <p>公開日: <time datetime="${slide.date}">${japaneseDate}</time></p>
 
