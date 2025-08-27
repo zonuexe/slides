@@ -3,8 +3,31 @@ import { serve } from "@hono/node-server";
 import { loadSlides, getSlideBySlug } from "./lib/slides.js";
 import { createReadStream } from "fs";
 import { stat } from "fs/promises";
+import { readFile } from "fs/promises";
+import yaml from "js-yaml";
 
 const app = new Hono();
+
+// サイト設定を読み込む
+let siteConfig = null;
+async function loadSiteConfig() {
+  if (!siteConfig) {
+    try {
+      const configFile = await readFile('./_site.yaml', 'utf8');
+      siteConfig = yaml.load(configFile);
+    } catch (error) {
+      console.error('サイト設定の読み込みに失敗しました:', error);
+      // デフォルト設定
+      siteConfig = {
+        site: { name: "tadsan's slide deck", url: "https://zonuexe.github.io" },
+        author: { name: "tadsan", url: "https://twitter.com/tadsan" },
+        oembed: { provider_name: "tadsan's slide deck", provider_url: "https://zonuexe.github.io/slides/" },
+        embed: { base_url: "https://zonuexe.github.io/slide-pdf.js", slide_path: "https://zonuexe.github.io/slides/pdf" }
+      };
+    }
+  }
+  return siteConfig;
+}
 
 // スライド一覧ページ
 app.get("/slides/", async (c) => {
@@ -73,14 +96,30 @@ app.get("/slides/:slug/", async (c) => {
     const maxWidth = slide.max_width || 1024;
     const maxHeight = slide.max_height || 768;
 
+    const config = await loadSiteConfig();
     const html = `
       <!DOCTYPE html>
       <html lang="ja">
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="${slide.title}">
+          <meta property="og:description" content="${config.site.description}">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="${config.site.url}/slides/${slide.slug}/">
+          <meta property="og:site_name" content="${config.ogp.site_name}">
+          <meta property="og:locale" content="${config.ogp.locale}">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="${config.twitter.site}">
+          <meta name="twitter:creator" content="${config.twitter.creator}">
+          <meta name="twitter:title" content="${slide.title}">
+          <meta name="twitter:description" content="${config.site.description}">
+
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.xml">
+
           <title>${slide.title}</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
@@ -173,18 +212,19 @@ app.get("/slides/:slug/oembed.json", async (c) => {
       return c.text("スライドが見つかりません", 404);
     }
 
-    const currentUrl = `https://zonuexe.github.io/slides/${slug}/`;
-    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=${encodeURIComponent(`https://zonuexe.github.io/slides/pdf/${slide.file}`)}`;
+    const config = await loadSiteConfig();
+    const currentUrl = `${config.site.url}/slides/${slug}/`;
+    const embedUrl = `${config.embed.base_url}/?slide=${encodeURIComponent(`${config.embed.slide_path}/${slide.file}`)}`;
 
     const oembedData = {
-      type: "rich",
-      version: "1.0",
+      type: config.oembed.type,
+      version: config.oembed.version,
       title: slide.title,
       url: embedUrl,
-      author_name: "tadsan",
-      author_url: "https://twitter.com/tadsan",
-      provider_name: "tadsan's slide deck",
-      provider_url: "https://zonuexe.github.io/slides/",
+      author_name: config.author.name,
+      author_url: config.author.url,
+      provider_name: config.oembed.provider_name,
+      provider_url: config.oembed.provider_url,
       width: slide.max_width || 1024,
       height: slide.max_height || 768,
       html: `<iframe src="${embedUrl}" width="${slide.max_width || 1024}" height="${slide.max_height || 768}" frameborder="0" scrolling="no" title="${slide.title}"></iframe>`
@@ -207,18 +247,19 @@ app.get("/slides/:slug/oembed.xml", async (c) => {
       return c.text("スライドが見つかりません", 404);
     }
 
-    const currentUrl = `https://zonuexe.github.io/slides/${slug}/`;
-    const embedUrl = `https://zonuexe.github.io/slide-pdf.js/?slide=${encodeURIComponent(`https://zonuexe.github.io/slides/pdf/${slide.file}`)}`;
+    const config = await loadSiteConfig();
+    const currentUrl = `${config.site.url}/slides/${slug}/`;
+    const embedUrl = `${config.embed.base_url}/?slide=${encodeURIComponent(`${config.embed.slide_path}/${slide.file}`)}`;
 
     const oembedData = {
-      type: "rich",
-      version: "1.0",
+      type: config.oembed.type,
+      version: config.oembed.version,
       title: slide.title,
       url: embedUrl,
-      author_name: "tadsan",
-      author_url: "https://twitter.com/tadsan",
-      provider_name: "tadsan's slide deck",
-      provider_url: "https://zonuexe.github.io/slides/",
+      author_name: config.author.name,
+      author_url: config.author.url,
+      provider_name: config.oembed.provider_name,
+      provider_url: config.oembed.provider_url,
       width: slide.max_width || 1024,
       height: slide.max_height || 768,
       html: `<iframe src="${embedUrl}" width="${slide.max_width || 1024}" height="${slide.max_height || 768}" frameborder="0" scrolling="no" title="${slide.title}"></iframe>`
