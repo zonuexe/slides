@@ -93,8 +93,17 @@ app.get("/slides/:slug/", async (c) => {
     const japaneseDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 
     // スライドの最大サイズを取得（デフォルト値も設定）
-    const maxWidth = slide.max_width || 1024;
-    const maxHeight = slide.max_height || 768;
+    let maxWidth = slide.max_width || 1024;
+    let maxHeight = slide.max_height || 768;
+
+    // 縦幅が既定値より小さい場合は自動的にリサイズ
+    const defaultMinHeight = 1024;
+    if (maxHeight < defaultMinHeight) {
+      // アスペクト比を保持してmaxHeightを1024に拡大
+      const aspectRatio = maxWidth / maxHeight;
+      maxHeight = defaultMinHeight;
+      maxWidth = Math.round(maxHeight * aspectRatio);
+    }
 
     const config = await loadSiteConfig();
     const html = `
