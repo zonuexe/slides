@@ -5,3 +5,411 @@ links:
   p32:
   - url: http://www.kmonos.net/alang/etc/brainfuck.php
     title: Brainf*ck
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '         であらゆる言語から'
+    - node: bold
+      content: ELVM
+    - node: text
+      content: ' に変換しようPHP'
+    - node: bold
+      content: '         Let''s convert from any language to PHP by ELVM'
+    - node: text
+      content: '#phpstudy2018-01-31 PHP勉強会@東京 '
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社技術基盤チーム (pixiv.net)
+
+        •Emacs Lisper, PHPer
+
+        •入社前は自宅警備をしながらRuby書いてた
+
+        •Emacs PHP Modeのメンテナ引き継ぎました
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 好きな言語構造はですgoto
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: 宣伝
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: '         昨晩書いた         まじめ記事(当社比)'
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '         今日は話しません'
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: '         前夜祭で話します'
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '         チケット購入しよう'
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: はじめに
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '         であらゆる言語から'
+    - node: bold
+      content: ELVM
+    - node: text
+      content: ' に変換しようPHP'
+    - node: bold
+      content: '         Let''s convert from any language to PHP by ELVM'
+    - node: text
+      content: '#phpstudy2018-01-31 PHP勉強会@東京 '
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 「あらゆる」はオーバー
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: '|←樹海| .￣.||￣　　　　　ｵﾜﾀ┗(^o^ )┓三 　　||　　　　　　　　　　　┏┗ 　 三 ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣'
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: '         まあ話を聞いてくれ'
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 計算可能性
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: コンピュータで解ける問題
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: チューリングマシン
+  p19:
+  - node: p
+    children:
+    - node: bold
+      content: https://www.google.com/doodles/alan-turings-100th-birthday
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: チューリングさんが計算の可能性をつきつめたらこうなった
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: '計算機で計算できる函数 '
+    - node: text
+      content: チャーチ=チューリングのテーゼ
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '         パソコンで計算できる         ||チューリング機械と同じ'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: チューリングマシンを使ってチューリングマシンと同等のものを構成できる
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 万能チューリングマシン
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: ある計算機言語を使って万能チューリングマシンを構成できるとき、その言語はチューであると呼ぶリング完全
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 万能？
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: ディスクにデータを書き込むとか、現在の時刻を知るとか、TCPパケットを送るとか、そういう魔法のような機械のことは想定してない
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 簡単な言語
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: Brainfuck
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: < > + - . , [ ] 言語仕様8命令だけ
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: トークン意味<ポインタを1進める>ポインタを1戻す+ポインタ位置の値を1加算-ポインタ位置の値を1減算.ポインタ位置に値を出力,1バイト読込ポインタ位置に代入[ポインタ位置の値が0なら]にジャンプ]ポインタ位置の値が0でなければ[にジャンプ
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: '>+++++++++[<++++++++>-]<.>+++++++[<++++>-]<+.+++++++..+++.[-]>++++++++[<++++>-]<.>+++++++++++[<+++++>-]<.>++++++++[<+++>-]<.++'
+    - node: bold
+      content: http://www.kmonos.net/alang/etc/brainfuck.php
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: (神記事なのでゆっくり読んでほしい)
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 'Brainfuckは言語仕様         が非常に小さいので覚えるのは非常に簡単！'
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: '言語が簡単
+
+         ||その言語で書くのが簡単'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: そんなわけはない
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: 言語の簡単さと人間の読み書きの容易さは一致しない
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 難解プログラミング言語(Esolang)
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: Brainfuckのようなへんてこ言語をEsolangと呼ぶ
+    - node: bold
+      content: https://esolangs.org/wiki/Main_Page
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: (Brainfuckは言語仕様は非常にわかりやすいが、異常に難解なEsolangも当然ある)
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: 話を戻す
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: Brainfuckはチューリング機械と同等
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: Brainfuckは万能チューリング機械
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: Brainfuckはチューリング完全
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: つまり
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'Brainfuckを実装で         きる言語はチューリング完全'
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: PHPはチューリング完全かな？
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: PHPを使ってBrainfuckを実装してみよう
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: ELVM
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: ようやく話がここまできた
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: EsoLangVM
+    - node: bold
+      content: https://github.com/shinh/elvm
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: 'Shinichiro Hamaji         さんが開発したコンパイラ'
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: ELVMバイトコードから任意の言語にコンパイルできる
+  p54:
+  - node: p
+    children:
+    - node: bold
+      content: http://shinh.skr.jp/slide/elvm/009.html
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPターゲットが         なかったので追加しました'
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 2016年11月に
+    - node: bold
+      content: https://github.com/shinh/elvm/blob/master/target/php.c
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: ご存じの通りJavaScriptはPHPにそっくり！！
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: JavaScriptをPHPっぽく直せばそれだけで動くはず
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: そう思ってた頃が私にもありました
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: なぜなのか
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: JS版実装
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: 'static void js_emit_func_prologue(int func_id) {   emit_line("");   emit_line("var
+        func%d = function() {", func_id);   inc_indent();   emit_line("while (%d <=
+        pc && pc < %d && running) {",             func_id * CHUNKED_FUNC_SIZE, (func_id
+        + 1) * CHUNKED_FUNC_SIZE);   inc_indent(); '
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: 'func1, func2のよ         うな無名函数が作られる'
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP Notice:  Undefined variable: func0 in /Users/megurine/repo/elvm/out/00exit.eir.php
+        on line 39'
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 変数束縛
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: PHPは明示的に use ($var) と書かないとレキシカルスコープを捕捉できない
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: ／(^o^)＼
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: まあ解決策はなくはないけど
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: '         いちばん楽だったのは'
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: '　 　　　　 | 　 　＼　　__　　／ ﾋﾟｺｰﾝ そうだ、goto　 　＿　（ｍ）　＿　　 　 　　　　|ミ| 　 　 ／ 　｀´　
+        ＼ 　　　　　(''A`) 　　　　　ノヽノヽ 　　　　　　　くく '
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: ネストが浅い！
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: コールスタックが深くならない
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: goto最高！
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: 私からは異常です

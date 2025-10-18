@@ -23,3 +23,327 @@ links:
   p66:
   - url: http://moneyphp.org/en/latest/
     title: Money for PHP — Money 3.0.0 documentation
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '         PHPで雑に通貨クラスを 実装してみた結果 🤑'
+    - node: bold
+      content: I implemented a Money class, and I'm sleepy.
+    - node: text
+      content: 2018-02-23 ピクシブ社内勉強会
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社技術基盤チーム (pixiv.net)
+
+        •Emacs Lisper, PHPer
+
+        •Emacs PHP Modeのメンテナ引き継ぎました
+
+        •好きなリスプはEmacs Lispです
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 伏線
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 金
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: '         日本で流通する最低貨幣は一円硬貨'
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '         USで流通する最低貨幣は一セント硬貨'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: '         セントは1/100ドル$0.01と表記される'
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: コンピュータで扱える数
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '         PHPでは型が3つある'
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '整数型 (int)PHPの整数は signed int
+
+         ビット数はPHP_INT_SIZE最大値はPHP_INT_MAXで定義
+
+         概念上、この式で最大値が得られる2 ** (PHP_INT_SIZE * 8 - 1) - 1'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '浮動小数点数型 (float)         PHPの整数はdouble
+
+        (IEEE 754 倍精度フォーマット)型名としては(real)の別名もあるが、別に実数ではない'
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '         とても大事なこと'
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP_INT_MAX         9223372036854775807'
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP_INT_MAX + 1         どうなる？'
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: var_dump(PHP_INT_MAX + 1); //=> float(9.2233720368548E+18)
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: '$bytes = PHP_INT_SIZE * 8;         var_dump(2**($bytes-1)-1); //=> float(9.2233720368548E+18)'
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 突然のfloat
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: そうです
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: PHPの演算子は整数演算でを超えPHP_INT_MAXるとfloatになります
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 😩
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '         もひとつ大事なこと'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: '         浮動小数点は「ぴったり」の数を表現できない'
+  p25:
+  - node: p
+    children:
+    - node: bold
+      content: https://ja.wikipedia.org/wiki/浮動小数点数#エラー（誤差）
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: '浮動小数点数は         概算で十分な計算に向く'
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: '         誤差を許容         できない用途には使ってはならない'
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: われわれが欲するのは誤差が生じずに小数点以下を表現できる数
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 颯爽と現れる
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: BC Math 関数
+  p31:
+  - node: p
+    children:
+    - node: bold
+      content: http://php.net/manual/ja/ref.bc.php
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: http://php.net/manual/ja/function.bcadd.php
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 突然のstring
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: '         冷静になってほしい'
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: '         文字列で入出力を         表現すれば桁は落ちない'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: '$scaleオプション         で任意の精度を指定できる'
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: '         裸の文字列のまま取り回したくない…'
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: クラスを作ろう
+  p39:
+  - node: p
+    children:
+    - node: bold
+      content: https://github.com/zonuexe/kane.php
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 定石がある
+  p41:
+  - node: p
+    children:
+    - node: bold
+      content: https://martinfowler.com/eaaCatalog/money.html
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: https://martinfowler.com/eaaCatalog/money.html
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: '         よっしゃやってるで'
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: MoneyはCurrency(通貨)と量(数)の組である
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: '         数字から金を作る'
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: '         +, -, ×どうやって実装'
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: '         まじめに書くと意外にめんどい'
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 🤔
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: '         キラッとひらめいた'
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: '         計算する処理はMoneyCalculatorトレイトに分割'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: ある程度の式は書けるように
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 二項演算を採用しなかったので優先順位の評価は一切不要
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: '         副作用として複数引数の処理が簡単になった'
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: '         通貨計算ではLIStをProcessingする！'
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: 雑に作った
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: 実用性はない
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: '         MoneyPHPを使ったほうがいい'
+  p66:
+  - node: p
+    children:
+    - node: bold
+      content: 'http://moneyphp.org/en/latest/ '
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: '         PHPで雑に通貨クラスを 実装してみた結果 🤑'
+    - node: bold
+      content: I implemented a Money class, and I'm sleepy.
+    - node: text
+      content: 2018-02-23 ピクシブ社内勉強会
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: LIStをProcessingしてた

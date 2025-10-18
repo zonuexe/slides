@@ -37,3 +37,766 @@ links:
   p46:
   - url: http://blog.tojiru.net/article/432944706.html
     title: 'composerを速くするプラグイン・prestissimoを作った: Architect Note'
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '仕事で使えるComposer無修正版         ピクシブ株式会社うさみけんた @tadsanPHPカンファレンス北海道2016'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id:zonuexe
+
+        •プログラミング言語と日本語が好き
+
+        •北海道工業大学(当時) 電子計算機研究部出身
+
+        •2012年頃までRuby札幌とかPython札幌で活動
+
+        •2012年11月に初めての就職（現職）
+
+        •PHPは現職に所属してからまじめに取り組み•'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 'おしながきComposerの基礎／導入
+
+        •ナウいPHPライブラリの探しかた
+
+        •Composerとデプロイについて
+
+        •そのほかもろもろのこと•'
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: 'Version 1.0.0 was released on April 5, 2016 '
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 'Composer #とは'
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerって何よ依存関係管理ツール 
+
+        (Dependency manager)•YumやAPTはシステムにライブラリを導入する
+
+        •Composerは、特定のプロジェクト単位に対して•閉じて依存性を管理する
+
+        npmやBundlerに影響を受けた
+
+        (Node.js)(Ruby)•         グローバル(特定のプロジェクトに依存しない)•インストールも可能ではある'
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 'Get Composer!2016年4月5日(今月) 正式版1.0.0リリース！
+
+        •https://getcomposer.org/download/
+
+        •         PHAR形式で配布されてるので、•PHP(5.3.2+)がある環境ならどこでも動作する
+
+        Linux/OS XのみならずWindowsもサポートしてる
+
+        •Packagist, GitHub, PEARなどと連携可能•'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 'Composer VS pearpearはPHP標準のパッケージ管理コマンド
+
+        •         機能の豊富さ、利用できるパッケージの数、•新鮮さのような違いはもちろんある。
+
+        それ以上に、PHPプロジェクトと同時にデプロイ可•能になったことが非常に重要
+
+        ライブラリを導入する権限がインフラ／サーバー管•         理者からアプリエンジニアの手に落ちてきた（身分制度の変革）'
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerは何ではないかPHPのC extensionはインストールできない
+
+        '
+    - node: text
+      content: 'インストール済か確認することはできる
+
+        •従来通りPECLなどを利用することになる•'
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: Composerの基礎
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'composer.jsonプロジェクトの情報を記述するファイル
+
+        •一般的にはプロジェクトのルートに置く
+
+        •依存情報やオートローディング設定など
+
+        •vendor/packageパッケージ名はの形式
+
+        •vendorは組織名やアカウント名をつける
+
+        •Javaのように厳密に決まってるわけじゃない•'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 'ライブラリの依存を記述requireに依存するパッケージ+バージョンを記述
+
+        •'
+    - node: bold
+      content: '{'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    "require": {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        "filp/whoops": "~2.1.0"'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    },'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    "require-dev": {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        "phpunit/phpunit": "^4.8"'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    }'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+    - node: text
+      content: composer require --dev "phpunit/phpunit:4.8"•
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 'バージョン記法 (一部)"*": 全てのバージョンを受け入れる
+
+        •"1.2.3"：バージョンタグ固定
+
+        •"~1.2.3": バージョンタグ固定(マイナー更新する)
+
+        •"dev-xxxxx":  ブランチxxxxxを指定
+
+        •dev-master#82115e5e37fa046464cのようにブラ•ンチとコミットIDを指定できる(しないと危険)'
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 'composer.lock依存パッケージのバージョンを固定するファイル
+
+        •composer.jsonでは範囲や複数指定が可能
+
+        •         固定することで、意図しないバージョンが•勝手にインストールされることを防ぐ
+
+        自動生成されるので手動編集しない方が良い•'
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'composer.lockの管理composer update vendor/package で更新
+
+        •         composer.lock自動生成されるをGitなどの•バージョン管理の対象にするべきかは場合による
+
+        アプリケーションでは管理することが多い
+
+        •ライブラリは基本的に管理しない
+
+        •.gitignore管理しない場合は  に設定しておく•'
+  p16:
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: bold
+        content: require __DIR__ . '/vendor/autoload.php';
+  - node: p
+    children:
+    - node: text
+      content: 'Composerを使うvendor/依存ライブラリはディレクトリに入る
+
+        '
+    - node: text
+      content: '.gitignoreプロジェクトの  で除外しておく
+
+        '
+    - node: text
+      content: Composerに依存するPHPには以下の一行を書く
+    - node: text
+      content: '何度も書く必要はなく、一度だけ読み込めばいい
+
+        '
+    - node: text
+      content: Composerでインストールされたライブラリは、
+    - node: text
+      content: include_onceする必要がない
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 'オートローディングPHPerをinclude_onceから解き放つ福音
+
+        •'
+    - node: bold
+      content: '{'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    "autoload": {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        "classmap": ["./src"]'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    },'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    "autoload-dev": {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        "classmap": ["./tests"]'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    }'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+    - node: text
+      content: 詳しくはWEB+DB Vol. 81に書きました(宣伝)•
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 'サブコマンド (一部)composer install: 
+
+        •必要なパッケージをインストールcomposer list: 機能一覧を出力
+
+        •composer self-update: composer.pharを更新
+
+        •composer search: パッケージ検索
+
+        •composer validate: composer.jsonのチェック
+
+        •         composer create-project: •フレームワークの雛形からプロジェクトを新規作成'
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: Composerを導入する
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerの配置を考える公式サイトのスクリプトでは、ダウンロードまで•しかしてくれない (Windowsにはしてくれる)
+
+        仕事の性質に配置方法には一考の余地がある
+
+        '
+    - node: text
+      content: 'サーバーごと
+
+        •ユーザーごと
+
+        •プロジェクトごと•'
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'サーバーごとの場合         プロジェクトメンバーが共有の開発サーバーに•ログインして作業する場合にとれる方法
+
+        /usr/local/bin/composer.phar など
+
+        •良い点：Composerのバージョン差異がなくなる
+
+        •         悪い点：サーバー管理者が更新しなきゃいけない•　　　　サーバー多いとめんどくさい'
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 'ユーザーごとの場合         プロジェクトメンバーが自分のPCで開発する•場合とか、ライブラリをいろいろ作る場合とか
+
+        $HOME/bin/composer.phar など (好みによる)
+
+        •         良い点：メンテナンスするライブラリの数が•　　　　多い場合は管理が楽
+
+         悪い点：バージョンを同期させるのがめんどう•　　　　PATH通したりsudoさせたり説明めんどう'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 'プロジェクトごとの場合         大規模な開発チームで一つのリポジトリを•継続的に開発していく場合とか
+
+        /composer.pharプロジェクト内の  など
+
+        •良い点：メンバー間のバージョン差異はなくせる
+
+        •         悪い点：プロジェクト数が多いと運用が面倒•　　　　ディスクスペースの浪費 (1.6MB程度)'
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '結局どれがいいの？         PHPに詳しくないひとのことを考えると、•         プロジェクトごとにcomposer.pharを置くのが一番楽じゃないかと思う
+
+         セットアップスクリプトでダウンロードさせても•いいけど、pixivでは git commit しちゃってる
+
+        毎月更新するとして1.6MBのディスクスペースの•浪費は、運用の手間を考えれば甘受できるレベル'
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 'xdebugとComposer         xdebugが有効な環境でComposer使うと怒られる•         '
+    - node: bold
+      content: You are running composer with xdebug enabled. This has a major impact
+        on runtime performance. See https://getcomposer.org/xdebug
+    - node: text
+      content: 'xdebugは開発中は有用なので外したくない
+
+        •実際遅くなるのでシェルスクリプトを噛ませたい
+
+        •composer.pharphp -n を  で起動できればいい
+
+        •php.iniを無効化する＝拡張が有効にならない•'
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerのラッパープロジェクトローカルに置く場合…
+
+        '
+    - node: text
+      content: 'composer.phar.composer.pharをにリネーム
+
+        •./composerかわりに  を利用
+
+        •chmod +x ./composer で実行権限を付与
+
+        •ファイルの中身は以下の二行•'
+    - node: bold
+      content: '#!/bin/sh'
+    - node: text
+      content: '         '
+    - node: bold
+      content: php -n $(dirname $0)/.composer.phar "$@"
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: '環境変数Composerに必要なファイルはCOMPOSER_HOME•         環境変数のディレクトリにインストール
+
+         デフォルトでユーザディレクトリにインストール•         (Linux/OS X) $HOME/.composer(Windows)  
+
+        %APPDATA%¥Composerシステムの設定を工夫すれば共有ディレクトリに•         インストールすることも可能ではある(やったことないけど)'
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerを導入         UNIX系OSでユーザごとにインストールするとき•に配置しておくと便利$HOME/local/bin/composer (やなどでPATHを通す).bash_profile.zshenv'
+    - node: bold
+      content: '# .bash_profile/.bashrc'
+    - node: text
+      content: '         '
+    - node: bold
+      content: PATH=$HOME/.composer/vendor/bin:$HOME/local/bin:$PATH
+    - node: text
+      content: '         '
+    - node: bold
+      content: '# .zshenv/.zshrc'
+    - node: text
+      content: '         '
+    - node: bold
+      content: path=(
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    ~/.composer/vendor/bin(N-/)'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    ~/local/bin(N-/)'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    $path'
+    - node: text
+      content: '         '
+    - node: bold
+      content: )
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: PHPのライブラリを探す
+  p30:
+  - node: p
+    children:
+    - node: bold
+      content: Packagist
+    - node: text
+      content: The PHP Package Repository
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'Packagistって何だhttps://packagist.org/ 
+
+        '
+    - node: text
+      content: 'PHPのパッケージリポジトリ
+
+        '
+    - node: text
+      content: '2012年から4月から活動してる (４周年！)
+
+        '
+    - node: text
+      content: '現在92,973パッケージ登録されてる
+
+        '
+    - node: text
+      content: ちなみにPEARのパッケージ数は602
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: http://www.modulecounts.com/
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 'Packagistの特徴GitHubなどのリポジトリと簡単に連携できる
+
+        '
+    - node: text
+      content: API連携した状態なら、git tagをつけるだけで
+    - node: text
+      content: 'かんたんに新しいバージョンをリリースできる
+
+        有名なライブラリ／フレームワークは登録済み
+
+        '
+    - node: text
+      content: 歴史的にフレームワークはzipファイルで公開
+    - node: text
+      content: されてきたが、現在はComposerでもインストールできる
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: ライブラリを探すとりあえず awesome-php に載ってるものを
+    - node: text
+      content: '触ってみる
+
+        各ジャンルの手堅いライブラリの一覧
+
+        '
+    - node: text
+      content: 'たいていのコンポーネントは大手が作ってる
+
+        '
+    - node: text
+      content: 'SymfonyとかHoaProjectとか
+
+        '
+    - node: text
+      content: Twitterの@call_user_funcをフォローすると
+    - node: text
+      content: 新着のライブラリがいっぱい流れてくる
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: Composerとデプロイ
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 'デプロイ、どうしてますか？稼働中のサーバーに高速にコードを配置したい
+
+        '
+    - node: text
+      content: rsyncなどで愚直にファイルを配置すると、
+    - node: text
+      content: '最中のPHPファイルが書き変わっちゃって処理途中のユーザーリクエストがエラーで落ちる
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: Composerにも自動生成ファイルがあるので、
+    - node: text
+      content: デプロイを工夫しないと、やはり落ちることが
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: アトミックデプロイ
+    - node: bold
+      content: '         '
+    - node: text
+      content: エラーが出ないようにデプロイ途中の不完全な
+    - node: text
+      content: '状態がユーザーの目に触れないよう工夫する
+
+        弊社事例(rsync+デプロイスクリプト手書き)は'
+    - node: text
+      content: 'WEB+DB PRESS vol. 84に載ってる
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 最近はDeployer http://deployer.org/ が
+    - node: text
+      content: いい感じにアトミックデプロイしてくれるらしい(環境に合せて検証の必要あり)
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 'Satis - Package Repository Generatorhttps://github.com/composer/satis
+
+        '
+    - node: text
+      content: '要はプライベートなPackagistを自前運用できる
+
+        '
+    - node: text
+      content: パッケージのアーカイブを保存できるので、
+    - node: text
+      content: 'もしGitHubが不通になってしまってもデプロイできない事態を避けることができる
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: デプロイ先のサーバーとネットワーク的に
+    - node: text
+      content: 近いところにあればデプロイ時間の短縮になる
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 'Satisの運用satis.json必要なライブラリをに列挙する
+
+        '
+    - node: text
+      content: 'composer.json記法はと同じ
+
+        '
+    - node: text
+      content: '"~2.1.0"">=2.1.0"記法よりはが良い
+
+        '
+    - node: text
+      content: satis.jsonとビルドスクリプトを置いた
+    - node: text
+      content: satis.jsonリポジトリを用意して、毎日定時とが更新されたときに新鮮なパッケージを取得
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: Satisを使う場合のcomposer.json
+    - node: bold
+      content: '{'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    "repositories": ['
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '            "packagist": false'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        },'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '            "type": "composer",'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '            "url": "http://satis.pixiv.private/"'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '        }'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    ]'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: パッケージ作りたい
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 基本
+    - node: bold
+      content: '         '
+    - node: text
+      content: PackagistはGitHubでログインできるので、
+    - node: text
+      content: 'GitHubに上げると非常に楽
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: ブラウザで https://packagist.org を開いて
+    - node: text
+      content: '説明通りに入力していくだけ
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 新しいバージョンのリリースは、
+    - node: text
+      content: git tag 1.4.5 && git push --tags で完了
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 'お作法Composerはオートローディングが基本なので、 '
+    - node: text
+      content: '不必要なinclude_onceは書かない
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: PSR-1, PSR-2, PSR-4 を読んでおけば、
+    - node: text
+      content: 'だいたい綺麗なコードが書ける気がする
+
+        PSR-1, PSR-2はインフィニットループさんに'
+    - node: text
+      content: 'よる日本語訳がWebにあります
+
+        とりあえずnamespaceは付けといた方が良い'
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: Composerが遅い
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: Packagistは遠い
+    - node: bold
+      content: '         '
+    - node: text
+      content: GitHub/Packagistは日本から遠いところに
+    - node: text
+      content: 'あるので、ネットワークコストが非常に高い
+
+        これはSatisを置けば解決する
+
+        '
+    - node: text
+      content: Satisを用意できない／用意するまでもない
+    - node: text
+      content: ときは、Hirakuさんという方がミラーサイト
+    - node: bold
+      content: '         '
+    - node: text
+      content: https://packagist.jp/を用意してくれてるので、これを使える
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: Composerは遅い
+    - node: bold
+      content: '         '
+    - node: text
+      content: ComposerはPHPの互換性を重視してるので、
+    - node: text
+      content: '最適な実装ではない
+
+        Hirakuさんが並列ダウンロードできるようにした
+
+        '
+    - node: text
+      content: composerを速くするプラグイン・prestissimoを作った
+    - node: text
+      content: 'http://blog.tojiru.net/article/432944706.html
+
+        GitHubで既に★1660個ついてる！'
+  p47:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: グローバルにライブラリをインストール
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: 'どんなときにグローバル？実際出番はあまりない
+
+        •コマンドとしてインストールしたいライブラリ
+
+        •         いちいちプロジェクトを作るまでもない•使い捨てコードから利用したいライブラリ
+
+         グローバルインストールしても、•勝手に読み込まれるようなことはない'
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: 'PsySHはべんりcomposer global require psy/psysh
+
+        •PHPの対話環境 (REPL)
+
+        •RubyのIRB, Pryのようなもの
+
+        •         ただし実行中に関数やクラスの再定義は•できないので注意すること
+
+        psysh.el もあるよ •(宣伝／未完成)'

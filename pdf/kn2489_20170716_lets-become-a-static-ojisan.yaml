@@ -7,6 +7,453 @@ links:
     title: ニコニコ
   p45:
   - url: http://ngyuki.hatenablog.com/entry/2015/02/20/134239
-    title: ngyuki.hatenablog.com
+    title: PhpStorm の PHPSTORM_META でサービスロケーターとかを入力補完 - ngyukiの日記
   - url: https://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Advanced+Metadata#PhpStormAdvancedMetadata-Factorymethods
     title: PhpStorm advanced metadata | PhpStorm Documentation
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 公開版staticおじさんになろうWar on Dynamicsカンファレンス関西2017-07-15 PHP2017 LT
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: このスライドは2017年7月15日に開催されたPHPカンファレンス関西2017で当日募集された本篇LTにて話したスライドに調整および加筆を施したものです。口頭で補足したもの、文字だけではわかりにくいものを補ったほか、後半部分に文章の追加があります。
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id:zonuexe
+
+        •ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+
+        •フレームワークなき道にフレームを作るおしごと
+
+        •Qiitaに記事を書いたり変なコメントしてるよ
+
+        •最近やってること
+
+        '
+    - node: text
+      content: '万難が排されつつあるのでPHP7 移行
+
+        •えいやえいやとテスト書いたり直したりしてる•'
+  p4:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: そろそろ10年になるWebサービスを開発
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 注意
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 'このLTは特定のアーキ         テクチャの導入を勧誘するものではなく、その是非については自分で判断してください。'
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '         対処が難しかった事例を         寄せ集めただけで、特定の実装の話ではない'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: オチは特にない
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: あと特定の会社の回し者ではない
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p11:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: あるメソッドの
+    - node: bold
+      content: '         '
+    - node: text
+      content: API(引数・返り値)を変更したいとします
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: リファクタリングできますか？
+  p13:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: そのメソッドの
+    - node: bold
+      content: '         '
+    - node: text
+      content: 呼び出し箇所を列挙できますか？
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: そうですね
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: git grep '\->setName('
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 本当にそれで全部ですか？
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: '$obj = new FugaClass; $f = [$obj, ''setName'']; call_user_func($f,
+        $n); '
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 🙃
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: '$obj = new FugaClass; $obj->setName($v);         //  ↑探したいのはこっち$obj2 = new HogeClass; $obj->setName($x, $y);         // ↑同名の関係ないメソッド'
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 誤爆
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 結果を絞ろう
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '         # newsetNameの次行にがある前提git grep -a1 ''new FugaClass'' | grep ''\->setName('''
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: これで完璧
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '// DIコンテナ         $app[''fuga'']->setName($n); '
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 🙃
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: こんなことが続くと
+    - node: bold
+      content: '         '
+    - node: text
+      content: 人間は無気力になる(学習性無力感)
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: (そのあとも動的な性質による悩みは絶えない)
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: ソリューション
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 'new staticおじさんeditionclass FugaClass {     private $name;             private function __construct(){}      public static function setName()
+        {FugaClass $that, $name        $that->name = $name;     }     // ...'
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: git grep 'FugaClass::setName'
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: これでいいのか
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 😇
+  p33:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 書きにくくなっただけでは…
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: staticおじさんをやめようBeat “evil” static methodsカンファレンス関西2017-07-15 PHP2017
+        LT
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 特効薬
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: Photoshop
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 'FindUsageと
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: Refactor機能最強説
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 型
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 型が推測できなくなるような複雑な書き方をしない
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: 型を確定できないところは地道にPHPDocで型をつけていく
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: http://nico.ms/kn1774
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: これだけ覚えて帰ってねタグ名意味例@param引数を定義@param int $n1 @return返り値を定義@return int[]@var変数/プロパティを定義@var
+        int@propertyマジックプロパティを定義@property int $id
+  p44:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: DI/IoCコンテナは？
+  p45:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: (日本語での説明、ただしサンプルコードが旧形式)PhpStorm の PHPSTORM_META でサービスロケーター
+    - node: bold
+      content: '         '
+    - node: text
+      content: とかを入力補完 - ngyukiの日記
+    - node: bold
+      content: '         '
+    - node: text
+      content: http://ngyuki.hatenablog.com/entry/2015/02/20/134239
+    - node: bold
+      content: '          '
+    - node: text
+      content: (公式資料・新形式のコード例が載ってる)
+    - node: bold
+      content: '         '
+    - node: text
+      content: PhpStorm Advanced Metadatahttps://confluence.jetbrains.com/display/PhpStorm/
+        PhpStorm+Advanced+Metadata#PhpStormAdvancedMetadata-Factorymethods
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 某社の回し者ではないので、PhpStorm以外に良いツールあれば知りたい！
+  p47:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: そもそもstaticおじさんになった理由はコレジャナイ
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: なれる！staticおじさんI wanna be a clever static uncleカンファレンス関西2017-07-15 PHP2017
+        LT
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: 'Webサービスを作る人間
+
+        ＝
+
+        オブジェクト指向の達人'
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: ではない
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: 素朴に作られたクラスは余計な状態を抱えこんで渾沌が肥大化する
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: '多すぎる引数… '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 謎のメソッド…不要なプロパティ…
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: それでもコードは動き、今の自分たちを生かしてくれてる (=収益源)
+  p54:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 作られた当時は
+    - node: bold
+      content: '         '
+    - node: text
+      content: 理由があった(たぶん)
+  p55:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 動いてきたコードへの
+    - node: bold
+      content: '         '
+    - node: text
+      content: リスペクトを見失ってはならない
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 'それでもサービスを成長さ         せる足枷にならないようにリファクタリングしていく'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: '         混沌としたクラスから         staticおじさんに         身を堕としたのはカオスを収束させるため'
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 'カオスを収束させた後な         らば、未来に向かって「あるべき姿」を再定義することができる'
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: カオスを収束させずに夢を見てアーキテクチャの再設計を試みると理想と現実のギャップと物量に圧し潰されて氏ぬ
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: '         重要な事実：オブジェクト指向を多少かじった程度では、ベターなOO設計ができる大先生にはなれない'
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: 設計のエキスパートではなくても多くのパタンに触れていけば現在の身のたけに合ったものを選びとることはできる
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: 'オブジェクト指向プログラミングに         基いたリファクタリングが常に         最適解ではなくて、手続き型なら         手続き型としてのやりかたはある。         (staticおじさんの再肯定)'
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: 設計に失敗したらやり直しが利くように疎結合にしていくことも大事。
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: '         (疎結合にする試みそのものが         負債を生むこと往々にしてある。一足飛ばしで変更しすぎるのもよくない)'
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 現実を直視して分析し、自分たちに合った現実解を地道に適用していく
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: どんなことにも長所と短所がある。世の中ではオブジェクト指向が先進的、手続き型はレガシーのような風潮もあるが、手続き型がベターと結論することもある。
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: しかし｢オブジェクト指向はわかりにくい｣｢インスタンスを作るとリファクタリングしにくい｣といった風評はPhpStormなどのIDEで解決できる。ツールを知ることでサービスの成長改善につなげられる。
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: '良いツールを知らないと「リファクタリング対象をリストアップするときにgrepコマンドでテキスト検索するしかな         い」といった事態に陥る。(最初の問題提起)'
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: スタートアップ期のコードでは設計に悩み留まって製品をリリースできないことは賢明ではない。リリースされた後も機能追加に注力すべきだが、機能追加と既存機能の安定性を両立しようとすると、どこかで決断の時は来る。
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: 'きちんと設計して
+
+        未来に行こう'

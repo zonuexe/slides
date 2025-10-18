@@ -15,3 +15,84 @@ links:
   p9:
   - url: https://github.com/BaguettePHP/TetoSQL
     title: GitHub - BaguettePHP/TetoSQL
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '憂鬱なSQLのためのアレPHP-BLT #4'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: '近況報告PHPカンファレンス北海道で喋ってきました         •「仕事で使えるComposer」         http://niconare.nicovideo.jp/watch/kn1371 WEB+DB Press Vol. 92に         •PHPからHTTPリクエストをする話を書きました         http://gihyo.jp/magazine/wdpress/archive/2016/vol92'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: '近況報告AdventCalendarではPHPマニュアルの         •バージョン番号をパースする話を書きました          http://qiita.com/tadsan/items/94e00f6fdf40d96c5072スレッドフロート掲示板を作りたかった少年時•代の代償行為として、モダンPHP、ただし         フレームワーク抜きで書き始めました         http://qiita.com/tadsan/items/cdbbb5b08591af2b110d'
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: みんな大好きPDOPHP Data Objects •いろんなSQLを抽象化したオブジェクト •学生がmysqli関数使ってたけどPDOでいい
+        •あとなんか、Doctrineとか使った方がいいの?•
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: Real World PHP2015年にもなって徳丸先生がPHPカンファレン•スでSQLインジェクションの話をしてるリアル O/Rマッパー使っとけｗｗｗと(cid:7972)ったところで、•世界にはまだ文字列結合SQLが眠ってる
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: みんな事故る文字列結合の温床 •型を指定するのはめんどくさい •$stmt->bindValue(':id', $id, \PDO::PARAM_INT)
+        •可変個数のIN句が地雷•
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: Real World PHP$names = ["taro","jiro","saburo"]; $str = implode(",",
+        array_map($name){     return sprintf('"%s"', $name); }); $sql = "SELECT *
+        FROM users WHERE name IN ($str)";// ↑典型的な漏れのあるロジックの例
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: PDOのラッパー作った警告：ちゃんとしたO/Rマッパーの方がいい •(会社で同僚が作ったのを)コピペして再実装した •SQL内に型が書けるDSL
+        •PDOに乗っかって、余計なことはしない •SQLインジェクションにある程度の耐性がある?•
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 'composer require zonuexe/tetosql           https://github.com/BaguettePHP/TetoSQL'
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '<?php namespace InspireBBS\Model; use Teto\SQL; /**  * 板を表現するモデル  *
+        @copyright 2016 USAMI Kenta  * @license   WTFPL  */ final class Board {     /**      *
+        @return Board[]      */     public static function findAll() {         $data
+        = SQL\Query::execute(db(), self::findAll_query, [])             ->fetchAll(\PDO::FETCH_ASSOC)
+        ?: [];         $boards = [];         foreach ($data as $b) {             $boards[]
+        = new Board($b);         }         return $boards;     }     const findAll_query
+        = ''SELECT `id`, `name`, `text` FROM `boards`''; }'
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'use Teto\SQL; public static function find($id) {     $data = SQL\Query::execute(db(),
+        self::findAll_query, [         '':id'' => $id,     ])->fetchAll(\PDO::FETCH_ASSOC)
+        ?: [];     $boards = [];     foreach ($data as $b) {         $boards[] = new
+        Board($b);     }     return $boards; } const find_query = ‘     SELECT `id`,
+        `name`, `text` FROM `boards` WHERE `id` = $id@int '';'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '基本的なAPIどうにかしてPDOのコネクションをとっておく ••$stmt = SQL\Query::execute($con, self::find_query,             ['':id'' => $id, '':hoge'' => $hoge] ); コネクション、SQL、アサインする値を渡す •帰ってくる値はPDOStatementなので、         •いつもの感覚でfetch/fetchAllするだけ！'
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 'constPHPのconstは(原則)実行時に変更されない •そこにパラメータを当て嵌めるだけ、なのは         •なんとなく心理的な安心感がある (本当か?)お気付きだろうか… •このコードがPSR-1違反であることに…•'

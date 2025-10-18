@@ -29,3 +29,740 @@ links:
   p46:
   - url: http://php.net/manual/ja/language.oop5.overloading.php
     title: 'PHP: オーバーロード - Manual'
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '         Phanによる静的解析 PHPコード'
+    - node: bold
+      content: (cid:1964)(cid:1417)(cid:3636)(cid:3095)(cid:3419)
+    - node: text
+      content: '         ピクシブ株式会社うさみけんた @tadsanJAPAN phpcon 2016, 3rd November '
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id:zonuexe
+
+        •2012年 自宅警備→ピクシブ株式会社
+
+        •モバイルアプリ向けWebAPI開発とか
+
+        •今年の春からメンテナンスとしてチーム独立
+
+        •         日常的なバグ修正から、アーキテクチャの改善•リファクタリングやテストなどいろいろ！'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: おしごと
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: '         現実に動いている         (ユーザーさんが利用している)         サービスを破壊せずにコードの健全さを向上したい'
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: そんなノウハウをｷﾞｭｯと詰め込んだPHP大規模開発入門(連載中)
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP大規模開発入門Vol.87: 
+
+        PHPDocでコードの品質を保つ•Vol.91: 
+
+        名前空間とオートローディング•         Vol.94: PHP初心者がハマりがちな落とし穴•
+
+         ……型のキャスト，変数とリファレンスVol.95:          PHPの静的解析• ……ドキュメントの生成，問題箇所の発見'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP大規模開発入門Vol.87: 
+
+        PHPDocでコードの品質を保つ•Vol.91: 
+
+        名前空間とオートローディング•         Vol.94: PHP初心者がハマりがちな落とし穴•
+
+         ……型のキャスト，変数とリファレンスVol.95:          PHPの静的解析• ……ドキュメントの生成，問題箇所の発見'
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 'おしながきPHPと型
+
+        '
+    - node: text
+      content: 'PHPDocとは何か
+
+        '
+    - node: text
+      content: Phanの紹介
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: PHPと型
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '動的型検査         プログラムを動かしながら(←動的)•         手さぐりで型を調べる (←型検査)         $a = 13;  $b = "2";         echo $a + $b;          $aint$bstringの型はだな、の型は…「•          ！」だけど数字だから足しざんできるね ……みたいな茶番を毎回やってる'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPの型変数に型はないが、値が型を持つ
+
+        '
+    - node: text
+      content: 'int idC言語みたいに  のような定義はできない
+
+        '
+    - node: text
+      content: '64''A'' と  は厳然とした別の型の値
+
+        '
+    - node: text
+      content: '''64'' == 64 のような比較が成り立つ設計
+
+        '
+    - node: text
+      content: 関数は型宣言できる (ただし動的検査)
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: PHPの型の種類整数 浮動小数点数 論理値
+    - node: bold
+      content: '         '
+    - node: text
+      content: intfloatbool
+  - node: p
+    children:
+    - node: text
+      content: 文字列 配列リソース
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'stringarrayresource()() ()オブジェクトヌル値objectnull() ()
+
+        arrayではのみ宣言に記述できる
+
+        •PHP5intfloatstringbool7.0では, , , が記述できる•'
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: '型宣言(PHP7)         PHP7の関数(メソッド・クロージャ含む)は、引数と返り値に型を定義することができる'
+    - node: bold
+      content: // PHP 5
+    - node: text
+      content: '         function trapezoid($h, $a, $b) {             return $h * ($a + $b) / 2;         }'
+    - node: bold
+      content: // PHP 7
+    - node: text
+      content: '         function trapezoid(float $h, float $a, float $b): float         {             return $h * ($a + $b) / 2;         }'
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: '動的型検査の弱点プログラムを動かしてみないとわからない•$a = 13;  $b = [];         // 環境依存の分岐 (本番環境じゃないと動かない)         if (is_production()) {           echo $a + $b; // 検出できない           echo 1 + [];  // ←これはPHP7で検出できるようになった         }         function f(): int {             return []; // これも検出できない         }'
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: PHPDoc#とは何か
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 'DocCommentとリフレクション         定義文に付属する(クラス・関数・メソッドなど)'
+    - node: text
+      content: 特別なコメントのを実行時に
+    - node: bold
+      content: /**  */
+    - node: text
+      content: ' (範囲)〜文字列として取得することができる(DocComment)'
+    - node: bold
+      content: /** ここはDocCommentだよ */
+    - node: text
+      content: '         function hoge() {         }          $ref = new \ReflectionFunction(''hoge'');         echo $ref->getDocComment();         '
+    - node: bold
+      content: // => "/** ここはDocCommentだよ */"
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPDoc型注釈         DocCommentに型定義を注釈として記述する記法。PhpStormやPhanが解釈してくれる。'
+    - node: bold
+      content: /**
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @param  float $h'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @param  float $a'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @param  float $b'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @return float'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' */'
+    - node: text
+      content: '         function trapezoid($h, $a, $b) {             return $h * ($a + $b) / 2;         }'
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: PhpStormの型表示
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPDocの型基本はPHPの型かクラス名を書く
+
+        •callable$thisselfstaticvoid, , , , なども有効
+
+        •複合型 (Union/Multiple types)
+
+        •intint|string「または文字列」 
+
+        •値が並んでるもの (配列/Collection)
+
+        •intint[] 「が並んでるもの」 •https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html•'
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'なぜPHPDoc型注釈？         いきなり実装コードに型定義を追加すると、•いままで顕在化しなかったバグが発生するおそれ
+
+        不用意なキャストや型検査でエラー発生
+
+        •         PHPDocはただのコメントなので、•稼動中のコードの挙動を変更せず検査できる
+
+        現行のPHPの型定義以上の型付けを表現できる
+
+        •arrayint[]複合型やコレクション( → )
+
+        •stringint PHP5で対応できない , など•'
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 'これだけ覚えて帰ってねタグ名意味例@param引数を定義@param int $n1 @return返り値を定義@return int[]@var変数/プロパティを定義@var
+        int@propertyマジックプロパティを定義@property int $id         @propertyふつうのプロパティはじゃなくて@varなので注意 @property(Phanは未対応)'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: '@varプロパティの例 ()@varふつうのプロパティの場合は  を使って書くfinal class Book {             '
+    - node: bold
+      content: /** @var string */
+    - node: text
+      content: '             public $title;             '
+    - node: bold
+      content: /** @var \MyApp\Author[] */
+    - node: text
+      content: '             public $authors;             '
+    - node: bold
+      content: /** @var \MyApp\ISBN */
+    - node: text
+      content: '             public $isbn;         }'
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '@propertyプロパティの例 ()拙作のzonuexe/objectsystemを使った場合'
+    - node: bold
+      content: /**
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @property string          $title'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @property \MyApp\Author[] $authors'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' * @property \MyApp\ISBN     $isbn'
+    - node: text
+      content: '         '
+    - node: bold
+      content: ' */'
+    - node: text
+      content: '         final class Book {             use \Teto\Object\TypedProperty;             protected static $property_types = [                 ''title''   => ''string'',                 ''authors'' => ''MyApp\Author[]'',                 ''isbn''    => ''?MyApp\ISBN'',             ];         }'
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 型注釈を使ったハック複合型とコレクション(型の配列)を組み合せる
+    - node: bold
+      content: /** @return Book[]|\ArrayObject */
+    - node: text
+      content: '         function getBooks() {            $data = hogehoge();            return new \ArrayObject($data);         }          $books = getBooks();         $books->▍ // ここで \ArrayObject の補完が効く          foreach ($books as $book) {             $book->▍ // ここで Book の補完が効く         }'
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: Phanの紹介
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanとは何か         ハンドメイドマーケットを運営する•         アメリカのEtsy社が開発する静的解析ツールhttps://github.com/etsy/phan
+
+         現在PHP作者のRasmus Lerdorf が所属し、•Phanの開発にも参加してる
+
+        PHPの型定義と型注釈を両方見てくれる
+
+        •@property@methodただし、と未対応•'
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanの導入         https://github.com/etsy/phan/releases•.phar最新のタグが付いてるファイルをダウンロード
+
+        PHP7とphp-astが必須
+
+        •         ただしラッパースクリプトを用意すれば、•サービスがPHP7で稼動してなくても動かせる#!/bin/sh         /path/to/php7/bin/php ${PHAN_BIN:-/path/to/bin/phan}  "$@"'
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanの設定         はじめにWikiから設定ファイルをコピペして、•         .phan/config.phpプロジェクトの  に保存https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file    //
+        ディレクトリホワイトリスト             ''directory_list'' => [                 ''src'',                 ''vendor/symfony/console'',             ],             // ディレクトリブラックリスト             "exclude_analysis_directory_list" => [                 ''vendor/''             ],'
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanの設定(そのほか)•''generic_types_enabled'' => bool @templateタグ(ジェネリック)
+        有効/無効
+
+        ••''suppress_issue_types'' => string[] 無視するIssueタイプを指定する
+
+        ••''plugins'' => string[] Phanプラグインを追加できる
+
+        •DollarDollarサンプルとしてが添付されている
+
+        •$$var (可変変数)を検出•'
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'Phan コマンド-o, --output <filename> 出力ファイル指定
+
+        •-m <mode>, --output-mode 出力形式
+
+        •-x, --dead-code-detection デッドコード検出
+
+        •--backward-compatibility-checks PHP7互換性
+
+        •-j, --processes <int> 並列実行数
+
+        •-p, --progress-bar 進捗バーを表示•         ./phan-wrapper -m csv -o phan.csv -x -j4 \             --progress-bar --backward-compatibility-checks         '
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 'Phan 出力         デフォルトの場合の出力•         pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal          Argument 1 (month) is string but \checkdate() takes int          pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal Argument
+        2 (day) is string but \checkdate() takes int            path/to/file.php:333 PhanTypeMismatchArgumentInternal This is message. はIssueと呼ばれる
+
+        PhanTypeMismatchArgumentInternal•@suppressIssueごとに出力するを制御可能(タグ)•'
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 'Phan IssueいろいろPhanParamTooFewPhanParamTooMany / 
+
+        •引数が足りない／多い
+
+        •PhanParamTypeMismatch
+
+        •引数の型が間違ってる
+
+        •PhanRedefineClassPhanRedefineFunction / 
+
+        •同名のクラス／関数がいくつも定義されてる•'
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: PhanUndeclaredClassCatch存在しないクラスでキャッチしようとしてないか
+    - node: bold
+      content: // PHP 5
+    - node: text
+      content: '         '
+    - node: bold
+      content: namespace MyApp;
+    - node: text
+      content: '          '
+    - node: bold
+      content: try {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    foo();'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '} catch (RuntimeException $e) {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    // ↑ \MyApp\RuntimeException'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '} catch (\Excaption $e) {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    // ↑ \Exception が正しい'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: PhanUndeclaredClassInstanceofinstanceof存在しないクラスでしてないか
+    - node: bold
+      content: namespace MyApp;
+    - node: text
+      content: '          '
+    - node: bold
+      content: $e = get_error();
+    - node: text
+      content: '         '
+    - node: bold
+      content: if ($e instanceof RuntimeException) {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    // ↑ \MyApp\RuntimeException'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '} elseif ($e instanceof \Excaption) {'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    // ↑ \Exception が正しい'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: PhanTypeMismatchForeachforeachできない値をforeachしようとしてる
+    - node: bold
+      content: $iter = null;
+    - node: text
+      content: '         '
+    - node: bold
+      content: // E_WARNING
+    - node: text
+      content: '         '
+    - node: bold
+      content: foreach ($iter as $i) {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    echo $i;'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: PhanTypeMismatchReturn定義と違った型の値を返してる
+    - node: bold
+      content: /** @return void */
+    - node: text
+      content: '         '
+    - node: bold
+      content: function f() {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    return null;'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+    - node: text
+      content: '          '
+    - node: bold
+      content: function g():int {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    return [];'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: PhanTypeMissingReturn特定の型を返すべきだが、何も返していない
+    - node: bold
+      content: /** @return int */
+    - node: text
+      content: '         '
+    - node: bold
+      content: function g(){
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    return;'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 'PhanTypeVoidAssignment         null実際にはが代入されるがvoidは「データがない」を意味するので適切ではない'
+    - node: bold
+      content: /** @return void */
+    - node: text
+      content: '         '
+    - node: bold
+      content: function g(){ return; }
+    - node: text
+      content: '          '
+    - node: bold
+      content: $result = g();
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: PhanNoopXXXX無意味なコードを検出する
+    - node: bold
+      content: // 代入しない配列 PhanNoopArray
+    - node: text
+      content: '         '
+    - node: bold
+      content: '[1, 2, 3];'
+    - node: text
+      content: '          '
+    - node: bold
+      content: // 代入も実行もしないクロージャ PhanNoopClosure
+    - node: text
+      content: '         '
+    - node: bold
+      content: function(){ return awesome(); };
+    - node: text
+      content: '          '
+    - node: bold
+      content: // returnしていないので無意味 PhanNoopProperty
+    - node: text
+      content: '         '
+    - node: bold
+      content: class C {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    public $p;'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    function f() { $this->p; }'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: 'PhanDeprecatedFunction         廃止予定/非推奨のメソッドを利用。         古い実装を新しいものに置換する際に@deprecated を付けておくと洗い出せてべんり'
+    - node: bold
+      content: function newAwesomeFunc(){}
+    - node: text
+      content: '          '
+    - node: bold
+      content: /** @deprecated */
+    - node: text
+      content: '         '
+    - node: bold
+      content: function oldFunc(){}
+    - node: text
+      content: '          '
+    - node: bold
+      content: oldFunc(); // PhpStormは取り消し線で表示
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 'Phan独自のアノテーション         @suppress <issue_type>クラス・メソッドなどの範囲でIssueを無効化する         '
+    - node: bold
+      content: /** @suppress PhanUndeclaredConstant */
+    - node: text
+      content: '         '
+    - node: bold
+      content: class C {
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    function f() { return AWESOME_CONSTANT; }'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    /** @supress PhanUndeclaredProperty */'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '    function g() { return $this->p; }'
+    - node: text
+      content: '         '
+    - node: bold
+      content: '}'
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: Phan独自のアノテーション@template 型変数(ジェネリック)
+    - node: bold
+      content: /** @template T1 */
+    - node: text
+      content: '         class Container {         '
+    - node: bold
+      content: '    /** @var T1 */'
+    - node: text
+      content: '             private $value;             public function __construct($value){ $this->value = $value; }             function getValue() { return $value; }         }'
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanの制限define()関数での定数定義はサポートされない
+
+        '
+    - node: text
+      content: 'const動的に定義されるため (は静的)
+
+        '
+    - node: text
+      content: 'Reference to undeclared constant 扱い
+
+        '
+    - node: text
+      content: '@method には対応してない
+
+        '
+    - node: text
+      content: __call() を使ったProxyパターン殺し
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanのめんどくさいところ重い
+
+        '
+    - node: text
+      content: 'ファイル数にもよるが数十秒〜 かかる
+
+        '
+    - node: text
+      content: '標準化されてないPHPDocに惑わされる
+
+        '
+    - node: text
+      content: PhanTypeMismatchReturn Returning type bool •but insert() is declared
+        to return \成功 「@return 成功 true 失敗 false」•
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanの注意点メソッド／プロパティの動的定義に未対応
+
+        '
+    - node: text
+      content: '__get()__set()__call()__callStatic(), , ,  など
+
+        '
+    - node: text
+      content: PHP用語としての「オーバーロード」
+    - node: text
+      content: '
+
+        http://php.net/manual/ja/language.oop5.overloading.php定数の動的定義にも未対応
+
+        '
+    - node: text
+      content: define()const はだめ。文ならOK。
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: 'Phanの比較対象(競合)定番：PHP Mess Detector (PHPMD)
+
+        '
+    - node: text
+      content: 'さまざまな指摘をしてくれるが、型検査はなし
+
+        •似たサービスもいくつかある (private有料)
+
+        '
+    - node: text
+      content: 'Scrutinizer, SensioLabsInsight, CodeClimate
+
+        '
+    - node: text
+      content: 'これらコードの怪しい兆候を細かに教えてくれる
+
+        •型検査の精度ではPhanの方が良く見える•'
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+    - node: bold
+      content: '         '
+    - node: text
+      content: PHPDocの型注釈は動作に影響を及ぼさずに
+    - node: text
+      content: '型を宣言することができる
+
+        Phanはソースコードを動作させずに解析できる
+
+        '
+    - node: text
+      content: Phanで静的解析することで、
+    - node: text
+      content: 'リファクタリングのリスクを減らすことができる
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 廃止予定の非推奨メソッドには
+    - node: text
+      content: '@deprecated をつける習慣をつけると殲滅が捗る'

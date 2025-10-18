@@ -30,3 +30,305 @@ links:
   - url: https://github.com/BaguettePHP/http-accept-language
     title: 'GitHub - BaguettePHP/http-accept-language: HTTP Accept-Language header
       parser'
+text:
+  p1:
+  - node: p
+    children:
+    - node: bold
+      content: 'Real World PHP in '
+    - node: text
+      content: 'pixivぐるなびピクシブ合同勉強会          年月日20151023'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰ようさみけんた / tadsan •年月にピクシブ入社201211 •入社前は自宅警備しながら書いてたRuby •版サービスなどのもろもろAPI/OAuth/PCPHP
+        •最近では漫画・小説チームとして動いてる •カンファレンスの応募に落ちましたPHPLT•
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 注意時間配分は考慮してない •開発楽しい！とかじゃなく淡々と羅列するだけ •ゆっくり話すので、「お前何言ってんんだ」と•感じたらつっこみを入れてください
+        資料はあとで公開します•
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: アジェンダ現状についてだらだら話す •のデプロイについて
+    - node: bold
+      content: pixiv
+    - node: text
+      content: ' •の開発環境について'
+    - node: bold
+      content: pixiv
+    - node: text
+      content: ' •のについて'
+    - node: bold
+      content: pixiv
+    - node: text
+      content: PHP •のについて
+    - node: bold
+      content: pixiv
+    - node: text
+      content: SQL •そのほか•
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: pixiv.git (クラスのお友達) ├ accounts.pixiv.net ├ rpc.pixiv.private ├ admin.pixiv.net
+        ├ source.pixiv.net ├ api.pixiv.net ├ spapi.pixiv.net ├ batch ├ spotlight.pics
+        ├ embed.pixiv.net ├ ssl.pixiv.net ├ m.pixiv.net ├ touch.pixiv.net ├ me.pixiv.net
+        ├ util ├ oauth.pixiv.net ├ vendor ├ pixiv-lib ├ web-test ├ public-api.pixiv.net└
+        www.pixiv.net
+  p7:
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 重複・細部が異なるコードが分散してた
+  - node: p
+    children:
+    - node: text
+      content: 変遷以前年頃までは、サブディレクトリ(2013)•ごとに独立したリポジトリで、共通部分Gitをとして扱ってたsubmodule 共通部分の抽象化もうまくなされて居らず、
+    - node: bold
+      content: '         '
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 変遷は疎結合なモジュールに適するsubmodule •結合度が高いモジュールのリポジトリを分•割すると、変更コストが極めて高い リポジトリを統合することで凝集度を高め•るリファクタリングも断行しやすくなった
+        細部が異なる重複コード問題も根絶•
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: デプロイ基本的にサーバー全台台程度に(xx)rsync •以前年はファイルの増減を伴った(2013)PHP•デプロイ時にはページにもよるが、
+    - node: bold
+      content: '         '
+    - node: text
+      content: ()件程度のエラーが発生してしまってたxxx 現在はの確立で、Blue-GreenDeployment•ファイルの追加削除も怖いものではない/
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: デプロイ
+    - node: bold
+      content: ' (pploy)'
+    - node: text
+      content: 汎用的なデプロイシステム •ディレクトリにファイルを配置/.deploy  •スクリプトが実行されるbin/deploy  •で画面カスタマイズ可能readme.html  •に依存するので、特定のバージョンをGit•チェックアウトして反映することも容易
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: デプロイと変遷ブログ記事紹介
+    - node: bold
+      content: ' '
+    - node: text
+      content: '()開発・デプロイ環境の変遷年春版 2014 •履歴を残したまま複数のリポジトリを統git•合する のデプロイを支えるpixivpploy
+        •github: edvakf/pploy •WEB+DB PRESS Vol. 84•'
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: の開発環境pixivなどの依存が多く、ローカルに環境を構DB•築することは容易ではない不可能でもない ()共有の環境にでログインして開発SSH
+        •端末のやで開発するひともEmacsVim •でローカルと同期してなどrsyncPhpStorm •はを利用してる@tadsanTRAMP•
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: の開発環境pixivのを大胆に活用ApacheVirtualHost •にシンボリックリンクを作成/home/www/ •社内ネットワークで名前解決できるDNS
+        •のような形式www.tadsan.example.com  •関係なくても任意のを動作可能pixivPHP •で同じ仕様のサーバー増やせるOpenStack•
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: pixiv-libの操作を抽象化する層DB(DAO) •データの入出力などをまとめて扱う層 •社内では「層」と呼ばれるCommon •セッション・国際化などの基盤機能
+        •その他の共通処理いろいろ！ •むかしはって呼ばれてた懐古 extlib•()
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: のコードpixiv
+    - node: bold
+      content: PHP
+    - node: text
+      content: PHP 5.5 + Apache •を見ればわかる通り、ページURL=PHP •などsearch.php, member_illust.php
+        … •一部のリクエストはで捌いてるHHVM •ルーティングのために依存mod_rewrite•
+  p17:
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 用途に合せて設計ができるのは悪くない どちらにしろ自分たちでセキュリティを
+    - node: li
+      children:
+      - node: text
+        content: 担保しなければいけないのはおんなじ！
+  - node: p
+    children:
+    - node: text
+      content: のコードpixiv
+    - node: bold
+      content: PHP
+    - node: text
+      content: 既存のフレームワークに依存しない •独自フレームワークを運用してる部分もある •口にすると顔をしかめられがちだが、
+    - node: bold
+      content: '         '
+    - node: bold
+      content: '         '
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: のコードpixiv
+    - node: bold
+      content: PHP
+    - node: text
+      content: 動的な言語機能は必要ない限り利用しない •クラスの静的メソッドを多用する •継承は排除する方向 •トレイトもあまり利用しない •リファレンスは原則排除する
+        •を使ってもつらいものはつらいPhpStorm•
+  p19:
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: のは利用しにくいComposerautoload 一部ではで生成してphpabinclude
+  - node: p
+    children:
+    - node: text
+      content: のコードpixiv
+    - node: bold
+      content: PHP
+    - node: text
+      content: ってたくさん書いてる！！include_once •オートローダーの利用は限定的 •では現状は利用不可鋭意改善中pixiv-lib •()
+        リポジトリ内に混在する都合上、
+    - node: bold
+      content: '         '
+  p20:
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 英語または日本語で各人の得意な方で 意識高く「全部英語で」など拘らない
+    - node: li
+      children:
+      - node: text
+        content: 必要な文章は論理的に誤りがないように
+    - node: li
+      children:
+      - node: text
+        content: コミットのルールは厳格に定めない
+    - node: li
+      children:
+      - node: text
+        content: 各人のやりかたを尊重する
+    - node: li
+      children:
+      - node: text
+        content: 典型的なで運用 Github Flow
+  - node: p
+    children:
+    - node: text
+      content: のコードpixiv
+    - node: bold
+      content: PHP
+    - node: text
+      content: コミットログやコード内コメントは、
+    - node: bold
+      content: '         '
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: loadset.php
+    - node: text
+      content: 各プロジェクトの初期化ファイル •エラーハンドラーの設定 •必要なライブラリのロード •定数の定義(deﬁne) •のみで読み込むloadsetrequire_once
+        •そのほかは全部で include_once •
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: のpixiv
+    - node: bold
+      content: SQL
+    - node: text
+      content: MySQL 5.5 •文字列結合による組立つらすぎSQL… •マッパー自動クエリビルダーは利用せずOR/ •年の初旬からに型をつけて安全に2015SQL•書けるライブラリを社内で運用
+        脆弱性対策の文脈で生まれたが書きやすい•
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: のpixiv
+    - node: bold
+      content: SQL
+    - node: text
+      content: 'なぜ自動クエリビルダー利用しないの？Q:  •いままでが文字列結合で組み立ててたから •クエリが単純ではないパターンも多い •例ブックマークなど:  •'
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: のpixiv
+    - node: bold
+      content: API
+    - node: text
+      content: いろんな試行錯誤をしてきた •一部で有名なの最初期CSVAPI () •で利用するためのActiveResourceAPI •スマートフォンアプリ向けREST
+        API •社内向けのシンプルなAPI (RPC)•
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: パッケージ管理を利用Composer •はに同梱composer.pharpixiv.git •社内ネットワーク内でを運用Satis
+        •で定期的に更新Jenkins •の障害があっても支障なしGitHub •手動で実行もできる•
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: のテストpixiv基本的にでテストを書くPHPUnit •年頃にテストを書く文化が定着した2013 •のにしたら自動テスト走るGitlabMRpush
+        •うっかりにされたら即座に
+    - node: bold
+      content: '         '
+    - node: text
+      content: masterpush•に通知されるidobata
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: のレビュー体制pixiv毎週に携る各チームのレビュアーで
+    - node: bold
+      content: '         '
+    - node: text
+      content: pixiv.git•設計方針や最新の情報などを共有・相談 レビュアーが各チームに持ち帰る •各自メンバーに説明したり、レビュー過程•で指摘することで全体のコード品質を保つ
+        ガイドラインや推奨スタイルの確立•
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: そのほかのデプロイ回数は一日およそ回
+    - node: bold
+      content: pixiv
+    - node: text
+      content: 20 •ディレクターが文言変更をすることが多い •をいっぱい使ってるJenkins •の代替としてcron •スクリプトのとしても利用できるWebUI
+        •各種エディタの勢力は均衡してる•
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: ふろく連載
+    - node: bold
+      content: ' '
+    - node: text
+      content: '(WEB+DB PHP)特におもしろい記事 •テストしにくいコード対策Vol.81:  •安全なコーディングスタイルVol.83:  •デプロイ・運用Vol.84:
+        Composer •記法で型注釈Vol.87: PHPDoc •の運用Vol.88: HHVM•'
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 続きはで
+    - node: bold
+      content: Web
+    - node: text
+      content: https://github.com/pixiv •http://inside.pixiv.net/ •個人で公開してるものGitHub  •(tadsan)BaguettePHP/php-simple-routing
+        •BaguettePHP/http-accept-language•

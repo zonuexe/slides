@@ -65,3 +65,718 @@ links:
   p122:
   - url: https://qiita.com/tanakahisateru/items/3f24014a91744c2b04fe
     title: 'PSR-8 Hug (日本語訳) #PHP - Qiita'
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: PSRを実装してみるLet's implement PSR(PHP Standards Recommendations)2019-01-26  PHP
+        Conference Sendai
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'Sendai, Miyagi, Japan '
+    - node: bold
+      content: '#phpconsen'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社 pixiv運営本部
+
+        •Emacs Lisper, PHPer
+
+        •Emacs PHP Modeのメンテナ引き継ぎました
+
+        •好きなリスプはEmacs Lispです
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 今回の目的
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: PSRって何のためにあるの
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '強い人たちと話すと         PSRの不満についての愚痴を聞くけれども、なるほどわからん'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: わかりたい
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: それを明らかにしたいと思い、われわれ取材班は仙台へと旅立った
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 'でも、英語も         仕様書を読むのも         苦手だお…'
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 　 　　　　 | 　 　＼　　__　　／ ﾋﾟｺｰﾝ  　 　＿　（ｍ）　＿　　
+    - node: bold
+      content: そうだ、実装しながら理解しよう
+    - node: text
+      content: '　 　　　　|ミ| 　 　 ／ 　｀´　 ＼ 　　　　　(''A`) 　　　　　ノヽノヽ 　　　　　　　くく '
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 実装
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '仕様を雑に読む→         よくわからないので         ぐぐる→既存実装を読んでみる→雑に実装してみる→         (以下ループ) '
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 背景
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: PHPのコンポーネントを作って提供してる組織は意外とたくさんある
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 'たくさんあるのはいいが大同小異、同じような         ものが乱立してると困る'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: '使い回せるものが         あるなら折角だから         相互運用したい'
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 'そのような現状でPSRは何を提供しているのか、         実装しながら見てみよう'
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: おしながき
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP-FIGについて         PSR-0  PSR-3PSR-1  PSR-6PSR-2  PSR-13         そのほかのPSR'
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 'ここから         駆け足になるので         最初にまとめ'
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 'PSRにナンバリング         されてるからと言って         高品質で優先すべき         対象とは限らない'
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: PHP-FIG
+    - node: bold
+      content: '         '
+    - node: text
+      content: フレームワーク相互運用グループ
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'PSRを策定         する団体'
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 'フレームワーク/CMS/そのほかPHP関連         開発者の寄合所帯'
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: さっき挙げた団体の全てが加盟してるわけではない
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 抜けちゃったところもいろいろある
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 'Zend,CakePHP,         Yii, Drupal, Slim         など多数'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 'Guzzle, Doctrine, Symfony, Laravel, The PHP Leagueは         脱退済み'
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: 脱退したからと言ってPSRを尊重してないわけではない
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: PSR
+    - node: bold
+      content: '         '
+    - node: text
+      content: PHP標準勧告
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: ｢勧告｣と名前はついてるがPHP本体とは関係なく､有志による規格
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: グループの背景にある考えは、代表者たちがプロジェクト間の共通点について話し合うことで協働する方法を探ることです。
+    - node: bold
+      content: '         '
+    - node: text
+      content: グループの議論の主な観客は参加プロジェクト同士ですが、そのほかのコミュニPHPティも注目していることはよく承知しています。ほかの人々がの成果物を採用すPSRることは歓迎しますが、それは目的ではありません。
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: 投票メンバーは標準を遵守しなければいけませんか？
+    - node: bold
+      content: ' '
+    - node: text
+      content: いいえ。の投票メンバーになるこPHP-FIGとで、すべての、あるいは任意のを実PSR装することを強制されることはありません。プロジェクトはしかるべき時にアップグレードする際に後方互換性を考慮する必要があります。ほとんどのプロジェクトで最終的に採用されると想定されますが、必須ではありません。
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: '勧告される対象は我々下々のPHPer各位         ではなくPHP-FIGに         任意で参加した団体'
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: '勧告された参加団体が         PSRを準拠することもまた任意'
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: '脱退したはずの団体が         PSRを準拠することもまた任意'
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR自体が、ベスト         プラクティスを標榜してたりもするけど…？'
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'それはそれ         これはこれ'
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: PSR-0
+    - node: bold
+      content: '         '
+    - node: text
+      content: Autoloading Standard
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: 失効済み！！！PSR-0
+    - node: bold
+      content: '         '
+    - node: text
+      content: Autoloading Standard
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: オートロードに適合したクラスの命名規則とファイルの配置
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: '前提PHP 5.0からクラスのオート         ローディング(遅延ロード)に対応=必要あるまで読み込まないそれ以前はからinclude_pathが主流include/require(_once)'
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: ざっくりPSR-0クラス名の構造の規則\<Vendor Name>\(<Namespace>\)*<Class Name> 区切りの擬似名前空間も許容_
+        \<Vendor Name>_(<Namespace>_)*<Class Name>
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: ディレクトリ配置. Hoge!""     Fuga!""         Piyo.php!""class Hoge_Fuga_Piyo
+        {}または// namespace Hoge\Fuga;class Piyo{}
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 実装依存になる部分ファイルシステム依存大文字小文字の差異Unicode NFD問題
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: '曖昧な部分「ベンダー名」って何…？自由に決められるので、         ただの紳士協定に過ぎないトップレベルのクラス定義を戒める効果はある(?)'
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: '実装方式A: クラスマップ方式実行前にディレクトリ構造を         スキャンして対応表を作成B: 逐次確認実行時にファイルシステムを検査'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-0準拠クラスローダー関数function add_directory(string $base_dir): void {$directory
+        = rtrim($base_dir, ''/\\'');spl_autoload_register(function ($fqcn) use ($base_dir)
+        {$namespaces = explode(''\\'', $fqcn);$class = array_pop($namespaces);$class_file
+        = strtr($class, [''_'' => ''/'']) . ''.php'';$ns_dir = implode(''/'', $namespaces);$file_path
+        = implode(‘/'',array_filter([$base_dir, $ns_dir, $class_file], ''strlen''));if
+        (is_file($file_path)) {require_once $file_path;}});}'
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 現状以前はライブラリごとに
+    - node: bold
+      content: '         '
+    - node: text
+      content: クラスローダーを提供してた などRequests::register_autoloader()最近はComposerがオートロード機能を提供してくれるのでcomposer.jsonに書くだけ
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 重要PSR-0はPSR-4で代替されたので廃止済み
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: 'Composer以前PEARでインストールするzipをダウンロードして、         そのディレクトリをinclude_pathに追加する同じホスト上で動作する別のPHPプロジェクトと共用されることも'
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: 'Composer以後依存パッケージはプロジェクト内のサブディレクトリにインストール同じホスト上で動作する別の         プロジェクトと混在することは原則ない'
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: PSR-1
+    - node: bold
+      content: '         '
+    - node: text
+      content: Basic Coding Standard
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: 基本的な(＝相互運用のため重要度の高い)コーディング規約
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: '要件名前空間・クラス名は         PSR-4/0に適合するように文字コードはUTF-8(BOM無)クラス定義で副作用を         起こしてはいけない'
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 命名規則クラス名はUpperCamelCase定数名はUPPER_SNAKE_CASEメソッド名はlowerCamelCase変数・プロパティは規定しない
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: '理由｢あるクラスがロードされた副作用として別のファイルが読み込まれる｣のような挙動は         わかりにくい最低限のもの以外はinclude/requireせずに遅延ロードに         任せるのが無難'
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: こういうコードはだめ<?php /** Foo/Bar.php */ // 別のファイルを読み込もうとする include_once
+        __DIR__ . "/foo.php"; // エラーレベルを変更 error_reporting(0); class Foo {     //
+        ... }
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: '「実装します」         といった感じの         ものではないので'
+  - node: p
+    children:
+    - node: text
+      content: 次
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: PSR-2
+    - node: bold
+      content: '         '
+    - node: text
+      content: Coding Style Guide
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: 'コーディング         スタイルの         ガイドライン'
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: 要件プロジェクト内で表記を一貫して意識のずれを低減するPSR-1に準拠することが前提さまざまなプロジェクトのコーディングスタイルを調査した上で策定
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: ホワイトスペース・インデントインデントは4スペースが基本単項演算子以外の演算子や()の前後にはスペースを入れる改行コードはLF一行あたりの文字数は80文字を推奨、120文字以上は警告
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: 'ざっくりclass Foo '
+    - node: bold
+      content: ← 改行する
+    - node: text
+      content: '{     public function bar($xs) '
+    - node: bold
+      content: ← 改行する
+    - node: text
+      content: '    {         foreach ($xs as $x) { '
+    - node: bold
+      content: ← 改行しない
+    - node: text
+      content: '            $f = function ($a) use ($x) { '
+    - node: bold
+      content: ← 改行しない
+    - node: text
+      content: '                // ...             };         }     } }'
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: '{} と改行位置の癖宣言文(, , など)classfunctionnamespaceの開始行と の間は改行する{ それ以外の文は         (, など)ifforeach改行せず、開始行に  を書く{無名関数は文ではなく式なので改行せず、開始行に  を書く{'
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: 重要なこと
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: スタイルルールは、様々なプロジェクトの共通内容から生み出されています。様々な 作者が複数プロジェクトを横断して協力しあうことで、全てのプロジェクトで有用なガイドライン策定の助けとなります。従っ
+        て、このガイド本来の利点は、ルール自体にはなくルールを共有することにあります。http://www.inﬁniteloop.co.jp/docs/psr/psr-2-coding-style-guide.html
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: その他本スタイルガイドでは、意図的に7.  省略しているスタイルやプラクティスが多くあります。例えば下記のような幾つかに ついては、ここでは明記していません。
+    - node: bold
+      content: '         '
+    - node: text
+      content: '（中略） '
+    - node: bold
+      content: '         '
+    - node: text
+      content: なお、本スタイルガイドは将来的に様々なスタイルやプラクティスの登場に応じて改定・拡張をできるものとします。http://www.inﬁniteloop.co.jp/docs/psr/psr-2-coding-style-guide.html
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-2は         コーディングスタイル策定の         ガイドライン'
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: PSR-2をカスタマイズする定義文であっても { を同じ行で書くとかインデントを8タブにするとか改行コードをCR+LFにするとか
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: 策定したガイドラインを守らせるPHP-CS-Fixerを導入するEditorConfigを導入するPhpStormの設定ファイルを共有StyleCI
+        https://styleci.io
+  p81:
+  - node: p
+    children:
+    - node: text
+      content: PHP-CS-Fixerの設定例<?php $finder = PhpCsFixer\Finder::create()     ->in(__DIR__
+        . '/src')     ->in(__DIR__ . '/tests'); return PhpCsFixer\Config::create()     ->setRules([
+        定義開始行と { を同じ行に        '@PSR1' => true,         '@PSR2' => true,         'braces'
+        => [             'position_after_functions_and_oop_constructs' => 'same',         ],    ])     ->setFinder($finder)
+        タブでインデント    ->setIndent("\t")     ->setLineEnding("\n");
+  p82:
+  - node: p
+    children:
+    - node: text
+      content: '.editorconfig# EditorConfig is awesome: http://EditorConfig.org #
+        top-most EditorConfig file root = true # Unix-style newlines with a newline
+        ending every file [*] end_of_line = lf insert_final_newline = true charset
+        = utf-8 # PHP - http://php.net/ [*.php] タブでインデント         indent_style = tab 幅8で表示indent_size = 8'
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: 'PhpStormの設定ファイルを共有PhpStormが生成するは.idea一部ファイルを除き、         共有した方がいいらしいgithub/gitignore: JetBrains.gitignore特に.idea/codeStyles/Project.xmlがコーディングスタイル'
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: '大事なことコーディングスタイルは人間が         レビューであれこれと指図したり         するよりも、機械的に変換したほうがギクシャクせずに済む｢人間が気をつける｣は破綻する｢自然にそうなる｣ 状態が理想'
+  p85:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-2の現状初版が2012年6月なので、         PHP7の時代には不足気味可変長引数、無名クラスとか現在、後継となるPSR-12         が         Extended Coding Style Guide策定作業中'
+  p86:
+  - node: p
+    children:
+    - node: text
+      content: PSR-3
+    - node: bold
+      content: '         '
+    - node: text
+      content: Logger Interface
+  p87:
+  - node: p
+    children:
+    - node: text
+      content: Syslog風のLoggerインターフェイス
+  p88:
+  - node: p
+    children:
+    - node: text
+      content: '要件Syslogで定義された8種類の         レベルごとにログを記録緊急度が高い順からEmergency, Alert, Critical, Error, Warning, Notice, Informational,
+        Debug'
+  p89:
+  - node: p
+    children:
+    - node: text
+      content: '実装psr/logパッケージに含まれる/LoggerTraitAbstractLoggerを利用して最小限で実装可能今回実装したPSRのなかでは         機能がわかりやすく実装が         簡単なので初心者にオススメ'
+  p90:
+  - node: p
+    children:
+    - node: text
+      content: 雑感普通はMonologを使えばいいので代替実装に変更するメリットが全然感じられないMonologのハンドラーを実装した方が拡張しやすいので、そちらの方がオススメ
+  p91:
+  - node: p
+    children:
+    - node: text
+      content: 'さらに雑感WebアプリからSyslogの         8種類のレベルはミスマッチ感がある正直、Error, Debug, Infoの         3レベルくらいにまとめた方が扱いやすいのでは'
+  p92:
+  - node: p
+    children:
+    - node: text
+      content: 'ヘルパー関数<?php declare(strict_types=1); namespace ZoPsr\Log3; use Psr\Log\LogLevel;
+        function to_num(string $level): int {  return [   LogLevel::EMERGENCY => 0,   LogLevel::ALERT     =>
+        1,   LogLevel::CRITICAL  => 2,   LogLevel::ERROR     => 3,   LogLevel::WARNING   =>
+        4,   LogLevel::NOTICE    => 5,   LogLevel::INFO      => 6,   LogLevel::DEBUG     =>
+        7,  ][$level]; } '
+  p93:
+  - node: p
+    children:
+    - node: text
+      content: '行区切りJSON出力するロガーfinal class FileLogger implements LoggerInterface {  use
+        LoggerTrait;  /** @var resource */  private $_fp;  /** @var string */  private
+        $_min_level;  /**   * @param resource $fp   * @param ?string $min_level   */  public
+        function __construct($fp, $min_level = null) {   $this->_fp = $fp;   $this->_min_level
+        = $min_level ?? LogLevel::WARNING;  }  public function log($level, $message,
+        array $context = []) {   if (to_num($level) <= to_num($this->_min_level))
+        {    $log = json_encode([''level'' => $level, ''message'' => $message, ''context''
+        => $context],             JSON_UNESCAPED_SLASHES) ?: ''{"json_encode_error":true}}'';    fputs($this->_fp,
+        $log);    fputs($this->_fp, "\n");'
+  p94:
+  - node: p
+    children:
+    - node: text
+      content: PSR-4
+    - node: bold
+      content: '         '
+    - node: text
+      content: Autoloader
+  p95:
+  - node: p
+    children:
+    - node: text
+      content: オートロードに適合したクラスの命名規則とファイルの配置
+  p96:
+  - node: p
+    children:
+    - node: text
+      content: PSR-0の後釜
+  p97:
+  - node: p
+    children:
+    - node: text
+      content: オートロードに適合したクラスの命名規則とファイルの配置
+  p98:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-0との差異_を使った擬似名前空間は         許容されなくなったPSR-0は名前空間に対応するディレクトリを用意しなければならなかったが、PSR-4ではディレクトリを浅くできる'
+  p99:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-0との差異prefixとbase directory         という概念が導入されたというクラス\A\B\C\D PSR-0: src/A/B/C/D.phpPSR-4: src/D.php Composerを使ってたらお馴染'
+  p100:
+  - node: p
+    children:
+    - node: text
+      content: 'ディレクトリ配置.. src src!""!""     Fuga     Piyo.php!""!""         Piyo.php!""<?phpnamespace
+        Hoge\Fuga;         class Piyo{}'
+  p101:
+  - node: p
+    children:
+    - node: text
+      content: 'クラスローダの実装(1)final class ClassLoader {  /** @var array<string,string>
+        */  private $directories = [];  public function add(string $prefix, string
+        $directory): void {   $this->directories[$prefix] = $directory;  }  public
+        function register(bool $prepend = false) {   spl_autoload_register([$this,
+        ''autoload''], true, $prepend);  }  public function autoload(string $class):
+        void {   $path = $this->_resolve($class);   if ($path !== null) {    require_once
+        $path;   }  }'
+  p102:
+  - node: p
+    children:
+    - node: text
+      content: 'クラスローダの実装(2) private function _resolve(string $class): ?string {   foreach
+        ($this->directories as $prefix => $dir) {    if (strpos($class, $prefix) !==
+        0) {     continue;    }    $path = $this->_makePath($class, $prefix, $dir);    if
+        (is_file($path)) {     return $path;    }   }   return null;  }  private function
+        _makePath($class, $prefix, $directory): string {   $relative = substr($class,
+        strlen($prefix));   $path = strtr($relative, ''\\'', ''/'') . ''.php'';   return
+        $directory . DIRECTORY_SEPARATOR . $path;  } }'
+  p103:
+  - node: p
+    children:
+    - node: text
+      content: ディレクトリの追加<?php use ZoPsr\Autoload4\ClassLoader; use function ZoPsr\TestHelper\capture;
+        require_once __DIR__ . '/../../vendor/autoload.php'; $loader = new ClassLoader;
+        $loader->register(false); $loader->add('Foo\\', __DIR__ . '/1'); $loader->add('Hoge\\',
+        __DIR__ . '/2');
+  p104:
+  - node: p
+    children:
+    - node: text
+      content: PSR-4を実装する意味はあるかクラス名の規則として重要クラスローダは自作せずにComposerを使った方がパフォーマンスの最適化できて便利PHPのクラスロードの仕組みを学ぶ上では重要
+  p105:
+  - node: p
+    children:
+    - node: text
+      content: PSR-13
+    - node: bold
+      content: '         '
+    - node: text
+      content: Link definition interfaces
+  p106:
+  - node: p
+    children:
+    - node: text
+      content: '要件ハイパーメディアの「リンク」を抽象化したクラスHTMLのとかとか<link>HTTPのLinkヘッダとか         (RFC5988/8288 WebLinking)……なんだけど'
+  p107:
+  - node: p
+    children:
+    - node: text
+      content: '仕様基本はPSR-7と同じ         イミュータブルなオブジェクト関連するRFCがやたらある特にRFC6570(URI Template)、それ混ぜる必要あったか…？実装として混ざってるわけではないが、という状態があるisTemplated()'
+  p108:
+  - node: p
+    children:
+    - node: text
+      content: 'URI TemplateRFC6570URIに変数展開するための         テンプレート言語これ自体は需要ある規格だが、Linkでテンプレートありなしのhrefを混在させて嬉しいことは         ……ある？'
+  p109:
+  - node: p
+    children:
+    - node: text
+      content: 既存実装crell/htmlmodelPSR-13提案者の概念実証php-fig/link-utilPHP-FIGによる実装Linkクラスも実装されてるあのSymfonyも独自実装してない
+  p110:
+  - node: p
+    children:
+    - node: text
+      content: 仕様への文句isTemplated()必死にユースケースを考えてみたけど、積極的にこの分岐をしたいケースが一切見当たらないでも事実上Symfony\WebLink黙殺されてるように見える
+  p111:
+  - node: p
+    children:
+    - node: text
+      content: 実装への文句isTemplated()hrefに  か  のどちらかが含{}まれてたらURI Template文字列って判定してるすごく怪しい
+  p112:
+  - node: p
+    children:
+    - node: text
+      content: URIの仕様https://example.com/{ のようなURIは完全に合法{と}はreservedな文字でもunreservedな文字でもないので、パーセントエンコードされてるとは限らない
+  p113:
+  - node: p
+    children:
+    - node: text
+      content: 'とてもバグりそうな雰囲気が文字列を場当たり的な判定して実行時に分岐するのは、         どう考えてもアンチパターンせめてTemplatedLinkInterfaceのような別の型で表現するなら気持ちはわかる(けど嬉しくはない)'
+  p114:
+  - node: p
+    children:
+    - node: text
+      content: そのほかのPSR
+  p115:
+  - node: p
+    children:
+    - node: text
+      content: ここから実装が間に合わなかったPSRについて雑に話します
+  p116:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-7 message interfaceHTTPのリクエスト／レスポンスを抽象化するクラスGuzzleのようなHTTPクライアントライブラリには好適しかしHTTPミドルウェアの         媒介としては辛くないですか'
+  p117:
+  - node: p
+    children:
+    - node: text
+      content: PSR-7とわたしGuzzle使ったらPHPでめちゃんこ簡単にHTTPプロキシ鯖を実装できたので好きPHPでプロキシサーバーを作るPHPのプロキシサーバーを説明する
+  p118:
+  - node: p
+    children:
+    - node: text
+      content: PSR-6 Caching Interface実は今回は実装してみたけど、特に感情がない業務ではRedisなどのKVSをラップした独自の抽象クラスを使ってるけど、移行する気は特に湧かなかった
+  p119:
+  - node: p
+    children:
+    - node: text
+      content: PSR-5 PHPDoc (Draft)PSRの番号が若いのに長年マージされてない代表格放棄されかけたがAPIドキュメント自動生成よりもIDEや静的解析のデファクト標準として重要なので議論復活した
+  p120:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-5とわたしWEB+DB PRESS Vol.87に書いた         '
+  - node: p
+    children:
+    - node: text
+      content: (総集編に収録されてるから買って)2018年のPHPDoc事情とPSR-5PhpStorm 2018.3でPSR-5ジェネリクス記法はサポートされない
+  p121:
+  - node: p
+    children:
+    - node: text
+      content: PSR-5と静的解析コード上の記述とPHPDocのコメントを手がかりにして、怪しい部分を高精度で検出してくれるPhan, PHPStan,
+        Psalm, PhpStormなどのツールがある今回の実装でも助けられました
+  p122:
+  - node: p
+    children:
+    - node: text
+      content: PSR-8 Mutually Assured Hug2014年4月1日に提案された｢この標準は､オブジェクトが互いの感謝と支持を表明するための､一般的な方法を確立します｣こんなのにPSRの番号の帯域を降ってよかったの…？PSR-8
+        Hug (日本語訳)

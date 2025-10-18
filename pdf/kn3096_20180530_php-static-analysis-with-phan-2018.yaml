@@ -49,3 +49,440 @@ links:
   p68:
   - url: https://www.pixiv.net/fanbox/creator/105589
     title: にゃんだーすわん｜pixivFANBOX
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: でコード静的解析PhanPHP2018
+    - node: bold
+      content: Static analysis of PHP code using Phan.
+    - node: text
+      content: '2018-05-30 PHP勉強会@東京 #phpstudy'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社 pixiv運営本部
+
+        •Emacs Lisper, PHPer
+
+        •Emacs PHP Modeのメンテナ引き継ぎました
+
+        •好きなリスプはEmacs Lispです
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: We are hiring!
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 近況報告
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: そして
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: って何Phan
+  p14:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 今回は最近の
+    - node: bold
+      content: '         '
+    - node: text
+      content: Phanについて軽くまとめます
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 最近のPhanの動向
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 相変らず恐しいペースで開発が進んでる
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 連想配列の静的解析の鬼
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: LSPの実装
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 復讐
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 静的解析とは
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: '         実行して'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 調べるのが動的解析
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '         実行せず'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 調べるのが静的解析
+  p25:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'Xdebug, phpdbg         などのデバッガは動的解析'
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: '         PHPUnitなどの'
+    - node: bold
+      content: '         '
+    - node: text
+      content: テスティングフレームワークも動的解析
+  p27:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: ' はphp -l静的解析'
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: '         PHPStanは実行時情報を使って静的解析する'
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: '         Phanは'
+    - node: bold
+      content: '         '
+    - node: text
+      content: コードを実行せず静的解析する
+  p31:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 得意なことがちょっと異なる
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 導入しやすさもちょっと異なる
+  p33:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: '@tadsanは         ももPHPStanPhan両方使ってます'
+  p34:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 詳しいことは直接きいて
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: (ここまで5分)
+  p36:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: Phanを使ってできること
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: 説明
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: '“Phan is a static analyzer for PHP that '
+    - node: bold
+      content: '         '
+    - node: text
+      content: prefers to minimize false-positives. Phan attempts to prove incorrectness
+        rather than correctness.”https://github.com/phan/phan
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: '         Phanは偽陽性を最小化することを“         好むPHP静的解析器です。         Phanは正しいと証明することよりも誤りであることを証明しようとします。”https://github.com/phan/phan'
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: '         Phanでエラーが         検出されなければ'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 正しく動く… わけではない
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: '         Phanでエラーが         検出されるから'
+    - node: bold
+      content: '         '
+    - node: text
+      content: コードは動かない… わけではない
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: '         「動かないかもしれない」         ちゃんとしてないコードから怪しい箇所を検出するのに強い'
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: で、Phanは何をやってくれるの？
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: ざっくり
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 要はPhpStormを使ってできるような検査ができる
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'ざっくりとPhanのできること存在しないクラスやメソッドの使用
+
+        引数の型のミスマッチや過不足
+
+        コードとPHPDocの不整合
+
+        存在しないプロパティのアクセス
+
+        PHP7と非互換な文法
+
+        非推奨な機能の使用 (@deprecated)'
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: '比較的最近実装された機能LSP (Language Server Protocol)
+
+        VSCなどから利用できる
+
+        設定ファイルの自動生成
+
+        composer.jsonからの設定取り込み
+
+        未使用変数・デッドコード検出機能'
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: '型PSR-5(abandoned) 型表記を実装
+
+        @param@return@var@method, , ,           @property@phan- に優先する  付きのPHPDocタグが追加
+
+        独自の拡張形式で型を記述できる
+
+        Closure(int|array): (int[]) @phan-param array{field:string}'
+  p49:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: Phanを導入しよう
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 三択
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: A.Phar
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'アーカイブ
+
+        (超おてがる)'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'B.Docker(ただしバージョン古すぎる)
+
+        C.Composer'
+    - node: bold
+      content: '         '
+    - node: text
+      content: (依存関係の管理がだるい)
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: A.Phar
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'アーカイブ
+
+        (超おてがる)'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'B.Docker(ただしバージョン古すぎる)
+
+        C.Composer'
+    - node: bold
+      content: '         '
+    - node: text
+      content: (依存関係の管理がだるい)
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 'Pharアーカイブのメリット         導入も更新もPharファイルをダウンロードするだけ！ 超カンタン
+
+        ただし、PHPの実行環境は必要
+
+         ファイルをダウンロードしてmv phan.phar ~/local/bin/phan         chmod +x ~/local/bin/phan'
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: 'DockerのメリットDokcerの動く環境なら超カンタン！
+
+         Phan 0.9.4を最後に音沙汰がない…まあPHP7.1サポートされてるし動くけど…'
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerのメリットあるかなあ… (疑問)
+
+         どうしてもPhanのHEADを 攻めたいならComposerで入れる
+
+        composer require --dev でプロジェクトに入れるのはオススメしない
+
+        composer global requireやるなら '
+  p57:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: どうやって動かすの
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 'Composerの初期設定         プロジェクトルートがある場所で         phan --init を実行すると.phan/config.php が自動生成される
+
+        phan -o phan.log のように実行するphan.logとに行区切りのレポートが表示される'
+  p59:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: Phan以外の最近の動向
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: PHPStan
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPStan         Phanとキャラかぶりしてるので比較されがち
+
+        Phanが全体を解析するのが基本で遅いけど、PHPStanはファイルごとに解析するとかに向いてる'
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPStanPullRequestごとにテストするならPhanよりもPHPStan
+
+         高速に解析できるので、作業中に常時解析しまくってもよい
+
+        Emacsで編集中に表示すると         PhpStormっぽくなるぞ！！！１https://github.com/emacs-php/phpstan.el'
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: Phpactor
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 'Phpactor         これも静的解析ツールだけど、補完や定義ジャンプ、定義の挿入やリファクタリングなどのエディタ向けのツールセットを提供
+
+        いままでリファクタリングは         PhpStorm独擅場だったが、これを崩せるポテンシャルがある'
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: 'Phpactorエディタに依存しない操作
+
+        標準でvimプラグインがある
+
+        Emacs版の実装は私が開発中
+
+        https://github.com/emacs-php/phpactor.el
+
+        オレオレ
+
+        開発中感はあるけど、いちおう動く'
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: 最後に

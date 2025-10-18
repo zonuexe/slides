@@ -9,3 +9,334 @@ links:
   p16:
   - url: https://dic.nicovideo.jp/a/%E7%B8%9B%E3%82%8A%E3%83%97%E3%83%AC%E3%82%A4
     title: 縛りプレイとは (シバリプレイとは) [単語記事] - ニコニコ大百科
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: PHP縛りゲーの世界第136回 PHP勉強会＠東京
+    - node: bold
+      content: '         '
+    - node: text
+      content: '2019年3月27日 #phpstudy'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社 pixiv運営本部
+
+        •Emacs Lisper, PHPer
+
+        •Emacs PHP Modeのメンテナ引き継ぎました
+
+        •好きなリスプはEmacs Lispです
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 待ってるにょ
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 宣伝
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 今週末はPHPerKaigiです
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: CIとか静的解析の話をします
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: チケットを持ってない人は今すぐ購入
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: さてみなさん
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: プログラミングは
+    - node: bold
+      content: '         '
+    - node: text
+      content: 好きですか？
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: プログラミングは
+    - node: bold
+      content: '         '
+    - node: text
+      content: 楽しいですか？
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: もっと楽しくしたくないですか？
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: そうですね
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 制約を課すべし
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: ゲームをプレイする際、本来ゲーム側からは設定されていない制限（縛り）を自ら科す事によって、より難易度の高いゲームをプレイする事。ニコニコ大百科
+    - node: bold
+      content: '         '
+    - node: text
+      content: –https://dic.nicovideo.jp/a/%E7%B8%9B%E3%82%8A%E3%83%97%E3%83%AC%E3%82%A4
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 他言語における
+    - node: bold
+      content: '         '
+    - node: text
+      content: 実例
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 'セミコロンレスJava常識的なJavaは、式文の         末尾にセミコロン(;)を要求ところが、工夫することで ; の挿入を回避して         コードを書くことが可能'
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: PythonワンライナーPythonはインデントベースの文法(オフサイドルール)を持つため、改行を要求する文法が多い……が、さまざまなテクを駆使することでこの制約を回避
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: それならPHPは
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: セミコロンレスPHPPHPもJavaと同じく式文の末尾にセミコロン(;)を要求するだが実はPHPは ?> 直前の ; を省略できる?>
+        も禁止することで成立する
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 'ワンライナーPHPPHPは改行が文法的な意味を         (ほぼ)持たず ; で区切って         複数の式文を一行に書けるPythonと同等の難易度には         ならない'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: どうしよう
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 🤔
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 🤑
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: ＄
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $ とは言わずと知れた変数のシンボル(sigil)おそらくPerlに由来するが、Perlの意味とはまったく異なる実際いろんなところで必須
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php function foo($a, $b) {     $name = "hoge"; // 変数代入     var_dump($_SERVER);
+        // ← スーパーグローバル変数     foreach (piyo() as $p) { // ← 省略できない         echo $piyo->$name;
+        // ← 可変プロパティ     } }
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: どうしよう
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: (２回め)
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 変数を利用できない＝状態の更新ができない
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 🙃
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 大丈夫です
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: $なしで意外と
+    - node: bold
+      content: '         '
+    - node: text
+      content: 書けます
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: FizzBuzzは
+    - node: bold
+      content: '         '
+    - node: text
+      content: 書けます
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: どうすんの
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, 'Fizz', null, null]; call_user_func(new
+        class { function __invoke() {   if (func_get_arg(0) -1 )     call_user_func(__METHOD__,
+        func_get_arg(0) - 1);   echo FB[func_get_arg(0) % 15] ?? func_get_arg(0),
+        "\n"; }}, 100);
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, 'Fizz', null, null]; 定数定義 ($不要)call_user_func(new
+        class { function __invoke() {   if (func_get_arg(0) -1 )     call_user_func(__METHOD__,
+        func_get_arg(0) - 1);   echo FB[func_get_arg(0) % 15] ?? func_get_arg(0),
+        "\n"; }}, 100);
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 無名関数を起動'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, 'Fizz', null, null]; call_user_func(new
+        class { function __invoke() {   if (func_get_arg(0) -1 )     call_user_func(__METHOD__,
+        func_get_arg(0) - 1);   echo FB[func_get_arg(0) % 15] ?? func_get_arg(0),
+        "\n"; }}, 100);
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, FizzBuzzのロジック'Fizz', null, null];
+        call_user_func(new class { function __invoke() {   if (func_get_arg(0) -1
+        )     call_user_func(__METHOD__, func_get_arg(0) - 1);   echo FB[func_get_arg(0)
+        % 15] ?? func_get_arg(0), "\n"; }}, 100);
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, 100から0になるまで、
+    - node: bold
+      content: '         '
+    - node: text
+      content: '''Fizz'', null, null]; 自分自身の関数を呼び出すcall_user_func(new class { function
+        __invoke() {   if (func_get_arg(0) -1 )     call_user_func(__METHOD__, func_get_arg(0)
+        - 1);   echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n"; }}, 100);'
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, 'Fizz', null, null]; FizzBuzzをプリントcall_user_func(new
+        class { function __invoke() {   if (func_get_arg(0) -1 )     call_user_func(__METHOD__,
+        func_get_arg(0) - 1);   echo FB[func_get_arg(0) % 15] ?? func_get_arg(0),
+        "\n"; }}, 100);
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: PHPにおける $<?php const FB = ['FizzBuzz', null, null, 'Fizz', null, 'Buzz',
+        'Fizz', null, null, 'Fizz', 'Buzz', null, 'Fizz', null, null]; 引数をとるcall_user_func(new
+        class { function __invoke() {   if (func_get_arg(0) -1 )     call_user_func(__METHOD__,
+        func_get_arg(0) - 1);   echo FB[func_get_arg(0) % 15] ?? func_get_arg(0),
+        "\n"; }}, 100);
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: '変数禁止って言ってんのに         func_get_arg(0)         使ってるのずるくね？'
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: ずるい
+    - node: bold
+      content: '         '
+    - node: text
+      content: とってもずるい
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: しかしfunc_get_arg()を
+    - node: bold
+      content: '         '
+    - node: text
+      content: 禁止すると関数が完全に利用不能になるので難易度急上昇↑↑
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: 今回は妥協
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: 今回は再帰呼び出しすることで状態更新を回避
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: さらなる難易度を求めるあなたへ
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 難易度を下げる関数を禁止状態を持てる関数APCu, , getenv()ini_get()変数テーブルの操作, compact()extract()
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: '難易度を下げる関数を禁止定数の動的定義, define()constant() 更新不能のグローバル変数として状態を持てるため禁止する文字を増やす
+        とか : とか(両方は重い){}'

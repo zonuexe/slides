@@ -2,3 +2,405 @@ size:
   max_width: 1024
   max_height: 768
 links: {}
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '         2017年の　　 開発に　  Emacsで勝つ'
+    - node: bold
+      content: PHP development in Emacs, 2017
+    - node: text
+      content: '         #opendevcon2017-08-19 NEEC Kamata Open Developers Conference 2017 Tokyo'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+
+        •フレームワークなき道にフレームを作るおしごと
+
+        •Qiitaに記事を書いたり変なコメントしてるよ
+
+        •最近やってること
+
+        '
+    - node: text
+      content: '万難が排されつつあるのでPHP7 移行
+
+        •えいやえいやとテスト書いたり直したりしてる•'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: '開発してるものPsySH (PHP) - PR/機能追加
+
+        '
+    - node: text
+      content: 'whoops! (PHP) - PR/機能改善
+
+        '
+    - node: text
+      content: 'php-mode.el (Emacs Lisp) - PR/機能追加/改善
+
+        '
+    - node: text
+      content: 'composer.el (Emacs Lisp) - 開発者(オーナー)
+
+        '
+    - node: text
+      content: 'psysh.el (Emacs Lisp) - 開発者(オーナー)
+
+        '
+    - node: text
+      content: 'phpunit.el (Emacs Lisp) - 共同メンテナ
+
+        '
+    - node: text
+      content: こまかいのいろいろ
+  p4:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: はじめに言っておく
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: Photoshop
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm
+  p7:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: PhpStorm先生は
+    - node: bold
+      content: '         '
+    - node: text
+      content: お前の先輩よりもPHPに詳しい
+  p8:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: PhpStorm先生は
+    - node: bold
+      content: '         '
+    - node: text
+      content: 俺よりもずっとPHPに詳しい
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: (僕が使ってるのはPHPだからPHPの話をするけど、
+    - node: bold
+      content: '         '
+    - node: text
+      content: あなたの使ってる[ﾋﾟｰ]言語も例外ではない)
+  p10:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 僕の仕事
+    - node: bold
+      content: '         '
+    - node: text
+      content: ＝同僚をPhpStormに改宗させること
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: しょーもないヒュー
+    - node: bold
+      content: '         '
+    - node: text
+      content: マンエラーを静的解析の力で捻じ伏せること
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 精度の高い静的解析と型推論
+  p13:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'それに裏打ちされた、入力補完、定(メソッド/プロパティ)義ジャンプ、未定義検出、型エラー検出、リファクタリング、
+
+        etc, etc...'
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: いまどきテキストエディタでIDEに対抗しようとすることは、竹槍で戦闘機に対抗しようとすることに等しい
+  p15:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: では、なぜ
+    - node: bold
+      content: '         '
+    - node: text
+      content: Emacsを利用するのか
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: Emacs=環境
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: (誇張ではない)
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: エディタの機能=ただの関数
+  p19:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 標準機能すら上書きできる
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 標準機能を置換する
+    - node: bold
+      content: '         '
+    - node: text
+      content: べんりパッケージいろいろある
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: '[ﾋﾟｰ]よりもずっとはやい！'
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: (Vimよりは遅いかも…)
+  p23:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: ともあれ高機能なエディタは
+    - node: bold
+      content: '         '
+    - node: text
+      content: 好きな機能を
+    - node: bold
+      content: '         '
+    - node: text
+      content: 組み合せて構築できるフレームワークのようなもの
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: '当時紹介したもの (1)php-mode.el
+
+        今も開発してるから入れてくれ頼む
+
+        phpunit.el
+
+        PHPUnitを簡単に実行できる
+
+        psysh.el
+
+        PHPのREPLを実行できる
+
+        選択範囲のコードを実行したりできる'
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: '当時紹介したもの (2)TRAMP
+
+        sshのファイルを直接編集できる
+
+        Magit
+
+        Gitインターフェイス
+
+        エディタ内でgit blameできる
+
+        magit-find-file
+
+        リポジトリ内の絞り込み検索'
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: '当時紹介したもの (3)php-eldoc
+
+        PHPの標準関数の引数が表示できる
+
+        標準関数ごときでぐぐってはいけない
+
+        smartchr.el
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: キーを連打すると入力文字列が入れ変る
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 'そのほかべんりなものflycheck
+
+        文法チェックやLintの非同期実行
+
+        チェッカーを独自実装できる
+
+        Projectile
+
+        プロジェクト管理ツール'
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 'プロジェクト固有のマイナーモードpixiv-dev.el
+
+        GitHubに置いてあるよ
+
+        べんりコマンドとか
+
+        社内用のLintツールとか'
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 弱点
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: いちいち通信が発生するので、めちゃくちゃ遅い
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: PhpStorm先生に学ぶ
+  p33:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: automatic deployment保存したファイルを(S)FTPで勝手に送ってくれるやつ
+  p34:
+  - node: p
+    children:
+    - node: bold
+      content: https://github.com/zonuexe/emacs-auto-deployment
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 素のエディタは竹槍
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: 勝つには
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: A. IDEが必要ないほどPHPの仕様に詳しくなる
+  p39:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 俺が人間静的解析器だ
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: B. いろんなツールやパッケージを組み合せて必要な機能を実現していく
+  p41:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: しかし道は険しい
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 最終的には快適な
+    - node: bold
+      content: '         '
+    - node: text
+      content: 開発環境で、バグ起こしにくい開発を実現させることが目的
+  p43:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: やっていく気持ち
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: 最後にお願い
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: EmacsでのPHP開発で困ってることを共有してほしい
+  p46:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 続きはWebで
+    - node: bold
+      content: '         '
+    - node: text
+      content: '@tadsanhttps://github.com/zonuexe/emacs-php-development'

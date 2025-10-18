@@ -4,7 +4,7 @@ size:
 links:
   p3:
   - url: https://www.pixiv.co.jp/
-    title: www.pixiv.co.jp
+    title: ピクシブ株式会社
   p4:
   - url: https://phperkaigi.jp/2018/
     title: ホーム | PHPerKaigi 2018
@@ -50,3 +50,550 @@ links:
   - url: https://github.com/zonuexe/dotfiles/blob/master/.emacs.d/site-lisp/pixiv-dev.el
     title: dotfiles/.emacs.d/site-lisp/pixiv-dev.el at master · zonuexe/dotfiles ·
       GitHub
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '         なぜ2018年にIDEと　  Emacsを選ぶのか'
+    - node: bold
+      content: Why was IDE and Emacs chosen, now in 2018?
+    - node: text
+      content: '         #techbeerbash2018-02-19 FJCT Tech Beer Bash 2018 vol.1
+
+        '
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •ピクシブ株式会社技術基盤チーム (pixiv.net)
+
+        •Emacs Lisper, PHPer
+
+        •入社前は自宅警備をしながらRuby書いてた
+
+        •Emacs PHP Modeのメンテナ引き継ぎました
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: アジェンダ
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '1.はどんな言語か
+
+        PHP2.でなにができるか
+
+        Emacs3.に何を期待するかIDE'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: '         はじめに言っておく'
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: '         実用的なPHPのEmacs環境構築'
+  p11:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: エディタくらい好きなの選びたい
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 勝つとか負けるとかの話ではない
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: ' エディタ選択は専門職たるエンジニアの裁量の範疇'
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: '本当にそれでエラー         を起こさない自信があるならな'
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 僕は自信がない
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 'pixivPhpStorm<3           希望者はIDEのライセンス購入(IntelliJ IDEA, RubyMine)'
+  p17:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: PhpStorm先生は
+    - node: bold
+      content: '         '
+    - node: text
+      content: お前の先輩よりもPHPに詳しい
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: PhpStorm先生は
+    - node: bold
+      content: '         '
+    - node: text
+      content: 俺よりもずっとPHPに詳しい
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: いますぐ生産性を上げたいなら素直にIDEを買っておけ
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'IDE()IntelliJ IDEA/PhpStorm         のライセンス料は人件費よりずっと安い'
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: '         回し者では         ないので宣伝はこの辺に'
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '         なぜ2018年にIDEと　  Emacsを選ぶのか'
+    - node: bold
+      content: Why was IDE and Emacs chosen, now in 2018?
+    - node: text
+      content: '         #techbeerbash2018-02-19 FJCT Tech Beer Bash 2018 vol.1
+
+        '
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: なぜ
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '         それが僕には楽しかったから
+
+        (Just for Fun)'
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: ほとんど全ての機能をハックできるエディタだから
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: ほとんど全て
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 誇張ではない
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: エディタ機能の多くの部分はLispで実装される
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: C言語で実装された関数もラップできるし、動的に上書きもできる
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: '         Lispの言語の強力さもある'
+  p31:
+  - node: p
+    children:
+    - node: bold
+      content: http://practical-scheme.net/trans/beating-the-averages-j.html
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: https://cruel.org/freeware/hacker.html
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 職業エンジニアとしての見識を広めるために、見知らぬ言語の見識を深めるのは悪くない
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: '         異質なものに触れて         常用する言語を         相対化することで得られるものはある'
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: '         1. PHPはどんな言語か'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: PHPを書いたことはありますか？
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: '         いろいろなコードが書ける'
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 'テンプレートエンジン<!DOCTYPE html>         <html><head><title>Hello, PHP!</title></head> <p> <?php if (date(''H'') <
+        19): ?>      こんにちは         <?php else: ?>              こんばんは         <?php endif; ?>         </p> <p>今は<?= htmlspecialchars(date(''H'')) ?>時です</p>'
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 'CGIっぽいスクリプト<?php require ''bootstrap.php'';         $db = mysqli_connect(); $stmt = mysqli_prepare($db, ''SELECT * FROM books'');         mysqli_stmt_execute($stmt);          print ''<h1>本の一覧</h1>'';         print ''<ul>'';         foreach ($stmt as $s){     print ''<li>''; print $s->name; print ‘</li>'';         } print ''</ul>'';'
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 'クラスベースOOP<?php         namespace MyApp\Controller; class BooksController extends BaseController{     public
+        function index() {         $books = Books::getAll();         $this->render(compact("books"));     }
+        }'
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: '         (当然ながら)Webアプリに多用される言語'
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 'なんとなくPerlっぽさ(変があり、PHP5では数に)$         ちょっとJavaっぽい見ためのOOPが入ってる'
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: むかしながらのおてがるCGIっぽいスクリプト
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: フレームワークを利用した階層構造アプリケーション
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: どちらもできるのがPHP
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: '         ちゃんとしたパッケージマネージャがある'
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: '         Composernpm, Bundlerのようなもの'
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 動的型検査
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: '         変数の型は         実行時までわからない'
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: 型宣言がある
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: '関数の型注釈 (従来から可能)<?php          /**          * @param  float $height          * @param  float $top          * @param  float $bottom          * @return float          */         function trapezoid($height, $top, $bottom) {             return (($top + $bottom) / 2) * $height;         }'
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: '関数の型宣言 (PHP7から可能)<?php          function trapezoid(float $height,              float $top, float $bottom): float         {             return (($top + $bottom) / 2) * $height;         }'
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: JavaScript,Python, Rubyなどと並ぶ動的プログラミング言語
+  p56:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 2018年現在おそらく唯一まともにPHPの型について書いてある紙(雑誌)
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: PHPはオープンクラス(モンはないので、クラキーパッチ)スが実行時に拡張されることは考えなくてよいあまり
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR         PHP標準勧告'
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: '         本来のPHPはカオスなCGI'
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: フレームワークでオブジェクトを相互運用できるようにするための足枷
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: 実行環境
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: たいてい本番運用環境(GNU/Linux,まれにFreeBSD)と開発環境(Mac, Windows, は異なるデスクトップLinux)
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: '         2. IDEに何を期待するか'
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: PhpStormはPHPのコンパイラ、黄色いやつはゆるさない@tanakahisateru said...
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: https://twitter.com/t_wada/status/819379053530529792
+  p66:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 精度の高い静的解析と型推論
+  p67:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'それに裏打ちされた、入力補完、定(メソッド/プロパティ)義ジャンプ、未定義検出、型エラー検出、リファクタリング、
+
+        etc, etc...'
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: 大事なことは
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: '         自分の誤ちにすぐに気付けること'
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: 黄色いやつ
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: 黄色いやつ黄色いやつ
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: '         次にすることを示してくれること'
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: Guzzle(HTTPクライアント)でリクエストする
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: '         レスポンス得たい次にどうする？'
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: 'ソースコードを読む
+
+        ドキュメントを探す？'
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 動的言語であっても、強力な静的解析機能でサポートしてくれるのが理想的なIDE
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: 'カオスなPHPを         御するためにIDEは強大な助け'
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: '         3. Emacsで何ができるか'
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: いまどきEmacs？
+  p86:
+  - node: p
+    children:
+    - node: text
+      content: 要約すると
+  p87:
+  - node: p
+    children:
+    - node: text
+      content: 'Emacsの強さは拡張性         であり、基本機能は残念ながらそれほど強くはない'
+  p88:
+  - node: p
+    children:
+    - node: text
+      content: いまどきテキストエディタでIDEに対抗しようとすることは、竹槍で戦闘機に対抗しようとすることに等しい
+  p89:
+  - node: p
+    children:
+    - node: text
+      content: '端末でSSHでログインし         た先の鯖でも動作する、といったメリットはある'
+  p90:
+  - node: p
+    children:
+    - node: text
+      content: (これは開発よりはインフラのサーバオペレーション寄りの需要ではある)
+  p91:
+  - node: p
+    children:
+    - node: text
+      content: 逆に「Emacsはターミナルで動かすもの」と誤解があるかもしれない
+  p92:
+  - node: p
+    children:
+    - node: text
+      content: 逆に「Emacsはターミナルで動かすもの」と誤解があるかもしれない
+  p95:
+  - node: p
+    children:
+    - node: text
+      content: '         ほかのツールを         組み合せることで匹敵する機能を持たせることはできる'
+  p96:
+  - node: p
+    children:
+    - node: text
+      content: しかし
+  p97:
+  - node: p
+    children:
+    - node: text
+      content: '         現時点で残念ながら         選ぶ・組み合せるの概念から抜け出せない'
+  p98:
+  - node: p
+    children:
+    - node: text
+      content: 'PhpStormには         埋められない不満もある'
+  p99:
+  - node: p
+    children:
+    - node: text
+      content: '         PhpStormユーザは         「設定」しかできないが、         Emacsはいつでも自分で「実装」できる'
+  p100:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p101:
+  - node: p
+    children:
+    - node: text
+      content: すぐに強力な開発環境が欲しいなら商用IDE
+  p102:
+  - node: p
+    children:
+    - node: text
+      content: 環境をハックして自分を前進させながらEmacs
+  p103:
+  - node: p
+    children:
+    - node: text
+      content: 両方使ってもいい
+  p104:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: プロとしての道具を選ぼう
+  p105:
+  - node: p
+    children:
+    - node: text
+      content: 残念ながらEmacsは贔屓目に見て非力
+  p106:
+  - node: p
+    children:
+    - node: text
+      content: それはそれとしてEmacsをハックするのは楽しい
+  p107:
+  - node: p
+    children:
+    - node: text
+      content: '         自分といっしょに強くなれる'
+  p108:
+  - node: p
+    children:
+    - node: text
+      content: そんなわけでいろいろ作ってきた
+  p114:
+  - node: p
+    children:
+    - node: text
+      content: '         tadsan先生の次回作にご期待ください'
+  p115:
+  - node: p
+    children:
+    - node: text
+      content: '         お前が         Emacs Lisperになるんだよ'

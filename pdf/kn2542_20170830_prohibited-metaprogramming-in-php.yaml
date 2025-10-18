@@ -8,3 +8,478 @@ links:
   p14:
   - url: https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0
     title: メタプログラミング - Wikipedia
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '         使ってはいけない　　 メタプログラミング 初級篇'
+    - node: bold
+      content: Dangerous PHP Meta programming Tutorial
+    - node: text
+      content: '#phpstudy2017-08-30 PHP勉強会@東京 '
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •Emacs Lisper, PHPer
+
+        •pixiv Inc.でpixivを作ってるよ
+
+        •Qiitaに記事を書いたり変なコメントしてるよ
+
+        •動的言語はコンピューティングの真髄•'
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: はじめに
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: サンプルコードは言語機能を簡易に紹介するためのものです
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 利用の際は必要性と利便性を慎重に判断すること。
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: アジェンダ
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '0.  前提
+
+        1. 初級篇
+
+        2. 中級篇
+
+        3. 上級篇'
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: '0.  前提
+
+        1. 初級篇
+
+        2. 中級篇
+
+        3. 上級篇'
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '         メタプログラミング'
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 非常に雑にまとめると、一見して意味のわかりにくい謎テク
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 前提
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: メタプログラミング(metaprogramming)とはプログラミング技法の一種で、ロジックを直接コーディングするのではなく、あるパターンをもったロジックを生成する高位ロジックによってプログラミングを行う方法、またその高位ロジックを定義する方法のこと。メタプログラミングhttps://ja.wikipedia.org/wiki/
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 直接コーディングするのではなくメタプログラミングhttps://ja.wikipedia.org/wiki/
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: '         突き詰めていくと         関数呼び出しすら「直接コーディング」しないと解釈できる'
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 'それよりはちょっと         複雑なものがメタプログラミング'
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: PHPは、所謂LLとしては遊びが少ない
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: '例) 原則として関数やクラスを再定義できない
+
+        (致命的エラーが発生)'
+  p19:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'RubyやPythonと違ってオープンクラスではない
+
+        (モンキーパッチができない)'
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: '         謎なタイミングでクラス定義が変更されることがない(基本的には)'
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: ＝静的解析しやすい条件が揃ってる
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '         変数スコープが(比較的)シンプル'
+  p23:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: その和を乱す邪悪な動的メタプログラミングテクニックが存在する
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 😇
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 「一見してわかりにくい言語機能」
+    - node: bold
+      content: '         '
+    - node: text
+      content: 「ユーザー定義関数では不可能なマジックを実現してくる謎関数」
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 初級編
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: callable
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 関数として呼出し可能な値を表す擬似型
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 'map$ary = ["apple", "orange", "banana"]; //=> ["Apple", "Orange",
+        "Banana"]// 配列の中身を一個一個変更する         $bry = []; foreach ($ary as $i => $a) {     $bry[$i] = ucfirst($a); }'
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 'map$ary = ["apple", "orange", "banana"]; //=> ["Apple", "Orange",
+        "Banana"]// 配列の中身を一個一個変更する         $cry = array_map(''ucfirst'', $ary);'
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'map$ary = ["apple", "orange", "banana"]; //=> ["Apple", "Orange",
+        "Banana"]$bry = []; $cry = foreach ($ary as $i => $a) { array_map(''ucfirst'',
+        $ary);     $bry[$i]=> ucfirst($a); } '
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: callable//  Beforeif ($cond) {     foo($var); } else {     bar($var);
+        }
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 'callable//  After$f = $cond ? ''foo'' : ''bar''; call_user_func($f,
+        $var); //  こうやって書いてもいい$f($var);'
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 'callable//  //  BeforeAfterif ($cond) { $f = $cond ? ''foo'' : ''bar'';     foo($var);
+        call_user_func($f, $var); } else {     bar($var); //  こうやって書いてもいい}$f($var);'
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: '使ってはいけない度
+
+        ★★☆☆☆'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 僕はコードレビューで「foreachの方が読
+    - node: bold
+      content: '         '
+    - node: text
+      content: みやすい」ってマジレスすることもある(★が多いほど邪悪)
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: (メタプログラミングと呼ぶかは議論がある)
+  p37:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: PHPの「ふつう」はひとによって境界が異なる
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 'compact()         extract()'
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 変数テーブルにアクセスできる関数
+  p40:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: compact()
+    - node: bold
+      content: '         '
+    - node: text
+      content: 変数テーブルから取り出して配列にする
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: compact()$foo = foo(); $bar = bar();hoge([ hoge(compact('foo','bar'));    'foo'
+        => $foo,     'bar' => $bar ]);
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: '使ってはいけない度
+
+        ★☆☆☆☆'
+    - node: bold
+      content: '          '
+    - node: text
+      content: 何が起こるか把握して
+    - node: bold
+      content: '         '
+    - node: text
+      content: 書くぶんには罠が少ない(★が多いほど邪悪)
+  p43:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: extract()
+    - node: bold
+      content: '         '
+    - node: text
+      content: 変数テーブルから取り出して配列に
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: 'extract()function hoge(array $vs) {$hoge_foo = $vs[''foo''];extract($vs,
+                       EXTR_PREFIX_ALL, $hoge_bar = $vs[''bar''];''hoge'');本当はissetでチェックすべき'
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: '使ってはいけない度
+
+        ★★★★★'
+    - node: bold
+      content: '          '
+    - node: text
+      content: 何が起こるか把握して
+    - node: bold
+      content: '         '
+    - node: text
+      content: 書くぶんには罠が少ない(★が多いほど邪悪)
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'extract() 変数定義が検出できない
+
+        読みにくくなるので邪悪
+
+        バグの温床であるばかりか、ふつうに脆弱性の温床になる'
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: $$var
+  p48:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: $$var
+    - node: bold
+      content: '         '
+    - node: text
+      content: 可変変数(variable variables)
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: '可変変数$world = "こんにちは世界"; $hello = "world"; $v = "hello"; var_dump($v);    //=>
+        "hello" var_dump($$v);   //=> "world"         var_dump($$$v);  //=> "こんにちは世界" // $$ はいくつ付けてもよい！！'
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: '使ってはいけない度
+
+        ★★★★★'
+    - node: bold
+      content: '         '
+    - node: text
+      content: 純粋に読みにくい……。error_reporing
+    - node: bold
+      content: '         '
+    - node: text
+      content: のレベルが低いと警告なしでnullになる。(★が多いほど邪悪)
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: debug_backtrace()
+  p52:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: スタックトレースを
+    - node: bold
+      content: '         '
+    - node: text
+      content: 全部取得できる(ファイル・引数含む)
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: 'Baguette\FriendsClass\CalledByOutsiderException: It is not allowed
+        for Baguette\Ore to call  in ~/friends/src/functions.php on line 35 Call Stack:     0.0003     359288   1.
+        {main}() ~/friends/tests/test.php:0     0.0020     552824   2. Baguette\Omae->callFriend()
+        ~/friends/tests/test.php:33     0.0020     552864   3. Baguette\Ore->__construct()
+        ~/friends/tests/test.php:20     0.0020     552864   4. Baguette\assert_called_by_friend()
+        ~/friends/tests/test.php:12'
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: (これを悪用すればどんな邪悪なことができるかは明白)
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: '超べんりな用途 (ロギング)function db($query, array $param) {              $trace = implode(''; '', array_map(function ($t) {        return "{$t[''file'']}({$t[''line'']})";     },
+        debug_backtrace()));              $stmt = PDO::query($query.'' -- ''.$trace);     // SQLスロークエリログの末尾にトレースが             // 残るので、原因の特定しやすくなる！'
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: '邪悪な用途function hoge($a, $b, $c) {              $trace = debug_backtrace(true, 2);    $class = $trace[1][''class''] ??
+        false;             $func  = $trace[1][''func''] ?? false;             if ($class === "Foo" && $func === "bar") {         //  Foo::bar() はバグってるので値を上書き        $b
+        = "piyo";             }'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: '使ってはいけない度
+
+        ★★★☆☆'
+    - node: bold
+      content: '          '
+    - node: text
+      content: ロギングは問題なし。
+    - node: bold
+      content: '         '
+    - node: text
+      content: ワークアラウンドはギルティ。(★が多いほど邪悪)
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 今回は初級篇
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: プログラミングのおもしろテクを知ったら使ってみたくなるのが人情
+  p61:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 大いなる力には大いなる責任が伴う
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: メタプログラミングの採用で劇的に便利になることもある
+  p63:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 単に初心者殺しな
+    - node: bold
+      content: '         '
+    - node: text
+      content: 意味不明なコードになることがある
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: (経験豊富な先輩に「若いなあ」となまあたたかく見られるかも)
+  p65:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: 用法容量を守って
+    - node: bold
+      content: '         '
+    - node: text
+      content: たのしいプログラミングをTo Be Continued

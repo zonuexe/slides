@@ -14,3 +14,593 @@ links:
   p31:
   - url: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
     title: 型の定義 — phpDocumentor
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: いまさら！　　お作法入門
+    - node: bold
+      content: Modern...? PHP manners guide
+    - node: text
+      content: '         pixiv SUMMER BOOT CAMP 2017#pixiv_BOOTCAMP東京都渋谷区千駄ヶ谷 '
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 講義資料です
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: 'このスライドはWebで公開します
+
+        (メモはとらなくても良いです、の意味)'
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
+
+        '
+    - node: text
+      content: 'GitHub/Packagistでは id: zonuexe
+
+        •2012年11月にピクシブ株式会社に入社
+
+        •Emacs Lisper, PHPer
+
+        •入社前は自宅警備をしながらRuby書いてた
+
+        •Qiitaに記事を書いたり変なコメントしてるよ•'
+  p6:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: おぼえてほしいこと
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: コードは動けばええんや😄
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 反論？
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: '最高のコードは動くコードコードの美しさはユーザーに見えない
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 汚ないコードでも、動けばユーザーにとっては最大の価値を生み出す
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '最高のコードは動くコードコードの美しさはユーザーに見えない
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 汚ないコードでも、動けばユーザーにとっては最大の価値を生み出す
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '全ての物事には一長一短がある読めないコードはメンテできない
+
+        機能拡張しにくい
+
+        ある日とつぜん動かなくなる
+
+        仕様変更に追従困難'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '         動けばの前提が崩れたコードは価値が大暴落'
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: まとめると
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'ソースコードの美醜は現在のプログラムの価値とは関係ない
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: ただし美しくないコードは将来の可能性を閉ざしかねない
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 'リーダブル         そのために「読める」         コードの追求とお作法の共有が必要'
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 今回は大仰な設計の話ではなく、単にコーディングルールの共有をします
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: PSR?
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: その話はあとで
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: '<?phpからはじめよ<?phpファイル先頭は必ずを書きます
+
+        namespaceuse必要ならとを書きます
+
+        include_once 必要なければ書きません
+
+        そのあとクラス定義を書きます
+
+        (だけ)?>ファイル最後に  は書きません'
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: namespaceは必要か？
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'namespaceを利用すべきかは、プロジェクトごとの事情に強く依存します
+
+        pixiv-libでは原則として利用しません
+
+        テストコードでだけ使ってる
+
+        tests/()         pixiv.git内のプロジェクト単位では、利用されることもあります'
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'namespaceもしもがなかったらUser_Commonのような擬似名前空間
+
+        namespaceuseとの解決は少し面倒
+
+         要はクラス名とファイル名の解決ができればオートローディングできます
+
+        User_Common User/Common.php→ '
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'require/include_onceは最低限だけ         クラスローダーを登録することで、自動ローディングできる (遅延評価)
+
+        1ファイルにつき1クラスを定義する
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 関数定義などは基本的には
+    - node: bold
+      content: '         '
+    - node: text
+      content: 初期化ファイルから読み込みますcomposer.jsonautoload.files(の)
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '?> を書かない理由省略可能、書くメリットが皆無
+
+         <?php 〜 ?>PHPは  の範囲外に書かれた文字列を出力します
+
+        不随意にコード中に変な文字が混入し         たとき、文法エラーにもならず出力されかねないリスクがあります'
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 'クラス定義クラスの概要を一行で要約すること
+
+         一行で説明が不可能なら、クラスが持つ責任は明らかに多すぎます
+
+        クラス継承は慎重に設計してください
+
+         個人的な経験では継承よりも委譲やinterfaceの方がうまくいきます'
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPDocの構造/**          * 概要(summary, 要約) ↓ 下は空行          *          * 説明文(description)。クラスの説明を書きます。          * ここには何行書いてもいいです。          *          * 説明不足よりも能弁を尊べ。          *          *          @see https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/basic-syntax.html
+        */ final class Foo_BarModel implements ModelInterface         {             // ...'
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: クラスとPHPDoc
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: メソッド定義
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'メソッドの概要を一行で要約し、引数と返り値の型をデザインします
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: '一行で説明できないメソッドはその存在の軸が容易に揺らいでいく
+
+         複数の型の値を返すメソッドは機能が多すぎ、利用側が煩雑になる'
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: メソッドとPHPDoc
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: http://nico.ms/kn1774
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: これだけ覚えて帰ってねタグ名意味例@param引数を定義@param int $n1 @return返り値を定義@return int[]@var変数/プロパティを定義@var
+        int@propertyマジックプロパティを定義@property int $id
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPDocの型「PHPの型」か「クラス名」を書く
+
+        •基本的な型
+
+        •stringintboolfloatarray, , , , , •resourcenulltruefalse, , , 
+
+        擬似型
+
+        •callablevoid, 
+
+        •(返り値を返さない)https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html'
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPDocの型複合型
+
+        •intint|string「または文字列」 
+
+        •値が並んだ配列
+
+        •intint[] 「が並んだ配列」 •https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html'
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: ' なんでPHPなのにわざわざ型を書くの'
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: '         バグるのと型書くのどっちがええねん😎'
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: PHPは動的プログラミング言語
+    - node: bold
+      content: '         '
+    - node: text
+      content: 静的型解析器(コンパイラ)は
+    - node: bold
+      content: '         '
+    - node: text
+      content: '一般に実行前(コンパイル時)に変数や関数の型を特定する
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: PHPのVM(インタプリタ)は、
+    - node: bold
+      content: '         '
+    - node: text
+      content: 変数や関数の型は基本的に特定せず、実行時に動的型解析する
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: '         PHPの多くのバグは実行時まで遅延する'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: '         要は動かさないとわからない'
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: '         動かさなくても         バグを検出できるうれしみは大きい'
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 引数一覧で型を表示するところ
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 型がめったくそなの叱ってくれ
+  p40:
+  - node: p
+    children:
+    - node: bold
+      content: '         '
+    - node: text
+      content: ループの話をしよう
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: PHPのfor文は原則禁止#
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: PHPの配列は歯抜けになる#
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: foreachなら大丈夫$
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: 引数一覧で型を表示するところ
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: ループの中で補完が利かない
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: きちんと型をつけ直す
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: ループの中でも補完が利くよ
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR
+
+        PHP Standards Recommendations PHP標準勧告'
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP-FIG
+
+        PHP Framework Interop Group PHPフレームワーク相互運用グループ'
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 'フレームワークや         CMSを開発する組織の寄合'
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: 2017年8月現在のメンバーCakePHP, Composer, concrete5, Contao Open Source CMS,
+        Drupal, eZ Publish, Horde, IBM i Toolkit, Icicle, Jackalope, Joomla, Lithium,
+        Magento, PEAR, Phalcon, Phing, phpBB, phpDocumentor, PHPixie, Pimcore, PPI
+        Framework, PrestaShop, PyroCMS, ReactPHP, Revive Adserver, Sculpin, SilverStripe,
+        Slim, Stash, Stormpath PHP SDK, SugarCRM, Symfony, Neos and Flow, Wikibase
+        and Semantic MediaWiki, Yii framework, Zend Framework 2, Zikula
+    - node: bold
+      content: http://www.php-ﬁg.org/members/
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: 相互運用??
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: '         ばらばらに作ってたのを         仕様化して相互に利用しやすくしようぜ！
+
+        ……みたいな人類の夢'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: みんな仲良く%&’
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-0 Autoloading Standardクラス名とファイルを一致させる規則
+
+        ベンダー名を名前空間のトップにする
+
+        \_DIRECTORY_SEPARATORとをに置換
+
+        2014年にPSR-4に置換されて廃止'
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-1 Basic Coding StandardPHPコードはまたは
+
+        <?php … ?><?= … ?>文字コードはUTF-8(BOMなし)
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: 'クラスや定義のファイルは分けて、副作用のある処理とは分割する
+
+        '
+    - node: bold
+      content: '         '
+    - node: text
+      content: クラス名はStudlyCaps(UpperCamlCase)、
+    - node: bold
+      content: '         '
+    - node: text
+      content: メソッド名はlowerCamelCase、プロパティ名は規定しないけど一貫せよ
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-2 Coding Style Guide具体的なコーディングスタイルガイド
+
+        PSRに準拠したライブラリが必ず遵守しなければいけないルールではなく、         プロジェクトごとにガイドラインを決めるための叩き台
+
+        ↑ここ誤解してるひとが意外と多い'
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: '{クラスや関数など定義のは改行final class Hoge implements Fizz         {             function hoge($a, $b)             {                 return $a + $b;             }         }          function foo()         {'
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: '{そのほかの文のは改行しない$is_hoge = hoge(); if ($is_hoge) {             foo();         } elseif (piyo($a)) {             bar();         }          foreach ($values as $i => $v) {             $values[$i] = piyopiyo($v);         }'
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: '演算子などは、きっちり空白$str = "もじれつ"; $str2 = $str . "！"; $n = 2; $m = 5; return
+        foo($n, $m) * 2; '
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: 'PSR-4 Autoloading Standardクラス名とファイルを一致させる規則
+
+        ベンダー名を名前空間のトップにする
+
+        \_DIRECTORY_SEPARATORとをに置換
+
+        サブ名前空間とベースディレクトリの概念が導入'
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: わしのPSRは17まであるぞ
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: ルールは破るためにある😎
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: '         所詮はフレームワーク開発者どもの間の規則😎'
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: 'プライベートなプロ         ジェクトがPSRに厳密に従っても得られるものは乏しい'
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: 'プライベートなプロ         ジェクトがPSRに厳密に従っても得られるものは乏しい'
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: 厳密に
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: '         都合のいいところだけ持ってくればいい😊'
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: '         規則とは理想的には自分たちの足を撃ち抜かないためにある'
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: 実態に即しない規則は改正すべし
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: 'よく聞く例PSR-2を魔改造カスタマイズ
+
+        インデントはスペースではなくタブ
+
+        { の改行位置が気に入らないので統一
+
+        要はコード内で統一感があれば良い'
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: 'pixivの例PSR-1, PSR-2はそのまま採用
+
+        行の長さの規制だけ緩めてる
+
+        PSR-0, PSR-4は採用しない
+
+        相互運用されないアプリケーションコードなどはvendorは厳密に意識しなくても別に問題が起こらない'
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: 'クラスのオートロードPSR-0, PSR-4の規約通りに配置するだけで、Composerがいい感じにロードできる
+
+         まあ文字列マッチしてるだけなので、ベンダー名とか省略しても実際動く
+
+        そもそもローダーを自作してもいい'
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: 'まとめ         ルールやお作法は、(これに限らず)われわれ人類が自爆しないための鎖
+
+        ルールが作られた背景には事情があるので、それを共有していくのが重要
+
+        「どうしてこうなってるの」と感じたら質問していこう'
