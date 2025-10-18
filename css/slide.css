@@ -304,6 +304,10 @@ body {
     display: none;
 }
 
+.slide-content.expanded {
+    display: none;
+}
+
 .back-link.expanded {
     display: none;
 }
@@ -442,6 +446,45 @@ body {
 .download-section .copy-image-btn {
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+/* Full screen APIでのサイズ制限 */
+#pdf-container:fullscreen, #pdf-container:-webkit-full-screen {
+    width: 90vw !important;
+    height: 90vh !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+}
+
+/* PDFテキストレイヤーの高さ調整 */
+.pdf-textLayer {
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
+/* 画面の高さが足りない場合の調整 */
+@media (max-height: 800px) {
+    .pdf-textLayer {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-height: 600px) {
+    .pdf-textLayer {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-height: 400px) {
+    .pdf-textLayer {
+        transform: scale(0.4);
+    }
 }
 
 @media (max-width: 768px) {
