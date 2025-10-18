@@ -5,7 +5,7 @@ import re
 import sys
 from collections import defaultdict
 from pathlib import Path
-from typing import Dict, Iterable, List, NamedTuple, Optional, Tuple
+from typing import Any, Dict, Iterable, List, NamedTuple, Optional, Tuple
 
 import pdfplumber
 import yaml
@@ -13,6 +13,7 @@ import yaml
 BULLET_CHAR = "•"
 LINE_ROUND_DIGITS = 1
 GAP_THRESHOLD = 1.5
+BULLET_INDENT_TOLERANCE = 30.0
 
 Segment = Tuple[str, bool]
 
@@ -320,9 +321,57 @@ def process_lines(lines: List[LineData]) -> PageNodes:
     """Transform lines into paragraph/ul nodes."""
     page_nodes: PageNodes = []
     pending_paragraph: List[Dict[str, str]] = []
-    bullet_items: List[Dict[str, str]] = []
     bullet_holdover = False
+    bullet_holdover_indent: Optional[float] = None
+    bullet_stack: List[Dict[str, Any]] = []
+    bullet_roots: List[Dict[str, Any]] = []
     previous_line: Optional[LineData] = None
+
+    def flush_bullet_lists() -> None:
+        if not bullet_roots:
+            return
+        page_nodes.extend(bullet_roots)
+        bullet_roots.clear()
+        bullet_stack.clear()
+
+    def ensure_list_level(indent: float) -> Dict[str, Any]:
+        tolerance = BULLET_INDENT_TOLERANCE
+        if not bullet_stack:
+            ul_node: Dict[str, Any] = {"node": "ul", "children": []}
+            bullet_roots.append(ul_node)
+            bullet_stack.append({"indent": indent, "node": ul_node, "last_li": None})
+            return bullet_stack[-1]
+
+        while bullet_stack and indent < bullet_stack[-1]["indent"] - tolerance:
+            bullet_stack.pop()
+        if not bullet_stack:
+            ul_node = {"node": "ul", "children": []}
+            bullet_roots.append(ul_node)
+            bullet_stack.append({"indent": indent, "node": ul_node, "last_li": None})
+            return bullet_stack[-1]
+
+        current = bullet_stack[-1]
+        if indent > current["indent"] + tolerance:
+            parent_li = current.get("last_li")
+            if parent_li is None:
+                return current
+            child_list = {"node": "ul", "children": []}
+            parent_li.setdefault("children", []).append(child_list)
+            bullet_stack.append({"indent": indent, "node": child_list, "last_li": None})
+            current = bullet_stack[-1]
+        return current
+
+    def add_bullet_item(indent: float, text: str) -> None:
+        text = text.strip()
+        if not text:
+            return
+        level = ensure_list_level(indent)
+        li_node: Dict[str, Any] = {
+            "node": "li",
+            "children": [{"node": "text", "content": text}],
+        }
+        level["node"]["children"].append(li_node)
+        level["last_li"] = li_node
 
     for line in lines:
         combined_text = "".join(text for text, _ in line.segments)
@@ -335,15 +384,15 @@ def process_lines(lines: List[LineData]) -> PageNodes:
                     {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
                 )
                 pending_paragraph = []
-            if bullet_items:
-                page_nodes.append({"node": "ul", "children": list(bullet_items)})
-                bullet_items = []
+            flush_bullet_lists()
             bullet_holdover = False
+            bullet_holdover_indent = None
             previous_line = None
             continue
 
         if stripped == BULLET_CHAR:
             bullet_holdover = True
+            bullet_holdover_indent = line.left
             previous_line = None
             continue
 
@@ -354,11 +403,14 @@ def process_lines(lines: List[LineData]) -> PageNodes:
             bullet_texts.append(stripped)
             is_bullet = True
             bullet_holdover = False
+            indent_value = bullet_holdover_indent if bullet_holdover_indent is not None else line.left
+            bullet_holdover_indent = None
         elif stripped.startswith(BULLET_CHAR):
             content = stripped.lstrip(BULLET_CHAR).strip()
             if content:
                 bullet_texts.append(content)
                 is_bullet = True
+            indent_value = line.left
         elif BULLET_CHAR in stripped:
             parts = [
                 part.strip() for part in stripped.split(BULLET_CHAR) if part.strip()
@@ -366,6 +418,7 @@ def process_lines(lines: List[LineData]) -> PageNodes:
             if len(parts) > 1:
                 bullet_texts.extend(parts)
                 is_bullet = True
+            indent_value = line.left
 
         if is_bullet:
             if pending_paragraph:
@@ -373,15 +426,16 @@ def process_lines(lines: List[LineData]) -> PageNodes:
                     {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
                 )
                 pending_paragraph = []
-            previous_line = None
+            if not bullet_texts:
+                bullet_texts.append(stripped)
             for text in bullet_texts:
-                bullet_items.append({"node": "li", "content": text})
+                add_bullet_item(indent_value, text)
+            previous_line = None
             continue
 
-        if bullet_items:
-            page_nodes.append({"node": "ul", "children": list(bullet_items)})
-            bullet_items = []
+        flush_bullet_lists()
         bullet_holdover = False
+        bullet_holdover_indent = None
 
         if not nodes:
             previous_line = None
@@ -415,8 +469,7 @@ def process_lines(lines: List[LineData]) -> PageNodes:
         page_nodes.append(
             {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
         )
-    if bullet_items:
-        page_nodes.append({"node": "ul", "children": list(bullet_items)})
+    flush_bullet_lists()
 
     return page_nodes
 
