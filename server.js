@@ -212,13 +212,6 @@ app.get("/slides/:slug/", async (c) => {
             }
           </style>
           <script>
-            // HTMLエスケープ関数（クライアントサイド用）
-            function escapeHtml(text) {
-              const div = document.createElement('div');
-              div.textContent = text;
-              return div.innerHTML;
-            }
-
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
               maxWidth: ${maxWidth},
