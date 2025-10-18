@@ -11,6 +11,16 @@ import shutil
 from pathlib import Path
 from typing import Iterable, List, Dict, Any, Optional
 
+LINK_EXTRACTOR_CMD = [
+    "uv",
+    "run",
+    "--project",
+    "script",
+    "python",
+    "script/pdf_link_extractor.py",
+    "--update-meta",
+]
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PDF_DIR = ROOT / "pdf"
@@ -114,10 +124,16 @@ def generate_thumbnail(pdf_path: Path) -> Path:
     return output_path
 
 
-def run_text_extractor(pdf_path: Path) -> Path:
+def ensure_meta_file(pdf_path: Path) -> Path:
     meta_path = pdf_path.with_suffix(".yaml")
     if not meta_path.exists():
+        meta_path.parent.mkdir(parents=True, exist_ok=True)
         meta_path.touch()
+    return meta_path
+
+
+def run_text_extractor(pdf_path: Path) -> Path:
+    meta_path = ensure_meta_file(pdf_path)
     target = str(pdf_path)
     try:
         subprocess.run(
@@ -183,11 +199,38 @@ def derive_hashtags(texts: Iterable[str]) -> List[str]:
 def derive_size(meta: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     size = meta.get("size")
     if isinstance(size, dict):
-        return {
-            "max_width": size.get("max_width"),
-            "max_height": size.get("max_height"),
-        }
+        max_width = size.get("max_width")
+        max_height = size.get("max_height")
+        result: Dict[str, Any] = {}
+        if isinstance(max_width, (int, float)):
+            result["max_width"] = int(max_width)
+        if isinstance(max_height, (int, float)):
+            result["max_height"] = int(max_height)
+        return result if result else None
     return None
+
+
+def derive_links(meta: Dict[str, Any]) -> List[Dict[str, str]]:
+    links_section = meta.get("links")
+    if not isinstance(links_section, dict):
+        return []
+    collected: Dict[str, Dict[str, str]] = {}
+    for items in links_section.values():
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            url = item.get("url")
+            if not isinstance(url, str) or not url.strip():
+                continue
+            url = url.strip()
+            title = item.get("title")
+            entry = {"url": url}
+            if isinstance(title, str) and title.strip():
+                entry["title"] = title.strip()
+            collected[url] = entry
+    return list(collected.values())
 
 
 def update_slides_yaml(entries: List[Dict[str, Any]]) -> None:
@@ -238,6 +281,16 @@ def main() -> int:
         print(f"Processing {pdf_path}...")
         generate_thumbnail(pdf_path)
         meta_path = run_text_extractor(pdf_path)
+        try:
+            ensure_meta_file(pdf_path)
+            subprocess.run(
+                LINK_EXTRACTOR_CMD + ["--meta-file", str(meta_path), str(pdf_path)],
+                cwd=ROOT,
+                check=True,
+            )
+        except subprocess.CalledProcessError as exc:
+            raise SystemExit(f"pdf_link_extractor failed for {pdf_path}: {exc}") from exc
+
         with meta_path.open("r", encoding="utf-8") as handle:
             meta = yaml.safe_load(handle) or {}
 
@@ -246,6 +299,7 @@ def main() -> int:
         title = derive_title(texts, slug)
         hashtags = derive_hashtags(texts)
         size = derive_size(meta)
+        links = derive_links(meta)
 
         date_part = slug.split("_", 1)[0]
         date_formatted = (
@@ -268,10 +322,6 @@ def main() -> int:
             "download": pdf_path.name,
             "image": str(image_rel).replace("\\", "/"),
         }
-        if size and size.get("max_width"):
-            entry["max_width"] = size["max_width"]
-        if size and size.get("max_height"):
-            entry["max_height"] = size["max_height"]
         if hashtags:
             entry["hashtags"] = hashtags
         processed_entries.append(entry)

@@ -1450,7 +1450,6 @@ def get_pdf_size(pdf_file: str) -> Dict[str, int]:
 def update_meta_file(
     pdf_file: str,
     links_by_page: Dict[int, List[Dict[str, str]]],
-    text_by_page: Dict[int, List[str]] = None,
     meta_file: str = None,
     preserve_existing_links: bool = False,
 ):
@@ -1460,52 +1459,44 @@ def update_meta_file(
     Args:
         pdf_file: PDFファイルのパス
         links_by_page: ページごとのリンク情報
-        text_by_page: ページごとのテキスト情報（オプション）
         meta_file: メタデータファイルのパス（指定されない場合は自動生成）
         preserve_existing_links: 既存のリンク情報を保持するかどうか
     """
     try:
-        # メタファイルが指定されていない場合は自動生成
         if meta_file is None:
-            # パスからファイル名を抽出
-            import os
-
             filename = os.path.basename(pdf_file)
             file_key = filename.replace(".pdf", "")
             meta_file = f"../pdf/{file_key}.yaml"
 
-        # PDFからサイズを取得
         pdf_size = get_pdf_size(pdf_file)
 
-        # 既存のメタデータファイルを読み込む（preserve_existing_linksがTrueの場合）
-        existing_links = {}
-        if preserve_existing_links:
-            import os
+        existing_data: Dict[str, Any] = {}
+        if os.path.exists(meta_file):
+            try:
+                with open(meta_file, "r", encoding="utf-8") as f:
+                    loaded = yaml.safe_load(f)
+                    if isinstance(loaded, dict):
+                        existing_data = loaded
+            except Exception as e:
+                logger.warning(f"既存のメタデータファイルの読み込みに失敗: {e}")
 
-            if os.path.exists(meta_file):
-                try:
-                    with open(meta_file, "r", encoding="utf-8") as f:
-                        existing_data = yaml.safe_load(f)
-                        if existing_data and "links" in existing_data:
-                            existing_links = existing_data["links"]
-                except Exception as e:
-                    logger.warning(f"既存のメタデータファイルの読み込みに失敗: {e}")
+        links_section: Dict[str, Any]
+        if preserve_existing_links and isinstance(existing_data.get("links"), dict):
+            links_section = existing_data["links"]
+        else:
+            links_section = {}
 
-        # メタデータを構築
-        meta_data = {"size": pdf_size, "links": existing_links}
+        meta_data: Dict[str, Any] = {}
+        if isinstance(existing_data, dict):
+            meta_data.update(existing_data)
 
-        # テキスト情報を追加
-        if text_by_page:
-            meta_data["text"] = {}
-            for page_num, paragraphs in text_by_page.items():
-                page_key = f"p{page_num}"
-                meta_data["text"][page_key] = paragraphs
+        meta_data["size"] = pdf_size
+        meta_data["links"] = links_section
 
         for page_num, links in links_by_page.items():
             page_key = f"p{page_num}"
             meta_data["links"][page_key] = links
 
-        # ファイルに保存
         with open(meta_file, "w", encoding="utf-8") as f:
             yaml.dump(
                 meta_data,
@@ -1538,13 +1529,6 @@ def main():
         "-m",
         help="更新するメタデータファイルのパス（指定しない場合は自動生成）",
     )
-    parser.add_argument(
-        "--extract-text",
-        "-t",
-        action="store_true",
-        help="テキストも抽出してメタデータに含める",
-    )
-
     args = parser.parse_args()
 
     if args.verbose:
@@ -1558,19 +1542,6 @@ def main():
 
     # リンクを抽出
     links_by_page = extract_links_from_pdf(args.pdf_file)
-
-    # テキストを抽出（オプション）
-    text_by_page = None
-    if args.extract_text:
-        logger.info("テキストを抽出中...")
-        text_by_page = extract_text_from_pdf(args.pdf_file)
-        if text_by_page:
-            total_paragraphs = sum(
-                len(paragraphs) for paragraphs in text_by_page.values()
-            )
-            logger.info(
-                f"テキスト抽出完了: {len(text_by_page)}ページから{total_paragraphs}個の段落を抽出しました"
-            )
 
     if not links_by_page:
         logger.info("リンクが見つかりませんでした")
@@ -1591,7 +1562,7 @@ def main():
 
     # メタデータファイルを更新
     if args.update_meta:
-        update_meta_file(args.pdf_file, links_by_page, text_by_page, args.meta_file)
+        update_meta_file(args.pdf_file, links_by_page, args.meta_file)
 
     # 画面に出力
     print(yaml_output)
