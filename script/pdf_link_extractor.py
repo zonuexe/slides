@@ -7,8 +7,7 @@ import os
 import sys
 import yaml
 import argparse
-from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List
 import logging
 
 try:
@@ -21,6 +20,18 @@ except ImportError:
     print("以下のコマンドでインストールしてください：")
     print("uv sync")
     sys.exit(1)
+
+
+class SingleQuotedDumper(yaml.SafeDumper):
+    """シングルクォートをデフォルトで使用するYAMLダンパー"""
+
+    def choose_scalar_style(self):
+        """スカラー値のスタイルを選択（シングルクォートを優先）"""
+        style = super().choose_scalar_style()
+        if style == '"':
+            return "'"
+        return style
+
 
 # ログ設定
 logging.basicConfig(
@@ -139,8 +150,53 @@ def format_to_yaml(
         yaml_data["pdf"]["links"][page_key] = links
 
     return yaml.dump(
-        yaml_data, default_flow_style=False, allow_unicode=True, sort_keys=False
+        yaml_data,
+        default_flow_style=False,
+        allow_unicode=True,
+        sort_keys=False,
+        Dumper=SingleQuotedDumper,
     )
+
+
+def update_meta_file(
+    pdf_file: str, links_by_page: Dict[int, List[Dict[str, str]]], meta_file: str = None
+):
+    """
+    PDFメタデータファイルを更新する
+
+    Args:
+        pdf_file: PDFファイルのパス
+        links_by_page: ページごとのリンク情報
+        meta_file: メタデータファイルのパス（指定されない場合は自動生成）
+    """
+    try:
+        # メタファイルが指定されていない場合は自動生成
+        if meta_file is None:
+            file_key = pdf_file.replace("pdf/", "").replace(".pdf", "")
+            meta_file = f"pdf/{file_key}.yaml"
+
+        # メタデータを構築
+        meta_data = {"size": {"max_width": 1024, "max_height": 768}, "links": {}}
+
+        for page_num, links in links_by_page.items():
+            page_key = f"p{page_num}"
+            meta_data["links"][page_key] = links
+
+        # ファイルに保存
+        with open(meta_file, "w", encoding="utf-8") as f:
+            yaml.dump(
+                meta_data,
+                f,
+                default_flow_style=False,
+                allow_unicode=True,
+                sort_keys=False,
+                Dumper=SingleQuotedDumper,
+            )
+
+        logger.info(f"メタデータファイルを更新しました: {meta_file}")
+
+    except Exception as e:
+        logger.error(f"メタデータファイルの更新でエラー: {e}")
 
 
 def main():
@@ -150,6 +206,14 @@ def main():
     parser.add_argument("pdf_file", help="処理するPDFファイルのパス")
     parser.add_argument(
         "--verbose", "-v", action="store_true", help="詳細なログを出力する"
+    )
+    parser.add_argument(
+        "--update-meta", "-u", action="store_true", help="メタデータファイルを更新する"
+    )
+    parser.add_argument(
+        "--meta-file",
+        "-m",
+        help="更新するメタデータファイルのパス（指定しない場合は自動生成）",
     )
 
     args = parser.parse_args()
@@ -182,6 +246,10 @@ def main():
         logger.info(
             f"処理完了: {len(links_by_page)}ページから{total_links}個のリンクを抽出しました"
         )
+
+    # メタデータファイルを更新
+    if args.update_meta:
+        update_meta_file(args.pdf_file, links_by_page, args.meta_file)
 
     # 画面に出力
     print(yaml_output)
