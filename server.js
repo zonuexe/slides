@@ -408,6 +408,16 @@ app.get("/slides/:slug/", async (c) => {
               <h1>${slide.title}</h1>
               <p>公開日: <time datetime="${slide.date}">${japaneseDate}</time></p>
 
+              ${slide.events && slide.events.length > 0 ? `
+                <div class="event-info">
+                  ${slide.events.map(event => {
+      const eventDate = new Date(event.presented_at);
+      const eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
+      return `<p><time datetime="${event.presented_at}">${eventJapaneseDate}</time>に${event.location}の${event.place}で開催された『<a href="${event.url}" target="_blank">${event.name}</a>』で${event.type}(${event.talk_duration}分)として発表しました。</p>`;
+    }).join('')}
+                </div>
+              ` : ''}
+
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
                   ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag">#${tag}</a>`).join('')}
