@@ -1,0 +1,1022 @@
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p31:
+  - url: php://stderr
+    title: stderr
+  - url: http://example.com/
+    title: Example Domain
+text:
+  p1:
+  - node: p
+    children:
+    - node: bold
+      content: 解体新書
+  - node: p
+    children:
+    - node: bold
+      content: Composer
+    - node: br
+    - node: bold
+      content: Anatomy of Composer, in Runtime
+  - node: p
+    children:
+    - node: text
+      content: 'PHPカンファレンス北海道出張版(仮) '
+  - node: p
+    children:
+    - node: text
+      content: '#phpcondo2017'
+  - node: p
+    children:
+    - node: text
+      content: 'PHPオフ会 '
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 砂川出身、北海道工業大学
+    - node: li
+      children:
+      - node: text
+        content: 2012年11月にピクシブ株式会社に入社
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+    - node: li
+      children:
+      - node: text
+        content: 入社前は自宅警備をしながらRuby書いてた
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+    - node: li
+      children:
+      - node: text
+        content: 2017年、PHPカンファレンス全部でしゃべった
+  p3: []
+  p4:
+  - node: p
+    children:
+    - node: bold
+      content: Composer
+    - node: br
+    - node: bold
+      content: 使ってますか？
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: Dependency Manager for PHP
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: ' 使ってない'
+  - node: p
+    children:
+    - node: text
+      content: A.
+  - node: p
+    children:
+    - node: text
+      content: ' FW経由で'
+  - node: p
+    children:
+    - node: text
+      content: B.
+    - node: br
+    - node: text
+      content: ' 直接使ってる'
+  - node: p
+    children:
+    - node: text
+      content: C.
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 分かれそう
+  p8:
+  - node: p
+    children:
+    - node: bold
+      content: 本日しない話
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: PHPのクラスのオート
+    - node: br
+    - node: text
+      content: ローディングの説明
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: プロジェクトでの
+    - node: br
+    - node: text
+      content: Composerの運用方法
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 過去の発表を
+    - node: br
+    - node: text
+      content: 読んでください
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: https://niconare.nicovideo.jp/watch/kn1371
+  p13: []
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: https://qiita.com/tadsan/items/86099d44d12f1103b0a0
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: https://qiita.com/tadsan/items/a78c9160418200e2d47a
+  p16:
+  - node: p
+    children:
+    - node: bold
+      content: Composerで
+    - node: br
+    - node: bold
+      content: できること
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: ざっくり
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: プロジェクトが
+  - node: p
+    children:
+    - node: text
+      content: 依存するパッケージを ダウンロードしてくる
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: プロジェクトが
+  - node: p
+    children:
+    - node: text
+      content: 依存するパッケージを
+    - node: br
+    - node: text
+      content: 利用可能にする
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 今日は実行時の
+    - node: br
+    - node: text
+      content: 話をします
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 基本はComposerの
+  - node: p
+    children:
+    - node: text
+      content: autoload.php
+  - node: p
+    children:
+    - node: text
+      content: を読み込
+  - node: p
+    children:
+    - node: text
+      content: めば準備完了する
+  p22: []
+  p23:
+  - node: p
+    children:
+    - node: bold
+      content: 復習
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: PHPスクリプト の読み込みかた
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: require, require_once include, include_once
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 場合によるけど
+    - node: br
+    - node: text
+      content: 基本だいたい同じ
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: どこから？
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: ファイルシステムの
+    - node: bold
+      content: 絶対パス
+    - node: text
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: 'A. '
+  - node: p
+    children:
+    - node: text
+      content: include_path
+  - node: p
+    children:
+    - node: text
+      content: からの
+    - node: bold
+      content: 相対パス
+  - node: p
+    children:
+    - node: text
+      content: 'B. '
+    - node: br
+    - node: bold
+      content: プロトコル
+    - node: text
+      content: ' (ラッパー)'
+  - node: p
+    children:
+    - node: text
+      content: 'C. '
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: ファイルシステムの絶対パス
+  - node: p
+    children:
+    - node: text
+      content: 'require ''/path/to/file.php''; '
+  - node: p
+    children:
+    - node: text
+      content: 'ファイルシステム内のフルパス '
+  - node: p
+    children:
+    - node: text
+      content: 'require __DIR__.''/../Klass.php''; '
+  - node: p
+    children:
+    - node: text
+      content: __DIR__
+  - node: p
+    children:
+    - node: text
+      content: マジック定数 で
+    - node: br
+    - node: text
+      content: スクリプトのディレクトリが入る
+  p30:
+  - node: p
+    children:
+    - node: bold
+      content: include_path
+  - node: p
+    children:
+    - node: text
+      content: からの
+    - node: bold
+      content: 相対パス
+  - node: p
+    children:
+    - node: text
+      content: include_path
+  - node: p
+    children:
+    - node: text
+      content: 'にディレクトリを追加する '
+  - node: p
+    children:
+    - node: text
+      content: '"."   '
+  - node: p
+    children:
+    - node: text
+      content: だいたいデフォルトに  が入ってる
+  - node: p
+    children:
+    - node: text
+      content: 'require ''Hoge.php''; '
+  - node: p
+    children:
+    - node: text
+      content: 'require ''Fuga/Piyo.php''; '
+  - node: p
+    children:
+    - node: text
+      content: ディレクトリ内も探索される
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: プロトコル(ラッパー)
+  - node: p
+    children:
+    - node: text
+      content: 'fopen(''php://stderr'', ''r'') '
+  - node: p
+    children:
+    - node: text
+      content: とか
+  - node: p
+    children:
+    - node: text
+      content: file_get_contents('http://example.com/')
+  - node: p
+    children:
+    - node: text
+      content: とかやるための仕組み
+  - node: p
+    children:
+    - node: text
+      content: ……が、セキュリティの懸念もあるの
+  - node: p
+    children:
+    - node: text
+      content: 'php.ini '
+  - node: p
+    children:
+    - node: text
+      content: で、デフォルトでは  で
+  - node: p
+    children:
+    - node: text
+      content: allow_url_include = Off
+  - node: p
+    children:
+    - node: text
+      content: ' になってる'
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: 改めて
+  - node: p
+    children:
+    - node: bold
+      content: Composer
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: オートロード 機能ついてる
+  p34: []
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: どうやって
+    - node: br
+    - node: text
+      content: 読み込んでるの？
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: autoload.phpを
+    - node: br
+    - node: text
+      content: 読もう
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: みなさまの手元のComposer
+  - node: p
+    children:
+    - node: text
+      content: プロジェクトを
+    - node: br
+    - node: text
+      content: 見比べながらお聞きください
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: '% composer --version '
+    - node: br
+    - node: text
+      content: Composer version 1.5.2 2017-09-11 16:59:25
+  - node: p
+    children:
+    - node: text
+      content: '% composer install --no-dev --prefer-dist'
+  p39:
+  - node: p
+    children:
+    - node: bold
+      content: vendor/autoload.php
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '// autoload.php @generated by Composer '
+  - node: p
+    children:
+    - node: text
+      content: 'require_once __DIR__ . ''/composer/autoload_real.php''; '
+  - node: p
+    children:
+    - node: text
+      content: 'return '
+    - node: br
+    - node: text
+      content: 'ComposerAutoloaderInitbed8ae7d525347237f9cdad08c8930b3::getLoader(); '
+  p40:
+  - node: p
+    children:
+    - node: bold
+      content: vendor/autoload.php
+  - node: p
+    children:
+    - node: text
+      content: 1.autoload_real.php
+  - node: p
+    children:
+    - node: text
+      content: 'を読み込む '
+  - node: p
+    children:
+    - node: text
+      content: '2.謎のクラスの静的メソッドを実行 '
+  - node: p
+    children:
+    - node: text
+      content: たぶん変なバイトキャッシュを
+  - node: p
+    children:
+    - node: text
+      content: 残さないためにcontent-hashが付いた
+    - node: br
+    - node: text
+      content: クラス名
+  p41: []
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_real.php
+  - node: p
+    children:
+    - node: text
+      content: 1.$loader
+  - node: p
+    children:
+    - node: text
+      content: 'が生成済みなら返すだけ '
+  - node: p
+    children:
+    - node: text
+      content: 2.クラスローダーを読み込むだけのクラス
+    - node: br
+    - node: text
+      content: ローダーを登録して、使ったらすぐに
+    - node: br
+    - node: text
+      content: 'spl_autoload_unregister する '
+  - node: p
+    children:
+    - node: text
+      content: なんか環境依存の
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ワークアラウンドっぽい気がする
+  p43:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_real.php
+  - node: p
+    children:
+    - node: text
+      content: 'if (null !== self::$loader) { '
+    - node: br
+    - node: text
+      content: '    return self::$loader; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: // Composer\Autoload クラスを読み込むだけのローダー
+  - node: p
+    children:
+    - node: text
+      content: 'spl_autoload_register(array(''ComposerAutoloaderInitbedRy'', ''loadClassLoader''), '
+  - node: p
+    children:
+    - node: text
+      content: true, true);
+    - node: br
+    - node: text
+      content: self::$loader = $loader = new \Composer\Autoload\ClassLoader(); spl_autoload_unregister(array('ComposerAutoloaderInitbedRy',
+        'loadClassLoader'));
+  p44:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_real.php
+  - node: p
+    children:
+    - node: text
+      content: '1.'
+    - node: br
+    - node: text
+      content: PHPの実行時環境によってクラス定義の
+    - node: br
+    - node: text
+      content: '読み込みを変更 '
+  - node: p
+    children:
+    - node: text
+      content: '2.'
+    - node: br
+    - node: text
+      content: 'autoload_static.php VS 三兄弟 '
+  - node: p
+    children:
+    - node: text
+      content: PHP5.6以上で、HHVMじゃなくて、
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: zend_loader_file_encoded()が無効なら
+      - node: br
+      - node: text
+        content: autoload_staticが利用される
+  p45:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_real.php
+  - node: p
+    children:
+    - node: text
+      content: $useStaticLoader = PHP_VERSION_ID >= 50600 && !defined('HHVM_VERSION')
+        &&
+  - node: p
+    children:
+    - node: text
+      content: '     (!function_exists(''zend_loader_file_encoded'') || !zend_loader_file_encoded()); '
+    - node: br
+    - node: text
+      content: 'if ($useStaticLoader) { '
+    - node: br
+    - node: text
+      content: '    require_once __DIR__ . ''/autoload_static.php''; '
+    - node: br
+    - node: text
+      content: '    call_user_func(\Composer\Autoload\ComposerStaticInitbedRy::getInitializer($loader)); '
+    - node: br
+    - node: text
+      content: '} else { '
+    - node: br
+    - node: text
+      content: '    $map = require __DIR__ . ''/autoload_namespaces.php''; '
+    - node: br
+    - node: text
+      content: '    foreach ($map as $namespace => $path) { '
+    - node: br
+    - node: text
+      content: '        $loader->set($namespace, $path); '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    $map = require __DIR__ . ''/autoload_psr4.php''; '
+    - node: br
+    - node: text
+      content: '    foreach ($map as $namespace => $path) {         $loader->setPsr4($namespace,
+        $path); '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    $classMap = require __DIR__ . ''/autoload_classmap.php''; '
+    - node: br
+    - node: text
+      content: '    if ($classMap) { '
+    - node: br
+    - node: text
+      content: '        $loader->addClassMap($classMap); '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '}'
+  p46:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_static.php
+  - node: p
+    children:
+    - node: text
+      content: 'プロジェクトの依存パッケージと、 composer installのオプションに依存 '
+  - node: p
+    children:
+    - node: text
+      content: 'デフォルトではComposer.jsonの 定義通りのローディングを生成 '
+  - node: p
+    children:
+    - node: text
+      content: --optimize-autoloader オプションで
+    - node: br
+    - node: text
+      content: クラスマップを強制で生成する
+  p47:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_static.php (PSR-4のみ)
+  - node: p
+    children:
+    - node: text
+      content: '<?php // autoload_static.php @generated by Composer '
+    - node: br
+    - node: text
+      content: 'namespace Composer\Autoload; '
+    - node: br
+    - node: text
+      content: 'class ComposerStaticInitbed8ae7d525347237f9cdad08c8930b3 { '
+    - node: br
+    - node: text
+      content: '    public static $prefixLengthsPsr4 = array ( '
+    - node: br
+    - node: text
+      content: '        ''T'' =>          array ( '
+    - node: br
+    - node: text
+      content: '            ''Teto\\'' => 5, '
+    - node: br
+    - node: text
+      content: '        ), '
+    - node: br
+    - node: text
+      content: '    ); '
+    - node: br
+    - node: text
+      content: '    public static $prefixDirsPsr4 = array ( '
+    - node: br
+    - node: text
+      content: '        ''Teto\\'' =>  '
+    - node: br
+    - node: text
+      content: '        array ( '
+    - node: br
+    - node: text
+      content: '            0 => __DIR__ . ''/../..'' . ''/src'', '
+    - node: br
+    - node: text
+      content: '        ), '
+    - node: br
+    - node: text
+      content: '    ); '
+    - node: br
+    - node: text
+      content: '    public static function getInitializer(ClassLoader $loader) { '
+    - node: br
+    - node: text
+      content: '        return \Closure::bind(function () use ($loader) { '
+    - node: br
+    - node: text
+      content: '            $loader->prefixLengthsPsr4 = ComposerStaticInitbed8ae7d525347237f9cdad08c8930b3::$prefixLengthsPsr4; '
+    - node: br
+    - node: text
+      content: '            $loader->prefixDirsPsr4 = ComposerStaticInitbed8ae7d525347237f9cdad08c8930b3::$prefixDirsPsr4; '
+  - node: p
+    children:
+    - node: text
+      content: '        }, null, ClassLoader::class); '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '}'
+  p48:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_static.php (optimized)
+  - node: p
+    children:
+    - node: text
+      content: '    public static $classMap = array ( '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\Helper'' => __DIR__ . ''/../..'' . ''/src/Object/Helper.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\MethodAlias'' => __DIR__ . ''/../..'' . ''/src/Object/MethodAlias.php'',         ''Teto\\Object\\ObjectArray''
+        => __DIR__ . ''/../..'' . ''/src/Object/ObjectArray.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\PrivateGetter'' => __DIR__ . ''/../..'' .
+        ''/src/Object/PrivateGetter.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\PrivateStrictGetter'' => __DIR__ . ''/../..''
+        . ''/src/Object/'
+    - node: br
+    - node: text
+      content: 'PrivateStrictGetter.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\PropertyLikeMethod'' => __DIR__ . ''/../..''
+        . ''/src/Object/'
+    - node: br
+    - node: text
+      content: 'PropertyLikeMethod.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\ReadOnly'' => __DIR__ . ''/../..'' . ''/src/Object/ReadOnly.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\ToArrayInterface'' => __DIR__ . ''/../..''
+        . ''/src/Object/'
+    - node: br
+    - node: text
+      content: 'ToArrayInterface.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\TypeAssert'' => __DIR__ . ''/../..'' . ''/src/Object/TypeAssert.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\TypeDefinition'' => __DIR__ . ''/../..'' .
+        ''/src/Object/'
+    - node: br
+    - node: text
+      content: 'TypeDefinition.php'', '
+    - node: br
+    - node: text
+      content: '        ''Teto\\Object\\TypedProperty'' => __DIR__ . ''/../..'' .
+        ''/src/Object/TypedProperty.php'', '
+    - node: br
+    - node: text
+      content: '    );'
+  p49:
+  - node: p
+    children:
+    - node: bold
+      content: autoload_static.phpの大事なとこ
+  - node: p
+    children:
+    - node: text
+      content: Closure::bind()
+  - node: p
+    children:
+    - node: text
+      content: でスコープ束縛して、
+  - node: p
+    children:
+    - node: text
+      content: メソッド呼び出しをけちりながら privateメンバーにセットしてる
+  - node: p
+    children:
+    - node: text
+      content: 'return \Closure::bind(function () use ($loader) { '
+    - node: br
+    - node: text
+      content: '    $loader->prefixLengthsPsr4 = ComposerStaticInitbedRy::$prefixLengthsPsr4; '
+    - node: br
+    - node: text
+      content: '    $loader->prefixDirsPsr4 = ComposerStaticInitbedRy::$prefixDirsPsr4; '
+    - node: br
+    - node: text
+      content: '    $loader->classMap = ComposerStaticInitbedRy::$classMap; '
+  - node: p
+    children:
+    - node: text
+      content: '}, null, ClassLoader::class);'
+  p50:
+  - node: p
+    children:
+    - node: bold
+      content: ClassLoader.php
+  - node: p
+    children:
+    - node: text
+      content: 'クラスローダーの実装本体 '
+  - node: p
+    children:
+    - node: text
+      content: いままで設定された情報をもとにクラス
+    - node: br
+    - node: text
+      content: '名の解決・ファイルロードをする '
+  - node: p
+    children:
+    - node: text
+      content: 動的に変動する部分は分離されてるので、
+  - node: p
+    children:
+    - node: text
+      content: バイトコードがキャッシュされても 特に問題なさそうに作ってるっぽい
+  p51:
+  - node: p
+    children:
+    - node: bold
+      content: ClassLoader.php
+  - node: p
+    children:
+    - node: text
+      content: 'spl_autoload_register()で呼ばれる '
+  - node: p
+    children:
+    - node: text
+      content: 'クラスマップにあったらそれを読む '
+  - node: p
+    children:
+    - node: text
+      content: 'なかったらpsr-4, psr-2を読む '
+  - node: p
+    children:
+    - node: text
+      content: PEARに依存するなどの場合は
+    - node: br
+    - node: text
+      content: include_pathを読む
+  p52:
+  - node: p
+    children:
+    - node: bold
+      content: これによって
+    - node: text
+      content: ' '
+    - node: bold
+      content: 得られる知見
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: Composerは、いろんなPHP のバージョンとか実行環境
+    - node: br
+    - node: text
+      content: で動くように書かれてる
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 実行時にcomposer.jsonとか composer.lockは使ってなく
+    - node: br
+    - node: text
+      content: て、静的なPHPスクリプト
+    - node: br
+    - node: text
+      content: ファイルが書き出される
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: composer install
+  - node: p
+    children:
+    - node: text
+      content: サーバーで
+    - node: br
+    - node: text
+      content: の必要はなく、手元でインス トールしてvendorディレクト
+    - node: br
+    - node: text
+      content: リごと転送してやればいい
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: よくある誤解
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 「レンタルサーバーの最安プ
+    - node: br
+    - node: text
+      content: ランでPHP動かしてるから
+    - node: br
+    - node: text
+      content: Composer入らないんだ…」
+    - node: br
+    - node: text
+      content: といったことは
+    - node: bold
+      content: ない
+  p58:
+  - node: p
+    children:
+    - node: bold
+      content: 本筋から
+    - node: text
+      content: ' '
+    - node: bold
+      content: 外れた話
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 'Autoloader '
+    - node: br
+    - node: text
+      content: 'Optimization '
+    - node: br
+    - node: text
+      content: https://getcomposer.org/doc/articles/autoloader-optimization.md
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: Level 1
+  - node: p
+    children:
+    - node: text
+      content: 本番運用時は
+  - node: p
+    children:
+    - node: text
+      content: が基本
+  - node: p
+    children:
+    - node: text
+      content: --optimize-autoloader
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: ……そのほかは
+  - node: p
+    children:
+    - node: text
+      content: 効果あるのかな？ (私は使ってないです)
+  p62:
+  - node: p
+    children:
+    - node: bold
+      content: 予告
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: PHP AdventCalendar 2017では
+    - node: br
+    - node: text
+      content: Composerとか全然考慮されてない (zipで配布されてる)SDKをむりやり Composerで管理する話を書きます

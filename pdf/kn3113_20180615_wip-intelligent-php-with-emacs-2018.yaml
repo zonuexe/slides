@@ -1,0 +1,936 @@
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p2:
+  - url: https://github.com/ejmr/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p6:
+  - url: https://medium.com/@tadsan/emacs-php-mode%E3%82%92%E5%BC%95%E3%81%8D%E7%B6%99%E3%81%8E%E3%81%BE%E3%81%97%E3%81%9F-a2aac7336d17
+    title: Emacs PHP Modeを引き継ぎました. もろもろの経緯があって、EmacsのPHP… | by USAMI Kenta @tadsan
+      | Medium
+  p7:
+  - url: https://github.com/ejmr/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p27:
+  - url: https://niconare.nicovideo.jp/watch/kn1189
+    title: niconare.nicovideo.jp
+  p61:
+  - url: http://tech.mercari.com/entry/phpstan
+    title: tech.mercari.com
+  p66:
+  - url: http://phpactor.github.io/phpactor/
+    title: phpactor.github.io
+  p76:
+  - url: https://github.com/emacs-php/phpstan.el
+    title: 'GitHub - emacs-php/phpstan.el: Interface to PHPStan (PHP static analyzer)'
+  p77:
+  - url: https://github.com/emacs-php/phpactor.el
+    title: 'GitHub - emacs-php/phpactor.el: Interface to Phpactor (an intelligent
+      code-completion and refactoring tool for PHP)'
+  p79:
+  - url: https://github.com/emacs-php/php-suite
+    title: 'GitHub - emacs-php/php-suite: Emacs is a powerful IDE for PHP'
+  p88:
+  - url: https://www.pixiv.net/fanbox/creator/105589
+    title: にゃんだーすわん｜pixivFANBOX
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 'WIP:'
+  - node: p
+    children:
+    - node: text
+      content: で
+    - node: bold
+      content: インテリジェントな
+  - node: p
+    children:
+    - node: text
+      content: Emacs
+    - node: br
+    - node: text
+      content: '  コーディング'
+  - node: p
+    children:
+    - node: text
+      content: 'PHP 2018 '
+    - node: bold
+      content: Intelligent PHP coding in Emacs.
+  - node: p
+    children:
+    - node: text
+      content: '2018-06-16 '
+    - node: bold
+      content: '#phpconfuk_rej '
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス福岡2018前夜祭リジェクトコン
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ピクシブ株式会社 pixiv運営本部
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeのメンテナ引き継ぎました
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 好きなリスプはEmacs Lispです
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: We are hiring!
+  p5:
+  - node: p
+    children:
+    - node: bold
+      content: 近況報告
+  p6: []
+  p7: []
+  p8:
+  - node: p
+    children:
+    - node: bold
+      content: はじめに
+    - node: br
+    - node: bold
+      content: お断り
+  p9:
+  - node: p
+    children:
+    - node: bold
+      content: 私は会社では
+  - node: p
+    children:
+    - node: bold
+      content: PhpStormの利用を
+  - node: p
+    children:
+    - node: bold
+      content: 推進してます
+    - node: br
+    - node: bold
+      content: (当然経費で導入)
+  p10:
+  - node: p
+    children:
+    - node: bold
+      content: 今回の発表
+  - node: p
+    children:
+    - node: text
+      content: 現段階は
+  - node: p
+    children:
+    - node: bold
+      content: WIP
+  - node: p
+    children:
+    - node: bold
+      content: (作業中)
+  p11:
+  - node: p
+    children:
+    - node: bold
+      content: 対象者
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: PhpStorm以外で
+    - node: br
+    - node: bold
+      content: 開発したい各位
+  p13:
+  - node: p
+    children:
+    - node: bold
+      content: 特に
+  - node: p
+    children:
+    - node: bold
+      content: Vimmer
+    - node: text
+      content: ' '
+    - node: bold
+      content: Emacser
+  p14:
+  - node: p
+    children:
+    - node: bold
+      content: それ以外の
+  - node: p
+    children:
+    - node: bold
+      content: エディタ拡張
+    - node: br
+    - node: bold
+      content: 開発者
+  p15:
+  - node: p
+    children:
+    - node: bold
+      content: 改めて
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 'WIP:'
+  - node: p
+    children:
+    - node: text
+      content: で
+    - node: bold
+      content: インテリジェントな
+  - node: p
+    children:
+    - node: text
+      content: Emacs
+    - node: br
+    - node: text
+      content: '  コーディング'
+  - node: p
+    children:
+    - node: text
+      content: 'PHP 2018 '
+    - node: bold
+      content: Intelligent PHP coding in Emacs.
+  - node: p
+    children:
+    - node: text
+      content: '2018-06-16 '
+    - node: bold
+      content: '#phpconfuk_rej '
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス福岡2018前夜祭リジェクトコン
+  p17:
+  - node: p
+    children:
+    - node: bold
+      content: みなさん
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: IDEでコード
+    - node: br
+    - node: bold
+      content: 書いてますか？
+  p19:
+  - node: p
+    children:
+    - node: bold
+      content: PhpStorm?
+  p20:
+  - node: p
+    children:
+    - node: bold
+      content: Vim?
+    - node: br
+    - node: bold
+      content: Emacs?
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: Sublime Text?
+    - node: br
+    - node: bold
+      content: Atom? VSCode?
+  p22:
+  - node: p
+    children:
+    - node: bold
+      content: Eclipse?
+    - node: br
+    - node: bold
+      content: NetBeans?
+  p23:
+  - node: p
+    children:
+    - node: bold
+      content: 秀丸?
+    - node: br
+    - node: bold
+      content: サクラエディタ?
+  p24:
+  - node: p
+    children:
+    - node: bold
+      content: 私はEmacs
+    - node: text
+      content: ' ＼(^o^)／'
+  p25:
+  - node: p
+    children:
+    - node: bold
+      content: 理由：
+    - node: br
+    - node: text
+      content: 僕がハックできるエディタ
+  - node: p
+    children:
+    - node: text
+      content: がEmacsだから
+    - node: br
+    - node: text
+      content: (PhpStormは自由にハック
+    - node: br
+    - node: text
+      content: できない)
+  p26:
+  - node: p
+    children:
+    - node: bold
+      content: これまでの
+    - node: br
+    - node: bold
+      content: あらすじ
+  p27: []
+  p28:
+  - node: p
+    children:
+    - node: bold
+      content: 要約：
+    - node: br
+    - node: text
+      content: Lispパッケージを入れ ると、いい感じのナビ ゲーションができるよ
+  p29: []
+  p30:
+  - node: p
+    children:
+    - node: bold
+      content: 要約：
+    - node: br
+    - node: text
+      content: Emacsは高性能
+    - node: br
+    - node: text
+      content: 竹槍だぞ
+  p31: []
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: 要約：
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm最高！
+    - node: br
+    - node: text
+      content: いちばん好きなStorm
+    - node: br
+    - node: text
+      content: です
+  p33:
+  - node: p
+    children:
+    - node: bold
+      content: エディタくらい
+    - node: br
+    - node: bold
+      content: 好きなの選びたい
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 勝つとか負けると
+    - node: br
+    - node: text
+      content: かの話ではない
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: ' エディタ選択は 専門職たるエンジ ニアの裁量の範疇'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 本当にそれでエラー
+  - node: p
+    children:
+    - node: text
+      content: を起こさない
+    - node: br
+    - node: text
+      content: 自信があるならな
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: 僕は自信がない
+  p38:
+  - node: p
+    children:
+    - node: bold
+      content: インテリジェント
+    - node: text
+      content: ' '
+    - node: bold
+      content: なIDEができること
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 定義ジャンプ
+  - node: p
+    children:
+    - node: text
+      content: リファクタリング
+  - node: p
+    children:
+    - node: text
+      content: インラインエラーチェック
+  - node: p
+    children:
+    - node: text
+      content: ' - syntax error/ 型の不整合'
+  - node: p
+    children:
+    - node: text
+      content: ' - 未定義変数/未定義クラス'
+    - node: br
+    - node: text
+      content: … etc.
+  p40:
+  - node: p
+    children:
+    - node: bold
+      content: 定義ジャンプ
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: 高速なコードリー ディングには必須
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: リファクタリング
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 効率よく仕様を変
+    - node: br
+    - node: text
+      content: 更するのに必須
+  p44:
+  - node: p
+    children:
+    - node: bold
+      content: インライン
+    - node: br
+    - node: bold
+      content: エラーチェック
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 文法違反のチェック
+  - node: p
+    children:
+    - node: text
+      content: ごときに
+    - node: br
+    - node: text
+      content: 時間をとりたくない
+  p46: []
+  p47:
+  - node: p
+    children:
+    - node: bold
+      content: あなたの
+  - node: p
+    children:
+    - node: bold
+      content: エディタは
+    - node: text
+      content: ' '
+    - node: bold
+      content: できますか?
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: 定義ジャンプ ←タグジャンプ
+  - node: p
+    children:
+    - node: text
+      content: リファクタリング ← sed
+  - node: p
+    children:
+    - node: text
+      content: インラインエラーチェック
+  - node: p
+    children:
+    - node: text
+      content: ' - syntax error/ 型の不整合'
+  - node: p
+    children:
+    - node: text
+      content: ' - 未定義変数/未定義クラス'
+    - node: br
+    - node: text
+      content: … etc. ↑ php -l
+  p49:
+  - node: p
+    children:
+    - node: bold
+      content: タグファイルってシ
+    - node: text
+      content: ' '
+    - node: bold
+      content: ンボル検索してジャ
+    - node: text
+      content: ' '
+    - node: bold
+      content: ンプするだけじゃな
+    - node: br
+    - node: bold
+      content: いの…
+  p50:
+  - node: p
+    children:
+    - node: bold
+      content: おまいは
+  - node: p
+    children:
+    - node: bold
+      content: それで
+    - node: text
+      content: ' '
+    - node: bold
+      content: 満足か?
+  p51:
+  - node: p
+    children:
+    - node: bold
+      content: Photoshop
+  p52:
+  - node: p
+    children:
+    - node: bold
+      content: それはそれでいい
+  p53:
+  - node: p
+    children:
+    - node: bold
+      content: 手に馴染んだエディタ
+  - node: p
+    children:
+    - node: text
+      content: vs
+    - node: bold
+      content: ' '
+    - node: br
+    - node: bold
+      content: 高性能IDE
+  p54:
+  - node: p
+    children:
+    - node: bold
+      content: エディタ選択の自由を守る
+    - node: text
+      content: ' '
+    - node: bold
+      content: には自分自信がPHPスキル
+    - node: text
+      content: ' '
+    - node: bold
+      content: を磨き、IDEを選択せずに
+    - node: text
+      content: ' '
+    - node: bold
+      content: 開発することで損ねないこ
+    - node: text
+      content: ' '
+    - node: bold
+      content: との証を立てねばならない。
+  p55:
+  - node: p
+    children:
+    - node: bold
+      content: 強いIDEの生産性を凌駕す
+    - node: br
+    - node: bold
+      content: るには、開発者各位がエディ
+    - node: text
+      content: ' '
+    - node: bold
+      content: タスキルとコーディングス
+    - node: text
+      content: ' '
+    - node: bold
+      content: キルを磨かなければいけな
+    - node: br
+    - node: bold
+      content: い！！！
+  p56:
+  - node: p
+    children:
+    - node: bold
+      content: ほんとに
+    - node: br
+    - node: bold
+      content: それでいいのか
+  p57:
+  - node: p
+    children:
+    - node: bold
+      content: 精密リファクタは
+    - node: text
+      content: ' '
+    - node: bold
+      content: PhpStormの独擅場
+  p58:
+  - node: p
+    children:
+    - node: bold
+      content: 圧倒的じゃないか、
+    - node: br
+    - node: bold
+      content: 我が軍は。
+  p59:
+  - node: p
+    children:
+    - node: bold
+      content: 戦力差を
+    - node: text
+      content: ' '
+    - node: bold
+      content: 埋めよう
+  p60:
+  - node: p
+    children:
+    - node: bold
+      content: PHPStan
+  p61: []
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: 実は、
+    - node: bold
+      content: PHPStan
+    - node: text
+      content: は
+    - node: br
+    - node: text
+      content: 軽いのでインライン
+    - node: br
+    - node: text
+      content: エラー検査に
+    - node: bold
+      content: 最適
+  p63:
+  - node: p
+    children:
+    - node: bold
+      content: この検査結果をエディ
+    - node: text
+      content: ' '
+    - node: bold
+      content: タでインライン表示で
+    - node: br
+    - node: bold
+      content: きれば、だいたい
+    - node: br
+    - node: bold
+      content: PhpStormっぽくなる！
+  p64:
+  - node: p
+    children:
+    - node: bold
+      content: PHPStan 0.9.2と
+  - node: p
+    children:
+    - node: bold
+      content: 現masterブランチは
+    - node: text
+      content: ' '
+    - node: bold
+      content: 互換性がないので注意
+  p65:
+  - node: p
+    children:
+    - node: bold
+      content: Phpactor
+  p66: []
+  p67:
+  - node: p
+    children:
+    - node: bold
+      content: リファクタリング
+  - node: p
+    children:
+    - node: bold
+      content: ＆
+    - node: br
+    - node: bold
+      content: ナビゲーション・補完
+  p68:
+  - node: p
+    children:
+    - node: bold
+      content: エディタ中立な
+    - node: br
+    - node: bold
+      content: 設計
+  p69:
+  - node: p
+    children:
+    - node: bold
+      content: 公式では
+  - node: p
+    children:
+    - node: bold
+      content: Vimプラグイン
+    - node: br
+    - node: bold
+      content: 同梱
+  p70:
+  - node: p
+    children:
+    - node: bold
+      content: リファクタリング機能につ
+    - node: text
+      content: ' '
+    - node: bold
+      content: いては、まだPhpStormに
+  - node: p
+    children:
+    - node: bold
+      content: 匹敵するほどの能力はない
+    - node: br
+    - node: bold
+      content: (開発中・発展途上)
+  p71:
+  - node: p
+    children:
+    - node: bold
+      content: 現状報告
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: 自分で問題解決 できる
+    - node: bold
+      content: 人柱向け
+  p73:
+  - node: p
+    children:
+    - node: bold
+      content: まだ万人にEmacs
+    - node: text
+      content: ' '
+    - node: bold
+      content: を薦められる段階
+    - node: br
+    - node: bold
+      content: にはなってない
+  p74:
+  - node: p
+    children:
+    - node: bold
+      content: 理由：
+  - node: p
+    children:
+    - node: text
+      content: プロジェクトごと設定必要
+  - node: p
+    children:
+    - node: text
+      content: インストールがめんどい
+  p75:
+  - node: p
+    children:
+    - node: bold
+      content: インストールめんどい件：
+    - node: text
+      content: ' まだPharアーカイブでは配'
+  - node: p
+    children:
+    - node: text
+      content: 布されてない
+  - node: p
+    children:
+    - node: text
+      content: とかで入れ
+  - node: p
+    children:
+    - node: text
+      content: composer global るのが比較的に楽
+  p76: []
+  p77: []
+  p78:
+  - node: p
+    children:
+    - node: bold
+      content: そして
+  p79: []
+  p80:
+  - node: p
+    children:
+    - node: bold
+      content: この構想については
+    - node: text
+      content: ' '
+    - node: bold
+      content: 眠くない夜に書きます
+  p81:
+  - node: p
+    children:
+    - node: bold
+      content: いますぐ利用したい
+    - node: text
+      content: ' '
+    - node: bold
+      content: Emacsユーザー向け
+  p82:
+  - node: p
+    children:
+    - node: text
+      content: MELPAで
+  - node: p
+    children:
+    - node: text
+      content: ﬂycheck-phpstan
+  - node: p
+    children:
+    - node: text
+      content: を入れて、
+    - node: br
+    - node: text
+      content: README通りに設定
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: MELPAで
+  - node: p
+    children:
+    - node: text
+      content: phpactor
+  - node: p
+    children:
+    - node: text
+      content: を入れて、設定し
+  - node: p
+    children:
+    - node: text
+      content: company-phpactor
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: 詳しくは直接聞 いてくれ！！
+  p85:
+  - node: p
+    children:
+    - node: bold
+      content: tadsanのやる気を
+    - node: text
+      content: ' '
+    - node: bold
+      content: アップさせる方法
+  p86:
+  - node: p
+    children:
+    - node: bold
+      content: やらなきゃいけない
+    - node: text
+      content: ' '
+    - node: bold
+      content: ことドキュメント化
+    - node: text
+      content: ' '
+    - node: bold
+      content: の必要はわかってる…
+  p87:
+  - node: p
+    children:
+    - node: bold
+      content: 夜は眠いし
+    - node: br
+    - node: bold
+      content: やる気が出ない
+  p88: []
+  p89:
+  - node: p
+    children:
+    - node: text
+      content: tadsan先生の
+    - node: br
+    - node: text
+      content: 次回作にご期待
+    - node: br
+    - node: text
+      content: ください
+  p90:
+  - node: p
+    children:
+    - node: bold
+      content: 課金は成果を
+    - node: br
+    - node: bold
+      content: 約束するものでは
+    - node: br
+    - node: bold
+      content: ございません
+  p91:
+  - node: p
+    children:
+    - node: bold
+      content: あるいは
+  p92:
+  - node: p
+    children:
+    - node: text
+      content: お前が
+  - node: p
+    children:
+    - node: text
+      content: Emacs Lisperに
+    - node: br
+    - node: text
+      content: なるんだよ

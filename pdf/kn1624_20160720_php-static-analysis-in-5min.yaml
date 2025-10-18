@@ -1,0 +1,417 @@
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p15:
+  - url: http://algo13.net/php/tips/static-analysis.html
+    title: 'PHP: PHPの静的解析(php -l, phpcs, PHPCompatibility, etc ...) — Algo13 2016.04.11
+      ドキュメント'
+    archive: https://web.archive.org/web/20160516214151/http://algo13.net/php/tips/static-analysis.html
+text:
+  p1:
+  - node: p
+    children:
+    - node: bold
+      content: 5分でわかる静的解析入門
+  - node: p
+    children:
+    - node: bold
+      content: Learn PHP static analysis in 5 min.
+  - node: p
+    children:
+    - node: bold
+      content: '2016-07-20 PHP BLT #5'
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: GitHub/Packagistでは id:zonuexe
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Ruby書いてたら、何の因果かPHPを書く仕事に
+    - node: li
+      children:
+      - node: text
+        content: 好きな言葉はメタプログラミングです
+  p3:
+  - node: p
+    children:
+    - node: bold
+      content: さて
+  p4:
+  - node: p
+    children:
+    - node: bold
+      content: 敵を知れば百戦殆ふからず
+  - node: p
+    children:
+    - node: text
+      content: プログラムを実際に動かさずして、
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ソフトウェアの性質を把握する
+      - node: br
+      - node: text
+        content: 'いろんなツールとか手法がある '
+  - node: p
+    children:
+    - node: text
+      content: 人間がPull Requestのdiffを見て
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: レビューするのも一種の静的解析
+  - node: p
+    children:
+    - node: text
+      content: ユニットテストは実際に動かすので
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 動的検査の一種
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: wc -l **/*.php
+  p6:
+  - node: p
+    children:
+    - node: bold
+      content: wc -l **/*.php
+  - node: p
+    children:
+    - node: bold
+      content: 'Unixの標準コマンド '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: お前は何を言ってるんだ
+    - node: li
+      children:
+      - node: text
+        content: -l
+      - node: br
+      - node: bold
+        content: 'ファイルの行数を測る ( ) '
+    - node: li
+      children:
+      - node: text
+        content: -c
+      - node: br
+      - node: bold
+        content: バイト数を測る ( )
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: php -l a.php
+  p8:
+  - node: p
+    children:
+    - node: bold
+      content: php -l target.php
+  - node: p
+    children:
+    - node: text
+      content: コードがSyntax Errorではないか
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 検査する
+  - node: p
+    children:
+    - node: text
+      content: 実際に運用されるサーバーと同じ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: バージョンを利用する
+      - node: br
+      - node: text
+        content: 'git ls-files | grep ''\.php$'' | '
+    - node: li
+      children:
+      - node: text
+        content: xargs -IFILE -n1 php -l FILE
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: token_get_all()
+  p10:
+  - node: p
+    children:
+    - node: bold
+      content: token_get_all()
+  - node: p
+    children:
+    - node: text
+      content: 'PHPの標準関数 (要tokenizer) '
+  - node: p
+    children:
+    - node: text
+      content: スクリプトを構文要素ごとに
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 切り分けてくれる(だけ)
+      - node: br
+      - node: text
+        content: '構文解析はしてくれない… (重要) '
+    - node: li
+      children:
+      - node: text
+        content: 目的を集中すれば小さなパーサーは
+    - node: li
+      children:
+      - node: text
+        content: 意外に書けた
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: preg_match()
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: preg_match()
+  - node: p
+    children:
+    - node: text
+      content: 'PHPの標準関数（最終兵器） '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 雑な正規表現でも意外と機能する
+    - node: li
+      children:
+      - node: text
+        content: 正規表現パターンなら誰でも書ける
+    - node: li
+      children:
+      - node: text
+        content: ので、チームでメンテナンスできる
+  p13:
+  - node: p
+    children:
+    - node: bold
+      content: preg_match()
+  - node: p
+    children:
+    - node: text
+      content: こんな感じで配列にパターンを
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 並べていく
+      - node: br
+      - node: bold
+        content: '[ '
+      - node: br
+      - node: bold
+        content: '    ''level'' => ''error'', '
+      - node: br
+      - node: bold
+        content: '    ''desc''  => ''mt_srand() は使用禁止'', '
+      - node: br
+      - node: bold
+        content: '    ''pattern'' => [ '
+      - node: br
+      - node: bold
+        content: '        ''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false, '
+      - node: br
+      - node: bold
+        content: '    ], '
+      - node: br
+      - node: bold
+        content: '],'
+  p14:
+  - node: p
+    children:
+    - node: bold
+      content: そのほか
+  p15:
+  - node: p
+    children:
+    - node: bold
+      content: よのなかにはたくさん実装ある
+  - node: p
+    children:
+    - node: text
+      content: 'PHPの静的解析 '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: — Algo13 2016.04.11 ドキュメント
+  - node: p
+    children:
+    - node: text
+      content: http://algo13.net/php/tips/static-analysis.html
+  - node: p
+    children:
+    - node: text
+      content: '↑良い感じにまとまってるネ申記事 '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: phpmd, phpcs, php7cc…
+    - node: li
+      children:
+      - node: text
+        content: 簡単な構文解析のサンプル載ってる
+  p16:
+  - node: p
+    children:
+    - node: bold
+      content: 何をしたいのか
+  p17:
+  - node: p
+    children:
+    - node: bold
+      content: 静的解析できると何が嬉しいのか
+  - node: p
+    children:
+    - node: text
+      content: Syntax Errorなファイルを
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: デプロイしないようにしたい…
+      - node: br
+      - node: text
+        content: '弊社でも昔はありました '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: コードレビューでつまらないことを
+    - node: li
+      children:
+      - node: text
+        content: 指摘したくない
+  - node: p
+    children:
+    - node: text
+      content: 割と膨大なコードを安全に
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: PHP7に着地させたい
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: 最近のナウいツール
+  p19:
+  - node: p
+    children:
+    - node: bold
+      content: etsy/phan
+  - node: p
+    children:
+    - node: text
+      content: Rasmus Lerdorfを要するEtsy社が
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 開発する静的解析ツール
+  - node: p
+    children:
+    - node: text
+      content: 未定義関数とか型がをかしいとか、
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: とにかくいろんな指摘してくれる
+      - node: br
+      - node: text
+        content: 'PHPDocの型を解析してくれる '
+    - node: li
+      children:
+      - node: text
+        content: 日本語で紹介すればバズれるぞ！！！
+  p20:
+  - node: p
+    children:
+    - node: bold
+      content: 最近やってること
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: baguette/definfo
+  - node: p
+    children:
+    - node: text
+      content: '最近夜な夜な作ってるツール '
+  - node: p
+    children:
+    - node: text
+      content: 実行時情報(Reflection)を使って
+  - node: p
+    children:
+    - node: text
+      content: いろいろ指図してくれるように
+    - node: br
+    - node: text
+      content: 'するつもり '
+  - node: p
+    children:
+    - node: text
+      content: 'タグジャンプの代替にしたい '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 静的解析はしないつもりだったけど、
+  - node: p
+    children:
+    - node: text
+      content: どうにもならないところは がんばって構文解析してる

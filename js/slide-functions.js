@@ -14,8 +14,10 @@ function toggleExpanded() {
 
         // スライド情報と戻るリンクを非表示
         const slideInfo = document.querySelector('.slide-info');
+        const slideContent = document.querySelector('.slide-content');
         const backLink = document.querySelector('.back-link');
         if (slideInfo) slideInfo.classList.add('expanded');
+        if (slideContent) slideContent.classList.add('expanded');
         if (backLink) backLink.classList.add('expanded');
 
         // 画面サイズに応じて適切なサイズを設定
@@ -48,8 +50,10 @@ function toggleExpanded() {
 
         // スライド情報と戻るリンクを再表示
         const slideInfo = document.querySelector('.slide-info');
+        const slideContent = document.querySelector('.slide-content');
         const backLink = document.querySelector('.back-link');
         if (slideInfo) slideInfo.classList.remove('expanded');
+        if (slideContent) slideContent.classList.remove('expanded');
         if (backLink) backLink.classList.remove('expanded');
 
         iframe.style.width = '';
@@ -290,6 +294,12 @@ function initializeSlide() {
     // ウィンドウリサイズイベントを設定
     window.addEventListener('resize', handleResize);
 
+    // Full screen APIのイベントリスナーを追加
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
     // ページ変更監視を開始（iframe読み込み完了後）
     document.addEventListener('DOMContentLoaded', function () {
         // iframeが既に読み込まれている場合
@@ -306,22 +316,76 @@ function initializeSlide() {
     });
 }
 
+// Full screen APIの状態変化を監視
+function handleFullscreenChange() {
+    const iframe = document.getElementById('pdf-container');
+    if (!iframe) return;
+
+    if (!document.fullscreenElement &&
+        !document.webkitFullscreenElement &&
+        !document.mozFullScreenElement &&
+        !document.msFullscreenElement) {
+        // 全画面表示が解除された場合
+        resetFullscreenSize();
+    }
+}
+
 // Full screen APIを使った全画面表示の切り替え
 function toggleFullscreen() {
     const iframe = document.getElementById('pdf-container');
 
     if (!document.fullscreenElement) {
         // 全画面表示に切り替え
-        iframe.requestFullscreen().catch(err => {
+        iframe.requestFullscreen().then(() => {
+            // 全画面表示になった後に少し遅延させてサイズを調整
+            setTimeout(() => {
+                adjustFullscreenSize();
+            }, 100);
+        }).catch(err => {
             console.error('全画面表示に失敗しました:', err);
             showToast('全画面表示に失敗しました。ブラウザが対応していない可能性があります。', 'error');
         });
     } else {
         // 全画面表示を解除
-        document.exitFullscreen().catch(err => {
+        document.exitFullscreen().then(() => {
+            // 全画面表示が解除された後にサイズをリセット
+            resetFullscreenSize();
+        }).catch(err => {
             console.error('全画面表示の解除に失敗しました:', err);
         });
     }
+}
+
+// 全画面表示時のサイズ調整
+function adjustFullscreenSize() {
+    const iframe = document.getElementById('pdf-container');
+    if (!iframe) return;
+
+    // CSSの:fullscreen擬似クラスでサイズ制限を行うため、
+    // JavaScriptでのサイズ調整は最小限にする
+    console.log('Fullscreen mode activated - CSS :fullscreen pseudo-class will handle sizing');
+}
+
+// 全画面表示解除時のサイズリセット
+function resetFullscreenSize() {
+    const iframe = document.getElementById('pdf-container');
+    if (!iframe) return;
+
+    // インラインスタイルを完全に削除してCSSに戻す
+    iframe.style.removeProperty('width');
+    iframe.style.removeProperty('height');
+    iframe.style.removeProperty('position');
+    iframe.style.removeProperty('top');
+    iframe.style.removeProperty('left');
+    iframe.style.removeProperty('transform');
+    iframe.style.removeProperty('z-index');
+
+    // 少し遅延させてからCSSの再適用を確実にする
+    setTimeout(() => {
+        iframe.style.display = 'none';
+        iframe.offsetHeight; // 強制的に再描画を発生させる
+        iframe.style.display = '';
+    }, 10);
 }
 
 // Web Share APIを使ったスライド共有

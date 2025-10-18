@@ -1,0 +1,409 @@
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p2:
+  - url: http://niconare.nicovideo.jp/watch/kn1371
+    title: niconare.nicovideo.jp
+  - url: http://gihyo.jp/magazine/wdpress/archive/2016/vol92
+    title: WEB+DB PRESS Vol.92 | 技術評論社
+  p3:
+  - url: http://qiita.com/tadsan/items/94e00f6fdf40d96c5072
+    title: 'PHPとバージョン #PHP - Qiita'
+  - url: http://qiita.com/tadsan/items/cdbbb5b08591af2b110d
+    title: 'インスパイヤされて掲示板を作りたくなった(1) #PHP - Qiita'
+  p9:
+  - url: https://github.com/BaguettePHP/TetoSQL
+    title: GitHub - BaguettePHP/TetoSQL
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 憂鬱なSQLのためのアレ
+  - node: p
+    children:
+    - node: text
+      content: 'PHP-BLT #4'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: 近況報告
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス北海道で喋ってきました
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 「仕事で使えるComposer」
+  - node: p
+    children:
+    - node: text
+      content: 'http://niconare.nicovideo.jp/watch/kn1371 '
+  - node: p
+    children:
+    - node: text
+      content: WEB+DB Press Vol. 92に
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: PHPからHTTPリクエストをする話を書きました
+  - node: p
+    children:
+    - node: text
+      content: http://gihyo.jp/magazine/wdpress/archive/2016/vol92
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 近況報告
+  - node: p
+    children:
+    - node: text
+      content: AdventCalendarではPHPマニュアルの
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: バージョン番号をパースする話を書きました
+  - node: p
+    children:
+    - node: text
+      content: http://qiita.com/tadsan/items/94e00f6fdf40d96c5072
+  - node: p
+    children:
+    - node: text
+      content: スレッドフロート掲示板を作りたかった少年時
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 代の代償行為として、モダンPHP、ただし
+  - node: p
+    children:
+    - node: text
+      content: フレームワーク抜きで書き始めました
+  - node: p
+    children:
+    - node: text
+      content: http://qiita.com/tadsan/items/cdbbb5b08591af2b110d
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: みんな大好きPDO
+  - node: p
+    children:
+    - node: text
+      content: 'PHP Data Objects '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: いろんなSQLを抽象化したオブジェクト
+    - node: li
+      children:
+      - node: text
+        content: 学生がmysqli関数使ってたけどPDOでいい
+    - node: li
+      children:
+      - node: text
+        content: あとなんか、Doctrineとか使った方がいいの?
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: Real World PHP
+  - node: p
+    children:
+    - node: text
+      content: 2015年にもなって徳丸先生がPHPカンファレン
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: スでSQLインジェクションの話をしてるリアル
+      - node: br
+      - node: text
+        content: O/Rマッパー使っとけｗｗｗと煽ったところで、
+    - node: li
+      children:
+      - node: text
+        content: 世界にはまだ文字列結合SQLが眠ってる
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: みんな事故る
+  - node: p
+    children:
+    - node: text
+      content: '文字列結合の温床 '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 型を指定するのはめんどくさい
+    - node: li
+      children:
+      - node: text
+        content: $stmt->bindValue(':id', $id, \PDO::PARAM_INT)
+    - node: li
+      children:
+      - node: text
+        content: 可変個数のIN句が地雷
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: Real World PHP
+  - node: p
+    children:
+    - node: text
+      content: '$names = ["taro","jiro","saburo"]; '
+    - node: br
+    - node: text
+      content: '$str = implode(",", array_map($name){ '
+    - node: br
+    - node: text
+      content: '    return sprintf(''"%s"'', $name); '
+    - node: br
+    - node: text
+      content: '}); '
+    - node: br
+    - node: text
+      content: $sql = "SELECT * FROM users WHERE name IN ($str)";
+  - node: p
+    children:
+    - node: text
+      content: // ↑典型的な漏れのあるロジックの例
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: PDOのラッパー作った
+  - node: p
+    children:
+    - node: text
+      content: '警告：ちゃんとしたO/Rマッパーの方がいい '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: (会社で同僚が作ったのを)コピペして再実装した
+    - node: li
+      children:
+      - node: text
+        content: SQL内に型が書けるDSL
+    - node: li
+      children:
+      - node: text
+        content: PDOに乗っかって、余計なことはしない
+    - node: li
+      children:
+      - node: text
+        content: SQLインジェクションにある程度の耐性がある?
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: composer require zonuexe/tetosql
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/BaguettePHP/TetoSQL
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+    - node: br
+    - node: text
+      content: 'namespace InspireBBS\Model; '
+    - node: br
+    - node: text
+      content: 'use Teto\SQL; '
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' * 板を表現するモデル '
+  - node: p
+    children:
+    - node: text
+      content: ' * @copyright 2016 USAMI Kenta '
+    - node: br
+    - node: text
+      content: ' * @license   WTFPL '
+    - node: br
+    - node: text
+      content: ' */ '
+    - node: br
+    - node: text
+      content: 'final class Board { '
+    - node: br
+    - node: text
+      content: '    /** '
+    - node: br
+    - node: text
+      content: '     * @return Board[] '
+    - node: br
+    - node: text
+      content: '     */ '
+    - node: br
+    - node: text
+      content: '    public static function findAll() { '
+    - node: br
+    - node: text
+      content: '        $data = SQL\Query::execute(db(), self::findAll_query, []) '
+    - node: br
+    - node: text
+      content: '            ->fetchAll(\PDO::FETCH_ASSOC) ?: []; '
+  - node: p
+    children:
+    - node: text
+      content: '        $boards = []; '
+    - node: br
+    - node: text
+      content: '        foreach ($data as $b) { '
+    - node: br
+    - node: text
+      content: '            $boards[] = new Board($b); '
+    - node: br
+    - node: text
+      content: '        } '
+  - node: p
+    children:
+    - node: text
+      content: '        return $boards; '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    const findAll_query = ''SELECT `id`, `name`, `text` FROM `boards`''; '
+    - node: br
+    - node: text
+      content: '}'
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'use Teto\SQL; '
+    - node: br
+    - node: text
+      content: 'public static function find($id) { '
+    - node: br
+    - node: text
+      content: '    $data = SQL\Query::execute(db(), self::findAll_query, [ '
+    - node: br
+    - node: text
+      content: '        '':id'' => $id, '
+    - node: br
+    - node: text
+      content: '    ])->fetchAll(\PDO::FETCH_ASSOC) ?: []; '
+  - node: p
+    children:
+    - node: text
+      content: '    $boards = []; '
+    - node: br
+    - node: text
+      content: '    foreach ($data as $b) { '
+    - node: br
+    - node: text
+      content: '        $boards[] = new Board($b); '
+    - node: br
+    - node: text
+      content: '    } '
+  - node: p
+    children:
+    - node: text
+      content: '    return $boards; '
+    - node: br
+    - node: text
+      content: '} '
+    - node: br
+    - node: text
+      content: 'const find_query = ‘ '
+    - node: br
+    - node: text
+      content: '    SELECT `id`, `name`, `text` FROM `boards` WHERE `id` = $id@int '
+    - node: br
+    - node: text
+      content: ''';'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 基本的なAPI
+  - node: p
+    children:
+    - node: text
+      content: 'どうにかしてPDOのコネクションをとっておく '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: $stmt = SQL\Query::execute($con, self::find_query,
+  - node: p
+    children:
+    - node: text
+      content: '    ['':id'' => $id, '':hoge'' => $hoge] ); '
+  - node: p
+    children:
+    - node: text
+      content: 'コネクション、SQL、アサインする値を渡す '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 帰ってくる値はPDOStatementなので、
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: いつもの感覚でfetch/fetchAllするだけ！
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: const
+    - node: br
+    - node: text
+      content: 'PHPのconstは(原則)実行時に変更されない '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: そこにパラメータを当て嵌めるだけ、なのは
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: なんとなく心理的な安心感がある (本当か?)
+      - node: br
+      - node: text
+        content: 'お気付きだろうか… '
+    - node: li
+      children:
+      - node: text
+        content: このコードがPSR-1違反であることに…

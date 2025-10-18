@@ -1,0 +1,959 @@
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p13:
+  - url: https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0
+    title: メタプログラミング - Wikipedia
+  p14:
+  - url: https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0
+    title: メタプログラミング - Wikipedia
+text:
+  p1:
+  - node: p
+    children:
+    - node: bold
+      content: 使ってはいけない
+    - node: br
+    - node: text
+      content: 　　 メタプログラミング 初級篇
+  - node: p
+    children:
+    - node: bold
+      content: Dangerous PHP Meta programming Tutorial
+  - node: p
+    children:
+    - node: text
+      content: '#phpstudy'
+  - node: p
+    children:
+    - node: text
+      content: '2017-08-30 PHP勉強会@東京 '
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Emacs Lisper, PHPer
+    - node: li
+      children:
+      - node: text
+        content: pixiv Inc.でpixivを作ってるよ
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+    - node: li
+      children:
+      - node: text
+        content: 動的言語はコンピューティングの真髄
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: はじめに
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: サンプルコードは言 語機能を
+    - node: bold
+      content: 簡易に紹介
+    - node: text
+      content: ' '
+    - node: bold
+      content: する
+    - node: text
+      content: ためのものです
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 利用の際は必要性と利便性
+    - node: br
+    - node: text
+      content: を
+    - node: bold
+      content: 慎重に
+    - node: text
+      content: 判断すること。
+  p6:
+  - node: p
+    children:
+    - node: bold
+      content: アジェンダ
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 0.  前提 1. 初級篇 2. 中級篇 3. 上級篇
+  p8:
+  - node: p
+    children:
+    - node: bold
+      content: '0.  前提 1. 初級篇 '
+    - node: text
+      content: 2. 中級篇 3. 上級篇
+  p9: []
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: メタプロ
+    - node: br
+    - node: text
+      content: グラミング
+  p11:
+  - node: p
+    children:
+    - node: bold
+      content: 非常に雑にまとめる
+    - node: text
+      content: ' '
+    - node: bold
+      content: と、一見して意味の
+    - node: text
+      content: ' '
+    - node: bold
+      content: わかりにくい謎テク
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: 前提
+  p13:
+  - node: p
+    children:
+    - node: bold
+      content: メタプログラミング
+    - node: text
+      content: (metaprogramming)と はプログラミング技法の一種で、ロジックを 直接コーディングするのではなく、あるパター ンをもったロジックを生成する高位ロジック
+        によってプログラミングを行う方法、またそ
+    - node: br
+    - node: text
+      content: の高位ロジックを定義する方法のこと。
+  - node: p
+    children:
+    - node: text
+      content: メタプログラミング
+  - node: p
+    children:
+    - node: bold
+      content: https://ja.wikipedia.org/wiki/
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 直接コーディングするのではなく
+  - node: p
+    children:
+    - node: text
+      content: メタプログラミング
+  - node: p
+    children:
+    - node: bold
+      content: https://ja.wikipedia.org/wiki/
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 突き詰めていくと
+  - node: p
+    children:
+    - node: text
+      content: 関数呼び出しすら
+    - node: br
+    - node: text
+      content: 「直接コーディング」 しないと解釈できる
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: それよりはちょっと
+  - node: p
+    children:
+    - node: text
+      content: 複雑なものが
+    - node: br
+    - node: text
+      content: メタプログラミング
+  p17:
+  - node: p
+    children:
+    - node: bold
+      content: PHPは、所謂LLと
+    - node: br
+    - node: bold
+      content: しては遊びが少ない
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: 例) 原則として関数や
+    - node: br
+    - node: bold
+      content: 'クラスを再定義できない '
+    - node: br
+    - node: text
+      content: (致命的エラーが発生)
+  p19:
+  - node: p
+    children:
+    - node: bold
+      content: RubyやPythonと違って
+    - node: text
+      content: ' '
+    - node: bold
+      content: 'オープンクラスではない '
+    - node: br
+    - node: text
+      content: (モンキーパッチができない)
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 謎なタイミングで
+    - node: br
+    - node: text
+      content: クラス定義が変更される
+    - node: br
+    - node: text
+      content: ことが ない
+    - node: br
+    - node: text
+      content: (基本的には)
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: ＝静的解析しやすい
+    - node: br
+    - node: bold
+      content: 条件が揃ってる
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 変数スコープが
+    - node: br
+    - node: text
+      content: (比較的)
+    - node: bold
+      content: シンプル
+  p23:
+  - node: p
+    children:
+    - node: bold
+      content: その和を乱す邪悪な
+    - node: br
+    - node: bold
+      content: 動的メタプログラミング
+    - node: br
+    - node: bold
+      content: テクニックが存在する
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 😇
+  p25:
+  - node: p
+    children:
+    - node: bold
+      content: 「一見してわかりにくい言語機能」
+  - node: p
+    children:
+    - node: bold
+      content: 「ユーザー定義関数では不可能な
+    - node: text
+      content: ' '
+    - node: bold
+      content: マジックを実現してくる謎関数」
+  p26:
+  - node: p
+    children:
+    - node: bold
+      content: 初級編
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: callable
+  p28:
+  - node: p
+    children:
+    - node: bold
+      content: 関数として呼出し可
+    - node: text
+      content: ' '
+    - node: bold
+      content: 能な値を表す擬似型
+  p29:
+  - node: p
+    children:
+    - node: bold
+      content: map
+  - node: p
+    children:
+    - node: text
+      content: '$ary = ["apple", "orange", "banana"]; '
+    - node: br
+    - node: text
+      content: //=> ["Apple", "Orange", "Banana"]
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 配列の中身を一個一個変更する
+  - node: p
+    children:
+    - node: text
+      content: '$bry = []; '
+    - node: br
+    - node: text
+      content: 'foreach ($ary as $i => $a) {     $bry[$i] = ucfirst($a); '
+    - node: br
+    - node: text
+      content: '}'
+  p30:
+  - node: p
+    children:
+    - node: bold
+      content: map
+  - node: p
+    children:
+    - node: text
+      content: '$ary = ["apple", "orange", "banana"]; '
+    - node: br
+    - node: text
+      content: //=> ["Apple", "Orange", "Banana"]
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 配列の中身を一個一個変更する
+  - node: p
+    children:
+    - node: text
+      content: $cry = array_map('ucfirst', $ary);
+  p31:
+  - node: p
+    children:
+    - node: bold
+      content: map
+  - node: p
+    children:
+    - node: text
+      content: '$ary = ["apple", "orange", "banana"]; '
+    - node: br
+    - node: text
+      content: //=> ["Apple", "Orange", "Banana"]
+  - node: p
+    children:
+    - node: text
+      content: '$bry = []; '
+  - node: p
+    children:
+    - node: text
+      content: '$cry = '
+  - node: p
+    children:
+    - node: text
+      content: 'foreach ($ary as $i => $a) { '
+  - node: p
+    children:
+    - node: text
+      content: array_map('ucfirst', $ary);
+  - node: p
+    children:
+    - node: text
+      content: '    $bry[$i] => ucfirst($a); '
+    - node: br
+    - node: text
+      content: '} '
+  p32:
+  - node: p
+    children:
+    - node: bold
+      content: callable
+  - node: p
+    children:
+    - node: text
+      content: '//   '
+    - node: br
+    - node: text
+      content: Before
+    - node: br
+    - node: text
+      content: 'if ($cond) {     foo($var); '
+    - node: br
+    - node: text
+      content: '} else { '
+    - node: br
+    - node: text
+      content: '    bar($var); '
+    - node: br
+    - node: text
+      content: '}'
+  p33:
+  - node: p
+    children:
+    - node: bold
+      content: callable
+  - node: p
+    children:
+    - node: text
+      content: '//   '
+    - node: br
+    - node: text
+      content: After
+  - node: p
+    children:
+    - node: text
+      content: '$f = $cond ? ''foo'' : ''bar''; call_user_func($f, $var); '
+  - node: p
+    children:
+    - node: text
+      content: '//   '
+    - node: br
+    - node: text
+      content: こうやって書いてもいい
+  - node: p
+    children:
+    - node: text
+      content: $f($var);
+  p34:
+  - node: p
+    children:
+    - node: bold
+      content: callable
+  - node: p
+    children:
+    - node: text
+      content: '//    //   '
+    - node: br
+    - node: text
+      content: Before After
+  - node: p
+    children:
+    - node: text
+      content: 'if ($cond) {  $f = $cond ? ''foo'' : ''bar'';     foo($var);  call_user_func($f,
+        $var); '
+    - node: br
+    - node: text
+      content: '} else { '
+    - node: br
+    - node: text
+      content: '    bar($var);  //   '
+  - node: p
+    children:
+    - node: text
+      content: こうやって書いてもいい
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: $f($var);
+  p35:
+  - node: p
+    children:
+    - node: bold
+      content: '使ってはいけない度 '
+    - node: br
+    - node: text
+      content: ★★☆☆☆
+  - node: p
+    children:
+    - node: bold
+      content: 僕はコードレビューで「foreachの方が読
+  - node: p
+    children:
+    - node: bold
+      content: みやすい」ってマジレスすることもある
+    - node: br
+    - node: bold
+      content: (★が多いほど邪悪)
+  p36:
+  - node: p
+    children:
+    - node: bold
+      content: (メタプログラミングと
+    - node: br
+    - node: bold
+      content: 呼ぶかは議論がある)
+  p37:
+  - node: p
+    children:
+    - node: bold
+      content: PHPの「ふつう」は
+    - node: text
+      content: ' '
+    - node: bold
+      content: ひとによって境界が
+    - node: br
+    - node: bold
+      content: 異なる
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: compact()
+  - node: p
+    children:
+    - node: text
+      content: extract()
+  p39:
+  - node: p
+    children:
+    - node: bold
+      content: 変数テーブルにアク
+    - node: br
+    - node: bold
+      content: セスできる関数
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: compact()
+  - node: p
+    children:
+    - node: bold
+      content: 変数テーブルから
+    - node: br
+    - node: bold
+      content: 取り出して配列にする
+  p41:
+  - node: p
+    children:
+    - node: bold
+      content: compact()
+  - node: p
+    children:
+    - node: text
+      content: $foo = foo(); $bar = bar();
+  - node: p
+    children:
+    - node: text
+      content: hoge([  hoge(compact('foo','bar'));
+    - node: br
+    - node: text
+      content: '    ''foo'' => $foo,     ''bar'' => $bar '
+    - node: br
+    - node: text
+      content: ']);'
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: '使ってはいけない度 '
+    - node: br
+    - node: text
+      content: ★☆☆☆☆
+  - node: p
+    children:
+    - node: bold
+      content: 何が起こるか把握して
+  - node: p
+    children:
+    - node: bold
+      content: 書くぶんには罠が少ない
+    - node: br
+    - node: bold
+      content: (★が多いほど邪悪)
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: extract()
+  - node: p
+    children:
+    - node: bold
+      content: 変数テーブルから
+    - node: text
+      content: ' '
+    - node: bold
+      content: 取り出して配列に
+  p44:
+  - node: p
+    children:
+    - node: bold
+      content: extract()
+  - node: p
+    children:
+    - node: text
+      content: 'function hoge(array $vs) '
+    - node: br
+    - node: text
+      content: '{'
+  - node: p
+    children:
+    - node: text
+      content: $hoge_foo = $vs['foo'];
+  - node: p
+    children:
+    - node: text
+      content: 'extract($vs, '
+  - node: p
+    children:
+    - node: text
+      content: '      EXTR_PREFIX_ALL, '
+  - node: p
+    children:
+    - node: text
+      content: $hoge_bar = $vs['bar'];
+  - node: p
+    children:
+    - node: text
+      content: '''hoge'');'
+  - node: p
+    children:
+    - node: text
+      content: 本当はissetでチェックすべき
+  p45:
+  - node: p
+    children:
+    - node: bold
+      content: '使ってはいけない度 '
+    - node: br
+    - node: text
+      content: ★★★★★
+  - node: p
+    children:
+    - node: bold
+      content: 何が起こるか把握して
+  - node: p
+    children:
+    - node: bold
+      content: 書くぶんには罠が少ない
+    - node: br
+    - node: bold
+      content: (★が多いほど邪悪)
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'extract() '
+    - node: br
+    - node: bold
+      content: '変数定義が検出できない 読みにくくなるので邪悪 '
+    - node: br
+    - node: bold
+      content: バグの温床であるばかりか、
+    - node: text
+      content: ' '
+    - node: bold
+      content: ふつうに脆弱性の温床になる
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: $$var
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: $$var
+  - node: p
+    children:
+    - node: bold
+      content: 可変変数
+  - node: p
+    children:
+    - node: bold
+      content: (variable variables)
+  p49:
+  - node: p
+    children:
+    - node: bold
+      content: 可変変数
+  - node: p
+    children:
+    - node: text
+      content: '$world = "こんにちは世界"; '
+  - node: p
+    children:
+    - node: text
+      content: '$hello = "world"; '
+    - node: br
+    - node: text
+      content: '$v = "hello"; '
+  - node: p
+    children:
+    - node: text
+      content: var_dump($v);    //=> "hello" var_dump($$v);   //=> "world"
+  - node: p
+    children:
+    - node: text
+      content: 'var_dump($$$v);  //=> "こんにちは世界" '
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: $$ はいくつ付けてもよい！！
+  p50:
+  - node: p
+    children:
+    - node: bold
+      content: '使ってはいけない度 '
+    - node: br
+    - node: text
+      content: ★★★★★
+  - node: p
+    children:
+    - node: bold
+      content: 純粋に読みにくい……。error_reporing
+  - node: p
+    children:
+    - node: bold
+      content: のレベルが低いと警告なしでnullになる。
+    - node: br
+    - node: bold
+      content: (★が多いほど邪悪)
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: debug_backtrace()
+  p52:
+  - node: p
+    children:
+    - node: bold
+      content: スタックトレースを
+  - node: p
+    children:
+    - node: bold
+      content: 全部取得できる
+    - node: br
+    - node: bold
+      content: (ファイル・引数含む)
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: 'Baguette\FriendsClass\CalledByOutsiderException: It is not allowed
+        for '
+    - node: br
+    - node: text
+      content: 'Baguette\Ore to call  in ~/friends/src/functions.php on line 35 '
+  - node: p
+    children:
+    - node: text
+      content: 'Call Stack: '
+    - node: br
+    - node: text
+      content: '    0.0003     359288   1. {main}() ~/friends/tests/test.php:0 '
+    - node: br
+    - node: text
+      content: '    0.0020     552824   2. Baguette\Omae->callFriend() ~/friends/tests/'
+    - node: br
+    - node: text
+      content: 'test.php:33 '
+    - node: br
+    - node: text
+      content: '    0.0020     552864   3. Baguette\Ore->__construct() ~/friends/tests/'
+    - node: br
+    - node: text
+      content: 'test.php:20 '
+    - node: br
+    - node: text
+      content: '    0.0020     552864   4. Baguette\assert_called_by_friend() ~/friends/'
+    - node: br
+    - node: text
+      content: tests/test.php:12
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: (これを悪用すれば どんな邪悪なことが
+    - node: br
+    - node: text
+      content: できるかは明白)
+  p55:
+  - node: p
+    children:
+    - node: bold
+      content: 超べんりな用途 (ロギング)
+  - node: p
+    children:
+    - node: text
+      content: function db($query, array $param) {
+  - node: p
+    children:
+    - node: text
+      content: '    $trace = implode(''; '', array_map(function ($t) {'
+    - node: br
+    - node: text
+      content: '        return "{$t[''file'']}({$t[''line'']})"; '
+    - node: br
+    - node: text
+      content: '    }, debug_backtrace())); '
+  - node: p
+    children:
+    - node: text
+      content: '    $stmt = PDO::query($query.'' -- ''.$trace);     // SQLスロークエリログの末尾にトレースが'
+  - node: p
+    children:
+    - node: text
+      content: '    // 残るので、原因の特定しやすくなる！'
+  p56:
+  - node: p
+    children:
+    - node: bold
+      content: 邪悪な用途
+  - node: p
+    children:
+    - node: text
+      content: function hoge($a, $b, $c) {
+  - node: p
+    children:
+    - node: text
+      content: '    $trace = debug_backtrace(true, 2);'
+    - node: br
+    - node: text
+      content: '    $class = $trace[1][''class''] ?? false;'
+  - node: p
+    children:
+    - node: text
+      content: '    $func  = $trace[1][''func''] ?? false;'
+  - node: p
+    children:
+    - node: text
+      content: '    if ($class === "Foo" && $func === "bar") { '
+    - node: br
+    - node: text
+      content: '        //   '
+  - node: p
+    children:
+    - node: text
+      content: Foo::bar() はバグってるので値を上書き
+  - node: p
+    children:
+    - node: text
+      content: '        $b = "piyo";'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  p57:
+  - node: p
+    children:
+    - node: bold
+      content: '使ってはいけない度 '
+    - node: br
+    - node: text
+      content: ★★★☆☆
+  - node: p
+    children:
+    - node: bold
+      content: ロギングは問題なし。
+  - node: p
+    children:
+    - node: bold
+      content: ワークアラウンドはギルティ。
+    - node: br
+    - node: bold
+      content: (★が多いほど邪悪)
+  p58:
+  - node: p
+    children:
+    - node: bold
+      content: まとめ
+  p59:
+  - node: p
+    children:
+    - node: bold
+      content: 今回は初級篇
+  p60:
+  - node: p
+    children:
+    - node: bold
+      content: プログラミングのおも
+    - node: text
+      content: ' '
+    - node: bold
+      content: しろテクを知ったら使っ
+    - node: text
+      content: ' '
+    - node: bold
+      content: てみたくなるのが人情
+  p61:
+  - node: p
+    children:
+    - node: bold
+      content: 大いなる力には
+    - node: br
+    - node: bold
+      content: 大いなる責任が伴う
+  p62:
+  - node: p
+    children:
+    - node: bold
+      content: メタプログラミング
+    - node: text
+      content: ' '
+    - node: bold
+      content: の採用で劇的に便利
+    - node: br
+    - node: bold
+      content: になることもある
+  p63:
+  - node: p
+    children:
+    - node: bold
+      content: 単に初心者殺しな
+  - node: p
+    children:
+    - node: bold
+      content: 意味不明なコードに
+    - node: br
+    - node: bold
+      content: なることがある
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: (経験豊富な先輩に「若 いなあ」となまあた たかく見られるかも)
+  p65:
+  - node: p
+    children:
+    - node: bold
+      content: 用法容量を守って
+  - node: p
+    children:
+    - node: bold
+      content: たのしい
+    - node: br
+    - node: bold
+      content: プログラミングを
+  - node: p
+    children:
+    - node: text
+      content: To Be Continued

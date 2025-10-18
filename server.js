@@ -6,6 +6,56 @@ import { stat } from "fs/promises";
 import { readFile } from "fs/promises";
 import yaml from "js-yaml";
 
+// HTMLエスケープ関数（サーバーサイド用）
+function escapeHtml(text) {
+  if (typeof text !== 'string') return text;
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderNode(node) {
+  if (!node || !node.node) return '';
+
+  switch (node.node) {
+    case 'p':
+      return `<p>${node.children ? node.children.map(child => renderNode(child)).join('') : ''}</p>`;
+
+    case 'text':
+      return escapeHtml(node.content || '');
+
+    case 'bold':
+      return `<strong>${escapeHtml(node.content || '')}</strong>`;
+
+    case 'link':
+      const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(node.href || '')}&size=32`;
+      const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
+      return `${faviconImg}<a href="${escapeHtml(node.href || '')}" target="_blank">${escapeHtml(node.content || '')}</a>`;
+
+    case 'img':
+      return '[img]';
+
+    case 'br':
+      return '<br>';
+
+    case 'ul':
+      return `<ul>${node.children ? node.children.map(child => renderNode(child)).join('') : ''}</ul>`;
+
+    case 'li':
+      if (node.children) {
+        return `<li>${node.children.map(child => renderNode(child)).join('')}</li>`;
+      } else {
+        return `<li>${escapeHtml(node.content || '')}</li>`;
+      }
+
+    default:
+      return escapeHtml(node.content || '');
+  }
+}
+
 const app = new Hono();
 
 // サイト設定を読み込む
@@ -29,6 +79,29 @@ async function loadSiteConfig() {
   return siteConfig;
 }
 
+// スライドのファイル名からPDFメタデータを取得
+async function getPdfMetaByFile(filePath, slide) {
+  // slide.metaが指定されている場合はそのファイルを読み込む
+  if (slide.meta) {
+    try {
+      const metaFile = await readFile(slide.meta, 'utf8');
+      const metaData = yaml.load(metaFile);
+      return metaData;
+    } catch (error) {
+      console.error(`メタデータファイルの読み込みに失敗しました (${slide.meta}):`, error);
+    }
+  }
+
+  // デフォルト値を返す
+  return {
+    size: {
+      max_width: slide.max_width || 1024,
+      max_height: slide.max_height || 768
+    },
+    links: {}
+  };
+}
+
 // スライド一覧ページ
 app.get("/slides/", async (c) => {
   try {
@@ -44,10 +117,6 @@ app.get("/slides/", async (c) => {
           <style>
             body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; }
             .container { max-width: 1200px; margin: 0 auto; }
-            .slide-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-            .slide-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
-            .slide-card h3 { margin-top: 0; }
-            .slide-link { color: #007bff; text-decoration: none; }
           </style>
         </head>
         <body>
@@ -92,9 +161,10 @@ app.get("/slides/:slug/", async (c) => {
     const date = new Date(slide.date);
     const japaneseDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 
-    // スライドの最大サイズを取得（デフォルト値も設定）
-    let maxWidth = slide.max_width || 1024;
-    let maxHeight = slide.max_height || 768;
+    // PDFメタデータからサイズ情報を取得
+    const pdfMeta = await getPdfMetaByFile(slide.file, slide);
+    let maxWidth = pdfMeta.size?.max_width || slide.max_width || 1024;
+    let maxHeight = pdfMeta.size?.max_height || slide.max_height || 768;
 
     // 縦幅が既定値より小さい場合は自動的にリサイズ
     const defaultMinHeight = 1024;
@@ -117,6 +187,7 @@ app.get("/slides/:slug/", async (c) => {
           <meta property="og:description" content="${config.site.description}">
           <meta property="og:type" content="website">
           <meta property="og:url" content="${config.site.url}/slides/${slide.slug}/">
+          <meta property="og:image" content="${config.site.url}/slides/${slide.image}">
           <meta property="og:site_name" content="${config.ogp.site_name}">
           <meta property="og:locale" content="${config.ogp.locale}">
 
@@ -125,6 +196,7 @@ app.get("/slides/:slug/", async (c) => {
           <meta name="twitter:creator" content="${config.twitter.creator}">
           <meta name="twitter:title" content="${slide.title}">
           <meta name="twitter:description" content="${config.site.description}">
+          <meta name="twitter:image" content="${config.site.url}/slides/${slide.image}">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.xml">
@@ -140,12 +212,61 @@ app.get("/slides/:slug/", async (c) => {
             }
           </style>
           <script>
+            // HTMLエスケープ関数（クライアントサイド用）
+            function escapeHtml(text) {
+              const div = document.createElement('div');
+              div.textContent = text;
+              return div.innerHTML;
+            }
+
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
               maxWidth: ${maxWidth},
               maxHeight: ${maxHeight},
               download: '${slide.download}'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(\d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -177,11 +298,11 @@ app.get("/slides/:slug/", async (c) => {
 
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
-                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" rel="noopener noreferrer" class="hashtag">#${tag}</a>`).join('')}
+                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="${slidePath}" download="${slide.download}" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -191,6 +312,54 @@ app.get("/slides/:slug/", async (c) => {
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  ${pdfMeta.text && Object.keys(pdfMeta.text).length > 0 ? `
+                    ${Object.entries(pdfMeta.text).map(([pageKey, nodes]) => `
+                      <div class="page-content" id="page-${pageKey.replace('p', '')}">
+                        <h4>Page ${pageKey.replace('p', '')}</h4>
+                        <div class="page-text">
+                          ${nodes.map(node => renderNode(node)).join('')}
+                        </div>
+                      </div>
+                    `).join('')}
+                  ` : `
+                    <p>テキスト情報がありません。</p>
+                  `}
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  ${pdfMeta.links && Object.keys(pdfMeta.links).length > 0 ? `
+                    ${Object.entries(pdfMeta.links).map(([pageKey, links]) => `
+                      <div class="page-content" id="page-${pageKey.replace('p', '')}">
+                        <h4>Page ${pageKey.replace('p', '')}</h4>
+                        <div class="page-links">
+                          <ul>
+                            ${links.map(link => {
+      const href = link.archive || link.url;
+      const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(href)}&size=32`;
+      const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
+
+      if (link.archive) {
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a><br>(original: ${escapeHtml(link.url)})</li>`;
+      } else {
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a></li>`;
+      }
+    }).join('')}
+                          </ul>
+                        </div>
+                      </div>
+                    `).join('')}
+                  ` : `
+                    <p>関連リンクがありません。</p>
+                  `}
+                </div>
               </div>
             </div>
             <div class="back-link">
