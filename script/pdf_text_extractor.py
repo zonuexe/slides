@@ -22,19 +22,34 @@ class LineData(NamedTuple):
     top: float
     bottom: float
     left: float
+    right: float
+    width: float
     height: float
+    center: float
 PageNodes = List[Dict[str, object]]
 PageMap = Dict[str, PageNodes]
+
+CID_MAP = {
+    "7979": "篇",
+}
+CID_PATTERN = re.compile(r"\(cid:(\d+)\)")
+CID_SEQUENCE_MAP = {
+    "(cid:1964)(cid:1417)(cid:3899)(cid:1516)(cid:2742)(cid:3419)": "公開用完全版",
+}
 
 
 def clean_character(text: str) -> str:
     """Normalize raw character data from the PDF."""
     if not text:
         return ""
+    for sequence, replacement in CID_SEQUENCE_MAP.items():
+        if sequence in text:
+            text = text.replace(sequence, replacement)
     text = text.replace("\x03", "")  # EOT
     text = text.replace("\t", " ")
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = text.replace("\u00a0", " ")
+    text = CID_PATTERN.sub(lambda match: CID_MAP.get(match.group(1), match.group(0)), text)
     return text
 
 
@@ -83,12 +98,20 @@ def merge_adjacent_nodes(nodes: List[Dict[str, str]]) -> List[Dict[str, str]]:
     """Combine consecutive nodes of the same type."""
     merged: List[Dict[str, str]] = []
     for node in nodes:
-        if not node.get("content"):
+        node_type = node.get("node")
+        if node_type == "br":
+            merged.append({"node": "br"})
             continue
-        if merged and merged[-1]["node"] == node["node"]:
-            merged[-1]["content"] += node["content"]
-        else:
-            merged.append(dict(node))
+        if node_type in {"text", "bold"}:
+            content = node.get("content", "")
+            if not content:
+                continue
+            if merged and merged[-1].get("node") == node_type:
+                merged[-1]["content"] += content
+            else:
+                merged.append({"node": node_type, "content": content})
+            continue
+        merged.append(dict(node))
     return merged
 
 
@@ -232,14 +255,20 @@ def extract_segments_from_page(page) -> List[LineData]:
             c.get("bottom", c["top"] + c.get("height", 0.0)) for c in chars
         )
         min_left = min(c["x0"] for c in chars)
+        max_right = max(c["x1"] for c in chars)
+        width = max(1.0, max_right - min_left)
         height = max(1.0, max_bottom - min_top)
+        center = min_left + (width / 2.0)
         lines.append(
             LineData(
                 segments=segments,
                 top=min_top,
                 bottom=max_bottom,
                 left=min_left,
+                right=max_right,
+                width=width,
                 height=height,
+                center=center,
             )
         )
     return lines
@@ -258,16 +287,33 @@ def segments_to_nodes(segments: Iterable[Segment]) -> List[Dict[str, str]]:
     return merge_adjacent_nodes(nodes)
 
 
-def _should_break_paragraph(previous: LineData, current: LineData) -> bool:
-    """Decide paragraph boundaries based on layout metrics rather than text heuristics."""
-    vertical_gap = current.top - previous.bottom
+def _line_relationship(previous: LineData, current: LineData) -> str:
+    """Classify how two consecutive lines should be combined."""
     baseline = max(previous.height, current.height, 1.0)
-    if vertical_gap > baseline * 0.6:
-        return True
+    vertical_gap = current.top - previous.bottom
+    if vertical_gap > baseline * 0.8:
+        return "break"
+    height_ratio = min(previous.height, current.height) / baseline
+    if height_ratio < 0.4 and vertical_gap > baseline * 0.3:
+        return "break"
+
     indent_diff = abs(current.left - previous.left)
-    if indent_diff > max(24.0, baseline * 0.3):
-        return True
-    return False
+    center_diff = abs(current.center - previous.center)
+    width_ratio = current.width / max(previous.width, 1.0)
+    inverse_width_ratio = previous.width / max(current.width, 1.0)
+
+    if indent_diff > baseline * 1.4 and center_diff > baseline * 1.4:
+        return "break"
+
+    if (
+        indent_diff > baseline * 0.35
+        or center_diff > baseline * 0.5
+        or width_ratio > 1.8
+        or inverse_width_ratio > 1.8
+    ):
+        return "line_break"
+
+    return "space"
 
 
 def process_lines(lines: List[LineData]) -> PageNodes:
@@ -346,14 +392,22 @@ def process_lines(lines: List[LineData]) -> PageNodes:
             previous_line = line
             continue
 
-        if previous_line is None or _should_break_paragraph(previous_line, line):
+        relation = "break"
+        if previous_line is not None:
+            relation = _line_relationship(previous_line, line)
+
+        if relation == "break":
             page_nodes.append(
                 {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
             )
             pending_paragraph = list(nodes)
         else:
-            if needs_space(pending_paragraph[-1]):
-                pending_paragraph.append({"node": "text", "content": " "})
+            if relation == "line_break":
+                if not pending_paragraph or pending_paragraph[-1].get("node") != "br":
+                    pending_paragraph.append({"node": "br"})
+            else:
+                if needs_space(pending_paragraph[-1]):
+                    pending_paragraph.append({"node": "text", "content": " "})
             pending_paragraph.extend(nodes)
         previous_line = line
 

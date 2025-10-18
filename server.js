@@ -36,6 +36,9 @@ function renderNode(node) {
     case 'img':
       return '[img]';
 
+    case 'br':
+      return '<br>';
+
     case 'ul':
       return `<ul>${node.children ? node.children.map(child => renderNode(child)).join('') : ''}</ul>`;
 
