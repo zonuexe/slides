@@ -60,6 +60,63 @@ const app = new Hono();
 
 // サイト設定を読み込む
 let siteConfig = null;
+const pdfMetaCache = new Map();
+const SNIPPET_LENGTH = 160;
+
+function collectTextFromNode(node, collector) {
+  if (!node || typeof node !== "object") return;
+  if (typeof node.content === "string") {
+    collector.push(node.content);
+  }
+  if (Array.isArray(node.children)) {
+    node.children.forEach((child) => collectTextFromNode(child, collector));
+  }
+}
+
+function extractTextContent(meta) {
+  if (!meta || typeof meta !== "object") return "";
+  const collected = [];
+  const textSections = meta.text;
+  if (textSections && typeof textSections === "object") {
+    const values = Array.isArray(textSections)
+      ? textSections
+      : Object.values(textSections);
+    values.forEach((section) => {
+      if (Array.isArray(section)) {
+        section.forEach((node) => collectTextFromNode(node, collected));
+      }
+    });
+  }
+  const links = meta.links;
+  if (links && typeof links === "object") {
+    Object.values(links).forEach((items) => {
+      if (Array.isArray(items)) {
+        items.forEach((link) => {
+          if (link && typeof link.title === "string") {
+            collected.push(link.title);
+          }
+          if (link && typeof link.url === "string") {
+            collected.push(link.url);
+          }
+        });
+      }
+    });
+  }
+  return collected
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function buildSnippet(text) {
+  if (!text) return "";
+  const normalised = text.replace(/\s+/g, " ").trim();
+  if (normalised.length <= SNIPPET_LENGTH) {
+    return normalised;
+  }
+  return `${normalised.slice(0, SNIPPET_LENGTH)}…`;
+}
+
 async function loadSiteConfig() {
   if (!siteConfig) {
     try {
@@ -83,9 +140,14 @@ async function loadSiteConfig() {
 async function getPdfMetaByFile(filePath, slide) {
   // slide.metaが指定されている場合はそのファイルを読み込む
   if (slide.meta) {
+    const cacheKey = `meta:${slide.meta}`;
+    if (pdfMetaCache.has(cacheKey)) {
+      return pdfMetaCache.get(cacheKey);
+    }
     try {
       const metaFile = await readFile(slide.meta, 'utf8');
       const metaData = yaml.load(metaFile);
+      pdfMetaCache.set(cacheKey, metaData);
       return metaData;
     } catch (error) {
       console.error(`メタデータファイルの読み込みに失敗しました (${slide.meta}):`, error);
@@ -93,19 +155,49 @@ async function getPdfMetaByFile(filePath, slide) {
   }
 
   // デフォルト値を返す
-  return {
+  const cacheKey = `default:${filePath}`;
+  if (pdfMetaCache.has(cacheKey)) {
+    return pdfMetaCache.get(cacheKey);
+  }
+  const fallback = {
     size: {
       max_width: slide.max_width || 1024,
       max_height: slide.max_height || 768
     },
     links: {}
   };
+  pdfMetaCache.set(cacheKey, fallback);
+  return fallback;
 }
 
 // スライド一覧ページ
 app.get("/slides/", async (c) => {
   try {
     const slides = await loadSlides();
+    const enrichedSlides = [];
+
+    for (const slide of slides) {
+      let searchContent = "";
+      try {
+        const meta = await getPdfMetaByFile(slide.file, slide);
+        searchContent = extractTextContent(meta);
+      } catch (error) {
+        console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
+      }
+      enrichedSlides.push({
+        ...slide,
+        searchContent,
+        snippet: buildSnippet(searchContent || slide.title || ""),
+      });
+    }
+
+    const slidesForClient = enrichedSlides.map((slide) => ({
+      slug: slide.slug ?? "",
+      title: slide.title ?? "",
+      date: slide.date ?? "",
+      content: slide.searchContent ?? "",
+    }));
+    const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
 
     const html = `
       <!DOCTYPE html>
@@ -113,29 +205,52 @@ app.get("/slides/", async (c) => {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>スライド一覧</title>
+          <title>tadsan's slide deck</title>
           <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; }
+            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background-color: #f7f7f7; }
             .container { max-width: 1200px; margin: 0 auto; }
+            .search-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
+            .search-label { flex: 1 1 280px; max-width: 600px; }
+            .search-input { flex: 1 1 280px; width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 999px; font-size: 1rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
+            .search-input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); }
+            .search-result { font-size: 0.9rem; color: #555; margin: 0; }
             .slide-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-            .slide-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
+            .slide-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
             .slide-card h3 { margin-top: 0; }
+            .slide-card-meta { font-size: 0.9rem; color: gray; margin: 0 0 8px 0; }
+            .slide-card-snippet { margin-top: 12px; font-size: 0.95rem; color: #444; line-height: 1.5; }
+            .slide-card-snippet mark { background-color: rgba(255, 230, 0, 0.6); padding: 0 2px; border-radius: 2px; }
             .slide-link { color: #007bff; text-decoration: none; }
+            .slide-link:hover { text-decoration: underline; }
+            .no-results { grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #666; font-size: 1rem; }
+            .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
           </style>
         </head>
         <body>
           <div class="container">
-            <h1>スライド一覧</h1>
+            <h1><a href="http://twitter.com/tadsan">tadsan</a>'s slide deck  ヾ(〃＞＜)ﾉﾞ</h1>
+            <div class="search-toolbar">
+              <label class="search-label">
+                <span class="visually-hidden">スライドを検索</span>
+                <input id="search-input" class="search-input" type="search" placeholder="タイトル・スラッグ・日付・本文で検索" autocomplete="off">
+              </label>
+              <p id="search-result-count" class="search-result">全 ${enrichedSlides.length}件</p>
+            </div>
             <div class="slide-grid">
-              ${slides.map(slide => `
+              ${enrichedSlides.map(slide => `
                 <div class="slide-card">
-                  <h3 ><a class="slide-link" href="/slides/${slide.slug}/">${slide.title}</a></h3>
-                  <p style="font-size: small; color: gray">${slide.slug}</p>
-                  <p>公開日: <time datetime="${slide.date}">${slide.date}</time></p>
+                  <h3 ><a class="slide-link" href="/slides/${escapeHtml(slide.slug ?? "")}/">${escapeHtml(slide.title ?? "")}</a></h3>
+                  <p class="slide-card-meta">${escapeHtml(slide.slug ?? "")}</p>
+                  <p>公開日: <time datetime="${escapeHtml(slide.date ?? "")}">${escapeHtml(slide.date ?? "")}</time></p>
                 </div>
               `).join('\n')}
             </div>
           </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
+          <script>window.slidesData = ${slidesJson};</script>
+          <script src="/slides/js/search.js" defer></script>
         </body>
       </html>
     `;
@@ -366,6 +481,8 @@ app.get("/slides/:slug/", async (c) => {
               </a>
             </div>
           </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
         </body>
       </html>
     `;
