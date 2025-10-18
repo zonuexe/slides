@@ -1,6 +1,6 @@
 # Makefile for slides project
 
-.PHONY: help script-format script-lint script-check fetch-static
+.PHONY: help script-format script-lint script-check fetch-static add-new-slides
 
 # Default target
 help:
@@ -9,6 +9,7 @@ help:
 	@echo "  script-lint     - Lint Python files in script/ directory"
 	@echo "  script-check    - Run both format and lint checks"
 	@echo "  fetch-static    - Fetch slide pages from localhost into static files"
+	@echo "  add-new-slides  - Generate assets and register newly added PDFs"
 
 # Format Python files using ruff
 script-format:
@@ -27,3 +28,7 @@ script-check: script-format script-lint
 fetch-static:
 	@echo "Fetching static slide pages..."
 	UV_CACHE_DIR=.uv-cache uv run python script/fetch_static_slides.py
+
+add-new-slides:
+	@echo "Generating assets for newly added slides..."
+	UV_CACHE_DIR=.uv-cache uv run python script/add_new_slides.py
