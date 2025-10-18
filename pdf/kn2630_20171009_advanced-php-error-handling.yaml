@@ -65,14 +65,14 @@ text:
       content: ここで差がつく
     - node: bold
       content: エラー処理
-    - node: text
-      content: ' '
+  - node: p
+    children:
     - node: bold
       content: By Error Handling your application will be completed
   - node: p
     children:
     - node: bold
-      content: (cid:1964)(cid:1417)(cid:3899)(cid:1516)(cid:2742)(cid:3419)
+      content: 公開用完全版
   - node: p
     children:
     - node: text
@@ -257,7 +257,8 @@ text:
     children:
     - node: text
       content: 'だいたいPHPマニュアルに載ってる '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'http://php.net/language.operators.errorcontrol '
     - node: br
@@ -425,14 +426,16 @@ text:
     children:
     - node: text
       content: '実行時の警告・エラー '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: Deprecated, Strict
   - node: p
     children:
     - node: text
       content: '非互換／廃止予定の機能 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: Fatal Error
   - node: p
@@ -532,7 +535,8 @@ text:
     children:
     - node: text
       content: '存在しないファイルを開く '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '$f = fopen("/hoge.txt", "r"); '
   - node: p
@@ -550,7 +554,8 @@ text:
     - node: br
     - node: text
       content: PHP7では に変更
-    - node: br
+  - node: p
+    children:
     - node: text
       content: function foo($i, $j) { echo $i, $j; }
   p32:
@@ -584,7 +589,11 @@ text:
   - node: p
     children:
     - node: text
-      content: Strictは7.0で廃止(再分類)された https://wiki.php.net/rfc/reclassify_e_strict
+      content: Strictは7.0で廃止(再分類)された
+  - node: p
+    children:
+    - node: text
+      content: https://wiki.php.net/rfc/reclassify_e_strict
   p33:
   - node: p
     children:
@@ -875,7 +884,8 @@ text:
     - node: br
     - node: text
       content: 7系では例外(Errorクラス)を
-    - node: br
+  - node: p
+    children:
     - node: text
       content: throw
   - node: p
@@ -892,7 +902,8 @@ text:
     - node: br
     - node: text
       content: '知っておく必要がある '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: E_ERROR
   - node: p
@@ -1250,7 +1261,8 @@ text:
     children:
     - node: text
       content: 処理すべきエラーかどうかの判定
-    - node: br
+  - node: p
+    children:
     - node: text
       content: error_reporting()
     - node: br
@@ -1363,7 +1375,8 @@ text:
     - node: br
     - node: text
       content: 独自設定したエラーハンドラが
-    - node: br
+  - node: p
+    children:
     - node: text
       content: error_reporting()
   - node: p
@@ -1621,7 +1634,8 @@ text:
     - node: br
     - node: text
       content: ユニットテスト
-    - node: br
+  - node: p
+    children:
     - node: text
       content: error_reporting(E_ALL);
   - node: p
@@ -1632,7 +1646,8 @@ text:
     children:
     - node: text
       content: 新規ファイルや動作確認できたページ
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '//   '
     - node: br
@@ -1647,7 +1662,8 @@ text:
     children:
     - node: bold
       content: べんりヘルパー関数
-    - node: br
+  - node: p
+    children:
     - node: text
       content: /**
   - node: p
@@ -1850,7 +1866,11 @@ text:
   - node: p
     children:
     - node: text
-      content: whoopsを使った設定例書きました http://gihyo.jp/magazine/wdpress/archive/2017/vol96
+      content: whoopsを使った設定例書きました
+  - node: p
+    children:
+    - node: text
+      content: http://gihyo.jp/magazine/wdpress/archive/2017/vol96
   p78:
   - node: p
     children:
@@ -1923,7 +1943,8 @@ text:
     children:
     - node: text
       content: エラー発生時のレベルと
-    - node: br
+  - node: p
+    children:
     - node: text
       content: error_reporting()
   - node: p
@@ -2008,7 +2029,8 @@ text:
     - node: br
     - node: text
       content: ' * @deprecated {@see grant()} を使ってください '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: ' */ '
     - node: br
@@ -2069,7 +2091,8 @@ text:
     children:
     - node: text
       content: した内容！)
-    - node: br
+  - node: p
+    children:
     - node: text
       content: https://gist.github.com/zonuexe/577d089815e241d5da26
   p86:
@@ -2106,7 +2129,8 @@ text:
     - node: br
     - node: text
       content: 'などをする '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: http://inside.pixiv.net/entry/2015/12/18/210721
   p87:
@@ -2142,7 +2166,8 @@ text:
     children:
     - node: text
       content: 'だいたいPHPマニュアルに載ってる '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'http://php.net/language.operators.errorcontrol '
     - node: br
@@ -2197,7 +2222,8 @@ text:
     children:
     - node: text
       content: 効果 by Ken'ichiro Oyama
-    - node: br
+  - node: p
+    children:
     - node: text
       content: http://k1low.hatenablog.com/entry/2017/06/13/083000
   p91:
@@ -2232,7 +2258,8 @@ text:
     children:
     - node: text
       content: ' (サンプル)'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: https://gist.github.com/zonuexe/577d089815e241d5da26
   p92:
@@ -2335,7 +2362,8 @@ text:
     children:
     - node: text
       content: または
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: recruit.pixiv.net
   p101:

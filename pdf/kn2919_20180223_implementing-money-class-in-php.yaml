@@ -161,7 +161,11 @@ text:
   - node: p
     children:
     - node: text
-      content: 概念上、この式で最大値が得られる 2 ** (PHP_INT_SIZE * 8 - 1) - 1
+      content: 概念上、この式で最大値が得られる
+  - node: p
+    children:
+    - node: text
+      content: 2 ** (PHP_INT_SIZE * 8 - 1) - 1
   p12:
   - node: p
     children:
@@ -233,7 +237,8 @@ text:
     children:
     - node: text
       content: PHPの演算子は整数演 算で を超え
-    - node: br
+  - node: p
+    children:
     - node: text
       content: PHP_INT_MAX
     - node: br
@@ -435,7 +440,11 @@ text:
   - node: p
     children:
     - node: text
-      content: 計算する処理は MoneyCalculator トレイトに分割
+      content: 計算する処理は
+  - node: p
+    children:
+    - node: text
+      content: MoneyCalculator トレイトに分割
   p53: []
   p54: []
   p55: []

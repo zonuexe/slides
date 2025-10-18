@@ -57,7 +57,8 @@ text:
       content: で
     - node: bold
       content: ' コード静的解析'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: Phan PHP 2018
   - node: p
@@ -518,7 +519,8 @@ text:
     children:
     - node: text
       content: 'PSR-5(abandoned) 型表記を実装 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '@param @return @var @method'
   - node: p
@@ -540,7 +542,8 @@ text:
     - node: br
     - node: text
       content: '独自の拡張形式で型を記述できる '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'Closure(int|array): (int[]) '
     - node: br
@@ -579,7 +582,8 @@ text:
     - node: br
     - node: bold
       content: '(ただしバージョン古すぎる) '
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: C. Composer
   - node: p
@@ -606,7 +610,8 @@ text:
     - node: br
     - node: bold
       content: '(ただしバージョン古すぎる) '
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: C. Composer
   - node: p
@@ -638,7 +643,8 @@ text:
     children:
     - node: text
       content: ファイルをダウンロードして
-    - node: br
+  - node: p
+    children:
     - node: text
       content: mv phan.phar ~/local/bin/phan
   - node: p
@@ -809,7 +815,11 @@ text:
   - node: p
     children:
     - node: text
-      content: PhpStormっぽくなるぞ！！！１ https://github.com/emacs-php/phpstan.el
+      content: PhpStormっぽくなるぞ！！！１
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/emacs-php/phpstan.el
   p63:
   - node: p
     children:
@@ -850,7 +860,8 @@ text:
     children:
     - node: text
       content: 'エディタに依存しない操作 標準でvimプラグインがある Emacs版の実装は私が開発中 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'https://github.com/emacs-php/phpactor.el '
     - node: br

@@ -51,7 +51,7 @@ text:
       content: コード
     - node: br
     - node: bold
-      content: (cid:1964)(cid:1417)(cid:3636)(cid:3095)(cid:3419)
+      content: 公開補訂版
   - node: p
     children:
     - node: text
@@ -148,7 +148,8 @@ text:
     children:
     - node: bold
       content: PHP大規模開発入門
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Vol.87
     - node: text
@@ -181,7 +182,8 @@ text:
     children:
     - node: text
       content: ' ……型のキャスト，変数とリファレンス'
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Vol.95
     - node: text
@@ -201,7 +203,8 @@ text:
     children:
     - node: bold
       content: PHP大規模開発入門
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Vol.87
     - node: text
@@ -240,7 +243,8 @@ text:
       content: 型
     - node: text
       content: のキャスト，変数とリファレンス
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Vol.95
     - node: text
@@ -348,40 +352,36 @@ text:
       children:
       - node: text
         content: int id
-  - node: p
-    children:
-    - node: text
-      content: C言語みたいに
-    - node: bold
-      content: '   '
-    - node: text
-      content: のような定義は
-    - node: bold
-      content: 'できない '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: 64 'A'
-  - node: p
-    children:
-    - node: bold
-      content: ' '
-    - node: text
-      content: と
-    - node: bold
-      content: '   '
-    - node: text
-      content: は
-    - node: bold
-      content: '厳然とした別の型の値 '
-  - node: ul
-    children:
-    - node: li
-      children:
+        content: C言語みたいに
+      - node: bold
+        content: '   '
       - node: text
-        content: '''64'' == 64'
+        content: のような定義は
+      - node: bold
+        content: 'できない '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 64 'A'
+          - node: br
+          - node: bold
+            content: ' '
+          - node: text
+            content: と
+          - node: bold
+            content: '   '
+          - node: text
+            content: は
+          - node: bold
+            content: '厳然とした別の型の値 '
+        - node: li
+          children:
+          - node: text
+            content: '''64'' == 64'
   - node: p
     children:
     - node: text
@@ -411,10 +411,9 @@ text:
       children:
       - node: text
         content: ( ) ( ) ( )
-  - node: p
-    children:
-    - node: bold
-      content: 文字列  配列 リソース
+      - node: br
+      - node: bold
+        content: 文字列  配列 リソース
   - node: p
     children:
     - node: text
@@ -484,7 +483,8 @@ text:
       content: 返り値
     - node: text
       content: に型を定義することができる
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: // PHP 5
   - node: p
@@ -599,7 +599,8 @@ text:
       content: ' を'
     - node: bold
       content: 実行時に
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: /**   */
     - node: text
@@ -739,32 +740,28 @@ text:
       children:
       - node: text
         content: int int|string
-  - node: p
-    children:
-    - node: text
-      content: '「 または文字列」   '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: 値が並んでるもの (配列/Collection)
-  - node: ul
-    children:
+        content: '「 または文字列」   '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 値が並んでるもの (配列/Collection)
     - node: li
       children:
       - node: text
         content: int int[]
-  - node: p
-    children:
-    - node: text
-      content: '「 が並んでるもの」 '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
+        content: '「 が並んでるもの」 '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
   p21:
   - node: p
     children:
@@ -784,10 +781,9 @@ text:
       children:
       - node: text
         content: いままで顕在化しなかったバグが発生するおそれ
-  - node: p
-    children:
-    - node: text
-      content: '不用意なキャストや型検査でエラー発生 '
+      - node: br
+      - node: text
+        content: '不用意なキャストや型検査でエラー発生 '
   - node: p
     children:
     - node: text
@@ -798,30 +794,27 @@ text:
       children:
       - node: text
         content: 稼動中のコードの挙動を変更せず検査できる
-  - node: p
-    children:
-    - node: text
-      content: '現行のPHPの型定義以上の型付けを表現できる '
+      - node: br
+      - node: text
+        content: '現行のPHPの型定義以上の型付けを表現できる '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: array int[]
-  - node: p
-    children:
-    - node: text
-      content: '複合型やコレクション(  →  ) '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: string int
-  - node: p
-    children:
-    - node: text
-      content: PHP5で対応できない  ,  など
+        content: '複合型やコレクション(  →  ) '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: string int
+          - node: br
+          - node: text
+            content: PHP5で対応できない  ,  など
   p22:
   - node: p
     children:
@@ -879,7 +872,8 @@ text:
     children:
     - node: text
       content: ふつうのプロパティは じゃなくて
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '@var'
   - node: p
@@ -1086,7 +1080,8 @@ text:
       content: アメリカのEtsy社が開発する
     - node: bold
       content: 静的解析ツール
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'https://github.com/etsy/phan '
   - node: p
@@ -1103,22 +1098,20 @@ text:
       children:
       - node: text
         content: Phanの開発にも参加してる
-  - node: p
-    children:
-    - node: text
-      content: 'PHPの型定義と型注釈を両方見てくれる '
+      - node: br
+      - node: text
+        content: 'PHPの型定義と型注釈を両方見てくれる '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: '@property @method'
-  - node: p
-    children:
-    - node: text
-      content: ただし、 と
-    - node: bold
-      content: ' 未対応'
+      - node: br
+      - node: text
+        content: ただし、 と
+      - node: bold
+        content: ' 未対応'
   p28:
   - node: p
     children:
@@ -1134,14 +1127,12 @@ text:
       children:
       - node: text
         content: .phar
-  - node: p
-    children:
-    - node: text
-      content: '最新のタグが付いてる ファイルをダウンロード '
-  - node: p
-    children:
-    - node: text
-      content: 'PHP7とphp-astが必須 '
+      - node: br
+      - node: text
+        content: '最新のタグが付いてる ファイルをダウンロード '
+      - node: br
+      - node: text
+        content: 'PHP7とphp-astが必須 '
   - node: p
     children:
     - node: text
@@ -1152,10 +1143,9 @@ text:
       children:
       - node: text
         content: サービスがPHP7で稼動してなくても動かせる
-  - node: p
-    children:
-    - node: text
-      content: '#!/bin/sh'
+      - node: br
+      - node: text
+        content: '#!/bin/sh'
   - node: p
     children:
     - node: text
@@ -1177,7 +1167,8 @@ text:
     children:
     - node: text
       content: プロジェクトの   に保存
-    - node: br
+  - node: p
+    children:
     - node: text
       content: https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file
   - node: p
@@ -1233,10 +1224,9 @@ text:
       children:
       - node: text
         content: '''generic_types_enabled'' => bool'
-  - node: p
-    children:
-    - node: text
-      content: '@template'
+      - node: br
+      - node: text
+        content: '@template'
   - node: p
     children:
     - node: text
@@ -1247,36 +1237,29 @@ text:
       children:
       - node: text
         content: '''suppress_issue_types'' => string[]'
-  - node: p
-    children:
-    - node: text
-      content: '無視するIssueタイプを指定する '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: '無視するIssueタイプを指定する '
     - node: li
       children:
       - node: text
         content: '''plugins'' => string[]'
-  - node: p
-    children:
-    - node: text
-      content: 'Phanプラグインを追加できる '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: DollarDollar
-  - node: p
-    children:
-    - node: text
-      content: 'サンプルとして が添付されている '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: $$var
+        content: 'Phanプラグインを追加できる '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: DollarDollar
+          - node: br
+          - node: text
+            content: 'サンプルとして が添付されている '
+        - node: li
+          children:
+          - node: text
+            content: $$var
   - node: p
     children:
     - node: text
@@ -1398,12 +1381,11 @@ text:
       children:
       - node: text
         content: '@suppress'
-  - node: p
-    children:
-    - node: bold
-      content: Issue
-    - node: text
-      content: ごとに出力するを制御可能( タグ)
+      - node: br
+      - node: bold
+        content: Issue
+      - node: text
+        content: ごとに出力するを制御可能( タグ)
   p33:
   - node: p
     children:
@@ -1641,7 +1623,8 @@ text:
     children:
     - node: text
       content: 実際には が代入されるが
-    - node: br
+  - node: p
+    children:
     - node: text
       content: void
   - node: p
@@ -1728,7 +1711,8 @@ text:
     children:
     - node: text
       content: 古い実装を新しいものに置換する際に
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '@deprecated'
   - node: p
@@ -1852,16 +1836,15 @@ text:
       children:
       - node: text
         content: const
-  - node: p
-    children:
-    - node: bold
-      content: '動的に定義されるため ( は静的) '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Reference to undeclared constant
+      - node: br
+      - node: bold
+        content: '動的に定義されるため ( は静的) '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Reference to undeclared constant
   - node: p
     children:
     - node: bold
@@ -1917,10 +1900,9 @@ text:
           children:
           - node: text
             content: but insert() is declared to return \成功
-  - node: p
-    children:
-    - node: text
-      content: 「@return 成功 true 失敗 false」
+          - node: br
+          - node: text
+            content: 「@return 成功 true 失敗 false」
   p46:
   - node: p
     children:
@@ -2012,10 +1994,9 @@ text:
       children:
       - node: text
         content: 型を宣言することができる
-  - node: p
-    children:
-    - node: bold
-      content: 'Phanはソースコードを動作させずに解析できる '
+      - node: br
+      - node: bold
+        content: 'Phanはソースコードを動作させずに解析できる '
   - node: p
     children:
     - node: bold

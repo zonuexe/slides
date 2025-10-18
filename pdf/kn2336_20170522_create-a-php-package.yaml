@@ -19,7 +19,8 @@ text:
     children:
     - node: bold
       content: パッケージを作ろう！ LT
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Create your PHP library/package!
   - node: p
@@ -64,10 +65,9 @@ text:
       children:
       - node: text
         content: コアの部分をぐにゃっとできるように悩んでるよ
-  - node: p
-    children:
-    - node: text
-      content: Mastodon API Client/SDK作ったよ
+      - node: br
+      - node: text
+        content: Mastodon API Client/SDK作ったよ
   p3:
   - node: p
     children:
@@ -147,7 +147,8 @@ text:
       content: '  '
     - node: text
       content: 形式
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '[-0-9a-z]+ '
     - node: br
@@ -229,7 +230,8 @@ text:
     children:
     - node: text
       content: 拘りがなければ と に置く
-    - node: br
+  - node: p
+    children:
     - node: text
       content: git init; mkdir src/ tests/;
   - node: p
@@ -292,7 +294,8 @@ text:
     children:
     - node: text
       content: 起動スクリプトでだけ
-    - node: br
+  - node: p
+    children:
     - node: text
       content: autoload.php
   - node: p
@@ -526,8 +529,8 @@ text:
     children:
     - node: bold
       content: Packagistでぐぐる
-    - node: text
-      content: ' '
+  - node: p
+    children:
     - node: bold
       content: https://packagist.org/
   p19:
@@ -602,8 +605,8 @@ text:
     children:
     - node: bold
       content: ひたすらひたすらひたすら写してく
-    - node: text
-      content: ' '
+  - node: p
+    children:
     - node: bold
       content: https://github.com/tootsuite/documentation/blob/
   - node: p
@@ -614,7 +617,8 @@ text:
     children:
     - node: bold
       content: 自作のライブラリで型付け
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: https://github.com/BaguettePHP/objectsystem
   p23:
@@ -671,7 +675,8 @@ text:
     children:
     - node: text
       content: Requestするメソッド
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: public static function getAccount(
   - node: p
@@ -719,7 +724,8 @@ text:
     children:
     - node: text
       content: APIの結果をデコードしてぶっこむ
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: public function __construct(array $properties) {
   - node: p

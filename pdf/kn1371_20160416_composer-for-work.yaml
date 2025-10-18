@@ -159,20 +159,18 @@ text:
       children:
       - node: text
         content: 閉じて依存性を管理する
-  - node: p
-    children:
-    - node: bold
-      content: npm
-    - node: text
-      content: ' や'
-    - node: bold
-      content: Bundler
-    - node: text
-      content: ' に影響を受けた '
-  - node: p
-    children:
-    - node: text
-      content: (Node.js) (Ruby)
+      - node: br
+      - node: bold
+        content: npm
+      - node: text
+        content: ' や'
+      - node: bold
+        content: Bundler
+      - node: text
+        content: ' に影響を受けた '
+      - node: br
+      - node: text
+        content: (Node.js) (Ruby)
   - node: p
     children:
     - node: text
@@ -214,12 +212,9 @@ text:
       children:
       - node: text
         content: PHP(5.3.2+)がある環境ならどこでも動作する
-  - node: p
-    children:
-    - node: text
-      content: 'Linux/OS XのみならずWindowsもサポートしてる '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'Linux/OS XのみならずWindowsもサポートしてる '
     - node: li
       children:
       - node: text
@@ -247,20 +242,16 @@ text:
       children:
       - node: text
         content: 新鮮さのような違いはもちろんある。
-  - node: p
-    children:
-    - node: text
-      content: それ以上に、PHPプロジェクトと同時にデプロイ可
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: それ以上に、PHPプロジェクトと同時にデプロイ可
     - node: li
       children:
       - node: text
         content: 能になったことが非常に重要
-  - node: p
-    children:
-    - node: text
-      content: ライブラリを導入する権限がインフラ／サーバー管
+      - node: br
+      - node: text
+        content: ライブラリを導入する権限がインフラ／サーバー管
   - node: p
     children:
     - node: text
@@ -319,12 +310,9 @@ text:
       children:
       - node: text
         content: vendor/package
-  - node: p
-    children:
-    - node: text
-      content: 'パッケージ名は の形式 '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'パッケージ名は の形式 '
     - node: li
       children:
       - node: text
@@ -478,10 +466,9 @@ text:
       children:
       - node: text
         content: 勝手にインストールされることを防ぐ
-  - node: p
-    children:
-    - node: text
-      content: 自動生成されるので手動編集しない方が良い
+      - node: br
+      - node: text
+        content: 自動生成されるので手動編集しない方が良い
   p15:
   - node: p
     children:
@@ -508,24 +495,22 @@ text:
       children:
       - node: text
         content: バージョン管理の対象にするべきかは場合による
-  - node: p
-    children:
-    - node: text
-      content: 'アプリケーションでは管理することが多い '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: ライブラリは基本的に管理しない
-    - node: li
-      children:
-      - node: text
-        content: .gitignore
-  - node: p
-    children:
-    - node: text
-      content: 管理しない場合は   に設定しておく
+        content: 'アプリケーションでは管理することが多い '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ライブラリは基本的に管理しない
+        - node: li
+          children:
+          - node: text
+            content: .gitignore
+          - node: br
+          - node: text
+            content: 管理しない場合は   に設定しておく
   p16:
   - node: p
     children:
@@ -544,10 +529,9 @@ text:
       children:
       - node: text
         content: .gitignore
-  - node: p
-    children:
-    - node: bold
-      content: 'プロジェクトの   で除外しておく '
+      - node: br
+      - node: bold
+        content: 'プロジェクトの   で除外しておく '
   - node: p
     children:
     - node: bold
@@ -558,10 +542,9 @@ text:
       children:
       - node: text
         content: require __DIR__ . '/vendor/autoload.php';
-  - node: p
-    children:
-    - node: bold
-      content: '何度も書く必要はなく、一度だけ読み込めばいい '
+      - node: br
+      - node: bold
+        content: '何度も書く必要はなく、一度だけ読み込めばいい '
   - node: p
     children:
     - node: bold
@@ -642,10 +625,9 @@ text:
       children:
       - node: text
         content: 必要なパッケージをインストール
-  - node: p
-    children:
-    - node: text
-      content: composer list
+      - node: br
+      - node: text
+        content: composer list
   - node: p
     children:
     - node: text
@@ -714,12 +696,9 @@ text:
       children:
       - node: text
         content: しかしてくれない (Windowsにはしてくれる)
-  - node: p
-    children:
-    - node: bold
-      content: '仕事の性質に配置方法には一考の余地がある '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '仕事の性質に配置方法には一考の余地がある '
     - node: li
       children:
       - node: text
@@ -749,10 +728,9 @@ text:
       children:
       - node: text
         content: ログインして作業する場合にとれる方法
-  - node: p
-    children:
-    - node: text
-      content: /usr/local/bin/composer.phar
+      - node: br
+      - node: text
+        content: /usr/local/bin/composer.phar
   - node: p
     children:
     - node: text
@@ -790,10 +768,9 @@ text:
       children:
       - node: text
         content: 場合とか、ライブラリをいろいろ作る場合とか
-  - node: p
-    children:
-    - node: text
-      content: $HOME/bin/composer.phar
+      - node: br
+      - node: text
+        content: $HOME/bin/composer.phar
   - node: p
     children:
     - node: text
@@ -889,12 +866,9 @@ text:
       children:
       - node: text
         content: いいけど、pixivでは git commit しちゃってる
-  - node: p
-    children:
-    - node: text
-      content: 毎月更新するとして1.6MBのディスクスペースの
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 毎月更新するとして1.6MBのディスクスペースの
     - node: li
       children:
       - node: text
@@ -962,12 +936,9 @@ text:
       children:
       - node: text
         content: ./composer
-  - node: p
-    children:
-    - node: text
-      content: 'かわりに   を利用 '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'かわりに   を利用 '
     - node: li
       children:
       - node: text
@@ -1053,15 +1024,15 @@ text:
       children:
       - node: text
         content: に配置しておくと便利
-  - node: p
-    children:
-    - node: text
-      content: $HOME/local/bin/composer
+      - node: br
+      - node: text
+        content: $HOME/local/bin/composer
   - node: p
     children:
     - node: text
       content: ( や などでPATHを通す)
-    - node: br
+  - node: p
+    children:
     - node: text
       content: .bash_profile .zshenv
   - node: p
@@ -1162,10 +1133,9 @@ text:
       children:
       - node: text
         content: かんたんに新しいバージョンをリリースできる
-  - node: p
-    children:
-    - node: bold
-      content: '有名なライブラリ／フレームワークは登録済み '
+      - node: br
+      - node: bold
+        content: '有名なライブラリ／フレームワークは登録済み '
   - node: ul
     children:
     - node: li
@@ -1194,18 +1164,15 @@ text:
       children:
       - node: text
         content: 触ってみる
-  - node: p
-    children:
-    - node: bold
-      content: '各ジャンルの手堅いライブラリの一覧 '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: たいていのコンポーネントは大手が作ってる
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '各ジャンルの手堅いライブラリの一覧 '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: たいていのコンポーネントは大手が作ってる
     - node: li
       children:
       - node: text
@@ -1270,12 +1237,9 @@ text:
       children:
       - node: text
         content: 状態がユーザーの目に触れないよう工夫する
-  - node: p
-    children:
-    - node: bold
-      content: 弊社事例(rsync+デプロイスクリプト手書き)は
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 弊社事例(rsync+デプロイスクリプト手書き)は
     - node: li
       children:
       - node: text
@@ -1346,16 +1310,15 @@ text:
       children:
       - node: text
         content: composer.json
-  - node: p
-    children:
-    - node: bold
-      content: '記法は と同じ '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '"~2.1.0" ">=2.1.0"'
+      - node: br
+      - node: bold
+        content: '記法は と同じ '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: '"~2.1.0" ">=2.1.0"'
   - node: p
     children:
     - node: bold
@@ -1374,13 +1337,12 @@ text:
       children:
       - node: text
         content: satis.json
-  - node: p
-    children:
-    - node: bold
-      content: リポジトリを用意して、毎日定時と が
-    - node: br
-    - node: bold
-      content: 更新されたときに新鮮なパッケージを取得
+      - node: br
+      - node: bold
+        content: リポジトリを用意して、毎日定時と が
+      - node: br
+      - node: bold
+        content: 更新されたときに新鮮なパッケージを取得
   p40:
   - node: p
     children:
@@ -1495,20 +1457,18 @@ text:
       children:
       - node: text
         content: だいたい綺麗なコードが書ける気がする
-  - node: p
-    children:
-    - node: bold
-      content: PSR-1, PSR-2はインフィニットループさんに
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: よる日本語訳がWebにあります
-  - node: p
-    children:
-    - node: bold
-      content: とりあえずnamespaceは付けといた方が良い
+      - node: br
+      - node: bold
+        content: PSR-1, PSR-2はインフィニットループさんに
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: よる日本語訳がWebにあります
+          - node: br
+          - node: bold
+            content: とりあえずnamespaceは付けといた方が良い
   p44:
   - node: p
     children:
@@ -1529,10 +1489,9 @@ text:
       children:
       - node: text
         content: あるので、ネットワークコストが非常に高い
-  - node: p
-    children:
-    - node: bold
-      content: 'これはSatisを置けば解決する '
+      - node: br
+      - node: bold
+        content: 'これはSatisを置けば解決する '
   - node: p
     children:
     - node: bold
@@ -1563,10 +1522,9 @@ text:
       children:
       - node: text
         content: 最適な実装ではない
-  - node: p
-    children:
-    - node: bold
-      content: 'Hirakuさんが並列ダウンロードできるようにした '
+      - node: br
+      - node: bold
+        content: 'Hirakuさんが並列ダウンロードできるようにした '
   - node: p
     children:
     - node: bold
@@ -1577,10 +1535,9 @@ text:
       children:
       - node: text
         content: http://blog.tojiru.net/article/432944706.html
-  - node: p
-    children:
-    - node: bold
-      content: GitHubで既に★1660個ついてる！
+      - node: br
+      - node: bold
+        content: GitHubで既に★1660個ついてる！
   p47:
   - node: p
     children:
@@ -1653,12 +1610,9 @@ text:
       children:
       - node: text
         content: できないので注意すること
-  - node: p
-    children:
-    - node: text
-      content: 'psysh.el もあるよ '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'psysh.el もあるよ '
     - node: li
       children:
       - node: text

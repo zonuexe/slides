@@ -93,20 +93,23 @@ text:
     children:
     - node: text
       content: ' 使ってない'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: A.
   - node: p
     children:
     - node: text
       content: ' FW経由で'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: B.
     - node: br
     - node: text
       content: ' 直接使ってる'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: C.
   p7:
@@ -206,7 +209,8 @@ text:
     children:
     - node: text
       content: 基本はComposerの
-    - node: br
+  - node: p
+    children:
     - node: text
       content: autoload.php
   - node: p
@@ -255,7 +259,8 @@ text:
       content: 絶対パス
     - node: text
       content: ' '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'A. '
   - node: p
@@ -277,7 +282,8 @@ text:
       content: プロトコル
     - node: text
       content: ' (ラッパー)'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'C. '
   p29:
@@ -380,7 +386,8 @@ text:
     children:
     - node: text
       content: で、デフォルトでは  で
-    - node: br
+  - node: p
+    children:
     - node: text
       content: allow_url_include = Off
   - node: p
@@ -392,7 +399,8 @@ text:
     children:
     - node: bold
       content: 改めて
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Composer
   p33:
@@ -573,7 +581,8 @@ text:
     - node: br
     - node: text
       content: '読み込みを変更 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '2.'
     - node: br
@@ -589,10 +598,9 @@ text:
       children:
       - node: text
         content: zend_loader_file_encoded()が無効なら
-  - node: p
-    children:
-    - node: text
-      content: autoload_staticが利用される
+      - node: br
+      - node: text
+        content: autoload_staticが利用される
   p45:
   - node: p
     children:

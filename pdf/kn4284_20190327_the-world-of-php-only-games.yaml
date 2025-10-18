@@ -323,7 +323,8 @@ text:
     - node: text
       content: '    foreach (piyo() as $p) { // ← 省略できない         echo $piyo->$name;
         // ← 可変プロパティ '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '    } '
     - node: br
@@ -685,7 +686,8 @@ text:
     children:
     - node: text
       content: 状態を持てる関数
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'APCu,  , '
   - node: p
@@ -696,7 +698,8 @@ text:
     children:
     - node: text
       content: 変数テーブルの操作
-    - node: br
+  - node: p
+    children:
     - node: text
       content: ', '
     - node: br
@@ -732,6 +735,7 @@ text:
     children:
     - node: text
       content: ' とか : とか(両方は重い)'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '{}'

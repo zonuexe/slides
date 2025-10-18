@@ -77,12 +77,9 @@ text:
       children:
       - node: text
         content: 年 月にピクシブ入社
-  - node: p
-    children:
-    - node: text
-      content: '2012 11  '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: '2012 11  '
     - node: li
       children:
       - node: text
@@ -97,22 +94,18 @@ text:
       children:
       - node: text
         content: の もろもろやってます
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv PHP  '
+      - node: br
+      - node: text
+        content: 'pixiv PHP  '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: に の記事を書きました
-  - node: p
-    children:
-    - node: text
-      content: 'WEB+DB Press PHP  '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'WEB+DB Press PHP  '
     - node: li
       children:
       - node: text
@@ -163,46 +156,36 @@ text:
       children:
       - node: text
         content: のデプロイについて
-  - node: p
-    children:
-    - node: bold
-      content: 'pixiv  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の開発環境について
-  - node: p
-    children:
-    - node: bold
-      content: 'pixiv  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の について
-  - node: p
-    children:
-    - node: bold
-      content: 'pixiv PHP  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の について
-  - node: p
-    children:
-    - node: bold
-      content: 'pixiv SQL  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そのほか
+      - node: br
+      - node: bold
+        content: 'pixiv  '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: の開発環境について
+          - node: br
+          - node: bold
+            content: 'pixiv  '
+        - node: li
+          children:
+          - node: text
+            content: の について
+          - node: br
+          - node: bold
+            content: 'pixiv PHP  '
+        - node: li
+          children:
+          - node: text
+            content: の について
+          - node: br
+          - node: bold
+            content: 'pixiv SQL  '
+        - node: li
+          children:
+          - node: text
+            content: そのほか
   p5:
   - node: p
     children:
@@ -264,7 +247,8 @@ text:
     - node: br
     - node: text
       content: を として扱ってた
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'submodule  '
     - node: br
@@ -336,12 +320,9 @@ text:
       children:
       - node: text
         content: 以前 年は ファイルの増減を伴った
-  - node: p
-    children:
-    - node: bold
-      content: (2013 ) PHP
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: (2013 ) PHP
     - node: li
       children:
       - node: text
@@ -354,14 +335,16 @@ text:
     children:
     - node: text
       content: 件程度のエラーが発生してしまってた
-    - node: br
+  - node: p
+    children:
     - node: text
       content: xxx
     - node: bold
       content: '  '
     - node: text
       content: 現在は の確立で、
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Blue-GreenDeployment
   - node: ul
@@ -393,42 +376,32 @@ text:
       children:
       - node: text
         content: ディレクトリにファイルを配置
-  - node: p
-    children:
-    - node: bold
-      content: '/.deploy   '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '/.deploy   '
     - node: li
       children:
       - node: text
         content: スクリプトが実行される
-  - node: p
-    children:
-    - node: bold
-      content: 'bin/deploy   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: で画面カスタマイズ可能
-  - node: p
-    children:
-    - node: bold
-      content: 'readme.html   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: に依存するので、特定のバージョンを
-  - node: p
-    children:
-    - node: bold
-      content: Git
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'bin/deploy   '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: で画面カスタマイズ可能
+          - node: br
+          - node: bold
+            content: 'readme.html   '
+        - node: li
+          children:
+          - node: text
+            content: に依存するので、特定のバージョンを
+          - node: br
+          - node: bold
+            content: Git
     - node: li
       children:
       - node: text
@@ -474,7 +447,8 @@ text:
     children:
     - node: text
       content: のデプロイを支える
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'pixiv pploy '
   - node: ul
@@ -542,20 +516,16 @@ text:
       children:
       - node: text
         content: でローカルと同期して など
-  - node: p
-    children:
-    - node: bold
-      content: 'rsync PhpStorm  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'rsync PhpStorm  '
     - node: li
       children:
       - node: text
         content: は を利用してる
-  - node: p
-    children:
-    - node: bold
-      content: '@tadsan TRAMP'
+      - node: br
+      - node: bold
+        content: '@tadsan TRAMP'
   p15:
   - node: p
     children:
@@ -579,12 +549,9 @@ text:
       children:
       - node: text
         content: にシンボリックリンクを作成
-  - node: p
-    children:
-    - node: bold
-      content: '/home/www/  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '/home/www/  '
     - node: li
       children:
       - node: text
@@ -599,30 +566,25 @@ text:
       children:
       - node: text
         content: のような形式
-  - node: p
-    children:
-    - node: bold
-      content: 'www.tadsan.example.com   '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'www.tadsan.example.com   '
     - node: li
       children:
       - node: text
         content: 関係なくても任意の を動作可能
-  - node: p
-    children:
-    - node: bold
-      content: 'pixiv PHP  '
+      - node: br
+      - node: bold
+        content: 'pixiv PHP  '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: で同じ仕様のサーバー増やせる
-  - node: p
-    children:
-    - node: bold
-      content: OpenStack
+      - node: br
+      - node: bold
+        content: OpenStack
   p16:
   - node: p
     children:
@@ -632,7 +594,8 @@ text:
     children:
     - node: text
       content: の操作を抽象化する層
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'DB (DAO) '
   - node: ul
@@ -702,26 +665,22 @@ text:
       children:
       - node: text
         content: を見ればわかる通り、ページ
-  - node: p
-    children:
-    - node: bold
-      content: 'URL =PHP '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: など
-  - node: p
-    children:
-    - node: bold
-      content: 'search.php, member_illust.php  … '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 一部のリクエストは で捌いてる
+      - node: br
+      - node: bold
+        content: 'URL =PHP '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: など
+          - node: br
+          - node: bold
+            content: 'search.php, member_illust.php  … '
+        - node: li
+          children:
+          - node: text
+            content: 一部のリクエストは で捌いてる
   - node: p
     children:
     - node: bold
@@ -824,16 +783,16 @@ text:
       children:
       - node: text
         content: を使ってもつらいものはつらい
-  - node: p
-    children:
-    - node: bold
-      content: PhpStorm
+      - node: br
+      - node: bold
+        content: PhpStorm
   p20:
   - node: p
     children:
     - node: text
       content: の コード 昨年 月
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: pixiv PHP  ( 10 )
   - node: p
@@ -870,23 +829,21 @@ text:
       children:
       - node: text
         content: ( )
-  - node: p
-    children:
-    - node: text
-      content: リポジトリ内に混在する都合上、
+      - node: br
+      - node: text
+        content: リポジトリ内に混在する都合上、
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: の は利用しにくい
-  - node: p
-    children:
-    - node: bold
-      content: 'Composer autoload  '
-    - node: br
-    - node: text
-      content: 一部では で生成して
+      - node: br
+      - node: bold
+        content: 'Composer autoload  '
+      - node: br
+      - node: text
+        content: 一部では で生成して
   - node: p
     children:
     - node: bold
@@ -896,7 +853,8 @@ text:
     children:
     - node: text
       content: の コード 現在
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'pixiv PHP  '
     - node: text
@@ -921,10 +879,9 @@ text:
       children:
       - node: text
         content: では完全移行が完了
-  - node: p
-    children:
-    - node: bold
-      content: pixiv-lib
+      - node: br
+      - node: bold
+        content: pixiv-lib
   - node: p
     children:
     - node: text
@@ -1016,20 +973,16 @@ text:
       children:
       - node: text
         content: 定数 の定義
-  - node: p
-    children:
-    - node: bold
-      content: '(deﬁne)  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '(deﬁne)  '
     - node: li
       children:
       - node: text
         content: のみ で読み込む
-  - node: p
-    children:
-    - node: bold
-      content: 'loadset require_once  '
+      - node: br
+      - node: bold
+        content: 'loadset require_once  '
   - node: ul
     children:
     - node: li
@@ -1045,7 +998,8 @@ text:
     children:
     - node: text
       content: の
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: pixiv SQL
   - node: p
@@ -1068,22 +1022,16 @@ text:
       children:
       - node: text
         content: マッパー自動クエリビルダーは利用せず
-  - node: p
-    children:
-    - node: bold
-      content: 'OR /  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'OR /  '
     - node: li
       children:
       - node: text
         content: 年の初旬から に型をつけて安全に
-  - node: p
-    children:
-    - node: bold
-      content: 2015 SQL
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 2015 SQL
     - node: li
       children:
       - node: text
@@ -1098,14 +1046,16 @@ text:
     children:
     - node: text
       content: の
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: pixiv SQL
   - node: p
     children:
     - node: text
       content: なぜ自動クエリビルダー利用しないの？
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'Q:   '
   - node: ul
@@ -1126,16 +1076,16 @@ text:
       children:
       - node: text
         content: 例 ブックマークなど
-  - node: p
-    children:
-    - node: bold
-      content: ': '
+      - node: br
+      - node: bold
+        content: ': '
   p27:
   - node: p
     children:
     - node: text
       content: の
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: pixiv WebAPI
     - node: br
@@ -1157,12 +1107,9 @@ text:
       children:
       - node: text
         content: で利用するための
-  - node: p
-    children:
-    - node: bold
-      content: 'ActiveResource API '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'ActiveResource API '
     - node: li
       children:
       - node: text
@@ -1200,14 +1147,16 @@ text:
     children:
     - node: text
       content: の
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: pixiv WebAPI
   - node: p
     children:
     - node: text
       content: なぜ か なぜ じゃないのか
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'RESTful ?  REST ? '
   - node: ul
@@ -1232,13 +1181,12 @@ text:
       children:
       - node: text
         content: の概念が馴染むとは限らない
-  - node: p
-    children:
-    - node: bold
-      content: 'REST/CRUD  '
-    - node: br
-    - node: text
-      content: 外部公開するのでなければ、
+      - node: br
+      - node: bold
+        content: 'REST/CRUD  '
+      - node: br
+      - node: text
+        content: 外部公開するのでなければ、
   - node: ul
     children:
     - node: li
@@ -1292,10 +1240,9 @@ text:
       children:
       - node: text
         content: 社内 は を採用した
-  - node: p
-    children:
-    - node: bold
-      content: 'API(RPC)  Apache Thrift   '
+      - node: br
+      - node: bold
+        content: 'API(RPC)  Apache Thrift   '
   - node: ul
     children:
     - node: li
@@ -1325,16 +1272,15 @@ text:
       children:
       - node: text
         content: は に同梱
-  - node: p
-    children:
-    - node: bold
-      content: 'composer.phar pixiv.git  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 社内ネットワーク内で を運用
+      - node: br
+      - node: bold
+        content: 'composer.phar pixiv.git  '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 社内ネットワーク内で を運用
   - node: p
     children:
     - node: bold
@@ -1345,26 +1291,22 @@ text:
       children:
       - node: text
         content: で定期的に更新
-  - node: p
-    children:
-    - node: bold
-      content: 'Jenkins  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の障害があっても支障なし
-  - node: p
-    children:
-    - node: bold
-      content: 'GitHub  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 手動でパッケージ更新もできる
+      - node: br
+      - node: bold
+        content: 'Jenkins  '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: の障害があっても支障なし
+          - node: br
+          - node: bold
+            content: 'GitHub  '
+        - node: li
+          children:
+          - node: text
+            content: 手動でパッケージ更新もできる
   p31:
   - node: p
     children:
@@ -1388,22 +1330,16 @@ text:
       children:
       - node: text
         content: 年頃にテストを書く文化が定着した
-  - node: p
-    children:
-    - node: bold
-      content: '2013  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '2013  '
     - node: li
       children:
       - node: text
         content: の に したら自動テスト走る
-  - node: p
-    children:
-    - node: bold
-      content: 'Gitlab MR push  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'Gitlab MR push  '
     - node: li
       children:
       - node: text
@@ -1418,10 +1354,9 @@ text:
       children:
       - node: text
         content: に通知される
-  - node: p
-    children:
-    - node: bold
-      content: idobata
+      - node: br
+      - node: bold
+        content: idobata
   p32:
   - node: p
     children:
@@ -1474,7 +1409,8 @@ text:
     children:
     - node: text
       content: のデプロイ回数は一日およそ 回
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'pixiv 40  '
   - node: ul
@@ -1489,26 +1425,24 @@ text:
       children:
       - node: text
         content: をいっぱい使ってる
-  - node: p
-    children:
-    - node: bold
-      content: 'Jenkins  '
+      - node: br
+      - node: bold
+        content: 'Jenkins  '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: の代替として
-  - node: p
-    children:
-    - node: bold
-      content: 'cron  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: スクリプトの としても利用できる
+      - node: br
+      - node: bold
+        content: 'cron  '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: スクリプトの としても利用できる
   - node: p
     children:
     - node: bold
@@ -1544,72 +1478,59 @@ text:
       children:
       - node: text
         content: テストしにくいコード対策
-  - node: p
-    children:
-    - node: bold
-      content: 'Vol.81:   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 安全なコーディングスタイル
-  - node: p
-    children:
-    - node: bold
-      content: 'Vol.83:   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: デプロイ・ 運用
-  - node: p
-    children:
-    - node: bold
-      content: 'Vol.84: '
-    - node: text
-      content: ' Composer  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 記法で型注釈
-  - node: p
-    children:
-    - node: bold
-      content: 'Vol.87: '
-    - node: text
-      content: 'PHPDoc  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の運用
-  - node: p
-    children:
-    - node: bold
-      content: 'Vol.88: '
-    - node: text
-      content: 'HHVM  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 名前空間とオートローディング
-  - node: p
-    children:
-    - node: bold
-      content: 'Vol.91: '
+      - node: br
+      - node: bold
+        content: 'Vol.81:   '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 安全なコーディングスタイル
+          - node: br
+          - node: bold
+            content: 'Vol.83:   '
+        - node: li
+          children:
+          - node: text
+            content: デプロイ・ 運用
+          - node: br
+          - node: bold
+            content: 'Vol.84: '
+          - node: text
+            content: ' Composer  '
+        - node: li
+          children:
+          - node: text
+            content: 記法で型注釈
+          - node: br
+          - node: bold
+            content: 'Vol.87: '
+          - node: text
+            content: 'PHPDoc  '
+        - node: li
+          children:
+          - node: text
+            content: の運用
+          - node: br
+          - node: bold
+            content: 'Vol.88: '
+          - node: text
+            content: 'HHVM  '
+        - node: li
+          children:
+          - node: text
+            content: 名前空間とオートローディング
+          - node: br
+          - node: bold
+            content: 'Vol.91: '
   p35:
   - node: p
     children:
     - node: text
       content: 続きは で
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Web
   - node: p
@@ -1626,27 +1547,23 @@ text:
       children:
       - node: text
         content: 個人で公開してるもの
-  - node: p
-    children:
-    - node: bold
-      content: 'GitHub   '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'GitHub   '
     - node: li
       children:
       - node: text
         content: (tadsan )
-  - node: p
-    children:
-    - node: text
-      content: 'BaguettePHP/simple-routing '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: BaguettePHP/http-accept-language
-    - node: li
-      children:
-      - node: text
-        content: BaguettePHP/TetoSQL
+        content: 'BaguettePHP/simple-routing '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: BaguettePHP/http-accept-language
+        - node: li
+          children:
+          - node: text
+            content: BaguettePHP/TetoSQL

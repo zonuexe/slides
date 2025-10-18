@@ -71,7 +71,8 @@ text:
     children:
     - node: text
       content: PSRを実装してみる
-    - node: br
+  - node: p
+    children:
     - node: text
       content: Let's implement PSR
   - node: p
@@ -441,7 +442,8 @@ text:
     children:
     - node: text
       content: ティも注目していることはよく承知してい ます。ほかの人々が の成果物を採用す
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: PSR
     - node: br
@@ -555,7 +557,8 @@ text:
     children:
     - node: text
       content: 失効済み！！！
-    - node: br
+  - node: p
+    children:
     - node: text
       content: PSR-0
   - node: p
@@ -617,7 +620,8 @@ text:
     children:
     - node: text
       content: 区切りの擬似名前空間も許容
-    - node: br
+  - node: p
+    children:
     - node: text
       content: _
   - node: p
@@ -743,7 +747,8 @@ text:
     children:
     - node: text
       content: PSR-0準拠クラスローダー関数
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'function add_directory(string $base_dir): void {'
     - node: br
@@ -975,11 +980,19 @@ text:
   - node: p
     children:
     - node: text
-      content: '// 別のファイルを読み込もうとする include_once __DIR__ . "/foo.php"; '
+      content: '// 別のファイルを読み込もうとする '
   - node: p
     children:
     - node: text
-      content: '// エラーレベルを変更 error_reporting(0); '
+      content: 'include_once __DIR__ . "/foo.php"; '
+  - node: p
+    children:
+    - node: text
+      content: '// エラーレベルを変更 '
+  - node: p
+    children:
+    - node: text
+      content: 'error_reporting(0); '
   - node: p
     children:
     - node: text
@@ -1134,13 +1147,15 @@ text:
     children:
     - node: text
       content: ( ,  ,  など)
-    - node: br
+  - node: p
+    children:
     - node: text
       content: class function namespace
     - node: br
     - node: text
       content: の開始行と  の間は改行する
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '{ '
     - node: br
@@ -1150,7 +1165,8 @@ text:
     children:
     - node: text
       content: ( ,  など)
-    - node: br
+  - node: p
+    children:
     - node: text
       content: if foreach
   - node: p
@@ -1199,7 +1215,8 @@ text:
     children:
     - node: text
       content: その他本スタイルガイドでは、意図的に
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: '7.   '
     - node: br
@@ -1264,7 +1281,8 @@ text:
     - node: br
     - node: text
       content: PhpStormの設定ファイルを共有
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'StyleCI '
   - node: p
@@ -1407,7 +1425,8 @@ text:
     children:
     - node: text
       content: 共有した方がいいらしい
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'github/gitignore: JetBrains.gitignore'
     - node: br
@@ -1507,7 +1526,8 @@ text:
     - node: br
     - node: text
       content: 緊急度が高い順から
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'Emergency, Alert, Critical, '
     - node: br
@@ -1525,7 +1545,8 @@ text:
     children:
     - node: text
       content: psr/logパッケージに含まれる
-    - node: br
+  - node: p
+    children:
     - node: text
       content: /
     - node: br
@@ -2078,7 +2099,8 @@ text:
     - node: br
     - node: text
       content: PSR-13提案者の概念実証
-    - node: br
+  - node: p
+    children:
     - node: text
       content: php-fig/link-util
     - node: br
@@ -2300,7 +2322,11 @@ text:
       content: コード上の記述とPHPDocのコメン トを手がかりにして、怪しい部分
     - node: br
     - node: text
-      content: 'を高精度で検出してくれる Phan, PHPStan, Psalm, '
+      content: を高精度で検出してくれる
+  - node: p
+    children:
+    - node: text
+      content: 'Phan, PHPStan, Psalm, '
     - node: br
     - node: text
       content: PhpStormなどのツールがある 今回の実装でも助けられました

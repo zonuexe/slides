@@ -321,7 +321,8 @@ text:
     children:
     - node: text
       content: PHPで書くとURLに
-    - node: br
+  - node: p
+    children:
     - node: text
       content: .php
   - node: p
@@ -344,7 +345,8 @@ text:
     - node: br
     - node: text
       content: これをな
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'php-project/ ├── inc '
     - node: br
@@ -369,7 +371,8 @@ text:
     - node: br
     - node: text
       content: こうじゃ
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'php-project/ ├── inc '
     - node: br
@@ -486,7 +489,8 @@ text:
     children:
     - node: bold
       content: ビルトインサーバー
-    - node: br
+  - node: p
+    children:
     - node: text
       content: php -S
     - node: br
@@ -514,13 +518,15 @@ text:
     - node: br
     - node: text
       content: ' ファイルがあったら、それを返す( なら実行)'
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '#  index.php  '
     - node: br
     - node: text
       content: 存在しなかったら、 を実行
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'RewriteCond %{REQUEST_FILENAME} !-f '
     - node: br
@@ -601,7 +607,8 @@ text:
     - node: br
     - node: bold
       content: 'ングがしたかった '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: https://qiita.zonu.me/simple-routing
   p30:
@@ -716,7 +723,8 @@ text:
     - node: br
     - node: text
       content: ただし、現在は例外を利用すべき
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '# '
     - node: br
@@ -784,7 +792,11 @@ text:
   - node: p
     children:
     - node: text
-      content: '// 全ての変数は $ から始まる $string = ''string'' . "value"; '
+      content: '// 全ての変数は $ から始まる '
+  - node: p
+    children:
+    - node: text
+      content: '$string = ''string'' . "value"; '
     - node: br
     - node: text
       content: '$array  = [1, 2, 3]; '
@@ -911,13 +923,15 @@ text:
     - node: br
     - node: text
       content: '    "name" => "めぐりねるか", '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '    "age"  => 28, '
     - node: br
     - node: text
       content: '    "from" => "北海道", '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '];'
   p46:
@@ -992,7 +1006,8 @@ text:
     - node: br
     - node: text
       content: フィボナッチ数列を順に出力する
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'foreach (fizzbuzz(100) as $f) { '
     - node: br
@@ -1111,7 +1126,8 @@ text:
     children:
     - node: text
       content: 実はPHPのWebはCGIの世界観
-    - node: br
+  - node: p
+    children:
     - node: text
       content: print
     - node: br
@@ -1132,7 +1148,8 @@ text:
     - node: br
     - node: text
       content: '// HTTPヘッダはボディよりも先に出力する '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'header("Content-Type: text/plain;"); '
     - node: br
@@ -1234,7 +1251,8 @@ text:
     children:
     - node: text
       content: '// ユーザーのリクエスト情報 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'echo htmlspecialchars($_SERVER[''REQUEST_METHOD'']); '
     - node: br

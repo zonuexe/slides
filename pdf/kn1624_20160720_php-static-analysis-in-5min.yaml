@@ -13,7 +13,8 @@ text:
     children:
     - node: bold
       content: 5分でわかる静的解析入門
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Learn PHP static analysis in 5 min.
   - node: p
@@ -64,10 +65,9 @@ text:
       children:
       - node: text
         content: ソフトウェアの性質を把握する
-  - node: p
-    children:
-    - node: text
-      content: 'いろんなツールとか手法がある '
+      - node: br
+      - node: text
+        content: 'いろんなツールとか手法がある '
   - node: p
     children:
     - node: text
@@ -112,20 +112,16 @@ text:
       children:
       - node: text
         content: -l
-  - node: p
-    children:
-    - node: bold
-      content: 'ファイルの行数を測る ( ) '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: 'ファイルの行数を測る ( ) '
     - node: li
       children:
       - node: text
         content: -c
-  - node: p
-    children:
-    - node: bold
-      content: バイト数を測る ( )
+      - node: br
+      - node: bold
+        content: バイト数を測る ( )
   p7:
   - node: p
     children:
@@ -156,12 +152,9 @@ text:
       children:
       - node: text
         content: バージョンを利用する
-  - node: p
-    children:
-    - node: text
-      content: 'git ls-files | grep ''\.php$'' | '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'git ls-files | grep ''\.php$'' | '
     - node: li
       children:
       - node: text
@@ -190,12 +183,9 @@ text:
       children:
       - node: text
         content: 切り分けてくれる(だけ)
-  - node: p
-    children:
-    - node: text
-      content: '構文解析はしてくれない… (重要) '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: '構文解析はしてくれない… (重要) '
     - node: li
       children:
       - node: text
@@ -247,28 +237,27 @@ text:
       children:
       - node: text
         content: 並べていく
-  - node: p
-    children:
-    - node: bold
-      content: '[ '
-    - node: br
-    - node: bold
-      content: '    ''level'' => ''error'', '
-    - node: br
-    - node: bold
-      content: '    ''desc''  => ''mt_srand() は使用禁止'', '
-    - node: br
-    - node: bold
-      content: '    ''pattern'' => [ '
-    - node: br
-    - node: bold
-      content: '        ''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false, '
-    - node: br
-    - node: bold
-      content: '    ], '
-    - node: br
-    - node: bold
-      content: '],'
+      - node: br
+      - node: bold
+        content: '[ '
+      - node: br
+      - node: bold
+        content: '    ''level'' => ''error'', '
+      - node: br
+      - node: bold
+        content: '    ''desc''  => ''mt_srand() は使用禁止'', '
+      - node: br
+      - node: bold
+        content: '    ''pattern'' => [ '
+      - node: br
+      - node: bold
+        content: '        ''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false, '
+      - node: br
+      - node: bold
+        content: '    ], '
+      - node: br
+      - node: bold
+        content: '],'
   p14:
   - node: p
     children:
@@ -327,18 +316,15 @@ text:
       children:
       - node: text
         content: デプロイしないようにしたい…
-  - node: p
-    children:
-    - node: text
-      content: '弊社でも昔はありました '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: コードレビューでつまらないことを
-  - node: ul
-    children:
+        content: '弊社でも昔はありました '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: コードレビューでつまらないことを
     - node: li
       children:
       - node: text
@@ -383,12 +369,9 @@ text:
       children:
       - node: text
         content: とにかくいろんな指摘してくれる
-  - node: p
-    children:
-    - node: text
-      content: 'PHPDocの型を解析してくれる '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'PHPDocの型を解析してくれる '
     - node: li
       children:
       - node: text

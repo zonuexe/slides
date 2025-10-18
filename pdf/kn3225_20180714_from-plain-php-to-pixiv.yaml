@@ -118,14 +118,11 @@ text:
       children:
       - node: text
         content: 年末から現職、 を実装したりしたよ
-  - node: p
-    children:
-    - node: bold
-      content: '2012'
-    - node: text
-      content: ' WEB API  '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: '2012'
+      - node: text
+        content: ' WEB API  '
     - node: li
       children:
       - node: text
@@ -136,20 +133,16 @@ text:
       children:
       - node: text
         content: 現行メンテナ
-  - node: p
-    children:
-    - node: text
-      content: 'Emacs PHP Mode   / https://github.com/emacs-php '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'Emacs PHP Mode   / https://github.com/emacs-php '
     - node: li
       children:
       - node: text
         content: 適当な記事を書いてきたよ
-  - node: p
-    children:
-    - node: text
-      content: 'Qiita: https://qiita.com/tadsan   '
+      - node: br
+      - node: text
+        content: 'Qiita: https://qiita.com/tadsan   '
   p3:
   - node: p
     children:
@@ -171,16 +164,15 @@ text:
       children:
       - node: text
         content: 年 月 日に開始されたイラスト ・投稿サイト
-  - node: p
-    children:
-    - node: text
-      content: '2007 9 10 SNS  '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: イラスト約 万作品 ベース、画像枚数は 億 万枚以上
+        content: '2007 9 10 SNS  '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: イラスト約 万作品 ベース、画像枚数は 億 万枚以上
   - node: p
     children:
     - node: text
@@ -256,18 +248,17 @@ text:
       children:
       - node: text
         content: 本体
-  - node: p
-    children:
-    - node: bold
-      content: pixiv
-    - node: text
-      content: '  www.pixiv.net '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
+      - node: bold
+        content: pixiv
       - node: text
-        content: デスクトップ版いわゆる 向け
+        content: '  www.pixiv.net '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: デスクトップ版いわゆる 向け
   - node: p
     children:
     - node: text
@@ -293,12 +284,9 @@ text:
       children:
       - node: text
         content: とデータベースを共有するコードは一個のリポジトリに含まれる
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv  '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'pixiv  '
     - node: li
       children:
       - node: text
@@ -448,7 +436,8 @@ text:
     children:
     - node: text
       content: 数々の変更は が直接行っ
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '@tadsan'
     - node: br
@@ -457,7 +446,11 @@ text:
   - node: p
     children:
     - node: text
-      content: むしろ恩恵を受けてきた立場 ( )
+      content: むしろ恩恵を受けてきた立場
+  - node: p
+    children:
+    - node: text
+      content: ( )
   p12:
   - node: p
     children:
@@ -1254,7 +1247,8 @@ text:
     children:
     - node: text
       content: ン
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: c
   - node: p
@@ -1297,7 +1291,8 @@ text:
     children:
     - node: text
       content: 統
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: .
   - node: p
@@ -1308,7 +1303,8 @@ text:
     children:
     - node: text
       content: 年 月
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: (2012 11 )
   - node: p
@@ -1335,7 +1331,8 @@ text:
     children:
     - node: text
       content: 合
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: i
     - node: text
@@ -2057,7 +2054,8 @@ text:
     children:
     - node: text
       content: 自 ┃
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: )
   - node: p
@@ -2361,7 +2359,8 @@ text:
     children:
     - node: text
       content: ン
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: c
     - node: text
@@ -2424,7 +2423,8 @@ text:
     children:
     - node: text
       content: 合
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: i
     - node: text
@@ -2508,7 +2508,8 @@ text:
     children:
     - node: text
       content: 今回の発表で言及されないもの は概ね時間の制約で取捨選択さ れたか忘れてるだけなので、懇 親会や で にきいて
-    - node: br
+  - node: p
+    children:
     - node: text
       content: Twitter @tadsan
   p15:
@@ -2529,7 +2530,8 @@ text:
     children:
     - node: text
       content: の
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: pixiv PHP
   - node: ul
@@ -2538,16 +2540,15 @@ text:
       children:
       - node: text
         content: は 一時 を使ってた箇所あり
-  - node: p
-    children:
-    - node: text
-      content: 'PHP Apache+mod_php ( fpm ) '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: フロントの から、リバースプロキシして にリクエスト
+        content: 'PHP Apache+mod_php ( fpm ) '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: フロントの から、リバースプロキシして にリクエスト
   - node: p
     children:
     - node: text
@@ -2568,20 +2569,18 @@ text:
       children:
       - node: text
         content: 例
-  - node: p
-    children:
-    - node: text
-      content: ': https://www.pixiv.net/member.php?id=105589 '
+      - node: br
+      - node: text
+        content: ': https://www.pixiv.net/member.php?id=105589 '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: とか とか、よくある のスタックに載ってる
-  - node: p
-    children:
-    - node: text
-      content: Linux MySQL LAMP
+      - node: br
+      - node: text
+        content: Linux MySQL LAMP
   p17:
   - node: p
     children:
@@ -2792,10 +2791,9 @@ text:
       children:
       - node: text
         content: とエラーログの話は に書きました
-  - node: p
-    children:
-    - node: text
-      content: 'whoops!  WEB+DB PRESS Vol.96 '
+      - node: br
+      - node: text
+        content: 'whoops!  WEB+DB PRESS Vol.96 '
   p21:
   - node: p
     children:
@@ -2902,10 +2900,9 @@ text:
       children:
       - node: text
         content: 「 の誤解」
-  - node: p
-    children:
-    - node: text
-      content: 'PSR  https://qiita.com/tadsan/items/942a381e952e12a8fa5a '
+      - node: br
+      - node: text
+        content: 'PSR  https://qiita.com/tadsan/items/942a381e952e12a8fa5a '
   - node: ul
     children:
     - node: li
@@ -2971,12 +2968,9 @@ text:
       children:
       - node: text
         content: の機能の貧弱さ
-  - node: p
-    children:
-    - node: text
-      content: 'PDO  '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'PDO  '
     - node: li
       children:
       - node: text
@@ -2991,16 +2985,15 @@ text:
       children:
       - node: text
         content: にあるようなカッコイイ機能がない
-  - node: p
-    children:
-    - node: text
-      content: 'Rails  '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: かっこいいエラー表示
+        content: 'Rails  '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: かっこいいエラー表示
   - node: ul
     children:
     - node: li
@@ -3055,10 +3048,9 @@ text:
       children:
       - node: text
         content: をかけると安全にはなるが、それでも面倒
-  - node: p
-    children:
-    - node: text
-      content: 'filter_input() '
+      - node: br
+      - node: text
+        content: 'filter_input() '
   p28:
   - node: p
     children:
@@ -3118,12 +3110,9 @@ text:
       children:
       - node: text
         content: または のみを期待するようなパターン
-  - node: p
-    children:
-    - node: text
-      content: '?mode=hoge   ?mode=fuga   '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: '?mode=hoge   ?mode=fuga   '
     - node: li
       children:
       - node: text
@@ -3137,7 +3126,8 @@ text:
     children:
     - node: text
       content: テンプレートと 生成の問題
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: URL
   - node: p
@@ -3169,10 +3159,9 @@ text:
       children:
       - node: text
         content: などのパラメータに不正な値を入れるリスク
-  - node: p
-    children:
-    - node: text
-      content: id
+      - node: br
+      - node: text
+        content: id
   p31:
   - node: p
     children:
@@ -3308,12 +3297,9 @@ text:
       children:
       - node: text
         content: で書きにくいクエリの代表例
-  - node: p
-    children:
-    - node: text
-      content: 'PDO : IN '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'PDO : IN '
     - node: li
       children:
       - node: text
@@ -3328,12 +3314,9 @@ text:
       children:
       - node: text
         content: のクエリの に を書くか で書くか問題
-  - node: p
-    children:
-    - node: text
-      content: 'PDO placeholder  ?   :hoge   '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'PDO placeholder  ?   :hoge   '
     - node: li
       children:
       - node: text
@@ -3376,32 +3359,25 @@ text:
       children:
       - node: text
         content: 脆弱性のリスクなしただし の実装の不備はないと信じる
-  - node: p
-    children:
-    - node: text
-      content: 'SQLi( )  ( mysqlnd ) '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'SQLi( )  ( mysqlnd ) '
     - node: li
       children:
       - node: text
         content: で整数の埋め込み、 で複数の整数を展開する
-  - node: p
-    children:
-    - node: text
-      content: ':hoge@int    :fuga_ids@int[]   '
+      - node: br
+      - node: text
+        content: ':hoge@int    :fuga_ids@int[]   '
   - node: ul
     children:
     - node: li
       children:
       - node: text
         content: や の記法で条件分岐や複数 なども可能
-  - node: p
-    children:
-    - node: text
-      content: '%if   %for  SET  '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: '%if   %for  SET  '
     - node: li
       children:
       - node: text
@@ -3445,10 +3421,9 @@ text:
       children:
       - node: text
         content: に や などのクエリを発行しようとすると例外
-  - node: p
-    children:
-    - node: text
-      content: 'slave INSERT UPDATE  '
+      - node: br
+      - node: text
+        content: 'slave INSERT UPDATE  '
   - node: ul
     children:
     - node: li
@@ -3482,26 +3457,20 @@ text:
       children:
       - node: text
         content: 新機能が実装されたブランチをリリースするときマージする
-  - node: p
-    children:
-    - node: bold
-      content: A
-    - node: text
-      content: ':   '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: A
+      - node: text
+        content: ':   '
     - node: li
       children:
       - node: text
         content: リリース前にあらかじめマージして、実行されないようにしておく
-  - node: p
-    children:
-    - node: bold
-      content: B
-    - node: text
-      content: ':   '
-  - node: ul
-    children:
+      - node: br
+      - node: bold
+        content: B
+      - node: text
+        content: ':   '
     - node: li
       children:
       - node: text
@@ -3694,14 +3663,16 @@ text:
     children:
     - node: text
       content: 続きは で
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Web
   - node: p
     children:
     - node: text
       content: あと
-    - node: br
+  - node: p
+    children:
     - node: text
       content: ' ('
     - node: bold
@@ -3724,10 +3695,9 @@ text:
       children:
       - node: text
         content: 改
-  - node: p
-    children:
-    - node: text
-      content: 'Real World PHP in pixiv   '
+      - node: br
+      - node: text
+        content: 'Real World PHP in pixiv   '
   - node: ul
     children:
     - node: li
@@ -3740,43 +3710,38 @@ text:
           children:
           - node: text
             content: で のユニットテストの書きやすさを劇的に改善する手法
-  - node: p
-    children:
-    - node: text
-      content: 'DocComment PHP  '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 連載『 大規模開発入門』を振り返る
-  - node: p
-    children:
-    - node: text
-      content: 'WEB+DB PRESS PHP   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の基盤ノウハウ大公開！ カンファレンス 登壇レポート
-  - node: p
-    children:
-    - node: text
-      content: pixiv PHP 2017
+          - node: br
+          - node: text
+            content: 'DocComment PHP  '
+        - node: li
+          children:
+          - node: text
+            content: 連載『 大規模開発入門』を振り返る
+          - node: br
+          - node: text
+            content: 'WEB+DB PRESS PHP   '
+        - node: li
+          children:
+          - node: text
+            content: の基盤ノウハウ大公開！ カンファレンス 登壇レポート
+          - node: br
+          - node: text
+            content: pixiv PHP 2017
   p44:
   - node: p
     children:
     - node: text
       content: 続きは で
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Web
   - node: p
     children:
     - node: text
       content: あと
-    - node: br
+  - node: p
+    children:
     - node: text
       content: ' ('
     - node: bold
@@ -3805,12 +3770,9 @@ text:
       children:
       - node: text
         content: の誤解
-  - node: p
-    children:
-    - node: text
-      content: 'PSR  '
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'PSR  '
     - node: li
       children:
       - node: text
@@ -3821,10 +3783,9 @@ text:
       children:
       - node: text
         content: って書きたくない僕たちのためのオートローディングと
-  - node: p
-    children:
-    - node: text
-      content: 'include Composer '
+      - node: br
+      - node: text
+        content: 'include Composer '
   - node: ul
     children:
     - node: li
@@ -3837,23 +3798,24 @@ text:
           children:
           - node: text
             content: やエラー処理の例
-  - node: p
-    children:
-    - node: text
-      content: whoops  https://github.com/zonuexe/wdb-php-96-sample
+          - node: br
+          - node: text
+            content: whoops  https://github.com/zonuexe/wdb-php-96-sample
   p45:
   - node: p
     children:
     - node: text
       content: 続きは で
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Web
   - node: p
     children:
     - node: text
       content: あと
-    - node: br
+  - node: p
+    children:
     - node: text
       content: ' ('
     - node: bold

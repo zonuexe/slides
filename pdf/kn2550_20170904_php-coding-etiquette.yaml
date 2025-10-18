@@ -24,7 +24,8 @@ text:
       content: まさら！
     - node: text
       content: 　　お作法入門
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Modern...? PHP manners guide
   - node: p
@@ -338,7 +339,8 @@ text:
       content: ' でだけ使ってる'
     - node: bold
       content: ' '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: tests/
     - node: br
@@ -432,7 +434,8 @@ text:
       content: 初期化ファイルから
     - node: text
       content: 読み込みます
-    - node: br
+  - node: p
+    children:
     - node: text
       content: composer.json autoload.files
     - node: br
@@ -518,7 +521,8 @@ text:
       content: 委譲
     - node: text
       content: や
-    - node: br
+  - node: p
+    children:
     - node: text
       content: interface
   - node: p
@@ -760,32 +764,28 @@ text:
       children:
       - node: text
         content: int int|string
-  - node: p
-    children:
-    - node: text
-      content: '「 または文字列」   '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: 値が並んだ配列
-  - node: ul
-    children:
+        content: '「 または文字列」   '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 値が並んだ配列
     - node: li
       children:
       - node: text
         content: int int[]
-  - node: p
-    children:
-    - node: text
-      content: '「 が並んだ配列」 '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
+        content: '「 が並んだ配列」 '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
   p32:
   - node: p
     children:
@@ -958,7 +958,8 @@ text:
     children:
     - node: bold
       content: 2017年8月現在のメンバー
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'CakePHP, Composer, concrete5, Contao Open Source CMS, Drupal, eZ Publish,
         Horde, IBM i '

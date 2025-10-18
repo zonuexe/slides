@@ -59,14 +59,17 @@ text:
       content: PHP
     - node: br
     - node: text
-      content: ' 実装する前に知っておきたい勘所 '
+      content: ' 実装する前に知っておきたい勘所'
+  - node: p
+    children:
     - node: bold
       content: Tips for implementing Testing Framework in PHP.
   - node: p
     children:
     - node: text
       content: 2018-03-09 PHPerKaigi 2018 前夜祭
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'Nerima Coconeri Hall #phperkaigi'
   p2:
@@ -459,7 +462,8 @@ text:
     children:
     - node: text
       content: もしphptを採用する
-    - node: br
+  - node: p
+    children:
     - node: text
       content: run-tests.php
   - node: p
@@ -919,13 +923,15 @@ text:
     - node: br
     - node: text
       content: '    /** @var bool テスト失敗停止するか */ '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '    private $stop_on_failure = false; '
     - node: br
     - node: text
       content: '    /** @var array[] 実行結果 */ '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '    private $result = [];'
   - node: p
@@ -943,7 +949,8 @@ text:
     children:
     - node: text
       content: '    /** assert()の失敗時にこいつが呼ばれるように設定 */ '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '    public function handler($file, $line, $code, $desc = null) { '
     - node: br
@@ -988,7 +995,8 @@ text:
     - node: br
     - node: text
       content: '            exit(1); // エラー終了 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '        } '
     - node: br
@@ -1014,7 +1022,8 @@ text:
     - node: br
     - node: text
       content: '        // ソースコードの該当行を取得 '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '        $code = trim(file($file)[$line-1]); '
   - node: p
@@ -1170,8 +1179,11 @@ text:
   - node: p
     children:
     - node: text
-      content: '    // $GLOBALSは長大なので消しとく     unset($variables[''GLOBALS'']);     return
-        \serialize($variables); '
+      content: '    // $GLOBALSは長大なので消しとく '
+  - node: p
+    children:
+    - node: text
+      content: '    unset($variables[''GLOBALS'']);     return \serialize($variables); '
     - node: br
     - node: text
       content: '} '
@@ -1449,7 +1461,8 @@ text:
     children:
     - node: text
       content: 'PHPUnitでの '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '@dataProvider'
   p116:
@@ -1662,7 +1675,8 @@ text:
     children:
     - node: text
       content: '    // @dataProvider hogehoge を取り出す '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '    if (preg_match(''/@dataProvider +(?<provider>\S+)/'', '
     - node: br
@@ -1725,7 +1739,8 @@ text:
     children:
     - node: text
       content: 理想的
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '|| '
     - node: br

@@ -254,7 +254,8 @@ text:
     - node: br
     - node: text
       content: これで別ページでも すれば
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '// $_SESSION[''name'']   '
   - node: p
@@ -265,7 +266,8 @@ text:
     children:
     - node: text
       content: '$_SESSION[''name''] = ''太郎''; '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: 'header(''Location: /betsu.php'');'
   p22:
@@ -576,7 +578,8 @@ text:
     children:
     - node: bold
       content: 次回に訪問するとき
-    - node: br
+  - node: p
+    children:
     - node: text
       content: GET /index HTTP/1.1
   - node: p
@@ -600,7 +603,8 @@ text:
     children:
     - node: bold
       content: 次回に訪問するとき
-    - node: br
+  - node: p
+    children:
     - node: text
       content: GET /index HTTP/1.1
   - node: p

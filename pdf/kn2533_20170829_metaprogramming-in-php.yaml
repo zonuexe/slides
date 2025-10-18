@@ -11,7 +11,8 @@ text:
     - node: br
     - node: text
       content: ' メタプログラミングの温床'
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: Meta programming for PHP
   - node: p
@@ -405,7 +406,8 @@ text:
     children:
     - node: bold
       content: 可変変数
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: (variable variables)
   p31:
@@ -417,7 +419,8 @@ text:
     children:
     - node: text
       content: '$world = "こんにちは世界"; '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '$hello = "world"; '
     - node: br
@@ -431,7 +434,8 @@ text:
     children:
     - node: text
       content: 'var_dump($$$v);  //=> "こんにちは世界" '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '// '
   - node: p
@@ -561,7 +565,8 @@ text:
     children:
     - node: text
       content: 義プロパティだけはなく
-    - node: br
+  - node: p
+    children:
     - node: text
       content: private protected
   - node: p
@@ -839,7 +844,8 @@ text:
     children:
     - node: text
       content: ファイルを魔改造
-    - node: br
+  - node: p
+    children:
     - node: text
       content: '        $evil_src = evil_customize($src);'
   - node: p
@@ -908,7 +914,8 @@ text:
     children:
     - node: bold
       content: もある。
-    - node: br
+  - node: p
+    children:
     - node: text
       content: (Go! AOP  )
   - node: p

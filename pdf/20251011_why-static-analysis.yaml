@@ -171,7 +171,8 @@ text:
     - node: br
     - node: bold
       content: '英辞郎 on the WEB, 株式会社アルク, EDP '
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'https://eowf.alc.co.jp/search?q=static '
     - node: br
@@ -188,7 +189,8 @@ text:
     - node: br
     - node: bold
       content: '英辞郎 on the WEB, 株式会社アルク, EDP '
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'https://eowf.alc.co.jp/search?q=static '
     - node: br
@@ -205,7 +207,8 @@ text:
     - node: br
     - node: bold
       content: '英辞郎 on the WEB, 株式会社アルク, EDP '
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'https://eowf.alc.co.jp/search?q=static '
     - node: br
@@ -222,7 +225,8 @@ text:
     - node: br
     - node: bold
       content: '英辞郎 on the WEB, 株式会社アルク, EDP '
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: 'https://eowf.alc.co.jp/search?q=static '
     - node: br
@@ -921,10 +925,9 @@ text:
       children:
       - node: text
         content: 従来はサーバーサイドアプリケーションが必要だったものも、
-  - node: p
-    children:
-    - node: text
-      content: 近年では外部サービス(mBaaS/IDaaS)に依存することもできる
+      - node: br
+      - node: text
+        content: 近年では外部サービス(mBaaS/IDaaS)に依存することもできる
   p40:
   - node: p
     children:
@@ -1207,7 +1210,8 @@ text:
     children:
     - node: bold
       content: ダイナミックレンダリング
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: (Rendertron)
   - node: p
@@ -1255,7 +1259,8 @@ text:
     children:
     - node: bold
       content: ダイナミックレンダリング
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: (Rendertron)
   - node: p
@@ -1303,7 +1308,8 @@ text:
     children:
     - node: bold
       content: ダイナミックレンダリング
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: (Rendertron)
   - node: p
@@ -1407,12 +1413,9 @@ text:
           children:
           - node: text
             content: 型がついたとき、実行時にその種のエラーが起こらない性質を
-  - node: p
-    children:
-    - node: text
-      content: '「健全である」あるいは「型安全である」という '
-  - node: ul
-    children:
+          - node: br
+          - node: text
+            content: '「健全である」あるいは「型安全である」という '
     - node: li
       children:
       - node: text
@@ -1486,22 +1489,19 @@ text:
       children:
       - node: text
         content: 例：
-  - node: p
-    children:
-    - node: text
-      content: 'メソッドに期待する形式の引数を渡せば、エラーなく実行されてほしい '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: メソッドに同じ引数を渡せば、決まった結果になってほしい
-    - node: li
-      children:
-      - node: text
-        content: わざわざ実装にジャンプしなくても、引数の形式がわかりやすくなってほしい
-  - node: ul
-    children:
+        content: 'メソッドに期待する形式の引数を渡せば、エラーなく実行されてほしい '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: メソッドに同じ引数を渡せば、決まった結果になってほしい
+        - node: li
+          children:
+          - node: text
+            content: わざわざ実装にジャンプしなくても、引数の形式がわかりやすくなってほしい
     - node: li
       children:
       - node: text
@@ -1753,7 +1753,8 @@ text:
     - node: br
     - node: text
       content: '確かめたいこと '
-    - node: br
+  - node: p
+    children:
     - node: text
       content: = PHPUnit
   p93:

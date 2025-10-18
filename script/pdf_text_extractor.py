@@ -27,25 +27,33 @@ class LineData(NamedTuple):
     width: float
     height: float
     center: float
+    text_left: float
+    text: str
 PageNodes = List[Dict[str, object]]
 PageMap = Dict[str, PageNodes]
 
 CID_MAP = {
     "7979": "篇",
+    "7972": "煽",
+    "7766": "謎",
+    "1964": "公",
+    "1417": "開",
+    "3899": "用",
+    "1516": "完",
+    "2742": "全",
+    "3636": "補",
+    "3095": "訂",
+    "3419": "版",
 }
 CID_PATTERN = re.compile(r"\(cid:(\d+)\)")
-CID_SEQUENCE_MAP = {
-    "(cid:1964)(cid:1417)(cid:3899)(cid:1516)(cid:2742)(cid:3419)": "公開用完全版",
-}
+NUMERIC_LINE_PATTERN = re.compile(r"^[0-9A-Za-z０-９Ａ-Ｚａ-ｚ\s]+$")
+JAPANESE_PATTERN = re.compile(r"[ぁ-んァ-ヶ一-龯]")
 
 
 def clean_character(text: str) -> str:
     """Normalize raw character data from the PDF."""
     if not text:
         return ""
-    for sequence, replacement in CID_SEQUENCE_MAP.items():
-        if sequence in text:
-            text = text.replace(sequence, replacement)
     text = text.replace("\x03", "")  # EOT
     text = text.replace("\t", " ")
     text = text.replace("\r\n", "\n").replace("\r", "\n")
@@ -260,6 +268,14 @@ def extract_segments_from_page(page) -> List[LineData]:
         width = max(1.0, max_right - min_left)
         height = max(1.0, max_bottom - min_top)
         center = min_left + (width / 2.0)
+        non_bullet_chars = [
+            c for c in chars if clean_character(c.get("text", "")).strip() and clean_character(c.get("text", "")) != BULLET_CHAR
+        ]
+        if non_bullet_chars:
+            text_left = min(c["x0"] for c in non_bullet_chars)
+        else:
+            text_left = min_left
+        line_text = "".join(text for text, _ in segments)
         lines.append(
             LineData(
                 segments=segments,
@@ -270,6 +286,8 @@ def extract_segments_from_page(page) -> List[LineData]:
                 width=width,
                 height=height,
                 center=center,
+                text_left=text_left,
+                text=line_text,
             )
         )
     return lines
@@ -302,9 +320,22 @@ def _line_relationship(previous: LineData, current: LineData) -> str:
     center_diff = abs(current.center - previous.center)
     width_ratio = current.width / max(previous.width, 1.0)
     inverse_width_ratio = previous.width / max(current.width, 1.0)
+    prev_text = previous.text.strip()
+    curr_text = current.text.strip()
 
     if indent_diff > baseline * 1.4 and center_diff > baseline * 1.4:
         return "break"
+
+    if JAPANESE_PATTERN.search(prev_text) and not JAPANESE_PATTERN.search(curr_text):
+        if curr_text and all(ch in " ,." or ch.isascii() for ch in curr_text):
+            return "break"
+
+    if (
+        indent_diff > baseline * 0.35
+        and all(unit in prev_text for unit in ("年", "月", "日"))
+        and NUMERIC_LINE_PATTERN.match(curr_text)
+    ):
+        return "space"
 
     if (
         indent_diff > baseline * 0.35
@@ -339,7 +370,14 @@ def process_lines(lines: List[LineData]) -> PageNodes:
         if not bullet_stack:
             ul_node: Dict[str, Any] = {"node": "ul", "children": []}
             bullet_roots.append(ul_node)
-            bullet_stack.append({"indent": indent, "node": ul_node, "last_li": None})
+            bullet_stack.append(
+                {
+                    "indent": indent,
+                    "node": ul_node,
+                    "last_li": None,
+                    "last_li_indent": None,
+                }
+            )
             return bullet_stack[-1]
 
         while bullet_stack and indent < bullet_stack[-1]["indent"] - tolerance:
@@ -347,7 +385,14 @@ def process_lines(lines: List[LineData]) -> PageNodes:
         if not bullet_stack:
             ul_node = {"node": "ul", "children": []}
             bullet_roots.append(ul_node)
-            bullet_stack.append({"indent": indent, "node": ul_node, "last_li": None})
+            bullet_stack.append(
+                {
+                    "indent": indent,
+                    "node": ul_node,
+                    "last_li": None,
+                    "last_li_indent": None,
+                }
+            )
             return bullet_stack[-1]
 
         current = bullet_stack[-1]
@@ -357,11 +402,18 @@ def process_lines(lines: List[LineData]) -> PageNodes:
                 return current
             child_list = {"node": "ul", "children": []}
             parent_li.setdefault("children", []).append(child_list)
-            bullet_stack.append({"indent": indent, "node": child_list, "last_li": None})
+            bullet_stack.append(
+                {
+                    "indent": indent,
+                    "node": child_list,
+                    "last_li": None,
+                    "last_li_indent": None,
+                }
+            )
             current = bullet_stack[-1]
         return current
 
-    def add_bullet_item(indent: float, text: str) -> None:
+    def add_bullet_item(indent: float, text: str, content_indent: float) -> None:
         text = text.strip()
         if not text:
             return
@@ -372,9 +424,10 @@ def process_lines(lines: List[LineData]) -> PageNodes:
         }
         level["node"]["children"].append(li_node)
         level["last_li"] = li_node
+        level["last_li_indent"] = content_indent
 
     for line in lines:
-        combined_text = "".join(text for text, _ in line.segments)
+        combined_text = line.text
         stripped = combined_text.strip()
         nodes = segments_to_nodes(line.segments)
 
@@ -429,8 +482,38 @@ def process_lines(lines: List[LineData]) -> PageNodes:
             if not bullet_texts:
                 bullet_texts.append(stripped)
             for text in bullet_texts:
-                add_bullet_item(indent_value, text)
-            previous_line = None
+                add_bullet_item(indent_value, text, line.text_left)
+            previous_line = line
+            continue
+
+        continued = False
+        if bullet_stack:
+            current_level = bullet_stack[-1]
+            last_li = current_level.get("last_li")
+            if last_li is not None:
+                base_indent = current_level.get("indent", 0.0)
+                content_indent = current_level.get("last_li_indent", base_indent)
+                lower_bound = current_level.get("indent", 0.0) - BULLET_INDENT_TOLERANCE
+                upper_bound = max(content_indent, current_level.get("indent", 0.0)) + BULLET_INDENT_TOLERANCE * 3
+                if lower_bound <= line.left <= upper_bound:
+                    relation = "line_break"
+                    if previous_line is not None:
+                        relation = _line_relationship(previous_line, line)
+                    child_nodes = nodes
+                    if child_nodes:
+                        last_children = last_li.setdefault("children", [])
+                        if relation == "space":
+                            if last_children and needs_space(last_children[-1]):
+                                last_children.append({"node": "text", "content": " "})
+                        else:
+                            if last_children and last_children[-1].get("node") != "br":
+                                last_children.append({"node": "br"})
+                        last_children.extend(child_nodes)
+                        last_children[:] = merge_adjacent_nodes(last_children)
+                        current_level["last_li_indent"] = line.left
+                        previous_line = line
+                        continued = True
+        if continued:
             continue
 
         flush_bullet_lists()

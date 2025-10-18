@@ -19,7 +19,8 @@ text:
     children:
     - node: bold
       content: はじめてのPHPDocと型
-    - node: br
+  - node: p
+    children:
     - node: bold
       content: My first PHPDoc and Type
   - node: p
@@ -67,7 +68,8 @@ text:
     children:
     - node: text
       content: 動かすとき に調べるかが、
-    - node: br
+  - node: p
+    children:
     - node: text
       content: (runtime)
     - node: br
@@ -147,12 +149,9 @@ text:
       children:
       - node: text
         content: をとりながらPHPを書ける
-  - node: p
-    children:
-    - node: text
-      content: 人間がわかるってことは、機械にも
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 人間がわかるってことは、機械にも
     - node: li
       children:
       - node: text
@@ -241,14 +240,12 @@ text:
       children:
       - node: text
         content: 「 」
-  - node: p
-    children:
-    - node: text
-      content: 'いいけど、現実は甘くない '
-  - node: p
-    children:
-    - node: text
-      content: 型が特定できないことも多い
+      - node: br
+      - node: text
+        content: 'いいけど、現実は甘くない '
+      - node: br
+      - node: text
+        content: 型が特定できないことも多い
   p9:
   - node: p
     children:
@@ -390,10 +387,9 @@ text:
       children:
       - node: text
         content: /*
-  - node: p
-    children:
-    - node: text
-      content: ( では無効なので注意！！！！)
+      - node: br
+      - node: text
+        content: ( では無効なので注意！！！！)
   p13:
   - node: p
     children:
@@ -481,34 +477,28 @@ text:
       children:
       - node: text
         content: int int|string
-  - node: p
-    children:
-    - node: text
-      content: '「 または文字列」   '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: 値が並んだ配列
-  - node: ul
-    children:
+        content: '「 または文字列」   '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 値が並んだ配列
     - node: li
       children:
       - node: text
         content: int int[]
-  - node: p
-    children:
-    - node: text
-      content: '「 が並んだ配列」 '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
-  - node: ul
-    children:
+        content: '「 が並んだ配列」 '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
     - node: li
       children:
       - node: text
@@ -601,10 +591,9 @@ text:
       children:
       - node: text
         content: array
-  - node: p
-    children:
-    - node: text
-      content: 'tadsanは連想配列を と書く '
+      - node: br
+      - node: text
+        content: 'tadsanは連想配列を と書く '
   - node: p
     children:
     - node: text
@@ -637,18 +626,15 @@ text:
       children:
       - node: text
         content: phpDocumentor2の仕様 (phpdoc.org)
-  - node: p
-    children:
-    - node: text
-      content: '日本語 https://zonuexe.github.io/phpDocumentor2-ja/ '
-  - node: ul
-    children:
-    - node: li
-      children:
+      - node: br
       - node: text
-        content: 使ってるツールはいろいろある
-  - node: ul
-    children:
+        content: '日本語 https://zonuexe.github.io/phpDocumentor2-ja/ '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 使ってるツールはいろいろある
     - node: li
       children:
       - node: text
@@ -679,10 +665,9 @@ text:
       children:
       - node: text
         content: 引数に特定のキーワードかクラス名を書く
-  - node: p
-    children:
-    - node: text
-      content: 'ことができた '
+      - node: br
+      - node: text
+        content: 'ことができた '
   - node: p
     children:
     - node: text
@@ -693,11 +678,11 @@ text:
       children:
       - node: text
         content: みたいな
+      - node: br
+      - node: text
+        content: array callable resource
   - node: p
     children:
-    - node: text
-      content: array callable resource
-    - node: br
     - node: text
       content: ',  ,   '
   - node: ul
@@ -751,10 +736,9 @@ text:
       children:
       - node: text
         content: で呼び出したときにどうするの…?
-  - node: p
-    children:
-    - node: text
-      content: 'パンドラの箱を開けてしまった感 '
+      - node: br
+      - node: text
+        content: 'パンドラの箱を開けてしまった感 '
   - node: p
     children:
     - node: bold
