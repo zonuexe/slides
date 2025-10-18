@@ -187,6 +187,7 @@ app.get("/slides/:slug/", async (c) => {
           <meta property="og:description" content="${config.site.description}">
           <meta property="og:type" content="website">
           <meta property="og:url" content="${config.site.url}/slides/${slide.slug}/">
+          <meta property="og:image" content="${config.site.url}/slides/${slide.image}">
           <meta property="og:site_name" content="${config.ogp.site_name}">
           <meta property="og:locale" content="${config.ogp.locale}">
 
@@ -195,6 +196,7 @@ app.get("/slides/:slug/", async (c) => {
           <meta name="twitter:creator" content="${config.twitter.creator}">
           <meta name="twitter:title" content="${slide.title}">
           <meta name="twitter:description" content="${config.site.description}">
+          <meta name="twitter:image" content="${config.site.url}/slides/${slide.image}">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.xml">
