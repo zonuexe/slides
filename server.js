@@ -31,7 +31,9 @@ function renderNode(node) {
       return `<strong>${escapeHtml(node.content || '')}</strong>`;
 
     case 'link':
-      return `<a href="${escapeHtml(node.href || '')}" target="_blank" rel="noopener noreferrer">${escapeHtml(node.content || '')}</a>`;
+      const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(node.href || '')}&size=32`;
+      const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
+      return `${faviconImg}<a href="${escapeHtml(node.href || '')}" target="_blank">${escapeHtml(node.content || '')}</a>`;
 
     case 'img':
       return '[img]';
@@ -414,7 +416,7 @@ app.get("/slides/:slug/", async (c) => {
 
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
-                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" rel="noopener noreferrer" class="hashtag">#${tag}</a>`).join('')}
+                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
 
@@ -438,7 +440,7 @@ app.get("/slides/:slug/", async (c) => {
                   ${pdfMeta.text && Object.keys(pdfMeta.text).length > 0 ? `
                     ${Object.entries(pdfMeta.text).map(([pageKey, nodes]) => `
                       <div class="page-content" id="page-${pageKey.replace('p', '')}">
-                        <h4>${pageKey.toUpperCase()}</h4>
+                        <h4>Page ${pageKey.replace('p', '')}</h4>
                         <div class="page-text">
                           ${nodes.map(node => renderNode(node)).join('')}
                         </div>
@@ -454,12 +456,20 @@ app.get("/slides/:slug/", async (c) => {
                   ${pdfMeta.links && Object.keys(pdfMeta.links).length > 0 ? `
                     ${Object.entries(pdfMeta.links).map(([pageKey, links]) => `
                       <div class="page-content" id="page-${pageKey.replace('p', '')}">
-                        <h4>${pageKey.toUpperCase()}</h4>
+                        <h4>Page ${pageKey.replace('p', '')}</h4>
                         <div class="page-links">
                           <ul>
-                            ${links.map(link => `
-                              <li><a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.title)}</a></li>
-                            `).join('')}
+                            ${links.map(link => {
+      const href = link.archive || link.url;
+      const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(href)}&size=32`;
+      const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
+
+      if (link.archive) {
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a><br>(original: ${escapeHtml(link.url)})</li>`;
+      } else {
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a></li>`;
+      }
+    }).join('')}
                           </ul>
                         </div>
                       </div>

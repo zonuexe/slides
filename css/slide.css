@@ -312,3 +312,32 @@ body {
 .pdf-controls.expanded {
     /* 位置は常に固定なので変更なし */
 }
+
+/* 関連リンクのスタイル */
+.page-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.page-links li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+}
+
+.page-links li img {
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.page-links li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.page-links li a:hover {
+    text-decoration: underline;
+}
