@@ -37,7 +37,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 「仕事で使えるComposer」
+      children:
+      - node: text
+        content: 「仕事で使えるComposer」
   - node: p
     children:
     - node: text
@@ -49,7 +51,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: PHPからHTTPリクエストをする話を書きました
+      children:
+      - node: text
+        content: PHPからHTTPリクエストをする話を書きました
   - node: p
     children:
     - node: text
@@ -66,7 +70,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: バージョン番号をパースする話を書きました
+      children:
+      - node: text
+        content: バージョン番号をパースする話を書きました
   - node: p
     children:
     - node: text
@@ -78,7 +84,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 代の代償行為として、モダンPHP、ただし
+      children:
+      - node: text
+        content: 代の代償行為として、モダンPHP、ただし
   - node: p
     children:
     - node: text
@@ -99,11 +107,17 @@ text:
   - node: ul
     children:
     - node: li
-      content: いろんなSQLを抽象化したオブジェクト
+      children:
+      - node: text
+        content: いろんなSQLを抽象化したオブジェクト
     - node: li
-      content: 学生がmysqli関数使ってたけどPDOでいい
+      children:
+      - node: text
+        content: 学生がmysqli関数使ってたけどPDOでいい
     - node: li
-      content: あとなんか、Doctrineとか使った方がいいの?
+      children:
+      - node: text
+        content: あとなんか、Doctrineとか使った方がいいの?
   p5:
   - node: p
     children:
@@ -116,7 +130,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: スでSQLインジェクションの話をしてるリアル
+      children:
+      - node: text
+        content: スでSQLインジェクションの話をしてるリアル
   - node: p
     children:
     - node: text
@@ -124,7 +140,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 世界にはまだ文字列結合SQLが眠ってる
+      children:
+      - node: text
+        content: 世界にはまだ文字列結合SQLが眠ってる
   p6:
   - node: p
     children:
@@ -137,11 +155,17 @@ text:
   - node: ul
     children:
     - node: li
-      content: 型を指定するのはめんどくさい
+      children:
+      - node: text
+        content: 型を指定するのはめんどくさい
     - node: li
-      content: $stmt->bindValue(':id', $id, \PDO::PARAM_INT)
+      children:
+      - node: text
+        content: $stmt->bindValue(':id', $id, \PDO::PARAM_INT)
     - node: li
-      content: 可変個数のIN句が地雷
+      children:
+      - node: text
+        content: 可変個数のIN句が地雷
   p7:
   - node: p
     children:
@@ -179,13 +203,21 @@ text:
   - node: ul
     children:
     - node: li
-      content: (会社で同僚が作ったのを)コピペして再実装した
+      children:
+      - node: text
+        content: (会社で同僚が作ったのを)コピペして再実装した
     - node: li
-      content: SQL内に型が書けるDSL
+      children:
+      - node: text
+        content: SQL内に型が書けるDSL
     - node: li
-      content: PDOに乗っかって、余計なことはしない
+      children:
+      - node: text
+        content: PDOに乗っかって、余計なことはしない
     - node: li
-      content: SQLインジェクションにある程度の耐性がある?
+      children:
+      - node: text
+        content: SQLインジェクションにある程度の耐性がある?
   p9:
   - node: p
     children:
@@ -327,7 +359,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: $stmt = SQL\Query::execute($con, self::find_query,
+      children:
+      - node: text
+        content: $stmt = SQL\Query::execute($con, self::find_query,
   - node: p
     children:
     - node: text
@@ -339,11 +373,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: 帰ってくる値はPDOStatementなので、
+      children:
+      - node: text
+        content: 帰ってくる値はPDOStatementなので、
   - node: ul
     children:
     - node: li
-      content: いつもの感覚でfetch/fetchAllするだけ！
+      children:
+      - node: text
+        content: いつもの感覚でfetch/fetchAllするだけ！
   p13:
   - node: p
     children:
@@ -355,11 +393,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: そこにパラメータを当て嵌めるだけ、なのは
+      children:
+      - node: text
+        content: そこにパラメータを当て嵌めるだけ、なのは
   - node: ul
     children:
     - node: li
-      content: なんとなく心理的な安心感がある (本当か?)
+      children:
+      - node: text
+        content: なんとなく心理的な安心感がある (本当か?)
   - node: p
     children:
     - node: text
@@ -367,4 +409,6 @@ text:
   - node: ul
     children:
     - node: li
-      content: このコードがPSR-1違反であることに…
+      children:
+      - node: text
+        content: このコードがPSR-1違反であることに…

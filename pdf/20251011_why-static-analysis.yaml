@@ -68,19 +68,35 @@ text:
   - node: ul
     children:
     - node: li
-      content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
     - node: li
-      content: ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+      children:
+      - node: text
+        content: ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
     - node: li
-      content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+      children:
+      - node: text
+        content: Emacs PHP Modeを開発しています (2017年-)
     - node: li
-      content: Emacs PHP Modeを開発しています (2017年-)
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
     - node: li
-      content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+      children:
+      - node: text
+        content: 西日本とは縁もゆかりもなくて、広島に来たのは今日で三回目です！
     - node: li
-      content: 西日本とは縁もゆかりもなくて、広島に来たのは今日で三回目です！
-    - node: li
-      content: assert(count($tadsan->phpcons) >= 45);
+      children:
+      - node: text
+        content: assert(count($tadsan->phpcons) >= 45);
   p3:
   - node: p
     children:
@@ -313,13 +329,21 @@ text:
   - node: ul
     children:
     - node: li
-      content: 永遠に変化しない／新しいファイルをアップロードしたら変化する
+      children:
+      - node: text
+        content: 永遠に変化しない／新しいファイルをアップロードしたら変化する
     - node: li
-      content: 最初の表示は同じだが、人間が操作したら画面表示が変化する
+      children:
+      - node: text
+        content: 最初の表示は同じだが、人間が操作したら画面表示が変化する
     - node: li
-      content: ページをリロードするごとに新しい内容が表示される
+      children:
+      - node: text
+        content: ページをリロードするごとに新しい内容が表示される
     - node: li
-      content: 人間が操作するごとに新しい内容が表示される
+      children:
+      - node: text
+        content: 人間が操作するごとに新しい内容が表示される
   p22:
   - node: p
     children:
@@ -876,15 +900,27 @@ text:
   - node: ul
     children:
     - node: li
-      content: ここまでの説明はとても大雑把
+      children:
+      - node: text
+        content: ここまでの説明はとても大雑把
     - node: li
-      content: 現実のWebサイトでは静的な要素と動的な要素が複雑に入り混じる
+      children:
+      - node: text
+        content: 現実のWebサイトでは静的な要素と動的な要素が複雑に入り混じる
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 静的なHTML/JSファイルからAPIにリクエストしてページ表示するとか
     - node: li
-      content: 静的なHTML/JSファイルからAPIにリクエストしてページ表示するとか
+      children:
+      - node: text
+        content: 静と動を適切に見極めて構成することで、開発効率やインフラコストの最適化
     - node: li
-      content: 静と動を適切に見極めて構成することで、開発効率やインフラコストの最適化
-    - node: li
-      content: 従来はサーバーサイドアプリケーションが必要だったものも、
+      children:
+      - node: text
+        content: 従来はサーバーサイドアプリケーションが必要だったものも、
   - node: p
     children:
     - node: text
@@ -1352,13 +1388,25 @@ text:
   - node: ul
     children:
     - node: li
-      content: 型検査 = プログラム(ソースコード)が型の制約を満たすか調べる
+      children:
+      - node: text
+        content: 型検査 = プログラム(ソースコード)が型の制約を満たすか調べる
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 例： 関数呼び出しに正しい型を渡せているか
     - node: li
-      content: 例： 関数呼び出しに正しい型を渡せているか
-    - node: li
-      content: 静的型付きの言語はプログラムの実行前に型検査合格を前提とする
-    - node: li
-      content: 型がついたとき、実行時にその種のエラーが起こらない性質を
+      children:
+      - node: text
+        content: 静的型付きの言語はプログラムの実行前に型検査合格を前提とする
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 型がついたとき、実行時にその種のエラーが起こらない性質を
   - node: p
     children:
     - node: text
@@ -1366,9 +1414,13 @@ text:
   - node: ul
     children:
     - node: li
-      content: コンパイルの過程で型検査し、実行時に型情報を持たない言語も多い
+      children:
+      - node: text
+        content: コンパイルの過程で型検査し、実行時に型情報を持たない言語も多い
     - node: li
-      content: 静的型付けと呼ぶのはおすすめしない (が、よく言われている)
+      children:
+      - node: text
+        content: 静的型付けと呼ぶのはおすすめしない (が、よく言われている)
   p60:
   - node: p
     children:
@@ -1381,15 +1433,27 @@ text:
   - node: ul
     children:
     - node: li
-      content: プログラムの実行前に型検査合格を前提としない言語
+      children:
+      - node: text
+        content: プログラムの実行前に型検査合格を前提としない言語
     - node: li
-      content: 実行時に「値」と「型タグ」をセットで扱い、処理しながら逐次型検査を行なう
+      children:
+      - node: text
+        content: 実行時に「値」と「型タグ」をセットで扱い、処理しながら逐次型検査を行なう
     - node: li
-      content: 実行時にソースコードを評価する(eval)など柔軟な機能を提供する
+      children:
+      - node: text
+        content: 実行時にソースコードを評価する(eval)など柔軟な機能を提供する
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 原理上どんな文字列も実行できるので、無限の可能性を秘めている
     - node: li
-      content: 原理上どんな文字列も実行できるので、無限の可能性を秘めている
-    - node: li
-      content: 動的型付けと呼ぶのはおすすめしない (が、よく言われている)
+      children:
+      - node: text
+        content: 動的型付けと呼ぶのはおすすめしない (が、よく言われている)
   p61:
   - node: p
     children:
@@ -1415,9 +1479,13 @@ text:
   - node: ul
     children:
     - node: li
-      content: ソフトウェアを安定させるには、その挙動を予測可能な範囲に収めたい
+      children:
+      - node: text
+        content: ソフトウェアを安定させるには、その挙動を予測可能な範囲に収めたい
     - node: li
-      content: 例：
+      children:
+      - node: text
+        content: 例：
   - node: p
     children:
     - node: text
@@ -1425,11 +1493,19 @@ text:
   - node: ul
     children:
     - node: li
-      content: メソッドに同じ引数を渡せば、決まった結果になってほしい
+      children:
+      - node: text
+        content: メソッドに同じ引数を渡せば、決まった結果になってほしい
     - node: li
-      content: わざわざ実装にジャンプしなくても、引数の形式がわかりやすくなってほしい
+      children:
+      - node: text
+        content: わざわざ実装にジャンプしなくても、引数の形式がわかりやすくなってほしい
+  - node: ul
+    children:
     - node: li
-      content: そこで、動的解析 = ユニットテスト = 動かして試してみる
+      children:
+      - node: text
+        content: そこで、動的解析 = ユニットテスト = 動かして試してみる
   p64:
   - node: p
     children:
@@ -1438,15 +1514,27 @@ text:
   - node: ul
     children:
     - node: li
-      content: PHPは根本的に動的言語であり、ほとんどの特徴が当てはまる
+      children:
+      - node: text
+        content: PHPは根本的に動的言語であり、ほとんどの特徴が当てはまる
     - node: li
-      content: ただしPHPには型宣言があり、型宣言通りの値が渡されなければエラー
+      children:
+      - node: text
+        content: ただしPHPには型宣言があり、型宣言通りの値が渡されなければエラー
     - node: li
-      content: 他言語でも型宣言は存在するが、実行時に保証されない口約束であることも
-    - node: li
-      content: Python, TypeScript…
-    - node: li
-      content: 一方でPHPでは動かしてみれば型宣言に反しているかがわかる
+      children:
+      - node: text
+        content: 他言語でも型宣言は存在するが、実行時に保証されない口約束であることも
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Python, TypeScript…
+        - node: li
+          children:
+          - node: text
+            content: 一方でPHPでは動かしてみれば型宣言に反しているかがわかる
   p65:
   - node: p
     children:
@@ -1502,15 +1590,29 @@ text:
   - node: ul
     children:
     - node: li
-      content: PHPStan - PHP Static Analysis Tool
+      children:
+      - node: text
+        content: PHPStan - PHP Static Analysis Tool
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: フルネームで呼んでいる人は見たことがない
+        - node: li
+          children:
+          - node: text
+            content: PHPで書かれたPHPの静的解析ツール
     - node: li
-      content: フルネームで呼んでいる人は見たことがない
-    - node: li
-      content: PHPで書かれたPHPの静的解析ツール
-    - node: li
-      content: チェコ人のOndřej Mirtesが個人で開発している
-    - node: li
-      content: 今年になってPHPStan s.r.o(有限会社)として法人化した
+      children:
+      - node: text
+        content: チェコ人のOndřej Mirtesが個人で開発している
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 今年になってPHPStan s.r.o(有限会社)として法人化した
   p73:
   - node: p
     children:

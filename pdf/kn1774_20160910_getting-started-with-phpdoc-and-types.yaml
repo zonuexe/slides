@@ -91,7 +91,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 手さぐりで型を調べる
+      children:
+      - node: text
+        content: 手さぐりで型を調べる
   - node: p
     children:
     - node: text
@@ -102,7 +104,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 「
+      children:
+      - node: text
+        content: 「
   - node: p
     children:
     - node: text
@@ -140,7 +144,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: をとりながらPHPを書ける
+      children:
+      - node: text
+        content: をとりながらPHPを書ける
   - node: p
     children:
     - node: text
@@ -148,7 +154,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: やってれないことはない
+      children:
+      - node: text
+        content: やってれないことはない
   p7:
   - node: p
     children:
@@ -214,9 +222,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: 時間は有限なので、既存コードを読む
-    - node: li
-      content: 時間は最小限にできるとウレシイ
+      children:
+      - node: text
+        content: 時間は有限なので、既存コードを読む
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 時間は最小限にできるとウレシイ
   - node: p
     children:
     - node: text
@@ -224,7 +238,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 「 」
+      children:
+      - node: text
+        content: 「 」
   - node: p
     children:
     - node: text
@@ -344,7 +360,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 取得できる特別な形式のコメント
+      children:
+      - node: text
+        content: 取得できる特別な形式のコメント
   - node: p
     children:
     - node: text
@@ -352,7 +370,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: /** 〜 */
+      children:
+      - node: text
+        content: /** 〜 */
   - node: p
     children:
     - node: text
@@ -367,7 +387,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: /*
+      children:
+      - node: text
+        content: /*
   - node: p
     children:
     - node: text
@@ -413,7 +435,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: HTMLドキュメントを生成できる
+      children:
+      - node: text
+        content: HTMLドキュメントを生成できる
   - node: p
     children:
     - node: text
@@ -421,7 +445,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: PHPDocって形式がある
+      children:
+      - node: text
+        content: PHPDocって形式がある
   - node: p
     children:
     - node: text
@@ -429,7 +455,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: デファクト
+      children:
+      - node: text
+        content: デファクト
   - node: p
     children:
     - node: text
@@ -446,9 +474,13 @@ text:
   - node: ul
     children:
     - node: li
-      content: 複合型
+      children:
+      - node: text
+        content: 複合型
     - node: li
-      content: int int|string
+      children:
+      - node: text
+        content: int int|string
   - node: p
     children:
     - node: text
@@ -456,9 +488,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: 値が並んだ配列
+      children:
+      - node: text
+        content: 値が並んだ配列
+  - node: ul
+    children:
     - node: li
-      content: int int[]
+      children:
+      - node: text
+        content: int int[]
   - node: p
     children:
     - node: text
@@ -466,9 +504,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
+      children:
+      - node: text
+        content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
+  - node: ul
+    children:
     - node: li
-      content: types.html
+      children:
+      - node: text
+        content: types.html
   p16:
   - node: p
     children:
@@ -544,7 +588,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: リストでもあり連想配列でもある
+      children:
+      - node: text
+        content: リストでもあり連想配列でもある
   - node: p
     children:
     - node: text
@@ -552,7 +598,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: array
+      children:
+      - node: text
+        content: array
   - node: p
     children:
     - node: text
@@ -567,7 +615,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: mixed[] User[]
+      children:
+      - node: text
+        content: mixed[] User[]
   - node: p
     children:
     - node: text
@@ -584,7 +634,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: phpDocumentor2の仕様 (phpdoc.org)
+      children:
+      - node: text
+        content: phpDocumentor2の仕様 (phpdoc.org)
   - node: p
     children:
     - node: text
@@ -592,11 +644,21 @@ text:
   - node: ul
     children:
     - node: li
-      content: 使ってるツールはいろいろある
+      children:
+      - node: text
+        content: 使ってるツールはいろいろある
+  - node: ul
+    children:
     - node: li
-      content: PhpStorm, Phan, ApiGen, phpDox…
-    - node: li
-      content: PSR-5で提案されてるけど… どうなる?
+      children:
+      - node: text
+        content: PhpStorm, Phan, ApiGen, phpDox…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: PSR-5で提案されてるけど… どうなる?
   p19:
   - node: p
     children:
@@ -614,7 +676,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 引数に特定のキーワードかクラス名を書く
+      children:
+      - node: text
+        content: 引数に特定のキーワードかクラス名を書く
   - node: p
     children:
     - node: text
@@ -626,7 +690,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: みたいな
+      children:
+      - node: text
+        content: みたいな
   - node: p
     children:
     - node: text
@@ -637,9 +703,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: PHP7では「型宣言」になって返り値の型が
+      children:
+      - node: text
+        content: PHP7では「型宣言」になって返り値の型が
+  - node: ul
+    children:
     - node: li
-      content: 書ける
+      children:
+      - node: text
+        content: 書ける
   p21:
   - node: p
     children:
@@ -656,9 +728,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: そんなの簡単だろさっさと実装しろや…
-    - node: li
-      content: みたいな単純な問題ではない
+      children:
+      - node: text
+        content: そんなの簡単だろさっさと実装しろや…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: みたいな単純な問題ではない
   - node: p
     children:
     - node: text
@@ -670,7 +748,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: で呼び出したときにどうするの…?
+      children:
+      - node: text
+        content: で呼び出したときにどうするの…?
   - node: p
     children:
     - node: text
@@ -682,7 +762,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: declare(strict_types=1)
+      children:
+      - node: text
+        content: declare(strict_types=1)
   p22:
   - node: p
     children:
@@ -761,7 +843,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 型が違ってるところを指摘してくれる
+      children:
+      - node: text
+        content: 型が違ってるところを指摘してくれる
   - node: p
     children:
     - node: text
@@ -769,4 +853,6 @@ text:
   - node: ul
     children:
     - node: li
-      content: 詳しくしゃべってきます (30分枠)
+      children:
+      - node: text
+        content: 詳しくしゃべってきます (30分枠)

@@ -59,11 +59,17 @@ text:
   - node: ul
     children:
     - node: li
-      content: このスライドは開始10分前に書きはじめました
+      children:
+      - node: text
+        content: このスライドは開始10分前に書きはじめました
     - node: li
-      content: pixiv Inc.でまじめにふまじめPHP書いてるよ
+      children:
+      - node: text
+        content: pixiv Inc.でまじめにふまじめPHP書いてるよ
     - node: li
-      content: WEB+DB PRESS Vol. 91買ってね！！！
+      children:
+      - node: text
+        content: WEB+DB PRESS Vol. 91買ってね！！！
   p3:
   - node: p
     children:
@@ -76,11 +82,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: 今回は入門篇なので、
+      children:
+      - node: text
+        content: 今回は入門篇なので、
   - node: ul
     children:
     - node: li
-      content: あんまりすごいことはやらないよ！
+      children:
+      - node: text
+        content: あんまりすごいことはやらないよ！
   - node: p
     children:
     - node: text
@@ -113,15 +123,23 @@ text:
   - node: ul
     children:
     - node: li
-      content: 現在でも活発に開発されてるよ！
+      children:
+      - node: text
+        content: 現在でも活発に開発されてるよ！
     - node: li
-      content: もちろんPHP 7にも対応してる！
+      children:
+      - node: text
+        content: もちろんPHP 7にも対応してる！
     - node: li
-      content: 数年前にインストールして放置してる…
+      children:
+      - node: text
+        content: 数年前にインストールして放置してる…
   - node: ul
     children:
     - node: li
-      content: ってひとは是非ともアップデートするべき
+      children:
+      - node: text
+        content: ってひとは是非ともアップデートするべき
   p6:
   - node: p
     children:
@@ -139,9 +157,13 @@ text:
   - node: ul
     children:
     - node: li
-      content: SSHでサーバ上のファイルを編集できるよ！
+      children:
+      - node: text
+        content: SSHでサーバ上のファイルを編集できるよ！
     - node: li
-      content: とても賢いので、Magitとかも普通に動く
+      children:
+      - node: text
+        content: とても賢いので、Magitとかも普通に動く
   - node: p
     children:
     - node: text
@@ -169,7 +191,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: な ストームとか使ってる人たちが
+      children:
+      - node: text
+        content: な ストームとか使ってる人たちが
   - node: p
     children:
     - node: text
@@ -177,7 +201,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: 簡単にファイル絞り込んでるので悔しかった
+      children:
+      - node: text
+        content: 簡単にファイル絞り込んでるので悔しかった
   - node: p
     children:
     - node: text
@@ -185,11 +211,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: TRAMP使ってても問題なく利用できるよ
+      children:
+      - node: text
+        content: TRAMP使ってても問題なく利用できるよ
   - node: ul
     children:
     - node: li
-      content: (ただし、初回だけ若干重い…)
+      children:
+      - node: text
+        content: (ただし、初回だけ若干重い…)
   p10:
   - node: p
     children:
@@ -207,7 +237,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: master/.emacs.d/site-lisp/php-eldoc.el
+      children:
+      - node: text
+        content: master/.emacs.d/site-lisp/php-eldoc.el
   - node: p
     children:
     - node: text
@@ -215,9 +247,13 @@ text:
   - node: ul
     children:
     - node: li
-      content: の引数とかね！
+      children:
+      - node: text
+        content: の引数とかね！
     - node: li
-      content: implode()
+      children:
+      - node: text
+        content: implode()
   - node: p
     children:
     - node: text
@@ -225,7 +261,9 @@ text:
   - node: ul
     children:
     - node: li
-      content: Qiitaとかに書きます
+      children:
+      - node: text
+        content: Qiitaとかに書きます
   p12:
   - node: p
     children:
@@ -242,13 +280,23 @@ text:
   - node: ul
     children:
     - node: li
-      content: キーを連打すると入力文字列が入れ変ってく
+      children:
+      - node: text
+        content: キーを連打すると入力文字列が入れ変ってく
     - node: li
-      content: 変換パターンは自分で登録する
+      children:
+      - node: text
+        content: 変換パターンは自分で登録する
     - node: li
-      content: たとえば  →  →   みたいに
-    - node: li
-      content: '[   [] array()'
+      children:
+      - node: text
+        content: たとえば  →  →   みたいに
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: '[   [] array()'
   - node: p
     children:
     - node: text
@@ -269,11 +317,17 @@ text:
   - node: ul
     children:
     - node: li
-      content: PHPで動くインタラクティブシェル
+      children:
+      - node: text
+        content: PHPで動くインタラクティブシェル
     - node: li
-      content: composer g require psy/psysh
+      children:
+      - node: text
+        content: composer g require psy/psysh
     - node: li
-      content: Emacsからも当然のように動かせるよ
+      children:
+      - node: text
+        content: Emacsからも当然のように動かせるよ
   p16:
   - node: p
     children:
@@ -289,11 +343,15 @@ text:
   - node: ul
     children:
     - node: li
-      content: 今回は入門篇なので、
+      children:
+      - node: text
+        content: 今回は入門篇なので、
   - node: ul
     children:
     - node: li
-      content: そのうちもっとすごいことを書くよ
+      children:
+      - node: text
+        content: そのうちもっとすごいことを書くよ
   - node: p
     children:
     - node: text
@@ -301,4 +359,6 @@ text:
   - node: ul
     children:
     - node: li
-      content: Emacsでキミだけの最強IDEを実装しちゃおう！
+      children:
+      - node: text
+        content: Emacsでキミだけの最強IDEを実装しちゃおう！
