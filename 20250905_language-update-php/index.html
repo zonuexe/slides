@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20250905_language-update-php/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20250905_language-update-php.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,6 +17,7 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="Language Update PHP (LL2025)">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20250905_language-update-php.png">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20250905_language-update-php/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20250905_language-update-php/oembed.xml">
@@ -37,6 +39,48 @@
               maxHeight: 1024,
               download: '20250905_Language Update PHP (LL2025).pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/20250905_language-update-php.pdf" download="20250905_Language Update PHP (LL2025).pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -78,6 +122,223 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>Language Update PHP</strong></p><p>Learn Language 2025</p><p>pixiv Inc.<br><strong>USAMI Kenta</strong></p><p><strong>2025-09-05</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>お前誰よ</strong></p><p>うさみけんた / にゃんだーすわん</p><p>●</p><p>GitHub: @zonuexe</p><p>○<br>2012年11月から現職</p><p>●</p><p>ピクシブ株式会社 Platform Div PHPer</p><p>●</p><p>2012年末から現職、APIとかCIとかいろいろなとこ</p><p>●</p><p>最近はインフラっぽい仕事してます</p><p>○</p><p><strong>tadsan</strong></p><p>Emacs PHP Modeを開発しています (2017年-)</p><p>●</p><p><strong>PHPer</strong></p><p>プログラミング言語にちょっとこだわりのある素人 </p><p>●</p><p>(spcamp2010)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>みなさんご存じですね？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>&lt;?php</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>どのくらいご存じかは人による</strong></p><p>2000年前後から世界中でWeb開発に活用されてきた</p><p>●</p><p>いわゆる動的型付けのスクリプト言語</p><p>●</p><p>とにかくいろいろな場面で使われてきた</p><p>●</p><p>Webアプリだけでなく汎用言語として多くのタスクをこなせる</p><p>○<br>現代で有名なのは「WordPress」「Laravel」「Wikipedia」</p><p>●</p><p>PHPが嫌いでもPHPを避けて生活するのが難しいくらい</p><p>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>PHP以前 (1990年代)</strong></p><p>Webアプリケーション ≒ CGI</p><p>●</p><p>必ずしもそうではないが、ほとんどはそうだったはず</p><p>○</p><p>例外：普通のやつらの上を行け Paul Graham: Common Lisp</p><p>○<br>CGIは任意の言語で書ける… <strong>が、</strong></p><p>●</p><p>Perl = パフォーマンスの問題</p><p>○</p><p>C言語 = メモリ安全に書くのが著しく難しい</p><p>○</p><p>シェルスクリプト = 非常に多くの課題がある</p><p>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>PHPは何を解決したか (1990年代前半)</strong></p><p>CGIではなくApacheのモジュールとして提供</p><p>●</p><p>現実にはレンタルサーバの権限の問題でCGIモードで運用も多い</p><p>○<br>HTMLと統合されたテンプレート言語</p><p>●</p><p>コードとHTMLの親子関係が逆転する</p><p>○<br>ライブラリではなく言語レベルでHTTPをサポートしている</p><p>●</p><p>他言語のCGIサポートはライブラリレベルなので、正しく使わない</p><p>○</p><p>とヘッダインジェクションのリスクがあった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>Webはどうなったか (2010年代)</strong></p><p>CGIではなくApacheのモジュールとして提供</p><p>●</p><p>CGIが廃れ、共用レンタルサーバの存在感が相対的に低下</p><p>○<br>HTMLと統合されたテンプレート言語</p><p>●</p><p>各言語でテンプレートライブラリが普及、使うのが当たり前</p><p>○<br>ライブラリではなく言語レベルでHTTPをサポートしている</p><p>●</p><p>CGIのような潜在的に危険なプロトコルが利用されなくなったの</p><p>○</p><p>で、フレームワークに乗って作る限り問題は起こらない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>他言語のWeb開発の断絶</strong></p><p>CGIはリクエストごとにプロセスを起動し、HTTPを標準入出力と環境変</p><p>●</p><p>数に置き換える</p><p>アーキテクチャなど考えず、シンプルな「スクリプト」でよかった</p><p>○<br>2000年代にインターフェイス／サーバ／アプリケーション分離の風潮</p><p>●</p><p>Python: WSGI, Ruby: Rack, Perl: PSGI</p><p>○<br>PHPはトレンドに乗らず、CGI／レンタルサーバも健在であり続けた</p><p>●</p><p>Apacheのmod_perl, mod_rubyも存在するが、主流にはならず</p><p>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>グレートリセットが起こらなかったPHP</strong></p><p>Railsの普及により、Rubyでは事実上Railsに「標準化」された</p><p>●</p><p>Rack以前からあったRedmine, tDiaryなどはRackアプリケーション</p><p>○</p><p>に移行</p><p>Python/Perlはフレームワークの寡占はないが、CGI世代と完全に断絶</p><p>●</p><p>PHPはLaravelが一般化しているが、フレームワークなしも混住</p><p>●</p><p>よくも悪くも2000年代始めの世界観を捨てきれていない</p><p>○</p><p>PHPにとっては「足枷」「便利ライブラリの集合」に過ぎない</p><p>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>21世紀のCGI</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>21世紀のSSI</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>そんな言語でも進化は続く</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>PHPの開発体制</strong></p><p>Request for Comments https://wiki.php.net/rfc</p><p>●</p><p>言語機能の改廃提案と投票プロセス、リリース周期が明文化</p><p>○<br>機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意</p><p>●</p><p>PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない</p><p>●</p><p>PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着</p><p>●</p><p>品質保障のためのfeature freeze、RC版なども定められた</p><p>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>The PHP Foundation</strong></p><p>PHPの著作権は「The PHP Group」という団体が持っている</p><p>●</p><p>2021年にPHPの継続的な開発を支援する財団が設立された</p><p>●</p><p>PHPのメイン開発者だったNikita Popovの引退が契機</p><p>●</p><p>各社からの協賛金を集め、数人のPHP「コア開発者」を雇っている</p><p>●</p><p>日本からは高町咲衣さんが参加 (PHP 8.4 リリースマネージャ)</p><p>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>PHPの言語仕様の進化</strong></p><p>最新版はPHP 8.4 (2024年11月リリース)</p><p>●</p><p>PHPユーザーの多様性</p><p>●</p><p>開発文化 vs Web制作文化</p><p>○<br>基本的にはかなり保守的だが、有用な機能はじわじわ追加されている</p><p>●</p><p>PHP 8.xで追加された構文を使えばかなり簡潔に書けることが多い</p><p>○<br>BC Breakは… そこそこある</p><p>●</p><p>基本的には「なぜこんなコードが動くんだ」という変なケースが潰</p><p>○</p><p>される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>#[Attribute] (PHP 8.0)</strong></p><p>PHPは歴史的にDoc commentにメタデータを書く文化が発達していた</p><p>●</p><p>リフレクションAPIで文字列を取得できる</p><p>○</p><p>構造化データは独自に構文解析する必要がある</p><p>○<br>#[Attribute] はPHPのシンタックスの一部としてパースされる</p><p>●</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>クラスの改善</strong></p><p>readonlyプロパティ (PHP 8.1)</p><p>●</p><p>readonlyクラス (PHP 8.2)</p><p>●</p><p>プロパティフック (PHP 8.4)</p><p>●</p><p>C#のプロパティと同じようにプロパティの読み込みと書き込みに</p><p>○</p><p>処理を書ける<br>非対称プロパティ (PHP 8.4)</p><p>●</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>#[Attribute] (PHP 8.0)</strong></p><p>PHPは歴史的にDoc commentにメタデータを書く文化が発達していた</p><p>●</p><p>リフレクションAPIで文字列を取得できる</p><p>○</p><p>構造化データは独自に構文解析する必要がある</p><p>○<br>#[Attribute] はPHPのシンタックスの一部としてパースされる</p><p>●</p><p>誰もが使うというよりはフレームワークなどの機能として活用できる</p><p>●</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>match式 (PHP 8.0)</strong></p><p>式バージョンのswitch</p><p>●</p><p>従来のswitch文の使いにくさが改善されている</p><p>○<br>残念ながら、高機能なパターンマッチ機能は未実装</p><p>●</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>PHPのライセンス変更 (PHP 9.0?)</strong></p><p>PHP RFC: PHP License Update</p><p>●</p><p>本日時点ではまだ未確定だが、独自の <strong>PHP License</strong> からBSDライセンス</p><p>●</p><p>に移行する提案<br>さまざまな歴史的経緯がまとめられていて読みごたえがある</p><p>●</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe&size=32" alt=""><a href="https://github.com/zonuexe" target="_blank">zonuexe (USAMI Kenta) · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpractical-scheme.net%2Ftrans%2Fbeating-the-averages-j.html&size=32" alt=""><a href="https://practical-scheme.net/trans/beating-the-averages-j.html" target="_blank">Beating the Averages</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fddd1f8c8289b064cf923&size=32" alt=""><a href="https://qiita.com/tadsan/items/ddd1f8c8289b064cf923" target="_blank">なぜPHPファイルは &lt;?php が省略できないのか #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc&size=32" alt=""><a href="https://wiki.php.net/rfc" target="_blank">PHP: Request for Comments</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Fphp_license_update&size=32" alt=""><a href="https://wiki.php.net/rfc/php_license_update" target="_blank">PHP RFC: PHP License Update</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

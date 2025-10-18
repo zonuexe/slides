@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20171024_php-first-class-citizens/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2678_20171024_php-first-class-citizens.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="諸君とPHPと一般市民">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2678_20171024_php-first-class-citizens.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20171024_php-first-class-citizens/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20171024_php-first-class-citizens/oembed.xml">
 
           <title>諸君とPHPと一般市民</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2678_20171024_諸君とPHPと一般市民 #phpstudy.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" rel="noopener noreferrer" class="hashtag">#phpstudy</a>
+                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag">#phpstudy</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2678_20171024_php-first-class-citizens.pdf" download="kn2678_20171024_諸君とPHPと一般市民 #phpstudy.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,430 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>諸君</strong>と<strong>PHP</strong>と<strong>一級市民</strong></p><p><strong>First-class citizen in PHP with you</strong></p><p>#phpstudy</p><p>2017-10-24 PHP勉強会@東京 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社技術基盤チーム (pixiv.net)</li></ul></li><li>Emacs Lisper, PHPer</li><li>入社前は自宅警備をしながらRuby書いてた<ul><li>Emacs PHP Modeのメンテナ引き継ぎました</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>はじめに</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>プログラムは</strong></p><p><strong>様々な要素の</strong><br><strong>組み合せで構成される</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>様々な要素？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>PHPにおいては 、</p><p>(ざっくり)</p><p><strong>構文  数字  文字列  真理値</strong></p><p>(文法)</p><p>, , , ,</p><p><strong>配列  リソース 型  クラス</strong>  <strong>関数</strong></p><p>, ,  , , ,<br><strong>オブジェクト  インターフェイス</strong></p><p>, ,</p><p><strong>トレイト</strong>  ファイル  外部API  </p><p>, , ,</p><p>データベース  HTML<strong>テンプレート</strong></p><p>,<br><strong>…etc.</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p><strong>われわれは</strong></p><p><strong>いろんなものを</strong> <strong>組み合せて作る</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>どうやって？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>いろんなものが現れる</strong></p><p>&lt;?php require &#39;bootstrap.php&#39;;</p><p>$db = mysqli_connect(); <br>$stmt = mysqli_prepare($db, &#39;SELECT * FROM books&#39;);</p><p>mysqli_stmt_execute($stmt); </p><p>print &#39;&lt;h1&gt;本の一覧&lt;/h1&gt;&#39;;</p><p>print &#39;&lt;ul&gt;&#39;;</p><p>foreach ($stmt as $s){ <br>    print &#39;&lt;li&gt;&#39;; print $s-&gt;name; print ‘&lt;/li&gt;&#39;;</p><p>} <br>print &#39;&lt;/ul&gt;&#39;;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>お気付きか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>階級制度</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>いろんな</strong><br><strong>ものがある</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>第一級オブジェクト（ファーストクラスオブジェクト、<br><strong>“ ﬁrst-</strong></p><p>）は、あるプログラミング言語において、たとえ</p><p><strong>class object</strong><br>ば生成、代入、演算、（引数・戻り値としての）受け渡しと いったその言語における基本的な操作を制限なしに使用でき る対象のことである。ここで「オブジェクト」とは広く対象 物・客体を意味し、必ずしもオブジェクト指向プログラミン<br>グにおけるオブジェクトを意味しない。</p><p><strong>”</strong></p><p>第一級オブジェクト</p><p><strong>–  </strong></p><p>最終更新</p><p><strong>(  2017-04-23 19:00:11)</strong></p><p><strong>https://ja.wikipedia.org/wiki/</strong><br><strong>%E7%AC%AC%E4%B8%80%E7%B4%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p><strong>PHPは</strong><br><strong>どうかな？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p>貴族 簡単に画面に出力できる</p><p>上級市民 シリアライズできる</p><p>一級市民 変数に代入できる・引数にできる</p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>PHPは</strong><br><strong>どうかな？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p><strong>明らかに一級市民</strong><br><strong>ではないもの</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p>貴族 簡単に画面に出力できる</p><p>上級市民 シリアライズできる</p><p>一級市民 変数に代入できる・引数にできる</p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p><strong>ココ→</strong></p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>構文</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>if for<br><strong>を に変換する…</strong></p><p><strong>といったことは</strong><br><strong>できない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>🤔</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>神</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p><strong>ココ→</strong></p><p>貴族 簡単に画面に出力できる</p><p>上級市民 シリアライズできる</p><p>一級市民 変数に代入できる・引数にできる</p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p><strong>string</strong><br><strong>int</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>string </strong></p><p><strong>(文字列)</strong></p><p>$s = &quot;string&quot;; <br>echoとかで簡単に画面に出力できる </p><p>$a[&#39;str&#39;] みたいな感じでキーになれる </p><p>あらゆるバイナリ列を格納できる </p><p>例: <strong>画像ファイルの中身</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>int </strong></p><p><strong>(整数)</strong></p><p>$i = 12345; <br>echoとかで簡単に画面に出力できる </p><p>$a[0] みたいな感じでキーになれる </p><p>PHP_INT_MINからPHP_INT_MAXの<br>範囲のみ扱える (CPUのアーキテクチャ<br>32bit, 64bitに依存)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p><strong>上級市民</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p><strong>ココ→</strong></p><p>貴族 簡単に画面に出力できる</p><p>上級市民 シリアライズできる</p><p>一級市民 変数に代入できる・引数にできる</p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>float </strong></p><p><strong>(浮動小数点数)</strong></p><p>$f =1.1; $l = PHP_INT_MAX + 1; echoとかで簡単に画面に出力できる </p><p>絶対に配列のキーにしてはいけない </p><p>エラーにもならずintに化ける </p><p>基本的に等値比較(==, ===)<br>してはいけない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p><strong>bool </strong></p><p><strong>(真理値)</strong></p><p>$t = true; $f = (1 == 2); <br>そのままechoなどで出力できない </p><p>trueは1に化ける </p><p>falseは何も出力されない </p><p>配列キーにすると</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong>結果を一時変数に保存する</strong></p><p>&lt;?php </p><p>if ($i == 1) echo &#39;$iは1です&#39;;</p><p>$is_success = do_something(); <br>if ($is_success) {     echo &quot;成功&quot;; </p><p>} else { <br>    echo &quot;しっぱい。。。&quot;; </p><p>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p><strong>結果を返す関数</strong></p><p>&lt;?php </p><p>function is_valid_keyword($key) <br>{ <br>    return in_array($key, [&#39;public&#39;, &#39;private&#39;]); <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p><strong>シリアライズ</strong><br><strong>できる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p>貴族 簡単に画面に出力できる</p><p><strong>ココ→</strong></p><p>上級市民 シリアライズできる</p><p>一級市民 変数に代入できる・引数にできる</p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p><strong>array </strong></p><p><strong>(配列)</strong></p><p>$a = array(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;);</p><p>$b = range(1, 10);<br>$c = [&#39;name&#39; =&gt; $n , &#39;age&#39; =&gt; $y]; </p><p>ほかの言語の配列や辞書(ハッシュ, 連<br>想配列)とか呼ばれるもの </p><p>内容にほかの型の値を含められる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p><strong>object </strong></p><p><strong>(オブジェクト)</strong></p><p>$dt = new DateTime(&#39;2112-09-03&#39;);</p><p>(object)[&#39;name&#39; =&gt; $n , &#39;age&#39; =&gt; $y];</p><p>$o = </p><p>クラスを実体化したもの<br>キャストするとstdClassになる </p><p>内容にほかの型の値を含められる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p><strong>シリアライズ</strong></p><p>&lt;?php <br>$s = serialize(&#39;string&#39;); <br>// &quot;s:6:&quot;string&quot;;&quot; <br>$a = serialize([&#39;apple&#39;, &#39;orange&#39;]);</p><p>//=&gt; &quot;a:2:{i:0;s:5:&quot;apple&quot;;i:1;s:6:&quot;orange&quot;;}&quot; </p><p>$obj = new stdClass; <br>$obj-&gt;name = &#39;ミク&#39;; $obj-&gt;age = 16; <br>//=&gt; &quot;O:8:&quot;stdClass&quot;:2:{s:4:&quot;name&quot;;s:6:&quot;ミク&quot;;s:3:&quot;age&quot;;i:16;}&quot;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p><strong>変数に代入できる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p>貴族 簡単に画面に出力できる</p><p>上級市民 シリアライズできる</p><p><strong>ココ→</strong></p><p>一級市民 変数に代入できる・引数にできる</p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p><strong>Closure </strong></p><p><strong>(無名関数)</strong></p><p>$x2 = function ($n){return $n*2}; </p><p>ローカル変数として関数を<br>作ることができる </p><p>グローバル関数は一度定義すると</p><p>(同名で)作り直すことはできないが、 これは何回でも作って捨てられる！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p><strong>リソース(何者である何か)</strong></p><p>$c = curl_init(); $g = gmp_init(); </p><p>リソースって一括りにされてるけど<br>互換性はない </p><p>http://php.net/resource </p><p>resourceは型宣言に書けない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>リソースは型宣言できない</strong></p><p>&lt;?php </p><p>$f = function ($r) { var_dump($r); }; <br>$g = function (resource $r) { var_dump($r); }; </p><p>$x = fopen(&#39;php://temp&#39;, &#39;r&#39;); </p><p>$f($x); $g($x);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>関数や構文を経由し</strong> <strong>て一級市民になれる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>階層 できること</p><p>神 配列のキーになれる</p><p>貴族 簡単に画面に出力できる</p><p>上級市民 シリアライズできる</p><p>一級市民 変数に代入できる・引数にできる</p><p><strong>ココ→</strong></p><p>関数や構文を経由して一級市民になれる</p><p>謎の関数によってアクセスできる</p><p>相当がんばらないと操作できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>callable </strong></p><p><strong>(関数っぽくできる何か)</strong></p><p>タイプヒントにcallableって書ける 単なる文字列・配列を紛れやすい </p><p>最近は引数で受け渡すときは<br>callableよりも\Closureがオススメ </p><p>PHP 7.1〜 \Closure::fromCallable() これでcallableをClosureに変換できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p><strong>callable (関数・メソッド)</strong></p><p>&lt;?php </p><p>$p = &#39;printf&#39;; <br>$p(&#39;%s %s!&#39;, &#39;Hello&#39;, $p); </p><p>$c = \DateTimeImmutable::class; <br>$dt = new $c; </p><p>$m = [$dt, &#39;format&#39;]; echo $m(&#39;Y-m-d H:i:s&#39;);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>ファイル</strong></p><p>&lt;?php </p><p>if (is_development()) { <br>   $fp = fopen(&#39;php://stderr&#39;); <br>} else <br>   $fp = fopen(&#39;/path/to/log.txt&#39;); <br>} </p><p>$logger = new MyLogger($fp); <br>$logger-&gt;write($data);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p><strong>ここから下は</strong><br><strong>一級市民と呼び難い</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>😢</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p><strong>謎の関数によって</strong><br><strong>アクセスできる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p><strong>謎</strong></p><p>ローカル変数 </p><p>compact(), extract() </p><p>プロパティ </p><p>ReflectionProperty </p><p>定数 </p><p>constant()</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p><strong>もう時間がない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p><strong>Symfony\</strong> <strong>VarDumper</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p><strong>PsySH</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p><strong>whoops!</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p><strong>いい感じに</strong> <strong>表示できる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p><strong>市民権を</strong><br><strong>拡張しよう</strong></p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    <p>関連リンクがありません。</p>
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

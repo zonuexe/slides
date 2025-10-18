@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20180131_transpiling-to-php-with-elvm/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2884_20180131_transpiling-to-php-with-elvm.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="ELVMであらゆる言語からPHPに変換しよう">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2884_20180131_transpiling-to-php-with-elvm.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20180131_transpiling-to-php-with-elvm/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20180131_transpiling-to-php-with-elvm/oembed.xml">
 
           <title>ELVMであらゆる言語からPHPに変換しよう</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2884_20180131_ELVMであらゆる言語からPHPに変換しよう #phpstudy.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" rel="noopener noreferrer" class="hashtag">#phpstudy</a>
+                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag">#phpstudy</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2884_20180131_transpiling-to-php-with-elvm.pdf" download="kn2884_20180131_ELVMであらゆる言語からPHPに変換しよう #phpstudy.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,565 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>で<strong>あらゆる言語</strong>から</p><p><strong>ELVM</strong><br>  に変換しよう</p><p><strong>PHP</strong></p><p><strong>Let&#39;s convert from </strong><br><strong>any language to PHP by ELVM</strong></p><p>#phpstudy</p><p>2018-01-31 PHP勉強会@東京 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社技術基盤チーム (pixiv.net)</li></ul></li><li>Emacs Lisper, PHPer</li><li>入社前は自宅警備をしながらRuby書いてた<ul><li>Emacs PHP Modeのメンテナ引き継ぎました</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>好きな言語構 造は です</p><p>goto</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>宣伝</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>昨晩書いた</p><p>まじめ記事<br>(当社比)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>今日は<br>話しません</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>前夜祭で 話します</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>チケット<br>購入しよう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>はじめに</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>で<strong>あらゆる言語</strong>から</p><p><strong>ELVM</strong><br>  に変換しよう</p><p><strong>PHP</strong></p><p><strong>Let&#39;s convert from </strong><br><strong>any language to PHP by ELVM</strong></p><p>#phpstudy</p><p>2018-01-31 PHP勉強会@東京 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>「あらゆる」<br>は<strong>オーバー</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>|←樹海| <br>.￣.||￣　　　　　ｵﾜﾀ┗(^o^ )┓三 　　||　　　　　　　　　　　┏┗ 　 三 <br>￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>まあ話を<br>聞いてくれ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>計算可能性</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>コンピュータ で解ける問題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>チューリング<br>マシン</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p><strong>https://www.google.com/doodles/alan-turings-100th-birthday</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>チューリングさんが 計算の可能性をつき つめたらこうなった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>計算機で計算できる函数 </strong>チャーチ=チューリング<br>のテーゼ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>パソコンで計算できる</p><p>||<br>チューリング機械と同じ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>チューリングマシンを使っ てチューリングマシンと 同等のものを構成できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>万能チューリ<br>ングマシン</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>ある計算機言語を使って万能 チューリングマシンを構成で<br>きるとき、その言語は</p><p>チュー</p><p>であると呼ぶ</p><p>リング完全</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>万能？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>ディスクにデータを書き込むと<br>か、現在の時刻を知るとか、<br>TCPパケットを送るとか、そう いう魔法のような機械のことは<br>想定してない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>簡単な言語</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>Brainfuck</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>&lt; &gt; + - . , [ ] <br>言語仕様8命令だけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>トークン 意味</p><p>&lt; ポインタを1進める</p><p>&gt; ポインタを1戻す</p><p>+ ポインタ位置の値を1加算</p><p>- ポインタ位置の値を1減算</p><p>. ポインタ位置に値を出力</p><p>, 1バイト読込ポインタ位置に代入</p><p>[ ポインタ位置の値が0なら]にジャンプ</p><p>] ポインタ位置の値が0でなければ[にジャンプ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>&gt;+++++++++[&lt;++++++++&gt;-]&lt;.&gt;++++++ +[&lt;++++&gt;-]&lt;+.+++++++..+++.[-]&gt;++ ++++++[&lt;++++&gt;-]&lt;.&gt;+++++++++++[&lt;+<br>++++&gt;-]&lt;.&gt;++++++++[&lt;+++&gt;-]&lt;.++<br><strong>http://www.kmonos.net/alang/etc/brainfuck.php</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>(神記事なのでゆっ くり読んでほしい)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>Brainfuckは言語仕様</p><p>が非常に小さいので<br>覚えるのは非常に簡単！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>言語が簡単 </p><p>||<br>その言語で書くのが簡単</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>そんなわけは<br>ない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>言語の簡単さと人 間の読み書きの容 易さは一致しない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>難解プログラミン グ言語(Esolang)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>Brainfuckのよう なへんてこ言語を<br>Esolangと呼ぶ</p><p><strong>https://esolangs.org/wiki/Main_Page</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>(Brainfuckは言語仕様は 非常にわかりやすいが、 異常に難解なEsolangも<br>当然ある)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>話を戻す</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>Brainfuckは<br>チューリング機械<br>と同等</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>Brainfuckは万能 チューリング機械</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>Brainfuckは<br>チューリング完全</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>つまり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>Brainfuckを実装で</p><p>きる言語は<br>チューリング完全</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>PHPはチューリ ング完全かな？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>PHPを使って<br>Brainfuckを実装<br>してみよう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>ELVM</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>ようやく話が ここまできた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>EsoLangVM</p><p><strong>https://github.com/shinh/elvm</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>Shinichiro Hamaji</p><p>さんが開発した<br>コンパイラ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>ELVMバイトコード<br>から任意の言語に コンパイルできる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p><strong>http://shinh.skr.jp/slide/elvm/009.html</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>PHPターゲットが</p><p>なかったので 追加しました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>2016年11月に</p><p><strong>https://github.com/shinh/elvm/blob/master/target/php.c</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>ご存じの通り<br>JavaScriptはPHP<br>にそっくり！！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>JavaScriptをPHPっ ぽく直せばそれだけ<br>で動くはず</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>そう思ってた頃が 私にもありました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>なぜなのか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>JS版実装</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>static void js_emit_func_prologue(int func_id) { <br>  emit_line(&quot;&quot;); <br>  emit_line(&quot;var func%d = function() {&quot;, func_id); <br>  inc_indent(); <br>  emit_line(&quot;while (%d &lt;= pc &amp;&amp; pc &lt; %d &amp;&amp; running) {&quot;,             func_id * CHUNKED_FUNC_SIZE, (func_id + 1) * <br>CHUNKED_FUNC_SIZE); <br>  inc_indent(); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>func1, func2のよ</p><p>うな無名函数が<br>作られる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>PHP Notice:  Undefined variable: func0 in /<br>Users/megurine/repo/elvm/out/00exit.eir.php on <br>line 39</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>変数束縛</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>PHPは明示的に use <br>($var) と書かないとレ キシカルスコープを捕捉<br>できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>／(^o^)＼</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>まあ解決策はな<br>くはないけど</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>いちばん楽 だったのは</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p>　 　　　　 | <br>　 　＼　　__　　／ ﾋﾟｺｰﾝ </p><p>そうだ、goto</p><p>　 　＿　（ｍ）　＿　　  <br>　 　　　　|ミ| <br>　 　 ／ 　｀´　 ＼ <br>　　　　　(&#39;A`) <br>　　　　　ノヽノヽ 　　　　　　　くく </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p>ネストが浅い！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p>コールスタック が深くならない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p>goto最高！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p>私からは異常<br>です</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fwww.kmonos.net%2Falang%2Fetc%2Fbrainfuck.php&size=32" alt=""><a href="http://www.kmonos.net/alang/etc/brainfuck.php" target="_blank">Brainf*ck</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

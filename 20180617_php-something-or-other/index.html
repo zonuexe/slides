@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20180617_php-something-or-other/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn3116_20180617_php-something-or-other.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="すごい「PHPなんとか」列伝 (未完成発表未遂版)">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn3116_20180617_php-something-or-other.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20180617_php-something-or-other/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20180617_php-something-or-other/oembed.xml">
 
           <title>すごい「PHPなんとか」列伝 (未完成発表未遂版)</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn3116_20180617_すごい「PHPなんとか」列伝 (未完成発表未遂版) #phpconfuk_after.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpconfuk_after" target="_blank" rel="noopener noreferrer" class="hashtag">#phpconfuk_after</a>
+                  <a href="https://twitter.com/hashtag/phpconfuk_after" target="_blank" class="hashtag">#phpconfuk_after</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn3116_20180617_php-something-or-other.pdf" download="kn3116_20180617_すごい「PHPなんとか」列伝 (未完成発表未遂版) #phpconfuk_after.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,295 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>すごい「<strong>PHPなんとか</strong>」列伝<br><strong>Awesome “PHP-xxx”s.</strong></p><p>2018-06-18 <strong>#phpconfuk</strong></p><p>PHPカンファレンス福岡2018懇親会LT</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>We are hiring!</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>前回の</strong><br><strong>あらすじ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p><strong>経緯</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>PhpStorm</strong>が<br>正式な綴り</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>PHP-STORM</strong>でも <strong>phpStorm</strong>でもない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>ちなみにCLIの<br>コマンドは</p><p>pstorm</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>ところで</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>PHP関係のツールや</p><p>ライブラリには<br>「<strong>PHPなんとか</strong>」が<br>異常に多い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p><strong>便乗</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>phpunit phpspec phpstan phpstorm phpbrew phpmd phpactor phpcs phpparser phploc phpdbg phptal phpdi phpdocumentor phpmetrics phpmode phpdox phpbench</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>傾向</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>大文字・小文字</p><p>PHPの後</p><p>- スペースありなし</p><p>- ハイフン／アンダーバー<br>… etc.</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p><strong>よし、見ていくぞ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>1. PHPUnit</strong></p><p>PHP大文字</p><p>PHP後スペースなし<br>Uだけ大文字</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p><strong>2. phpspec</strong></p><p>PHP小文字</p><p>PHP後スペースなし<br>specも小文字</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p><strong>2. phpspec</strong></p><p>PHP小文字</p><p>PHP後スペースなし<br>specも小文字</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p><strong>スライドを</strong><br><strong>作るのがだるい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>続きはTwitterで</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>まとめ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>phpxx/phpxx<br><strong>みたいなパッケージ名だと、</strong> <strong>なんかコミュニティで開発</strong> <strong>されててすごそう感がある</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>安易なPHPxxx</strong> <strong>多すぎでは…</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>脆弱性で悪評を高</strong> <strong>めたPHPMailerと</strong> <strong>かもありましたね</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>みなさんは<br>名前とDL数だけでラ イブラリを選定した りしませんよね？？</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F0d1e79b4baff509e7df1&size=32" alt=""><a href="https://qiita.com/tadsan/items/0d1e79b4baff509e7df1" target="_blank">PHP「関数っぽいもの」列伝 #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftwitter.com%2Ftanakahisateru%2Fstatus%2F1005041339484868608&size=32" alt=""><a href="https://twitter.com/tanakahisateru/status/1005041339484868608" target="_blank">twitter.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphpunit.de%2F&size=32" alt=""><a href="https://phpunit.de/" target="_blank">PHPUnit: The PHP Testing Framework</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phpspec.net%2F&size=32" alt=""><a href="https://www.phpspec.net/" target="_blank">www.phpspec.net</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftwitter.com%2Ftadsan%2Fstatus%2F1005043823028813824&size=32" alt=""><a href="https://twitter.com/tadsan/status/1005043823028813824" target="_blank">twitter.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20170819_winning-php-development-in-2017-with-emacs/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2530_20170819_winning-php-development-in-2017-with-emacs.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="2017年のPHP開発にEmacsで勝つ">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2530_20170819_winning-php-development-in-2017-with-emacs.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20170819_winning-php-development-in-2017-with-emacs/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20170819_winning-php-development-in-2017-with-emacs/oembed.xml">
 
           <title>2017年のPHP開発にEmacsで勝つ</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2530_20170819_2017年のPHP開発にEmacsで勝つ #opendevcon.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/opendevcon" target="_blank" rel="noopener noreferrer" class="hashtag">#opendevcon</a>
+                  <a href="https://twitter.com/hashtag/opendevcon" target="_blank" class="hashtag">#opendevcon</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2530_20170819_winning-php-development-in-2017-with-emacs.pdf" download="kn2530_20170819_2017年のPHP開発にEmacsで勝つ #opendevcon.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,346 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>2017<strong>年</strong>の　　 開発に<br>　  Emacsで勝つ</p><p><strong>PHP development in Emacs, 2017</strong></p><p>#opendevcon</p><p>2017-08-19 NEEC Kamata <br><strong>Open Developers Conference 2017 Tokyo</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社でひたすらPHPやってる p(ixi)v</li></ul></li><li>フレームワークなき道にフレームを作るおしごと</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li><li>最近やってること</li><li>万難が排されつつあるのでPHP7 移行<ul><li>えいやえいやとテスト書いたり直したりしてる</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>開発してるもの</strong><br><strong>PsySH (PHP) - PR/機能追加 </strong></p><ul><li>whoops! (PHP) - PR/機能改善</li><li>php-mode.el (Emacs Lisp) - PR/機能追加/改善</li><li>composer.el (Emacs Lisp) - 開発者(オーナー)</li><li>psysh.el (Emacs Lisp) - 開発者(オーナー)</li><li>phpunit.el (Emacs Lisp) - 共同メンテナ</li><li>こまかいのいろいろ</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>はじめに</strong><br><strong>言っておく</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>Photoshop</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p><strong>PhpStorm</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p><strong>PhpStorm先生は</strong></p><p><strong>お前の先輩よりも</strong><br><strong>PHPに詳しい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>PhpStorm先生は</strong></p><p><strong>俺よりもずっと</strong><br><strong>PHPに詳しい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>(僕が使ってるのはPHPだ</strong> <strong>からPHPの話をするけど、</strong></p><p><strong>あなたの使ってる</strong><br><strong>[ﾋﾟｰ]言語も例外ではない)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>僕の仕事</strong></p><p><strong>＝</strong><br><strong>同僚をPhpStorm</strong> <strong>に改宗させること</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>しょーもないヒュー</strong></p><p><strong>マンエラーを</strong><br><strong>静的解析の力で捻</strong><br><strong>じ伏せること</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>精度の高い<br><strong>静的解析</strong>と<strong>型推論</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p><strong>それに裏打ちされた、</strong><br><strong>入力補完 、定</strong><br><strong>(メソッド/プロパティ)</strong><br><strong>義ジャンプ、未定義検出、型エ</strong> <strong>ラー検出、リファクタリング、 </strong></p><p><strong>etc, etc...</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p><strong>いまどきテキストエディ</strong> <strong>タでIDEに対抗しよう</strong> <strong>とすることは、竹槍で</strong> <strong>戦闘機に対抗しようと</strong><br><strong>することに等しい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p><strong>では、なぜ</strong></p><p><strong>Emacsを</strong><br><strong>利用するのか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>Emacs=環境</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>(誇張ではない)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p><strong>エディタの機能</strong><br><strong>=ただの関数</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p><strong>標準機能すら</strong> <strong>上書きできる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>標準機能を置換する</strong></p><p><strong>べんりパッケージ</strong><br><strong>いろいろある</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>[ﾋﾟｰ]よりも</strong><br><strong>ずっとはやい！</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p><strong>(Vimよりは遅いかも…)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>ともあれ高機能なエディタは</strong></p><p><strong>好きな機能を</strong></p><p><strong>組み合せて構築できる</strong><br><strong>フレームワークのようなもの</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p><strong>当時紹介したもの (1)</strong></p><p><strong>php-mode.el </strong><br><strong>今も開発してるから入れてくれ頼む </strong></p><p><strong>phpunit.el </strong><br><strong>PHPUnitを簡単に実行できる </strong></p><p><strong>psysh.el </strong><br><strong>PHPのREPLを実行できる </strong><br><strong>選択範囲のコードを実行したりできる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>当時紹介したもの (2)</strong></p><p><strong>TRAMP </strong><br><strong>sshのファイルを直接編集できる </strong></p><p><strong>Magit </strong><br><strong>Gitインターフェイス </strong><br><strong>エディタ内でgit blameできる </strong></p><p><strong>magit-find-file </strong><br><strong>リポジトリ内の絞り込み検索</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>当時紹介したもの (3)</strong></p><p><strong>php-eldoc </strong><br><strong>PHPの標準関数の引数が表示できる 標準関数ごときでぐぐってはいけな</strong><br><strong>い </strong></p><p><strong>smartchr.el </strong></p><p><strong>キーを連打すると入力文字列が</strong><br><strong>入れ変る</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p><strong>そのほかべんりなもの</strong></p><p><strong>flycheck </strong><br><strong>文法チェックやLintの非同期実行 </strong><br><strong>チェッカーを独自実装できる </strong></p><p><strong>Projectile </strong><br><strong>プロジェクト管理ツール</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>プロジェクト固有のマイナーモード</strong></p><p><strong>pixiv-dev.el </strong><br><strong>GitHubに置いてあるよ </strong><br><strong>べんりコマンドとか </strong><br><strong>社内用のLintツールとか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>弱点</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p><strong>いちいち通信が発生する</strong> <strong>ので、めちゃくちゃ遅い</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong>PhpStorm先生に</strong><br><strong>学ぶ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p><strong>automatic deployment</strong> 保存したファイルを(S)FTPで<br>勝手に送ってくれるやつ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p><strong>https://github.com/zonuexe/emacs-auto-deployment</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p><strong>まとめ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p><strong>素のエディタは</strong><br><strong>竹槍</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p><strong>勝つには</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p><strong>A. IDEが必要ないほど</strong><br><strong>PHPの仕様に詳しくなる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p><strong>俺が</strong><br><strong>人間静的解析器だ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p><strong>B. いろんなツールやパッ</strong> <strong>ケージを組み合せて必要</strong><br><strong>な機能を実現していく</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p><strong>しかし道は</strong><br><strong>険しい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p><strong>最終的には快適な</strong></p><p><strong>開発環境で、</strong><br><strong>バグ起こしにくい</strong> <strong>開発を実現させる</strong><br><strong>ことが目的</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>やっていく</strong><br><strong>気持ち</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>最後にお願い</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p><strong>EmacsでのPHP開</strong> <strong>発で困ってること</strong> <strong>を共有してほしい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>続きはWebで</strong></p><p><strong>@tadsan</strong><br><strong>https://github.com/zonuexe/emacs-php-development</strong></p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    <p>関連リンクがありません。</p>
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

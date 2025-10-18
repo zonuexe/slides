@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20170716_lets-become-a-static-ojisan/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2489_20170716_lets-become-a-static-ojisan.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="staticおじさんになろう 公開版">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2489_20170716_lets-become-a-static-ojisan.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20170716_lets-become-a-static-ojisan/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20170716_lets-become-a-static-ojisan/oembed.xml">
 
           <title>staticおじさんになろう 公開版</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2489_20170716_staticおじさんになろう 公開版 #phpkansai.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpkansai" target="_blank" rel="noopener noreferrer" class="hashtag">#phpkansai</a>
+                  <a href="https://twitter.com/hashtag/phpkansai" target="_blank" class="hashtag">#phpkansai</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2489_20170716_lets-become-a-static-ojisan.pdf" download="kn2489_20170716_staticおじさんになろう 公開版 #phpkansai.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,532 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>公開版<br><strong>staticおじさんになろう</strong></p><p><strong>War on Dynamics</strong></p><p>カンファレンス関西</p><p><strong>2017-07-15 PHP 2017 LT</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>このスライドは2017年7月15日に 開催されたPHPカンファレンス関 西2017で当日募集された本篇LT にて話したスライドに調整および 加筆を施したものです。口頭で補 足したもの、文字だけではわかり にくいものを補ったほか、後半部<br>分に文章の追加があります。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>ピクシブ株式会社でひたすらPHPやってる p(ixi)v</li></ul></li><li>フレームワークなき道にフレームを作るおしごと</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li><li>最近やってること</li><li>万難が排されつつあるのでPHP7 移行<ul><li>えいやえいやとテスト書いたり直したりしてる</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>そろそろ10年になる</strong> <strong>Webサービスを開発</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>注意</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>このLTは特定のアーキ</p><p>テクチャの導入を<br>勧誘するものではなく、 その是非については<strong>自分</strong><br><strong>で判断</strong>してください。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>対処が難しかった事例を</p><p>寄せ集めただけで、<br>特定の実装の話ではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>オチは特にない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>あと特定の会社の<br><strong>回し者ではない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>さて</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>あるメソッドの</strong></p><p><strong>API(引数・返り値)を</strong> <strong>変更したいとします</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>リファクタリング</strong><br>できますか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p><strong>そのメソッドの</strong></p><p><strong>呼び出し箇所を列挙</strong><br>できますか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p><strong>そうですね</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>git grep &#39;\-&gt;setName(&#39;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>本当にそれで <strong>全部</strong>ですか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>$obj = new FugaClass; $f = [$obj, &#39;setName&#39;]; call_user_func($f, $n); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>🙃</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>$obj = new FugaClass; <br>$obj-&gt;setName($v);</p><p>//   <br>↑探したいのはこっち</p><p>$obj2 = new HogeClass; $obj-&gt;setName($x, $y);</p><p>// ↑同名の<strong>関係ない</strong>メソッド</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>誤爆</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>結果を絞ろう</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p># new setName</p><p>の次行に がある前提</p><p>git grep -a1 &#39;new FugaClass&#39; | <br>grep &#39;\-&gt;setName(&#39;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>これで完璧</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>// </p><p>DIコンテナ</p><p>$app[&#39;fuga&#39;]-&gt;setName($n); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>🙃</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>こんなことが続くと</strong></p><p><strong>人間は無気力になる</strong><br><strong>(学習性無力感)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>(そのあとも動的な性質</strong> <strong>による悩みは絶えない)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p><strong>ソリューション</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>new staticおじさんedition</strong></p><p>class FugaClass {     private $name;</p><p>    private function __construct(){} </p><p>public static function setName( ) {</p><p>FugaClass $that, $name</p><p>        $that-&gt;name = $name; <br>    } <br>    // ...</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>git grep <br>&#39;FugaClass::setName&#39;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p><strong>これでいいのか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>😇</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p><strong>書きにくくなった</strong><br>だけでは…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p><strong>staticおじさんをやめよう</strong><br><strong>Beat “evil” static methods</strong></p><p>カンファレンス関西</p><p><strong>2017-07-15 PHP 2017 LT</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p><strong>特効薬</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p><strong>Photoshop</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p><strong>PhpStorm</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>FindUsage</p><p><strong>と </strong></p><p>Refactor</p><p><strong>機能</strong></p><p><strong>最強説</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p><strong>型</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>型が推測できなく なるような<strong>複雑な</strong><br><strong>書き方をしない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>型を確定できないと ころは地道にPHPDoc<br>で型をつけていく</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>http://nico.ms/kn1774</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>これだけ覚えて帰ってね</strong></p><p><strong>タグ名 意味 例</strong></p><p><strong>@param</strong> 引数を定義</p><p>@param int $n1 </p><p><strong>@return</strong> 返り値を定義</p><p>@return int[]</p><p><strong>@var</strong> 変数/プロパティを定義</p><p>@var int</p><p><strong>@property</strong> マジックプロパティを定義</p><p>@property int $id</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>DI/IoC</strong><br><strong>コンテナは？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p><strong>(日本語での説明、ただしサンプルコードが旧形式)</strong><br><strong>PhpStorm の PHPSTORM_META でサービスロケーター</strong></p><p><strong>とかを入力補完 - ngyukiの日記</strong></p><p><strong>http://ngyuki.hatenablog.com/entry/2015/02/20/134239</strong></p><p><strong>(公式資料・新形式のコード例が載ってる)</strong></p><p><strong>PhpStorm Advanced Metadata</strong><br><strong>https://confluence.jetbrains.com/display/PhpStorm/</strong></p><p><strong>PhpStorm+Advanced+Metadata#PhpStormAdvancedMetadata-Factorymethods</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>某社の回し者ではないの</strong> <strong>で、PhpStorm以外に良</strong> <strong>いツールあれば知りたい！</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p><strong>そもそも</strong><br><strong>staticおじさんになっ</strong> <strong>た理由はコレジャナイ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>なれる！staticおじさん</strong></p><p><strong>I wanna be a clever static uncle</strong></p><p>カンファレンス関西</p><p><strong>2017-07-15 PHP 2017 LT</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p><strong>Webサービスを作る人間 </strong><br><strong>＝ </strong><br><strong>オブジェクト指向の達人</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p><strong>ではない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p><strong>素朴に作られたクラス</strong> <strong>は余計な状態を抱えこ</strong> <strong>んで渾沌が肥大化する</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p><strong>多すぎる引数… </strong></p><p><strong>謎のメソッド…</strong><br><strong>不要なプロパティ…</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p><strong>それでもコードは動き、</strong> <strong>今の自分たちを生かし</strong> <strong>てくれてる (=収益源)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p><strong>作られた当時は</strong></p><p><strong>理由があった</strong><br><strong>(たぶん)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p><strong>動いてきたコードへの</strong></p><p><strong>リスペクトを</strong><br><strong>見失ってはならない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>それでもサービスを成長さ</p><p>せる<strong>足枷にならないように</strong> リファクタリングしていく</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>混沌としたクラスから</p><p>staticおじさんに</p><p>身を堕としたのは<br>カオスを収束させるため</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>カオスを収束させた後な</p><p>らば、未来に向かって<br>「あるべき姿」を再定義<br>することができる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>カオスを収束させずに夢を見 てアーキテクチャの再設計を 試みると<strong>理想と現実のギャッ</strong> <strong>プと物量</strong>に圧し潰されて氏ぬ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p><strong>重要な事実：</strong><br>オブジェクト指向を多少かじっ た程度では、ベターなOO設計 ができる大先生にはなれない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>設計のエキスパートではなく ても多くのパタンに触れてい けば<strong>現在の身のたけに合った</strong> <strong>もの</strong>を選びとることはできる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>オブジェクト指向プログラミングに</p><p>基いたリファクタリングが常に</p><p>最適解ではなくて、手続き型なら</p><p>手続き型としてのやりかたはある。</p><p><strong>(staticおじさんの再肯定)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>設計に失敗したらやり直 しが利くように疎結合に<br>していくことも大事。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>(疎結合にする試みそのものが</p><p>負債を生むこと往々にしてある。 <strong>一足飛ばしで変更しすぎる</strong>のもよ<br>くない)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>現実を直視して分析し、 自分たちに合った現実解<br>を地道に適用していく</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>どんなことにも長所と短所がある。 世の中ではオブジェクト指向が先 進的、手続き型はレガシーのよう な風潮もあるが、手続き型がベター<br>と結論することもある。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>しかし｢オブジェクト指向はわかり にくい｣｢インスタンスを作るとリ ファクタリングしにくい｣といった 風評はPhpStormなどのIDEで解決 できる。<strong>ツールを知ること</strong>でサー ビスの成長改善につなげられる。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>良いツールを知らないと「リ ファクタリング対象をリスト アップするときにgrepコマン ドでテキスト検索するしかな</p><p>い」といった事態に陥る。<br>(最初の問題提起)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>スタートアップ期のコードでは設 計に悩み留まって製品をリリース できないことは賢明ではない。リ リースされた後も機能追加に注力 すべきだが、機能追加と既存機能 の安定性を両立しようとすると、<br>どこかで決断の時は来る。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p><strong>きちんと設計して </strong><br><strong>未来に行こう</strong></p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fnico.ms%2Fkn1774&size=32" alt=""><a href="http://nico.ms/kn1774" target="_blank">ニコニコ</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fngyuki.hatenablog.com%2Fentry%2F2015%2F02%2F20%2F134239&size=32" alt=""><a href="http://ngyuki.hatenablog.com/entry/2015/02/20/134239" target="_blank">PhpStorm の PHPSTORM_META でサービスロケーターとかを入力補完 - ngyukiの日記</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fconfluence.jetbrains.com%2Fdisplay%2FPhpStorm%2FPhpStorm%2BAdvanced%2BMetadata%23PhpStormAdvancedMetadata-Factorymethods&size=32" alt=""><a href="https://confluence.jetbrains.com/display/PhpStorm/PhpStorm+Advanced+Metadata#PhpStormAdvancedMetadata-Factorymethods" target="_blank">PhpStorm advanced metadata | PhpStorm Documentation</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

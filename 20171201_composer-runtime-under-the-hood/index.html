@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20171201_composer-runtime-under-the-hood/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2785_20171201_composer-runtime-under-the-hood.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="Composer解体新書 (実行時篇)">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2785_20171201_composer-runtime-under-the-hood.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20171201_composer-runtime-under-the-hood/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20171201_composer-runtime-under-the-hood/oembed.xml">
 
           <title>Composer解体新書 (実行時篇)</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2785_20171201_Composer解体新書 (実行時篇) #phpcondo2017.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpcondo2017" target="_blank" rel="noopener noreferrer" class="hashtag">#phpcondo2017</a>
+                  <a href="https://twitter.com/hashtag/phpcondo2017" target="_blank" class="hashtag">#phpcondo2017</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2785_20171201_composer-runtime-under-the-hood.pdf" download="kn2785_20171201_Composer解体新書 (実行時篇) #phpcondo2017.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,474 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>解体新書</strong></p><p><strong>Composer</strong><br><strong>Anatomy of Composer, in Runtime</strong></p><p>PHPカンファレンス北海道出張版(仮) </p><p>#phpcondo2017</p><p>PHPオフ会 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>砂川出身、北海道工業大学</li></ul></li><li>2012年11月にピクシブ株式会社に入社</li><li>Emacs Lisper, PHPer</li><li>入社前は自宅警備をしながらRuby書いてた<ul><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li><li>2017年、PHPカンファレンス全部でしゃべった</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>Composer</strong><br><strong>使ってますか？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>Dependency Manager for PHP</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p> 使ってない</p><p>A.</p><p> FW経由で</p><p>B.<br> 直接使ってる</p><p>C.</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>分かれそう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>本日しない話</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>PHPのクラスのオート<br>ローディングの説明</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>プロジェクトでの<br>Composerの運用方法</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>過去の発表を<br>読んでください</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>https://niconare.nicovideo.jp/watch/kn1371</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>https://qiita.com/tadsan/items/86099d44d12f1103b0a0</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>https://qiita.com/tadsan/items/a78c9160418200e2d47a</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>Composerで</strong><br><strong>できること</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>ざっくり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>プロジェクトが</p><p>依存するパッケージを ダウンロードしてくる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>プロジェクトが</p><p>依存するパッケージを<br>利用可能にする</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>今日は実行時の<br>話をします</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>基本はComposerの</p><p>autoload.php</p><p>を読み込</p><p>めば準備完了する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>復習</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>PHPスクリプト の読み込みかた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>require, require_once include, include_once</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>場合によるけど<br>基本だいたい同じ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>どこから？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>ファイルシステムの<strong>絶対パス</strong> </p><p>A. </p><p>include_path</p><p>からの<strong>相対パス</strong></p><p>B. <br><strong>プロトコル</strong> (ラッパー)</p><p>C. </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>ファイルシステムの絶対パス</p><p>require &#39;/path/to/file.php&#39;; </p><p>ファイルシステム内のフルパス </p><p>require __DIR__.&#39;/../Klass.php&#39;; </p><p>__DIR__</p><p>マジック定数 で<br>スクリプトのディレクトリが入る</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>include_path</strong></p><p>からの<strong>相対パス</strong></p><p>include_path</p><p>にディレクトリを追加する </p><p>&quot;.&quot;   </p><p>だいたいデフォルトに  が入ってる</p><p>require &#39;Hoge.php&#39;; </p><p>require &#39;Fuga/Piyo.php&#39;; </p><p>ディレクトリ内も探索される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>プロトコル(ラッパー)</p><p>fopen(&#39;php://stderr&#39;, &#39;r&#39;) </p><p>とか</p><p>file_get_contents(&#39;http://example.com/&#39;)</p><p>とかやるための仕組み</p><p>……が、セキュリティの懸念もあるの</p><p>php.ini </p><p>で、デフォルトでは  で</p><p>allow_url_include = Off</p><p> になってる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong>改めて</strong></p><p><strong>Composer</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>オートロード 機能ついてる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>どうやって<br>読み込んでるの？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>autoload.phpを<br>読もう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>みなさまの手元のComposer</p><p>プロジェクトを<br>見比べながらお聞きください</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>% composer --version <br>Composer version 1.5.2 2017-09-11 16:59:25</p><p>% composer install --no-dev --prefer-dist</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p><strong>vendor/autoload.php</strong></p><p>&lt;?php </p><p>// autoload.php @generated by Composer </p><p>require_once __DIR__ . &#39;/composer/autoload_real.php&#39;; </p><p>return <br>ComposerAutoloaderInitbed8ae7d525347237f9cdad08c8930b3::getLoader(); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p><strong>vendor/autoload.php</strong></p><p>1.autoload_real.php</p><p>を読み込む </p><p>2.謎のクラスの静的メソッドを実行 </p><p>たぶん変なバイトキャッシュを</p><p>残さないためにcontent-hashが付いた<br>クラス名</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_real.php</strong></p><p>1.$loader</p><p>が生成済みなら返すだけ </p><p>2.クラスローダーを読み込むだけのクラス<br>ローダーを登録して、使ったらすぐに<br>spl_autoload_unregister する </p><p>なんか環境依存の</p><ul><li>ワークアラウンドっぽい気がする</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_real.php</strong></p><p>if (null !== self::$loader) { <br>    return self::$loader; <br>} </p><p>// Composer\Autoload クラスを読み込むだけのローダー</p><p>spl_autoload_register(array(&#39;ComposerAutoloaderInitbedRy&#39;, &#39;loadClassLoader&#39;), </p><p>true, true);<br>self::$loader = $loader = new \Composer\Autoload\ClassLoader(); spl_autoload_unregister(array(&#39;ComposerAutoloaderInitbedRy&#39;, &#39;loadClassLoader&#39;));</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_real.php</strong></p><p>1.<br>PHPの実行時環境によってクラス定義の<br>読み込みを変更 </p><p>2.<br>autoload_static.php VS 三兄弟 </p><p>PHP5.6以上で、HHVMじゃなくて、</p><ul><li>zend_loader_file_encoded()が無効なら<br>autoload_staticが利用される</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_real.php</strong></p><p>$useStaticLoader = PHP_VERSION_ID &gt;= 50600 &amp;&amp; !defined(&#39;HHVM_VERSION&#39;) &amp;&amp;</p><p>     (!function_exists(&#39;zend_loader_file_encoded&#39;) || !zend_loader_file_encoded()); <br>if ($useStaticLoader) { <br>    require_once __DIR__ . &#39;/autoload_static.php&#39;; <br>    call_user_func(\Composer\Autoload\ComposerStaticInitbedRy::getInitializer($loader)); <br>} else { <br>    $map = require __DIR__ . &#39;/autoload_namespaces.php&#39;; <br>    foreach ($map as $namespace =&gt; $path) { <br>        $loader-&gt;set($namespace, $path); <br>    } <br>    $map = require __DIR__ . &#39;/autoload_psr4.php&#39;; <br>    foreach ($map as $namespace =&gt; $path) {         $loader-&gt;setPsr4($namespace, $path); <br>    } <br>    $classMap = require __DIR__ . &#39;/autoload_classmap.php&#39;; <br>    if ($classMap) { <br>        $loader-&gt;addClassMap($classMap); <br>    } <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_static.php</strong></p><p>プロジェクトの依存パッケージと、 composer installのオプションに依存 </p><p>デフォルトではComposer.jsonの 定義通りのローディングを生成 </p><p>--optimize-autoloader オプションで<br>クラスマップを強制で生成する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_static.php (PSR-4のみ)</strong></p><p>&lt;?php // autoload_static.php @generated by Composer <br>namespace Composer\Autoload; <br>class ComposerStaticInitbed8ae7d525347237f9cdad08c8930b3 { <br>    public static $prefixLengthsPsr4 = array ( <br>        &#39;T&#39; =&gt;          array ( <br>            &#39;Teto\\&#39; =&gt; 5, <br>        ), <br>    ); <br>    public static $prefixDirsPsr4 = array ( <br>        &#39;Teto\\&#39; =&gt;  <br>        array ( <br>            0 =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src&#39;, <br>        ), <br>    ); <br>    public static function getInitializer(ClassLoader $loader) { <br>        return \Closure::bind(function () use ($loader) { <br>            $loader-&gt;prefixLengthsPsr4 = ComposerStaticInitbed8ae7d525347237f9cdad08c8930b3::$prefixLengthsPsr4; <br>            $loader-&gt;prefixDirsPsr4 = ComposerStaticInitbed8ae7d525347237f9cdad08c8930b3::$prefixDirsPsr4; </p><p>        }, null, ClassLoader::class); <br>    } <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_static.php (optimized)</strong></p><p>    public static $classMap = array ( <br>        &#39;Teto\\Object\\Helper&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/Helper.php&#39;, <br>        &#39;Teto\\Object\\MethodAlias&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/MethodAlias.php&#39;,         &#39;Teto\\Object\\ObjectArray&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/ObjectArray.php&#39;, <br>        &#39;Teto\\Object\\PrivateGetter&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/PrivateGetter.php&#39;, <br>        &#39;Teto\\Object\\PrivateStrictGetter&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/<br>PrivateStrictGetter.php&#39;, <br>        &#39;Teto\\Object\\PropertyLikeMethod&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/<br>PropertyLikeMethod.php&#39;, <br>        &#39;Teto\\Object\\ReadOnly&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/ReadOnly.php&#39;, <br>        &#39;Teto\\Object\\ToArrayInterface&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/<br>ToArrayInterface.php&#39;, <br>        &#39;Teto\\Object\\TypeAssert&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/TypeAssert.php&#39;, <br>        &#39;Teto\\Object\\TypeDefinition&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/<br>TypeDefinition.php&#39;, <br>        &#39;Teto\\Object\\TypedProperty&#39; =&gt; __DIR__ . &#39;/../..&#39; . &#39;/src/Object/TypedProperty.php&#39;, <br>    );</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p><strong>autoload_static.phpの大事なとこ</strong></p><p>Closure::bind()</p><p>でスコープ束縛して、</p><p>メソッド呼び出しをけちりながら privateメンバーにセットしてる</p><p>return \Closure::bind(function () use ($loader) { <br>    $loader-&gt;prefixLengthsPsr4 = ComposerStaticInitbedRy::$prefixLengthsPsr4; <br>    $loader-&gt;prefixDirsPsr4 = ComposerStaticInitbedRy::$prefixDirsPsr4; <br>    $loader-&gt;classMap = ComposerStaticInitbedRy::$classMap; </p><p>}, null, ClassLoader::class);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p><strong>ClassLoader.php</strong></p><p>クラスローダーの実装本体 </p><p>いままで設定された情報をもとにクラス<br>名の解決・ファイルロードをする </p><p>動的に変動する部分は分離されてるので、</p><p>バイトコードがキャッシュされても 特に問題なさそうに作ってるっぽい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p><strong>ClassLoader.php</strong></p><p>spl_autoload_register()で呼ばれる </p><p>クラスマップにあったらそれを読む </p><p>なかったらpsr-4, psr-2を読む </p><p>PEARに依存するなどの場合は<br>include_pathを読む</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p><strong>これによって</strong> <strong>得られる知見</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>Composerは、いろんなPHP のバージョンとか実行環境<br>で動くように書かれてる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>実行時にcomposer.jsonとか composer.lockは使ってなく<br>て、静的なPHPスクリプト<br>ファイルが書き出される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>composer install</p><p>サーバーで<br>の必要はなく、手元でインス トールしてvendorディレクト<br>リごと転送してやればいい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>よくある誤解</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>「レンタルサーバーの最安プ<br>ランでPHP動かしてるから<br>Composer入らないんだ…」<br>といったことは<strong>ない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p><strong>本筋から</strong> <strong>外れた話</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>Autoloader <br>Optimization <br>https://getcomposer.org/doc/articles/autoloader-optimization.md</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>Level 1</p><p>本番運用時は</p><p>が基本</p><p>--optimize-autoloader</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>……そのほかは</p><p>効果あるのかな？ (私は使ってないです)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p><strong>予告</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>PHP AdventCalendar 2017では<br>Composerとか全然考慮されてない (zipで配布されてる)SDKをむりやり Composerで管理する話を書きます</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=php%3A%2F%2Fstderr&size=32" alt=""><a href="php://stderr" target="_blank">stderr</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fexample.com%2F&size=32" alt=""><a href="http://example.com/" target="_blank">Example Domain</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

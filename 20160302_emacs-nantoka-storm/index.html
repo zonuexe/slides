@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20160302_emacs-nantoka-storm/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn1189_20160302_emacs-nantoka-storm.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="なんとかStormに負けたくない Emacs初級篇">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn1189_20160302_emacs-nantoka-storm.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20160302_emacs-nantoka-storm/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20160302_emacs-nantoka-storm/oembed.xml">
 
           <title>なんとかStormに負けたくない Emacs初級篇</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn1189_20160302_なんとかStormに負けたくない Emacs初級篇.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn1189_20160302_emacs-nantoka-storm.pdf" download="kn1189_20160302_なんとかStormに負けたくない Emacs初級篇.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -78,6 +122,199 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>に負けたくない</p><p>な Storm<br>んとか</p><p>Emacs 初級篇</p><p>2016-03-01 PHP BLT #3</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ</p><p>うさみけんた / tadsan / Zonu.EXE </p><ul><li>このスライドは開始10分前に書きはじめました</li><li>pixiv Inc.でまじめにふまじめPHP書いてるよ</li><li>WEB+DB PRESS Vol. 91買ってね！！！</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>あじぇんだ</p><p>無理せず手に馴染む道具で書くのが一番だよ！ </p><ul><li>今回は入門篇なので、</li></ul><ul><li>あんまりすごいことはやらないよ！<br>私の はGitHubにあるよ！</li></ul><p>init.el</p><p>https://github.com/zonuexe/dotﬁles/tree/master/.emacs.d</p><p>Emacsは24.5を入れよう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>php-mode</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>php-mode<br>https://github.com/ejmr/php-mode </p><ul><li>現在でも活発に開発されてるよ！</li><li>もちろんPHP 7にも対応してる！</li><li>数年前にインストールして放置してる…</li></ul><ul><li>ってひとは是非ともアップデートするべき</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>TRAMP</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>TRAMP</p><p>Emacsに標準で入ってる </p><ul><li>SSHでサーバ上のファイルを編集できるよ！</li><li>とても賢いので、Magitとかも普通に動く</li></ul><p>scp:your-server:/home/user/…<br>みたいに開ける </p><p>recentfとかでも開けるので超べんり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>magit-ﬁnd-ﬁles</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>magit-ﬁnd-ﬁles<br>https://github.com/bradwright/magit-ﬁnd-ﬁle.el </p><ul><li>な ストームとか使ってる人たちが</li></ul><p>んとか</p><ul><li>簡単にファイル絞り込んでるので悔しかった<br>Git使ってるプロジェクトなら有効 </li><li>TRAMP使ってても問題なく利用できるよ</li></ul><ul><li>(ただし、初回だけ若干重い…)</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>php-eldoc</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>php-eldoc</p><p>https://github.com/zonuexe/dotﬁles/blob/</p><ul><li>master/.emacs.d/site-lisp/php-eldoc.el<br>標準関数の引数とか覚えてられっか馬鹿野郎 </li><li>の引数とかね！</li><li>implode()<br>たしか入れかたがめんどくさいので、そのうち</li><li>Qiitaとかに書きます</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>smartchr.el</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>smartchr.el<br>https://github.com/imakado/emacs-smartchr </p><ul><li>キーを連打すると入力文字列が入れ変ってく</li><li>変換パターンは自分で登録する</li><li>たとえば  →  →   みたいに<ul><li>[   [] array()<br>同名のVim Scriptが原作</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>psysh</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>psysh<br>https://github.com/zonuexe/psysh.el </p><ul><li>PHPで動くインタラクティブシェル</li><li>composer g require psy/psysh</li><li>Emacsからも当然のように動かせるよ</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>まとめ</p><p>な ストームがなくてもPHPは書けるよ <br>んとか</p><ul><li>今回は入門篇なので、</li></ul><ul><li>そのうちもっとすごいことを書くよ<br>エディタハラスメントはダメ、ゼッタイ。 </li><li>Emacsでキミだけの最強IDEを実装しちゃおう！</li></ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fgihyo.jp%2Fmagazine%2Fwdpress%2Farchive%2F2016%2Fvol91&size=32" alt=""><a href="http://gihyo.jp/magazine/wdpress/archive/2016/vol91" target="_blank">WEB+DB PRESS Vol.91 | 技術評論社</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fdotfiles%2Ftree%2Fmaster%2F.emacs.d&size=32" alt=""><a href="https://github.com/zonuexe/dotfiles/tree/master/.emacs.d" target="_blank">dotfiles/.emacs.d at master · zonuexe/dotfiles · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fbradwright%2Fmagit-find-file.el&size=32" alt=""><a href="https://github.com/bradwright/magit-find-file.el" target="_blank">GitHub - bradwright/magit-find-file.el: Magit-powered find-file functionality. Like C-p in Sublime Text 2.</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fdotfiles%2Fblob%2Fmaster%2F.emacs.d%2Fsite-lisp%2Fphp-eldoc.el&size=32" alt=""><a href="https://github.com/zonuexe/dotfiles/blob/master/.emacs.d/site-lisp/php-eldoc.el" target="_blank">dotfiles/.emacs.d/site-lisp/php-eldoc.el at master · zonuexe/dotfiles · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fimakado%2Femacs-smartchr&size=32" alt=""><a href="https://github.com/imakado/emacs-smartchr" target="_blank">GitHub - imakado/emacs-smartchr: emacs version of smartchr.vim</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fpsysh.el&size=32" alt=""><a href="https://github.com/zonuexe/psysh.el" target="_blank">GitHub - emacs-php/psysh.el: PsySH on Emacs, PHP interactive shell (REPL)</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

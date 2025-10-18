@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20170819_php-as-a-programming-environment/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2529_20170819_php-as-a-programming-environment.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="プログラミング環境としてのPHP">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2529_20170819_php-as-a-programming-environment.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20170819_php-as-a-programming-environment/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20170819_php-as-a-programming-environment/oembed.xml">
 
           <title>プログラミング環境としてのPHP</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2529_20170819_プログラミング環境としてのPHP #opendevcon.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,11 +112,11 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/opendevcon" target="_blank" rel="noopener noreferrer" class="hashtag">#opendevcon</a>
+                  <a href="https://twitter.com/hashtag/opendevcon" target="_blank" class="hashtag">#opendevcon</a>
                 </div>
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2529_20170819_php-as-a-programming-environment.pdf" download="kn2529_20170819_プログラミング環境としてのPHP #opendevcon.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -82,6 +126,485 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>プログラミング環境</strong>としての</p><p><strong>Introducing PHP as a Programming Environment</strong></p><p>#opendevcon</p><p>2017-08-19 NEEC Kamata <br><strong>Open Developers Conference 2017 Tokyo</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社でひたすらPHPやってる p(ixi)v</li></ul></li><li>フレームワークなき道にフレームを作るおしごと</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li><li>最近やってること</li><li>万難が排されつつあるのでPHP7 移行<ul><li>えいやえいやとテスト書いたり直したりしてる</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>最初に</strong><br><strong>覚えてほしいこと</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>現在の安定版は</strong><br><strong>7.1系です</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>質問です</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>あなたの想像する<br><strong>PHPコード</strong>はどれ？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p><strong>A</strong></p><p>&lt;!DOCTYPE html&gt;</p><p>&lt;html&gt;&lt;head&gt;&lt;title&gt;Hello, PHP!&lt;/title&gt;&lt;/head&gt; <br>&lt;p&gt; <br>&lt;?php if (date(&#39;H&#39;) &lt; 19): ?&gt; <br>     こんにちは</p><p>&lt;?php else: ?&gt;</p><p>     こんばんは</p><p>&lt;?php endif; ?&gt;</p><p>&lt;/p&gt; <br>&lt;p&gt;今は&lt;?= htmlspecialchars(date(&#39;H&#39;)) ?&gt;時です&lt;/p&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>B</strong></p><p>&lt;?php require &#39;bootstrap.php&#39;;</p><p>$db = mysqli_connect(); <br>$stmt = mysqli_prepare($db, &#39;SELECT * FROM books&#39;);</p><p>mysqli_stmt_execute($stmt);</p><p>print &#39;&lt;h1&gt;本の一覧&lt;/h1&gt;&#39;;</p><p>print &#39;&lt;ul&gt;&#39;;</p><p>foreach ($stmt as $s) { <br>    print &#39;&lt;li&gt;&#39;; print $s-&gt;name; print &#39;&lt;/li&gt;&#39;;</p><p>} <br>print &#39;&lt;/ul&gt;&#39;;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>C</strong></p><p>&lt;?php</p><p>namespace Hoge\Http\Controller; <br>class BooksController extends BaseController { <br>    public function index() { <br>        $books = Books::getAll(); </p><p>        $this-&gt;render(compact(&quot;books&quot;)); <br>    } <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>いろいろある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>よくあるPHPのコード分類</strong></p><p><strong>A: </strong>HTMLの条件分岐と値の出力</p><p><strong>B: </strong>DBの内容をHTMLとして出力</p><p><strong>C: </strong>クラス定義だけ書かれたコード</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>よくあるPHPのコード分類</strong></p><p><strong>A: </strong>HTMLの条件分岐と値の出力<br><strong>↑ SSI的PHP </strong></p><p><strong>B: </strong>DBの内容をHTMLとして出力<br><strong>↑ CGI的PHP </strong></p><p><strong>C: </strong>クラス定義だけ書かれたコード<br><strong>↑ フレームワーク的PHP</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p><strong>割とどうとでも</strong> <strong>書けるのがPHP</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p><strong>PHPの実行手順のイメージ</strong></p><p><strong>コードを書く</strong> (or 既製コードを準備) </p><p>レンタルサーバーを借ります </p><p>(S)FTPで.phpファイルを転送します </p><p><strong>デプロイ完了</strong> ＼(^o^)／</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>PHPで書くとURLに</p><p>.php</p><p>って付くのでは??</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>そんなことはない</strong><br>(そんなこともある)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>ディレクトリ配置のイメージ</strong><br>これをな</p><p>php-project/ ├── inc <br>│   └── bootstrap.php <br>└── public   </p><p>(ドキュメントルート)</p><p>    ├── index.php     ├── login.php     ├── logout.php     └── terms.html</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p><strong>ディレクトリ配置のイメージ</strong><br>こうじゃ</p><p>php-project/ ├── inc <br>│   ├── bootstrap.php <br>│   └── routes.php <br>└── public   </p><p>(ドキュメントルート)</p><p>    ├── .htaccess   </p><p>(Apacheの場合)</p><p>    └── index.php</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>このPHPを動かすに はどうすればいいの</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>PHPの動作方法にはいろいろある</strong></p><p><strong>Server API (SAPI) と呼ばれる </strong></p><p>cli cli-server</p><p><strong>コマンドライン ( ,  ) </strong></p><p>apache</p><p><strong>Apache+mod_php ( ) </strong></p><p>cgi-fcgi<br><strong>CGI ( ) </strong></p><p>fpm-fcgi</p><p><strong>PHP-FPM ( )</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>どこでPHPを動かせばいいか</strong></p><p><strong>何も考えずにレンタルサーバ借りて、</strong><br><strong>ファイルを適当に転送すれば動く </strong></p><p><strong>HerokuとかPaaSでも簡単に動く </strong></p><p><strong>オンプレとかVPSとかでアプリケー</strong><br><strong>ションサーバーを実行する方法もある</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p><strong>テストするだけなら</strong><br><strong>PHPだけあればok</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>php -S <br>localhost:8989 index.php</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p><strong>ビルトインサーバー</strong></p><p>php -S<br><strong>( ) PHP5.4以降 </strong>開発用の簡易HTTP鯖</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>.htaccess</p><p><strong>よくある</strong></p><p> (Apache HTTPd)</p><p># .php  <br> ファイルがあったら、それを返す( なら実行)</p><p>#  index.php  <br>存在しなかったら、 を実行</p><p>RewriteCond %{REQUEST_FILENAME} !-f <br>RewriteRule ^ index.php [QSA,L]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>routes.php</p><p><strong>愚直な </strong></p><p>&lt;?php <br>$path = substr(explode(&#39;?&#39;,  $_SERVER[&#39;REQUEST_URI&#39;], 2)[0], 1);</p><p>$is_post = $_SERVER[&#39;REQUEST_METHOD&#39;] === &#39;POST&#39;;</p><p>if ($is_get &amp;&amp; $path === &#39;/&#39;) { <br>    show_index(); return; <br>} elseif ($path === &#39;/login&#39;) { <br>    $is_post ? post_login() : show_login(); return; <br>} </p><p>http_response_code(404); <br>echo &quot;ないよー&quot;;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>これを毎回自分で書くのは</strong></p><p><strong>ちょっぴり大変なので、</strong><br><strong>フレームワークを利用する</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p><strong>PHP</strong></p><p><strong>micro framework</strong><br>Slim, Lumen など</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>シンプルなルーティ</strong><br><strong>ングがしたかった </strong></p><p>https://qiita.zonu.me/simple-routing</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>そろそろ言語の話</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>PHPには「protected属性」も「仮想メソッ ド」もありますよ。情報学科の教官が「重 要だ」っていうやつは何でもね。僕自身は、 こんなものどうでもいいと思ってますけど。<br><strong>–Rasmus Lerdorf </strong><br>伝説の 作者「 」名言集を聞くと嫌 厨がファビョる</p><p><strong>PHP Rasmus Lerdorf PHP</strong></p><p>の訳を抜萃</p><p><strong>https://anond.hatelabo.jp/20100427231539 </strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong>実際ふつうの言語にある</strong><br><strong>機能はだいたいある</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p><strong>Linux, *BSD, </strong><br><strong>macOS, Windows</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p><strong>RubyやPythonで書けること</strong></p><p><strong>は概ねできると思ってよい</strong> <strong>(異常に苦手なことはある)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p><strong>Cっぽさ、Perlっぽさ、</strong><br><strong>そこはかとないJavaっぽさ (結果としてどれでもない雑然とした感じ)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p><strong>Cっぽいコード</strong></p><p>&lt;?php</p><p>$fp = fopen(&#39;input.txt&#39;, &#39;r&#39;); <br>$i = 0; </p><p>while (($line = fgets($fp, 4096)) !== false) { <br>    printf(&quot;%d: %s&quot;, ++$i, $line); <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p><strong>Perlっぽいコード</strong></p><p>&lt;?php </p><p>$con = mysqli_connect() or die(1); </p><p># <br>ただし、現在は例外を利用すべき</p><p># <br>テストもしにくくなるので非推奨</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p><strong>Javaっぽいコード</strong></p><p>&lt;?php <br>abstract class Foo {</p><p>     abstract function sample($n);</p><p>} <br>final class Bar extends Foo implements Hoge { <br>    public function sample($n) {         if (!is_numeric($n)) { <br>            throw new InvalidArgumentException(&quot;errorMsg&quot;); <br>        } <br>    } <br>} </p><p>$bar = new Bar(); $bar-&gt;sampleCode(128);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p><strong>PHPの</strong><br><strong>基本構文</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p><strong>データ型・リテラル</strong></p><p>&lt;?php</p><p>// 全ての変数は $ から始まる </p><p>$string = &#39;string&#39; . &quot;value&quot;; <br>$array  = [1, 2, 3]; <br>$bool   = true; $int    = 56789; $float  = 1.234; <br>$obj1   = new stdClass; <br>$obj2   = (object)[&quot;name&quot; =&gt; &quot;Miku&quot;, &quot;age&quot; =&gt; 16];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p><strong>関数定義</strong></p><p>&lt;?php</p><p>namespace zonuexe; </p><p>function triangle_area(float $h, float $b) :float { <br>    return $h * $b / 2; <br>} </p><p>function triangle_area($h, $b) { <br>    return $h * $b / 2; <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p><strong>関数・クラス定義の注意</strong></p><p><strong>RubyやPythonでは関数(メソッド)を</strong><br><strong>再定義したり、定義済みクラスに定義を</strong> <strong>追加できる  </strong></p><p><strong>(オープンクラス、モンキーパッチング)</strong></p><p><strong>その代り特定のクラスが複数ファイルに</strong> <strong>分割されることがないのでわかりやすい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>クロージャ</strong></p><p>&lt;?php</p><p>$h = function($s) { <br>    return htmlspecialchars($s, ENT_QUOTES, &#39;UTF-8&#39;); <br>}; </p><p>$array = array_map($h, getNames());</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>PHPの</strong><br><strong>良い言語機能</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p><strong>array</strong></p><p>&lt;?php <br>$old_num = array(1, 2, 3); <br>$fruits = [&quot;りんご&quot;, &quot;ばなな&quot;, &quot;みかん&quot;]; </p><p>$tadsan = [ <br>    &quot;name&quot; =&gt; &quot;めぐりねるか&quot;, </p><p>    &quot;age&quot;  =&gt; 28, <br>    &quot;from&quot; =&gt; &quot;北海道&quot;, </p><p>];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>foreach</strong></p><p>&lt;?php <br>$fruits = [&quot;りんご&quot;, &quot;ばなな&quot;, &quot;みかん&quot;]; </p><p>for ($i = 0; $i &lt; count($fruits); $i++) { <br>    printf(&quot;%s\n&quot;, $fruits[$i]); <br>} </p><p>foreach ($fruits as $fruit) {     printf(&quot;%s\n&quot;, $fruit); <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p><strong>ジェネレータ</strong></p><p>&lt;?php <br>function fizzbuzz ($to) { <br>    for ($i = 1; $i &lt;= $to; $i++) { <br>        $s = &quot;&quot;; <br>        if ($i % 3 == 0) { $s .= &quot;Fizz&quot;; }         if ($i % 5 == 0) { $s .= &quot;Buzz&quot;; } <br>        yield ($s === &quot;&quot;) ? $i : $s; <br>   } <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>ジェネレータ + foreach</strong></p><p>//   <br>フィボナッチ数列を順に出力する</p><p>foreach (fizzbuzz(100) as $f) { <br>    echo $f, PHP_EOL; <br>} </p><p>// </p><p>これを応用すれば、函数型プログラミングの</p><p>//   <br>遅延リスト(無限リスト)を簡単に実装できる！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p><strong>callable (文字列)</strong></p><p>&lt;?php </p><p>$func= &quot;strlen&quot;; <br>echo $func(&quot;abcde&quot;); //=&gt; 5 </p><p>$ary = [&quot;a&quot;, &quot;bc&quot;, &quot;desc&quot;, &quot;hello&quot;]; <br>$bry = array_map(&quot;strlen&quot;, $ary); <br>//=&gt; [1, 2, 3, 4, 5]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p><strong>callable (そのほか)</strong></p><p>&lt;?php </p><p>$dt = new DateTime; <br>$method = [$dt, &quot;getTimeStamp&quot;]; </p><p>echo $method(); // 1503115455 <br>echo $dt-&gt;getTimeStamp();</p><p>// 1503115455 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p><strong>Reflection</strong></p><p>&lt;?php </p><p>function sampleFnc($a, $b, $c = null){} </p><p>$ref = new ReflectionFunction(&quot;sampleFnc&quot;); <br>echo $ref-&gt;getNumberOfParameters(); <br>//=&gt; 3 <br>echo $ref-&gt;getNumberOfRequiredParameters(); <br>//=&gt; 2</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p><strong>Webプログラミン</strong><br><strong>グに適した機能</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>実はPHPのWebはCGIの世界観</p><p>print<br>HTMLを   したりすると<br>出力される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p><strong>テンプレート</strong></p><p>&lt;?php <br>// HTTPヘッダはボディよりも先に出力する </p><p>header(&quot;Content-Type: text/plain;&quot;); <br>echo &quot;apple\n&quot;; <br>?&gt; <br>orange banana <br>&lt;?= getMelon() ?&gt; <br>&lt;?php function getMelon(){ return &quot;melon&quot;; }</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>?&gt;ほげ&lt;?php <br>実は  は<br>echo &quot;ほげ&quot;;</p><p> と同じ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p><strong>テンプレート</strong></p><p>&lt;?php $n = trim(fgets(fopen(&#39;php://stdin&#39;, &#39;r&#39;)));</p><p>for ($i = 1; $i &lt;= $n; $i++) {</p><p>    if ($i % 3 === 0) { ?&gt;Fizz&lt;?php }</p><p>    if ($i % 5 === 0) { ?&gt;Buzz&lt;?php }</p><p>    elseif ($i % 3 !== 0) echo $i;</p><p>?&gt;</p><p>&lt;?php }</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p><strong>出力バッファリング</strong></p><p>&lt;?php </p><p>ob_start(); <br>var_dump(new DateTime); $str = ob_get_clean(); </p><p>var_dump($str);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p><strong>$_SERVER</strong></p><p>&lt;?php <br>// http://php.net/$_SERVER を読む </p><p>// ユーザーのリクエスト情報 </p><p>echo htmlspecialchars($_SERVER[&#39;REQUEST_METHOD&#39;]); <br>echo htmlspecialchars($_SERVER[&#39;REQUEST_URI&#39;]); <br>echo htmlspecialchars($_SERVER[&#39;HTTP_ACCEPT_LANGUAGE&#39;]); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p><strong>HTTPのための機能</strong></p><p>&lt;?php <br>$img = base64_decode(&#39;R0lGODlhAQABAIABAP/// wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==&#39;); </p><p>http_response_code(404); <br>header(&quot;Content-Type: image/gif&quot;); <br>header(&quot;Content-Length:&quot;.strlen($img));</p><p>echo $img;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p><strong>セッション機能</strong></p><p>&lt;?php // logout.php <br>session_start(); </p><p>$ls_logged_in = isset($_SESSION[&#39;user_id&#39;]); </p><p>if ($is_logged_in) {     $_SESSION = []; <br>    session_regenerate_id(); <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p><strong>まとめ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p><strong>まとめ</strong></p><p><strong>PHPは7.1系 にしよう </strong><br><strong>(2017年現在安定版)</strong></p><p><strong>PHPは多様なスタイルがあるよ </strong></p><p><strong>レンタルサーバーとかに適当に置けば</strong><br><strong>まあなんとなく動くよ </strong></p><p><strong>PHPはふつうの文法とWeb向きの</strong><br><strong>機能があるプログラミング言語だよ</strong></p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.zonu.me%2Fsimple-routing&size=32" alt=""><a href="https://qiita.zonu.me/simple-routing" target="_blank">qiita.zonu.me</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fanond.hatelabo.jp%2F20100427231539&size=32" alt=""><a href="https://anond.hatelabo.jp/20100427231539" target="_blank">anond.hatelabo.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2F%24_SERVER&size=32" alt=""><a href="http://php.net/$_SERVER" target="_blank">PHP: $_SERVER - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

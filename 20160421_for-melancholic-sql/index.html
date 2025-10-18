@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20160421_for-melancholic-sql/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn1386_20160421_for-melancholic-sql.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="憂鬱なSQLのためのアレ">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn1386_20160421_for-melancholic-sql.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20160421_for-melancholic-sql/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20160421_for-melancholic-sql/oembed.xml">
 
           <title>憂鬱なSQLのためのアレ</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn1386_20160421_憂鬱なSQLのためのアレ.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn1386_20160421_for-melancholic-sql.pdf" download="kn1386_20160421_憂鬱なSQLのためのアレ.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -78,6 +122,142 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>憂鬱なSQLのためのアレ</p><p>PHP-BLT #4</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>近況報告</p><p>PHPカンファレンス北海道で喋ってきました</p><ul><li>「仕事で使えるComposer」</li></ul><p>http://niconare.nicovideo.jp/watch/kn1371 </p><p>WEB+DB Press Vol. 92に</p><ul><li>PHPからHTTPリクエストをする話を書きました</li></ul><p>http://gihyo.jp/magazine/wdpress/archive/2016/vol92</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>近況報告</p><p>AdventCalendarではPHPマニュアルの</p><ul><li>バージョン番号をパースする話を書きました</li></ul><p>http://qiita.com/tadsan/items/94e00f6fdf40d96c5072</p><p>スレッドフロート掲示板を作りたかった少年時</p><ul><li>代の代償行為として、モダンPHP、ただし</li></ul><p>フレームワーク抜きで書き始めました</p><p>http://qiita.com/tadsan/items/cdbbb5b08591af2b110d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>みんな大好きPDO</p><p>PHP Data Objects </p><ul><li>いろんなSQLを抽象化したオブジェクト</li><li>学生がmysqli関数使ってたけどPDOでいい</li><li>あとなんか、Doctrineとか使った方がいいの?</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>Real World PHP</p><p>2015年にもなって徳丸先生がPHPカンファレン</p><ul><li>スでSQLインジェクションの話をしてるリアル<br>O/Rマッパー使っとけｗｗｗと煽ったところで、</li><li>世界にはまだ文字列結合SQLが眠ってる</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>みんな事故る</p><p>文字列結合の温床 </p><ul><li>型を指定するのはめんどくさい</li><li>$stmt-&gt;bindValue(&#39;:id&#39;, $id, \PDO::PARAM_INT)</li><li>可変個数のIN句が地雷</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>Real World PHP</p><p>$names = [&quot;taro&quot;,&quot;jiro&quot;,&quot;saburo&quot;]; <br>$str = implode(&quot;,&quot;, array_map($name){ <br>    return sprintf(&#39;&quot;%s&quot;&#39;, $name); <br>}); <br>$sql = &quot;SELECT * FROM users WHERE name IN ($str)&quot;;</p><p>// ↑典型的な漏れのあるロジックの例</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>PDOのラッパー作った</p><p>警告：ちゃんとしたO/Rマッパーの方がいい </p><ul><li>(会社で同僚が作ったのを)コピペして再実装した</li><li>SQL内に型が書けるDSL</li><li>PDOに乗っかって、余計なことはしない</li><li>SQLインジェクションにある程度の耐性がある?</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>composer require zonuexe/tetosql</p><p>https://github.com/BaguettePHP/TetoSQL</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>&lt;?php <br>namespace InspireBBS\Model; <br>use Teto\SQL; </p><p>/** <br> * 板を表現するモデル </p><p> * @copyright 2016 USAMI Kenta <br> * @license   WTFPL <br> */ <br>final class Board { <br>    /** <br>     * @return Board[] <br>     */ <br>    public static function findAll() { <br>        $data = SQL\Query::execute(db(), self::findAll_query, []) <br>            -&gt;fetchAll(\PDO::FETCH_ASSOC) ?: []; </p><p>        $boards = []; <br>        foreach ($data as $b) { <br>            $boards[] = new Board($b); <br>        } </p><p>        return $boards; <br>    } <br>    const findAll_query = &#39;SELECT `id`, `name`, `text` FROM `boards`&#39;; <br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>use Teto\SQL; <br>public static function find($id) { <br>    $data = SQL\Query::execute(db(), self::findAll_query, [ <br>        &#39;:id&#39; =&gt; $id, <br>    ])-&gt;fetchAll(\PDO::FETCH_ASSOC) ?: []; </p><p>    $boards = []; <br>    foreach ($data as $b) { <br>        $boards[] = new Board($b); <br>    } </p><p>    return $boards; <br>} <br>const find_query = ‘ <br>    SELECT `id`, `name`, `text` FROM `boards` WHERE `id` = $id@int <br>&#39;;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>基本的なAPI</p><p>どうにかしてPDOのコネクションをとっておく </p><ul><li>$stmt = SQL\Query::execute($con, self::find_query,</li></ul><p>    [&#39;:id&#39; =&gt; $id, &#39;:hoge&#39; =&gt; $hoge] ); </p><p>コネクション、SQL、アサインする値を渡す </p><ul><li>帰ってくる値はPDOStatementなので、</li></ul><ul><li>いつもの感覚でfetch/fetchAllするだけ！</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>const<br>PHPのconstは(原則)実行時に変更されない </p><ul><li>そこにパラメータを当て嵌めるだけ、なのは</li></ul><ul><li>なんとなく心理的な安心感がある (本当か?)<br>お気付きだろうか… </li><li>このコードがPSR-1違反であることに…</li></ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fniconare.nicovideo.jp%2Fwatch%2Fkn1371&size=32" alt=""><a href="http://niconare.nicovideo.jp/watch/kn1371" target="_blank">niconare.nicovideo.jp</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fgihyo.jp%2Fmagazine%2Fwdpress%2Farchive%2F2016%2Fvol92&size=32" alt=""><a href="http://gihyo.jp/magazine/wdpress/archive/2016/vol92" target="_blank">WEB+DB PRESS Vol.92 | 技術評論社</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F94e00f6fdf40d96c5072&size=32" alt=""><a href="http://qiita.com/tadsan/items/94e00f6fdf40d96c5072" target="_blank">PHPとバージョン #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fcdbbb5b08591af2b110d&size=32" alt=""><a href="http://qiita.com/tadsan/items/cdbbb5b08591af2b110d" target="_blank">インスパイヤされて掲示板を作りたくなった(1) #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2FTetoSQL&size=32" alt=""><a href="https://github.com/BaguettePHP/TetoSQL" target="_blank">GitHub - BaguettePHP/TetoSQL</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

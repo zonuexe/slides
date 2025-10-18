@@ -3,25 +3,84 @@
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <link rel="alternate" type="application/json+oembed" href="/oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+
+          <meta property="og:title" content="PHPパッケージを作ろう！ Lightning">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/kn2336_20170522_create-a-php-package/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2336_20170522_create-a-php-package.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHPパッケージを作ろう！ Lightning">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2336_20170522_create-a-php-package.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/kn2336_20170522_create-a-php-package/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/kn2336_20170522_create-a-php-package/oembed.xml">
+
           <title>PHPパッケージを作ろう！ Lightning</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2336_20170522_PHPパッケージを作ろう！ Lightning.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -53,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2336_20170522_create-a-php-package.pdf" download="kn2336_20170522_PHPパッケージを作ろう！ Lightning.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -63,6 +122,245 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>パッケージを作ろう！ LT</strong></p><p><strong>Create your PHP library/package!</strong></p><p><strong>2017-05-22 PHP BLT #7</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>ピクシブ株式会社でひたすらPHPやってる p(ixi)v</li></ul></li><li>フレームワークなき道にフレームを作るおしごと</li><li>最近やってること</li></ul><p>ひたすらに要らないコードを整理したり、</p><ul><li>コアの部分をぐにゃっとできるように悩んでるよ<br>Mastodon API Client/SDK作ったよ</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>Mastodon</strong><br><strong>たのしいんですよ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>PHPからMastodonの</strong></p><p><strong>APIを簡単に触れる</strong><br><strong>クラスを作った</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>$composer require zonuexe/mastodon-api</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p><strong>コンポーザーを手</strong> <strong>元に入れる方法は</strong><br><strong>キータに書いた</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p><strong>パッケージ作るときに決めること</strong></p><p>vendor/package</p><p>パッケージ名 ( ) </p><p>対象PHPバージョン </p><p>ディレクトリ構成 </p><p>ライセンス</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>パッケージ名</strong></p><p>vendor/package</p><p>パッケージ名は<strong>  </strong>形式</p><p>[-0-9a-z]+ <br>( -と数字小文字のみ)<strong> </strong></p><p>GitHubと一致させておくと親切 </p><p>zonuexe/mastodon-api</p><p><strong> </strong>にした</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>対象PHPバージョン</strong></p><p><strong>どこから対応するか？ HHVM</strong>は？<strong> </strong></p><p><strong>5.3.2+  </strong></p><p> (Composer最低)</p><p><strong>5.5+  </strong><br> (旧安定版、<strong>サポート終了済み</strong>)</p><p><strong>7.0+  </strong><br> (旧安定版)</p><p><strong>5.6+, 7.1+</strong></p><p> (現安定版)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>ディレクトリ構成</strong></p><p>src/ tests/</p><p>拘りがなければ と に置く</p><p>git init; mkdir src/ tests/;</p><p>bin/</p><p>コマンドを配布したければ<strong>   </strong>に<strong> </strong></p><p>docs/</p><p><strong> </strong>にドキュメントを置くと、</p><p>GitHub Pagesに展開できて便利</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>オートローディング</strong></p><p>require</p><p>モダンなPHPに は最低限 </p><p>include<br>各クラスに とか書かない </p><p>composer.json</p><p>に設定を書く </p><p>起動スクリプトでだけ</p><p>autoload.php</p><p>を読み込むようにする</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>オートローディング(PSR-4)</strong></p><p><strong>{</strong></p><p><strong>    &quot;autoload&quot;: {</strong></p><p><strong>        &quot;psr-4&quot;: {</strong></p><p><strong>            &quot;Mastodon\\&quot;: &quot;src/&quot;</strong></p><p><strong>        }</strong></p><p><strong>    },</strong></p><p><strong>    autoload-dev&quot;: {</strong></p><p><strong>        &quot;psr-4&quot;: {</strong></p><p><strong>            &quot;Mastodon\\&quot;: &quot;tests/&quot;</strong></p><p><strong>        }</strong></p><p><strong>    }</strong></p><p><strong>}</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p><strong>オートローディング(files)</strong></p><p>クラスは遅延ロードできるが、 関数はできないので読み込む</p><p><strong>{</strong></p><p><strong>    &quot;autoload&quot;: {</strong></p><p><strong>        &quot;files&quot;: [&quot;src/functions.php&quot;]</strong></p><p><strong>    },</strong></p><p><strong>    &quot;autoload-dev&quot;: {</strong></p><p><strong>        &quot;files&quot;: [&quot;tests/helpers.php&quot;]</strong></p><p><strong>    }</strong></p><p><strong>}</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p><strong>オートローディング(classmap)</strong></p><p>名前空間とディレクトリ構成が<br>一致しない雑なPHPも力強く読める</p><p><strong>{</strong></p><p><strong>    &quot;autoload&quot;: {</strong></p><p><strong>        &quot;classmap&quot;: [&quot;src/&quot;]</strong></p><p><strong>    },</strong></p><p><strong>    &quot;autoload-dev&quot;: {</strong></p><p><strong>        &quot;classmap&quot;: [&quot;tests/&quot;]</strong></p><p><strong>    }</strong></p><p><strong>}</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p><strong>ライセンス</strong></p><p> (利用許諾)</p><p><strong>二次利用させるためのガイドライン </strong></p><p>好き勝手に利用させたいなら <strong>Apache-2.0</strong>か<strong>MIT</strong>がオススメ<strong> </strong></p><p>他人が行なった変更を合法的に<br>自分にも取り込みたいなら<strong>GPL-3.0</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>極論</strong></p><p>(利用許諾)</p><p>ライセンス を明示せずに</p><p>ソースコードをパブリックな場所に<br>置いてはいけない </p><p>そのソースコードを見付けたひとが</p><p>合法的に再利用することができない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>よしこれで</strong><br><strong>準備が整った</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p><strong>パッケージを探す</strong></p><p><strong>定番パッケージはawesome-php</strong></p><p><strong>https://github.com/ziadoz/awesome-php</strong></p><p><strong>Packagistでぐぐる</strong></p><p><strong>https://packagist.org/</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p><strong>鉄則</strong></p><p>composer.json require</p><p>の は弄るな </p><p>composer require</p><p>はコマンドで。</p><p>JSONファイルはいい感じに変更される </p><p>バージョンはいい感じに解決される</p><p><strong>$ composer require guzzlehttp/guzzle respect/validation</strong></p><p><strong>$ composer require --dev phpunit/phpunit:^4.8</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>SDKがやること</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>SDKのおしごと</strong></p><p><strong>HTTPリクエストする </strong></p><p><strong>それをPHPにマッピングする </strong></p><p><strong>複雑さを隠すための工夫をする</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p><strong>Entity</strong></p><p><strong>Mastodon本家のAPIリファレンスを</strong></p><p><strong>ひたすらひたすらひたすら写してく</strong></p><p><strong>https://github.com/tootsuite/documentation/blob/</strong></p><p><strong>master/Using-the-API/API.md#entities</strong></p><p><strong>自作のライブラリで型付け</strong></p><p><strong>https://github.com/BaguettePHP/objectsystem</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>あんまり複雑なことを見せない</strong></p><p>ちょーかんたんっぽく</p><p><strong>&lt;?php use Baguette\Mastodon as m;</strong></p><p><strong>$mastodon = m\session(</strong></p><p><strong>&#39;pawoo.net&#39;, $client_id, $client_secret, [</strong></p><p><strong>&#39;scope&#39; =&gt; &#39;read write follow&#39;,</strong></p><p><strong>&#39;grant&#39; =&gt;  ,</strong></p><p><strong>[&#39;username&#39; =&gt; $mail, &#39;password&#39; =&gt; $passwd]</strong></p><p><strong>]);</strong></p><p><strong>$account = $mastodon-&gt;getAccount(42);</strong></p><p><strong>$mastodon-&gt;postStatus(m\toot(&#39;トゥートゥー&#39;));</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p><strong>OOPであることには拘らない</strong></p><p>Requestするメソッド</p><p><strong>public static function getAccount(</strong></p><p><strong>    Client $client, SessionStorage $session, $id</strong></p><p><strong>) {</strong></p><p><strong>    v::intVal()-&gt;min(0)-&gt;assert($id);</strong></p><p><strong>    return static::map(</strong></p><p><strong>        Entity\Account::class,</strong></p><p><strong>        $client-&gt;requestAPI(&#39;GET&#39;,</strong></p><p><strong>sprintf(&#39;/api/v1/accounts/%d&#39;, $id), [], $session)</strong></p><p><strong>    );</strong></p><p><strong>}</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p><strong>中では再帰的にクラスを生成</strong></p><p>APIの結果をデコードしてぶっこむ</p><p><strong>public function __construct(array $properties) {</strong></p><p><strong>    $this-&gt;setProperties(mapValues($properties, [</strong></p><p><strong>        &#39;account&#39;           =&gt; Account::class,</strong></p><p><strong>        &#39;reblog&#39;            =&gt; Status::class,</strong></p><p><strong>        &#39;created_at&#39;        =&gt; \DateTimeImmutable::class,</strong></p><p><strong>        &#39;media_attachments&#39; =&gt; [Attachment::class],</strong></p><p><strong>        &#39;mentions&#39;          =&gt; [Mention::class],</strong></p><p><strong>        &#39;tags&#39;              =&gt; [Tag::class],</strong></p><p><strong>        &#39;application&#39;       =&gt; Application::class,</strong></p><p><strong>    ]));</strong></p><p><strong>}</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>テストの</strong> <strong>書きかた</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>テスト</strong></p><p><strong>がんばりすぎない </strong></p><p>踏み外したくない道をしっかり書く </p><p>HTTPリクエストはGuzzleで隠蔽</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p><strong>Mastodon</strong><br><strong>たのしいんですよ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>まだ未実装なAPIは</strong> <strong>たくさん／(^o^)＼</strong></p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fziadoz%2Fawesome-php&size=32" alt=""><a href="https://github.com/ziadoz/awesome-php" target="_blank">GitHub - ziadoz/awesome-php: A curated list of amazingly awesome PHP libraries, resources and shiny things.</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpackagist.org%2F&size=32" alt=""><a href="https://packagist.org/" target="_blank">Packagist</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ftootsuite%2Fdocumentation%2Fblob%2Fmaster%2FUsing-the-API%2FAPI.md%23entities&size=32" alt=""><a href="https://github.com/tootsuite/documentation/blob/master/Using-the-API/API.md#entities" target="_blank">github.com</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fobjectsystem&size=32" alt=""><a href="https://github.com/BaguettePHP/objectsystem" target="_blank">GitHub - BaguettePHP/objectsystem: Object system implementation for PHP</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

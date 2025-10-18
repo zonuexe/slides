@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20160416_composer-for-work/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn1371_20160416_composer-for-work.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="仕事で使えるComposer">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn1371_20160416_composer-for-work.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20160416_composer-for-work/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20160416_composer-for-work/oembed.xml">
 
           <title>仕事で使えるComposer</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn1371_20160416_仕事で使えるComposer.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn1371_20160416_composer-for-work.pdf" download="kn1371_20160416_仕事で使えるComposer.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -78,6 +122,448 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>仕事で使えるComposer</strong><br>無修正版</p><p>ピクシブ株式会社<br>うさみけんた @tadsan</p><p><strong>PHPカンファレンス北海道2016</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>プログラミング言語と日本語が好き</li></ul></li><li>北海道工業大学(当時) 電子計算機研究部出身</li><li>2012年頃までRuby札幌とかPython札幌で活動</li><li>2012年11月に初めての就職（現職）</li><li>PHPは現職に所属してからまじめに取り組み</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>おしながき</strong></p><p>Composerの基礎／導入 </p><ul><li>ナウいPHPライブラリの探しかた</li><li>Composerとデプロイについて</li><li>そのほかもろもろのこと</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p><strong>Version 1.0.0 was released on April 5, 2016 </strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>Composer </strong></p><p><strong>#とは</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p><strong>Composerって何よ</strong></p><p><strong>依存関係管理ツール</strong>   </p><p>(Dependency manager)</p><ul><li>YumやAPTはシステムにライブラリを導入する</li><li>Composerは、特定のプロジェクト単位に対して</li><li>閉じて依存性を管理する<br><strong>npm</strong> や<strong>Bundler</strong> に影響を受けた <br>(Node.js) (Ruby)</li></ul><p>グローバル</p><p>(特定のプロジェクトに依存しない)</p><ul><li>インストールも可能ではある</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p><strong>Get Composer!</strong></p><p>2016年4月5日(今月) <strong>正式版1.0.0リリース！ </strong></p><ul><li>https://getcomposer.org/download/</li></ul><p>PHAR形式で配布されてるので、</p><ul><li>PHP(5.3.2+)がある環境ならどこでも動作する<br>Linux/OS XのみならずWindowsもサポートしてる </li><li>Packagist, GitHub, PEARなどと連携可能</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>Composer VS pear</strong></p><p>pear</p><p>はPHP標準のパッケージ管理コマンド </p><p>機能の豊富さ、利用できるパッケージの数、</p><ul><li>新鮮さのような違いはもちろんある。<br>それ以上に、PHPプロジェクトと同時にデプロイ可</li><li>能になったことが非常に重要<br>ライブラリを導入する権限がインフラ／サーバー管</li></ul><p>理者からアプリエンジニアの手に落ちてきた<br>（身分制度の変革）</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>Composerは何ではないか</strong></p><p><strong>PHPのC extensionはインストールできない </strong></p><ul><li>インストール済か確認することはできる<ul><li>従来通りPECLなどを利用することになる</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>Composerの基礎</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>composer.json</strong></p><p>プロジェクトの情報を記述するファイル </p><ul><li>一般的にはプロジェクトのルートに置く<ul><li>依存情報やオートローディング設定など</li></ul></li><li>vendor/package<br>パッケージ名は の形式 </li><li>vendor</li></ul><p>は組織名やアカウント名をつける </p><ul><li>Javaのように厳密に決まってるわけじゃない</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>ライブラリの依存を記述</strong></p><p>require</p><p>に依存するパッケージ+バージョンを記述 </p><ul><li>{</li></ul><p><strong>    &quot;require&quot;: {</strong></p><p><strong>        &quot;filp/whoops&quot;: &quot;~2.1.0&quot;</strong></p><p><strong>    },</strong></p><p><strong>    &quot;require-dev&quot;: {</strong></p><p><strong>        &quot;phpunit/phpunit&quot;: &quot;^4.8&quot;</strong></p><p><strong>    }</strong></p><p><strong>}</strong></p><p>composer require --dev &quot;phpunit/phpunit:4.8&quot;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p><strong>バージョン記法 (一部)</strong></p><p>&quot;*&quot;</p><p>: 全てのバージョンを受け入れる </p><ul><li>&quot;1.2.3&quot;</li></ul><p>：バージョンタグ固定 </p><ul><li>&quot;~1.2.3&quot;</li></ul><p>: バージョンタグ固定(マイナー更新する) </p><ul><li>&quot;dev-xxxxx&quot;</li></ul><p>:  ブランチxxxxxを指定 </p><ul><li>dev-master#82115e5e37fa046464c</li></ul><p>のようにブラ</p><ul><li>ンチとコミットIDを指定できる(しないと危険)</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p><strong>composer.lock</strong></p><p>依存パッケージのバージョンを固定するファイル </p><ul><li>composer.json</li></ul><p>では範囲や複数指定が可能 </p><p>固定することで、意図しないバージョンが</p><ul><li>勝手にインストールされることを防ぐ<br>自動生成されるので手動編集しない方が良い</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p><strong>composer.lockの管理</strong></p><p>composer update vendor/package</p><p> で更新 </p><p>composer.lock<br>自動生成される をGitなどの</p><ul><li>バージョン管理の対象にするべきかは場合による<br>アプリケーションでは管理することが多い <ul><li>ライブラリは基本的に管理しない</li><li>.gitignore<br>管理しない場合は   に設定しておく</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>Composerを使う</strong></p><p>vendor/<br><strong>依存ライブラリは ディレクトリに入る </strong></p><ul><li>.gitignore<br><strong>プロジェクトの   で除外しておく </strong></li></ul><p><strong>Composerに依存するPHPには以下の一行を書く</strong></p><ul><li>require __DIR__ . &#39;/vendor/autoload.php&#39;;<br><strong>何度も書く必要はなく、一度だけ読み込めばいい </strong></li></ul><p><strong>Composerでインストールされたライブラリは、</strong></p><ul><li>include_once</li></ul><p><strong>する必要がない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>オートローディング</strong></p><p>PHPerをinclude_onceから解き放つ福音 </p><ul><li>{</li></ul><p><strong>    &quot;autoload&quot;: {</strong></p><p><strong>        &quot;classmap&quot;: [&quot;./src&quot;]</strong></p><p><strong>    },</strong></p><p><strong>    &quot;autoload-dev&quot;: {</strong></p><p><strong>        &quot;classmap&quot;: [&quot;./tests&quot;]</strong></p><p><strong>    }</strong></p><p><strong>}</strong></p><p>詳しくはWEB+DB Vol. 81に書きました(宣伝)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p><strong>サブコマンド (一部)</strong></p><p>composer install</p><p>:   </p><ul><li>必要なパッケージをインストール<br>composer list</li></ul><p>: 機能一覧を出力 </p><ul><li>composer self-update</li></ul><p>: composer.pharを更新 </p><ul><li>composer search</li></ul><p>: パッケージ検索 </p><ul><li>composer validate</li></ul><p>: composer.jsonのチェック </p><p>composer create-project</p><p>: </p><ul><li>フレームワークの雛形からプロジェクトを新規作成</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p><strong>Composerを導入する</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>Composerの配置を考える</strong></p><p>公式サイトのスクリプトでは、ダウンロードまで</p><ul><li>しかしてくれない (Windowsにはしてくれる)<br><strong>仕事の性質に配置方法には一考の余地がある </strong></li><li>サーバーごと<ul><li>ユーザーごと</li><li>プロジェクトごと</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>サーバーごとの場合</strong></p><p>プロジェクトメンバーが共有の開発サーバーに</p><ul><li>ログインして作業する場合にとれる方法<br>/usr/local/bin/composer.phar</li></ul><p> など </p><ul><li>良い点：Composerのバージョン差異がなくなる</li></ul><p><strong>悪い点：</strong>サーバー管理者が更新しなきゃいけない</p><ul><li>サーバー多いとめんどくさい</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p><strong>ユーザーごとの場合</strong></p><p>プロジェクトメンバーが自分のPCで開発する</p><ul><li>場合とか、ライブラリをいろいろ作る場合とか<br>$HOME/bin/composer.phar</li></ul><p> など (好みによる) </p><p><strong>良い点</strong>：メンテナンスするライブラリの数が</p><ul><li>多い場合は管理が楽</li></ul><p><strong>悪い点</strong>：バージョンを同期させるのがめんどう</p><ul><li>PATH通したりsudoさせたり説明めんどう</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>プロジェクトごとの場合</strong></p><p>大規模な開発チームで一つのリポジトリを</p><ul><li>継続的に開発していく場合とか</li></ul><p>/composer.phar</p><p>プロジェクト内の   など </p><ul><li>良い点：メンバー間のバージョン差異はなくせる</li></ul><p><strong>悪い点</strong>：プロジェクト数が多いと運用が面倒</p><ul><li>ディスクスペースの浪費 (1.6MB程度)</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p><strong>結局どれがいいの？</strong></p><p>PHPに詳しくないひとのことを考えると、</p><p>プロジェクトごとにcomposer.pharを置くのが<br>一番楽じゃないかと思う </p><p>セットアップスクリプトでダウンロードさせても</p><ul><li>いいけど、pixivでは git commit しちゃってる<br>毎月更新するとして1.6MBのディスクスペースの</li><li>浪費は、運用の手間を考えれば甘受できるレベル</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p><strong>xdebugとComposer</strong></p><p>xdebugが有効な環境でComposer使うと怒られる</p><p><strong>You are running composer with xdebug enabled. This has a major impact on runtime performance. See https://getcomposer.org/xdebug</strong></p><p>xdebugは開発中は有用なので外したくない </p><ul><li>実際遅くなるのでシェルスクリプトを噛ませたい</li><li>composer.phar php -n</li></ul><p> を   で起動できればいい </p><ul><li>php.iniを無効化する＝拡張が有効にならない</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>Composerのラッパー</strong></p><p><strong>プロジェクトローカルに置く場合… </strong></p><ul><li>composer.phar .composer.phar</li></ul><p>を にリネーム </p><ul><li>./composer<br>かわりに   を利用 </li><li>chmod +x ./composer</li></ul><p>で実行権限を付与 </p><ul><li>ファイルの中身は以下の二行</li><li>#!/bin/sh</li></ul><p><strong>php -n $(dirname $0)/.composer.phar &quot;$@&quot;</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>環境変数</strong></p><p>Composerに必要なファイルは</p><p>COMPOSER_HOME</p><p>環境変数のディレクトリにインストール </p><p>デフォルトでユーザディレクトリにインストール</p><p>(Linux/OS X) </p><p>$HOME/.composer</p><p>(Windows)     </p><p>%APPDATA%¥Composer</p><p>システムの設定を工夫すれば共有ディレクトリに</p><p>インストールすることも可能ではある<br>(やったことないけど)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p><strong>Composerを導入</strong></p><p>UNIX系OSでユーザごとにインストールするとき</p><ul><li>に配置しておくと便利<br>$HOME/local/bin/composer</li></ul><p>( や などでPATHを通す)</p><p>.bash_profile .zshenv</p><p><strong># .bash_profile/.bashrc</strong></p><p><strong>PATH=$HOME/.composer/vendor/bin:$HOME/local/bin:$PATH</strong></p><p><strong># .zshenv/.zshrc</strong></p><p><strong>path=(</strong></p><p><strong>    ~/.composer/vendor/bin(N-/)</strong></p><p><strong>    ~/local/bin(N-/)</strong></p><p><strong>    $path</strong></p><p><strong>)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>PHPのライブラリを探す</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>Packagist</strong><br><strong>The PHP Package Repository</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p><strong>Packagistって何だ</strong></p><p><strong>https://packagist.org/  </strong></p><ul><li>PHPのパッケージリポジトリ</li><li>2012年から4月から活動してる (４周年！)<ul><li>現在92,973パッケージ登録されてる</li><li>ちなみにPEARのパッケージ数は602</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong>http://www.modulecounts.com/</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p><strong>Packagistの特徴</strong></p><p><strong>GitHubなどのリポジトリと簡単に連携できる </strong></p><p><strong>API連携した状態なら、git tagをつけるだけで</strong></p><ul><li>かんたんに新しいバージョンをリリースできる<br><strong>有名なライブラリ／フレームワークは登録済み </strong></li></ul><ul><li>歴史的にフレームワークはzipファイルで公開</li></ul><p><strong>されてきたが、現在はComposerでも</strong><br><strong>インストールできる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p><strong>ライブラリを探す</strong></p><p><strong>とりあえず awesome-php に載ってるものを</strong></p><ul><li>触ってみる<br><strong>各ジャンルの手堅いライブラリの一覧 </strong><ul><li>たいていのコンポーネントは大手が作ってる</li></ul></li><li>SymfonyとかHoaProjectとか</li></ul><p><strong>Twitterの@call_user_funcをフォローすると</strong></p><ul><li>新着のライブラリがいっぱい流れてくる</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p><strong>Composerとデプロイ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p><strong>デプロイ、どうしてますか？</strong></p><p><strong>稼働中のサーバーに高速にコードを配置したい </strong></p><p><strong>rsyncなどで愚直にファイルを配置すると、</strong></p><p><strong>最中のPHPファイルが書き変わっちゃって</strong><br><strong>処理途中のユーザーリクエストがエラーで落ちる </strong></p><p><strong>Composerにも自動生成ファイルがあるので、</strong></p><ul><li>デプロイを工夫しないと、やはり落ちることが</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p><strong>アトミックデプロイ</strong></p><p><strong>エラーが出ないようにデプロイ途中の不完全な</strong></p><ul><li>状態がユーザーの目に触れないよう工夫する<br><strong>弊社事例(rsync+デプロイスクリプト手書き)は</strong></li><li>WEB+DB PRESS vol. 84に載ってる</li></ul><p><strong>最近はDeployer http://deployer.org/ が</strong></p><p><strong>いい感じにアトミックデプロイしてくれるらしい</strong><br><strong>(環境に合せて検証の必要あり)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p><strong>Satis - Package Repository Generator</strong></p><p><strong>https://github.com/composer/satis </strong></p><ul><li>要はプライベートなPackagistを自前運用できる</li></ul><p><strong>パッケージのアーカイブを保存できるので、</strong></p><p><strong>もしGitHubが不通になってしまっても</strong><br><strong>デプロイできない事態を避けることができる </strong></p><p><strong>デプロイ先のサーバーとネットワーク的に</strong></p><ul><li>近いところにあればデプロイ時間の短縮になる</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p><strong>Satisの運用</strong></p><p>satis.json</p><p><strong>必要なライブラリを に列挙する </strong></p><ul><li>composer.json<br><strong>記法は と同じ </strong><ul><li>&quot;~2.1.0&quot; &quot;&gt;=2.1.0&quot;</li></ul></li></ul><p><strong>記法よりは が良い </strong></p><p>satis.json</p><p><strong>とビルドスクリプトを置いた</strong></p><ul><li>satis.json<br><strong>リポジトリを用意して、毎日定時と が</strong><br><strong>更新されたときに新鮮なパッケージを取得</strong></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p><strong>Satisを使う場合のcomposer.json</strong></p><p><strong>{</strong></p><p><strong>    &quot;repositories&quot;: [</strong></p><p><strong>        {</strong></p><p><strong>            &quot;packagist&quot;: false</strong></p><p><strong>        },</strong></p><p><strong>        {</strong></p><p><strong>            &quot;type&quot;: &quot;composer&quot;,</strong></p><p><strong>            &quot;url&quot;: &quot;http://satis.pixiv.private/&quot;</strong></p><p><strong>        }</strong></p><p><strong>    ]</strong></p><p><strong>}</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p><strong>パッケージ作りたい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p><strong>基本</strong></p><p><strong>PackagistはGitHubでログインできるので、</strong></p><ul><li>GitHubに上げると非常に楽</li></ul><p><strong>ブラウザで https://packagist.org を開いて</strong></p><ul><li>説明通りに入力していくだけ</li></ul><p><strong>新しいバージョンのリリースは、</strong></p><ul><li>git tag 1.4.5 &amp;&amp; git push --tags で完了</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>お作法</strong></p><p><strong>Composerはオートローディングが基本なので、 </strong></p><ul><li>不必要なinclude_onceは書かない</li></ul><p><strong>PSR-1, PSR-2, PSR-4 を読んでおけば、</strong></p><ul><li>だいたい綺麗なコードが書ける気がする<br><strong>PSR-1, PSR-2はインフィニットループさんに</strong><ul><li>よる日本語訳がWebにあります<br><strong>とりあえずnamespaceは付けといた方が良い</strong></li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>Composerが遅い</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p><strong>Packagistは遠い</strong></p><p><strong>GitHub/Packagistは日本から遠いところに</strong></p><ul><li>あるので、ネットワークコストが非常に高い<br><strong>これはSatisを置けば解決する </strong></li></ul><p><strong>Satisを用意できない／用意するまでもない</strong></p><p><strong>ときは、Hirakuさんという方がミラーサイト</strong></p><p><strong>https://packagist.jp/</strong><br><strong>を用意してくれてるので、これを使える</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>Composerは遅い</strong></p><p><strong>ComposerはPHPの互換性を重視してるので、</strong></p><ul><li>最適な実装ではない<br><strong>Hirakuさんが並列ダウンロードできるようにした </strong></li></ul><p><strong>composerを速くするプラグイン・prestissimoを作った</strong></p><ul><li>http://blog.tojiru.net/article/432944706.html<br><strong>GitHubで既に★1660個ついてる！</strong></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p><strong>グローバルに</strong><br><strong>ライブラリをインストール</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>どんなときにグローバル？</strong></p><p>実際出番はあまりない </p><ul><li>コマンドとしてインストールしたいライブラリ</li></ul><p>いちいちプロジェクトを作るまでもない</p><ul><li>使い捨てコードから利用したいライブラリ</li></ul><p>グローバルインストールしても、</p><ul><li>勝手に読み込まれるようなことはない</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p><strong>PsySHはべんり</strong></p><p>composer global require psy/psysh</p><ul><li>PHPの対話環境 (REPL)</li><li>RubyのIRB, Pryのようなもの</li></ul><p>ただし実行中に関数やクラスの再定義は</p><ul><li>できないので注意すること<br>psysh.el もあるよ </li><li>(宣伝／未完成)</li></ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgetcomposer.org%2Fdownload%2F&size=32" alt=""><a href="https://getcomposer.org/download/" target="_blank">Composer</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgetcomposer.org%2Fxdebug&size=32" alt=""><a href="https://getcomposer.org/xdebug" target="_blank">Troubleshooting - Composer</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpackagist.org%2F&size=32" alt=""><a href="https://packagist.org/" target="_blank">Packagist</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fziadoz%2Fawesome-php&size=32" alt=""><a href="https://github.com/ziadoz/awesome-php" target="_blank">GitHub - ziadoz/awesome-php: A curated list of amazingly awesome PHP libraries, resources and shiny things.</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fsymfony.com&size=32" alt=""><a href="http://symfony.com" target="_blank">Symfony, High Performance PHP Framework for Web Development</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fhoa-project.net%2FEn%2F&size=32" alt=""><a href="http://hoa-project.net/En/" target="_blank">hoa-project.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftwitter.com%2Fcall_user_func&size=32" alt=""><a href="https://twitter.com/call_user_func" target="_blank">twitter.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fdeployer.org%2F&size=32" alt=""><a href="http://deployer.org/" target="_blank">Deployer - The deployment tool for PHP | Deployer</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fcomposer%2Fsatis&size=32" alt=""><a href="https://github.com/composer/satis" target="_blank">GitHub - composer/satis: Simple static Composer repository generator - For a full private Composer repo use Private Packagist</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpackagist.org&size=32" alt=""><a href="https://packagist.org" target="_blank">Packagist</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpackagist.jp%2F&size=32" alt=""><a href="https://packagist.jp/" target="_blank">Packagist.JP</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.tojiru.net%2Farticle%2F432944706.html&size=32" alt=""><a href="http://blog.tojiru.net/article/432944706.html" target="_blank">composerを速くするプラグイン・prestissimoを作った: Architect Note</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

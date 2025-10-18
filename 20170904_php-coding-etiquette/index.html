@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20170904_php-coding-etiquette/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2550_20170904_php-coding-etiquette.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="いまさら！PHPお作法入門">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2550_20170904_php-coding-etiquette.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20170904_php-coding-etiquette/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20170904_php-coding-etiquette/oembed.xml">
 
           <title>いまさら！PHPお作法入門</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2550_20170904_いまさら！PHPお作法入門.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2550_20170904_php-coding-etiquette.pdf" download="kn2550_20170904_いまさら！PHPお作法入門.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -78,6 +122,613 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>い<strong>まさら！</strong>　　お作法入門</p><p><strong>Modern...? PHP manners guide</strong></p><p>pixiv SUMMER BOOT CAMP 2017</p><p>#pixiv_BOOTCAMP</p><p>東京都渋谷区千駄ヶ谷 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>講義資料です</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>このスライドは<br><strong>Webで公開します </strong>(メモはとらなくても良いです、の意味)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>2012年11月にピクシブ株式会社に入社</li></ul></li><li>Emacs Lisper, PHPer</li><li>入社前は自宅警備をしながらRuby書いてた<ul><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p><strong>おぼえて</strong><br><strong>ほしいこと</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>コードは動けばええんや<br>😄</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p><strong>反論？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>最高のコードは動くコード</strong></p><p><strong>コードの美しさはユーザーに見えない </strong></p><p><strong>汚ないコードでも、動けばユーザーに</strong><br><strong>とっては最大の価値を生み出す</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>最高のコードは動くコード</strong></p><p><strong>コードの美しさはユーザーに見えない </strong></p><p><strong>汚ないコードでも、動けばユーザーに</strong><br><strong>とっては最大の価値を生み出す</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>全ての物事には一長一短がある</strong></p><p><strong>読めないコードはメンテできない </strong></p><p><strong>機能拡張しにくい </strong></p><p><strong>ある日とつぜん動かなくなる </strong></p><p><strong>仕様変更に追従困難</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>動けばの前提が崩れた コードは価値が大暴落</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p><strong>まとめると</strong></p><p><strong>ソースコードの美醜は現在の</strong> <strong>プログラムの価値とは関係ない </strong></p><p><strong>ただし美しくないコードは</strong><br><strong>将来の可能性を閉ざしかねない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>リーダブル</p><p>そのために「読める」</p><p>コードの追求と<br>お作法の共有が必要</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p><strong>今回は大仰な設計の話で</strong> <strong>はなく、単にコーディン</strong> <strong>グルールの共有をします</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>PSR?</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>その話はあとで</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>&lt;?php</p><p>からはじめよ</p><p>&lt;?php</p><p>ファイル先頭は<strong>必ず</strong> を書きます<strong> </strong></p><p>namespace use<br><strong>必要なら</strong> と を書きます<strong> </strong></p><p>include_once</p><p><strong> 必要なければ</strong>書きません<strong> </strong></p><p>そのあとクラス定義 を書きます<strong> </strong></p><p><strong>(だけ)</strong></p><p>?&gt;<br>ファイル最後に<strong>   </strong>は書きません</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>namespace</p><p>は必要か？</p><p>namespace</p><p>を利用すべきかは、<br><strong>プロジェクトごとの事情</strong>に強く依存します<strong> </strong></p><p><strong>pixiv-lib</strong>では<strong>原則として</strong>利用しません<strong> </strong></p><p><strong>テストコード</strong> でだけ使ってる<strong> </strong></p><p>tests/<br><strong>( )</strong></p><p><strong>pixiv.git</strong>内のプロジェクト単位では、<br>利用されることもあります</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>namespace</p><p>もしも がなかったら</p><p>User_Common</p><p>のような<strong>擬似名前空間 </strong></p><p>namespace use</p><p>と の解決は<strong>少し面倒 </strong></p><p>要はクラス名とファイル名の解決が できれば<strong>オートローディング</strong>できます<strong> </strong></p><p>User_Common  User/Common.php<br><strong>→ </strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>require/include_once</p><p>は最低限だけ</p><p>クラスローダーを登録することで、 自動ローディングできる<strong> (遅延評価) </strong></p><p><strong>1ファイルにつき1クラス</strong>を定義する<strong> </strong></p><p>関数定義などは基本的には</p><p><strong>初期化ファイルから</strong>読み込みます</p><p>composer.json autoload.files<br><strong>( の )</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>?&gt; </p><p>を書かない理由</p><p>省略可能、<strong>書くメリットが皆無 </strong></p><p>&lt;?php 〜 ?&gt;<br>PHPは<strong>   </strong>の範囲外に<br>書かれた文字列を出力します<strong> </strong></p><p>不随意にコード中に変な文字が混入し</p><p>たとき、文法エラーにもならず<br><strong>出力されかねない</strong>リスクがあります</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>クラス定義</p><p>クラスの概要を一行で要約すること </p><p>一行で説明が不可能なら、クラスが<br>持つ責任は<strong>明らかに多すぎます</strong> </p><p>クラス継承は慎重に設計してください </p><p>個人的な経験では<strong>継承</strong>よりも<strong>委譲</strong>や</p><p>interface</p><p>の方がうまくいきます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p><strong>PHPDocの構造</strong></p><p>/**</p><p> * 概要(summary, 要約) ↓ 下は空行</p><p> *</p><p> * 説明文(description)。クラスの説明を書きます。</p><p> * ここには何行書いてもいいです。</p><p> *</p><p> * 説明不足よりも能弁を尊べ。</p><p> *</p><p> * </p><p>@see </p><p>https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/basic-syntax.html</p><p> */ <br>final class Foo_BarModel implements ModelInterface</p><p>{</p><p>    // ...</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>クラスとPHPDoc</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>メソッド定義</p><p>メソッドの概要を一行で要約し、 <strong>引数と返り値の型をデザイン</strong>します<strong> </strong></p><p><strong>一行で説明できないメソッド</strong>は<br>その存在の軸が容易に揺らいでいく<strong> </strong></p><p><strong>複数の型の値を返すメソッド</strong>は<br>機能が多すぎ、利用側が煩雑になる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>メソッドとPHPDoc</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>http://nico.ms/kn1774</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>これだけ覚えて帰ってね</strong></p><p><strong>タグ名 意味 例</strong></p><p><strong>@param</strong> 引数を定義</p><p>@param int $n1 </p><p><strong>@return</strong> 返り値を定義</p><p>@return int[]</p><p><strong>@var</strong> 変数/プロパティを定義</p><p>@var int</p><p><strong>@property</strong> マジックプロパティを定義</p><p>@property int $id</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>PHPDocの型</strong></p><p>「PHPの型」か「クラス名」を書く </p><ul><li>基本的な型</li><li>string int bool float array</li></ul><p>,  ,  ,  ,  , </p><ul><li>resource null true false</li></ul><p>,  ,  ,   </p><p>擬似型 </p><ul><li>callable void</li></ul><p>,   </p><ul><li>(返り値を返さない)</li></ul><p>https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p><strong>PHPDocの型</strong></p><p>複合型 </p><ul><li>int int|string<br>「 または文字列」   <ul><li>値が並んだ配列</li></ul></li><li>int int[]<br>「 が並んだ配列」 <ul><li>https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong> なんでPHPなのに</strong><br><strong>わざわざ型を書くの</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>バグるのと型書くの<br>どっちがええねん<br>😎</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>PHPは動的プログラミング言語</p><p><strong>静的型解析器(コンパイラ)は</strong></p><p><strong>一般に実行前(コンパイル時)に</strong><br><strong>変数や関数の型を特定する </strong></p><p><strong>PHPのVM(インタプリタ)は、</strong></p><p><strong>変数や関数の型は基本的に特定せず、</strong><br><strong>実行時に動的型解析する</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>PHPの多くのバグは 実行時まで遅延する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>要は動かさないと<br>わからない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>動かさなくても</p><p>バグを検出できる うれしみは大きい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>引数一覧で型を表示するところ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>型がめったくそなの叱ってくれ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p><strong>ループの</strong><br><strong>話をしよう</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>PHPのfor文は原則禁止</p><p>#</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>PHPの配列は歯抜けになる</p><p>#</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>foreachなら大丈夫</p><p>$</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>引数一覧で型を表示するところ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>ループの中で補完が利かない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>きちんと型をつけ直す</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>ループの中でも補完が利くよ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>PSR </strong><br>PHP Standards Recommendations <br>PHP標準勧告</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>PHP-FIG <br>PHP Framework Interop Group <br>PHPフレームワーク相互運用グループ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>フレームワークや</p><p>CMSを開発する<br>組織の寄合</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p><strong>2017年8月現在のメンバー</strong></p><p>CakePHP, Composer, concrete5, Contao Open Source CMS, Drupal, eZ Publish, Horde, IBM i <br>Toolkit, Icicle, Jackalope, Joomla, Lithium, <br>Magento, PEAR, Phalcon, Phing, phpBB, phpDocumentor, PHPixie, Pimcore, PPI <br>Framework, PrestaShop, PyroCMS, ReactPHP, <br>Revive Adserver, Sculpin, SilverStripe, Slim, <br>Stash, Stormpath PHP SDK, SugarCRM, <br>Symfony, Neos and Flow, Wikibase and Semantic <br>MediaWiki, Yii framework, Zend Framework 2, <br>Zikula</p><p><strong>http://www.php-ﬁg.org/members/</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>相互運用??</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>ばらばらに作ってたのを</p><p>仕様化して相互に<br>利用しやすくしようぜ！ <br>……みたいな人類の夢</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>みんな仲良く %&amp;’</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p><strong>PSR-0</strong> Autoloading Standard</p><p><strong>クラス名</strong>と<strong>ファイル</strong>を一致させる規則<strong> </strong></p><p><strong>ベンダー名</strong>を名前空間のトップにする<strong> </strong></p><p>\ _ DIRECTORY_SEPARATOR<br>とを に置換<strong> </strong></p><p>2014年にPSR-4に置換されて<strong>廃止</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p><strong>PSR-1</strong> Basic Coding Standard</p><p>PHPコードは または<strong>  </strong></p><p>&lt;?php … ?&gt; &lt;?= … ?&gt;</p><p>文字コードは<strong>UTF-8(BOMなし) </strong></p><p><strong>クラスや定義のファイルは分けて、</strong><br><strong>副作用のある処理とは分割する </strong></p><p><strong>クラス名はStudlyCaps(UpperCamlCase)、</strong></p><p><strong>メソッド名はlowerCamelCase、</strong><br><strong>プロパティ名は規定しないけど一貫せよ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p><strong>PSR-2</strong> Coding Style Guide</p><p>具体的なコーディングスタイルガイド </p><p>PSRに準拠したライブラリが必ず遵守 しなければいけないルール<strong>ではなく</strong>、</p><p>プロジェクトごとにガイドラインを<br>決めるための叩き台 </p><p>↑ここ誤解してるひとが意外と多い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>{</p><p><strong>クラスや関数など定義の は改行</strong></p><p>final class Hoge implements Fizz</p><p>{</p><p>    function hoge($a, $b)</p><p>    {</p><p>        return $a + $b;</p><p>    }</p><p>}</p><p>function foo()</p><p>{</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>{<br><strong>そのほかの文の は改行しない</strong></p><p>$is_hoge = hoge(); <br>if ($is_hoge) {</p><p>    foo();</p><p>} elseif (piyo($a)) {</p><p>    bar();</p><p>}</p><p>foreach ($values as $i =&gt; $v) {</p><p>    $values[$i] = piyopiyo($v);</p><p>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p><strong>演算子などは、きっちり空白</strong></p><p>$str = &quot;もじれつ&quot;; $str2 = $str . &quot;！&quot;; </p><p>$n = 2; $m = 5; <br>return foo($n, $m) * 2; </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p><strong>PSR-4</strong> Autoloading Standard</p><p><strong>クラス名</strong>と<strong>ファイル</strong>を一致させる規則<strong> </strong></p><p><strong>ベンダー名</strong>を名前空間のトップにする<strong> </strong></p><p>\ _ DIRECTORY_SEPARATOR<br>とを に置換 </p><p><strong>サブ名前空間</strong>と<strong>ベースディレクトリ</strong>の<br>概念が導入</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>わしのPSRは17まで<br>あるぞ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p><strong>さて</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>ルールは破るためにある<br>😎</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>所詮はフレームワーク 開発者どもの間の規則<br>😎</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>プライベートなプロ</p><p>ジェクトがPSRに<br>厳密に従っても得ら<br>れるものは乏しい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p>プライベートなプロ</p><p>ジェクトがPSRに<br>厳密に従っても得ら<br>れるものは乏しい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p>厳密に</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          <p>都合のいいところだけ<br>持ってくればいい<br>😊</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p>規則とは理想的には 自分たちの足を撃ち 抜かないためにある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p>実態に即しない規則<br>は改正すべし</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p><strong>よく聞く例</strong></p><p>PSR-2を魔改造<strong>カスタマイズ</strong> </p><p>インデントはスペースではなくタブ </p><p>{ の改行位置が気に入らないので統一 </p><p>要はコード内で統一感があれば良い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p><strong>pixivの例</strong></p><p><strong>PSR-1</strong>, <strong>PSR-2</strong>はそのまま採用 </p><p>行の長さの規制だけ緩めてる </p><p><strong>PSR-0</strong>, <strong>PSR-4</strong>は採用しない </p><p>相互運用されないアプリケーション コードなどはvendorは厳密に意識し<br>なくても別に問題が起こらない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-text">
+                          <p><strong>クラスのオートロード</strong></p><p><strong>PSR-0</strong>, <strong>PSR-4</strong>の規約通りに配置する だけで、Composerがいい感じにロー<br>ドできる </p><p>まあ文字列マッチしてるだけなので、 ベンダー名とか省略しても実際動く </p><p>そもそもローダーを自作してもいい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-text">
+                          <p><strong>まとめ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-79">
+                        <h4>Page 79</h4>
+                        <div class="page-text">
+                          <p><strong>まとめ</strong></p><p>ルールやお作法は、</p><p>(これに限らず)<br>われわれ人類が自爆しないための鎖 </p><p>ルールが作られた背景には事情がある ので、それを共有していくのが重要 </p><p>「どうしてこうなってるの」と感じた<br>ら質問していこう</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzonuexe.github.io%2FphpDocumentor2-ja%2Freferences%2Fphpdoc%2Fbasic-syntax.html&size=32" alt=""><a href="https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/basic-syntax.html" target="_blank">基本文法 — phpDocumentor</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fnico.ms%2Fkn1774&size=32" alt=""><a href="http://nico.ms/kn1774" target="_blank">ニコニコ</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzonuexe.github.io%2FphpDocumentor2-ja%2Freferences%2Fphpdoc%2Ftypes.html&size=32" alt=""><a href="https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html" target="_blank">型の定義 — phpDocumentor</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzonuexe.github.io%2FphpDocumentor2-ja%2Freferences%2Fphpdoc%2Ftypes.html&size=32" alt=""><a href="https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html" target="_blank">型の定義 — phpDocumentor</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">

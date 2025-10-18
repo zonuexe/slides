@@ -8,6 +8,7 @@
           <meta property="og:description" content="tadsan's slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20171206_practical-php-session/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2795_20171206_practical-php-session.png">
           <meta property="og:site_name" content="tadsan's slide deck">
           <meta property="og:locale" content="ja_JP">
 
@@ -16,27 +17,70 @@
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="実用PHPセッション入門">
           <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2795_20171206_practical-php-session.png">
 
-          <link rel="alternate" type="application/json+oembed" href="oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20171206_practical-php-session/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20171206_practical-php-session/oembed.xml">
 
           <title>実用PHPセッション入門</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
           <link rel="stylesheet" href="/slides/css/slide.css">
           <style>
             :root {
-              --max-width: 1024px;
-              --aspect-ratio: 1024 / 768;
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
               --max-height: 66.67vh;
             }
           </style>
           <script>
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
-              maxWidth: 1024,
-              maxHeight: 768,
+              maxWidth: 1365,
+              maxHeight: 1024,
               download: 'kn2795_20171206_実用PHPセッション入門.pdf'
             };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -68,7 +112,7 @@
 
               
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="/slides/pdf/kn2795_20171206_practical-php-session.pdf" download="kn2795_20171206_実用PHPセッション入門.pdf" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -78,6 +122,678 @@
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>セッション入門</p><p>PHP<br><strong>Introduction to PHP Session</strong></p><p><strong> ピクシブ社内勉強会</strong></p><p><strong>2017-12-01</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた、@tadsan、Zonu.EXE </strong></p><ul><li>Emacs PHP Modeメンテナ</li><li>省略</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p><strong>注意</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>この発表は新規のWebサイト Webアプリケーションフレー ムワークに依存しないPHP開<br>発を推奨する目的ではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>※今回ログイン の話はしません</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p><strong>セッション</strong><br><strong>とは何か</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>この用語</p><p>(セッション)</p><p>が意味するところは<br>いろいろあるけど</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>ここではWebで、<br>ユーザーと<strong>継続的に</strong><br>通信する機構</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p><strong>継続的？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p><strong>はじめて訪問したとき</strong></p><p>こんにちは</p><p>「ゲスト」さん！ <br>あなたは誰ですか？</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p><strong>ここに名前をいれてね</strong></p><p>私は「tadsan」だよ</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p><strong>次に訪問したとき</strong></p><p>こんにちは</p><p>「tadsan」さん！ また来ましたね！</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>Webブラウザでセッションを<br>実現するには、一般的には</p><p>が利用される</p><p>Cookie</p><p>(クッキー)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>あとで話すよ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p><strong>注意</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>セッションの実装は<br>Webサイトのプライバシー ポリシーと密接に関連する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p><strong>のプライバシーポリシー</strong></p><p>pixiv</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p><strong>TIPS</strong><br>Cookieを使ったセッション を利用するときはプライバ シーポリシーを明記しよう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p><strong>PHPで </strong><br><strong>セッション</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p><strong>超かんたん</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p><strong>name.php</strong></p><p>&lt;?php </p><p>session_start(); </p><p>//   session_start()   <br>これで別ページでも すれば</p><p>// $_SESSION[&#39;name&#39;]   </p><p>として参照できるようになる</p><p>$_SESSION[&#39;name&#39;] = &#39;太郎&#39;; </p><p>header(&#39;Location: /betsu.php&#39;);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p><strong>betsu.php</strong></p><p>&lt;?php session_start() ?&gt; </p><p>&lt;p&gt; <br>こんにちは&lt;?= htmlspecialchars( ) ?&gt;さん </p><p>$_SESSION[&#39;name&#39;]</p><p>&lt;/p&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p><strong>TIPS</strong><br>PHPのフレームワークはセッション機構 がいい感じに統合されてることがある。 ただし、マイクロフレームワークではオ ミットされてることが多くPHPデフォル トのセッションを気にする必要がある。</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p><strong>TIPS</strong><br>session_start()</p><p>および<strong>後述す</strong></p><p><strong>るセッション設定</strong>は個別のペー ジで呼ぶのではなく、共通初期<br>化スクリプトに記述すること</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p><strong>まあとりあえず </strong></p><p>session_start()</p><p><strong>で</strong></p><p><strong>簡単にできる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p><strong>ね、かんたん</strong><br><strong>でしょ？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p><strong>完</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>🙃</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>だと思ったか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p><strong>どうして</strong></p><p><strong>セッションは</strong><br><strong>動くのか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p><strong>よし、Webサイトを見よう</strong></p><p>GET /index HTTP/1.1</p><p>Host: example.com</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p><strong>はじめて訪問したとき</strong></p><p>こいつはCookie持ってないな…</p><p>ちっ、新参か。</p><p>GET /index HTTP/1.1</p><p>セッションIDを発行するか </p><p>Host: example.com</p><p>「こんにちはゲストさーん」</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p><strong>はじめて訪問したとき</strong></p><p>200 OK</p><p>こいつはCookie持ってないな…</p><p>ちっ、新参か。</p><p>Set-Cookie: </p><p>セッションIDを発行するか </p><p>PHPSESSID=xxxxx;expires=...</p><p>&lt;!DOCTYPE html&gt;&lt;html&gt;...</p><p>「こんにちはゲストさーん」</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p><strong>はじめて訪問したとき</strong></p><p>200 OK</p><p>こいつはCookie持ってないな…</p><p>ちっ、新参か。</p><p>Set-Cookie: <br><strong>Set-Cookie!</strong></p><p>セッションIDを発行するか </p><p>PHPSESSID=xxxxx;expires=...</p><p>&lt;!DOCTYPE html&gt;&lt;html&gt;...</p><p>「こんにちはゲストさーん」</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p><strong>RFC 6265</strong><br><strong>HTTP State </strong><br><strong>Management Mechanism</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>HTTP上でWebサイトと</p><p>UA が<strong>状態</strong>を<br>(ブラウザ)<br>共有するためのしくみ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p><strong>状態？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p><strong>話は長くなる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>Cookieに対応したユーザーエー</p><p>ジェント が</p><p>(Webブラウザ)</p><p>Set-Cookieを受け取ると、 次からそのサイトにリクエス トするときにCookieヘッダを<br>付加する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p><strong>次回に訪問するとき</strong></p><p>GET /index HTTP/1.1</p><p>Host: example.com</p><p>Cookie:</p><p>PHPSESSID=xxxxx</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p><strong>次回に訪問するとき</strong></p><p>GET /index HTTP/1.1</p><p>おっこいつは前も来たxxxxだな </p><p>Host: example.com</p><p>「こんちわー またきたね」</p><p>Cookie:</p><p>PHPSESSID=xxxxx</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p><strong>次回に訪問するとき</strong></p><p>おっこいつは前も来たxxxxだな </p><p>200 OK</p><p>「こんちわー またきたね」</p><p>&lt;!DOCTYPE html&gt;&lt;html&gt;...</p><p><strong>Webサイト</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p><strong>どうして</strong></p><p><strong>セッションは</strong><br><strong>動くのか</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p><strong>Ｑ.</strong>どうしてセッショ ンは特に設定しなく ても動くのはなぜ？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p><strong>Ａ.</strong>PHPはきみのことを</p><p>ファイルに保存して<br>覚えてるからだよ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p><strong>ファイル</strong>っすか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>😅</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p><strong>ファイル</strong>です</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>😇</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>session_save_path() 保存するディレクトリ<br>を設定できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p><strong>http://php.net/manual/ja/function.session-save-path.php</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>🙃</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p><strong>Ｑ.ファイル</strong>の<br>問題点とは何か？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>🤔</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p><strong>Ａ.サーバーまたいで</strong></p><p><strong>セッションを</strong><br><strong>共有できない！</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>🙃</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p><strong>Ｑ.</strong>具体的に 何が起こる？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p><strong>Ａ.サーバーを増やして</strong> <strong>分散させた瞬間に、セッ</strong> <strong>ションが消えたりする</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>／(^o^)＼</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p><strong>実用PHP</strong><br><strong>セッション</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p><strong>本題はここから</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>SessionHandlerInterface</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p><strong>http://php.net/manual/ja/class.sessionhandlerinterface.php</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p><strong>これを実装して</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p><strong>MySessHandler.php</strong></p><p>&lt;?php </p><p>class MySessHandler implements SessionHandlerInterface <br>{ <br>    //   </p><p>実装…</p><p>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p><strong>bootstrap.php</strong></p><p>&lt;?php </p><p>$handler = new MySessHandler(); <br>session_set_save_handler($handler, true);</p><p>session_start(); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p><strong>登録できる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p><strong>実装って何を</strong><br><strong>すればいいの？</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p><strong>Redis/Memcached/</strong> <strong>SQLなどに保存する</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p><strong>極端な話、データベー</strong> <strong>スじゃなくてもいい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p><strong>例)Cookie</strong></p><p><strong>(セキュリティの面で</strong><br><strong>面倒なのでおすすめはしない)</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          <p><strong>設定</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p><strong>デフォルト設定</strong><br><strong>の問題</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p><strong>デフォルトでは、Cookie</strong></p><p><strong>にSecure,httpOnly属性</strong><br><strong>がついてない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p><strong>現代においては</strong><br><strong>ありえない</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p><strong>http://php.net/manual/ja/function.session-set-cookie-params.php</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-text">
+                          <p><strong>絶対設定しよう</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-text">
+                          <p><strong>PHPSESSIDださい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-79">
+                        <h4>Page 79</h4>
+                        <div class="page-text">
+                          <p><strong>bootstrap.php</strong></p><p>&lt;?php </p><p>session_name(&#39;hoge_session_id&#39;); </p><p>$handler = new MySessHandler(); <br>session_set_save_handler($handler, true);</p><p>session_start(); </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-80">
+                        <h4>Page 80</h4>
+                        <div class="page-text">
+                          <p><strong>php.ini</strong></p><p><strong>VS</strong><br><strong> PHP関数</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-81">
+                        <h4>Page 81</h4>
+                        <div class="page-text">
+                          <p><strong>セッション系の設定 </strong></p><p><strong>設定ファイル と</strong></p><p>*.ini<br><strong>( )</strong></p><p><strong>PHP両方で設定できる</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-82">
+                        <h4>Page 82</h4>
+                        <div class="page-text">
+                          <p><strong>環境によってphp.iniは手を入</strong> <strong>れにくいので、実行時にPHP</strong> <strong>スクリプトで設定関数を呼ぶ</strong><br><strong>ようにする方がおすすめ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-83">
+                        <h4>Page 83</h4>
+                        <div class="page-text">
+                          <p><strong>関数で書いてやれば</strong></p><p><strong>(同じコードである限り)</strong><br><strong>事故が起きにくい</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-84">
+                        <h4>Page 84</h4>
+                        <div class="page-text">
+                          <p><strong>今回しなかっ</strong><br><strong>た話</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-85">
+                        <h4>Page 85</h4>
+                        <div class="page-text">
+                          <p><strong>ログインの</strong><br><strong>実装方法</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-86">
+                        <h4>Page 86</h4>
+                        <div class="page-text">
+                          <p><strong>ログイン処理を実装するため</strong> <strong>にはセキュリティ的に考慮す</strong><br><strong>べき事柄がいろいろあるよ</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-87">
+                        <h4>Page 87</h4>
+                        <div class="page-text">
+                          <p><strong>この発表の</strong></p><p><strong>反響があったら</strong> <strong>続きを書くよ！</strong></p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fexample.com&size=32" alt=""><a href="http://example.com" target="_blank">Example Domain</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fexample.com&size=32" alt=""><a href="http://example.com" target="_blank">Example Domain</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Ffunction.session-save-path.php&size=32" alt=""><a href="http://php.net/manual/ja/function.session-save-path.php" target="_blank">PHP: session_save_path - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Fclass.sessionhandlerinterface.php&size=32" alt=""><a href="http://php.net/manual/ja/class.sessionhandlerinterface.php" target="_blank">PHP: SessionHandlerInterface - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Ffunction.session-set-cookie-params.php&size=32" alt=""><a href="http://php.net/manual/ja/function.session-set-cookie-params.php" target="_blank">PHP: session_set_cookie_params - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
               </div>
             </div>
             <div class="back-link">
