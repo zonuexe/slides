@@ -35,12 +35,12 @@ for pdf_path in "${pdf_files[@]}"; do
   base_name="$(basename "${pdf_path}" .pdf)"
   output_path="${PDF_DIR}/${base_name}.png"
 
-  tmp_output="$(mktemp "${output_path}.XXXXXX")"
+  tmp_output="$(mktemp "${output_path}.XXXXXX.png")"
   trap 'rm -f "${tmp_output}"' EXIT
 
   "${CONVERT_CMD[@]}" -quiet -density 200 "${pdf_path}[0]" \
     -thumbnail "1200x630>" -strip -background white -alpha remove -alpha off \
-    "${tmp_output}"
+    png32:"${tmp_output}"
 
   mv -f "${tmp_output}" "${output_path}"
   trap - EXIT
