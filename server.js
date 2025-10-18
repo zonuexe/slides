@@ -6,6 +6,51 @@ import { stat } from "fs/promises";
 import { readFile } from "fs/promises";
 import yaml from "js-yaml";
 
+// HTMLエスケープ関数（サーバーサイド用）
+function escapeHtml(text) {
+  if (typeof text !== 'string') return text;
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function renderNode(node) {
+  if (!node || !node.node) return '';
+
+  switch (node.node) {
+    case 'p':
+      return `<p>${node.children ? node.children.map(child => renderNode(child)).join('') : ''}</p>`;
+
+    case 'text':
+      return escapeHtml(node.content || '');
+
+    case 'bold':
+      return `<strong>${escapeHtml(node.content || '')}</strong>`;
+
+    case 'link':
+      return `<a href="${escapeHtml(node.href || '')}" target="_blank" rel="noopener noreferrer">${escapeHtml(node.content || '')}</a>`;
+
+    case 'img':
+      return '[img]';
+
+    case 'ul':
+      return `<ul>${node.children ? node.children.map(child => renderNode(child)).join('') : ''}</ul>`;
+
+    case 'li':
+      if (node.children) {
+        return `<li>${node.children.map(child => renderNode(child)).join('')}</li>`;
+      } else {
+        return `<li>${escapeHtml(node.content || '')}</li>`;
+      }
+
+    default:
+      return escapeHtml(node.content || '');
+  }
+}
+
 const app = new Hono();
 
 // サイト設定を読み込む
@@ -27,6 +72,29 @@ async function loadSiteConfig() {
     }
   }
   return siteConfig;
+}
+
+// スライドのファイル名からPDFメタデータを取得
+async function getPdfMetaByFile(filePath, slide) {
+  // slide.metaが指定されている場合はそのファイルを読み込む
+  if (slide.meta) {
+    try {
+      const metaFile = await readFile(slide.meta, 'utf8');
+      const metaData = yaml.load(metaFile);
+      return metaData;
+    } catch (error) {
+      console.error(`メタデータファイルの読み込みに失敗しました (${slide.meta}):`, error);
+    }
+  }
+
+  // デフォルト値を返す
+  return {
+    size: {
+      max_width: slide.max_width || 1024,
+      max_height: slide.max_height || 768
+    },
+    links: {}
+  };
 }
 
 // スライド一覧ページ
@@ -92,9 +160,10 @@ app.get("/slides/:slug/", async (c) => {
     const date = new Date(slide.date);
     const japaneseDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
 
-    // スライドの最大サイズを取得（デフォルト値も設定）
-    let maxWidth = slide.max_width || 1024;
-    let maxHeight = slide.max_height || 768;
+    // PDFメタデータからサイズ情報を取得
+    const pdfMeta = await getPdfMetaByFile(slide.file, slide);
+    let maxWidth = pdfMeta.size?.max_width || slide.max_width || 1024;
+    let maxHeight = pdfMeta.size?.max_height || slide.max_height || 768;
 
     // 縦幅が既定値より小さい場合は自動的にリサイズ
     const defaultMinHeight = 1024;
@@ -138,14 +207,179 @@ app.get("/slides/:slug/", async (c) => {
               --aspect-ratio: ${maxWidth} / ${maxHeight};
               --max-height: 66.67vh;
             }
+
+            .slide-info {
+              background: white;
+              border-top: 1px solid #ddd;
+              z-index: 10;
+              padding: 20px;
+              box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            }
+
+            .slide-content {
+              position: relative;
+              background: white;
+              border-top: 1px solid #ddd;
+              max-height: 50vh;
+              overflow-y: auto;
+              z-index: 5;
+              padding: 20px;
+              box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            }
+
+            .content-panes {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 30px;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+
+            .text-pane, .links-pane {
+              min-height: 200px;
+            }
+
+            .text-pane h3, .links-pane h3 {
+              margin-top: 0;
+              margin-bottom: 15px;
+              color: #333;
+              border-bottom: 2px solid #007bff;
+              padding-bottom: 5px;
+            }
+
+            .page-content {
+              margin-bottom: 30px;
+            }
+
+            .page-content h4 {
+              margin: 0 0 10px 0;
+              font-size: 16px;
+              color: #666;
+              font-weight: bold;
+              background: #f8f9fa;
+              padding: 8px 12px;
+              border-radius: 4px;
+            }
+
+            .page-text {
+              margin: 0;
+              padding-left: 20px;
+            }
+
+            .page-text li {
+              margin-bottom: 8px;
+              line-height: 1.5;
+              color: #444;
+            }
+
+            .page-links ul {
+              margin: 0;
+              padding-left: 20px;
+            }
+
+            .page-links li {
+              margin-bottom: 8px;
+            }
+
+            .page-links a {
+              color: #007bff;
+              text-decoration: none;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+
+            .page-links a:hover {
+              text-decoration: underline;
+            }
+
+            .download-section {
+              margin-bottom: 20px;
+              padding-bottom: 20px;
+              border-bottom: 1px solid #eee;
+            }
+
+            .download-section .download-btn,
+            .download-section .download-image-btn,
+            .download-section .copy-image-btn {
+              margin-right: 10px;
+              margin-bottom: 10px;
+            }
+
+            @media (max-width: 768px) {
+              .content-panes {
+                grid-template-columns: 1fr;
+                gap: 20px;
+              }
+
+              .slide-content {
+                padding: 15px;
+                max-height: 40vh; /* モバイルでは少し小さく */
+              }
+
+              .slide-info {
+                padding: 15px;
+              }
+            }
           </style>
           <script>
+            // HTMLエスケープ関数（クライアントサイド用）
+            function escapeHtml(text) {
+              const div = document.createElement('div');
+              div.textContent = text;
+              return div.innerHTML;
+            }
+
             // スライド設定をグローバル変数として定義
             window.slideConfig = {
               maxWidth: ${maxWidth},
               maxHeight: ${maxHeight},
               download: '${slide.download}'
             };
+
+            // PDFメタデータをグローバル変数として定義
+            window.pdfMeta = ${JSON.stringify(pdfMeta)};
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(\d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -181,7 +415,7 @@ app.get("/slides/:slug/", async (c) => {
                 </div>
               ` : ''}
 
-              <div style="margin-top: 20px;">
+              <div class="download-section">
                 <a href="${slidePath}" download="${slide.download}" class="download-btn">
                   <i class="fa-solid fa-download"></i> Download PDF
                 </a>
@@ -191,6 +425,46 @@ app.get("/slides/:slug/", async (c) => {
                 <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  ${pdfMeta.text && Object.keys(pdfMeta.text).length > 0 ? `
+                    ${Object.entries(pdfMeta.text).map(([pageKey, nodes]) => `
+                      <div class="page-content" id="page-${pageKey.replace('p', '')}">
+                        <h4>${pageKey.toUpperCase()}</h4>
+                        <div class="page-text">
+                          ${nodes.map(node => renderNode(node)).join('')}
+                        </div>
+                      </div>
+                    `).join('')}
+                  ` : `
+                    <p>テキスト情報がありません。</p>
+                  `}
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  ${pdfMeta.links && Object.keys(pdfMeta.links).length > 0 ? `
+                    ${Object.entries(pdfMeta.links).map(([pageKey, links]) => `
+                      <div class="page-content" id="page-${pageKey.replace('p', '')}">
+                        <h4>${pageKey.toUpperCase()}</h4>
+                        <div class="page-links">
+                          <ul>
+                            ${links.map(link => `
+                              <li><a href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.title)}</a></li>
+                            `).join('')}
+                          </ul>
+                        </div>
+                      </div>
+                    `).join('')}
+                  ` : `
+                    <p>関連リンクがありません。</p>
+                  `}
+                </div>
               </div>
             </div>
             <div class="back-link">
