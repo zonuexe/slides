@@ -17,43 +17,65 @@ text:
   p1:
   - node: p
     children:
-    - node: text
-      content: 'パッケージを作ろう！ LTCreate your PHP library/package!2017-05-22 PHP BLT #7'
+    - node: bold
+      content: パッケージを作ろう！ LT
+    - node: br
+    - node: bold
+      content: Create your PHP library/package!
+  - node: p
+    children:
+    - node: bold
+      content: '2017-05-22 PHP BLT #7'
   p2:
   - node: p
     children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: GitHub/Packagistでは id:zonuexe
+    - node: li
+      content: ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+    - node: li
+      content: フレームワークなき道にフレームを作るおしごと
+    - node: li
+      content: 最近やってること
+  - node: p
+    children:
     - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
+      content: ひたすらに要らないコードを整理したり、
+  - node: ul
+    children:
+    - node: li
+      content: コアの部分をぐにゃっとできるように悩んでるよ
+  - node: p
+    children:
     - node: text
-      content: 'GitHub/Packagistでは id:zonuexe
-
-        •ピクシブ株式会社でひたすらPHPやってる p(ixi)v
-
-        •フレームワークなき道にフレームを作るおしごと
-
-        •最近やってること
-
-        •         ひたすらに要らないコードを整理したり、•コアの部分をぐにゃっとできるように悩んでるよ
-
-        Mastodon API Client/SDK作ったよ•'
+      content: Mastodon API Client/SDK作ったよ
   p3:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: Mastodonたのしいんですよ
+      content: Mastodon
+    - node: br
+    - node: bold
+      content: たのしいんですよ
   p4:
   - node: p
     children:
-    - node: text
-      content: PHPからMastodonの
     - node: bold
-      content: '         '
-    - node: text
-      content: APIを簡単に触れるクラスを作った
+      content: PHPからMastodonの
+  - node: p
+    children:
+    - node: bold
+      content: APIを簡単に触れる
+    - node: br
+    - node: bold
+      content: クラスを作った
   p5:
   - node: p
     children:
@@ -62,426 +84,712 @@ text:
   p6:
   - node: p
     children:
+    - node: bold
+      content: コンポーザーを手
     - node: text
-      content: コンポーザーを手元に入れる方法はキータに書いた
+      content: ' '
+    - node: bold
+      content: 元に入れる方法は
+    - node: br
+    - node: bold
+      content: キータに書いた
   p7:
   - node: p
     children:
+    - node: bold
+      content: パッケージ作るときに決めること
+  - node: p
+    children:
     - node: text
-      content: 'パッケージ作るときに決めることvendor/packageパッケージ名 ()
-
-        対象PHPバージョン
-
-        ディレクトリ構成
-
-        ライセンス'
+      content: vendor/package
+  - node: p
+    children:
+    - node: text
+      content: 'パッケージ名 ( ) '
+  - node: p
+    children:
+    - node: text
+      content: '対象PHPバージョン '
+  - node: p
+    children:
+    - node: text
+      content: 'ディレクトリ構成 '
+  - node: p
+    children:
+    - node: text
+      content: ライセンス
   p8:
   - node: p
     children:
+    - node: bold
+      content: パッケージ名
+  - node: p
+    children:
     - node: text
-      content: 'パッケージ名vendor/packageパッケージ名は 形式[-0-9a-z]+ (-と数字小文字のみ)
-
-        GitHubと一致させておくと親切
-
-        zonuexe/mastodon-api にした'
+      content: vendor/package
+  - node: p
+    children:
+    - node: text
+      content: パッケージ名は
+    - node: bold
+      content: '  '
+    - node: text
+      content: 形式
+    - node: br
+    - node: text
+      content: '[-0-9a-z]+ '
+    - node: br
+    - node: text
+      content: ( -と数字小文字のみ)
+    - node: bold
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: 'GitHubと一致させておくと親切 '
+  - node: p
+    children:
+    - node: text
+      content: zonuexe/mastodon-api
+  - node: p
+    children:
+    - node: bold
+      content: ' '
+    - node: text
+      content: にした
   p9:
   - node: p
     children:
+    - node: bold
+      content: 対象PHPバージョン
+  - node: p
+    children:
+    - node: bold
+      content: どこから対応するか？ HHVM
     - node: text
-      content: '対象PHPバージョンどこから対応するか？ HHVMは？
-
-        5.3.2+
-
-         (Composer最低)5.5+
-
-         (旧安定版、サポート終了済み)7.0+
-
-         (旧安定版)5.6+, 7.1+ (現安定版)'
+      content: は？
+    - node: bold
+      content: ' '
+  - node: p
+    children:
+    - node: bold
+      content: '5.3.2+  '
+  - node: p
+    children:
+    - node: text
+      content: ' (Composer最低)'
+  - node: p
+    children:
+    - node: bold
+      content: '5.5+  '
+    - node: br
+    - node: text
+      content: ' (旧安定版、'
+    - node: bold
+      content: サポート終了済み
+    - node: text
+      content: )
+  - node: p
+    children:
+    - node: bold
+      content: '7.0+  '
+    - node: br
+    - node: text
+      content: ' (旧安定版)'
+  - node: p
+    children:
+    - node: bold
+      content: 5.6+, 7.1+
+  - node: p
+    children:
+    - node: text
+      content: ' (現安定版)'
   p10:
   - node: p
     children:
-    - node: text
-      content: ディレクトリ構成
     - node: bold
-      content: '         '
+      content: ディレクトリ構成
+  - node: p
+    children:
     - node: text
-      content: 'src/tests/拘りがなければとに置くgit init; mkdir src/ tests/;
-
-        bin/コマンドを配布したければ  に
-
-         docs/ にドキュメントを置くと、GitHub Pagesに展開できて便利'
+      content: src/ tests/
+  - node: p
+    children:
+    - node: text
+      content: 拘りがなければ と に置く
+    - node: br
+    - node: text
+      content: git init; mkdir src/ tests/;
+  - node: p
+    children:
+    - node: text
+      content: bin/
+  - node: p
+    children:
+    - node: text
+      content: コマンドを配布したければ
+    - node: bold
+      content: '   '
+    - node: text
+      content: に
+    - node: bold
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: docs/
+  - node: p
+    children:
+    - node: bold
+      content: ' '
+    - node: text
+      content: にドキュメントを置くと、
+  - node: p
+    children:
+    - node: text
+      content: GitHub Pagesに展開できて便利
   p11:
   - node: p
     children:
-    - node: text
-      content: 'オートローディングrequireモダンなPHPには最低限
-
-        include各クラスにとか書かない
-
-        composer.jsonに設定を書く
-
-         起動スクリプトでだけautoload.phpを読み込むようにする'
-  p12:
+    - node: bold
+      content: オートローディング
   - node: p
     children:
     - node: text
+      content: require
+  - node: p
+    children:
+    - node: text
+      content: 'モダンなPHPに は最低限 '
+  - node: p
+    children:
+    - node: text
+      content: include
+    - node: br
+    - node: text
+      content: '各クラスに とか書かない '
+  - node: p
+    children:
+    - node: text
+      content: composer.json
+  - node: p
+    children:
+    - node: text
+      content: 'に設定を書く '
+  - node: p
+    children:
+    - node: text
+      content: 起動スクリプトでだけ
+    - node: br
+    - node: text
+      content: autoload.php
+  - node: p
+    children:
+    - node: text
+      content: を読み込むようにする
+  p12:
+  - node: p
+    children:
+    - node: bold
       content: オートローディング(PSR-4)
+  - node: p
+    children:
     - node: bold
       content: '{'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    "autoload": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        "psr-4": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '            "Mastodon\\": "src/"'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        }'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    },'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    autoload-dev": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        "psr-4": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '            "Mastodon\\": "tests/"'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        }'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    }'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '}'
   p13:
   - node: p
     children:
+    - node: bold
+      content: オートローディング(files)
+  - node: p
+    children:
     - node: text
-      content: 'オートローディング(files)         クラスは遅延ロードできるが、関数はできないので読み込む'
+      content: クラスは遅延ロードできるが、 関数はできないので読み込む
+  - node: p
+    children:
     - node: bold
       content: '{'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    "autoload": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        "files": ["src/functions.php"]'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    },'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    "autoload-dev": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        "files": ["tests/helpers.php"]'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    }'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '}'
   p14:
   - node: p
     children:
+    - node: bold
+      content: オートローディング(classmap)
+  - node: p
+    children:
     - node: text
-      content: 'オートローディング(classmap)         名前空間とディレクトリ構成が一致しない雑なPHPも力強く読める'
+      content: 名前空間とディレクトリ構成が
+    - node: br
+    - node: text
+      content: 一致しない雑なPHPも力強く読める
+  - node: p
+    children:
     - node: bold
       content: '{'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    "autoload": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        "classmap": ["src/"]'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    },'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    "autoload-dev": {'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        "classmap": ["tests/"]'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    }'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '}'
   p15:
   - node: p
     children:
-    - node: text
-      content: 'ライセンス (利用許諾)二次利用させるためのガイドライン
-
-        '
     - node: bold
-      content: '         '
-    - node: text
-      content: '好き勝手に利用させたいならApache-2.0かMITがオススメ
-
-         他人が行なった変更を合法的に自分にも取り込みたいならGPL-3.0'
-  p16:
+      content: ライセンス
   - node: p
     children:
     - node: text
-      content: '極論(利用許諾)         ライセンスを明示せずに         ソースコードをパブリックな場所に置いてはいけない
-
-         そのソースコードを見付けたひとが         合法的に再利用することができない'
+      content: ' (利用許諾)'
+  - node: p
+    children:
+    - node: bold
+      content: '二次利用させるためのガイドライン '
+  - node: p
+    children:
+    - node: text
+      content: '好き勝手に利用させたいなら '
+    - node: bold
+      content: Apache-2.0
+    - node: text
+      content: か
+    - node: bold
+      content: MIT
+    - node: text
+      content: がオススメ
+    - node: bold
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: 他人が行なった変更を合法的に
+    - node: br
+    - node: text
+      content: 自分にも取り込みたいなら
+    - node: bold
+      content: GPL-3.0
+  p16:
+  - node: p
+    children:
+    - node: bold
+      content: 極論
+  - node: p
+    children:
+    - node: text
+      content: (利用許諾)
+  - node: p
+    children:
+    - node: text
+      content: ライセンス を明示せずに
+  - node: p
+    children:
+    - node: text
+      content: ソースコードをパブリックな場所に
+    - node: br
+    - node: text
+      content: '置いてはいけない '
+  - node: p
+    children:
+    - node: text
+      content: そのソースコードを見付けたひとが
+  - node: p
+    children:
+    - node: text
+      content: 合法的に再利用することができない
   p17:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: よしこれで準備が整った
+      content: よしこれで
+    - node: br
+    - node: bold
+      content: 準備が整った
   p18:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: パッケージを探す
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: '定番パッケージはawesome-php
-
-        https://github.com/ziadoz/awesome-php'
+      content: 定番パッケージはawesome-php
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: https://github.com/ziadoz/awesome-php
+  - node: p
+    children:
+    - node: bold
+      content: Packagistでぐぐる
     - node: text
-      content: Packagistでぐぐるhttps://packagist.org/
+      content: ' '
+    - node: bold
+      content: https://packagist.org/
   p19:
   - node: p
     children:
+    - node: bold
+      content: 鉄則
+  - node: p
+    children:
     - node: text
-      content: '鉄則composer.jsonrequireのは弄るな
-
-         composer requireはコマンドで。JSONファイルはいい感じに変更される
-
-        バージョンはいい感じに解決される'
+      content: composer.json require
+  - node: p
+    children:
+    - node: text
+      content: 'の は弄るな '
+  - node: p
+    children:
+    - node: text
+      content: composer require
+  - node: p
+    children:
+    - node: text
+      content: はコマンドで。
+  - node: p
+    children:
+    - node: text
+      content: 'JSONファイルはいい感じに変更される '
+  - node: p
+    children:
+    - node: text
+      content: バージョンはいい感じに解決される
+  - node: p
+    children:
     - node: bold
       content: $ composer require guzzlehttp/guzzle respect/validation
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: $ composer require --dev phpunit/phpunit:^4.8
   p20:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: SDKがやること
   p21:
   - node: p
     children:
-    - node: text
-      content: 'SDKのおしごとHTTPリクエストする
-
-        それをPHPにマッピングする
-
-        複雑さを隠すための工夫をする'
+    - node: bold
+      content: SDKのおしごと
+  - node: p
+    children:
+    - node: bold
+      content: 'HTTPリクエストする '
+  - node: p
+    children:
+    - node: bold
+      content: 'それをPHPにマッピングする '
+  - node: p
+    children:
+    - node: bold
+      content: 複雑さを隠すための工夫をする
   p22:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: Entity
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
       content: Mastodon本家のAPIリファレンスを
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: ひたすらひたすらひたすら写してく
     - node: text
-      content: 'ひたすらひたすらひたすら写してくhttps://github.com/tootsuite/documentation/blob/
-
-        master/Using-the-API/API.md#entities'
+      content: ' '
     - node: bold
-      content: '         '
-    - node: text
-      content: 自作のライブラリで型付けhttps://github.com/BaguettePHP/objectsystem
+      content: https://github.com/tootsuite/documentation/blob/
+  - node: p
+    children:
+    - node: bold
+      content: master/Using-the-API/API.md#entities
+  - node: p
+    children:
+    - node: bold
+      content: 自作のライブラリで型付け
+    - node: br
+    - node: bold
+      content: https://github.com/BaguettePHP/objectsystem
   p23:
   - node: p
     children:
+    - node: bold
+      content: あんまり複雑なことを見せない
+  - node: p
+    children:
     - node: text
-      content: あんまり複雑なことを見せないちょーかんたんっぽく
+      content: ちょーかんたんっぽく
+  - node: p
+    children:
     - node: bold
       content: <?php use Baguette\Mastodon as m;
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: $mastodon = m\session(
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '''pawoo.net'', $client_id, $client_secret, ['
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
-      content: '    ''scope'' => ''read write follow'','
-    - node: text
-      content: '         '
+      content: '''scope'' => ''read write follow'','
+  - node: p
+    children:
     - node: bold
-      content: '        ''grant'' => ,'
-    - node: text
-      content: '         '
+      content: '''grant'' =>  ,'
+  - node: p
+    children:
     - node: bold
-      content: '[''username'' => $mail, ''password'' => $passwd]        ]);'
-    - node: text
-      content: '          '
+      content: '[''username'' => $mail, ''password'' => $passwd]'
+  - node: p
+    children:
+    - node: bold
+      content: ']);'
+  - node: p
+    children:
     - node: bold
       content: $account = $mastodon->getAccount(42);
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: $mastodon->postStatus(m\toot('トゥートゥー'));
   p24:
   - node: p
     children:
+    - node: bold
+      content: OOPであることには拘らない
+  - node: p
+    children:
     - node: text
-      content: OOPであることには拘らないRequestするメソッド
+      content: Requestするメソッド
+    - node: br
     - node: bold
       content: public static function getAccount(
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    Client $client, SessionStorage $session, $id'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: ) {
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    v::intVal()->min(0)->assert($id);'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    return static::map('
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        Entity\Account::class,'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        $client->requestAPI(''GET'','
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
-      content: '        '
-    - node: text
-      content: '         '
+      content: sprintf('/api/v1/accounts/%d', $id), [], $session)
+  - node: p
+    children:
     - node: bold
-      content: sprintf('/api/v1/accounts/%d', $id), [], $session)    );
-    - node: text
-      content: '         '
+      content: '    );'
+  - node: p
+    children:
     - node: bold
       content: '}'
   p25:
   - node: p
     children:
+    - node: bold
+      content: 中では再帰的にクラスを生成
+  - node: p
+    children:
     - node: text
-      content: 中では再帰的にクラスを生成APIの結果をデコードしてぶっこむ
+      content: APIの結果をデコードしてぶっこむ
+    - node: br
     - node: bold
       content: public function __construct(array $properties) {
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    $this->setProperties(mapValues($properties, ['
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''account''           => Account::class,'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''reblog''            => Status::class,'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''created_at''        => \DateTimeImmutable::class,'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''media_attachments'' => [Attachment::class],'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''mentions''          => [Mention::class],'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''tags''              => [Tag::class],'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '        ''application''       => Application::class,'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '    ]));'
-    - node: text
-      content: '         '
+  - node: p
+    children:
     - node: bold
       content: '}'
   p26:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: テストの
     - node: text
-      content: テストの書きかた
+      content: ' '
+    - node: bold
+      content: 書きかた
   p27:
   - node: p
     children:
+    - node: bold
+      content: テスト
+  - node: p
+    children:
+    - node: bold
+      content: 'がんばりすぎない '
+  - node: p
+    children:
     - node: text
-      content: 'テストがんばりすぎない
-
-        踏み外したくない道をしっかり書く
-
-        HTTPリクエストはGuzzleで隠蔽'
+      content: '踏み外したくない道をしっかり書く '
+  - node: p
+    children:
+    - node: text
+      content: HTTPリクエストはGuzzleで隠蔽
   p28:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: Mastodonたのしいんですよ
+      content: Mastodon
+    - node: br
+    - node: bold
+      content: たのしいんですよ
   p29:
   - node: p
     children:
+    - node: bold
+      content: まだ未実装なAPIは
     - node: text
-      content: まだ未実装なAPIはたくさん／(^o^)＼
+      content: ' '
+    - node: bold
+      content: たくさん／(^o^)＼

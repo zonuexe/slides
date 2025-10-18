@@ -20,79 +20,351 @@ text:
   - node: p
     children:
     - node: text
-      content: '憂鬱なSQLのためのアレPHP-BLT #4'
+      content: 憂鬱なSQLのためのアレ
+  - node: p
+    children:
+    - node: text
+      content: 'PHP-BLT #4'
   p2:
   - node: p
     children:
     - node: text
-      content: '近況報告PHPカンファレンス北海道で喋ってきました         •「仕事で使えるComposer」         http://niconare.nicovideo.jp/watch/kn1371 WEB+DB Press Vol. 92に         •PHPからHTTPリクエストをする話を書きました         http://gihyo.jp/magazine/wdpress/archive/2016/vol92'
+      content: 近況報告
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス北海道で喋ってきました
+  - node: ul
+    children:
+    - node: li
+      content: 「仕事で使えるComposer」
+  - node: p
+    children:
+    - node: text
+      content: 'http://niconare.nicovideo.jp/watch/kn1371 '
+  - node: p
+    children:
+    - node: text
+      content: WEB+DB Press Vol. 92に
+  - node: ul
+    children:
+    - node: li
+      content: PHPからHTTPリクエストをする話を書きました
+  - node: p
+    children:
+    - node: text
+      content: http://gihyo.jp/magazine/wdpress/archive/2016/vol92
   p3:
   - node: p
     children:
     - node: text
-      content: '近況報告AdventCalendarではPHPマニュアルの         •バージョン番号をパースする話を書きました          http://qiita.com/tadsan/items/94e00f6fdf40d96c5072スレッドフロート掲示板を作りたかった少年時•代の代償行為として、モダンPHP、ただし         フレームワーク抜きで書き始めました         http://qiita.com/tadsan/items/cdbbb5b08591af2b110d'
+      content: 近況報告
+  - node: p
+    children:
+    - node: text
+      content: AdventCalendarではPHPマニュアルの
+  - node: ul
+    children:
+    - node: li
+      content: バージョン番号をパースする話を書きました
+  - node: p
+    children:
+    - node: text
+      content: http://qiita.com/tadsan/items/94e00f6fdf40d96c5072
+  - node: p
+    children:
+    - node: text
+      content: スレッドフロート掲示板を作りたかった少年時
+  - node: ul
+    children:
+    - node: li
+      content: 代の代償行為として、モダンPHP、ただし
+  - node: p
+    children:
+    - node: text
+      content: フレームワーク抜きで書き始めました
+  - node: p
+    children:
+    - node: text
+      content: http://qiita.com/tadsan/items/cdbbb5b08591af2b110d
   p4:
   - node: p
     children:
     - node: text
-      content: みんな大好きPDOPHP Data Objects •いろんなSQLを抽象化したオブジェクト •学生がmysqli関数使ってたけどPDOでいい
-        •あとなんか、Doctrineとか使った方がいいの?•
+      content: みんな大好きPDO
+  - node: p
+    children:
+    - node: text
+      content: 'PHP Data Objects '
+  - node: ul
+    children:
+    - node: li
+      content: いろんなSQLを抽象化したオブジェクト
+    - node: li
+      content: 学生がmysqli関数使ってたけどPDOでいい
+    - node: li
+      content: あとなんか、Doctrineとか使った方がいいの?
   p5:
   - node: p
     children:
     - node: text
-      content: Real World PHP2015年にもなって徳丸先生がPHPカンファレン•スでSQLインジェクションの話をしてるリアル O/Rマッパー使っとけｗｗｗと(cid:7972)ったところで、•世界にはまだ文字列結合SQLが眠ってる
+      content: Real World PHP
+  - node: p
+    children:
+    - node: text
+      content: 2015年にもなって徳丸先生がPHPカンファレン
+  - node: ul
+    children:
+    - node: li
+      content: スでSQLインジェクションの話をしてるリアル
+  - node: p
+    children:
+    - node: text
+      content: O/Rマッパー使っとけｗｗｗと(cid:7972)ったところで、
+  - node: ul
+    children:
+    - node: li
+      content: 世界にはまだ文字列結合SQLが眠ってる
   p6:
   - node: p
     children:
     - node: text
-      content: みんな事故る文字列結合の温床 •型を指定するのはめんどくさい •$stmt->bindValue(':id', $id, \PDO::PARAM_INT)
-        •可変個数のIN句が地雷•
+      content: みんな事故る
+  - node: p
+    children:
+    - node: text
+      content: '文字列結合の温床 '
+  - node: ul
+    children:
+    - node: li
+      content: 型を指定するのはめんどくさい
+    - node: li
+      content: $stmt->bindValue(':id', $id, \PDO::PARAM_INT)
+    - node: li
+      content: 可変個数のIN句が地雷
   p7:
   - node: p
     children:
     - node: text
-      content: Real World PHP$names = ["taro","jiro","saburo"]; $str = implode(",",
-        array_map($name){     return sprintf('"%s"', $name); }); $sql = "SELECT *
-        FROM users WHERE name IN ($str)";// ↑典型的な漏れのあるロジックの例
+      content: Real World PHP
+  - node: p
+    children:
+    - node: text
+      content: '$names = ["taro","jiro","saburo"]; '
+    - node: br
+    - node: text
+      content: '$str = implode(",", array_map($name){ '
+    - node: br
+    - node: text
+      content: '    return sprintf(''"%s"'', $name); '
+    - node: br
+    - node: text
+      content: '}); '
+    - node: br
+    - node: text
+      content: $sql = "SELECT * FROM users WHERE name IN ($str)";
+  - node: p
+    children:
+    - node: text
+      content: // ↑典型的な漏れのあるロジックの例
   p8:
   - node: p
     children:
     - node: text
-      content: PDOのラッパー作った警告：ちゃんとしたO/Rマッパーの方がいい •(会社で同僚が作ったのを)コピペして再実装した •SQL内に型が書けるDSL
-        •PDOに乗っかって、余計なことはしない •SQLインジェクションにある程度の耐性がある?•
+      content: PDOのラッパー作った
+  - node: p
+    children:
+    - node: text
+      content: '警告：ちゃんとしたO/Rマッパーの方がいい '
+  - node: ul
+    children:
+    - node: li
+      content: (会社で同僚が作ったのを)コピペして再実装した
+    - node: li
+      content: SQL内に型が書けるDSL
+    - node: li
+      content: PDOに乗っかって、余計なことはしない
+    - node: li
+      content: SQLインジェクションにある程度の耐性がある?
   p9:
   - node: p
     children:
     - node: text
-      content: 'composer require zonuexe/tetosql           https://github.com/BaguettePHP/TetoSQL'
+      content: composer require zonuexe/tetosql
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/BaguettePHP/TetoSQL
   p10:
   - node: p
     children:
     - node: text
-      content: '<?php namespace InspireBBS\Model; use Teto\SQL; /**  * 板を表現するモデル  *
-        @copyright 2016 USAMI Kenta  * @license   WTFPL  */ final class Board {     /**      *
-        @return Board[]      */     public static function findAll() {         $data
-        = SQL\Query::execute(db(), self::findAll_query, [])             ->fetchAll(\PDO::FETCH_ASSOC)
-        ?: [];         $boards = [];         foreach ($data as $b) {             $boards[]
-        = new Board($b);         }         return $boards;     }     const findAll_query
-        = ''SELECT `id`, `name`, `text` FROM `boards`''; }'
+      content: '<?php '
+    - node: br
+    - node: text
+      content: 'namespace InspireBBS\Model; '
+    - node: br
+    - node: text
+      content: 'use Teto\SQL; '
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' * 板を表現するモデル '
+    - node: br
+    - node: text
+      content: ' * @copyright 2016 USAMI Kenta '
+    - node: br
+    - node: text
+      content: ' * @license   WTFPL '
+    - node: br
+    - node: text
+      content: ' */ '
+    - node: br
+    - node: text
+      content: 'final class Board { '
+    - node: br
+    - node: text
+      content: '    /** '
+    - node: br
+    - node: text
+      content: '     * @return Board[] '
+    - node: br
+    - node: text
+      content: '     */ '
+    - node: br
+    - node: text
+      content: '    public static function findAll() { '
+    - node: br
+    - node: text
+      content: '        $data = SQL\Query::execute(db(), self::findAll_query, []) '
+    - node: br
+    - node: text
+      content: '            ->fetchAll(\PDO::FETCH_ASSOC) ?: []; '
+  - node: p
+    children:
+    - node: text
+      content: '        $boards = []; '
+    - node: br
+    - node: text
+      content: '        foreach ($data as $b) { '
+    - node: br
+    - node: text
+      content: '            $boards[] = new Board($b); '
+    - node: br
+    - node: text
+      content: '        } '
+  - node: p
+    children:
+    - node: text
+      content: '        return $boards; '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    const findAll_query = ''SELECT `id`, `name`, `text` FROM `boards`''; '
+    - node: br
+    - node: text
+      content: '}'
   p11:
   - node: p
     children:
     - node: text
-      content: 'use Teto\SQL; public static function find($id) {     $data = SQL\Query::execute(db(),
-        self::findAll_query, [         '':id'' => $id,     ])->fetchAll(\PDO::FETCH_ASSOC)
-        ?: [];     $boards = [];     foreach ($data as $b) {         $boards[] = new
-        Board($b);     }     return $boards; } const find_query = ‘     SELECT `id`,
-        `name`, `text` FROM `boards` WHERE `id` = $id@int '';'
+      content: 'use Teto\SQL; '
+    - node: br
+    - node: text
+      content: 'public static function find($id) { '
+    - node: br
+    - node: text
+      content: '    $data = SQL\Query::execute(db(), self::findAll_query, [ '
+    - node: br
+    - node: text
+      content: '        '':id'' => $id, '
+    - node: br
+    - node: text
+      content: '    ])->fetchAll(\PDO::FETCH_ASSOC) ?: []; '
+  - node: p
+    children:
+    - node: text
+      content: '    $boards = []; '
+    - node: br
+    - node: text
+      content: '    foreach ($data as $b) { '
+    - node: br
+    - node: text
+      content: '        $boards[] = new Board($b); '
+    - node: br
+    - node: text
+      content: '    } '
+  - node: p
+    children:
+    - node: text
+      content: '    return $boards; '
+    - node: br
+    - node: text
+      content: '} '
+    - node: br
+    - node: text
+      content: 'const find_query = ‘ '
+    - node: br
+    - node: text
+      content: '    SELECT `id`, `name`, `text` FROM `boards` WHERE `id` = $id@int '
+    - node: br
+    - node: text
+      content: ''';'
   p12:
   - node: p
     children:
     - node: text
-      content: '基本的なAPIどうにかしてPDOのコネクションをとっておく ••$stmt = SQL\Query::execute($con, self::find_query,             ['':id'' => $id, '':hoge'' => $hoge] ); コネクション、SQL、アサインする値を渡す •帰ってくる値はPDOStatementなので、         •いつもの感覚でfetch/fetchAllするだけ！'
+      content: 基本的なAPI
+  - node: p
+    children:
+    - node: text
+      content: 'どうにかしてPDOのコネクションをとっておく '
+  - node: ul
+    children:
+    - node: li
+      content: $stmt = SQL\Query::execute($con, self::find_query,
+  - node: p
+    children:
+    - node: text
+      content: '    ['':id'' => $id, '':hoge'' => $hoge] ); '
+  - node: p
+    children:
+    - node: text
+      content: 'コネクション、SQL、アサインする値を渡す '
+  - node: ul
+    children:
+    - node: li
+      content: 帰ってくる値はPDOStatementなので、
+  - node: ul
+    children:
+    - node: li
+      content: いつもの感覚でfetch/fetchAllするだけ！
   p13:
   - node: p
     children:
     - node: text
-      content: 'constPHPのconstは(原則)実行時に変更されない •そこにパラメータを当て嵌めるだけ、なのは         •なんとなく心理的な安心感がある (本当か?)お気付きだろうか… •このコードがPSR-1違反であることに…•'
+      content: const
+    - node: br
+    - node: text
+      content: 'PHPのconstは(原則)実行時に変更されない '
+  - node: ul
+    children:
+    - node: li
+      content: そこにパラメータを当て嵌めるだけ、なのは
+  - node: ul
+    children:
+    - node: li
+      content: なんとなく心理的な安心感がある (本当か?)
+  - node: p
+    children:
+    - node: text
+      content: 'お気付きだろうか… '
+  - node: ul
+    children:
+    - node: li
+      content: このコードがPSR-1違反であることに…

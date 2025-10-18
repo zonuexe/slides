@@ -15,77 +15,195 @@ text:
   p1:
   - node: p
     children:
+    - node: bold
+      content: プログラミング環境
     - node: text
-      content: '         プログラミング環境としての'
+      content: としての
+  - node: p
+    children:
     - node: bold
       content: Introducing PHP as a Programming Environment
-    - node: text
-      content: '         #opendevcon2017-08-19 NEEC Kamata Open Developers Conference 2017 Tokyo'
-  p2:
   - node: p
     children:
     - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
+      content: '#opendevcon'
+  - node: p
+    children:
     - node: text
-      content: 'GitHub/Packagistでは id: zonuexe
-
-        •ピクシブ株式会社でひたすらPHPやってる p(ixi)v
-
-        •フレームワークなき道にフレームを作るおしごと
-
-        •Qiitaに記事を書いたり変なコメントしてるよ
-
-        •最近やってること
-
-        '
-    - node: text
-      content: '万難が排されつつあるのでPHP7 移行
-
-        •えいやえいやとテスト書いたり直したりしてる•'
+      content: '2017-08-19 NEEC Kamata '
+    - node: br
+    - node: bold
+      content: Open Developers Conference 2017 Tokyo
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: 'GitHub/Packagistでは id: zonuexe'
+    - node: li
+      content: ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+    - node: li
+      content: フレームワークなき道にフレームを作るおしごと
+    - node: li
+      content: Qiitaに記事を書いたり変なコメントしてるよ
+    - node: li
+      content: 最近やってること
+    - node: li
+      content: 万難が排されつつあるのでPHP7 移行
+    - node: li
+      content: えいやえいやとテスト書いたり直したりしてる
   p3:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 最初に覚えてほしいこと
+      content: 最初に
+    - node: br
+    - node: bold
+      content: 覚えてほしいこと
   p4:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 現在の安定版は7.1系です
+      content: 現在の安定版は
+    - node: br
+    - node: bold
+      content: 7.1系です
   p5:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 質問です
   p6:
   - node: p
     children:
     - node: text
-      content: '         あなたの想像するPHPコードはどれ？'
+      content: あなたの想像する
+    - node: br
+    - node: bold
+      content: PHPコード
+    - node: text
+      content: はどれ？
   p7:
   - node: p
     children:
+    - node: bold
+      content: A
+  - node: p
+    children:
     - node: text
-      content: 'A<!DOCTYPE html>         <html><head><title>Hello, PHP!</title></head> <p> <?php if (date(''H'') <
-        19): ?>      こんにちは         <?php else: ?>              こんばんは         <?php endif; ?>         </p> <p>今は<?= htmlspecialchars(date(''H'')) ?>時です</p>'
+      content: <!DOCTYPE html>
+  - node: p
+    children:
+    - node: text
+      content: '<html><head><title>Hello, PHP!</title></head> '
+    - node: br
+    - node: text
+      content: '<p> '
+    - node: br
+    - node: text
+      content: '<?php if (date(''H'') < 19): ?> '
+    - node: br
+    - node: text
+      content: '     こんにちは'
+  - node: p
+    children:
+    - node: text
+      content: '<?php else: ?>'
+  - node: p
+    children:
+    - node: text
+      content: '     こんばんは'
+  - node: p
+    children:
+    - node: text
+      content: <?php endif; ?>
+  - node: p
+    children:
+    - node: text
+      content: '</p> '
+    - node: br
+    - node: text
+      content: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
   p8:
   - node: p
     children:
-    - node: text
-      content: 'B<?php require ''bootstrap.php'';         $db = mysqli_connect(); $stmt = mysqli_prepare($db, ''SELECT * FROM books'');         mysqli_stmt_execute($stmt);         print ''<h1>本の一覧</h1>'';         print ''<ul>'';         foreach ($stmt as $s) {     print ''<li>''; print $s->name; print ''</li>'';         } print ''</ul>'';'
-  p9:
+    - node: bold
+      content: B
   - node: p
     children:
     - node: text
-      content: 'C<?php         namespace Hoge\Http\Controller; class BooksController extends BaseController
-        {     public function index() {         $books = Books::getAll();         $this->render(compact("books"));     }
-        }'
+      content: <?php require 'bootstrap.php';
+  - node: p
+    children:
+    - node: text
+      content: '$db = mysqli_connect(); '
+    - node: br
+    - node: text
+      content: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
+  - node: p
+    children:
+    - node: text
+      content: mysqli_stmt_execute($stmt);
+  - node: p
+    children:
+    - node: text
+      content: print '<h1>本の一覧</h1>';
+  - node: p
+    children:
+    - node: text
+      content: print '<ul>';
+  - node: p
+    children:
+    - node: text
+      content: 'foreach ($stmt as $s) { '
+    - node: br
+    - node: text
+      content: '    print ''<li>''; print $s->name; print ''</li>'';'
+  - node: p
+    children:
+    - node: text
+      content: '} '
+    - node: br
+    - node: text
+      content: print '</ul>';
+  p9:
+  - node: p
+    children:
+    - node: bold
+      content: C
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'namespace Hoge\Http\Controller; '
+    - node: br
+    - node: text
+      content: 'class BooksController extends BaseController { '
+    - node: br
+    - node: text
+      content: '    public function index() { '
+    - node: br
+    - node: text
+      content: '        $books = Books::getAll(); '
+  - node: p
+    children:
+    - node: text
+      content: '        $this->render(compact("books")); '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '}'
   p10:
   - node: p
     children:
@@ -94,150 +212,380 @@ text:
   p11:
   - node: p
     children:
+    - node: bold
+      content: よくあるPHPのコード分類
+  - node: p
+    children:
+    - node: bold
+      content: 'A: '
     - node: text
-      content: 'よくあるPHPのコード分類         A: HTMLの条件分岐と値の出力         B: DBの内容をHTMLとして出力         C: クラス定義だけ書かれたコード'
+      content: HTMLの条件分岐と値の出力
+  - node: p
+    children:
+    - node: bold
+      content: 'B: '
+    - node: text
+      content: DBの内容をHTMLとして出力
+  - node: p
+    children:
+    - node: bold
+      content: 'C: '
+    - node: text
+      content: クラス定義だけ書かれたコード
   p12:
   - node: p
     children:
+    - node: bold
+      content: よくあるPHPのコード分類
+  - node: p
+    children:
+    - node: bold
+      content: 'A: '
     - node: text
-      content: 'よくあるPHPのコード分類         A: HTMLの条件分岐と値の出力↑ SSI的PHP
-
-         B: DBの内容をHTMLとして出力↑ CGI的PHP
-
-         C: クラス定義だけ書かれたコード↑ フレームワーク的PHP'
+      content: HTMLの条件分岐と値の出力
+    - node: br
+    - node: bold
+      content: '↑ SSI的PHP '
+  - node: p
+    children:
+    - node: bold
+      content: 'B: '
+    - node: text
+      content: DBの内容をHTMLとして出力
+    - node: br
+    - node: bold
+      content: '↑ CGI的PHP '
+  - node: p
+    children:
+    - node: bold
+      content: 'C: '
+    - node: text
+      content: クラス定義だけ書かれたコード
+    - node: br
+    - node: bold
+      content: ↑ フレームワーク的PHP
   p13:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: 割とどうとでも
     - node: text
-      content: 割とどうとでも書けるのがPHP
+      content: ' '
+    - node: bold
+      content: 書けるのがPHP
   p14:
   - node: p
     children:
+    - node: bold
+      content: PHPの実行手順のイメージ
+  - node: p
+    children:
+    - node: bold
+      content: コードを書く
     - node: text
-      content: 'PHPの実行手順のイメージコードを書く (or 既製コードを準備)
-
-        レンタルサーバーを借ります
-
-        (S)FTPで.phpファイルを転送します
-
-        デプロイ完了 ＼(^o^)／'
+      content: ' (or 既製コードを準備) '
+  - node: p
+    children:
+    - node: text
+      content: 'レンタルサーバーを借ります '
+  - node: p
+    children:
+    - node: text
+      content: '(S)FTPで.phpファイルを転送します '
+  - node: p
+    children:
+    - node: bold
+      content: デプロイ完了
+    - node: text
+      content: ' ＼(^o^)／'
   p15:
   - node: p
     children:
     - node: text
-      content: '         PHPで書くとURLに.phpって付くのでは??'
+      content: PHPで書くとURLに
+    - node: br
+    - node: text
+      content: .php
+  - node: p
+    children:
+    - node: text
+      content: って付くのでは??
   p16:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: そんなことはない
+    - node: br
     - node: text
-      content: そんなことはない(そんなこともある)
+      content: (そんなこともある)
   p17:
   - node: p
     children:
+    - node: bold
+      content: ディレクトリ配置のイメージ
+    - node: br
     - node: text
-      content: ディレクトリ配置のイメージこれをなphp-project/ ├── inc │   └── bootstrap.php └── public  (ドキュメントルート)    ├──
-        index.php     ├── login.php     ├── logout.php     └── terms.html
-  p18:
+      content: これをな
+    - node: br
+    - node: text
+      content: 'php-project/ ├── inc '
+    - node: br
+    - node: text
+      content: '│   └── bootstrap.php '
+    - node: br
+    - node: text
+      content: '└── public   '
   - node: p
     children:
     - node: text
-      content: ディレクトリ配置のイメージこうじゃphp-project/ ├── inc │   ├── bootstrap.php │   └──
-        routes.php └── public  (ドキュメントルート)    ├── .htaccess  (Apacheの場合)    └── index.php
+      content: (ドキュメントルート)
+  - node: p
+    children:
+    - node: text
+      content: '    ├── index.php     ├── login.php     ├── logout.php     └── terms.html'
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: ディレクトリ配置のイメージ
+    - node: br
+    - node: text
+      content: こうじゃ
+    - node: br
+    - node: text
+      content: 'php-project/ ├── inc '
+    - node: br
+    - node: text
+      content: '│   ├── bootstrap.php '
+    - node: br
+    - node: text
+      content: '│   └── routes.php '
+    - node: br
+    - node: text
+      content: '└── public   '
+  - node: p
+    children:
+    - node: text
+      content: (ドキュメントルート)
+  - node: p
+    children:
+    - node: text
+      content: '    ├── .htaccess   '
+  - node: p
+    children:
+    - node: text
+      content: (Apacheの場合)
+  - node: p
+    children:
+    - node: text
+      content: '    └── index.php'
   p19:
   - node: p
     children:
     - node: text
-      content: このPHPを動かすにはどうすればいいの
+      content: このPHPを動かすに はどうすればいいの
   p20:
   - node: p
     children:
+    - node: bold
+      content: PHPの動作方法にはいろいろある
+  - node: p
+    children:
+    - node: bold
+      content: 'Server API (SAPI) と呼ばれる '
+  - node: p
+    children:
     - node: text
-      content: 'PHPの動作方法にはいろいろあるServer API (SAPI) と呼ばれる
-
-        clicli-serverコマンドライン (, )
-
-        apacheApache+mod_php ()
-
-        cgi-fcgiCGI ()
-
-        fpm-fcgiPHP-FPM ()'
+      content: cli cli-server
+  - node: p
+    children:
+    - node: bold
+      content: 'コマンドライン ( ,  ) '
+  - node: p
+    children:
+    - node: text
+      content: apache
+  - node: p
+    children:
+    - node: bold
+      content: 'Apache+mod_php ( ) '
+  - node: p
+    children:
+    - node: text
+      content: cgi-fcgi
+    - node: br
+    - node: bold
+      content: 'CGI ( ) '
+  - node: p
+    children:
+    - node: text
+      content: fpm-fcgi
+  - node: p
+    children:
+    - node: bold
+      content: PHP-FPM ( )
   p21:
   - node: p
     children:
-    - node: text
-      content: どこでPHPを動かせばいいか
     - node: bold
-      content: '         '
-    - node: text
-      content: '何も考えずにレンタルサーバ借りて、ファイルを適当に転送すれば動く
-
-        HerokuとかPaaSでも簡単に動く
-
-        オンプレとかVPSとかでアプリケーションサーバーを実行する方法もある'
+      content: どこでPHPを動かせばいいか
+  - node: p
+    children:
+    - node: bold
+      content: 何も考えずにレンタルサーバ借りて、
+    - node: br
+    - node: bold
+      content: 'ファイルを適当に転送すれば動く '
+  - node: p
+    children:
+    - node: bold
+      content: 'HerokuとかPaaSでも簡単に動く '
+  - node: p
+    children:
+    - node: bold
+      content: オンプレとかVPSとかでアプリケー
+    - node: br
+    - node: bold
+      content: ションサーバーを実行する方法もある
   p22:
   - node: p
     children:
-    - node: text
-      content: テストするだけならPHPだけあればok
+    - node: bold
+      content: テストするだけなら
+    - node: br
+    - node: bold
+      content: PHPだけあればok
   p23:
   - node: p
     children:
     - node: text
-      content: php -S localhost:8989 index.php
+      content: 'php -S '
+    - node: br
+    - node: text
+      content: localhost:8989 index.php
   p24:
   - node: p
     children:
+    - node: bold
+      content: ビルトインサーバー
+    - node: br
     - node: text
-      content: 'ビルトインサーバーphp -S() PHP5.4以降
-
-        開発用の簡易HTTP鯖'
+      content: php -S
+    - node: br
+    - node: bold
+      content: '( ) PHP5.4以降 '
+    - node: text
+      content: 開発用の簡易HTTP鯖
   p25:
   - node: p
     children:
     - node: text
-      content: .htaccessよくある (Apache HTTPd)#.php  ファイルがあったら、それを返す(なら実行)# index.php
-        存在しなかったら、を実行RewriteCond %{REQUEST_FILENAME} !-f RewriteRule ^ index.php [QSA,L]
+      content: .htaccess
+  - node: p
+    children:
+    - node: bold
+      content: よくある
+  - node: p
+    children:
+    - node: text
+      content: ' (Apache HTTPd)'
+  - node: p
+    children:
+    - node: text
+      content: '# .php  '
+    - node: br
+    - node: text
+      content: ' ファイルがあったら、それを返す( なら実行)'
+    - node: br
+    - node: text
+      content: '#  index.php  '
+    - node: br
+    - node: text
+      content: 存在しなかったら、 を実行
+    - node: br
+    - node: text
+      content: 'RewriteCond %{REQUEST_FILENAME} !-f '
+    - node: br
+    - node: text
+      content: RewriteRule ^ index.php [QSA,L]
   p26:
   - node: p
     children:
     - node: text
-      content: 'routes.php愚直な <?php $path = substr(explode(''?'',  $_SERVER[''REQUEST_URI''],
-        2)[0], 1);         $is_post = $_SERVER[''REQUEST_METHOD''] === ''POST'';         if ($is_get && $path === ''/'') {     show_index(); return; } elseif ($path
-        === ''/login'') {     $is_post ? post_login() : show_login(); return; } http_response_code(404);
-        echo "ないよー";'
-  p27:
+      content: routes.php
+  - node: p
+    children:
+    - node: bold
+      content: '愚直な '
   - node: p
     children:
     - node: text
-      content: これを毎回自分で書くのは
-    - node: bold
-      content: '         '
+      content: '<?php '
+    - node: br
     - node: text
-      content: ちょっぴり大変なので、フレームワークを利用する
+      content: $path = substr(explode('?',  $_SERVER['REQUEST_URI'], 2)[0], 1);
+  - node: p
+    children:
+    - node: text
+      content: $is_post = $_SERVER['REQUEST_METHOD'] === 'POST';
+  - node: p
+    children:
+    - node: text
+      content: 'if ($is_get && $path === ''/'') { '
+    - node: br
+    - node: text
+      content: '    show_index(); return; '
+    - node: br
+    - node: text
+      content: '} elseif ($path === ''/login'') { '
+    - node: br
+    - node: text
+      content: '    $is_post ? post_login() : show_login(); return; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: 'http_response_code(404); '
+    - node: br
+    - node: text
+      content: echo "ないよー";
+  p27:
+  - node: p
+    children:
+    - node: bold
+      content: これを毎回自分で書くのは
+  - node: p
+    children:
+    - node: bold
+      content: ちょっぴり大変なので、
+    - node: br
+    - node: bold
+      content: フレームワークを利用する
   p28:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: PHP
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: micro framework
+    - node: br
     - node: text
-      content: micro frameworkSlim, Lumen など
+      content: Slim, Lumen など
   p29:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: シンプルなルーティ
+    - node: br
+    - node: bold
+      content: 'ングがしたかった '
+    - node: br
     - node: text
-      content: 'シンプルなルーティングがしたかった
-
-        https://qiita.zonu.me/simple-routing'
+      content: https://qiita.zonu.me/simple-routing
   p30:
   - node: p
     children:
@@ -247,225 +595,720 @@ text:
   - node: p
     children:
     - node: text
-      content: PHPには「protected属性」も「仮想メソッド」もありますよ。情報学科の教官が「重要だ」っていうやつは何でもね。僕自身は、こんなものどうでもいいと思ってますけど。–Rasmus
-        Lerdorf 伝説の作者「」名言集を聞くと嫌厨がファビョる
+      content: PHPには「protected属性」も「仮想メソッ ド」もありますよ。情報学科の教官が「重 要だ」っていうやつは何でもね。僕自身は、
+        こんなものどうでもいいと思ってますけど。
+    - node: br
     - node: bold
-      content: '         '
+      content: '–Rasmus Lerdorf '
+    - node: br
     - node: text
-      content: 'PHPRasmus LerdorfPHPの訳を抜萃https://anond.hatelabo.jp/20100427231539 '
+      content: 伝説の 作者「 」名言集を聞くと嫌 厨がファビョる
+  - node: p
+    children:
+    - node: bold
+      content: PHP Rasmus Lerdorf PHP
+  - node: p
+    children:
+    - node: text
+      content: の訳を抜萃
+  - node: p
+    children:
+    - node: bold
+      content: 'https://anond.hatelabo.jp/20100427231539 '
   p32:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 実際ふつうの言語にある機能はだいたいある
+      content: 実際ふつうの言語にある
+    - node: br
+    - node: bold
+      content: 機能はだいたいある
   p33:
   - node: p
     children:
-    - node: text
-      content: Linux, *BSD, macOS, Windows
+    - node: bold
+      content: 'Linux, *BSD, '
+    - node: br
+    - node: bold
+      content: macOS, Windows
   p34:
   - node: p
     children:
-    - node: text
-      content: RubyやPythonで書けること
     - node: bold
-      content: '         '
+      content: RubyやPythonで書けること
+  - node: p
+    children:
+    - node: bold
+      content: は概ねできると思ってよい
     - node: text
-      content: は概ねできると思ってよい(異常に苦手なことはある)
+      content: ' '
+    - node: bold
+      content: (異常に苦手なことはある)
   p35:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 'Cっぽさ、Perlっぽさ、そこはかとないJavaっぽさ
-
-        (結果としてどれでもない雑然とした感じ)'
+      content: Cっぽさ、Perlっぽさ、
+    - node: br
+    - node: bold
+      content: そこはかとないJavaっぽさ (結果としてどれでもない雑然とした感じ)
   p36:
   - node: p
     children:
+    - node: bold
+      content: Cっぽいコード
+  - node: p
+    children:
     - node: text
-      content: 'Cっぽいコード<?php         $fp = fopen(''input.txt'', ''r''); $i = 0; while (($line = fgets($fp, 4096))
-        !== false) {     printf("%d: %s", ++$i, $line); }'
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '$fp = fopen(''input.txt'', ''r''); '
+    - node: br
+    - node: text
+      content: '$i = 0; '
+  - node: p
+    children:
+    - node: text
+      content: 'while (($line = fgets($fp, 4096)) !== false) { '
+    - node: br
+    - node: text
+      content: '    printf("%d: %s", ++$i, $line); '
+    - node: br
+    - node: text
+      content: '}'
   p37:
   - node: p
     children:
-    - node: text
-      content: 'Perlっぽいコード<?php $con = mysqli_connect() or die(1);          # ただし、現在は例外を利用すべき# テストもしにくくなるので非推奨'
-  p38:
+    - node: bold
+      content: Perlっぽいコード
   - node: p
     children:
     - node: text
-      content: 'Javaっぽいコード<?php abstract class Foo {              abstract function sample($n);         } final class Bar extends Foo implements Hoge {     public function sample($n)
-        {         if (!is_numeric($n)) {             throw new InvalidArgumentException("errorMsg");         }     }
-        } $bar = new Bar(); $bar->sampleCode(128);'
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$con = mysqli_connect() or die(1); '
+  - node: p
+    children:
+    - node: text
+      content: '# '
+    - node: br
+    - node: text
+      content: ただし、現在は例外を利用すべき
+    - node: br
+    - node: text
+      content: '# '
+    - node: br
+    - node: text
+      content: テストもしにくくなるので非推奨
+  p38:
+  - node: p
+    children:
+    - node: bold
+      content: Javaっぽいコード
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+    - node: br
+    - node: text
+      content: abstract class Foo {
+  - node: p
+    children:
+    - node: text
+      content: '     abstract function sample($n);'
+  - node: p
+    children:
+    - node: text
+      content: '} '
+    - node: br
+    - node: text
+      content: 'final class Bar extends Foo implements Hoge { '
+    - node: br
+    - node: text
+      content: '    public function sample($n) {         if (!is_numeric($n)) { '
+    - node: br
+    - node: text
+      content: '            throw new InvalidArgumentException("errorMsg"); '
+    - node: br
+    - node: text
+      content: '        } '
+    - node: br
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: $bar = new Bar(); $bar->sampleCode(128);
   p39:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: PHPの基本構文
+      content: PHPの
+    - node: br
+    - node: bold
+      content: 基本構文
   p40:
   - node: p
     children:
+    - node: bold
+      content: データ型・リテラル
+  - node: p
+    children:
     - node: text
-      content: 'データ型・リテラル<?php         // 全ての変数は $ から始まる $string = ''string'' . "value"; $array  = [1, 2, 3]; $bool   =
-        true; $int    = 56789; $float  = 1.234; $obj1   = new stdClass; $obj2   =
-        (object)["name" => "Miku", "age" => 16];'
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '// 全ての変数は $ から始まる $string = ''string'' . "value"; '
+    - node: br
+    - node: text
+      content: '$array  = [1, 2, 3]; '
+    - node: br
+    - node: text
+      content: '$bool   = true; $int    = 56789; $float  = 1.234; '
+    - node: br
+    - node: text
+      content: '$obj1   = new stdClass; '
+    - node: br
+    - node: text
+      content: $obj2   = (object)["name" => "Miku", "age" => 16];
   p41:
   - node: p
     children:
+    - node: bold
+      content: 関数定義
+  - node: p
+    children:
     - node: text
-      content: '関数定義<?php         namespace zonuexe; function triangle_area(float $h, float $b) :float {     return
-        $h * $b / 2; } function triangle_area($h, $b) {     return $h * $b / 2; }'
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'namespace zonuexe; '
+  - node: p
+    children:
+    - node: text
+      content: 'function triangle_area(float $h, float $b) :float { '
+    - node: br
+    - node: text
+      content: '    return $h * $b / 2; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: 'function triangle_area($h, $b) { '
+    - node: br
+    - node: text
+      content: '    return $h * $b / 2; '
+    - node: br
+    - node: text
+      content: '}'
   p42:
   - node: p
     children:
-    - node: text
-      content: 関数・クラス定義の注意
     - node: bold
-      content: '         '
+      content: 関数・クラス定義の注意
+  - node: p
+    children:
+    - node: bold
+      content: RubyやPythonでは関数(メソッド)を
+    - node: br
+    - node: bold
+      content: 再定義したり、定義済みクラスに定義を
     - node: text
-      content: 'RubyやPythonでは関数(メソッド)を再定義したり、定義済みクラスに定義を追加できる
-
-        (オープンクラス、モンキーパッチング)その代り特定のクラスが複数ファイルに分割されることがないのでわかりやすい'
+      content: ' '
+    - node: bold
+      content: '追加できる  '
+  - node: p
+    children:
+    - node: bold
+      content: (オープンクラス、モンキーパッチング)
+  - node: p
+    children:
+    - node: bold
+      content: その代り特定のクラスが複数ファイルに
+    - node: text
+      content: ' '
+    - node: bold
+      content: 分割されることがないのでわかりやすい
   p43:
   - node: p
     children:
+    - node: bold
+      content: クロージャ
+  - node: p
+    children:
     - node: text
-      content: 'クロージャ<?php         $h = function($s) {     return htmlspecialchars($s, ENT_QUOTES, ''UTF-8'');
-        }; $array = array_map($h, getNames());'
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '$h = function($s) { '
+    - node: br
+    - node: text
+      content: '    return htmlspecialchars($s, ENT_QUOTES, ''UTF-8''); '
+    - node: br
+    - node: text
+      content: '}; '
+  - node: p
+    children:
+    - node: text
+      content: $array = array_map($h, getNames());
   p44:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: PHPの良い言語機能
+      content: PHPの
+    - node: br
+    - node: bold
+      content: 良い言語機能
   p45:
   - node: p
     children:
+    - node: bold
+      content: array
+  - node: p
+    children:
     - node: text
-      content: array<?php $old_num = array(1, 2, 3); $fruits = ["りんご", "ばなな", "みかん"];
-        $tadsan = [     "name" => "めぐりねるか",     "age"  => 28,     "from" => "北海道",
-        ];
+      content: '<?php '
+    - node: br
+    - node: text
+      content: '$old_num = array(1, 2, 3); '
+    - node: br
+    - node: text
+      content: '$fruits = ["りんご", "ばなな", "みかん"]; '
+  - node: p
+    children:
+    - node: text
+      content: '$tadsan = [ '
+    - node: br
+    - node: text
+      content: '    "name" => "めぐりねるか", '
+    - node: br
+    - node: text
+      content: '    "age"  => 28, '
+    - node: br
+    - node: text
+      content: '    "from" => "北海道", '
+    - node: br
+    - node: text
+      content: '];'
   p46:
   - node: p
     children:
+    - node: bold
+      content: foreach
+  - node: p
+    children:
     - node: text
-      content: foreach<?php $fruits = ["りんご", "ばなな", "みかん"]; for ($i = 0; $i < count($fruits);
-        $i++) {     printf("%s\n", $fruits[$i]); } foreach ($fruits as $fruit) {     printf("%s\n",
-        $fruit); }
+      content: '<?php '
+    - node: br
+    - node: text
+      content: '$fruits = ["りんご", "ばなな", "みかん"]; '
+  - node: p
+    children:
+    - node: text
+      content: 'for ($i = 0; $i < count($fruits); $i++) { '
+    - node: br
+    - node: text
+      content: '    printf("%s\n", $fruits[$i]); '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: 'foreach ($fruits as $fruit) {     printf("%s\n", $fruit); '
+    - node: br
+    - node: text
+      content: '}'
   p47:
   - node: p
     children:
+    - node: bold
+      content: ジェネレータ
+  - node: p
+    children:
     - node: text
-      content: 'ジェネレータ<?php function fizzbuzz ($to) {     for ($i = 1; $i <= $to;
-        $i++) {         $s = "";         if ($i % 3 == 0) { $s .= "Fizz"; }         if
-        ($i % 5 == 0) { $s .= "Buzz"; }         yield ($s === "") ? $i : $s;    }
-        }'
+      content: '<?php '
+    - node: br
+    - node: text
+      content: 'function fizzbuzz ($to) { '
+    - node: br
+    - node: text
+      content: '    for ($i = 1; $i <= $to; $i++) { '
+    - node: br
+    - node: text
+      content: '        $s = ""; '
+    - node: br
+    - node: text
+      content: '        if ($i % 3 == 0) { $s .= "Fizz"; }         if ($i % 5 == 0)
+        { $s .= "Buzz"; } '
+    - node: br
+    - node: text
+      content: '        yield ($s === "") ? $i : $s; '
+    - node: br
+    - node: text
+      content: '   } '
+    - node: br
+    - node: text
+      content: '}'
   p48:
   - node: p
     children:
+    - node: bold
+      content: ジェネレータ + foreach
+  - node: p
+    children:
     - node: text
-      content: 'ジェネレータ + foreach//  フィボナッチ数列を順に出力するforeach (fizzbuzz(100) as $f) {     echo
-        $f, PHP_EOL; } // これを応用すれば、函数型プログラミングの         //  遅延リスト(無限リスト)を簡単に実装できる！'
+      content: '//   '
+    - node: br
+    - node: text
+      content: フィボナッチ数列を順に出力する
+    - node: br
+    - node: text
+      content: 'foreach (fizzbuzz(100) as $f) { '
+    - node: br
+    - node: text
+      content: '    echo $f, PHP_EOL; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: これを応用すれば、函数型プログラミングの
+  - node: p
+    children:
+    - node: text
+      content: '//   '
+    - node: br
+    - node: text
+      content: 遅延リスト(無限リスト)を簡単に実装できる！
   p49:
   - node: p
     children:
+    - node: bold
+      content: callable (文字列)
+  - node: p
+    children:
     - node: text
-      content: callable (文字列)<?php $func= "strlen"; echo $func("abcde"); //=> 5 $ary
-        = ["a", "bc", "desc", "hello"]; $bry = array_map("strlen", $ary); //=> [1,
-        2, 3, 4, 5]
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$func= "strlen"; '
+    - node: br
+    - node: text
+      content: 'echo $func("abcde"); //=> 5 '
+  - node: p
+    children:
+    - node: text
+      content: '$ary = ["a", "bc", "desc", "hello"]; '
+    - node: br
+    - node: text
+      content: '$bry = array_map("strlen", $ary); '
+    - node: br
+    - node: text
+      content: //=> [1, 2, 3, 4, 5]
   p50:
   - node: p
     children:
+    - node: bold
+      content: callable (そのほか)
+  - node: p
+    children:
     - node: text
-      content: 'callable (そのほか)<?php $dt = new DateTime; $method = [$dt, "getTimeStamp"];
-        echo $method(); // 1503115455 echo $dt->getTimeStamp();         // 1503115455 '
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$dt = new DateTime; '
+    - node: br
+    - node: text
+      content: '$method = [$dt, "getTimeStamp"]; '
+  - node: p
+    children:
+    - node: text
+      content: 'echo $method(); // 1503115455 '
+    - node: br
+    - node: text
+      content: echo $dt->getTimeStamp();
+  - node: p
+    children:
+    - node: text
+      content: '// 1503115455 '
   p51:
   - node: p
     children:
-    - node: text
-      content: Reflection<?php function sampleFnc($a, $b, $c = null){} $ref = new
-        ReflectionFunction("sampleFnc"); echo $ref->getNumberOfParameters(); //=>
-        3 echo $ref->getNumberOfRequiredParameters(); //=> 2
-  p52:
+    - node: bold
+      content: Reflection
   - node: p
     children:
     - node: text
-      content: Webプログラミングに適した機能
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'function sampleFnc($a, $b, $c = null){} '
+  - node: p
+    children:
+    - node: text
+      content: '$ref = new ReflectionFunction("sampleFnc"); '
+    - node: br
+    - node: text
+      content: 'echo $ref->getNumberOfParameters(); '
+    - node: br
+    - node: text
+      content: '//=> 3 '
+    - node: br
+    - node: text
+      content: 'echo $ref->getNumberOfRequiredParameters(); '
+    - node: br
+    - node: text
+      content: //=> 2
+  p52:
+  - node: p
+    children:
+    - node: bold
+      content: Webプログラミン
+    - node: br
+    - node: bold
+      content: グに適した機能
   p53:
   - node: p
     children:
     - node: text
-      content: '         実はPHPのWebはCGIの世界観printHTMLを  したりすると出力される'
+      content: 実はPHPのWebはCGIの世界観
+    - node: br
+    - node: text
+      content: print
+    - node: br
+    - node: text
+      content: HTMLを   したりすると
+    - node: br
+    - node: text
+      content: 出力される
   p54:
   - node: p
     children:
+    - node: bold
+      content: テンプレート
+  - node: p
+    children:
     - node: text
-      content: 'テンプレート<?php // HTTPヘッダはボディよりも先に出力する header("Content-Type: text/plain;");
-        echo "apple\n"; ?> orange banana <?= getMelon() ?> <?php function getMelon(){
-        return "melon"; }'
+      content: '<?php '
+    - node: br
+    - node: text
+      content: '// HTTPヘッダはボディよりも先に出力する '
+    - node: br
+    - node: text
+      content: 'header("Content-Type: text/plain;"); '
+    - node: br
+    - node: text
+      content: 'echo "apple\n"; '
+    - node: br
+    - node: text
+      content: '?> '
+    - node: br
+    - node: text
+      content: 'orange banana '
+    - node: br
+    - node: text
+      content: '<?= getMelon() ?> '
+    - node: br
+    - node: text
+      content: <?php function getMelon(){ return "melon"; }
   p55:
   - node: p
     children:
     - node: text
-      content: '         ?>ほげ<?php 実は はecho "ほげ"; と同じ'
+      content: '?>ほげ<?php '
+    - node: br
+    - node: text
+      content: 実は  は
+    - node: br
+    - node: text
+      content: echo "ほげ";
+  - node: p
+    children:
+    - node: text
+      content: ' と同じ'
   p56:
   - node: p
     children:
+    - node: bold
+      content: テンプレート
+  - node: p
+    children:
     - node: text
-      content: 'テンプレート<?php $n = trim(fgets(fopen(''php://stdin'', ''r'')));          for ($i = 1; $i <= $n; $i++) {             if ($i % 3 === 0) { ?>Fizz<?php }             if ($i % 5 === 0) { ?>Buzz<?php }             elseif ($i % 3 !== 0) echo $i;         ?>          <?php }'
+      content: <?php $n = trim(fgets(fopen('php://stdin', 'r')));
+  - node: p
+    children:
+    - node: text
+      content: for ($i = 1; $i <= $n; $i++) {
+  - node: p
+    children:
+    - node: text
+      content: '    if ($i % 3 === 0) { ?>Fizz<?php }'
+  - node: p
+    children:
+    - node: text
+      content: '    if ($i % 5 === 0) { ?>Buzz<?php }'
+  - node: p
+    children:
+    - node: text
+      content: '    elseif ($i % 3 !== 0) echo $i;'
+  - node: p
+    children:
+    - node: text
+      content: ?>
+  - node: p
+    children:
+    - node: text
+      content: <?php }
   p57:
   - node: p
     children:
+    - node: bold
+      content: 出力バッファリング
+  - node: p
+    children:
     - node: text
-      content: 出力バッファリング<?php ob_start(); var_dump(new DateTime); $str = ob_get_clean();
-        var_dump($str);
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'ob_start(); '
+    - node: br
+    - node: text
+      content: 'var_dump(new DateTime); $str = ob_get_clean(); '
+  - node: p
+    children:
+    - node: text
+      content: var_dump($str);
   p58:
   - node: p
     children:
+    - node: bold
+      content: $_SERVER
+  - node: p
+    children:
     - node: text
-      content: '$_SERVER<?php // http://php.net/$_SERVER を読む // ユーザーのリクエスト情報 echo
-        htmlspecialchars($_SERVER[''REQUEST_METHOD'']); echo htmlspecialchars($_SERVER[''REQUEST_URI'']);
-        echo htmlspecialchars($_SERVER[''HTTP_ACCEPT_LANGUAGE'']); '
+      content: '<?php '
+    - node: br
+    - node: text
+      content: '// http://php.net/$_SERVER を読む '
+  - node: p
+    children:
+    - node: text
+      content: '// ユーザーのリクエスト情報 '
+    - node: br
+    - node: text
+      content: 'echo htmlspecialchars($_SERVER[''REQUEST_METHOD'']); '
+    - node: br
+    - node: text
+      content: 'echo htmlspecialchars($_SERVER[''REQUEST_URI'']); '
+    - node: br
+    - node: text
+      content: 'echo htmlspecialchars($_SERVER[''HTTP_ACCEPT_LANGUAGE'']); '
   p59:
   - node: p
     children:
+    - node: bold
+      content: HTTPのための機能
+  - node: p
+    children:
     - node: text
-      content: 'HTTPのための機能<?php $img = base64_decode(''R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='');
-        http_response_code(404); header("Content-Type: image/gif"); header("Content-Length:".strlen($img));         echo $img;'
+      content: '<?php '
+    - node: br
+    - node: text
+      content: '$img = base64_decode(''R0lGODlhAQABAIABAP/// wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==''); '
+  - node: p
+    children:
+    - node: text
+      content: 'http_response_code(404); '
+    - node: br
+    - node: text
+      content: 'header("Content-Type: image/gif"); '
+    - node: br
+    - node: text
+      content: header("Content-Length:".strlen($img));
+  - node: p
+    children:
+    - node: text
+      content: echo $img;
   p60:
   - node: p
     children:
-    - node: text
-      content: セッション機能<?php // logout.php session_start(); $ls_logged_in = isset($_SESSION['user_id']);
-        if ($is_logged_in) {     $_SESSION = [];     session_regenerate_id(); }
-  p61:
+    - node: bold
+      content: セッション機能
   - node: p
     children:
     - node: text
+      content: '<?php // logout.php '
+    - node: br
+    - node: text
+      content: 'session_start(); '
+  - node: p
+    children:
+    - node: text
+      content: '$ls_logged_in = isset($_SESSION[''user_id'']); '
+  - node: p
+    children:
+    - node: text
+      content: 'if ($is_logged_in) {     $_SESSION = []; '
+    - node: br
+    - node: text
+      content: '    session_regenerate_id(); '
+    - node: br
+    - node: text
+      content: '}'
+  p61:
+  - node: p
+    children:
+    - node: bold
       content: まとめ
   p62:
   - node: p
     children:
-    - node: text
-      content: 'まとめPHPは7.1系にしよう
-
-        (2017年現在安定版)PHPは多様なスタイルがあるよ
-
-        '
     - node: bold
-      content: '         '
-    - node: text
-      content: 'レンタルサーバーとかに適当に置けばまあなんとなく動くよ
-
-        '
+      content: まとめ
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: PHPはふつうの文法とWeb向きの機能があるプログラミング言語だよ
+      content: 'PHPは7.1系 にしよう '
+    - node: br
+    - node: bold
+      content: (2017年現在安定版)
+  - node: p
+    children:
+    - node: bold
+      content: 'PHPは多様なスタイルがあるよ '
+  - node: p
+    children:
+    - node: bold
+      content: レンタルサーバーとかに適当に置けば
+    - node: br
+    - node: bold
+      content: 'まあなんとなく動くよ '
+  - node: p
+    children:
+    - node: bold
+      content: PHPはふつうの文法とWeb向きの
+    - node: br
+    - node: bold
+      content: 機能があるプログラミング言語だよ

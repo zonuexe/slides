@@ -35,300 +35,1177 @@ text:
   - node: p
     children:
     - node: bold
-      content: 'Real World PHP in '
+      content: Real World PHP in pixiv
+  - node: p
+    children:
     - node: text
-      content: 'pixivぐるなびピクシブ合同勉強会          年月日20151023'
+      content: ぐるなびピクシブ合同勉強会
+  - node: p
+    children:
+    - node: text
+      content: 年 月 日
+  - node: p
+    children:
+    - node: text
+      content: 2015 10 23
   p2:
   - node: p
     children:
     - node: text
-      content: お前誰ようさみけんた / tadsan •年月にピクシブ入社201211 •入社前は自宅警備しながら書いてたRuby •版サービスなどのもろもろAPI/OAuth/PCPHP
-        •最近では漫画・小説チームとして動いてる •カンファレンスの応募に落ちましたPHPLT•
+      content: お前誰よ
+  - node: p
+    children:
+    - node: text
+      content: うさみけんた
+  - node: p
+    children:
+    - node: text
+      content: ' / tadsan '
+  - node: ul
+    children:
+    - node: li
+      content: 年 月にピクシブ入社
+  - node: p
+    children:
+    - node: text
+      content: '2012 11  '
+  - node: ul
+    children:
+    - node: li
+      content: 入社前は自宅警備しながら 書いてた
+  - node: p
+    children:
+    - node: text
+      content: 'Ruby  '
+  - node: ul
+    children:
+    - node: li
+      content: 版サービスなどの もろもろ
+  - node: p
+    children:
+    - node: text
+      content: 'API/OAuth/PC PHP  '
+  - node: ul
+    children:
+    - node: li
+      content: 最近では漫画・小説チームとして動いてる
+  - node: ul
+    children:
+    - node: li
+      content: カンファレンスの 応募に落ちました
+  - node: p
+    children:
+    - node: text
+      content: PHP LT
   p3:
   - node: p
     children:
     - node: text
-      content: 注意時間配分は考慮してない •開発楽しい！とかじゃなく淡々と羅列するだけ •ゆっくり話すので、「お前何言ってんんだ」と•感じたらつっこみを入れてください
-        資料はあとで公開します•
+      content: 注意
+  - node: p
+    children:
+    - node: text
+      content: 時間配分は考慮してない
+  - node: ul
+    children:
+    - node: li
+      content: 開発楽しい！とかじゃなく淡々と羅列するだけ
+  - node: ul
+    children:
+    - node: li
+      content: ゆっくり話すので、「お前何言ってんんだ」と
+    - node: li
+      content: 感じたらつっこみを入れてください
+  - node: p
+    children:
+    - node: text
+      content: 資料はあとで公開します
   p4:
   - node: p
     children:
     - node: text
-      content: アジェンダ現状についてだらだら話す •のデプロイについて
-    - node: bold
-      content: pixiv
+      content: アジェンダ
+  - node: p
+    children:
     - node: text
-      content: ' •の開発環境について'
+      content: 現状についてだらだら話す
+  - node: ul
+    children:
+    - node: li
+      content: のデプロイについて
+  - node: p
+    children:
     - node: bold
-      content: pixiv
-    - node: text
-      content: ' •のについて'
+      content: 'pixiv  '
+  - node: ul
+    children:
+    - node: li
+      content: の開発環境について
+  - node: p
+    children:
     - node: bold
-      content: pixiv
-    - node: text
-      content: PHP •のについて
+      content: 'pixiv  '
+  - node: ul
+    children:
+    - node: li
+      content: の について
+  - node: p
+    children:
     - node: bold
-      content: pixiv
-    - node: text
-      content: SQL •そのほか•
+      content: 'pixiv PHP  '
+  - node: ul
+    children:
+    - node: li
+      content: の について
+  - node: p
+    children:
+    - node: bold
+      content: 'pixiv SQL  '
+  - node: ul
+    children:
+    - node: li
+      content: そのほか
+  p5: []
   p6:
   - node: p
     children:
     - node: text
-      content: pixiv.git (クラスのお友達) ├ accounts.pixiv.net ├ rpc.pixiv.private ├ admin.pixiv.net
-        ├ source.pixiv.net ├ api.pixiv.net ├ spapi.pixiv.net ├ batch ├ spotlight.pics
-        ├ embed.pixiv.net ├ ssl.pixiv.net ├ m.pixiv.net ├ touch.pixiv.net ├ me.pixiv.net
-        ├ util ├ oauth.pixiv.net ├ vendor ├ pixiv-lib ├ web-test ├ public-api.pixiv.net└
-        www.pixiv.net
+      content: 'pixiv.git (クラスのお友達) '
+    - node: br
+    - node: text
+      content: '├ accounts.pixiv.net  ├ rpc.pixiv.private ├ admin.pixiv.net  ├ source.pixiv.net
+        ├ api.pixiv.net  ├ spapi.pixiv.net ├ batch  ├ spotlight.pics ├ embed.pixiv.net  ├
+        ssl.pixiv.net ├ m.pixiv.net  ├ touch.pixiv.net '
+    - node: br
+    - node: text
+      content: '├ me.pixiv.net  ├ util ├ oauth.pixiv.net  ├ vendor ├ pixiv-lib  ├
+        web-test '
+    - node: br
+    - node: text
+      content: ├ public-api.pixiv.net └ www.pixiv.net
   p7:
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 重複・細部が異なるコードが分散してた
   - node: p
     children:
     - node: text
-      content: 変遷以前年頃までは、サブディレクトリ(2013)•ごとに独立したリポジトリで、共通部分Gitをとして扱ってたsubmodule 共通部分の抽象化もうまくなされて居らず、
+      content: 変遷
+  - node: p
+    children:
+    - node: text
+      content: 以前 年頃までは、サブディレクトリ
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: (2013 )
+  - node: ul
+    children:
+    - node: li
+      content: ごとに独立した リポジトリで、共通部分
+  - node: p
+    children:
+    - node: bold
+      content: Git
+    - node: br
+    - node: text
+      content: を として扱ってた
+    - node: br
+    - node: bold
+      content: 'submodule  '
+    - node: br
+    - node: text
+      content: 共通部分の抽象化もうまくなされて居らず、
+  - node: ul
+    children:
+    - node: li
+      content: 重複・細部が異なるコードが分散してた
   p8:
   - node: p
     children:
     - node: text
-      content: 変遷は疎結合なモジュールに適するsubmodule •結合度が高いモジュールのリポジトリを分•割すると、変更コストが極めて高い リポジトリを統合することで凝集度を高め•るリファクタリングも断行しやすくなった
-        細部が異なる重複コード問題も根絶•
+      content: 変遷
+  - node: p
+    children:
+    - node: text
+      content: は疎結合なモジュールに適する
+  - node: p
+    children:
+    - node: bold
+      content: 'submodule  '
+  - node: ul
+    children:
+    - node: li
+      content: 結合度が高いモジュールのリポジトリを分
+    - node: li
+      content: 割すると、変更コストが極めて高い
+  - node: p
+    children:
+    - node: text
+      content: リポジトリを統合することで凝集度を高め
+  - node: ul
+    children:
+    - node: li
+      content: るリファクタリングも断行しやすくなった
+  - node: p
+    children:
+    - node: text
+      content: 細部が異なる重複コード問題も根絶
   p9:
   - node: p
     children:
     - node: text
-      content: デプロイ基本的にサーバー全台台程度に(xx)rsync •以前年はファイルの増減を伴った(2013)PHP•デプロイ時にはページにもよるが、
-    - node: bold
-      content: '         '
+      content: デプロイ
+  - node: p
+    children:
     - node: text
-      content: ()件程度のエラーが発生してしまってたxxx 現在はの確立で、Blue-GreenDeployment•ファイルの追加削除も怖いものではない/
+      content: 基本的にサーバー全台 台程度に
+  - node: p
+    children:
+    - node: bold
+      content: (
+    - node: text
+      content: xx
+    - node: bold
+      content: ' ) rsync '
+  - node: ul
+    children:
+    - node: li
+      content: 以前 年は ファイルの増減を伴った
+  - node: p
+    children:
+    - node: bold
+      content: (2013 ) PHP
+  - node: ul
+    children:
+    - node: li
+      content: デプロイ時にはページにもよるが、
+  - node: p
+    children:
+    - node: bold
+      content: ( )
+  - node: p
+    children:
+    - node: text
+      content: 件程度のエラーが発生してしまってた
+    - node: br
+    - node: text
+      content: xxx
+    - node: bold
+      content: '  '
+    - node: text
+      content: 現在は の確立で、
+    - node: br
+    - node: bold
+      content: Blue-GreenDeployment
+  - node: ul
+    children:
+    - node: li
+      content: ファイルの追加削除も怖いものではない
+  - node: p
+    children:
+    - node: bold
+      content: /
+  p10: []
   p11:
   - node: p
     children:
     - node: text
       content: デプロイ
+  - node: p
+    children:
     - node: bold
       content: ' (pploy)'
+    - node: br
     - node: text
-      content: 汎用的なデプロイシステム •ディレクトリにファイルを配置/.deploy  •スクリプトが実行されるbin/deploy  •で画面カスタマイズ可能readme.html  •に依存するので、特定のバージョンをGit•チェックアウトして反映することも容易
+      content: 汎用的なデプロイシステム
+  - node: ul
+    children:
+    - node: li
+      content: ディレクトリにファイルを配置
+  - node: p
+    children:
+    - node: bold
+      content: '/.deploy   '
+  - node: ul
+    children:
+    - node: li
+      content: スクリプトが実行される
+  - node: p
+    children:
+    - node: bold
+      content: 'bin/deploy   '
+  - node: ul
+    children:
+    - node: li
+      content: で画面カスタマイズ可能
+  - node: p
+    children:
+    - node: bold
+      content: 'readme.html   '
+  - node: ul
+    children:
+    - node: li
+      content: に依存するので、特定のバージョンを
+  - node: p
+    children:
+    - node: bold
+      content: Git
+  - node: ul
+    children:
+    - node: li
+      content: チェックアウトして反映することも容易
   p12:
   - node: p
     children:
     - node: text
-      content: デプロイと変遷ブログ記事紹介
-    - node: bold
-      content: ' '
+      content: デプロイと変遷
+  - node: p
+    children:
     - node: text
-      content: '()開発・デプロイ環境の変遷年春版 2014 •履歴を残したまま複数のリポジトリを統git•合する のデプロイを支えるpixivpploy
-        •github: edvakf/pploy •WEB+DB PRESS Vol. 84•'
+      content: ブログ記事紹介
+  - node: p
+    children:
+    - node: text
+      content: ( )
+  - node: p
+    children:
+    - node: text
+      content: 開発・デプロイ環境の変遷 年春版
+  - node: p
+    children:
+    - node: bold
+      content: ' 2014  '
+  - node: ul
+    children:
+    - node: li
+      content: 履歴を残したまま複数の リポジトリを統
+  - node: p
+    children:
+    - node: bold
+      content: git
+  - node: ul
+    children:
+    - node: li
+      content: 合する
+  - node: p
+    children:
+    - node: text
+      content: のデプロイを支える
+    - node: br
+    - node: bold
+      content: 'pixiv pploy '
+  - node: ul
+    children:
+    - node: li
+      content: 'github: edvakf/pploy'
+    - node: li
+      content: WEB+DB PRESS Vol. 84
   p13:
   - node: p
     children:
     - node: text
-      content: の開発環境pixivなどの依存が多く、ローカルに環境を構DB•築することは容易ではない不可能でもない ()共有の環境にでログインして開発SSH
-        •端末のやで開発するひともEmacsVim •でローカルと同期してなどrsyncPhpStorm •はを利用してる@tadsanTRAMP•
+      content: の開発環境
+  - node: p
+    children:
+    - node: bold
+      content: pixiv
+  - node: p
+    children:
+    - node: text
+      content: などの依存が多く、ローカルに環境を構
+  - node: p
+    children:
+    - node: bold
+      content: DB
+  - node: ul
+    children:
+    - node: li
+      content: 築することは容易ではない
+  - node: p
+    children:
+    - node: text
+      content: 不可能でもない
+  - node: p
+    children:
+    - node: text
+      content: ( )
+  - node: p
+    children:
+    - node: text
+      content: 共有の環境に でログインして開発
+  - node: p
+    children:
+    - node: bold
+      content: 'SSH  '
+  - node: ul
+    children:
+    - node: li
+      content: 端末の や で開発するひとも
+  - node: p
+    children:
+    - node: bold
+      content: 'Emacs Vim  '
+  - node: ul
+    children:
+    - node: li
+      content: でローカルと同期して など
+  - node: p
+    children:
+    - node: bold
+      content: 'rsync PhpStorm  '
+  - node: ul
+    children:
+    - node: li
+      content: は を利用してる
+  - node: p
+    children:
+    - node: bold
+      content: '@tadsan TRAMP'
   p14:
   - node: p
     children:
     - node: text
-      content: の開発環境pixivのを大胆に活用ApacheVirtualHost •にシンボリックリンクを作成/home/www/ •社内ネットワークで名前解決できるDNS
-        •のような形式www.tadsan.example.com  •関係なくても任意のを動作可能pixivPHP •で同じ仕様のサーバー増やせるOpenStack•
-  p15:
+      content: の開発環境
+  - node: p
+    children:
+    - node: bold
+      content: pixiv
   - node: p
     children:
     - node: text
-      content: pixiv-libの操作を抽象化する層DB(DAO) •データの入出力などをまとめて扱う層 •社内では「層」と呼ばれるCommon •セッション・国際化などの基盤機能
-        •その他の共通処理いろいろ！ •むかしはって呼ばれてた懐古 extlib•()
+      content: の を大胆に活用
+  - node: p
+    children:
+    - node: bold
+      content: 'Apache VirtualHost  '
+  - node: ul
+    children:
+    - node: li
+      content: にシンボリックリンクを作成
+  - node: p
+    children:
+    - node: bold
+      content: '/home/www/  '
+  - node: ul
+    children:
+    - node: li
+      content: 社内ネットワークで 名前解決できる
+  - node: p
+    children:
+    - node: bold
+      content: 'DNS  '
+  - node: ul
+    children:
+    - node: li
+      content: のような形式
+  - node: p
+    children:
+    - node: bold
+      content: 'www.tadsan.example.com   '
+  - node: ul
+    children:
+    - node: li
+      content: 関係なくても任意の を動作可能
+  - node: p
+    children:
+    - node: bold
+      content: 'pixiv PHP  '
+  - node: ul
+    children:
+    - node: li
+      content: で同じ仕様のサーバー増やせる
+  - node: p
+    children:
+    - node: bold
+      content: OpenStack
+  p15:
+  - node: p
+    children:
+    - node: bold
+      content: pixiv-lib
+  - node: p
+    children:
+    - node: text
+      content: の操作を抽象化する層
+    - node: br
+    - node: bold
+      content: 'DB (DAO) '
+  - node: ul
+    children:
+    - node: li
+      content: データの入出力などをまとめて扱う層
+  - node: ul
+    children:
+    - node: li
+      content: 社内では「 層」と呼ばれる
+  - node: p
+    children:
+    - node: bold
+      content: 'Common  '
+  - node: ul
+    children:
+    - node: li
+      content: セッション・国際化などの基盤機能
+  - node: ul
+    children:
+    - node: li
+      content: その他の共通処理いろいろ！
+  - node: ul
+    children:
+    - node: li
+      content: むかしは って呼ばれてた
+  - node: p
+    children:
+    - node: text
+      content: 懐古
+  - node: p
+    children:
+    - node: bold
+      content: extlib
+  - node: ul
+    children:
+    - node: li
+      content: ( )
   p16:
   - node: p
     children:
     - node: text
-      content: のコードpixiv
+      content: の コード
+  - node: p
+    children:
     - node: bold
-      content: PHP
-    - node: text
-      content: PHP 5.5 + Apache •を見ればわかる通り、ページURL=PHP •などsearch.php, member_illust.php
-        … •一部のリクエストはで捌いてるHHVM •ルーティングのために依存mod_rewrite•
-  p17:
+      content: pixiv PHP
+  - node: p
+    children:
+    - node: bold
+      content: 'PHP 5.5 + Apache '
   - node: ul
     children:
     - node: li
-      children:
-      - node: text
-        content: 用途に合せて設計ができるのは悪くない どちらにしろ自分たちでセキュリティを
+      content: を見ればわかる通り、ページ
+  - node: p
+    children:
+    - node: bold
+      content: 'URL =PHP '
+  - node: ul
+    children:
     - node: li
-      children:
-      - node: text
-        content: 担保しなければいけないのはおんなじ！
+      content: など
+  - node: p
+    children:
+    - node: bold
+      content: 'search.php, member_illust.php  … '
+  - node: ul
+    children:
+    - node: li
+      content: 一部のリクエストは で捌いてる
+  - node: p
+    children:
+    - node: bold
+      content: 'HHVM  '
+  - node: ul
+    children:
+    - node: li
+      content: ルーティングのため に依存
+  - node: p
+    children:
+    - node: bold
+      content: mod_rewrite
+  p17:
   - node: p
     children:
     - node: text
-      content: のコードpixiv
+      content: の コード
+  - node: p
+    children:
     - node: bold
-      content: PHP
+      content: pixiv PHP
+    - node: br
     - node: text
-      content: 既存のフレームワークに依存しない •独自フレームワークを運用してる部分もある •口にすると顔をしかめられがちだが、
-    - node: bold
-      content: '         '
-    - node: bold
-      content: '         '
+      content: 既存のフレームワークに依存しない
+  - node: ul
+    children:
+    - node: li
+      content: 独自フレームワークを運用してる部分もある
+  - node: ul
+    children:
+    - node: li
+      content: 口にすると顔をしかめられがちだが、
+  - node: ul
+    children:
+    - node: li
+      content: 用途に合せて設計ができるのは悪くない
+  - node: p
+    children:
+    - node: text
+      content: どちらにしろ自分たちでセキュリティを
+  - node: ul
+    children:
+    - node: li
+      content: 担保しなければいけないのはおんなじ！
   p18:
   - node: p
     children:
     - node: text
-      content: のコードpixiv
+      content: の コード
+  - node: p
+    children:
     - node: bold
-      content: PHP
+      content: pixiv PHP
+    - node: br
     - node: text
-      content: 動的な言語機能は必要ない限り利用しない •クラスの静的メソッドを多用する •継承は排除する方向 •トレイトもあまり利用しない •リファレンスは原則排除する
-        •を使ってもつらいものはつらいPhpStorm•
+      content: 動的な言語機能は必要ない限り利用しない
+  - node: ul
+    children:
+    - node: li
+      content: クラスの静的メソッドを多用する
+  - node: ul
+    children:
+    - node: li
+      content: 継承は排除する方向
+  - node: ul
+    children:
+    - node: li
+      content: トレイトもあまり利用しない
+  - node: ul
+    children:
+    - node: li
+      content: リファレンスは原則排除する
+  - node: ul
+    children:
+    - node: li
+      content: を使ってもつらいものはつらい
+  - node: p
+    children:
+    - node: bold
+      content: PhpStorm
   p19:
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: のは利用しにくいComposerautoload 一部ではで生成してphpabinclude
   - node: p
     children:
     - node: text
-      content: のコードpixiv
+      content: の コード
+  - node: p
+    children:
     - node: bold
-      content: PHP
+      content: pixiv PHP
+  - node: p
+    children:
     - node: text
-      content: ってたくさん書いてる！！include_once •オートローダーの利用は限定的 •では現状は利用不可鋭意改善中pixiv-lib •()
-        リポジトリ内に混在する都合上、
+      content: ってたくさん書いてる！！
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: 'include_once  '
+  - node: ul
+    children:
+    - node: li
+      content: オートローダーの利用は限定的
+  - node: ul
+    children:
+    - node: li
+      content: では現状は利用不可
+  - node: p
+    children:
+    - node: text
+      content: 鋭意改善中
+  - node: p
+    children:
+    - node: bold
+      content: 'pixiv-lib  '
+  - node: ul
+    children:
+    - node: li
+      content: ( )
+  - node: p
+    children:
+    - node: text
+      content: リポジトリ内に混在する都合上、
+  - node: ul
+    children:
+    - node: li
+      content: の は利用しにくい
+  - node: p
+    children:
+    - node: bold
+      content: 'Composer autoload  '
+    - node: br
+    - node: text
+      content: 一部では で生成して
+  - node: p
+    children:
+    - node: bold
+      content: phpab include
   p20:
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 英語または日本語で各人の得意な方で 意識高く「全部英語で」など拘らない
-    - node: li
-      children:
-      - node: text
-        content: 必要な文章は論理的に誤りがないように
-    - node: li
-      children:
-      - node: text
-        content: コミットのルールは厳格に定めない
-    - node: li
-      children:
-      - node: text
-        content: 各人のやりかたを尊重する
-    - node: li
-      children:
-      - node: text
-        content: 典型的なで運用 Github Flow
   - node: p
     children:
     - node: text
-      content: のコードpixiv
+      content: の コード
+  - node: p
+    children:
     - node: bold
-      content: PHP
+      content: pixiv PHP
+  - node: p
+    children:
     - node: text
       content: コミットログやコード内コメントは、
+  - node: ul
+    children:
+    - node: li
+      content: 英語または日本語で各人の得意な方で
+  - node: p
+    children:
+    - node: text
+      content: 意識高く「全部英語で」など拘らない
+  - node: ul
+    children:
+    - node: li
+      content: 必要な文章は論理的に誤りがないように
+  - node: ul
+    children:
+    - node: li
+      content: コミットのルールは厳格に定めない
+  - node: ul
+    children:
+    - node: li
+      content: 各人のやりかたを尊重する
+  - node: ul
+    children:
+    - node: li
+      content: 典型的な で運用
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: ' Github Flow '
   p21:
   - node: p
     children:
     - node: bold
       content: loadset.php
+    - node: br
     - node: text
-      content: 各プロジェクトの初期化ファイル •エラーハンドラーの設定 •必要なライブラリのロード •定数の定義(deﬁne) •のみで読み込むloadsetrequire_once
-        •そのほかは全部で include_once •
+      content: 各プロジェクトの初期化ファイル
+  - node: ul
+    children:
+    - node: li
+      content: エラーハンドラーの設定
+  - node: ul
+    children:
+    - node: li
+      content: 必要なライブラリのロード
+  - node: ul
+    children:
+    - node: li
+      content: 定数 の定義
+  - node: p
+    children:
+    - node: bold
+      content: '(deﬁne)  '
+  - node: ul
+    children:
+    - node: li
+      content: のみ で読み込む
+  - node: p
+    children:
+    - node: bold
+      content: 'loadset require_once  '
+  - node: ul
+    children:
+    - node: li
+      content: そのほかは全部 で
+  - node: p
+    children:
+    - node: bold
+      content: ' include_once '
   p22:
   - node: p
     children:
     - node: text
-      content: のpixiv
+      content: の
+    - node: br
     - node: bold
-      content: SQL
+      content: pixiv SQL
+  - node: p
+    children:
+    - node: bold
+      content: 'MySQL 5.5 '
+  - node: ul
+    children:
+    - node: li
+      content: 文字列結合による 組立つらすぎ
+  - node: p
+    children:
+    - node: bold
+      content: 'SQL … '
+  - node: ul
+    children:
+    - node: li
+      content: マッパー自動クエリビルダーは利用せず
+  - node: p
+    children:
+    - node: bold
+      content: 'OR /  '
+  - node: ul
+    children:
+    - node: li
+      content: 年の初旬から に型をつけて安全に
+  - node: p
+    children:
+    - node: bold
+      content: 2015 SQL
+  - node: ul
+    children:
+    - node: li
+      content: 書けるライブラリを社内で運用
+  - node: p
+    children:
     - node: text
-      content: MySQL 5.5 •文字列結合による組立つらすぎSQL… •マッパー自動クエリビルダーは利用せずOR/ •年の初旬からに型をつけて安全に2015SQL•書けるライブラリを社内で運用
-        脆弱性対策の文脈で生まれたが書きやすい•
+      content: 脆弱性対策の文脈で生まれたが書きやすい
+  p23: []
   p24:
   - node: p
     children:
     - node: text
-      content: のpixiv
+      content: の
+    - node: br
     - node: bold
-      content: SQL
+      content: pixiv SQL
+  - node: p
+    children:
     - node: text
-      content: 'なぜ自動クエリビルダー利用しないの？Q:  •いままでが文字列結合で組み立ててたから •クエリが単純ではないパターンも多い •例ブックマークなど:  •'
+      content: なぜ自動クエリビルダー利用しないの？
+    - node: br
+    - node: bold
+      content: 'Q:   '
+  - node: ul
+    children:
+    - node: li
+      content: いままでが文字列結合で組み立ててたから
+  - node: ul
+    children:
+    - node: li
+      content: クエリが単純ではないパターンも多い
+  - node: ul
+    children:
+    - node: li
+      content: 例 ブックマークなど
+  - node: p
+    children:
+    - node: bold
+      content: ':   '
   p25:
   - node: p
     children:
     - node: text
-      content: のpixiv
+      content: の
+    - node: br
     - node: bold
-      content: API
+      content: pixiv API
+    - node: br
     - node: text
-      content: いろんな試行錯誤をしてきた •一部で有名なの最初期CSVAPI () •で利用するためのActiveResourceAPI •スマートフォンアプリ向けREST
-        API •社内向けのシンプルなAPI (RPC)•
+      content: いろんな試行錯誤をしてきた
+  - node: ul
+    children:
+    - node: li
+      content: 一部で有名な の 最初期
+  - node: p
+    children:
+    - node: bold
+      content: 'CSV API ( ) '
+  - node: ul
+    children:
+    - node: li
+      content: で利用するための
+  - node: p
+    children:
+    - node: bold
+      content: 'ActiveResource API '
+  - node: ul
+    children:
+    - node: li
+      content: スマートフォンアプリ向け
+  - node: p
+    children:
+    - node: bold
+      content: 'REST API '
+  - node: ul
+    children:
+    - node: li
+      content: 社内向けのシンプルな
+  - node: p
+    children:
+    - node: bold
+      content: API (RPC)
   p26:
   - node: p
     children:
     - node: text
-      content: パッケージ管理を利用Composer •はに同梱composer.pharpixiv.git •社内ネットワーク内でを運用Satis
-        •で定期的に更新Jenkins •の障害があっても支障なしGitHub •手動で実行もできる•
+      content: パッケージ管理
+  - node: p
+    children:
+    - node: text
+      content: を利用
+  - node: p
+    children:
+    - node: bold
+      content: 'Composer  '
+  - node: ul
+    children:
+    - node: li
+      content: は に同梱
+  - node: p
+    children:
+    - node: bold
+      content: 'composer.phar pixiv.git  '
+  - node: ul
+    children:
+    - node: li
+      content: 社内ネットワーク内で を運用
+  - node: p
+    children:
+    - node: bold
+      content: 'Satis  '
+  - node: ul
+    children:
+    - node: li
+      content: で定期的に更新
+  - node: p
+    children:
+    - node: bold
+      content: 'Jenkins  '
+  - node: ul
+    children:
+    - node: li
+      content: の障害があっても支障なし
+  - node: p
+    children:
+    - node: bold
+      content: 'GitHub  '
+  - node: ul
+    children:
+    - node: li
+      content: 手動で実行もできる
   p27:
   - node: p
     children:
     - node: text
-      content: のテストpixiv基本的にでテストを書くPHPUnit •年頃にテストを書く文化が定着した2013 •のにしたら自動テスト走るGitlabMRpush
-        •うっかりにされたら即座に
+      content: のテスト
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: pixiv
+  - node: p
+    children:
     - node: text
-      content: masterpush•に通知されるidobata
+      content: 基本的に でテストを書く
+  - node: p
+    children:
+    - node: bold
+      content: 'PHPUnit  '
+  - node: ul
+    children:
+    - node: li
+      content: 年頃にテストを書く文化が定着した
+  - node: p
+    children:
+    - node: bold
+      content: '2013  '
+  - node: ul
+    children:
+    - node: li
+      content: の に したら自動テスト走る
+  - node: p
+    children:
+    - node: bold
+      content: 'Gitlab MR push  '
+  - node: ul
+    children:
+    - node: li
+      content: うっかり に されたら即座に
+  - node: p
+    children:
+    - node: bold
+      content: master push
+  - node: ul
+    children:
+    - node: li
+      content: に通知される
+  - node: p
+    children:
+    - node: bold
+      content: idobata
   p28:
   - node: p
     children:
     - node: text
-      content: のレビュー体制pixiv毎週に携る各チームのレビュアーで
+      content: のレビュー体制
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: pixiv
+  - node: p
+    children:
     - node: text
-      content: pixiv.git•設計方針や最新の情報などを共有・相談 レビュアーが各チームに持ち帰る •各自メンバーに説明したり、レビュー過程•で指摘することで全体のコード品質を保つ
-        ガイドラインや推奨スタイルの確立•
+      content: 毎週 に携る各チームのレビュアーで
+  - node: p
+    children:
+    - node: bold
+      content: pixiv.git
+  - node: ul
+    children:
+    - node: li
+      content: 設計方針や最新の情報などを共有・相談
+  - node: p
+    children:
+    - node: text
+      content: レビュアーが各チームに持ち帰る
+  - node: ul
+    children:
+    - node: li
+      content: 各自メンバーに説明したり、レビュー過程
+    - node: li
+      content: で指摘することで全体のコード品質を保つ
+  - node: p
+    children:
+    - node: text
+      content: ガイドラインや推奨スタイルの確立
   p29:
   - node: p
     children:
     - node: text
-      content: そのほかのデプロイ回数は一日およそ回
-    - node: bold
-      content: pixiv
+      content: そのほか
+  - node: p
+    children:
     - node: text
-      content: 20 •ディレクターが文言変更をすることが多い •をいっぱい使ってるJenkins •の代替としてcron •スクリプトのとしても利用できるWebUI
-        •各種エディタの勢力は均衡してる•
+      content: のデプロイ回数は一日およそ 回
+    - node: br
+    - node: bold
+      content: 'pixiv 20  '
+  - node: ul
+    children:
+    - node: li
+      content: ディレクターが文言変更をすることが多い
+  - node: ul
+    children:
+    - node: li
+      content: をいっぱい使ってる
+  - node: p
+    children:
+    - node: bold
+      content: 'Jenkins  '
+  - node: ul
+    children:
+    - node: li
+      content: の代替として
+  - node: p
+    children:
+    - node: bold
+      content: 'cron  '
+  - node: ul
+    children:
+    - node: li
+      content: スクリプトの としても利用できる
+  - node: p
+    children:
+    - node: bold
+      content: 'WebUI  '
+  - node: ul
+    children:
+    - node: li
+      content: 各種エディタの勢力は均衡してる
   p30:
   - node: p
     children:
     - node: text
-      content: ふろく連載
+      content: ふろく 連載
+  - node: p
+    children:
     - node: bold
       content: ' '
     - node: text
-      content: '(WEB+DB PHP)特におもしろい記事 •テストしにくいコード対策Vol.81:  •安全なコーディングスタイルVol.83:  •デプロイ・運用Vol.84:
-        Composer •記法で型注釈Vol.87: PHPDoc •の運用Vol.88: HHVM•'
+      content: (
+    - node: bold
+      content: WEB+DB
+    - node: text
+      content: ' PHP )'
+  - node: p
+    children:
+    - node: text
+      content: 特におもしろい記事
+  - node: ul
+    children:
+    - node: li
+      content: テストしにくいコード対策
+  - node: p
+    children:
+    - node: bold
+      content: 'Vol.81:   '
+  - node: ul
+    children:
+    - node: li
+      content: 安全なコーディングスタイル
+  - node: p
+    children:
+    - node: bold
+      content: 'Vol.83:   '
+  - node: ul
+    children:
+    - node: li
+      content: デプロイ・ 運用
+  - node: p
+    children:
+    - node: bold
+      content: 'Vol.84: '
+    - node: text
+      content: ' Composer  '
+  - node: ul
+    children:
+    - node: li
+      content: 記法で型注釈
+  - node: p
+    children:
+    - node: bold
+      content: 'Vol.87: '
+    - node: text
+      content: 'PHPDoc  '
+  - node: ul
+    children:
+    - node: li
+      content: の運用
+  - node: p
+    children:
+    - node: bold
+      content: 'Vol.88: '
+    - node: text
+      content: HHVM
   p31:
   - node: p
     children:
     - node: text
-      content: 続きはで
+      content: 続きは で
+    - node: br
     - node: bold
       content: Web
+  - node: p
+    children:
     - node: text
-      content: https://github.com/pixiv •http://inside.pixiv.net/ •個人で公開してるものGitHub  •(tadsan)BaguettePHP/php-simple-routing
-        •BaguettePHP/http-accept-language•
+      content: 'https://github.com/pixiv '
+  - node: ul
+    children:
+    - node: li
+      content: http://inside.pixiv.net/
+    - node: li
+      content: 個人で公開してるもの
+  - node: p
+    children:
+    - node: bold
+      content: 'GitHub   '
+  - node: ul
+    children:
+    - node: li
+      content: (tadsan )
+  - node: p
+    children:
+    - node: text
+      content: 'BaguettePHP/php-simple-routing '
+  - node: ul
+    children:
+    - node: li
+      content: BaguettePHP/http-accept-language

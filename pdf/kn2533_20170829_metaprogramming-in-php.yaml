@@ -7,107 +7,171 @@ text:
   - node: p
     children:
     - node: text
-      content: '         　　 における メタプログラミングの温床'
+      content: 　　 における
+    - node: br
+    - node: text
+      content: ' メタプログラミングの温床'
+    - node: br
     - node: bold
       content: Meta programming for PHP
-    - node: text
-      content: '         #ll2017jp2017-08-20 NEEC Kamata ODC 2017 Tokyo/ Learn Languages (LL2017)'
-  p2:
   - node: p
     children:
     - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
+      content: '#ll2017jp'
+  - node: p
+    children:
     - node: text
-      content: 'GitHub/Packagistでは id: zonuexe
-
-        •Emacs Lisper, PHPer
-
-        •Qiitaに記事を書いたり変なコメントしてるよ
-
-        •動的言語はコンピューティングの真髄•'
+      content: '2017-08-20 NEEC Kamata '
+    - node: br
+    - node: bold
+      content: ODC 2017 Tokyo/ Learn Languages (LL2017)
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: 'GitHub/Packagistでは id: zonuexe'
+    - node: li
+      content: Emacs Lisper, PHPer
+    - node: li
+      content: Qiitaに記事を書いたり変なコメントしてるよ
+    - node: li
+      content: 動的言語はコンピューティングの真髄
   p3:
   - node: p
     children:
     - node: text
-      content: 世の中にはいろんなクールな言語がある
+      content: 世の中にはいろんな クールな言語がある
   p4:
   - node: p
     children:
     - node: text
-      content: PHPには毛ほども興味のなさそうな皆さまにPHPの動的な言語機能を紹介します
+      content: PHPには毛ほども興味のな さそうな皆さまにPHPの
+    - node: bold
+      content: 動
+    - node: text
+      content: ' '
+    - node: bold
+      content: 的な言語機能
+    - node: text
+      content: を紹介します
   p5:
   - node: p
     children:
     - node: text
-      content: サンプルコードは言語機能を簡易に紹介するためのものです
+      content: サンプルコードは言 語機能を
+    - node: bold
+      content: 簡易に紹介
+    - node: text
+      content: ' '
+    - node: bold
+      content: する
+    - node: text
+      content: ためのものです
   p6:
   - node: p
     children:
     - node: text
-      content: '利用の際は必要性と利便性         を慎重に判断すること。(メタプログラミングって基本的にそーゆーものですけど…)'
-  p7:
+      content: 利用の際は必要性と利便性
   - node: p
     children:
     - node: text
+      content: を
+    - node: bold
+      content: 慎重に
+    - node: text
+      content: 判断すること。
+    - node: br
+    - node: text
+      content: (メタプログラミングって基本的
+    - node: br
+    - node: text
+      content: にそーゆーものですけど…)
+  p7:
+  - node: p
+    children:
+    - node: bold
       content: アジェンダ
   p8:
   - node: p
     children:
     - node: text
-      content: '0.  前提
-
-        1. 初級篇
-
-        2. 中級篇
-
-        3. 上級篇'
+      content: 0.  前提 1. 初級篇 2. 中級篇 3. 上級篇
   p9:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 前提
   p10:
   - node: p
     children:
-    - node: text
-      content: PHPは、所謂LLとしては遊びが少ない
+    - node: bold
+      content: PHPは、所謂LLと
+    - node: br
+    - node: bold
+      content: しては遊びが少ない
   p11:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: 例) 原則として関数や
+    - node: br
+    - node: bold
+      content: 'クラスを再定義できない '
+    - node: br
     - node: text
-      content: '例) 原則として関数やクラスを再定義できない
-
-        (致命的エラーが発生)'
+      content: (致命的エラーが発生)
   p12:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: RubyやPythonと違って
     - node: text
-      content: 'RubyやPythonと違ってオープンクラスではない
-
-        (モンキーパッチができない)'
+      content: ' '
+    - node: bold
+      content: 'オープンクラスではない '
+    - node: br
+    - node: text
+      content: (モンキーパッチができない)
   p13:
   - node: p
     children:
     - node: text
-      content: '         謎なタイミングでクラス定義が変更されることがない(基本的には)'
+      content: 謎なタイミングで
+    - node: br
+    - node: text
+      content: クラス定義が変更される
+    - node: br
+    - node: text
+      content: ことが ない
+    - node: br
+    - node: text
+      content: (基本的には)
   p14:
   - node: p
     children:
-    - node: text
-      content: ＝静的解析しやすい条件が揃ってる
+    - node: bold
+      content: ＝静的解析しやすい
+    - node: br
+    - node: bold
+      content: 条件が揃ってる
   p15:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: その和を乱す邪悪な動的メタプログラミングテクニックが存在する
+      content: その和を乱す邪悪な
+    - node: br
+    - node: bold
+      content: 動的メタプログラミング
+    - node: br
+    - node: bold
+      content: テクニックが存在する
   p16:
   - node: p
     children:
@@ -116,7 +180,7 @@ text:
   p17:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 初級編
   p18:
   - node: p
@@ -126,74 +190,197 @@ text:
   p19:
   - node: p
     children:
+    - node: bold
+      content: 関数として呼出し可
     - node: text
-      content: 関数として呼出し可能な値を表す擬似型
+      content: ' '
+    - node: bold
+      content: 能な値を表す擬似型
   p20:
   - node: p
     children:
-    - node: text
-      content: 'callable//  //  BeforeAfterif ($cond) { $f = $cond ? ''foo'' : ''bar'';     foo($var);
-        call_user_func($f, $var); } else {     bar($var); //  こうやって書いてもいい}$f($var);'
-  p21:
+    - node: bold
+      content: callable
   - node: p
     children:
     - node: text
-      content: 'map$ary = ["apple", "orange", "banana"]; //=> ["Apple", "Orange",
-        "Banana"]$bry = []; $cry =          foreach ($ary as $i => $a) { array_map(''ucfirst'', $ary);     $bry[$i]=>
-        ucfirst($a); } '
+      content: '//    //   '
+    - node: br
+    - node: text
+      content: Before After
+  - node: p
+    children:
+    - node: text
+      content: 'if ($cond) {  $f = $cond ? ''foo'' : ''bar'';     foo($var);  call_user_func($f,
+        $var); '
+    - node: br
+    - node: text
+      content: '} else { '
+    - node: br
+    - node: text
+      content: '    bar($var);  //   '
+  - node: p
+    children:
+    - node: text
+      content: こうやって書いてもいい
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: $f($var);
+  p21:
+  - node: p
+    children:
+    - node: bold
+      content: map
+  - node: p
+    children:
+    - node: text
+      content: '$ary = ["apple", "orange", "banana"]; '
+    - node: br
+    - node: text
+      content: //=> ["Apple", "Orange", "Banana"]
+  - node: p
+    children:
+    - node: text
+      content: '$bry = []; '
+  - node: p
+    children:
+    - node: text
+      content: '$cry = '
+  - node: p
+    children:
+    - node: text
+      content: 'foreach ($ary as $i => $a) { '
+  - node: p
+    children:
+    - node: text
+      content: array_map('ucfirst', $ary);
+  - node: p
+    children:
+    - node: text
+      content: '    $bry[$i] => ucfirst($a); '
+    - node: br
+    - node: text
+      content: '} '
   p22:
   - node: p
     children:
     - node: text
-      content: 'compact()         extract()'
+      content: compact()
+  - node: p
+    children:
+    - node: text
+      content: extract()
   p23:
   - node: p
     children:
-    - node: text
-      content: 変数テーブルにアクセスできる関数
+    - node: bold
+      content: 変数テーブルにアク
+    - node: br
+    - node: bold
+      content: セスできる関数
   p24:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
       content: compact()
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 変数テーブルから取り出して配列にする
+      content: 変数テーブルから
+    - node: br
+    - node: bold
+      content: 取り出して配列にする
   p25:
   - node: p
     children:
+    - node: bold
+      content: compact()
+  - node: p
+    children:
     - node: text
-      content: compact()$foo = foo(); $bar = bar();hoge([ hoge(compact('foo','bar'));    'foo'
-        => $foo,     'bar' => $bar ]);
+      content: $foo = foo(); $bar = bar();
+  - node: p
+    children:
+    - node: text
+      content: hoge([  hoge(compact('foo','bar'));
+    - node: br
+    - node: text
+      content: '    ''foo'' => $foo,     ''bar'' => $bar '
+    - node: br
+    - node: text
+      content: ']);'
   p26:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
       content: extract()
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: 変数テーブルから
     - node: text
-      content: 変数テーブルから取り出して配列に
+      content: ' '
+    - node: bold
+      content: 取り出して配列に
   p27:
   - node: p
     children:
+    - node: bold
+      content: extract()
+  - node: p
+    children:
     - node: text
-      content: 'extract()function (array $vs) {$hoge_foo = $vs[''foo''];extract($vs,
-                       EXTR_PREFIX_ALL, $hoge_bar = $vs[''bar''];''hoge'');本当はissetでチェックすべき'
+      content: 'function (array $vs) '
+    - node: br
+    - node: text
+      content: '{'
+  - node: p
+    children:
+    - node: text
+      content: $hoge_foo = $vs['foo'];
+  - node: p
+    children:
+    - node: text
+      content: 'extract($vs, '
+  - node: p
+    children:
+    - node: text
+      content: '      EXTR_PREFIX_ALL, '
+  - node: p
+    children:
+    - node: text
+      content: $hoge_bar = $vs['bar'];
+  - node: p
+    children:
+    - node: text
+      content: '''hoge'');'
+  - node: p
+    children:
+    - node: text
+      content: 本当はissetでチェックすべき
   p28:
   - node: p
     children:
     - node: text
-      content: 'extract() 未使用変数の検出できない
-
-        読みにくくなるので邪悪
-
-        バグの温床であるばかりか、ふつうに脆弱性の温床になる'
+      content: 'extract() '
+    - node: br
+    - node: bold
+      content: '未使用変数の検出できない '
+    - node: br
+    - node: bold
+      content: '読みにくくなるので邪悪 '
+    - node: br
+    - node: bold
+      content: バグの温床であるばかりか、
+    - node: text
+      content: ' '
+    - node: bold
+      content: ふつうに脆弱性の温床になる
   p29:
   - node: p
     children:
@@ -202,20 +389,45 @@ text:
   p30:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
       content: $$var
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 可変変数(variable variables)
+      content: 可変変数
+    - node: br
+    - node: bold
+      content: (variable variables)
   p31:
   - node: p
     children:
+    - node: bold
+      content: 可変変数
+  - node: p
+    children:
     - node: text
-      content: '可変変数$world = "こんにちは世界"; $hello = "world"; $v = "hello"; var_dump($v);    //=>
-        "hello" var_dump($$v);   //=> "world"         var_dump($$$v);  //=> "こんにちは世界" // $$ はいくつ付けてもよい！！'
+      content: '$world = "こんにちは世界"; '
+    - node: br
+    - node: text
+      content: '$hello = "world"; '
+    - node: br
+    - node: text
+      content: '$v = "hello"; '
+  - node: p
+    children:
+    - node: text
+      content: var_dump($v);    //=> "hello" var_dump($$v);   //=> "world"
+  - node: p
+    children:
+    - node: text
+      content: 'var_dump($$$v);  //=> "こんにちは世界" '
+    - node: br
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: $$ はいくつ付けてもよい！！
   p32:
   - node: p
     children:
@@ -225,69 +437,194 @@ text:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: スタックトレースを
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 全部取得できる(ファイル・引数含む)
+      content: 全部取得できる
+    - node: br
+    - node: bold
+      content: (ファイル・引数含む)
   p34:
   - node: p
     children:
     - node: text
-      content: (これを悪用すればどんな邪悪なことができるかは明白なので省略)
+      content: (これを悪用すればどん な邪悪なことができる かは明白なので省略)
   p35:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 中級編
   p36:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: マジック
     - node: text
-      content: マジックメソッド
+      content: ' '
+    - node: bold
+      content: メソッド
   p37:
   - node: p
     children:
     - node: text
-      content: '__get($name)         __set($name, $value)'
+      content: __get($name)
+  - node: p
+    children:
+    - node: text
+      content: __set($name, $value)
   p38:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
-      content: __get()アクセス不可プロパティを読み出そうとしたときに呼ばれる
+      content: __get()
+    - node: br
+    - node: bold
+      content: アクセス不可プロパティ
+    - node: text
+      content: ' '
+    - node: bold
+      content: を読み出そうとしたとき
+    - node: br
+    - node: bold
+      content: に呼ばれる
   p39:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
-      content: __set()アクセス不可プロパティを書き込もうとしたときに呼ばれる
+      content: __set()
+    - node: br
+    - node: bold
+      content: アクセス不可プロパティ
+    - node: text
+      content: ' '
+    - node: bold
+      content: を書き込もうとしたとき
+    - node: br
+    - node: bold
+      content: に呼ばれる
   p40:
   - node: p
     children:
+    - node: bold
+      content: __get(), __set()
+  - node: p
+    children:
     - node: text
-      content: '__get(), __set()class Hoge {             private $values = [];     public function __set($name, $value) {                 $values[$name] = $value;             }     public function __get($name) {                 return $values[$name];             }         }'
+      content: class Hoge {
+  - node: p
+    children:
+    - node: text
+      content: '    private $values = []; '
+    - node: br
+    - node: text
+      content: '    public function __set($name, $value) {'
+  - node: p
+    children:
+    - node: text
+      content: '        $values[$name] = $value;'
+  - node: p
+    children:
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    public function __get($name) {'
+  - node: p
+    children:
+    - node: text
+      content: '        return $values[$name];'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p41:
   - node: p
     children:
     - node: text
-      content: '「アクセス不可」は未定         義プロパティだけはなくprivateprotected, 含む'
+      content: 「アクセス不可」は未定
+  - node: p
+    children:
+    - node: text
+      content: 義プロパティだけはなく
+    - node: br
+    - node: text
+      content: private protected
+  - node: p
+    children:
+    - node: text
+      content: ',  含む'
   p42:
   - node: p
     children:
-    - node: text
-      content: '読み出し専用プロパティ/**          * @property-read string $name          */ class Hoge {             private $name;     public function __construct($name) {                 $this->name = $name;             }     public function __get($name) {                 return $values[$name];             }'
-  p43:
+    - node: bold
+      content: 読み出し専用プロパティ
   - node: p
     children:
     - node: text
-      content: '書き込み禁止プロパティ    public function __set($name) {                throw new OutOfRangeException();             }         }'
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: ' * @property-read string $name'
+  - node: p
+    children:
+    - node: text
+      content: ' */ '
+    - node: br
+    - node: text
+      content: class Hoge {
+  - node: p
+    children:
+    - node: text
+      content: '    private $name; '
+    - node: br
+    - node: text
+      content: '    public function __construct($name) {'
+  - node: p
+    children:
+    - node: text
+      content: '        $this->name = $name;'
+  - node: p
+    children:
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    public function __get($name) {'
+  - node: p
+    children:
+    - node: text
+      content: '        return $values[$name];'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  p43:
+  - node: p
+    children:
+    - node: bold
+      content: 書き込み禁止プロパティ
+  - node: p
+    children:
+    - node: text
+      content: '    public function __set($name) {'
+  - node: p
+    children:
+    - node: text
+      content: '       throw new OutOfRangeException();'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p44:
   - node: p
     children:
@@ -296,99 +633,285 @@ text:
   p45:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
-      content: __call()アクセス不可メソッドを起動しようとしたときに呼ばれる
+      content: __call()
+    - node: br
+    - node: bold
+      content: アクセス不可メソッドを
+    - node: text
+      content: ' '
+    - node: bold
+      content: 起動しようとしたときに
+    - node: br
+    - node: bold
+      content: 呼ばれる
   p46:
   - node: p
     children:
+    - node: bold
+      content: Proxyパターン
+  - node: p
+    children:
     - node: text
-      content: 'Proxyパターンclass HogeProxy {             private $hoge;     public function __construct(Hoge $hoge) {                 $this->hoge = $hoge;             }     public function __call($name, $args) {                 return call_user_func_array($name, $args);             }         }'
+      content: class HogeProxy {
+  - node: p
+    children:
+    - node: text
+      content: '    private $hoge; '
+    - node: br
+    - node: text
+      content: '    public function __construct(Hoge $hoge) {'
+  - node: p
+    children:
+    - node: text
+      content: '        $this->hoge = $hoge;'
+  - node: p
+    children:
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    public function __call($name, $args) {'
+  - node: p
+    children:
+    - node: text
+      content: '        return call_user_func_array($name, $args);'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p47:
   - node: p
     children:
-    - node: text
-      content: 'Proxyパターン (PHPDoc)/**          * @method Foo getFoo()          * @method string format(string $tpl)          * @method void close()          */ class HogeProxy {     /** @var Hoge */             private $hoge;     public function __construct(Hoge $hoge) {                 $this->hoge = $hoge;             }     public function __call($name, $args) {'
-  p48:
+    - node: bold
+      content: Proxyパターン (PHPDoc)
   - node: p
     children:
     - node: text
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: ' * @method Foo getFoo()'
+  - node: p
+    children:
+    - node: text
+      content: ' * @method string format(string $tpl)'
+  - node: p
+    children:
+    - node: text
+      content: ' * @method void close()'
+  - node: p
+    children:
+    - node: text
+      content: ' */ '
+    - node: br
+    - node: text
+      content: class HogeProxy {     /** @var Hoge */
+  - node: p
+    children:
+    - node: text
+      content: '    private $hoge; '
+    - node: br
+    - node: text
+      content: '    public function __construct(Hoge $hoge) {'
+  - node: p
+    children:
+    - node: text
+      content: '        $this->hoge = $hoge;'
+  - node: p
+    children:
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '    public function __call($name, $args) {'
+  p48:
+  - node: p
+    children:
+    - node: bold
       content: 上級編
   p49:
   - node: p
     children:
     - node: text
-      content: spl_autoload_register()
+      content: spl_autoload _register()
   p50:
   - node: p
     children:
+    - node: bold
+      content: クラスが定義された
     - node: text
-      content: クラスが定義されたファイルを自動ロードするための仕組み
+      content: ' '
+    - node: bold
+      content: ファイルを自動ロー
+    - node: text
+      content: ' '
+    - node: bold
+      content: ドするための仕組み
   p51:
   - node: p
     children:
+    - node: bold
+      content: (ふつうはComposerが
     - node: text
-      content: (ふつうはComposerがやってくれるので自分で定義する必要ない)
+      content: ' '
+    - node: bold
+      content: やってくれるので自分
+    - node: text
+      content: ' '
+    - node: bold
+      content: で定義する必要ない)
   p52:
   - node: p
     children:
+    - node: bold
+      content: ふつうのクラスローダー
+  - node: p
+    children:
     - node: text
-      content: 'ふつうのクラスローダーspl_autoload_register(function ($class) {             $file = strtr($class, ''\\'', ''/'') . ''.php'';     $path = __DIR__ .
-        ''/'' . $file;     if (file_exists($path)) {                 require $path;             }         });'
+      content: spl_autoload_register(function ($class) {
+  - node: p
+    children:
+    - node: text
+      content: '    $file = strtr($class, ''\\'', ''/'') . ''.php''; '
+    - node: br
+    - node: text
+      content: '    $path = __DIR__ . ''/'' . $file; '
+    - node: br
+    - node: text
+      content: '    if (file_exists($path)) {'
+  - node: p
+    children:
+    - node: text
+      content: '        require $path;'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '});'
   p53:
   - node: p
     children:
-    - node: text
-      content: クラスが読み込まれる前に介入できる
+    - node: bold
+      content: クラスが読み込まれ
+    - node: br
+    - node: bold
+      content: る前に介入できる
   p54:
   - node: p
     children:
-    - node: text
-      content: '邪悪クラスローダーif (file_exists($path)) {             $evil_path = evil_path($path);     if (file_exists($evil_path)) {         $src
-        = file_get_contents($path);         //  ファイルを魔改造        $evil_src = evil_customize($src);                 file_put_contents($evil_path, $evil_src);            }    require $evil_path;         }'
-  p55:
+    - node: bold
+      content: 邪悪クラスローダー
   - node: p
     children:
     - node: text
+      content: if (file_exists($path)) {
+  - node: p
+    children:
+    - node: text
+      content: '    $evil_path = evil_path($path);     if (file_exists($evil_path))
+        { '
+    - node: br
+    - node: text
+      content: '        $src = file_get_contents($path); '
+    - node: br
+    - node: text
+      content: '        //   '
+  - node: p
+    children:
+    - node: text
+      content: ファイルを魔改造
+    - node: br
+    - node: text
+      content: '        $evil_src = evil_customize($src);'
+  - node: p
+    children:
+    - node: text
+      content: '        file_put_contents($evil_path, $evil_src);'
+  - node: p
+    children:
+    - node: text
+      content: '   } '
+    - node: br
+    - node: text
+      content: '   require $evil_path;'
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  p55:
+  - node: p
+    children:
+    - node: bold
       content: まとめ
   p56:
   - node: p
     children:
+    - node: bold
+      content: PHPは制限の大い言語
     - node: text
-      content: PHPは制限の大い言語のようだが、遊べるポイントはいろいろある
+      content: ' '
+    - node: bold
+      content: のようだが、遊べるポ
+    - node: text
+      content: ' '
+    - node: bold
+      content: イントはいろいろある
   p57:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 大いなる力には大いなる責任がry
+      content: 大いなる力には
+    - node: br
+    - node: bold
+      content: 大いなる責任がry
   p58:
   - node: p
     children:
-    - node: text
-      content: PHPUnit, PsySH, そのほか
     - node: bold
-      content: '         '
+      content: PHPUnit, PsySH, そのほか
+  - node: p
+    children:
+    - node: bold
+      content: 一部のフレームワークなどは
     - node: text
-      content: 一部のフレームワークなどはメタプログラミングのテクニックを活用してる
+      content: ' '
+    - node: bold
+      content: メタプログラミングのテクニッ
+    - node: br
+    - node: bold
+      content: クを活用してる
   p59:
   - node: p
     children:
-    - node: text
-      content: それ用のライブラリ
     - node: bold
-      content: '         '
+      content: それ用のライブラリ
+  - node: p
+    children:
+    - node: bold
+      content: もある。
+    - node: br
     - node: text
-      content: もある。(Go! AOP )https://github.com/goaop/framework
-  p60:
+      content: (Go! AOP  )
   - node: p
     children:
     - node: text
+      content: https://github.com/goaop/framework
+  p60:
+  - node: p
+    children:
+    - node: bold
       content: 実用知識！
   p61:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: そなえよう

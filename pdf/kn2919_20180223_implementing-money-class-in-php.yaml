@@ -28,96 +28,166 @@ text:
   - node: p
     children:
     - node: text
-      content: '         PHPで雑に通貨クラスを 実装してみた結果 🤑'
+      content: PHPで
+    - node: bold
+      content: 雑に
+    - node: text
+      content: 通貨クラスを
+    - node: br
+    - node: text
+      content: ' 実装してみた'
+    - node: bold
+      content: 結果
+    - node: text
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: 🤑
+  - node: p
+    children:
     - node: bold
       content: I implemented a Money class, and I'm sleepy.
+  - node: p
+    children:
     - node: text
       content: 2018-02-23 ピクシブ社内勉強会
   p2:
   - node: p
     children:
-    - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
-    - node: text
-      content: 'GitHub/Packagistでは id: zonuexe
-
-        •ピクシブ株式会社技術基盤チーム (pixiv.net)
-
-        •Emacs Lisper, PHPer
-
-        •Emacs PHP Modeのメンテナ引き継ぎました
-
-        •好きなリスプはEmacs Lispです
-
-        •Qiitaに記事を書いたり変なコメントしてるよ•'
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: 'GitHub/Packagistでは id: zonuexe'
+    - node: li
+      content: ピクシブ株式会社技術基盤チーム (pixiv.net)
+    - node: li
+      content: Emacs Lisper, PHPer
+    - node: li
+      content: Emacs PHP Modeのメンテナ引き継ぎました
+    - node: li
+      content: 好きなリスプはEmacs Lispです
+    - node: li
+      content: Qiitaに記事を書いたり変なコメントしてるよ
   p3:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 伏線
+  p4: []
   p5:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 金
   p6:
   - node: p
     children:
     - node: text
-      content: '         日本で流通する最低貨幣は一円硬貨'
+      content: 日本で流通する最低
+    - node: br
+    - node: text
+      content: 貨幣は
+    - node: bold
+      content: 一円硬貨
   p7:
   - node: p
     children:
     - node: text
-      content: '         USで流通する最低貨幣は一セント硬貨'
+      content: USで流通する最低
+    - node: br
+    - node: text
+      content: 貨幣は
+    - node: bold
+      content: 一セント硬貨
   p8:
   - node: p
     children:
     - node: text
-      content: '         セントは1/100ドル$0.01と表記される'
+      content: セントは1/100ドル $0.01と表記される
   p9:
   - node: p
     children:
     - node: text
-      content: コンピュータで扱える数
+      content: コンピュータで
+    - node: br
+    - node: text
+      content: 扱える数
   p10:
   - node: p
     children:
     - node: text
-      content: '         PHPでは型が3つある'
+      content: PHPでは型が
+    - node: br
+    - node: bold
+      content: 3つある
   p11:
   - node: p
     children:
-    - node: text
-      content: '整数型 (int)PHPの整数は signed int
-
-         ビット数はPHP_INT_SIZE最大値はPHP_INT_MAXで定義
-
-         概念上、この式で最大値が得られる2 ** (PHP_INT_SIZE * 8 - 1) - 1'
-  p12:
+    - node: bold
+      content: 整数型 (int)
   - node: p
     children:
     - node: text
-      content: '浮動小数点数型 (float)         PHPの整数はdouble
-
-        (IEEE 754 倍精度フォーマット)型名としては(real)の別名もあるが、別に実数ではない'
+      content: 'PHPの整数は signed int '
+  - node: p
+    children:
+    - node: text
+      content: ビット数はPHP_INT_SIZE
+    - node: br
+    - node: text
+      content: '最大値はPHP_INT_MAXで定義 '
+  - node: p
+    children:
+    - node: text
+      content: 概念上、この式で最大値が得られる 2 ** (PHP_INT_SIZE * 8 - 1) - 1
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: 浮動小数点数型 (float)
+  - node: p
+    children:
+    - node: text
+      content: PHPの整数はdouble
+  - node: p
+    children:
+    - node: text
+      content: (IEEE 754 倍精度フォーマット)
+  - node: p
+    children:
+    - node: text
+      content: 型名としては(real)の別名もあ
+    - node: br
+    - node: text
+      content: るが、別に実数ではない
   p13:
   - node: p
     children:
     - node: text
-      content: '         とても大事なこと'
+      content: とても
+    - node: br
+    - node: text
+      content: 大事なこと
   p14:
   - node: p
     children:
     - node: text
-      content: 'PHP_INT_MAX         9223372036854775807'
+      content: PHP_INT_MAX
   p15:
   - node: p
     children:
     - node: text
-      content: 'PHP_INT_MAX + 1         どうなる？'
+      content: PHP_INT_MAX + 1
+  - node: p
+    children:
+    - node: text
+      content: どうなる？
   p16:
   - node: p
     children:
@@ -127,7 +197,11 @@ text:
   - node: p
     children:
     - node: text
-      content: '$bytes = PHP_INT_SIZE * 8;         var_dump(2**($bytes-1)-1); //=> float(9.2233720368548E+18)'
+      content: $bytes = PHP_INT_SIZE * 8;
+  - node: p
+    children:
+    - node: text
+      content: var_dump(2**($bytes-1)-1); //=> float(9.2233720368548E+18)
   p18:
   - node: p
     children:
@@ -142,7 +216,13 @@ text:
   - node: p
     children:
     - node: text
-      content: PHPの演算子は整数演算でを超えPHP_INT_MAXるとfloatになります
+      content: PHPの演算子は整数演 算で を超え
+    - node: br
+    - node: text
+      content: PHP_INT_MAX
+    - node: br
+    - node: text
+      content: るとfloatになります
   p21:
   - node: p
     children:
@@ -152,12 +232,19 @@ text:
   - node: p
     children:
     - node: text
-      content: '         もひとつ大事なこと'
+      content: もひとつ
+    - node: br
+    - node: text
+      content: 大事なこと
   p23:
   - node: p
     children:
     - node: text
-      content: '         浮動小数点は「ぴったり」の数を表現できない'
+      content: 浮動小数点は
+    - node: br
+    - node: text
+      content: 「ぴったり」の数 を表現できない
+  p24: []
   p25:
   - node: p
     children:
@@ -167,17 +254,31 @@ text:
   - node: p
     children:
     - node: text
-      content: '浮動小数点数は         概算で十分な計算に向く'
+      content: 浮動小数点数は
+  - node: p
+    children:
+    - node: text
+      content: 概算で十分な
+    - node: br
+    - node: text
+      content: 計算に向く
   p27:
   - node: p
     children:
     - node: text
-      content: '         誤差を許容         できない用途には使ってはならない'
+      content: 誤差を許容
+  - node: p
+    children:
+    - node: text
+      content: できない用途には 使ってはならない
   p28:
   - node: p
     children:
     - node: text
-      content: われわれが欲するのは誤差が生じずに小数点以下を表現できる数
+      content: われわれが欲するのは 誤差が生じずに小数点
+    - node: br
+    - node: text
+      content: 以下を表現できる数
   p29:
   - node: p
     children:
@@ -186,7 +287,7 @@ text:
   p30:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: BC Math 関数
   p31:
   - node: p
@@ -207,26 +308,43 @@ text:
   - node: p
     children:
     - node: text
-      content: '         冷静になってほしい'
+      content: 冷静になって
+    - node: br
+    - node: text
+      content: ほしい
   p35:
   - node: p
     children:
     - node: text
-      content: '         文字列で入出力を         表現すれば桁は落ちない'
+      content: 文字列で入出力を
+  - node: p
+    children:
+    - node: text
+      content: 表現すれば
+    - node: br
+    - node: text
+      content: 桁は落ちない
   p36:
   - node: p
     children:
     - node: text
-      content: '$scaleオプション         で任意の精度を指定できる'
+      content: $scaleオプション
+  - node: p
+    children:
+    - node: text
+      content: で任意の精度を
+    - node: br
+    - node: text
+      content: 指定できる
   p37:
   - node: p
     children:
     - node: text
-      content: '         裸の文字列のまま取り回したくない…'
+      content: 裸の文字列のまま 取り回したくない…
   p38:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: クラスを作ろう
   p39:
   - node: p
@@ -252,27 +370,38 @@ text:
   - node: p
     children:
     - node: text
-      content: '         よっしゃやってるで'
+      content: よっしゃ
+    - node: br
+    - node: text
+      content: やってるで
   p44:
   - node: p
     children:
     - node: text
-      content: MoneyはCurrency(通貨)と量(数)の組である
+      content: Moneyは
+    - node: br
+    - node: text
+      content: Currency(通貨)と 量(数)の組である
+  p45: []
   p46:
   - node: p
     children:
     - node: text
-      content: '         数字から金を作る'
+      content: 数字から 金を作る
+  p47: []
   p48:
   - node: p
     children:
     - node: text
-      content: '         +, -, ×どうやって実装'
+      content: +, -, ×
+    - node: br
+    - node: text
+      content: どうやって実装
   p49:
   - node: p
     children:
     - node: text
-      content: '         まじめに書くと意外にめんどい'
+      content: まじめに書くと 意外にめんどい
   p50:
   - node: p
     children:
@@ -282,36 +411,59 @@ text:
   - node: p
     children:
     - node: text
-      content: '         キラッとひらめいた'
+      content: キラッと
+    - node: br
+    - node: text
+      content: ひらめいた
   p52:
   - node: p
     children:
     - node: text
-      content: '         計算する処理はMoneyCalculatorトレイトに分割'
+      content: 計算する処理は MoneyCalculator トレイトに分割
+  p53: []
+  p54: []
+  p55: []
+  p56: []
   p57:
   - node: p
     children:
     - node: text
-      content: ある程度の式は書けるように
+      content: ある程度の式は
+    - node: br
+    - node: text
+      content: 書けるように
   p58:
   - node: p
     children:
     - node: text
-      content: 二項演算を採用しなかったので優先順位の評価は一切不要
+      content: 二項演算を採用しな かったので優先順位
+    - node: br
+    - node: text
+      content: の評価は一切不要
   p59:
   - node: p
     children:
     - node: text
-      content: '         副作用として複数引数の処理が簡単になった'
+      content: 副作用として
+    - node: br
+    - node: text
+      content: 複数引数の処理 が簡単になった
+  p60: []
   p61:
   - node: p
     children:
     - node: text
-      content: '         通貨計算ではLIStをProcessingする！'
+      content: 通貨計算では
+    - node: br
+    - node: text
+      content: LIStをProcessing
+    - node: br
+    - node: text
+      content: する！
   p62:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: まとめ
   p63:
   - node: p
@@ -327,7 +479,10 @@ text:
   - node: p
     children:
     - node: text
-      content: '         MoneyPHPを使ったほうがいい'
+      content: MoneyPHPを
+    - node: br
+    - node: text
+      content: 使ったほうがいい
   p66:
   - node: p
     children:
@@ -337,13 +492,35 @@ text:
   - node: p
     children:
     - node: text
-      content: '         PHPで雑に通貨クラスを 実装してみた結果 🤑'
+      content: PHPで
+    - node: bold
+      content: 雑に
+    - node: text
+      content: 通貨クラスを
+    - node: br
+    - node: text
+      content: ' 実装してみた'
+    - node: bold
+      content: 結果
+    - node: text
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: 🤑
+  - node: p
+    children:
     - node: bold
       content: I implemented a Money class, and I'm sleepy.
+  - node: p
+    children:
     - node: text
       content: 2018-02-23 ピクシブ社内勉強会
   p68:
   - node: p
     children:
     - node: text
-      content: LIStをProcessingしてた
+      content: LIStをProcessing
+    - node: br
+    - node: text
+      content: してた

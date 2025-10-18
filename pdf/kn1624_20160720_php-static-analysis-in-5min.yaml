@@ -11,38 +11,69 @@ text:
   p1:
   - node: p
     children:
-    - node: text
-      content: '5分でわかる静的解析入門Learn PHP static analysis in 5 min.2016-07-20 PHP BLT
-        #5'
+    - node: bold
+      content: 5分でわかる静的解析入門
+    - node: br
+    - node: bold
+      content: Learn PHP static analysis in 5 min.
+  - node: p
+    children:
+    - node: bold
+      content: '2016-07-20 PHP BLT #5'
   p2:
   - node: p
     children:
-    - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
-    - node: text
-      content: 'GitHub/Packagistでは id:zonuexe
-
-        •Ruby書いてたら、何の因果かPHPを書く仕事に
-
-        •好きな言葉はメタプログラミングです•'
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: GitHub/Packagistでは id:zonuexe
+    - node: li
+      content: Ruby書いてたら、何の因果かPHPを書く仕事に
+    - node: li
+      content: 好きな言葉はメタプログラミングです
   p3:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: さて
   p4:
   - node: p
     children:
+    - node: bold
+      content: 敵を知れば百戦殆ふからず
+  - node: p
+    children:
     - node: text
-      content: '敵を知れば百戦殆ふからず         プログラムを実際に動かさずして、•ソフトウェアの性質を把握する
-
-        いろんなツールとか手法がある
-
-        •         人間がPull Requestのdiffを見て•レビューするのも一種の静的解析
-
-         ユニットテストは実際に動かすので•動的検査の一種'
+      content: プログラムを実際に動かさずして、
+  - node: ul
+    children:
+    - node: li
+      content: ソフトウェアの性質を把握する
+  - node: p
+    children:
+    - node: text
+      content: 'いろんなツールとか手法がある '
+  - node: p
+    children:
+    - node: text
+      content: 人間がPull Requestのdiffを見て
+  - node: ul
+    children:
+    - node: li
+      content: レビューするのも一種の静的解析
+  - node: p
+    children:
+    - node: text
+      content: ユニットテストは実際に動かすので
+  - node: ul
+    children:
+    - node: li
+      content: 動的検査の一種
   p5:
   - node: p
     children:
@@ -53,20 +84,28 @@ text:
     children:
     - node: bold
       content: wc -l **/*.php
-    - node: text
-      content: 'Unixの標準コマンド
-
-        '
-    - node: text
-      content: 'お前は何を言ってるんだ
-
-        '
-    - node: text
-      content: '-lファイルの行数を測る ()
-
-        '
-    - node: text
-      content: -cバイト数を測る ()
+  - node: p
+    children:
+    - node: bold
+      content: 'Unixの標準コマンド '
+  - node: ul
+    children:
+    - node: li
+      content: お前は何を言ってるんだ
+    - node: li
+      content: -l
+  - node: p
+    children:
+    - node: bold
+      content: 'ファイルの行数を測る ( ) '
+  - node: ul
+    children:
+    - node: li
+      content: -c
+  - node: p
+    children:
+    - node: bold
+      content: バイト数を測る ( )
   p7:
   - node: p
     children:
@@ -77,12 +116,30 @@ text:
     children:
     - node: bold
       content: php -l target.php
+  - node: p
+    children:
     - node: text
-      content: '         コードがSyntax Errorではないか•検査する
-
-         実際に運用されるサーバーと同じ•バージョンを利用する
-
-        git ls-files | grep ''\.php$'' | •xargs -IFILE -n1 php -l FILE'
+      content: コードがSyntax Errorではないか
+  - node: ul
+    children:
+    - node: li
+      content: 検査する
+  - node: p
+    children:
+    - node: text
+      content: 実際に運用されるサーバーと同じ
+  - node: ul
+    children:
+    - node: li
+      content: バージョンを利用する
+  - node: p
+    children:
+    - node: text
+      content: 'git ls-files | grep ''\.php$'' | '
+  - node: ul
+    children:
+    - node: li
+      content: xargs -IFILE -n1 php -l FILE
   p9:
   - node: p
     children:
@@ -93,14 +150,28 @@ text:
     children:
     - node: bold
       content: token_get_all()
+  - node: p
+    children:
     - node: text
-      content: 'PHPの標準関数 (要tokenizer)
-
-        •         スクリプトを構文要素ごとに•切り分けてくれる(だけ)
-
-        構文解析はしてくれない… (重要)
-
-        •目的を集中すれば小さなパーサーは•意外に書けた'
+      content: 'PHPの標準関数 (要tokenizer) '
+  - node: p
+    children:
+    - node: text
+      content: スクリプトを構文要素ごとに
+  - node: ul
+    children:
+    - node: li
+      content: 切り分けてくれる(だけ)
+  - node: p
+    children:
+    - node: text
+      content: '構文解析はしてくれない… (重要) '
+  - node: ul
+    children:
+    - node: li
+      content: 目的を集中すれば小さなパーサーは
+    - node: li
+      content: 意外に書けた
   p11:
   - node: p
     children:
@@ -111,87 +182,189 @@ text:
     children:
     - node: bold
       content: preg_match()
+  - node: p
+    children:
     - node: text
-      content: 'PHPの標準関数（最終兵器）
-
-        •雑な正規表現でも意外と機能する
-
-        •正規表現パターンなら誰でも書ける•ので、チームでメンテナンスできる'
+      content: 'PHPの標準関数（最終兵器） '
+  - node: ul
+    children:
+    - node: li
+      content: 雑な正規表現でも意外と機能する
+    - node: li
+      content: 正規表現パターンなら誰でも書ける
+    - node: li
+      content: ので、チームでメンテナンスできる
   p13:
   - node: p
     children:
     - node: bold
       content: preg_match()
-    - node: text
-      content: '         こんな感じで配列にパターンを•並べていく'
-    - node: bold
-      content: '[     ''level'' => ''error'',     ''desc''  => ''mt_srand() は使用禁止'',     ''pattern''
-        => [         ''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false,     ], ],'
-  p14:
   - node: p
     children:
     - node: text
+      content: こんな感じで配列にパターンを
+  - node: ul
+    children:
+    - node: li
+      content: 並べていく
+  - node: p
+    children:
+    - node: bold
+      content: '[ '
+    - node: br
+    - node: bold
+      content: '    ''level'' => ''error'', '
+    - node: br
+    - node: bold
+      content: '    ''desc''  => ''mt_srand() は使用禁止'', '
+    - node: br
+    - node: bold
+      content: '    ''pattern'' => [ '
+    - node: br
+    - node: bold
+      content: '        ''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false, '
+    - node: br
+    - node: bold
+      content: '    ], '
+    - node: br
+    - node: bold
+      content: '],'
+  p14:
+  - node: p
+    children:
+    - node: bold
       content: そのほか
   p15:
   - node: p
     children:
-    - node: text
-      content: 'よのなかにはたくさん実装あるPHPの静的解析          •— Algo13 2016.04.11 ドキュメント 
-
-        http://algo13.net/php/tips/static-analysis.html↑良い感じにまとまってるネ申記事
-
-        •phpmd, phpcs, php7cc…
-
-        •簡単な構文解析のサンプル載ってる•'
-  p16:
+    - node: bold
+      content: よのなかにはたくさん実装ある
   - node: p
     children:
     - node: text
+      content: 'PHPの静的解析 '
+  - node: ul
+    children:
+    - node: li
+      content: — Algo13 2016.04.11 ドキュメント
+  - node: p
+    children:
+    - node: text
+      content: http://algo13.net/php/tips/static-analysis.html
+  - node: p
+    children:
+    - node: text
+      content: '↑良い感じにまとまってるネ申記事 '
+  - node: ul
+    children:
+    - node: li
+      content: phpmd, phpcs, php7cc…
+    - node: li
+      content: 簡単な構文解析のサンプル載ってる
+  p16:
+  - node: p
+    children:
+    - node: bold
       content: 何をしたいのか
   p17:
   - node: p
     children:
-    - node: text
-      content: '静的解析できると何が嬉しいのか         Syntax Errorなファイルを•デプロイしないようにしたい…
-
-        弊社でも昔はありました
-
-        •コードレビューでつまらないことを•指摘したくない
-
-         割と膨大なコードを安全に•PHP7に着地させたい'
-  p18:
+    - node: bold
+      content: 静的解析できると何が嬉しいのか
   - node: p
     children:
     - node: text
+      content: Syntax Errorなファイルを
+  - node: ul
+    children:
+    - node: li
+      content: デプロイしないようにしたい…
+  - node: p
+    children:
+    - node: text
+      content: '弊社でも昔はありました '
+  - node: ul
+    children:
+    - node: li
+      content: コードレビューでつまらないことを
+    - node: li
+      content: 指摘したくない
+  - node: p
+    children:
+    - node: text
+      content: 割と膨大なコードを安全に
+  - node: ul
+    children:
+    - node: li
+      content: PHP7に着地させたい
+  p18:
+  - node: p
+    children:
+    - node: bold
       content: 最近のナウいツール
   p19:
   - node: p
     children:
     - node: bold
       content: etsy/phan
-    - node: text
-      content: 'Rasmus Lerdorfを要するEtsy社が•開発する静的解析ツール
-
-         未定義関数とか型がをかしいとか、•とにかくいろんな指摘してくれる
-
-        PHPDocの型を解析してくれる
-
-        •日本語で紹介すればバズれるぞ！！！•'
-  p20:
   - node: p
     children:
     - node: text
+      content: Rasmus Lerdorfを要するEtsy社が
+  - node: ul
+    children:
+    - node: li
+      content: 開発する静的解析ツール
+  - node: p
+    children:
+    - node: text
+      content: 未定義関数とか型がをかしいとか、
+  - node: ul
+    children:
+    - node: li
+      content: とにかくいろんな指摘してくれる
+  - node: p
+    children:
+    - node: text
+      content: 'PHPDocの型を解析してくれる '
+  - node: ul
+    children:
+    - node: li
+      content: 日本語で紹介すればバズれるぞ！！！
+  p20:
+  - node: p
+    children:
+    - node: bold
       content: 最近やってること
   p21:
   - node: p
     children:
     - node: bold
       content: baguette/definfo
+  - node: p
+    children:
     - node: text
-      content: '最近夜な夜な作ってるツール
-
-        •         実行時情報(Reflection)を使って•         いろいろ指図してくれるようにするつもり
-
-        タグジャンプの代替にしたい
-
-        •静的解析はしないつもりだったけど、•         どうにもならないところはがんばって構文解析してる'
+      content: '最近夜な夜な作ってるツール '
+  - node: p
+    children:
+    - node: text
+      content: 実行時情報(Reflection)を使って
+  - node: p
+    children:
+    - node: text
+      content: いろいろ指図してくれるように
+    - node: br
+    - node: text
+      content: 'するつもり '
+  - node: p
+    children:
+    - node: text
+      content: 'タグジャンプの代替にしたい '
+  - node: ul
+    children:
+    - node: li
+      content: 静的解析はしないつもりだったけど、
+  - node: p
+    children:
+    - node: text
+      content: どうにもならないところは がんばって構文解析してる

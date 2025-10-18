@@ -26,30 +26,47 @@ text:
   - node: p
     children:
     - node: text
-      content: すごい「PHPなんとか」列伝
+      content: すごい「
     - node: bold
-      content: 'Awesome “PHP-xxx”s.         '
+      content: PHPなんとか
     - node: text
-      content: '2018-06-18 #phpconfukPHPカンファレンス福岡2018懇親会LT'
-  p2:
+      content: 」列伝
+    - node: br
+    - node: bold
+      content: Awesome “PHP-xxx”s.
   - node: p
     children:
     - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
+      content: '2018-06-18 '
+    - node: bold
+      content: '#phpconfuk'
+  - node: p
+    children:
     - node: text
-      content: 'GitHub/Packagistでは id: zonuexe
-
-        •ピクシブ株式会社 pixiv運営本部
-
-        •Emacs Lisper, PHPer
-
-        •Emacs PHP Modeのメンテナ引き継ぎました
-
-        •好きなリスプはEmacs Lispです
-
-        •Qiitaに記事を書いたり変なコメントしてるよ•'
+      content: PHPカンファレンス福岡2018懇親会LT
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: 'GitHub/Packagistでは id: zonuexe'
+    - node: li
+      content: ピクシブ株式会社 pixiv運営本部
+    - node: li
+      content: Emacs Lisper, PHPer
+    - node: li
+      content: Emacs PHP Modeのメンテナ引き継ぎました
+    - node: li
+      content: 好きなリスプはEmacs Lispです
+    - node: li
+      content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
   p4:
   - node: p
     children:
@@ -59,118 +76,227 @@ text:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 前回のあらすじ
+      content: 前回の
+    - node: br
+    - node: bold
+      content: あらすじ
+  p6: []
   p7:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 経緯
+  p8: []
   p9:
   - node: p
     children:
+    - node: bold
+      content: PhpStorm
     - node: text
-      content: '         PhpStormが正式な綴り'
+      content: が
+    - node: br
+    - node: text
+      content: 正式な綴り
   p10:
   - node: p
     children:
+    - node: bold
+      content: PHP-STORM
     - node: text
-      content: '         PHP-STORMでもphpStormでもない'
+      content: 'でも '
+    - node: bold
+      content: phpStorm
+    - node: text
+      content: でもない
   p11:
   - node: p
     children:
     - node: text
-      content: '         ちなみにCLIのコマンドはpstorm'
-  p12:
+      content: ちなみにCLIの
+    - node: br
+    - node: text
+      content: コマンドは
   - node: p
     children:
     - node: text
+      content: pstorm
+  p12:
+  - node: p
+    children:
+    - node: bold
       content: ところで
   p13:
   - node: p
     children:
     - node: text
-      content: 'PHP関係のツールや         ライブラリには「PHPなんとか」が異常に多い'
+      content: PHP関係のツールや
+  - node: p
+    children:
+    - node: text
+      content: ライブラリには
+    - node: br
+    - node: text
+      content: 「
+    - node: bold
+      content: PHPなんとか
+    - node: text
+      content: 」が
+    - node: br
+    - node: text
+      content: 異常に多い
   p14:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 便乗
+  p15: []
   p16:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: phpunit phpspec phpstan phpstorm phpbrew phpmd phpactor phpcs phpparser
         phploc phpdbg phptal phpdi phpdocumentor phpmetrics phpmode phpdox phpbench
   p17:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 傾向
   p18:
   - node: p
     children:
     - node: text
-      content: '         大文字・小文字         PHPの後         - スペースありなし         - ハイフン／アンダーバー… etc.'
-  p19:
+      content: 大文字・小文字
   - node: p
     children:
     - node: text
+      content: PHPの後
+  - node: p
+    children:
+    - node: text
+      content: '- スペースありなし'
+  - node: p
+    children:
+    - node: text
+      content: '- ハイフン／アンダーバー'
+    - node: br
+    - node: text
+      content: … etc.
+  p19:
+  - node: p
+    children:
+    - node: bold
       content: よし、見ていくぞ
   p20:
   - node: p
     children:
+    - node: bold
+      content: 1. PHPUnit
+  - node: p
+    children:
     - node: text
-      content: '         1. PHPUnit         PHP大文字         PHP後スペースなしUだけ大文字'
+      content: PHP大文字
+  - node: p
+    children:
+    - node: text
+      content: PHP後スペースなし
+    - node: br
+    - node: text
+      content: Uだけ大文字
+  p21: []
   p22:
   - node: p
     children:
-    - node: text
-      content: '         2. phpspec         PHP小文字         PHP後スペースなしspecも小文字'
-  p24:
+    - node: bold
+      content: 2. phpspec
   - node: p
     children:
     - node: text
-      content: '         2. phpspec         PHP小文字         PHP後スペースなしspecも小文字'
+      content: PHP小文字
+  - node: p
+    children:
+    - node: text
+      content: PHP後スペースなし
+    - node: br
+    - node: text
+      content: specも小文字
+  p23: []
+  p24:
+  - node: p
+    children:
+    - node: bold
+      content: 2. phpspec
+  - node: p
+    children:
+    - node: text
+      content: PHP小文字
+  - node: p
+    children:
+    - node: text
+      content: PHP後スペースなし
+    - node: br
+    - node: text
+      content: specも小文字
   p25:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: スライドを作るのがだるい
+      content: スライドを
+    - node: br
+    - node: bold
+      content: 作るのがだるい
   p26:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 続きはTwitterで
   p27:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: まとめ
   p28:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
-      content: phpxx/phpxxみたいなパッケージ名だと、なんかコミュニティで開発されててすごそう感がある
+      content: phpxx/phpxx
+    - node: br
+    - node: bold
+      content: みたいなパッケージ名だと、
+    - node: text
+      content: ' '
+    - node: bold
+      content: なんかコミュニティで開発
+    - node: text
+      content: ' '
+    - node: bold
+      content: されててすごそう感がある
   p29:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: 安易なPHPxxx
     - node: text
-      content: 安易なPHPxxx多すぎでは…
+      content: ' '
+    - node: bold
+      content: 多すぎでは…
   p30:
   - node: p
     children:
+    - node: bold
+      content: 脆弱性で悪評を高
     - node: text
-      content: 脆弱性で悪評を高めたPHPMailerとかもありましたね
+      content: ' '
+    - node: bold
+      content: めたPHPMailerと
+    - node: text
+      content: ' '
+    - node: bold
+      content: かもありましたね
   p31:
   - node: p
     children:
     - node: text
-      content: '         みなさんは名前とDL数だけでライブラリを選定したりしませんよね？？'
+      content: みなさんは
+    - node: br
+    - node: text
+      content: 名前とDL数だけでラ イブラリを選定した りしませんよね？？

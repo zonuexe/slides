@@ -22,83 +22,166 @@ text:
   - node: p
     children:
     - node: text
-      content: セッション入門PHP
+      content: セッション入門
+  - node: p
+    children:
+    - node: text
+      content: PHP
+    - node: br
     - node: bold
       content: Introduction to PHP Session
-    - node: text
+  - node: p
+    children:
+    - node: bold
       content: ' ピクシブ社内勉強会'
+  - node: p
+    children:
     - node: bold
       content: '2017-12-01'
   p2:
   - node: p
     children:
-    - node: text
-      content: 'お前誰ようさみけんた、@tadsan、Zonu.EXE
-
-        '
-    - node: text
-      content: 'Emacs PHP Modeメンテナ
-
-        '
-    - node: text
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた、@tadsan、Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: Emacs PHP Modeメンテナ
+    - node: li
       content: 省略
   p3:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 注意
   p4:
   - node: p
     children:
     - node: text
-      content: この発表は新規のWebサイトWebアプリケーションフレームワークに依存しないPHP開発を推奨する目的ではない
+      content: この発表は新規のWebサイト Webアプリケーションフレー ムワークに依存しないPHP開
+    - node: br
+    - node: text
+      content: 発を推奨する目的ではない
   p5:
   - node: p
     children:
     - node: text
-      content: ※今回ログインの話はしません
+      content: ※今回ログイン の話はしません
   p6:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: セッションとは何か
+      content: セッション
+    - node: br
+    - node: bold
+      content: とは何か
   p7:
   - node: p
     children:
     - node: text
-      content: 'この用語(セッション)         が意味するところはいろいろあるけど'
+      content: この用語
+  - node: p
+    children:
+    - node: text
+      content: (セッション)
+  - node: p
+    children:
+    - node: text
+      content: が意味するところは
+    - node: br
+    - node: text
+      content: いろいろあるけど
   p8:
   - node: p
     children:
     - node: text
-      content: '         ここではWebで、ユーザーと継続的に通信する機構'
+      content: ここではWebで、
+    - node: br
+    - node: text
+      content: ユーザーと
+    - node: bold
+      content: 継続的に
+    - node: br
+    - node: text
+      content: 通信する機構
   p9:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 継続的？
   p10:
   - node: p
     children:
+    - node: bold
+      content: はじめて訪問したとき
+  - node: p
+    children:
     - node: text
-      content: 'はじめて訪問したときこんにちは         「ゲスト」さん！ あなたは誰ですか？Webサイト'
+      content: こんにちは
+  - node: p
+    children:
+    - node: text
+      content: '「ゲスト」さん！ '
+    - node: br
+    - node: text
+      content: あなたは誰ですか？
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p11:
   - node: p
     children:
-    - node: text
-      content: ここに名前をいれてね私は「tadsan」だよWebサイト
-  p12:
+    - node: bold
+      content: ここに名前をいれてね
   - node: p
     children:
     - node: text
-      content: '次に訪問したときこんにちは         「tadsan」さん！ また来ましたね！Webサイト'
+      content: 私は「tadsan」だよ
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
+  p12:
+  - node: p
+    children:
+    - node: bold
+      content: 次に訪問したとき
+  - node: p
+    children:
+    - node: text
+      content: こんにちは
+  - node: p
+    children:
+    - node: text
+      content: 「tadsan」さん！ また来ましたね！
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p13:
   - node: p
     children:
     - node: text
-      content: Webブラウザでセッションを実現するには、一般的にはが利用されるCookie(クッキー)
+      content: Webブラウザでセッションを
+    - node: br
+    - node: text
+      content: 実現するには、一般的には
+  - node: p
+    children:
+    - node: text
+      content: が利用される
+  - node: p
+    children:
+    - node: text
+      content: Cookie
+  - node: p
+    children:
+    - node: text
+      content: (クッキー)
   p14:
   - node: p
     children:
@@ -107,86 +190,165 @@ text:
   p15:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 注意
   p16:
   - node: p
     children:
     - node: text
-      content: '         セッションの実装はWebサイトのプライバシーポリシーと密接に関連する'
+      content: セッションの実装は
+    - node: br
+    - node: text
+      content: Webサイトのプライバシー ポリシーと密接に関連する
   p17:
   - node: p
     children:
+    - node: bold
+      content: のプライバシーポリシー
+  - node: p
+    children:
     - node: text
-      content: のプライバシーポリシーpixiv
+      content: pixiv
   p18:
   - node: p
     children:
     - node: bold
       content: TIPS
+    - node: br
     - node: text
-      content: Cookieを使ったセッションを利用するときはプライバシーポリシーを明記しよう
+      content: Cookieを使ったセッション を利用するときはプライバ シーポリシーを明記しよう
   p19:
   - node: p
     children:
-    - node: text
-      content: 'PHPで
-
-        セッション'
+    - node: bold
+      content: 'PHPで '
+    - node: br
+    - node: bold
+      content: セッション
   p20:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 超かんたん
   p21:
   - node: p
     children:
-    - node: text
-      content: 'name.php<?php session_start(); //  session_start()  これで別ページでもすれば//
-        $_SESSION[''name'']  として参照できるようになる$_SESSION[''name''] = ''太郎''; header(''Location:
-        /betsu.php'');'
-  p22:
+    - node: bold
+      content: name.php
   - node: p
     children:
     - node: text
-      content: betsu.php<?php session_start() ?> <p> こんにちは<?= htmlspecialchars() ?>さん
-        $_SESSION['name']</p>
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'session_start(); '
+  - node: p
+    children:
+    - node: text
+      content: '//   session_start()   '
+    - node: br
+    - node: text
+      content: これで別ページでも すれば
+    - node: br
+    - node: text
+      content: '// $_SESSION[''name'']   '
+  - node: p
+    children:
+    - node: text
+      content: として参照できるようになる
+  - node: p
+    children:
+    - node: text
+      content: '$_SESSION[''name''] = ''太郎''; '
+    - node: br
+    - node: text
+      content: 'header(''Location: /betsu.php'');'
+  p22:
+  - node: p
+    children:
+    - node: bold
+      content: betsu.php
+  - node: p
+    children:
+    - node: text
+      content: '<?php session_start() ?> '
+  - node: p
+    children:
+    - node: text
+      content: '<p> '
+    - node: br
+    - node: text
+      content: 'こんにちは<?= htmlspecialchars( ) ?>さん '
+  - node: p
+    children:
+    - node: text
+      content: $_SESSION['name']
+  - node: p
+    children:
+    - node: text
+      content: </p>
   p23:
   - node: p
     children:
     - node: bold
       content: TIPS
+    - node: br
     - node: text
-      content: PHPのフレームワークはセッション機構がいい感じに統合されてることがある。ただし、マイクロフレームワークではオミットされてることが多くPHPデフォルトのセッションを気にする必要がある。
+      content: PHPのフレームワークはセッション機構 がいい感じに統合されてることがある。 ただし、マイクロフレームワークではオ ミットされてることが多くPHPデフォル
+        トのセッションを気にする必要がある。
   p24:
   - node: p
     children:
     - node: bold
       content: TIPS
+    - node: br
     - node: text
-      content: session_start()および後述するセッション設定は個別のページで呼ぶのではなく、共通初期化スクリプトに記述すること
-  p25:
+      content: session_start()
   - node: p
     children:
     - node: text
-      content: 'まあとりあえず
-
-        '
+      content: および
     - node: bold
-      content: '         '
+      content: 後述す
+  - node: p
+    children:
+    - node: bold
+      content: るセッション設定
     - node: text
-      content: session_start()で簡単にできる
+      content: は個別のペー ジで呼ぶのではなく、共通初期
+    - node: br
+    - node: text
+      content: 化スクリプトに記述すること
+  p25:
+  - node: p
+    children:
+    - node: bold
+      content: 'まあとりあえず '
+  - node: p
+    children:
+    - node: text
+      content: session_start()
+  - node: p
+    children:
+    - node: bold
+      content: で
+  - node: p
+    children:
+    - node: bold
+      content: 簡単にできる
   p26:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: ね、かんたんでしょ？
+      content: ね、かんたん
+    - node: br
+    - node: bold
+      content: でしょ？
   p27:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 完
   p28:
   - node: p
@@ -196,117 +358,336 @@ text:
   p29:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: だと思ったか
   p30:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: どうして
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: セッションは動くのか
+      content: セッションは
+    - node: br
+    - node: bold
+      content: 動くのか
   p31:
   - node: p
     children:
+    - node: bold
+      content: よし、Webサイトを見よう
+  - node: p
+    children:
     - node: text
-      content: 'よし、Webサイトを見ようGET /index HTTP/1.1         Host: example.comWebサイト'
+      content: GET /index HTTP/1.1
+  - node: p
+    children:
+    - node: text
+      content: 'Host: example.com'
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p32:
   - node: p
     children:
+    - node: bold
+      content: はじめて訪問したとき
+  - node: p
+    children:
     - node: text
-      content: 'はじめて訪問したとき         こいつはCookie持ってないな…         ちっ、新参か。GET /index HTTP/1.1         セッションIDを発行するか
-
-        Host: example.com「こんにちはゲストさーん」Webサイト'
+      content: こいつはCookie持ってないな…
+  - node: p
+    children:
+    - node: text
+      content: ちっ、新参か。
+  - node: p
+    children:
+    - node: text
+      content: GET /index HTTP/1.1
+  - node: p
+    children:
+    - node: text
+      content: 'セッションIDを発行するか '
+  - node: p
+    children:
+    - node: text
+      content: 'Host: example.com'
+  - node: p
+    children:
+    - node: text
+      content: 「こんにちはゲストさーん」
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p33:
   - node: p
     children:
-    - node: text
-      content: 'はじめて訪問したとき200 OK          こいつはCookie持ってないな…         ちっ、新参か。Set-Cookie: セッションIDを発行するか
-
-        PHPSESSID=xxxxx;expires=...         <!DOCTYPE html><html>...「こんにちはゲストさーん」Webサイト'
-  p34:
+    - node: bold
+      content: はじめて訪問したとき
   - node: p
     children:
     - node: text
-      content: 'はじめて訪問したとき200 OK          こいつはCookie持ってないな…         ちっ、新参か。Set-Cookie: Set-Cookie!セッションIDを発行するか
-
-        PHPSESSID=xxxxx;expires=...         <!DOCTYPE html><html>...「こんにちはゲストさーん」Webサイト'
+      content: 200 OK
+  - node: p
+    children:
+    - node: text
+      content: こいつはCookie持ってないな…
+  - node: p
+    children:
+    - node: text
+      content: ちっ、新参か。
+  - node: p
+    children:
+    - node: text
+      content: 'Set-Cookie: '
+  - node: p
+    children:
+    - node: text
+      content: 'セッションIDを発行するか '
+  - node: p
+    children:
+    - node: text
+      content: PHPSESSID=xxxxx;expires=...
+  - node: p
+    children:
+    - node: text
+      content: <!DOCTYPE html><html>...
+  - node: p
+    children:
+    - node: text
+      content: 「こんにちはゲストさーん」
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
+  p34:
+  - node: p
+    children:
+    - node: bold
+      content: はじめて訪問したとき
+  - node: p
+    children:
+    - node: text
+      content: 200 OK
+  - node: p
+    children:
+    - node: text
+      content: こいつはCookie持ってないな…
+  - node: p
+    children:
+    - node: text
+      content: ちっ、新参か。
+  - node: p
+    children:
+    - node: text
+      content: 'Set-Cookie: '
+    - node: br
+    - node: bold
+      content: Set-Cookie!
+  - node: p
+    children:
+    - node: text
+      content: 'セッションIDを発行するか '
+  - node: p
+    children:
+    - node: text
+      content: PHPSESSID=xxxxx;expires=...
+  - node: p
+    children:
+    - node: text
+      content: <!DOCTYPE html><html>...
+  - node: p
+    children:
+    - node: text
+      content: 「こんにちはゲストさーん」
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p35:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: RFC 6265HTTP State Management Mechanism
+      content: RFC 6265
+    - node: br
+    - node: bold
+      content: 'HTTP State '
+    - node: br
+    - node: bold
+      content: Management Mechanism
   p36:
   - node: p
     children:
     - node: text
-      content: 'HTTP上でWebサイトと         UAが状態を(ブラウザ)共有するためのしくみ'
-  p37:
+      content: HTTP上でWebサイトと
   - node: p
     children:
     - node: text
+      content: UA が
+    - node: bold
+      content: 状態
+    - node: text
+      content: を
+    - node: br
+    - node: text
+      content: (ブラウザ)
+    - node: br
+    - node: text
+      content: 共有するためのしくみ
+  p37:
+  - node: p
+    children:
+    - node: bold
       content: 状態？
   p38:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 話は長くなる
   p39:
   - node: p
     children:
     - node: text
-      content: 'Cookieに対応したユーザーエー         ジェントが(Webブラウザ)         Set-Cookieを受け取ると、次からそのサイトにリクエストするときにCookieヘッダを付加する'
+      content: Cookieに対応したユーザーエー
+  - node: p
+    children:
+    - node: text
+      content: ジェント が
+  - node: p
+    children:
+    - node: text
+      content: (Webブラウザ)
+  - node: p
+    children:
+    - node: text
+      content: Set-Cookieを受け取ると、 次からそのサイトにリクエス トするときにCookieヘッダを
+    - node: br
+    - node: text
+      content: 付加する
   p40:
   - node: p
     children:
+    - node: bold
+      content: 次回に訪問するとき
+    - node: br
     - node: text
-      content: '次回に訪問するときGET /index HTTP/1.1         Host: example.com         Cookie:         PHPSESSID=xxxxxWebサイト'
+      content: GET /index HTTP/1.1
+  - node: p
+    children:
+    - node: text
+      content: 'Host: example.com'
+  - node: p
+    children:
+    - node: text
+      content: 'Cookie:'
+  - node: p
+    children:
+    - node: text
+      content: PHPSESSID=xxxxx
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p41:
   - node: p
     children:
+    - node: bold
+      content: 次回に訪問するとき
+    - node: br
     - node: text
-      content: '次回に訪問するときGET /index HTTP/1.1         おっこいつは前も来たxxxxだな
-
-        Host: example.com         「こんちわー またきたね」Cookie:         PHPSESSID=xxxxxWebサイト'
-  p42:
+      content: GET /index HTTP/1.1
   - node: p
     children:
     - node: text
-      content: '次回に訪問するときおっこいつは前も来たxxxxだな
-
-        200 OK         「こんちわー またきたね」<!DOCTYPE html><html>...Webサイト'
+      content: 'おっこいつは前も来たxxxxだな '
+  - node: p
+    children:
+    - node: text
+      content: 'Host: example.com'
+  - node: p
+    children:
+    - node: text
+      content: 「こんちわー またきたね」
+  - node: p
+    children:
+    - node: text
+      content: 'Cookie:'
+  - node: p
+    children:
+    - node: text
+      content: PHPSESSID=xxxxx
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: 次回に訪問するとき
+  - node: p
+    children:
+    - node: text
+      content: 'おっこいつは前も来たxxxxだな '
+  - node: p
+    children:
+    - node: text
+      content: 200 OK
+  - node: p
+    children:
+    - node: text
+      content: 「こんちわー またきたね」
+  - node: p
+    children:
+    - node: text
+      content: <!DOCTYPE html><html>...
+  - node: p
+    children:
+    - node: bold
+      content: Webサイト
   p43:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: どうして
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: セッションは動くのか
+      content: セッションは
+    - node: br
+    - node: bold
+      content: 動くのか
   p44:
   - node: p
     children:
+    - node: bold
+      content: Ｑ.
     - node: text
-      content: Ｑ.どうしてセッションは特に設定しなくても動くのはなぜ？
+      content: どうしてセッショ ンは特に設定しなく ても動くのはなぜ？
   p45:
   - node: p
     children:
+    - node: bold
+      content: Ａ.
     - node: text
-      content: '         Ａ.PHPはきみのことを         ファイルに保存して覚えてるからだよ'
-  p46:
+      content: PHPはきみのことを
   - node: p
     children:
     - node: text
-      content: ファイルっすか
+      content: ファイルに保存して
+    - node: br
+    - node: text
+      content: 覚えてるからだよ
+  p46:
+  - node: p
+    children:
+    - node: bold
+      content: ファイル
+    - node: text
+      content: っすか
   p47:
   - node: p
     children:
@@ -315,8 +696,10 @@ text:
   p48:
   - node: p
     children:
+    - node: bold
+      content: ファイル
     - node: text
-      content: ファイルです
+      content: です
   p49:
   - node: p
     children:
@@ -326,7 +709,10 @@ text:
   - node: p
     children:
     - node: text
-      content: session_save_path() 保存するディレクトリを設定できる
+      content: session_save_path() 保存するディレクトリ
+    - node: br
+    - node: text
+      content: を設定できる
   p51:
   - node: p
     children:
@@ -340,8 +726,13 @@ text:
   p53:
   - node: p
     children:
+    - node: bold
+      content: Ｑ.ファイル
     - node: text
-      content: '         Ｑ.ファイルの問題点とは何か？'
+      content: の
+    - node: br
+    - node: text
+      content: 問題点とは何か？
   p54:
   - node: p
     children:
@@ -350,12 +741,15 @@ text:
   p55:
   - node: p
     children:
-    - node: text
-      content: Ａ.サーバーまたいで
     - node: bold
-      content: '         '
-    - node: text
-      content: セッションを共有できない！
+      content: Ａ.サーバーまたいで
+  - node: p
+    children:
+    - node: bold
+      content: セッションを
+    - node: br
+    - node: bold
+      content: 共有できない！
   p56:
   - node: p
     children:
@@ -364,13 +758,23 @@ text:
   p57:
   - node: p
     children:
+    - node: bold
+      content: Ｑ.
     - node: text
-      content: '         Ｑ.具体的に何が起こる？'
+      content: 具体的に 何が起こる？
   p58:
   - node: p
     children:
+    - node: bold
+      content: Ａ.サーバーを増やして
     - node: text
-      content: Ａ.サーバーを増やして分散させた瞬間に、セッションが消えたりする
+      content: ' '
+    - node: bold
+      content: 分散させた瞬間に、セッ
+    - node: text
+      content: ' '
+    - node: bold
+      content: ションが消えたりする
   p59:
   - node: p
     children:
@@ -380,13 +784,14 @@ text:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 実用PHPセッション
+      content: 実用PHP
+    - node: br
+    - node: bold
+      content: セッション
   p61:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 本題はここから
   p62:
   - node: p
@@ -401,79 +806,131 @@ text:
   p64:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: これを実装して
   p65:
   - node: p
     children:
+    - node: bold
+      content: MySessHandler.php
+  - node: p
+    children:
     - node: text
-      content: MySessHandler.php<?php class MySessHandler implements SessionHandlerInterface
-        {     //  実装…}
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'class MySessHandler implements SessionHandlerInterface '
+    - node: br
+    - node: text
+      content: '{ '
+    - node: br
+    - node: text
+      content: '    //   '
+  - node: p
+    children:
+    - node: text
+      content: 実装…
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p66:
   - node: p
     children:
-    - node: text
-      content: 'bootstrap.php<?php $handler = new MySessHandler(); session_set_save_handler($handler,
-        true);         session_start(); '
-  p67:
+    - node: bold
+      content: bootstrap.php
   - node: p
     children:
     - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$handler = new MySessHandler(); '
+    - node: br
+    - node: text
+      content: session_set_save_handler($handler, true);
+  - node: p
+    children:
+    - node: text
+      content: 'session_start(); '
+  p67:
+  - node: p
+    children:
+    - node: bold
       content: 登録できる
   p68:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 実装って何をすればいいの？
+      content: 実装って何を
+    - node: br
+    - node: bold
+      content: すればいいの？
   p69:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: Redis/Memcached/
     - node: text
-      content: Redis/Memcached/SQLなどに保存する
+      content: ' '
+    - node: bold
+      content: SQLなどに保存する
   p70:
   - node: p
     children:
+    - node: bold
+      content: 極端な話、データベー
     - node: text
-      content: 極端な話、データベースじゃなくてもいい
+      content: ' '
+    - node: bold
+      content: スじゃなくてもいい
   p71:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: 例)Cookie
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: (セキュリティの面で面倒なのでおすすめはしない)
+      content: (セキュリティの面で
+    - node: br
+    - node: bold
+      content: 面倒なのでおすすめはしない)
   p72:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 設定
   p73:
   - node: p
     children:
-    - node: text
-      content: デフォルト設定の問題
+    - node: bold
+      content: デフォルト設定
+    - node: br
+    - node: bold
+      content: の問題
   p74:
   - node: p
     children:
-    - node: text
-      content: デフォルトでは、Cookie
     - node: bold
-      content: '         '
-    - node: text
-      content: にSecure,httpOnly属性がついてない
+      content: デフォルトでは、Cookie
+  - node: p
+    children:
+    - node: bold
+      content: にSecure,httpOnly属性
+    - node: br
+    - node: bold
+      content: がついてない
   p75:
   - node: p
     children:
-    - node: text
-      content: 現代においてはありえない
+    - node: bold
+      content: 現代においては
+    - node: br
+    - node: bold
+      content: ありえない
   p76:
   - node: p
     children:
@@ -482,82 +939,135 @@ text:
   p77:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 絶対設定しよう
   p78:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: PHPSESSIDださい
   p79:
   - node: p
     children:
+    - node: bold
+      content: bootstrap.php
+  - node: p
+    children:
     - node: text
-      content: 'bootstrap.php<?php session_name(''hoge_session_id''); $handler = new
-        MySessHandler(); session_set_save_handler($handler, true);         session_start(); '
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'session_name(''hoge_session_id''); '
+  - node: p
+    children:
+    - node: text
+      content: '$handler = new MySessHandler(); '
+    - node: br
+    - node: text
+      content: session_set_save_handler($handler, true);
+  - node: p
+    children:
+    - node: text
+      content: 'session_start(); '
   p80:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: php.ini
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: VS PHP関数
+      content: VS
+    - node: br
+    - node: bold
+      content: ' PHP関数'
   p81:
   - node: p
     children:
-    - node: text
-      content: 'セッション系の設定
-
-        '
     - node: bold
-      content: '         '
-    - node: text
-      content: 設定ファイルと*.ini()PHP両方で設定できる
-  p82:
+      content: 'セッション系の設定 '
+  - node: p
+    children:
+    - node: bold
+      content: 設定ファイル と
   - node: p
     children:
     - node: text
-      content: 環境によってphp.iniは手を入れにくいので、実行時にPHPスクリプトで設定関数を呼ぶようにする方がおすすめ
+      content: '*.ini'
+    - node: br
+    - node: bold
+      content: ( )
+  - node: p
+    children:
+    - node: bold
+      content: PHP両方で設定できる
+  p82:
+  - node: p
+    children:
+    - node: bold
+      content: 環境によってphp.iniは手を入
+    - node: text
+      content: ' '
+    - node: bold
+      content: れにくいので、実行時にPHP
+    - node: text
+      content: ' '
+    - node: bold
+      content: スクリプトで設定関数を呼ぶ
+    - node: br
+    - node: bold
+      content: ようにする方がおすすめ
   p83:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: 関数で書いてやれば
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: (同じコードである限り)事故が起きにくい
+      content: (同じコードである限り)
+    - node: br
+    - node: bold
+      content: 事故が起きにくい
   p84:
   - node: p
     children:
-    - node: text
-      content: 今回しなかった話
+    - node: bold
+      content: 今回しなかっ
+    - node: br
+    - node: bold
+      content: た話
   p85:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: ログインの実装方法
+      content: ログインの
+    - node: br
+    - node: bold
+      content: 実装方法
   p86:
   - node: p
     children:
+    - node: bold
+      content: ログイン処理を実装するため
     - node: text
-      content: ログイン処理を実装するためにはセキュリティ的に考慮すべき事柄がいろいろあるよ
+      content: ' '
+    - node: bold
+      content: にはセキュリティ的に考慮す
+    - node: br
+    - node: bold
+      content: べき事柄がいろいろあるよ
   p87:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: この発表の
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: 反響があったら
     - node: text
-      content: 反響があったら続きを書くよ！
+      content: ' '
+    - node: bold
+      content: 続きを書くよ！

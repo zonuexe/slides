@@ -9,127 +9,209 @@ text:
   p1:
   - node: p
     children:
+    - node: bold
+      content: PHP
     - node: text
-      content: 'PHPとsyntax highlightingPHP Editor and IDEs2017-2-23 PHP BLT #6'
+      content: と
+    - node: bold
+      content: syntax highlighting
+    - node: br
+    - node: bold
+      content: PHP Editor and IDEs
+  - node: p
+    children:
+    - node: bold
+      content: '2017-2-23 PHP BLT #6'
   p2:
   - node: p
     children:
-    - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
-    - node: text
-      content: 'GitHub/Packagistでは id:zonuexe
-
-        •ピクシブ株式会社でひたすらPHPやってる p(ixi)v
-
-        •フレームワークなき道にフレームを作るおしごと
-
-        •最近やってること
-
-        •会社にPhpStormを導入しました
-
-        •Emacsのphp-modeとかの改善やってます•'
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: GitHub/Packagistでは id:zonuexe
+    - node: li
+      content: ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+    - node: li
+      content: フレームワークなき道にフレームを作るおしごと
+    - node: li
+      content: 最近やってること
+    - node: li
+      content: 会社にPhpStormを導入しました
+    - node: li
+      content: Emacsのphp-modeとかの改善やってます
   p3:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: いままでの復習
+  p4: []
+  p5: []
+  p6: []
   p7:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 要点
   p8:
   - node: p
     children:
+    - node: bold
+      content: PHPDocの型
+  - node: p
+    children:
     - node: text
-      content: 'PHPDocの型基本はPHPの型かクラス名を書く
-
-        •複合型
-
-        •intint|string「または文字列」 
-
-        •値が並んだ配列
-
-        •intint[] 「が並んだ配列」 •https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/•types.html'
+      content: '基本はPHPの型かクラス名を書く '
+  - node: ul
+    children:
+    - node: li
+      content: 複合型
+    - node: li
+      content: int int|string
+  - node: p
+    children:
+    - node: text
+      content: '「 または文字列」   '
+  - node: ul
+    children:
+    - node: li
+      content: 値が並んだ配列
+    - node: li
+      content: int int[]
+  - node: p
+    children:
+    - node: text
+      content: '「 が並んだ配列」 '
+  - node: ul
+    children:
+    - node: li
+      content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
+    - node: li
+      content: types.html
   p9:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: ところで、PHPの開発環境はいろいろある(エディタ/IDE)
+      content: ところで、PHPの開発環境
+  - node: p
+    children:
+    - node: bold
+      content: はいろいろある
+  - node: p
+    children:
+    - node: bold
+      content: (エディタ/IDE)
   p10:
   - node: p
     children:
-    - node: text
-      content: 'みなさんは何を使ってますか？vi? Emacs? Vim? Spacemacs? NeoVim?
-
-        Sublime Text? Atom? VisualStudio Code?
-
-        PhpStorm? IntelliJ IDEA?
-
-        NetBeans? Eclipse?
-
-        nano? micro? 秀丸? TeraPad?'
+    - node: bold
+      content: みなさんは何を使ってますか？
+  - node: p
+    children:
+    - node: bold
+      content: 'vi? Emacs? Vim? Spacemacs? NeoVim? '
+  - node: p
+    children:
+    - node: bold
+      content: 'Sublime Text? Atom? VisualStudio Code? '
+  - node: p
+    children:
+    - node: bold
+      content: 'PhpStorm? IntelliJ IDEA? '
+  - node: p
+    children:
+    - node: bold
+      content: 'NetBeans? Eclipse? '
+  - node: p
+    children:
+    - node: bold
+      content: nano? micro? 秀丸? TeraPad?
   p11:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: Syntax highlighting!
   p12:
   - node: p
     children:
-    - node: text
-      content: '各種エディタでPHPを強調表示するにはphp-modeEmacs →  入れる
-
-        StanAngeloff/php.vimVim →  入れる
-
-        '
     - node: bold
-      content: '         '
+      content: 各種エディタでPHPを強調表示するには
+  - node: p
+    children:
     - node: text
-      content: 'Eclipse, NetBeans → PHPが入ってるエディションを入れる
-
-        IntelliJ IDEA → PHPパッケージ入れる'
+      content: php-mode
+    - node: br
+    - node: bold
+      content: 'Emacs →   入れる '
+  - node: p
+    children:
+    - node: text
+      content: StanAngeloff/php.vim
+    - node: br
+    - node: bold
+      content: 'Vim →   入れる '
+  - node: p
+    children:
+    - node: bold
+      content: 'Eclipse, NetBeans '
+    - node: br
+    - node: bold
+      content: '→ PHPが入ってるエディションを入れる '
+  - node: p
+    children:
+    - node: bold
+      content: IntelliJ IDEA → PHPパッケージ入れる
   p13:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: 各種最新版に
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: アップデートすべし(PHP BLTで毎回言ってる気がする…)
+      content: アップデートすべし
+    - node: br
+    - node: bold
+      content: (PHP BLTで毎回言ってる気がする…)
+  p14: []
+  p15: []
+  p16: []
+  p17: []
+  p18: []
+  p19: []
   p20:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 悲しみ
   p21:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: だいたいPHPDocを無視しやがる
+      content: だいたいPHPDocを
+    - node: br
+    - node: bold
+      content: 無視しやがる
   p22:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: Emacsのphp-modeなら手を出せるので直した
+      content: Emacsのphp-modeなら
+    - node: br
+    - node: bold
+      content: 手を出せるので直した
+  p23: []
   p24:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: ありがちなミスを防ぐ工夫
   p25:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: (スライドここまで)

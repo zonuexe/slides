@@ -62,35 +62,79 @@ text:
   - node: p
     children:
     - node: text
-      content: ここで差がつくエラー処理
+      content: ここで差がつく
     - node: bold
-      content: By Error Handling your application will be completed(cid:1964)(cid:1417)(cid:3899)(cid:1516)(cid:2742)(cid:3419)
+      content: エラー処理
     - node: text
-      content: '         , 8th OctPHP Conference Japan 2017#phpcon2017Kamata Tokyo, PiO '
+      content: ' '
+    - node: bold
+      content: By Error Handling your application will be completed
+  - node: p
+    children:
+    - node: bold
+      content: (cid:1964)(cid:1417)(cid:3899)(cid:1516)(cid:2742)(cid:3419)
+  - node: p
+    children:
+    - node: text
+      content: ', 8th Oct'
+  - node: p
+    children:
+    - node: text
+      content: PHP Conference Japan 2017
+  - node: p
+    children:
+    - node: text
+      content: '#phpcon2017'
+  - node: p
+    children:
+    - node: text
+      content: 'Kamata Tokyo, PiO '
   p2:
   - node: p
     children:
     - node: text
-      content: '         2017年10月8日に開催された         PHPカンファレンスで発表した         「ここで差がつくエラー処理」の完全版発表資料を補訂したです'
-  p3:
+      content: 2017年10月8日に開催された
+  - node: p
+    children:
+    - node: bold
+      content: PHPカンファレンス
+    - node: text
+      content: で発表した
   - node: p
     children:
     - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
+      content: 「ここで差がつくエラー処理」の
+  - node: p
+    children:
     - node: text
-      content: 'GitHub/Packagistでは id: zonuexe
-
-        •ピクシブ株式会社技術基盤チーム (pixiv.net)
-
-        •Emacs Lisper, PHPer
-
-        •入社前は自宅警備をしながらRuby書いてた
-
-        •Emacs PHP Modeのメンテナ引き継ぎました
-
-        •Qiitaに記事を書いたり変なコメントしてるよ•'
+      content: 完全版
+  - node: p
+    children:
+    - node: text
+      content: 発表資料を補訂した です
+  p3:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: 'GitHub/Packagistでは id: zonuexe'
+    - node: li
+      content: ピクシブ株式会社技術基盤チーム (pixiv.net)
+    - node: li
+      content: Emacs Lisper, PHPer
+    - node: li
+      content: 入社前は自宅警備をしながらRuby書いてた
+    - node: li
+      content: Emacs PHP Modeのメンテナ引き継ぎました
+    - node: li
+      content: Qiitaに記事を書いたり変なコメントしてるよ
+  p4: []
   p5:
   - node: p
     children:
@@ -104,445 +148,1354 @@ text:
   p7:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: みなさん困ってませんか
+  p8: []
   p9:
   - node: p
     children:
-    - node: text
-      content: こんな画面を見せてしまってませんか
+    - node: bold
+      content: こんな画面を見せて
+    - node: br
+    - node: bold
+      content: しまってませんか
+  p10: []
   p11:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 本番サービスで見せちゃってませんか
+      content: 本番サービスで
+    - node: br
+    - node: bold
+      content: 見せちゃってませんか
+  p12: []
   p13:
   - node: p
     children:
-    - node: text
-      content: HTML 出力途中で落ちたりしませんか
+    - node: bold
+      content: HTML 出力途中で
+    - node: br
+    - node: bold
+      content: 落ちたりしませんか
+  p14: []
   p15:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: エラーになってもWebサイトの体裁は
+      content: エラーになっても
+    - node: br
     - node: bold
-      content: '         '
-    - node: text
-      content: なんとか保ちたい……ですよね？
+      content: Webサイトの体裁は
+  - node: p
+    children:
+    - node: bold
+      content: なんとか保ちたい
+    - node: br
+    - node: bold
+      content: ……ですよね？
   p16:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: 画面はpixivの実在のバグではなく
     - node: text
-      content: 画面はpixivの実在のバグではなく故意に例外を発生させたものです
+      content: ' '
+    - node: bold
+      content: 故意に例外を発生させたものです
   p17:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: アジェンダ
   p18:
   - node: p
     children:
     - node: text
-      content: '1. 例外・エラーの種類
-
-        2. 本番環境でのエラー処理
-
-        3. 開発環境でのエラー処理'
+      content: '1. 例外・エラーの種類 '
+    - node: br
+    - node: text
+      content: 2. 本番環境でのエラー処理 3. 開発環境でのエラー処理
   p19:
   - node: p
     children:
+    - node: bold
+      content: 具体的にはこんな話をします
+  - node: p
+    children:
     - node: text
-      content: '具体的にはこんな話をしますエラーと例外の基本概念
-
-        それらを制御するやりかた
-
-        開発環境でうんざりしない方法'
+      content: 'エラーと例外の基本概念 '
+  - node: p
+    children:
+    - node: text
+      content: 'それらを制御するやりかた '
+  - node: p
+    children:
+    - node: text
+      content: 開発環境でうんざりしない方法
   p20:
   - node: p
     children:
+    - node: bold
+      content: 参考資料
+  - node: p
+    children:
     - node: text
-      content: '参考資料だいたいPHPマニュアルに載ってる
-
-        http://php.net/language.operators.errorcontrol
-
-        http://php.net/set_error_handler
-
-        http://php.net/set_exception_handler
-
-        http://php.net/register_shutdown_function
-
-        http://php.net/ErrorException
-
-        http://php.net/display-errors
-
-        whoops! https://github.com/filp/whoops'
+      content: 'だいたいPHPマニュアルに載ってる '
+    - node: br
+    - node: text
+      content: 'http://php.net/language.operators.errorcontrol '
+    - node: br
+    - node: text
+      content: 'http://php.net/set_error_handler '
+    - node: br
+    - node: text
+      content: 'http://php.net/set_exception_handler '
+    - node: br
+    - node: text
+      content: 'http://php.net/register_shutdown_function '
+    - node: br
+    - node: text
+      content: 'http://php.net/ErrorException http://php.net/display-errors '
+    - node: br
+    - node: bold
+      content: whoops!
+    - node: text
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/filp/whoops
   p21:
   - node: p
     children:
+    - node: bold
+      content: やらない話
+  - node: p
+    children:
     - node: text
-      content: 'やらない話エラー監視
-
-        例外設計
-
-        そもそもエラーって何だ'
+      content: 'エラー監視 '
+  - node: p
+    children:
+    - node: text
+      content: '例外設計 '
+  - node: p
+    children:
+    - node: text
+      content: そもそもエラーって何だ
   p22:
   - node: p
     children:
-    - node: text
-      content: 'PHPのコードの試しかたphp -r ''var_dump(1 + []);'' php -aREPL (PsySH または )
-
-        https://3v4l.org/
-
-        多くのバージョンで串刺し実行'
-  p23:
+    - node: bold
+      content: PHPのコードの試しかた
   - node: p
     children:
     - node: text
-      content: 'エラー・例外とはプログラムが正常ではないときに、それを通知する仕組み
-
-        PHPではエラーと例外がある
-
-        PHP5では処理系は基本的にエラー
-
-        PHP7で例外を投げることが増えた'
+      content: 'php -r ''var_dump(1 + []);'' '
+  - node: p
+    children:
+    - node: text
+      content: php -a
+  - node: p
+    children:
+    - node: text
+      content: 'REPL (PsySH または  ) '
+  - node: p
+    children:
+    - node: text
+      content: 'https://3v4l.org/ '
+  - node: p
+    children:
+    - node: text
+      content: 多くのバージョンで串刺し実行
+  p23:
+  - node: p
+    children:
+    - node: bold
+      content: エラー・例外とは
+  - node: p
+    children:
+    - node: text
+      content: プログラムが正常ではないときに、
+    - node: br
+    - node: text
+      content: 'それを通知する仕組み '
+  - node: p
+    children:
+    - node: text
+      content: PHPでは
+    - node: bold
+      content: エラー
+    - node: text
+      content: と
+    - node: bold
+      content: 例外
+    - node: text
+      content: 'がある '
+  - node: p
+    children:
+    - node: text
+      content: 'PHP5では処理系は基本的にエラー '
+  - node: p
+    children:
+    - node: text
+      content: PHP7で例外を投げることが増えた
   p24:
   - node: p
     children:
     - node: text
-      content: '1. 例外・エラーの種類
-
-        2. 本番環境でのエラー処理
-
-        3. 開発環境でのエラー処理'
+      content: '1. '
+    - node: bold
+      content: 例外・エラーの種類
+    - node: text
+      content: ' '
+    - node: br
+    - node: text
+      content: 2. 本番環境でのエラー処理 3. 開発環境でのエラー処理
   p25:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: エラー
   p26:
   - node: p
     children:
+    - node: bold
+      content: エラー
+  - node: p
+    children:
     - node: text
-      content: 'エラー         従来のPHPで異常状態を通知するための仕組み
-
-        関数呼び出し未定義変数の参照、結構いろんなところで発生する
-
-        PHPで種類が整理された7'
+      content: 従来のPHPで
+    - node: bold
+      content: 異常状態を通知する
+    - node: br
+    - node: text
+      content: 'ための仕組み '
+  - node: p
+    children:
+    - node: bold
+      content: 関数呼び出し 未定義変数の参照
+    - node: br
+    - node: text
+      content: 、
+    - node: br
+    - node: text
+      content: '結構いろんなところで発生する '
+  - node: p
+    children:
+    - node: text
+      content: PHP で種類が整理された
   p27:
   - node: p
     children:
+    - node: bold
+      content: 主要なエラー
+  - node: p
+    children:
     - node: text
-      content: '主要なエラーNotice よくない処理の通知
-
-        Warning, Error
-
-        実行時の警告・エラー
-
-        Deprecated, Strict
-
-        非互換／廃止予定の機能
-
-        Fatal Error 致命的エラー'
+      content: Notice
+  - node: p
+    children:
+    - node: text
+      content: ' '
+    - node: bold
+      content: よくない
+    - node: text
+      content: '処理の通知 '
+  - node: p
+    children:
+    - node: text
+      content: Warning, Error
+  - node: p
+    children:
+    - node: text
+      content: '実行時の警告・エラー '
+    - node: br
+    - node: text
+      content: Deprecated, Strict
+  - node: p
+    children:
+    - node: text
+      content: '非互換／廃止予定の機能 '
+    - node: br
+    - node: text
+      content: Fatal Error
+  - node: p
+    children:
+    - node: text
+      content: ' '
+    - node: bold
+      content: 致命的
+    - node: text
+      content: エラー
   p28:
   - node: p
     children:
+    - node: bold
+      content: Notice
+  - node: p
+    children:
     - node: text
-      content: 'Notice配列の未定義位置から値を取り出そうとしたときなどに発生する
-
-        信号無視みたいな軽犯罪
-
-         ただしバグの温床になるので、無視せずきちんと対処を強く推奨'
+      content: '配列の未定義位置から値を取り出 そうとしたときなどに発生する '
+  - node: p
+    children:
+    - node: bold
+      content: 信号無視
+    - node: text
+      content: 'みたいな軽犯罪 '
+  - node: p
+    children:
+    - node: text
+      content: ただしバグの温床になるので、 無視せずきちんと対処を強く推奨
   p29:
   - node: p
     children:
+    - node: bold
+      content: Noticeの例 (一部)
+  - node: p
+    children:
     - node: text
-      content: 'Noticeの例 (一部)echo $i;          // 存在しない変数         echo $_GET[''id'']; // 存在しないインデクス
-
-        echo $o->abc;     // 存在しないプロパティ'
+      content: 'echo $i;          // '
+  - node: p
+    children:
+    - node: text
+      content: 存在しない
+    - node: bold
+      content: 変数
+  - node: p
+    children:
+    - node: text
+      content: 'echo $_GET[''id'']; // '
+  - node: p
+    children:
+    - node: text
+      content: 存在しない
+    - node: bold
+      content: インデクス
+    - node: text
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: 'echo $o->abc;     // '
+  - node: p
+    children:
+    - node: text
+      content: 存在しない
+    - node: bold
+      content: プロパティ
   p30:
   - node: p
     children:
+    - node: bold
+      content: Warning, Error
+  - node: p
+    children:
     - node: text
-      content: 'Warning, Error何かが「間違ってる」ときに発生
-
-        デフォルトの挙動ではWarningでは停止せずに進む
-
-        一貫性がないが、どちらも異常状態なので無視せず直した方がよい'
+      content: '何かが「間違ってる」ときに発生 '
+  - node: p
+    children:
+    - node: text
+      content: デフォルトの挙動ではWarningで
+    - node: br
+    - node: text
+      content: 'は停止せずに進む '
+  - node: p
+    children:
+    - node: text
+      content: 一貫性がないが、どちらも異常状 態なので無視せず直した方がよい
   p31:
   - node: p
     children:
+    - node: bold
+      content: Warning, Errorの例(一部)
+  - node: p
+    children:
     - node: text
-      content: 'Warning, Errorの例(一部)// 存在しないファイルを開く
-
-        $f = fopen("/hoge.txt", "r");          foo($i); // 引数が足りない、PHP5のみ// ArgumentError PHP7ではに変更function foo($i, $j) {
-        echo $i, $j; }         '
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: '存在しないファイルを開く '
+    - node: br
+    - node: text
+      content: '$f = fopen("/hoge.txt", "r"); '
+  - node: p
+    children:
+    - node: text
+      content: 'foo($i); // '
+  - node: p
+    children:
+    - node: text
+      content: 引数が足りない、PHP5のみ
+  - node: p
+    children:
+    - node: text
+      content: '//  ArgumentError  '
+    - node: br
+    - node: text
+      content: PHP7では に変更
+    - node: br
+    - node: text
+      content: function foo($i, $j) { echo $i, $j; }
   p32:
   - node: p
     children:
+    - node: bold
+      content: Deprecated, Strict
+  - node: p
+    children:
     - node: text
-      content: 'Deprecated, Strict廃止予定や互換性の怪しい機能
-
-        split()例:  関数 
-
-        explode()(とは別物)5.3でdeprecated、7.0で削除
-
-         Strictは7.0で廃止(再分類)されたhttps://wiki.php.net/rfc/reclassify_e_strict'
+      content: '廃止予定や互換性の怪しい機能 '
+  - node: p
+    children:
+    - node: text
+      content: split()
+  - node: p
+    children:
+    - node: text
+      content: '例:   関数   '
+  - node: p
+    children:
+    - node: text
+      content: explode()
+    - node: br
+    - node: text
+      content: ( とは別物)
+  - node: p
+    children:
+    - node: text
+      content: '5.3でdeprecated、7.0で削除 '
+  - node: p
+    children:
+    - node: text
+      content: Strictは7.0で廃止(再分類)された https://wiki.php.net/rfc/reclassify_e_strict
   p33:
   - node: p
     children:
+    - node: bold
+      content: Deprecated, Strictの例(一部)
+  - node: p
+    children:
     - node: text
-      content: 'Deprecated, Strictの例(一部)class Hoge {             /**  */古いスタイルのコンストラクタ             function Hoge() {             }         } '
+      content: class Hoge {
+  - node: p
+    children:
+    - node: text
+      content: '    /**   */'
+    - node: br
+    - node: text
+      content: 古いスタイルのコンストラクタ
+  - node: p
+    children:
+    - node: text
+      content: '    function Hoge() {'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '} '
   p34:
   - node: p
     children:
+    - node: bold
+      content: Deprecatedの例(一部)
+  - node: p
+    children:
     - node: text
-      content: 'Deprecatedの例(一部)//** PHP5.3でDeprecatedエラー、7で削除         $a = split('','', ''1,2,3'');
-
-          // エラー抑制演算子、通称なると// エラーを握り潰せるべんりで危険なやつ         $a = @split('','', ''1,2,3'');
-
-        '
+      content: '//** '
+  - node: p
+    children:
+    - node: text
+      content: PHP5.3でDeprecatedエラー、7で削除
+  - node: p
+    children:
+    - node: text
+      content: $a = split(',', '1,2,3');
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: エラー抑制演算子、通称なると
+    - node: br
+    - node: text
+      content: // エラーを握り潰せるべんりで危険なやつ
+  - node: p
+    children:
+    - node: text
+      content: $a = @split(',', '1,2,3');
   p35:
   - node: p
     children:
+    - node: bold
+      content: Fatal Error (致命的エラー)
+  - node: p
+    children:
     - node: text
-      content: 'Fatal Error (致命的エラー)これ以上は続行できないエラー
-
-         同名のクラスや関数を多重定義しようとしたとき
-
-        requireファイルをできなかったとき
-
-        明らかに不正な式'
+      content: 'これ以上は続行できないエラー '
+  - node: p
+    children:
+    - node: text
+      content: 同名のクラスや関数を
+    - node: br
+    - node: text
+      content: '多重定義しようとしたとき '
+  - node: p
+    children:
+    - node: text
+      content: require
+  - node: p
+    children:
+    - node: text
+      content: 'ファイルを できなかったとき '
+  - node: p
+    children:
+    - node: text
+      content: 明らかに不正な式
   p36:
   - node: p
     children:
-    - node: text
-      content: 'Fatal Errorの例(一部)// PHP5系とPHP7系でエラーになる
-
-        // タイミングが異なるコード         $i = mt_rand(1, 2); echo $i;         if ($i === 1) {             // 数値と配列は加算できない             $x = 1 + [];         }'
-  p37:
+    - node: bold
+      content: Fatal Errorの例(一部)
   - node: p
     children:
     - node: text
-      content: 'Fatal Errorの例(一部)// PHP5系とPHP7系でエラーになる
-
-        // タイミングが異なるコード         $i = mt_rand(1, 2); echo $i;          : 何も出力されずFatalPHP7if ($i === 1) {          : 「1」とFatalそれ以外　  または「2」のみ    $x = 1 + [];         }'
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 'PHP5系とPHP7系でエラーになる '
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: タイミングが異なるコード
+  - node: p
+    children:
+    - node: text
+      content: '$i = mt_rand(1, 2); '
+    - node: br
+    - node: text
+      content: echo $i;
+  - node: p
+    children:
+    - node: text
+      content: if ($i === 1) {
+  - node: p
+    children:
+    - node: text
+      content: '    // '
+  - node: p
+    children:
+    - node: text
+      content: 数値と配列は加算できない
+  - node: p
+    children:
+    - node: text
+      content: '    $x = 1 + [];'
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  p37:
+  - node: p
+    children:
+    - node: bold
+      content: Fatal Errorの例(一部)
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 'PHP5系とPHP7系でエラーになる '
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: タイミングが異なるコード
+  - node: p
+    children:
+    - node: text
+      content: '$i = mt_rand(1, 2); '
+    - node: br
+    - node: text
+      content: echo $i;
+  - node: p
+    children:
+    - node: text
+      content: ': 何も出力されず'
+    - node: bold
+      content: Fatal
+  - node: p
+    children:
+    - node: bold
+      content: PHP7
+  - node: p
+    children:
+    - node: text
+      content: if ($i === 1) {
+  - node: p
+    children:
+    - node: text
+      content: ': 「1」と'
+    - node: bold
+      content: Fatal
+  - node: p
+    children:
+    - node: bold
+      content: それ以外
+    - node: br
+    - node: text
+      content: 　  または「2」のみ
+  - node: p
+    children:
+    - node: text
+      content: '    $x = 1 + [];'
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p38:
   - node: p
     children:
     - node: text
-      content: '         PHP7は賢いので、実際に         実行されることがなくても(絶対実行されないifの中だろうと)'
-    - node: bold
-      content: '         '
+      content: PHP7は賢いので、実際に
+  - node: p
+    children:
     - node: text
+      content: 実行されることがなくても
+    - node: br
+    - node: text
+      content: (絶対実行されないifの中だろうと)
+  - node: p
+    children:
+    - node: bold
       content: コンパイル時に検出してくれる
   p39:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 例外
   p40:
   - node: p
     children:
     - node: text
-      content: 'ExceptionThrowable例外 (, )PHP5で追加された言語機能
-
-        throw異常状態のときにで投げる
-
-        たいいき(Non-local)大域脱出と呼ばれる機能
-
-        catch文で捕捉できる'
+      content: Exception Throwable
+    - node: br
+    - node: bold
+      content: 例外 ( ,  )
+  - node: p
+    children:
+    - node: text
+      content: 'PHP5で追加された言語機能 '
+  - node: p
+    children:
+    - node: text
+      content: throw
+  - node: p
+    children:
+    - node: text
+      content: '異常状態のときに で投げる '
+  - node: p
+    children:
+    - node: text
+      content: たいいき(Non-local)
+    - node: br
+    - node: text
+      content: '大域脱出と呼ばれる機能 '
+  - node: p
+    children:
+    - node: text
+      content: catch
+  - node: p
+    children:
+    - node: text
+      content: 文で捕捉できる
   p41:
   - node: p
     children:
-    - node: text
-      content: '例外オブジェクトPHP5ではExceptionまたは、Exceptionを継承したクラス
-
-        PHP7ではThrowableインターフェ         イスと、Exceptionを継承しないErrorとその派生クラスが追加
-
-        便宜上まとめて「例外」と呼ぶ'
-  p42:
+    - node: bold
+      content: 例外オブジェクト
   - node: p
     children:
     - node: text
-      content: 'ErrorとエラーとE_ERRORPHP5系でエラーが発生したものが、7系では例外(Errorクラス)をthrowするように徐々に移行
-
-        すべての移行されたわけではなく、         まだエラーと例外の概念を両方知っておく必要がある
-
-        E_ERRORレベルのエラー…ややこしい'
+      content: 'PHP5ではExceptionまたは、 '
+    - node: bold
+      content: Exceptionを継承した
+    - node: text
+      content: 'クラス '
+    - node: br
+    - node: text
+      content: PHP7ではThrowableインターフェ
+  - node: p
+    children:
+    - node: text
+      content: イスと、Exceptionを継承しない
+    - node: br
+    - node: text
+      content: Errorとその派生クラスが追加 便宜上まとめて「例外」と呼ぶ
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: ErrorとエラーとE_ERROR
+  - node: p
+    children:
+    - node: text
+      content: PHP5系でエラーが発生したものが、
+    - node: br
+    - node: text
+      content: 7系では例外(Errorクラス)を
+    - node: br
+    - node: text
+      content: throw
+  - node: p
+    children:
+    - node: text
+      content: 'するように徐々に移行 '
+    - node: br
+    - node: text
+      content: すべての移行されたわけではなく、
+  - node: p
+    children:
+    - node: text
+      content: まだエラーと例外の概念を両方
+    - node: br
+    - node: text
+      content: '知っておく必要がある '
+    - node: br
+    - node: text
+      content: E_ERROR
+  - node: p
+    children:
+    - node: text
+      content: レベルのエラー…
+    - node: bold
+      content: ややこしい
   p43:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: エラーハンドリング
+      content: エラー
+    - node: br
+    - node: bold
+      content: ハンドリング
   p44:
   - node: p
     children:
+    - node: bold
+      content: 伝統的なエラー処理手法
+  - node: p
+    children:
     - node: text
-      content: '伝統的なエラー処理手法// MySQLに接続失敗したら異常終了
-
-        $db = mysql_connect() or die("接続に失敗しました");die() は exit() と同じ意味
-
-        ここでいきなり強制終了する
-
-        そのあと処理はほとんどできない'
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 'MySQLに接続失敗したら異常終了 '
+  - node: p
+    children:
+    - node: text
+      content: $db = mysql_connect() or die("接続に失敗しまし
+    - node: br
+    - node: text
+      content: た");
+  - node: p
+    children:
+    - node: text
+      content: 'die() は exit() と同じ意味 '
+  - node: p
+    children:
+    - node: text
+      content: 'ここでいきなり強制終了する '
+  - node: p
+    children:
+    - node: text
+      content: そのあと処理はほとんどできない
   p45:
   - node: p
     children:
+    - node: bold
+      content: せめて例外に
+  - node: p
+    children:
     - node: text
-      content: 'せめて例外にif (do_something() === false) {             throw new FooException(''do_something() が失敗した'');         }         現在実行中の処理を中断して、try…catch まで遡る
-
-         catchできなかったら、そこでおとなしく野垂れ死ぬしかない…?
-
-         ただちに終了されないので、まだ挽回の余地がある'
+      content: if (do_something() === false) {
+  - node: p
+    children:
+    - node: text
+      content: '    throw new FooException(''do_something() が失敗した'');'
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: 現在実行中の処理を中断して、
+    - node: br
+    - node: text
+      content: 'try…catch まで遡る '
+  - node: p
+    children:
+    - node: text
+      content: catchできなかったら、そこで
+    - node: br
+    - node: text
+      content: 'おとなしく野垂れ死ぬしかない…? '
+  - node: p
+    children:
+    - node: text
+      content: ただちに終了されないので、
+    - node: br
+    - node: text
+      content: まだ挽回の余地がある
   p46:
   - node: p
     children:
+    - node: bold
+      content: エラーハンドリング
+  - node: p
+    children:
     - node: text
-      content: エラーハンドリング発生したエラーをなんとかする
+      content: 発生したエラーをなんとかする
   p47:
   - node: p
     children:
+    - node: bold
+      content: エラーハンドリング
+  - node: p
+    children:
     - node: text
-      content: 'エラーハンドリング発生したエラーをなんとかする
-
-        A: どうにか続行を試みる
-
-        B: どうにもならないので諦める'
+      content: '発生したエラーをなんとかする '
+    - node: br
+    - node: bold
+      content: A
+    - node: text
+      content: ': どうにか続行を試みる '
+    - node: br
+    - node: bold
+      content: B
+    - node: text
+      content: ': どうにもならないので諦める'
   p48:
   - node: p
     children:
+    - node: bold
+      content: エラーハンドリング
+  - node: p
+    children:
     - node: text
-      content: 'エラーハンドリング発生したエラーをなんとかする
-
-        A: どうにか続行を試みる
-
-        B: どうにもならないので諦める
-
-        せめてログだけでも…
-
-         なんとか共通ナビゲーションとロゴだけは表示してほしい…'
+      content: '発生したエラーをなんとかする '
+    - node: br
+    - node: bold
+      content: A
+    - node: text
+      content: ': どうにか続行を試みる '
+    - node: br
+    - node: bold
+      content: B
+    - node: text
+      content: ': どうにもならないので諦める '
+    - node: br
+    - node: text
+      content: 'せめてログだけでも… '
+  - node: p
+    children:
+    - node: text
+      content: なんとか共通ナビゲーションと ロゴだけは表示してほしい…
   p49:
   - node: p
     children:
+    - node: bold
+      content: 我々に三回のチャンスがある
+  - node: p
+    children:
     - node: text
-      content: 我々に三回のチャンスがあるset_error_handler() set_exception_handler() register_shutdown_function()
+      content: 'set_error_handler() '
+  - node: p
+    children:
+    - node: text
+      content: 'set_exception_handler() '
+  - node: p
+    children:
+    - node: text
+      content: register_shutdown_function()
   p50:
   - node: p
     children:
+    - node: bold
+      content: error_reporting()
+  - node: p
+    children:
     - node: text
-      content: 'error_reporting()「出力するエラーの種類を設定する」
-
-         どのエラーレベルに対応するかビットフラグで設定する
-
-        引数なしで呼ぶと現在の値を返す
-
-        error_reporting(E_ALL & ~E_NOTICE)'
+      content: '「出力するエラーの種類を設定する」 '
+  - node: p
+    children:
+    - node: text
+      content: どのエラーレベルに対応するか
+    - node: br
+    - node: text
+      content: 'ビットフラグで設定する '
+  - node: p
+    children:
+    - node: text
+      content: '引数なしで呼ぶと現在の値を返す '
+  - node: p
+    children:
+    - node: text
+      content: error_reporting(E_ALL & ~E_NOTICE)
   p51:
   - node: p
     children:
+    - node: bold
+      content: error_reporting() 設定方法
+  - node: p
+    children:
     - node: text
-      content: 'error_reporting() 設定方法         // 無視できるもの全部無視error_reporting(0);         // 全部のエラーを捕捉する         error_reporting(E_ALL);         error_reporting(E_ALL | E_STRICT); // PHP 5.3以下         // Noticeのみ無視         error_reporting(E_ALL & ~E_NOTICE);         // NoticeとDeprecatedを無視         error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED); '
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 無視できるもの全部無視
+  - node: p
+    children:
+    - node: text
+      content: error_reporting(0);
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 全部のエラーを捕捉する
+  - node: p
+    children:
+    - node: text
+      content: error_reporting(E_ALL);
+  - node: p
+    children:
+    - node: text
+      content: 'error_reporting(E_ALL | E_STRICT); // '
+  - node: p
+    children:
+    - node: text
+      content: PHP 5.3以下
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: Noticeのみ無視
+  - node: p
+    children:
+    - node: text
+      content: error_reporting(E_ALL & ~E_NOTICE);
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: NoticeとDeprecatedを無視
+  - node: p
+    children:
+    - node: text
+      content: 'error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED); '
   p52:
   - node: p
     children:
+    - node: bold
+      content: set_error_handler()
+  - node: p
+    children:
     - node: text
-      content: 'set_error_handler()         エラーが発生したときに、         set_error_hanlder() に登録した関数が呼ばれる
-
-        エラーに応じて処理を続行させることもできるし終了させてもいい
-
-        Fatal errorは捕捉できない！'
+      content: エラーが発生したときに、
+  - node: p
+    children:
+    - node: text
+      content: set_error_hanlder()
+  - node: p
+    children:
+    - node: text
+      content: ' に登録した'
+  - node: p
+    children:
+    - node: text
+      content: '関数が呼ばれる '
+    - node: br
+    - node: text
+      content: 'エラーに応じて処理を続行させる こともできるし終了させてもいい '
+    - node: br
+    - node: text
+      content: Fatal errorは捕捉できない！
   p53:
   - node: p
     children:
+    - node: bold
+      content: set_exception_handler()
+  - node: p
+    children:
     - node: text
-      content: 'set_exception_handler()例外がtry-catchでも捕捉されな         かったときに、         set_exception_hanlder() に登録した関数が呼ばれる
-
-        関数が実行された後は停止する
-
-        登録できる関数はひとつだけ'
+      content: 例外がtry-catchでも捕捉されな
+  - node: p
+    children:
+    - node: text
+      content: かったときに、
+  - node: p
+    children:
+    - node: text
+      content: set_exception_hanlder()
+  - node: p
+    children:
+    - node: text
+      content: ' に'
+  - node: p
+    children:
+    - node: text
+      content: '登録した関数が呼ばれる '
+  - node: p
+    children:
+    - node: text
+      content: '関数が実行された後は停止する '
+  - node: p
+    children:
+    - node: text
+      content: 登録できる関数はひとつだけ
   p54:
   - node: p
     children:
-    - node: text
-      content: 'register_shutdown_function()         PHPスクリプト終了時に必ず呼ばれる関数を登録する
-
-         set_error_handler()に来ない         Fatal Error(致命的エラー)を捕捉してロギングできるチャンス
-
-        最後のエメラルドスプラッシュ'
-  p55:
+    - node: bold
+      content: register_shutdown_function()
   - node: p
     children:
     - node: text
+      content: PHPスクリプト終了時に必ず
+    - node: br
+    - node: text
+      content: '呼ばれる関数を登録する '
+  - node: p
+    children:
+    - node: text
+      content: set_error_handler()
+  - node: p
+    children:
+    - node: text
+      content: に来ない
+  - node: p
+    children:
+    - node: text
+      content: Fatal Error(致命的エラー)を
+    - node: br
+    - node: text
+      content: '捕捉してロギングできるチャンス '
+    - node: br
+    - node: text
+      content: 最後のエメラルドスプラッシュ
+  p55:
+  - node: p
+    children:
+    - node: bold
       content: 定石
   p56:
   - node: p
     children:
-    - node: text
-      content: 'エラー処理の定石デフォルトのエラー出力を切る
-
-         エラーは例外に変換して、未捕捉の例外とまとめて処理する
-
-        処理すべきエラーかどうかの判定error_reporting()にを利用する'
-  p57:
+    - node: bold
+      content: エラー処理の定石
   - node: p
     children:
     - node: text
+      content: 'デフォルトのエラー出力を切る '
+  - node: p
+    children:
+    - node: text
+      content: エラーは例外に変換して、
+    - node: br
+    - node: text
+      content: '未捕捉の例外とまとめて処理する '
+  - node: p
+    children:
+    - node: text
+      content: 処理すべきエラーかどうかの判定
+    - node: br
+    - node: text
+      content: error_reporting()
+    - node: br
+    - node: text
+      content: に を利用する
+  p57:
+  - node: p
+    children:
+    - node: bold
       content: デフォルトのエラー出力
   p58:
   - node: p
     children:
+    - node: bold
+      content: デフォルトのエラー出力
+  - node: p
+    children:
     - node: text
-      content: 'デフォルトのエラー出力         // 必ず読まれるPHPファイルで設定する// 少なくとも本番環境では絶対offにするini_set(''display_errors'', ''off'');         '
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 必ず読まれるPHPファイルで設定する
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 少なくとも本番環境では絶対offにする
+  - node: p
+    children:
+    - node: text
+      content: ini_set('display_errors', 'off');
   p59:
   - node: p
     children:
+    - node: bold
+      content: set_exception_handler() 設定方法
+  - node: p
+    children:
     - node: text
-      content: 'set_exception_handler() 設定方法         // 例外をハンドリングset_exception_handler(function ($e){             // 例外をログに記録             YourApp::logException($e);             // エラー時の画面を表示             YourApp::displayErrorPage($e);         });'
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 例外をハンドリング
+  - node: p
+    children:
+    - node: text
+      content: set_exception_handler(function ($e){
+  - node: p
+    children:
+    - node: text
+      content: '    // '
+  - node: p
+    children:
+    - node: text
+      content: 例外をログに記録
+  - node: p
+    children:
+    - node: text
+      content: '    YourApp::logException($e);'
+  - node: p
+    children:
+    - node: text
+      content: '    // '
+  - node: p
+    children:
+    - node: text
+      content: エラー時の画面を表示
+  - node: p
+    children:
+    - node: text
+      content: '    YourApp::displayErrorPage($e);'
+  - node: p
+    children:
+    - node: text
+      content: '});'
   p60:
   - node: p
     children:
+    - node: bold
+      content: エラー抑制とerror_reporting
+  - node: p
+    children:
     - node: text
-      content: 'エラー抑制とerror_reporting＠は一時的に(エラー抑制演算子)         error_reporting(0)に設定して処理を実行するだけ
-
-        独自設定したエラーハンドラがerror_reporting()を考慮してくれないと、エラーが握り潰されない'
+      content: ＠
+  - node: p
+    children:
+    - node: text
+      content: は一時的に
+  - node: p
+    children:
+    - node: text
+      content: (エラー抑制演算子)
+  - node: p
+    children:
+    - node: text
+      content: error_reporting(0)
+  - node: p
+    children:
+    - node: text
+      content: に設定して
+  - node: p
+    children:
+    - node: text
+      content: '処理を実行するだけ '
+    - node: br
+    - node: text
+      content: 独自設定したエラーハンドラが
+    - node: br
+    - node: text
+      content: error_reporting()
+  - node: p
+    children:
+    - node: text
+      content: を考慮してくれ
+  - node: p
+    children:
+    - node: text
+      content: ないと、エラーが握り潰されない
   p61:
   - node: p
     children:
+    - node: bold
+      content: set_error_handler() 設定方法
+  - node: p
+    children:
     - node: text
-      content: 'set_error_handler() 設定方法set_error_handler(''my_error_handler'');         function my_error_handler (             $level, $message, $file = null, $line = null) {             // エラーレベルのAND(ビット積)をとる             if (error_reporting() & $level > 0) {                throw new ErrorException(                    $message, 0, $level, $file, $line);             }         }'
+      content: set_error_handler('my_error_handler');
+  - node: p
+    children:
+    - node: text
+      content: function my_error_handler (
+  - node: p
+    children:
+    - node: text
+      content: '    $level, $message, $file = null, $line = null) {'
+  - node: p
+    children:
+    - node: text
+      content: '    // '
+  - node: p
+    children:
+    - node: text
+      content: エラーレベルのAND(ビット積)をとる
+  - node: p
+    children:
+    - node: text
+      content: '    if (error_reporting() & $level > 0) {'
+  - node: p
+    children:
+    - node: text
+      content: '       throw new ErrorException('
+  - node: p
+    children:
+    - node: text
+      content: '           $message, 0, $level, $file, $line);'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p62:
   - node: p
     children:
+    - node: bold
+      content: 'error_reporting() '
+  - node: p
+    children:
     - node: text
-      content: 'error_reporting()          error_reporting()で設定した         エラーレベルはデフォルトのエラーハンドラで利用される
-
-        自作のエラーハンドラを設定する         ときは、error_reporting()を考慮して実装しなければならない
-
-        実際グローバル変数みたいなもの'
+      content: error_reporting()で設定した
+  - node: p
+    children:
+    - node: text
+      content: 'エラーレベルはデフォルトの エラーハンドラで利用される '
+    - node: br
+    - node: text
+      content: 自作のエラーハンドラを設定する
+  - node: p
+    children:
+    - node: text
+      content: ときは、error_reporting()を
+    - node: br
+    - node: text
+      content: 考慮して実装しなければならない 実際グローバル変数みたいなもの
   p63:
   - node: p
     children:
-    - node: text
-      content: 'register_shutdown_function() 設定方法register_shutdown_function(function(){             if (empty($error = error_get_last())) return;             //  エラーハンドラーで捕捉できないエラーを判定             $fatal = E_ERROR | E_PARSE | E_COMPILE_WARNING          | E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR;     if
-        (($error[''level''] & $fatal_errors) > 0) {                 $e = new ErrorException($error[''message''], 0,                    $error[''type''], $error[''file''], $error[''line'']);                 my_error_handler($e);             }          })；'
-  p64:
+    - node: bold
+      content: register_shutdown_function() 設定方法
   - node: p
     children:
     - node: text
-      content: '例外のロギングPHPの標準機能error_log()は、ちょっと弱い
-
-        rollbar, faultlineなどに送る
-
-        pixivの場合は例外情報をバックトレースも含めてJSONエンコードしてファイルに追記、Fluentdで収集'
+      content: register_shutdown_function(function(){
+  - node: p
+    children:
+    - node: text
+      content: '    if (empty($error = error_get_last())) return;'
+  - node: p
+    children:
+    - node: text
+      content: '    //   '
+  - node: p
+    children:
+    - node: text
+      content: エラーハンドラーで捕捉できないエラーを判定
+  - node: p
+    children:
+    - node: text
+      content: $fatal = E_ERROR | E_PARSE | E_COMPILE_WARNING
+  - node: p
+    children:
+    - node: text
+      content: '          | E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR; '
+    - node: br
+    - node: text
+      content: '    if (($error[''level''] & $fatal_errors) > 0) {'
+  - node: p
+    children:
+    - node: text
+      content: '        $e = new ErrorException($error[''message''], 0,'
+  - node: p
+    children:
+    - node: text
+      content: '           $error[''type''], $error[''file''], $error[''line'']);'
+  - node: p
+    children:
+    - node: text
+      content: '        my_error_handler($e);'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: ' })；'
+  p64:
+  - node: p
+    children:
+    - node: bold
+      content: 例外のロギング
+  - node: p
+    children:
+    - node: text
+      content: PHPの標準機能error_log()は、
+    - node: br
+    - node: text
+      content: 'ちょっと弱い '
+    - node: br
+    - node: text
+      content: 'rollbar, faultlineなどに送る '
+    - node: br
+    - node: text
+      content: pixivの場合は例外情報をバックト レースも含めてJSONエンコードし てファイルに追記、Fluentdで収集
   p65:
   - node: p
     children:
@@ -551,267 +1504,881 @@ text:
   p66:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 開発時の原則
   p67:
   - node: p
     children:
+    - node: bold
+      content: error_reporting()
+  - node: p
+    children:
     - node: text
-      content: 'error_reporting()可能な限り無視しない
-
-        例: 本番ではDeprecatedを無視
-
-        ただしプロジェクト全体にNotice発生箇所が多い場合は無理しない
-
-        一気にリファクタリングしようとしてエンバグする方がずっと怖い'
+      content: '可能な限り無視しない '
+    - node: br
+    - node: bold
+      content: 例
+    - node: text
+      content: ': 本番ではDeprecatedを無視 '
+    - node: br
+    - node: text
+      content: ただしプロジェクト全体にNotice 発生箇所が多い場合は
+    - node: bold
+      content: 無理しない
+    - node: text
+      content: ' '
+    - node: br
+    - node: text
+      content: 一気にリファクタリングしようと してエンバグする方がずっと怖い
   p68:
   - node: p
     children:
+    - node: bold
+      content: エラー設定は初期化処理で実行する
+  - node: p
+    children:
     - node: text
-      content: 'エラー設定は初期化処理で実行する         error_reportingはphp.iniでも         設定可能だが、PHPで明示的に設定すれば環境依存がなくなる
-
-         深いところで仕方なく変更する         必要に迫られたときは、小さなスコープで変更してすぐに戻す'
+      content: error_reportingはphp.iniでも
+  - node: p
+    children:
+    - node: text
+      content: '設定可能だが、PHPで明示的に 設定すれば環境依存がなくなる '
+  - node: p
+    children:
+    - node: text
+      content: 深いところで仕方なく変更する
+  - node: p
+    children:
+    - node: text
+      content: 必要に迫られたときは、小さな スコープで変更してすぐに戻す
   p69:
   - node: p
     children:
+    - node: bold
+      content: 段階的にエラーレベルを上げる
+  - node: p
+    children:
     - node: text
-      content: '段階的にエラーレベルを上げる         pixivの開発時にもまだNoticeが発生する箇所が残ってる…
-
-         やむを得ず変更する際は浅い位置で設定する
-
-        (例:コントローラ)         Deprecatedはユニットテストで追い詰めていく'
+      content: pixivの開発時にもまだNoticeが
+    - node: br
+    - node: text
+      content: '発生する箇所が残ってる… '
+  - node: p
+    children:
+    - node: text
+      content: やむを得ず変更する際は浅い位置
+  - node: p
+    children:
+    - node: text
+      content: 'で設定する '
+  - node: p
+    children:
+    - node: text
+      content: (例:コントローラ)
+  - node: p
+    children:
+    - node: text
+      content: Deprecatedはユニットテストで
+    - node: br
+    - node: text
+      content: 追い詰めていく
   p70:
   - node: p
     children:
+    - node: bold
+      content: pixivの設定
+  - node: p
+    children:
     - node: text
-      content: 'pixivの設定         // 全体設定 error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);//  ユニットテストerror_reporting(E_ALL);          // 新規ファイルや動作確認できたページ//  (コントローラー)単位でレベルを上げるsetErrorReportingAll(); '
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 全体設定
+  - node: p
+    children:
+    - node: text
+      content: error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+    - node: br
+    - node: text
+      content: '//   '
+    - node: br
+    - node: text
+      content: ユニットテスト
+    - node: br
+    - node: text
+      content: error_reporting(E_ALL);
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 新規ファイルや動作確認できたページ
+    - node: br
+    - node: text
+      content: '//   '
+    - node: br
+    - node: text
+      content: (コントローラー)単位でレベルを上げる
+  - node: p
+    children:
+    - node: text
+      content: 'setErrorReportingAll(); '
   p71:
   - node: p
     children:
+    - node: bold
+      content: べんりヘルパー関数
+    - node: br
     - node: text
-      content: 'べんりヘルパー関数/**           * 開発時のみエラーレベルを最大に上げる *           * 本番(運用環境)には影響しない          */function setErrorReportingAll() {             if (is_development()) {                 error_reporting(E_ALL);             }         } '
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: ' * '
+  - node: p
+    children:
+    - node: text
+      content: 開発時のみエラーレベルを最大に上げる
+  - node: p
+    children:
+    - node: text
+      content: ' * '
+  - node: p
+    children:
+    - node: text
+      content: ' * '
+  - node: p
+    children:
+    - node: text
+      content: 本番(運用環境)には影響しない
+  - node: p
+    children:
+    - node: text
+      content: ' */'
+    - node: br
+    - node: text
+      content: function setErrorReportingAll() {
+  - node: p
+    children:
+    - node: text
+      content: '    if (is_development()) {'
+  - node: p
+    children:
+    - node: text
+      content: '        error_reporting(E_ALL);'
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '} '
   p72:
   - node: p
     children:
+    - node: bold
+      content: 深いところで一時的にエラーレベルを変更
+  - node: p
+    children:
     - node: text
-      content: '深いところで一時的にエラーレベルを変更         /** mcrypt*/は7.1で非推奨、7.2で削除予定 function mcrypt_wrapper($text) {             $err = error_reporting();             error_reporting(E_ALL & ~E_DEPRECATED);     try {         // mcryptを使った処理             } finally {                 error_reporting($err);     }             return $result;         }'
+      content: /** mcrypt */
+  - node: p
+    children:
+    - node: text
+      content: 'は7.1で非推奨、7.2で削除予定 '
+  - node: p
+    children:
+    - node: text
+      content: function mcrypt_wrapper($text) {
+  - node: p
+    children:
+    - node: text
+      content: '    $err = error_reporting();'
+  - node: p
+    children:
+    - node: text
+      content: '    error_reporting(E_ALL & ~E_DEPRECATED); '
+    - node: br
+    - node: text
+      content: '    try {         // '
+  - node: p
+    children:
+    - node: text
+      content: mcryptを使った処理
+  - node: p
+    children:
+    - node: text
+      content: '    } finally {'
+  - node: p
+    children:
+    - node: text
+      content: '        error_reporting($err); '
+    - node: br
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '    return $result;'
+  - node: p
+    children:
+    - node: text
+      content: '}'
   p73:
   - node: p
     children:
-    - node: text
-      content: '手を出せないライブラリ/SDK         /** */なんかエラー吐きまくる古いSDKのラッパー function hoge_legacy_wrapper($text) {             $err = error_reporting();             error_reporting(E_ALL &~E_NOTICE & ~E_DEPRECATED);     try {         $result
-        = \Hoge\Legacy\SDK::proc();             } finally {                 error_reporting($err);     }             return $result;         }'
-  p74:
+    - node: bold
+      content: 手を出せないライブラリ/SDK
   - node: p
     children:
     - node: text
+      content: /**  */
+    - node: br
+    - node: text
+      content: 'なんかエラー吐きまくる古いSDKのラッパー '
+  - node: p
+    children:
+    - node: text
+      content: function hoge_legacy_wrapper($text) {
+  - node: p
+    children:
+    - node: text
+      content: '    $err = error_reporting();'
+  - node: p
+    children:
+    - node: text
+      content: '    error_reporting(E_ALL &~E_NOTICE & ~E_DEPRECATED); '
+    - node: br
+    - node: text
+      content: '    try { '
+    - node: br
+    - node: text
+      content: '        $result = \Hoge\Legacy\SDK::proc();'
+  - node: p
+    children:
+    - node: text
+      content: '    } finally {'
+  - node: p
+    children:
+    - node: text
+      content: '        error_reporting($err); '
+    - node: br
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: '    return $result;'
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  p74:
+  - node: p
+    children:
+    - node: bold
       content: whoops!
   p75:
   - node: p
     children:
+    - node: bold
+      content: whoops!
+  - node: p
+    children:
     - node: text
-      content: 'whoops!“PHP errors for cool kids” エラー処理用フレームワーク
-
-         set_exception_handler()はひとつしかハンドラを登録できないが、whoopsは複数登録できる'
+      content: '“PHP errors for cool kids” '
+    - node: br
+    - node: text
+      content: 'エラー処理用フレームワーク '
+  - node: p
+    children:
+    - node: text
+      content: set_exception_handler()は
+    - node: br
+    - node: text
+      content: ひとつしかハンドラを登録できな いが、whoopsは複数登録できる
+  p76: []
   p77:
   - node: p
     children:
+    - node: bold
+      content: whoops! ハンドラー
+  - node: p
+    children:
     - node: text
-      content: 'whoops! ハンドラー         ハンドラーは複数登録できる(関数)スタック
-
-         (FIFO, 後入れ先出し)         ロギング・デバッグだけでなくエラー画面の表示にも利用できる
-
-        WEB+DB Press Vol.96サンプルに         whoopsを使った設定例書きましたhttp://gihyo.jp/magazine/wdpress/archive/2017/vol96'
+      content: ハンドラー は複数登録できる
+  - node: p
+    children:
+    - node: text
+      content: (関数)
+    - node: br
+    - node: bold
+      content: スタック
+    - node: text
+      content: '  '
+  - node: p
+    children:
+    - node: text
+      content: ' (FIFO, 後入れ先出し)'
+  - node: p
+    children:
+    - node: text
+      content: 'ロギング・デバッグだけでなく エラー画面の表示にも利用できる '
+    - node: br
+    - node: text
+      content: WEB+DB Press Vol.96サンプルに
+  - node: p
+    children:
+    - node: text
+      content: whoopsを使った設定例書きました http://gihyo.jp/magazine/wdpress/archive/2017/vol96
   p78:
   - node: p
     children:
+    - node: bold
+      content: whoops! 注意点
+  - node: p
+    children:
     - node: text
-      content: 'whoops! 注意点         PrettyPageHandlerはべんりだがもし本番環境で有効化されてしまうと脆弱性や情報漏洩の原因にすらなりかねない
-
-         設定に自信がなければ、単に         開発環境用のカッコイイエラー画面として割り切るのが安全'
+      content: PrettyPageHandlerはべんりだが もし本番環境で有効化されてしま うと脆弱性や情報漏洩の原因にす
+    - node: br
+    - node: text
+      content: 'らなりかねない '
+  - node: p
+    children:
+    - node: text
+      content: 設定に自信がなければ、単に
+  - node: p
+    children:
+    - node: text
+      content: 開発環境用のカッコイイエラー 画面として割り切るのが安全
   p79:
   - node: p
     children:
-    - node: text
-      content: 'whoopsの有効化         // 開発時のみWhoopsを有効化する場合if (is_development()) {     $handler = (PHP_SAPI ===
-        ''cli'')                ? new \Whoops\Handler\PlainTextHandler                : new \Whoops\Handler\PrettyPageHandler;    $whoops = new \Whoops\Run;    $whoops->register();         }'
-  p80:
+    - node: bold
+      content: whoopsの有効化
   - node: p
     children:
     - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 開発時のみWhoopsを有効化する場合
+  - node: p
+    children:
+    - node: text
+      content: 'if (is_development()) { '
+    - node: br
+    - node: text
+      content: '    $handler = (PHP_SAPI === ''cli'')'
+  - node: p
+    children:
+    - node: text
+      content: '       ? new \Whoops\Handler\PlainTextHandler'
+  - node: p
+    children:
+    - node: text
+      content: '       : new \Whoops\Handler\PrettyPageHandler; '
+    - node: br
+    - node: text
+      content: '   $whoops = new \Whoops\Run; '
+    - node: br
+    - node: text
+      content: '   $whoops->register();'
+  - node: p
+    children:
+    - node: text
+      content: '}'
+  p80:
+  - node: p
+    children:
+    - node: bold
       content: 落穂
   p81:
   - node: p
     children:
+    - node: bold
+      content: エラーレベルとビットフラグ
+  - node: p
+    children:
     - node: text
-      content: 'エラーレベルとビットフラグエラー発生時のレベルとerror_reporting()はビットフラグ
-
-         E_ALLは全種類のエラーのフラグを立てた状態
-
-         E_ALL & ~E_NOTICEのように反転してビット積をとるのが簡単'
+      content: エラー発生時のレベルと
+    - node: br
+    - node: text
+      content: error_reporting()
+  - node: p
+    children:
+    - node: text
+      content: 'はビットフラグ '
+  - node: p
+    children:
+    - node: text
+      content: E_ALL
+  - node: p
+    children:
+    - node: text
+      content: は全種類のエラーの
+  - node: p
+    children:
+    - node: text
+      content: 'フラグを立てた状態 '
+  - node: p
+    children:
+    - node: text
+      content: E_ALL & ~E_NOTICEのように
+    - node: br
+    - node: text
+      content: 反転してビット積をとるのが簡単
   p82:
   - node: p
     children:
+    - node: bold
+      content: ビットフラグの確認方法
+  - node: p
+    children:
     - node: text
-      content: ビットフラグの確認方法printf('%015b', E_ALL); // => "111111111111111" printf('%015b',
-        E_DEPRECATED); // => "010000000000000" printf('%015b', E_ALL & ~E_DEPRECATED);
-        // => "101111111111111"
+      content: 'printf(''%015b'', E_ALL); // => "111111111111111" '
+    - node: br
+    - node: text
+      content: 'printf(''%015b'', E_DEPRECATED); '
+    - node: br
+    - node: text
+      content: '// => "010000000000000" '
+    - node: br
+    - node: text
+      content: 'printf(''%015b'', E_ALL & ~E_DEPRECATED); '
+    - node: br
+    - node: text
+      content: // => "101111111111111"
   p83:
   - node: p
     children:
+    - node: bold
+      content: trigger_error()
+  - node: p
+    children:
     - node: text
-      content: 'trigger_error()エラーを意図的に発生させる
-
-        ただし全てのエラーを発生させられるわけではなくE_USER_系のみ
-
-        今日エラーはあまり考慮されてないので、役立たないかも…
-
-        USERの有無は別のエラーなので'
+      content: 'エラーを意図的に発生させる '
+    - node: br
+    - node: text
+      content: ただし全てのエラーを発生させら れるわけではなくE_USER_系のみ 今日エラーはあまり考慮されてな
+    - node: br
+    - node: text
+      content: 'いので、役立たないかも… '
+    - node: br
+    - node: text
+      content: USERの有無は別のエラーなので
   p84:
   - node: p
     children:
+    - node: bold
+      content: trigger_error利用例
+  - node: p
+    children:
     - node: text
-      content: 'trigger_error利用例         // 関数をリネームしたいとき/**  * @deprecated {@see grant()} を使ってください  */ function credential(array
-        $data){             $msg = ''credential() is obsolete function.  Use grant() instead.'';     trigger_error($msg,
-        E_USER_DEPRECATED);     return grant($data); } '
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: 関数をリネームしたいとき
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' * @deprecated {@see grant()} を使ってください '
+    - node: br
+    - node: text
+      content: ' */ '
+    - node: br
+    - node: text
+      content: function credential(array $data){
+  - node: p
+    children:
+    - node: text
+      content: '    $msg = ''credential() is obsolete function.  Use '
+    - node: br
+    - node: text
+      content: 'grant() instead.''; '
+    - node: br
+    - node: text
+      content: '    trigger_error($msg, E_USER_DEPRECATED); '
+    - node: br
+    - node: text
+      content: '    return grant($data); '
+    - node: br
+    - node: text
+      content: '} '
   p85:
   - node: p
     children:
+    - node: bold
+      content: もうひとつのエラーハンドリング
+  - node: p
+    children:
     - node: text
-      content: 'もうひとつのエラーハンドリングset_exception_handler()を使ったハンドリングは…実際(説明)難しい
-
-         細かなエラーハンドリングはtry-catchを使った方がやりやすい
-
-        エラーの仕組み(このセッションで説明よりは把握しやすい
-
-        した内容！)https://gist.github.com/zonuexe/577d089815e241d5da26'
+      content: set_exception_handler()
+  - node: p
+    children:
+    - node: text
+      content: を使った
+  - node: p
+    children:
+    - node: text
+      content: 'ハンドリングは…実際(説明)難しい '
+  - node: p
+    children:
+    - node: text
+      content: 細かなエラーハンドリングは
+    - node: br
+    - node: text
+      content: 'try-catchを使った方がやりやすい '
+    - node: br
+    - node: text
+      content: エラーの仕組み
+  - node: p
+    children:
+    - node: text
+      content: (このセッションで説明
+  - node: p
+    children:
+    - node: text
+      content: 'よりは把握しやすい '
+  - node: p
+    children:
+    - node: text
+      content: した内容！)
+    - node: br
+    - node: text
+      content: https://gist.github.com/zonuexe/577d089815e241d5da26
   p86:
   - node: p
     children:
+    - node: bold
+      content: pixivの場合 (AppRunnerパターン)
+  - node: p
+    children:
     - node: text
-      content: 'pixivの場合 (AppRunnerパターン)アプリケーション(PC版, スマートフォン版,          ごとにAppRunnerとetc...)(社内用語)呼ばれるクラスを定義する
-
-         例外の種類ごとにcatchして、適切な処理(ロギング・エラー表示)などをする
-
-        http://inside.pixiv.net/entry/2015/12/18/210721'
+      content: アプリケーション
+  - node: p
+    children:
+    - node: text
+      content: '(PC版, スマートフォン版, '
+  - node: p
+    children:
+    - node: text
+      content: ごとにAppRunner と
+  - node: p
+    children:
+    - node: text
+      content: etc...) (社内用語)
+    - node: br
+    - node: text
+      content: '呼ばれるクラスを定義する '
+  - node: p
+    children:
+    - node: text
+      content: 例外の種類ごとにcatchして、
+    - node: br
+    - node: text
+      content: 適切な処理(ロギング・エラー表示)
+    - node: br
+    - node: text
+      content: 'などをする '
+    - node: br
+    - node: text
+      content: http://inside.pixiv.net/entry/2015/12/18/210721
   p87:
   - node: p
     children:
-    - node: text
-      content: 'pixivの場合 (なぜこのパターンか)例外にも種類がある
-
-        アプリケーションのバグ
-
-        クエリパラメータの異常入力
-
-         それらのアプリケーションの事情に沿ってロギングする'
-  p88:
+    - node: bold
+      content: pixivの場合 (なぜこのパターンか)
   - node: p
     children:
     - node: text
+      content: '例外にも種類がある '
+    - node: br
+    - node: text
+      content: 'アプリケーションのバグ '
+    - node: br
+    - node: text
+      content: 'クエリパラメータの異常入力 '
+  - node: p
+    children:
+    - node: text
+      content: それらのアプリケーションの 事情に沿ってロギングする
+  p88:
+  - node: p
+    children:
+    - node: bold
       content: 参考資料
   p89:
   - node: p
     children:
+    - node: bold
+      content: 参考資料
+  - node: p
+    children:
     - node: text
-      content: '参考資料だいたいPHPマニュアルに載ってる
-
-        http://php.net/language.operators.errorcontrol
-
-        http://php.net/set_error_handler
-
-        http://php.net/set_exception_handler
-
-        http://php.net/register_shutdown_function
-
-        http://php.net/ErrorException
-
-        http://php.net/display-errors
-
-        whoops! https://github.com/filp/whoops'
+      content: 'だいたいPHPマニュアルに載ってる '
+    - node: br
+    - node: text
+      content: 'http://php.net/language.operators.errorcontrol '
+    - node: br
+    - node: text
+      content: 'http://php.net/set_error_handler '
+    - node: br
+    - node: text
+      content: 'http://php.net/set_exception_handler '
+    - node: br
+    - node: text
+      content: 'http://php.net/register_shutdown_function '
+    - node: br
+    - node: text
+      content: 'http://php.net/ErrorException http://php.net/display-errors '
+    - node: br
+    - node: bold
+      content: whoops!
+    - node: text
+      content: ' '
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/filp/whoops
   p90:
   - node: p
     children:
+    - node: bold
+      content: 参考 資料
+    - node: br
     - node: text
-      content: '参考資料(にすると良い)         PHPのエラーと例外再入門          by Hiraku NAKANOhttps://speakerdeck.com/hirak/php-error-and-
-
-        exceptionfaultline/faultline-phpによるサーバ管理不要なエラートラッキングとその         効果 by Ken''ichiro Oyamahttp://k1low.hatenablog.com/entry/2017/06/13/083000'
+      content: (にすると良い)
+  - node: p
+    children:
+    - node: text
+      content: 'PHPのエラーと例外再入門 '
+  - node: p
+    children:
+    - node: text
+      content: by Hiraku NAKANO
+    - node: br
+    - node: text
+      content: https://speakerdeck.com/hirak/php-error-and-
+  - node: p
+    children:
+    - node: text
+      content: exception
+  - node: p
+    children:
+    - node: text
+      content: faultline/faultline-phpによるサーバ 管理不要なエラートラッキングとその
+  - node: p
+    children:
+    - node: text
+      content: 効果 by Ken'ichiro Oyama
+    - node: br
+    - node: text
+      content: http://k1low.hatenablog.com/entry/2017/06/13/083000
   p91:
   - node: p
     children:
-    - node: text
-      content: '参考資料 (pixiv AppRunner)         (ピクシブ株式会社 Advent Calendar 2015)健全なpixivは健康なPHPに宿る〜         モダンPHPを保つ7つの鍵
-
-        http://inside.pixiv.net/entry/2015/12/18/210721         ソースコード (サンプル)https://gist.github.com/zonuexe/577d089815e241d5da26'
-  p92:
+    - node: bold
+      content: '参考資料 '
   - node: p
     children:
     - node: text
+      content: (pixiv AppRunner)
+  - node: p
+    children:
+    - node: text
+      content: (ピクシブ株式会社 Advent Calendar 2015)
+    - node: br
+    - node: text
+      content: 健全なpixivは健康なPHPに宿る〜
+  - node: p
+    children:
+    - node: text
+      content: モダンPHPを保つ7つの鍵
+  - node: p
+    children:
+    - node: text
+      content: http://inside.pixiv.net/entry/2015/12/18/210721
+  - node: p
+    children:
+    - node: text
+      content: ソースコード
+  - node: p
+    children:
+    - node: text
+      content: ' (サンプル)'
+    - node: br
+    - node: text
+      content: https://gist.github.com/zonuexe/577d089815e241d5da26
+  p92:
+  - node: p
+    children:
+    - node: bold
       content: ' 最後に'
   p93:
   - node: p
     children:
+    - node: bold
+      content: メンバー全員が知るべき？
+  - node: p
+    children:
     - node: text
-      content: 'メンバー全員が知るべき？知っておくとためにはなる…かも
-
-        でも完全に理解してないといけないわけではない
-
-        とは言っても社内で誰かが知っておかないと困ることではある
-
-        「Noticeを潰せ」だけ周知したい'
+      content: 知っておくとためにはなる…かも でも完全に理解してないといけな
+    - node: br
+    - node: text
+      content: 'いわけではない '
+    - node: br
+    - node: text
+      content: とは言っても社内で誰かが知って
+    - node: br
+    - node: text
+      content: 'おかないと困ることではある '
+    - node: br
+    - node: text
+      content: 「
+    - node: bold
+      content: Noticeを潰せ
+    - node: text
+      content: 」だけ周知したい
+  p94: []
   p95:
   - node: p
     children:
-    - node: text
-      content: Webサービスの開発基盤を設計したいひとも
+    - node: bold
+      content: Webサービスの開発基盤
+    - node: br
+    - node: bold
+      content: を設計したいひとも
   p96:
   - node: p
     children:
-    - node: text
-      content: 創作文化のための開発に興味があるひとも
+    - node: bold
+      content: 創作文化のための開発に
+    - node: br
+    - node: bold
+      content: 興味があるひとも
   p97:
   - node: p
     children:
     - node: text
-      content: '         今回の内容がいまいちぴんと来なくても大丈夫'
+      content: 今回の内容がいまいち
+    - node: br
+    - node: text
+      content: ぴんと来なくても大丈夫
   p98:
   - node: p
     children:
+    - node: bold
+      content: PHP
     - node: text
-      content: 'PHP, JavaScript, Ruby,          Scala, Go, データ分析,インフラ, その他…'
+      content: ','
+    - node: bold
+      content: ' JavaScript'
+    - node: text
+      content: ','
+    - node: bold
+      content: ' '
+    - node: text
+      content: 'Ruby, '
+  - node: p
+    children:
+    - node: text
+      content: Scala, Go, データ分析,
+    - node: br
+    - node: text
+      content: インフラ, その他…
   p99:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: まずは一度オフィスに
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 遊びに来ませんかヾ(〃＞＜)ﾉﾞ☆
+      content: 遊びに来ませんか
+    - node: br
+    - node: bold
+      content: ヾ(〃＞＜)ﾉﾞ☆
   p100:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: Twitter @
     - node: text
-      content: Twitter @tadsan宛
-    - node: bold
-      content: '         '
-    - node: text
-      content: またはrecruit.pixiv.net
-  p101:
+      content: tadsan宛
   - node: p
     children:
     - node: text
-      content: '使用フォント
-
-        　　 ＿ 　　 ＼ヽ,　,、 セプテンバーＭ・Ｌ
-
-        　　 　 `''''|/ﾉ 　　　 　 .| 　＿　 　 | Migu 1M 　＼｀ヽ、| 　　 ＼, V Rounded M+ 2p　 　 　 `L,,_
-        　　　 　 |ヽ､) 　　　　 .| 　　　　/ 　 　 　 　 　 ,､ 　　　 /　　　　　　　　ヽYﾉ 　　　.|　　　　　　 r''''ヽ、.|
-        　　　|　　　　　 　 `ｰ-ヽ|ヮ 　 　 |　　　　　 　 　 　 `| 　　　ヽ,　　　　,r　 　 　 .| 　　　　 ヽ,r''''''ヽ!''-‐''''''''''ヽ､ﾉ
-        　,,,..---r''",r, ,　、`ヽ､　ヾ 　ヽ､__/ ./ﾊﾚﾊ i`ヽ、 `''''r`ミ_ 　　　.ﾚ//r,,,､ ﾚ''ﾚﾊヾ,　
-        L,,_　`ヽ、 　　　 "ﾚ, l;;;l　　 l;;;l`i.ﾘﾚ''　ﾘ￣~~ 　　　　　ヽ､　ワ `"／-''`''`'' 　　　　　　　`''''''''''''''''"　　　　　
-        ┼ヽ　 -|r‐､.　ﾚ　| 　　　　　　　　　　　　　　 　 ｄ⌒)　./|　_ﾉ　 __ﾉ'
+      content: または
+    - node: br
+    - node: bold
+      content: recruit.pixiv.net
+  p101:
+  - node: p
+    children:
+    - node: bold
+      content: '使用フォント '
+  - node: p
+    children:
+    - node: text
+      content: '　　 ＿ '
+    - node: br
+    - node: text
+      content: '　　 ＼ヽ,　,、 '
+  - node: p
+    children:
+    - node: text
+      content: 'セプテンバーＭ・Ｌ '
+  - node: p
+    children:
+    - node: text
+      content: '　　 　 `''''|/ﾉ 　　　 　 .| 　＿　 　 | '
+  - node: p
+    children:
+    - node: text
+      content: 'Migu 1M '
+  - node: p
+    children:
+    - node: text
+      content: '　＼｀ヽ、| 　　 ＼, V '
+  - node: p
+    children:
+    - node: bold
+      content: Rounded M+ 2p
+  - node: p
+    children:
+    - node: text
+      content: '　 　 　 `L,,_ 　　　 　 |ヽ､) '
+    - node: br
+    - node: text
+      content: '　　　　 .| '
+    - node: br
+    - node: text
+      content: '　　　　/ 　 　 　 　 　 ,､ '
+    - node: br
+    - node: text
+      content: '　　　 /　　　　　　　　ヽYﾉ 　　　.|　　　　　　 r''''ヽ、.| 　　　|　　　　　 　 `ｰ-ヽ|ヮ 　 　 |　　　　　
+        　 　 　 `| 　　　ヽ,　　　　,r　 　 　 .| 　　　　 ヽ,r''''''ヽ!''-‐''''''''''ヽ､ﾉ 　,,,..---r''",r,
+        ,　、`ヽ､　ヾ '
+    - node: br
+    - node: text
+      content: '　ヽ､__/ ./ﾊﾚﾊ i`ヽ、 `''''r`ミ_ '
+    - node: br
+    - node: text
+      content: '　　　.ﾚ//r,,,､ ﾚ''ﾚﾊヾ,　 L,,_　`ヽ、 　　　 "ﾚ, l;;;l　　 l;;;l`i.ﾘﾚ''　ﾘ￣~~ '
+    - node: br
+    - node: text
+      content: '　　　　　ヽ､　ワ `"／-''`''`'' '
+    - node: br
+    - node: text
+      content: 　　　　　　　`''''''''"　　　　　 ┼ヽ　 -|r‐､.　ﾚ　| 　　　　　　　　　　　　　　 　 ｄ⌒)　./|　_ﾉ　
+        __ﾉ

@@ -6,31 +6,50 @@ text:
   p1:
   - node: p
     children:
+    - node: bold
+      content: 諸君
     - node: text
-      content: 諸君とPHPと一級市民
+      content: と
+    - node: bold
+      content: PHP
+    - node: text
+      content: と
+    - node: bold
+      content: 一級市民
+  - node: p
+    children:
     - node: bold
       content: First-class citizen in PHP with you
-    - node: text
-      content: '#phpstudy2017-10-24 PHP勉強会@東京 '
-  p2:
   - node: p
     children:
     - node: text
-      content: 'お前誰ようさみけんた (@tadsan) / Zonu.EXE
-
-        '
+      content: '#phpstudy'
+  - node: p
+    children:
     - node: text
-      content: 'GitHub/Packagistでは id: zonuexe
-
-        •ピクシブ株式会社技術基盤チーム (pixiv.net)
-
-        •Emacs Lisper, PHPer
-
-        •入社前は自宅警備をしながらRuby書いてた
-
-        •Emacs PHP Modeのメンテナ引き継ぎました
-
-        •Qiitaに記事を書いたり変なコメントしてるよ•'
+      content: '2017-10-24 PHP勉強会@東京 '
+  p2:
+  - node: p
+    children:
+    - node: bold
+      content: お前誰よ
+    - node: br
+    - node: bold
+      content: 'うさみけんた (@tadsan) / Zonu.EXE '
+  - node: ul
+    children:
+    - node: li
+      content: 'GitHub/Packagistでは id: zonuexe'
+    - node: li
+      content: ピクシブ株式会社技術基盤チーム (pixiv.net)
+    - node: li
+      content: Emacs Lisper, PHPer
+    - node: li
+      content: 入社前は自宅警備をしながらRuby書いてた
+    - node: li
+      content: Emacs PHP Modeのメンテナ引き継ぎました
+    - node: li
+      content: Qiitaに記事を書いたり変なコメントしてるよ
   p3:
   - node: p
     children:
@@ -40,125 +59,324 @@ text:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: プログラムは
+  - node: p
+    children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 様々な要素の組み合せで構成される
+      content: 様々な要素の
+    - node: br
+    - node: bold
+      content: 組み合せで構成される
   p5:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 様々な要素？
   p6:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
-      content: 'PHPにおいては、(ざっくり)構文 数字 文字列 真理値(文法),,,,         配列 リソース型 クラス 関数         ,, ,,,オブジェクト インターフェイス         ,,         トレイト ファイル 外部API ,,,'
-    - node: bold
-      content: '         '
+      content: PHPにおいては 、
+  - node: p
+    children:
     - node: text
-      content: データベース HTMLテンプレート,…etc.
+      content: (ざっくり)
+  - node: p
+    children:
+    - node: bold
+      content: 構文  数字  文字列  真理値
+  - node: p
+    children:
+    - node: text
+      content: (文法)
+  - node: p
+    children:
+    - node: text
+      content: ', , , ,'
+  - node: p
+    children:
+    - node: bold
+      content: 配列  リソース 型  クラス
+    - node: text
+      content: '  '
+    - node: bold
+      content: 関数
+  - node: p
+    children:
+    - node: text
+      content: ', ,  , , ,'
+    - node: br
+    - node: bold
+      content: オブジェクト  インターフェイス
+  - node: p
+    children:
+    - node: text
+      content: ', ,'
+  - node: p
+    children:
+    - node: bold
+      content: トレイト
+    - node: text
+      content: '  ファイル  外部API  '
+  - node: p
+    children:
+    - node: text
+      content: ', , ,'
+  - node: p
+    children:
+    - node: text
+      content: データベース  HTML
+    - node: bold
+      content: テンプレート
+  - node: p
+    children:
+    - node: text
+      content: ','
+    - node: br
+    - node: bold
+      content: …etc.
   p7:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
       content: われわれは
+  - node: p
+    children:
     - node: bold
-      content: '         '
+      content: いろんなものを
     - node: text
-      content: いろんなものを組み合せて作る
+      content: ' '
+    - node: bold
+      content: 組み合せて作る
   p8:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: どうやって？
   p9:
   - node: p
     children:
-    - node: text
-      content: 'いろんなものが現れる<?php require ''bootstrap.php'';         $db = mysqli_connect(); $stmt = mysqli_prepare($db, ''SELECT * FROM books'');         mysqli_stmt_execute($stmt);          print ''<h1>本の一覧</h1>'';         print ''<ul>'';         foreach ($stmt as $s){     print ''<li>''; print $s->name; print ‘</li>'';         } print ''</ul>'';'
-  p10:
+    - node: bold
+      content: いろんなものが現れる
   - node: p
     children:
     - node: text
+      content: <?php require 'bootstrap.php';
+  - node: p
+    children:
+    - node: text
+      content: '$db = mysqli_connect(); '
+    - node: br
+    - node: text
+      content: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
+  - node: p
+    children:
+    - node: text
+      content: 'mysqli_stmt_execute($stmt); '
+  - node: p
+    children:
+    - node: text
+      content: print '<h1>本の一覧</h1>';
+  - node: p
+    children:
+    - node: text
+      content: print '<ul>';
+  - node: p
+    children:
+    - node: text
+      content: 'foreach ($stmt as $s){ '
+    - node: br
+    - node: text
+      content: '    print ''<li>''; print $s->name; print ‘</li>'';'
+  - node: p
+    children:
+    - node: text
+      content: '} '
+    - node: br
+    - node: text
+      content: print '</ul>';
+  p10:
+  - node: p
+    children:
+    - node: bold
       content: お気付きか
   p11:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 階級制度
   p12:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: いろんなものがある
+      content: いろんな
+    - node: br
+    - node: bold
+      content: ものがある
+  p13: []
   p14:
   - node: p
     children:
     - node: text
-      content: 第一級オブジェクト（ファーストクラスオブジェクト、“ﬁrst-）は、あるプログラミング言語において、たとえclass objectば生成、代入、演算、（引数・戻り値としての）受け渡しといったその言語における基本的な操作を制限なしに使用できる対象のことである。ここで「オブジェクト」とは広く対象物・客体を意味し、必ずしもオブジェクト指向プログラミングにおけるオブジェクトを意味しない。”第一級オブジェクト
+      content: 第一級オブジェクト（ファーストクラスオブジェクト、
+    - node: br
     - node: bold
-      content: '         '
+      content: “ ﬁrst-
+  - node: p
+    children:
     - node: text
-      content: – 最終更新( 2017-04-23 19:00:11)https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E7%B4%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88
+      content: ）は、あるプログラミング言語において、たとえ
+  - node: p
+    children:
+    - node: bold
+      content: class object
+    - node: br
+    - node: text
+      content: ば生成、代入、演算、（引数・戻り値としての）受け渡しと いったその言語における基本的な操作を制限なしに使用でき る対象のことである。ここで「オブジェクト」とは広く対象
+        物・客体を意味し、必ずしもオブジェクト指向プログラミン
+    - node: br
+    - node: text
+      content: グにおけるオブジェクトを意味しない。
+  - node: p
+    children:
+    - node: bold
+      content: ”
+  - node: p
+    children:
+    - node: text
+      content: 第一級オブジェクト
+  - node: p
+    children:
+    - node: bold
+      content: '–  '
+  - node: p
+    children:
+    - node: text
+      content: 最終更新
+    - node: br
+    - node: bold
+      content: (  2017-04-23 19:00:11)
+  - node: p
+    children:
+    - node: bold
+      content: https://ja.wikipedia.org/wiki/
+    - node: br
+    - node: bold
+      content: '%E7%AC%AC%E4%B8%80%E7%B4%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88'
   p15:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: PHPはどうかな？
+      content: PHPは
+    - node: br
+    - node: bold
+      content: どうかな？
   p16:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる貴族簡単に画面に出力できる上級市民シリアライズできる一級市民変数に代入できる・引数にできる関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる相当がんばらないと操作できない
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
+    - node: text
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
+    - node: text
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
+    - node: text
+      content: 一級市民 変数に代入できる・引数にできる
+  - node: p
+    children:
+    - node: text
+      content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
+    - node: text
+      content: 相当がんばらないと操作できない
   p17:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: PHPはどうかな？
+      content: PHPは
+    - node: br
+    - node: bold
+      content: どうかな？
   p18:
   - node: p
     children:
-    - node: text
-      content: 明らかに一級市民ではないもの
+    - node: bold
+      content: 明らかに一級市民
+    - node: br
+    - node: bold
+      content: ではないもの
   p19:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる貴族簡単に画面に出力できる上級市民シリアライズできる一級市民変数に代入できる・引数にできる関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
+    - node: text
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
+    - node: text
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
+    - node: text
+      content: 一級市民 変数に代入できる・引数にできる
+  - node: p
+    children:
+    - node: text
+      content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
     - node: bold
       content: ココ→
+  - node: p
+    children:
     - node: text
       content: 相当がんばらないと操作できない
   p20:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 構文
   p21:
   - node: p
     children:
-    - node: bold
-      content: '         '
     - node: text
-      content: ifforをに変換する…
+      content: if for
+    - node: br
     - node: bold
-      content: '         '
-    - node: text
-      content: といったことはできない
+      content: を に変換する…
+  - node: p
+    children:
+    - node: bold
+      content: といったことは
+    - node: br
+    - node: bold
+      content: できない
   p22:
   - node: p
     children:
@@ -167,226 +385,657 @@ text:
   p23:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 神
   p24:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
     - node: bold
       content: ココ→
+  - node: p
+    children:
     - node: text
-      content: 貴族簡単に画面に出力できる上級市民シリアライズできる一級市民変数に代入できる・引数にできる関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる相当がんばらないと操作できない
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
+    - node: text
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
+    - node: text
+      content: 一級市民 変数に代入できる・引数にできる
+  - node: p
+    children:
+    - node: text
+      content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
+    - node: text
+      content: 相当がんばらないと操作できない
   p25:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: stringint
+      content: string
+    - node: br
+    - node: bold
+      content: int
   p26:
   - node: p
     children:
+    - node: bold
+      content: 'string '
+  - node: p
+    children:
+    - node: bold
+      content: (文字列)
+  - node: p
+    children:
     - node: text
-      content: 'string (文字列)$s = "string";
-
-        echoとかで簡単に画面に出力できる
-
-        $a[''str''] みたいな感じでキーになれる
-
-        あらゆるバイナリ列を格納できる
-
-        例: 画像ファイルの中身'
+      content: '$s = "string"; '
+    - node: br
+    - node: text
+      content: 'echoとかで簡単に画面に出力できる '
+  - node: p
+    children:
+    - node: text
+      content: '$a[''str''] みたいな感じでキーになれる '
+  - node: p
+    children:
+    - node: text
+      content: 'あらゆるバイナリ列を格納できる '
+  - node: p
+    children:
+    - node: text
+      content: '例: '
+    - node: bold
+      content: 画像ファイルの中身
   p27:
   - node: p
     children:
-    - node: text
-      content: 'int (整数)$i = 12345;
-
-        echoとかで簡単に画面に出力できる
-
-        $a[0] みたいな感じでキーになれる
-
-         PHP_INT_MINからPHP_INT_MAXの範囲のみ扱える (CPUのアーキテクチャ32bit, 64bitに依存)'
-  p28:
+    - node: bold
+      content: 'int '
+  - node: p
+    children:
+    - node: bold
+      content: (整数)
   - node: p
     children:
     - node: text
+      content: '$i = 12345; '
+    - node: br
+    - node: text
+      content: 'echoとかで簡単に画面に出力できる '
+  - node: p
+    children:
+    - node: text
+      content: '$a[0] みたいな感じでキーになれる '
+  - node: p
+    children:
+    - node: text
+      content: PHP_INT_MINからPHP_INT_MAXの
+    - node: br
+    - node: text
+      content: 範囲のみ扱える (CPUのアーキテクチャ
+    - node: br
+    - node: text
+      content: 32bit, 64bitに依存)
+  p28:
+  - node: p
+    children:
+    - node: bold
       content: 上級市民
   p29:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
     - node: bold
       content: ココ→
+  - node: p
+    children:
     - node: text
-      content: 貴族簡単に画面に出力できる上級市民シリアライズできる一級市民変数に代入できる・引数にできる関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる相当がんばらないと操作できない
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
+    - node: text
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
+    - node: text
+      content: 一級市民 変数に代入できる・引数にできる
+  - node: p
+    children:
+    - node: text
+      content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
+    - node: text
+      content: 相当がんばらないと操作できない
   p30:
   - node: p
     children:
+    - node: bold
+      content: 'float '
+  - node: p
+    children:
+    - node: bold
+      content: (浮動小数点数)
+  - node: p
+    children:
     - node: text
-      content: 'float (浮動小数点数)$f =1.1; $l = PHP_INT_MAX + 1;
-
-        echoとかで簡単に画面に出力できる
-
-        絶対に配列のキーにしてはいけない
-
-        エラーにもならずintに化ける
-
-         基本的に等値比較(==, ===)してはいけない'
+      content: '$f =1.1; $l = PHP_INT_MAX + 1; echoとかで簡単に画面に出力できる '
+  - node: p
+    children:
+    - node: text
+      content: '絶対に配列のキーにしてはいけない '
+  - node: p
+    children:
+    - node: text
+      content: 'エラーにもならずintに化ける '
+  - node: p
+    children:
+    - node: text
+      content: 基本的に等値比較(==, ===)
+    - node: br
+    - node: text
+      content: してはいけない
   p31:
   - node: p
     children:
+    - node: bold
+      content: 'bool '
+  - node: p
+    children:
+    - node: bold
+      content: (真理値)
+  - node: p
+    children:
     - node: text
-      content: 'bool (真理値)$t = true; $f = (1 == 2);
-
-        そのままechoなどで出力できない
-
-        trueは1に化ける
-
-        falseは何も出力されない
-
-        配列キーにすると'
+      content: '$t = true; $f = (1 == 2); '
+    - node: br
+    - node: text
+      content: 'そのままechoなどで出力できない '
+  - node: p
+    children:
+    - node: text
+      content: 'trueは1に化ける '
+  - node: p
+    children:
+    - node: text
+      content: 'falseは何も出力されない '
+  - node: p
+    children:
+    - node: text
+      content: 配列キーにすると
   p32:
   - node: p
     children:
-    - node: text
-      content: '結果を一時変数に保存する<?php if ($i == 1) echo ''$iは1です'';         $is_success = do_something(); if ($is_success) {     echo "成功"; } else {     echo
-        "しっぱい。。。"; }'
-  p33:
+    - node: bold
+      content: 結果を一時変数に保存する
   - node: p
     children:
     - node: text
-      content: 結果を返す関数<?php function is_valid_keyword($key) {     return in_array($key,
-        ['public', 'private']); }
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: if ($i == 1) echo '$iは1です';
+  - node: p
+    children:
+    - node: text
+      content: '$is_success = do_something(); '
+    - node: br
+    - node: text
+      content: 'if ($is_success) {     echo "成功"; '
+    - node: br
+    - node: text
+      content: '} else { '
+    - node: br
+    - node: text
+      content: '    echo "しっぱい。。。"; '
+    - node: br
+    - node: text
+      content: '}'
+  p33:
+  - node: p
+    children:
+    - node: bold
+      content: 結果を返す関数
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'function is_valid_keyword($key) '
+    - node: br
+    - node: text
+      content: '{ '
+    - node: br
+    - node: text
+      content: '    return in_array($key, [''public'', ''private'']); '
+    - node: br
+    - node: text
+      content: '}'
   p34:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: シリアライズできる
+      content: シリアライズ
+    - node: br
+    - node: bold
+      content: できる
   p35:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる貴族簡単に画面に出力できる
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
+    - node: text
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
     - node: bold
       content: ココ→
+  - node: p
+    children:
     - node: text
-      content: 上級市民シリアライズできる一級市民変数に代入できる・引数にできる関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる相当がんばらないと操作できない
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
+    - node: text
+      content: 一級市民 変数に代入できる・引数にできる
+  - node: p
+    children:
+    - node: text
+      content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
+    - node: text
+      content: 相当がんばらないと操作できない
   p36:
   - node: p
     children:
+    - node: bold
+      content: 'array '
+  - node: p
+    children:
+    - node: bold
+      content: (配列)
+  - node: p
+    children:
     - node: text
-      content: 'array (配列)         $a = array(''a'', ''b'', ''c'');         $b = range(1, 10);$c = [''name'' => $n , ''age'' => $y];
-
-        ほかの言語の配列や辞書(ハッシュ, 連想配列)とか呼ばれるもの
-
-        内容にほかの型の値を含められる'
+      content: $a = array('a', 'b', 'c');
+  - node: p
+    children:
+    - node: text
+      content: $b = range(1, 10);
+    - node: br
+    - node: text
+      content: '$c = [''name'' => $n , ''age'' => $y]; '
+  - node: p
+    children:
+    - node: text
+      content: ほかの言語の配列や辞書(ハッシュ, 連
+    - node: br
+    - node: text
+      content: '想配列)とか呼ばれるもの '
+  - node: p
+    children:
+    - node: text
+      content: 内容にほかの型の値を含められる
   p37:
   - node: p
     children:
+    - node: bold
+      content: 'object '
+  - node: p
+    children:
+    - node: bold
+      content: (オブジェクト)
+  - node: p
+    children:
     - node: text
-      content: 'object (オブジェクト)         $dt = new DateTime(''2112-09-03'');
-
-        (object)[''name'' => $n , ''age'' => $y];$o =          クラスを実体化したものキャストするとstdClassになる
-
-        内容にほかの型の値を含められる'
+      content: $dt = new DateTime('2112-09-03');
+  - node: p
+    children:
+    - node: text
+      content: (object)['name' => $n , 'age' => $y];
+  - node: p
+    children:
+    - node: text
+      content: '$o = '
+  - node: p
+    children:
+    - node: text
+      content: クラスを実体化したもの
+    - node: br
+    - node: text
+      content: 'キャストするとstdClassになる '
+  - node: p
+    children:
+    - node: text
+      content: 内容にほかの型の値を含められる
   p38:
   - node: p
     children:
-    - node: text
-      content: 'シリアライズ<?php $s = serialize(''string''); // "s:6:"string";" $a = serialize([''apple'',
-        ''orange'']);         //=> "a:2:{i:0;s:5:"apple";i:1;s:6:"orange";}" $obj = new stdClass; $obj->name
-        = ''ミク''; $obj->age = 16; //=> "O:8:"stdClass":2:{s:4:"name";s:6:"ミク";s:3:"age";i:16;}"'
-  p39:
+    - node: bold
+      content: シリアライズ
   - node: p
     children:
     - node: text
+      content: '<?php '
+    - node: br
+    - node: text
+      content: '$s = serialize(''string''); '
+    - node: br
+    - node: text
+      content: '// "s:6:"string";" '
+    - node: br
+    - node: text
+      content: $a = serialize(['apple', 'orange']);
+  - node: p
+    children:
+    - node: text
+      content: '//=> "a:2:{i:0;s:5:"apple";i:1;s:6:"orange";}" '
+  - node: p
+    children:
+    - node: text
+      content: '$obj = new stdClass; '
+    - node: br
+    - node: text
+      content: '$obj->name = ''ミク''; $obj->age = 16; '
+    - node: br
+    - node: text
+      content: //=> "O:8:"stdClass":2:{s:4:"name";s:6:"ミク";s:3:"age";i:16;}"
+  p39:
+  - node: p
+    children:
+    - node: bold
       content: 変数に代入できる
   p40:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる貴族簡単に画面に出力できる上級市民シリアライズできる
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
+    - node: text
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
+    - node: text
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
     - node: bold
       content: ココ→
-    - node: text
-      content: 一級市民変数に代入できる・引数にできる関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる相当がんばらないと操作できない
-  p41:
   - node: p
     children:
     - node: text
-      content: 'Closure (無名関数)$x2 = function ($n){return $n*2};
-
-         ローカル変数として関数を作ることができる
-
-         グローバル関数は一度定義すると         (同名で)作り直すことはできないが、これは何回でも作って捨てられる！'
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: 'リソース(何者である何か)$c = curl_init(); $g = gmp_init();
-
-         リソースって一括りにされてるけど互換性はない
-
-        http://php.net/resource
-
-        resourceは型宣言に書けない'
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: リソースは型宣言できない<?php $f = function ($r) { var_dump($r); }; $g = function
-        (resource $r) { var_dump($r); }; $x = fopen('php://temp', 'r'); $f($x); $g($x);
-  p44:
+      content: 一級市民 変数に代入できる・引数にできる
   - node: p
     children:
     - node: text
       content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
+    - node: text
+      content: 相当がんばらないと操作できない
+  p41:
+  - node: p
+    children:
+    - node: bold
+      content: 'Closure '
+  - node: p
+    children:
+    - node: bold
+      content: (無名関数)
+  - node: p
+    children:
+    - node: text
+      content: '$x2 = function ($n){return $n*2}; '
+  - node: p
+    children:
+    - node: text
+      content: ローカル変数として関数を
+    - node: br
+    - node: text
+      content: '作ることができる '
+  - node: p
+    children:
+    - node: text
+      content: グローバル関数は一度定義すると
+  - node: p
+    children:
+    - node: text
+      content: (同名で)作り直すことはできないが、 これは何回でも作って捨てられる！
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: リソース(何者である何か)
+  - node: p
+    children:
+    - node: text
+      content: '$c = curl_init(); $g = gmp_init(); '
+  - node: p
+    children:
+    - node: text
+      content: リソースって一括りにされてるけど
+    - node: br
+    - node: text
+      content: '互換性はない '
+  - node: p
+    children:
+    - node: text
+      content: 'http://php.net/resource '
+  - node: p
+    children:
+    - node: text
+      content: resourceは型宣言に書けない
+  p43:
+  - node: p
+    children:
+    - node: bold
+      content: リソースは型宣言できない
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$f = function ($r) { var_dump($r); }; '
+    - node: br
+    - node: text
+      content: '$g = function (resource $r) { var_dump($r); }; '
+  - node: p
+    children:
+    - node: text
+      content: '$x = fopen(''php://temp'', ''r''); '
+  - node: p
+    children:
+    - node: text
+      content: $f($x); $g($x);
+  p44:
+  - node: p
+    children:
+    - node: bold
+      content: 関数や構文を経由し
+    - node: text
+      content: ' '
+    - node: bold
+      content: て一級市民になれる
   p45:
   - node: p
     children:
     - node: text
-      content: 階層できること神配列のキーになれる貴族簡単に画面に出力できる上級市民シリアライズできる一級市民変数に代入できる・引数にできる
+      content: 階層 できること
+  - node: p
+    children:
+    - node: text
+      content: 神 配列のキーになれる
+  - node: p
+    children:
+    - node: text
+      content: 貴族 簡単に画面に出力できる
+  - node: p
+    children:
+    - node: text
+      content: 上級市民 シリアライズできる
+  - node: p
+    children:
+    - node: text
+      content: 一級市民 変数に代入できる・引数にできる
+  - node: p
+    children:
     - node: bold
       content: ココ→
+  - node: p
+    children:
     - node: text
-      content: 関数や構文を経由して一級市民になれる(cid:7766)の関数によってアクセスできる相当がんばらないと操作できない
+      content: 関数や構文を経由して一級市民になれる
+  - node: p
+    children:
+    - node: text
+      content: (cid:7766)の関数によってアクセスできる
+  - node: p
+    children:
+    - node: text
+      content: 相当がんばらないと操作できない
   p46:
   - node: p
     children:
+    - node: bold
+      content: 'callable '
+  - node: p
+    children:
+    - node: bold
+      content: (関数っぽくできる何か)
+  - node: p
+    children:
     - node: text
-      content: 'callable (関数っぽくできる何か)タイプヒントにcallableって書ける
-
-        単なる文字列・配列を紛れやすい
-
-         最近は引数で受け渡すときはcallableよりも\Closureがオススメ
-
-         PHP 7.1〜 \Closure::fromCallable()これでcallableをClosureに変換できる'
+      content: 'タイプヒントにcallableって書ける 単なる文字列・配列を紛れやすい '
+  - node: p
+    children:
+    - node: text
+      content: 最近は引数で受け渡すときは
+    - node: br
+    - node: text
+      content: 'callableよりも\Closureがオススメ '
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.1〜 \Closure::fromCallable() これでcallableをClosureに変換できる
   p47:
   - node: p
     children:
-    - node: text
-      content: callable (関数・メソッド)<?php $p = 'printf'; $p('%s %s!', 'Hello', $p); $c
-        = \DateTimeImmutable::class; $dt = new $c; $m = [$dt, 'format']; echo $m('Y-m-d
-        H:i:s');
-  p48:
+    - node: bold
+      content: callable (関数・メソッド)
   - node: p
     children:
     - node: text
-      content: ファイル<?php if (is_development()) {    $fp = fopen('php://stderr'); }
-        else    $fp = fopen('/path/to/log.txt'); } $logger = new MyLogger($fp); $logger->write($data);
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$p = ''printf''; '
+    - node: br
+    - node: text
+      content: '$p(''%s %s!'', ''Hello'', $p); '
+  - node: p
+    children:
+    - node: text
+      content: '$c = \DateTimeImmutable::class; '
+    - node: br
+    - node: text
+      content: '$dt = new $c; '
+  - node: p
+    children:
+    - node: text
+      content: $m = [$dt, 'format']; echo $m('Y-m-d H:i:s');
+  p48:
+  - node: p
+    children:
+    - node: bold
+      content: ファイル
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'if (is_development()) { '
+    - node: br
+    - node: text
+      content: '   $fp = fopen(''php://stderr''); '
+    - node: br
+    - node: text
+      content: '} else '
+    - node: br
+    - node: text
+      content: '   $fp = fopen(''/path/to/log.txt''); '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: '$logger = new MyLogger($fp); '
+    - node: br
+    - node: text
+      content: $logger->write($data);
   p49:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: ここから下は一級市民と呼び難い
+      content: ここから下は
+    - node: br
+    - node: bold
+      content: 一級市民と呼び難い
   p50:
   - node: p
     children:
@@ -395,56 +1044,77 @@ text:
   p51:
   - node: p
     children:
-    - node: text
-      content: 謎の関数によってアクセスできる
+    - node: bold
+      content: 謎の関数によって
+    - node: br
+    - node: bold
+      content: アクセスできる
   p52:
   - node: p
     children:
-    - node: text
-      content: '謎ローカル変数
-
-        compact(), extract()
-
-        プロパティ
-
-        ReflectionProperty
-
-        定数
-
-        constant()'
-  p53:
+    - node: bold
+      content: 謎
   - node: p
     children:
     - node: text
+      content: 'ローカル変数 '
+    - node: br
+    - node: text
+      content: 'compact(), extract() '
+  - node: p
+    children:
+    - node: text
+      content: 'プロパティ '
+  - node: p
+    children:
+    - node: text
+      content: 'ReflectionProperty '
+  - node: p
+    children:
+    - node: text
+      content: '定数 '
+  - node: p
+    children:
+    - node: text
+      content: constant()
+  p53:
+  - node: p
+    children:
+    - node: bold
       content: もう時間がない
   p54:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: Symfony\
     - node: text
-      content: Symfony\VarDumper
+      content: ' '
+    - node: bold
+      content: VarDumper
   p55:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: PsySH
   p56:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: whoops!
   p57:
   - node: p
     children:
     - node: bold
-      content: '         '
+      content: いい感じに
     - node: text
-      content: いい感じに表示できる
+      content: ' '
+    - node: bold
+      content: 表示できる
   p58:
   - node: p
     children:
     - node: bold
-      content: '         '
-    - node: text
-      content: 市民権を拡張しよう
+      content: 市民権を
+    - node: br
+    - node: bold
+      content: 拡張しよう
