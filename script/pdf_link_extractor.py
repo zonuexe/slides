@@ -4,6 +4,7 @@
 """
 
 import os
+import re
 import sys
 import yaml
 import argparse
@@ -177,6 +178,93 @@ def extract_text_from_pdf(pdf_path: str) -> Dict[int, List[Dict]]:
     return text_by_page
 
 
+def _split_text_content(text: str) -> List[str]:
+    """
+    テキスト内容を適切に分割する
+
+    Args:
+        text: 分割するテキスト
+
+    Returns:
+        分割されたテキストのリスト
+    """
+    # 分割パターン
+    split_patterns = [
+        # PHPで終わるタイトルとpixivで始まる会社名（より具体的）
+        (r"(.*in PHP)(pixiv.*)", r"\1|\2"),
+        # 英語のタイトルと日本語の会社名の分離
+        (r"([A-Za-z\s]+)([ぁ-んァ-ヶ一-龯\s]+)", r"\1|\2"),
+        # 長い英語タイトルと会社名
+        (r"([A-Za-z\s]{20,})([A-Za-z\s]+Inc\.?)", r"\1|\2"),
+    ]
+
+    result = [text]
+
+    for pattern, replacement in split_patterns:
+        new_result = []
+        for part in result:
+            if "|" in part:
+                # 既に分割されている場合はそのまま
+                new_result.extend(part.split("|"))
+            else:
+                # パターンマッチングで分割
+                if re.search(pattern, part):
+                    split_part = re.sub(pattern, replacement, part)
+                    new_result.extend(split_part.split("|"))
+                else:
+                    new_result.append(part)
+        result = new_result
+
+    return [part.strip() for part in result if part.strip()]
+
+
+def _should_separate_paragraph(last_node: Dict, first_node: Dict) -> bool:
+    """
+    段落を分離すべきかどうかを判定する
+
+    Args:
+        last_node: 前の段落の最後のノード
+        first_node: 現在の行の最初のノード
+
+    Returns:
+        段落を分離すべきかどうか
+    """
+    last_content = last_node.get("content", "").strip()
+    first_content = first_node.get("content", "").strip()
+
+    # 明らかに異なる内容の場合は分離
+    separation_patterns = [
+        # タイトルと会社名の分離（英語の後に会社名）
+        (r".*[A-Za-z]$", r"^[A-Za-z\s]+Inc\.?"),  # 英語で終わるタイトルと会社名
+        # 会社名と日付の分離
+        (r".*Inc\.?$", r"^\d{4}-\d{2}-\d{2}"),  # 会社名と日付
+        # 日付とイベント名の分離
+        (r"^\d{4}-\d{2}-\d{2}", r"^#\w+"),  # 日付とハッシュタグ
+        # 長いテキストと短いテキストの分離
+        (r".{30,}$", r"^.{1,15}$"),  # 長いテキストの後に短いテキスト
+        # 英語のタイトルと日本語の会社名の分離
+        (
+            r".*[A-Za-z]$",
+            r"^[ぁ-んァ-ヶ一-龯]+",
+        ),  # 英語で終わるタイトルと日本語の会社名
+        # 具体的なパターン：PHPで終わるタイトルとpixivで始まる会社名
+        (r".*PHP$", r"^pixiv"),  # PHPで終わるタイトルとpixivで始まる会社名
+        # 英語のタイトルと日本語の会社名（より具体的）
+        (
+            r".*[A-Za-z\s]+$",
+            r"^[ぁ-んァ-ヶ一-龯\s]+",
+        ),  # 英語で終わるタイトルと日本語の会社名
+    ]
+
+    for pattern_last, pattern_first in separation_patterns:
+        if re.search(pattern_last, last_content) and re.search(
+            pattern_first, first_content
+        ):
+            return True
+
+    return False
+
+
 def extract_formatted_paragraphs(chars: List[Dict], words: List[Dict]) -> List[Dict]:
     """
     文字レベルの情報からフォーマット付き段落を抽出し、構造化されたノードとして返す
@@ -243,6 +331,18 @@ def extract_formatted_paragraphs(chars: List[Dict], words: List[Dict]) -> List[D
         if current_bold_text:
             line_nodes.append({"node": "bold", "content": current_bold_text})
 
+        # テキストノードの内容を分割
+        processed_line_nodes = []
+        for node in line_nodes:
+            if node["node"] == "text":
+                # テキスト内容を分割
+                split_texts = _split_text_content(node["content"])
+                for split_text in split_texts:
+                    processed_line_nodes.append({"node": "text", "content": split_text})
+            else:
+                processed_line_nodes.append(node)
+        line_nodes = processed_line_nodes
+
         # 空行でない場合は段落に追加
         if line_nodes:
             # •だけの行は次の行と結合するために特別処理
@@ -262,47 +362,68 @@ def extract_formatted_paragraphs(chars: List[Dict], words: List[Dict]) -> List[D
                 # •で始まる行を個別に追加
                 paragraphs.append({"node": "p", "children": line_nodes})
             else:
-                # 行内に•が含まれている場合は分割
-                has_bullet = any("•" in node.get("content", "") for node in line_nodes)
-                if has_bullet:
-                    # 現在の段落を終了
+                # 段落分離の判定
+                should_separate = False
+                if current_paragraph and line_nodes:
+                    last_node = current_paragraph[-1]
+                    first_node = line_nodes[0]
+                    should_separate = _should_separate_paragraph(last_node, first_node)
+
+                if should_separate:
+                    # 現在の段落を終了して新しい段落を開始
                     if current_paragraph:
                         paragraphs.append({"node": "p", "children": current_paragraph})
                         current_paragraph = []
-
-                    # •で分割して処理
-                    split_nodes = []
-                    for node in line_nodes:
-                        content = node.get("content", "")
-                        if "•" in content:
-                            # •で分割
-                            parts = content.split("•")
-                            for i, part in enumerate(parts):
-                                if i > 0:  # •の後の部分
-                                    split_nodes.append(
-                                        {
-                                            "node": "p",
-                                            "children": [
-                                                {"node": "text", "content": "•" + part}
-                                            ],
-                                        }
-                                    )
-                                elif part:  # •の前の部分
-                                    split_nodes.append(
-                                        {"node": "text", "content": part}
-                                    )
-                        else:
-                            split_nodes.append(node)
-
-                    # 分割されたノードを段落に追加
-                    for node in split_nodes:
-                        if node.get("node") == "p":
-                            paragraphs.append(node)
-                        else:
-                            current_paragraph.append(node)
-                else:
-                    # 通常の行は段落に追加
                     current_paragraph.extend(line_nodes)
+                else:
+                    # 行内に•が含まれている場合は分割
+                    has_bullet = any(
+                        "•" in node.get("content", "") for node in line_nodes
+                    )
+                    if has_bullet:
+                        # 現在の段落を終了
+                        if current_paragraph:
+                            paragraphs.append(
+                                {"node": "p", "children": current_paragraph}
+                            )
+                            current_paragraph = []
+
+                        # •で分割して処理
+                        split_nodes = []
+                        for node in line_nodes:
+                            content = node.get("content", "")
+                            if "•" in content:
+                                # •で分割
+                                parts = content.split("•")
+                                for i, part in enumerate(parts):
+                                    if i > 0:  # •の後の部分
+                                        split_nodes.append(
+                                            {
+                                                "node": "p",
+                                                "children": [
+                                                    {
+                                                        "node": "text",
+                                                        "content": "•" + part,
+                                                    }
+                                                ],
+                                            }
+                                        )
+                                    elif part:  # •の前の部分
+                                        split_nodes.append(
+                                            {"node": "text", "content": part}
+                                        )
+                            else:
+                                split_nodes.append(node)
+
+                        # 分割されたノードを段落に追加
+                        for node in split_nodes:
+                            if node.get("node") == "p":
+                                paragraphs.append(node)
+                            else:
+                                current_paragraph.append(node)
+                    else:
+                        # 通常の行は段落に追加
+                        current_paragraph.extend(line_nodes)
         else:
             # 空行の場合は段落を終了
             if current_paragraph:
