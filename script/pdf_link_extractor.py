@@ -213,6 +213,16 @@ def extract_formatted_paragraphs(chars: List[Dict], words: List[Dict]) -> List[D
         for char in line_chars:
             char_text = char["text"]
 
+            # 特殊文字の処理
+            # EOT文字(0x03)を除去
+            char_text = char_text.replace("\x03", "")
+
+            # タブ文字を空白に変換
+            char_text = char_text.replace("\t", " ")
+
+            # CR改行コードをLFに統一
+            char_text = char_text.replace("\r", "\n")
+
             # フォント情報から太字を判定
             font_name = char.get("fontname", "").lower()
             is_bold = "bold" in font_name or "black" in font_name
@@ -1193,12 +1203,15 @@ def extract_differences(
         return current_content
 
 
-def extract_links_from_pdf(pdf_path: str) -> Dict[int, List[Dict[str, str]]]:
+def extract_links_from_pdf(
+    pdf_path: str, skip_crawling: bool = False
+) -> Dict[int, List[Dict[str, str]]]:
     """
     PDFファイルからリンクを抽出する
 
     Args:
         pdf_path: PDFファイルのパス
+        skip_crawling: リンク先のクローリングをスキップするかどうか
 
     Returns:
         ページ番号をキーとしたリンク情報の辞書
@@ -1233,7 +1246,13 @@ def extract_links_from_pdf(pdf_path: str) -> Dict[int, List[Dict[str, str]]]:
                                         continue
                                     seen_urls_in_page.add(url)
 
-                                    # タイトルを取得（キャッシュを使用）
+                                    # タイトルを取得（スキップオプションに応じて）
+                                    if skip_crawling:
+                                        title = url  # URLをそのまま使用
+                                    else:
+                                        # キャッシュを使用
+                                        pass
+
                                     if url not in url_title_cache:
                                         title = get_page_title(url)
                                         url_title_cache[url] = title
@@ -1280,11 +1299,39 @@ def format_to_yaml(
     )
 
 
+def get_pdf_size(pdf_file: str) -> Dict[str, int]:
+    """
+    PDFファイルからサイズ情報を取得する
+
+    Args:
+        pdf_file: PDFファイルのパス
+
+    Returns:
+        サイズ情報の辞書 {"max_width": int, "max_height": int}
+    """
+    try:
+        import pdfplumber
+
+        with pdfplumber.open(pdf_file) as pdf:
+            if len(pdf.pages) > 0:
+                # 最初のページのサイズを取得
+                page = pdf.pages[0]
+                width = int(page.width)
+                height = int(page.height)
+                return {"max_width": width, "max_height": height}
+            else:
+                return {"max_width": 1024, "max_height": 768}  # デフォルト値
+    except Exception as e:
+        logger.warning(f"PDFサイズの取得に失敗: {e}")
+        return {"max_width": 1024, "max_height": 768}  # デフォルト値
+
+
 def update_meta_file(
     pdf_file: str,
     links_by_page: Dict[int, List[Dict[str, str]]],
     text_by_page: Dict[int, List[str]] = None,
     meta_file: str = None,
+    preserve_existing_links: bool = False,
 ):
     """
     PDFメタデータファイルを更新する
@@ -1294,6 +1341,7 @@ def update_meta_file(
         links_by_page: ページごとのリンク情報
         text_by_page: ページごとのテキスト情報（オプション）
         meta_file: メタデータファイルのパス（指定されない場合は自動生成）
+        preserve_existing_links: 既存のリンク情報を保持するかどうか
     """
     try:
         # メタファイルが指定されていない場合は自動生成
@@ -1305,8 +1353,25 @@ def update_meta_file(
             file_key = filename.replace(".pdf", "")
             meta_file = f"../pdf/{file_key}.yaml"
 
+        # PDFからサイズを取得
+        pdf_size = get_pdf_size(pdf_file)
+
+        # 既存のメタデータファイルを読み込む（preserve_existing_linksがTrueの場合）
+        existing_links = {}
+        if preserve_existing_links:
+            import os
+
+            if os.path.exists(meta_file):
+                try:
+                    with open(meta_file, "r", encoding="utf-8") as f:
+                        existing_data = yaml.safe_load(f)
+                        if existing_data and "links" in existing_data:
+                            existing_links = existing_data["links"]
+                except Exception as e:
+                    logger.warning(f"既存のメタデータファイルの読み込みに失敗: {e}")
+
         # メタデータを構築
-        meta_data = {"size": {"max_width": 1024, "max_height": 768}, "links": {}}
+        meta_data = {"size": pdf_size, "links": existing_links}
 
         # テキスト情報を追加
         if text_by_page:
