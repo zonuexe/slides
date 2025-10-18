@@ -117,10 +117,6 @@ app.get("/slides/", async (c) => {
           <style>
             body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; }
             .container { max-width: 1200px; margin: 0 auto; }
-            .slide-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-            .slide-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; }
-            .slide-card h3 { margin-top: 0; }
-            .slide-link { color: #007bff; text-decoration: none; }
           </style>
         </head>
         <body>
@@ -212,119 +208,6 @@ app.get("/slides/:slug/", async (c) => {
               --aspect-ratio: ${maxWidth} / ${maxHeight};
               --max-height: 66.67vh;
             }
-
-            .slide-info {
-              background: white;
-              border-top: 1px solid #ddd;
-              z-index: 10;
-              padding: 20px;
-              box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            }
-
-            .slide-content {
-              position: relative;
-              background: white;
-              border-top: 1px solid #ddd;
-              max-height: 50vh;
-              overflow-y: auto;
-              z-index: 5;
-              padding: 20px;
-              box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-            }
-
-            .content-panes {
-              display: grid;
-              grid-template-columns: 1fr 1fr;
-              gap: 30px;
-              max-width: 1200px;
-              margin: 0 auto;
-            }
-
-            .text-pane, .links-pane {
-              min-height: 200px;
-            }
-
-            .text-pane h3, .links-pane h3 {
-              margin-top: 0;
-              margin-bottom: 15px;
-              color: #333;
-              border-bottom: 2px solid #007bff;
-              padding-bottom: 5px;
-            }
-
-            .page-content {
-              margin-bottom: 30px;
-            }
-
-            .page-content h4 {
-              margin: 0 0 10px 0;
-              font-size: 16px;
-              color: #666;
-              font-weight: bold;
-              background: #f8f9fa;
-              padding: 8px 12px;
-              border-radius: 4px;
-            }
-
-            .page-text {
-              margin: 0;
-              padding-left: 20px;
-            }
-
-            .page-text li {
-              margin-bottom: 8px;
-              line-height: 1.5;
-              color: #444;
-            }
-
-            .page-links ul {
-              margin: 0;
-              padding-left: 20px;
-            }
-
-            .page-links li {
-              margin-bottom: 8px;
-            }
-
-            .page-links a {
-              color: #007bff;
-              text-decoration: none;
-              font-size: 14px;
-              line-height: 1.4;
-            }
-
-            .page-links a:hover {
-              text-decoration: underline;
-            }
-
-            .download-section {
-              margin-bottom: 20px;
-              padding-bottom: 20px;
-              border-bottom: 1px solid #eee;
-            }
-
-            .download-section .download-btn,
-            .download-section .download-image-btn,
-            .download-section .copy-image-btn {
-              margin-right: 10px;
-              margin-bottom: 10px;
-            }
-
-            @media (max-width: 768px) {
-              .content-panes {
-                grid-template-columns: 1fr;
-                gap: 20px;
-              }
-
-              .slide-content {
-                padding: 15px;
-                max-height: 40vh; /* モバイルでは少し小さく */
-              }
-
-              .slide-info {
-                padding: 15px;
-              }
-            }
           </style>
           <script>
             // HTMLエスケープ関数（クライアントサイド用）
@@ -340,9 +223,6 @@ app.get("/slides/:slug/", async (c) => {
               maxHeight: ${maxHeight},
               download: '${slide.download}'
             };
-
-            // PDFメタデータをグローバル変数として定義
-            window.pdfMeta = ${JSON.stringify(pdfMeta)};
 
             // ページスクロール連動機能
             function scrollToPage(pageNum) {
