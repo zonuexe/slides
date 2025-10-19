@@ -4,28 +4,12 @@
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>tadsan's slide deck</title>
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background-color: #f7f7f7; }
-            .container { max-width: 1200px; margin: 0 auto; }
-            .search-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
-            .search-label { flex: 1 1 280px; max-width: 600px; }
-            .search-input { flex: 1 1 280px; width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 999px; font-size: 1rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-            .search-input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); }
-            .search-result { font-size: 0.9rem; color: #555; margin: 0; }
-            .slide-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-            .slide-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-            .slide-card h3 { margin-top: 0; }
-            .slide-card-meta { font-size: 0.9rem; color: gray; margin: 0 0 8px 0; }
-            .slide-card-snippet { margin-top: 12px; font-size: 0.95rem; color: #444; line-height: 1.5; }
-            .slide-card-snippet mark { background-color: rgba(255, 230, 0, 0.6); padding: 0 2px; border-radius: 2px; }
-            .slide-link { color: #007bff; text-decoration: none; }
-            .slide-link:hover { text-decoration: underline; }
-            .no-results { grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #666; font-size: 1rem; }
-            .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-          </style>
+          <link rel="preload" href="/slides/css/index.css" as="style">
+          <link rel="stylesheet" href="/slides/css/index.css">
           <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
           <link rel="preload" href="/slides/index.js" as="script">
           <link rel="preload" href="/slides/js/search.js" as="script">
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
         </head>
         <body>
           <div class="container">
@@ -43,6 +27,16 @@
                   <h3 ><a class="slide-link" href="/slides/20251013_computer-science-vs-pixiv/">創作プラットフォームにおけるコンピュータサイエンス vs 俺たち</a></h3>
                   <p class="slide-card-meta">20251013_computer-science-vs-pixiv</p>
                   <p>公開日: <time datetime="2025-10-13">2025-10-13</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> traPavilion</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Web</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Vim</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -50,6 +44,16 @@
                   <h3 ><a class="slide-link" href="/slides/20251011_why-static-analysis/">なんでいま静的解析なの？ PHPで学ぶ「静」と「動」</a></h3>
                   <p class="slide-card-meta">20251011_why-static-analysis</p>
                   <p>公開日: <time datetime="2025-10-11">2025-10-11</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス広島2025</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Web</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -57,6 +61,16 @@
                   <h3 ><a class="slide-link" href="/slides/20250905_language-update-php/">Language Update PHP (LL2025)</a></h3>
                   <p class="slide-card-meta">20250905_language-update-php</p>
                   <p>公開日: <time datetime="2025-09-05">2025-09-05</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> LLイベント(Learn Languages 2025)</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> LLイベント</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> ODC</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -64,6 +78,16 @@
                   <h3 ><a class="slide-link" href="/slides/20250827_build-your-own-slide-deck/">スライドをシェアできるサービスを作る</a></h3>
                   <p class="slide-card-meta">20250827_build-your-own-slide-deck</p>
                   <p>公開日: <time datetime="2025-08-27">2025-08-27</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第178回 PHP勉強会＠東京</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> PHP勉強会@東京</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Web</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -71,6 +95,12 @@
                   <h3 ><a class="slide-link" href="/slides/20150315_real-world-pixiv-kai/">Real World PHP in pixiv改</a></h3>
                   <p class="slide-card-meta">20150315_real-world-pixiv-kai</p>
                   <p>公開日: <time datetime="2015-03-15">2015-03-15</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -78,6 +108,12 @@
                   <h3 ><a class="slide-link" href="/slides/20151027_real-world-php-in-pixiv/">Real World PHP in pixiv</a></h3>
                   <p class="slide-card-meta">20151027_real-world-php-in-pixiv</p>
                   <p>公開日: <time datetime="2015-10-27">2015-10-27</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -85,6 +121,12 @@
                   <h3 ><a class="slide-link" href="/slides/20160302_emacs-nantoka-storm/">なんとかStormに負けたくない Emacs初級篇</a></h3>
                   <p class="slide-card-meta">20160302_emacs-nantoka-storm</p>
                   <p>公開日: <time datetime="2016-03-02">2016-03-02</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -92,6 +134,16 @@
                   <h3 ><a class="slide-link" href="/slides/20160416_composer-for-work/">仕事で使えるComposer</a></h3>
                   <p class="slide-card-meta">20160416_composer-for-work</p>
                   <p>公開日: <time datetime="2016-04-16">2016-04-16</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス北海道2016</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Composer</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -99,6 +151,12 @@
                   <h3 ><a class="slide-link" href="/slides/20160421_for-melancholic-sql/">憂鬱なSQLのためのアレ</a></h3>
                   <p class="slide-card-meta">20160421_for-melancholic-sql</p>
                   <p>公開日: <time datetime="2016-04-21">2016-04-21</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> セキュリティ</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -106,6 +164,12 @@
                   <h3 ><a class="slide-link" href="/slides/20160720_php-static-analysis-in-5min/">PHP 5分でわかる静的解析入門</a></h3>
                   <p class="slide-card-meta">20160720_php-static-analysis-in-5min</p>
                   <p>公開日: <time datetime="2016-07-20">2016-07-20</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -113,6 +177,12 @@
                   <h3 ><a class="slide-link" href="/slides/20160910_getting-started-with-phpdoc-and-types/">はじめてのPHPDocと型</a></h3>
                   <p class="slide-card-meta">20160910_getting-started-with-phpdoc-and-types</p>
                   <p>公開日: <time datetime="2016-09-10">2016-09-10</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -120,6 +190,12 @@
                   <h3 ><a class="slide-link" href="/slides/kn1928_20161111_php-static-analysis-with-phan/">PhanによるPHPコード静的解析(公開補訂版)</a></h3>
                   <p class="slide-card-meta">kn1928_20161111_php-static-analysis-with-phan</p>
                   <p>公開日: <time datetime="2016-11-11">2016-11-11</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -127,6 +203,12 @@
                   <h3 ><a class="slide-link" href="/slides/20170223_php-and-syntax-highlighting/">PHPとsyntax highlighting</a></h3>
                   <p class="slide-card-meta">20170223_php-and-syntax-highlighting</p>
                   <p>公開日: <time datetime="2017-02-23">2017-02-23</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> テキストエディタ</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -134,6 +216,12 @@
                   <h3 ><a class="slide-link" href="/slides/kn2336_20170522_create-a-php-package/">PHPパッケージを作ろう！ Lightning</a></h3>
                   <p class="slide-card-meta">kn2336_20170522_create-a-php-package</p>
                   <p>公開日: <time datetime="2017-05-22">2017-05-22</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -141,6 +229,12 @@
                   <h3 ><a class="slide-link" href="/slides/20170716_lets-become-a-static-ojisan/">staticおじさんになろう 公開版</a></h3>
                   <p class="slide-card-meta">20170716_lets-become-a-static-ojisan</p>
                   <p>公開日: <time datetime="2017-07-16">2017-07-16</time></p>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -148,6 +242,16 @@
                   <h3 ><a class="slide-link" href="/slides/20170819_php-as-a-programming-environment/">プログラミング環境としてのPHP</a></h3>
                   <p class="slide-card-meta">20170819_php-as-a-programming-environment</p>
                   <p>公開日: <time datetime="2017-08-19">2017-08-19</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> Open Developers Conference 2017 Tokyo</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> ODC</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -155,6 +259,16 @@
                   <h3 ><a class="slide-link" href="/slides/20170819_winning-php-development-in-2017-with-emacs/">2017年のPHP開発にEmacsで勝つ</a></h3>
                   <p class="slide-card-meta">20170819_winning-php-development-in-2017-with-emacs</p>
                   <p>公開日: <time datetime="2017-08-19">2017-08-19</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> Open Developers Conference 2017 Tokyo</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 開発環境</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> ODC</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -162,6 +276,16 @@
                   <h3 ><a class="slide-link" href="/slides/20170829_metaprogramming-in-php/">PHPにおけるメタプログラミングの温床</a></h3>
                   <p class="slide-card-meta">20170829_metaprogramming-in-php</p>
                   <p>公開日: <time datetime="2017-08-29">2017-08-29</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> LLイベント(Learn Languages 2017)</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> メタプログラミング</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> LLイベント</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> ODC</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -169,6 +293,8 @@
                   <h3 ><a class="slide-link" href="/slides/20170830_prohibited-metaprogramming-in-php/">使ってはいけないPHPメタプログラミングの温床</a></h3>
                   <p class="slide-card-meta">20170830_prohibited-metaprogramming-in-php</p>
                   <p>公開日: <time datetime="2017-08-30">2017-08-30</time></p>
+                  
+                  
                 </div>
               
 
@@ -176,6 +302,8 @@
                   <h3 ><a class="slide-link" href="/slides/20170904_php-coding-etiquette/">いまさら！PHPお作法入門</a></h3>
                   <p class="slide-card-meta">20170904_php-coding-etiquette</p>
                   <p>公開日: <time datetime="2017-09-04">2017-09-04</time></p>
+                  
+                  
                 </div>
               
 
@@ -183,6 +311,8 @@
                   <h3 ><a class="slide-link" href="/slides/20171009_advanced-php-error-handling/">PHP ここで差がつくエラー処理 完全版</a></h3>
                   <p class="slide-card-meta">20171009_advanced-php-error-handling</p>
                   <p>公開日: <time datetime="2017-10-09">2017-10-09</time></p>
+                  
+                  
                 </div>
               
 
@@ -190,6 +320,8 @@
                   <h3 ><a class="slide-link" href="/slides/20171024_php-first-class-citizens/">諸君とPHPと一般市民</a></h3>
                   <p class="slide-card-meta">20171024_php-first-class-citizens</p>
                   <p>公開日: <time datetime="2017-10-24">2017-10-24</time></p>
+                  
+                  
                 </div>
               
 
@@ -197,6 +329,12 @@
                   <h3 ><a class="slide-link" href="/slides/20171201_composer-runtime-under-the-hood/">Composer解体新書 (実行時篇)</a></h3>
                   <p class="slide-card-meta">20171201_composer-runtime-under-the-hood</p>
                   <p>公開日: <time datetime="2017-12-01">2017-12-01</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス北海道出張版(仮) PHPオフ会</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -204,6 +342,8 @@
                   <h3 ><a class="slide-link" href="/slides/20171206_practical-php-session/">実用PHPセッション入門</a></h3>
                   <p class="slide-card-meta">20171206_practical-php-session</p>
                   <p>公開日: <time datetime="2017-12-06">2017-12-06</time></p>
+                  
+                  
                 </div>
               
 
@@ -211,6 +351,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180131_transpiling-to-php-with-elvm/">ELVMであらゆる言語からPHPに変換しよう</a></h3>
                   <p class="slide-card-meta">20180131_transpiling-to-php-with-elvm</p>
                   <p>公開日: <time datetime="2018-01-31">2018-01-31</time></p>
+                  
+                  
                 </div>
               
 
@@ -218,6 +360,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180220_ide-vs-emacs-2018/">なぜ2018年にIDEとEmacsを選ぶのか</a></h3>
                   <p class="slide-card-meta">20180220_ide-vs-emacs-2018</p>
                   <p>公開日: <time datetime="2018-02-20">2018-02-20</time></p>
+                  
+                  
                 </div>
               
 
@@ -225,6 +369,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180223_implementing-money-class-in-php/">PHPで雑に通貨クラスを実装してみた結果</a></h3>
                   <p class="slide-card-meta">20180223_implementing-money-class-in-php</p>
                   <p>公開日: <time datetime="2018-02-23">2018-02-23</time></p>
+                  
+                  
                 </div>
               
 
@@ -232,6 +378,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180309_building-php-testing-framework/">PHPでテスティングフレームワークを実装する前に知っておきたい勘所</a></h3>
                   <p class="slide-card-meta">20180309_building-php-testing-framework</p>
                   <p>公開日: <time datetime="2018-03-09">2018-03-09</time></p>
+                  
+                  
                 </div>
               
 
@@ -239,6 +387,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180530_php-static-analysis-with-phan-2018/">PhanでPHP静的解析2018</a></h3>
                   <p class="slide-card-meta">20180530_php-static-analysis-with-phan-2018</p>
                   <p>公開日: <time datetime="2018-05-30">2018-05-30</time></p>
+                  
+                  
                 </div>
               
 
@@ -246,6 +396,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180615_wip-intelligent-php-with-emacs-2018/">WIP: EmacsでインテリジェントなPHPコーディング2018</a></h3>
                   <p class="slide-card-meta">20180615_wip-intelligent-php-with-emacs-2018</p>
                   <p>公開日: <time datetime="2018-06-15">2018-06-15</time></p>
+                  
+                  
                 </div>
               
 
@@ -253,6 +405,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180617_php-something-or-other/">すごい「PHPなんとか」列伝 (未完成発表未遂版)</a></h3>
                   <p class="slide-card-meta">20180617_php-something-or-other</p>
                   <p>公開日: <time datetime="2018-06-17">2018-06-17</time></p>
+                  
+                  
                 </div>
               
 
@@ -260,6 +414,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180714_from-plain-php-to-pixiv/">「ふつうのPHP」がpixivになるまで</a></h3>
                   <p class="slide-card-meta">20180714_from-plain-php-to-pixiv</p>
                   <p>公開日: <time datetime="2018-07-14">2018-07-14</time></p>
+                  
+                  
                 </div>
               
 
@@ -267,6 +423,8 @@
                   <h3 ><a class="slide-link" href="/slides/20180826_language-update-php-2018/">Language Update PHP 2018</a></h3>
                   <p class="slide-card-meta">20180826_language-update-php-2018</p>
                   <p>公開日: <time datetime="2018-08-26">2018-08-26</time></p>
+                  
+                  
                 </div>
               
 
@@ -274,6 +432,8 @@
                   <h3 ><a class="slide-link" href="/slides/20181125_vimconf-editor-independent-php-development/">Modern editor-independent development environment for PHP</a></h3>
                   <p class="slide-card-meta">20181125_vimconf-editor-independent-php-development</p>
                   <p>公開日: <time datetime="2018-11-25">2018-11-25</time></p>
+                  
+                  
                 </div>
               
 
@@ -281,6 +441,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190126_implements-psr/">PSRを実装してみる</a></h3>
                   <p class="slide-card-meta">20190126_implements-psr</p>
                   <p>公開日: <time datetime="2019-01-26">2019-01-26</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス仙台2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> PSR</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> HTTP</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -288,6 +458,12 @@
                   <h3 ><a class="slide-link" href="/slides/20190216_introduction-to-laravel-3/">Laravel3に入門してみる</a></h3>
                   <p class="slide-card-meta">20190216_introduction-to-laravel-3</p>
                   <p>公開日: <time datetime="2019-02-16">2019-02-16</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> Laravel JP Conference</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -295,6 +471,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190218_php-static-analysis-status/">PHP静的解析現状確認会 - pixiv.git</a></h3>
                   <p class="slide-card-meta">20190218_php-static-analysis-status</p>
                   <p>公開日: <time datetime="2019-02-18">2019-02-18</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHP静的解析現状確認会</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -302,6 +488,12 @@
                   <h3 ><a class="slide-link" href="/slides/20190308_php-muscle/">PHP筋肉をつける💪</a></h3>
                   <p class="slide-card-meta">20190308_php-muscle</p>
                   <p>公開日: <time datetime="2019-03-08">2019-03-08</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス2018</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -309,6 +501,12 @@
                   <h3 ><a class="slide-link" href="/slides/20190327_the-world-of-php-only-games/">PHP縛りゲーの世界</a></h3>
                   <p class="slide-card-meta">20190327_the-world-of-php-only-games</p>
                   <p>公開日: <time datetime="2019-03-27">2019-03-27</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第136回 PHP勉強会＠東京</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -316,6 +514,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190330_php-yurufuwa-ci-guide/">PHPゆるふわCI入門</a></h3>
                   <p class="slide-card-meta">20190330_php-yurufuwa-ci-guide</p>
                   <p>公開日: <time datetime="2019-03-30">2019-03-30</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPerKaigi 2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 開発環境</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -323,6 +531,12 @@
                   <h3 ><a class="slide-link" href="/slides/20190430_building-a-nostalgic-editor/">平成時代に憧れてたあのエディタを実装してみる</a></h3>
                   <p class="slide-card-meta">20190430_building-a-nostalgic-editor</p>
                   <p>公開日: <time datetime="2019-04-30">2019-04-30</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 新元号決定！平成最後のLT大会＆PARTY</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -330,6 +544,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190425_one-emacs-lisp-one-world/">一つの Lisp、一つの世界</a></h3>
                   <p class="slide-card-meta">20190425_one-emacs-lisp-one-world</p>
                   <p>公開日: <time datetime="2019-04-25">2019-04-25</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> Shibuya.lisp lispmeetup #75</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:Lisp</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Emacs</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -337,6 +561,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190529_iterating-strings/">文字列をイテレーションする</a></h3>
                   <p class="slide-card-meta">20190529_iterating-strings</p>
                   <p>公開日: <time datetime="2019-05-29">2019-05-29</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第138回 PHP勉強会＠東京</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Unicode</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -344,6 +578,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190629_php-typing-gap/">PHP型検査・夢と理想と現実</a></h3>
                   <p class="slide-card-meta">20190629_php-typing-gap</p>
                   <p>公開日: <time datetime="2019-06-29">2019-06-29</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス福岡2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 開発環境</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -351,6 +595,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190828_what-was-pplusplus/">P++とは何だったのか</a></h3>
                   <p class="slide-card-meta">20190828_what-was-pplusplus</p>
                   <p>公開日: <time datetime="2019-08-28">2019-08-28</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第141回 PHP勉強会＠東京</p><p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス北海道2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -358,6 +612,16 @@
                   <h3 ><a class="slide-link" href="/slides/20190921_kill-your-php-code/">PHP バグ・脆弱性の温床10連発</a></h3>
                   <p class="slide-card-meta">20190921_kill-your-php-code</p>
                   <p>公開日: <time datetime="2019-09-21">2019-09-21</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス北海道2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> セキュリティ</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -365,6 +629,16 @@
                   <h3 ><a class="slide-link" href="/slides/20191012_practical-php-meta-programming/">実用メタプログラミング</a></h3>
                   <p class="slide-card-meta">20191012_practical-php-meta-programming</p>
                   <p>公開日: <time datetime="2019-10-12">2019-10-12</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス沖縄2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> メタプログラミング</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -372,6 +646,16 @@
                   <h3 ><a class="slide-link" href="/slides/20191018_regular-expressions-in-emacs/">Emacsと正規表現</a></h3>
                   <p class="slide-card-meta">20191018_regular-expressions-in-emacs</p>
                   <p>公開日: <time datetime="2019-10-18">2019-10-18</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> Regex Festa</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:Lisp</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Emacs</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 正規表現</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -379,6 +663,16 @@
                   <h3 ><a class="slide-link" href="/slides/20191130_introduce-static-analyzers-to-php/">PHPプロジェクトに静的解析を新規導入する</a></h3>
                   <p class="slide-card-meta">20191130_introduce-static-analyzers-to-php</p>
                   <p>公開日: <time datetime="2019-11-30">2019-11-30</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 大改修！PHPレガシーコードビフォーアフター</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 開発環境</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> CakePHP</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -386,6 +680,16 @@
                   <h3 ><a class="slide-link" href="/slides/20191201_what-did-php-give-up/">PHPは何を捨て、どんな力を手に入れてきたのか</a></h3>
                   <p class="slide-card-meta">20191201_what-did-php-give-up</p>
                   <p>公開日: <time datetime="2019-12-01">2019-12-01</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス2019</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -393,6 +697,16 @@
                   <h3 ><a class="slide-link" href="/slides/20191214_ruby-lisp-unbreakable-bond/">RubyとLispの切っても切れない関係</a></h3>
                   <p class="slide-card-meta">20191214_ruby-lisp-unbreakable-bond</p>
                   <p>公開日: <time datetime="2019-12-14">2019-12-14</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 平成Ruby会議01</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:Lisp</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:Ruby</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Emacs</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -400,6 +714,16 @@
                   <h3 ><a class="slide-link" href="/slides/20200211_generator-infinity-techniques/">ジェネレータで無限を手玉に取る術</a></h3>
                   <p class="slide-card-meta">20200211_generator-infinity-techniques</p>
                   <p>公開日: <time datetime="2020-02-11">2020-02-11</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPerKaigi 2020</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -407,6 +731,16 @@
                   <h3 ><a class="slide-link" href="/slides/20200217_how-plain-php-became-pixiv/">「ふつうのPHP」がpixivになるまで前史</a></h3>
                   <p class="slide-card-meta">20200217_how-plain-php-became-pixiv</p>
                   <p>公開日: <time datetime="2020-02-17">2020-02-17</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PIXIV TECH FES.</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Emacs</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -414,6 +748,16 @@
                   <h3 ><a class="slide-link" href="/slides/20200226_meeting-array-types/">配列の型と向き合う</a></h3>
                   <p class="slide-card-meta">20200226_meeting-array-types</p>
                   <p>公開日: <time datetime="2020-02-26">2020-02-26</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第145回 PHP勉強会＠東京</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -421,6 +765,16 @@
                   <h3 ><a class="slide-link" href="/slides/20200314_types-for-untyped-languages/">型なき言語に付ける型</a></h3>
                   <p class="slide-card-meta">20200314_types-for-untyped-languages</p>
                   <p>公開日: <time datetime="2020-03-14">2020-03-14</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> バーチャル空間勉強会#0</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -428,6 +782,16 @@
                   <h3 ><a class="slide-link" href="/slides/20200516_php8-attribute/">PHP8 &lt;&lt;Attribute&gt;&gt;</a></h3>
                   <p class="slide-card-meta">20200516_php8-attribute</p>
                   <p>公開日: <time datetime="2020-05-16">2020-05-16</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 関西PHP勉強会</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -435,6 +799,16 @@
                   <h3 ><a class="slide-link" href="/slides/20201212_why-am-i-still-cursed-by-php8/">私はなぜPHP8に苦しみ未だに解き放たれていないのか</a></h3>
                   <p class="slide-card-meta">20201212_why-am-i-still-cursed-by-php8</p>
                   <p>公開日: <time datetime="2020-12-12">2020-12-12</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス2020</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 言語仕様</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> Emacs</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -442,6 +816,16 @@
                   <h3 ><a class="slide-link" href="/slides/20201212_psr-http-web-application-practice/">PSRで学ぶHTTP Webアプリケーションの実践</a></h3>
                   <p class="slide-card-meta">20201212_psr-http-web-application-practice</p>
                   <p>公開日: <time datetime="2020-12-12">2020-12-12</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス2020</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> PSR</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> フレームワーク</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -449,6 +833,16 @@
                   <h3 ><a class="slide-link" href="/slides/20210327_build-framework-from-scratch/">[初心者向け]フレームワークを一から作るところを見せる</a></h3>
                   <p class="slide-card-meta">20210327_build-framework-from-scratch</p>
                   <p>公開日: <time datetime="2021-03-27">2021-03-27</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPerKaigi 2021</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> PSR</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> フレームワーク</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -456,6 +850,16 @@
                   <h3 ><a class="slide-link" href="/slides/20210529_intro-to-safe-typing/">今日からできる安心型付け入門</a></h3>
                   <p class="slide-card-meta">20210529_intro-to-safe-typing</p>
                   <p>公開日: <time datetime="2021-05-29">2021-05-29</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス沖縄2021</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -463,6 +867,16 @@
                   <h3 ><a class="slide-link" href="/slides/20211003_arrays-generics-untypable/">配列、ジェネリクス､配列で書けない型</a></h3>
                   <p class="slide-card-meta">20211003_arrays-generics-untypable</p>
                   <p>公開日: <time datetime="2021-10-03">2021-10-03</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス2021</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 静的解析</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -470,6 +884,16 @@
                   <h3 ><a class="slide-link" href="/slides/20220121_php-style-programming-guide/">PHP式プログラミング入門</a></h3>
                   <p class="slide-card-meta">20220121_php-style-programming-guide</p>
                   <p>公開日: <time datetime="2022-01-21">2022-01-21</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第二回関数型プログラミング(仮)の会</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 関数型</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -477,6 +901,16 @@
                   <h3 ><a class="slide-link" href="/slides/20220411_psr7-psr15-web-app-patterns/">PSR-7とPSR-15によるWebアプリケーション実装パターン</a></h3>
                   <p class="slide-card-meta">20220411_psr7-psr15-web-app-patterns</p>
                   <p>公開日: <time datetime="2022-04-11">2022-04-11</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPerKaigi 2022</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 関数型</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -484,6 +918,16 @@
                   <h3 ><a class="slide-link" href="/slides/20220827_practical-phpstan/">実践PHPStan</a></h3>
                   <p class="slide-card-meta">20220827_practical-phpstan</p>
                   <p>公開日: <time datetime="2022-08-27">2022-08-27</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPカンファレンス沖縄2022</p>
+                    </div>
+                  
+                  
+                    <ul class="slide-card-tags">
+                      <li><i class="fa-solid fa-tag" aria-hidden="true"></i> lang:PHP</li><li><i class="fa-solid fa-tag" aria-hidden="true"></i> 関数型</li>
+                    </ul>
+                  
                 </div>
               
 
@@ -491,6 +935,12 @@
                   <h3 ><a class="slide-link" href="/slides/20221005_do-you-know-php-standard-functions/">お前はPHPの標準関数の数を知っているか</a></h3>
                   <p class="slide-card-meta">20221005_do-you-know-php-standard-functions</p>
                   <p>公開日: <time datetime="2022-10-05">2022-10-05</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PHPer Tea Night★第三夜</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -498,6 +948,12 @@
                   <h3 ><a class="slide-link" href="/slides/20221015_php-py-came-from-the-2010s/">10年前から来たphp.py</a></h3>
                   <p class="slide-card-meta">20221015_php-py-came-from-the-2010s</p>
                   <p>公開日: <time datetime="2022-10-15">2022-10-15</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> PyCon JP 2022</p><p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第157回 PHP勉強会＠東京</p>
+                    </div>
+                  
+                  
                 </div>
               
 
@@ -505,6 +961,12 @@
                   <h3 ><a class="slide-link" href="/slides/20221220_favored-functions/">『えこひいき』される関数たち</a></h3>
                   <p class="slide-card-meta">20221220_favored-functions</p>
                   <p>公開日: <time datetime="2022-12-20">2022-12-20</time></p>
+                  
+                    <div class="slide-card-events">
+                      <p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> 第147回 PHP勉強会＠東京</p>
+                    </div>
+                  
+                  
                 </div>
               
           </div>
