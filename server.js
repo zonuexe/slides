@@ -402,6 +402,19 @@ app.get("/slides/:slug/", async (c) => {
                 </div>
               ` : ''}
 
+              ${slide.related_articles && slide.related_articles.length > 0 ? `
+                <div class="related-articles">
+                  <ul>
+                    ${slide.related_articles.map(article => {
+      const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(article.url)}&size=32`;
+      const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
+      const descHtml = article.desc ? `<br>${escapeHtml(article.desc)}` : '';
+      return `<li>${faviconImg}<a href="${escapeHtml(article.url)}" target="_blank">${escapeHtml(article.title)}</a>${descHtml}</li>`;
+    }).join('')}
+                  </ul>
+                </div>
+              ` : ''}
+
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
                   ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag">#${tag}</a>`).join('')}
