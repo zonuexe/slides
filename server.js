@@ -154,34 +154,40 @@ async function getPdfMetaByFile(filePath, slide) {
   };
 }
 
+async function generateSlidesData() {
+  const slides = await loadSlides();
+  const enrichedSlides = [];
+
+  for (const slide of slides) {
+    let searchContent = "";
+    try {
+      const meta = await getPdfMetaByFile(slide.file, slide);
+      searchContent = extractTextContent(meta);
+    } catch (error) {
+      console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
+    }
+    enrichedSlides.push({
+      ...slide,
+      searchContent,
+      snippet: buildSnippet(searchContent || slide.title || ""),
+    });
+  }
+
+  const slidesForClient = enrichedSlides.map((slide) => ({
+    slug: slide.slug ?? "",
+    title: slide.title ?? "",
+    date: slide.date ?? "",
+    content: slide.searchContent ?? "",
+  }));
+  const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
+
+  return { enrichedSlides, slidesJson };
+}
+
 // スライド一覧ページ
 app.get("/slides/", async (c) => {
   try {
-    const slides = await loadSlides();
-    const enrichedSlides = [];
-
-    for (const slide of slides) {
-      let searchContent = "";
-      try {
-        const meta = await getPdfMetaByFile(slide.file, slide);
-        searchContent = extractTextContent(meta);
-      } catch (error) {
-        console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
-      }
-      enrichedSlides.push({
-        ...slide,
-        searchContent,
-        snippet: buildSnippet(searchContent || slide.title || ""),
-      });
-    }
-
-    const slidesForClient = enrichedSlides.map((slide) => ({
-      slug: slide.slug ?? "",
-      title: slide.title ?? "",
-      date: slide.date ?? "",
-      content: slide.searchContent ?? "",
-    }));
-    const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
+    const { enrichedSlides, slidesJson } = await generateSlidesData();
 
     const html = `
       <!DOCTYPE html>
@@ -209,6 +215,9 @@ app.get("/slides/", async (c) => {
             .no-results { grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #666; font-size: 1rem; }
             .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
           </style>
+          <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
+          <link rel="preload" href="/slides/index.js" as="script">
+          <link rel="preload" href="/slides/js/search.js" as="script">
         </head>
         <body>
           <div class="container">
@@ -228,21 +237,43 @@ app.get("/slides/", async (c) => {
                   <p>公開日: <time datetime="${escapeHtml(slide.date ?? "")}">${escapeHtml(slide.date ?? "")}</time></p>
                 </div>
               `).join('\n')}
-            </div>
           </div>
-          <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
-          <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
-          <script>window.slidesData = ${slidesJson};</script>
-          <script src="/slides/js/search.js" defer></script>
-        </body>
-      </html>
-    `;
+        </div>
+        <hr>
+        <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
+        <script src="/slides/index.js" defer></script>
+        <script src="/slides/js/search.js" defer></script>
+      </body>
+    </html>
+  `;
 
     return c.html(html.trim());
   } catch (error) {
     console.error('Error loading slides:', error);
     return c.text('スライドの読み込みに失敗しました', 500);
+  }
+});
+
+// スライドデータ配信用
+app.get("/slides/index.js", async (c) => {
+  try {
+    const { slidesJson } = await generateSlidesData();
+    const body = `window.slidesData = ${slidesJson};`;
+    return new Response(body, {
+      headers: {
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+      },
+    });
+  } catch (error) {
+    console.error("Error generating slides data script:", error);
+    return new Response("console.error('Failed to load slides data');", {
+      status: 500,
+      headers: {
+        "Content-Type": "application/javascript; charset=utf-8",
+      },
+    });
   }
 });
 
