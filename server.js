@@ -115,6 +115,47 @@ function buildSnippet(text) {
   return `${normalised.slice(0, SNIPPET_LENGTH)}…`;
 }
 
+function toSearchFragment(value) {
+  if (typeof value === "string") return value;
+  if (typeof value === "number") return value.toString();
+  if (value instanceof Date) return value.toISOString();
+  return "";
+}
+
+function collectEventsText(events) {
+  if (!Array.isArray(events)) return "";
+  return events
+    .map((event) =>
+      [
+        event?.name,
+        event?.type,
+        event?.location,
+        event?.place,
+        event?.presented_at,
+        event?.url,
+        event?.talk_duration,
+      ]
+        .map(toSearchFragment)
+        .filter(Boolean)
+        .join(" ")
+    )
+    .filter(Boolean)
+    .join(" ");
+}
+
+function collectRelatedArticlesText(relatedArticles) {
+  if (!Array.isArray(relatedArticles)) return "";
+  return relatedArticles
+    .map((article) =>
+      [article?.title, article?.desc, article?.url]
+        .map(toSearchFragment)
+        .filter(Boolean)
+        .join(" ")
+    )
+    .filter(Boolean)
+    .join(" ");
+}
+
 async function loadSiteConfig() {
   try {
     const configFile = await readFile('./_site.yaml', 'utf8');
@@ -166,10 +207,19 @@ async function generateSlidesData() {
     } catch (error) {
       console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
     }
+    const eventsText = collectEventsText(slide.events);
+    const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
+    const combinedContent = [searchContent, eventsText, relatedArticlesText]
+      .filter(Boolean)
+      .join(" ");
+
     enrichedSlides.push({
       ...slide,
       searchContent,
-      snippet: buildSnippet(searchContent || slide.title || ""),
+      eventsText,
+      relatedArticlesText,
+      combinedContent,
+      snippet: buildSnippet(combinedContent || slide.title || ""),
     });
   }
 
@@ -177,7 +227,17 @@ async function generateSlidesData() {
     slug: slide.slug ?? "",
     title: slide.title ?? "",
     date: slide.date ?? "",
-    content: slide.searchContent ?? "",
+    content: slide.combinedContent ?? slide.searchContent ?? "",
+    events: Array.isArray(slide.events)
+      ? slide.events
+          .map((event) => (event && typeof event.name === "string" ? event.name : ""))
+          .filter(Boolean)
+      : [],
+    tags: Array.isArray(slide.tags)
+      ? slide.tags
+          .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
+          .filter(Boolean)
+      : [],
   }));
   const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
 
@@ -196,28 +256,12 @@ app.get("/slides/", async (c) => {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>tadsan's slide deck</title>
-          <style>
-            body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 20px; background-color: #f7f7f7; }
-            .container { max-width: 1200px; margin: 0 auto; }
-            .search-toolbar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 20px 0; }
-            .search-label { flex: 1 1 280px; max-width: 600px; }
-            .search-input { flex: 1 1 280px; width: 100%; padding: 10px 14px; border: 1px solid #ccc; border-radius: 999px; font-size: 1rem; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-            .search-input:focus { outline: none; border-color: #007bff; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15); }
-            .search-result { font-size: 0.9rem; color: #555; margin: 0; }
-            .slide-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-            .slide-card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; background-color: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
-            .slide-card h3 { margin-top: 0; }
-            .slide-card-meta { font-size: 0.9rem; color: gray; margin: 0 0 8px 0; }
-            .slide-card-snippet { margin-top: 12px; font-size: 0.95rem; color: #444; line-height: 1.5; }
-            .slide-card-snippet mark { background-color: rgba(255, 230, 0, 0.6); padding: 0 2px; border-radius: 2px; }
-            .slide-link { color: #007bff; text-decoration: none; }
-            .slide-link:hover { text-decoration: underline; }
-            .no-results { grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #666; font-size: 1rem; }
-            .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-          </style>
+          <link rel="preload" href="/slides/css/index.css" as="style">
+          <link rel="stylesheet" href="/slides/css/index.css">
           <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
           <link rel="preload" href="/slides/index.js" as="script">
           <link rel="preload" href="/slides/js/search.js" as="script">
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
         </head>
         <body>
           <div class="container">
@@ -235,6 +279,28 @@ app.get("/slides/", async (c) => {
                   <h3 ><a class="slide-link" href="/slides/${escapeHtml(slide.slug ?? "")}/">${escapeHtml(slide.title ?? "")}</a></h3>
                   <p class="slide-card-meta">${escapeHtml(slide.slug ?? "")}</p>
                   <p>公開日: <time datetime="${escapeHtml(slide.date ?? "")}">${escapeHtml(slide.date ?? "")}</time></p>
+                  ${Array.isArray(slide.events) && slide.events.some(event => event && event.name) ? `
+                    <div class="slide-card-events">
+                      ${slide.events
+                        .map((event) => {
+                          if (!event || !event.name) return "";
+                          return `<p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> ${escapeHtml(event.name)}</p>`;
+                        })
+                        .filter(Boolean)
+                        .join("")}
+                    </div>
+                  ` : ""}
+                  ${Array.isArray(slide.tags) && slide.tags.some(tag => typeof tag === "string" && tag.trim()) ? `
+                    <ul class="slide-card-tags">
+                      ${slide.tags
+                        .map((tag) => {
+                          if (typeof tag !== "string" || !tag.trim()) return "";
+                          return `<li><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(tag.trim())}</li>`;
+                        })
+                        .filter(Boolean)
+                        .join("")}
+                    </ul>
+                  ` : ""}
                 </div>
               `).join('\n')}
           </div>

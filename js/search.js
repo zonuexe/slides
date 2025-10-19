@@ -64,6 +64,34 @@
     const title = escapeHtml(slide.title || "");
     const slug = escapeHtml(slide.slug || "");
     const date = escapeHtml(slide.date || "");
+    const eventNames = Array.isArray(slide.events)
+      ? slide.events
+          .map((name) => (typeof name === "string" ? name.trim() : ""))
+          .filter(Boolean)
+      : [];
+    const eventsHtml = eventNames.length
+      ? `<div class="slide-card-events">${eventNames
+          .map(
+            (name) =>
+              `<p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> ${escapeHtml(
+                name
+              )}</p>`
+          )
+          .join("")}</div>`
+      : "";
+    const tagNames = Array.isArray(slide.tags)
+      ? slide.tags
+          .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
+          .filter(Boolean)
+      : [];
+    const tagsHtml = tagNames.length
+      ? `<ul class="slide-card-tags">${tagNames
+          .map(
+            (tag) =>
+              `<li><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(tag)}</li>`
+          )
+          .join("")}</ul>`
+      : "";
     const snippetText = query ? buildSnippet(slide.content || "", query) : "";
     const snippetHtml = snippetText ? `<p class="slide-card-snippet">${highlightSnippet(snippetText, query)}</p>` : "";
     return `
@@ -71,6 +99,8 @@
         <h3><a class="slide-link" href="/slides/${slug}/">${title}</a></h3>
         <p class="slide-card-meta">${slug}</p>
         <p>公開日: <time datetime="${date}">${date}</time></p>
+        ${eventsHtml}
+        ${tagsHtml}
         ${snippetHtml}
       </div>
     `;
