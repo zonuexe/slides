@@ -96,25 +96,22 @@ def generate_thumbnail(pdf_path: Path) -> Path:
     with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp_file:
         tmp_name = tmp_file.name
 
-    convert_args = (
-        cmd
-        + [
-            "-quiet",
-            "-density",
-            "200",
-            f"{pdf_path}[0]",
-            "-thumbnail",
-            "1200x630>",
-            "-strip",
-            "-background",
-            "white",
-            "-alpha",
-            "remove",
-            "-alpha",
-            "off",
-            f"png32:{tmp_name}",
-        ]
-    )
+    convert_args = cmd + [
+        "-quiet",
+        "-density",
+        "200",
+        f"{pdf_path}[0]",
+        "-thumbnail",
+        "1200x630>",
+        "-strip",
+        "-background",
+        "white",
+        "-alpha",
+        "remove",
+        "-alpha",
+        "off",
+        f"png32:{tmp_name}",
+    ]
     subprocess.run(convert_args, check=True)
     Path(tmp_name).replace(output_path)
 
@@ -259,7 +256,9 @@ def main() -> int:
 
     pdfs: List[Path] = []
     if args.pdf:
-        pdfs = [Path(p) if Path(p).is_absolute() else (ROOT / p).resolve() for p in args.pdf]
+        pdfs = [
+            Path(p) if Path(p).is_absolute() else (ROOT / p).resolve() for p in args.pdf
+        ]
     else:
         pdfs = list_staged_pdfs()
 
@@ -289,7 +288,9 @@ def main() -> int:
                 check=True,
             )
         except subprocess.CalledProcessError as exc:
-            raise SystemExit(f"pdf_link_extractor failed for {pdf_path}: {exc}") from exc
+            raise SystemExit(
+                f"pdf_link_extractor failed for {pdf_path}: {exc}"
+            ) from exc
 
         with meta_path.open("r", encoding="utf-8") as handle:
             meta = yaml.safe_load(handle) or {}
@@ -328,7 +329,9 @@ def main() -> int:
 
     if processed_entries:
         update_slides_yaml(processed_entries)
-        print(f"Updated slides.yaml with {len(processed_entries)} entr{'y' if len(processed_entries)==1 else 'ies'}.")
+        print(
+            f"Updated slides.yaml with {len(processed_entries)} entr{'y' if len(processed_entries) == 1 else 'ies'}."
+        )
     return 0
 
 
