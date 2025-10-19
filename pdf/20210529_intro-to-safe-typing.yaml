@@ -1,0 +1,1881 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 今日からできる安心型付け入門
+  - node: p
+    children:
+    - node: text
+      content: Introduction of typing in PHP
+  - node: p
+    children:
+    - node: text
+      content: ' 2021-05-29 YouTube '
+    - node: br
+    - node: text
+      content: 'PHPカンファレンス沖縄 '
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+    - node: br
+    - node: text
+      content: 'うさみけんた (@tadsan)  '
+  - node: p
+    children:
+    - node: text
+      content: ' / Zonu.EXE'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ピクシブ株式会社 pixiv運営本部
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer, Rubyist
+    - node: li
+      children:
+      - node: text
+        content: 2018年からEmacs PHP Modeのメンテナ
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 好きなリスプはEmacs Lispです
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 本日のお題
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: '‒今日からできる安心型付け入門 - PHPカンファレンス沖縄 '
+  - node: p
+    children:
+    - node: text
+      content: https://fortee.jp/phpcon-okinawa-2021/proposal/b90e3c04-ae04-4430-a28c-3f231e703c37
+  p5: []
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: アジェンダ
+  - node: p
+    children:
+    - node: text
+      content: 'PHPの型について なぜ型をつけるのか '
+    - node: br
+    - node: text
+      content: PHPの入出力型の特性
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 今回含まないもの
+  - node: p
+    children:
+    - node: text
+      content: '各静的解析ツールやIDE '
+    - node: br
+    - node: text
+      content: '(PhpStorm)固有の型・機能 '
+    - node: br
+    - node: text
+      content: 'メタプログラミングに '
+    - node: br
+    - node: text
+      content: 対応した型付け
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 用語について
+  - node: p
+    children:
+    - node: text
+      content: '単に関数と呼ぶとき、 '
+    - node: br
+    - node: text
+      content: 'メソッドとクロージャを含む 定義に直接記述する型を型宣言 '
+    - node: br
+    - node: text
+      content: '(type declaration)、 '
+    - node: br
+    - node: text
+      content: PHPDocを型注釈
+    - node: br
+    - node: text
+      content: (annotation)と呼びます
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: PHPの型について
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 型の前に
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'プログラムには '
+    - node: br
+    - node: text
+      content: 依存があるという
+    - node: br
+    - node: text
+      content: ことを認める
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 依存とは
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '$a = 1;          $b = 2;         '
+  - node: p
+    children:
+    - node: text
+      content: echo $a + $b;
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '$a = 1;          $b = 2;         '
+  - node: p
+    children:
+    - node: text
+      content: echo $a + $b;
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: マスクされている
+    - node: br
+    - node: text
+      content: 'という状態を '
+    - node: br
+    - node: text
+      content: コードに反映する
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '$a = 1;          $b = 2;         '
+  - node: p
+    children:
+    - node: text
+      content: echo $a + $b;
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'function print_add($a, $b)         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '    echo $a + $b;         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: print_add(1, 2);
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: '汎用的な処理と '
+    - node: br
+    - node: text
+      content: '実際の値を '
+    - node: br
+    - node: text
+      content: 切り離すことができた
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+  - node: p
+    children:
+    - node: text
+      content: 'こいつらが '
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 何者かわからん
+  - node: p
+    children:
+    - node: text
+      content: 'function print_add($a, $b)         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '    echo $a + $b;         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: print_add(1, 2);
+  p20: []
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 型をつけよう
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+  - node: p
+    children:
+    - node: text
+      content: 型が明確になった
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'function print_add($a, $b)         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '    echo $a + $b;         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: print_add(1, 2);
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 'そもそも '
+    - node: br
+    - node: text
+      content: 型とは
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: データ型
+  - node: p
+    children:
+    - node: text
+      content: 'PHPで使える値の種類のこと '
+    - node: br
+    - node: text
+      content: あたい へんすう ていすう
+    - node: br
+    - node: text
+      content: 値＝変数･定数にセットしたり､
+    - node: br
+    - node: text
+      content: '関数呼び出しに渡せるもの '
+    - node: br
+    - node: text
+      content: 値は何らかのデータ型に属する
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: PHPと型
+  - node: p
+    children:
+    - node: text
+      content: PHPは型システムの分類とし
+    - node: br
+    - node: text
+      content: 'て弱い動的型付けあるいは 「型なし」と分類されがち '
+    - node: br
+    - node: text
+      content: しかしPHPは単なる型なしと 呼ぶには型を使ってできるこ
+    - node: br
+    - node: text
+      content: とが多い
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: PHPの実行時型検査
+  - node: p
+    children:
+    - node: text
+      content: '関数のパラメータと戻り値、 プロパティに型宣言できる '
+    - node: br
+    - node: text
+      content: '強力な実行時型検査 '
+    - node: br
+    - node: text
+      content: '実行時にコードの型宣言通り 型で実行されることが保障 '
+    - node: br
+    - node: text
+      content: TSやPythonとは異なる
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: PHP5の型ヒント
+  - node: p
+    children:
+    - node: text
+      content: 'Type Hintingと呼ばれてた '
+    - node: br
+    - node: text
+      content: ',  あるいは '
+  - node: p
+    children:
+    - node: text
+      content: array callable
+    - node: br
+    - node: text
+      content: クラス/インターフェイスしか
+    - node: br
+    - node: text
+      content: '書けなかった '
+    - node: br
+    - node: text
+      content: PHP7.0以降ではスカラー型
+    - node: br
+    - node: text
+      content: に対応し、型宣言に改称
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: PHPの静的型検査
+  - node: p
+    children:
+    - node: text
+      content: Psalm, PHPStanなどの検査
+    - node: br
+    - node: text
+      content: 'ツールが豊富 '
+    - node: br
+    - node: text
+      content: PhpStormは検査能力は劣る
+    - node: br
+    - node: text
+      content: 'が簡単に導入できる '
+    - node: br
+    - node: text
+      content: 今回の発表では個別のツール の導入方法には触れません
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: データ型(1) int 整数型
+  - node: p
+    children:
+    - node: text
+      content: ',  ,  や のような数 '
+  - node: p
+    children:
+    - node: text
+      content: 0 1 2 -100
+    - node: br
+    - node: text
+      content: '最大値は で '
+  - node: p
+    children:
+    - node: text
+      content: PHP_INT_MAX
+  - node: p
+    children:
+    - node: text
+      content: 最小値は
+  - node: p
+    children:
+    - node: text
+      content: PHP_INT_MIN
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: データ型(2) string 文字列型
+  - node: p
+    children:
+    - node: text
+      content: ' のような '
+  - node: p
+    children:
+    - node: text
+      content: あいう
+  - node: p
+    children:
+    - node: text
+      content: '"a" "xyz" " "'
+    - node: br
+    - node: text
+      content: '文字の並びだと思ってください '
+    - node: br
+    - node: text
+      content: から
+    - node: br
+    - node: text
+      content: '長さ0の    も存在する '
+  - node: p
+    children:
+    - node: text
+      content: '""'
+  - node: p
+    children:
+    - node: text
+      content: (空文字列)
+  - node: p
+    children:
+    - node: text
+      content: PHPの文字列値はエンコーディングを持
+    - node: br
+    - node: text
+      content: たないバイト列
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'ここで簡単な '
+    - node: br
+    - node: text
+      content: 'コードを考えて '
+    - node: br
+    - node: text
+      content: みましょう
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 簡単なコードを考える
+    - node: br
+    - node: text
+      content: 値
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: '細かくいうと$a = 1 '
+  - node: p
+    children:
+    - node: text
+      content: '1'
+  - node: p
+    children:
+    - node: text
+      content: 値
+  - node: p
+    children:
+    - node: text
+      content: のような変数代入も式
+  - node: p
+    children:
+    - node: text
+      content: '"2"'
+  - node: p
+    children:
+    - node: text
+      content: 値
+  - node: p
+    children:
+    - node: text
+      content: $a = 1;
+  - node: p
+    children:
+    - node: text
+      content: '1'
+  - node: p
+    children:
+    - node: text
+      content: 値
+  - node: p
+    children:
+    - node: text
+      content: $b = "2";
+  - node: p
+    children:
+    - node: text
+      content: '"2"'
+  - node: p
+    children:
+    - node: text
+      content: '式 '
+  - node: p
+    children:
+    - node: text
+      content: $c = $a + $b;
+  - node: p
+    children:
+    - node: text
+      content: 1 + "2"
+  - node: p
+    children:
+    - node: text
+      content: echo $c;
+  - node: p
+    children:
+    - node: text
+      content: 値
+  - node: p
+    children:
+    - node: text
+      content: '3'
+  - node: p
+    children:
+    - node: text
+      content: 値
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: リテラルと式
+  - node: p
+    children:
+    - node: text
+      content: 'コードに直接書く値を '
+    - node: br
+    - node: text
+      content: 'リテラル といいます '
+  - node: p
+    children:
+    - node: text
+      content: (literal)
+    - node: br
+    - node: text
+      content: '    みたいなの '
+  - node: p
+    children:
+    - node: text
+      content: '1  2.3  "abc" '
+  - node: p
+    children:
+    - node: text
+      content: 'のようなコードを '
+  - node: p
+    children:
+    - node: text
+      content: $a + $b
+  - node: p
+    children:
+    - node: text
+      content: 式 といいます
+  - node: p
+    children:
+    - node: text
+      content: (expression)
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 値には必ず型がある
+  - node: p
+    children:
+    - node: text
+      content: int(1)
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: string("2")
+  - node: p
+    children:
+    - node: text
+      content: $a = 1;
+  - node: p
+    children:
+    - node: text
+      content: int(1)
+  - node: p
+    children:
+    - node: text
+      content: $b = "2";
+  - node: p
+    children:
+    - node: text
+      content: string("2")
+  - node: p
+    children:
+    - node: text
+      content: '式 '
+  - node: p
+    children:
+    - node: text
+      content: $c = $a + $b;
+  - node: p
+    children:
+    - node: text
+      content: 1 + "2"
+  - node: p
+    children:
+    - node: text
+      content: echo $c;
+  - node: p
+    children:
+    - node: text
+      content: int(3)
+  - node: p
+    children:
+    - node: text
+      content: int(3)
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: データ型(3) ﬂoat 浮動小数点数型
+  - node: p
+    children:
+    - node: text
+      content: ',  ,  ,  , '
+    - node: br
+    - node: text
+      content: 0.1 10.0 -0.3 INF -INF
+    - node: br
+    - node: text
+      content: 'のような値 '
+    - node: br
+    - node: text
+      content: PHPでは整数の範囲を外れた
+    - node: br
+    - node: text
+      content: '数は になる '
+  - node: p
+    children:
+    - node: text
+      content: float
+  - node: p
+    children:
+    - node: text
+      content: ' は ﬂoat'
+  - node: p
+    children:
+    - node: text
+      content: PHP_INT_MAX+1
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: データ型(4) bool 論理型
+  - node: p
+    children:
+    - node: text
+      content: ' と   の二種類だけ'
+  - node: p
+    children:
+    - node: text
+      content: 'true false の値からなる型 '
+  - node: p
+    children:
+    - node: text
+      content: ' や   のような'
+  - node: p
+    children:
+    - node: text
+      content: '$a==$b $a < $b 比較式の結果は  '
+  - node: p
+    children:
+    - node: text
+      content: bool
+  - node: p
+    children:
+    - node: text
+      content: PHPでは   も
+  - node: p
+    children:
+    - node: text
+      content: $a && $b bool
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: スカラー型のまとめ
+  - node: p
+    children:
+    - node: text
+      content: ',  ,  ,  の '
+  - node: p
+    children:
+    - node: text
+      content: bool int float string
+    - node: br
+    - node: text
+      content: '4種をスカラー(scalar)と呼ぶ '
+    - node: br
+    - node: text
+      content: 後述する複合型でも特殊型で
+    - node: br
+    - node: text
+      content: もないものという共通性
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 複合型
+  - node: p
+    children:
+    - node: text
+      content: '内部に別の値を持てる型 '
+    - node: br
+    - node: text
+      content: ' (配列) '
+  - node: p
+    children:
+    - node: text
+      content: array
+  - node: p
+    children:
+    - node: text
+      content: ' (オブジェクト) '
+  - node: p
+    children:
+    - node: text
+      content: object
+  - node: p
+    children:
+    - node: text
+      content: ※ PHPマニュアルは 特殊型と
+  - node: p
+    children:
+    - node: text
+      content: callable
+  - node: p
+    children:
+    - node: text
+      content: 特殊型も複合型として記載
+  - node: p
+    children:
+    - node: text
+      content: iterable
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: データ型(5) array 配列型
+  - node: p
+    children:
+    - node: text
+      content: 他言語のリストと辞書
+  - node: p
+    children:
+    - node: text
+      content: (ハッシュ)
+  - node: p
+    children:
+    - node: text
+      content: 'を兼ねた型だが､基本は辞書的 '
+  - node: p
+    children:
+    - node: text
+      content: や
+  - node: p
+    children:
+    - node: text
+      content: (空配列)
+  - node: p
+    children:
+    - node: text
+      content: '[1, 2, 3] []'
+  - node: p
+    children:
+    - node: text
+      content: '[''name'' => ''taro'', ''birthday'' => ''09-13''] のように複数の値を格納できる'
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: データ型(5) array 配列型
+  - node: p
+    children:
+    - node: text
+      content: 作成時にキーを指定しないと0
+    - node: br
+    - node: text
+      content: 'からの連番になる '
+  - node: p
+    children:
+    - node: text
+      content: 'と   は同じ '
+  - node: p
+    children:
+    - node: text
+      content: '[1] [0 => 1]'
+  - node: p
+    children:
+    - node: text
+      content: ' は '
+  - node: p
+    children:
+    - node: text
+      content: $a = [3 => 'a']
+  - node: p
+    children:
+    - node: text
+      content: ではない
+  - node: p
+    children:
+    - node: text
+      content: '[null, null, ''a'']'
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: データ型(6) object
+  - node: p
+    children:
+    - node: text
+      content: プロパティ を持
+  - node: p
+    children:
+    - node: text
+      content: (メンバー変数)
+    - node: br
+    - node: text
+      content: ち､  のような構文
+  - node: p
+    children:
+    - node: text
+      content: $obj->prop
+    - node: br
+    - node: text
+      content: 'でアクセスできる値の型 '
+    - node: br
+    - node: text
+      content: objectには属するクラスがあ
+    - node: br
+    - node: text
+      content: り、組み込みクラス、ユー ザー定義、 がある
+  - node: p
+    children:
+    - node: text
+      content: stdClass
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 型宣言とクラス
+  - node: p
+    children:
+    - node: text
+      content: '型宣言にはクラス名または '
+    - node: br
+    - node: text
+      content: 'インターフェイスを記述できる '
+    - node: br
+    - node: text
+      content: '事実上のユーザー定義型 '
+    - node: br
+    - node: text
+      content: 'インターフェイスを活用する と実装と宣言を分離できる '
+    - node: br
+    - node: text
+      content: 依存性逆転の原則(DIP)
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 全てinterfaceで指定すべきか
+  - node: p
+    children:
+    - node: text
+      content: 抽象化でたしかに実装詳細へ の依存を避けることができる 全ての依存をインターフェイ
+    - node: br
+    - node: text
+      content: 'スにすべきかは悩ましい '
+    - node: br
+    - node: text
+      content: 'DTOやValueObjectなど '
+  - node: p
+    children:
+    - node: text
+      content: DataTimeInterface
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: 特殊型
+  - node: p
+    children:
+    - node: text
+      content: '単体で型宣言できない特殊な値 '
+    - node: br
+    - node: text
+      content: 'resource (リソース) '
+    - node: br
+    - node: text
+      content: 'null (空値) '
+  - node: p
+    children:
+    - node: text
+      content: ※ nullはnullableの一部やPHP8の 　 ユニオン型の一部として記述可能
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 型ではないが特殊な戻り値
+  - node: p
+    children:
+    - node: text
+      content: 'function(): '
+    - node: bold
+      content: void
+    - node: text
+      content: ' {}'
+    - node: br
+    - node: text
+      content: '値を返さないことを示す '
+    - node: br
+    - node: text
+      content: '値を返さないということは、 副作用があるというマーク '
+    - node: br
+    - node: text
+      content: DBにデータを記録する、 メールを送る、例外送出
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 複合的な型表記
+  - node: p
+    children:
+    - node: text
+      content: 'nullable型 '
+  - node: p
+    children:
+    - node: text
+      content: 'とか '
+  - node: p
+    children:
+    - node: text
+      content: ?DateTime
+    - node: br
+    - node: text
+      content: 'ユニオン型 '
+  - node: p
+    children:
+    - node: text
+      content: 'とか とか '
+  - node: p
+    children:
+    - node: text
+      content: A|B string|false
+    - node: br
+    - node: text
+      content: 'PHP7ではPHPDocコメントに '
+    - node: br
+    - node: text
+      content: 書く必要がある
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: クラスの型付けを 考えてみましょう
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: Book (本)
+  - node: p
+    children:
+    - node: text
+      content: プロパティ とし
+  - node: p
+    children:
+    - node: text
+      content: (メンバー変数)
+    - node: br
+    - node: text
+      content: て、name(書名)とAuthor(著
+    - node: br
+    - node: text
+      content: 者オブジェクト)を持つ メソッドは今回は割愛
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: クラスの型付けを考える 5.0
+  - node: p
+    children:
+    - node: text
+      content: 〜
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 5.x 7.3
+  - node: p
+    children:
+    - node: text
+      content: 'class Book {         '
+    - node: br
+    - node: text
+      content: '   /** @var string */'
+    - node: br
+    - node: text
+      content: '   private $name;         '
+    - node: br
+    - node: text
+      content: '   /** @var Author */'
+    - node: br
+    - node: text
+      content: '   private $author;         '
+  - node: p
+    children:
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, Author $author         '
+    - node: br
+    - node: text
+      content: '   ) {         '
+    - node: br
+    - node: text
+      content: '       $this->name = $name;         '
+    - node: br
+    - node: text
+      content: '       $this->author = $author;         '
+    - node: br
+    - node: text
+      content: '   }'
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: クラスの型付けを考える 7.4
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   private string $name;         '
+    - node: br
+    - node: text
+      content: '   private Author $author;         '
+  - node: p
+    children:
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, Author $author         '
+    - node: br
+    - node: text
+      content: '   ) {         '
+    - node: br
+    - node: text
+      content: '       $this->name = $name;         '
+    - node: br
+    - node: text
+      content: '       $this->author = $author;         '
+    - node: br
+    - node: text
+      content: '  }'
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: クラスの型付けを考える 8.0
+  - node: p
+    children:
+    - node: text
+      content: 以降
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 8.0
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       private string $name,                 private Author $author         '
+    - node: br
+    - node: text
+      content: '  ) {         '
+  - node: p
+    children:
+    - node: text
+      content: プロパティ代入は不要
+  - node: p
+    children:
+    - node: text
+      content: '       //           '
+    - node: br
+    - node: text
+      content: '       // $this->name = $name;         '
+    - node: br
+    - node: text
+      content: '       // $this->author = $author;         '
+    - node: br
+    - node: text
+      content: '  }   '
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: '仕様変更 '
+    - node: br
+    - node: text
+      content: 😁
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: 著者が複数の本って いっぱいあるんじゃ
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: '著者が複数…  '
+    - node: br
+    - node: text
+      content: 配列で受け取ろう
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: $author
+    - node: br
+    - node: text
+      content: '↓ '
+    - node: br
+    - node: text
+      content: $authors
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 変更前 7.4
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   private string $name;         '
+  - node: p
+    children:
+    - node: text
+      content: '   private Author $author;         '
+  - node: p
+    children:
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, Author $author         '
+    - node: br
+    - node: text
+      content: '   ) {         '
+    - node: br
+    - node: text
+      content: '       $this->name = $name;         '
+    - node: br
+    - node: text
+      content: '       $this->author = $author;         '
+    - node: br
+    - node: text
+      content: '   }'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 変更後 7.4
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'arrayって… '
+    - node: br
+    - node: text
+      content: 情報量減っちゃってね？
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   private string $name;         '
+  - node: p
+    children:
+    - node: text
+      content: '   private array $authors;         '
+  - node: p
+    children:
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, array $authors         '
+    - node: br
+    - node: text
+      content: '   ) {'
+    - node: br
+    - node: text
+      content: '       // ...         '
+    - node: br
+    - node: text
+      content: '   }'
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: array型宣言は結構困る
+  - node: p
+    children:
+    - node: text
+      content: 今回欲しいのはAuthorだけが
+    - node: br
+    - node: text
+      content: '入った配列 '
+  - node: p
+    children:
+    - node: text
+      content: 'だけでは不十分 '
+  - node: p
+    children:
+    - node: text
+      content: array
+  - node: p
+    children:
+    - node: text
+      content: 'みたいな '
+  - node: p
+    children:
+    - node: text
+      content: 太宰治
+  - node: p
+    children:
+    - node: text
+      content: '[''name''=>'' '']'
+    - node: br
+    - node: text
+      content: 配列がほしいわけではない
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: ここで出てくる のがPHPDoc
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: 変更前 7.4
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   private string $name;         '
+  - node: p
+    children:
+    - node: text
+      content: '   private array $authors;         '
+  - node: p
+    children:
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, array $authors         '
+    - node: br
+    - node: text
+      content: '   ) {'
+    - node: br
+    - node: text
+      content: '       // ...         '
+    - node: br
+    - node: text
+      content: '   }'
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocでプロパティ型付け
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   private string $name;             /** @var Authors[] */         '
+    - node: br
+    - node: text
+      content: '   private array $authors;         '
+  - node: p
+    children:
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, array $authors         '
+    - node: br
+    - node: text
+      content: '   ) {'
+    - node: br
+    - node: text
+      content: '       // ...         '
+    - node: br
+    - node: text
+      content: '   }'
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocでメソッド型付け
+  - node: p
+    children:
+    - node: text
+      content: <?php // PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '   private string $name;             /** @var Authors[] */         '
+    - node: br
+    - node: text
+      content: '   private array $authors;         '
+    - node: br
+    - node: text
+      content: '   /**         '
+    - node: br
+    - node: text
+      content: '    * @param Authors[] $authors         '
+    - node: br
+    - node: text
+      content: '    */         '
+    - node: br
+    - node: text
+      content: '   public function __construct(         '
+    - node: br
+    - node: text
+      content: '       string $name, array $authors         '
+    - node: br
+    - node: text
+      content: '   ) {'
+    - node: br
+    - node: text
+      content: '       // ...'
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: PHPDoc(型注釈)について
+  - node: p
+    children:
+    - node: text
+      content: 'DocComment /** … */に 型情報を書くことで、型宣言 できない詳細な型を付ける PHPが対応しない型や、 実行時に検査しにくい型を '
+    - node: br
+    - node: text
+      content: 記述できる
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: PHPDoc(型注釈)にしか書けない型
+  - node: p
+    children:
+    - node: text
+      content: 'コレクションの型 '
+    - node: br
+    - node: text
+      content: 'ジェネリクス '
+    - node: br
+    - node: text
+      content: 'ユニオン型はPHPDocで '
+    - node: br
+    - node: text
+      content: '長年使われていたがPHP8で '
+    - node: br
+    - node: text
+      content: 型宣言に取り入れられた
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: PHPDoc(型注釈)にしか書けない型
+  - node: p
+    children:
+    - node: text
+      content: 'リテラル型・定数型 '
+  - node: p
+    children:
+    - node: text
+      content: 'array-shapes '
+    - node: br
+    - node: text
+      content: (Object-like arrays)
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: パラメータの型
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: 検索エンジンを単語検索する
+  - node: p
+    children:
+    - node: text
+      content: ' *  */'
+    - node: br
+    - node: text
+      content: function search(string $word, string $mode) {
+    - node: br
+    - node: text
+      content: '   // ...         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: ユーザーが検索したいワード  検索モードはどんな文字列で
+    - node: br
+    - node: text
+      content: なんでも入れていい も入れたいわけではない
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: パラメータのリテラルユニオン型
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: 検索エンジンを単語検索する
+  - node: p
+    children:
+    - node: text
+      content: ' *           '
+    - node: br
+    - node: text
+      content: ' * @phpstan-param ''exact''|''partial'' $mode'
+    - node: br
+    - node: text
+      content: ' */'
+    - node: br
+    - node: text
+      content: function search(string $word, string $mode) {
+    - node: br
+    - node: text
+      content: '   // ...         '
+    - node: br
+    - node: text
+      content: '}'
+    - node: br
+    - node: text
+      content: 期待値をResultでそのまま書
+    - node: br
+    - node: text
+      content: ける
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: パラメータの定数プレフィクス型
+  - node: p
+    children:
+    - node: text
+      content: <?php
+    - node: br
+    - node: text
+      content: 'const SEARCH_MODE_EXACT = ''exact'';         '
+    - node: br
+    - node: text
+      content: const SEARCH_MODE_PARTIAL = 'partial';
+  - node: p
+    children:
+    - node: text
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: 検索エンジンを単語検索する
+  - node: p
+    children:
+    - node: text
+      content: ' *           '
+    - node: br
+    - node: text
+      content: ' * @phpstan-param SEARCH_MODE_* $mode'
+    - node: br
+    - node: text
+      content: ' */'
+    - node: br
+    - node: text
+      content: function search(string $word, string $mode) {
+    - node: br
+    - node: text
+      content: '   // ...         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: 'ユーザーが検索したいワード '
+    - node: br
+    - node: text
+      content: なんでも入れていい
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: '型なしは '
+    - node: br
+    - node: text
+      content: どこから来るの？
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: 'ここまでは値をリテラル で記述するか引数経由で 期待通りの値が渡される '
+    - node: br
+    - node: text
+      content: 前提で話をしてきた
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: リテラルは実行時変化しない
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'function print_add(int $a, int $b): int|float         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '    echo $a + $b;         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: print_add(1, 2);
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: 外部入力
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'function print_add(int $a, int $b): int|float         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '    echo $a + $b;         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: print_add($_GET['a'], $_GET['b']);
+  - node: p
+    children:
+    - node: text
+      content: クエリが  期待する形式の値が渡
+  - node: p
+    children:
+    - node: text
+      content: きちんと渡されたら動く されなければエラー
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: 厳密な入力
+  - node: p
+    children:
+    - node: text
+      content: <?php
+    - node: br
+    - node: text
+      content: 'declare(strict_types=1);         '
+  - node: p
+    children:
+    - node: text
+      content: 'function print_add(int $a, int $b): int|float         '
+    - node: br
+    - node: text
+      content: '{'
+    - node: br
+    - node: text
+      content: '    echo $a + $b;         '
+    - node: br
+    - node: text
+      content: '}'
+  - node: p
+    children:
+    - node: text
+      content: print_add($_GET['a'], $_GET['b']);
+  - node: p
+    children:
+    - node: text
+      content: '?a=1&b=2 が渡されようが '
+  - node: p
+    children:
+    - node: text
+      content: 厳密な型付けを有効化
+  - node: p
+    children:
+    - node: text
+      content: 型が違うので絶対動かない
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: DB(PDO)から取得した型
+  - node: p
+    children:
+    - node: text
+      content: PDOはデフォルトでプリペア
+    - node: br
+    - node: text
+      content: ドステートメントのエミュ
+    - node: br
+    - node: text
+      content: 'レーションが有効 '
+    - node: br
+    - node: text
+      content: 'その場合は全てのカラムが '
+    - node: br
+    - node: text
+      content: 文字列になってしまう
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: デシリアライズした値
+  - node: p
+    children:
+    - node: text
+      content: 'unserialize(), '
+    - node: br
+    - node: text
+      content: 'json_decode()など '
+    - node: br
+    - node: text
+      content: 'これらも何が入っているか '
+    - node: br
+    - node: text
+      content: わからない
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: 今回はPHPに組み込 みの型の使いかたに 絞って説明しました
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 実際に厳密に型を付けて いくと、これだけでは力 不足なポイントが多く出
+    - node: br
+    - node: text
+      content: てきます
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: '‒arrayの型と向き合う #phpstudy '
+  - node: p
+    children:
+    - node: text
+      content: https://tadsan.fanbox.cc/posts/854598
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: '‒array shapes記法(Object-like arrays)と旧PSR-5記法で型をつける '
+  - node: p
+    children:
+    - node: text
+      content: https://qiita.com/tadsan/items/bfa9465166c351da37e5
+  p81:
+  - node: p
+    children:
+    - node: text
+      content: '‒このPHPがテンプレートエンジンのくせに慎重すぎる (前篇) '
+  - node: p
+    children:
+    - node: text
+      content: https://qiita.com/tadsan/items/bf61520eb2d455e0e8b4
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p2:
+  - url: https://github.com/emacs-php/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p4:
+  - url: https://fortee.jp/phpcon-okinawa-2021/proposal/b90e3c04-ae04-4430-a28c-3f231e703c37
+    title: '今日からできる安心型付け入門 by うさみけんた | プロポーザル | PHPカンファレンス沖縄2021 #phpcon_okinawa -
+      fortee.jp'
+  p5:
+  - url: https://fortee.jp/phpcon-okinawa-2021/proposal/b90e3c04-ae04-4430-a28c-3f231e703c37
+    title: '今日からできる安心型付け入門 by うさみけんた | プロポーザル | PHPカンファレンス沖縄2021 #phpcon_okinawa -
+      fortee.jp'
+  p79:
+  - url: https://tadsan.fanbox.cc/posts/854598
+    title: 'arrayの型と向き合う #phpstudy ｜にゃんだーすわん｜pixivFANBOX'
+  p80:
+  - url: https://qiita.com/tadsan/items/bfa9465166c351da37e5
+    title: 'array shapes記法(Object-like arrays)と旧PSR-5記法で型をつける #PHP - Qiita'
+  p81:
+  - url: https://qiita.com/tadsan/items/bf61520eb2d455e0e8b4
+    title: 'このPHPがテンプレートエンジンのくせに慎重すぎる (前篇) #PHP - Qiita'

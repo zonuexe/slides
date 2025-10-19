@@ -58,9 +58,7 @@ function renderNode(node) {
 
 const app = new Hono();
 
-// サイト設定を読み込む
-let siteConfig = null;
-const pdfMetaCache = new Map();
+// サイト設定を読み込む（キャッシュなし）
 const SNIPPET_LENGTH = 160;
 
 function collectTextFromNode(node, collector) {
@@ -118,36 +116,28 @@ function buildSnippet(text) {
 }
 
 async function loadSiteConfig() {
-  if (!siteConfig) {
-    try {
-      const configFile = await readFile('./_site.yaml', 'utf8');
-      siteConfig = yaml.load(configFile);
-    } catch (error) {
-      console.error('サイト設定の読み込みに失敗しました:', error);
-      // デフォルト設定
-      siteConfig = {
-        site: { name: "tadsan's slide deck", url: "https://zonuexe.github.io" },
-        author: { name: "tadsan", url: "https://twitter.com/tadsan" },
-        oembed: { provider_name: "tadsan's slide deck", provider_url: "https://zonuexe.github.io/slides/" },
-        embed: { base_url: "https://zonuexe.github.io/slide-pdf.js", slide_path: "https://zonuexe.github.io/slides/pdf" }
-      };
-    }
+  try {
+    const configFile = await readFile('./_site.yaml', 'utf8');
+    return yaml.load(configFile);
+  } catch (error) {
+    console.error('サイト設定の読み込みに失敗しました:', error);
+    // デフォルト設定
+    return {
+      site: { name: "tadsan's slide deck", url: "https://zonuexe.github.io" },
+      author: { name: "tadsan", url: "https://twitter.com/tadsan" },
+      oembed: { provider_name: "tadsan's slide deck", provider_url: "https://zonuexe.github.io/slides/" },
+      embed: { base_url: "https://zonuexe.github.io/slide-pdf.js", slide_path: "https://zonuexe.github.io/slides/pdf" }
+    };
   }
-  return siteConfig;
 }
 
-// スライドのファイル名からPDFメタデータを取得
+// スライドのファイル名からPDFメタデータを取得（キャッシュなし）
 async function getPdfMetaByFile(filePath, slide) {
   // slide.metaが指定されている場合はそのファイルを読み込む
   if (slide.meta) {
-    const cacheKey = `meta:${slide.meta}`;
-    if (pdfMetaCache.has(cacheKey)) {
-      return pdfMetaCache.get(cacheKey);
-    }
     try {
       const metaFile = await readFile(slide.meta, 'utf8');
       const metaData = yaml.load(metaFile);
-      pdfMetaCache.set(cacheKey, metaData);
       return metaData;
     } catch (error) {
       console.error(`メタデータファイルの読み込みに失敗しました (${slide.meta}):`, error);
@@ -155,49 +145,49 @@ async function getPdfMetaByFile(filePath, slide) {
   }
 
   // デフォルト値を返す
-  const cacheKey = `default:${filePath}`;
-  if (pdfMetaCache.has(cacheKey)) {
-    return pdfMetaCache.get(cacheKey);
-  }
-  const fallback = {
+  return {
     size: {
       max_width: slide.max_width || 1024,
       max_height: slide.max_height || 768
     },
     links: {}
   };
-  pdfMetaCache.set(cacheKey, fallback);
-  return fallback;
+}
+
+async function generateSlidesData() {
+  const slides = await loadSlides();
+  const enrichedSlides = [];
+
+  for (const slide of slides) {
+    let searchContent = "";
+    try {
+      const meta = await getPdfMetaByFile(slide.file, slide);
+      searchContent = extractTextContent(meta);
+    } catch (error) {
+      console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
+    }
+    enrichedSlides.push({
+      ...slide,
+      searchContent,
+      snippet: buildSnippet(searchContent || slide.title || ""),
+    });
+  }
+
+  const slidesForClient = enrichedSlides.map((slide) => ({
+    slug: slide.slug ?? "",
+    title: slide.title ?? "",
+    date: slide.date ?? "",
+    content: slide.searchContent ?? "",
+  }));
+  const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
+
+  return { enrichedSlides, slidesJson };
 }
 
 // スライド一覧ページ
 app.get("/slides/", async (c) => {
   try {
-    const slides = await loadSlides();
-    const enrichedSlides = [];
-
-    for (const slide of slides) {
-      let searchContent = "";
-      try {
-        const meta = await getPdfMetaByFile(slide.file, slide);
-        searchContent = extractTextContent(meta);
-      } catch (error) {
-        console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
-      }
-      enrichedSlides.push({
-        ...slide,
-        searchContent,
-        snippet: buildSnippet(searchContent || slide.title || ""),
-      });
-    }
-
-    const slidesForClient = enrichedSlides.map((slide) => ({
-      slug: slide.slug ?? "",
-      title: slide.title ?? "",
-      date: slide.date ?? "",
-      content: slide.searchContent ?? "",
-    }));
-    const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
+    const { enrichedSlides, slidesJson } = await generateSlidesData();
 
     const html = `
       <!DOCTYPE html>
@@ -225,6 +215,9 @@ app.get("/slides/", async (c) => {
             .no-results { grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #666; font-size: 1rem; }
             .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
           </style>
+          <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
+          <link rel="preload" href="/slides/index.js" as="script">
+          <link rel="preload" href="/slides/js/search.js" as="script">
         </head>
         <body>
           <div class="container">
@@ -244,21 +237,43 @@ app.get("/slides/", async (c) => {
                   <p>公開日: <time datetime="${escapeHtml(slide.date ?? "")}">${escapeHtml(slide.date ?? "")}</time></p>
                 </div>
               `).join('\n')}
-            </div>
           </div>
-          <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
-          <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
-          <script>window.slidesData = ${slidesJson};</script>
-          <script src="/slides/js/search.js" defer></script>
-        </body>
-      </html>
-    `;
+        </div>
+        <hr>
+        <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
+        <script src="/slides/index.js" defer></script>
+        <script src="/slides/js/search.js" defer></script>
+      </body>
+    </html>
+  `;
 
     return c.html(html.trim());
   } catch (error) {
     console.error('Error loading slides:', error);
     return c.text('スライドの読み込みに失敗しました', 500);
+  }
+});
+
+// スライドデータ配信用
+app.get("/slides/index.js", async (c) => {
+  try {
+    const { slidesJson } = await generateSlidesData();
+    const body = `window.slidesData = ${slidesJson};`;
+    return new Response(body, {
+      headers: {
+        "Content-Type": "application/javascript; charset=utf-8",
+        "Cache-Control": "public, max-age=0, must-revalidate",
+      },
+    });
+  } catch (error) {
+    console.error("Error generating slides data script:", error);
+    return new Response("console.error('Failed to load slides data');", {
+      status: 500,
+      headers: {
+        "Content-Type": "application/javascript; charset=utf-8",
+      },
+    });
   }
 });
 
@@ -337,48 +352,6 @@ app.get("/slides/:slug/", async (c) => {
               maxHeight: ${maxHeight},
               download: '${slide.download}'
             };
-
-            // ページスクロール連動機能
-            function scrollToPage(pageNum) {
-              const pageElement = document.getElementById('page-' + pageNum);
-              if (pageElement) {
-                pageElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }
-
-            // iframeのハッシュ変更を監視
-            function watchIframeHash() {
-              const iframe = document.getElementById('pdf-container');
-              if (!iframe) return;
-
-              let lastHash = '';
-              const checkHash = () => {
-                try {
-                  const currentHash = iframe.contentWindow.location.hash;
-                  if (currentHash !== lastHash) {
-                    lastHash = currentHash;
-                    const pageMatch = currentHash.match(/[#&]p=(\d+)/);
-                    if (pageMatch) {
-                      const pageNum = parseInt(pageMatch[1]);
-                      scrollToPage(pageNum);
-                    }
-                  }
-                } catch (e) {
-                  // クロスオリジンの場合は無視
-                }
-              };
-
-              // 定期的にハッシュをチェック
-              setInterval(checkHash, 500);
-            }
-
-            // ページ読み込み後にハッシュ監視を開始
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(watchIframeHash, 1000);
-            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -415,6 +388,19 @@ app.get("/slides/:slug/", async (c) => {
       const eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
       return `<p><time datetime="${event.presented_at}">${eventJapaneseDate}</time>に${event.location}の${event.place}で開催された『<a href="${event.url}" target="_blank">${event.name}</a>』で${event.type}(${event.talk_duration}分)として発表しました。</p>`;
     }).join('')}
+                </div>
+              ` : ''}
+
+              ${slide.related_articles && slide.related_articles.length > 0 ? `
+                <div class="related-articles">
+                  <ul>
+                    ${slide.related_articles.map(article => {
+      const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(article.url)}&size=32`;
+      const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
+      const descHtml = article.desc ? `<br>${escapeHtml(article.desc)}` : '';
+      return `<li>${faviconImg}<a href="${escapeHtml(article.url)}" target="_blank">${escapeHtml(article.title)}</a>${descHtml}</li>`;
+    }).join('')}
+                  </ul>
                 </div>
               ` : ''}
 

@@ -1,0 +1,381 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 『えこひいき』される関数たち
+  - node: p
+    children:
+    - node: text
+      content: Functions Specialized by Zend Engine
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2022-12-20 '
+  - node: p
+    children:
+    - node: bold
+      content: PHP勉強会@東京
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 エンジニア
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Emacs PHP Modeを開発しています (2017年-)
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p4: []
+  p5: []
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 'Zend Engineって '
+    - node: br
+    - node: text
+      content: なあに
+  p7: []
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 仮想機械？
+  p9: []
+  p10: []
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'I am CPU. '
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: つまり？
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 自分のことをCPU だと思い込んだ象
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 'CPUの言葉でしゃべれ '
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'Zend Engine '
+    - node: br
+    - node: text
+      content: オ ペ コ ー ド
+  - node: p
+    children:
+    - node: text
+      content: opcode
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: PHPはオペコードにコンパイルされる
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: echo 1; ECHO                 1
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: PHPはオペコードにコンパイルされる
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: echo 'foo'; ECHO             'foo'
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: PHPはオペコードにコンパイルされる
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: print 'foo'; ECHO             'foo'
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: PHPはオペコードにコンパイルされる
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: echo 1 + 2; ECHO                 3
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: PHPはオペコードにコンパイルされる
+  - node: p
+    children:
+    - node: text
+      content: <?php
+    - node: br
+    - node: text
+      content: '$a = 1; ASSIGN           !0, 1         '
+  - node: p
+    children:
+    - node: text
+      content: 'ADD          ~2  !0, 2         '
+  - node: p
+    children:
+    - node: text
+      content: echo $a + 2;
+  - node: p
+    children:
+    - node: text
+      content: ECHO                ~2
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'opcodeでおｋ '
+  - node: p
+    children:
+    - node: text
+      content: <?php echo "foo";
+  - node: p
+    children:
+    - node: text
+      content: 'ECHO ''foo'' '
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 'なんで '
+    - node: br
+    - node: text
+      content: こんなことするの
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP '
+    - node: br
+    - node: text
+      content: 高度な構文解析が必要 な高級なシンタックス
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 'opcode '
+    - node: br
+    - node: text
+      content: '構文解析不要な '
+    - node: br
+    - node: text
+      content: シンプルな命令セット
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: '分けて開発することで '
+    - node: br
+    - node: text
+      content: 最適化しやすくなる
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 'これを極めれば '
+    - node: br
+    - node: text
+      content: パフォーマンス改善に
+    - node: br
+    - node: text
+      content: 役立つのか？
+  p27: []
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: ここまでが前振り
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 関数呼び出し
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: 'INIT_FCALL  ''var_dump'' SEND_VAL         ''foo''         '
+  - node: p
+    children:
+    - node: text
+      content: var_dump("foo");
+  - node: p
+    children:
+    - node: text
+      content: DO_ICALL
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 関数呼び出しは 関数呼び出しに
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: なるとは限らない
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: ！？
+  - node: p
+    children:
+    - node: text
+      content: 関数呼び出し
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: TYPE_CHECK 16 ~0 'foo'
+  - node: p
+    children:
+    - node: text
+      content: 'echo '
+    - node: br
+    - node: text
+      content: is_int('foo'); ECHO                ~0
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: ！？
+  - node: p
+    children:
+    - node: text
+      content: 関数呼び出し
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: ECHO                3
+  - node: p
+    children:
+    - node: text
+      content: 'echo '
+    - node: br
+    - node: text
+      content: strlen('foo');
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 『えこひいき』とは何だったのか
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: PHPの処理系の心臓部は,Zend Engine5と呼ばれる仮想機械
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 実行時にOPCode(Zend Engineのマシン語)にコンパイルする
+        - node: li
+          children:
+          - node: text
+            content: 現代的なスクリプト言語はほとんど同じような構造になっている
+    - node: li
+      children:
+      - node: text
+        content: PHPコードはOPCodeにコンパイルされるが一対一で変換されず、
+      - node: br
+      - node: text
+        content: '一部の関数呼び出しは特別な最適化が施される '
+    - node: li
+      children:
+      - node: text
+        content: 一般的なアプリケーションではあまりパフォーマンスに寄与しないかも
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p5:
+  - url: https://qiita.com/tadsan/items/643a7cd0b4d7f27dd3ed
+    title: 'ZendEngineにえこひいきされる標準関数たち (前篇) #PHP - Qiita'
+  p7:
+  - url: https://ja.wikipedia.org/wiki/Zend_Engine
+    title: Zend Engine - Wikipedia
+  p27:
+  - url: https://qiita.com/tadsan/items/643a7cd0b4d7f27dd3ed
+    title: 'ZendEngineにえこひいきされる標準関数たち (前篇) #PHP - Qiita'

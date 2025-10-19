@@ -84,6 +84,7 @@ def main() -> int:
 
     targets: list[tuple[str, str | None]] = []
     targets.append(("/slides/", None))
+    targets.append(("/slides/index.js", "application/javascript"))
     for slug in slugs:
         targets.append((f"/slides/{slug}/", None))
         targets.append((f"/slides/{slug}/oembed.json", "application/json"))
