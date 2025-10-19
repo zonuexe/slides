@@ -228,7 +228,7 @@ app.get("/slides/", async (c) => {
         </head>
         <body>
           <div class="container">
-            <h1><a href="http://twitter.com/tadsan">tadsan</a>'s slide deck  ヾ(〃＞＜)ﾉﾞ</h1>
+            <h1><a href="http://twitter.com/tadsan">tadsan</a>'s slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
             <div class="search-toolbar">
               <label class="search-label">
                 <span class="visually-hidden">スライドを検索</span>
