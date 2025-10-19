@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="PSRで学ぶHTTP Webアプリケーションの実践">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20201212_psr-http-web-application-practice/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20201212_psr-http-web-application-practice.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PSRで学ぶHTTP Webアプリケーションの実践">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20201212_psr-http-web-application-practice.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20201212_psr-http-web-application-practice/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20201212_psr-http-web-application-practice/oembed.xml">
+
+          <title>PSRで学ぶHTTP Webアプリケーションの実践</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1820px;
+              --aspect-ratio: 1820 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1820,
+              maxHeight: 1024,
+              download: '20201212_psr-http-web-application-practice.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20201212_psr-http-web-application-practice.pdf" id="pdf-container" title="PSRで学ぶHTTP Webアプリケーションの実践"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>PSRで学ぶHTTP Webアプリケーションの実践</h1>
+              <p>公開日: <time datetime="2020-12-12">2020年12月12日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2020-12-12">2020年12月12日</time>にオンラインのYouTube Liveで開催された『<a href="https://phpcon.php.gr.jp/2020/" target="_blank">PHPカンファレンス2020</a>』でLong session(60分)として発表しました。</p>
+                </div>
+              
+
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpcon" target="_blank" class="hashtag">#phpcon</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20201212_psr-http-web-application-practice.pdf" download="20201212_psr-http-web-application-practice.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>PSRで学ぶHTTP Webアプリケーションの実践</strong></p><p>2020-12-12 PHPカンファレンス2020 #phpcon         </p><p>pixiv Inc.<br><strong>USAMI Kenta</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ</p><p>うさみけんた</p><p>●</p><p>ピクシブ株式会社 事業本部</p><p>●</p><p> pixiv<br>現職には 年から所属</p><p>○</p><p>2012<br>は 年頃から</p><p>○</p><p>PHP 2013</p><p>現行メンテナー</p><p>●</p><p>Emacs PHP Mode</p><p><strong>USAMI Kenta</strong></p><p>対応 まだです</p><p>○</p><p>PHP8  Attribute</p><p><strong>@tadsan</strong></p><p>カンファレンス終わったら</p><p>○</p><p>PHP …</p><p>などのコミュニティ</p><p>●</p><p>Emacs JP, php-users-ja</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>技術など</p><p>年以前は を書いてました</p><p>●</p><p>2012 Ruby<br>現職入社以後は社内 およびフレームワークの開</p><p>●</p><p>API</p><p>発・メンテナンスなどを担当<br>いままでのカンファレンスでは や 静的</p><p>●</p><p>Composer PHP</p><p><strong>USAMI Kenta</strong></p><p>解析・言語機能などを紹介してきました<br>趣味では や や などを</p><p>●</p><p>PHP PHP Emacs Lisp</p><p><strong>@tadsan</strong></p><p>書いてます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>今回のお題         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>基本的には既存の素晴らしい資料を<br>●<br>読めば全部書いてある         <br>しかしPHPとHTTPとオブジェクト指向<br>○<br>の理解がないと、何が嬉しいのか納<br>得しがたい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>特にPSR-15に関しては今年の頭に<br>●<br>PHPerKaigiのために手を動かしてみる まで、いまいちぴんときていなかった         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>「抽象的な話はわかった 。で、<br>●</p><p>(わからん)</p><p>結局何すればいいの」という         <br>理解のギャップを埋めることを目標とし<br>ています         <br>発表後に資料の復習と実践を推奨しま<br>●<br>す         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>アジェンダ         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>1. HTTPの概説とPHPの制約         </p><p>2. HTTPとフレームワークとPSR         </p><p>3. PSR-7/15/17ベースの実装と勘所         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>1. HTTPの概説と         <br>PHPの制約         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ネットの         <br>アドレスのやつ？         </p><p>HTTPとは何か         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>より引用</p><p>https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol <br>最終更新 年 月 日 火</p><p> 2020 11 3  ( ) 13:19 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ネットじゃん         </p><p>Hypertextって…？         <br>●</p><p>リンクとかクリックすると         <br>○<br>別のページに飛べたりする文書         </p><p>要はHTMLとかのこと         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>より引用</p><p>https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol <br>最終更新 年 月 日 火</p><p> 2020 11 3  ( ) 13:19 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>テキストだけじゃな<br>いじゃん         </p><p>より引用</p><p>https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol <br>最終更新 年 月 日 火</p><p> 2020 11 3  ( ) 13:19 </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>Enterを押すとHTTP<br>通信が走る         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>HTTP/3は         </p><p>HTTPはTCPベースの通信         </p><p>違いますが…         </p><p>●</p><p>TCPはバイトの並びを送れる         <br>○</p><p>HTTP/1はTCPでテキストを         <br>○<br>特定のルールで区切って送信する         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>一般的なPHPでのHTTP通信         <br>●</p><p>file_get_contents() 関数         <br>○<br>cURL 関数         <br>○</p><p>GuzzleやPSR-18で抽象化         <br>■</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>HTTPのやりとりの基本         <br>●</p><p>送信された要求(request)には         <br>○<br>返答(response)を返す         <br>HTML, CSS, JavaScript, JSON, そ<br>■<br>のほかなんでも         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>HTTPリクエスト         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>リクエスト</p><p><strong>HTTP</strong></p><p>リクエスト行         </p><p>POST /post HTTP/1.1<br>Host: httpbin.org<br>Accept: application/json<br>Content-Type: application/json</p><p>ヘッダフィールド         </p><p>Connection: close</p><p>{&quot;foo&quot;:&quot;bar&quot;}</p><p>リクエストボディ         </p><p>リクエスト行・ヘッダ の区切りはCR+LF </p><p>(\r\n)         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>http://httpbin.org/post</p><p>POST /post HTTP/1.1<br>Host: httpbin.org<br>Accept: application/json<br>Content-Type: application/json<br>Connection: close</p><p>{&quot;foo&quot;:&quot;bar&quot;}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ソケットが         <br>使える         </p><p>このルール通りにテキストを組み立てて         <br>TCPでいい感じに送ればHTTP通信できる         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>httpbin.org         <br>●</p><p>HTTPリクエストに対してさまざまな返<br>○<br>答してくれるWebサービス         <br>ブラウザ上からもテストできる         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>リクエスト リクエスト組み立て</p><p><strong>HTTP  ( )</strong></p><p>リクエスト行         </p><p>&lt;?php</p><p>$request = implode(&quot;\r\n&quot;, [<br>    &#39;POST /post HTTP/1.1&#39;,</p><p>ヘッダフィールド         </p><p>    &#39;Host: httpbin.org&#39;,<br>    &#39;Accept: application/json&#39;,<br>    &#39;Content-Type: application/json&#39;,</p><p>リクエストボディ         </p><p>    &#39;Connection: close&#39;,<br>    &#39;&#39;,</p><p>リクエスト行・ヘッダ</p><p>    json_encode([&#39;foo&#39; =&gt; &#39;bar&#39;]),</p><p>の区切りはCR+LF </p><p>]);</p><p>(\r\n)         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>リクエスト ソケット読み書き</p><p><strong>HTTP  ( )</strong></p><p>名前解決         </p><p>$ip = dns_get_record(&#39;httpbin.org&#39;, DNS_A)[0][&#39;ip&#39;]; $sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);<br>socket_connect($sock, $ip, 80) or </p><p>ソケット接続         </p><p>die(socket_strerror(socket_last_error()));</p><p>ソケット書込(リクエスト)          </p><p>socket_write($sock, $request);</p><p>ソケット読込(レスポンス)          </p><p>$response = &#39;&#39;;<br>do {<br>    $responses .= ($buf = socket_read($sock, 2048));<br>} while ($buf !== &#39;&#39;);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ご安心ください         </p><p>ところで、この方法で簡単に         <br>通信できるのはHTTP/1.1以下だけ。         <br>HTTPSやHTTP/2では困難。         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>HTTPSだろうと          ブラウザからは         <br>通信は簡単に見れる         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>Webブラウザの          開発者ツール         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>さて         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>リクエストを送る人が居れば          リクエストを受け取る人も居る         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>実際にはGoかも         <br>しれないしRubyかも<br>しれない…         </p><p>そうですPHPです         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ブラウザでPHPの実行結果 が見えるということはPHPが HTTPリクエストを受け取って<br>レスポンスを         <br>返しているにほかならない         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>スーパー         <br>グローバル変数         </p><p>$_SERVER         <br>$_GET, $_POST         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>リクエスト</p><p>$_GET         </p><p><strong>HTTP</strong></p><p>POST /post?hoge=1&amp;fuga=2 HTTP/1.1<br>Host: httpbin.org<br>Accept: application/json<br>Content-Type: application/x-www-form-urlencoded<br>Connection: close</p><p>foo=3&amp;bar=4</p><p>$_SERVER         </p><p>$_POST         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>より引用</p><p>https://www.php.net/manual/ja/reserved.variables.server.php </p><p>年 月 日閲覧</p><p>2020 12 12  </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>CGI <br>●</p><p>(Common Gateway Interface)         </p><p>かつては掲示板のような         <br>○<br>Webアプリ = CGIだった         <br>リクエストごとにプロセス起動し標準<br>○<br>入出力と環境変数で受け渡し         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>CGIから$_SERVER<br>●</p><p>○<br>$_SERVER[&#39;REQUEST_URI&#39;]<br>ヘッダを全て大文字 - を_に変換         <br>○ ○<br>Content-Type ⇒ <br>$_SERVER[&#39;HTTP_CONTENT_TYPE&#39;]         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>PHPとSAPI (ServerAPI)<br>●</p><p>○<br>PHPはサーバーの実行環境の差を          ServerAPIという層で吸収している         </p><p>cgi-fcgi, apache, fpm-fcgi, cli-sever...         <br>○<br>環境ごとにコードを書き換える必要性が限り<br>○<br>なく小さい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>HTTPレスポンス         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>レスポンス</p><p><strong>HTTP</strong></p><p>バージョン/ステータス         </p><p>HTTP/1.1 200 OK<br>Date: Fri, 11 Dec 2020 16:20:18 GMT<br>Content-Type: application/json<br>Content-Length: 339</p><p>ヘッダフィールド         </p><p>Connection: close<br>Server: gunicorn/19.9.0<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Credentials: true</p><p>レスポンスボディ         </p><p>{&quot;json&quot;:&quot;response...&quot;}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>レスポンス</p><p><strong>HTTP</strong></p><p>バージョン/ステータス         </p><p>HTTP/1.1 200 OK<br>Date: Fri, 11 Dec 2020 16:20:18 GMT<br>Content-Type: text/html<br>Content-Length: 339</p><p>ヘッダフィールド         </p><p>Connection: close<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Credentials: true</p><p>&lt;!DOCTYPE html&gt;</p><p>レスポンスボディ         </p><p>&lt;html&gt;<br>    &lt;head&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>PHPではechoなどで出力したものは         <br>そのままレスポンスボディになる         <br>(レスポンスヘッダは、ボディを         <br>echoする前にheader()を呼んでおく)         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>では基本的にこれだけ</p><p><strong>PHP</strong></p><p>&lt;?php<br>header(&#39;Content-Type: application/json&#39;); header(&#39;Access-Control-Allow-Origin: *&#39;);<br>header(&#39;Access-Control-Allow-Credentials: true&#39;);</p><p>echo json_encode($data);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>では基本的にこれだけ</p><p><strong>PHP</strong></p><p>&lt;?php<br>header(&#39;Content-Type: text/html&#39;);<br>header(&#39;Access-Control-Allow-Origin: *&#39;);<br>header(&#39;Access-Control-Allow-Credentials: true&#39;);<br>?&gt;<br>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>    &lt;head&gt;...</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>では基本的にこれだけ</p><p><strong>PHP</strong></p><p>&lt;?php<br>header(&#39;Content-Type: image/png&#39;);<br>header(&#39;Access-Control-Allow-Origin: *&#39;);<br>header(&#39;Access-Control-Allow-Credentials: true&#39;);</p><p>画像ファイルをそのまま返すこともできる</p><p>// <br>readfile(__DIR__ . &#39;/../storage/flower.png&#39;);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>PerlやRubyなどの言語のCGI機能はあ<br>●<br>くまでもライブラリだが、PHPはServer APIとしてHTTP処理が言語処理系と統<br>合されている         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>スーパーグローバル変数         <br>●</p><p>$_GET, $_POST, $_REQUEST         <br>○<br>$_SERVER, $_COOKIE, $FILES         <br>グローバル関数         <br>●</p><p>header(), setcookie(), session         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ならPHPの基本機能をそのまま          使うのが一番自然でいいのでは         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>そうともいかない事情がある         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>グローバルは         <br>テストとひたすら相</p><p>スーパーグローバル変数         <br><strong>●</strong></p><p>性が悪い         </p><p>$_GET, $_POST, $_REQUEST         <br>○<br>$_SERVER, $_COOKIE, $FILES         <br>グローバル関数         <br><strong>●</strong></p><p>header(), setcookie(), session         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>なぜテストと相性が悪いのか         <br>●</p><p>一般的なユニットテストはテスト対象<br>○<br>に引数を与えて、その返り値をア<br>サーションする         <br>実装が引数以外のものに依存すると<br>○<br>テストしにくい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>とはいえグローバル変数はどうにかな<br>●<br>る         <br>PHPUnitならテストケース実行前の<br>○<br>setUp()で確実にリセットしておけばい<br>い         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>header()/setcookieとCLIの相性         <br>●</p><p>PHPUnitのテスト対象で呼ばれると<br>○<br>Warningで止まる         <br>○ Warning: Cannot modify header </p><p>information</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>header()/setcookieとCLIの相性         <br>●</p><p>「特定の場合にヘッダ／Cookieが送<br>○<br>信されること」のようなアサーションは<br>書けない         <br>ラッパー関数などの工夫で可能         <br>■<br>弊社ではStaticMockで対応         <br>■</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>2. HTTPとフレームワー<br>クとPSR         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ここまでの問題点を         <br>整理しよう         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>PHPのHTTP機能はグローバルな         <br>●<br>状態と密結合している         <br>操作できないグローバルな状態が         <br>●<br>存在すると引数と返り値による          アサーションに落とし込めない         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>それならHTTPを         <br>引数と返り値で扱える         <br>場所に持ってくればいい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>HTTPの構造は決まってる<br>わけじゃないですか         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>リクエスト</p><p><strong>HTTP</strong></p><p>リクエスト行         </p><p>POST /post HTTP/1.1<br>Host: httpbin.org<br>Accept: application/json<br>Content-Type: application/json</p><p>ヘッダフィールド         </p><p>Connection: close</p><p>{&quot;foo&quot;:&quot;bar&quot;}</p><p>リクエストボディ         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>レスポンス</p><p><strong>HTTP</strong></p><p>バージョン/ステータス         </p><p>HTTP/1.1 200 OK<br>Date: Fri, 11 Dec 2020 16:20:18 GMT<br>Content-Type: application/json<br>Content-Length: 339</p><p>ヘッダフィールド         </p><p>Connection: close<br>Server: gunicorn/19.9.0<br>Access-Control-Allow-Origin: *<br>Access-Control-Allow-Credentials: true</p><p>レスポンスボディ         </p><p>{&quot;json&quot;:&quot;response...&quot;}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>いかにもクラスに         <br>できそう         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>システムの奥深くでグローバル         <br>変数を参照されたら困るなら          リクエストオブジェクトを渡して         <br>そこから状態を取得させればいい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>header()関数をコールされたら困る<br>なら、送信したいヘッダを         <br>レスポンスオブジェクトに記録して受<br>け渡していけばいい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>そりゃみんな         <br>やりますよね…         </p><p>より引用</p><p>Rob Allen HTTP, PSR-7 and Middleware</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>いろいろあった         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>2013年にはこういう<br>のもあった         </p><p>より引用</p><p>https://stackphp.com/ </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>より引用</p><p>https://stackphp.com/ </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>より引用</p><p>https://stackphp.com/ </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>そこで出てくるのが         <br>PHP-FIGとPSR         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>PHP-FIG         <br>●</p><p>PHP Framework Interop Group         <br>○<br>(フレームワーク相互運用グループ)         </p><p>PSR         <br>●</p><p>PHP Standard Recommendation<br>○<br>(PHP標準勧告)         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>経緯はsasezakiさんの         <br>「憂鬱な希望としての PSR-7」を参照         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>時は流れて2018年</p><p>PSR-15:          </p><p> HTTP Server Request Handlers</p><p>PSR-17: HTTP Factories<br>が受理         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>これで晴れて具象への依存を避けつつPSR ベースのWebアプリを書けるようになったとい<br>う話は、田中ひさてるさんの         <br>PHP-FIGのHTTP処理標準の設計はなぜ<br>PSR-7/15/17になったのか         <br>を参照ください         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-79">
+                        <h4>Page 79</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>3. PSR-7/15/17ベー<br>スの実装と勘所         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-80">
+                        <h4>Page 80</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>お待たせしました         <br>ここからWebアプリを         <br>作りはじめましょう         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-81">
+                        <h4>Page 81</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>実装を選ぶ         <br>●</p><p>PSRは飽くまでインターフェイス         <br>○<br>オブジェクトは別に必要         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-82">
+                        <h4>Page 82</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>PSR-7/PSR-17         <br>●</p><p>を使う         </p><p>○<br>Guzzleもいいがnyholm/psr7</p><p>●<br>SAPIとの入出力         <br>○<br>nyholm/psr7-server         <br>narrowspark/http-emitter         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-83">
+                        <h4>Page 83</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ServerRequestInterface         <br>●</p><p>Requestにスーパーグローバル<br>○<br>($_GETなど)相当+Attributeを         <br>付与して引き回せる         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-84">
+                        <h4>Page 84</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>Emitter         <br>●</p><p>Responseオブジェクトを出力         <br>○<br>(echo)         <br>HTTPヘッダに合わせてheader()関数<br>○<br>を呼ぶ         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-85">
+                        <h4>Page 85</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>プロジェクト初期化</p><p>https://github.com/zonuexe/phpcon-psr-app </p><p>% composer require nyholm/psr7 nyholm/psr7-server<br>% composer require narrowspark/http-emitter</p><p>サーバー起動</p><p># <br>% php -S localhost:3939 -t public/ ./public/index.php</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-86">
+                        <h4>Page 86</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>public/index.php</strong></p><p>&lt;?php declare(strict_types=1);<br>use Narrowspark\HttpEmitter\SapiEmitter;<br>use Nyholm\Psr7\Factory\Psr17Factory;<br>use Nyholm\Psr7Server\ServerRequestCreator; require __DIR__ . &#39;/../vendor/autoload.php&#39;;</p><p>$psr17Factory = new Psr17Factory(); $creator = new ServerRequestCreator(<br>    $psr17Factory, // ServerRequestFactory<br>    $psr17Factory, // UriFactory<br>    $psr17Factory, // UploadedFileFactory<br>    $psr17Factory  // StreamFactory<br>);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-87">
+                        <h4>Page 87</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>public/index.php</strong></p><p>$serverRequest = $creator-&gt;fromGlobals();</p><p>；</p><p>$response = $psr17Factory-&gt;createResponse()<br>    -&gt;withHeader(&#39;Content-Type&#39;, &#39;text/plain&#39;)<br>    -&gt;withBody($psr17Factory-&gt;createStream(&#39;Hello!&#39;));</p><p>$emitter = new SapiEmitter();<br>$emitter-&gt;emit($response);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-88">
+                        <h4>Page 88</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ControllerでResponseを返してみる         <br>●</p><p>RequestHandlerで実装するとLaravel<br>○<br>の っぽくなる         </p><p>Single Action Controller<br>__invoke()ではなくhandle()に         <br>○</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-89">
+                        <h4>Page 89</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>注意: 今回はControllerを<br>●<br>RequestHandlerにしているが、         <br>別の方法で安全に起動できる手段が         <br>あれば他の方法でもよい         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-90">
+                        <h4>Page 90</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>src/Http/RequestHandler/Hello.php</strong><br>final class Hello implements RequestHandlerInterface<br>{<br>  private StreamFactory $stream_factory;<br>  private ResponseFactory $response_factory;</p><p>  public function __construct(<br>    ResponseFactory $response_factory,<br>    StreamFactory $stream_factory<br>  ) {<br>    $this-&gt;response_factory = $response_factory;<br>    $this-&gt;stream_factory = $stream_factory;<br>  }</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-91">
+                        <h4>Page 91</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>src/Http/RequestHandler/Hello.php</strong></p><p>  public function handle(Request $request): Response<br>  {<br>    return $this-&gt;response_factory-&gt;createResponse()<br>      -&gt;withHeader(&#39;Content-Type&#39;, &#39;text/plain&#39;)<br>      -&gt;withBody(<br>        $this-&gt;stream_factory-&gt;createStream(&#39;Hello!&#39;)<br>      );<br>    }<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-92">
+                        <h4>Page 92</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>public/index.php</strong></p><p>$serverRequest = $creator-&gt;fromGlobals();</p><p>$hello = new Hello($psr17Factory, $psr17Factory);<br>$response = $hello-&gt;handle($serverRequest);</p><p>$emitter = new SapiEmitter();<br>$emitter-&gt;emit($response);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-93">
+                        <h4>Page 93</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>せっかくなので、超簡単な         <br>●<br>ルーターも作っていきましょう         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-94">
+                        <h4>Page 94</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>public/index.php</strong></p><p>$router = new StaticRouter([<br>  &#39;/&#39; =&gt; [&#39;GET&#39;=&gt;fn() =&gt; new Index($psr17, $psr17)],<br>  &#39;/hello&#39; =&gt; [&#39;GET&#39;=&gt;fn()=&gt; new Hello($psr17, $psr17)], ], fn() =&gt; new ErrorPage($psr17Factory, $psr17Factory));</p><p>$response = $router-&gt;handle($serverRequest);</p><p>$emitter = new SapiEmitter();<br>$emitter-&gt;emit($response);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-95">
+                        <h4>Page 95</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>src/Http/RequestHandler/StaticRouter.php</strong><br>final class StaticRouter implements <br>RequestHandlerInterface<br>{<br>  private array $routes;<br>  private Closure $error_page;</p><p>  public function __construct(array $routes, Closure <br>$error_page)<br>  {<br>    $this-&gt;routes = $routes;<br>    $this-&gt;error_page = $error_page;<br>  }</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-96">
+                        <h4>Page 96</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>src/Http/RequestHandler/StaticRouter.php</strong><br>  public function handle(Request $request): Response<br>  {<br>    $path = $request-&gt;getUri()-&gt;getPath();<br>    $method = $request-&gt;getMethod();</p><p>    return (<br>      $this-&gt;routes[$path][$method]<br>      ?? $this-&gt;error_page     )()-&gt;handle($request);<br>  }<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-97">
+                        <h4>Page 97</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>既存のミドルウェアを導入していく         <br>●<br>○<br>https://github.com/middlewares/psr15-middle<br> のプロジェクトがさまざまなミド</p><p>wares<br>ルウェアを既に実装している         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-98">
+                        <h4>Page 98</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>オブジェクトの生成をどうするか         <br>●</p><p>今回は数が少ないのですべて         <br>○</p><p> では</p><p>○<br>https://github.com/phppg/phperkaigi-golf<br>PHP-DIにオブジェクトの生成とディス<br>パッチを任せている         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-99">
+                        <h4>Page 99</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ServerRequestと型付けの問題         <br>●</p><p>ServerRequest::getParsedBody()や<br>○<br>getQueryParams()から値を取り出す<br>のは$_GETと大差ない          getAttributeの値も現状         <br>○<br>@varなどで明示的に型付けが必要         </p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fscrapbox.io%2Fphp%2FPSR-HTTP%25E3%2582%25B7%25E3%2583%25AA%25E3%2583%25BC%25E3%2582%25BA%25E3%2582%2592%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B%25E3%2581%259F%25E3%2582%2581%25E3%2581%25AE%25E6%2583%2585%25E5%25A0%25B1%25E6%25BA%2590&size=32" alt=""><a href="https://scrapbox.io/php/PSR-HTTP%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E3%82%92%E7%90%86%E8%A7%A3%E3%81%99%E3%82%8B%E3%81%9F%E3%82%81%E3%81%AE%E6%83%85%E5%A0%B1%E6%BA%90" target="_blank">PSR-HTTPシリーズを理解するための情報源 - PHP</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FHypertext_Transfer_Protocol&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">HTTP - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FHypertext_Transfer_Protocol&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">HTTP - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FHypertext_Transfer_Protocol&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">HTTP - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fja%2Freserved.variables.server.php&size=32" alt=""><a href="https://www.php.net/manual/ja/reserved.variables.server.php" target="_blank">PHP: $_SERVER - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fakrabat.com%2Ftalks%2Fhttp-psr-7-and-middleware%2F&size=32" alt=""><a href="https://akrabat.com/talks/http-psr-7-and-middleware/" target="_blank">HTTP, PSR-7 and Middleware – Rob Allen</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fstackphp.com%2F&size=32" alt=""><a href="https://stackphp.com/" target="_blank">Stack — HttpKernelInterface based middlewares</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fstackphp.com%2F&size=32" alt=""><a href="https://stackphp.com/" target="_blank">Stack — HttpKernelInterface based middlewares</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fstackphp.com%2F&size=32" alt=""><a href="https://stackphp.com/" target="_blank">Stack — HttpKernelInterface based middlewares</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fsasezaki.hatenablog.com%2Fentry%2F2015%2F03%2F07%2F195908&size=32" alt=""><a href="http://sasezaki.hatenablog.com/entry/2015/03/07/195908" target="_blank">PHP - 憂鬱な希望としての PSR-7 - Feelin&#39; Kinda Strange</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fspeakerdeck.com%2Ftanakahisateru%2F17ninatutafalseka&size=32" alt=""><a href="https://speakerdeck.com/tanakahisateru/17ninatutafalseka" target="_blank">PHP-FIGのHTTP処理標準の設計はなぜPSR-7/15/17になったのか - Speaker Deck</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-85">
+                        <h4>Page 85</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fphpcon-psr-app&size=32" alt=""><a href="https://github.com/zonuexe/phpcon-psr-app" target="_blank">GitHub - zonuexe/phpcon-psr-app</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-97">
+                        <h4>Page 97</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fmiddlewares%2Fpsr15-middlewares&size=32" alt=""><a href="https://github.com/middlewares/psr15-middlewares" target="_blank">GitHub - middlewares/psr15-middlewares: Collection of PSR-15 middlewares officially developed by Middlewares organization</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-98">
+                        <h4>Page 98</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphppg%2Fphperkaigi-golf&size=32" alt=""><a href="https://github.com/phppg/phperkaigi-golf" target="_blank">GitHub - phppg/phperkaigi-golf</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

@@ -39,48 +39,6 @@
               maxHeight: 1024,
               download: '20201212_why-am-i-still-cursed-by-php8.pdf'
             };
-
-            // ページスクロール連動機能
-            function scrollToPage(pageNum) {
-              const pageElement = document.getElementById('page-' + pageNum);
-              if (pageElement) {
-                pageElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }
-
-            // iframeのハッシュ変更を監視
-            function watchIframeHash() {
-              const iframe = document.getElementById('pdf-container');
-              if (!iframe) return;
-
-              let lastHash = '';
-              const checkHash = () => {
-                try {
-                  const currentHash = iframe.contentWindow.location.hash;
-                  if (currentHash !== lastHash) {
-                    lastHash = currentHash;
-                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
-                    if (pageMatch) {
-                      const pageNum = parseInt(pageMatch[1]);
-                      scrollToPage(pageNum);
-                    }
-                  }
-                } catch (e) {
-                  // クロスオリジンの場合は無視
-                }
-              };
-
-              // 定期的にハッシュをチェック
-              setInterval(checkHash, 500);
-            }
-
-            // ページ読み込み後にハッシュ監視を開始
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(watchIframeHash, 1000);
-            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -114,6 +72,8 @@
                 <div class="event-info">
                   <p><time datetime="2020-12-12">2020年12月12日</time>にオンラインのZoom会議で開催された『<a href="https://phpcon.php.gr.jp/2020/" target="_blank">PHPカンファレンス2020</a>』で懇親会LT(5分)として発表しました。</p>
                 </div>
+              
+
               
 
               

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="10年前から来たphp.py">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20221015_php-py-came-from-the-2010s/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20221015_php-py-came-from-the-2010s.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="10年前から来たphp.py">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20221015_php-py-came-from-the-2010s.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20221015_php-py-came-from-the-2010s/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20221015_php-py-came-from-the-2010s/oembed.xml">
+
+          <title>10年前から来たphp.py</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20221015_php-py-came-from-the-2010s.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20221015_php-py-came-from-the-2010s.pdf" id="pdf-container" title="10年前から来たphp.py"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>10年前から来たphp.py</h1>
+              <p>公開日: <time datetime="2022-10-15">2022年10月15日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2022-10-05">2022年10月5日</time>に東京都江東区のTOC有明コンベンションホールで開催された『<a href="https://2022.pycon.jp/" target="_blank">PyCon JP 2022</a>』で懇親会の辻LT(5分)として発表しました。</p><p><time datetime="2023-10-05">2023年10月5日</time>に東京都港区のdocomo R&D OPEN LAB ODAIBAで開催された『<a href="https://phpstudy.connpass.com/event/297100/" target="_blank">第157回 PHP勉強会＠東京</a>』でライトニングトーク(5分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F4605590&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/4605590" target="_blank">10年前から来たphp.py #pyconjp ｜にゃんだーすわん｜pixivFANBOX</a></li>
+                  </ul>
+                </div>
+              
+
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20221015_php-py-came-from-the-2010s.pdf" download="20221015_php-py-came-from-the-2010s.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>10年前から来たphp.py</p><p>&quot;php.py&quot; came from the 2010&#39;s</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2022-10-15</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li><li>会社ではPython使われてますが私は触ってません！！！！</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>3週間前はPHP <br>カンファレンスでした (両方に携っているスタッフ<br>おつかれさまです)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>Emacs-PHP</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>PHPの静的解析とか 言語仕様の紹介をして<br>暮らしています</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>普段はEmacsの <br>php-mode開発したり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>WEB+DB PRESS総集編</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>Software Design 11月号</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>Emacsで動的言語を リアルタイム静的解析 しながら快適に開発で きるようにしています</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>Pythonは1行くらい 書いたことあります</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>nishioさんに影響されて…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>PythonでRubyを 書けるようにしたり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>RubyをPythonっぽく置き換える</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>冗談は置いておいて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>2011年くらいに<br>Pythonやってました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>Pythonを学んだ本</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>札幌で読書会をやっていた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>最初はRuby <br> 並行してPython <br>就職してPHP</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>いわゆるLL言語を 浅く広く触っている</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>RubyとPHPの処理系<br>実装のことは <br>ちょっとだけわかる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>PyConは初参加！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>隣の芝は青い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>専門分野じゃない カンファレンスに 飛び込むのは良い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>というわけでPython ニワカなりに10年前の<br>ことを知ってます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>Emacsで.py書くとき <br>どっちのpython-mode<br>使ってるんです？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>PyCon楽しい！！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>とはいえ <br>Pythonコミュニティに <br>影響を受けてきた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>魂に刻まれた <br>Pythonのヤバい機能</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p><strong>codec</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>文字コード変換する <br>やつでしょ？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>昔はスクリプトが <br>UTF-8以外で 書かれていた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>Pythonは3で <br>文字列=Unicodeに <br>全振りした <br>ちなみにPHP6もやろうとしたけど失敗した</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>Pythonは任意のエン コーディングで書かれ たコードを実行できる<br>仕組みがある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>LL Tiger (2010年)</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>殺伐Python</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>殺伐Python</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>殺伐Python</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>codecは追加できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>なんとcodecはプリプロセッサだったのだ</p><p><strong>Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。 </strong><br><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>!?</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>バイトコンパイル前に<br>介入できれば <br>事実上何でもできる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>殺伐Python</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>渋川さんはガチなので<br>Rubyのコードを<br>Pythonに翻訳します</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>殺伐Python</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>殺伐Python</p><p><strong>http://blog.shibu.jp/article/39920783.html より引用</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>いま読み直しても <br>やばい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>じゃあPHPでも 動かすか(安直)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>私はガチではないので お手軽実装で済ませる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>というわけで <br>Pythonを書きました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>1行くらい…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>読みにくい…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>phpcodec.py</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>(ファイルに書かれた<br>コードをPHPプロセス<br>に流すだけの雑実装)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>みなさまおなじみのPHP</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>改行したﬁzzbuzz.py</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>実行</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>codecを現在動かすにあたって</p><ul><li>公開されていた渋川さんのコードが読めない (!!?)<ul><li>BitBucketはMercurialサポート終了 https://bitbucket.org/shibu</li><li>10年前はGitHub普及前でMercurialとBitBucket使われてましたね…</li></ul></li><li>渋川さんのコードを再利用したと思しき記事を断片的に参考に<ul><li>https://doloopwhile.hatenablog.com/entry/20100801/1280688409</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>codecを現在動かすにあたって</p><ul><li>元コードではStreamReaderでコードを書き換えていたが動かなかった<ul><li>Pythonの処理系実装を軽く読んでみたけど理由わからず、教えてください</li></ul></li><li>sitecustomizeとかusercustomizeで暗黙的にコーデック追加して<br>#coding: php なファイルをダイレクトに起動できるようにしたい… <ul><li>仕方ないので現在は -m phpcodec で実行したらダイナミックインポート</li><li>もっといい感じにしたいね！</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>おまけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>エンコーディング指定</p><p>テキストエディタのエンコーディング指定に由来 <br>(Rubyもだいたい同じ仕様)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>エンコーディング指定</p><p>Emacs記法</p><p>これなに</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>PEP 263</p><p>Vim記法</p><p>それっぽい指定をいい感<br>じに読み込んでくれる</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgihyo.jp%2Fbook%2F2021%2F978-4-297-12215-7&size=32" alt=""><a href="https://gihyo.jp/book/2021/978-4-297-12215-7" target="_blank">WEB+DB PRESS総集編［Vol.1～120］ | 技術評論社</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20120717014426%2Fhttp%3A%2F%2Fwww.nishiohirokazu.org%2Fblog%2F2006%2F09%2Fhow_to_write_oneliner_in_pytho.html&size=32" alt=""><a href="https://web.archive.org/web/20120717014426/http://www.nishiohirokazu.org/blog/2006/09/how_to_write_oneliner_in_pytho.html" target="_blank">西尾泰和のブログ: How to make oneliner in Python?</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Frubygems.org%2Fgems%2Fpythonism&size=32" alt=""><a href="https://rubygems.org/gems/pythonism" target="_blank">pythonism | RubyGems.org | your community gem host</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Famzn.to%2F3EG8K9y&size=32" alt=""><a href="https://amzn.to/3EG8K9y" target="_blank">Amazon.co.jp: 初めてのコンピュータサイエンス : Jennifer Campbell, Paul Gries, Jason Montojo, Greg Wilson, 長尾 高弘: 本</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Famzn.to%2F3S4slTN&size=32" alt=""><a href="https://amzn.to/3S4slTN" target="_blank">Python入門[2&amp;3対応] | エスキュービズム |本 | 通販 | Amazon</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Famzn.to%2F3euDCzh&size=32" alt=""><a href="https://amzn.to/3euDCzh" target="_blank">Amazon.co.jp: Pythonチュートリアル 第2版 : Guido van Rossum, 鴨澤 眞夫: 本</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fblog.shibu.jp%2Farticle%2F39920783.html&size=32" alt=""><a href="http://blog.shibu.jp/article/39920783.html" target="_blank">Shibu&#39;s Diary: LL TigerのLTでRuby on Python(仮)の発表してきました。</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fbitbucket.org%2Fshibu&size=32" alt=""><a href="https://bitbucket.org/shibu" target="_blank">Bitbucket</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdoloopwhile.hatenablog.com%2Fentry%2F20100801%2F1280688409&size=32" alt=""><a href="https://doloopwhile.hatenablog.com/entry/20100801/1280688409" target="_blank">モテたい一心でbrainf*ckをPythonに実行させる - None is None is None</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpeps.python.org%2Fpep-0263%2F&size=32" alt=""><a href="https://peps.python.org/pep-0263/" target="_blank">PEP 263 – Defining Python Source Code Encodings | peps.python.org</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

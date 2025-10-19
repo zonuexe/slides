@@ -39,48 +39,6 @@
               maxHeight: 1024,
               download: '20190828_what-was-pplusplus.pdf'
             };
-
-            // ページスクロール連動機能
-            function scrollToPage(pageNum) {
-              const pageElement = document.getElementById('page-' + pageNum);
-              if (pageElement) {
-                pageElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }
-
-            // iframeのハッシュ変更を監視
-            function watchIframeHash() {
-              const iframe = document.getElementById('pdf-container');
-              if (!iframe) return;
-
-              let lastHash = '';
-              const checkHash = () => {
-                try {
-                  const currentHash = iframe.contentWindow.location.hash;
-                  if (currentHash !== lastHash) {
-                    lastHash = currentHash;
-                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
-                    if (pageMatch) {
-                      const pageNum = parseInt(pageMatch[1]);
-                      scrollToPage(pageNum);
-                    }
-                  }
-                } catch (e) {
-                  // クロスオリジンの場合は無視
-                }
-              };
-
-              // 定期的にハッシュをチェック
-              setInterval(checkHash, 500);
-            }
-
-            // ページ読み込み後にハッシュ監視を開始
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(watchIframeHash, 1000);
-            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -114,6 +72,8 @@
                 <div class="event-info">
                   <p><time datetime="2019-08-28">2019年8月28日</time>に東京都渋谷区のGMO Yoursで開催された『<a href="https://phpstudy.doorkeeper.jp/events/96166" target="_blank">第141回 PHP勉強会＠東京</a>』でメイン発表枠(20分)として発表しました。</p><p><time datetime="2019-09-21">2019年9月21日</time>に札幌市中央区の札幌市民交流プラザで開催された『<a href="https://2019.phpcon.hokkaido.jp/" target="_blank">PHPカンファレンス北海道2019</a>』でアンカンファレンス(20分)として発表しました。</p>
                 </div>
+              
+
               
 
               

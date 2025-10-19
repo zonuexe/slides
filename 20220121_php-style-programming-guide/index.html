@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="PHP式プログラミング入門">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20220121_php-style-programming-guide/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20220121_php-style-programming-guide.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHP式プログラミング入門">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20220121_php-style-programming-guide.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20220121_php-style-programming-guide/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20220121_php-style-programming-guide/oembed.xml">
+
+          <title>PHP式プログラミング入門</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20220121_php-style-programming-guide.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20220121_php-style-programming-guide.pdf" id="pdf-container" title="PHP式プログラミング入門"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>PHP式プログラミング入門</h1>
+              <p>公開日: <time datetime="2022-01-21">2022年1月21日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2022-01-21">2022年1月21日</time>にオンラインのZoom会議で開催された『<a href="https://opt.connpass.com/event/233498/" target="_blank">第二回関数型プログラミング(仮)の会</a>』でライトニングトーク(5分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F3303037&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/3303037" target="_blank">PHP式プログラミング入門(LT版) #func_party ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/func_party" target="_blank" class="hashtag">#func_party</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20220121_php-style-programming-guide.pdf" download="20220121_php-style-programming-guide.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>PHP式プログラミング入門</strong></p><p>Guide to expression-oriented programming in PHP</p><p>USAMI Kenta</p><p><strong>2022.01.21</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>仕事ではPHPという静的型付き関数型プログラミング言語を書いています</li><li>趣味ではEmacs Lispという雑草のような生命力の言語を書いています</li></ul><p><strong>*</strong></p><p>(出典： 『初めての人のためのLISP』)</p><p><strong>*</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>普段はEmacsという<br>Lisp専用OSでPHP開発<br>する環境を作ってます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>こういうバック <br>グラウンドなので <br>関数型よくわからない…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>map/reduceが <br>関数プログラミング <br>なんでしょ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>僕はあらゆるループを LispのLOOPマクロ で書きたい派なんで…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>ちなみにLispはElixir <br>と同様に、基本的に returnを書けません</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>PHPって <br>どういう言語</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>PHPはHTMLに書く言語？</p><p>&lt;!DOCTYPE html public&gt;</p><p>現在は 時 分 秒です</p><p>&lt;p&gt; &lt;?= date(&#39;%H %i %s &#39;) ?&gt;&lt;/p&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>PHPスクリプト</p><p>&lt;?php</p><p>echo &quot;&lt;!DOCTYPE html public&gt;\n\n&quot;;</p><p>現在は 時 分 秒です</p><p>echo &quot;&lt;p&gt; &quot;, date(&#39;%H %i %s &#39;), &quot;&lt;/p&gt;\n&quot;;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>こういうノリで <br>Webアプリがサクっと<br>書ける素朴な言語</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>PHPはこんな言語</p><ul><li>汎用プログラミング言語 (Webだけではない)</li><li>昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体</li><li>&lt;?php タグの内側のシンタックスはCっぽい<ul><li>C言語っぽい {} を使った制御構造がある</li><li>式文が ; で終端する</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>PHPとクロージャ</p><ul><li>基本的にレキシカルスコープです</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>PHPとクロージャ</p><ul><li>基本的にレキシカルスコープです</li><li>function ($a, $b)  { return $a + $b; } のような無名関数</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>PHPとクロージャ</p><ul><li>基本的にレキシカルスコープです</li><li>function ($a, $b)  { return $a + $b; } のような無名関数<ul><li>外側の変数をキャプチャするには明示が必要<br>function ($a, $b) use ($c)  { return $a + $b + $c; }</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>PHPとクロージャ</p><ul><li>基本的にレキシカルスコープです</li><li>function ($a, $b)  { return $a + $b; } のような無名関数<ul><li>外側の変数をキャプチャするには明示が必要<br>function ($a, $b) use ($c)  { return $a + $b + $c; } </li></ul></li><li>PHP 7.4からは  fn($a, $b) =&gt; $a + $b + $c;<ul><li>明示しなくても キャプチャできて便利</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>これだけ知れば おもしろいこと <br>いろいろできそう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>ところで</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>世の中にはいろんな <br>制約を課した <br>プログラミングがある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>セミコロンなしで Javaを書くとか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>Pythonワンライナー<br>とか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>$なしでPHPを <br>書くとか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>https://tadsan.fanbox.cc/posts/329540</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>これはこれで <br>おもしろい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>(再掲)PHPはこんな言語</p><ul><li>汎用プログラミング言語 (Webだけではない)</li><li>昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体</li><li>&lt;?php タグの内側のシンタックスはCっぽい<ul><li>C言語っぽい {} を使った制御構造がある</li><li>式文が ; で終端する</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>(再掲)PHPはこんな言語</p><ul><li>汎用プログラミング言語 (Webだけではない)</li><li>昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体</li><li>&lt;?php タグの内側のシンタックスはCっぽい<ul><li>C言語っぽい {} を使った制御構造がある</li><li>式文が ; で終端する</li></ul></li></ul><p>こいつら目障り <br>じゃないですか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>セミコロンレス <br>Javaでは</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>https://horosora.hatenablog.com/entry/2018/08/03/162147より引用</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>; だけじゃなくて <br>{} も縛りたくない？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>今回の本題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>(再掲)PHPはHTMLに書く言語</p><p>&lt;!DOCTYPE html public&gt;</p><p>現在は 時 分 秒です</p><p>&lt;p&gt; &lt;?= date(&#39;%H %i %s &#39;) ?&gt;&lt;/p&gt;</p><p>?&gt; 直前は ; を削れる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>すべての処理を &lt;?= に押し込む</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>できれば一個の &lt;?= に押し込む</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>PHPは式指向 <br>プログラミングできる<br>下地はいろいろある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>PHPの特徴</p><ul><li>スクリプト言語にありがちな定義せずに代入したら使える変数<ul><li>代入は式！</li></ul></li><li>C言語とほぼ同じ制御構造なので if や while は {} または ; 必須<ul><li>分岐は条件演算子 $cond ? $then : $else でどうにか</li><li>ループは array_map(), array_reduce() でどうにか</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>これだけできれば チューリング完全 であることは自明</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>FizzBuzzを書いてみよう</p><p>から を改行区切りで出力</p><p>1 100</p><p>&lt;?= implode(range(1, 100), &quot;\n&quot;) ?&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>FizzBuzzを書いてみよう</p><p>から を に変換して改行区切りで出力</p><p>1 100 FizzBuzz</p><p>&lt;?= implode(array_map(<br>fn(int $n): string =&gt; [[$n, &#39;Buzz&#39;],          <br>  [&#39;Fizz&#39;, &#39;FizzBuzz&#39;]][$n%3==0][$n%5==0],<br>range(1, 100), &quot;\n&quot;) ?&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>こういうノリで map/reduceに <br>変形できれば <br>任意の処理が可能</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>パイプライン演算子が<br>欲しくなってくるぜ <br>(Lispならスレッドマクロがあるのに)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>これはLispですね</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>そう思ったことが 私にもありました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>ある日のこと…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>https://qiita.com/perpouh/items/807775de16986a956d1c より引用</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>https://qiita.com/perpouh/items/807775de16986a956d1c より引用</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>これはやばい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>https://qiita.com/perpouh/items/807775de16986a956d1c より引用</p><p>文を多用してるので fn() に置き換え困難</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>この路線の限界</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>array_map/<br>array_reduceは あくまで配列処理</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>無限ループできない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>旧式のfunctionでは自己再帰可能</p><p>変数を参照として <br>キャプチャしないと </p><p>&lt;?php </p><p>いけない</p><p>$fib = function (int $n) use (&amp;$fib) {<br>    return ($n &lt; 2)         <br>        ? 1         <br>        : $fib($n - 1) + $fib($n -2);<br>};</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>アロー関数(fn)では自己再帰不能</p><p>クロージャ作成時には <br>クロージャ自体は作られてない</p><p>&lt;?php </p><p>ので束縛できない</p><p>$fib = fn (int $n) =&gt;         <br>    ($n &lt; 2)                  ? 1         <br>        : $fib($n - 1) + $fib($n -2);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>じゃあどうすればいい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>そうですね</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>不動点演算子</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>いわゆる <br>Yコンビネータ (Zコンビネータ)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>Zコンビネータ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>これで勝てる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>可読性重視版</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>圧縮版</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>完</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>まとめ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>PHPはLispじゃない 式指向プログラミング<br>は大変</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>エクストリーム <br>スポーツを楽しもう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>ご静聴ありがとう <br>ございました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>あとPHPでもかなり 実用的な静的型検査が できるようになってる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>関連記事</p><ul><li>PHP式プログラミング入門 (原稿版)</li><li>PHPの無名関数式とは何か、そしてPHP7.4のアロー関数にそなえよう</li><li>Functoolsを作った<ul><li>Functoolsで過剰にスマートなPHPを書こう (無名再帰篇)</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F329540&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/329540" target="_blank">$-less PHP｜にゃんだーすわん｜pixivFANBOX</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fhorosora.hatenablog.com%2Fentry%2F2018%2F08%2F03%2F162147&size=32" alt=""><a href="https://horosora.hatenablog.com/entry/2018/08/03/162147" target="_blank">セミコロンレス Java をちょっとだけやってみた - horolog</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Fperpouh%2Fitems%2F807775de16986a956d1c&size=32" alt=""><a href="https://qiita.com/perpouh/items/807775de16986a956d1c" target="_blank">スターリンソートwithPHP #ネタ - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzenn.dev%2Ftadsan%2Farticles%2Fd4508906a36aba&size=32" alt=""><a href="https://zenn.dev/tadsan/articles/d4508906a36aba" target="_blank">PHP式プログラミング入門</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fb2a37d1a7fed1b5b2cb1&size=32" alt=""><a href="https://qiita.com/tadsan/items/b2a37d1a7fed1b5b2cb1" target="_blank">PHPの無名関数式とは何か、そしてPHP7.4のアロー関数にそなえよう #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fabc52f0739ab5b4e781b&size=32" alt=""><a href="https://qiita.com/tadsan/items/abc52f0739ab5b4e781b" target="_blank">Functoolsを作った #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F6b8cc35ff9ccb3c27678&size=32" alt=""><a href="https://qiita.com/tadsan/items/6b8cc35ff9ccb3c27678" target="_blank">Functoolsで過剰にスマートなPHPを書こう (無名再帰篇) #ポエム - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

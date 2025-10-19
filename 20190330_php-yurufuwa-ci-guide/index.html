@@ -39,48 +39,6 @@
               maxHeight: 1024,
               download: '20190330_php-yurufuwa-ci-guide.pdf'
             };
-
-            // ページスクロール連動機能
-            function scrollToPage(pageNum) {
-              const pageElement = document.getElementById('page-' + pageNum);
-              if (pageElement) {
-                pageElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }
-
-            // iframeのハッシュ変更を監視
-            function watchIframeHash() {
-              const iframe = document.getElementById('pdf-container');
-              if (!iframe) return;
-
-              let lastHash = '';
-              const checkHash = () => {
-                try {
-                  const currentHash = iframe.contentWindow.location.hash;
-                  if (currentHash !== lastHash) {
-                    lastHash = currentHash;
-                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
-                    if (pageMatch) {
-                      const pageNum = parseInt(pageMatch[1]);
-                      scrollToPage(pageNum);
-                    }
-                  }
-                } catch (e) {
-                  // クロスオリジンの場合は無視
-                }
-              };
-
-              // 定期的にハッシュをチェック
-              setInterval(checkHash, 500);
-            }
-
-            // ページ読み込み後にハッシュ監視を開始
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(watchIframeHash, 1000);
-            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -112,8 +70,10 @@
 
               
                 <div class="event-info">
-                  <p><time datetime="2019-03-30">2019年3月30日</time>に東京都の練馬区立区民・産業プラザ Coconeriホールで開催された『<a href="https://phperkaigi.jp/2019/" target="_blank">PHPerKaigi 2019</a>』で30(レギュラートーク分)として発表しました。</p>
+                  <p><time datetime="2019-03-30">2019年3月30日</time>に東京都の練馬区立区民・産業プラザ Coconeriホールで開催された『<a href="https://phperkaigi.jp/2019/" target="_blank">PHPerKaigi 2019</a>』でレギュラートーク(30分)として発表しました。</p>
                 </div>
+              
+
               
 
               

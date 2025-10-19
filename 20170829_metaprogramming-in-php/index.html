@@ -39,48 +39,6 @@
               maxHeight: 1024,
               download: 'kn2533_20170829_PHPにおけるメタプログラミングの温床 #ll2017jp.pdf'
             };
-
-            // ページスクロール連動機能
-            function scrollToPage(pageNum) {
-              const pageElement = document.getElementById('page-' + pageNum);
-              if (pageElement) {
-                pageElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }
-
-            // iframeのハッシュ変更を監視
-            function watchIframeHash() {
-              const iframe = document.getElementById('pdf-container');
-              if (!iframe) return;
-
-              let lastHash = '';
-              const checkHash = () => {
-                try {
-                  const currentHash = iframe.contentWindow.location.hash;
-                  if (currentHash !== lastHash) {
-                    lastHash = currentHash;
-                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
-                    if (pageMatch) {
-                      const pageNum = parseInt(pageMatch[1]);
-                      scrollToPage(pageNum);
-                    }
-                  }
-                } catch (e) {
-                  // クロスオリジンの場合は無視
-                }
-              };
-
-              // 定期的にハッシュをチェック
-              setInterval(checkHash, 500);
-            }
-
-            // ページ読み込み後にハッシュ監視を開始
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(watchIframeHash, 1000);
-            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -114,6 +72,8 @@
                 <div class="event-info">
                   <p><time datetime="2017-08-20">2017年8月20日</time>に東京都大田区の日本工学院専門学校 蒲田キャンパスで開催された『<a href="https://ll.jus.or.jp/2017/" target="_blank">LLイベント(Learn Languages 2017)</a>』でライトニングトーク(5分)として発表しました。</p>
                 </div>
+              
+
               
 
               

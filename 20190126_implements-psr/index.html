@@ -39,48 +39,6 @@
               maxHeight: 1024,
               download: 'kn3830_20190126_PSRを実装してみる #phpconsen.pdf'
             };
-
-            // ページスクロール連動機能
-            function scrollToPage(pageNum) {
-              const pageElement = document.getElementById('page-' + pageNum);
-              if (pageElement) {
-                pageElement.scrollIntoView({
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }
-
-            // iframeのハッシュ変更を監視
-            function watchIframeHash() {
-              const iframe = document.getElementById('pdf-container');
-              if (!iframe) return;
-
-              let lastHash = '';
-              const checkHash = () => {
-                try {
-                  const currentHash = iframe.contentWindow.location.hash;
-                  if (currentHash !== lastHash) {
-                    lastHash = currentHash;
-                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
-                    if (pageMatch) {
-                      const pageNum = parseInt(pageMatch[1]);
-                      scrollToPage(pageNum);
-                    }
-                  }
-                } catch (e) {
-                  // クロスオリジンの場合は無視
-                }
-              };
-
-              // 定期的にハッシュをチェック
-              setInterval(checkHash, 500);
-            }
-
-            // ページ読み込み後にハッシュ監視を開始
-            document.addEventListener('DOMContentLoaded', () => {
-              setTimeout(watchIframeHash, 1000);
-            });
           </script>
           <script src="/slides/js/slide-functions.js"></script>
           <script>
@@ -109,6 +67,12 @@
               </button>
               <h1>PSRを実装してみる</h1>
               <p>公開日: <time datetime="2019-01-26">2019年1月26日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="Sat Jan 26 2019 09:00:00 GMT+0900 (Japan Standard Time)">2019年1月26日</time>に宮城県仙台市青葉区花京院のTKPガーデンシティPREMIUM仙台西口8Fで開催された『<a href="https://phpcon-sendai.net/2019/" target="_blank">PHPカンファレンス仙台2019</a>』でレギュラーセッション(30分)として発表しました。</p>
+                </div>
+              
 
               
 
@@ -1101,7 +1065,7 @@
                         <h4>Page 83</h4>
                         <div class="page-links">
                           <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fgithub%2Fgitignore%2Fblob%2Fmaster%2FGlobal%2FJetBrains.gitignore&size=32" alt=""><a href="https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore" target="_blank">github.com</a></li>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fgithub%2Fgitignore%2Fblob%2Fmaster%2FGlobal%2FJetBrains.gitignore&size=32" alt=""><a href="https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore" target="_blank">gitignore/Global/JetBrains.gitignore at main · github/gitignore · GitHub</a></li>
                           </ul>
                         </div>
                       </div>

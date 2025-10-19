@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="配列、ジェネリクス､配列で書けない型">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20211003_arrays-generics-untypable/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20211003_arrays-generics-untypable.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="配列、ジェネリクス､配列で書けない型">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20211003_arrays-generics-untypable.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20211003_arrays-generics-untypable/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20211003_arrays-generics-untypable/oembed.xml">
+
+          <title>配列、ジェネリクス､配列で書けない型</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20211003_arrays-generics-untypable.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20211003_arrays-generics-untypable.pdf" id="pdf-container" title="配列、ジェネリクス､配列で書けない型"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>配列、ジェネリクス､配列で書けない型</h1>
+              <p>公開日: <time datetime="2021-10-03">2021年10月3日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2021-05-29">2021年5月29日</time>にオンラインのYouTube Liveで開催された『<a href="https://phpcon-okinawa.connpass.com/event/212058/" target="_blank">PHPカンファレンス2021</a>』でレギュラーセッション(30分)として発表しました。</p>
+                </div>
+              
+
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpcon_okinawa" target="_blank" class="hashtag">#phpcon_okinawa</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20211003_arrays-generics-untypable.pdf" download="20211003_arrays-generics-untypable.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>配列、ジェネリクス､ <br>PHPで書けない型</p><p><strong>公開補訂版</strong></p><p>Arrays, Generics, and Types that cannot be type-declared.</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2021.10.03</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>PHPカンファレンス実行委員、PHPerKaigi コアスタッフ</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>tadsanのあれこれが読める場所</p><ul><li>https://tadsan.fanbox.cc/</li><li>https://scrapbox.io/php/</li><li>https://www.phper.ninja/</li><li>https://zenn.dev/tadsan</li><li>https://qiita.com/tadsan</li><li>https://github.com/bag2php</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>WEB+DB PRESS総集編</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>Software Design 11月号</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>今回のお題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>プロポーザル</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>いきなりですが <br>問題です</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>値をそのまま返す関数</p><p>function id(mixed $value): mixed {<br>    return $value;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>値をそのまま返す関数</p><p>PhpStormとかで </p><p>メソッド名補完がきく</p><p>$date = new DateTimeImmutable();<br>$date-&gt;diff(</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>値をそのまま返す関数</p><p>PhpStormとかで </p><p>メソッド名補完が <br>き…かない</p><p>$date = new DateTimeImmutable();<br>id($date)-&gt;diff(</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>値をそのまま返す関数</p><p>なんでも受け取って</p><p>function id(mixed $value): mixed {<br>    return $value;</p><p>なんでも返す</p><p>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>本日の目標は <br>こういうときに怯えず <br>型を付けることです</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>個々の静的解析ツール<br>導入方法などは <br>今回は扱いません</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>ただし最新のPhpStorm 2021.2では静的解析ツー ルを導入しなくてもすんな<br>り動くと思います</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>これまでのあらすじ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>PHPカンファレンス2016</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>PHPカンファレンス福岡2019</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>PHP勉強会＠東京 </p><p>(2020年2月) </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>PHPカンファレンス沖縄2021</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>型とPHPの歴史</p><ul><li>2004年 PHP 5.0で限定的ながら型宣言(type hinting)が可能に<ul><li>arrayおよびクラス名(インターフェイス)のみ記述可能</li></ul></li><li>2012年頃(?) PhpStormがPHPDocベースの静的解析を提供</li><li>2015年12月 PHP 7.0リリース、スカラー型宣言とstrict_typesが追加</li><li>2016年頃 Phan, PHPStan, Psalmが開発開始</li><li>2019年12月 PHP 7.4リリース、プロパティに型宣言が追加</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>型についておさらい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>型とは何か</p><ul><li>基本的には値の種類のこと</li><li>PHPのデータ型は以下のように分類できる<ul><li>スカラー型: bool / int / ¸oat / string</li><li>複合型: array / object / callable / iterable / (mixed)</li><li>特殊型: null / resource</li></ul></li><li>クラスとインターフェイスをユーザー定義型として利用できる</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>PHPは動的言語</p><ul><li>変数には型宣言がない<ul><li>基本的にどのような値でも入れることができる</li><li>値の型は実行時にいつでも確認できる<ul><li>is_int(), is_bool(), is_array() などの関数</li></ul></li></ul></li><li>関数とプロパティは型宣言できるし、省略もできる<ul><li>パラメータや戻り値の型はRe¸ectionで実行時にいつでも確認できる</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>型チェックは実行時まで遅延する</p><p>&lt;?php</p><p>$a : array</p><p>$b : int</p><p>$a = [];</p><p>そもそも </p><p>$b = 1;</p><p>計算できない</p><p>echo $a + $b;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>PHPの型宣言の特徴</p><ul><li>実行時に型を確実にチェックされる<ul><li>スカラー型(bool, int, ¸oat, string)を宣言したとき、<br>デフォルトではキャストよりも厳密に値を判定した上で型変換を行う </li><li>それ以外の型は一致しなかった場合にTypeErrorを発生する</li></ul></li><li>ファイル単位で declare(strict_types=1) と書くと厳密な型モードになる</li><li>関数の呼び出し側で宣言したモードが反映される</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>型チェックは実行時まで遅延する</p><p>返り値でintに </p><p>パラメータ </p><p>変換する</p><p>mixed</p><p>&lt;?php</p><p>1 : int</p><p>$toint = fn($n): int =&gt; $n;         </p><p>0 : int</p><p>var_dump($toint(&#39;1&#39;));<br>var_dump($toint((int)&#39;&#39;));</p><p>返り値で厳密な</p><p>var_dump($toint(&#39;&#39;));</p><p>チェック</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>漸進的型付けで動的言語を型検査する</p><ul><li>何も型宣言されていない状態をmixed型(何でもあり)とする</li><li>より詳細に状態を絞りたいポイントに型宣言やPHPDocなどを付けていく<ul><li>PhpStormやPHPStanなどのツールはPHPDocの内容を考慮してくれる</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>型がついていない関数</p><p>function add($a, $b) {<br>    return $a + $b;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>型宣言すればいい？</p><p>int + intって <br>本当にintなの？</p><p>function add(int $a, int $b):int {<br>    return $a + $b;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>ﬂoatにすればいい？</p><p>ひとつの解決策では <br>あるが… 不必要に¸oat<br>を強制するのか</p><p>function add(float $a, float $b):float {<br>    return $a + $b;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>PHPDocの型注釈</p><p>(アノテーション)</p><p>/**<br> * @param int|float $a</p><p>あえて型宣言を省略する</p><p> * @param int|float $b<br> * @return int|float<br> */         <br>function add($a, $b) {<br>    return $a + $b;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>Union型宣言(PHP8.0)</p><p>function add(         <br>    int|float $a,              int|float $b         <br>): int|float {<br>    return $a + $b;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>かくしてPHPは PHPDocなんか 書かなくても良い <br>平和な世界になりました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>HAPPY END?</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>😇</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>ほんとうにそうか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>Bookクラスは著者を持つ</p><p>上司 <br>「共著を想定できてる？」</p><p>class Book         <br>{         <br>    function __construct(<br>        private Author $author         <br>    ) {<br>        // ...         <br>    }<br>}         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>Bookの著者は複数居る</p><p>arrayにすることで <br>複数であることを表現</p><p>class Book         <br>{         <br>    function __construct(<br>        private array $authors         <br>    ) {</p><p>Authorクラスの </p><p>        // ...         </p><p>情報が減ってる…</p><p>    }<br>}         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>著者一覧を出力したい</p><p>Book::$authors : array 中身が何かわからない！</p><p>class Book         <br>{         <br>    function printAuthors($fp): void {<br>       foreach ($this-&gt;authors as $author) {                     fwrite($fp, $author-&gt;getName());         <br>       }         </p><p>Authorクラスの </p><p>    }</p><p>メソッドを補完できない</p><p>}         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>Bookの著者は複数居る</p><p>arrayにすることで <br>複数であることを表現</p><p>class Book         <br>{         <br>    function __construct(<br>        private array $authors         <br>    ) {</p><p>Authorクラスの </p><p>        // ...         </p><p>情報が減ってる…</p><p>    }<br>}         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>著者は複数居る</p><p>PHPDocの復活</p><p>class Book         <br>{         <br>    function __construct(         <br>        /** @var array&lt;Author&gt; */<br>        private array $authors         <br>    ) {<br>        // ...         <br>    }</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>著者一覧を出力したい</p><p>Book::$authors : <br>array&lt;Author&gt;</p><p>class Book         <br>{         <br>    function printAuthors($fp): void {<br>       foreach ($this-&gt;authors as $author) {                     fwrite($fp, $author-&gt;getName());         <br>       }         </p><p>Authorクラスの </p><p>    }</p><p>メソッドが補完できる</p><p>}         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>この事例からわかること</p><ul><li>arrayは独立した型だが、中に何が入っているかはわからない</li><li>array型宣言されていても、どんな配列でも正常に動くわけじゃない<ul><li>むしろ「arrayなら何でも受け付ける」という関数はかなり少数派</li><li>「いったいどんな配列なのか」を詳細に説明する必要が生じる</li><li>配列の内部詳細を書くための記法がある</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザＩＤがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト</li></ul><p>array{id:int, name:string}</p><p>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], </p><p>] </p><p>list&lt;array{id:int, name:string}&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>配列の記法</p><ul><li>従来は Author[] とか int[] みたいに [] を後置する記法が主流だった<ul><li>この記法では構造体のような配列の内部構造を記述できない</li></ul></li><li>array&lt;Author&gt; や array&lt;int&gt; で要素を表現できる</li><li>array&lt;int, Author&gt; のように書くとキーも表現できる</li><li>array{id:int, name:string} のような値はarray-shapesと呼ばれる</li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>型パラメータ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>array&lt;int&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>array&lt;Author&gt;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>いろんなものが書ける</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>再掲: 値をそのまま返す関数</p><p>function id(mixed $value): mixed {<br>    return $value;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>再掲: 値をそのまま返す関数</p><p>/**         <br> * @template T         <br> * @phpstan-param T $value         <br> * @phpstan-return T         <br> */<br>function id(mixed $value): mixed {<br>    return $value;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>値をそのまま返す関数</p><p>PhpStormとかで </p><p>メソッド名補完が きくようになった</p><p>$date = new DateTimeImmutable();<br>id($date)-&gt;diff(</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>これを活用する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>配列の先頭要素をとる関数</p><p>/          **         <br>           * @template T         <br>           * @param array&lt;T&gt; $XS         <br>           * @param T $default         <br> * @return T         <br> */<br>function first(array $xs, mixed $default): mixed {          f u n c ftoiroen afcih r(s$tx(sa rarsa y$ x$)x sr,e tsutrrni n$gx ;$default): mixed {<br>        rreettuurrnn  $$vdaelfuaeu;lt;<br>}}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>配列の先頭要素をとる関数</p><p>/**         <br> * @template T         <br> * @param array&lt;T&gt; $xs         <br> * @param T $default         <br> * @return T         <br> */<br>function first(array $xs, mixed $default): mixed {         <br>    foreach ($xs as $x) return $x;<br>    return $default;</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>配列の先頭要素を受け取る</p><p>PhpStormとかで </p><p>メソッド名補完がきく</p><p>を返す関数</p><p>// list&lt;DateTimeImmutable&gt;           <br>$dates = get_dates();<br>$first = first($dates, new DateTimeImmutable);         <br>$first-&gt;diff(</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>これを活用する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>kane.php</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>フォント</p><p>FOT-ハミング Std (M) <br>BIZ UDPゴシック (Regular) </p><p>Courier (Regular)</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2F&size=32" alt=""><a href="https://tadsan.fanbox.cc/" target="_blank">にゃんだーすわん｜pixivFANBOX</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fscrapbox.io%2Fphp%2F&size=32" alt=""><a href="https://scrapbox.io/php/" target="_blank">PHP</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2F&size=32" alt=""><a href="https://www.phper.ninja/" target="_blank">超PHPerになろう</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzenn.dev%2Ftadsan&size=32" alt=""><a href="https://zenn.dev/tadsan" target="_blank">にゃんだーすわんさんの記事一覧 | Zenn</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan&size=32" alt=""><a href="https://qiita.com/tadsan" target="_blank">tadsan - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fbag2php&size=32" alt=""><a href="https://github.com/bag2php" target="_blank">bag2php · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgihyo.jp%2Fbook%2F2021%2F978-4-297-12215-7&size=32" alt=""><a href="https://gihyo.jp/book/2021/978-4-297-12215-7" target="_blank">WEB+DB PRESS総集編［Vol.1～120］ | 技術評論社</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphpcon-2021%2Fproposal%2Fa7e53ddb-09fd-404e-bb90-b5047e8994ab&size=32" alt=""><a href="https://fortee.jp/phpcon-2021/proposal/a7e53ddb-09fd-404e-bb90-b5047e8994ab" target="_blank">配列、ジェネリクス、PHPで書けない型 by うさみけんた | トーク | PHP Conference Japan 2021 #phpcon #phpcon2021 #php - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fkane.php&size=32" alt=""><a href="https://github.com/zonuexe/kane.php" target="_blank">GitHub - zonuexe/kane.php: Idol time is Money.</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>
