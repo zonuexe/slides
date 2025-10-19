@@ -29,6 +29,8 @@ class LineData(NamedTuple):
     center: float
     text_left: float
     text: str
+
+
 PageNodes = List[Dict[str, object]]
 PageMap = Dict[str, PageNodes]
 
@@ -58,7 +60,9 @@ def clean_character(text: str) -> str:
     text = text.replace("\t", " ")
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = text.replace("\u00a0", " ")
-    text = CID_PATTERN.sub(lambda match: CID_MAP.get(match.group(1), match.group(0)), text)
+    text = CID_PATTERN.sub(
+        lambda match: CID_MAP.get(match.group(1), match.group(0)), text
+    )
     return text
 
 
@@ -134,7 +138,9 @@ def needs_space(node: Dict[str, str]) -> bool:
     return not content.endswith((" ", "\u3000"))
 
 
-def _strip_trailing_page_number(children: List[Dict[str, str]]) -> Tuple[List[Dict[str, str]], bool]:
+def _strip_trailing_page_number(
+    children: List[Dict[str, str]],
+) -> Tuple[List[Dict[str, str]], bool]:
     """Remove digit-only tail nodes that represent page numbers."""
     trimmed = list(children)
     removed = False
@@ -269,7 +275,10 @@ def extract_segments_from_page(page) -> List[LineData]:
         height = max(1.0, max_bottom - min_top)
         center = min_left + (width / 2.0)
         non_bullet_chars = [
-            c for c in chars if clean_character(c.get("text", "")).strip() and clean_character(c.get("text", "")) != BULLET_CHAR
+            c
+            for c in chars
+            if clean_character(c.get("text", "")).strip()
+            and clean_character(c.get("text", "")) != BULLET_CHAR
         ]
         if non_bullet_chars:
             text_left = min(c["x0"] for c in non_bullet_chars)
@@ -456,7 +465,11 @@ def process_lines(lines: List[LineData]) -> PageNodes:
             bullet_texts.append(stripped)
             is_bullet = True
             bullet_holdover = False
-            indent_value = bullet_holdover_indent if bullet_holdover_indent is not None else line.left
+            indent_value = (
+                bullet_holdover_indent
+                if bullet_holdover_indent is not None
+                else line.left
+            )
             bullet_holdover_indent = None
         elif stripped.startswith(BULLET_CHAR):
             content = stripped.lstrip(BULLET_CHAR).strip()
@@ -494,7 +507,10 @@ def process_lines(lines: List[LineData]) -> PageNodes:
                 base_indent = current_level.get("indent", 0.0)
                 content_indent = current_level.get("last_li_indent", base_indent)
                 lower_bound = current_level.get("indent", 0.0) - BULLET_INDENT_TOLERANCE
-                upper_bound = max(content_indent, current_level.get("indent", 0.0)) + BULLET_INDENT_TOLERANCE * 3
+                upper_bound = (
+                    max(content_indent, current_level.get("indent", 0.0))
+                    + BULLET_INDENT_TOLERANCE * 3
+                )
                 if lower_bound <= line.left <= upper_bound:
                     relation = "line_break"
                     if previous_line is not None:
@@ -635,11 +651,9 @@ def main() -> int:
     processed = False
     for pdf_path in iter_pdf_targets(pdf_dir, args.targets):
         yaml_path = yaml_dir / f"{pdf_path.stem}.yaml"
+        yaml_path.parent.mkdir(parents=True, exist_ok=True)
         if not yaml_path.exists():
-            print(
-                f"[warn] missing YAML counterpart for {pdf_path.name}", file=sys.stderr
-            )
-            continue
+            yaml_path.touch()
         text_map = extract_pdf_to_nodes(pdf_path)
         update_yaml_text(yaml_path, text_map)
         processed = True

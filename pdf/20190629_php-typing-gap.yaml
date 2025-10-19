@@ -1,0 +1,1412 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: PHP
+    - node: br
+    - node: text
+      content: 型検査･夢と理想と現実
+  - node: p
+    children:
+    - node: text
+      content: 'PHP typing: the gap between ideal and reality.'
+    - node: br
+    - node: text
+      content: 補訂公開版
+  - node: p
+    children:
+    - node: text
+      content: '[2019-06-29] '
+  - node: p
+    children:
+    - node: text
+      content: 'PHPCon Fukuoka 2019 '
+  - node: p
+    children:
+    - node: text
+      content: 'FFBHall #phpconfuk'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+    - node: br
+    - node: text
+      content: 'うさみけんた (@tadsan)  '
+  - node: p
+    children:
+    - node: text
+      content: ' / Zonu.EXE'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ピクシブ株式会社 pixiv事業本部
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeのメンテナ引き継ぎました
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 好きなリスプはEmacs Lispです
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: おしながき
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: おしながき
+  - node: p
+    children:
+    - node: text
+      content: '【はやわかり】 PHPと型 '
+  - node: p
+    children:
+    - node: text
+      content: '型付けと型解析の考えかた '
+  - node: p
+    children:
+    - node: text
+      content: 型と実装上の問題
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 最初から結論
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: PHPの
+  - node: p
+    children:
+    - node: text
+      content: 型付けは難しい
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: PHPのスカラー 型宣言は難しい
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: PHP7だからと言って､ やみくもにstringやint
+  - node: p
+    children:
+    - node: text
+      content: などの型宣言を書くのは
+  - node: p
+    children:
+    - node: text
+      content: おすすめできない
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 思考停止での
+  - node: p
+    children:
+    - node: text
+      content: strict_types=1
+    - node: br
+    - node: text
+      content: 指定もおすすめできない
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: コーディングには
+    - node: br
+    - node: text
+      content: PhpStormやPHPStan
+    - node: br
+    - node: text
+      content: を活用しましょう
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 静的解析で
+  - node: p
+    children:
+    - node: text
+      content: CIしましょう
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 型宣言だけではなく
+  - node: p
+    children:
+    - node: text
+      content: PHPDoc/PSR-5 の型も活用しよう
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 型の記法だけでは解決 できないことがあるの
+    - node: br
+    - node: text
+      content: で実装を工夫しよう
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: そんな話を
+  - node: p
+    children:
+    - node: text
+      content: します
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 【はやわかり】
+  - node: p
+    children:
+    - node: text
+      content: PHPと型
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: PHPと型
+  - node: p
+    children:
+    - node: text
+      content: 'いわゆる「動的型」の言語 '
+  - node: p
+    children:
+    - node: text
+      content: 'PHP処理系は変数に型がない '
+  - node: p
+    children:
+    - node: text
+      content: '変数にはどんな値も代入可能 '
+  - node: p
+    children:
+    - node: text
+      content: PHP7の型には二種類の
+  - node: p
+    children:
+    - node: text
+      content: モード(strict_types)がある
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: PHPの型の種類
+  - node: p
+    children:
+    - node: text
+      content: 'スカラー型 '
+  - node: p
+    children:
+    - node: text
+      content: '複合型 '
+  - node: p
+    children:
+    - node: text
+      content: '特殊型 '
+  - node: p
+    children:
+    - node: text
+      content: ドキュメント上の擬似型
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: スカラー型
+  - node: p
+    children:
+    - node: text
+      content: '論理型  true, false '
+  - node: p
+    children:
+    - node: text
+      content: ' (bool)'
+  - node: p
+    children:
+    - node: text
+      content: '整数型  1, 2, 3... '
+  - node: p
+    children:
+    - node: text
+      content: ' (int)'
+  - node: p
+    children:
+    - node: text
+      content: '浮動小数点数  1.0,... '
+    - node: br
+    - node: text
+      content: ' (ﬂoat)'
+  - node: p
+    children:
+    - node: text
+      content: 文字列型  "abc"
+  - node: p
+    children:
+    - node: text
+      content: ' (string)'
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 複合型
+  - node: p
+    children:
+    - node: text
+      content: '配列型 (array) '
+  - node: p
+    children:
+    - node: text
+      content: 'オブジェクト型 (object) '
+  - node: p
+    children:
+    - node: text
+      content: '呼び出し可能型 (callable) '
+  - node: p
+    children:
+    - node: text
+      content: 反復型 (iterable)
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 特殊型
+  - node: p
+    children:
+    - node: text
+      content: 'ヌル型 (null) '
+  - node: p
+    children:
+    - node: text
+      content: 'リソース型 (resource) '
+  - node: p
+    children:
+    - node: text
+      content: '型ではないが返り値に書ける '
+  - node: p
+    children:
+    - node: text
+      content: void 返り値がないこと
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: ドキュメント上の擬似型
+  - node: p
+    children:
+    - node: text
+      content: 'mixed 多様な型(複数) '
+  - node: p
+    children:
+    - node: text
+      content: 'number int|false '
+  - node: p
+    children:
+    - node: text
+      content: その他ツール固有の型表記
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: declare(strict_types)
+  - node: p
+    children:
+    - node: text
+      content: 'ブロック(ファイル)単位でディレ クティブを設定するための構文 '
+    - node: br
+    - node: text
+      content: デフォルト(無指定時)は
+  - node: p
+    children:
+    - node: text
+      content: 'strict_types=0 '
+    - node: br
+    - node: text
+      content: 引数と返り値についてキャス トとエラーの振舞に影響(後述)
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: declare(strict_types=0)
+  - node: p
+    children:
+    - node: text
+      content: 引数や返り値のスカラー型宣 言と実際の値が一致しなかっ たとき、変換可能な値なら暗
+    - node: br
+    - node: text
+      content: '黙的に型変換 '
+    - node: br
+    - node: text
+      content: オブジェクトが暗黙的にキャ
+    - node: br
+    - node: text
+      content: ストされることはない
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: declare(strict_types=1)
+  - node: p
+    children:
+    - node: text
+      content: 引数や返り値の宣言と実際の
+    - node: br
+    - node: text
+      content: 値が一致しなかったとき
+    - node: br
+    - node: text
+      content: 'TypeErrorが発生 '
+    - node: br
+    - node: text
+      content: スカラー型・その他の型・
+  - node: p
+    children:
+    - node: text
+      content: クラス/インターフェイスで
+    - node: br
+    - node: text
+      content: 挙動に違いはない
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: PHPのどこに型を書けるか
+  - node: p
+    children:
+    - node: text
+      content: '引数の型宣言 '
+  - node: p
+    children:
+    - node: text
+      content: '返り値の型宣言 '
+  - node: p
+    children:
+    - node: text
+      content: PHPDoc
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 引数の型宣言
+  - node: p
+    children:
+    - node: text
+      content: '関数/メソッドの仮引数リスト '
+  - node: p
+    children:
+    - node: bold
+      content: function x(string $s, array $a)
+    - node: br
+    - node: text
+      content: 'のように書ける '
+  - node: p
+    children:
+    - node: text
+      content: 書けるのは一部の型・擬似型 とクラス・インターフェイス
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 返り値の型宣言
+  - node: p
+    children:
+    - node: text
+      content: '仮引数リストの後に書ける '
+  - node: p
+    children:
+    - node: text
+      content: 'のように書ける '
+  - node: p
+    children:
+    - node: bold
+      content: function y():int
+    - node: br
+    - node: text
+      content: '基本は引数と同様 '
+    - node: br
+    - node: text
+      content: '値を返さない場合に : void と'
+    - node: br
+    - node: text
+      content: 書ける
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 型宣言のわかりにくい仕様
+  - node: p
+    children:
+    - node: text
+      content: '書ける型と書けない型がある '
+  - node: p
+    children:
+    - node: text
+      content: 'self, array, callable, bool, '
+    - node: br
+    - node: text
+      content: 'ﬂoat, int, string, '
+    - node: br
+    - node: text
+      content: 'iterable , object  '
+  - node: p
+    children:
+    - node: text
+      content: (7.1+) (7.2+)
+  - node: p
+    children:
+    - node: text
+      content: 'だけが特別な意味を持つ '
+    - node: br
+    - node: text
+      content: それ以外はクラス/インターフェイス
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 型宣言に書けない型
+  - node: p
+    children:
+    - node: text
+      content: integer, boolean, double
+  - node: p
+    children:
+    - node: text
+      content: 'などの型の別名は記述不可 '
+    - node: br
+    - node: text
+      content: ちなみにstrはstringの別名… ではないので覚えておいてく
+    - node: br
+    - node: text
+      content: 'ださい (型宣言に限らず) '
+    - node: br
+    - node: text
+      content: resourceは型宣言に書けない mixedやnumberも書けない
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocの型注釈記法
+  - node: p
+    children:
+    - node: text
+      content: クラスやメソッドの上にDoc Commentを書くことで型を
+    - node: br
+    - node: text
+      content: '記述できる '
+    - node: br
+    - node: text
+      content: あくまでコメントなのでコー ドの実行に影響を及ぼさず、 IDEやツールの解析材料となる
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocの型注釈記法
+  - node: p
+    children:
+    - node: text
+      content: 型宣言では実現できない型が
+    - node: br
+    - node: text
+      content: '付けられる '
+    - node: br
+    - node: text
+      content: 'マジックメソッド/プロパティ '
+    - node: br
+    - node: text
+      content: ユニオン型 Hoge|Fuga 配列要素の型付け int[]
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: PSR-5 (Draft)
+  - node: p
+    children:
+    - node: text
+      content: array<string>や
+  - node: p
+    children:
+    - node: text
+      content: ArrayObject<int,string>と
+    - node: br
+    - node: text
+      content: '書ける '
+    - node: br
+    - node: text
+      content: ……が、PhpStormは対応し
+    - node: br
+    - node: text
+      content: 'てない '
+    - node: br
+    - node: text
+      content: ArrayObject|string[]で代用
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: ここまでは
+  - node: p
+    children:
+    - node: text
+      content: 基本的な話
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 型付けと型解析の
+  - node: p
+    children:
+    - node: text
+      content: 考えかた
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 関数がどのような引数
+    - node: br
+    - node: text
+      content: を期待しどんな値を
+  - node: p
+    children:
+    - node: text
+      content: 返すのか明示したい
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: オブジェクトのメソッド
+    - node: br
+    - node: text
+      content: やプロパティが適切に
+  - node: p
+    children:
+    - node: text
+      content: 補完されると気持ち良い
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: プログラムが
+  - node: p
+    children:
+    - node: text
+      content: 間違ってることを
+  - node: p
+    children:
+    - node: text
+      content: 実行前に検証したい
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: ツールを
+  - node: p
+    children:
+    - node: text
+      content: 導入しよう
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 現行の高度な静的解析ツール
+  - node: p
+    children:
+    - node: text
+      content: 'PhpStorm (IDE) '
+  - node: p
+    children:
+    - node: text
+      content: 'Phan '
+  - node: p
+    children:
+    - node: text
+      content: 'PHPStan '
+  - node: p
+    children:
+    - node: text
+      content: Psalm
+  p41: []
+  p42: []
+  p43: []
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm
+  - node: p
+    children:
+    - node: text
+      content: 'よいところ '
+    - node: br
+    - node: text
+      content: '導入が最も簡単 '
+    - node: br
+    - node: text
+      content: '十分な精度のエラー検出 '
+    - node: br
+    - node: text
+      content: 'よくないところ '
+    - node: br
+    - node: text
+      content: エラーの列挙ができないので CIのフローに組み込めない
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: Phan
+  - node: p
+    children:
+    - node: text
+      content: 'よいところ '
+    - node: br
+    - node: text
+      content: '導入は比較的簡単 '
+    - node: br
+    - node: text
+      content: 'とても高い精度のエラー検出 '
+    - node: br
+    - node: text
+      content: 'よくないところ '
+    - node: br
+    - node: text
+      content: 大規模プロジェクトでは解析
+    - node: br
+    - node: text
+      content: に時間がかかる
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: Phanのすごいところ
+  - node: p
+    children:
+    - node: text
+      content: '連想配列にも型が付けられる '
+    - node: br
+    - node: text
+      content: 'array-shapes記法 '
+    - node: br
+    - node: text
+      content: 自動で型推論もしてくれるが 解析がすごすぎてレガシーで 長大な関数から恐ろしい型が
+    - node: br
+    - node: text
+      content: 吐かれたりする
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: PHPStan
+  - node: p
+    children:
+    - node: text
+      content: 'よいところ '
+    - node: br
+    - node: text
+      content: '実行時情報を使用し高速 高い精度のエラー検出 '
+    - node: br
+    - node: text
+      content: 'よくないところ '
+    - node: br
+    - node: text
+      content: Composer以外の依存関係 があると導入にコツが要る
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: Psalm
+  - node: p
+    children:
+    - node: text
+      content: 'よいところ '
+    - node: br
+    - node: text
+      content: '独自の引数アサーション 高い精度のエラー検出 '
+    - node: br
+    - node: text
+      content: 'よくないところ '
+    - node: br
+    - node: text
+      content: 大規模プロジェクトでは解析
+    - node: br
+    - node: text
+      content: に時間がかかる
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: つまりどれがいいのか (CI)
+  - node: p
+    children:
+    - node: text
+      content: 現時点ではそれぞれのツール で検出項目に一長一短がある
+    - node: br
+    - node: text
+      content: 'ため、使い分けるとよい '
+    - node: br
+    - node: text
+      content: PHPStanは高速なのでGitで ブランチにpushするごとに検 査するようなCIと相性がよい
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: つまりどれがいいのか
+  - node: p
+    children:
+    - node: text
+      content: ' (エディタ)'
+  - node: p
+    children:
+    - node: text
+      content: PhpStormは総合的に見て
+  - node: p
+    children:
+    - node: text
+      content: '簡単に導入できて強力 '
+    - node: br
+    - node: text
+      content: 自分で自由にハックしたいと か、どうしても予算が出ない などの事情があればエディタ
+    - node: br
+    - node: text
+      content: とPHPStanがおすすめ
+  p51: []
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: プログラムが
+  - node: p
+    children:
+    - node: text
+      content: 間違ってることを
+  - node: p
+    children:
+    - node: text
+      content: 実行前に検証したい
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: '“Phan is a static analyzer for PHP that prefers to minimize '
+    - node: br
+    - node: text
+      content: 'false-positives. Phan attempts to prove incorrectness rather than '
+    - node: br
+    - node: text
+      content: correctness.”
+  - node: p
+    children:
+    - node: text
+      content: ‒ https://github.com/phan/phan
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 型解析の
+  - node: p
+    children:
+    - node: text
+      content: 基本的な考え
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: これから説明する解析プロ セスは便宜的に単純化した もので、実際のツールが報 告する警告とは異なります
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 単純なコードで考える
+  - node: p
+    children:
+    - node: text
+      content: 'strlen(string $s): int'
+  - node: p
+    children:
+    - node: text
+      content: '$length = strlen($a); '
+  - node: p
+    children:
+    - node: text
+      content: $aには string が代入
+  - node: p
+    children:
+    - node: text
+      content: $lengthは int が
+  - node: p
+    children:
+    - node: text
+      content: されてるはず
+  - node: p
+    children:
+    - node: text
+      content: 代入される
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 単純なコードで考える
+    - node: br
+    - node: text
+      content: $aは array が
+  - node: p
+    children:
+    - node: text
+      content: 代入される
+  - node: p
+    children:
+    - node: text
+      content: 'なんで '
+    - node: br
+    - node: text
+      content: strlenに array を
+  - node: p
+    children:
+    - node: text
+      content: 渡してるの？
+  - node: p
+    children:
+    - node: text
+      content: $lengthは int が
+  - node: p
+    children:
+    - node: text
+      content: 'strlen(string $s): int'
+    - node: br
+    - node: text
+      content: 'なんで '
+  - node: p
+    children:
+    - node: text
+      content: 代入される
+  - node: p
+    children:
+    - node: text
+      content: intと array を
+  - node: p
+    children:
+    - node: text
+      content: $a = explode('/', 'a/b');
+  - node: p
+    children:
+    - node: text
+      content: 足してるの？
+  - node: p
+    children:
+    - node: text
+      content: '$length = strlen($a); '
+    - node: br
+    - node: text
+      content: $b = $length + [];
+    - node: br
+    - node: text
+      content: このコードに矛盾があるのは｢実行しなくても｣わかる
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 関数の型付けを考える
+  - node: p
+    children:
+    - node: text
+      content: $aと$bって
+  - node: p
+    children:
+    - node: text
+      content: 何を指定すればいいの？
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '? ? ?'
+    - node: br
+    - node: text
+      content: string string string
+  - node: p
+    children:
+    - node: text
+      content: 'function x($a, $b) {     return $a . $b; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: 結果の型は何？
+  - node: p
+    children:
+    - node: text
+      content: 文字列結合なので
+  - node: p
+    children:
+    - node: text
+      content: 両辺の値はstring
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 単純に解決できない関数
+  - node: p
+    children:
+    - node: text
+      content: $aと$bって
+  - node: p
+    children:
+    - node: text
+      content: '(number $x, number $b): number'
+  - node: p
+    children:
+    - node: text
+      content: 何を指定すればいいの？
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '? ? ?'
+    - node: br
+    - node: text
+      content: '(array $x, array $b): array'
+  - node: p
+    children:
+    - node: text
+      content: 'function x($a, $b) { '
+  - node: p
+    children:
+    - node: text
+      content: で、どっち？
+  - node: p
+    children:
+    - node: text
+      content: '    return $a + $b; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: 結果の型は何？
+    - node: br
+    - node: text
+      content: 'PHPの + 演算子は '
+  - node: p
+    children:
+    - node: text
+      content: '  number + number '
+    - node: br
+    - node: text
+      content: '  array + array '
+    - node: br
+    - node: text
+      content: のどちらか
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: PHPの型推論の限界
+  - node: p
+    children:
+    - node: text
+      content: 原理上コードの解析だけでは
+    - node: br
+    - node: text
+      content: '完全な静的検査は不可能 '
+    - node: br
+    - node: text
+      content: '変数やプロパティの動的性 '
+    - node: br
+    - node: text
+      content: '関数や演算子の多態性 '
+    - node: br
+    - node: text
+      content: インピーダンスミスマッチ
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: PHPの現実 と向き合う
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocで地道に型をつける
+  - node: p
+    children:
+    - node: text
+      content: 歴史あるコードは引数の仕様 が形式化されたPHPDocで 書かれてなかったり、崩れた
+    - node: br
+    - node: text
+      content: '形で書かれてたりする '
+    - node: br
+    - node: text
+      content: CIやIDEに磨かれてないと
+  - node: p
+    children:
+    - node: text
+      content: 高確率で誤りを含んでる
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocに則ってない
+  - node: p
+    children:
+    - node: text
+      content: //===========================
+  - node: p
+    children:
+    - node: text
+      content: '// @params str $a '
+    - node: br
+    - node: text
+      content: '// @return true または false '
+  - node: p
+    children:
+    - node: text
+      content: //===========================
+  - node: p
+    children:
+    - node: text
+      content: function x($a, $b) {
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: PHPDocに則るように修正
+  - node: p
+    children:
+    - node: text
+      content: /**
+  - node: p
+    children:
+    - node: text
+      content: ' * @param string $a '
+    - node: br
+    - node: text
+      content: ' * @return bool '
+    - node: br
+    - node: text
+      content: ' */'
+  - node: p
+    children:
+    - node: text
+      content: function x($a, $b) {
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 多態な関数設計を避ける
+  - node: p
+    children:
+    - node: text
+      content: '引数によって返り値の構造(型) が変化するような関数は避ける '
+    - node: br
+    - node: text
+      content: '例: parse_url() '
+    - node: br
+    - node: text
+      content: 引数一つなら連想配列を返す 第二引数に定数を渡すと文字
+    - node: br
+    - node: text
+      content: 列を返す
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: mixed を避ける
+  - node: p
+    children:
+    - node: text
+      content: 引数や返り値が実装を見ない
+    - node: br
+    - node: text
+      content: 'とわからなくなる '
+    - node: br
+    - node: text
+      content: json_encodeやvar_dumpみ たいに多様なものを受け付け る関数以外はmixedと書くべ
+    - node: br
+    - node: text
+      content: き箇所は少ない
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: arrayも極力控える
+  - node: p
+    children:
+    - node: text
+      content: 単にarrayとだけ書くと、配列
+    - node: br
+    - node: text
+      content: 'の中身はmixed状態 '
+    - node: br
+    - node: text
+      content: '｢文字列が並ぶ配列｣はstring[] '
+    - node: br
+    - node: text
+      content: ｢決まったキーを持つ配列｣の
+    - node: br
+    - node: text
+      content: 記法は標準化されてない
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: '@phan-param, @phan-return'
+  - node: p
+    children:
+    - node: text
+      content: Phanのarray-shapes記法で
+    - node: br
+    - node: text
+      content: は
+  - node: p
+    children:
+    - node: text
+      content: array{name:string,age:int}
+    - node: br
+    - node: text
+      content: のように記述できる
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: 数値とインピーダンスミスマッチ
+  - node: p
+    children:
+    - node: text
+      content: '何かにつけて鬼門 '
+    - node: br
+    - node: text
+      content: クエリパラメータやルーター の動的パラメータから数字列
+    - node: br
+    - node: text
+      content: 'を取得する処理 '
+    - node: br
+    - node: text
+      content: PDOから取得してきた数値
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: クエリパラメータ
+  - node: p
+    children:
+    - node: text
+      content: '// 正の整数だけを期待 '
+  - node: p
+    children:
+    - node: text
+      content: 'if (!is_numeric($_GET[''user_id''])) { '
+    - node: br
+    - node: text
+      content: '    throw new BadRequest; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: $user_id = (int)$_GET['user_id'];
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: URL動的パラメータ
+  - node: p
+    children:
+    - node: text
+      content: /user/000001 とか /user/0000000001 とか受け付けちゃって本当に大丈夫…?
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: ﬁlter_var/ﬁlter_inputで安心？
+  - node: p
+    children:
+    - node: text
+      content: 'filter_var('' 123'', FILTER_VALIDATE_INT) '
+    - node: br
+    - node: text
+      content: // int(123)
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: PHPの整数の範囲
+  - node: p
+    children:
+    - node: text
+      content: ビット数はアーキテクチャ依
+    - node: br
+    - node: text
+      content: '存の符号付き整数値 '
+    - node: br
+    - node: text
+      content: 外部入力やDBの
+    - node: br
+    - node: text
+      content: UNSIGNED BIGINTなカラ
+    - node: br
+    - node: text
+      content: ムの値を(int)キャストして
+  - node: p
+    children:
+    - node: text
+      content: 化ける
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: スカラー型宣言とstrict_types
+  - node: p
+    children:
+    - node: text
+      content: キャストとつきあっていく覚
+    - node: br
+    - node: text
+      content: '悟が必要 '
+    - node: br
+    - node: text
+      content: 通常のキャストとも別のルー ルで暗黙変換されることを認 識しないと想定しない変換が
+    - node: br
+    - node: text
+      content: 走ることがある
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: strict_typesの範囲
+  - node: p
+    children:
+    - node: text
+      content: declare(strict_types)は ファイルごとに指定される 引数の型チェックは呼び出す
+    - node: br
+    - node: text
+      content: 側の指定が、返り値の型
+    - node: br
+    - node: text
+      content: チェックは定義側の指定が反
+    - node: br
+    - node: text
+      content: 映される
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: レガシーコードとスカラー型
+  - node: p
+    children:
+    - node: text
+      content: 引数リストにむやみにstring
+    - node: br
+    - node: text
+      content: 'やintと書かない '
+    - node: br
+    - node: text
+      content: PHPDocならキャストは起 こらないので動作に影響はし
+    - node: br
+    - node: text
+      content: ない
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: 静的解析結果と
+  - node: p
+    children:
+    - node: text
+      content: どうやって向き
+    - node: br
+    - node: text
+      content: 合っていくか
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 既存プロジェクトを検査すると
+  - node: p
+    children:
+    - node: text
+      content: 数千行にも及ぶおびただしい 警告が出力されることもざら しかしそれよりも、そのコー ドが「たしかに動いている」
+    - node: br
+    - node: text
+      content: 事実が重要
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: 大事なのは傷口を広げないこと
+  - node: p
+    children:
+    - node: text
+      content: 警告が出てるから間違った
+    - node: br
+    - node: text
+      content: 'コードではない '
+    - node: br
+    - node: text
+      content: 警告の量が減ればメンテしや すい状況に近付くのだと捉え
+    - node: br
+    - node: text
+      content: る
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: 差分を重要視する
+  - node: p
+    children:
+    - node: text
+      content: リファクタリングの前後で Phanの出力ログのdiffをと
+    - node: br
+    - node: text
+      content: り、行が増えなければ、間違っ た書き換えはしてない可能性は
+    - node: br
+    - node: text
+      content: '高い '
+    - node: br
+    - node: text
+      content: ロジックの正しさは保障できな いのでテストなどは別途必要
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p2:
+  - url: https://github.com/emacs-php/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p53:
+  - url: https://github.com/phan/phan
+    title: 'GitHub - phan/phan: Phan is a static analyzer for PHP. Phan prefers to
+      avoid false-positives and attempts to prove incorrectness rather than correctness.'

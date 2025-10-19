@@ -1,0 +1,1068 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: PHP8 <<Attribute>>
+  - node: p
+    children:
+    - node: text
+      content: ' 2020-05-16 #phpkansai '
+    - node: br
+    - node: text
+      content: '【オンライン】関西PHP勉強会 '
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+    - node: br
+    - node: text
+      content: 'うさみけんた (@tadsan)  '
+  - node: p
+    children:
+    - node: text
+      content: ' / Zonu.EXE'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ピクシブ株式会社 pixiv運営本部
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer, Rubyist
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeのメンテナ引き継ぎました
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 好きなリスプはEmacs Lispです
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4: []
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 近況
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 3月から 氏んでた
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '最近は '
+    - node: br
+    - node: text
+      content: やや元気
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス関西 にはPHP-Parserの話を しようと応募してました
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: はじめに
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 今回紹介する内容に
+    - node: br
+    - node: text
+      content: よって今すぐ何かが変 わることはあまりない
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 少なくともコードを
+    - node: br
+    - node: text
+      content: PHP7系から8に移行
+    - node: br
+    - node: text
+      content: できないと使えない
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 'これから一年くらい '
+    - node: br
+    - node: text
+      content: かけて対応するツールや フレームワークも徐々に
+    - node: br
+    - node: text
+      content: 出てくると思う
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: PHP8時代に心の 準備だけしておこう
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: RFC
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: PHPへの 変更提案
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 全てのPHPへの 変更はここで議決
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: ここを観察すれば 次のPHPがわかる
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 'ウォッチ '
+    - node: br
+    - node: text
+      content: してますか？
+  p20: []
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: '@PHPRFCBot'
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 今年12月にリリース予 定のPHP8.0に向けて さまざまな機能が提案
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 'Feature freezeは '
+    - node: br
+    - node: text
+      content: 7月だが既にPHP8向け
+    - node: br
+    - node: text
+      content: にいろいろ決まってる
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p25: []
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: RFCは受理された が､実装はまだマー
+    - node: br
+    - node: text
+      content: ジされてない
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 過去何度も提案されて
+    - node: br
+    - node: text
+      content: きたが今回の仕様で ようやく受理された
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 'そもそも '
+    - node: br
+    - node: text
+      content: これは何だ
+  p29: []
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: このRFCはクラス・プロパティ・関数・ メソッド・引数および定数の宣言に対 する構文的メタデータの構造化された 形式として「アトリビュート」を提案
+        します。アトリビュートによって宣言 に直接埋め込まれた構成ディレクティ
+    - node: br
+    - node: text
+      content: ブを定義できます。
+  p31: []
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 似たようなコンセプトは｢アノテーション｣ としてJavaに､｢アトリビュート｣として C#・C++・Rust・Hackに、そして ｢デコレータ｣としてPython･JavaScript
+    - node: br
+    - node: text
+      content: にあります。
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: attributeの定訳とし
+    - node: br
+    - node: text
+      content: ては｢属性｣｡直接関係な いが同じ用語としては HTMLでも非常に重要 な概念。<a href="...">
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: これまでPHPは構造化されていない形 式のメタデータとしてDoc-comment だけを提供しています。ただ、Doc- commentは単なる文字列であり、構
+        造化情報を保持するための @ ベースの 擬似言語がさまざまなPHPサブコミュ ニティによって提案されてきました。
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 'Doc-commentは '
+    - node: br
+    - node: text
+      content: リフレクションAPI経由で
+    - node: br
+    - node: text
+      content: '実行時に文字列として '
+    - node: br
+    - node: text
+      content: '取得できる '
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 実行時に影響するこ ともあるし､しないこ ともある特殊なやつ
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' * これ '
+  - node: p
+    children:
+    - node: text
+      content: ' */'
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' *   '
+    - node: br
+    - node: text
+      content: '@return int'
+    - node: br
+    - node: text
+      content: ' */'
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' *   '
+    - node: br
+    - node: text
+      content: '@phpstan-return 1|2'
+    - node: br
+    - node: text
+      content: ' */'
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' *   '
+    - node: br
+    - node: text
+      content: '@deprecated'
+    - node: br
+    - node: text
+      content: ' */'
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' *   '
+    - node: br
+    - node: text
+      content: '@Inject'
+    - node: br
+    - node: text
+      content: ' */'
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' *   '
+    - node: br
+    - node: text
+      content: '@Inject(optional=true)'
+    - node: br
+    - node: text
+      content: ' */'
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 各プロジェクトが 雰囲気で定義してる
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: 各プロジェクト固有タグは @phan-param みたいに
+    - node: br
+    - node: text
+      content: '共通のタグにprefixを '
+    - node: br
+    - node: text
+      content: つけたりアノテーションを \ で名前空間で区切ってる
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 文字列を解析してるだけ だからPHPに存在しない 名前付き引数も好き勝手
+    - node: br
+    - node: text
+      content: に使えるぜ！！！１１
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: ‒ PHPerKaigi 2020 (Feb 9, 2020)
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: '大雑把に言うと '
+    - node: br
+    - node: text
+      content: 'IDEや静的解析のヒント '
+    - node: br
+    - node: text
+      content: '実行時メタプログラミング '
+    - node: br
+    - node: text
+      content: に分類できる
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: 'なんとなくの風潮として '
+    - node: br
+    - node: text
+      content: '@tag はタグ､ '
+    - node: br
+    - node: text
+      content: '@Anno("arg", attr=true)は'
+    - node: br
+    - node: text
+      content: アノテーションと呼び分け
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: あくまで｢なんとなく｣で あって､各サブコミュニティ が勝手に実装してるだけ なので厳密な定義はない
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 区別はかなり曖昧だが PSR-19はタグカタログ であり､アノテーション
+    - node: br
+    - node: text
+      content: カタログではない
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: どちらにせよ､PHPス クリプトに書く以上の 付加情報を記述できる
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: あるいは実装から分離して
+    - node: br
+    - node: text
+      content: 'アノテーションとして '
+    - node: br
+    - node: text
+      content: 記述することでAOPを実現
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: 実行時メタプログ
+    - node: br
+    - node: text
+      content: ラミングの温床
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: '例: '
+  - node: p
+    children:
+    - node: text
+      content: Go! AOP
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: そんなわけで
+    - node: br
+    - node: text
+      content: Attributeが入ると
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: '/** '
+    - node: br
+    - node: text
+      content: ' * @ExampleAttribute '
+    - node: br
+    - node: text
+      content: ' */ '
+    - node: br
+    - node: text
+      content: 'class Foo '
+    - node: br
+    - node: text
+      content: '{ '
+    - node: br
+    - node: text
+      content: '    // ... '
+    - node: br
+    - node: text
+      content: '}'
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: '<<ExampleAttribute>> '
+    - node: br
+    - node: text
+      content: 'class Foo '
+    - node: br
+    - node: text
+      content: '{ '
+    - node: br
+    - node: text
+      content: '    // ... '
+    - node: br
+    - node: text
+      content: '}'
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: '// この記法は不採用 '
+  - node: p
+    children:
+    - node: text
+      content: '@:ExampleAttribute '
+    - node: br
+    - node: text
+      content: 'class Foo '
+    - node: br
+    - node: text
+      content: '{ '
+    - node: br
+    - node: text
+      content: '    // ... '
+    - node: br
+    - node: text
+      content: '}'
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: Doc-commentから取得 できるのは文字列なので､
+    - node: br
+    - node: text
+      content: '実行時に活用するには '
+    - node: br
+    - node: text
+      content: それを構文解析する必要
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: AttributeはDoc-
+    - node: br
+    - node: text
+      content: commentと同じように実 行時に取得でき､構造化さ
+    - node: br
+    - node: text
+      content: れており構文解析不要
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: 好き勝手な記法が使え るタグ/アノテーション と違ってAttributes v2 仕様は単純な関数呼び 出し風構文と静的な式
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: 静的な式 = PHPで有効な
+    - node: br
+    - node: text
+      content: '式のうちリテラルと定数 と演算子式で解決できる '
+    - node: br
+    - node: text
+      content: (実行時に変わらない)
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: たぶんPHP-Parserから もリフレクションと似た
+    - node: br
+    - node: text
+      content: 'APIが用意されて '
+    - node: br
+    - node: text
+      content: 簡単に取得できるだろう
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: アトリビュートはク
+    - node: br
+    - node: text
+      content: ラスと同じようにuse
+    - node: br
+    - node: text
+      content: で名前解決できる
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: アトリビュートはクラ
+    - node: br
+    - node: text
+      content: スにマッピングし、
+    - node: br
+    - node: text
+      content: 'Reflectionから '
+    - node: br
+    - node: text
+      content: インスタンスがとれる
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: アトリビュートクラス
+  - node: p
+    children:
+    - node: text
+      content: '<<PhpAttribute>> '
+    - node: br
+    - node: text
+      content: 'class MyAttr '
+    - node: br
+    - node: text
+      content: '{ '
+    - node: br
+    - node: text
+      content: '    function __construct($arg){         // 特にやることがなければ '
+    - node: br
+    - node: text
+      content: '        // 実行時には何もしなくていい '
+  - node: p
+    children:
+    - node: text
+      content: '    } '
+    - node: br
+    - node: text
+      content: '}'
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: 'ある意味ではコメントと 同じで､取得されない限り Attributeは実行に影響を '
+    - node: br
+    - node: text
+      content: 及ぼさない
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: 先程のAttributeクラス は静的解析のためのヒン トであって必須ではない
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: 'その意味でPythonの '
+    - node: br
+    - node: text
+      content: 'デコレータとは '
+    - node: br
+    - node: text
+      content: 全然違う
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: アトリビュートを加味し てインスタンスを生成す る実行時のファクトリー またはクラスローダーで 近似させることはできる
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: 明確な分類はできない
+    - node: br
+    - node: text
+      content: が、タグよりもアノテー
+    - node: br
+    - node: text
+      content: ション系の方がアトリ
+    - node: br
+    - node: text
+      content: ビュートで表現しやすい
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: PHPコンパイラ(処理系) のためのアトリビュート があることが示唆されて いる(詳細はRFC範囲外)
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP '
+    - node: br
+    - node: text
+      content: やるじゃん
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: ほんとに？
+    - node: br
+    - node: text
+      content: 🤔
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: ' 誰のための '
+    - node: br
+    - node: text
+      content: アトリビュート?
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: コンパイラアトリビュー ト(処理系への指示)は
+    - node: br
+    - node: text
+      content: なんとなくわかる
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: ユーザーランドアト
+    - node: br
+    - node: text
+      content: リビュートは…？
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 'ユースケース '
+    - node: br
+    - node: text
+      content: は…？
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: RFCで実例が 紹介されている
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: これはわかる
+  p81:
+  - node: p
+    children:
+    - node: text
+      content: これも… まあまあ
+  p82:
+  - node: p
+    children:
+    - node: text
+      content: これは… そうなるね
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: ここまでくると…
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: もうつらたん
+  p85:
+  - node: p
+    children:
+    - node: text
+      content: DSLを喜んで覚え直し
+  - node: p
+    children:
+    - node: text
+      content: たいひとは居るのか？
+    - node: br
+    - node: text
+      content: 🙃
+  p86:
+  - node: p
+    children:
+    - node: text
+      content: 移行対象ではなく例とし て考えれば､アノテーショ ンベースDSLの新規実装 コストは多少下がってそう
+  p87:
+  - node: p
+    children:
+    - node: text
+      content: とはいえライブラリは既
+    - node: br
+    - node: text
+      content: にあるし､コードイン ジェクションもキャッ
+    - node: br
+    - node: text
+      content: シュ機構があるので実行 時コストには影響しない
+  p88:
+  - node: p
+    children:
+    - node: text
+      content: '実はPHP RFC: '
+    - node: br
+    - node: text
+      content: Named Argumentsも 復活してPHP8に向けて 議論されそうな雰囲気が あるので影響あるかもね
+  p89:
+  - node: p
+    children:
+    - node: text
+      content: <<Deprecated>>
+  p90: []
+  p91:
+  - node: p
+    children:
+    - node: text
+      content: アトリビュートの 実際の利用例とし ての新しいRFC
+  p92:
+  - node: p
+    children:
+    - node: text
+      content: trigger_error(E_DEPRE CATED) 相当のコードを 生成する実行エンジン組 み込みのアトリビュート
+  p93:
+  - node: p
+    children:
+    - node: text
+      content: 言語組み込みのアトリ
+    - node: br
+    - node: text
+      content: ビュートがある意義もわ かるし､ユーザーランド で再現もめんどいので助
+    - node: br
+    - node: text
+      content: かるといえば助かる
+  p94:
+  - node: p
+    children:
+    - node: text
+      content: 関数やメソッド以外 にプロパティや定数 の非推奨化もできる
+  p95:
+  - node: p
+    children:
+    - node: text
+      content: が､メーリングリス トでは存在意義につ
+    - node: br
+    - node: text
+      content: いて割と揉めてる
+  p96:
+  - node: p
+    children:
+    - node: text
+      content: ついでに引数へのア トリビュートの付け かたについても議論
+  p97:
+  - node: p
+    children:
+    - node: text
+      content: 普通の実装
+  - node: p
+    children:
+    - node: text
+      content: 'function f(     $arg1,     $arg2 '
+    - node: br
+    - node: text
+      content: ){}
+  p98:
+  - node: p
+    children:
+    - node: text
+      content: 引数の非推奨化
+  - node: p
+    children:
+    - node: text
+      content: 'function f(     $arg1, '
+    - node: br
+    - node: text
+      content: '     $arg2 '
+    - node: br
+    - node: text
+      content: <<Deprecated>>
+    - node: br
+    - node: text
+      content: ){}
+  p99:
+  - node: p
+    children:
+    - node: text
+      content: '引数のアトリビュート '
+    - node: br
+    - node: text
+      content: 'ってほんとに '
+    - node: br
+    - node: text
+      content: 必要なんですか…
+  p100:
+  - node: p
+    children:
+    - node: text
+      content: そもそも名前空間
+  - node: p
+    children:
+    - node: text
+      content: '\Php\Attributes '
+    - node: br
+    - node: text
+      content: '\Deprecated '
+    - node: br
+    - node: text
+      content: じゃなくていいの？
+  p101:
+  - node: p
+    children:
+    - node: text
+      content: 'Attributesのfuture '
+    - node: br
+    - node: text
+      content: 'scopeの段階では '
+    - node: br
+    - node: text
+      content: 名前空間がついてたのに､ しれっとグローバル名前
+    - node: br
+    - node: text
+      content: 空間に移動している
+  p102:
+  - node: p
+    children:
+    - node: text
+      content: 'Attributeが 解決できない '
+    - node: br
+    - node: text
+      content: 問題
+  p103:
+  - node: p
+    children:
+    - node: text
+      content: '/** @duplicated */ '
+    - node: br
+    - node: text
+      content: 'アノテーション名を '
+    - node: br
+    - node: text
+      content: 'タイプミスすると '
+    - node: br
+    - node: text
+      content: (上手に静的解析しない限り) 実行時に無視される
+  p104:
+  - node: p
+    children:
+    - node: text
+      content: '<<Duplicated>> アトリビュート名を '
+    - node: br
+    - node: text
+      content: 'タイプミスすると (静的解析しない限り) '
+    - node: br
+    - node: text
+      content: 実行時に無視される
+  p105:
+  - node: p
+    children:
+    - node: text
+      content: あと単純に名前空間との
+    - node: br
+    - node: text
+      content: '相性が悪くて､IDEや '
+    - node: br
+    - node: text
+      content: 静的解析を使ってないと
+    - node: br
+    - node: text
+      content: 'useし忘れて無意味な '
+    - node: br
+    - node: text
+      content: おまじないとして残り…
+  p106:
+  - node: p
+    children:
+    - node: text
+      content: この問題はアノテー ションベースAOPで 結構深刻だと思うんで すけど皆さんどうやっ
+    - node: br
+    - node: text
+      content: て解決してるんだろ
+  p107:
+  - node: p
+    children:
+    - node: text
+      content: 全部のタグ/アノテー ションがアトリビュー
+    - node: br
+    - node: text
+      content: トに移行されるの？
+  p108:
+  - node: p
+    children:
+    - node: text
+      content: されない
+    - node: br
+    - node: text
+      content: と思う
+  p109:
+  - node: p
+    children:
+    - node: text
+      content: いままでのタグ
+  - node: p
+    children:
+    - node: text
+      content: '/** */ '
+    - node: br
+    - node: text
+      content: ' @param 1|2 $arg '
+  - node: p
+    children:
+    - node: text
+      content: 'function f(     int $arg1 '
+    - node: br
+    - node: text
+      content: ){}
+  p110:
+  - node: p
+    children:
+    - node: text
+      content: アトリビュートで置換
+  - node: p
+    children:
+    - node: text
+      content: (イメージ)
+  - node: p
+    children:
+    - node: text
+      content: use PHPStan\Param as param;
+  - node: p
+    children:
+    - node: text
+      content: 'function f( '
+  - node: p
+    children:
+    - node: text
+      content: 'int $arg1 '
+  - node: p
+    children:
+    - node: text
+      content: <<param("1|2")>>
+    - node: br
+    - node: text
+      content: ){}
+  p111:
+  - node: p
+    children:
+    - node: text
+      content: IDEの入力補完があっ
+  - node: p
+    children:
+    - node: text
+      content: たとしても書きにくい
+    - node: br
+    - node: text
+      content: 🙃
+  p112:
+  - node: p
+    children:
+    - node: text
+      content: 'Attributeの '
+    - node: br
+    - node: text
+      content: 明日はどっちだ
+  p113:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP先生の '
+    - node: br
+    - node: text
+      content: '次回作に '
+    - node: br
+    - node: text
+      content: ご期待ください
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p2:
+  - url: https://github.com/emacs-php/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p25:
+  - url: https://wiki.php.net/rfc/attributes_v2
+    title: 'PHP: rfc:attributes_v2'
+  p46:
+  - url: https://fortee.jp/phperkaigi-2020/proposal/58645104-35a5-4a87-b81c-16b2b9ad7147
+    title: 'PHPのアノテーションの仕組みとメリット・デメリット by 山岡広幸 | トーク | PHPerKaigi 2020 #phperkaigi
+      - fortee.jp'
+  p50:
+  - url: https://github.com/php-fig/fig-standards/blob/master/proposed/phpdoc-tags.md
+    title: fig-standards/proposed/phpdoc-tags.md at master · php-fig/fig-standards
+      · GitHub
+  p54:
+  - url: https://github.com/goaop/framework
+    title: 'GitHub - goaop/framework: :gem: Go! AOP PHP - modern aspect-oriented framework
+      for the new level of software development'
+  p88:
+  - url: https://wiki.php.net/rfc/named_params
+    title: 'PHP: rfc:named_params'

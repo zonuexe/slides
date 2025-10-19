@@ -1,0 +1,1374 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPは何を捨て、 '
+    - node: br
+    - node: text
+      content: どんな力を手に入れてきたのか
+  - node: p
+    children:
+    - node: text
+      content: What did PHP give up and what power did it get?
+  - node: p
+    children:
+    - node: text
+      content: 'PHP Conference Japan '
+    - node: br
+    - node: text
+      content: '2019-12-01 #phpcon'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+    - node: br
+    - node: text
+      content: 'うさみけんた (@tadsan)  '
+  - node: p
+    children:
+    - node: text
+      content: ' / Zonu.EXE'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ピクシブ株式会社 pixiv事業本部
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeのメンテナ引き継ぎました
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 好きなリスプはEmacs Lispです
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4: []
+  p5: []
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: これまでのあらすじ
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 昨日
+  p8: []
+  p9: []
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: そもそもPHP自体が レガシーと言われがち
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス
+  p12: []
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 本日のお題
+  p14: []
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: そもそもPHPというプ ログラミング言語はどん な機能を持っているのか
+  p16:
+  - node: p
+    children:
+    - node: bold
+      content: '“We have things like protected properties. '
+    - node: br
+    - node: bold
+      content: 'We have abstract methods. We have all '
+    - node: br
+    - node: bold
+      content: 'this stuff that your computer science '
+    - node: br
+    - node: bold
+      content: 'teacher told you you should be using.  '
+    - node: br
+    - node: bold
+      content: I don't care about this crap at all.”
+  - node: p
+    children:
+    - node: bold
+      content: '–Rasmus Lerdorf '
+    - node: br
+    - node: bold
+      content: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: には プロパティも抽象メ
+  - node: p
+    children:
+    - node: bold
+      content: “PHP protected
+    - node: br
+    - node: text
+      content: ソッドもありますよ。計算機科学の教授が
+    - node: br
+    - node: text
+      content: 「使え」と言ってるものは全部。
+  - node: p
+    children:
+    - node: text
+      content: そんなことはクソ興味ないですけど
+  - node: p
+    children:
+    - node: bold
+      content: ”
+  - node: p
+    children:
+    - node: bold
+      content: –Rasmus Lerdorf
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 僕が思いつくPHPの 機能をざっと挙げて
+    - node: br
+    - node: text
+      content: みると…
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 抽象クラス, トレイト, インター
+    - node: br
+    - node: text
+      content: フェイス, ジェネレータ, イテレー タ, クロージャ, 函数の動的呼び出 し, 無名クラス, eval, 型宣言, 連 想配列, リフレクションAPI,
+        自己
+    - node: br
+    - node: text
+      content: '文書化, 標準入出力の読み書き, '
+    - node: br
+    - node: text
+      content: REPL, クラスの遅延ロード
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 改めてPHPの言語 仕様が追加された時
+    - node: br
+    - node: text
+      content: 系列を見てみよう
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.4
+  - node: p
+    children:
+    - node: text
+      content: 'Arrow functions 2.0 '
+    - node: br
+    - node: text
+      content: 'JavaScriptなど '
+  - node: p
+    children:
+    - node: text
+      content: 'Typed Property '
+    - node: br
+    - node: text
+      content: 'Javaなどの静的型付き言語 '
+  - node: p
+    children:
+    - node: text
+      content: 'Numeric Literal Separator '
+    - node: br
+    - node: text
+      content: Ada, Ruby, JavaScriptなど
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.3
+  - node: p
+    children:
+    - node: text
+      content: 'Flexible Heredoc and Nowdoc '
+    - node: br
+    - node: text
+      content: 'Rubyにも似た記法はある '
+  - node: p
+    children:
+    - node: text
+      content: 'list() Reference Assignment '
+    - node: br
+    - node: text
+      content: これはPHP独自に近い
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.2
+  - node: p
+    children:
+    - node: text
+      content: 'Trailing Commas In List Syntax '
+    - node: br
+    - node: text
+      content: カンマ(,)を並べて書く記法のほぼ全
+    - node: br
+    - node: text
+      content: 'てで余分につけてもよくなった '
+  - node: p
+    children:
+    - node: text
+      content: 'Parameter Type Widening '
+    - node: br
+    - node: text
+      content: 継承したクラスで引数の型省略
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.1
+  - node: p
+    children:
+    - node: text
+      content: 'Nullable Types '
+    - node: br
+    - node: text
+      content: 'Void Return Type '
+    - node: br
+    - node: text
+      content: 'Multi catch '
+    - node: br
+    - node: text
+      content: Allow specifying keys in list()
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.0
+  - node: p
+    children:
+    - node: text
+      content: 'Anonymous Class '
+    - node: br
+    - node: text
+      content: Generator Delegation
+  - node: p
+    children:
+    - node: text
+      content: '(yield from) '
+  - node: p
+    children:
+    - node: text
+      content: 'Return Type Declaration Null Coalesce Operator '
+    - node: br
+    - node: text
+      content: Scalar type hints
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: PHP 5.6
+  - node: p
+    children:
+    - node: text
+      content: 'Exponential Operator(pow**) '
+    - node: br
+    - node: text
+      content: 'Importing named function '
+    - node: br
+    - node: text
+      content: 'Variadic function argument (...) '
+    - node: br
+    - node: text
+      content: '配列を引数として展開 '
+  - node: p
+    children:
+    - node: text
+      content: 'Argument unpacking(...) '
+    - node: br
+    - node: text
+      content: 可変長引数を配列として取得
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: PHP 5.5
+  - node: p
+    children:
+    - node: text
+      content: 'Generator '
+    - node: br
+    - node: text
+      content: ﬁnally keyword (try-catch-...) Const array/string dereference Allow
+        non-scalar keys in foreach
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: PHP 5.4
+  - node: p
+    children:
+    - node: text
+      content: 'Traits '
+    - node: br
+    - node: text
+      content: 'Short array syntax '
+    - node: br
+    - node: text
+      content: callable type hint
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: PHP 5.3
+  - node: p
+    children:
+    - node: text
+      content: 'Closures (function expression) '
+    - node: br
+    - node: text
+      content: '関数式、クロージャ、またはラムダ式 '
+    - node: br
+    - node: text
+      content: JavaScriptのfunctionに似てる が、レキシカルスコープ(変数の捕 捉)のためにuseキーワードが必要
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: ひとつひとつの機能 の話を語ったら20分
+    - node: br
+    - node: text
+      content: では全然足りない
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: なので本日はPHPがどう変 わっていったかというエピ ソードを交えてPHPの言語
+    - node: br
+    - node: text
+      content: 機能を紹介していきます
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: がリリー
+  - node: p
+    children:
+    - node: text
+      content: PHP 7.4.0
+    - node: br
+    - node: text
+      content: スされましたね
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 本日
+  - node: p
+    children:
+    - node: text
+      content: '12月1日は '
+    - node: br
+    - node: text
+      content: 何の日でしょう？
+  p35: []
+  p36: []
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: '27 '
+    - node: br
+    - node: text
+      content: この数は何でしょう
+  p38: []
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: せいかい
+  - node: p
+    children:
+    - node: text
+      content: 'PHP7.4に向けて '
+    - node: br
+    - node: text
+      content: 受理されたRFCの数
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: RFC?
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: RFC
+  - node: p
+    children:
+    - node: text
+      content: (Request for Comment)
+  - node: p
+    children:
+    - node: text
+      content: 新バージョンへの変更提案 PHPの機能の改廃の提案は
+    - node: br
+    - node: text
+      content: 'RFCを通じて行われる '
+    - node: br
+    - node: text
+      content: 提案はメーリングリストで議論 されPHP.net VCSアカウント
+    - node: br
+    - node: text
+      content: の所持者が議決する
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: PHP RFC
+  - node: p
+    children:
+    - node: text
+      content: の歴史
+  - node: p
+    children:
+    - node: text
+      content: 2008年頃から機能提案のため
+    - node: br
+    - node: text
+      content: 'に運用されはじめた '
+    - node: br
+    - node: text
+      content: 2011年 から正式な
+  - node: p
+    children:
+    - node: text
+      content: (5.4alpha1)
+    - node: br
+    - node: text
+      content: リリースプロセスになった
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: '“PHP releases have always been '
+    - node: br
+    - node: text
+      content: 'done spontaneously, in a somehow chaotic way. Individual(s) decided '
+    - node: br
+    - node: text
+      content: 'when a release will happen and '
+    - node: br
+    - node: text
+      content: 'what could or could ﬁt in. Release managers role are unclear and the '
+    - node: br
+    - node: text
+      content: 'way to nominate them is not '
+    - node: br
+    - node: text
+      content: clearly deﬁned either.”
+    - node: br
+    - node: text
+      content: '‒ Request for Comments: Release Process '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/releaseprocess
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: “PHPのリリースは常に無秩序な方法で自 発的に行われてきました。個々人がいつリ リースされるか、何が起こるか、そして何 が収まるかを決定しています。リリースマ
+        ネージャの役割は不明瞭で、指名の手続き
+    - node: br
+    - node: text
+      content: も明確に定義されていません。”
+  - node: p
+    children:
+    - node: text
+      content: '‒ Request for Comments: Release Process '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/releaseprocess
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: この時期
+  - node: p
+    children:
+    - node: text
+      content: (2008〜2010年)
+  - node: p
+    children:
+    - node: text
+      content: 'のPHPには '
+    - node: br
+    - node: text
+      content: 何があったでしょう
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: この当時のPHP情勢
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: '廣川さんの '
+    - node: br
+    - node: text
+      content: ｢PHPの今とこれから｣が 当時の事情の貴重な資料
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHPの今とこれから2009 '
+  - node: p
+    children:
+    - node: text
+      content: https://www.slideshare.net/hirokawa/php2009
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHPの今とこれから2009 '
+  - node: p
+    children:
+    - node: text
+      content: https://www.slideshare.net/hirokawa/php2009
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHPの今とこれから2009 '
+  - node: p
+    children:
+    - node: text
+      content: https://www.slideshare.net/hirokawa/php2009
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: Unicode化とは どういうことか？
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: 言語処理系の文字列実装
+  - node: p
+    children:
+    - node: text
+      content: 'CSI方式  '
+  - node: p
+    children:
+    - node: text
+      content: (Code Set Independent)
+  - node: p
+    children:
+    - node: text
+      content: '特定のコードセットに依存しない '
+    - node: br
+    - node: text
+      content: 'UCS正規化方式  '
+  - node: p
+    children:
+    - node: text
+      content: (Universal Character Set)
+  - node: p
+    children:
+    - node: text
+      content: 内部的に文字コードを統一し
+    - node: br
+    - node: text
+      content: 'てから処理する '
+  - node: p
+    children:
+    - node: text
+      content: https://magazine.rubyist.net/articles/0025/0025-Ruby19_m17n.html
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: 言語ごとの文字列実装
+  - node: p
+    children:
+    - node: text
+      content: 'CSI方式 '
+  - node: p
+    children:
+    - node: text
+      content: 'Ruby, Python 2, PHP '
+    - node: br
+    - node: text
+      content: 'UCS正規化方式 '
+  - node: p
+    children:
+    - node: text
+      content: 'Java, JavaScript, Perl,  '
+    - node: br
+    - node: text
+      content: Python 3, PHP6
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: ざっくりCSI方式
+  - node: p
+    children:
+    - node: text
+      content: '文字列変換をしないので、 オーバーヘッドは最小限 '
+    - node: br
+    - node: text
+      content: サポートする文字コードごと に文字列処理の実装が要る
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: ざっくりUCS正規化方式
+  - node: p
+    children:
+    - node: text
+      content: 文字列を変換するので入出力 で変換オーバーヘッドがある 文字列処理は内部文字コード 用のものだけ用意すればいい
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: PHP6はUTF-16を目指した
+  - node: p
+    children:
+    - node: text
+      content: 'UCS正規化方式への移行 '
+    - node: br
+    - node: text
+      content: 従来のPHP文字列はバイト列 PHP 5.2で キャスト
+  - node: p
+    children:
+    - node: bold
+      content: (binary)
+    - node: br
+    - node: text
+      content: 'と   が追加された '
+  - node: p
+    children:
+    - node: bold
+      content: b"string"
+    - node: br
+    - node: text
+      content: 結局Unicode化しなかった
+    - node: br
+    - node: text
+      content: ので、ただのエイリアス
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 重要なこと
+  - node: p
+    children:
+    - node: text
+      content: UCS正規化しないとUnicode サポートできないわけではない UTF-16にしても1コードポイ ント＝1文字になるわけではな
+    - node: br
+    - node: text
+      content: い (サロゲートペア)
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: PHP6.0の顛末
+  - node: p
+    children:
+    - node: text
+      content: '実装は難航し、文字列以外の 6.0向け機能は5.3, 5.4系で '
+    - node: br
+    - node: text
+      content: 'それぞれリリースされた '
+    - node: br
+    - node: text
+      content: 2010年3月にリポジトリの
+    - node: br
+    - node: text
+      content: 'trunk(master)が5.3に '
+    - node: br
+    - node: text
+      content: ロールバックした
+  p59: []
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: 開発が頓挫したPHP6は 欠番としてスキップされ
+    - node: br
+    - node: text
+      content: PHP5.6の次は7.0になっ
+    - node: br
+    - node: text
+      content: たというのは有名な話
+  p61: []
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: (私はこの時代にPHPに 触れておらず議論を詳し
+    - node: br
+    - node: text
+      content: くは追ってないので 想像の域は出ないが)
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: この時代にPHPはカウボーイ による開発スタイルを捨て、明 文化されたスケジュールとプロ セスによる開発体制に移行した
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: PHPのリリース計画や メンテナンス期間が定め られたのもこのRFCから
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: PHP5.3ではPHP6
+    - node: br
+    - node: text
+      content: 'を待たず重要な '
+    - node: br
+    - node: text
+      content: 機能がマージされた
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHPの今とこれから2009 '
+  - node: p
+    children:
+    - node: text
+      content: https://www.slideshare.net/hirokawa/php2009
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: 遅延静的束縛
+  - node: p
+    children:
+    - node: text
+      content: 'static::method(); '
+    - node: br
+    - node: text
+      content: 親クラスの静的メソッドから継承さ れたクラスのメソッドを呼び出す ちなみに 関
+  - node: p
+    children:
+    - node: bold
+      content: forward_static_call()
+    - node: br
+    - node: text
+      content: 数のマニュアルには「静的メソッド をコールする」と書いてるが、この 説明は間違い (翻訳の問題ではない)
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: Dynamic static call
+  - node: p
+    children:
+    - node: text
+      content: 'の代りに '
+  - node: p
+    children:
+    - node: text
+      content: Hoge::fuga()
+    - node: br
+    - node: text
+      content: $class="Hoge"; $class::fuga();
+    - node: br
+    - node: text
+      content: で呼べるようになった 静的メソッド版可変関数
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: 名前空間
+  - node: p
+    children:
+    - node: text
+      content: 'クラスや関数を階層化できる '
+    - node: br
+    - node: text
+      content: 名前空間違いの同名のクラス
+    - node: br
+    - node: text
+      content: 'が作れるようになった '
+    - node: br
+    - node: text
+      content: 'フルネームをFQSENと呼ぶ '
+    - node: br
+    - node: text
+      content: useでファイルローカルな別名
+    - node: br
+    - node: text
+      content: を付けることもできる
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: useの誤解されがちなところ
+  - node: p
+    children:
+    - node: text
+      content: 'include/requireのようにファ イルを読み込む機能ではない '
+    - node: br
+    - node: text
+      content: 'ファイル内で呼べるよう '
+    - node: br
+    - node: text
+      content: ローカルな名前を付けるだけ 存在しないクラスをuseして
+    - node: br
+    - node: text
+      content: もエラーにはならない
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: クロージャ (関数式・ラムダ式)
+  - node: p
+    children:
+    - node: text
+      content: 'ローカルな関数が作れる '
+    - node: br
+    - node: text
+      content: ただの関数を作れるだけでは なく、外側の変数を引き込め
+    - node: br
+    - node: text
+      content: 'るのが重要 (関数閉包) '
+    - node: br
+    - node: text
+      content: 普通の関数やメソッドにその
+    - node: br
+    - node: text
+      content: 機能はない
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: クロージャ以前の無名関数
+  - node: p
+    children:
+    - node: text
+      content: create_function()という関
+    - node: br
+    - node: text
+      content: '数で関数式っぽいことはできた その実態はevalで lambda_1 のような関数を動的に定義する '
+    - node: br
+    - node: text
+      content: この関数はリスキーなので PHP7.2からdeprecated
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: PHPのクロージャ
+  - node: p
+    children:
+    - node: text
+      content: '構文上はJavaScriptのものに 似ているが、useで列挙しない と外側の変数を捕捉できない '
+    - node: br
+    - node: text
+      content: この仕様にはPHPの変数の 説明しにくい挙動が関わって
+    - node: br
+    - node: text
+      content: いる…
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: PHPの変数
+  - node: p
+    children:
+    - node: text
+      content: PHPで変数の値を再代入した
+    - node: br
+    - node: text
+      content: 'り引数に渡したりすると、 '
+    - node: br
+    - node: text
+      content: '(意味論として)値がコピーされる '
+    - node: br
+    - node: text
+      content: クロージャでuseしたときも
+    - node: br
+    - node: text
+      content: PHPでは引数と同じ動きになる &を付けると変数の参照をとる
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: JavaScriptのクロージャ
+  - node: p
+    children:
+    - node: text
+      content: make_counter = function() {
+    - node: br
+    - node: text
+      content: '    i = 0;'
+    - node: br
+    - node: text
+      content: '    return function () {'
+    - node: br
+    - node: text
+      content: '        return i++;'
+    - node: br
+    - node: text
+      content: '    };'
+    - node: br
+    - node: text
+      content: '};'
+  - node: p
+    children:
+    - node: text
+      content: c1 = make_counter();
+  - node: p
+    children:
+    - node: text
+      content: console.log(c1()); console.log(c1()); console.log(c1());
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: PHPのクロージャ
+  - node: p
+    children:
+    - node: text
+      content: この記述だと$i=0のコピーさ
+    - node: br
+    - node: text
+      content: れるだけ。 &を付けると変数リファ
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: レンスで値を更新できる
+  - node: p
+    children:
+    - node: text
+      content: $make_counter = function() {
+    - node: br
+    - node: text
+      content: '    $i = 0;'
+    - node: br
+    - node: text
+      content: '    return function () use ($i) {'
+    - node: br
+    - node: text
+      content: '        return $i++;'
+    - node: br
+    - node: text
+      content: '    };'
+    - node: br
+    - node: text
+      content: '};'
+  - node: p
+    children:
+    - node: text
+      content: $c1 = $make_counter();
+  - node: p
+    children:
+    - node: text
+      content: var_dump($c1()); //=> 0 var_dump($c1()); //=> 0 var_dump($c1()); //=>
+        0
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: 最初のRFCクロージャ
+  - node: p
+    children:
+    - node: text
+      content: '実はJavaScript風クロージャ よりも前に短いクロージャが 提案されてた (2008年3月) '
+  - node: p
+    children:
+    - node: text
+      content: 'RFC: Short syntax for anonymous functions '
+    - node: br
+    - node: text
+      content: ただしDraft止まり
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHP: rfc:short-syntax-for-anonymous-functions '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/short-syntax-for-anonymous-functions
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHP: rfc:short-syntax-for-anonymous-functions '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/short-syntax-for-anonymous-functions
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: 時は流れて
+    - node: br
+    - node: text
+      content: 2019年
+  p81:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP: rfc:arrow_functions_v2 '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/arrow_functions_v2
+  p82:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP: rfc:arrow_functions_v2 '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/arrow_functions_v2
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: 姿形は違うが幾度もの 議論の末に短い記法の
+    - node: br
+    - node: text
+      content: 関数式が導入された
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: ところで
+  p85:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP: rfc:arrow_functions_v2 '
+    - node: br
+    - node: text
+      content: https://wiki.php.net/rfc/arrow_functions_v2
+  p86:
+  - node: p
+    children:
+    - node: text
+      content: '私たちはこの '
+    - node: br
+    - node: text
+      content: '提案者の名前を '
+    - node: br
+    - node: text
+      content: 見たことがある！
+  p87:
+  - node: p
+    children:
+    - node: text
+      content: '‒ PHPの今とこれから2012 '
+  - node: p
+    children:
+    - node: text
+      content: https://www.slideshare.net/hirokawa/php-now-and-then-
+    - node: br
+    - node: text
+      content: 2012-at-php-conference-2012-tokyo-japan
+  p88:
+  - node: p
+    children:
+    - node: text
+      content: ジェネレータ
+  - node: p
+    children:
+    - node: text
+      content: '(古典的な)コルーチン '
+    - node: br
+    - node: text
+      content: 「何度も繰り返す」構造を関 数(メソッド)を使って簡単に作
+    - node: br
+    - node: text
+      content: れる
+  p89:
+  - node: p
+    children:
+    - node: text
+      content: Nikita Popov
+  - node: p
+    children:
+    - node: text
+      content: '近年のPHPの中核的な開発者 '
+    - node: br
+    - node: text
+      content: 'PHP5.5以降､非常に多数の言語機能 を実装してPHPに取り入れてきた '
+    - node: br
+    - node: text
+      content: 'PHP-Parserなどの作者 '
+    - node: br
+    - node: text
+      content: 去年の大学院を卒業し今年JetBrains に入社してPhpStormチームに参加
+  p90:
+  - node: p
+    children:
+    - node: text
+      content: とてもざっくり言うとレガ シー仕様を消し､不条理な 挙動は是正し､他言語にあ るようなカッコイイ機能を
+    - node: br
+    - node: text
+      content: 追加提案してきた
+  p91:
+  - node: p
+    children:
+    - node: text
+      content: '不条理な '
+    - node: br
+    - node: text
+      content: 挙動って？
+  p92:
+  - node: p
+    children:
+    - node: text
+      content: '例: 未定義定数はその文字列になる'
+  - node: p
+    children:
+    - node: text
+      content: 'echo PHP; '
+    - node: br
+    - node: text
+      content: '=> 文字列 "PHP" が出力 '
+  - node: p
+    children:
+    - node: text
+      content: 'E_NOTICE/E_WARNING '
+    - node: br
+    - node: text
+      content: error_reportingが低い環境 でさりげなく生き残ってた可
+    - node: br
+    - node: text
+      content: 能性が高い
+  p93:
+  - node: p
+    children:
+    - node: text
+      content: 歴史的経緯で残ったレ ガシー仕様はさくっと 消しまくっていこうぜ
+  p94:
+  - node: p
+    children:
+    - node: text
+      content: いいじゃん いいじゃん
+  p95:
+  - node: p
+    children:
+    - node: text
+      content: 📛
+  p96:
+  - node: p
+    children:
+    - node: text
+      content: 🔥
+  p97:
+  - node: p
+    children:
+    - node: text
+      content: 🔥
+    - node: br
+    - node: text
+      content: 🔥
+    - node: br
+    - node: text
+      content: 🔥
+  p98:
+  - node: p
+    children:
+    - node: text
+      content: 燃えた
+  p99: []
+  p100:
+  - node: p
+    children:
+    - node: text
+      content: Deprecate PHP's short open tags, again
+  - node: p
+    children:
+    - node: text
+      content: 一般的なPHPタグは<?php ... ?> または<?= ... ?> だが、<? ... ?>と
+    - node: br
+    - node: text
+      content: 'いう形式もある '
+    - node: br
+    - node: text
+      content: php.iniで有効無効を切替られる 環境によってOnだったりOffだっ
+    - node: br
+    - node: text
+      content: たり
+  p101:
+  - node: p
+    children:
+    - node: text
+      content: Deprecate PHP's short open tags, again
+  - node: p
+    children:
+    - node: text
+      content: 'XML宣言との相性がとても悪い '
+    - node: br
+    - node: text
+      content: そんな半端モンは引導を渡してやろう
+    - node: br
+    - node: text
+      content: 'ぜ！ ということで提案された '
+    - node: br
+    - node: text
+      content: 構文がシンプルになるし、機械的に変 換もできるから良いだろ、という主旨
+  p102:
+  - node: p
+    children:
+    - node: text
+      content: 'Zeevによる '
+    - node: br
+    - node: text
+      content: 反論
+  p103: []
+  p104:
+  - node: p
+    children:
+    - node: text
+      content: Zeev Suraski
+  - node: p
+    children:
+    - node: text
+      content: 'PHP3・4の開発者 '
+    - node: br
+    - node: text
+      content: '相方のAndi Gutmansとともに VM型処理系のZend Engine開発 '
+    - node: br
+    - node: text
+      content: 'PHPでよくあるZend…は '
+    - node: br
+    - node: text
+      content: 'ZeevとAndiに由来 '
+    - node: br
+    - node: text
+      content: PHPコードに未だに影響を残す
+  p105:
+  - node: p
+    children:
+    - node: text
+      content: さらなる提案
+  p106: []
+  p107:
+  - node: p
+    children:
+    - node: text
+      content: 続きは Webで
+  p108: []
+  p109:
+  - node: p
+    children:
+    - node: text
+      content: まとめ
+  p110:
+  - node: p
+    children:
+    - node: text
+      content: PHPは力を手に入れ ようとして失敗して きた経験が結構ある
+  p111:
+  - node: p
+    children:
+    - node: text
+      content: 現在のPHPは静的解析 できる環境が年々強まっ て往年のざっくりさは息
+    - node: br
+    - node: text
+      content: をひそめつつある
+  p112:
+  - node: p
+    children:
+    - node: text
+      content: 銀河の平和は
+    - node: br
+    - node: text
+      content: どっちだ
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p2:
+  - url: https://github.com/emacs-php/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p8:
+  - url: https://phperkaigi.connpass.com/event/155509/
+    title: 大改修！PHPレガシーコードビフォーアフター - connpass
+  p9:
+  - url: https://www.pixiv.net/fanbox/creator/105589/post/685719
+    title: '「PHPプロジェクトに静的解析を新規導入する」 #phperkaigi｜にゃんだーすわん｜pixivFANBOX'
+  p12:
+  - url: https://devpixiv.hatenablog.com/entry/2016/11/11/202656
+    title: devpixiv.hatenablog.com
+  p16:
+  - url: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+    title: Rasmus Lerdorf - Wikiquote
+  p38:
+  - url: https://wiki.php.net/rfc
+    title: 'PHP: rfc'
+  p43:
+  - url: https://wiki.php.net/rfc/releaseprocess
+    title: 'PHP: rfc:releaseprocess'
+  p44:
+  - url: https://wiki.php.net/rfc/releaseprocess
+    title: 'PHP: rfc:releaseprocess'
+  p48:
+  - url: https://www.slideshare.net/hirokawa/php2009
+    title: PHPの今とこれから2009 | PDF
+  p49:
+  - url: https://www.slideshare.net/hirokawa/php2009
+    title: PHPの今とこれから2009 | PDF
+  p50:
+  - url: https://www.slideshare.net/hirokawa/php2009
+    title: PHPの今とこれから2009 | PDF
+  p52:
+  - url: https://magazine.rubyist.net/articles/0025/0025-Ruby19_m17n.html
+    title: Ruby M17N の設計と実装
+  p59:
+  - url: https://news-web.php.net/php.internals/47120
+    title: 'php.internals: PHP 6'
+  p61:
+  - url: https://wiki.php.net/rfc/releaseprocess
+    title: 'PHP: rfc:releaseprocess'
+  p66:
+  - url: https://www.slideshare.net/hirokawa/php2009
+    title: PHPの今とこれから2009 | PDF
+  p77:
+  - url: https://wiki.php.net/rfc/short-syntax-for-anonymous-functions
+    title: 'PHP: rfc:short-syntax-for-anonymous-functions'
+  p87:
+  - url: https://www.slideshare.net/hirokawa/php-now-and-then-2012-at-php-conference-2012-tokyo-japan
+    title: PHP Now and Then 2012 at PHP Conference 2012, Tokyo Japan (in japanese)
+      | PDF
