@@ -58,9 +58,7 @@ function renderNode(node) {
 
 const app = new Hono();
 
-// サイト設定を読み込む
-let siteConfig = null;
-const pdfMetaCache = new Map();
+// サイト設定を読み込む（キャッシュなし）
 const SNIPPET_LENGTH = 160;
 
 function collectTextFromNode(node, collector) {
@@ -118,36 +116,28 @@ function buildSnippet(text) {
 }
 
 async function loadSiteConfig() {
-  if (!siteConfig) {
-    try {
-      const configFile = await readFile('./_site.yaml', 'utf8');
-      siteConfig = yaml.load(configFile);
-    } catch (error) {
-      console.error('サイト設定の読み込みに失敗しました:', error);
-      // デフォルト設定
-      siteConfig = {
-        site: { name: "tadsan's slide deck", url: "https://zonuexe.github.io" },
-        author: { name: "tadsan", url: "https://twitter.com/tadsan" },
-        oembed: { provider_name: "tadsan's slide deck", provider_url: "https://zonuexe.github.io/slides/" },
-        embed: { base_url: "https://zonuexe.github.io/slide-pdf.js", slide_path: "https://zonuexe.github.io/slides/pdf" }
-      };
-    }
+  try {
+    const configFile = await readFile('./_site.yaml', 'utf8');
+    return yaml.load(configFile);
+  } catch (error) {
+    console.error('サイト設定の読み込みに失敗しました:', error);
+    // デフォルト設定
+    return {
+      site: { name: "tadsan's slide deck", url: "https://zonuexe.github.io" },
+      author: { name: "tadsan", url: "https://twitter.com/tadsan" },
+      oembed: { provider_name: "tadsan's slide deck", provider_url: "https://zonuexe.github.io/slides/" },
+      embed: { base_url: "https://zonuexe.github.io/slide-pdf.js", slide_path: "https://zonuexe.github.io/slides/pdf" }
+    };
   }
-  return siteConfig;
 }
 
-// スライドのファイル名からPDFメタデータを取得
+// スライドのファイル名からPDFメタデータを取得（キャッシュなし）
 async function getPdfMetaByFile(filePath, slide) {
   // slide.metaが指定されている場合はそのファイルを読み込む
   if (slide.meta) {
-    const cacheKey = `meta:${slide.meta}`;
-    if (pdfMetaCache.has(cacheKey)) {
-      return pdfMetaCache.get(cacheKey);
-    }
     try {
       const metaFile = await readFile(slide.meta, 'utf8');
       const metaData = yaml.load(metaFile);
-      pdfMetaCache.set(cacheKey, metaData);
       return metaData;
     } catch (error) {
       console.error(`メタデータファイルの読み込みに失敗しました (${slide.meta}):`, error);
@@ -155,19 +145,13 @@ async function getPdfMetaByFile(filePath, slide) {
   }
 
   // デフォルト値を返す
-  const cacheKey = `default:${filePath}`;
-  if (pdfMetaCache.has(cacheKey)) {
-    return pdfMetaCache.get(cacheKey);
-  }
-  const fallback = {
+  return {
     size: {
       max_width: slide.max_width || 1024,
       max_height: slide.max_height || 768
     },
     links: {}
   };
-  pdfMetaCache.set(cacheKey, fallback);
-  return fallback;
 }
 
 // スライド一覧ページ
