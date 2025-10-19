@@ -1,0 +1,568 @@
+size:
+  max_width: 1024
+  max_height: 768
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: Emacsと正規表現
+  - node: p
+    children:
+    - node: text
+      content: Regular expressions in Emacs
+  - node: p
+    children:
+    - node: text
+      content: 'Regex Festa '
+  - node: p
+    children:
+    - node: text
+      content: '2019-10-18 #regexfesta'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+    - node: br
+    - node: text
+      content: 'うさみけんた (@tadsan)  '
+  - node: p
+    children:
+    - node: text
+      content: ' / Zonu.EXE'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'GitHub/Packagistでは id: zonuexe'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ピクシブ株式会社 pixiv事業本部
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeのメンテナ引き継ぎました
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 好きなリスプはEmacs Lispです
+        - node: li
+          children:
+          - node: text
+            content: Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4: []
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: せっかくなので PHPの話を先に
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPには複数の '
+    - node: br
+    - node: text
+      content: 正規表現エンジンが
+    - node: br
+    - node: text
+      content: あります
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 'ereg (POSIX ERE) '
+    - node: br
+    - node: text
+      content: preg (PCRE) mb_ereg (鬼車)
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: PHP5系で廃止
+  - node: p
+    children:
+    - node: text
+      content: 'ereg (POSIX ERE) '
+    - node: br
+    - node: text
+      content: preg (PCRE) mb_ereg (鬼車)
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 現代のPHPでは
+    - node: br
+    - node: text
+      content: preg関数(PCRE)
+    - node: br
+    - node: text
+      content: が一般的
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: PHPには正規表現
+    - node: br
+    - node: text
+      content: リテラルがない
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: (そもそも複数エンジン があるのでリテラルで 特権扱いされると困る)
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: バックスラッシュのエスケープ
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: $subject = 'a\b';
+    - node: br
+    - node: text
+      content: preg_match('/(?<bs>\\\\)/', $subject, $m);
+  - node: p
+    children:
+    - node: text
+      content: var_dump($m['bs']);
+    - node: br
+    - node: text
+      content: // string(1) "\"
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: デリミタの変更
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  - node: p
+    children:
+    - node: text
+      content: $subject = 'https://example.com/';
+    - node: br
+    - node: text
+      content: // Bad pattern
+    - node: br
+    - node: text
+      content: preg_match('/^https:\/\/([.+])/i', $subject);
+  - node: p
+    children:
+    - node: text
+      content: preg_match('@^https://([.+])@i', $subject); preg_match('#^https://([.+])#i',
+        $subject);
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 関数形式だがコンパ イル結果は内部的に
+    - node: br
+    - node: text
+      content: 保持されている
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: PCRE関数はリクエ
+    - node: br
+    - node: text
+      content: ストをまたいでコンパ イル結果が保持される
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: PHPの話ここまで
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: Emacs
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: Emacsは正規表現
+    - node: br
+    - node: text
+      content: でできている
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 1. エディタの 検索機能として
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 2. 構文ハイライト
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 '
+    - node: br
+    - node: text
+      content: 'https://ja.wikipedia.org/wiki/正規表現 '
+    - node: br
+    - node: text
+      content: 最終更新 2019年7月9日 12:45 版
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 '
+    - node: br
+    - node: text
+      content: 'https://ja.wikipedia.org/wiki/正規表現 '
+    - node: br
+    - node: text
+      content: 最終更新 2019年7月9日 12:45 版
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 '
+    - node: br
+    - node: text
+      content: 'https://ja.wikipedia.org/wiki/正規表現 '
+    - node: br
+    - node: text
+      content: 最終更新 2019年7月9日 12:45 版
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: これしか書いてない
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: '基本正規表現とも 拡張正規表現とも '
+    - node: br
+    - node: text
+      content: 違う
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: Emacsの正規表現は
+    - node: br
+    - node: text
+      content: NFAに分類される (最小量指定子がある)
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 基本 拡張 Emacs
+  - node: p
+    children:
+    - node: text
+      content: グループ \(regexp\) (regexp) \(regexp\)
+  - node: p
+    children:
+    - node: text
+      content: 繰り返し \{n,m} {n,m} \{n,m}
+  - node: p
+    children:
+    - node: text
+      content: 文字クラス [abc] [abc] [abc]
+  - node: p
+    children:
+    - node: text
+      content: 1回以上 + +
+  - node: p
+    children:
+    - node: text
+      content: 選言 | \|
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: Perl Emacs
+  - node: p
+    children:
+    - node: text
+      content: 先頭・末尾 \A \z \` \'
+  - node: p
+    children:
+    - node: text
+      content: '単語構成文字 '
+  - node: p
+    children:
+    - node: text
+      content: \w \b \w \b
+  - node: p
+    children:
+    - node: text
+      content: ／単語境界
+  - node: p
+    children:
+    - node: text
+      content: '[[:space:]] '
+  - node: p
+    children:
+    - node: text
+      content: 空白文字 \s
+  - node: p
+    children:
+    - node: text
+      content: \s-
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: '僕の知ってる '
+    - node: br
+    - node: text
+      content: 正規表現と違う！
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 'シンタックス '
+    - node: br
+    - node: text
+      content: テーブル
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: メジャーモードごと
+    - node: br
+    - node: text
+      content: に文字の意味を 定義できる機能
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 言語ごとにシンボル
+    - node: br
+    - node: text
+      content: 構成文字は異なる
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: Lispでは foo-bar は一つのシンボル (変数名や関数名になる)
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 'Cなどの言語では '
+    - node: br
+    - node: text
+      content: 'foo-barは別シンボル '
+  - node: p
+    children:
+    - node: text
+      content: (foo - bar)
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 'その構文情報 '
+  - node: p
+    children:
+    - node: text
+      content: 'を '
+  - node: p
+    children:
+    - node: text
+      content: (syntax table)
+    - node: br
+    - node: text
+      content: 正規表現から使える
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 逆に言うと正規表現の
+    - node: br
+    - node: text
+      content: マッチ結果はシンタック
+    - node: br
+    - node: text
+      content: ステーブルに依存する
+  p37: []
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: で、実際どうなの
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: '文脈によって エスケープが '
+  - node: p
+    children:
+    - node: text
+      content: 変わってる
+  - node: p
+    children:
+    - node: text
+      content: (ように見える)
+  p40: []
+  p41: []
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: Emacsのメジャー
+    - node: br
+    - node: text
+      content: モード(言語モード)の 実装には大量の正規表
+    - node: br
+    - node: text
+      content: 現を書く必要がある
+  p43: []
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: これは読みにくい
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: でもご安心ください
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'rxという正規表現 '
+    - node: br
+    - node: text
+      content: 組み立てDSLがある
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: 文字列 rx
+  - node: p
+    children:
+    - node: text
+      content: グループ \(regexp\) (group "regexp")
+  - node: p
+    children:
+    - node: text
+      content: 繰り返し \{n,m} (repeat n m pattern)
+  - node: p
+    children:
+    - node: text
+      content: 文字クラス [abc] (in "abc")
+  - node: p
+    children:
+    - node: text
+      content: 1回以上 + (+ pattern)
+  - node: p
+    children:
+    - node: text
+      content: 選言 \| (or a b)
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: 文字列 rx
+  - node: p
+    children:
+    - node: text
+      content: 'string-start '
+  - node: p
+    children:
+    - node: text
+      content: 先頭・末尾 \` \'
+  - node: p
+    children:
+    - node: text
+      content: string-end
+  - node: p
+    children:
+    - node: text
+      content: '単語構成文字  wordchar '
+  - node: p
+    children:
+    - node: text
+      content: \w \b
+    - node: br
+    - node: text
+      content: ／単語境界 word-boundary
+  - node: p
+    children:
+    - node: text
+      content: '[[:space:]]  space '
+  - node: p
+    children:
+    - node: text
+      content: 空白文字
+  - node: p
+    children:
+    - node: text
+      content: \s- (syntax whitespace)
+  p49: []
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: ツールはいろいろ
+    - node: br
+    - node: text
+      content: 揃ってる
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: 're-builder '
+    - node: br
+    - node: text
+      content: (Emacs標準添付)
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: font-lock-studio (強調表示の色付けを順番
+    - node: br
+    - node: text
+      content: に実行してくれる)
+links:
+  p2:
+  - url: https://github.com/emacs-php/php-mode
+    title: 'GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode
+      for editing PHP scripts'
+  p13:
+  - url: https://example.com/
+    title: Example Domain
+  p21:
+  - url: https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE
+    title: 正規表現 - Wikipedia
+  - url: https://ja.wikipedia.org/w/index.php?title=%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE&oldid=73398558
+    title: 正規表現 - Wikipedia
+  p22:
+  - url: https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE
+    title: 正規表現 - Wikipedia
+  - url: https://ja.wikipedia.org/w/index.php?title=%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE&oldid=73398558
+    title: 正規表現 - Wikipedia
+  p23:
+  - url: https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE
+    title: 正規表現 - Wikipedia
+  - url: https://ja.wikipedia.org/w/index.php?title=%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE&oldid=73398558
+    title: 正規表現 - Wikipedia

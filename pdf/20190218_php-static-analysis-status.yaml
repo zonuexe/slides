@@ -1,0 +1,946 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: 静的解析現状確認会
+  - node: p
+    children:
+    - node: bold
+      content: PHP
+  - node: p
+    children:
+    - node: text
+      content: ピクシブ株式会社
+  - node: p
+    children:
+    - node: bold
+      content: ' / pixiv.git'
+  - node: p
+    children:
+    - node: text
+      content: pixiv Inc.
+    - node: br
+    - node: text
+      content: うさみけんた
+  - node: p
+    children:
+    - node: bold
+      content: ' / tadsan'
+  - node: p
+    children:
+    - node: bold
+      content: '2019-02-18'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: はじめに
+  - node: p
+    children:
+    - node: text
+      content: 今回紹介する の開発環境の改善は歴代の複数のチームメンバーの創意工夫の積
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: pixiv
+  - node: p
+    children:
+    - node: text
+      content: み重ねであり、この資料は筆者 がその成果をまとめたものである
+  - node: p
+    children:
+    - node: text
+      content: (@tadsan)
+  - node: p
+    children:
+    - node: text
+      content: の型に関する見解は 個人の意見およびチーム内での議論に基く
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: PHP @tadsan
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: 現状を三行で
+  - node: p
+    children:
+    - node: text
+      content: 未定義クラス・メソッド・定数・変数などの使用は簡単に検出できます
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 、 や などのツールがありますが、それぞれの特徴が
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm Phan PHPStan
+  - node: p
+    children:
+    - node: text
+      content: の開発では ごとに動的解析と静的解析の結果は
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: pixiv.git Pull Request
+    - node: br
+    - node: text
+      content: 概ね 秒程度で結果を表示できてます
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: 自己紹介
+  - node: p
+    children:
+    - node: text
+      content: 以前にやってた言語は
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: PHP Ruby, sh, Lisp
+    - node: br
+    - node: text
+      content: 経験として動的言語が中心
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: 静的型は に触れた程度
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: F#, OCaml, Haskell
+  - node: p
+    children:
+    - node: text
+      content: 年 月にピクシブ入社最初は
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 2012 11  ( Ruby)
+    - node: br
+    - node: text
+      content: 年 月頃から を書きはじめた
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 2013 4 PHP
+  - node: p
+    children:
+    - node: bold
+      content: tadsan
+    - node: br
+    - node: text
+      content: 運営本部
+  - node: p
+    children:
+    - node: bold
+      content: pixiv
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: のコードベースの特徴
+  - node: p
+    children:
+    - node: bold
+      content: pixiv
+  - node: p
+    children:
+    - node: text
+      content: 手続き型に大きく寄った設計志向・アンチ の傾向が近い
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: OOP
+  - node: p
+    children:
+    - node: text
+      content: クラスはオートロード可能な関数と定数の置き場としての扱い
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: から取得した値をそのまま扱うことが多いので連想配列を多用
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: PDO
+  - node: p
+    children:
+    - node: text
+      content: 旧来の手法≒ による静的解析を容易にするためのコードベース
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: (  grep)
+  - node: p
+    children:
+    - node: text
+      content: 文字列・配列による 表現はクロージャで表現する
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: callable
+  - node: p
+    children:
+    - node: text
+      content: を採用していない による別名使用は極力しない
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: PSR-4  (use )
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: と静的解析
+  - node: p
+    children:
+    - node: bold
+      content: pixiv
+  - node: p
+    children:
+    - node: text
+      content: たぶん 年頃 デプロイ時に必ず でのチェックを実施
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: '( 2014 )   php -l '
+  - node: p
+    children:
+    - node: text
+      content: それ以前は を含むファイルをデプロイすることがまれにあった
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: SyntaxError
+  - node: p
+    children:
+    - node: text
+      content: 年 月正規表現ベースの を導入
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: '2016 3 :  lint'
+  - node: p
+    children:
+    - node: text
+      content: の 単位で される度に実行・コメント
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: GitLab MR push
+  - node: p
+    children:
+    - node: text
+      content: 年頃から 検証 静的解析がもたらす大 型検査時代
+  - node: p
+    children:
+    - node: text
+      content: ● →
+  - node: p
+    children:
+    - node: text
+      content: 2016 Phan  Phan PHP
+  - node: p
+    children:
+    - node: text
+      content: (phpcon2016)
+  - node: p
+    children:
+    - node: text
+      content: 年 月 を本格的に に導入
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: '2018 6 : PHPStan CI'
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: に寄らない利点
+  - node: p
+    children:
+    - node: bold
+      content: OOP
+  - node: p
+    children:
+    - node: text
+      content: この利点は と による静的解析によっておよそ無効化された。よって
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm PHPStan
+    - node: br
+    - node: text
+      content: 軽々に他者に推奨する戦略ではない。
+  - node: p
+    children:
+    - node: text
+      content: インスタンス化 メソッド呼び出しの過程を経ると、 などの
+  - node: p
+    children:
+    - node: text
+      content: ● →
+  - node: p
+    children:
+    - node: text
+      content: '    grep/sed/awk'
+  - node: p
+    children:
+    - node: text
+      content: プリミティブなテキスト編集ツールだけではメソッド利用箇所の洗い出しやリファクタリング の妨げとなる。この状況は既に大量のコードがあるプロジェクトを効率よくメンテする側面
+    - node: br
+    - node: text
+      content: においては大変に痛かった。
+  - node: p
+    children:
+    - node: text
+      content: 繰り返すが、現在においては型と静的解析の力を利用しながら のリファクタリ
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: PhpStorm
+  - node: p
+    children:
+    - node: text
+      content: ング機能などを利用し、過不足にほかのツールを利用するの懸命だろう
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: 正規表現ベースのチェッカー
+  - node: p
+    children:
+    - node: bold
+      content: (linter)
+  - node: p
+    children:
+    - node: text
+      content: 適用するパターン・除外するパターンを書ける
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: では との のあったファイルに対してチェッカーを適用
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: MR master diff
+  - node: p
+    children:
+    - node: text
+      content: 推奨されないバッドノウハウや表記揺れなどを抑止する目的
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 除外パターンも書けるので特定の場合のみ例外的に許可もしやすい
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 例 テストコードでのみ使用可
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: ': '
+  - node: p
+    children:
+    - node: text
+      content: パターンのテストもあるのでチームメンバーが必要に応じて加除
+  - node: p
+    children:
+    - node: text
+      content: ●
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: '''@pixiv-lib/.*\.php$@'' => ['
+    - node: br
+    - node: text
+      content: '    ['
+    - node: br
+    - node: text
+      content: '        ''level'' => ''error'','
+  - node: p
+    children:
+    - node: text
+      content: で定義されているクラスは しないこと
+  - node: p
+    children:
+    - node: text
+      content: '        ''desc''  => ''pixiv-lib  include_once  '','
+    - node: br
+    - node: text
+      content: '        ''pattern'' => ['
+    - node: br
+    - node: text
+      content: '            ''/include_once[ \(] *INC_PATH /'' => false,'
+    - node: br
+    - node: text
+      content: '            ''@/stacc/api\.php@'' => true,'
+    - node: br
+    - node: text
+      content: '        ],'
+    - node: br
+    - node: text
+      content: '        ''tests'' => ['
+    - node: br
+    - node: text
+      content: '            [''pixiv-lib/foo.php'', "include_once INC_PATH . ''/Awesome/Class.php'';", '
+    - node: br
+    - node: text
+      content: true],
+    - node: br
+    - node: text
+      content: '            [''pixiv-lib/foo.php'', "include_once INC_PATH . ''/stacc/api.php'';", '
+    - node: br
+    - node: text
+      content: false],
+    - node: br
+    - node: text
+      content: '            [''pixiv-lib/foo.php'', "include_once INC_PATH . ''HogeClass.php'';",
+        true],'
+    - node: br
+    - node: text
+      content: '            [''foo.php'', "include_once INC_PATH . ''/Awesome/Class.php'';",
+        false],'
+    - node: br
+    - node: text
+      content: '            [''foo.php'', "include_once INC_PATH . ''/stacc/api.php'';",
+        false],             [''foo.php'', "include_once INC_PATH . ''HogeClass.php'';",
+        false],'
+    - node: br
+    - node: text
+      content: '        ],'
+    - node: br
+    - node: text
+      content: '    ],'
+    - node: br
+    - node: text
+      content: '],'
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: bold
+      content: Phan
+  - node: p
+    children:
+    - node: text
+      content: コードを強力に静的解析する
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 連想配列の要素や特定のリテラルが来ること期待して解析できる
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: '@phan-return array{mode:’foo’|’bar’,hoge:string}'
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: 明示しなくても実行パスを収集して最大限に型を推論してくれる
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: 解析の度に全コードをスキャンするので大規模なコードベースでは、
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: とても時間がかかる
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: bold
+      content: PHPStan
+  - node: p
+    children:
+    - node: text
+      content: コードを強力に解析するが、静的情報だけではなく実行時情報を活用する
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 正確に検査するためには解析対象をオートロードあるいは事前読み込みできるようにす
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: ( )
+  - node: p
+    children:
+    - node: text
+      content: ることが前提
+  - node: p
+    children:
+    - node: text
+      content: 一回のプロセス起動で多数のファイルを同時に解析すると多量のメモリを消費するので、
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: と違ってプロジェクトの全クラスを一度に検査する用途は向かない
+  - node: p
+    children:
+    - node: text
+      content: Phan
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: の
+  - node: p
+    children:
+    - node: bold
+      content: pixiv CI
+  - node: p
+    children:
+    - node: text
+      content: および のテストによる動的解析と
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: bold
+      content: PHPUnit( JS )
+  - node: p
+    children:
+    - node: text
+      content: と正規表現ベースの による静的解析の二本立て
+  - node: p
+    children:
+    - node: bold
+      content: PHPStan linter
+  - node: p
+    children:
+    - node: text
+      content: 前述の通り、静的解析には ではなく を採用している
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: Phan PHPStan
+  - node: p
+    children:
+    - node: text
+      content: 実行環境の改善により、 の における のブ
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: CI GitLab Merge Request(GitHub Pull Request)
+    - node: br
+    - node: text
+      content: ランチに してから 秒前後で動的解析と静的解析の結果が得られる
+  - node: p
+    children:
+    - node: text
+      content: push 60
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: と型
+  - node: p
+    children:
+    - node: bold
+      content: PHP
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: アプリケーションと型
+  - node: p
+    children:
+    - node: bold
+      content: PHP
+  - node: p
+    children:
+    - node: text
+      content: そもそもが動的型付け言語で、静的に型を付ける上で不利な面も多い
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 時などは、
+  - node: p
+    children:
+    - node: text
+      content: ATTR_EMULATE_PREPARES
+  - node: p
+    children:
+    - node: text
+      content: ●
+    - node: bold
+      content: ' $_GET $_POST PDO'
+  - node: p
+    children:
+    - node: text
+      content: ',  ,  ( )'
+  - node: p
+    children:
+    - node: text
+      content: あらゆる値を文字列型または再帰的に文字列を要素とする配列として扱う
+  - node: p
+    children:
+    - node: text
+      content: ( )
+  - node: p
+    children:
+    - node: text
+      content: そのような値に対して「適切なキャスト」を書くのは「とても」難しい
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: 不用意な判定で にキャストするのはバグや脆弱性の温床になる
+  - node: p
+    children:
+    - node: text
+      content: string->int
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: の型宣言はデフォルトでキャストするので強いリスクがある
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: PHP7
+  - node: p
+    children:
+    - node: text
+      content: が必須
+  - node: p
+    children:
+    - node: text
+      content: declare(strict_types=1);
+    - node: br
+    - node: text
+      content: (   )
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: 型宣言への態度
+  - node: p
+    children:
+    - node: text
+      content: 既存の大規模なプロジェクトへの適用には強い懸念がある
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: 特に のキャストが発生するケース
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: string->int
+  - node: p
+    children:
+    - node: text
+      content: 設定済みなら 処理系が、
+  - node: p
+    children:
+    - node: text
+      content: declare(strict_types=1)
+  - node: p
+    children:
+    - node: text
+      content: ○
+  - node: p
+    children:
+    - node: text
+      content: PHP
+  - node: p
+    children:
+    - node: text
+      content: 未設定なら人間が不用意にキャストしてしまうことがある
+  - node: p
+    children:
+    - node: text
+      content: 新規のプロジェクトでも、値を適切に扱える環境で慎重に導入したい
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: ではスカラー型宣言 は利用せず に留めたい
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: pixiv (int, string, bool) PHPDoc
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: '2540'
+  - node: p
+    children:
+    - node: text
+      content: ちょっと気になってるけど使ってない
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/sensiolabs-de/deptrac
+  - node: p
+    children:
+    - node: text
+      content: ●
+  - node: p
+    children:
+    - node: text
+      content: https://github.com/vimeo/psalm
+size:
+  max_width: 720
+  max_height: 405
+links:
+  p6:
+  - url: https://devpixiv.hatenablog.com/entry/2016/11/11/202656
+    title: Phan静的解析がもたらす大PHP型検査時代 - pixiv inside [archive]
+  p16:
+  - url: https://github.com/sensiolabs-de/deptrac
+    title: 'GitHub - deptrac/deptrac: Keep your architecture clean.'
+  - url: https://github.com/vimeo/psalm
+    title: 'GitHub - vimeo/psalm: A PHP static analysis tool for finding errors and
+      security vulnerabilities in PHP applications'
