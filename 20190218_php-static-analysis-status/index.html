@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="PHP静的解析現状確認会 - pixiv.git">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20190218_php-static-analysis-status/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20190218_php-static-analysis-status.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHP静的解析現状確認会 - pixiv.git">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20190218_php-static-analysis-status.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20190218_php-static-analysis-status/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20190218_php-static-analysis-status/oembed.xml">
+
+          <title>PHP静的解析現状確認会 - pixiv.git</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1820px;
+              --aspect-ratio: 1820 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1820,
+              maxHeight: 1024,
+              download: '20190218_php-static-analysis-status.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20190218_php-static-analysis-status.pdf" id="pdf-container" title="PHP静的解析現状確認会 - pixiv.git"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>PHP静的解析現状確認会 - pixiv.git</h1>
+              <p>公開日: <time datetime="2019-02-18">2019年2月18日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2019-02-18">2019年2月18日</time>にオンラインのビデオ会議で開催された『<a href="https://x.com/tadsan/status/1073908231251025923" target="_blank">PHP静的解析現状確認会</a>』でundefined(undefined分)として発表しました。</p>
+                </div>
+              
+
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20190218_php-static-analysis-status.pdf" download="20190218_php-static-analysis-status.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>静的解析現状確認会</p><p><strong>PHP</strong></p><p>ピクシブ株式会社</p><p><strong> / pixiv.git</strong></p><p>pixiv Inc.<br>うさみけんた</p><p><strong> / tadsan</strong></p><p><strong>2019-02-18</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>はじめに</p><p>今回紹介する の開発環境の改善は歴代の複数のチームメンバーの創意工夫の積</p><p>●</p><p>pixiv</p><p>み重ねであり、この資料は筆者 がその成果をまとめたものである</p><p>(@tadsan)</p><p>の型に関する見解は 個人の意見およびチーム内での議論に基く</p><p>●</p><p>PHP @tadsan</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>現状を三行で</p><p>未定義クラス・メソッド・定数・変数などの使用は簡単に検出できます</p><p>●</p><p>、 や などのツールがありますが、それぞれの特徴が</p><p>●</p><p>PhpStorm Phan PHPStan</p><p>の開発では ごとに動的解析と静的解析の結果は</p><p>●</p><p>pixiv.git Pull Request<br>概ね 秒程度で結果を表示できてます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>自己紹介</p><p>以前にやってた言語は</p><p>●</p><p>PHP Ruby, sh, Lisp<br>経験として動的言語が中心</p><p>○</p><p>静的型は に触れた程度</p><p>○</p><p>F#, OCaml, Haskell</p><p>年 月にピクシブ入社最初は</p><p>●</p><p>2012 11  ( Ruby)<br>年 月頃から を書きはじめた</p><p>●</p><p>2013 4 PHP</p><p><strong>tadsan</strong><br>運営本部</p><p><strong>pixiv</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>のコードベースの特徴</p><p><strong>pixiv</strong></p><p>手続き型に大きく寄った設計志向・アンチ の傾向が近い</p><p>●</p><p>OOP</p><p>クラスはオートロード可能な関数と定数の置き場としての扱い</p><p>○</p><p>から取得した値をそのまま扱うことが多いので連想配列を多用</p><p>○</p><p>PDO</p><p>旧来の手法≒ による静的解析を容易にするためのコードベース</p><p>●</p><p>(  grep)</p><p>文字列・配列による 表現はクロージャで表現する</p><p>●</p><p>callable</p><p>を採用していない による別名使用は極力しない</p><p>●</p><p>PSR-4  (use )</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>と静的解析</p><p><strong>pixiv</strong></p><p>たぶん 年頃 デプロイ時に必ず でのチェックを実施</p><p>●</p><p>( 2014 )   php -l </p><p>それ以前は を含むファイルをデプロイすることがまれにあった</p><p>○</p><p>SyntaxError</p><p>年 月正規表現ベースの を導入</p><p>●</p><p>2016 3 :  lint</p><p>の 単位で される度に実行・コメント</p><p>○</p><p>GitLab MR push</p><p>年頃から 検証 静的解析がもたらす大 型検査時代</p><p>● →</p><p>2016 Phan  Phan PHP</p><p>(phpcon2016)</p><p>年 月 を本格的に に導入</p><p>●</p><p>2018 6 : PHPStan CI</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>に寄らない利点</p><p><strong>OOP</strong></p><p>この利点は と による静的解析によっておよそ無効化された。よって</p><p>●</p><p>PhpStorm PHPStan<br>軽々に他者に推奨する戦略ではない。</p><p>インスタンス化 メソッド呼び出しの過程を経ると、 などの</p><p>● →</p><p>    grep/sed/awk</p><p>プリミティブなテキスト編集ツールだけではメソッド利用箇所の洗い出しやリファクタリング の妨げとなる。この状況は既に大量のコードがあるプロジェクトを効率よくメンテする側面<br>においては大変に痛かった。</p><p>繰り返すが、現在においては型と静的解析の力を利用しながら のリファクタリ</p><p>●</p><p>PhpStorm</p><p>ング機能などを利用し、過不足にほかのツールを利用するの懸命だろう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>正規表現ベースのチェッカー</p><p><strong>(linter)</strong></p><p>適用するパターン・除外するパターンを書ける</p><p>●</p><p>では との のあったファイルに対してチェッカーを適用</p><p>●</p><p>MR master diff</p><p>推奨されないバッドノウハウや表記揺れなどを抑止する目的</p><p>●</p><p>除外パターンも書けるので特定の場合のみ例外的に許可もしやすい</p><p>●</p><p>例 テストコードでのみ使用可</p><p>○</p><p>: </p><p>パターンのテストもあるのでチームメンバーが必要に応じて加除</p><p>●</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>&#39;@pixiv-lib/.*\.php$@&#39; =&gt; [<br>    [<br>        &#39;level&#39; =&gt; &#39;error&#39;,</p><p>で定義されているクラスは しないこと</p><p>        &#39;desc&#39;  =&gt; &#39;pixiv-lib  include_once  &#39;,<br>        &#39;pattern&#39; =&gt; [<br>            &#39;/include_once[ \(] *INC_PATH /&#39; =&gt; false,<br>            &#39;@/stacc/api\.php@&#39; =&gt; true,<br>        ],<br>        &#39;tests&#39; =&gt; [<br>            [&#39;pixiv-lib/foo.php&#39;, &quot;include_once INC_PATH . &#39;/Awesome/Class.php&#39;;&quot;, <br>true],<br>            [&#39;pixiv-lib/foo.php&#39;, &quot;include_once INC_PATH . &#39;/stacc/api.php&#39;;&quot;, <br>false],<br>            [&#39;pixiv-lib/foo.php&#39;, &quot;include_once INC_PATH . &#39;HogeClass.php&#39;;&quot;, true],<br>            [&#39;foo.php&#39;, &quot;include_once INC_PATH . &#39;/Awesome/Class.php&#39;;&quot;, false],<br>            [&#39;foo.php&#39;, &quot;include_once INC_PATH . &#39;/stacc/api.php&#39;;&quot;, false],             [&#39;foo.php&#39;, &quot;include_once INC_PATH . &#39;HogeClass.php&#39;;&quot;, false],<br>        ],<br>    ],<br>],</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>Phan</strong></p><p>コードを強力に静的解析する</p><p>●</p><p>連想配列の要素や特定のリテラルが来ること期待して解析できる</p><p>●</p><p>@phan-return array{mode:’foo’|’bar’,hoge:string}</p><p>○</p><p>明示しなくても実行パスを収集して最大限に型を推論してくれる</p><p>○</p><p>解析の度に全コードをスキャンするので大規模なコードベースでは、</p><p>●</p><p>とても時間がかかる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>2540</p><p><strong>PHPStan</strong></p><p>コードを強力に解析するが、静的情報だけではなく実行時情報を活用する</p><p>●</p><p>正確に検査するためには解析対象をオートロードあるいは事前読み込みできるようにす</p><p>●</p><p>( )</p><p>ることが前提</p><p>一回のプロセス起動で多数のファイルを同時に解析すると多量のメモリを消費するので、</p><p>●</p><p>と違ってプロジェクトの全クラスを一度に検査する用途は向かない</p><p>Phan</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>の</p><p><strong>pixiv CI</strong></p><p>および のテストによる動的解析と</p><p>●</p><p><strong>PHPUnit( JS )</strong></p><p>と正規表現ベースの による静的解析の二本立て</p><p><strong>PHPStan linter</strong></p><p>前述の通り、静的解析には ではなく を採用している</p><p>●</p><p>Phan PHPStan</p><p>実行環境の改善により、 の における のブ</p><p>●</p><p>CI GitLab Merge Request(GitHub Pull Request)<br>ランチに してから 秒前後で動的解析と静的解析の結果が得られる</p><p>push 60</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>と型</p><p><strong>PHP</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>アプリケーションと型</p><p><strong>PHP</strong></p><p>そもそもが動的型付け言語で、静的に型を付ける上で不利な面も多い</p><p>●</p><p>時などは、</p><p>ATTR_EMULATE_PREPARES</p><p>●<strong> $_GET $_POST PDO</strong></p><p>,  ,  ( )</p><p>あらゆる値を文字列型または再帰的に文字列を要素とする配列として扱う</p><p>( )</p><p>そのような値に対して「適切なキャスト」を書くのは「とても」難しい</p><p>○</p><p>不用意な判定で にキャストするのはバグや脆弱性の温床になる</p><p>string-&gt;int</p><p>○</p><p>の型宣言はデフォルトでキャストするので強いリスクがある</p><p>○</p><p>PHP7</p><p>が必須</p><p>declare(strict_types=1);<br>(   )</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>型宣言への態度</p><p>既存の大規模なプロジェクトへの適用には強い懸念がある</p><p>●</p><p>特に のキャストが発生するケース</p><p>●</p><p>string-&gt;int</p><p>設定済みなら 処理系が、</p><p>declare(strict_types=1)</p><p>○</p><p>PHP</p><p>未設定なら人間が不用意にキャストしてしまうことがある</p><p>新規のプロジェクトでも、値を適切に扱える環境で慎重に導入したい</p><p>●</p><p>ではスカラー型宣言 は利用せず に留めたい</p><p>●</p><p>pixiv (int, string, bool) PHPDoc</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>2540</p><p>ちょっと気になってるけど使ってない</p><p>●</p><p>https://github.com/sensiolabs-de/deptrac</p><p>●</p><p>https://github.com/vimeo/psalm</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdevpixiv.hatenablog.com%2Fentry%2F2016%2F11%2F11%2F202656&size=32" alt=""><a href="https://devpixiv.hatenablog.com/entry/2016/11/11/202656" target="_blank">Phan静的解析がもたらす大PHP型検査時代 - pixiv inside [archive]</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fsensiolabs-de%2Fdeptrac&size=32" alt=""><a href="https://github.com/sensiolabs-de/deptrac" target="_blank">GitHub - deptrac/deptrac: Keep your architecture clean.</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fvimeo%2Fpsalm&size=32" alt=""><a href="https://github.com/vimeo/psalm" target="_blank">GitHub - vimeo/psalm: A PHP static analysis tool for finding errors and security vulnerabilities in PHP applications</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

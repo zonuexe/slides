@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="PHPは何を捨て、どんな力を手に入れてきたのか">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20191201_what-did-php-give-up/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20191201_what-did-php-give-up.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHPは何を捨て、どんな力を手に入れてきたのか">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20191201_what-did-php-give-up.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20191201_what-did-php-give-up/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20191201_what-did-php-give-up/oembed.xml">
+
+          <title>PHPは何を捨て、どんな力を手に入れてきたのか</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20191201_what-did-php-give-up.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20191201_what-did-php-give-up.pdf" id="pdf-container" title="PHPは何を捨て、どんな力を手に入れてきたのか"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>PHPは何を捨て、どんな力を手に入れてきたのか</h1>
+              <p>公開日: <time datetime="2019-12-01">2019年12月1日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2019-12-01">2019年12月1日</time>に東京都大田区蒲田の大田区産業プラザ PiOで開催された『<a href="https://phpcon.php.gr.jp/2019/" target="_blank">PHPカンファレンス2019</a>』でレギュラーセッション(25分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpcon" target="_blank" class="hashtag">#phpcon</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20191201_what-did-php-give-up.pdf" download="20191201_what-did-php-give-up.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>PHPは何を捨て、 <br>どんな力を手に入れてきたのか</p><p>What did PHP give up and what power did it get?</p><p>PHP Conference Japan <br>2019-12-01 #phpcon</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv事業本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>これまでのあらすじ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>昨日</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>そもそもPHP自体が レガシーと言われがち</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>PHPカンファレンス</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>本日のお題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>そもそもPHPというプ ログラミング言語はどん な機能を持っているのか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p><strong>“We have things like protected properties. </strong><br><strong>We have abstract methods. We have all </strong><br><strong>this stuff that your computer science </strong><br><strong>teacher told you you should be using.  </strong><br><strong>I don&#39;t care about this crap at all.”</strong></p><p><strong>–Rasmus Lerdorf </strong><br><strong>https://en.wikiquote.org/wiki/Rasmus_Lerdorf</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>には プロパティも抽象メ</p><p><strong>“PHP protected</strong><br>ソッドもありますよ。計算機科学の教授が<br>「使え」と言ってるものは全部。</p><p>そんなことはクソ興味ないですけど</p><p><strong>”</strong></p><p><strong>–Rasmus Lerdorf</strong></p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>僕が思いつくPHPの 機能をざっと挙げて<br>みると…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>抽象クラス, トレイト, インター<br>フェイス, ジェネレータ, イテレー タ, クロージャ, 函数の動的呼び出 し, 無名クラス, eval, 型宣言, 連 想配列, リフレクションAPI, 自己<br>文書化, 標準入出力の読み書き, <br>REPL, クラスの遅延ロード</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>改めてPHPの言語 仕様が追加された時<br>系列を見てみよう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>PHP 7.4</p><p>Arrow functions 2.0 <br>JavaScriptなど </p><p>Typed Property <br>Javaなどの静的型付き言語 </p><p>Numeric Literal Separator <br>Ada, Ruby, JavaScriptなど</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>PHP 7.3</p><p>Flexible Heredoc and Nowdoc <br>Rubyにも似た記法はある </p><p>list() Reference Assignment <br>これはPHP独自に近い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>PHP 7.2</p><p>Trailing Commas In List Syntax <br>カンマ(,)を並べて書く記法のほぼ全<br>てで余分につけてもよくなった </p><p>Parameter Type Widening <br>継承したクラスで引数の型省略</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>PHP 7.1</p><p>Nullable Types <br>Void Return Type <br>Multi catch <br>Allow specifying keys in list()</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>PHP 7.0</p><p>Anonymous Class <br>Generator Delegation</p><p>(yield from) </p><p>Return Type Declaration Null Coalesce Operator <br>Scalar type hints</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>PHP 5.6</p><p>Exponential Operator(pow**) <br>Importing named function <br>Variadic function argument (...) <br>配列を引数として展開 </p><p>Argument unpacking(...) <br>可変長引数を配列として取得</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>PHP 5.5</p><p>Generator <br>ﬁnally keyword (try-catch-...) Const array/string dereference Allow non-scalar keys in foreach</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>PHP 5.4</p><p>Traits <br>Short array syntax <br>callable type hint</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>PHP 5.3</p><p>Closures (function expression) <br>関数式、クロージャ、またはラムダ式 <br>JavaScriptのfunctionに似てる が、レキシカルスコープ(変数の捕 捉)のためにuseキーワードが必要</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>ひとつひとつの機能 の話を語ったら20分<br>では全然足りない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>なので本日はPHPがどう変 わっていったかというエピ ソードを交えてPHPの言語<br>機能を紹介していきます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>がリリー</p><p>PHP 7.4.0<br>スされましたね</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>本日</p><p>12月1日は <br>何の日でしょう？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>27 <br>この数は何でしょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>せいかい</p><p>PHP7.4に向けて <br>受理されたRFCの数</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>RFC?</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>RFC</p><p>(Request for Comment)</p><p>新バージョンへの変更提案 PHPの機能の改廃の提案は<br>RFCを通じて行われる <br>提案はメーリングリストで議論 されPHP.net VCSアカウント<br>の所持者が議決する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>PHP RFC</p><p>の歴史</p><p>2008年頃から機能提案のため<br>に運用されはじめた <br>2011年 から正式な</p><p>(5.4alpha1)<br>リリースプロセスになった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>“PHP releases have always been <br>done spontaneously, in a somehow chaotic way. Individual(s) decided <br>when a release will happen and <br>what could or could ﬁt in. Release managers role are unclear and the <br>way to nominate them is not <br>clearly deﬁned either.”<br>‒ Request for Comments: Release Process <br>https://wiki.php.net/rfc/releaseprocess</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>“PHPのリリースは常に無秩序な方法で自 発的に行われてきました。個々人がいつリ リースされるか、何が起こるか、そして何 が収まるかを決定しています。リリースマ ネージャの役割は不明瞭で、指名の手続き<br>も明確に定義されていません。”</p><p>‒ Request for Comments: Release Process <br>https://wiki.php.net/rfc/releaseprocess</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>この時期</p><p>(2008〜2010年)</p><p>のPHPには <br>何があったでしょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>この当時のPHP情勢</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>廣川さんの <br>｢PHPの今とこれから｣が 当時の事情の貴重な資料</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>‒ PHPの今とこれから2009 </p><p>https://www.slideshare.net/hirokawa/php2009</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>‒ PHPの今とこれから2009 </p><p>https://www.slideshare.net/hirokawa/php2009</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>‒ PHPの今とこれから2009 </p><p>https://www.slideshare.net/hirokawa/php2009</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>Unicode化とは どういうことか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>言語処理系の文字列実装</p><p>CSI方式  </p><p>(Code Set Independent)</p><p>特定のコードセットに依存しない <br>UCS正規化方式  </p><p>(Universal Character Set)</p><p>内部的に文字コードを統一し<br>てから処理する </p><p>https://magazine.rubyist.net/articles/0025/0025-Ruby19_m17n.html</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>言語ごとの文字列実装</p><p>CSI方式 </p><p>Ruby, Python 2, PHP <br>UCS正規化方式 </p><p>Java, JavaScript, Perl,  <br>Python 3, PHP6</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>ざっくりCSI方式</p><p>文字列変換をしないので、 オーバーヘッドは最小限 <br>サポートする文字コードごと に文字列処理の実装が要る</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>ざっくりUCS正規化方式</p><p>文字列を変換するので入出力 で変換オーバーヘッドがある 文字列処理は内部文字コード 用のものだけ用意すればいい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>PHP6はUTF-16を目指した</p><p>UCS正規化方式への移行 <br>従来のPHP文字列はバイト列 PHP 5.2で キャスト</p><p><strong>(binary)</strong><br>と   が追加された </p><p><strong>b&quot;string&quot;</strong><br>結局Unicode化しなかった<br>ので、ただのエイリアス</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>重要なこと</p><p>UCS正規化しないとUnicode サポートできないわけではない UTF-16にしても1コードポイ ント＝1文字になるわけではな<br>い (サロゲートペア)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>PHP6.0の顛末</p><p>実装は難航し、文字列以外の 6.0向け機能は5.3, 5.4系で <br>それぞれリリースされた <br>2010年3月にリポジトリの<br>trunk(master)が5.3に <br>ロールバックした</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>開発が頓挫したPHP6は 欠番としてスキップされ<br>PHP5.6の次は7.0になっ<br>たというのは有名な話</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>(私はこの時代にPHPに 触れておらず議論を詳し<br>くは追ってないので 想像の域は出ないが)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>この時代にPHPはカウボーイ による開発スタイルを捨て、明 文化されたスケジュールとプロ セスによる開発体制に移行した</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>PHPのリリース計画や メンテナンス期間が定め られたのもこのRFCから</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>PHP5.3ではPHP6<br>を待たず重要な <br>機能がマージされた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>‒ PHPの今とこれから2009 </p><p>https://www.slideshare.net/hirokawa/php2009</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>遅延静的束縛</p><p>static::method(); <br>親クラスの静的メソッドから継承さ れたクラスのメソッドを呼び出す ちなみに 関</p><p><strong>forward_static_call()</strong><br>数のマニュアルには「静的メソッド をコールする」と書いてるが、この 説明は間違い (翻訳の問題ではない)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>Dynamic static call</p><p>の代りに </p><p>Hoge::fuga()<br>$class=&quot;Hoge&quot;; $class::fuga();<br>で呼べるようになった 静的メソッド版可変関数</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>名前空間</p><p>クラスや関数を階層化できる <br>名前空間違いの同名のクラス<br>が作れるようになった <br>フルネームをFQSENと呼ぶ <br>useでファイルローカルな別名<br>を付けることもできる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p>useの誤解されがちなところ</p><p>include/requireのようにファ イルを読み込む機能ではない <br>ファイル内で呼べるよう <br>ローカルな名前を付けるだけ 存在しないクラスをuseして<br>もエラーにはならない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p>クロージャ (関数式・ラムダ式)</p><p>ローカルな関数が作れる <br>ただの関数を作れるだけでは なく、外側の変数を引き込め<br>るのが重要 (関数閉包) <br>普通の関数やメソッドにその<br>機能はない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          <p>クロージャ以前の無名関数</p><p>create_function()という関<br>数で関数式っぽいことはできた その実態はevalで lambda_1 のような関数を動的に定義する <br>この関数はリスキーなので PHP7.2からdeprecated</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p>PHPのクロージャ</p><p>構文上はJavaScriptのものに 似ているが、useで列挙しない と外側の変数を捕捉できない <br>この仕様にはPHPの変数の 説明しにくい挙動が関わって<br>いる…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p>PHPの変数</p><p>PHPで変数の値を再代入した<br>り引数に渡したりすると、 <br>(意味論として)値がコピーされる <br>クロージャでuseしたときも<br>PHPでは引数と同じ動きになる &amp;を付けると変数の参照をとる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p>JavaScriptのクロージャ</p><p>make_counter = function() {<br>    i = 0;<br>    return function () {<br>        return i++;<br>    };<br>};</p><p>c1 = make_counter();</p><p>console.log(c1()); console.log(c1()); console.log(c1());</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p>PHPのクロージャ</p><p>この記述だと$i=0のコピーさ<br>れるだけ。 &amp;を付けると変数リファ</p><p>&lt;?php</p><p>レンスで値を更新できる</p><p>$make_counter = function() {<br>    $i = 0;<br>    return function () use ($i) {<br>        return $i++;<br>    };<br>};</p><p>$c1 = $make_counter();</p><p>var_dump($c1()); //=&gt; 0 var_dump($c1()); //=&gt; 0 var_dump($c1()); //=&gt; 0</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-text">
+                          <p>最初のRFCクロージャ</p><p>実はJavaScript風クロージャ よりも前に短いクロージャが 提案されてた (2008年3月) </p><p>RFC: Short syntax for anonymous functions <br>ただしDraft止まり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-text">
+                          <p>‒ PHP: rfc:short-syntax-for-anonymous-functions <br>https://wiki.php.net/rfc/short-syntax-for-anonymous-functions</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-79">
+                        <h4>Page 79</h4>
+                        <div class="page-text">
+                          <p>‒ PHP: rfc:short-syntax-for-anonymous-functions <br>https://wiki.php.net/rfc/short-syntax-for-anonymous-functions</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-80">
+                        <h4>Page 80</h4>
+                        <div class="page-text">
+                          <p>時は流れて<br>2019年</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-81">
+                        <h4>Page 81</h4>
+                        <div class="page-text">
+                          <p>PHP: rfc:arrow_functions_v2 <br>https://wiki.php.net/rfc/arrow_functions_v2</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-82">
+                        <h4>Page 82</h4>
+                        <div class="page-text">
+                          <p>PHP: rfc:arrow_functions_v2 <br>https://wiki.php.net/rfc/arrow_functions_v2</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-83">
+                        <h4>Page 83</h4>
+                        <div class="page-text">
+                          <p>姿形は違うが幾度もの 議論の末に短い記法の<br>関数式が導入された</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-84">
+                        <h4>Page 84</h4>
+                        <div class="page-text">
+                          <p>ところで</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-85">
+                        <h4>Page 85</h4>
+                        <div class="page-text">
+                          <p>PHP: rfc:arrow_functions_v2 <br>https://wiki.php.net/rfc/arrow_functions_v2</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-86">
+                        <h4>Page 86</h4>
+                        <div class="page-text">
+                          <p>私たちはこの <br>提案者の名前を <br>見たことがある！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-87">
+                        <h4>Page 87</h4>
+                        <div class="page-text">
+                          <p>‒ PHPの今とこれから2012 </p><p>https://www.slideshare.net/hirokawa/php-now-and-then-<br>2012-at-php-conference-2012-tokyo-japan</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-88">
+                        <h4>Page 88</h4>
+                        <div class="page-text">
+                          <p>ジェネレータ</p><p>(古典的な)コルーチン <br>「何度も繰り返す」構造を関 数(メソッド)を使って簡単に作<br>れる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-89">
+                        <h4>Page 89</h4>
+                        <div class="page-text">
+                          <p>Nikita Popov</p><p>近年のPHPの中核的な開発者 <br>PHP5.5以降､非常に多数の言語機能 を実装してPHPに取り入れてきた <br>PHP-Parserなどの作者 <br>去年の大学院を卒業し今年JetBrains に入社してPhpStormチームに参加</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-90">
+                        <h4>Page 90</h4>
+                        <div class="page-text">
+                          <p>とてもざっくり言うとレガ シー仕様を消し､不条理な 挙動は是正し､他言語にあ るようなカッコイイ機能を<br>追加提案してきた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-91">
+                        <h4>Page 91</h4>
+                        <div class="page-text">
+                          <p>不条理な <br>挙動って？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-92">
+                        <h4>Page 92</h4>
+                        <div class="page-text">
+                          <p>例: 未定義定数はその文字列になる</p><p>echo PHP; <br>=&gt; 文字列 &quot;PHP&quot; が出力 </p><p>E_NOTICE/E_WARNING <br>error_reportingが低い環境 でさりげなく生き残ってた可<br>能性が高い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-93">
+                        <h4>Page 93</h4>
+                        <div class="page-text">
+                          <p>歴史的経緯で残ったレ ガシー仕様はさくっと 消しまくっていこうぜ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-94">
+                        <h4>Page 94</h4>
+                        <div class="page-text">
+                          <p>いいじゃん いいじゃん</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-95">
+                        <h4>Page 95</h4>
+                        <div class="page-text">
+                          <p>📛</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-96">
+                        <h4>Page 96</h4>
+                        <div class="page-text">
+                          <p>🔥</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-97">
+                        <h4>Page 97</h4>
+                        <div class="page-text">
+                          <p>🔥<br>🔥<br>🔥</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-98">
+                        <h4>Page 98</h4>
+                        <div class="page-text">
+                          <p>燃えた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-99">
+                        <h4>Page 99</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-100">
+                        <h4>Page 100</h4>
+                        <div class="page-text">
+                          <p>Deprecate PHP&#39;s short open tags, again</p><p>一般的なPHPタグは&lt;?php ... ?&gt; または&lt;?= ... ?&gt; だが、&lt;? ... ?&gt;と<br>いう形式もある <br>php.iniで有効無効を切替られる 環境によってOnだったりOffだっ<br>たり</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-101">
+                        <h4>Page 101</h4>
+                        <div class="page-text">
+                          <p>Deprecate PHP&#39;s short open tags, again</p><p>XML宣言との相性がとても悪い <br>そんな半端モンは引導を渡してやろう<br>ぜ！ ということで提案された <br>構文がシンプルになるし、機械的に変 換もできるから良いだろ、という主旨</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-102">
+                        <h4>Page 102</h4>
+                        <div class="page-text">
+                          <p>Zeevによる <br>反論</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-103">
+                        <h4>Page 103</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-104">
+                        <h4>Page 104</h4>
+                        <div class="page-text">
+                          <p>Zeev Suraski</p><p>PHP3・4の開発者 <br>相方のAndi Gutmansとともに VM型処理系のZend Engine開発 <br>PHPでよくあるZend…は <br>ZeevとAndiに由来 <br>PHPコードに未だに影響を残す</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-105">
+                        <h4>Page 105</h4>
+                        <div class="page-text">
+                          <p>さらなる提案</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-106">
+                        <h4>Page 106</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-107">
+                        <h4>Page 107</h4>
+                        <div class="page-text">
+                          <p>続きは Webで</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-108">
+                        <h4>Page 108</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-109">
+                        <h4>Page 109</h4>
+                        <div class="page-text">
+                          <p>まとめ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-110">
+                        <h4>Page 110</h4>
+                        <div class="page-text">
+                          <p>PHPは力を手に入れ ようとして失敗して きた経験が結構ある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-111">
+                        <h4>Page 111</h4>
+                        <div class="page-text">
+                          <p>現在のPHPは静的解析 できる環境が年々強まっ て往年のざっくりさは息<br>をひそめつつある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-112">
+                        <h4>Page 112</h4>
+                        <div class="page-text">
+                          <p>銀河の平和は<br>どっちだ</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphperkaigi.connpass.com%2Fevent%2F155509%2F&size=32" alt=""><a href="https://phperkaigi.connpass.com/event/155509/" target="_blank">大改修！PHPレガシーコードビフォーアフター - connpass</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.pixiv.net%2Ffanbox%2Fcreator%2F105589%2Fpost%2F685719&size=32" alt=""><a href="https://www.pixiv.net/fanbox/creator/105589/post/685719" target="_blank">「PHPプロジェクトに静的解析を新規導入する」 #phperkaigi｜にゃんだーすわん｜pixivFANBOX</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdevpixiv.hatenablog.com%2Fentry%2F2016%2F11%2F11%2F202656&size=32" alt=""><a href="https://devpixiv.hatenablog.com/entry/2016/11/11/202656" target="_blank">devpixiv.hatenablog.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fen.wikiquote.org%2Fwiki%2FRasmus_Lerdorf&size=32" alt=""><a href="https://en.wikiquote.org/wiki/Rasmus_Lerdorf" target="_blank">Rasmus Lerdorf - Wikiquote</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc&size=32" alt=""><a href="https://wiki.php.net/rfc" target="_blank">PHP: rfc</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Freleaseprocess&size=32" alt=""><a href="https://wiki.php.net/rfc/releaseprocess" target="_blank">PHP: rfc:releaseprocess</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Freleaseprocess&size=32" alt=""><a href="https://wiki.php.net/rfc/releaseprocess" target="_blank">PHP: rfc:releaseprocess</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fhirokawa%2Fphp2009&size=32" alt=""><a href="https://www.slideshare.net/hirokawa/php2009" target="_blank">PHPの今とこれから2009 | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fhirokawa%2Fphp2009&size=32" alt=""><a href="https://www.slideshare.net/hirokawa/php2009" target="_blank">PHPの今とこれから2009 | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fhirokawa%2Fphp2009&size=32" alt=""><a href="https://www.slideshare.net/hirokawa/php2009" target="_blank">PHPの今とこれから2009 | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fmagazine.rubyist.net%2Farticles%2F0025%2F0025-Ruby19_m17n.html&size=32" alt=""><a href="https://magazine.rubyist.net/articles/0025/0025-Ruby19_m17n.html" target="_blank">Ruby M17N の設計と実装</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fnews-web.php.net%2Fphp.internals%2F47120&size=32" alt=""><a href="https://news-web.php.net/php.internals/47120" target="_blank">php.internals: PHP 6</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Freleaseprocess&size=32" alt=""><a href="https://wiki.php.net/rfc/releaseprocess" target="_blank">PHP: rfc:releaseprocess</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fhirokawa%2Fphp2009&size=32" alt=""><a href="https://www.slideshare.net/hirokawa/php2009" target="_blank">PHPの今とこれから2009 | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Fshort-syntax-for-anonymous-functions&size=32" alt=""><a href="https://wiki.php.net/rfc/short-syntax-for-anonymous-functions" target="_blank">PHP: rfc:short-syntax-for-anonymous-functions</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-87">
+                        <h4>Page 87</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fhirokawa%2Fphp-now-and-then-2012-at-php-conference-2012-tokyo-japan&size=32" alt=""><a href="https://www.slideshare.net/hirokawa/php-now-and-then-2012-at-php-conference-2012-tokyo-japan" target="_blank">PHP Now and Then 2012 at PHP Conference 2012, Tokyo Japan (in japanese) | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

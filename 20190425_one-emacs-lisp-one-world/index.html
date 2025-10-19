@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="一つの Lisp、一つの世界">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20190425_one-emacs-lisp-one-world/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20190425_one-emacs-lisp-one-world.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="一つの Lisp、一つの世界">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20190425_one-emacs-lisp-one-world.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20190425_one-emacs-lisp-one-world/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20190425_one-emacs-lisp-one-world/oembed.xml">
+
+          <title>一つの Lisp、一つの世界</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20190425_one-emacs-lisp-one-world.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20190425_one-emacs-lisp-one-world.pdf" id="pdf-container" title="一つの Lisp、一つの世界"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>一つの Lisp、一つの世界</h1>
+              <p>公開日: <time datetime="2019-04-25">2019年4月25日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2019-04-25">2019年4月25日</time>に東京都港区の株式会社ポケットチェンジで開催された『<a href="https://lisp.connpass.com/event/127054/" target="_blank">Shibuya.lisp lispmeetup #75</a>』でセッション(20分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/75" target="_blank" class="hashtag">#75</a><a href="https://twitter.com/hashtag/lispmeetup" target="_blank" class="hashtag">#lispmeetup</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20190425_one-emacs-lisp-one-world.pdf" download="20190425_one-emacs-lisp-one-world.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>一つの Lisp、一つの世界</p><p>(Emacs)</p><p>One Lisp in a lifetime.</p><p>Shibuya.lisp lispmeetup #75</p><p>2019年4月25日 #lispmeetup</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          <p>宣伝</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>GNU Emacsを 使ってる方？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>Emacs Lispを</p><p>書いている方？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>Emacs Lisp</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>シンボルの</p><p>名前空間で見ると</p><p>Lisp-2に分類される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>関数がある</p><p> マクロがある</p><p>汎変数がある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>なんでも</p><p>できるのでは</p><p>？？？？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>そうして2012年</p><p>青年はSICPをEmacs Lispで解こうとした</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>／(^o^)＼</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>SICP読んだ方なら おわかりですね？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>Emacs Lispに</p><p>末尾呼び出し</p><p>最適化はない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>そうして青年は<br>Dr.RacketでSICP を解きはじめた…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>完<br>未</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>(飽きっぽいので最 後までは未だに解け<br>てないです…)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>リリカル☆Lispは</p><p>最後まで解きました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>Lispとして見た</p><p>Emacs Lisp</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>ダイナミック<br>スコープ楽しい！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>クロージャがなかった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>(今はあります！)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>まとめようと思ったけ ど山本和彦さんが昔書<br>いたブログがあった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>そうして青年は<br>Dr.RacketでSICP を解きはじめた…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>Emacs Lispの</p><p>文化</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>Emacsらしい<br>Lispとは</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>バッファが</p><p>ファーストクラス</p><p>オブジェクト</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>手続き的にカーソル を操作しながらバッ ファ内を操作できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>個人的には</p><p>とても楽しい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>Emacs JP Slack teamの</p><p>スプラッシュメッセージ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>Emacsは</p><p>雑草だ</p><p>！！！！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>私からは</p><p>以上です</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>補足</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>Emacs Lispの歴史的経緯<br>をまじめに知りたければ</p><p>Evolution of Emacs Lisp</p><p>https://www-labs.iro.umontreal.ca/~monnier/</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fengineers.connpass.com%2Fevent%2F123175%2F&size=32" alt=""><a href="https://engineers.connpass.com/event/123175/" target="_blank">新元号決定！平成最後のLT大会＆PARTY - connpass</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftokyo-emacs.connpass.com%2Fevent%2F128038%2F&size=32" alt=""><a href="https://tokyo-emacs.connpass.com/event/128038/" target="_blank">東京Emacs勉強会 端午の節句 - connpass</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Flyrical.bugyo.tk%2F&size=32" alt=""><a href="http://lyrical.bugyo.tk/" target="_blank">魔法言語 リリカル☆Lisp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fkazu-yamamoto.hatenablog.jp%2Fentry%2F20080208%2F1202435711&size=32" alt=""><a href="https://kazu-yamamoto.hatenablog.jp/entry/20080208/1202435711" target="_blank">Emacs Lisp のダメなところ - あどけない話</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fmelpa.org%2F%23%2F&size=32" alt=""><a href="https://melpa.org/#/" target="_blank">MELPA</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww-labs.iro.umontreal.ca%2F~monnier%2F&size=32" alt=""><a href="https://www-labs.iro.umontreal.ca/~monnier/" target="_blank">Stefan Monnier</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

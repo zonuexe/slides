@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="私はなぜPHP8に苦しみ未だに解き放たれていないのか">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20201212_why-am-i-still-cursed-by-php8/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20201212_why-am-i-still-cursed-by-php8.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="私はなぜPHP8に苦しみ未だに解き放たれていないのか">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20201212_why-am-i-still-cursed-by-php8.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20201212_why-am-i-still-cursed-by-php8/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20201212_why-am-i-still-cursed-by-php8/oembed.xml">
+
+          <title>私はなぜPHP8に苦しみ未だに解き放たれていないのか</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20201212_why-am-i-still-cursed-by-php8.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20201212_why-am-i-still-cursed-by-php8.pdf" id="pdf-container" title="私はなぜPHP8に苦しみ未だに解き放たれていないのか"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>私はなぜPHP8に苦しみ未だに解き放たれていないのか</h1>
+              <p>公開日: <time datetime="2020-12-12">2020年12月12日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2020-12-12">2020年12月12日</time>にオンラインのZoom会議で開催された『<a href="https://phpcon.php.gr.jp/2020/" target="_blank">PHPカンファレンス2020</a>』で懇親会LT(5分)として発表しました。</p>
+                </div>
+              
+
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20201212_why-am-i-still-cursed-by-php8.pdf" download="20201212_why-am-i-still-cursed-by-php8.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>私はなぜPHP8に苦しみ未だに解き放たれていないのか</strong></p><p>Why am I cursed by PHP8, and still not released?</p><p>2020-12-12</p><p>PHPカンファレンス懇親会LT </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer, Rubyist</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          <p>近況</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>出ましたね</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>出ちゃいま<br>したね</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>このときは <br>構文が違った</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>そのあといろ<br>いろあった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>いろいろ<br>あった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>@@Attr   #[Attr] @[Attr]   &lt;&lt;Attr&gt;&gt; <br>@:Attr    @{Attr}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>書きかた工夫すれば<br>PHP7と矛盾せずに導入<br>できるのは <br>#[Attr] 形式だけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>それは わかる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>話は変り <br>ますが</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>テキストエディタの 構文色付けというの<br>は意外に難しい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>エディタの種類によって<br>色付けアルゴリズムの <br>違いには結構違いがある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>一番よくあるのは<br>コードのキーワード<br>だけ色付ける方法</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>if, else, for, endif, <br>while, do, foreach, as, endif, ... などキーワード のリストと文字列の括弧 とコメントブロックだけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>PHPだとそれでは 不十分なことがある </p><p>(HereDoc/NowDoc)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>Attributeも</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>引数の非推奨化</p><p>#[Deprecated] <br>function f(     $arg1, <br>    #[</p><p>Deprecated] <br>$arg2){}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>引数の非推奨化</p><p>#[ <br>    Deprecated <br>] <br>function f($arg1, <br>    #[ $arg2){}<br>Deprecated] </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>エディタの構文色付けは 言語のパーサをそのまま 使えばいいわけではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>キーボードで1文字ごと<br>に入力されるので <br>画面に表示されている コードがPHPとして 正しいわけではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>最近一番注目されて<br>るのはtree-sitter<br>というやつ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>PHPではMicrosoftが <br>開発している </p><p>Tolerant PHP Parser <br>というやつもある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>何が言いたい のかというと</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>EmacsにはCc Mode という言語モード用の フレームワークがある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>Emacsの｢モード｣は画面 の文字に色を付けたりイ ンデント調節したりする</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>Cc Modeは｢C言語っ ぽい構文｣の言語を幅<br>広くサポートする</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>PHP Modeは何の 因果かjava-mode を継承している！！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>ここまで言っておいて なんだけど表示自体の 対応は全然難しくない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>画面表示は割と ちゃんとしてる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>じゃあ何が 問題なのか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>なぜかインデント処理の どこかで正規表現マッチ<br>に文字列を渡すべき <br>ところnilが渡ってエラー</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>バックトレースは<br>あるが行数なし</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>そしてその関数は<br>2000行近くある…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>俺たちのデバッグ<br>はこれからだ！</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Freleases%2F8.0%2Fen.php&size=32" alt=""><a href="https://www.php.net/releases/8.0/en.php" target="_blank">PHP: PHP 8.0.0 Release Announcement</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F1052551&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/1052551" target="_blank">PHP8 &lt;&lt;Attribute&gt;&gt;を語ろう #phpkansai ｜にゃんだーすわん｜pixivFANBOX</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="ジェネレータで無限を手玉に取る術">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20200211_generator-infinity-techniques/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20200211_generator-infinity-techniques.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="ジェネレータで無限を手玉に取る術">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20200211_generator-infinity-techniques.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20200211_generator-infinity-techniques/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20200211_generator-infinity-techniques/oembed.xml">
+
+          <title>ジェネレータで無限を手玉に取る術</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20200211_generator-infinity-techniques.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20200211_generator-infinity-techniques.pdf" id="pdf-container" title="ジェネレータで無限を手玉に取る術"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>ジェネレータで無限を手玉に取る術</h1>
+              <p>公開日: <time datetime="2020-02-11">2020年2月11日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2020-02-11">2020年2月11日</time>に東京都の練馬区立区民・産業プラザ Coconeriホールで開催された『<a href="https://phperkaigi.jp/2019/" target="_blank">PHPerKaigi 2020</a>』でレギュラートーク(15分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phperkaigi" target="_blank" class="hashtag">#phperkaigi</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20200211_generator-infinity-techniques.pdf" download="20200211_generator-infinity-techniques.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p><strong>ジェネレータで無限を手玉に取る術</strong></p><p>Techniques for controlling infinity using generator</p><p>2020-02-11 PHPerKaigi 2020 Day 2 <br>Coconeri Hall, Nerima, Tokyo #phperkaigi</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer, Rubyist</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>近況</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>本日のお題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 </p><p>https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>無限を <br>手玉に取る</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>元ねたがある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>いますぐ皆さんに <br>函数プログラミングを 学べという話ではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>(個人的に) 大事なのは <br>以下のページ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>言ってることは よくわからんが<br>カッコイイ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>何が <br>言いたいのか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>遅延評価 <br>必要になるまで 計算を遅らせる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>関数型知識ゼロでも <br>その神髄の一端を <br>いとも簡単に扱える 機能がPHPにはある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>ここまで言えば <br>おわかりですね？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>ジェネレータ</p><p>Generator</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>ジェネレータ <br>とは何か？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>「PHPでforeachで反復できるものは何でしょう？」配列、オ ブジェクト、Iterator、そして“ジェネレータ”です。ジェネレー タは言語によってコルーチン、semicoroutineやFiberとも呼 ばれるものと同等の言語機能であり、SICPのような計算機科学 の教科書で説明されるストリーム・無限リストを簡潔に実現で きます。foreachループで配列を反復するのは既に作成済みの データを頭から辿っていくだけのものであるのに対して、ジェ ネレータは配列のキーや要素に相当するものを計算によって生 み出すことができるため、省メモリで効率のよい計算が可能で す。このトークではジェネレータの基礎概念と、実際に応用で<br>きるパターンについて紹介していきます。</p><p>‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 </p><p>https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>この説明で全部<br>なのですが…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>ざっくり説明 していきます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>「PHPでforeachで反復できるものは何でしょう？」 配列、オブジェクト、Iterator、そして“ジェネレータ”<br>です。</p><p>‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 </p><p>https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>ジェネレータはforeachできる</p><p>配列を代用できる場面がある <br>全てを置き換えるものではない あくまでforeachで順次実行<br>するもののみ <br>その他の反復可能オブジェクト<br>については今回触れません</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>iterable擬似型 (PHP 7.1)</p><p>擬似型とは実態のある一種類の 型ではなく同じように扱える複 数の型とクラスをひとまとめに<br>した便宜上のもの <br>iterable = foreachできる値</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>おまけ: 擬似型</p><p>前述したように特定の型ではな いが、型宣言(引数・戻り値)の<br>型として記述できる <br>callable擬似型 <br>関数として呼び出せる値</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>おまけ: iterableと型定義</p><p>DocCommentに型を書くとき <br>キーと値の型を書ける </p><p>や </p><p>iterable&lt;int,string&gt;</p><p>のように </p><p>Generator&lt;int,string&gt;<br>PhpStormは未対応なので </p><p> で代用…</p><p>iterable|string[]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>おまけ: iterableと型定義</p><p>iterableの型をちゃんと書いておくと<br>foreachの中身も静的解析できる <br>PHPStanは書かないと叱ってくれる JetBrainsさん早くPhpStorm対応し て(deep-assocプラグインで補完可能) 詳細は｢2018年のPHPDoc事情とPSR-5｣に書きました</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>置換できる可能性がある</p><p>&lt;?php</p><p>どこかから取得してきた リスト</p><p>//  ID<br>$target_ids = [85490, 54352, 34242, 45090];</p><p>foreach ($target_ids as $id) {<br>    shori($id);<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>置換できる可能性がある</p><p>&lt;?php</p><p>ジェネレータのイメージ</p><p>// <br>$target_ids = function () { ... };</p><p>foreach ($target_ids as $id) {<br>    shori($id);<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>ジェネレータは言語によってコルーチン、<br>semicoroutineやFiberとも呼ばれるものと同等の言<br>語機能であり、</p><p>‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 </p><p>https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>用語 (呼ばれかた)</p><p>言語によって呼びかたや機能が<br>若干違います <br>JavaScriptやPythonのジェ ネレータはPHPと似ています <br>RubyにはEnumeratorと Fiberというものがあります</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>コルーチン (coroutine)</p><p>ジェネレータは古典的なコルー チンと同等のものですが、現代 でコルーチンと呼ばれているも のは意味がかなり拡大している<br>ので注意が必要です</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>SICPのような計算機科学の教科書で説明されるスト<br>リーム・無限リストを簡潔に実現できます。</p><p>‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 </p><p>https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>SICP <br>計算機プログラムの<br>構造と解釈</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>‒計算機プログラムの構造と解釈 第2版 </p><p>https://www.amazon.co.jp/dp/4798135984</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>Webで無料で<br>も読めます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>‒計算機プログラムの構造と解釈 第2版 </p><p>https://sicp.iijlab.net/fulltext/</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>‒アスペ日記 非公式PDF版SICP・新訳 </p><p>https://takeda25.hatenablog.jp/entry/20151030/1446174031</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>計算機科学の入門 書という扱いだが､ 簡単な本ではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>この本の序盤 2章あたりに <br>書いてあること</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>ペア</p><p>(二値の組を持つオブ<br>があれば様々</p><p>ジェクト)<br>なデータ構造が作れる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>ペアの片方を関数で <br>遅延させることで <br>ストリーム(遅延リス<br>ト)というものが作れる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>ストリーム (遅延リスト)</p><p>配列・オブジェクトのようなも のとクロージャがあれば実現で<br>きる <br>PHPで実装してみた </p><p>https://github.com/zonuexe/phperkaigi-generator/blob/master/<br>stream.php</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>ストリームでできる ことはジェネレータ<br>で表現できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>foreachループで配列を反復するのは既に作成済みの データを頭から辿っていくだけのものであるのに対し<br>て、ジェネレータは配列のキーや要素に相当するものを 計算によって生み出すことができるため、省メモリで効<br>率のよい計算が可能です。</p><p>‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 </p><p>https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>ということで、 ジェネレータを <br>説明します</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>ジェネレータの<br>書きかた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>ジェネレータ=特別な関数</p><p>関数定義(メソッド・クロー<br>ジャを含む)の中でyieldと書く<br>とジェネレータになる <br>yieldに渡した値はforeachの<br>値として受け渡される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>PHPUnit dataProvider</p><p>テストケースに必要なパラメー<br>タを生成するメソッド <br>配列を返すように作るのが一般 的だが、実はジェネレータでも<br>作れる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>基本的なジェネレータ</p><p>&lt;?php</p><p>どこかから取得してきた リスト</p><p>//  ID          <br>f<br>$target_ids = [85490, 54352, 34242, 45090];</p><p>foreach ($target_ids as $id) {<br>    shori($id);<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>基本的なジェネレータ</p><p>&lt;?php</p><p>どこかから取得してきた リスト</p><p>//  ID          <br>f<br>$target_ids = [85490, 54352, 34242, 45090];</p><p>foreach ($target_ids as $id) {<br>    shori($id);<br>}</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fbf61520eb2d455e0e8b4&size=32" alt=""><a href="https://qiita.com/tadsan/items/bf61520eb2d455e0e8b4" target="_blank">このPHPがテンプレートエンジンのくせに慎重すぎる (前篇) #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F5b1651a5-0a01-4b49-b338-e332f981bf5d&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d" target="_blank">ジェネレータで無限を手玉に取る術 by うさみけんた | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fmrkn%2Fss-8285032&size=32" alt=""><a href="https://www.slideshare.net/mrkn/ss-8285032" target="_blank">関数型プログラミングの世界 | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F5b1651a5-0a01-4b49-b338-e332f981bf5d&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d" target="_blank">ジェネレータで無限を手玉に取る術 by うさみけんた | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F5b1651a5-0a01-4b49-b338-e332f981bf5d&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d" target="_blank">ジェネレータで無限を手玉に取る術 by うさみけんた | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F72b02339d12120ca37d7&size=32" alt=""><a href="https://qiita.com/tadsan/items/72b02339d12120ca37d7" target="_blank">2018年のPHPDoc事情とPSR-5 #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F5b1651a5-0a01-4b49-b338-e332f981bf5d&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d" target="_blank">ジェネレータで無限を手玉に取る術 by うさみけんた | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F5b1651a5-0a01-4b49-b338-e332f981bf5d&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d" target="_blank">ジェネレータで無限を手玉に取る術 by うさみけんた | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Famzn.to%2F2tJXyXh&size=32" alt=""><a href="https://amzn.to/2tJXyXh" target="_blank">計算機プログラムの構造と解釈 第2版 | Harold Abelson, 和田 英一 |本 | 通販 | Amazon</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fsicp.iijlab.net%2Ffulltext%2F&size=32" alt=""><a href="https://sicp.iijlab.net/fulltext/" target="_blank">計算機プログラムの構造と解釈 第二版</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftakeda25.hatenablog.jp%2Fentry%2F20151030%2F1446174031&size=32" alt=""><a href="https://takeda25.hatenablog.jp/entry/20151030/1446174031" target="_blank">非公式PDF版SICP・新訳 - アスペ日記</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fphperkaigi-generator%2Fblob%2Fmaster%2Fstream.php&size=32" alt=""><a href="https://github.com/zonuexe/phperkaigi-generator/blob/master/stream.php" target="_blank">github.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F5b1651a5-0a01-4b49-b338-e332f981bf5d&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d" target="_blank">ジェネレータで無限を手玉に取る術 by うさみけんた | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

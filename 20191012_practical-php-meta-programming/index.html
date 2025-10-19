@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="実用メタプログラミング">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20191012_practical-php-meta-programming/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20191012_practical-php-meta-programming.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="実用メタプログラミング">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20191012_practical-php-meta-programming.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20191012_practical-php-meta-programming/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20191012_practical-php-meta-programming/oembed.xml">
+
+          <title>実用メタプログラミング</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20191012_practical-php-meta-programming.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20191012_practical-php-meta-programming.pdf" id="pdf-container" title="実用メタプログラミング"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>実用メタプログラミング</h1>
+              <p>公開日: <time datetime="2019-10-12">2019年10月12日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2019-10-12">2019年10月12日</time>に沖縄県宜野湾市のCODEBASE OKINAWAで開催された『<a href="https://web.archive.org/web/20200512080240/https://phpcon.okinawa.jp/" target="_blank">PHPカンファレンス沖縄2019</a>』でレギュラートーク(30分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpconokinawa" target="_blank" class="hashtag">#phpconokinawa</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20191012_practical-php-meta-programming.pdf" download="20191012_practical-php-meta-programming.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>実用メタプログラミング</p><p>Practical PHP meta programming</p><p>PHPカンファレンス沖縄2019 </p><p>2019-10-12 #phpconokinawa</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv事業本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>メタプログラミング <br>とは何か</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>そもそも</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>メタとは</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>出典: フリー百科事典『ウィキペディア（Wikipedia）』 <br>https://ja.wikipedia.org/wiki/メタ 最終更新 2019年1月10日 10:01 版</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>出典: フリー百科事典『ウィキペディア（Wikipedia）』 <br>https://ja.wikipedia.org/wiki/メタ 最終更新 2019年1月10日 10:01 版</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>出典: フリー百科事典『ウィキペディア（Wikipedia）』 <br>https://ja.wikipedia.org/wiki/メタ 最終更新 2019年1月10日 10:01 版</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>メタプログラミング <br>とは何か</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          <p>プログラム自身に <br>言及するような プログラミング</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>プログラムを <br>プログラミングする</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>どういうこと？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>たとえば実行時に <br>関数を定義する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>たとえば実行時に <br>実行する関数を決める</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>たとえばプロパティや<br>メソッドのアクセス<br>権限を制御する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>たとえば実装コード<br>から自動でテスト コードを生成する</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>厳密にプログラミング とメタプログラミング を分けるものはないが</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>フレームワークは大な り小なりメタプログラ ミングを利用している <br>(ことが多い)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>PHPの可能性を <br>広げるのが <br>メタプログラミング</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>メタプログラミング <br>できることで <br>有名な言語</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>Ruby</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>出典: O&#39;Reilly Japan - メタプログラミングRuby 第2版 </p><p>https://www.oreilly.co.jp/books/9784873117430/ <br>Paolo Perrotta 著 / 角征典 訳 / 2015年10月 発行</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>Lisp</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>出典: フリー百科事典『ウィキペディア（Wikipedia）』 <br>https://ja.wikipedia.org/wiki/メタプログラミング <br>最終更新 2017年12月6日 23:08 版</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>PHPではできない<br>ことの方が多い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>オープンクラスがない <br>プリプロセスもない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>PHPならではの 戦いかたがある！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>関数</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>FizzBuzzで <br>考えてみましょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>出典: どうしてプログラマに・・・プログラムが書けないのか? </p><p>http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm<br>Jeff Atwood著 / 青木靖 訳</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>出典: どうしてプログラマに・・・プログラムが書けないのか? </p><p>http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm<br>Jeff Atwood著 / 青木靖 訳</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>FizzBuzz模範回答</p><p>&lt;?php</p><p>foreach (range(1, 100) as $n) {<br>    $s = &#39;&#39;;<br>    if ($n % 3 === 0) $s .= &#39;Fizz&#39;;     if ($n % 5 === 0) $s .= &#39;Buzz&#39;;<br>    echo ($s === &#39;&#39;) ? $n : $s, &quot;\n&quot;;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>FizzBuzz模範回答 関数分割</p><p>&lt;?php<br>function to_fizzbuzz(int $n) {<br>    $s = &#39;&#39;;<br>    if ($n % 3 === 0) $s .= &#39;Fizz&#39;;     if ($n % 5 === 0) $s .= &#39;Buzz&#39;;<br>    return ($s === &#39;&#39;) ? $n : $s;</p><p>}</p><p>foreach (range(1, 100) as $n) {     echo to_fizzbuzz($n), &quot;\n&quot;;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>関数に分けるとテストが書ける</p><p>&lt;?php</p><p>assert(to_fizzbuzz(1) === &quot;1&quot;); assert(to_fizzbuzz(2) === &quot;2&quot;);<br>assert(to_fizzbuzz(3) === &quot;Fizz&quot;);<br>assert(to_fizzbuzz(4) === &quot;4&quot;);<br>assert(to_fizzbuzz(5) === &quot;Buzz&quot;);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>無茶振りをしましょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>関数に分けたい <br>でも引数使いたくない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>愚直に書くとこうなる</p><p>&lt;?php</p><p>assert(fizzbuzz1() === &quot;1&quot;); assert(fizzbuzz2() === &quot;2&quot;);<br>assert(fizzbuzz3() === &quot;Fizz&quot;);<br>assert(fizzbuzz4() === &quot;4&quot;);<br>assert(fizzbuzz5() === &quot;Buzz&quot;);</p><p>function fizzbuzz1() { return &quot;1&quot;; } function fizzbuzz2() { return &quot;2&quot;; }<br>function fizzbuzz3() { return &quot;Fizz&quot;; }<br>function fizzbuzz4() { return &quot;4&quot;; }<br>function fizzbuzz5() { return &quot;Buzz&quot;; }</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>手書きで <br>100個書くの!?</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>こういうことはできない</p><p>このコードは になります</p><p>&lt;?php //  syntax error</p><p>foreach (range(1, 100) as $n) {<br>    $s = &#39;&#39;;<br>    if ($n % 3 === 0) $s .= &#39;Fizz&#39;;     if ($n % 5 === 0) $s .= &#39;Buzz&#39;;</p><p>変数を使った関数定義はできない</p><p>    // <br>    function fizzbuzz$n(){<br>       return ($s === &#39;&#39;) ? $n : $s, &quot;\n&quot;;<br>    }<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>[非推奨] evalを使った無茶</p><p>&lt;?php</p><p>foreach (range(1, 100) as $n) {<br>    $s = &#39;&#39;;<br>    if ($n % 3 === 0) $s .= &#39;Fizz&#39;;     if ($n % 5 === 0) $s .= &#39;Buzz&#39;;<br>    $s = ($s === &#39;&#39;) ? $n : $s;</p><p>を使えばいちおうできる</p><p>    // eval<br>    eval(&quot;function fizzbuzz{$n} (){<br>       return &#39;{$s}&#39;;<br>    }&quot;);<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>evalはなんでも <br>できるがリスクも大きい <br>最後の手段 <br>( 関数も </p><p>create_function()<br>あったがPHP7.2で非推奨)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>無名関数  </p><p>(クロージャ)</p><p>を使いましょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>クロージャを使えばできる</p><p>&lt;?php<br>$fizzbuzz = [];<br>foreach (range(1, 100) as $n) {<br>    $s = &#39;&#39;;<br>    if ($n % 3 === 0) $s .= &#39;Fizz&#39;;     if ($n % 5 === 0) $s .= &#39;Buzz&#39;;<br>    $s = ($s === &#39;&#39;) ? (string)$n : $s;</p><p>    $fizzbuzz[$n] = function () use ($s) {<br>       return $s;<br>    };<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>クロージャの特徴</p><p>関数定義文ではなく関数式 使い捨て関数を簡単に作れる 関数式は で変数捕捉できる </p><p>use</p><p>Closureクラスのオブジェクト で、変数や引数として扱える</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>これで呼び出せるようになった</p><p>&lt;?php</p><p>assert($fizzbuzz[1]() === &quot;1&quot;); assert($fizzbuzz[2]() === &quot;2&quot;);<br>assert($fizzbuzz[3]() === &quot;Fizz&quot;);<br>assert($fizzbuzz[4]() === &quot;4&quot;);<br>assert($fizzbuzz[5]() === &quot;Buzz&quot;);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>クロージャを使った <br>コード</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>クロージャ+array_map</p><p>&lt;?php</p><p>$x2 = function ($n){ return $n * 2; };</p><p>$a = range(1, 10);<br>var_dump(array_map($x2, $a));<br>// [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>クロージャをうまく使って <br>「関数を作る関数」も <br>作れる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>クロージャを使った部分適用</p><p>&lt;?php</p><p>$times = function ($n) {<br>    return function ($m) use ($n) {<br>        return $n * $m;<br>    };<br>};</p><p>$a = range(1, 10);<br>echo json_encode(array_map($times(3), $a));<br>// [3,6,9,12,15,18,21,24,27,30]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>マジックメソッド</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>オブジェクトの 挙動を制御する 特殊なメソッド</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>プロパティアクセス<br>を乗っ取ろう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>アクセス不能プロパティを乗っ取る</p><p>&lt;?php<br>class A {<br>    private $data = [];</p><p>    public function __get($name) {<br>        $this-&gt;data[$name];<br>    }</p><p>    public function __set($name, $value) {<br>        $this-&gt;data[$name] = $value;<br>    }<br>}</p><p>__isset() と __unset() も定義すべき</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>アクセス不能 <br>＝privateなども含む</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>この仕様を悪用して こんなこともできる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>外部から読み込みだけできる</p><p>&lt;?php<br>trait PrivateRead {<br>    public function __get($name) {<br>        $this-&gt;$name;<br>    }<br>}</p><p>/**<br> * @property-read int $id<br> * @property-read int $name<br> */<br>class A {<br>    use PrivateRead;<br>    private $id;<br>    private $name;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>未定義プロパティに書き込み禁止</p><p>&lt;?php</p><p>trait ReadOnly {<br>    public function __set($name, $value) {<br>        throw new OutOfRangeException();<br>    }<br>}</p><p>class B {<br>    use ReadOnly;<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>メソッドアクセスも<br>乗っ取ろう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>オーバーロード <br>(ただしPHP用語)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>出典: PHP: オーバーロード - Manual </p><p>https://www.php.net/manual/ja/language.oop5.overloading.php<br>Copyright © 2001-2019 The PHP Group</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>一般的なプログラミング 用語「オーバーロード」 とは全然別物なので注意</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>未定義のメソッド呼び出しを捕捉</p><p>&lt;?php</p><p>class C {<br>    public function __call($name, $args)<br>    {</p><p>が呼ばれた</p><p>        echo __CLASS__.&quot;::{$name}() \n&quot;;<br>    }<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>Proxyパターンを簡単に実現</p><p>&lt;?php</p><p>/**<br> * @mixin Foo<br> */<br>class D {<br>    private $foo;<br>    public function (Foo $class) {<br>        $this-&gt;foo = $class;<br>    }<br>    public function __call($name, $args)<br>    {<br>       return $this-&gt;foo-&gt;$name(...$args);<br>    }<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>リフレクション</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>実行時に情報を取得</p><p>できるAPI</p><p>(一部上書き)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p>関数・クラス・オブジェクト・<br>メソッド・プロパティ・パラメー タ(引数)・返値の型・クラス定数<br>など </p><p>https://www.php.net/manual/ja/book.reflection.php</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p>PHPUnitの</p><p>dataProvider <br>(パラメタライズテスト) <br>とも組み合わせられる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          <p>未定義のメソッド呼び出しを捕捉</p><p>&lt;?php</p><p>class C {<br>    public function __call($name, $args)<br>    {</p><p>が呼ばれた</p><p>        echo __CLASS__.&quot;::{$name}() \n&quot;;<br>    }<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p>まとめ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p>メタプログラミングの技術を<br>使うと <br>「コードに書いてある通りで<br>はない」動きをさせられる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p>代償としてPhpStorm などの支援を受けにく<br>くなることがある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p>大いなる力には <br>大いなる責任が伴う</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2583%25A1%25E3%2582%25BF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF" target="_blank">メタ - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3D%25E3%2583%25A1%25E3%2582%25BF%26oldid%3D71254171&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%BF&amp;oldid=71254171" target="_blank">メタ - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2583%25A1%25E3%2582%25BF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF" target="_blank">メタ - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3D%25E3%2583%25A1%25E3%2582%25BF%26oldid%3D71254171&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%BF&amp;oldid=71254171" target="_blank">メタ - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2583%25A1%25E3%2582%25BF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF" target="_blank">メタ - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3D%25E3%2583%25A1%25E3%2582%25BF%26oldid%3D71254171&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%BF&amp;oldid=71254171" target="_blank">メタ - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.oreilly.co.jp%2Fbooks%2F9784873117430%2F&size=32" alt=""><a href="https://www.oreilly.co.jp/books/9784873117430/" target="_blank">メタプログラミングRuby 第2版 - O&#39;Reilly Japan</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2583%25A1%25E3%2582%25BF%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B0%25E3%2583%25A9%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0" target="_blank">メタプログラミング - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3D%25E3%2583%25A1%25E3%2582%25BF%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B0%25E3%2583%25A9%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0%26oldid%3D66537909&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0&amp;oldid=66537909" target="_blank">メタプログラミング - Wikipedia</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fwww.aoky.net%2Farticles%2Fjeff_atwood%2Fwhy_cant_programmers_program.htm&size=32" alt=""><a href="http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm" target="_blank">どうしてプログラマに・・・プログラムが書けないのか?</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fwww.aoky.net%2Farticles%2Fjeff_atwood%2Fwhy_cant_programmers_program.htm&size=32" alt=""><a href="http://www.aoky.net/articles/jeff_atwood/why_cant_programmers_program.htm" target="_blank">どうしてプログラマに・・・プログラムが書けないのか?</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fja%2Flanguage.oop5.overloading.php&size=32" alt=""><a href="https://www.php.net/manual/ja/language.oop5.overloading.php" target="_blank">PHP: オーバーロード - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fja%2Fbook.reflection.php&size=32" alt=""><a href="https://www.php.net/manual/ja/book.reflection.php" target="_blank">PHP: リフレクション - Manual</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

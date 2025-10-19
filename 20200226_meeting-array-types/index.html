@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="配列の型と向き合う">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20200226_meeting-array-types/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20200226_meeting-array-types.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="配列の型と向き合う">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20200226_meeting-array-types.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20200226_meeting-array-types/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20200226_meeting-array-types/oembed.xml">
+
+          <title>配列の型と向き合う</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20200226_meeting-array-types.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20200226_meeting-array-types.pdf" id="pdf-container" title="配列の型と向き合う"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>配列の型と向き合う</h1>
+              <p>公開日: <time datetime="2020-02-26">2020年2月26日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2020-02-26">2020年2月26日</time>に東京都中央区日本橋のサイボウズ株式会社で開催された『<a href="https://phpstudy.doorkeeper.jp/events/104495" target="_blank">第145回 PHP勉強会＠東京</a>』でライトニングトーク(5分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag">#phpstudy</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20200226_meeting-array-types.pdf" download="20200226_meeting-array-types.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>配列の型と向き合う</p><p>2020-02-26 PHP勉強会@東京 </p><p>#phpstudy</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer, Rubyist</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>近況</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          <p>⛳</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>文字を書いても <br>書いても終らない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>何が <br>あったのか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>本日のお題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>型､ついて ますか？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>今回はLTなので皆様既に PhpStormのために型を つけてる前提でいきます</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>前提</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>mixedは <br>災いのもと</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>mixedすると何が起こるか</p><p>間違って引数に渡しても <br>誰も怒ってくれない <br>PhpStormで補完が効かなくて<br>非常に気持ち悪い <br>静的解析性も開発体験も損ねる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>PhpStormでの <br>開発体験を上げるには<br>mixedを追放して <br>型を付けていくしかない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>肝に命じて<br>ほしい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>日曜の夜くらいから<br>記事を書いていた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>概要だけ書いて <br>さくっと投稿する <br>つもりだった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>書いても 書いても <br>終らん</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>なので配列の 話だけします</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>@paramarray</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>@returnarray</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>@vararray</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>書いてます<br>か？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>こいつは何を<br>言っているのか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>return array</p><p>&lt;?php</p><p>function getIds(): array {<br>    return ...<br>}</p><p>foreach (getIds() as $id) {<br>    $id<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>return array</p><p>&lt;?php</p><p>function getIds(): array {<br>    return ...<br>}</p><p>foreach (getIds() as $id) {</p><p>こいつの型がわからん<br>←</p><p>    $id // </p><p>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>arrayは</p><p>mixed</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>arrayを 許しては いけない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>Laravelのコードを<br>読んでもarrayまみれ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>じゃあ <br>どうすればいいの</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          <p>@return int[]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          <p>@return BookId[]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          <p>解決</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>本当に？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>🙅</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>配列の用途 は複数ある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>リストの</p><p>array</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>$ids = [1, 5, 9];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>// @return int[]</p><p>// @return array&lt;int&gt;<br>$ids = [1, 5, 9];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>@return int[]<br>phpDocumentor<br>形式</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          <p>@return array&lt;int&gt;</p><p>コレクションジェネリクス記法<br>旧PSR-5形式</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          <p>@return </p><p>ArrayObject&lt;int&gt;</p><p>コレクションジェネリクス記法<br>旧PSR-5形式</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>連想配列の</p><p>array</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>$id_name_table = [ <br>    1 =&gt; &quot;田中&quot;,     5 =&gt; &quot;佐藤&quot;,     9 =&gt; &quot;山田&quot;, </p><p>];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>// @return array&lt;int,string&gt;<br>$id_name_table = [ <br>    1 =&gt; &quot;田中&quot;,     5 =&gt; &quot;佐藤&quot;,     9 =&gt; &quot;山田&quot;, </p><p>];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>構造体の</p><p>array</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>$record = [     &quot;id&quot; =&gt; 1, <br>    &quot;name&quot; =&gt; &quot;田中&quot;, </p><p>];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>これはPSR-5形式 では表現できない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>// @return </p><p> array{id:int, name:string}<br>$record = [     &quot;id&quot; =&gt; 1, <br>    &quot;name&quot; =&gt; &quot;田中&quot;, </p><p>];</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>// @return </p><p> array{id:int, name:string} array-shapes記法 またはobject-like array</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>// @return </p><p> array{id?:int, name:string} 名前と:の間に ? を 付けると省略可能キー</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>現在はPSR-5(Draft)から 外されたが､既にほとんど の静的解析ツールには実 装されているので使える</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>ほとんどの？</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>Psalm Phan <br>PHPStan</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>ほとんど= <br>PhpStorm以外</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>型付けられな いのお前だけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>使おう</p><p>いますぐ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>Psalm Phan <br>PHPStan</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>安心ください</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p>たとえばこういう<br>コードがあるじゃろ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p>付けよう<br>型</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p>入れよう </p><p>deep-assoc</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-text">
+                          <p>いますぐ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-text">
+                          <p>ダウンロー <br>ド</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fab2d96c906110badf45e&size=32" alt=""><a href="https://qiita.com/tadsan/items/ab2d96c906110badf45e" target="_blank">PHPにコメントを書かせる、あるいはDocComment入門 (前編) #PHPDoc - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F72b02339d12120ca37d7&size=32" alt=""><a href="https://qiita.com/tadsan/items/72b02339d12120ca37d7" target="_blank">2018年のPHPDoc事情とPSR-5 #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fbf61520eb2d455e0e8b4&size=32" alt=""><a href="https://qiita.com/tadsan/items/bf61520eb2d455e0e8b4" target="_blank">このPHPがテンプレートエンジンのくせに慎重すぎる (前篇) #PHP - Qiita</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftwitter.com%2Ftadsan%2Fstatus%2F1180496205786148864&size=32" alt=""><a href="https://twitter.com/tadsan/status/1180496205786148864" target="_blank">twitter.com</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fwww.apple.com%2Fjp&size=32" alt=""><a href="http://www.apple.com/jp" target="_blank">Apple（日本）</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

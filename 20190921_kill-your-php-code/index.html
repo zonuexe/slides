@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="PHP バグ・脆弱性の温床10連発">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20190921_kill-your-php-code/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20190921_kill-your-php-code.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHP バグ・脆弱性の温床10連発">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20190921_kill-your-php-code.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20190921_kill-your-php-code/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20190921_kill-your-php-code/oembed.xml">
+
+          <title>PHP バグ・脆弱性の温床10連発</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20190921_kill-your-php-code.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20190921_kill-your-php-code.pdf" id="pdf-container" title="PHP バグ・脆弱性の温床10連発"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>PHP バグ・脆弱性の温床10連発</h1>
+              <p>公開日: <time datetime="2019-09-21">2019年9月21日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2019-09-21">2019年9月21日</time>に札幌市中央区の札幌市民交流プラザで開催された『<a href="https://2019.phpcon.hokkaido.jp/" target="_blank">PHPカンファレンス北海道2019</a>』でアンカンファレンス(20分)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpcondo" target="_blank" class="hashtag">#phpcondo</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20190921_kill-your-php-code.pdf" download="20190921_kill-your-php-code.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>PHP</p><p>バグ・脆弱性の温床10連発</p><p>Kill your PHP code by hitting 10 combos</p><p>[2019-09-21] </p><p>PHPカンファレンス北海道2019</p><p>#phpcondo</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv事業本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>実家は近所</p><p>です！！！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          <p>前回のぺちこん</p><p>北海道2016が</p><p>カンファレンス</p><p>デビュー戦</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          <p>ついでにその前 は札幌市中央区<br>Ruby会議01</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>PHPカンファレンス は楽しかったですか！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          <p>ここで学んだことは<br>今後の仕事に活か</p><p>していきましょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>本題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          <p>ということで</p><p>クイックに</p><p>いきましょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>10連発</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>ただしタイトルの 「10連発」は任意 の進数表記とする</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>クイック</p><p>PHP</p><p>バグ・脆弱性の温床10連発</p><p>Kill your PHP code by hitting 10 combos</p><p>[2019-07-31] </p><p>第140回 PHP勉強会＠東京</p><p>#phpstudy</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>例題1</p><p>&lt;?</p><p>$id = $_REQUEST[&#39;id&#39;]; if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);<br>?&gt;,</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>short open </p><p>例題1</p><p>tagはphp.iniの設定依存なので、 </p><p>基本は &lt;?php または &lt;?= </p><p>&lt;?</p><p>$id = $_REQUEST[&#39;id&#39;]; if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);<br>?&gt;,</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>short open </p><p>例題1</p><p>tagはphp.iniの設定依存なので、 </p><p>php.ini依存かつ、</p><p>基本は &lt;?php または &lt;?= </p><p>$_GETと$_POSTが混ざると不適切な取り扱</p><p>&lt;?</p><p>いされる傾向がある</p><p>$id = $_REQUEST[&#39;id&#39;]; if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);<br>?&gt;,</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>short open </p><p>例題1</p><p>tagはphp.iniの設定依存なので、 </p><p>php.ini依存かつ、</p><p>基本は &lt;?php または &lt;?= </p><p>$_GETと$_POSTが混ざると不適切な取り扱</p><p>&lt;?</p><p>いされる傾向がある</p><p>$id = $_REQUEST[&#39;id&#39;]; if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);<br>?&gt;,</p><p>何を期待するのか</p><p>不明瞭だがMySQLのAUTO_INCREMENT</p><p>なサロゲートキーなら不適切</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>short open </p><p>例題1</p><p>tagはphp.iniの設定依存なので、 </p><p>php.ini依存かつ、</p><p>基本は &lt;?php または &lt;?= </p><p>$_GETと$_POSTが混ざると不適切な取り扱</p><p>&lt;?</p><p>いされる傾向がある</p><p>$id = $_REQUEST[&#39;id&#39;]; if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);<br>?&gt;,</p><p>何を期待するのか</p><p>不明瞭だがMySQLのAUTO_INCREMENT</p><p>なサロゲートキーなら不適切</p><p>printfフォーマットに</p><p>変数埋め込みをしない (入力値に%が含まれる</p><p>とWarningが発生)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>short open </p><p>例題1</p><p>tagはphp.iniの設定依存なので、 </p><p>php.ini依存かつ、</p><p>基本は &lt;?php または &lt;?= </p><p>$_GETと$_POSTが混ざると不適切な取り扱</p><p>&lt;?</p><p>いされる傾向がある</p><p>$id = $_REQUEST[&#39;id&#39;]; if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);<br>?&gt;,</p><p>何を期待するのか</p><p>不明瞭だがMySQLのAUTO_INCREMENT</p><p>なサロゲートキーなら不適切</p><p>printfフォーマットに</p><p>脆弱性ではないが変な文字が混</p><p>変数埋め込みをしない (入力値に%が含まれる</p><p>ざってるので ?&gt; は消す</p><p>とWarningが発生)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>short open </p><p>例題1</p><p>tagはphp.iniの設定依存なので、 </p><p>php.ini依存かつ、</p><p>基本は &lt;?php または &lt;?= </p><p>$_GETと$_POSTが混ざると不適切な取り扱</p><p>&lt;?</p><p>いされる傾向がある</p><p>$id = $_REQUEST[&#39;id&#39;];</p><p>脆弱性じゃないけど { は一文で</p><p>if (!is_numeric($id))</p><p>は正しい ではありません</p><p>    printf(&quot;&lt;p&gt;{$id} ID &lt;/p&gt;&quot;);</p><p>も几帳面に付ける方がオススメ</p><p>?&gt;,</p><p>何を期待するのか</p><p>不明瞭だがMySQLのAUTO_INCREMENT</p><p>なサロゲートキーなら不適切</p><p>printfフォーマットに</p><p>脆弱性ではないが変な文字が混</p><p>変数埋め込みをしない (入力値に%が含まれる</p><p>ざってるので ?&gt; は消す</p><p>とWarningが発生)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>改善案は各自へ の宿題とします</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>例題2</p><p>const VALIDATE_PATTERN = &quot;/<br>    ^                                   # begin<br>    ([a-zA-Z0-9])+([a-zA-Z0-9\._-])*    # localpart<br>    @                                   # at mark<br>    ([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host     $                                   # end<br>/x&quot;;</p><p>$email = filter_input(INPUT_GET, &#39;email&#39;);<br>if (!preg_match(VALIDATE_PATTERN, $email)) {<br>    echo &quot;Bad mail address!!&quot;;<br>}<br>register_account(strtolower($email), $password);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>PCRE正規表現は /x 修飾子を付ける</p><p>例題2</p><p>と空白が無視されるので、これはGood</p><p>const VALIDATE_PATTERN = &quot;/<br>    ^                                   # begin<br>    ([a-zA-Z0-9])+([a-zA-Z0-9\._-])*    # localpart<br>    @                                   # at mark<br>    ([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host     $                                   # end<br>/x&quot;;</p><p>$email = filter_input(INPUT_GET, &#39;email&#39;);<br>if (!preg_match(VALIDATE_PATTERN, $email)) {<br>    echo &quot;Bad mail address!!&quot;;<br>}<br>register_account(strtolower($email), $password);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>PCRE正規表現は /x 修飾子を付ける</p><p>例題2</p><p>と空白が無視されるので、これはGood</p><p>だが、バリデーション(妥当性検証)の</p><p>const VALIDATE_PATTERN = &quot;/</p><p>ために正規表現で判定するのはだめ！！！</p><p>    ^                                   # begin<br>    ([a-zA-Z0-9])+([a-zA-Z0-9\._-])*    # localpart<br>    @                                   # at mark<br>    ([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host     $                                   # end<br>/x&quot;;</p><p>$email = filter_input(INPUT_GET, &#39;email&#39;);<br>if (!preg_match(VALIDATE_PATTERN, $email)) {<br>    echo &quot;Bad mail address!!&quot;;<br>}<br>register_account(strtolower($email), $password);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>PCRE正規表現は /x 修飾子を付ける</p><p>例題2</p><p>と空白が無視されるので、これはGood</p><p>だが、バリデーション(妥当性検証)の</p><p>const VALIDATE_PATTERN = &quot;/</p><p>ために正規表現で判定するのはだめ！！！</p><p>    ^                                   # begin<br>    ([a-zA-Z0-9])+([a-zA-Z0-9\._-])*    # localpart<br>    @                                   # at mark</p><p>FILTER_VALIDATE_EMAILという</p><p>    ([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host     $                                   # end</p><p>フラグを使えば取得と同時に検証できる</p><p>/x&quot;;</p><p>$email = filter_input(INPUT_GET, &#39;email&#39;);<br>if (!preg_match(VALIDATE_PATTERN, $email)) {<br>    echo &quot;Bad mail address!!&quot;;<br>}<br>register_account(strtolower($email), $password);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>PCRE正規表現は /x 修飾子を付ける</p><p>例題2</p><p>と空白が無視されるので、これはGood</p><p>だが、バリデーション(妥当性検証)の</p><p>const VALIDATE_PATTERN = &quot;/</p><p>ために正規表現で判定するのはだめ！！！</p><p>    ^                                   # begin<br>    ([a-zA-Z0-9])+([a-zA-Z0-9\._-])*    # localpart<br>    @                                   # at mark</p><p>FILTER_VALIDATE_EMAILという</p><p>    ([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host</p><p>Bad って表示してるだけで、処理は</p><p>    $                                   # end</p><p>フラグを使えば取得と同時に検証できる</p><p>/x&quot;;</p><p>停止できてない！！！！</p><p>$email = filter_input(INPUT_GET, &#39;email&#39;);<br>if (!preg_match(VALIDATE_PATTERN, $email)) {<br>    echo &quot;Bad mail address!!&quot;;<br>}<br>register_account(strtolower($email), $password);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>PCRE正規表現は /x 修飾子を付ける</p><p>例題2</p><p>と空白が無視されるので、これはGood</p><p>だが、バリデーション(妥当性検証)の</p><p>const VALIDATE_PATTERN = &quot;/</p><p>ために正規表現で判定するのはだめ！！！</p><p>    ^                                   # begin<br>    ([a-zA-Z0-9])+([a-zA-Z0-9\._-])*    # localpart<br>    @                                   # at mark</p><p>FILTER_VALIDATE_EMAILという</p><p>    ([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host</p><p>Bad って表示してるだけで、処理は</p><p>    $                                   # end</p><p>フラグを使えば取得と同時に検証できる</p><p>/x&quot;;</p><p>停止できてない！！！！</p><p>$email = filter_input(INPUT_GET, &#39;email&#39;);<br>if (!preg_match(VALIDATE_PATTERN, $email)) {<br>    echo &quot;Bad mail address!!&quot;;</p><p>正規化</p><p>}</p><p>は検討が必要(本来ローカルパートは大文</p><p>register_account(strtolower($email), $password);</p><p>字小文字区別するが、実際はサービスの実</p><p>装依存)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>例題2++<br>これならどうだ！</p><p>// <br>$email = filter_input(INPUT_GET, &#39;email&#39;,<br>                      FILTER_VALIDATE_EMAIL);<br>if ($email !== false) {<br>    echo &quot;Bad mail address!!&quot;;<br>    exit;<br>}</p><p>[$local, $host] = explode(&#39;@&#39;, $email);<br>$normalized = $local . &#39;@&#39; . strtolower($host);</p><p>register_account($email, $password);</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>例題2++<br>これならどうだ！</p><p>// <br>$email = filter_input(INPUT_GET, &#39;email&#39;,<br>                      FILTER_VALIDATE_EMAIL);<br>if ($email !== false) {</p><p>これでも</p><p>    echo &quot;Bad mail address!!&quot;;<br>    exit;</p><p>良くないことがあるので続きは懇親</p><p>}</p><p>会で！！！！！！！！</p><p>[$local, $host] = explode(&#39;@&#39;, $email);<br>$normalized = $local . &#39;@&#39; . strtolower($host);</p><p>register_account($email, $password);</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>

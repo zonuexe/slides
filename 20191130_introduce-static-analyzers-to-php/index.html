@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+          <meta property="og:title" content="PHPプロジェクトに静的解析を新規導入する">
+          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20191130_introduce-static-analyzers-to-php/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20191130_introduce-static-analyzers-to-php.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHPプロジェクトに静的解析を新規導入する">
+          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20191130_introduce-static-analyzers-to-php.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20191130_introduce-static-analyzers-to-php/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20191130_introduce-static-analyzers-to-php/oembed.xml">
+
+          <title>PHPプロジェクトに静的解析を新規導入する</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1365px;
+              --aspect-ratio: 1365 / 1024;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1365,
+              maxHeight: 1024,
+              download: '20191130_introduce-static-analyzers-to-php.pdf'
+            };
+
+            // ページスクロール連動機能
+            function scrollToPage(pageNum) {
+              const pageElement = document.getElementById('page-' + pageNum);
+              if (pageElement) {
+                pageElement.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }
+
+            // iframeのハッシュ変更を監視
+            function watchIframeHash() {
+              const iframe = document.getElementById('pdf-container');
+              if (!iframe) return;
+
+              let lastHash = '';
+              const checkHash = () => {
+                try {
+                  const currentHash = iframe.contentWindow.location.hash;
+                  if (currentHash !== lastHash) {
+                    lastHash = currentHash;
+                    const pageMatch = currentHash.match(/[#&]p=(d+)/);
+                    if (pageMatch) {
+                      const pageNum = parseInt(pageMatch[1]);
+                      scrollToPage(pageNum);
+                    }
+                  }
+                } catch (e) {
+                  // クロスオリジンの場合は無視
+                }
+              };
+
+              // 定期的にハッシュをチェック
+              setInterval(checkHash, 500);
+            }
+
+            // ページ読み込み後にハッシュ監視を開始
+            document.addEventListener('DOMContentLoaded', () => {
+              setTimeout(watchIframeHash, 1000);
+            });
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <div class="container">
+            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20191130_introduce-static-analyzers-to-php.pdf" id="pdf-container" title="PHPプロジェクトに静的解析を新規導入する"></iframe>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <!-- Toast通知用の要素 -->
+            <div id="toast" class="toast"></div>
+
+            <div class="slide-info">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1>PHPプロジェクトに静的解析を新規導入する</h1>
+              <p>公開日: <time datetime="2019-11-30">2019年11月30日</time></p>
+
+              
+                <div class="event-info">
+                  <p><time datetime="2019-11-30">2019年11月30日</time>に東京都港区六本木の株式会社メルカリで開催された『<a href="https://phperkaigi.connpass.com/event/155509/" target="_blank">大改修！PHPレガシーコードビフォーアフター</a>』でPHPの匠(30分)として発表しました。</p>
+                </div>
+              
+
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20191130_introduce-static-analyzers-to-php.pdf" download="20191130_introduce-static-analyzers-to-php.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+            </div>
+
+            <div class="slide-content">
+              <div class="content-panes">
+                <div class="text-pane">
+                  <h3>スライドテキスト</h3>
+                  
+                    
+                      <div class="page-content" id="page-1">
+                        <h4>Page 1</h4>
+                        <div class="page-text">
+                          <p>PHPプロジェクトに <br> 静的解析を新規導入する</p><p>Introduce static analyzers to PHP project</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-text">
+                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv事業本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-3">
+                        <h4>Page 3</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-4">
+                        <h4>Page 4</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-5">
+                        <h4>Page 5</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-6">
+                        <h4>Page 6</h4>
+                        <div class="page-text">
+                          <p>本日のお題</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-8">
+                        <h4>Page 8</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-10">
+                        <h4>Page 10</h4>
+                        <div class="page-text">
+                          <p>さて</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-11">
+                        <h4>Page 11</h4>
+                        <div class="page-text">
+                          <p>PHPカンファレンス</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-13">
+                        <h4>Page 13</h4>
+                        <div class="page-text">
+                          <p>まだユニットテストと同 様に｢あって当然｣のもの とまでは普及できてない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-15">
+                        <h4>Page 15</h4>
+                        <div class="page-text">
+                          <p>既存のプロジェクトに<br>導入する話は <br>あまりできてなかった</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-17">
+                        <h4>Page 17</h4>
+                        <div class="page-text">
+                          <p>なぜ静的解析を<br>するのか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-18">
+                        <h4>Page 18</h4>
+                        <div class="page-text">
+                          <p>関数がどのような引数<br>を期待しどんな値を 返すのか明示したい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-19">
+                        <h4>Page 19</h4>
+                        <div class="page-text">
+                          <p>プログラムが <br>間違ってることを <br>実行前に検証したい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-20">
+                        <h4>Page 20</h4>
+                        <div class="page-text">
+                          <p>それ以上に</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-21">
+                        <h4>Page 21</h4>
+                        <div class="page-text">
+                          <p>オブジェクトのメソッド<br>やプロパティが適切に <br>補完されると気持ち良い</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-22">
+                        <h4>Page 22</h4>
+                        <div class="page-text">
+                          <p>補完がきちんと機能 するようにPHPに 型をつけていこう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-23">
+                        <h4>Page 23</h4>
+                        <div class="page-text">
+                          <p>ただし</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-24">
+                        <h4>Page 24</h4>
+                        <div class="page-text">
+                          <p>静的解析は､現に <br>｢動いている｣事実を<br>覆すものではない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-25">
+                        <h4>Page 25</h4>
+                        <div class="page-text">
+                          <p>エラーとして見えないが <br>｢たまたま動いている｣ <br>現実を炙り出すことはある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-26">
+                        <h4>Page 26</h4>
+                        <div class="page-text">
+                          <p>変更によって動かなく<br>なってしまうことを <br>｢動かさずに｣発見できる<br>かもしれない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-27">
+                        <h4>Page 27</h4>
+                        <div class="page-text">
+                          <p>静的解析基盤を整えた 瞬間に致命的な問題を 検出できることはまれ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-28">
+                        <h4>Page 28</h4>
+                        <div class="page-text">
+                          <p>ということで静的 解析をしましょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-29">
+                        <h4>Page 29</h4>
+                        <div class="page-text">
+                          <p>静的解析 <br>ツールの種類</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-30">
+                        <h4>Page 30</h4>
+                        <div class="page-text">
+                          <p>現行の高度な静的解析ツール</p><p>PhpStorm (IDE) </p><p>Phan </p><p>PHPStan </p><p>Psalm</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-31">
+                        <h4>Page 31</h4>
+                        <div class="page-text">
+                          <p>PhpStorm</p><p>よいところ <br>導入が最も簡単 <br>十分な精度のエラー検出 <br>よくないところ <br>エラーの列挙ができないので CIのフローに組み込めない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-32">
+                        <h4>Page 32</h4>
+                        <div class="page-text">
+                          <p>Phan</p><p>よいところ <br>導入は比較的簡単 <br>とても高い精度のエラー検出 <br>よくないところ <br>大規模プロジェクトでは解析<br>に時間がかかる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-33">
+                        <h4>Page 33</h4>
+                        <div class="page-text">
+                          <p>PHPStan</p><p>よいところ <br>実行時情報を使用し高速 高い精度のエラー検出 <br>よくないところ <br>Composer以外の依存関係 があると導入にコツが要る</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-34">
+                        <h4>Page 34</h4>
+                        <div class="page-text">
+                          <p>Psalm</p><p>よいところ <br>独自の引数アサーション 高い精度のエラー検出 <br>よくないところ <br>大規模プロジェクトでは解析<br>に時間がかかる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-35">
+                        <h4>Page 35</h4>
+                        <div class="page-text">
+                          <p>静的解析の選択軸</p><p>Phan PHPStan</p><p>定義のみ実行が必要 </p><p>解析方法</p><p>実行しない(静的)</p><p>(静的と動的のmix)</p><p>php-ast (高速/C拡張) <br>依存関係 PHP-Parser<br>Tolerant PHP Parser(低速)</p><p>プロジェクトおよび  対象ファイルを </p><p>解析単位</p><p>依存ライブラリ全体 個別指定</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-36">
+                        <h4>Page 36</h4>
+                        <div class="page-text">
+                          <p>つまりどれがいいのか (CI)</p><p>現時点ではそれぞれのツール で検出項目に一長一短がある<br>ため、使い分けるとよい <br>PHPStanは高速なのでGitで ブランチにpushするごとに検 査するようなCIと相性がよい</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-37">
+                        <h4>Page 37</h4>
+                        <div class="page-text">
+                          <p>PHPStanの制約</p><p>クラス/関数/定数の定義と副作 用のある処理は明確に分かれ<br>ていないといけない <br>つまり、PSR-1 <br>Phanなら定義と処理が混在 <br>したファイルも解析できる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-38">
+                        <h4>Page 38</h4>
+                        <div class="page-text">
+                          <p>こういうコードはPHPStanで解析できない</p><p>&lt;?php<br>include __DIR__ . &#39;/config.php&#39;;</p><p>$connection = new PDO(DSN);<br>drop_table($connection);<br>exit;</p><p>function drop_table($connection)<br>{<br>    $connection-&gt;exec(&#39;DROP TABLE `users`;&#39;);<br>}</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-39">
+                        <h4>Page 39</h4>
+                        <div class="page-text">
+                          <p>静的解析を 導入しよう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-43">
+                        <h4>Page 43</h4>
+                        <div class="page-text">
+                          <p>CakePHP 4.0.0では PHPStanとPsalmで <br>型定義が大幅に改善 <br>(現在RC1)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-44">
+                        <h4>Page 44</h4>
+                        <div class="page-text">
+                          <p>じゃあPhanを <br>入れるか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-45">
+                        <h4>Page 45</h4>
+                        <div class="page-text">
+                          <p>基本は か </p><p>composer require<br>Pharファイルを <br>ダウンロードするだけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-46">
+                        <h4>Page 46</h4>
+                        <div class="page-text">
+                          <p>forteeはレガシー を自称しているが </p><p>Docker Compose</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-47">
+                        <h4>Page 47</h4>
+                        <div class="page-text">
+                          <p>Docker Compose<br>使ったことない僕の方が レガシーなんですけど…</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-48">
+                        <h4>Page 48</h4>
+                        <div class="page-text">
+                          <p>Docker Phan <br>[検索]</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-49">
+                        <h4>Page 49</h4>
+                        <div class="page-text">
+                          <p>🙅<br>だめです</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-52">
+                        <h4>Page 52</h4>
+                        <div class="page-text">
+                          <p>古すぎる！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-53">
+                        <h4>Page 53</h4>
+                        <div class="page-text">
+                          <p>Phanはほぼ毎週 <br>アップデートされて <br>さまざまな改善がある</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-54">
+                        <h4>Page 54</h4>
+                        <div class="page-text">
+                          <p>最新のPhanだけが<br>良いPhanだ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-55">
+                        <h4>Page 55</h4>
+                        <div class="page-text">
+                          <p>Phanの要求環境</p><p>基本的に普通のPHPイメージ <br>ext-ast (PECL ast)は必須 <br>Xdebugは無効化したい <br>パフォーマンスに影響する </p><p>ext-pcntl, ext-iconv,  <br>ext-mbstringも推奨</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-56">
+                        <h4>Page 56</h4>
+                        <div class="page-text">
+                          <p>Dockerﬁleにphp-astを足す</p><p>RUN pecl install ast \<br>    &amp;&amp; docker-php-ext-enable ast</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-57">
+                        <h4>Page 57</h4>
+                        <div class="page-text">
+                          <p>astをデフォルト有効化したくなければ</p><p>RUN pecl install ast</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-58">
+                        <h4>Page 58</h4>
+                        <div class="page-text">
+                          <p>別のコンテナイメー ジに分割したい場合</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-59">
+                        <h4>Page 59</h4>
+                        <div class="page-text">
+                          <p>docker/phan/Dockerﬁle</p><p>FROM php:7.3-cli<br>RUN apt-get update -y \<br>    &amp;&amp; apt-get install -y --no-install-recommends \<br>        libicu-dev \<br>        unzip<br>RUN docker-php-ext-install -j$(nproc) intl pcntl</p><p>RUN pecl install ast &amp;&amp; docker-php-ext-enable ast</p><p>COPY --from=composer /usr/bin/composer \         <br>    /usr/bin/composer</p><p>RUN composer global require phan/phan         <br>ENTRYPOINT php /root/.composer/vendor/bin/phan<br>WORKDIR /var/www/html</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-60">
+                        <h4>Page 60</h4>
+                        <div class="page-text">
+                          <p>docker-compose.yml</p><p>version: &quot;3.7&quot;<br>services:<br>  phan:<br>    build: ./docker/phan<br>    volumes:<br>      - ./:/var/www/html:cached<br>    entrypoint: php /root/.composer/vendor/bin/phan<br>    working_dir: /var/www/html         </p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-61">
+                        <h4>Page 61</h4>
+                        <div class="page-text">
+                          <p>独立したコンテナに分ける <br>メリットも大きくない気がする ので既存のPHP用コンテナに <br>混ぜ込めばいいと思います</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-62">
+                        <h4>Page 62</h4>
+                        <div class="page-text">
+                          <p>composer require --devを使うべき？</p><p>好みでどうぞ <br>アプリケーションと依存関係が <br>混ざるのでメンテ難しいと思います 僕はサブディレクトリにcomposer.json作ります composer-bin-pluginを使ってもいいかも</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-63">
+                        <h4>Page 63</h4>
+                        <div class="page-text">
+                          <p>以後./phan という ラッパースクリプト を使うことにします</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-64">
+                        <h4>Page 64</h4>
+                        <div class="page-text">
+                          <p>./phan</p><p>#!/usr/bin<br>docker-compose run --rm php-cli \         <br>    .phan/vendor/bin/phan &quot;$@&quot;</p><p>Windowsならphan.batってファイ ルを作って   あたりでパラメータ展</p><p><strong>%*</strong></p><p>開すれば動くと思うけど、詳しいこと はWindowsに詳しいひとに任せた！</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-65">
+                        <h4>Page 65</h4>
+                        <div class="page-text">
+                          <p>phan --initで初期化できる</p><p>.phan/config.phpが生成される <br>自動追加されなかった<br>directory_listを追加していく <br>composer requireで直接 依存するパッケージだけが <br>自動追加される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-66">
+                        <h4>Page 66</h4>
+                        <div class="page-text">
+                          <p>基本的な使いかた</p><p>./phan <br>-o phan.log <br> 結果をphan.logに書き出す </p><p>-j 4 <br>並列実行数。CPUのコア数を 指定するのが良い (諸説あり)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-67">
+                        <h4>Page 67</h4>
+                        <div class="page-text">
+                          <p>baseline</p><p>--save-baseline=.phan/<br>baseline.php を付けて実行する<br>とファイルごとに検出された<br>Issueを保存できる <br>--load-baseline で実行すると新 たに増えたものだけ報告される</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-68">
+                        <h4>Page 68</h4>
+                        <div class="page-text">
+                          <p>suppress_issue_types</p><p>報告しないIssueをリストアップ <br>フレームワーク側に問題があ るなら握り潰すしかない… ある程度の妥協も時には必要 <br>CakePHP 4.0になれば <br>おそらくほぼ消せるでしょう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-69">
+                        <h4>Page 69</h4>
+                        <div class="page-text">
+                          <p>tadsanのよくやる手法</p><p>masterブランチの内容をphan-<br>master.logに書き出す <br>リファクタリングして変更の都度 解析結果をphan.logに書き出す </p><p>diff -u phan-master.log phan.log</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-70">
+                        <h4>Page 70</h4>
+                        <div class="page-text">
+                          <p>実際に検出 されたミス</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-71">
+                        <h4>Page 71</h4>
+                        <div class="page-text">
+                          <p>未定義変数の検出</p><p>$part変数が未定義</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-72">
+                        <h4>Page 72</h4>
+                        <div class="page-text">
+                          <p>未定義変数の検出</p><p>$videoEmbedHtmlと<br>$slideEmbedHtmlが未定義</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-73">
+                        <h4>Page 73</h4>
+                        <div class="page-text">
+                          <p>deprecatedコードの検出</p><p>CakePHP 4.0.0で <br>プロパティにアクセス <br>できなくなる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-74">
+                        <h4>Page 74</h4>
+                        <div class="page-text">
+                          <p>未定義クラスの検出</p><p>use Exceptionがないので 現在の名前空間を指してる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-75">
+                        <h4>Page 75</h4>
+                        <div class="page-text">
+                          <p>おまけ: 謎のException</p><p>3箇所くらいで登場 <br>どれもAuraを直接使ってない たぶんPhpStormの自動挿入</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-76">
+                        <h4>Page 76</h4>
+                        <div class="page-text">
+                          <p>コンストラクタで値を返す</p><p>値を返せない <br>(単にreturn;でよい)</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-77">
+                        <h4>Page 77</h4>
+                        <div class="page-text">
+                          <p>そろそろまとめ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-78">
+                        <h4>Page 78</h4>
+                        <div class="page-text">
+                          <p>実際稼動しているアプリ<br>なので致命的な問題は なかなか見つからない</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-79">
+                        <h4>Page 79</h4>
+                        <div class="page-text">
+                          <p>リファクタリングや <br>フレームワークの <br>バージョンアップでは <br>大きな武器になる</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-80">
+                        <h4>Page 80</h4>
+                        <div class="page-text">
+                          <p>地味なものも <br>目立つが地道に <br>潰していこう</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-81">
+                        <h4>Page 81</h4>
+                        <div class="page-text">
+                          <p>おまけ</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-82">
+                        <h4>Page 82</h4>
+                        <div class="page-text">
+                          <p>今回forteeのコードで <br>初めてDocker Compose で構築されたPHPアプリ<br>ケーションに触れた</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-83">
+                        <h4>Page 83</h4>
+                        <div class="page-text">
+                          <p>🤔<br>なるほどわからん</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-84">
+                        <h4>Page 84</h4>
+                        <div class="page-text">
+                          <p>手持ちのレガシーPHP をDocker Compose<br>に載せてみるか</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-85">
+                        <h4>Page 85</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-86">
+                        <h4>Page 86</h4>
+                        <div class="page-text">
+                          
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-87">
+                        <h4>Page 87</h4>
+                        <div class="page-text">
+                          <p>Vagrant → <br>Docker Compose</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-88">
+                        <h4>Page 88</h4>
+                        <div class="page-text">
+                          <p>phpdotenv <br>.env → conf/.env</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-89">
+                        <h4>Page 89</h4>
+                        <div class="page-text">
+                          <p>docker-composeを <br>噛ませてsetupスクリプト<br>を実行できるように <br>場所を変更</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-90">
+                        <h4>Page 90</h4>
+                        <div class="page-text">
+                          <p>php -S → <br>Apache HTTP</p>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-91">
+                        <h4>Page 91</h4>
+                        <div class="page-text">
+                          <p>初めてでも <br>できちゃった</p>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+
+                <div class="links-pane">
+                  <h3>関連リンク</h3>
+                  
+                    
+                      <div class="page-content" id="page-2">
+                        <h4>Page 2</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-7">
+                        <h4>Page 7</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphperkaigi.connpass.com%2Fevent%2F155509%2F&size=32" alt=""><a href="https://phperkaigi.connpass.com/event/155509/" target="_blank">大改修！PHPレガシーコードビフォーアフター - connpass</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-9">
+                        <h4>Page 9</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2F&size=32" alt=""><a href="https://fortee.jp/" target="_blank">fortee.jp</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-12">
+                        <h4>Page 12</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdevpixiv.hatenablog.com%2Fentry%2F2016%2F11%2F11%2F202656&size=32" alt=""><a href="https://devpixiv.hatenablog.com/entry/2016/11/11/202656" target="_blank">Phan静的解析がもたらす大PHP型検査時代 - pixiv inside [archive]</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-14">
+                        <h4>Page 14</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.pixiv.net%2Ffanbox%2Fcreator%2F105589%2Fpost%2F333143&size=32" alt=""><a href="https://www.pixiv.net/fanbox/creator/105589/post/333143" target="_blank">PHPerKaigi 2019で「PHPゆるふわCI入門」を発表しました (スライド付き)｜にゃんだーすわん｜pixivFANBOX</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-16">
+                        <h4>Page 16</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.pixiv.net%2Ffanbox%2Fcreator%2F105589%2Fpost%2F445689&size=32" alt=""><a href="https://www.pixiv.net/fanbox/creator/105589/post/445689" target="_blank">「PHP型検査･夢と理想と現実」 #phpconfuk｜にゃんだーすわん｜pixivFANBOX</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-40">
+                        <h4>Page 40</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fcakefest.org%2F&size=32" alt=""><a href="https://cakefest.org/" target="_blank">CakeFest  🍰 - CakePHP Conference - Home Page</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-41">
+                        <h4>Page 41</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.slideshare.net%2Fmarkstory%2Fsafer-more-helpful-cakephp&size=32" alt=""><a href="https://www.slideshare.net/markstory/safer-more-helpful-cakephp" target="_blank">Safer, More Helpful CakePHP | PDF</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-42">
+                        <h4>Page 42</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fbakery.cakephp.org%2F2019%2F05%2F31%2Fcakephp_400alpha2_released.html&size=32" alt=""><a href="https://bakery.cakephp.org/2019/05/31/cakephp_400alpha2_released.html" target="_blank">CakePHP 4.0.0-alpha2 Released — Bakery</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-50">
+                        <h4>Page 50</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphan%2Fphan%2Freleases&size=32" alt=""><a href="https://github.com/phan/phan/releases" target="_blank">Releases · phan/phan · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-51">
+                        <h4>Page 51</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphan%2Fphan%2Freleases%2Ftag%2F0.9.4&size=32" alt=""><a href="https://github.com/phan/phan/releases/tag/0.9.4" target="_blank">Release Development release 0.9.4 supporting PHP 7.1 syntax · phan/phan · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-85">
+                        <h4>Page 85</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fpixiv%2Fintern2015w&size=32" alt=""><a href="https://github.com/pixiv/intern2015w" target="_blank">GitHub - pixiv/intern2015w</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                      <div class="page-content" id="page-86">
+                        <h4>Page 86</h4>
+                        <div class="page-links">
+                          <ul>
+                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fpixiv%2Fintern2015w%2Fblob%2F53e7cebc64cbcb8274e5d8e413c3105d1480bdb7%2FREADME.md&size=32" alt=""><a href="https://github.com/pixiv/intern2015w/blob/53e7cebc64cbcb8274e5d8e413c3105d1480bdb7/README.md" target="_blank">intern2015w/README.md at 53e7cebc64cbcb8274e5d8e413c3105d1480bdb7 · pixiv/intern2015w · GitHub</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    
+                  
+                </div>
+              </div>
+            </div>
+            <div class="back-link">
+              <a href="/slides/" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                スライド一覧に戻る
+              </a>
+            </div>
+          </div>
+          <hr>
+          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        </body>
+      </html>
