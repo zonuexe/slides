@@ -673,7 +673,10 @@ app.get("/slides/js/*", async (c) => {
     const stats = await stat(filePath);
 
     if (stats.isFile()) {
-      const contentType = path.endsWith(".js") ? "application/javascript" : "application/octet-stream";
+      let contentType = "application/octet-stream";
+      if (path.endsWith(".js") || path.endsWith(".mjs")) {
+        contentType = "application/javascript";
+      }
       const stream = createReadStream(filePath);
       return new Response(stream, {
         headers: { "Content-Type": contentType },
@@ -720,7 +723,7 @@ app.get("/slide-pdf.js/*", async (c) => {
     if (stats.isFile()) {
       // ファイル拡張子に基づいてContent-Typeを設定
       let contentType = "application/octet-stream";
-      if (path.endsWith(".js")) contentType = "application/javascript";
+      if (path.endsWith(".js") || path.endsWith(".mjs")) contentType = "application/javascript";
       else if (path.endsWith(".css")) contentType = "text/css";
       else if (path.endsWith(".html")) contentType = "text/html";
       else if (path.endsWith(".json")) contentType = "application/json";
