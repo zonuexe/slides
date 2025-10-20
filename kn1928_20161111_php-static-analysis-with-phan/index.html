@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/kn1928_20161111_php-static-analysis-with-phan/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/kn1928_20161111_php-static-analysis-with-phan/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/kn1928_20161111_php-static-analysis-with-phan/">
 
           <title>PhanによるPHPコード静的解析(公開補訂版)</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,15 +59,16 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>PhanによるPHPコード静的解析(公開補訂版)</h1>
-              <p>公開日: <time datetime="2016-11-11">2016年11月11日</time></p>
+              <h1 class="slide-title"><a href="/slides/kn1928_20161111_php-static-analysis-with-phan/" class="p-name u-url u-uid permalink-link">PhanによるPHPコード静的解析(公開補訂版)</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2016-11-11">2016年11月11日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
 
@@ -74,7 +76,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpcon" target="_blank" class="hashtag">#phpcon</a>
+                  <a href="https://twitter.com/hashtag/phpcon" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpcon</a>
                 </div>
               
 
@@ -89,441 +91,440 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p><strong>Phan</strong>による</p><p><strong>静的解析</strong></p><p> <strong>PHP</strong>コード<br><strong>公開補訂版</strong></p><p>ピクシブ株式会社<br>うさみけんた @tadsan</p><p><strong>JAPAN phpcon 2016, 3rd November </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>2012年 自宅警備→ピクシブ株式会社</li></ul></li><li>モバイルアプリ向けWebAPI開発とか<ul><li>今年の春からメンテナンスとしてチーム独立</li></ul></li></ul><p>日常的な<strong>バグ修正</strong>から、<strong>アーキテクチャの改善</strong></p><ul><li>リファクタリングやテストなどいろいろ！</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p><strong>おしごと</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>現実に動いている</p><p>(ユーザーさんが利用している)</p><p>サービスを破壊せずに<br><strong>コードの健全さを向上したい</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p><strong>そんなノウハウをｷﾞｭｯと詰め込んだ</strong><br><strong>PHP大規模開発入門</strong></p><p><strong>(連載中)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p><strong>PHP大規模開発入門</strong></p><p><strong>Vol.87</strong>:   </p><p>PHPDocでコードの品質を保つ</p><ul><li>Vol.91:</li></ul><p>名前空間とオートローディング</p><p><strong>Vol.94</strong>: </p><p>PHP初心者がハマりがちな落とし穴</p><p> ……型のキャスト，変数とリファレンス</p><p><strong>Vol.95</strong>: </p><p>PHPの静的解析</p><ul><li>……ドキュメントの生成，問題箇所の発見</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p><strong>PHP大規模開発入門</strong></p><p><strong>Vol.87</strong>:   </p><p><strong>PHPDoc</strong>でコードの品質を保つ</p><ul><li>Vol.91:</li></ul><p>名前空間とオートローディング</p><p><strong>Vol.94</strong>: </p><p>PHP初心者がハマりがちな落とし穴</p><p> ……<strong>型</strong>のキャスト，変数とリファレンス</p><p><strong>Vol.95</strong>: </p><p>PHPの静的解析</p><ul><li>……ドキュメントの生成，問題箇所の発見</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p><strong>おしながき</strong></p><p><strong>PHPと型 </strong></p><ul><li>PHPDocとは何か</li><li>Phanの紹介</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p><strong>PHPと型</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p><strong>動的型検査</strong></p><p>プログラムを動かしながら(←動的)</p><p>手さぐりで型を調べる (←型検査)</p><p>$a = 13;  $b = &quot;2&quot;;</p><p>echo $a + $b;</p><p>$a int $b string<br>の型は だな、 の型は …</p><p>「</p><p>！」</p><p>だけど数字だから足しざんできるね</p><p>……みたいな<strong>茶番</strong>を毎回やってる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p><strong>PHPの型</strong></p><p>変数に<strong>型はない</strong>が、<strong>値が型を持つ </strong></p><ul><li>int id<br>C言語みたいに<strong>   </strong>のような定義は<strong>できない </strong><ul><li>64 &#39;A&#39;<br><strong> </strong>と<strong>   </strong>は<strong>厳然とした別の型の値 </strong></li><li>&#39;64&#39; == 64</li></ul></li></ul><p>のような比較が成り立つ設計 </p><ul><li>関数は型宣言できる (ただし動的検査)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p><strong>PHPの型の種類</strong></p><p><strong>整数  浮動小数点数  論理値</strong></p><p>int float bool</p><ul><li>( ) ( ) ( )<br><strong>文字列  配列 リソース</strong></li></ul><p>string array resource<br>( ) ( )<strong> </strong> ( )</p><p><strong>オブジェクト ヌル値</strong></p><p>object null<br>( )<strong> </strong> ( ) </p><p>array</p><p>では のみ宣言に記述できる </p><ul><li>PHP5</li></ul><p>int float string bool<br>7.0では ,  ,  ,  が記述できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p><strong>型宣言(PHP7)</strong></p><p>PHP7の<strong>関数(メソッド・クロージャ含む)</strong>は、<br><strong>引数</strong>と<strong>返り値</strong>に型を定義することができる</p><p><strong>// PHP 5</strong></p><p>function trapezoid($h, $a, $b) {</p><p>    return $h * ($a + $b) / 2;</p><p>}</p><p><strong>// PHP 7</strong></p><p>function trapezoid(float $h, float $a, float $b): float</p><p>{</p><p>    return $h * ($a + $b) / 2;</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p><strong>動的型検査の弱点</strong></p><p>プログラムを動かしてみないとわからない</p><ul><li>$a = 13;  $b = [];</li></ul><p>// 環境依存の分岐 (本番環境じゃないと動かない)</p><p>if (is_production()) {</p><p>  echo $a + $b; // 検出できない</p><p>  echo 1 + [];  // ←これはPHP7で検出できるようになった</p><p>}</p><p>function f(): int {</p><p>    return []; // これも検出できない</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p><strong>PHPDoc</strong></p><p><strong>#とは何か</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p><strong>DocCommentとリフレクション</strong></p><p><strong>定義文</strong> に付属する<br><strong>(クラス・関数・メソッドなど)</strong></p><p>特別なコメント<strong> の</strong> を<strong>実行時に</strong></p><p><strong>/**   */</strong> <br><strong>( 範囲)</strong></p><p><strong>〜</strong></p><p>文字列として取得することができる<strong>(DocComment)</strong></p><p><strong>/** ここはDocCommentだよ */</strong></p><p>function hoge() {</p><p>}</p><p>$ref = new \ReflectionFunction(&#39;hoge&#39;);</p><p>echo $ref-&gt;getDocComment();</p><p><strong>// =&gt; &quot;/** ここはDocCommentだよ */&quot;</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p><strong>PHPDoc型注釈</strong></p><p>DocCommentに型定義を<strong>注釈として</strong>記述する記法。<br><strong>PhpStorm</strong>や<strong>Phan</strong>が解釈してくれる。</p><p><strong>/**</strong></p><p><strong> * @param  float $h</strong></p><p><strong> * @param  float $a</strong></p><p><strong> * @param  float $b</strong></p><p><strong> * @return float</strong></p><p><strong> */</strong></p><p>function trapezoid($h, $a, $b) {</p><p>    return $h * ($a + $b) / 2;</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p><strong>PhpStormの型表示</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p><strong>PHPDocの型</strong></p><p>基本はPHPの型かクラス名を書く </p><ul><li>callable $this self static void</li></ul><p>,  ,  ,  ,<strong> </strong> なども有効 </p><ul><li>複合型 (Union/Multiple types)</li></ul><ul><li>int int|string<br>「 または文字列」   <ul><li>値が並んでるもの (配列/Collection)</li></ul></li><li>int int[]<br>「 が並んでるもの」 <ul><li>https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p><strong>なぜPHPDoc型注釈？</strong></p><p>いきなり実装コードに<strong>型定義</strong>を追加すると、</p><ul><li>いままで顕在化しなかったバグが発生するおそれ<br>不用意なキャストや型検査でエラー発生 </li></ul><p>PHPDocはただのコメントなので、</p><ul><li>稼動中のコードの挙動を変更せず検査できる<br>現行のPHPの型定義以上の型付けを表現できる </li></ul><ul><li>array int[]<br>複合型やコレクション(  →  ) <ul><li>string int<br>PHP5で対応できない  ,  など</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p><strong>これだけ覚えて帰ってね</strong></p><p><strong>タグ名 意味 例</strong></p><p><strong>@param</strong> 引数を定義</p><p>@param int $n1 </p><p><strong>@return</strong> 返り値を定義</p><p>@return int[]</p><p><strong>@var</strong> 変数/プロパティを定義</p><p>@var int</p><p><strong>@property</strong> マジックプロパティを定義</p><p>@property int $id</p><p>@property</p><p>ふつうのプロパティは じゃなくて</p><p>@var</p><p>なので注意 </p><p>@property<br>(Phanは 未対応)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>@var</p><p><strong>プロパティの例</strong> ( )</p><p>@var</p><p>ふつうのプロパティの場合は   を使って書く</p><p>final class Book {</p><p>    <strong>/** @var string */</strong></p><p>    public $title;</p><p>    <strong>/** @var \MyApp\Author[] */</strong></p><p>    public $authors;</p><p>    <strong>/** @var \MyApp\ISBN */</strong></p><p>    public $isbn;</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>@property</p><p><strong>プロパティの例</strong> ( )</p><p>拙作のzonuexe/objectsystemを使った場合</p><p><strong>/**</strong></p><p><strong> * @property string          $title</strong></p><p><strong> * @property \MyApp\Author[] $authors</strong></p><p><strong> * @property \MyApp\ISBN     $isbn</strong></p><p><strong> */</strong></p><p>final class Book {</p><p>    use \Teto\Object\TypedProperty;</p><p>    protected static $property_types = [</p><p>        &#39;title&#39;   =&gt; &#39;string&#39;,</p><p>        &#39;authors&#39; =&gt; &#39;MyApp\Author[]&#39;,</p><p>        &#39;isbn&#39;    =&gt; &#39;?MyApp\ISBN&#39;,</p><p>    ];</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p><strong>型注釈を使ったハック</strong></p><p>複合型とコレクション(型の配列)を組み合せる</p><p><strong>/** @return Book[]|\ArrayObject */</strong></p><p>function getBooks() {</p><p>   $data = hogehoge();</p><p>   return new \ArrayObject($data);</p><p>}</p><p>$books = getBooks();</p><p>$books-&gt;▍ // ここで \ArrayObject の補完が効く</p><p>foreach ($books as $book) {</p><p>    $book-&gt;▍ // ここで Book の補完が効く</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの紹介</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p><strong>Phanとは何か</strong></p><p>ハンドメイドマーケットを運営する</p><p>アメリカのEtsy社が開発する<strong>静的解析ツール</strong></p><p>https://github.com/etsy/phan </p><p>現在PHP作者の<strong>Rasmus Lerdorf</strong> が所属し、</p><ul><li>Phanの開発にも参加してる<br>PHPの型定義と型注釈を両方見てくれる </li></ul><ul><li>@property @method<br>ただし、 と<strong> 未対応</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの導入</strong></p><p>https://github.com/etsy/phan/releases</p><ul><li>.phar<br>最新のタグが付いてる ファイルをダウンロード <br>PHP7とphp-astが必須 </li></ul><p>ただしラッパースクリプトを用意すれば、</p><ul><li>サービスがPHP7で稼動してなくても動かせる<br>#!/bin/sh</li></ul><p>/path/to/php7/bin/php ${PHAN_BIN:-/path/to/bin/phan}  &quot;$@&quot;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの設定</strong></p><p>はじめにWikiから設定ファイルをコピペして、</p><p>.phan/config.php</p><p>プロジェクトの   に保存</p><p>https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file</p><p>    // ディレクトリホワイトリスト</p><p>    &#39;directory_list&#39; =&gt; [</p><p>        &#39;src&#39;,</p><p>        &#39;vendor/symfony/console&#39;,</p><p>    ],</p><p>    // ディレクトリブラックリスト</p><p>    &quot;exclude_analysis_directory_list&quot; =&gt; [</p><p>        &#39;vendor/&#39;</p><p>    ],</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの設定</strong>(<strong>そのほか</strong>)</p><ul><li>&#39;generic_types_enabled&#39; =&gt; bool<br>@template</li></ul><p>タグ(ジェネリック) 有効/無効 </p><ul><li>&#39;suppress_issue_types&#39; =&gt; string[]<br>無視するIssueタイプを指定する </li><li>&#39;plugins&#39; =&gt; string[]<br>Phanプラグインを追加できる <ul><li>DollarDollar<br>サンプルとして が添付されている </li><li>$$var</li></ul></li></ul><p> (可変変数)を検出</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p><strong>Phan コマンド</strong></p><p>-o, --output &lt;filename&gt;</p><p> 出力ファイル指定 </p><ul><li>-m &lt;mode&gt;, --output-mode</li></ul><p> 出力形式 </p><ul><li>-x, --dead-code-detection</li></ul><p> デッドコード検出 </p><ul><li>--backward-compatibility-checks</li></ul><p> PHP7互換性 </p><ul><li>-j, --processes &lt;int&gt;</li></ul><p> 並列実行数 </p><ul><li>-p, --progress-bar</li></ul><p> 進捗バーを表示</p><p>./phan-wrapper -m csv -o phan.csv -x -j4 \</p><p>    --progress-bar --backward-compatibility-checks</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p><strong>Phan 出力</strong></p><p>デフォルトの場合の出力</p><p>pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal </p><p>Argument 1 (month) is string but \checkdate() takes int</p><p>pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal <br>Argument 2 (day) is string but \checkdate() takes int</p><p>path/to/file.php:333 PhanTypeMismatchArgumentInternal This is message.</p><p> は<strong>Issue</strong>と呼ばれる </p><p>PhanTypeMismatchArgumentInternal</p><ul><li>@suppress<br><strong>Issue</strong>ごとに出力するを制御可能( タグ)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p><strong>Phan Issueいろいろ</strong></p><p>PhanParamTooFew PhanParamTooMany</p><p> /   </p><ul><li>引数が足りない／多い<ul><li>PhanParamTypeMismatch</li></ul></li></ul><ul><li>引数の型が間違ってる<ul><li>PhanRedefineClass PhanRedefineFunction</li></ul></li></ul><p> /   </p><ul><li>同名のクラス／関数がいくつも定義されてる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p><strong>PhanUndeclaredClassCatch</strong></p><p>存在しないクラスでキャッチしようとしてないか</p><p><strong>// PHP 5</strong></p><p><strong>namespace MyApp;</strong></p><p><strong>try {</strong></p><p><strong>    foo();</strong></p><p><strong>} catch (RuntimeException $e) {</strong></p><p><strong>    // ↑ \MyApp\RuntimeException</strong></p><p><strong>} catch (\Excaption $e) {</strong></p><p><strong>    // ↑ \Exception が正しい</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p><strong>PhanUndeclaredClassInstanceof</strong></p><p>instanceof</p><p>存在しないクラスで してないか</p><p><strong>namespace MyApp;</strong></p><p><strong>$e = get_error();</strong></p><p><strong>if ($e instanceof RuntimeException) {</strong></p><p><strong>    // ↑ \MyApp\RuntimeException</strong></p><p><strong>} elseif ($e instanceof \Excaption) {</strong></p><p><strong>    // ↑ \Exception が正しい</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p><strong>PhanTypeMismatchForeach</strong></p><p>foreachできない値をforeachしようとしてる</p><p><strong>$iter = null;</strong></p><p><strong>// E_WARNING</strong></p><p><strong>foreach ($iter as $i) {</strong></p><p><strong>    echo $i;</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p><strong>PhanTypeMismatchReturn</strong></p><p>定義と違った型の値を返してる</p><p><strong>/** @return void */</strong></p><p><strong>function f() {</strong></p><p><strong>    return null;</strong></p><p><strong>}</strong></p><p><strong>function g():int {</strong></p><p><strong>    return [];</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p><strong>PhanTypeMissingReturn</strong></p><p>特定の型を返すべきだが、何も返していない</p><p><strong>/** @return int */</strong></p><p><strong>function g(){</strong></p><p><strong>    return;</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p><strong>PhanTypeVoidAssignment</strong></p><p>null</p><p>実際には が代入されるが</p><p>void</p><p>は「データがない」を意味するので適切ではな</p><p>い</p><p><strong>/** @return void */</strong></p><p><strong>function g(){ return; }</strong></p><p><strong>$result = g();</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p><strong>PhanNoopXXXX</strong></p><p>無意味なコードを検出する</p><p><strong>// 代入しない配列 PhanNoopArray</strong></p><p><strong>[1, 2, 3];</strong></p><p><strong>// 代入も実行もしないクロージャ PhanNoopClosure</strong></p><p><strong>function(){ return awesome(); };</strong></p><p><strong>// returnしていないので無意味 PhanNoopProperty</strong></p><p><strong>class C {</strong></p><p><strong>    public $p;</strong></p><p><strong>    function f() { $this-&gt;p; }</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p><strong>PhanDeprecatedFunction</strong></p><p><strong>廃止予定</strong>/<strong>非推奨</strong>のメソッドを利用。</p><p>古い実装を新しいものに置換する際に</p><p>@deprecated</p><p> を付けておくと洗い出せてべんり</p><p><strong>function newAwesomeFunc(){}</strong></p><p><strong>/** @deprecated */</strong></p><p><strong>function oldFunc(){}</strong></p><p><strong>oldFunc(); // PhpStormは取り消し線で表示</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p><strong>Phan独自のアノテーション</strong></p><p>@suppress &lt;issue_type&gt;<br>クラス・メソッドなどの範囲でIssueを無効化する</p><p><strong>/** @suppress PhanUndeclaredConstant */</strong></p><p><strong>class C {</strong></p><p><strong>    function f() { return AWESOME_CONSTANT; }</strong></p><p><strong>    /** @supress PhanUndeclaredProperty */</strong></p><p><strong>    function g() { return $this-&gt;p; }</strong></p><p><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p><strong>Phan独自のアノテーション</strong></p><p>@template </p><p><strong>型変数</strong>(ジェネリック)</p><p><strong>/** @template T1 */</strong></p><p>class Container {</p><p><strong>    /** @var T1 */</strong></p><p>    private $value;</p><p>    public function __construct($value){ $this-&gt;value = <br>$value; }</p><p>    function getValue() { return $value; }</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの制限</strong></p><p>define()</p><p><strong>関数での定数定義はサポートされない </strong></p><ul><li>const<br><strong>動的に定義されるため ( は静的) </strong><ul><li>Reference to undeclared constant</li></ul></li></ul><p><strong> 扱い </strong></p><ul><li>@method</li></ul><p><strong> には対応してない </strong></p><ul><li>__call()</li></ul><p><strong> を使ったProxyパターン殺し</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p><strong>Phanのめんどくさいところ</strong></p><p><strong>重い </strong></p><ul><li>ファイル数にもよるが数十秒〜 かかる<ul><li>標準化されてないPHPDocに惑わされる</li></ul></li><li>PhanTypeMismatchReturn Returning type bool<ul><li>but insert() is declared to return \成功<br>「@return 成功 true 失敗 false」</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの注意点</strong></p><p><strong>メソッド／プロパティの動的定義に未対応 </strong></p><ul><li>__get() __set() __call() __callStatic()</li></ul><p><strong>,  ,  ,   など </strong></p><p><strong>PHP用語としての「オーバーロード」</strong></p><p><strong>http://php.net/manual/ja/language.oop5.overloading.php</strong></p><p><strong>定数の動的定義にも未対応 </strong></p><ul><li>define() const</li></ul><p><strong> はだめ。 文ならOK。</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p><strong>Phanの比較対象(競合)</strong></p><p><strong>定番：PHP Mess Detector (PHPMD) </strong></p><ul><li>さまざまな指摘をしてくれるが、型検査はなし<ul><li>似たサービスもいくつかある (private有料)</li></ul></li><li>Scrutinizer, SensioLabsInsight, CodeClimate<ul><li>これらコードの怪しい兆候を細かに教えてくれる</li><li>型検査の精度ではPhanの方が良く見える</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p><strong>まとめ</strong></p><p><strong>PHPDocの型注釈は動作に影響を及ぼさずに</strong></p><ul><li>型を宣言することができる<br><strong>Phanはソースコードを動作させずに解析できる </strong></li></ul><p><strong>Phanで静的解析することで、</strong></p><ul><li>リファクタリングのリスクを減らすことができる</li></ul><p><strong>廃止予定の非推奨メソッドには</strong></p><ul><li>@deprecated</li></ul><p><strong> をつける習慣をつけると殲滅が捗る</strong></p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
                     
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p><strong>Phan</strong>による</p><p><strong>静的解析</strong></p><p> <strong>PHP</strong>コード<br><strong>公開補訂版</strong></p><p>ピクシブ株式会社<br>うさみけんた @tadsan</p><p><strong>JAPAN phpcon 2016, 3rd November </strong></p>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2015%2F12%2F13%2F145741&size=32" alt=""><a href="http://inside.pixiv.net/entry/2015/12/13/145741" target="_blank" rel="noopener">PHPで高速に動作するURLルーティングを自作してみた - pixiv inside [archive]</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>2012年 自宅警備→ピクシブ株式会社</li></ul></li><li>モバイルアプリ向けWebAPI開発とか<ul><li>今年の春からメンテナンスとしてチーム独立</li></ul></li></ul><p>日常的な<strong>バグ修正</strong>から、<strong>アーキテクチャの改善</strong></p><ul><li>リファクタリングやテストなどいろいろ！</li></ul>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fgihyo.jp%2Fmagazine%2Fwdpress%2Farchive%2F2016%2Fvol95&size=32" alt=""><a href="http://gihyo.jp/magazine/wdpress/archive/2016/vol95" target="_blank" rel="noopener">WEB+DB PRESS Vol.95 | 技術評論社</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p><strong>おしごと</strong></p>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzonuexe.github.io%2FphpDocumentor2-ja%2Freferences%2Fphpdoc%2Ftypes.html&size=32" alt=""><a href="https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html" target="_blank" rel="noopener">型の定義 — phpDocumentor</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p>現実に動いている</p><p>(ユーザーさんが利用している)</p><p>サービスを破壊せずに<br><strong>コードの健全さを向上したい</strong></p>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fobjectsystem&size=32" alt=""><a href="https://github.com/BaguettePHP/objectsystem" target="_blank" rel="noopener">GitHub - BaguettePHP/objectsystem: Object system implementation for PHP</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fetsy%2Fphan&size=32" alt=""><a href="https://github.com/etsy/phan" target="_blank" rel="noopener">GitHub - phan/phan: Phan is a static analyzer for PHP. Phan prefers to avoid false-positives and attempts to prove incorrectness rather than correctness.</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p><strong>そんなノウハウをｷﾞｭｯと詰め込んだ</strong><br><strong>PHP大規模開発入門</strong></p><p><strong>(連載中)</strong></p>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fetsy%2Fphan%2Freleases&size=32" alt=""><a href="https://github.com/etsy/phan/releases" target="_blank" rel="noopener">Releases · phan/phan · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fnikic%2Fphp-ast&size=32" alt=""><a href="https://github.com/nikic/php-ast" target="_blank" rel="noopener">GitHub - nikic/php-ast: Extension exposing PHP 7 abstract syntax tree</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p><strong>PHP大規模開発入門</strong></p><p><strong>Vol.87</strong>:   </p><p>PHPDocでコードの品質を保つ</p><ul><li>Vol.91:</li></ul><p>名前空間とオートローディング</p><p><strong>Vol.94</strong>: </p><p>PHP初心者がハマりがちな落とし穴</p><p> ……型のキャスト，変数とリファレンス</p><p><strong>Vol.95</strong>: </p><p>PHPの静的解析</p><ul><li>……ドキュメントの生成，問題箇所の発見</li></ul>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fetsy%2Fphan%2Fwiki%2FGetting-Started%23creating-a-config-file&size=32" alt=""><a href="https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file" target="_blank" rel="noopener">Getting Started · phan/phan Wiki · GitHub</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p><strong>PHP大規模開発入門</strong></p><p><strong>Vol.87</strong>:   </p><p><strong>PHPDoc</strong>でコードの品質を保つ</p><ul><li>Vol.91:</li></ul><p>名前空間とオートローディング</p><p><strong>Vol.94</strong>: </p><p>PHP初心者がハマりがちな落とし穴</p><p> ……<strong>型</strong>のキャスト，変数とリファレンス</p><p><strong>Vol.95</strong>: </p><p>PHPの静的解析</p><ul><li>……ドキュメントの生成，問題箇所の発見</li></ul>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Flanguage.oop5.overloading.php&size=32" alt=""><a href="http://php.net/manual/ja/language.oop5.overloading.php" target="_blank" rel="noopener">PHP: オーバーロード - Manual</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
+                      
                     
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p><strong>おしながき</strong></p><p><strong>PHPと型 </strong></p><ul><li>PHPDocとは何か</li><li>Phanの紹介</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p><strong>PHPと型</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p><strong>動的型検査</strong></p><p>プログラムを動かしながら(←動的)</p><p>手さぐりで型を調べる (←型検査)</p><p>$a = 13;  $b = &quot;2&quot;;</p><p>echo $a + $b;</p><p>$a int $b string<br>の型は だな、 の型は …</p><p>「</p><p>！」</p><p>だけど数字だから足しざんできるね</p><p>……みたいな<strong>茶番</strong>を毎回やってる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p><strong>PHPの型</strong></p><p>変数に<strong>型はない</strong>が、<strong>値が型を持つ </strong></p><ul><li>int id<br>C言語みたいに<strong>   </strong>のような定義は<strong>できない </strong><ul><li>64 &#39;A&#39;<br><strong> </strong>と<strong>   </strong>は<strong>厳然とした別の型の値 </strong></li><li>&#39;64&#39; == 64</li></ul></li></ul><p>のような比較が成り立つ設計 </p><ul><li>関数は型宣言できる (ただし動的検査)</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p><strong>PHPの型の種類</strong></p><p><strong>整数  浮動小数点数  論理値</strong></p><p>int float bool</p><ul><li>( ) ( ) ( )<br><strong>文字列  配列 リソース</strong></li></ul><p>string array resource<br>( ) ( )<strong> </strong> ( )</p><p><strong>オブジェクト ヌル値</strong></p><p>object null<br>( )<strong> </strong> ( ) </p><p>array</p><p>では のみ宣言に記述できる </p><ul><li>PHP5</li></ul><p>int float string bool<br>7.0では ,  ,  ,  が記述できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p><strong>型宣言(PHP7)</strong></p><p>PHP7の<strong>関数(メソッド・クロージャ含む)</strong>は、<br><strong>引数</strong>と<strong>返り値</strong>に型を定義することができる</p><p><strong>// PHP 5</strong></p><p>function trapezoid($h, $a, $b) {</p><p>    return $h * ($a + $b) / 2;</p><p>}</p><p><strong>// PHP 7</strong></p><p>function trapezoid(float $h, float $a, float $b): float</p><p>{</p><p>    return $h * ($a + $b) / 2;</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p><strong>動的型検査の弱点</strong></p><p>プログラムを動かしてみないとわからない</p><ul><li>$a = 13;  $b = [];</li></ul><p>// 環境依存の分岐 (本番環境じゃないと動かない)</p><p>if (is_production()) {</p><p>  echo $a + $b; // 検出できない</p><p>  echo 1 + [];  // ←これはPHP7で検出できるようになった</p><p>}</p><p>function f(): int {</p><p>    return []; // これも検出できない</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p><strong>PHPDoc</strong></p><p><strong>#とは何か</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p><strong>DocCommentとリフレクション</strong></p><p><strong>定義文</strong> に付属する<br><strong>(クラス・関数・メソッドなど)</strong></p><p>特別なコメント<strong> の</strong> を<strong>実行時に</strong></p><p><strong>/**   */</strong> <br><strong>( 範囲)</strong></p><p><strong>〜</strong></p><p>文字列として取得することができる<strong>(DocComment)</strong></p><p><strong>/** ここはDocCommentだよ */</strong></p><p>function hoge() {</p><p>}</p><p>$ref = new \ReflectionFunction(&#39;hoge&#39;);</p><p>echo $ref-&gt;getDocComment();</p><p><strong>// =&gt; &quot;/** ここはDocCommentだよ */&quot;</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p><strong>PHPDoc型注釈</strong></p><p>DocCommentに型定義を<strong>注釈として</strong>記述する記法。<br><strong>PhpStorm</strong>や<strong>Phan</strong>が解釈してくれる。</p><p><strong>/**</strong></p><p><strong> * @param  float $h</strong></p><p><strong> * @param  float $a</strong></p><p><strong> * @param  float $b</strong></p><p><strong> * @return float</strong></p><p><strong> */</strong></p><p>function trapezoid($h, $a, $b) {</p><p>    return $h * ($a + $b) / 2;</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p><strong>PhpStormの型表示</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p><strong>PHPDocの型</strong></p><p>基本はPHPの型かクラス名を書く </p><ul><li>callable $this self static void</li></ul><p>,  ,  ,  ,<strong> </strong> なども有効 </p><ul><li>複合型 (Union/Multiple types)</li></ul><ul><li>int int|string<br>「 または文字列」   <ul><li>値が並んでるもの (配列/Collection)</li></ul></li><li>int int[]<br>「 が並んでるもの」 <ul><li>https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p><strong>なぜPHPDoc型注釈？</strong></p><p>いきなり実装コードに<strong>型定義</strong>を追加すると、</p><ul><li>いままで顕在化しなかったバグが発生するおそれ<br>不用意なキャストや型検査でエラー発生 </li></ul><p>PHPDocはただのコメントなので、</p><ul><li>稼動中のコードの挙動を変更せず検査できる<br>現行のPHPの型定義以上の型付けを表現できる </li></ul><ul><li>array int[]<br>複合型やコレクション(  →  ) <ul><li>string int<br>PHP5で対応できない  ,  など</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p><strong>これだけ覚えて帰ってね</strong></p><p><strong>タグ名 意味 例</strong></p><p><strong>@param</strong> 引数を定義</p><p>@param int $n1 </p><p><strong>@return</strong> 返り値を定義</p><p>@return int[]</p><p><strong>@var</strong> 変数/プロパティを定義</p><p>@var int</p><p><strong>@property</strong> マジックプロパティを定義</p><p>@property int $id</p><p>@property</p><p>ふつうのプロパティは じゃなくて</p><p>@var</p><p>なので注意 </p><p>@property<br>(Phanは 未対応)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p>@var</p><p><strong>プロパティの例</strong> ( )</p><p>@var</p><p>ふつうのプロパティの場合は   を使って書く</p><p>final class Book {</p><p>    <strong>/** @var string */</strong></p><p>    public $title;</p><p>    <strong>/** @var \MyApp\Author[] */</strong></p><p>    public $authors;</p><p>    <strong>/** @var \MyApp\ISBN */</strong></p><p>    public $isbn;</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>@property</p><p><strong>プロパティの例</strong> ( )</p><p>拙作のzonuexe/objectsystemを使った場合</p><p><strong>/**</strong></p><p><strong> * @property string          $title</strong></p><p><strong> * @property \MyApp\Author[] $authors</strong></p><p><strong> * @property \MyApp\ISBN     $isbn</strong></p><p><strong> */</strong></p><p>final class Book {</p><p>    use \Teto\Object\TypedProperty;</p><p>    protected static $property_types = [</p><p>        &#39;title&#39;   =&gt; &#39;string&#39;,</p><p>        &#39;authors&#39; =&gt; &#39;MyApp\Author[]&#39;,</p><p>        &#39;isbn&#39;    =&gt; &#39;?MyApp\ISBN&#39;,</p><p>    ];</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p><strong>型注釈を使ったハック</strong></p><p>複合型とコレクション(型の配列)を組み合せる</p><p><strong>/** @return Book[]|\ArrayObject */</strong></p><p>function getBooks() {</p><p>   $data = hogehoge();</p><p>   return new \ArrayObject($data);</p><p>}</p><p>$books = getBooks();</p><p>$books-&gt;▍ // ここで \ArrayObject の補完が効く</p><p>foreach ($books as $book) {</p><p>    $book-&gt;▍ // ここで Book の補完が効く</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの紹介</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p><strong>Phanとは何か</strong></p><p>ハンドメイドマーケットを運営する</p><p>アメリカのEtsy社が開発する<strong>静的解析ツール</strong></p><p>https://github.com/etsy/phan </p><p>現在PHP作者の<strong>Rasmus Lerdorf</strong> が所属し、</p><ul><li>Phanの開発にも参加してる<br>PHPの型定義と型注釈を両方見てくれる </li></ul><ul><li>@property @method<br>ただし、 と<strong> 未対応</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの導入</strong></p><p>https://github.com/etsy/phan/releases</p><ul><li>.phar<br>最新のタグが付いてる ファイルをダウンロード <br>PHP7とphp-astが必須 </li></ul><p>ただしラッパースクリプトを用意すれば、</p><ul><li>サービスがPHP7で稼動してなくても動かせる<br>#!/bin/sh</li></ul><p>/path/to/php7/bin/php ${PHAN_BIN:-/path/to/bin/phan}  &quot;$@&quot;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの設定</strong></p><p>はじめにWikiから設定ファイルをコピペして、</p><p>.phan/config.php</p><p>プロジェクトの   に保存</p><p>https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file</p><p>    // ディレクトリホワイトリスト</p><p>    &#39;directory_list&#39; =&gt; [</p><p>        &#39;src&#39;,</p><p>        &#39;vendor/symfony/console&#39;,</p><p>    ],</p><p>    // ディレクトリブラックリスト</p><p>    &quot;exclude_analysis_directory_list&quot; =&gt; [</p><p>        &#39;vendor/&#39;</p><p>    ],</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの設定</strong>(<strong>そのほか</strong>)</p><ul><li>&#39;generic_types_enabled&#39; =&gt; bool<br>@template</li></ul><p>タグ(ジェネリック) 有効/無効 </p><ul><li>&#39;suppress_issue_types&#39; =&gt; string[]<br>無視するIssueタイプを指定する </li><li>&#39;plugins&#39; =&gt; string[]<br>Phanプラグインを追加できる <ul><li>DollarDollar<br>サンプルとして が添付されている </li><li>$$var</li></ul></li></ul><p> (可変変数)を検出</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p><strong>Phan コマンド</strong></p><p>-o, --output &lt;filename&gt;</p><p> 出力ファイル指定 </p><ul><li>-m &lt;mode&gt;, --output-mode</li></ul><p> 出力形式 </p><ul><li>-x, --dead-code-detection</li></ul><p> デッドコード検出 </p><ul><li>--backward-compatibility-checks</li></ul><p> PHP7互換性 </p><ul><li>-j, --processes &lt;int&gt;</li></ul><p> 並列実行数 </p><ul><li>-p, --progress-bar</li></ul><p> 進捗バーを表示</p><p>./phan-wrapper -m csv -o phan.csv -x -j4 \</p><p>    --progress-bar --backward-compatibility-checks</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p><strong>Phan 出力</strong></p><p>デフォルトの場合の出力</p><p>pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal </p><p>Argument 1 (month) is string but \checkdate() takes int</p><p>pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal <br>Argument 2 (day) is string but \checkdate() takes int</p><p>path/to/file.php:333 PhanTypeMismatchArgumentInternal This is message.</p><p> は<strong>Issue</strong>と呼ばれる </p><p>PhanTypeMismatchArgumentInternal</p><ul><li>@suppress<br><strong>Issue</strong>ごとに出力するを制御可能( タグ)</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p><strong>Phan Issueいろいろ</strong></p><p>PhanParamTooFew PhanParamTooMany</p><p> /   </p><ul><li>引数が足りない／多い<ul><li>PhanParamTypeMismatch</li></ul></li></ul><ul><li>引数の型が間違ってる<ul><li>PhanRedefineClass PhanRedefineFunction</li></ul></li></ul><p> /   </p><ul><li>同名のクラス／関数がいくつも定義されてる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p><strong>PhanUndeclaredClassCatch</strong></p><p>存在しないクラスでキャッチしようとしてないか</p><p><strong>// PHP 5</strong></p><p><strong>namespace MyApp;</strong></p><p><strong>try {</strong></p><p><strong>    foo();</strong></p><p><strong>} catch (RuntimeException $e) {</strong></p><p><strong>    // ↑ \MyApp\RuntimeException</strong></p><p><strong>} catch (\Excaption $e) {</strong></p><p><strong>    // ↑ \Exception が正しい</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p><strong>PhanUndeclaredClassInstanceof</strong></p><p>instanceof</p><p>存在しないクラスで してないか</p><p><strong>namespace MyApp;</strong></p><p><strong>$e = get_error();</strong></p><p><strong>if ($e instanceof RuntimeException) {</strong></p><p><strong>    // ↑ \MyApp\RuntimeException</strong></p><p><strong>} elseif ($e instanceof \Excaption) {</strong></p><p><strong>    // ↑ \Exception が正しい</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p><strong>PhanTypeMismatchForeach</strong></p><p>foreachできない値をforeachしようとしてる</p><p><strong>$iter = null;</strong></p><p><strong>// E_WARNING</strong></p><p><strong>foreach ($iter as $i) {</strong></p><p><strong>    echo $i;</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p><strong>PhanTypeMismatchReturn</strong></p><p>定義と違った型の値を返してる</p><p><strong>/** @return void */</strong></p><p><strong>function f() {</strong></p><p><strong>    return null;</strong></p><p><strong>}</strong></p><p><strong>function g():int {</strong></p><p><strong>    return [];</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p><strong>PhanTypeMissingReturn</strong></p><p>特定の型を返すべきだが、何も返していない</p><p><strong>/** @return int */</strong></p><p><strong>function g(){</strong></p><p><strong>    return;</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p><strong>PhanTypeVoidAssignment</strong></p><p>null</p><p>実際には が代入されるが</p><p>void</p><p>は「データがない」を意味するので適切ではな</p><p>い</p><p><strong>/** @return void */</strong></p><p><strong>function g(){ return; }</strong></p><p><strong>$result = g();</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p><strong>PhanNoopXXXX</strong></p><p>無意味なコードを検出する</p><p><strong>// 代入しない配列 PhanNoopArray</strong></p><p><strong>[1, 2, 3];</strong></p><p><strong>// 代入も実行もしないクロージャ PhanNoopClosure</strong></p><p><strong>function(){ return awesome(); };</strong></p><p><strong>// returnしていないので無意味 PhanNoopProperty</strong></p><p><strong>class C {</strong></p><p><strong>    public $p;</strong></p><p><strong>    function f() { $this-&gt;p; }</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p><strong>PhanDeprecatedFunction</strong></p><p><strong>廃止予定</strong>/<strong>非推奨</strong>のメソッドを利用。</p><p>古い実装を新しいものに置換する際に</p><p>@deprecated</p><p> を付けておくと洗い出せてべんり</p><p><strong>function newAwesomeFunc(){}</strong></p><p><strong>/** @deprecated */</strong></p><p><strong>function oldFunc(){}</strong></p><p><strong>oldFunc(); // PhpStormは取り消し線で表示</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p><strong>Phan独自のアノテーション</strong></p><p>@suppress &lt;issue_type&gt;<br>クラス・メソッドなどの範囲でIssueを無効化する</p><p><strong>/** @suppress PhanUndeclaredConstant */</strong></p><p><strong>class C {</strong></p><p><strong>    function f() { return AWESOME_CONSTANT; }</strong></p><p><strong>    /** @supress PhanUndeclaredProperty */</strong></p><p><strong>    function g() { return $this-&gt;p; }</strong></p><p><strong>}</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p><strong>Phan独自のアノテーション</strong></p><p>@template </p><p><strong>型変数</strong>(ジェネリック)</p><p><strong>/** @template T1 */</strong></p><p>class Container {</p><p><strong>    /** @var T1 */</strong></p><p>    private $value;</p><p>    public function __construct($value){ $this-&gt;value = <br>$value; }</p><p>    function getValue() { return $value; }</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの制限</strong></p><p>define()</p><p><strong>関数での定数定義はサポートされない </strong></p><ul><li>const<br><strong>動的に定義されるため ( は静的) </strong><ul><li>Reference to undeclared constant</li></ul></li></ul><p><strong> 扱い </strong></p><ul><li>@method</li></ul><p><strong> には対応してない </strong></p><ul><li>__call()</li></ul><p><strong> を使ったProxyパターン殺し</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p><strong>Phanのめんどくさいところ</strong></p><p><strong>重い </strong></p><ul><li>ファイル数にもよるが数十秒〜 かかる<ul><li>標準化されてないPHPDocに惑わされる</li></ul></li><li>PhanTypeMismatchReturn Returning type bool<ul><li>but insert() is declared to return \成功<br>「@return 成功 true 失敗 false」</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの注意点</strong></p><p><strong>メソッド／プロパティの動的定義に未対応 </strong></p><ul><li>__get() __set() __call() __callStatic()</li></ul><p><strong>,  ,  ,   など </strong></p><p><strong>PHP用語としての「オーバーロード」</strong></p><p><strong>http://php.net/manual/ja/language.oop5.overloading.php</strong></p><p><strong>定数の動的定義にも未対応 </strong></p><ul><li>define() const</li></ul><p><strong> はだめ。 文ならOK。</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p><strong>Phanの比較対象(競合)</strong></p><p><strong>定番：PHP Mess Detector (PHPMD) </strong></p><ul><li>さまざまな指摘をしてくれるが、型検査はなし<ul><li>似たサービスもいくつかある (private有料)</li></ul></li><li>Scrutinizer, SensioLabsInsight, CodeClimate<ul><li>これらコードの怪しい兆候を細かに教えてくれる</li><li>型検査の精度ではPhanの方が良く見える</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p><strong>まとめ</strong></p><p><strong>PHPDocの型注釈は動作に影響を及ぼさずに</strong></p><ul><li>型を宣言することができる<br><strong>Phanはソースコードを動作させずに解析できる </strong></li></ul><p><strong>Phanで静的解析することで、</strong></p><ul><li>リファクタリングのリスクを減らすことができる</li></ul><p><strong>廃止予定の非推奨メソッドには</strong></p><ul><li>@deprecated</li></ul><p><strong> をつける習慣をつけると殲滅が捗る</strong></p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2015%2F12%2F13%2F145741&size=32" alt=""><a href="http://inside.pixiv.net/entry/2015/12/13/145741" target="_blank">PHPで高速に動作するURLルーティングを自作してみた - pixiv inside [archive]</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fgihyo.jp%2Fmagazine%2Fwdpress%2Farchive%2F2016%2Fvol95&size=32" alt=""><a href="http://gihyo.jp/magazine/wdpress/archive/2016/vol95" target="_blank">WEB+DB PRESS Vol.95 | 技術評論社</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzonuexe.github.io%2FphpDocumentor2-ja%2Freferences%2Fphpdoc%2Ftypes.html&size=32" alt=""><a href="https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html" target="_blank">型の定義 — phpDocumentor</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fobjectsystem&size=32" alt=""><a href="https://github.com/BaguettePHP/objectsystem" target="_blank">GitHub - BaguettePHP/objectsystem: Object system implementation for PHP</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fetsy%2Fphan&size=32" alt=""><a href="https://github.com/etsy/phan" target="_blank">GitHub - phan/phan: Phan is a static analyzer for PHP. Phan prefers to avoid false-positives and attempts to prove incorrectness rather than correctness.</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fetsy%2Fphan%2Freleases&size=32" alt=""><a href="https://github.com/etsy/phan/releases" target="_blank">Releases · phan/phan · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fnikic%2Fphp-ast&size=32" alt=""><a href="https://github.com/nikic/php-ast" target="_blank">GitHub - nikic/php-ast: Extension exposing PHP 7 abstract syntax tree</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fetsy%2Fphan%2Fwiki%2FGetting-Started%23creating-a-config-file&size=32" alt=""><a href="https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file" target="_blank">Getting Started · phan/phan Wiki · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Flanguage.oop5.overloading.php&size=32" alt=""><a href="http://php.net/manual/ja/language.oop5.overloading.php" target="_blank">PHP: オーバーロード - Manual</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

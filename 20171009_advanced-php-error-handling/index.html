@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20171009_advanced-php-error-handling/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20171009_advanced-php-error-handling/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20171009_advanced-php-error-handling/">
 
           <title>PHP ここで差がつくエラー処理 完全版</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,15 +59,16 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>PHP ここで差がつくエラー処理 完全版</h1>
-              <p>公開日: <time datetime="2017-10-09">2017年10月9日</time></p>
+              <h1 class="slide-title"><a href="/slides/20171009_advanced-php-error-handling/" class="p-name u-url u-uid permalink-link">PHP ここで差がつくエラー処理 完全版</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2017-10-09">2017年10月9日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
 
@@ -74,7 +76,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpcon2017" target="_blank" class="hashtag">#phpcon2017</a>
+                  <a href="https://twitter.com/hashtag/phpcon2017" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpcon2017</a>
                 </div>
               
 
@@ -89,821 +91,820 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>ここで差がつく<strong>エラー処理</strong></p><p><strong>By Error Handling your application will be completed</strong></p><p><strong>公開用完全版</strong></p><p>, 8th Oct</p><p>PHP Conference Japan 2017</p><p>#phpcon2017</p><p>Kamata Tokyo, PiO </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>2017年10月8日に開催された</p><p><strong>PHPカンファレンス</strong>で発表した</p><p>「ここで差がつくエラー処理」の</p><p>完全版</p><p>発表資料を補訂した です</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社技術基盤チーム (pixiv.net)</li></ul></li><li>Emacs Lisper, PHPer</li><li>入社前は自宅警備をしながらRuby書いてた<ul><li>Emacs PHP Modeのメンテナ引き継ぎました</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>We are hiring!</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>はじめに</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p><strong>みなさん困ってませんか</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p><strong>こんな画面を見せて</strong><br><strong>しまってませんか</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p><strong>本番サービスで</strong><br><strong>見せちゃってませんか</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p><strong>HTML 出力途中で</strong><br><strong>落ちたりしませんか</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p><strong>エラーになっても</strong><br><strong>Webサイトの体裁は</strong></p><p><strong>なんとか保ちたい</strong><br><strong>……ですよね？</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p><strong>画面はpixivの実在のバグではなく</strong> <strong>故意に例外を発生させたものです</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p><strong>アジェンダ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>1. 例外・エラーの種類 <br>2. 本番環境でのエラー処理 3. 開発環境でのエラー処理</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p><strong>具体的にはこんな話をします</strong></p><p>エラーと例外の基本概念 </p><p>それらを制御するやりかた </p><p>開発環境でうんざりしない方法</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p><strong>参考資料</strong></p><p>だいたいPHPマニュアルに載ってる </p><p>http://php.net/language.operators.errorcontrol <br>http://php.net/set_error_handler <br>http://php.net/set_exception_handler <br>http://php.net/register_shutdown_function <br>http://php.net/ErrorException http://php.net/display-errors <br><strong>whoops!</strong> </p><p>https://github.com/filp/whoops</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p><strong>やらない話</strong></p><p>エラー監視 </p><p>例外設計 </p><p>そもそもエラーって何だ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p><strong>PHPのコードの試しかた</strong></p><p>php -r &#39;var_dump(1 + []);&#39; </p><p>php -a</p><p>REPL (PsySH または  ) </p><p>https://3v4l.org/ </p><p>多くのバージョンで串刺し実行</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p><strong>エラー・例外とは</strong></p><p>プログラムが正常ではないときに、<br>それを通知する仕組み </p><p>PHPでは<strong>エラー</strong>と<strong>例外</strong>がある </p><p>PHP5では処理系は基本的にエラー </p><p>PHP7で例外を投げることが増えた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>1. <strong>例外・エラーの種類</strong> <br>2. 本番環境でのエラー処理 3. 開発環境でのエラー処理</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p><strong>エラー</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p><strong>エラー</strong></p><p>従来のPHPで<strong>異常状態を通知する</strong><br>ための仕組み </p><p><strong>関数呼び出し 未定義変数の参照</strong><br>、<br>結構いろんなところで発生する </p><p>PHP で種類が整理された</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p><strong>主要なエラー</strong></p><p>Notice</p><p> <strong>よくない</strong>処理の通知 </p><p>Warning, Error</p><p>実行時の警告・エラー </p><p>Deprecated, Strict</p><p>非互換／廃止予定の機能 </p><p>Fatal Error</p><p> <strong>致命的</strong>エラー</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p><strong>Notice</strong></p><p>配列の未定義位置から値を取り出 そうとしたときなどに発生する </p><p><strong>信号無視</strong>みたいな軽犯罪 </p><p>ただしバグの温床になるので、 無視せずきちんと対処を強く推奨</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p><strong>Noticeの例 (一部)</strong></p><p>echo $i;          // </p><p>存在しない<strong>変数</strong></p><p>echo $_GET[&#39;id&#39;]; // </p><p>存在しない<strong>インデクス</strong> </p><p>echo $o-&gt;abc;     // </p><p>存在しない<strong>プロパティ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p><strong>Warning, Error</strong></p><p>何かが「間違ってる」ときに発生 </p><p>デフォルトの挙動ではWarningで<br>は停止せずに進む </p><p>一貫性がないが、どちらも異常状 態なので無視せず直した方がよい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p><strong>Warning, Errorの例(一部)</strong></p><p>// </p><p>存在しないファイルを開く </p><p>$f = fopen(&quot;/hoge.txt&quot;, &quot;r&quot;); </p><p>foo($i); // </p><p>引数が足りない、PHP5のみ</p><p>//  ArgumentError  <br>PHP7では に変更</p><p>function foo($i, $j) { echo $i, $j; }</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p><strong>Deprecated, Strict</strong></p><p>廃止予定や互換性の怪しい機能 </p><p>split()</p><p>例:   関数   </p><p>explode()<br>( とは別物)</p><p>5.3でdeprecated、7.0で削除 </p><p>Strictは7.0で廃止(再分類)された</p><p>https://wiki.php.net/rfc/reclassify_e_strict</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p><strong>Deprecated, Strictの例(一部)</strong></p><p>class Hoge {</p><p>    /**   */<br>古いスタイルのコンストラクタ</p><p>    function Hoge() {</p><p>    }</p><p>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p><strong>Deprecatedの例(一部)</strong></p><p>//** </p><p>PHP5.3でDeprecatedエラー、7で削除</p><p>$a = split(&#39;,&#39;, &#39;1,2,3&#39;);</p><p>// </p><p>エラー抑制演算子、通称なると<br>// エラーを握り潰せるべんりで危険なやつ</p><p>$a = @split(&#39;,&#39;, &#39;1,2,3&#39;);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p><strong>Fatal Error (致命的エラー)</strong></p><p>これ以上は続行できないエラー </p><p>同名のクラスや関数を<br>多重定義しようとしたとき </p><p>require</p><p>ファイルを できなかったとき </p><p>明らかに不正な式</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p><strong>Fatal Errorの例(一部)</strong></p><p>// </p><p>PHP5系とPHP7系でエラーになる </p><p>// </p><p>タイミングが異なるコード</p><p>$i = mt_rand(1, 2); <br>echo $i;</p><p>if ($i === 1) {</p><p>    // </p><p>数値と配列は加算できない</p><p>    $x = 1 + [];</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p><strong>Fatal Errorの例(一部)</strong></p><p>// </p><p>PHP5系とPHP7系でエラーになる </p><p>// </p><p>タイミングが異なるコード</p><p>$i = mt_rand(1, 2); <br>echo $i;</p><p>: 何も出力されず<strong>Fatal</strong></p><p><strong>PHP7</strong></p><p>if ($i === 1) {</p><p>: 「1」と<strong>Fatal</strong></p><p><strong>それ以外</strong><br>　  または「2」のみ</p><p>    $x = 1 + [];</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>PHP7は賢いので、実際に</p><p>実行されることがなくても<br>(絶対実行されないifの中だろうと)</p><p><strong>コンパイル時に検出してくれる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p><strong>例外</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>Exception Throwable<br><strong>例外 ( ,  )</strong></p><p>PHP5で追加された言語機能 </p><p>throw</p><p>異常状態のときに で投げる </p><p>たいいき(Non-local)<br>大域脱出と呼ばれる機能 </p><p>catch</p><p>文で捕捉できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p><strong>例外オブジェクト</strong></p><p>PHP5ではExceptionまたは、 <strong>Exceptionを継承した</strong>クラス <br>PHP7ではThrowableインターフェ</p><p>イスと、Exceptionを継承しない<br>Errorとその派生クラスが追加 便宜上まとめて「例外」と呼ぶ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p><strong>ErrorとエラーとE_ERROR</strong></p><p>PHP5系でエラーが発生したものが、<br>7系では例外(Errorクラス)を</p><p>throw</p><p>するように徐々に移行 <br>すべての移行されたわけではなく、</p><p>まだエラーと例外の概念を両方<br>知っておく必要がある </p><p>E_ERROR</p><p>レベルのエラー…<strong>ややこしい</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p><strong>エラー</strong><br><strong>ハンドリング</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p><strong>伝統的なエラー処理手法</strong></p><p>// </p><p>MySQLに接続失敗したら異常終了 </p><p>$db = mysql_connect() or die(&quot;接続に失敗しまし<br>た&quot;);</p><p>die() は exit() と同じ意味 </p><p>ここでいきなり強制終了する </p><p>そのあと処理はほとんどできない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p><strong>せめて例外に</strong></p><p>if (do_something() === false) {</p><p>    throw new FooException(&#39;do_something() が失敗した&#39;);</p><p>}</p><p>現在実行中の処理を中断して、<br>try…catch まで遡る </p><p>catchできなかったら、そこで<br>おとなしく野垂れ死ぬしかない…? </p><p>ただちに終了されないので、<br>まだ挽回の余地がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p><strong>エラーハンドリング</strong></p><p>発生したエラーをなんとかする</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p><strong>エラーハンドリング</strong></p><p>発生したエラーをなんとかする <br><strong>A</strong>: どうにか続行を試みる <br><strong>B</strong>: どうにもならないので諦める</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p><strong>エラーハンドリング</strong></p><p>発生したエラーをなんとかする <br><strong>A</strong>: どうにか続行を試みる <br><strong>B</strong>: どうにもならないので諦める <br>せめてログだけでも… </p><p>なんとか共通ナビゲーションと ロゴだけは表示してほしい…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p><strong>我々に三回のチャンスがある</strong></p><p>set_error_handler() </p><p>set_exception_handler() </p><p>register_shutdown_function()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p><strong>error_reporting()</strong></p><p>「出力するエラーの種類を設定する」 </p><p>どのエラーレベルに対応するか<br>ビットフラグで設定する </p><p>引数なしで呼ぶと現在の値を返す </p><p>error_reporting(E_ALL &amp; ~E_NOTICE)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p><strong>error_reporting() 設定方法</strong></p><p>// </p><p>無視できるもの全部無視</p><p>error_reporting(0);</p><p>// </p><p>全部のエラーを捕捉する</p><p>error_reporting(E_ALL);</p><p>error_reporting(E_ALL | E_STRICT); // </p><p>PHP 5.3以下</p><p>// </p><p>Noticeのみ無視</p><p>error_reporting(E_ALL &amp; ~E_NOTICE);</p><p>// </p><p>NoticeとDeprecatedを無視</p><p>error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED); </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p><strong>set_error_handler()</strong></p><p>エラーが発生したときに、</p><p>set_error_hanlder()</p><p> に登録した</p><p>関数が呼ばれる <br>エラーに応じて処理を続行させる こともできるし終了させてもいい <br>Fatal errorは捕捉できない！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p><strong>set_exception_handler()</strong></p><p>例外がtry-catchでも捕捉されな</p><p>かったときに、</p><p>set_exception_hanlder()</p><p> に</p><p>登録した関数が呼ばれる </p><p>関数が実行された後は停止する </p><p>登録できる関数はひとつだけ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p><strong>register_shutdown_function()</strong></p><p>PHPスクリプト終了時に必ず<br>呼ばれる関数を登録する </p><p>set_error_handler()</p><p>に来ない</p><p>Fatal Error(致命的エラー)を<br>捕捉してロギングできるチャンス <br>最後のエメラルドスプラッシュ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p><strong>定石</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p><strong>エラー処理の定石</strong></p><p>デフォルトのエラー出力を切る </p><p>エラーは例外に変換して、<br>未捕捉の例外とまとめて処理する </p><p>処理すべきエラーかどうかの判定</p><p>error_reporting()<br>に を利用する</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p><strong>デフォルトのエラー出力</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p><strong>デフォルトのエラー出力</strong></p><p>// </p><p>必ず読まれるPHPファイルで設定する</p><p>// </p><p>少なくとも本番環境では絶対offにする</p><p>ini_set(&#39;display_errors&#39;, &#39;off&#39;);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p><strong>set_exception_handler() 設定方法</strong></p><p>// </p><p>例外をハンドリング</p><p>set_exception_handler(function ($e){</p><p>    // </p><p>例外をログに記録</p><p>    YourApp::logException($e);</p><p>    // </p><p>エラー時の画面を表示</p><p>    YourApp::displayErrorPage($e);</p><p>});</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p><strong>エラー抑制とerror_reporting</strong></p><p>＠</p><p>は一時的に</p><p>(エラー抑制演算子)</p><p>error_reporting(0)</p><p>に設定して</p><p>処理を実行するだけ <br>独自設定したエラーハンドラが</p><p>error_reporting()</p><p>を考慮してくれ</p><p>ないと、エラーが握り潰されない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p><strong>set_error_handler() 設定方法</strong></p><p>set_error_handler(&#39;my_error_handler&#39;);</p><p>function my_error_handler (</p><p>    $level, $message, $file = null, $line = null) {</p><p>    // </p><p>エラーレベルのAND(ビット積)をとる</p><p>    if (error_reporting() &amp; $level &gt; 0) {</p><p>       throw new ErrorException(</p><p>           $message, 0, $level, $file, $line);</p><p>    }</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p><strong>error_reporting() </strong></p><p>error_reporting()で設定した</p><p>エラーレベルはデフォルトの エラーハンドラで利用される <br>自作のエラーハンドラを設定する</p><p>ときは、error_reporting()を<br>考慮して実装しなければならない 実際グローバル変数みたいなもの</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p><strong>register_shutdown_function() 設定方法</strong></p><p>register_shutdown_function(function(){</p><p>    if (empty($error = error_get_last())) return;</p><p>    //   </p><p>エラーハンドラーで捕捉できないエラーを判定</p><p>$fatal = E_ERROR | E_PARSE | E_COMPILE_WARNING</p><p>          | E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR; <br>    if (($error[&#39;level&#39;] &amp; $fatal_errors) &gt; 0) {</p><p>        $e = new ErrorException($error[&#39;message&#39;], 0,</p><p>           $error[&#39;type&#39;], $error[&#39;file&#39;], $error[&#39;line&#39;]);</p><p>        my_error_handler($e);</p><p>    }</p><p> })；</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            <p><strong>例外のロギング</strong></p><p>PHPの標準機能error_log()は、<br>ちょっと弱い <br>rollbar, faultlineなどに送る <br>pixivの場合は例外情報をバックト レースも含めてJSONエンコードし てファイルに追記、Fluentdで収集</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            <p>http://k1low.hatenablog.com/entry/2017/06/13/083000</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p><strong>開発時の原則</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            <p><strong>error_reporting()</strong></p><p>可能な限り無視しない <br><strong>例</strong>: 本番ではDeprecatedを無視 <br>ただしプロジェクト全体にNotice 発生箇所が多い場合は<strong>無理しない</strong> <br>一気にリファクタリングしようと してエンバグする方がずっと怖い</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            <p><strong>エラー設定は初期化処理で実行する</strong></p><p>error_reportingはphp.iniでも</p><p>設定可能だが、PHPで明示的に 設定すれば環境依存がなくなる </p><p>深いところで仕方なく変更する</p><p>必要に迫られたときは、小さな スコープで変更してすぐに戻す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p><strong>段階的にエラーレベルを上げる</strong></p><p>pixivの開発時にもまだNoticeが<br>発生する箇所が残ってる… </p><p>やむを得ず変更する際は浅い位置</p><p>で設定する </p><p>(例:コントローラ)</p><p>Deprecatedはユニットテストで<br>追い詰めていく</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            <p><strong>pixivの設定</strong></p><p>// </p><p>全体設定</p><p>error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED);<br>//   <br>ユニットテスト</p><p>error_reporting(E_ALL);</p><p>// </p><p>新規ファイルや動作確認できたページ</p><p>//   <br>(コントローラー)単位でレベルを上げる</p><p>setErrorReportingAll(); </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p><strong>べんりヘルパー関数</strong></p><p>/**</p><p> * </p><p>開発時のみエラーレベルを最大に上げる</p><p> * </p><p> * </p><p>本番(運用環境)には影響しない</p><p> */<br>function setErrorReportingAll() {</p><p>    if (is_development()) {</p><p>        error_reporting(E_ALL);</p><p>    }</p><p>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p><strong>深いところで一時的にエラーレベルを変更</strong></p><p>/** mcrypt */</p><p>は7.1で非推奨、7.2で削除予定 </p><p>function mcrypt_wrapper($text) {</p><p>    $err = error_reporting();</p><p>    error_reporting(E_ALL &amp; ~E_DEPRECATED); <br>    try {         // </p><p>mcryptを使った処理</p><p>    } finally {</p><p>        error_reporting($err); <br>    }</p><p>    return $result;</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            <p><strong>手を出せないライブラリ/SDK</strong></p><p>/**  */<br>なんかエラー吐きまくる古いSDKのラッパー </p><p>function hoge_legacy_wrapper($text) {</p><p>    $err = error_reporting();</p><p>    error_reporting(E_ALL &amp;~E_NOTICE &amp; ~E_DEPRECATED); <br>    try { <br>        $result = \Hoge\Legacy\SDK::proc();</p><p>    } finally {</p><p>        error_reporting($err); <br>    }</p><p>    return $result;</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p><strong>whoops!</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            <p><strong>whoops!</strong></p><p>“PHP errors for cool kids” <br>エラー処理用フレームワーク </p><p>set_exception_handler()は<br>ひとつしかハンドラを登録できな いが、whoopsは複数登録できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p><strong>whoops! ハンドラー</strong></p><p>ハンドラー は複数登録できる</p><p>(関数)<br><strong>スタック</strong>  </p><p> (FIFO, 後入れ先出し)</p><p>ロギング・デバッグだけでなく エラー画面の表示にも利用できる <br>WEB+DB Press Vol.96サンプルに</p><p>whoopsを使った設定例書きました</p><p>http://gihyo.jp/magazine/wdpress/archive/2017/vol96</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            <p><strong>whoops! 注意点</strong></p><p>PrettyPageHandlerはべんりだが もし本番環境で有効化されてしま うと脆弱性や情報漏洩の原因にす<br>らなりかねない </p><p>設定に自信がなければ、単に</p><p>開発環境用のカッコイイエラー 画面として割り切るのが安全</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p><strong>whoopsの有効化</strong></p><p>// </p><p>開発時のみWhoopsを有効化する場合</p><p>if (is_development()) { <br>    $handler = (PHP_SAPI === &#39;cli&#39;)</p><p>       ? new \Whoops\Handler\PlainTextHandler</p><p>       : new \Whoops\Handler\PrettyPageHandler; <br>   $whoops = new \Whoops\Run; <br>   $whoops-&gt;register();</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p><strong>落穂</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p><strong>エラーレベルとビットフラグ</strong></p><p>エラー発生時のレベルと</p><p>error_reporting()</p><p>はビットフラグ </p><p>E_ALL</p><p>は全種類のエラーの</p><p>フラグを立てた状態 </p><p>E_ALL &amp; ~E_NOTICEのように<br>反転してビット積をとるのが簡単</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p><strong>ビットフラグの確認方法</strong></p><p>printf(&#39;%015b&#39;, E_ALL); // =&gt; &quot;111111111111111&quot; <br>printf(&#39;%015b&#39;, E_DEPRECATED); <br>// =&gt; &quot;010000000000000&quot; <br>printf(&#39;%015b&#39;, E_ALL &amp; ~E_DEPRECATED); <br>// =&gt; &quot;101111111111111&quot;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p><strong>trigger_error()</strong></p><p>エラーを意図的に発生させる <br>ただし全てのエラーを発生させら れるわけではなくE_USER_系のみ 今日エラーはあまり考慮されてな<br>いので、役立たないかも… <br>USERの有無は別のエラーなので</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            <p><strong>trigger_error利用例</strong></p><p>// </p><p>関数をリネームしたいとき</p><p>/** <br> * @deprecated {@see grant()} を使ってください </p><p> */ <br>function credential(array $data){</p><p>    $msg = &#39;credential() is obsolete function.  Use <br>grant() instead.&#39;; <br>    trigger_error($msg, E_USER_DEPRECATED); <br>    return grant($data); <br>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            <p><strong>もうひとつのエラーハンドリング</strong></p><p>set_exception_handler()</p><p>を使った</p><p>ハンドリングは…実際(説明)難しい </p><p>細かなエラーハンドリングは<br>try-catchを使った方がやりやすい <br>エラーの仕組み</p><p>(このセッションで説明</p><p>よりは把握しやすい </p><p>した内容！)</p><p>https://gist.github.com/zonuexe/577d089815e241d5da26</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p><strong>pixivの場合 (AppRunnerパターン)</strong></p><p>アプリケーション</p><p>(PC版, スマートフォン版, </p><p>ごとにAppRunner と</p><p>etc...) (社内用語)<br>呼ばれるクラスを定義する </p><p>例外の種類ごとにcatchして、<br>適切な処理(ロギング・エラー表示)<br>などをする </p><p>http://inside.pixiv.net/entry/2015/12/18/210721</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p><strong>pixivの場合 (なぜこのパターンか)</strong></p><p>例外にも種類がある <br>アプリケーションのバグ <br>クエリパラメータの異常入力 </p><p>それらのアプリケーションの 事情に沿ってロギングする</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            <p><strong>参考資料</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            <p><strong>参考資料</strong></p><p>だいたいPHPマニュアルに載ってる </p><p>http://php.net/language.operators.errorcontrol <br>http://php.net/set_error_handler <br>http://php.net/set_exception_handler <br>http://php.net/register_shutdown_function <br>http://php.net/ErrorException http://php.net/display-errors <br><strong>whoops!</strong> </p><p>https://github.com/filp/whoops</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            <p><strong>参考 資料</strong><br>(にすると良い)</p><p>PHPのエラーと例外再入門 </p><p>by Hiraku NAKANO<br>https://speakerdeck.com/hirak/php-error-and-</p><p>exception</p><p>faultline/faultline-phpによるサーバ 管理不要なエラートラッキングとその</p><p>効果 by Ken&#39;ichiro Oyama</p><p>http://k1low.hatenablog.com/entry/2017/06/13/083000</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-text">
+                            <p><strong>参考資料 </strong></p><p>(pixiv AppRunner)</p><p>(ピクシブ株式会社 Advent Calendar 2015)<br>健全なpixivは健康なPHPに宿る〜</p><p>モダンPHPを保つ7つの鍵</p><p>http://inside.pixiv.net/entry/2015/12/18/210721</p><p>ソースコード</p><p> (サンプル)</p><p>https://gist.github.com/zonuexe/577d089815e241d5da26</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-92">
+                          <h4>Page 92</h4>
+                          <div class="page-text">
+                            <p><strong> 最後に</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-93">
+                          <h4>Page 93</h4>
+                          <div class="page-text">
+                            <p><strong>メンバー全員が知るべき？</strong></p><p>知っておくとためにはなる…かも でも完全に理解してないといけな<br>いわけではない <br>とは言っても社内で誰かが知って<br>おかないと困ることではある <br>「<strong>Noticeを潰せ</strong>」だけ周知したい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-94">
+                          <h4>Page 94</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-95">
+                          <h4>Page 95</h4>
+                          <div class="page-text">
+                            <p><strong>Webサービスの開発基盤</strong><br><strong>を設計したいひとも</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-96">
+                          <h4>Page 96</h4>
+                          <div class="page-text">
+                            <p><strong>創作文化のための開発に</strong><br><strong>興味があるひとも</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-97">
+                          <h4>Page 97</h4>
+                          <div class="page-text">
+                            <p>今回の内容がいまいち<br>ぴんと来なくても大丈夫</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-98">
+                          <h4>Page 98</h4>
+                          <div class="page-text">
+                            <p><strong>PHP</strong>,<strong> JavaScript</strong>,<strong> </strong>Ruby, </p><p>Scala, Go, データ分析,<br>インフラ, その他…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-99">
+                          <h4>Page 99</h4>
+                          <div class="page-text">
+                            <p><strong>まずは一度オフィスに</strong></p><p><strong>遊びに来ませんか</strong><br><strong>ヾ(〃＞＜)ﾉﾞ☆</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-100">
+                          <h4>Page 100</h4>
+                          <div class="page-text">
+                            <p><strong>Twitter @</strong>tadsan宛</p><p>または</p><p><strong>recruit.pixiv.net</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-101">
+                          <h4>Page 101</h4>
+                          <div class="page-text">
+                            <p><strong>使用フォント </strong></p><p>　　 ＿ <br>　　 ＼ヽ,　,、 </p><p>セプテンバーＭ・Ｌ </p><p>　　 　 `&#39;&#39;|/ﾉ 　　　 　 .| 　＿　 　 | </p><p>Migu 1M </p><p>　＼｀ヽ、| 　　 ＼, V </p><p><strong>Rounded M+ 2p</strong></p><p>　 　 　 `L,,_ 　　　 　 |ヽ､) <br>　　　　 .| <br>　　　　/ 　 　 　 　 　 ,､ <br>　　　 /　　　　　　　　ヽYﾉ 　　　.|　　　　　　 r&#39;&#39;ヽ、.| 　　　|　　　　　 　 `ｰ-ヽ|ヮ 　 　 |　　　　　 　 　 　 `| 　　　ヽ,　　　　,r　 　 　 .| 　　　　 ヽ,r&#39;&#39;&#39;ヽ!&#39;-‐&#39;&#39;&#39;&#39;&#39;ヽ､ﾉ 　,,,..---r&#39;&quot;,r, ,　、`ヽ､　ヾ <br>　ヽ､__/ ./ﾊﾚﾊ i`ヽ、 `&#39;&#39;r`ミ_ <br>　　　.ﾚ//r,,,､ ﾚ&#39;ﾚﾊヾ,　 L,,_　`ヽ、 　　　 &quot;ﾚ, l;;;l　　 l;;;l`i.ﾘﾚ&#39;　ﾘ￣~~ <br>　　　　　ヽ､　ワ `&quot;／-&#39;`&#39;`&#39; <br>　　　　　　　`&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&quot;　　　　　 ┼ヽ　 -|r‐､.　ﾚ　| 　　　　　　　　　　　　　　 　 ｄ⌒)　./|　_ﾉ　 __ﾉ</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
-                    
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p>ここで差がつく<strong>エラー処理</strong></p><p><strong>By Error Handling your application will be completed</strong></p><p><strong>公開用完全版</strong></p><p>, 8th Oct</p><p>PHP Conference Japan 2017</p><p>#phpcon2017</p><p>Kamata Tokyo, PiO </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p>2017年10月8日に開催された</p><p><strong>PHPカンファレンス</strong>で発表した</p><p>「ここで差がつくエラー処理」の</p><p>完全版</p><p>発表資料を補訂した です</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社技術基盤チーム (pixiv.net)</li></ul></li><li>Emacs Lisper, PHPer</li><li>入社前は自宅警備をしながらRuby書いてた<ul><li>Emacs PHP Modeのメンテナ引き継ぎました</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>We are hiring!</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>はじめに</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p><strong>みなさん困ってませんか</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p><strong>こんな画面を見せて</strong><br><strong>しまってませんか</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p><strong>本番サービスで</strong><br><strong>見せちゃってませんか</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p><strong>HTML 出力途中で</strong><br><strong>落ちたりしませんか</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p><strong>エラーになっても</strong><br><strong>Webサイトの体裁は</strong></p><p><strong>なんとか保ちたい</strong><br><strong>……ですよね？</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p><strong>画面はpixivの実在のバグではなく</strong> <strong>故意に例外を発生させたものです</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p><strong>アジェンダ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p>1. 例外・エラーの種類 <br>2. 本番環境でのエラー処理 3. 開発環境でのエラー処理</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p><strong>具体的にはこんな話をします</strong></p><p>エラーと例外の基本概念 </p><p>それらを制御するやりかた </p><p>開発環境でうんざりしない方法</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p><strong>参考資料</strong></p><p>だいたいPHPマニュアルに載ってる </p><p>http://php.net/language.operators.errorcontrol <br>http://php.net/set_error_handler <br>http://php.net/set_exception_handler <br>http://php.net/register_shutdown_function <br>http://php.net/ErrorException http://php.net/display-errors <br><strong>whoops!</strong> </p><p>https://github.com/filp/whoops</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p><strong>やらない話</strong></p><p>エラー監視 </p><p>例外設計 </p><p>そもそもエラーって何だ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p><strong>PHPのコードの試しかた</strong></p><p>php -r &#39;var_dump(1 + []);&#39; </p><p>php -a</p><p>REPL (PsySH または  ) </p><p>https://3v4l.org/ </p><p>多くのバージョンで串刺し実行</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p><strong>エラー・例外とは</strong></p><p>プログラムが正常ではないときに、<br>それを通知する仕組み </p><p>PHPでは<strong>エラー</strong>と<strong>例外</strong>がある </p><p>PHP5では処理系は基本的にエラー </p><p>PHP7で例外を投げることが増えた</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>1. <strong>例外・エラーの種類</strong> <br>2. 本番環境でのエラー処理 3. 開発環境でのエラー処理</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p><strong>エラー</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p><strong>エラー</strong></p><p>従来のPHPで<strong>異常状態を通知する</strong><br>ための仕組み </p><p><strong>関数呼び出し 未定義変数の参照</strong><br>、<br>結構いろんなところで発生する </p><p>PHP で種類が整理された</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p><strong>主要なエラー</strong></p><p>Notice</p><p> <strong>よくない</strong>処理の通知 </p><p>Warning, Error</p><p>実行時の警告・エラー </p><p>Deprecated, Strict</p><p>非互換／廃止予定の機能 </p><p>Fatal Error</p><p> <strong>致命的</strong>エラー</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p><strong>Notice</strong></p><p>配列の未定義位置から値を取り出 そうとしたときなどに発生する </p><p><strong>信号無視</strong>みたいな軽犯罪 </p><p>ただしバグの温床になるので、 無視せずきちんと対処を強く推奨</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p><strong>Noticeの例 (一部)</strong></p><p>echo $i;          // </p><p>存在しない<strong>変数</strong></p><p>echo $_GET[&#39;id&#39;]; // </p><p>存在しない<strong>インデクス</strong> </p><p>echo $o-&gt;abc;     // </p><p>存在しない<strong>プロパティ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p><strong>Warning, Error</strong></p><p>何かが「間違ってる」ときに発生 </p><p>デフォルトの挙動ではWarningで<br>は停止せずに進む </p><p>一貫性がないが、どちらも異常状 態なので無視せず直した方がよい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p><strong>Warning, Errorの例(一部)</strong></p><p>// </p><p>存在しないファイルを開く </p><p>$f = fopen(&quot;/hoge.txt&quot;, &quot;r&quot;); </p><p>foo($i); // </p><p>引数が足りない、PHP5のみ</p><p>//  ArgumentError  <br>PHP7では に変更</p><p>function foo($i, $j) { echo $i, $j; }</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p><strong>Deprecated, Strict</strong></p><p>廃止予定や互換性の怪しい機能 </p><p>split()</p><p>例:   関数   </p><p>explode()<br>( とは別物)</p><p>5.3でdeprecated、7.0で削除 </p><p>Strictは7.0で廃止(再分類)された</p><p>https://wiki.php.net/rfc/reclassify_e_strict</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p><strong>Deprecated, Strictの例(一部)</strong></p><p>class Hoge {</p><p>    /**   */<br>古いスタイルのコンストラクタ</p><p>    function Hoge() {</p><p>    }</p><p>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p><strong>Deprecatedの例(一部)</strong></p><p>//** </p><p>PHP5.3でDeprecatedエラー、7で削除</p><p>$a = split(&#39;,&#39;, &#39;1,2,3&#39;);</p><p>// </p><p>エラー抑制演算子、通称なると<br>// エラーを握り潰せるべんりで危険なやつ</p><p>$a = @split(&#39;,&#39;, &#39;1,2,3&#39;);</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p><strong>Fatal Error (致命的エラー)</strong></p><p>これ以上は続行できないエラー </p><p>同名のクラスや関数を<br>多重定義しようとしたとき </p><p>require</p><p>ファイルを できなかったとき </p><p>明らかに不正な式</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p><strong>Fatal Errorの例(一部)</strong></p><p>// </p><p>PHP5系とPHP7系でエラーになる </p><p>// </p><p>タイミングが異なるコード</p><p>$i = mt_rand(1, 2); <br>echo $i;</p><p>if ($i === 1) {</p><p>    // </p><p>数値と配列は加算できない</p><p>    $x = 1 + [];</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p><strong>Fatal Errorの例(一部)</strong></p><p>// </p><p>PHP5系とPHP7系でエラーになる </p><p>// </p><p>タイミングが異なるコード</p><p>$i = mt_rand(1, 2); <br>echo $i;</p><p>: 何も出力されず<strong>Fatal</strong></p><p><strong>PHP7</strong></p><p>if ($i === 1) {</p><p>: 「1」と<strong>Fatal</strong></p><p><strong>それ以外</strong><br>　  または「2」のみ</p><p>    $x = 1 + [];</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>PHP7は賢いので、実際に</p><p>実行されることがなくても<br>(絶対実行されないifの中だろうと)</p><p><strong>コンパイル時に検出してくれる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p><strong>例外</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p>Exception Throwable<br><strong>例外 ( ,  )</strong></p><p>PHP5で追加された言語機能 </p><p>throw</p><p>異常状態のときに で投げる </p><p>たいいき(Non-local)<br>大域脱出と呼ばれる機能 </p><p>catch</p><p>文で捕捉できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p><strong>例外オブジェクト</strong></p><p>PHP5ではExceptionまたは、 <strong>Exceptionを継承した</strong>クラス <br>PHP7ではThrowableインターフェ</p><p>イスと、Exceptionを継承しない<br>Errorとその派生クラスが追加 便宜上まとめて「例外」と呼ぶ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p><strong>ErrorとエラーとE_ERROR</strong></p><p>PHP5系でエラーが発生したものが、<br>7系では例外(Errorクラス)を</p><p>throw</p><p>するように徐々に移行 <br>すべての移行されたわけではなく、</p><p>まだエラーと例外の概念を両方<br>知っておく必要がある </p><p>E_ERROR</p><p>レベルのエラー…<strong>ややこしい</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p><strong>エラー</strong><br><strong>ハンドリング</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p><strong>伝統的なエラー処理手法</strong></p><p>// </p><p>MySQLに接続失敗したら異常終了 </p><p>$db = mysql_connect() or die(&quot;接続に失敗しまし<br>た&quot;);</p><p>die() は exit() と同じ意味 </p><p>ここでいきなり強制終了する </p><p>そのあと処理はほとんどできない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p><strong>せめて例外に</strong></p><p>if (do_something() === false) {</p><p>    throw new FooException(&#39;do_something() が失敗した&#39;);</p><p>}</p><p>現在実行中の処理を中断して、<br>try…catch まで遡る </p><p>catchできなかったら、そこで<br>おとなしく野垂れ死ぬしかない…? </p><p>ただちに終了されないので、<br>まだ挽回の余地がある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p><strong>エラーハンドリング</strong></p><p>発生したエラーをなんとかする</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p><strong>エラーハンドリング</strong></p><p>発生したエラーをなんとかする <br><strong>A</strong>: どうにか続行を試みる <br><strong>B</strong>: どうにもならないので諦める</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p><strong>エラーハンドリング</strong></p><p>発生したエラーをなんとかする <br><strong>A</strong>: どうにか続行を試みる <br><strong>B</strong>: どうにもならないので諦める <br>せめてログだけでも… </p><p>なんとか共通ナビゲーションと ロゴだけは表示してほしい…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p><strong>我々に三回のチャンスがある</strong></p><p>set_error_handler() </p><p>set_exception_handler() </p><p>register_shutdown_function()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p><strong>error_reporting()</strong></p><p>「出力するエラーの種類を設定する」 </p><p>どのエラーレベルに対応するか<br>ビットフラグで設定する </p><p>引数なしで呼ぶと現在の値を返す </p><p>error_reporting(E_ALL &amp; ~E_NOTICE)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p><strong>error_reporting() 設定方法</strong></p><p>// </p><p>無視できるもの全部無視</p><p>error_reporting(0);</p><p>// </p><p>全部のエラーを捕捉する</p><p>error_reporting(E_ALL);</p><p>error_reporting(E_ALL | E_STRICT); // </p><p>PHP 5.3以下</p><p>// </p><p>Noticeのみ無視</p><p>error_reporting(E_ALL &amp; ~E_NOTICE);</p><p>// </p><p>NoticeとDeprecatedを無視</p><p>error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED); </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p><strong>set_error_handler()</strong></p><p>エラーが発生したときに、</p><p>set_error_hanlder()</p><p> に登録した</p><p>関数が呼ばれる <br>エラーに応じて処理を続行させる こともできるし終了させてもいい <br>Fatal errorは捕捉できない！</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p><strong>set_exception_handler()</strong></p><p>例外がtry-catchでも捕捉されな</p><p>かったときに、</p><p>set_exception_hanlder()</p><p> に</p><p>登録した関数が呼ばれる </p><p>関数が実行された後は停止する </p><p>登録できる関数はひとつだけ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p><strong>register_shutdown_function()</strong></p><p>PHPスクリプト終了時に必ず<br>呼ばれる関数を登録する </p><p>set_error_handler()</p><p>に来ない</p><p>Fatal Error(致命的エラー)を<br>捕捉してロギングできるチャンス <br>最後のエメラルドスプラッシュ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p><strong>定石</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p><strong>エラー処理の定石</strong></p><p>デフォルトのエラー出力を切る </p><p>エラーは例外に変換して、<br>未捕捉の例外とまとめて処理する </p><p>処理すべきエラーかどうかの判定</p><p>error_reporting()<br>に を利用する</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p><strong>デフォルトのエラー出力</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p><strong>デフォルトのエラー出力</strong></p><p>// </p><p>必ず読まれるPHPファイルで設定する</p><p>// </p><p>少なくとも本番環境では絶対offにする</p><p>ini_set(&#39;display_errors&#39;, &#39;off&#39;);</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p><strong>set_exception_handler() 設定方法</strong></p><p>// </p><p>例外をハンドリング</p><p>set_exception_handler(function ($e){</p><p>    // </p><p>例外をログに記録</p><p>    YourApp::logException($e);</p><p>    // </p><p>エラー時の画面を表示</p><p>    YourApp::displayErrorPage($e);</p><p>});</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p><strong>エラー抑制とerror_reporting</strong></p><p>＠</p><p>は一時的に</p><p>(エラー抑制演算子)</p><p>error_reporting(0)</p><p>に設定して</p><p>処理を実行するだけ <br>独自設定したエラーハンドラが</p><p>error_reporting()</p><p>を考慮してくれ</p><p>ないと、エラーが握り潰されない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          <p><strong>set_error_handler() 設定方法</strong></p><p>set_error_handler(&#39;my_error_handler&#39;);</p><p>function my_error_handler (</p><p>    $level, $message, $file = null, $line = null) {</p><p>    // </p><p>エラーレベルのAND(ビット積)をとる</p><p>    if (error_reporting() &amp; $level &gt; 0) {</p><p>       throw new ErrorException(</p><p>           $message, 0, $level, $file, $line);</p><p>    }</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-text">
-                          <p><strong>error_reporting() </strong></p><p>error_reporting()で設定した</p><p>エラーレベルはデフォルトの エラーハンドラで利用される <br>自作のエラーハンドラを設定する</p><p>ときは、error_reporting()を<br>考慮して実装しなければならない 実際グローバル変数みたいなもの</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-63">
-                        <h4>Page 63</h4>
-                        <div class="page-text">
-                          <p><strong>register_shutdown_function() 設定方法</strong></p><p>register_shutdown_function(function(){</p><p>    if (empty($error = error_get_last())) return;</p><p>    //   </p><p>エラーハンドラーで捕捉できないエラーを判定</p><p>$fatal = E_ERROR | E_PARSE | E_COMPILE_WARNING</p><p>          | E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR; <br>    if (($error[&#39;level&#39;] &amp; $fatal_errors) &gt; 0) {</p><p>        $e = new ErrorException($error[&#39;message&#39;], 0,</p><p>           $error[&#39;type&#39;], $error[&#39;file&#39;], $error[&#39;line&#39;]);</p><p>        my_error_handler($e);</p><p>    }</p><p> })；</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-64">
-                        <h4>Page 64</h4>
-                        <div class="page-text">
-                          <p><strong>例外のロギング</strong></p><p>PHPの標準機能error_log()は、<br>ちょっと弱い <br>rollbar, faultlineなどに送る <br>pixivの場合は例外情報をバックト レースも含めてJSONエンコードし てファイルに追記、Fluentdで収集</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-65">
-                        <h4>Page 65</h4>
-                        <div class="page-text">
-                          <p>http://k1low.hatenablog.com/entry/2017/06/13/083000</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-66">
-                        <h4>Page 66</h4>
-                        <div class="page-text">
-                          <p><strong>開発時の原則</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-text">
-                          <p><strong>error_reporting()</strong></p><p>可能な限り無視しない <br><strong>例</strong>: 本番ではDeprecatedを無視 <br>ただしプロジェクト全体にNotice 発生箇所が多い場合は<strong>無理しない</strong> <br>一気にリファクタリングしようと してエンバグする方がずっと怖い</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-68">
-                        <h4>Page 68</h4>
-                        <div class="page-text">
-                          <p><strong>エラー設定は初期化処理で実行する</strong></p><p>error_reportingはphp.iniでも</p><p>設定可能だが、PHPで明示的に 設定すれば環境依存がなくなる </p><p>深いところで仕方なく変更する</p><p>必要に迫られたときは、小さな スコープで変更してすぐに戻す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-69">
-                        <h4>Page 69</h4>
-                        <div class="page-text">
-                          <p><strong>段階的にエラーレベルを上げる</strong></p><p>pixivの開発時にもまだNoticeが<br>発生する箇所が残ってる… </p><p>やむを得ず変更する際は浅い位置</p><p>で設定する </p><p>(例:コントローラ)</p><p>Deprecatedはユニットテストで<br>追い詰めていく</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-70">
-                        <h4>Page 70</h4>
-                        <div class="page-text">
-                          <p><strong>pixivの設定</strong></p><p>// </p><p>全体設定</p><p>error_reporting(E_ALL &amp; ~E_NOTICE &amp; ~E_DEPRECATED);<br>//   <br>ユニットテスト</p><p>error_reporting(E_ALL);</p><p>// </p><p>新規ファイルや動作確認できたページ</p><p>//   <br>(コントローラー)単位でレベルを上げる</p><p>setErrorReportingAll(); </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-71">
-                        <h4>Page 71</h4>
-                        <div class="page-text">
-                          <p><strong>べんりヘルパー関数</strong></p><p>/**</p><p> * </p><p>開発時のみエラーレベルを最大に上げる</p><p> * </p><p> * </p><p>本番(運用環境)には影響しない</p><p> */<br>function setErrorReportingAll() {</p><p>    if (is_development()) {</p><p>        error_reporting(E_ALL);</p><p>    }</p><p>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-text">
-                          <p><strong>深いところで一時的にエラーレベルを変更</strong></p><p>/** mcrypt */</p><p>は7.1で非推奨、7.2で削除予定 </p><p>function mcrypt_wrapper($text) {</p><p>    $err = error_reporting();</p><p>    error_reporting(E_ALL &amp; ~E_DEPRECATED); <br>    try {         // </p><p>mcryptを使った処理</p><p>    } finally {</p><p>        error_reporting($err); <br>    }</p><p>    return $result;</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-73">
-                        <h4>Page 73</h4>
-                        <div class="page-text">
-                          <p><strong>手を出せないライブラリ/SDK</strong></p><p>/**  */<br>なんかエラー吐きまくる古いSDKのラッパー </p><p>function hoge_legacy_wrapper($text) {</p><p>    $err = error_reporting();</p><p>    error_reporting(E_ALL &amp;~E_NOTICE &amp; ~E_DEPRECATED); <br>    try { <br>        $result = \Hoge\Legacy\SDK::proc();</p><p>    } finally {</p><p>        error_reporting($err); <br>    }</p><p>    return $result;</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-74">
-                        <h4>Page 74</h4>
-                        <div class="page-text">
-                          <p><strong>whoops!</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-75">
-                        <h4>Page 75</h4>
-                        <div class="page-text">
-                          <p><strong>whoops!</strong></p><p>“PHP errors for cool kids” <br>エラー処理用フレームワーク </p><p>set_exception_handler()は<br>ひとつしかハンドラを登録できな いが、whoopsは複数登録できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-76">
-                        <h4>Page 76</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-77">
-                        <h4>Page 77</h4>
-                        <div class="page-text">
-                          <p><strong>whoops! ハンドラー</strong></p><p>ハンドラー は複数登録できる</p><p>(関数)<br><strong>スタック</strong>  </p><p> (FIFO, 後入れ先出し)</p><p>ロギング・デバッグだけでなく エラー画面の表示にも利用できる <br>WEB+DB Press Vol.96サンプルに</p><p>whoopsを使った設定例書きました</p><p>http://gihyo.jp/magazine/wdpress/archive/2017/vol96</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-78">
-                        <h4>Page 78</h4>
-                        <div class="page-text">
-                          <p><strong>whoops! 注意点</strong></p><p>PrettyPageHandlerはべんりだが もし本番環境で有効化されてしま うと脆弱性や情報漏洩の原因にす<br>らなりかねない </p><p>設定に自信がなければ、単に</p><p>開発環境用のカッコイイエラー 画面として割り切るのが安全</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-79">
-                        <h4>Page 79</h4>
-                        <div class="page-text">
-                          <p><strong>whoopsの有効化</strong></p><p>// </p><p>開発時のみWhoopsを有効化する場合</p><p>if (is_development()) { <br>    $handler = (PHP_SAPI === &#39;cli&#39;)</p><p>       ? new \Whoops\Handler\PlainTextHandler</p><p>       : new \Whoops\Handler\PrettyPageHandler; <br>   $whoops = new \Whoops\Run; <br>   $whoops-&gt;register();</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-80">
-                        <h4>Page 80</h4>
-                        <div class="page-text">
-                          <p><strong>落穂</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-81">
-                        <h4>Page 81</h4>
-                        <div class="page-text">
-                          <p><strong>エラーレベルとビットフラグ</strong></p><p>エラー発生時のレベルと</p><p>error_reporting()</p><p>はビットフラグ </p><p>E_ALL</p><p>は全種類のエラーの</p><p>フラグを立てた状態 </p><p>E_ALL &amp; ~E_NOTICEのように<br>反転してビット積をとるのが簡単</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-82">
-                        <h4>Page 82</h4>
-                        <div class="page-text">
-                          <p><strong>ビットフラグの確認方法</strong></p><p>printf(&#39;%015b&#39;, E_ALL); // =&gt; &quot;111111111111111&quot; <br>printf(&#39;%015b&#39;, E_DEPRECATED); <br>// =&gt; &quot;010000000000000&quot; <br>printf(&#39;%015b&#39;, E_ALL &amp; ~E_DEPRECATED); <br>// =&gt; &quot;101111111111111&quot;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-83">
-                        <h4>Page 83</h4>
-                        <div class="page-text">
-                          <p><strong>trigger_error()</strong></p><p>エラーを意図的に発生させる <br>ただし全てのエラーを発生させら れるわけではなくE_USER_系のみ 今日エラーはあまり考慮されてな<br>いので、役立たないかも… <br>USERの有無は別のエラーなので</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-84">
-                        <h4>Page 84</h4>
-                        <div class="page-text">
-                          <p><strong>trigger_error利用例</strong></p><p>// </p><p>関数をリネームしたいとき</p><p>/** <br> * @deprecated {@see grant()} を使ってください </p><p> */ <br>function credential(array $data){</p><p>    $msg = &#39;credential() is obsolete function.  Use <br>grant() instead.&#39;; <br>    trigger_error($msg, E_USER_DEPRECATED); <br>    return grant($data); <br>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-text">
-                          <p><strong>もうひとつのエラーハンドリング</strong></p><p>set_exception_handler()</p><p>を使った</p><p>ハンドリングは…実際(説明)難しい </p><p>細かなエラーハンドリングは<br>try-catchを使った方がやりやすい <br>エラーの仕組み</p><p>(このセッションで説明</p><p>よりは把握しやすい </p><p>した内容！)</p><p>https://gist.github.com/zonuexe/577d089815e241d5da26</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-text">
-                          <p><strong>pixivの場合 (AppRunnerパターン)</strong></p><p>アプリケーション</p><p>(PC版, スマートフォン版, </p><p>ごとにAppRunner と</p><p>etc...) (社内用語)<br>呼ばれるクラスを定義する </p><p>例外の種類ごとにcatchして、<br>適切な処理(ロギング・エラー表示)<br>などをする </p><p>http://inside.pixiv.net/entry/2015/12/18/210721</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-87">
-                        <h4>Page 87</h4>
-                        <div class="page-text">
-                          <p><strong>pixivの場合 (なぜこのパターンか)</strong></p><p>例外にも種類がある <br>アプリケーションのバグ <br>クエリパラメータの異常入力 </p><p>それらのアプリケーションの 事情に沿ってロギングする</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-text">
-                          <p><strong>参考資料</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-text">
-                          <p><strong>参考資料</strong></p><p>だいたいPHPマニュアルに載ってる </p><p>http://php.net/language.operators.errorcontrol <br>http://php.net/set_error_handler <br>http://php.net/set_exception_handler <br>http://php.net/register_shutdown_function <br>http://php.net/ErrorException http://php.net/display-errors <br><strong>whoops!</strong> </p><p>https://github.com/filp/whoops</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-text">
-                          <p><strong>参考 資料</strong><br>(にすると良い)</p><p>PHPのエラーと例外再入門 </p><p>by Hiraku NAKANO<br>https://speakerdeck.com/hirak/php-error-and-</p><p>exception</p><p>faultline/faultline-phpによるサーバ 管理不要なエラートラッキングとその</p><p>効果 by Ken&#39;ichiro Oyama</p><p>http://k1low.hatenablog.com/entry/2017/06/13/083000</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-text">
-                          <p><strong>参考資料 </strong></p><p>(pixiv AppRunner)</p><p>(ピクシブ株式会社 Advent Calendar 2015)<br>健全なpixivは健康なPHPに宿る〜</p><p>モダンPHPを保つ7つの鍵</p><p>http://inside.pixiv.net/entry/2015/12/18/210721</p><p>ソースコード</p><p> (サンプル)</p><p>https://gist.github.com/zonuexe/577d089815e241d5da26</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-92">
-                        <h4>Page 92</h4>
-                        <div class="page-text">
-                          <p><strong> 最後に</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-93">
-                        <h4>Page 93</h4>
-                        <div class="page-text">
-                          <p><strong>メンバー全員が知るべき？</strong></p><p>知っておくとためにはなる…かも でも完全に理解してないといけな<br>いわけではない <br>とは言っても社内で誰かが知って<br>おかないと困ることではある <br>「<strong>Noticeを潰せ</strong>」だけ周知したい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-94">
-                        <h4>Page 94</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-95">
-                        <h4>Page 95</h4>
-                        <div class="page-text">
-                          <p><strong>Webサービスの開発基盤</strong><br><strong>を設計したいひとも</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-96">
-                        <h4>Page 96</h4>
-                        <div class="page-text">
-                          <p><strong>創作文化のための開発に</strong><br><strong>興味があるひとも</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-97">
-                        <h4>Page 97</h4>
-                        <div class="page-text">
-                          <p>今回の内容がいまいち<br>ぴんと来なくても大丈夫</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-98">
-                        <h4>Page 98</h4>
-                        <div class="page-text">
-                          <p><strong>PHP</strong>,<strong> JavaScript</strong>,<strong> </strong>Ruby, </p><p>Scala, Go, データ分析,<br>インフラ, その他…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-99">
-                        <h4>Page 99</h4>
-                        <div class="page-text">
-                          <p><strong>まずは一度オフィスに</strong></p><p><strong>遊びに来ませんか</strong><br><strong>ヾ(〃＞＜)ﾉﾞ☆</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-100">
-                        <h4>Page 100</h4>
-                        <div class="page-text">
-                          <p><strong>Twitter @</strong>tadsan宛</p><p>または</p><p><strong>recruit.pixiv.net</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-101">
-                        <h4>Page 101</h4>
-                        <div class="page-text">
-                          <p><strong>使用フォント </strong></p><p>　　 ＿ <br>　　 ＼ヽ,　,、 </p><p>セプテンバーＭ・Ｌ </p><p>　　 　 `&#39;&#39;|/ﾉ 　　　 　 .| 　＿　 　 | </p><p>Migu 1M </p><p>　＼｀ヽ、| 　　 ＼, V </p><p><strong>Rounded M+ 2p</strong></p><p>　 　 　 `L,,_ 　　　 　 |ヽ､) <br>　　　　 .| <br>　　　　/ 　 　 　 　 　 ,､ <br>　　　 /　　　　　　　　ヽYﾉ 　　　.|　　　　　　 r&#39;&#39;ヽ、.| 　　　|　　　　　 　 `ｰ-ヽ|ヮ 　 　 |　　　　　 　 　 　 `| 　　　ヽ,　　　　,r　 　 　 .| 　　　　 ヽ,r&#39;&#39;&#39;ヽ!&#39;-‐&#39;&#39;&#39;&#39;&#39;ヽ､ﾉ 　,,,..---r&#39;&quot;,r, ,　、`ヽ､　ヾ <br>　ヽ､__/ ./ﾊﾚﾊ i`ヽ、 `&#39;&#39;r`ミ_ <br>　　　.ﾚ//r,,,､ ﾚ&#39;ﾚﾊヾ,　 L,,_　`ヽ、 　　　 &quot;ﾚ, l;;;l　　 l;;;l`i.ﾘﾚ&#39;　ﾘ￣~~ <br>　　　　　ヽ､　ワ `&quot;／-&#39;`&#39;`&#39; <br>　　　　　　　`&#39;&#39;&#39;&#39;&#39;&#39;&#39;&#39;&quot;　　　　　 ┼ヽ　 -|r‐､.　ﾚ　| 　　　　　　　　　　　　　　 　 ｄ⌒)　./|　_ﾉ　 __ﾉ</p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Flanguage.operators.errorcontrol&size=32" alt=""><a href="http://php.net/language.operators.errorcontrol" target="_blank">PHP: Error Control - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Ffunction.set-error-handler.php&size=32" alt=""><a href="http://php.net/manual/ja/function.set-error-handler.php" target="_blank">PHP: set_error_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fset_exception_handler&size=32" alt=""><a href="http://php.net/set_exception_handler" target="_blank">PHP: set_exception_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fregister_shutdown_function&size=32" alt=""><a href="http://php.net/register_shutdown_function" target="_blank">PHP: register_shutdown_function - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2FErrorException&size=32" alt=""><a href="http://php.net/ErrorException" target="_blank">PHP: ErrorException - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fdisplay-errors&size=32" alt=""><a href="http://php.net/display-errors" target="_blank">PHP: Runtime Configuration - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ffilp%2Fwhoops&size=32" alt=""><a href="https://github.com/filp/whoops" target="_blank">GitHub - filp/whoops: PHP errors for cool kids</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2F3v4l.org%2F&size=32" alt=""><a href="https://3v4l.org/" target="_blank">Online PHP editor | Test code in 250+ PHP versions</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgist.github.com%2Fzonuexe%2F577d089815e241d5da26&size=32" alt=""><a href="https://gist.github.com/zonuexe/577d089815e241d5da26" target="_blank">PHP AppRunner · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2015%2F12%2F18%2F210721&size=32" alt=""><a href="http://inside.pixiv.net/entry/2015/12/18/210721" target="_blank">健全なpixivは健康なPHPに宿る〜モダンPHPを保つ7つの鍵 - pixiv inside [archive]</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Flanguage.operators.errorcontrol&size=32" alt=""><a href="http://php.net/language.operators.errorcontrol" target="_blank">PHP: Error Control - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Ffunction.set-error-handler.php&size=32" alt=""><a href="http://php.net/manual/ja/function.set-error-handler.php" target="_blank">PHP: set_error_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fset_exception_handler&size=32" alt=""><a href="http://php.net/set_exception_handler" target="_blank">PHP: set_exception_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fregister_shutdown_function&size=32" alt=""><a href="http://php.net/register_shutdown_function" target="_blank">PHP: register_shutdown_function - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2FErrorException&size=32" alt=""><a href="http://php.net/ErrorException" target="_blank">PHP: ErrorException - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fdisplay-errors&size=32" alt=""><a href="http://php.net/display-errors" target="_blank">PHP: Runtime Configuration - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ffilp%2Fwhoops&size=32" alt=""><a href="https://github.com/filp/whoops" target="_blank">GitHub - filp/whoops: PHP errors for cool kids</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fspeakerdeck.com%2Fhirak%2Fphp-error-and-exception&size=32" alt=""><a href="https://speakerdeck.com/hirak/php-error-and-exception" target="_blank">PHPのエラーと例外再入門 / php-error-and-exception - Speaker Deck</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fk1low.hatenablog.com%2Fentry%2F2017%2F06%2F13%2F083000&size=32" alt=""><a href="http://k1low.hatenablog.com/entry/2017/06/13/083000" target="_blank">PHPカンファレンス福岡2017でfaultlineについて発表してきました #phpconfuk - Copy/Cut/Paste/Hatena</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2015%2F12%2F18%2F210721&size=32" alt=""><a href="http://inside.pixiv.net/entry/2015/12/18/210721" target="_blank">健全なpixivは健康なPHPに宿る〜モダンPHPを保つ7つの鍵 - pixiv inside [archive]</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgist.github.com%2Fzonuexe%2F577d089815e241d5da26&size=32" alt=""><a href="https://gist.github.com/zonuexe/577d089815e241d5da26" target="_blank">PHP AppRunner · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-100">
-                        <h4>Page 100</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Frecruit.pixiv.net%2F&size=32" alt=""><a href="http://recruit.pixiv.net/" target="_blank">ピクシブ株式会社</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-101">
-                        <h4>Page 101</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fwww.type-labo.jp%2FHanpusept.html&size=32" alt=""><a href="http://www.type-labo.jp/Hanpusept.html" target="_blank">セプテンバー書体頒布のご案内</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Flanguage.operators.errorcontrol&size=32" alt=""><a href="http://php.net/language.operators.errorcontrol" target="_blank" rel="noopener">PHP: Error Control - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Ffunction.set-error-handler.php&size=32" alt=""><a href="http://php.net/manual/ja/function.set-error-handler.php" target="_blank" rel="noopener">PHP: set_error_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fset_exception_handler&size=32" alt=""><a href="http://php.net/set_exception_handler" target="_blank" rel="noopener">PHP: set_exception_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fregister_shutdown_function&size=32" alt=""><a href="http://php.net/register_shutdown_function" target="_blank" rel="noopener">PHP: register_shutdown_function - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2FErrorException&size=32" alt=""><a href="http://php.net/ErrorException" target="_blank" rel="noopener">PHP: ErrorException - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fdisplay-errors&size=32" alt=""><a href="http://php.net/display-errors" target="_blank" rel="noopener">PHP: Runtime Configuration - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ffilp%2Fwhoops&size=32" alt=""><a href="https://github.com/filp/whoops" target="_blank" rel="noopener">GitHub - filp/whoops: PHP errors for cool kids</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2F3v4l.org%2F&size=32" alt=""><a href="https://3v4l.org/" target="_blank" rel="noopener">Online PHP editor | Test code in 250+ PHP versions</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgist.github.com%2Fzonuexe%2F577d089815e241d5da26&size=32" alt=""><a href="https://gist.github.com/zonuexe/577d089815e241d5da26" target="_blank" rel="noopener">PHP AppRunner · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2015%2F12%2F18%2F210721&size=32" alt=""><a href="http://inside.pixiv.net/entry/2015/12/18/210721" target="_blank" rel="noopener">健全なpixivは健康なPHPに宿る〜モダンPHPを保つ7つの鍵 - pixiv inside [archive]</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Flanguage.operators.errorcontrol&size=32" alt=""><a href="http://php.net/language.operators.errorcontrol" target="_blank" rel="noopener">PHP: Error Control - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fmanual%2Fja%2Ffunction.set-error-handler.php&size=32" alt=""><a href="http://php.net/manual/ja/function.set-error-handler.php" target="_blank" rel="noopener">PHP: set_error_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fset_exception_handler&size=32" alt=""><a href="http://php.net/set_exception_handler" target="_blank" rel="noopener">PHP: set_exception_handler - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fregister_shutdown_function&size=32" alt=""><a href="http://php.net/register_shutdown_function" target="_blank" rel="noopener">PHP: register_shutdown_function - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2FErrorException&size=32" alt=""><a href="http://php.net/ErrorException" target="_blank" rel="noopener">PHP: ErrorException - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fphp.net%2Fdisplay-errors&size=32" alt=""><a href="http://php.net/display-errors" target="_blank" rel="noopener">PHP: Runtime Configuration - Manual</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ffilp%2Fwhoops&size=32" alt=""><a href="https://github.com/filp/whoops" target="_blank" rel="noopener">GitHub - filp/whoops: PHP errors for cool kids</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fspeakerdeck.com%2Fhirak%2Fphp-error-and-exception&size=32" alt=""><a href="https://speakerdeck.com/hirak/php-error-and-exception" target="_blank" rel="noopener">PHPのエラーと例外再入門 / php-error-and-exception - Speaker Deck</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fk1low.hatenablog.com%2Fentry%2F2017%2F06%2F13%2F083000&size=32" alt=""><a href="http://k1low.hatenablog.com/entry/2017/06/13/083000" target="_blank" rel="noopener">PHPカンファレンス福岡2017でfaultlineについて発表してきました #phpconfuk - Copy/Cut/Paste/Hatena</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2015%2F12%2F18%2F210721&size=32" alt=""><a href="http://inside.pixiv.net/entry/2015/12/18/210721" target="_blank" rel="noopener">健全なpixivは健康なPHPに宿る〜モダンPHPを保つ7つの鍵 - pixiv inside [archive]</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgist.github.com%2Fzonuexe%2F577d089815e241d5da26&size=32" alt=""><a href="https://gist.github.com/zonuexe/577d089815e241d5da26" target="_blank" rel="noopener">PHP AppRunner · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-100">
+                          <h4>Page 100</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Frecruit.pixiv.net%2F&size=32" alt=""><a href="http://recruit.pixiv.net/" target="_blank" rel="noopener">ピクシブ株式会社</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-101">
+                          <h4>Page 101</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fwww.type-labo.jp%2FHanpusept.html&size=32" alt=""><a href="http://www.type-labo.jp/Hanpusept.html" target="_blank" rel="noopener">セプテンバー書体頒布のご案内</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

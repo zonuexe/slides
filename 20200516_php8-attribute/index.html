@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20200516_php8-attribute/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20200516_php8-attribute/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20200516_php8-attribute/">
 
           <title>PHP8 <<Attribute>></title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,19 +59,20 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>PHP8 <<Attribute>></h1>
-              <p>公開日: <time datetime="2020-05-16">2020年5月16日</time></p>
+              <h1 class="slide-title"><a href="/slides/20200516_php8-attribute/" class="p-name u-url u-uid permalink-link">PHP8 &lt;&lt;Attribute&gt;&gt;</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2020-05-16">2020年5月16日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
                 <div class="event-info">
-                  <p><time datetime="2020-05-16">2020年5月16日</time>にオンラインのビデオ会議で開催された『<a href="https://phpkansai.connpass.com/event/174199/" target="_blank">関西PHP勉強会</a>』でライトニングトーク(5分)として発表しました。</p>
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2020-05-16">2020年5月16日</time>に<span class="p-location">オンライン</span>の<span class="p-location">ビデオ会議</span>で開催された『<a href="https://phpkansai.connpass.com/event/174199/" class="p-name u-url" target="_blank" rel="noopener">関西PHP勉強会</a>』で<span class="p-category">ライトニングトーク</span> <span class="p-duration" data-duration="5">5分</span>として発表しました。</p>
                 </div>
               
 
@@ -78,7 +80,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpkansai" target="_blank" class="hashtag">#phpkansai</a>
+                  <a href="https://twitter.com/hashtag/phpkansai" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpkansai</a>
                 </div>
               
 
@@ -93,878 +95,877 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>PHP8 &lt;&lt;Attribute&gt;&gt;</p><p> 2020-05-16 #phpkansai <br>【オンライン】関西PHP勉強会 </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer, Rubyist</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>近況</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>3月から 氏んでた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>最近は <br>やや元気</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>PHPカンファレンス関西 にはPHP-Parserの話を しようと応募してました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>はじめに</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>今回紹介する内容に<br>よって今すぐ何かが変 わることはあまりない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>少なくともコードを<br>PHP7系から8に移行<br>できないと使えない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>これから一年くらい <br>かけて対応するツールや フレームワークも徐々に<br>出てくると思う</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>PHP8時代に心の 準備だけしておこう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>RFC</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>PHPへの 変更提案</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>全てのPHPへの 変更はここで議決</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>ここを観察すれば 次のPHPがわかる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>ウォッチ <br>してますか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>@PHPRFCBot</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>今年12月にリリース予 定のPHP8.0に向けて さまざまな機能が提案</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>Feature freezeは <br>7月だが既にPHP8向け<br>にいろいろ決まってる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>RFCは受理された が､実装はまだマー<br>ジされてない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>過去何度も提案されて<br>きたが今回の仕様で ようやく受理された</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>そもそも <br>これは何だ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>このRFCはクラス・プロパティ・関数・ メソッド・引数および定数の宣言に対 する構文的メタデータの構造化された 形式として「アトリビュート」を提案 します。アトリビュートによって宣言 に直接埋め込まれた構成ディレクティ<br>ブを定義できます。</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>似たようなコンセプトは｢アノテーション｣ としてJavaに､｢アトリビュート｣として C#・C++・Rust・Hackに、そして ｢デコレータ｣としてPython･JavaScript<br>にあります。</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>attributeの定訳とし<br>ては｢属性｣｡直接関係な いが同じ用語としては HTMLでも非常に重要 な概念。&lt;a href=&quot;...&quot;&gt;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>これまでPHPは構造化されていない形 式のメタデータとしてDoc-comment だけを提供しています。ただ、Doc- commentは単なる文字列であり、構 造化情報を保持するための @ ベースの 擬似言語がさまざまなPHPサブコミュ ニティによって提案されてきました。</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>Doc-commentは <br>リフレクションAPI経由で<br>実行時に文字列として <br>取得できる </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>実行時に影響するこ ともあるし､しないこ ともある特殊なやつ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>/** <br> * これ </p><p> */</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>/** <br> *   <br>@return int<br> */</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>/** <br> *   <br>@phpstan-return 1|2<br> */</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>/** <br> *   <br>@deprecated<br> */</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>/** <br> *   <br>@Inject<br> */</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>/** <br> *   <br>@Inject(optional=true)<br> */</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>各プロジェクトが 雰囲気で定義してる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>各プロジェクト固有タグは @phan-param みたいに<br>共通のタグにprefixを <br>つけたりアノテーションを \ で名前空間で区切ってる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>文字列を解析してるだけ だからPHPに存在しない 名前付き引数も好き勝手<br>に使えるぜ！！！１１</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>‒ PHPerKaigi 2020 (Feb 9, 2020)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>大雑把に言うと <br>IDEや静的解析のヒント <br>実行時メタプログラミング <br>に分類できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>なんとなくの風潮として <br>@tag はタグ､ <br>@Anno(&quot;arg&quot;, attr=true)は<br>アノテーションと呼び分け</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>あくまで｢なんとなく｣で あって､各サブコミュニティ が勝手に実装してるだけ なので厳密な定義はない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>区別はかなり曖昧だが PSR-19はタグカタログ であり､アノテーション<br>カタログではない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>どちらにせよ､PHPス クリプトに書く以上の 付加情報を記述できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>あるいは実装から分離して<br>アノテーションとして <br>記述することでAOPを実現</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p>実行時メタプログ<br>ラミングの温床</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>例: </p><p>Go! AOP</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>そんなわけで<br>Attributeが入ると</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>/** <br> * @ExampleAttribute <br> */ <br>class Foo <br>{ <br>    // ... <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p>&lt;&lt;ExampleAttribute&gt;&gt; <br>class Foo <br>{ <br>    // ... <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p>// この記法は不採用 </p><p>@:ExampleAttribute <br>class Foo <br>{ <br>    // ... <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p>Doc-commentから取得 できるのは文字列なので､<br>実行時に活用するには <br>それを構文解析する必要</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>AttributeはDoc-<br>commentと同じように実 行時に取得でき､構造化さ<br>れており構文解析不要</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p>好き勝手な記法が使え るタグ/アノテーション と違ってAttributes v2 仕様は単純な関数呼び 出し風構文と静的な式</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>静的な式 = PHPで有効な<br>式のうちリテラルと定数 と演算子式で解決できる <br>(実行時に変わらない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>たぶんPHP-Parserから もリフレクションと似た<br>APIが用意されて <br>簡単に取得できるだろう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            <p>アトリビュートはク<br>ラスと同じようにuse<br>で名前解決できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            <p>アトリビュートはクラ<br>スにマッピングし、<br>Reflectionから <br>インスタンスがとれる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p>アトリビュートクラス</p><p>&lt;&lt;PhpAttribute&gt;&gt; <br>class MyAttr <br>{ <br>    function __construct($arg){         // 特にやることがなければ <br>        // 実行時には何もしなくていい </p><p>    } <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            <p>ある意味ではコメントと 同じで､取得されない限り Attributeは実行に影響を <br>及ぼさない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            <p>先程のAttributeクラス は静的解析のためのヒン トであって必須ではない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p>その意味でPythonの <br>デコレータとは <br>全然違う</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            <p>アトリビュートを加味し てインスタンスを生成す る実行時のファクトリー またはクラスローダーで 近似させることはできる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p>明確な分類はできない<br>が、タグよりもアノテー<br>ション系の方がアトリ<br>ビュートで表現しやすい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p>PHPコンパイラ(処理系) のためのアトリビュート があることが示唆されて いる(詳細はRFC範囲外)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            <p>PHP <br>やるじゃん</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p>ほんとに？<br>🤔</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            <p> 誰のための <br>アトリビュート?</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            <p>コンパイラアトリビュー ト(処理系への指示)は<br>なんとなくわかる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p>ユーザーランドアト<br>リビュートは…？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            <p>ユースケース <br>は…？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p>RFCで実例が 紹介されている</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p>これはわかる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p>これも… まあまあ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p>これは… そうなるね</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p>ここまでくると…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            <p>もうつらたん</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            <p>DSLを喜んで覚え直し</p><p>たいひとは居るのか？<br>🙃</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p>移行対象ではなく例とし て考えれば､アノテーショ ンベースDSLの新規実装 コストは多少下がってそう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p>とはいえライブラリは既<br>にあるし､コードイン ジェクションもキャッ<br>シュ機構があるので実行 時コストには影響しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            <p>実はPHP RFC: <br>Named Argumentsも 復活してPHP8に向けて 議論されそうな雰囲気が あるので影響あるかもね</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            <p>&lt;&lt;Deprecated&gt;&gt;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-text">
+                            <p>アトリビュートの 実際の利用例とし ての新しいRFC</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-92">
+                          <h4>Page 92</h4>
+                          <div class="page-text">
+                            <p>trigger_error(E_DEPRE CATED) 相当のコードを 生成する実行エンジン組 み込みのアトリビュート</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-93">
+                          <h4>Page 93</h4>
+                          <div class="page-text">
+                            <p>言語組み込みのアトリ<br>ビュートがある意義もわ かるし､ユーザーランド で再現もめんどいので助<br>かるといえば助かる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-94">
+                          <h4>Page 94</h4>
+                          <div class="page-text">
+                            <p>関数やメソッド以外 にプロパティや定数 の非推奨化もできる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-95">
+                          <h4>Page 95</h4>
+                          <div class="page-text">
+                            <p>が､メーリングリス トでは存在意義につ<br>いて割と揉めてる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-96">
+                          <h4>Page 96</h4>
+                          <div class="page-text">
+                            <p>ついでに引数へのア トリビュートの付け かたについても議論</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-97">
+                          <h4>Page 97</h4>
+                          <div class="page-text">
+                            <p>普通の実装</p><p>function f(     $arg1,     $arg2 <br>){}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-98">
+                          <h4>Page 98</h4>
+                          <div class="page-text">
+                            <p>引数の非推奨化</p><p>function f(     $arg1, <br>     $arg2 <br>&lt;&lt;Deprecated&gt;&gt;<br>){}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-99">
+                          <h4>Page 99</h4>
+                          <div class="page-text">
+                            <p>引数のアトリビュート <br>ってほんとに <br>必要なんですか…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-100">
+                          <h4>Page 100</h4>
+                          <div class="page-text">
+                            <p>そもそも名前空間</p><p>\Php\Attributes <br>\Deprecated <br>じゃなくていいの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-101">
+                          <h4>Page 101</h4>
+                          <div class="page-text">
+                            <p>Attributesのfuture <br>scopeの段階では <br>名前空間がついてたのに､ しれっとグローバル名前<br>空間に移動している</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-102">
+                          <h4>Page 102</h4>
+                          <div class="page-text">
+                            <p>Attributeが 解決できない <br>問題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-103">
+                          <h4>Page 103</h4>
+                          <div class="page-text">
+                            <p>/** @duplicated */ <br>アノテーション名を <br>タイプミスすると <br>(上手に静的解析しない限り) 実行時に無視される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-104">
+                          <h4>Page 104</h4>
+                          <div class="page-text">
+                            <p>&lt;&lt;Duplicated&gt;&gt; アトリビュート名を <br>タイプミスすると (静的解析しない限り) <br>実行時に無視される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-105">
+                          <h4>Page 105</h4>
+                          <div class="page-text">
+                            <p>あと単純に名前空間との<br>相性が悪くて､IDEや <br>静的解析を使ってないと<br>useし忘れて無意味な <br>おまじないとして残り…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-106">
+                          <h4>Page 106</h4>
+                          <div class="page-text">
+                            <p>この問題はアノテー ションベースAOPで 結構深刻だと思うんで すけど皆さんどうやっ<br>て解決してるんだろ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-107">
+                          <h4>Page 107</h4>
+                          <div class="page-text">
+                            <p>全部のタグ/アノテー ションがアトリビュー<br>トに移行されるの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-108">
+                          <h4>Page 108</h4>
+                          <div class="page-text">
+                            <p>されない<br>と思う</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-109">
+                          <h4>Page 109</h4>
+                          <div class="page-text">
+                            <p>いままでのタグ</p><p>/** */ <br> @param 1|2 $arg </p><p>function f(     int $arg1 <br>){}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-110">
+                          <h4>Page 110</h4>
+                          <div class="page-text">
+                            <p>アトリビュートで置換</p><p>(イメージ)</p><p>use PHPStan\Param as param;</p><p>function f( </p><p>int $arg1 </p><p>&lt;&lt;param(&quot;1|2&quot;)&gt;&gt;<br>){}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-111">
+                          <h4>Page 111</h4>
+                          <div class="page-text">
+                            <p>IDEの入力補完があっ</p><p>たとしても書きにくい<br>🙃</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-112">
+                          <h4>Page 112</h4>
+                          <div class="page-text">
+                            <p>Attributeの <br>明日はどっちだ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-113">
+                          <h4>Page 113</h4>
+                          <div class="page-text">
+                            <p>PHP先生の <br>次回作に <br>ご期待ください</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
-                    
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p>PHP8 &lt;&lt;Attribute&gt;&gt;</p><p> 2020-05-16 #phpkansai <br>【オンライン】関西PHP勉強会 </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p>お前誰よ<br>うさみけんた (@tadsan)  </p><p> / Zonu.EXE</p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer, Rubyist</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>近況</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>3月から 氏んでた</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p>最近は <br>やや元気</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p>PHPカンファレンス関西 にはPHP-Parserの話を しようと応募してました</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>はじめに</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p>今回紹介する内容に<br>よって今すぐ何かが変 わることはあまりない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p>少なくともコードを<br>PHP7系から8に移行<br>できないと使えない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p>これから一年くらい <br>かけて対応するツールや フレームワークも徐々に<br>出てくると思う</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p>PHP8時代に心の 準備だけしておこう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p>さて</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p>RFC</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>PHPへの 変更提案</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p>全てのPHPへの 変更はここで議決</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p>ここを観察すれば 次のPHPがわかる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p>ウォッチ <br>してますか？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p>@PHPRFCBot</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>今年12月にリリース予 定のPHP8.0に向けて さまざまな機能が提案</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p>Feature freezeは <br>7月だが既にPHP8向け<br>にいろいろ決まってる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>さて</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>RFCは受理された が､実装はまだマー<br>ジされてない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p>過去何度も提案されて<br>きたが今回の仕様で ようやく受理された</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>そもそも <br>これは何だ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p>このRFCはクラス・プロパティ・関数・ メソッド・引数および定数の宣言に対 する構文的メタデータの構造化された 形式として「アトリビュート」を提案 します。アトリビュートによって宣言 に直接埋め込まれた構成ディレクティ<br>ブを定義できます。</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p>似たようなコンセプトは｢アノテーション｣ としてJavaに､｢アトリビュート｣として C#・C++・Rust・Hackに、そして ｢デコレータ｣としてPython･JavaScript<br>にあります。</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p>attributeの定訳とし<br>ては｢属性｣｡直接関係な いが同じ用語としては HTMLでも非常に重要 な概念。&lt;a href=&quot;...&quot;&gt;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p>これまでPHPは構造化されていない形 式のメタデータとしてDoc-comment だけを提供しています。ただ、Doc- commentは単なる文字列であり、構 造化情報を保持するための @ ベースの 擬似言語がさまざまなPHPサブコミュ ニティによって提案されてきました。</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p>Doc-commentは <br>リフレクションAPI経由で<br>実行時に文字列として <br>取得できる </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p>実行時に影響するこ ともあるし､しないこ ともある特殊なやつ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p>/** <br> * これ </p><p> */</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>/** <br> *   <br>@return int<br> */</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p>/** <br> *   <br>@phpstan-return 1|2<br> */</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p>/** <br> *   <br>@deprecated<br> */</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p>/** <br> *   <br>@Inject<br> */</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p>/** <br> *   <br>@Inject(optional=true)<br> */</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p>各プロジェクトが 雰囲気で定義してる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p>各プロジェクト固有タグは @phan-param みたいに<br>共通のタグにprefixを <br>つけたりアノテーションを \ で名前空間で区切ってる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p>文字列を解析してるだけ だからPHPに存在しない 名前付き引数も好き勝手<br>に使えるぜ！！！１１</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p>‒ PHPerKaigi 2020 (Feb 9, 2020)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p>大雑把に言うと <br>IDEや静的解析のヒント <br>実行時メタプログラミング <br>に分類できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p>なんとなくの風潮として <br>@tag はタグ､ <br>@Anno(&quot;arg&quot;, attr=true)は<br>アノテーションと呼び分け</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p>あくまで｢なんとなく｣で あって､各サブコミュニティ が勝手に実装してるだけ なので厳密な定義はない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p>区別はかなり曖昧だが PSR-19はタグカタログ であり､アノテーション<br>カタログではない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p>どちらにせよ､PHPス クリプトに書く以上の 付加情報を記述できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p>あるいは実装から分離して<br>アノテーションとして <br>記述することでAOPを実現</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p>実行時メタプログ<br>ラミングの温床</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p>例: </p><p>Go! AOP</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p>そんなわけで<br>Attributeが入ると</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p>/** <br> * @ExampleAttribute <br> */ <br>class Foo <br>{ <br>    // ... <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p>&lt;&lt;ExampleAttribute&gt;&gt; <br>class Foo <br>{ <br>    // ... <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p>// この記法は不採用 </p><p>@:ExampleAttribute <br>class Foo <br>{ <br>    // ... <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p>Doc-commentから取得 できるのは文字列なので､<br>実行時に活用するには <br>それを構文解析する必要</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p>AttributeはDoc-<br>commentと同じように実 行時に取得でき､構造化さ<br>れており構文解析不要</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          <p>好き勝手な記法が使え るタグ/アノテーション と違ってAttributes v2 仕様は単純な関数呼び 出し風構文と静的な式</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-text">
-                          <p>静的な式 = PHPで有効な<br>式のうちリテラルと定数 と演算子式で解決できる <br>(実行時に変わらない)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-63">
-                        <h4>Page 63</h4>
-                        <div class="page-text">
-                          <p>たぶんPHP-Parserから もリフレクションと似た<br>APIが用意されて <br>簡単に取得できるだろう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-64">
-                        <h4>Page 64</h4>
-                        <div class="page-text">
-                          <p>アトリビュートはク<br>ラスと同じようにuse<br>で名前解決できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-65">
-                        <h4>Page 65</h4>
-                        <div class="page-text">
-                          <p>アトリビュートはクラ<br>スにマッピングし、<br>Reflectionから <br>インスタンスがとれる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-66">
-                        <h4>Page 66</h4>
-                        <div class="page-text">
-                          <p>アトリビュートクラス</p><p>&lt;&lt;PhpAttribute&gt;&gt; <br>class MyAttr <br>{ <br>    function __construct($arg){         // 特にやることがなければ <br>        // 実行時には何もしなくていい </p><p>    } <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-text">
-                          <p>ある意味ではコメントと 同じで､取得されない限り Attributeは実行に影響を <br>及ぼさない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-68">
-                        <h4>Page 68</h4>
-                        <div class="page-text">
-                          <p>先程のAttributeクラス は静的解析のためのヒン トであって必須ではない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-69">
-                        <h4>Page 69</h4>
-                        <div class="page-text">
-                          <p>その意味でPythonの <br>デコレータとは <br>全然違う</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-70">
-                        <h4>Page 70</h4>
-                        <div class="page-text">
-                          <p>アトリビュートを加味し てインスタンスを生成す る実行時のファクトリー またはクラスローダーで 近似させることはできる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-71">
-                        <h4>Page 71</h4>
-                        <div class="page-text">
-                          <p>明確な分類はできない<br>が、タグよりもアノテー<br>ション系の方がアトリ<br>ビュートで表現しやすい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-text">
-                          <p>PHPコンパイラ(処理系) のためのアトリビュート があることが示唆されて いる(詳細はRFC範囲外)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-73">
-                        <h4>Page 73</h4>
-                        <div class="page-text">
-                          <p>PHP <br>やるじゃん</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-74">
-                        <h4>Page 74</h4>
-                        <div class="page-text">
-                          <p>ほんとに？<br>🤔</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-75">
-                        <h4>Page 75</h4>
-                        <div class="page-text">
-                          <p> 誰のための <br>アトリビュート?</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-76">
-                        <h4>Page 76</h4>
-                        <div class="page-text">
-                          <p>コンパイラアトリビュー ト(処理系への指示)は<br>なんとなくわかる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-77">
-                        <h4>Page 77</h4>
-                        <div class="page-text">
-                          <p>ユーザーランドアト<br>リビュートは…？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-78">
-                        <h4>Page 78</h4>
-                        <div class="page-text">
-                          <p>ユースケース <br>は…？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-79">
-                        <h4>Page 79</h4>
-                        <div class="page-text">
-                          <p>RFCで実例が 紹介されている</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-80">
-                        <h4>Page 80</h4>
-                        <div class="page-text">
-                          <p>これはわかる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-81">
-                        <h4>Page 81</h4>
-                        <div class="page-text">
-                          <p>これも… まあまあ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-82">
-                        <h4>Page 82</h4>
-                        <div class="page-text">
-                          <p>これは… そうなるね</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-83">
-                        <h4>Page 83</h4>
-                        <div class="page-text">
-                          <p>ここまでくると…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-84">
-                        <h4>Page 84</h4>
-                        <div class="page-text">
-                          <p>もうつらたん</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-text">
-                          <p>DSLを喜んで覚え直し</p><p>たいひとは居るのか？<br>🙃</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-text">
-                          <p>移行対象ではなく例とし て考えれば､アノテーショ ンベースDSLの新規実装 コストは多少下がってそう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-87">
-                        <h4>Page 87</h4>
-                        <div class="page-text">
-                          <p>とはいえライブラリは既<br>にあるし､コードイン ジェクションもキャッ<br>シュ機構があるので実行 時コストには影響しない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-text">
-                          <p>実はPHP RFC: <br>Named Argumentsも 復活してPHP8に向けて 議論されそうな雰囲気が あるので影響あるかもね</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-text">
-                          <p>&lt;&lt;Deprecated&gt;&gt;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-text">
-                          <p>アトリビュートの 実際の利用例とし ての新しいRFC</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-92">
-                        <h4>Page 92</h4>
-                        <div class="page-text">
-                          <p>trigger_error(E_DEPRE CATED) 相当のコードを 生成する実行エンジン組 み込みのアトリビュート</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-93">
-                        <h4>Page 93</h4>
-                        <div class="page-text">
-                          <p>言語組み込みのアトリ<br>ビュートがある意義もわ かるし､ユーザーランド で再現もめんどいので助<br>かるといえば助かる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-94">
-                        <h4>Page 94</h4>
-                        <div class="page-text">
-                          <p>関数やメソッド以外 にプロパティや定数 の非推奨化もできる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-95">
-                        <h4>Page 95</h4>
-                        <div class="page-text">
-                          <p>が､メーリングリス トでは存在意義につ<br>いて割と揉めてる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-96">
-                        <h4>Page 96</h4>
-                        <div class="page-text">
-                          <p>ついでに引数へのア トリビュートの付け かたについても議論</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-97">
-                        <h4>Page 97</h4>
-                        <div class="page-text">
-                          <p>普通の実装</p><p>function f(     $arg1,     $arg2 <br>){}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-98">
-                        <h4>Page 98</h4>
-                        <div class="page-text">
-                          <p>引数の非推奨化</p><p>function f(     $arg1, <br>     $arg2 <br>&lt;&lt;Deprecated&gt;&gt;<br>){}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-99">
-                        <h4>Page 99</h4>
-                        <div class="page-text">
-                          <p>引数のアトリビュート <br>ってほんとに <br>必要なんですか…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-100">
-                        <h4>Page 100</h4>
-                        <div class="page-text">
-                          <p>そもそも名前空間</p><p>\Php\Attributes <br>\Deprecated <br>じゃなくていいの？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-101">
-                        <h4>Page 101</h4>
-                        <div class="page-text">
-                          <p>Attributesのfuture <br>scopeの段階では <br>名前空間がついてたのに､ しれっとグローバル名前<br>空間に移動している</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-102">
-                        <h4>Page 102</h4>
-                        <div class="page-text">
-                          <p>Attributeが 解決できない <br>問題</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-103">
-                        <h4>Page 103</h4>
-                        <div class="page-text">
-                          <p>/** @duplicated */ <br>アノテーション名を <br>タイプミスすると <br>(上手に静的解析しない限り) 実行時に無視される</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-104">
-                        <h4>Page 104</h4>
-                        <div class="page-text">
-                          <p>&lt;&lt;Duplicated&gt;&gt; アトリビュート名を <br>タイプミスすると (静的解析しない限り) <br>実行時に無視される</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-105">
-                        <h4>Page 105</h4>
-                        <div class="page-text">
-                          <p>あと単純に名前空間との<br>相性が悪くて､IDEや <br>静的解析を使ってないと<br>useし忘れて無意味な <br>おまじないとして残り…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-106">
-                        <h4>Page 106</h4>
-                        <div class="page-text">
-                          <p>この問題はアノテー ションベースAOPで 結構深刻だと思うんで すけど皆さんどうやっ<br>て解決してるんだろ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-107">
-                        <h4>Page 107</h4>
-                        <div class="page-text">
-                          <p>全部のタグ/アノテー ションがアトリビュー<br>トに移行されるの？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-108">
-                        <h4>Page 108</h4>
-                        <div class="page-text">
-                          <p>されない<br>と思う</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-109">
-                        <h4>Page 109</h4>
-                        <div class="page-text">
-                          <p>いままでのタグ</p><p>/** */ <br> @param 1|2 $arg </p><p>function f(     int $arg1 <br>){}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-110">
-                        <h4>Page 110</h4>
-                        <div class="page-text">
-                          <p>アトリビュートで置換</p><p>(イメージ)</p><p>use PHPStan\Param as param;</p><p>function f( </p><p>int $arg1 </p><p>&lt;&lt;param(&quot;1|2&quot;)&gt;&gt;<br>){}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-111">
-                        <h4>Page 111</h4>
-                        <div class="page-text">
-                          <p>IDEの入力補完があっ</p><p>たとしても書きにくい<br>🙃</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-112">
-                        <h4>Page 112</h4>
-                        <div class="page-text">
-                          <p>Attributeの <br>明日はどっちだ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-113">
-                        <h4>Page 113</h4>
-                        <div class="page-text">
-                          <p>PHP先生の <br>次回作に <br>ご期待ください</p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Fattributes_v2&size=32" alt=""><a href="https://wiki.php.net/rfc/attributes_v2" target="_blank">PHP: rfc:attributes_v2</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F58645104-35a5-4a87-b81c-16b2b9ad7147&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/58645104-35a5-4a87-b81c-16b2b9ad7147" target="_blank">PHPのアノテーションの仕組みとメリット・デメリット by 山岡広幸 | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp-fig%2Ffig-standards%2Fblob%2Fmaster%2Fproposed%2Fphpdoc-tags.md&size=32" alt=""><a href="https://github.com/php-fig/fig-standards/blob/master/proposed/phpdoc-tags.md" target="_blank">fig-standards/proposed/phpdoc-tags.md at master · php-fig/fig-standards · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fgoaop%2Fframework&size=32" alt=""><a href="https://github.com/goaop/framework" target="_blank">GitHub - goaop/framework: :gem: Go! AOP PHP - modern aspect-oriented framework for the new level of software development</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Fnamed_params&size=32" alt=""><a href="https://wiki.php.net/rfc/named_params" target="_blank">PHP: rfc:named_params</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphp-mode&size=32" alt=""><a href="https://github.com/emacs-php/php-mode" target="_blank" rel="noopener">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Fattributes_v2&size=32" alt=""><a href="https://wiki.php.net/rfc/attributes_v2" target="_blank" rel="noopener">PHP: rfc:attributes_v2</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2020%2Fproposal%2F58645104-35a5-4a87-b81c-16b2b9ad7147&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2020/proposal/58645104-35a5-4a87-b81c-16b2b9ad7147" target="_blank" rel="noopener">PHPのアノテーションの仕組みとメリット・デメリット by 山岡広幸 | トーク | PHPerKaigi 2020 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp-fig%2Ffig-standards%2Fblob%2Fmaster%2Fproposed%2Fphpdoc-tags.md&size=32" alt=""><a href="https://github.com/php-fig/fig-standards/blob/master/proposed/phpdoc-tags.md" target="_blank" rel="noopener">fig-standards/proposed/phpdoc-tags.md at master · php-fig/fig-standards · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fgoaop%2Fframework&size=32" alt=""><a href="https://github.com/goaop/framework" target="_blank" rel="noopener">GitHub - goaop/framework: :gem: Go! AOP PHP - modern aspect-oriented framework for the new level of software development</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwiki.php.net%2Frfc%2Fnamed_params&size=32" alt=""><a href="https://wiki.php.net/rfc/named_params" target="_blank" rel="noopener">PHP: rfc:named_params</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

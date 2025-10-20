@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20160720_php-static-analysis-in-5min/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20160720_php-static-analysis-in-5min/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20160720_php-static-analysis-in-5min/">
 
           <title>PHP 5分でわかる静的解析入門</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,15 +59,16 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>PHP 5分でわかる静的解析入門</h1>
-              <p>公開日: <time datetime="2016-07-20">2016年7月20日</time></p>
+              <h1 class="slide-title"><a href="/slides/20160720_php-static-analysis-in-5min/" class="p-name u-url u-uid permalink-link">PHP 5分でわかる静的解析入門</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2016-07-20">2016年7月20日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
 
@@ -74,7 +76,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpblt" target="_blank" class="hashtag">#phpblt</a>
+                  <a href="https://twitter.com/hashtag/phpblt" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpblt</a>
                 </div>
               
 
@@ -89,189 +91,188 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p><strong>5分でわかる静的解析入門</strong></p><p><strong>Learn PHP static analysis in 5 min.</strong></p><p><strong>2016-07-20 PHP BLT #5</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>Ruby書いてたら、何の因果かPHPを書く仕事に</li></ul></li><li>好きな言葉はメタプログラミングです</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p><strong>さて</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p><strong>敵を知れば百戦殆ふからず</strong></p><p>プログラムを実際に動かさずして、</p><ul><li>ソフトウェアの性質を把握する<br>いろんなツールとか手法がある </li></ul><p>人間がPull Requestのdiffを見て</p><ul><li>レビューするのも一種の静的解析</li></ul><p>ユニットテストは実際に動かすので</p><ul><li>動的検査の一種</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>wc -l **/*.php</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p><strong>wc -l **/*.php</strong></p><p><strong>Unixの標準コマンド </strong></p><ul><li>お前は何を言ってるんだ</li><li>-l<br><strong>ファイルの行数を測る ( ) </strong></li><li>-c<br><strong>バイト数を測る ( )</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>php -l a.php</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p><strong>php -l target.php</strong></p><p>コードがSyntax Errorではないか</p><ul><li>検査する</li></ul><p>実際に運用されるサーバーと同じ</p><ul><li>バージョンを利用する<br>git ls-files | grep &#39;\.php$&#39; | </li><li>xargs -IFILE -n1 php -l FILE</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>token_get_all()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p><strong>token_get_all()</strong></p><p>PHPの標準関数 (要tokenizer) </p><p>スクリプトを構文要素ごとに</p><ul><li>切り分けてくれる(だけ)<br>構文解析はしてくれない… (重要) </li><li>目的を集中すれば小さなパーサーは</li><li>意外に書けた</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>preg_match()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p><strong>preg_match()</strong></p><p>PHPの標準関数（最終兵器） </p><ul><li>雑な正規表現でも意外と機能する</li><li>正規表現パターンなら誰でも書ける</li><li>ので、チームでメンテナンスできる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p><strong>preg_match()</strong></p><p>こんな感じで配列にパターンを</p><ul><li>並べていく<br><strong>[ </strong><br><strong>    &#39;level&#39; =&gt; &#39;error&#39;, </strong><br><strong>    &#39;desc&#39;  =&gt; &#39;mt_srand() は使用禁止&#39;, </strong><br><strong>    &#39;pattern&#39; =&gt; [ </strong><br><strong>        &#39;/[^a-zA-Z0-9_$:&gt;]mt_srand *\(/i&#39; =&gt; false, </strong><br><strong>    ], </strong><br><strong>],</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p><strong>そのほか</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p><strong>よのなかにはたくさん実装ある</strong></p><p>PHPの静的解析 </p><ul><li>— Algo13 2016.04.11 ドキュメント</li></ul><p>http://algo13.net/php/tips/static-analysis.html</p><p>↑良い感じにまとまってるネ申記事 </p><ul><li>phpmd, phpcs, php7cc…</li><li>簡単な構文解析のサンプル載ってる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p><strong>何をしたいのか</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p><strong>静的解析できると何が嬉しいのか</strong></p><p>Syntax Errorなファイルを</p><ul><li>デプロイしないようにしたい…<br>弊社でも昔はありました <ul><li>コードレビューでつまらないことを</li></ul></li><li>指摘したくない</li></ul><p>割と膨大なコードを安全に</p><ul><li>PHP7に着地させたい</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p><strong>最近のナウいツール</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p><strong>etsy/phan</strong></p><p>Rasmus Lerdorfを要するEtsy社が</p><ul><li>開発する静的解析ツール</li></ul><p>未定義関数とか型がをかしいとか、</p><ul><li>とにかくいろんな指摘してくれる<br>PHPDocの型を解析してくれる </li><li>日本語で紹介すればバズれるぞ！！！</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p><strong>最近やってること</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p><strong>baguette/definfo</strong></p><p>最近夜な夜な作ってるツール </p><p>実行時情報(Reflection)を使って</p><p>いろいろ指図してくれるように<br>するつもり </p><p>タグジャンプの代替にしたい </p><ul><li>静的解析はしないつもりだったけど、</li></ul><p>どうにもならないところは がんばって構文解析してる</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
                     
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p><strong>5分でわかる静的解析入門</strong></p><p><strong>Learn PHP static analysis in 5 min.</strong></p><p><strong>2016-07-20 PHP BLT #5</strong></p>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20160516214151%2Fhttp%3A%2F%2Falgo13.net%2Fphp%2Ftips%2Fstatic-analysis.html&size=32" alt=""><a href="https://web.archive.org/web/20160516214151/http://algo13.net/php/tips/static-analysis.html" target="_blank" rel="noopener">PHP: PHPの静的解析(php -l, phpcs, PHPCompatibility, etc ...) — Algo13 2016.04.11 ドキュメント</a><br>(original: <a href="http://algo13.net/php/tips/static-analysis.html" target="_blank" rel="noopener">http://algo13.net/php/tips/static-analysis.html</a>)</li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
+                      
                     
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id:zonuexe<ul><li>Ruby書いてたら、何の因果かPHPを書く仕事に</li></ul></li><li>好きな言葉はメタプログラミングです</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p><strong>さて</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p><strong>敵を知れば百戦殆ふからず</strong></p><p>プログラムを実際に動かさずして、</p><ul><li>ソフトウェアの性質を把握する<br>いろんなツールとか手法がある </li></ul><p>人間がPull Requestのdiffを見て</p><ul><li>レビューするのも一種の静的解析</li></ul><p>ユニットテストは実際に動かすので</p><ul><li>動的検査の一種</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>wc -l **/*.php</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p><strong>wc -l **/*.php</strong></p><p><strong>Unixの標準コマンド </strong></p><ul><li>お前は何を言ってるんだ</li><li>-l<br><strong>ファイルの行数を測る ( ) </strong></li><li>-c<br><strong>バイト数を測る ( )</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p>php -l a.php</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p><strong>php -l target.php</strong></p><p>コードがSyntax Errorではないか</p><ul><li>検査する</li></ul><p>実際に運用されるサーバーと同じ</p><ul><li>バージョンを利用する<br>git ls-files | grep &#39;\.php$&#39; | </li><li>xargs -IFILE -n1 php -l FILE</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>token_get_all()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p><strong>token_get_all()</strong></p><p>PHPの標準関数 (要tokenizer) </p><p>スクリプトを構文要素ごとに</p><ul><li>切り分けてくれる(だけ)<br>構文解析はしてくれない… (重要) </li><li>目的を集中すれば小さなパーサーは</li><li>意外に書けた</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p>preg_match()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p><strong>preg_match()</strong></p><p>PHPの標準関数（最終兵器） </p><ul><li>雑な正規表現でも意外と機能する</li><li>正規表現パターンなら誰でも書ける</li><li>ので、チームでメンテナンスできる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p><strong>preg_match()</strong></p><p>こんな感じで配列にパターンを</p><ul><li>並べていく<br><strong>[ </strong><br><strong>    &#39;level&#39; =&gt; &#39;error&#39;, </strong><br><strong>    &#39;desc&#39;  =&gt; &#39;mt_srand() は使用禁止&#39;, </strong><br><strong>    &#39;pattern&#39; =&gt; [ </strong><br><strong>        &#39;/[^a-zA-Z0-9_$:&gt;]mt_srand *\(/i&#39; =&gt; false, </strong><br><strong>    ], </strong><br><strong>],</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p><strong>そのほか</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p><strong>よのなかにはたくさん実装ある</strong></p><p>PHPの静的解析 </p><ul><li>— Algo13 2016.04.11 ドキュメント</li></ul><p>http://algo13.net/php/tips/static-analysis.html</p><p>↑良い感じにまとまってるネ申記事 </p><ul><li>phpmd, phpcs, php7cc…</li><li>簡単な構文解析のサンプル載ってる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p><strong>何をしたいのか</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p><strong>静的解析できると何が嬉しいのか</strong></p><p>Syntax Errorなファイルを</p><ul><li>デプロイしないようにしたい…<br>弊社でも昔はありました <ul><li>コードレビューでつまらないことを</li></ul></li><li>指摘したくない</li></ul><p>割と膨大なコードを安全に</p><ul><li>PHP7に着地させたい</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p><strong>最近のナウいツール</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p><strong>etsy/phan</strong></p><p>Rasmus Lerdorfを要するEtsy社が</p><ul><li>開発する静的解析ツール</li></ul><p>未定義関数とか型がをかしいとか、</p><ul><li>とにかくいろんな指摘してくれる<br>PHPDocの型を解析してくれる </li><li>日本語で紹介すればバズれるぞ！！！</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p><strong>最近やってること</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p><strong>baguette/definfo</strong></p><p>最近夜な夜な作ってるツール </p><p>実行時情報(Reflection)を使って</p><p>いろいろ指図してくれるように<br>するつもり </p><p>タグジャンプの代替にしたい </p><ul><li>静的解析はしないつもりだったけど、</li></ul><p>どうにもならないところは がんばって構文解析してる</p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fweb.archive.org%2Fweb%2F20160516214151%2Fhttp%3A%2F%2Falgo13.net%2Fphp%2Ftips%2Fstatic-analysis.html&size=32" alt=""><a href="https://web.archive.org/web/20160516214151/http://algo13.net/php/tips/static-analysis.html" target="_blank">PHP: PHPの静的解析(php -l, phpcs, PHPCompatibility, etc ...) — Algo13 2016.04.11 ドキュメント</a><br>(original: http://algo13.net/php/tips/static-analysis.html)</li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

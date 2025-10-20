@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20190529_iterating-strings/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20190529_iterating-strings/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20190529_iterating-strings/">
 
           <title>文字列をイテレーションする</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,19 +59,20 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>文字列をイテレーションする</h1>
-              <p>公開日: <time datetime="2019-05-29">2019年5月29日</time></p>
+              <h1 class="slide-title"><a href="/slides/20190529_iterating-strings/" class="p-name u-url u-uid permalink-link">文字列をイテレーションする</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2019-05-29">2019年5月29日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
                 <div class="event-info">
-                  <p><time datetime="2019-05-29">2019年5月29日</time>に東京都渋谷区のGMO Yoursで開催された『<a href="https://phpstudy.doorkeeper.jp/events/91688" target="_blank">第138回 PHP勉強会＠東京</a>』でライトニングトーク(5分)として発表しました。</p>
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2019-05-29">2019年5月29日</time>に<span class="p-location">東京都渋谷区</span>の<span class="p-location">GMO Yours</span>で開催された『<a href="https://phpstudy.doorkeeper.jp/events/91688" class="p-name u-url" target="_blank" rel="noopener">第138回 PHP勉強会＠東京</a>』で<span class="p-category">ライトニングトーク</span> <span class="p-duration" data-duration="5">5分</span>として発表しました。</p>
                 </div>
               
 
@@ -78,7 +80,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag">#phpstudy</a>
+                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpstudy</a>
                 </div>
               
 
@@ -93,875 +95,874 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>文字列をイテレーションする</p><p>Iterate over &quot;elements&quot; of a string.</p><p>第138回 PHP勉強会＠東京</p><p>2019年5月29日 #phpstudy</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>宣伝</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>先に</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>今回話す内容は</p><p>平成最後のLT大会で</p><p>発表した内容に由来</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>今回話す実装は</p><p>既にライブラリ化<br>しました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>おさらい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>イテレータ</p><p>とは何か</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>任意の処理を</p><p>繰り返しの構造 に落とし込める</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>繰り返し？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>みんなだいすき</p><p>foreach</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>どうするの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>Iterator<br>インターフェイス</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>ジェネレータ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>関数で</p><p>イテレータを</p><p>つくれる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>時間がない</p><p>ので割愛</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>このあと</p><p>さんざん出ます</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>さて本題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>文字列をイテレーションする</p><p>Iterate over &quot;elements&quot; of a string.</p><p>第138回 PHP勉強会＠東京</p><p>2019年5月29日 #phpstudy</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>問題です</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>入力した文字列を 1文字ごとに改行 区切りで出力せよ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>簡単じゃん</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>簡単でしょ？</p><p>😄</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>本当に？</p><p>🤔</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>(どう表示される かは環境による)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>…………</p><p>🙃</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>どうしてこんな</p><p>ことがおこるのか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>前提1:</p><p>PHPの は</p><p>string<br>「文字」を知らない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>stringは</p><p>ただのバイト列</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>$s = &#39;abc&#39;; echo $s[0]; </p><p>これは先頭1文字ではなく</p><p>1バイトを取り出す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>逆に言うとstring にはどんなバイナ<br>リも格納できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>例:</p><p>&lt;?php</p><p>$s = file_get_contents(&#39;flower.png&#39;);</p><p>header(&#39;Content-Type: image/png&#39;); <br>echo $s;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>mb関数が</p><p>あるのでは？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>mb関数はencodingを常に<br>指定しないと</p><p>(環境依存せず)</p><p>確実に処理できない</p><p>🤔</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>PHP5.6以降では</p><p>の</p><p>default_charset<br>デフォルト値が&quot;UTF-8&quot;に、</p><p>が</p><p>mbstring.internal_encoding<br>非推奨になったのは嬉しい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>それはencodingを明示的に 指定しなくても安全に処理<br>できることを意味しない</p><p>🙃</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>前提2:</p><p>UTF-8は</p><p>可変長バイト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>ひとつの符号位置を</p><p>表すために<br>1〜4バイト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>まだ日本語文字を</p><p>「2バイト文字」と 呼んだりしませんね？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>Unicodeより<br>前の時代</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p>Shift_JISでは</p><p>ガ (2バイト)</p><p>ｶﾞ (1バイト+1バイト)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>この頃は半角カナ で情報量が半分に なることもあった</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>UTF-8では</p><p>ガ (3バイト)</p><p>ｶﾞ (3バイト+3バイト)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>Unicode(UTF-8)で<br>表現すると</p><p>半角カナは単純に</p><p>バイト数が倍になる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p>たいへんですね</p><p>☺</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p>その上で</p><p>Unicode時代の今日</p><p>何を「文字」と</p><p>呼ぶかを考える</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p>1. バイトごと</p><p>2. コードポイントごと</p><p>3. 書記素クラスタごと</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>バイトごと</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>これがまさに</p><p>バイトごとの</p><p>イテレーション</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>これを</p><p>ジェネレータに<br>変換</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p>ライブラリとしては<br>｢foreachできるオブジェクト｣</p><p>(＝ジェネレータ)として提供</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            <p>そうすることで 汎用的に利用で きるようになる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p>例: </p><p>数を集計する</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p>コードポイント</p><p>ごと</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p>コードポイント</p><p>(符号位置)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p>PHP はUnicodeを</p><p>(コア言語)</p><p>知らないが､PCRE関数</p><p>はUnicodeを</p><p>preg_match()<br>知ってる (  修飾子)</p><p>/u </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            <p>書記素クラスタ</p><p>ごと</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p>書記素とは？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            <p>人間の目に</p><p>1文字に見える<br>単位</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p>あ</p><p>漢</p><p>ガ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p>どれも単独の<br>書記素</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p>ところでUnicodeに は「ガ」の複数の</p><p>表現方法が存在する</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p>ガ (U+30AC)</p><p>ガ (U+30AB U+3099) ｶﾞ (U+FF76 U+FF9E)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p>結合したガ</p><p>ガ (U+30AC)</p><p>カ ゛</p><p>(結合文字)</p><p> + </p><p>ガ (U+30AB U+3099)</p><p>半角ｶ</p><p> + ﾞ</p><p>ｶﾞ (U+FF76 U+FF9E)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            <p>Unicode正規化</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            <p>余談: ファイル名に濁点のつい た文字をGitで管理するとMacと そのほかのファイルシステムで 諸々の厄介な事態が起こるので 禁忌。これはAppleのファイルシ ステムが伝統的にファイル名を Unicode正規化することが問題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p>(本筋から逸れ るので各自ggr)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p>書記素クラスタ のターンはまだ まだ終らないぜ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            <p>絵文字が</p><p>開いてしまった</p><p>パンドラの匣</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            <p>Case1: 国旗</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            <p>絵文字には</p><p>国旗が充実</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-text">
+                            <p>%&amp;’()*+,- ./0123456</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-92">
+                          <h4>Page 92</h4>
+                          <div class="page-text">
+                            <p>……と</p><p>思うじゃん？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-93">
+                          <h4>Page 93</h4>
+                          <div class="page-text">
+                            <p>実態</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-94">
+                          <h4>Page 94</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-95">
+                          <h4>Page 95</h4>
+                          <div class="page-text">
+                            <p>国旗専用文字の[J] と[P]を並べて配置 すると に化ける</p><p>,</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-96">
+                          <h4>Page 96</h4>
+                          <div class="page-text">
+                            <p>Case2: 家族</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-97">
+                          <h4>Page 97</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-98">
+                          <h4>Page 98</h4>
+                          <div class="page-text">
+                            <p>この絵文字のバイト数</p><p>strlen(&#39; &#39;);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-99">
+                          <h4>Page 99</h4>
+                          <div class="page-text">
+                            <p>この絵文字のバイト数</p><p>strlen(&#39; &#39;);</p><p>7<br>// =&gt; 25</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-100">
+                          <h4>Page 100</h4>
+                          <div class="page-text">
+                            <p>この絵文字のUTF-8文字数</p><p>mb_strlen(&#39; &#39;, &#39;UTF-8&#39;);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-101">
+                          <h4>Page 101</h4>
+                          <div class="page-text">
+                            <p>この絵文字のUTF-8文字数</p><p>mb_strlen(&#39; &#39;, &#39;UTF-8&#39;);</p><p>7<br>// =&gt; 7</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-102">
+                          <h4>Page 102</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-103">
+                          <h4>Page 103</h4>
+                          <div class="page-text">
+                            <p>| | |<br>👨👩👦👦</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-104">
+                          <h4>Page 104</h4>
+                          <div class="page-text">
+                            <p>Zero Width <br>Joiner</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-105">
+                          <h4>Page 105</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-106">
+                          <h4>Page 106</h4>
+                          <div class="page-text">
+                            <p>そんな文字でも</p><p>一安心</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-107">
+                          <h4>Page 107</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-108">
+                          <h4>Page 108</h4>
+                          <div class="page-text">
+                            <p>ICU に依存</p><p>(intl)<br>(常に正しく計算するにはシ ステムに最新のUnicode定義<br>が実装されたICUが必要)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-109">
+                          <h4>Page 109</h4>
+                          <div class="page-text">
+                            <p>今回の話題は</p><p>ただのトリビアか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-110">
+                          <h4>Page 110</h4>
+                          <div class="page-text">
+                            <p>No</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-111">
+                          <h4>Page 111</h4>
+                          <div class="page-text">
+                            <p>Webアプリとしては 「文字数」を制限し<br>なければいけない</p><p>場合が多々ある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-112">
+                          <h4>Page 112</h4>
+                          <div class="page-text">
+                            <p>サービス都合の制限</p><p>ストレージ(DB)都合制限</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-113">
+                          <h4>Page 113</h4>
+                          <div class="page-text">
+                            <p>自分がどういう理由で</p><p>文字数を制限しようと しているのか考えよう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-114">
+                          <h4>Page 114</h4>
+                          <div class="page-text">
+                            <p>例: </p><p>MySQLのインデックス長のデ フォルト設定が767バイトだか らutf8mb4のカラムの文字数を<br>VARCHAR(191)以下にしたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-115">
+                          <h4>Page 115</h4>
+                          <div class="page-text">
+                            <p>例: </p><p>長いユーザー名は画面 に収まりきらないから<br>30文字以下にしたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-116">
+                          <h4>Page 116</h4>
+                          <div class="page-text">
+                            <p>たいていは</p><p>mb_strlen($s, &#39;UTF-8&#39;)</p><p>で片がつく</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-117">
+                          <h4>Page 117</h4>
+                          <div class="page-text">
+                            <p>「文字数」と「表示幅」は<br>全然違う概念なので厄介</p><p>(なので、今回紹介した<br>each_grapheme()を使って計算して<br>もうまくいかない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-118">
+                          <h4>Page 118</h4>
+                          <div class="page-text">
+                            <p>オチはないけど各位 よく考えて「文字」<br>単位とつきあって</p><p>いきましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-119">
+                          <h4>Page 119</h4>
+                          <div class="page-text">
+                            <p>ちなみにTwitterの140 文字制限がDBの制約 ではないことは明白</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
-                    
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p>文字列をイテレーションする</p><p>Iterate over &quot;elements&quot; of a string.</p><p>第138回 PHP勉強会＠東京</p><p>2019年5月29日 #phpstudy</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社 pixiv運営本部</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p>宣伝</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>先に</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p>今回話す内容は</p><p>平成最後のLT大会で</p><p>発表した内容に由来</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>今回話す実装は</p><p>既にライブラリ化<br>しました</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p>おさらい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p>イテレータ</p><p>とは何か</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p>任意の処理を</p><p>繰り返しの構造 に落とし込める</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p>繰り返し？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p>みんなだいすき</p><p>foreach</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>どうするの？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p>Iterator<br>インターフェイス</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p>ジェネレータ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>関数で</p><p>イテレータを</p><p>つくれる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p>時間がない</p><p>ので割愛</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>このあと</p><p>さんざん出ます</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p>さて本題</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>文字列をイテレーションする</p><p>Iterate over &quot;elements&quot; of a string.</p><p>第138回 PHP勉強会＠東京</p><p>2019年5月29日 #phpstudy</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p>問題です</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>入力した文字列を 1文字ごとに改行 区切りで出力せよ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p>簡単じゃん</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p>簡単でしょ？</p><p>😄</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p>本当に？</p><p>🤔</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p>(どう表示される かは環境による)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p>…………</p><p>🙃</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>どうしてこんな</p><p>ことがおこるのか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p>前提1:</p><p>PHPの は</p><p>string<br>「文字」を知らない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p>stringは</p><p>ただのバイト列</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p>$s = &#39;abc&#39;; echo $s[0]; </p><p>これは先頭1文字ではなく</p><p>1バイトを取り出す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p>逆に言うとstring にはどんなバイナ<br>リも格納できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p>例:</p><p>&lt;?php</p><p>$s = file_get_contents(&#39;flower.png&#39;);</p><p>header(&#39;Content-Type: image/png&#39;); <br>echo $s;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p>mb関数が</p><p>あるのでは？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p>mb関数はencodingを常に<br>指定しないと</p><p>(環境依存せず)</p><p>確実に処理できない</p><p>🤔</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p>PHP5.6以降では</p><p>の</p><p>default_charset<br>デフォルト値が&quot;UTF-8&quot;に、</p><p>が</p><p>mbstring.internal_encoding<br>非推奨になったのは嬉しい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p>それはencodingを明示的に 指定しなくても安全に処理<br>できることを意味しない</p><p>🙃</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p>前提2:</p><p>UTF-8は</p><p>可変長バイト</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p>ひとつの符号位置を</p><p>表すために<br>1〜4バイト</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p>まだ日本語文字を</p><p>「2バイト文字」と 呼んだりしませんね？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p>Unicodeより<br>前の時代</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p>Shift_JISでは</p><p>ガ (2バイト)</p><p>ｶﾞ (1バイト+1バイト)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p>この頃は半角カナ で情報量が半分に なることもあった</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p>UTF-8では</p><p>ガ (3バイト)</p><p>ｶﾞ (3バイト+3バイト)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p>Unicode(UTF-8)で<br>表現すると</p><p>半角カナは単純に</p><p>バイト数が倍になる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p>たいへんですね</p><p>☺</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p>その上で</p><p>Unicode時代の今日</p><p>何を「文字」と</p><p>呼ぶかを考える</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p>1. バイトごと</p><p>2. コードポイントごと</p><p>3. 書記素クラスタごと</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p>バイトごと</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-text">
-                          <p>これがまさに</p><p>バイトごとの</p><p>イテレーション</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-63">
-                        <h4>Page 63</h4>
-                        <div class="page-text">
-                          <p>これを</p><p>ジェネレータに<br>変換</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-64">
-                        <h4>Page 64</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-65">
-                        <h4>Page 65</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-66">
-                        <h4>Page 66</h4>
-                        <div class="page-text">
-                          <p>ライブラリとしては<br>｢foreachできるオブジェクト｣</p><p>(＝ジェネレータ)として提供</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-text">
-                          <p>そうすることで 汎用的に利用で きるようになる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-68">
-                        <h4>Page 68</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-69">
-                        <h4>Page 69</h4>
-                        <div class="page-text">
-                          <p>例: </p><p>数を集計する</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-70">
-                        <h4>Page 70</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-71">
-                        <h4>Page 71</h4>
-                        <div class="page-text">
-                          <p>コードポイント</p><p>ごと</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-text">
-                          <p>コードポイント</p><p>(符号位置)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-73">
-                        <h4>Page 73</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-74">
-                        <h4>Page 74</h4>
-                        <div class="page-text">
-                          <p>PHP はUnicodeを</p><p>(コア言語)</p><p>知らないが､PCRE関数</p><p>はUnicodeを</p><p>preg_match()<br>知ってる (  修飾子)</p><p>/u </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-75">
-                        <h4>Page 75</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-76">
-                        <h4>Page 76</h4>
-                        <div class="page-text">
-                          <p>書記素クラスタ</p><p>ごと</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-77">
-                        <h4>Page 77</h4>
-                        <div class="page-text">
-                          <p>書記素とは？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-78">
-                        <h4>Page 78</h4>
-                        <div class="page-text">
-                          <p>人間の目に</p><p>1文字に見える<br>単位</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-79">
-                        <h4>Page 79</h4>
-                        <div class="page-text">
-                          <p>あ</p><p>漢</p><p>ガ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-80">
-                        <h4>Page 80</h4>
-                        <div class="page-text">
-                          <p>どれも単独の<br>書記素</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-81">
-                        <h4>Page 81</h4>
-                        <div class="page-text">
-                          <p>ところでUnicodeに は「ガ」の複数の</p><p>表現方法が存在する</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-82">
-                        <h4>Page 82</h4>
-                        <div class="page-text">
-                          <p>ガ (U+30AC)</p><p>ガ (U+30AB U+3099) ｶﾞ (U+FF76 U+FF9E)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-83">
-                        <h4>Page 83</h4>
-                        <div class="page-text">
-                          <p>結合したガ</p><p>ガ (U+30AC)</p><p>カ ゛</p><p>(結合文字)</p><p> + </p><p>ガ (U+30AB U+3099)</p><p>半角ｶ</p><p> + ﾞ</p><p>ｶﾞ (U+FF76 U+FF9E)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-84">
-                        <h4>Page 84</h4>
-                        <div class="page-text">
-                          <p>Unicode正規化</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-text">
-                          <p>余談: ファイル名に濁点のつい た文字をGitで管理するとMacと そのほかのファイルシステムで 諸々の厄介な事態が起こるので 禁忌。これはAppleのファイルシ ステムが伝統的にファイル名を Unicode正規化することが問題</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-text">
-                          <p>(本筋から逸れ るので各自ggr)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-87">
-                        <h4>Page 87</h4>
-                        <div class="page-text">
-                          <p>書記素クラスタ のターンはまだ まだ終らないぜ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-text">
-                          <p>絵文字が</p><p>開いてしまった</p><p>パンドラの匣</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-text">
-                          <p>Case1: 国旗</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-text">
-                          <p>絵文字には</p><p>国旗が充実</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-text">
-                          <p>%&amp;’()*+,- ./0123456</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-92">
-                        <h4>Page 92</h4>
-                        <div class="page-text">
-                          <p>……と</p><p>思うじゃん？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-93">
-                        <h4>Page 93</h4>
-                        <div class="page-text">
-                          <p>実態</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-94">
-                        <h4>Page 94</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-95">
-                        <h4>Page 95</h4>
-                        <div class="page-text">
-                          <p>国旗専用文字の[J] と[P]を並べて配置 すると に化ける</p><p>,</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-96">
-                        <h4>Page 96</h4>
-                        <div class="page-text">
-                          <p>Case2: 家族</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-97">
-                        <h4>Page 97</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-98">
-                        <h4>Page 98</h4>
-                        <div class="page-text">
-                          <p>この絵文字のバイト数</p><p>strlen(&#39; &#39;);</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-99">
-                        <h4>Page 99</h4>
-                        <div class="page-text">
-                          <p>この絵文字のバイト数</p><p>strlen(&#39; &#39;);</p><p>7<br>// =&gt; 25</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-100">
-                        <h4>Page 100</h4>
-                        <div class="page-text">
-                          <p>この絵文字のUTF-8文字数</p><p>mb_strlen(&#39; &#39;, &#39;UTF-8&#39;);</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-101">
-                        <h4>Page 101</h4>
-                        <div class="page-text">
-                          <p>この絵文字のUTF-8文字数</p><p>mb_strlen(&#39; &#39;, &#39;UTF-8&#39;);</p><p>7<br>// =&gt; 7</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-102">
-                        <h4>Page 102</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-103">
-                        <h4>Page 103</h4>
-                        <div class="page-text">
-                          <p>| | |<br>👨👩👦👦</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-104">
-                        <h4>Page 104</h4>
-                        <div class="page-text">
-                          <p>Zero Width <br>Joiner</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-105">
-                        <h4>Page 105</h4>
-                        <div class="page-text">
-                          <p>さて</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-106">
-                        <h4>Page 106</h4>
-                        <div class="page-text">
-                          <p>そんな文字でも</p><p>一安心</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-107">
-                        <h4>Page 107</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-108">
-                        <h4>Page 108</h4>
-                        <div class="page-text">
-                          <p>ICU に依存</p><p>(intl)<br>(常に正しく計算するにはシ ステムに最新のUnicode定義<br>が実装されたICUが必要)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-109">
-                        <h4>Page 109</h4>
-                        <div class="page-text">
-                          <p>今回の話題は</p><p>ただのトリビアか？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-110">
-                        <h4>Page 110</h4>
-                        <div class="page-text">
-                          <p>No</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-111">
-                        <h4>Page 111</h4>
-                        <div class="page-text">
-                          <p>Webアプリとしては 「文字数」を制限し<br>なければいけない</p><p>場合が多々ある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-112">
-                        <h4>Page 112</h4>
-                        <div class="page-text">
-                          <p>サービス都合の制限</p><p>ストレージ(DB)都合制限</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-113">
-                        <h4>Page 113</h4>
-                        <div class="page-text">
-                          <p>自分がどういう理由で</p><p>文字数を制限しようと しているのか考えよう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-114">
-                        <h4>Page 114</h4>
-                        <div class="page-text">
-                          <p>例: </p><p>MySQLのインデックス長のデ フォルト設定が767バイトだか らutf8mb4のカラムの文字数を<br>VARCHAR(191)以下にしたい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-115">
-                        <h4>Page 115</h4>
-                        <div class="page-text">
-                          <p>例: </p><p>長いユーザー名は画面 に収まりきらないから<br>30文字以下にしたい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-116">
-                        <h4>Page 116</h4>
-                        <div class="page-text">
-                          <p>たいていは</p><p>mb_strlen($s, &#39;UTF-8&#39;)</p><p>で片がつく</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-117">
-                        <h4>Page 117</h4>
-                        <div class="page-text">
-                          <p>「文字数」と「表示幅」は<br>全然違う概念なので厄介</p><p>(なので、今回紹介した<br>each_grapheme()を使って計算して<br>もうまくいかない)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-118">
-                        <h4>Page 118</h4>
-                        <div class="page-text">
-                          <p>オチはないけど各位 よく考えて「文字」<br>単位とつきあって</p><p>いきましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-119">
-                        <h4>Page 119</h4>
-                        <div class="page-text">
-                          <p>ちなみにTwitterの140 文字制限がDBの制約 ではないことは明白</p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank" rel="noopener">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

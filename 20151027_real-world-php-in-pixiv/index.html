@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20151027_real-world-php-in-pixiv/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20151027_real-world-php-in-pixiv/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20151027_real-world-php-in-pixiv/">
 
           <title>Real World PHP in pixiv</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,15 +59,16 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>Real World PHP in pixiv</h1>
-              <p>公開日: <time datetime="2015-10-27">2015年10月27日</time></p>
+              <h1 class="slide-title"><a href="/slides/20151027_real-world-php-in-pixiv/" class="p-name u-url u-uid permalink-link">Real World PHP in pixiv</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2015-10-27">2015年10月27日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
 
@@ -85,286 +87,285 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p><strong>Real World PHP in pixiv</strong></p><p>ぐるなびピクシブ合同勉強会</p><p>年 月 日</p><p>2015 10 23</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><p>うさみけんた</p><p> / tadsan </p><ul><li>年 月にピクシブ入社<br>2012 11  </li><li>入社前は自宅警備しながら 書いてた</li></ul><p>Ruby  </p><ul><li>版サービスなどの もろもろ<br>API/OAuth/PC PHP  </li></ul><ul><li>最近では漫画・小説チームとして動いてる</li></ul><ul><li>カンファレンスの 応募に落ちました<br>PHP LT</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>注意</p><p>時間配分は考慮してない</p><ul><li>開発楽しい！とかじゃなく淡々と羅列するだけ</li></ul><ul><li>ゆっくり話すので、「お前何言ってんんだ」と</li><li>感じたらつっこみを入れてください</li></ul><p>資料はあとで公開します</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>アジェンダ</p><p>現状についてだらだら話す</p><ul><li>のデプロイについて<br><strong>pixiv  </strong><ul><li>の開発環境について<br><strong>pixiv  </strong></li><li>の について<br><strong>pixiv PHP  </strong></li><li>の について<br><strong>pixiv SQL  </strong></li><li>そのほか</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>pixiv.git (クラスのお友達) <br>├ accounts.pixiv.net  ├ rpc.pixiv.private ├ admin.pixiv.net  ├ source.pixiv.net ├ api.pixiv.net  ├ spapi.pixiv.net ├ batch  ├ spotlight.pics ├ embed.pixiv.net  ├ ssl.pixiv.net ├ m.pixiv.net  ├ touch.pixiv.net <br>├ me.pixiv.net  ├ util ├ oauth.pixiv.net  ├ vendor ├ pixiv-lib  ├ web-test <br>├ public-api.pixiv.net └ www.pixiv.net</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>変遷</p><p>以前 年頃までは、サブディレクトリ</p><p><strong>(2013 )</strong></p><ul><li>ごとに独立した リポジトリで、共通部分</li></ul><p><strong>Git</strong><br>を として扱ってた</p><p><strong>submodule  </strong><br>共通部分の抽象化もうまくなされて居らず、</p><ul><li>重複・細部が異なるコードが分散してた</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>変遷</p><p>は疎結合なモジュールに適する</p><p><strong>submodule  </strong></p><ul><li>結合度が高いモジュールのリポジトリを分</li><li>割すると、変更コストが極めて高い</li></ul><p>リポジトリを統合することで凝集度を高め</p><ul><li>るリファクタリングも断行しやすくなった</li></ul><p>細部が異なる重複コード問題も根絶</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>デプロイ</p><p>基本的にサーバー全台 台程度に</p><p><strong>(</strong>xx<strong> ) rsync </strong></p><ul><li>以前 年は ファイルの増減を伴った<br><strong>(2013 ) PHP</strong></li><li>デプロイ時にはページにもよるが、</li></ul><p><strong>( )</strong></p><p>件程度のエラーが発生してしまってた</p><p>xxx<strong>  </strong>現在は の確立で、</p><p><strong>Blue-GreenDeployment</strong></p><ul><li>ファイルの追加削除も怖いものではない</li></ul><p><strong>/</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>デプロイ</p><p><strong> (pploy)</strong><br>汎用的なデプロイシステム</p><ul><li>ディレクトリにファイルを配置<br><strong>/.deploy   </strong></li><li>スクリプトが実行される<br><strong>bin/deploy   </strong><ul><li>で画面カスタマイズ可能<br><strong>readme.html   </strong></li><li>に依存するので、特定のバージョンを<br><strong>Git</strong></li></ul></li><li>チェックアウトして反映することも容易</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>デプロイと変遷</p><p>ブログ記事紹介</p><p>( )</p><p>開発・デプロイ環境の変遷 年春版</p><p><strong> 2014  </strong></p><ul><li>履歴を残したまま複数の リポジトリを統</li></ul><p><strong>git</strong></p><ul><li>合する</li></ul><p>のデプロイを支える</p><p><strong>pixiv pploy </strong></p><ul><li>github: edvakf/pploy</li><li>WEB+DB PRESS Vol. 84</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>の開発環境</p><p><strong>pixiv</strong></p><p>などの依存が多く、ローカルに環境を構</p><p><strong>DB</strong></p><ul><li>築することは容易ではない</li></ul><p>不可能でもない</p><p>( )</p><p>共有の環境に でログインして開発</p><p><strong>SSH  </strong></p><ul><li>端末の や で開発するひとも</li></ul><p><strong>Emacs Vim  </strong></p><ul><li>でローカルと同期して など<br><strong>rsync PhpStorm  </strong></li><li>は を利用してる<br><strong>@tadsan TRAMP</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>の開発環境</p><p><strong>pixiv</strong></p><p>の を大胆に活用</p><p><strong>Apache VirtualHost  </strong></p><ul><li>にシンボリックリンクを作成<br><strong>/home/www/  </strong></li><li>社内ネットワークで 名前解決できる</li></ul><p><strong>DNS  </strong></p><ul><li>のような形式<br><strong>www.tadsan.example.com   </strong></li><li>関係なくても任意の を動作可能<br><strong>pixiv PHP  </strong></li></ul><ul><li>で同じ仕様のサーバー増やせる<br><strong>OpenStack</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p><strong>pixiv-lib</strong></p><p>の操作を抽象化する層</p><p><strong>DB (DAO) </strong></p><ul><li>データの入出力などをまとめて扱う層</li></ul><ul><li>社内では「 層」と呼ばれる</li></ul><p><strong>Common  </strong></p><ul><li>セッション・国際化などの基盤機能</li></ul><ul><li>その他の共通処理いろいろ！</li></ul><ul><li>むかしは って呼ばれてた</li></ul><p>懐古</p><p><strong>extlib</strong></p><ul><li>( )</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>の コード</p><p><strong>pixiv PHP</strong></p><p><strong>PHP 5.5 + Apache </strong></p><ul><li>を見ればわかる通り、ページ<br><strong>URL =PHP </strong><ul><li>など<br><strong>search.php, member_illust.php  … </strong></li><li>一部のリクエストは で捌いてる</li></ul></li></ul><p><strong>HHVM  </strong></p><ul><li>ルーティングのため に依存</li></ul><p><strong>mod_rewrite</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>の コード</p><p><strong>pixiv PHP</strong><br>既存のフレームワークに依存しない</p><ul><li>独自フレームワークを運用してる部分もある</li></ul><ul><li>口にすると顔をしかめられがちだが、</li></ul><ul><li>用途に合せて設計ができるのは悪くない</li></ul><p>どちらにしろ自分たちでセキュリティを</p><ul><li>担保しなければいけないのはおんなじ！</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>の コード</p><p><strong>pixiv PHP</strong><br>動的な言語機能は必要ない限り利用しない</p><ul><li>クラスの静的メソッドを多用する</li></ul><ul><li>継承は排除する方向</li></ul><ul><li>トレイトもあまり利用しない</li></ul><ul><li>リファレンスは原則排除する</li></ul><ul><li>を使ってもつらいものはつらい<br><strong>PhpStorm</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>の コード</p><p><strong>pixiv PHP</strong></p><p>ってたくさん書いてる！！</p><p><strong>include_once  </strong></p><ul><li>オートローダーの利用は限定的</li></ul><ul><li>では現状は利用不可</li></ul><p>鋭意改善中</p><p><strong>pixiv-lib  </strong></p><ul><li>( )<br>リポジトリ内に混在する都合上、</li></ul><ul><li>の は利用しにくい<br><strong>Composer autoload  </strong><br>一部では で生成して</li></ul><p><strong>phpab include</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>の コード</p><p><strong>pixiv PHP</strong></p><p>コミットログやコード内コメントは、</p><ul><li>英語または日本語で各人の得意な方で</li></ul><p>意識高く「全部英語で」など拘らない</p><ul><li>必要な文章は論理的に誤りがないように</li></ul><ul><li>コミットのルールは厳格に定めない</li></ul><ul><li>各人のやりかたを尊重する</li></ul><ul><li>典型的な で運用</li></ul><p><strong> Github Flow </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p><strong>loadset.php</strong><br>各プロジェクトの初期化ファイル</p><ul><li>エラーハンドラーの設定</li></ul><ul><li>必要なライブラリのロード</li></ul><ul><li>定数 の定義<br><strong>(deﬁne)  </strong></li><li>のみ で読み込む<br><strong>loadset require_once  </strong></li></ul><ul><li>そのほかは全部 で</li></ul><p><strong> include_once </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>の</p><p><strong>pixiv SQL</strong></p><p><strong>MySQL 5.5 </strong></p><ul><li>文字列結合による 組立つらすぎ</li></ul><p><strong>SQL … </strong></p><ul><li>マッパー自動クエリビルダーは利用せず<br><strong>OR /  </strong></li><li>年の初旬から に型をつけて安全に<br><strong>2015 SQL</strong></li><li>書けるライブラリを社内で運用</li></ul><p>脆弱性対策の文脈で生まれたが書きやすい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>の</p><p><strong>pixiv SQL</strong></p><p>なぜ自動クエリビルダー利用しないの？</p><p><strong>Q:   </strong></p><ul><li>いままでが文字列結合で組み立ててたから</li></ul><ul><li>クエリが単純ではないパターンも多い</li></ul><ul><li>例 ブックマークなど<br><strong>:   </strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>の</p><p><strong>pixiv API</strong><br>いろんな試行錯誤をしてきた</p><ul><li>一部で有名な の 最初期</li></ul><p><strong>CSV API ( ) </strong></p><ul><li>で利用するための<br><strong>ActiveResource API </strong></li><li>スマートフォンアプリ向け</li></ul><p><strong>REST API </strong></p><ul><li>社内向けのシンプルな</li></ul><p><strong>API (RPC)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>パッケージ管理</p><p>を利用</p><p><strong>Composer  </strong></p><ul><li>は に同梱<br><strong>composer.phar pixiv.git  </strong><ul><li>社内ネットワーク内で を運用</li></ul></li></ul><p><strong>Satis  </strong></p><ul><li>で定期的に更新<br><strong>Jenkins  </strong><ul><li>の障害があっても支障なし<br><strong>GitHub  </strong></li><li>手動で実行もできる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>のテスト</p><p><strong>pixiv</strong></p><p>基本的に でテストを書く</p><p><strong>PHPUnit  </strong></p><ul><li>年頃にテストを書く文化が定着した<br><strong>2013  </strong></li><li>の に したら自動テスト走る<br><strong>Gitlab MR push  </strong></li><li>うっかり に されたら即座に</li></ul><p><strong>master push</strong></p><ul><li>に通知される<br><strong>idobata</strong></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>のレビュー体制</p><p><strong>pixiv</strong></p><p>毎週 に携る各チームのレビュアーで</p><p><strong>pixiv.git</strong></p><ul><li>設計方針や最新の情報などを共有・相談</li></ul><p>レビュアーが各チームに持ち帰る</p><ul><li>各自メンバーに説明したり、レビュー過程<ul><li>で指摘することで全体のコード品質を保つ</li></ul></li></ul><p>ガイドラインや推奨スタイルの確立</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>そのほか</p><p>のデプロイ回数は一日およそ 回</p><p><strong>pixiv 20  </strong></p><ul><li>ディレクターが文言変更をすることが多い</li></ul><ul><li>をいっぱい使ってる<br><strong>Jenkins  </strong></li></ul><ul><li>の代替として<br><strong>cron  </strong><ul><li>スクリプトの としても利用できる</li></ul></li></ul><p><strong>WebUI  </strong></p><ul><li>各種エディタの勢力は均衡してる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>ふろく 連載</p><p><strong> </strong>(<strong>WEB+DB</strong> PHP )</p><p>特におもしろい記事</p><ul><li>テストしにくいコード対策<br><strong>Vol.81:   </strong><ul><li>安全なコーディングスタイル<br><strong>Vol.83:   </strong></li><li>デプロイ・ 運用<br><strong>Vol.84: </strong> Composer  </li><li>記法で型注釈<br><strong>Vol.87: </strong>PHPDoc  </li><li>の運用<br><strong>Vol.88: </strong>HHVM</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>続きは で</p><p><strong>Web</strong></p><p>https://github.com/pixiv </p><ul><li>http://inside.pixiv.net/</li><li>個人で公開してるもの<br><strong>GitHub   </strong></li><li>(tadsan )<br>BaguettePHP/php-simple-routing <ul><li>BaguettePHP/http-accept-language</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
                     
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p><strong>Real World PHP in pixiv</strong></p><p>ぐるなびピクシブ合同勉強会</p><p>年 月 日</p><p>2015 10 23</p>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2014%2F03%2F26%2F100539&size=32" alt=""><a href="http://inside.pixiv.net/entry/2014/03/26/100539" target="_blank" rel="noopener">inside.pixiv.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fqiita.com%2Fedvakf%40github%2Fitems%2F9e7ccbaa944d26f9b69c&size=32" alt=""><a href="http://qiita.com/edvakf@github/items/9e7ccbaa944d26f9b69c" target="_blank" rel="noopener">履歴を残したまま複数のgitリポジトリを統合する #Git - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2014%2F12%2F25%2F102410&size=32" alt=""><a href="http://inside.pixiv.net/entry/2014/12/25/102410" target="_blank" rel="noopener">inside.pixiv.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fedvakf%2Fpploy&size=32" alt=""><a href="https://github.com/edvakf/pploy" target="_blank" rel="noopener">GitHub - edvakf/pploy</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fgihyo.jp%2Fmagazine%2Fwdpress%2Farchive%2F2015%2Fvol84&size=32" alt=""><a href="http://gihyo.jp/magazine/wdpress/archive/2015/vol84" target="_blank" rel="noopener">WEB+DB PRESS Vol.84 | 技術評論社</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p>お前誰よ</p><p>うさみけんた</p><p> / tadsan </p><ul><li>年 月にピクシブ入社<br>2012 11  </li><li>入社前は自宅警備しながら 書いてた</li></ul><p>Ruby  </p><ul><li>版サービスなどの もろもろ<br>API/OAuth/PC PHP  </li></ul><ul><li>最近では漫画・小説チームとして動いてる</li></ul><ul><li>カンファレンスの 応募に落ちました<br>PHP LT</li></ul>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ftheseer%2FAutoload&size=32" alt=""><a href="https://github.com/theseer/Autoload" target="_blank" rel="noopener">GitHub - theseer/Autoload: A lightweight php namespace aware autoload generator and phar archive builder</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p>注意</p><p>時間配分は考慮してない</p><ul><li>開発楽しい！とかじゃなく淡々と羅列するだけ</li></ul><ul><li>ゆっくり話すので、「お前何言ってんんだ」と</li><li>感じたらつっこみを入れてください</li></ul><p>資料はあとで公開します</p>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgist.github.com%2FGab-km%2F3705015&size=32" alt=""><a href="https://gist.github.com/Gab-km/3705015" target="_blank" rel="noopener">GitHub Flow (Japanese translation) · GitHub</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p>アジェンダ</p><p>現状についてだらだら話す</p><ul><li>のデプロイについて<br><strong>pixiv  </strong><ul><li>の開発環境について<br><strong>pixiv  </strong></li><li>の について<br><strong>pixiv PHP  </strong></li><li>の について<br><strong>pixiv SQL  </strong></li><li>そのほか</li></ul></li></ul>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fpixiv&size=32" alt=""><a href="https://github.com/pixiv" target="_blank" rel="noopener">pixiv Inc. · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2F&size=32" alt=""><a href="http://inside.pixiv.net/" target="_blank" rel="noopener">inside.pixiv.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fphp-simple-routing&size=32" alt=""><a href="https://github.com/BaguettePHP/php-simple-routing" target="_blank" rel="noopener">GitHub - BaguettePHP/TetoRouting: Simple routing for WebApp</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fhttp-accept-language&size=32" alt=""><a href="https://github.com/BaguettePHP/http-accept-language" target="_blank" rel="noopener">GitHub - BaguettePHP/http-accept-language: HTTP Accept-Language header parser</a></li>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
+                      
                     
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>pixiv.git (クラスのお友達) <br>├ accounts.pixiv.net  ├ rpc.pixiv.private ├ admin.pixiv.net  ├ source.pixiv.net ├ api.pixiv.net  ├ spapi.pixiv.net ├ batch  ├ spotlight.pics ├ embed.pixiv.net  ├ ssl.pixiv.net ├ m.pixiv.net  ├ touch.pixiv.net <br>├ me.pixiv.net  ├ util ├ oauth.pixiv.net  ├ vendor ├ pixiv-lib  ├ web-test <br>├ public-api.pixiv.net └ www.pixiv.net</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p>変遷</p><p>以前 年頃までは、サブディレクトリ</p><p><strong>(2013 )</strong></p><ul><li>ごとに独立した リポジトリで、共通部分</li></ul><p><strong>Git</strong><br>を として扱ってた</p><p><strong>submodule  </strong><br>共通部分の抽象化もうまくなされて居らず、</p><ul><li>重複・細部が異なるコードが分散してた</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p>変遷</p><p>は疎結合なモジュールに適する</p><p><strong>submodule  </strong></p><ul><li>結合度が高いモジュールのリポジトリを分</li><li>割すると、変更コストが極めて高い</li></ul><p>リポジトリを統合することで凝集度を高め</p><ul><li>るリファクタリングも断行しやすくなった</li></ul><p>細部が異なる重複コード問題も根絶</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>デプロイ</p><p>基本的にサーバー全台 台程度に</p><p><strong>(</strong>xx<strong> ) rsync </strong></p><ul><li>以前 年は ファイルの増減を伴った<br><strong>(2013 ) PHP</strong></li><li>デプロイ時にはページにもよるが、</li></ul><p><strong>( )</strong></p><p>件程度のエラーが発生してしまってた</p><p>xxx<strong>  </strong>現在は の確立で、</p><p><strong>Blue-GreenDeployment</strong></p><ul><li>ファイルの追加削除も怖いものではない</li></ul><p><strong>/</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p>デプロイ</p><p><strong> (pploy)</strong><br>汎用的なデプロイシステム</p><ul><li>ディレクトリにファイルを配置<br><strong>/.deploy   </strong></li><li>スクリプトが実行される<br><strong>bin/deploy   </strong><ul><li>で画面カスタマイズ可能<br><strong>readme.html   </strong></li><li>に依存するので、特定のバージョンを<br><strong>Git</strong></li></ul></li><li>チェックアウトして反映することも容易</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p>デプロイと変遷</p><p>ブログ記事紹介</p><p>( )</p><p>開発・デプロイ環境の変遷 年春版</p><p><strong> 2014  </strong></p><ul><li>履歴を残したまま複数の リポジトリを統</li></ul><p><strong>git</strong></p><ul><li>合する</li></ul><p>のデプロイを支える</p><p><strong>pixiv pploy </strong></p><ul><li>github: edvakf/pploy</li><li>WEB+DB PRESS Vol. 84</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p>の開発環境</p><p><strong>pixiv</strong></p><p>などの依存が多く、ローカルに環境を構</p><p><strong>DB</strong></p><ul><li>築することは容易ではない</li></ul><p>不可能でもない</p><p>( )</p><p>共有の環境に でログインして開発</p><p><strong>SSH  </strong></p><ul><li>端末の や で開発するひとも</li></ul><p><strong>Emacs Vim  </strong></p><ul><li>でローカルと同期して など<br><strong>rsync PhpStorm  </strong></li><li>は を利用してる<br><strong>@tadsan TRAMP</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p>の開発環境</p><p><strong>pixiv</strong></p><p>の を大胆に活用</p><p><strong>Apache VirtualHost  </strong></p><ul><li>にシンボリックリンクを作成<br><strong>/home/www/  </strong></li><li>社内ネットワークで 名前解決できる</li></ul><p><strong>DNS  </strong></p><ul><li>のような形式<br><strong>www.tadsan.example.com   </strong></li><li>関係なくても任意の を動作可能<br><strong>pixiv PHP  </strong></li></ul><ul><li>で同じ仕様のサーバー増やせる<br><strong>OpenStack</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p><strong>pixiv-lib</strong></p><p>の操作を抽象化する層</p><p><strong>DB (DAO) </strong></p><ul><li>データの入出力などをまとめて扱う層</li></ul><ul><li>社内では「 層」と呼ばれる</li></ul><p><strong>Common  </strong></p><ul><li>セッション・国際化などの基盤機能</li></ul><ul><li>その他の共通処理いろいろ！</li></ul><ul><li>むかしは って呼ばれてた</li></ul><p>懐古</p><p><strong>extlib</strong></p><ul><li>( )</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>の コード</p><p><strong>pixiv PHP</strong></p><p><strong>PHP 5.5 + Apache </strong></p><ul><li>を見ればわかる通り、ページ<br><strong>URL =PHP </strong><ul><li>など<br><strong>search.php, member_illust.php  … </strong></li><li>一部のリクエストは で捌いてる</li></ul></li></ul><p><strong>HHVM  </strong></p><ul><li>ルーティングのため に依存</li></ul><p><strong>mod_rewrite</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p>の コード</p><p><strong>pixiv PHP</strong><br>既存のフレームワークに依存しない</p><ul><li>独自フレームワークを運用してる部分もある</li></ul><ul><li>口にすると顔をしかめられがちだが、</li></ul><ul><li>用途に合せて設計ができるのは悪くない</li></ul><p>どちらにしろ自分たちでセキュリティを</p><ul><li>担保しなければいけないのはおんなじ！</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p>の コード</p><p><strong>pixiv PHP</strong><br>動的な言語機能は必要ない限り利用しない</p><ul><li>クラスの静的メソッドを多用する</li></ul><ul><li>継承は排除する方向</li></ul><ul><li>トレイトもあまり利用しない</li></ul><ul><li>リファレンスは原則排除する</li></ul><ul><li>を使ってもつらいものはつらい<br><strong>PhpStorm</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p>の コード</p><p><strong>pixiv PHP</strong></p><p>ってたくさん書いてる！！</p><p><strong>include_once  </strong></p><ul><li>オートローダーの利用は限定的</li></ul><ul><li>では現状は利用不可</li></ul><p>鋭意改善中</p><p><strong>pixiv-lib  </strong></p><ul><li>( )<br>リポジトリ内に混在する都合上、</li></ul><ul><li>の は利用しにくい<br><strong>Composer autoload  </strong><br>一部では で生成して</li></ul><p><strong>phpab include</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p>の コード</p><p><strong>pixiv PHP</strong></p><p>コミットログやコード内コメントは、</p><ul><li>英語または日本語で各人の得意な方で</li></ul><p>意識高く「全部英語で」など拘らない</p><ul><li>必要な文章は論理的に誤りがないように</li></ul><ul><li>コミットのルールは厳格に定めない</li></ul><ul><li>各人のやりかたを尊重する</li></ul><ul><li>典型的な で運用</li></ul><p><strong> Github Flow </strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p><strong>loadset.php</strong><br>各プロジェクトの初期化ファイル</p><ul><li>エラーハンドラーの設定</li></ul><ul><li>必要なライブラリのロード</li></ul><ul><li>定数 の定義<br><strong>(deﬁne)  </strong></li><li>のみ で読み込む<br><strong>loadset require_once  </strong></li></ul><ul><li>そのほかは全部 で</li></ul><p><strong> include_once </strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>の</p><p><strong>pixiv SQL</strong></p><p><strong>MySQL 5.5 </strong></p><ul><li>文字列結合による 組立つらすぎ</li></ul><p><strong>SQL … </strong></p><ul><li>マッパー自動クエリビルダーは利用せず<br><strong>OR /  </strong></li><li>年の初旬から に型をつけて安全に<br><strong>2015 SQL</strong></li><li>書けるライブラリを社内で運用</li></ul><p>脆弱性対策の文脈で生まれたが書きやすい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>の</p><p><strong>pixiv SQL</strong></p><p>なぜ自動クエリビルダー利用しないの？</p><p><strong>Q:   </strong></p><ul><li>いままでが文字列結合で組み立ててたから</li></ul><ul><li>クエリが単純ではないパターンも多い</li></ul><ul><li>例 ブックマークなど<br><strong>:   </strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p>の</p><p><strong>pixiv API</strong><br>いろんな試行錯誤をしてきた</p><ul><li>一部で有名な の 最初期</li></ul><p><strong>CSV API ( ) </strong></p><ul><li>で利用するための<br><strong>ActiveResource API </strong></li><li>スマートフォンアプリ向け</li></ul><p><strong>REST API </strong></p><ul><li>社内向けのシンプルな</li></ul><p><strong>API (RPC)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>パッケージ管理</p><p>を利用</p><p><strong>Composer  </strong></p><ul><li>は に同梱<br><strong>composer.phar pixiv.git  </strong><ul><li>社内ネットワーク内で を運用</li></ul></li></ul><p><strong>Satis  </strong></p><ul><li>で定期的に更新<br><strong>Jenkins  </strong><ul><li>の障害があっても支障なし<br><strong>GitHub  </strong></li><li>手動で実行もできる</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p>のテスト</p><p><strong>pixiv</strong></p><p>基本的に でテストを書く</p><p><strong>PHPUnit  </strong></p><ul><li>年頃にテストを書く文化が定着した<br><strong>2013  </strong></li><li>の に したら自動テスト走る<br><strong>Gitlab MR push  </strong></li><li>うっかり に されたら即座に</li></ul><p><strong>master push</strong></p><ul><li>に通知される<br><strong>idobata</strong></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>のレビュー体制</p><p><strong>pixiv</strong></p><p>毎週 に携る各チームのレビュアーで</p><p><strong>pixiv.git</strong></p><ul><li>設計方針や最新の情報などを共有・相談</li></ul><p>レビュアーが各チームに持ち帰る</p><ul><li>各自メンバーに説明したり、レビュー過程<ul><li>で指摘することで全体のコード品質を保つ</li></ul></li></ul><p>ガイドラインや推奨スタイルの確立</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p>そのほか</p><p>のデプロイ回数は一日およそ 回</p><p><strong>pixiv 20  </strong></p><ul><li>ディレクターが文言変更をすることが多い</li></ul><ul><li>をいっぱい使ってる<br><strong>Jenkins  </strong></li></ul><ul><li>の代替として<br><strong>cron  </strong><ul><li>スクリプトの としても利用できる</li></ul></li></ul><p><strong>WebUI  </strong></p><ul><li>各種エディタの勢力は均衡してる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p>ふろく 連載</p><p><strong> </strong>(<strong>WEB+DB</strong> PHP )</p><p>特におもしろい記事</p><ul><li>テストしにくいコード対策<br><strong>Vol.81:   </strong><ul><li>安全なコーディングスタイル<br><strong>Vol.83:   </strong></li><li>デプロイ・ 運用<br><strong>Vol.84: </strong> Composer  </li><li>記法で型注釈<br><strong>Vol.87: </strong>PHPDoc  </li><li>の運用<br><strong>Vol.88: </strong>HHVM</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p>続きは で</p><p><strong>Web</strong></p><p>https://github.com/pixiv </p><ul><li>http://inside.pixiv.net/</li><li>個人で公開してるもの<br><strong>GitHub   </strong></li><li>(tadsan )<br>BaguettePHP/php-simple-routing <ul><li>BaguettePHP/http-accept-language</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2014%2F03%2F26%2F100539&size=32" alt=""><a href="http://inside.pixiv.net/entry/2014/03/26/100539" target="_blank">inside.pixiv.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fqiita.com%2Fedvakf%40github%2Fitems%2F9e7ccbaa944d26f9b69c&size=32" alt=""><a href="http://qiita.com/edvakf@github/items/9e7ccbaa944d26f9b69c" target="_blank">履歴を残したまま複数のgitリポジトリを統合する #Git - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2Fentry%2F2014%2F12%2F25%2F102410&size=32" alt=""><a href="http://inside.pixiv.net/entry/2014/12/25/102410" target="_blank">inside.pixiv.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fedvakf%2Fpploy&size=32" alt=""><a href="https://github.com/edvakf/pploy" target="_blank">GitHub - edvakf/pploy</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fgihyo.jp%2Fmagazine%2Fwdpress%2Farchive%2F2015%2Fvol84&size=32" alt=""><a href="http://gihyo.jp/magazine/wdpress/archive/2015/vol84" target="_blank">WEB+DB PRESS Vol.84 | 技術評論社</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Ftheseer%2FAutoload&size=32" alt=""><a href="https://github.com/theseer/Autoload" target="_blank">GitHub - theseer/Autoload: A lightweight php namespace aware autoload generator and phar archive builder</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgist.github.com%2FGab-km%2F3705015&size=32" alt=""><a href="https://gist.github.com/Gab-km/3705015" target="_blank">GitHub Flow (Japanese translation) · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fpixiv&size=32" alt=""><a href="https://github.com/pixiv" target="_blank">pixiv Inc. · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Finside.pixiv.net%2F&size=32" alt=""><a href="http://inside.pixiv.net/" target="_blank">inside.pixiv.net</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fphp-simple-routing&size=32" alt=""><a href="https://github.com/BaguettePHP/php-simple-routing" target="_blank">GitHub - BaguettePHP/TetoRouting: Simple routing for WebApp</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2Fhttp-accept-language&size=32" alt=""><a href="https://github.com/BaguettePHP/http-accept-language" target="_blank">GitHub - BaguettePHP/http-accept-language: HTTP Accept-Language header parser</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

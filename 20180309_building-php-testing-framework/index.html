@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20180309_building-php-testing-framework/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20180309_building-php-testing-framework/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20180309_building-php-testing-framework/">
 
           <title>PHPでテスティングフレームワークを実装する前に知っておきたい勘所</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,15 +59,16 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>PHPでテスティングフレームワークを実装する前に知っておきたい勘所</h1>
-              <p>公開日: <time datetime="2018-03-09">2018年3月9日</time></p>
+              <h1 class="slide-title"><a href="/slides/20180309_building-php-testing-framework/" class="p-name u-url u-uid permalink-link">PHPでテスティングフレームワークを実装する前に知っておきたい勘所</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2018-03-09">2018年3月9日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
 
@@ -74,7 +76,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phperkaigi" target="_blank" class="hashtag">#phperkaigi</a>
+                  <a href="https://twitter.com/hashtag/phperkaigi" target="_blank" class="hashtag p-category u-url" rel="noopener">#phperkaigi</a>
                 </div>
               
 
@@ -89,1163 +91,1162 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>で<strong>テスティングフレ…ry</strong>を</p><p><strong>PHP</strong><br> 実装する前に知っておきたい勘所</p><p><strong>Tips for implementing Testing Framework in PHP.</strong></p><p>2018-03-09 PHPerKaigi 2018 前夜祭</p><p>Nerima Coconeri Hall #phperkaigi</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社技術基盤チーム (pixiv.net)</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p><strong>pixiv</strong>のコードは</p><p>毎日どんどん<br>刷新されてるよ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>明日の<strong>pixiv</strong>を<br>作るのは俺たちだ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>We are hiring!</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p><strong>アジェンダ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p><strong>本日しない話</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>オブジェクト<br>指向</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>TDD/BDDの 教義的な話</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>定義に従った<br>厳密な用語</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>Emacs <br>(私はphpunit.elの開発者でもあります)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>!</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>一連のストーリー<br>などは<strong>ない</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>オムニバス</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>1. フレームワークなしのテスト<br>2. できる！ フレームワーク 3. PHPで注意すべき「状態」</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>1. フレームワークなしのテスト<br>2. できる！ フレームワーク 3. PHPで注意すべき「状態」 ↑時間なくて収まらなかった</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>本題の前に</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>pixivは主に<br>PHPUnitでテスト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>僕がテストを新規を増や すならPHPUnitでテスト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>% cd ~/pixiv/tests</p><p>% git ls-files &#39;*Test.php&#39; | wc -l</p><p>1606</p><p>% git ls-files &#39;*Test.php&#39; | xargs cat | wc -l <br></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>どうすれば書きやすく</p><p>メンテできる<br>テストが書けるか悩み</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>本題の前に</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p><strong>さて</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>まれによく聞く</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>PHPUnitとかphpspecとか 巨大な依存関係入れたくない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>せやな</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>懸念の妥当性はともかく</p><p>依存パッケージの数が<br>それなりに多いのはたしか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>「簡単なテストだけ 　できればいいよ」</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>おう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>じゃ、作るか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>その前に</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>ところでPHP標準のテス ティングフレームワーク<br>がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>http://qa.php.net/write-test.php</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>PHP本体の<br>テストコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>php-srcに入ってる</p><p>run-tests.php</p><p>で</p><p>実行できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>実はPHPUnitでも おまけ機能として テスト実行できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p><strong>バッファの出力をテストする</strong></p><p>--TEST-- </p><p>--TEST-- </p><p>GET $_ENV test </p><p>Compute 1 + 1 test </p><p>--ENV-- </p><p>--FILE-- </p><p>return &lt;&lt;&lt;END </p><p>&lt;?= 1 + 1 ?&gt; </p><p>a=AAA </p><p>--EXPECT-- </p><p>b=BBB </p><p>2 </p><p>END; <br>--FILE-- <br>&lt;?php <br>echo getenv(&#39;a&#39;), &quot;\n&quot;; echo getenv(&#39;b&#39;), &quot;\n&quot;; <br>?&gt; <br>--EXPECT-- <br>AAA BBB</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>ただし</p><p>(意図的なのか)</p><p>仕様を完全には<br>サポートしてません</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>もしphptを採用する</p><p>run-tests.php</p><p>なら<br>を使った方がいい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p><strong>テスト</strong><br><strong>スクリプト</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>なぜ人は<br>テストを書くのか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>実装前に入出力の<br>例を明示したい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>機能追加や</p><p>リファクタリングで<br>意図した挙動が壊れな<br>いことを保障したい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>テストを書こう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>そうすると</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>関心がどうとか<br>って話になってくる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p><strong>うるせえ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>やりたいことは<br>動作確認</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>それだけ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>テストスクリプトを<br>書こう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p><strong>test.php</strong></p><p>&lt;?php <br>require_once __DIR__ . &#39;/vendor/autoload.php&#39;; </p><p>(2 === 1 + 1) or die(&quot;LINE: &quot;. __LINE__); <br>(3 === 1.5 + 1.5) or die(&quot;LINE: &quot;. __LINE__);</p><p>$date = date(&#39;Y-m-d&#39;,4502304000); <br>(&quot;2112-09-13&quot; === $date) or die(&quot;LINE: &quot;. __LINE__); </p><p>$a = [1, 2, 3]; <br>(1 == array_shift($a)) or die(&quot;LINE: &quot;. __LINE__); </p><p>echo &#39;ok.&#39;, PHP_EOL;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>失敗すると行が 出力されて終了</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>or die()<br>書くのだるい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>もうちょっと わかりやすく</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p>assert()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p><strong>test.php</strong></p><p>#!/usr/bin/env php <br>&lt;?php <br>require_once __DIR__ . &#39;/vendor/autoload.php&#39;; </p><p>assert(2 === 1 + 1); <br>assert(3 === 1.5 + 1.5); <br>assert(&quot;2112-09-13&quot; === date(&#39;Y-m-d&#39;, 4503168000)); </p><p>$a = [1, 2, 3]; <br>assert(1 == array_shift($a));</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p><strong>出力</strong></p><p>PHP Warning:  assert(): assert(3 === 1.5 + 1.5) failed in /Users/<br>megurine/repo/php/phperkaigi-test/assert-test.php on line 11 </p><p>Warning: assert(): assert(3 === 1.5 + 1.5) failed in /Users/megurine/<br>repo/php/phperkaigi-test/assert-test.php on line 11 <br>PHP Warning:  assert(): assert(&#39;2112-09-03&#39; === date(&#39;Y-m-d&#39;, <br>4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-<br>test.php on line 12 </p><p>Warning: assert(): assert(&#39;2112-09-03&#39; === date(&#39;Y-m-d&#39;, 4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-test.php on <br>line 12</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>エラーハンドリングの</p><p>設定をしないと<br>出力が二重化される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p>まあ雑だけど<br>テストにはなる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>完</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>☺</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            <p>最低限ができると<br>人間は欲が出てくる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            <p><strong>できる！</strong><br><strong>フレームワーク</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p>フレームワーク<br>とは</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            <p>https://ja.wikipedia.org/wiki/ソフトウェアフレームワーク</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            <p><strong>制御の反転</strong>が<br>ソフトウェアフレームワークの<br>特徴</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p>ふつうのライブラリは</p><p>あなたが書いたコードから<br>呼び出される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            <p>フレームワークは<br>あなたが書いたコードを<br>呼び出す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p>これが<br>制御の反転</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p>ここからは<br>どんどんいきます</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            <p><strong>仕様1: コードをべたに実行</strong></p><p>テストファイルは xxx_test.phpの形式 </p><p>assert()を使ってテストする </p><p>スクリプトを実行すると実行</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run</strong></p><p>#!/usr/bin/env php <br>&lt;?php <br>require __DIR__ . &#39;/../vendor/autoload.php&#39;; $testing = include __DIR__ . &#39;/bootstrap.php&#39;; <br>chdir(__DIR__); <br>foreach (glob(&#39;*_test.php&#39;) as $file) { <br>    try { <br>        include $file; <br>    } catch (\Throwable $e) { <br>        dump($e); <br>    } <br>} <br>$testing-&gt;finalize();</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            <p>assert()に失敗した</p><p>ときの結果は<br>カスタマイズできる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            <p>(実はPHP5方式と<br>PHP7方式で異なる) <strong>今回はPHP5方式</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p><strong>bootstrap.php</strong></p><p>&lt;?php <br>require_once __DIR__ . &#39;/define.php&#39;; <br>ini_set(&#39;zend.assertions&#39;, 1); ini_set(&#39;assert.exception&#39;, 0); assert_options(ASSERT_ACTIVE, 1); assert_options(ASSERT_BAIL, 0); <br>assert_options(ASSERT_QUIET_EVAL, 0); <br>assert_options(ASSERT_WARNING, 0);</p><p>$testing = new Testing(); <br>assert_options(ASSERT_CALLBACK, [$testing, &#39;handler&#39;]); <br>return $testing;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            <p><strong>Testing.php</strong><br>&lt;?php <br>class Testing { <br>    /** @var bool テスト失敗停止するか */ </p><p>    private $stop_on_failure = false; <br>    /** @var array[] 実行結果 */ </p><p>    private $result = [];</p><p>    public function __construct(array $options) { <br>        $this-&gt;stop_on_failure = $options[&#39;stop_on_failure&#39;] ?? false; <br>    }</p><p>    /** assert()の失敗時にこいつが呼ばれるように設定 */ </p><p>    public function handler($file, $line, $code, $desc = null) { <br>        $this-&gt;result[] = [$file, $line, $desc]; <br>        if ($this-&gt;stop_on_failure) $this-&gt;finalize(); <br>    }</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p><strong>Testing.php</strong><br>    /** いままで失敗したテストをまとめて結果表示 */</p><p>    public function finalize(): void <br>    { <br>        if ($this-&gt;result) { <br>            foreach ($this-&gt;result as [$file, $line, $desc]) <br>{ <br>                $this-&gt;output($file, $line, $desc); <br>            } <br>            exit(1); // エラー終了 </p><p>        } <br>        $this-&gt;result = [];         echo &#39;ok.&#39;, PHP_EOL; <br>        exit(0); <br>    }</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p><strong>Testing.php</strong><br>    private function output($file, $line, $desc): void <br>    { <br>        // ソースコードの該当行を取得 </p><p>        $code = trim(file($file)[$line-1]); </p><p>        echo &quot;FILE: {$file} ({$line})&quot;, PHP_EOL; <br>        echo &quot;CODE: {$code}&quot;, PHP_EOL;</p><p>        echo &quot;DESC: {$desc}&quot;, PHP_EOL; <br>    } </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p>完成！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p>テストを記述</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p><strong>fizzbuzz_test.php</strong><br>&lt;?php <br>// to_fizzbuzz() 関数は別に定義済みの想定 </p><p>assert(&quot;1&quot;    === $actual = to_fizzbuzz(1)); assert(&quot;Fizz&quot; === $actual = to_fizzbuzz(3)); assert(&quot;Buzz&quot; === $actual = to_fizzbuzz(5)); assert(&quot;Buzz&quot; === $actual = to_fizzbuzz(10)); <br>assert(&quot;FizzBuzz&quot; === $actual = to_fizzbuzz(15)); </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            <p>完璧では<br>(ただしassertは一行で書かれるものとする)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p>😊</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p>さらに<br>パワーアップ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            <p>PowerAssert (のようなもの)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            <p>Groovyのテストで<br>一躍知られた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            <p>t-wadaさんの<br>power-assert.jsが有名</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-text">
+                            <p>http://hamcrest.org/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-92">
+                          <h4>Page 92</h4>
+                          <div class="page-text">
+                            <p>PHPでちゃんと<br>作ろうとすると大変</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-93">
+                          <h4>Page 93</h4>
+                          <div class="page-text">
+                            <p>それっぽいもの<br>なら作れる！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-94">
+                          <h4>Page 94</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-95">
+                          <h4>Page 95</h4>
+                          <div class="page-text">
+                            <p>欠点</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-96">
+                          <h4>Page 96</h4>
+                          <div class="page-text">
+                            <p>assert()では失敗しかフック できないから、「98/100成功」 のようなカウントができない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-97">
+                          <h4>Page 97</h4>
+                          <div class="page-text">
+                            <p>PowerAssert(もどき)<br>書くのがめんどい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-98">
+                          <h4>Page 98</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-99">
+                          <h4>Page 99</h4>
+                          <div class="page-text">
+                            <p><strong>define.php</strong><br>&lt;?php </p><p>const collect_vars = &#39;return v(get_defined_vars()+<br>[&quot;this&quot;=&gt;isset($this)?$this:null]);&#39;; </p><p>function v(array $variables): string <br>{</p><p>    // $GLOBALSは長大なので消しとく </p><p>    unset($variables[&#39;GLOBALS&#39;]);     return \serialize($variables); <br>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-100">
+                          <h4>Page 100</h4>
+                          <div class="page-text">
+                            <p>次のパターンに<br>行きましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-101">
+                          <h4>Page 101</h4>
+                          <div class="page-text">
+                            <p><strong>仕様2: 関数を実行</strong></p><p>テストファイルは xxx_test.phpの形式 </p><p>その中に test_xxxx() 関数が定義する </p><p>Hamcrestを使ってテストしてみる </p><p>スクリプトを実行すると実行</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-102">
+                          <h4>Page 102</h4>
+                          <div class="page-text">
+                            <p>http://hamcrest.org/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-103">
+                          <h4>Page 103</h4>
+                          <div class="page-text">
+                            <p><strong>Hamcrest (hamcrest-php)</strong></p><p>マッチャー  </p><p> (値がマッチするか比較)</p><p>もともとはJavaのライブラリ </p><p>assertXXX()みたいなのが定義されてる </p><p>\Hamcrest\Util::registerGlobalFunctions()</p><p>を呼ぶとグローバル関数として定義される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-104">
+                          <h4>Page 104</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run </strong>(1/3)</p><p>#!/usr/bin/env php <br>&lt;?php <br>require __DIR__ . &#39;/../vendor/autoload.php&#39;; </p><p>\Hamcrest\Util::registerGlobalFunctions(); </p><p>chdir(__DIR__); <br>foreach (glob(&#39;*_test.php&#39;) as $file) { <br>    require_once $file; <br>} </p><p>$failures = []; $errors   = [];</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-105">
+                          <h4>Page 105</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run </strong>(2/3)</p><p>foreach (get_defined_functions(true)[&#39;user&#39;] as $func) { <br>    if (strpos($func, &#39;test_&#39;) === 0) { <br>        try { <br>            $func();             echo &#39;.&#39;; <br>        } catch (\Hamcrest\AssertionError $e) { <br>            $failures[] = $e; <br>            echo &#39;F&#39;; <br>        }catch (\Throwable $e) { <br>            $errors[] = $e; <br>            echo &#39;E&#39;; <br>        } <br>    } <br>} <br>echo PHP_EOL;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-106">
+                          <h4>Page 106</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run </strong>(3/3)</p><p>if ($failures) { <br>    echo &quot;Failures:&quot;, PHP_EOL; </p><p>    foreach ($failures as $f) { <br>        echo PHP_EOL; <br>        echo &quot;FILE: {$f-&gt;getFile()} ({$f-&gt;getLine()})&quot;, PHP_EOL; <br>        echo &quot;DESC: {$f-&gt;getMessage()})&quot;, PHP_EOL; <br>    } <br>} </p><p>if ($errors) { <br>    echo &quot;Errors:&quot;, PHP_EOL; <br>    dump($errors); <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-107">
+                          <h4>Page 107</h4>
+                          <div class="page-text">
+                            <p>また完成して<br>しまった…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-108">
+                          <h4>Page 108</h4>
+                          <div class="page-text">
+                            <p>テストを記述</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-109">
+                          <h4>Page 109</h4>
+                          <div class="page-text">
+                            <p><strong>fizzbuzz_test.php</strong><br>&lt;?php </p><p>function test_fizzbuzz() <br>{ <br>    assertThat(to_fizzbuzz(1), equalTo(&quot;1&quot;)); <br>    assertThat(to_fizzbuzz(3), equalTo(&quot;Fizz&quot;));     assertThat(to_fizzbuzz(5), equalTo(&quot;Buzz&quot;));     assertThat(to_fizzbuzz(10), equalTo(&quot;Buzz&quot;)); <br>    assertThat(to_fizzbuzz(15), equalTo(&quot;FizzBuzz&quot;)); <br>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-110">
+                          <h4>Page 110</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-111">
+                          <h4>Page 111</h4>
+                          <div class="page-text">
+                            <p>🤔</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-112">
+                          <h4>Page 112</h4>
+                          <div class="page-text">
+                            <p>出力差分はわかるけど いまいちわかりにくい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-113">
+                          <h4>Page 113</h4>
+                          <div class="page-text">
+                            <p>そうだ</p><p>パラメタライズテスト<br>をしよう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-114">
+                          <h4>Page 114</h4>
+                          <div class="page-text">
+                            <p>引数だけを変更して<br>同じテストをする</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-115">
+                          <h4>Page 115</h4>
+                          <div class="page-text">
+                            <p>PHPUnitでの </p><p>@dataProvider</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-116">
+                          <h4>Page 116</h4>
+                          <div class="page-text">
+                            <p>名前も拝借して<br>いきましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-117">
+                          <h4>Page 117</h4>
+                          <div class="page-text">
+                            <p><strong>fizzbuzz_test.php (Before)</strong><br>&lt;?php </p><p>function test_fizzbuzz() <br>{ <br>    assertThat(to_fizzbuzz(1), equalTo(&quot;1&quot;)); <br>    assertThat(to_fizzbuzz(3), equalTo(&quot;Fizz&quot;));     assertThat(to_fizzbuzz(5), equalTo(&quot;Buzz&quot;));     assertThat(to_fizzbuzz(10), equalTo(&quot;Buzz&quot;)); <br>    assertThat(to_fizzbuzz(15), equalTo(&quot;FizzBuzz&quot;)); <br>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-118">
+                          <h4>Page 118</h4>
+                          <div class="page-text">
+                            <p><strong>fizzbuzz_test.php (After)</strong></p><p>&lt;?php /** <br> * @dataProvider fizzbuzz_number_provider <br> */ <br>function test_fizzbuzz2($expected, $input) <br>{ <br>    assertThat(to_fizzbuzz($input), equalTo($expected)); <br>} </p><p>function fizzbuzz_number_provider() <br>{ <br>    return [ <br>        [&quot;1&quot;,         1],         [&quot;Fizz&quot;,      3],         [&quot;Buzz&quot;,      5],         [&quot;Buzz&quot;,     10],         [&quot;FizzBuzz&quot;, 15], <br>    ]; <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-119">
+                          <h4>Page 119</h4>
+                          <div class="page-text">
+                            <p>実行側も<br>書き換えていきます</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-120">
+                          <h4>Page 120</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run </strong>(2/3)</p><p>foreach (get_defined_functions(true)[&#39;user&#39;] as $func) { <br>    if (strpos($func, &#39;test_&#39;) === 0) { <br>        try { <br>            $func();             echo &#39;.&#39;; <br>        } catch (\Hamcrest\AssertionError $e) { <br>            $failures[] = $e; <br>            echo &#39;F&#39;; <br>        }catch (\Throwable $e) { <br>            $errors[] = $e; <br>            echo &#39;E&#39;; <br>        } <br>    } <br>} <br>echo PHP_EOL;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-121">
+                          <h4>Page 121</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run After</strong></p><p>foreach (get_defined_functions(true)[&#39;user&#39;] as $func) { <br>    if (strpos($func, &#39;test_&#39;) === 0) { <br>        $provider = get_provider($func) ?: function (){ yield []; }; </p><p>        foreach ($provider() as $args) { <br>            try { <br>                $func(...$args); <br>                echo &#39;.&#39;; <br>            } catch (\Hamcrest\AssertionError $e) { <br>                $failures[] = [&#39;error&#39; =&gt; $e, &#39;args&#39; =&gt; $args]; <br>                echo &#39;F&#39;; <br>            }catch (\Throwable $e) { <br>                $errors[] = $e; <br>                echo &#39;E&#39;; <br>            } </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-122">
+                          <h4>Page 122</h4>
+                          <div class="page-text">
+                            <p><strong>assert_tests/run getProvider</strong></p><p>function get_provider(string $func_name): ?string <br>{ <br>    $ref = new \ReflectionFunction($func_name); </p><p>    // @dataProvider hogehoge を取り出す </p><p>    if (preg_match(&#39;/@dataProvider +(?&lt;provider&gt;\S+)/&#39;, <br>$ref-&gt;getDocComment(), $m)) { <br>        return trim($m[&#39;provider&#39;]); <br>    } </p><p>    return null; <br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-123">
+                          <h4>Page 123</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-124">
+                          <h4>Page 124</h4>
+                          <div class="page-text">
+                            <p>まとめると</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-125">
+                          <h4>Page 125</h4>
+                          <div class="page-text">
+                            <p>単にテストを実行する</p><p>フレームワークっぽいもの<br>は意外と簡単に作れる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-126">
+                          <h4>Page 126</h4>
+                          <div class="page-text">
+                            <p><strong>PHPでテスト</strong> <strong>しにくい状態</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-127">
+                          <h4>Page 127</h4>
+                          <div class="page-text">
+                            <p>ここまでは「理想的な」</p><p>関数をテストすること<br>しか想定してない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-128">
+                          <h4>Page 128</h4>
+                          <div class="page-text">
+                            <p>理想的</p><p>|| <br>引数と返り値だけ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-129">
+                          <h4>Page 129</h4>
+                          <div class="page-text">
+                            <p>PHPで書かれる</p><p>「現実」のコードは<br>それだけじゃない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-130">
+                          <h4>Page 130</h4>
+                          <div class="page-text">
+                            <p>ファイル書き込み、データベース、<br>外部HTTP API呼び出し、グロー<br>バル変数、メール送信、HTTP<br>ヘッダ、クッキー…… などなど</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-131">
+                          <h4>Page 131</h4>
+                          <div class="page-text">
+                            <p>例: CLIでcookie()とか header()が呼び出され るとFatal errorになる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-132">
+                          <h4>Page 132</h4>
+                          <div class="page-text">
+                            <p>これはテスティングフレーム ワークだけではなくアプリケー ションの構造も再設計しない<br>と<strong>うまくテストできない</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-133">
+                          <h4>Page 133</h4>
+                          <div class="page-text">
+                            <p>HTTPはPSR-7に<br>するとか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-134">
+                          <h4>Page 134</h4>
+                          <div class="page-text">
+                            <p>外部への依存を</p><p>抽象化して<br>注入するとか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-135">
+                          <h4>Page 135</h4>
+                          <div class="page-text">
+                            <p>テスト実行中に</p><p>専用のDBを<br>起動して利用するとか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-136">
+                          <h4>Page 136</h4>
+                          <div class="page-text">
+                            <p>テストしたいと思った</p><p>瞬間に直さなきゃ</p><p>いけないことが<br>爆発的に発生して氏ぬ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-137">
+                          <h4>Page 137</h4>
+                          <div class="page-text">
+                            <p>😇</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-138">
+                          <h4>Page 138</h4>
+                          <div class="page-text">
+                            <p>次回に続く…?</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-139">
+                          <h4>Page 139</h4>
+                          <div class="page-text">
+                            <p><strong>まじめにテスト</strong> <strong>やりたいひとへ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-140">
+                          <h4>Page 140</h4>
+                          <div class="page-text">
+                            <p><strong>おまけ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-141">
+                          <h4>Page 141</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-142">
+                          <h4>Page 142</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-143">
+                          <h4>Page 143</h4>
+                          <div class="page-text">
+                            <p>PHPUnitも<br>良いが</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-144">
+                          <h4>Page 144</h4>
+                          <div class="page-text">
+                            <p>phpspecも<br>すごいぞ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-145">
+                          <h4>Page 145</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-146">
+                          <h4>Page 146</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
-                    
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p>で<strong>テスティングフレ…ry</strong>を</p><p><strong>PHP</strong><br> 実装する前に知っておきたい勘所</p><p><strong>Tips for implementing Testing Framework in PHP.</strong></p><p>2018-03-09 PHPerKaigi 2018 前夜祭</p><p>Nerima Coconeri Hall #phperkaigi</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>ピクシブ株式会社技術基盤チーム (pixiv.net)</li></ul></li><li>Emacs Lisper, PHPer</li><li>Emacs PHP Modeのメンテナ引き継ぎました<ul><li>好きなリスプはEmacs Lispです</li><li>Qiitaに記事を書いたり変なコメントしてるよ</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p><strong>pixiv</strong>のコードは</p><p>毎日どんどん<br>刷新されてるよ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>明日の<strong>pixiv</strong>を<br>作るのは俺たちだ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>We are hiring!</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p><strong>アジェンダ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p><strong>本日しない話</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>オブジェクト<br>指向</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p>TDD/BDDの 教義的な話</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p>定義に従った<br>厳密な用語</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p>Emacs <br>(私はphpunit.elの開発者でもあります)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p>!</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p>一連のストーリー<br>などは<strong>ない</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p>オムニバス</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>1. フレームワークなしのテスト<br>2. できる！ フレームワーク 3. PHPで注意すべき「状態」</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p>1. フレームワークなしのテスト<br>2. できる！ フレームワーク 3. PHPで注意すべき「状態」 ↑時間なくて収まらなかった</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p>本題の前に</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p>pixivは主に<br>PHPUnitでテスト</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p>僕がテストを新規を増や すならPHPUnitでテスト</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>% cd ~/pixiv/tests</p><p>% git ls-files &#39;*Test.php&#39; | wc -l</p><p>1606</p><p>% git ls-files &#39;*Test.php&#39; | xargs cat | wc -l <br></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p>どうすれば書きやすく</p><p>メンテできる<br>テストが書けるか悩み</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>本題の前に</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p><strong>さて</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>まれによく聞く</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p>PHPUnitとかphpspecとか 巨大な依存関係入れたくない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>せやな</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p>懸念の妥当性はともかく</p><p>依存パッケージの数が<br>それなりに多いのはたしか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p>「簡単なテストだけ 　できればいいよ」</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p>おう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p>じゃ、作るか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p>その前に</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p>ところでPHP標準のテス ティングフレームワーク<br>がある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p>http://qa.php.net/write-test.php</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p>PHP本体の<br>テストコード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p>php-srcに入ってる</p><p>run-tests.php</p><p>で</p><p>実行できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>実はPHPUnitでも おまけ機能として テスト実行できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p><strong>バッファの出力をテストする</strong></p><p>--TEST-- </p><p>--TEST-- </p><p>GET $_ENV test </p><p>Compute 1 + 1 test </p><p>--ENV-- </p><p>--FILE-- </p><p>return &lt;&lt;&lt;END </p><p>&lt;?= 1 + 1 ?&gt; </p><p>a=AAA </p><p>--EXPECT-- </p><p>b=BBB </p><p>2 </p><p>END; <br>--FILE-- <br>&lt;?php <br>echo getenv(&#39;a&#39;), &quot;\n&quot;; echo getenv(&#39;b&#39;), &quot;\n&quot;; <br>?&gt; <br>--EXPECT-- <br>AAA BBB</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p>ただし</p><p>(意図的なのか)</p><p>仕様を完全には<br>サポートしてません</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p>もしphptを採用する</p><p>run-tests.php</p><p>なら<br>を使った方がいい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p><strong>テスト</strong><br><strong>スクリプト</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p>なぜ人は<br>テストを書くのか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p>実装前に入出力の<br>例を明示したい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p>機能追加や</p><p>リファクタリングで<br>意図した挙動が壊れな<br>いことを保障したい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p>テストを書こう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p>そうすると</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p>関心がどうとか<br>って話になってくる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p><strong>うるせえ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p>やりたいことは<br>動作確認</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p>それだけ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p>テストスクリプトを<br>書こう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p><strong>test.php</strong></p><p>&lt;?php <br>require_once __DIR__ . &#39;/vendor/autoload.php&#39;; </p><p>(2 === 1 + 1) or die(&quot;LINE: &quot;. __LINE__); <br>(3 === 1.5 + 1.5) or die(&quot;LINE: &quot;. __LINE__);</p><p>$date = date(&#39;Y-m-d&#39;,4502304000); <br>(&quot;2112-09-13&quot; === $date) or die(&quot;LINE: &quot;. __LINE__); </p><p>$a = [1, 2, 3]; <br>(1 == array_shift($a)) or die(&quot;LINE: &quot;. __LINE__); </p><p>echo &#39;ok.&#39;, PHP_EOL;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p>失敗すると行が 出力されて終了</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p>or die()<br>書くのだるい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p>もうちょっと わかりやすく</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p>assert()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p><strong>test.php</strong></p><p>#!/usr/bin/env php <br>&lt;?php <br>require_once __DIR__ . &#39;/vendor/autoload.php&#39;; </p><p>assert(2 === 1 + 1); <br>assert(3 === 1.5 + 1.5); <br>assert(&quot;2112-09-13&quot; === date(&#39;Y-m-d&#39;, 4503168000)); </p><p>$a = [1, 2, 3]; <br>assert(1 == array_shift($a));</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p><strong>出力</strong></p><p>PHP Warning:  assert(): assert(3 === 1.5 + 1.5) failed in /Users/<br>megurine/repo/php/phperkaigi-test/assert-test.php on line 11 </p><p>Warning: assert(): assert(3 === 1.5 + 1.5) failed in /Users/megurine/<br>repo/php/phperkaigi-test/assert-test.php on line 11 <br>PHP Warning:  assert(): assert(&#39;2112-09-03&#39; === date(&#39;Y-m-d&#39;, <br>4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-<br>test.php on line 12 </p><p>Warning: assert(): assert(&#39;2112-09-03&#39; === date(&#39;Y-m-d&#39;, 4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-test.php on <br>line 12</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p>エラーハンドリングの</p><p>設定をしないと<br>出力が二重化される</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          <p>まあ雑だけど<br>テストにはなる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-text">
-                          <p>完</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-63">
-                        <h4>Page 63</h4>
-                        <div class="page-text">
-                          <p>☺</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-64">
-                        <h4>Page 64</h4>
-                        <div class="page-text">
-                          <p>最低限ができると<br>人間は欲が出てくる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-65">
-                        <h4>Page 65</h4>
-                        <div class="page-text">
-                          <p><strong>できる！</strong><br><strong>フレームワーク</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-66">
-                        <h4>Page 66</h4>
-                        <div class="page-text">
-                          <p>フレームワーク<br>とは</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-text">
-                          <p>https://ja.wikipedia.org/wiki/ソフトウェアフレームワーク</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-68">
-                        <h4>Page 68</h4>
-                        <div class="page-text">
-                          <p><strong>制御の反転</strong>が<br>ソフトウェアフレームワークの<br>特徴</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-69">
-                        <h4>Page 69</h4>
-                        <div class="page-text">
-                          <p>ふつうのライブラリは</p><p>あなたが書いたコードから<br>呼び出される</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-70">
-                        <h4>Page 70</h4>
-                        <div class="page-text">
-                          <p>フレームワークは<br>あなたが書いたコードを<br>呼び出す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-71">
-                        <h4>Page 71</h4>
-                        <div class="page-text">
-                          <p>これが<br>制御の反転</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-text">
-                          <p>ここからは<br>どんどんいきます</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-73">
-                        <h4>Page 73</h4>
-                        <div class="page-text">
-                          <p><strong>仕様1: コードをべたに実行</strong></p><p>テストファイルは xxx_test.phpの形式 </p><p>assert()を使ってテストする </p><p>スクリプトを実行すると実行</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-74">
-                        <h4>Page 74</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run</strong></p><p>#!/usr/bin/env php <br>&lt;?php <br>require __DIR__ . &#39;/../vendor/autoload.php&#39;; $testing = include __DIR__ . &#39;/bootstrap.php&#39;; <br>chdir(__DIR__); <br>foreach (glob(&#39;*_test.php&#39;) as $file) { <br>    try { <br>        include $file; <br>    } catch (\Throwable $e) { <br>        dump($e); <br>    } <br>} <br>$testing-&gt;finalize();</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-75">
-                        <h4>Page 75</h4>
-                        <div class="page-text">
-                          <p>assert()に失敗した</p><p>ときの結果は<br>カスタマイズできる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-76">
-                        <h4>Page 76</h4>
-                        <div class="page-text">
-                          <p>(実はPHP5方式と<br>PHP7方式で異なる) <strong>今回はPHP5方式</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-77">
-                        <h4>Page 77</h4>
-                        <div class="page-text">
-                          <p><strong>bootstrap.php</strong></p><p>&lt;?php <br>require_once __DIR__ . &#39;/define.php&#39;; <br>ini_set(&#39;zend.assertions&#39;, 1); ini_set(&#39;assert.exception&#39;, 0); assert_options(ASSERT_ACTIVE, 1); assert_options(ASSERT_BAIL, 0); <br>assert_options(ASSERT_QUIET_EVAL, 0); <br>assert_options(ASSERT_WARNING, 0);</p><p>$testing = new Testing(); <br>assert_options(ASSERT_CALLBACK, [$testing, &#39;handler&#39;]); <br>return $testing;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-78">
-                        <h4>Page 78</h4>
-                        <div class="page-text">
-                          <p><strong>Testing.php</strong><br>&lt;?php <br>class Testing { <br>    /** @var bool テスト失敗停止するか */ </p><p>    private $stop_on_failure = false; <br>    /** @var array[] 実行結果 */ </p><p>    private $result = [];</p><p>    public function __construct(array $options) { <br>        $this-&gt;stop_on_failure = $options[&#39;stop_on_failure&#39;] ?? false; <br>    }</p><p>    /** assert()の失敗時にこいつが呼ばれるように設定 */ </p><p>    public function handler($file, $line, $code, $desc = null) { <br>        $this-&gt;result[] = [$file, $line, $desc]; <br>        if ($this-&gt;stop_on_failure) $this-&gt;finalize(); <br>    }</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-79">
-                        <h4>Page 79</h4>
-                        <div class="page-text">
-                          <p><strong>Testing.php</strong><br>    /** いままで失敗したテストをまとめて結果表示 */</p><p>    public function finalize(): void <br>    { <br>        if ($this-&gt;result) { <br>            foreach ($this-&gt;result as [$file, $line, $desc]) <br>{ <br>                $this-&gt;output($file, $line, $desc); <br>            } <br>            exit(1); // エラー終了 </p><p>        } <br>        $this-&gt;result = [];         echo &#39;ok.&#39;, PHP_EOL; <br>        exit(0); <br>    }</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-80">
-                        <h4>Page 80</h4>
-                        <div class="page-text">
-                          <p><strong>Testing.php</strong><br>    private function output($file, $line, $desc): void <br>    { <br>        // ソースコードの該当行を取得 </p><p>        $code = trim(file($file)[$line-1]); </p><p>        echo &quot;FILE: {$file} ({$line})&quot;, PHP_EOL; <br>        echo &quot;CODE: {$code}&quot;, PHP_EOL;</p><p>        echo &quot;DESC: {$desc}&quot;, PHP_EOL; <br>    } </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-81">
-                        <h4>Page 81</h4>
-                        <div class="page-text">
-                          <p>完成！</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-82">
-                        <h4>Page 82</h4>
-                        <div class="page-text">
-                          <p>テストを記述</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-83">
-                        <h4>Page 83</h4>
-                        <div class="page-text">
-                          <p><strong>fizzbuzz_test.php</strong><br>&lt;?php <br>// to_fizzbuzz() 関数は別に定義済みの想定 </p><p>assert(&quot;1&quot;    === $actual = to_fizzbuzz(1)); assert(&quot;Fizz&quot; === $actual = to_fizzbuzz(3)); assert(&quot;Buzz&quot; === $actual = to_fizzbuzz(5)); assert(&quot;Buzz&quot; === $actual = to_fizzbuzz(10)); <br>assert(&quot;FizzBuzz&quot; === $actual = to_fizzbuzz(15)); </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-84">
-                        <h4>Page 84</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-text">
-                          <p>完璧では<br>(ただしassertは一行で書かれるものとする)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-text">
-                          <p>😊</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-87">
-                        <h4>Page 87</h4>
-                        <div class="page-text">
-                          <p>さらに<br>パワーアップ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-text">
-                          <p>PowerAssert (のようなもの)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-text">
-                          <p>Groovyのテストで<br>一躍知られた</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-text">
-                          <p>t-wadaさんの<br>power-assert.jsが有名</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-text">
-                          <p>http://hamcrest.org/</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-92">
-                        <h4>Page 92</h4>
-                        <div class="page-text">
-                          <p>PHPでちゃんと<br>作ろうとすると大変</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-93">
-                        <h4>Page 93</h4>
-                        <div class="page-text">
-                          <p>それっぽいもの<br>なら作れる！</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-94">
-                        <h4>Page 94</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-95">
-                        <h4>Page 95</h4>
-                        <div class="page-text">
-                          <p>欠点</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-96">
-                        <h4>Page 96</h4>
-                        <div class="page-text">
-                          <p>assert()では失敗しかフック できないから、「98/100成功」 のようなカウントができない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-97">
-                        <h4>Page 97</h4>
-                        <div class="page-text">
-                          <p>PowerAssert(もどき)<br>書くのがめんどい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-98">
-                        <h4>Page 98</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-99">
-                        <h4>Page 99</h4>
-                        <div class="page-text">
-                          <p><strong>define.php</strong><br>&lt;?php </p><p>const collect_vars = &#39;return v(get_defined_vars()+<br>[&quot;this&quot;=&gt;isset($this)?$this:null]);&#39;; </p><p>function v(array $variables): string <br>{</p><p>    // $GLOBALSは長大なので消しとく </p><p>    unset($variables[&#39;GLOBALS&#39;]);     return \serialize($variables); <br>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-100">
-                        <h4>Page 100</h4>
-                        <div class="page-text">
-                          <p>次のパターンに<br>行きましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-101">
-                        <h4>Page 101</h4>
-                        <div class="page-text">
-                          <p><strong>仕様2: 関数を実行</strong></p><p>テストファイルは xxx_test.phpの形式 </p><p>その中に test_xxxx() 関数が定義する </p><p>Hamcrestを使ってテストしてみる </p><p>スクリプトを実行すると実行</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-102">
-                        <h4>Page 102</h4>
-                        <div class="page-text">
-                          <p>http://hamcrest.org/</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-103">
-                        <h4>Page 103</h4>
-                        <div class="page-text">
-                          <p><strong>Hamcrest (hamcrest-php)</strong></p><p>マッチャー  </p><p> (値がマッチするか比較)</p><p>もともとはJavaのライブラリ </p><p>assertXXX()みたいなのが定義されてる </p><p>\Hamcrest\Util::registerGlobalFunctions()</p><p>を呼ぶとグローバル関数として定義される</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-104">
-                        <h4>Page 104</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run </strong>(1/3)</p><p>#!/usr/bin/env php <br>&lt;?php <br>require __DIR__ . &#39;/../vendor/autoload.php&#39;; </p><p>\Hamcrest\Util::registerGlobalFunctions(); </p><p>chdir(__DIR__); <br>foreach (glob(&#39;*_test.php&#39;) as $file) { <br>    require_once $file; <br>} </p><p>$failures = []; $errors   = [];</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-105">
-                        <h4>Page 105</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run </strong>(2/3)</p><p>foreach (get_defined_functions(true)[&#39;user&#39;] as $func) { <br>    if (strpos($func, &#39;test_&#39;) === 0) { <br>        try { <br>            $func();             echo &#39;.&#39;; <br>        } catch (\Hamcrest\AssertionError $e) { <br>            $failures[] = $e; <br>            echo &#39;F&#39;; <br>        }catch (\Throwable $e) { <br>            $errors[] = $e; <br>            echo &#39;E&#39;; <br>        } <br>    } <br>} <br>echo PHP_EOL;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-106">
-                        <h4>Page 106</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run </strong>(3/3)</p><p>if ($failures) { <br>    echo &quot;Failures:&quot;, PHP_EOL; </p><p>    foreach ($failures as $f) { <br>        echo PHP_EOL; <br>        echo &quot;FILE: {$f-&gt;getFile()} ({$f-&gt;getLine()})&quot;, PHP_EOL; <br>        echo &quot;DESC: {$f-&gt;getMessage()})&quot;, PHP_EOL; <br>    } <br>} </p><p>if ($errors) { <br>    echo &quot;Errors:&quot;, PHP_EOL; <br>    dump($errors); <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-107">
-                        <h4>Page 107</h4>
-                        <div class="page-text">
-                          <p>また完成して<br>しまった…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-108">
-                        <h4>Page 108</h4>
-                        <div class="page-text">
-                          <p>テストを記述</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-109">
-                        <h4>Page 109</h4>
-                        <div class="page-text">
-                          <p><strong>fizzbuzz_test.php</strong><br>&lt;?php </p><p>function test_fizzbuzz() <br>{ <br>    assertThat(to_fizzbuzz(1), equalTo(&quot;1&quot;)); <br>    assertThat(to_fizzbuzz(3), equalTo(&quot;Fizz&quot;));     assertThat(to_fizzbuzz(5), equalTo(&quot;Buzz&quot;));     assertThat(to_fizzbuzz(10), equalTo(&quot;Buzz&quot;)); <br>    assertThat(to_fizzbuzz(15), equalTo(&quot;FizzBuzz&quot;)); <br>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-110">
-                        <h4>Page 110</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-111">
-                        <h4>Page 111</h4>
-                        <div class="page-text">
-                          <p>🤔</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-112">
-                        <h4>Page 112</h4>
-                        <div class="page-text">
-                          <p>出力差分はわかるけど いまいちわかりにくい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-113">
-                        <h4>Page 113</h4>
-                        <div class="page-text">
-                          <p>そうだ</p><p>パラメタライズテスト<br>をしよう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-114">
-                        <h4>Page 114</h4>
-                        <div class="page-text">
-                          <p>引数だけを変更して<br>同じテストをする</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-115">
-                        <h4>Page 115</h4>
-                        <div class="page-text">
-                          <p>PHPUnitでの </p><p>@dataProvider</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-116">
-                        <h4>Page 116</h4>
-                        <div class="page-text">
-                          <p>名前も拝借して<br>いきましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-117">
-                        <h4>Page 117</h4>
-                        <div class="page-text">
-                          <p><strong>fizzbuzz_test.php (Before)</strong><br>&lt;?php </p><p>function test_fizzbuzz() <br>{ <br>    assertThat(to_fizzbuzz(1), equalTo(&quot;1&quot;)); <br>    assertThat(to_fizzbuzz(3), equalTo(&quot;Fizz&quot;));     assertThat(to_fizzbuzz(5), equalTo(&quot;Buzz&quot;));     assertThat(to_fizzbuzz(10), equalTo(&quot;Buzz&quot;)); <br>    assertThat(to_fizzbuzz(15), equalTo(&quot;FizzBuzz&quot;)); <br>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-118">
-                        <h4>Page 118</h4>
-                        <div class="page-text">
-                          <p><strong>fizzbuzz_test.php (After)</strong></p><p>&lt;?php /** <br> * @dataProvider fizzbuzz_number_provider <br> */ <br>function test_fizzbuzz2($expected, $input) <br>{ <br>    assertThat(to_fizzbuzz($input), equalTo($expected)); <br>} </p><p>function fizzbuzz_number_provider() <br>{ <br>    return [ <br>        [&quot;1&quot;,         1],         [&quot;Fizz&quot;,      3],         [&quot;Buzz&quot;,      5],         [&quot;Buzz&quot;,     10],         [&quot;FizzBuzz&quot;, 15], <br>    ]; <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-119">
-                        <h4>Page 119</h4>
-                        <div class="page-text">
-                          <p>実行側も<br>書き換えていきます</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-120">
-                        <h4>Page 120</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run </strong>(2/3)</p><p>foreach (get_defined_functions(true)[&#39;user&#39;] as $func) { <br>    if (strpos($func, &#39;test_&#39;) === 0) { <br>        try { <br>            $func();             echo &#39;.&#39;; <br>        } catch (\Hamcrest\AssertionError $e) { <br>            $failures[] = $e; <br>            echo &#39;F&#39;; <br>        }catch (\Throwable $e) { <br>            $errors[] = $e; <br>            echo &#39;E&#39;; <br>        } <br>    } <br>} <br>echo PHP_EOL;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-121">
-                        <h4>Page 121</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run After</strong></p><p>foreach (get_defined_functions(true)[&#39;user&#39;] as $func) { <br>    if (strpos($func, &#39;test_&#39;) === 0) { <br>        $provider = get_provider($func) ?: function (){ yield []; }; </p><p>        foreach ($provider() as $args) { <br>            try { <br>                $func(...$args); <br>                echo &#39;.&#39;; <br>            } catch (\Hamcrest\AssertionError $e) { <br>                $failures[] = [&#39;error&#39; =&gt; $e, &#39;args&#39; =&gt; $args]; <br>                echo &#39;F&#39;; <br>            }catch (\Throwable $e) { <br>                $errors[] = $e; <br>                echo &#39;E&#39;; <br>            } </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-122">
-                        <h4>Page 122</h4>
-                        <div class="page-text">
-                          <p><strong>assert_tests/run getProvider</strong></p><p>function get_provider(string $func_name): ?string <br>{ <br>    $ref = new \ReflectionFunction($func_name); </p><p>    // @dataProvider hogehoge を取り出す </p><p>    if (preg_match(&#39;/@dataProvider +(?&lt;provider&gt;\S+)/&#39;, <br>$ref-&gt;getDocComment(), $m)) { <br>        return trim($m[&#39;provider&#39;]); <br>    } </p><p>    return null; <br>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-123">
-                        <h4>Page 123</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-124">
-                        <h4>Page 124</h4>
-                        <div class="page-text">
-                          <p>まとめると</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-125">
-                        <h4>Page 125</h4>
-                        <div class="page-text">
-                          <p>単にテストを実行する</p><p>フレームワークっぽいもの<br>は意外と簡単に作れる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-126">
-                        <h4>Page 126</h4>
-                        <div class="page-text">
-                          <p><strong>PHPでテスト</strong> <strong>しにくい状態</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-127">
-                        <h4>Page 127</h4>
-                        <div class="page-text">
-                          <p>ここまでは「理想的な」</p><p>関数をテストすること<br>しか想定してない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-128">
-                        <h4>Page 128</h4>
-                        <div class="page-text">
-                          <p>理想的</p><p>|| <br>引数と返り値だけ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-129">
-                        <h4>Page 129</h4>
-                        <div class="page-text">
-                          <p>PHPで書かれる</p><p>「現実」のコードは<br>それだけじゃない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-130">
-                        <h4>Page 130</h4>
-                        <div class="page-text">
-                          <p>ファイル書き込み、データベース、<br>外部HTTP API呼び出し、グロー<br>バル変数、メール送信、HTTP<br>ヘッダ、クッキー…… などなど</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-131">
-                        <h4>Page 131</h4>
-                        <div class="page-text">
-                          <p>例: CLIでcookie()とか header()が呼び出され るとFatal errorになる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-132">
-                        <h4>Page 132</h4>
-                        <div class="page-text">
-                          <p>これはテスティングフレーム ワークだけではなくアプリケー ションの構造も再設計しない<br>と<strong>うまくテストできない</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-133">
-                        <h4>Page 133</h4>
-                        <div class="page-text">
-                          <p>HTTPはPSR-7に<br>するとか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-134">
-                        <h4>Page 134</h4>
-                        <div class="page-text">
-                          <p>外部への依存を</p><p>抽象化して<br>注入するとか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-135">
-                        <h4>Page 135</h4>
-                        <div class="page-text">
-                          <p>テスト実行中に</p><p>専用のDBを<br>起動して利用するとか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-136">
-                        <h4>Page 136</h4>
-                        <div class="page-text">
-                          <p>テストしたいと思った</p><p>瞬間に直さなきゃ</p><p>いけないことが<br>爆発的に発生して氏ぬ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-137">
-                        <h4>Page 137</h4>
-                        <div class="page-text">
-                          <p>😇</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-138">
-                        <h4>Page 138</h4>
-                        <div class="page-text">
-                          <p>次回に続く…?</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-139">
-                        <h4>Page 139</h4>
-                        <div class="page-text">
-                          <p><strong>まじめにテスト</strong> <strong>やりたいひとへ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-140">
-                        <h4>Page 140</h4>
-                        <div class="page-text">
-                          <p><strong>おまけ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-141">
-                        <h4>Page 141</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-142">
-                        <h4>Page 142</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-143">
-                        <h4>Page 143</h4>
-                        <div class="page-text">
-                          <p>PHPUnitも<br>良いが</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-144">
-                        <h4>Page 144</h4>
-                        <div class="page-text">
-                          <p>phpspecも<br>すごいぞ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-145">
-                        <h4>Page 145</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-146">
-                        <h4>Page 146</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fnlamirault%2Fphpunit.el&size=32" alt=""><a href="https://github.com/nlamirault/phpunit.el" target="_blank">GitHub - nlamirault/phpunit.el: Emacs mode to phpunit and test command line tool</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fqa.php.net%2Fwrite-test.php&size=32" alt=""><a href="http://qa.php.net/write-test.php" target="_blank">Writing Tests | php-src docs</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp%2Fphp-src%2Fblob%2Fmaster%2Frun-tests.php&size=32" alt=""><a href="https://github.com/php/php-src/blob/master/run-tests.php" target="_blank">php-src/run-tests.php at master · php/php-src · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp%2Fphp-src%2Fblob%2Fmaster%2Frun-tests.php&size=32" alt=""><a href="https://github.com/php/php-src/blob/master/run-tests.php" target="_blank">php-src/run-tests.php at master · php/php-src · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2582%25A6%25E3%2582%25A7%25E3%2582%25A2%25E3%2583%2595%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%25A0%25E3%2583%25AF%25E3%2583%25BC%25E3%2582%25AF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF" target="_blank">ソフトウェアフレームワーク - Wikipedia</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fpower-assert-js%2Fpower-assert&size=32" alt=""><a href="https://github.com/power-assert-js/power-assert" target="_blank">GitHub - power-assert-js/power-assert: Power Assert in JavaScript. Provides descriptive assertion messages through standard assert interface. No API is the best API.</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fhamcrest.org%2F&size=32" alt=""><a href="http://hamcrest.org/" target="_blank">Hamcrest</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-102">
-                        <h4>Page 102</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fhamcrest.org%2F&size=32" alt=""><a href="http://hamcrest.org/" target="_blank">Hamcrest</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-141">
-                        <h4>Page 141</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Famzn.to%2F2FDsg8w&size=32" alt=""><a href="http://amzn.to/2FDsg8w" target="_blank">テスト駆動開発 | Kent Beck, 和田 卓人 |本 | 通販 | Amazon</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-142">
-                        <h4>Page 142</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Famzn.to%2F2p5AfRF&size=32" alt=""><a href="http://amzn.to/2p5AfRF" target="_blank">Amazon.co.jp: 実践テスト駆動開発 (Object Oriented SELECTION) : Steve Freeman, Nat Pryce, 和智 右桂, 高木 正弘: 本</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-145">
-                        <h4>Page 145</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fiakio.hatenablog.com%2Fentry%2F2015%2F06%2F14%2F164729&size=32" alt=""><a href="http://iakio.hatenablog.com/entry/2015/06/14/164729" target="_blank">OSC2015北海道で「phpspecで学ぶLondon School TDD」という発表をしてきました - iakioの日記</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fejmr%2Fphp-mode&size=32" alt=""><a href="https://github.com/ejmr/php-mode" target="_blank" rel="noopener">GitHub - emacs-php/php-mode: A powerful and flexible Emacs major mode for editing PHP scripts</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fnlamirault%2Fphpunit.el&size=32" alt=""><a href="https://github.com/nlamirault/phpunit.el" target="_blank" rel="noopener">GitHub - nlamirault/phpunit.el: Emacs mode to phpunit and test command line tool</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fqa.php.net%2Fwrite-test.php&size=32" alt=""><a href="http://qa.php.net/write-test.php" target="_blank" rel="noopener">Writing Tests | php-src docs</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp%2Fphp-src%2Fblob%2Fmaster%2Frun-tests.php&size=32" alt=""><a href="https://github.com/php/php-src/blob/master/run-tests.php" target="_blank" rel="noopener">php-src/run-tests.php at master · php/php-src · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp%2Fphp-src%2Fblob%2Fmaster%2Frun-tests.php&size=32" alt=""><a href="https://github.com/php/php-src/blob/master/run-tests.php" target="_blank" rel="noopener">php-src/run-tests.php at master · php/php-src · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2582%25BD%25E3%2583%2595%25E3%2583%2588%25E3%2582%25A6%25E3%2582%25A7%25E3%2582%25A2%25E3%2583%2595%25E3%2583%25AC%25E3%2583%25BC%25E3%2583%25A0%25E3%2583%25AF%25E3%2583%25BC%25E3%2582%25AF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0%E3%83%AF%E3%83%BC%E3%82%AF" target="_blank" rel="noopener">ソフトウェアフレームワーク - Wikipedia</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fpower-assert-js%2Fpower-assert&size=32" alt=""><a href="https://github.com/power-assert-js/power-assert" target="_blank" rel="noopener">GitHub - power-assert-js/power-assert: Power Assert in JavaScript. Provides descriptive assertion messages through standard assert interface. No API is the best API.</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fhamcrest.org%2F&size=32" alt=""><a href="http://hamcrest.org/" target="_blank" rel="noopener">Hamcrest</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-102">
+                          <h4>Page 102</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fhamcrest.org%2F&size=32" alt=""><a href="http://hamcrest.org/" target="_blank" rel="noopener">Hamcrest</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-141">
+                          <h4>Page 141</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Famzn.to%2F2FDsg8w&size=32" alt=""><a href="http://amzn.to/2FDsg8w" target="_blank" rel="noopener">テスト駆動開発 | Kent Beck, 和田 卓人 |本 | 通販 | Amazon</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-142">
+                          <h4>Page 142</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Famzn.to%2F2p5AfRF&size=32" alt=""><a href="http://amzn.to/2p5AfRF" target="_blank" rel="noopener">Amazon.co.jp: 実践テスト駆動開発 (Object Oriented SELECTION) : Steve Freeman, Nat Pryce, 和智 右桂, 高木 正弘: 本</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-145">
+                          <h4>Page 145</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fiakio.hatenablog.com%2Fentry%2F2015%2F06%2F14%2F164729&size=32" alt=""><a href="http://iakio.hatenablog.com/entry/2015/06/14/164729" target="_blank" rel="noopener">OSC2015北海道で「phpspecで学ぶLondon School TDD」という発表をしてきました - iakioの日記</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

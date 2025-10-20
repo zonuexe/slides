@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20251011_why-static-analysis/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20251011_why-static-analysis/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20251011_why-static-analysis/">
 
           <title>なんでいま静的解析なの？ PHPで学ぶ「静」と「動」</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,19 +59,20 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>なんでいま静的解析なの？ PHPで学ぶ「静」と「動」</h1>
-              <p>公開日: <time datetime="2025-10-11">2025年10月11日</time></p>
+              <h1 class="slide-title"><a href="/slides/20251011_why-static-analysis/" class="p-name u-url u-uid permalink-link">なんでいま静的解析なの？ PHPで学ぶ「静」と「動」</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2025-10-11">2025年10月11日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
                 <div class="event-info">
-                  <p><time datetime="2025-10-11">2025年10月11日</time>に広島市南区のエールエールA館で開催された『<a href="https://phpcondo.connpass.com/event/69958/" target="_blank">PHPカンファレンス広島2025</a>』でレギュラーセッション(20分)として発表しました。</p>
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2025-10-11">2025年10月11日</time>に<span class="p-location">広島市南区</span>の<span class="p-location">エールエールA館</span>で開催された『<a href="https://phpcondo.connpass.com/event/69958/" class="p-name u-url" target="_blank" rel="noopener">PHPカンファレンス広島2025</a>』で<span class="p-category">レギュラーセッション</span> <span class="p-duration" data-duration="20">20分</span>として発表しました。</p>
                 </div>
               
 
@@ -78,7 +80,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpcon_hiroshima" target="_blank" class="hashtag">#phpcon_hiroshima</a>
+                  <a href="https://twitter.com/hashtag/phpcon_hiroshima" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpcon_hiroshima</a>
                 </div>
               
 
@@ -93,782 +95,781 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>なんでいま静的解析なの？ <br>PHPで学ぶ｢静｣と｢動｣</p><p>Why Static Analysis Now? Exploring “Static” and “Dynamic” in PHP</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2025-10-11 #phpcon_hiroshima </strong></p><p><strong>PHPカンファレンス広島2025</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 Platform Div &gt; WebTechnology Team PHPer<ul><li>2012年末から現職、APIとかCIとかいろいろなところを見つめてきました</li></ul></li><li>Emacs PHP Modeを開発しています (2017年-)</li><li>プログラミング言語にちょっとこだわりのある素人 (spcamp2010)</li><li>西日本とは縁もゆかりもなくて、広島に来たのは今日で三回目です！</li><li>assert(count($tadsan-&gt;phpcons) &gt;= 45);</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>今回のお題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p><strong>static</strong> <strong>dynamic</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>プログラミングを <br>やっていると <br>ちょくちょく出てくる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p><strong>static</strong></p><p><strong>dynamic</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p><strong>static</strong><br><strong>静</strong></p><p><strong>dynamic</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p><strong>static</strong><br><strong>静</strong></p><p><strong>dynamic</strong><br><strong>動</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>静とは 🧘</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>動とは 🏃</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>活動・動いている</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>活動・動いている</p><p>力強い・ <br>エネルギッシュ</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>活動・動いている</p><p>力強い・ <br>エネルギッシュ</p><p>変化・適応できる</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>活動・動いている</p><p>力強い・ <br>エネルギッシュ</p><p>変化・適応できる</p><p>コンパイル時ではなく、 <br>実行時に起こる</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>Webにおける静と動 <br>🌐</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>Webページはいつ「変化」するか</p><ul><li>永遠に変化しない／新しいファイルをアップロードしたら変化する</li><li>最初の表示は同じだが、人間が操作したら画面表示が変化する</li><li>ページをリロードするごとに新しい内容が表示される</li><li>人間が操作するごとに新しい内容が表示される</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>整理してみましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>Webアプリケーション分類</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>Webアプリケーション分類</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>フロントエンド </p><p>Webアプリケーション分類</p><p>アプリケーション</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>フロントエンド </p><p>Webアプリケーション分類</p><p>アプリケーション</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>フロントエンド </p><p>Webアプリケーション分類</p><p>アプリケーション</p><p>サーバーサイド </p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>アプリケーション</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>静的ホスティング vs Webアプリ</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>↑ 静的ホスティングサーバー </p><p>内容は変わることがある テンプレートエンジン + hydration</p><p>(GitHub Pages, PHP/CGI非対応レンタルサーバ, HTTPサーバ単体)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>動的Webサーバ</p><p>(PHP)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>↓ 動的サイト </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>アプリケーションサーバ (PHP, Node.js, Go, Railsなど…)</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>動的Webサーバ</p><p>(PHP)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーサイド単体で <br>扱えるのはここ</p><p>↓ 動的サイト </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>アプリケーションサーバ (PHP, Node.js, Go, Railsなど…)</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>動的Webサーバ</p><p>(PHP)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーサイド単体で  ここの裏側にも <br>扱えるのはここ PHP APIがいる</p><p>↓ 動的サイト </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>アプリケーションサーバ (PHP, Node.js, Go, Railsなど…)</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>Webアプリ vs Next.js</p><p> (SSR)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>Next.jsのようなフレームワークは </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>これに特化している</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>Vercel, AmplifyなどのPaaS<br>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>Webアプリ vs Next.js</p><p> (SSG/SPA)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  静的ページ  シングルページ 内容は常に同じ (SSG/静的サイト生成) アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>Next.jsは静的サイト開発にも使える</p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>Webアプリケーションの静と動</p><ul><li>ここまでの説明はとても大雑把</li><li>現実のWebサイトでは静的な要素と動的な要素が複雑に入り混じる<ul><li>静的なHTML/JSファイルからAPIにリクエストしてページ表示するとか</li></ul></li><li>静と動を適切に見極めて構成することで、開発効率やインフラコストの最適化</li><li>従来はサーバーサイドアプリケーションが必要だったものも、<br>近年では外部サービス(mBaaS/IDaaS)に依存することもできる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p><strong>キャッシュ </strong><br><strong>(CDN/キャッシュサーバ)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>セッション依存(ログイン後) ページはキャッシュできない</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p><strong>キャッシュ </strong><br><strong>(CDN/キャッシュサーバ)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>セッション依存(ログイン後) ページはキャッシュできない</p><p>適切にキャッシュ破棄できないと <br>古いコンテンツが残り続ける</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p><strong>キャッシュ </strong><br><strong>(CDN/キャッシュサーバ)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p><strong>ダイナミックレンダリング</strong></p><p><strong>(Rendertron)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>いろんな意味で <br>運用だいぶつらい</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p><strong>ダイナミックレンダリング</strong></p><p><strong>(Rendertron)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>いろんな意味で <br>運用だいぶつらい</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p><strong>ダイナミックレンダリング</strong></p><p><strong>(Rendertron)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p><p><strong>Next.js移行</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>静と動 🧘🏃</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>動くものと <br>変わらぬものがある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>開発における静と動 <br>🛠</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p>プログラムにも <br>静と動がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p><strong>引用： PHP (プログラミング言語) - Wikipedia (2025年6月22日 14:23版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p><strong>引用： PHP (プログラミング言語) - Wikipedia (2025年6月22日 14:23版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p><strong>引用： PHP (プログラミング言語) - Wikipedia (2025年6月22日 14:23版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p><strong>引用： C言語 - Wikipedia (2025年9月16日 22:41版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p><strong>引用： Java - Wikipedia (2025年9月24日 16:18版)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p>静的型付き</p><p>言語</p><p>(statically typed language)</p><ul><li>型検査 = プログラム(ソースコード)が型の制約を満たすか調べる<ul><li>例： 関数呼び出しに正しい型を渡せているか</li></ul></li><li>静的型付きの言語はプログラムの実行前に型検査合格を前提とする<ul><li>型がついたとき、実行時にその種のエラーが起こらない性質を<br>「健全である」あるいは「型安全である」という </li></ul></li><li>コンパイルの過程で型検査し、実行時に型情報を持たない言語も多い</li><li>静的型付けと呼ぶのはおすすめしない (が、よく言われている)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>動的言語</p><p>(dynamic language)</p><ul><li>プログラムの実行前に型検査合格を前提としない言語</li><li>実行時に「値」と「型タグ」をセットで扱い、処理しながら逐次型検査を行なう</li><li>実行時にソースコードを評価する(eval)など柔軟な機能を提供する<ul><li>原理上どんな文字列も実行できるので、無限の可能性を秘めている</li></ul></li><li>動的型付けと呼ぶのはおすすめしない (が、よく言われている)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p>無限の彼方へ さあ行くぞ！ </p><p>🚀🚀🚀</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>無限とか言われても困る <br>😵💫</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>品質管理 vs 俺たち</p><ul><li>ソフトウェアを安定させるには、その挙動を予測可能な範囲に収めたい</li><li>例：<br>メソッドに期待する形式の引数を渡せば、エラーなく実行されてほしい <ul><li>メソッドに同じ引数を渡せば、決まった結果になってほしい</li><li>わざわざ実装にジャンプしなくても、引数の形式がわかりやすくなってほしい</li></ul></li><li>そこで、動的解析 = ユニットテスト = 動かして試してみる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            <p>PHP vs 型付け</p><ul><li>PHPは根本的に動的言語であり、ほとんどの特徴が当てはまる</li><li>ただしPHPには型宣言があり、型宣言通りの値が渡されなければエラー</li><li>他言語でも型宣言は存在するが、実行時に保証されない口約束であることも<ul><li>Python, TypeScript…</li><li>一方でPHPでは動かしてみれば型宣言に反しているかがわかる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            <p><strong>PHP 5.x</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p><strong>PHP 5.x PHP 7.x</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            <p><strong>PHP 5.x PHP 7.x</strong></p><p>安全性を落とさず <br>本質的な実装に集中できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p>コーディングしながら <br>即座に間違いに気付きたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            <p>コーディングしながら <br>即座に間違いに気付きたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p>コーディングしながら <br>即座に間違いに気付きたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p>PHPStan</p><ul><li>PHPStan - PHP Static Analysis Tool<ul><li>フルネームで呼んでいる人は見たことがない</li><li>PHPで書かれたPHPの静的解析ツール</li></ul></li><li>チェコ人のOndřej Mirtesが個人で開発している<ul><li>今年になってPHPStan s.r.o(有限会社)として法人化した</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            <p>PHPUnitと <br>同じようにCIで <br>使うもの…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p>と考えてもいいが、 <br>まずは小さく 使ってほしい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            <p>インストラクション <br>PHPStanを使い倒せ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            <p>PHPStanは 毎秒起動せよ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p>……どうやって？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            <p>テキストエディタに <br>組み込みましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p>PhpStormで簡単に有効化</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p>VS Codeの場合</p><p><strong>おそらくSanderRondeが </strong><br><strong>いちばんよくできてる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p>VS Codeの場合</p><p><strong>おそらくSanderRondeが </strong><br><strong>いちばんよくできてる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p>Emacsは私が作っています</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p>常時ペアプロ相手に <br>なってくれてる <br>ようなもの</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p>\PHPStan\dumpType()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p>PHPStanの <br>基本機能を使える <br>ようになろう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            <p>無限の可能性を <br>認識可能な範囲内に <br>縮めるのが型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-text">
+                            <p>実行しなくても <br>わかること <br>= 静的に確認したい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-92">
+                          <h4>Page 92</h4>
+                          <div class="page-text">
+                            <p>実行して <br>確かめたいこと </p><p>= PHPUnit</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-93">
+                          <h4>Page 93</h4>
+                          <div class="page-text">
+                            <p>静と動</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-94">
+                          <h4>Page 94</h4>
+                          <div class="page-text">
+                            <p>静的解析とテスト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-95">
+                          <h4>Page 95</h4>
+                          <div class="page-text">
+                            <p>どちらかではなく <br>両輪</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-96">
+                          <h4>Page 96</h4>
+                          <div class="page-text">
+                            <p>PHPStanが <br>変だなと思ったら</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-97">
+                          <h4>Page 97</h4>
+                          <div class="page-text">
+                            <p>phpusers-ja Slack</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-98">
+                          <h4>Page 98</h4>
+                          <div class="page-text">
+                            <p>続きはWebで</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
-                    
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p>なんでいま静的解析なの？ <br>PHPで学ぶ｢静｣と｢動｣</p><p>Why Static Analysis Now? Exploring “Static” and “Dynamic” in PHP</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2025-10-11 #phpcon_hiroshima </strong></p><p><strong>PHPカンファレンス広島2025</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 Platform Div &gt; WebTechnology Team PHPer<ul><li>2012年末から現職、APIとかCIとかいろいろなところを見つめてきました</li></ul></li><li>Emacs PHP Modeを開発しています (2017年-)</li><li>プログラミング言語にちょっとこだわりのある素人 (spcamp2010)</li><li>西日本とは縁もゆかりもなくて、広島に来たのは今日で三回目です！</li><li>assert(count($tadsan-&gt;phpcons) &gt;= 45);</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p>今回のお題</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p><strong>static</strong> <strong>dynamic</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>プログラミングを <br>やっていると <br>ちょくちょく出てくる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p><strong>static</strong></p><p><strong>dynamic</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p><strong>static</strong><br><strong>静</strong></p><p><strong>dynamic</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p><strong>static</strong><br><strong>静</strong></p><p><strong>dynamic</strong><br><strong>動</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>静とは 🧘</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p><strong>引用： </strong><br><strong>英辞郎 on the WEB, 株式会社アルク, EDP </strong></p><p><strong>https://eowf.alc.co.jp/search?q=static </strong><br><strong>https://eowf.alc.co.jp/search?q=dynamic </strong><br><strong>(2025年10月11日 閲覧)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p>動とは 🏃</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>活動・動いている</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p>活動・動いている</p><p>力強い・ <br>エネルギッシュ</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p>活動・動いている</p><p>力強い・ <br>エネルギッシュ</p><p>変化・適応できる</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p>活動・動いている</p><p>力強い・ <br>エネルギッシュ</p><p>変化・適応できる</p><p>コンパイル時ではなく、 <br>実行時に起こる</p><p><strong>引用： dynamic - Wiktionary, the free dictionary (2025年8月12日 10:33版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p>Webにおける静と動 <br>🌐</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p>Webページはいつ「変化」するか</p><ul><li>永遠に変化しない／新しいファイルをアップロードしたら変化する</li><li>最初の表示は同じだが、人間が操作したら画面表示が変化する</li><li>ページをリロードするごとに新しい内容が表示される</li><li>人間が操作するごとに新しい内容が表示される</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>整理してみましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p>Webページはどこで「変化」するか</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>Webアプリケーション分類</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p>Webアプリケーション分類</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p>フロントエンド </p><p>Webアプリケーション分類</p><p>アプリケーション</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p>フロントエンド </p><p>Webアプリケーション分類</p><p>アプリケーション</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p>フロントエンド </p><p>Webアプリケーション分類</p><p>アプリケーション</p><p>サーバーサイド </p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>アプリケーション</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p>静的ホスティング vs Webアプリ</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>↑ 静的ホスティングサーバー </p><p>内容は変わることがある テンプレートエンジン + hydration</p><p>(GitHub Pages, PHP/CGI非対応レンタルサーバ, HTTPサーバ単体)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p>動的Webサーバ</p><p>(PHP)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>↓ 動的サイト </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>アプリケーションサーバ (PHP, Node.js, Go, Railsなど…)</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p>動的Webサーバ</p><p>(PHP)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーサイド単体で <br>扱えるのはここ</p><p>↓ 動的サイト </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>アプリケーションサーバ (PHP, Node.js, Go, Railsなど…)</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p>動的Webサーバ</p><p>(PHP)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーサイド単体で  ここの裏側にも <br>扱えるのはここ PHP APIがいる</p><p>↓ 動的サイト </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>アプリケーションサーバ (PHP, Node.js, Go, Railsなど…)</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p>Webアプリ vs Next.js</p><p> (SSR)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>Next.jsのようなフレームワークは </p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>これに特化している</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>Vercel, AmplifyなどのPaaS<br>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>Webアプリ vs Next.js</p><p> (SSG/SPA)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  静的ページ  シングルページ 内容は常に同じ (SSG/静的サイト生成) アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>Next.jsは静的サイト開発にも使える</p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p>Webアプリケーションの静と動</p><ul><li>ここまでの説明はとても大雑把</li><li>現実のWebサイトでは静的な要素と動的な要素が複雑に入り混じる<ul><li>静的なHTML/JSファイルからAPIにリクエストしてページ表示するとか</li></ul></li><li>静と動を適切に見極めて構成することで、開発効率やインフラコストの最適化</li><li>従来はサーバーサイドアプリケーションが必要だったものも、<br>近年では外部サービス(mBaaS/IDaaS)に依存することもできる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p><strong>キャッシュ </strong><br><strong>(CDN/キャッシュサーバ)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>セッション依存(ログイン後) ページはキャッシュできない</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p><strong>キャッシュ </strong><br><strong>(CDN/キャッシュサーバ)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>セッション依存(ログイン後) ページはキャッシュできない</p><p>適切にキャッシュ破棄できないと <br>古いコンテンツが残り続ける</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ</p><p>計算コストが重い</p><p>内容は常に同じ アプリケーション</p><p><strong>キャッシュ </strong><br><strong>(CDN/キャッシュサーバ)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p><strong>ダイナミックレンダリング</strong></p><p><strong>(Rendertron)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>いろんな意味で <br>運用だいぶつらい</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p><strong>ダイナミックレンダリング</strong></p><p><strong>(Rendertron)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p>静と動の境界を「ずらす」</p><p>SEOが弱い <br>(クローリングが遅い)</p><p>いろんな意味で <br>運用だいぶつらい</p><p>ブラウザ画面上で変化しない ブラウザ画面上で変化する</p><p>サーバーが返す  シングルページ <br>静的ページ<br>内容は常に同じ アプリケーション</p><p><strong>ダイナミックレンダリング</strong></p><p><strong>(Rendertron)</strong></p><p>サーバーが返す  サーバーサイド  サーバーサイドレンダリング </p><p>内容は変わることがある テンプレートエンジン + hydration</p><p><strong>Next.js移行</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p>静と動 🧘🏃</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p>動くものと <br>変わらぬものがある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p>開発における静と動 <br>🛠</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p>プログラムにも <br>静と動がある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p><strong>引用： PHP (プログラミング言語) - Wikipedia (2025年6月22日 14:23版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p><strong>引用： PHP (プログラミング言語) - Wikipedia (2025年6月22日 14:23版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p><strong>引用： PHP (プログラミング言語) - Wikipedia (2025年6月22日 14:23版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p><strong>引用： C言語 - Wikipedia (2025年9月16日 22:41版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p><strong>引用： Java - Wikipedia (2025年9月24日 16:18版)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p>静的型付き</p><p>言語</p><p>(statically typed language)</p><ul><li>型検査 = プログラム(ソースコード)が型の制約を満たすか調べる<ul><li>例： 関数呼び出しに正しい型を渡せているか</li></ul></li><li>静的型付きの言語はプログラムの実行前に型検査合格を前提とする<ul><li>型がついたとき、実行時にその種のエラーが起こらない性質を<br>「健全である」あるいは「型安全である」という </li></ul></li><li>コンパイルの過程で型検査し、実行時に型情報を持たない言語も多い</li><li>静的型付けと呼ぶのはおすすめしない (が、よく言われている)</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p>動的言語</p><p>(dynamic language)</p><ul><li>プログラムの実行前に型検査合格を前提としない言語</li><li>実行時に「値」と「型タグ」をセットで扱い、処理しながら逐次型検査を行なう</li><li>実行時にソースコードを評価する(eval)など柔軟な機能を提供する<ul><li>原理上どんな文字列も実行できるので、無限の可能性を秘めている</li></ul></li><li>動的型付けと呼ぶのはおすすめしない (が、よく言われている)</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          <p>無限の彼方へ さあ行くぞ！ </p><p>🚀🚀🚀</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-text">
-                          <p>無限とか言われても困る <br>😵💫</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-63">
-                        <h4>Page 63</h4>
-                        <div class="page-text">
-                          <p>品質管理 vs 俺たち</p><ul><li>ソフトウェアを安定させるには、その挙動を予測可能な範囲に収めたい</li><li>例：<br>メソッドに期待する形式の引数を渡せば、エラーなく実行されてほしい <ul><li>メソッドに同じ引数を渡せば、決まった結果になってほしい</li><li>わざわざ実装にジャンプしなくても、引数の形式がわかりやすくなってほしい</li></ul></li><li>そこで、動的解析 = ユニットテスト = 動かして試してみる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-64">
-                        <h4>Page 64</h4>
-                        <div class="page-text">
-                          <p>PHP vs 型付け</p><ul><li>PHPは根本的に動的言語であり、ほとんどの特徴が当てはまる</li><li>ただしPHPには型宣言があり、型宣言通りの値が渡されなければエラー</li><li>他言語でも型宣言は存在するが、実行時に保証されない口約束であることも<ul><li>Python, TypeScript…</li><li>一方でPHPでは動かしてみれば型宣言に反しているかがわかる</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-65">
-                        <h4>Page 65</h4>
-                        <div class="page-text">
-                          <p><strong>PHP 5.x</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-66">
-                        <h4>Page 66</h4>
-                        <div class="page-text">
-                          <p><strong>PHP 5.x PHP 7.x</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-text">
-                          <p><strong>PHP 5.x PHP 7.x</strong></p><p>安全性を落とさず <br>本質的な実装に集中できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-68">
-                        <h4>Page 68</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-69">
-                        <h4>Page 69</h4>
-                        <div class="page-text">
-                          <p>コーディングしながら <br>即座に間違いに気付きたい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-70">
-                        <h4>Page 70</h4>
-                        <div class="page-text">
-                          <p>コーディングしながら <br>即座に間違いに気付きたい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-71">
-                        <h4>Page 71</h4>
-                        <div class="page-text">
-                          <p>コーディングしながら <br>即座に間違いに気付きたい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-text">
-                          <p>PHPStan</p><ul><li>PHPStan - PHP Static Analysis Tool<ul><li>フルネームで呼んでいる人は見たことがない</li><li>PHPで書かれたPHPの静的解析ツール</li></ul></li><li>チェコ人のOndřej Mirtesが個人で開発している<ul><li>今年になってPHPStan s.r.o(有限会社)として法人化した</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-73">
-                        <h4>Page 73</h4>
-                        <div class="page-text">
-                          <p>PHPUnitと <br>同じようにCIで <br>使うもの…</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-74">
-                        <h4>Page 74</h4>
-                        <div class="page-text">
-                          <p>と考えてもいいが、 <br>まずは小さく 使ってほしい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-75">
-                        <h4>Page 75</h4>
-                        <div class="page-text">
-                          <p>インストラクション <br>PHPStanを使い倒せ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-76">
-                        <h4>Page 76</h4>
-                        <div class="page-text">
-                          <p>PHPStanは 毎秒起動せよ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-77">
-                        <h4>Page 77</h4>
-                        <div class="page-text">
-                          <p>……どうやって？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-78">
-                        <h4>Page 78</h4>
-                        <div class="page-text">
-                          <p>テキストエディタに <br>組み込みましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-79">
-                        <h4>Page 79</h4>
-                        <div class="page-text">
-                          <p>PhpStormで簡単に有効化</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-80">
-                        <h4>Page 80</h4>
-                        <div class="page-text">
-                          <p>VS Codeの場合</p><p><strong>おそらくSanderRondeが </strong><br><strong>いちばんよくできてる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-81">
-                        <h4>Page 81</h4>
-                        <div class="page-text">
-                          <p>VS Codeの場合</p><p><strong>おそらくSanderRondeが </strong><br><strong>いちばんよくできてる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-82">
-                        <h4>Page 82</h4>
-                        <div class="page-text">
-                          <p>Emacsは私が作っています</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-83">
-                        <h4>Page 83</h4>
-                        <div class="page-text">
-                          <p>常時ペアプロ相手に <br>なってくれてる <br>ようなもの</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-84">
-                        <h4>Page 84</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-text">
-                          <p>\PHPStan\dumpType()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-87">
-                        <h4>Page 87</h4>
-                        <div class="page-text">
-                          <p>PHPStanの <br>基本機能を使える <br>ようになろう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-text">
-                          <p>無限の可能性を <br>認識可能な範囲内に <br>縮めるのが型</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-text">
-                          <p>実行しなくても <br>わかること <br>= 静的に確認したい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-92">
-                        <h4>Page 92</h4>
-                        <div class="page-text">
-                          <p>実行して <br>確かめたいこと </p><p>= PHPUnit</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-93">
-                        <h4>Page 93</h4>
-                        <div class="page-text">
-                          <p>静と動</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-94">
-                        <h4>Page 94</h4>
-                        <div class="page-text">
-                          <p>静的解析とテスト</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-95">
-                        <h4>Page 95</h4>
-                        <div class="page-text">
-                          <p>どちらかではなく <br>両輪</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-96">
-                        <h4>Page 96</h4>
-                        <div class="page-text">
-                          <p>PHPStanが <br>変だなと思ったら</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-97">
-                        <h4>Page 97</h4>
-                        <div class="page-text">
-                          <p>phpusers-ja Slack</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-98">
-                        <h4>Page 98</h4>
-                        <div class="page-text">
-                          <p>続きはWebで</p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Feowf.alc.co.jp%2Fsearch%3Fq%3Dstatic&size=32" alt=""><a href="https://eowf.alc.co.jp/search?q=static" target="_blank">“static”の検索結果（696 件）：英辞郎 on the WEB Pro Lite</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Feowf.alc.co.jp%2Fsearch%3Fq%3Ddynamic&size=32" alt=""><a href="https://eowf.alc.co.jp/search?q=dynamic" target="_blank">“dynamic”の検索結果（3161 件）：英辞郎 on the WEB Pro Lite</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fen.wiktionary.org%2Fwiki%2Fdynamic&size=32" alt=""><a href="https://en.wiktionary.org/wiki/dynamic" target="_blank">dynamic - Wiktionary, the free dictionary</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fen.wiktionary.org%2Fw%2Findex.php%3Ftitle%3Ddynamic%26oldid%3D85867807&size=32" alt=""><a href="https://en.wiktionary.org/w/index.php?title=dynamic&amp;oldid=85867807" target="_blank">dynamic - Wiktionary, the free dictionary (2025-08-12T10:33:33版)</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FPHP_(%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B0%25E3%2583%25A9%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0%25E8%25A8%2580%25E8%25AA%259E)&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" target="_blank">PHP (プログラミング言語) - Wikipedia</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FC%25E8%25A8%2580%25E8%25AA%259E&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E" target="_blank">C言語 - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3DC%25E8%25A8%2580%25E8%25AA%259E%26oldid%3D106491218&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=C%E8%A8%80%E8%AA%9E&amp;oldid=106491218" target="_blank">C言語 - Wikipedia (2025-09-16T22:41:47版)</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FJava&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/Java" target="_blank">Java - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3DJava%26oldid%3D106582902&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=Java&amp;oldid=106582902" target="_blank">Java - Wikipedia (2025-09-24T16:18:20版)</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphpstan%2Fphpstan%23phpstan---php-static-analysis-tool&size=32" alt=""><a href="https://github.com/phpstan/phpstan#phpstan---php-static-analysis-tool" target="_blank">GitHub - phpstan/phpstan: PHP Static Analysis Tool - discover bugs in your code without running it!</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fphpstan-typing-tutorial&size=32" alt=""><a href="https://github.com/zonuexe/phpstan-typing-tutorial" target="_blank">GitHub - zonuexe/phpstan-typing-tutorial</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Feowf.alc.co.jp%2Fsearch%3Fq%3Dstatic&size=32" alt=""><a href="https://eowf.alc.co.jp/search?q=static" target="_blank" rel="noopener">“static”の検索結果（696 件）：英辞郎 on the WEB Pro Lite</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Feowf.alc.co.jp%2Fsearch%3Fq%3Ddynamic&size=32" alt=""><a href="https://eowf.alc.co.jp/search?q=dynamic" target="_blank" rel="noopener">“dynamic”の検索結果（3161 件）：英辞郎 on the WEB Pro Lite</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fen.wiktionary.org%2Fwiki%2Fdynamic&size=32" alt=""><a href="https://en.wiktionary.org/wiki/dynamic" target="_blank" rel="noopener">dynamic - Wiktionary, the free dictionary</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fen.wiktionary.org%2Fw%2Findex.php%3Ftitle%3Ddynamic%26oldid%3D85867807&size=32" alt=""><a href="https://en.wiktionary.org/w/index.php?title=dynamic&amp;oldid=85867807" target="_blank" rel="noopener">dynamic - Wiktionary, the free dictionary (2025-08-12T10:33:33版)</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FPHP_(%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B0%25E3%2583%25A9%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0%25E8%25A8%2580%25E8%25AA%259E)&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/PHP_(%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E8%A8%80%E8%AA%9E)" target="_blank" rel="noopener">PHP (プログラミング言語) - Wikipedia</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FC%25E8%25A8%2580%25E8%25AA%259E&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/C%E8%A8%80%E8%AA%9E" target="_blank" rel="noopener">C言語 - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3DC%25E8%25A8%2580%25E8%25AA%259E%26oldid%3D106491218&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=C%E8%A8%80%E8%AA%9E&amp;oldid=106491218" target="_blank" rel="noopener">C言語 - Wikipedia (2025-09-16T22:41:47版)</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2FJava&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/Java" target="_blank" rel="noopener">Java - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3DJava%26oldid%3D106582902&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=Java&amp;oldid=106582902" target="_blank" rel="noopener">Java - Wikipedia (2025-09-24T16:18:20版)</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphpstan%2Fphpstan%23phpstan---php-static-analysis-tool&size=32" alt=""><a href="https://github.com/phpstan/phpstan#phpstan---php-static-analysis-tool" target="_blank" rel="noopener">GitHub - phpstan/phpstan: PHP Static Analysis Tool - discover bugs in your code without running it!</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fphpstan-typing-tutorial&size=32" alt=""><a href="https://github.com/zonuexe/phpstan-typing-tutorial" target="_blank" rel="noopener">GitHub - zonuexe/phpstan-typing-tutorial</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20170829_metaprogramming-in-php/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20170829_metaprogramming-in-php/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20170829_metaprogramming-in-php/">
 
           <title>PHPにおけるメタプログラミングの温床</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,19 +59,20 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>PHPにおけるメタプログラミングの温床</h1>
-              <p>公開日: <time datetime="2017-08-29">2017年8月29日</time></p>
+              <h1 class="slide-title"><a href="/slides/20170829_metaprogramming-in-php/" class="p-name u-url u-uid permalink-link">PHPにおけるメタプログラミングの温床</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2017-08-29">2017年8月29日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
                 <div class="event-info">
-                  <p><time datetime="2017-08-20">2017年8月20日</time>に東京都大田区の日本工学院専門学校 蒲田キャンパスで開催された『<a href="https://ll.jus.or.jp/2017/" target="_blank">LLイベント(Learn Languages 2017)</a>』でライトニングトーク(5分)として発表しました。</p>
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2017-08-20">2017年8月20日</time>に<span class="p-location">東京都大田区</span>の<span class="p-location">日本工学院専門学校 蒲田キャンパス</span>で開催された『<a href="https://ll.jus.or.jp/2017/" class="p-name u-url" target="_blank" rel="noopener">LLイベント(Learn Languages 2017)</a>』で<span class="p-category">ライトニングトーク</span> <span class="p-duration" data-duration="5">5分</span>として発表しました。</p>
                 </div>
               
 
@@ -78,7 +80,7 @@
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/ll2017jp" target="_blank" class="hashtag">#ll2017jp</a>
+                  <a href="https://twitter.com/hashtag/ll2017jp" target="_blank" class="hashtag p-category u-url" rel="noopener">#ll2017jp</a>
                 </div>
               
 
@@ -93,460 +95,459 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p><strong>PHPにおけるメタプログラミングの温床</strong></p><p></p><p>2017-08-20 NEEC Kamata #ll2017jp<br>ODC 2017 Tokyo/ Learn Languages (LL2017)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>Emacs Lisper, PHPer</li></ul></li><li>Qiitaに記事を書いたり変なコメントしてるよ</li><li>動的言語はコンピューティングの真髄</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>世の中にはいろんな クールな言語がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>PHPには毛ほども興味のなさそうな皆さまにPHPの<strong>動的な言語機能</strong>を紹介します</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>サンプルコードは言語機能を<strong>簡易に紹介する</strong>ためのものです</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>利用の際は必要性と利便性を<strong>慎重に</strong>判断すること。<br>(メタプログラミングって基本的にそーゆーものですけど…)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p><strong>アジェンダ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>0.  前提<br>1. 初級篇<br>2. 中級篇<br>3. 上級篇</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p><strong>前提</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p><strong>PHPは、所謂LLとしては遊びが少ない</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p><strong>例) 原則として関数やクラスを再定義できない</strong><br>(致命的エラーが発生)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p><strong>RubyやPythonと違って</strong> <strong>オープンクラスではない </strong><br>(モンキーパッチができない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>謎なタイミングで<br>クラス定義が変更される<br>ことが ない<br>(基本的には)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p><strong>＝静的解析しやすい</strong><br><strong>条件が揃ってる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p><strong>その和を乱す邪悪な</strong><br><strong>動的メタプログラミング</strong><br><strong>テクニックが存在する</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>😇</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p><strong>初級編</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>callable</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>関数として呼出し可能な値を表す擬似型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p><strong>callable</strong></p><p><strong>// Before</strong><br>if ($cond) {<br>    foo($var);<br>} else {<br>    bar($var);<br>}</p><p><strong>// After</strong><br>$f = $cond ? &#39;foo&#39; : &#39;bar&#39;;<br>call_user_func($f, $var);<br><br><strong>// こうやって書いてもいい</strong>$f($var);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p><strong>map</strong></p><p>$ary = [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;]; <br>//=&gt; [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;]</p><p>$bry = []; </p><p>$cry = </p><p>foreach ($ary as $i =&gt; $a) { </p><p>array_map(&#39;ucfirst&#39;, $ary);</p><p>    $bry[$i] =&gt; ucfirst($a); <br>} </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>compact()</p><p>extract()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p><strong>変数テーブルにアク</strong><br><strong>セスできる関数</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>compact()</p><p><strong>変数テーブルから</strong><br><strong>取り出して配列にする</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p><strong>compact()</strong></p><p>$foo = foo(); $bar = bar();</p><p>hoge([  hoge(compact(&#39;foo&#39;,&#39;bar&#39;));<br>    &#39;foo&#39; =&gt; $foo,     &#39;bar&#39; =&gt; $bar <br>]);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>extract()</p><p><strong>変数テーブルから</strong> <strong>取り出して配列に</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p><strong>extract()</strong></p><p>function (array $vs) <br>{</p><p>$hoge_foo = $vs[&#39;foo&#39;];</p><p>extract($vs, </p><p>      EXTR_PREFIX_ALL, </p><p>$hoge_bar = $vs[&#39;bar&#39;];</p><p>&#39;hoge&#39;);</p><p>本当はissetでチェックすべき</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>extract() <br><strong>未使用変数の検出できない </strong><br><strong>読みにくくなるので邪悪 </strong><br><strong>バグの温床であるばかりか、</strong> <strong>ふつうに脆弱性の温床になる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>$$var</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>$$var</p><p><strong>可変変数</strong></p><p><strong>(variable variables)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p><strong>可変変数</strong></p><p>$world = &quot;こんにちは世界&quot;; </p><p>$hello = &quot;world&quot;; <br>$v = &quot;hello&quot;; </p><p>var_dump($v);    //=&gt; &quot;hello&quot; var_dump($$v);   //=&gt; &quot;world&quot;</p><p>var_dump($$$v);  //=&gt; &quot;こんにちは世界&quot; </p><p>// </p><p>$$ はいくつ付けてもよい！！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>debug_backtrace()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p><strong>スタックトレースを</strong></p><p><strong>全部取得できる</strong><br><strong>(ファイル・引数含む)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>(これを悪用すればどんな邪悪なことができるかは明白なので省略)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p><strong>中級編</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p><strong>マジックメソッド</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>__get($name)</p><p>__set($name, $value)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>__get()<br><strong>アクセス不可プロパティ</strong> <strong>を読み出そうとしたとき</strong><br><strong>に呼ばれる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>__set()<br><strong>アクセス不可プロパティ</strong> <strong>を書き込もうとしたとき</strong><br><strong>に呼ばれる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p><strong>__get(), __set()</strong></p><p>class Hoge {</p><p>    private $values = []; <br>    public function __set($name, $value) {</p><p>        $values[$name] = $value;</p><p>    } <br>    public function __get($name) {</p><p>        return $values[$name];</p><p>    }</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>「アクセス不可」は未定義プロパティだけはなくprivate, protected含む</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p><strong>読み出し専用プロパティ</strong></p><p>/**<br> * @property-read string $name<br><br>class Hoge {<br>    private $name; <br>    public function __construct($name) {<br>        $this-&gt;name = $name;<br>    } <br>    public function __get($name) {<br>        return $values[$name];<br>    }</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p><strong>書き込み禁止プロパティ</strong></p><p>    public function __set($name) {</p><p>       throw new OutOfRangeException();</p><p>    }</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>__call($name, $args)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>__call()<br><strong>アクセス不可メソッドを</strong> <strong>起動しようとしたときに</strong><br><strong>呼ばれる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p><strong>Proxyパターン</strong></p><p>class HogeProxy {</p><p>    private $hoge; <br>    public function __construct(Hoge $hoge) {</p><p>        $this-&gt;hoge = $hoge;</p><p>    } <br>    public function __call($name, $args) {</p><p>        return call_user_func_array($name, $args);</p><p>    }</p><p>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p><strong>Proxyパターン (PHPDoc)</strong></p><p>/**</p><p> * @method Foo getFoo()</p><p> * @method string format(string $tpl)</p><p> * @method void close()</p><p> */ <br>class HogeProxy {     /** @var Hoge */</p><p>    private $hoge; <br>    public function __construct(Hoge $hoge) {</p><p>        $this-&gt;hoge = $hoge;</p><p>    } <br>    public function __call($name, $args) {</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p><strong>上級編</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>spl_autoload _register()</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p><strong>クラスが定義された</strong> <strong>ファイルを自動ロー</strong> <strong>ドするための仕組み</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p><strong>(ふつうはComposerがやってくれるので自分で定義する必要ない)</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p><strong>ふつうのクラスローダー</strong></p><p>spl_autoload_register(function ($class) {<br>    $file = strtr($class, &#39;\\&#39;, &#39;/&#39;) . &#39;.php&#39;; <br>    $path = __DIR__ . &#39;/&#39; . $file; <br>    if (file_exists($path)) {<br>        require $path;<br>    }<br>});</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p><strong>クラスが読み込まれ</strong><br><strong>る前に介入できる</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p><strong>邪悪クラスローダー</strong></p><p>if (file_exists($path)) {</p><p>    $evil_path = evil_path($path);     if (file_exists($evil_path)) { <br>        $src = file_get_contents($path); <br>        // ファイルを魔改造<br>        $evil_src = evil_customize($src);<br>        file_put_contents($evil_path, $evil_src);<br>   } <br>   require $evil_path;<br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p><strong>まとめ</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>PHPは制限の大い言語のようだが、遊べるポイントはいろいろある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p><strong>大いなる力には大いなる責任がry</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p>PHPUnit, PsySH, そのほか一部のフレームワークなどはメタプログラミングのテクニックを活用してる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p><strong>それ用のライブラリもある。</strong></p><p>(Go! AOP https://github.com/goaop/framework)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p><strong>実用知識！</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p><strong>そなえよう</strong></p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
                     
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p>　　 における<br> メタプログラミングの温床</p><p><strong>Meta programming for PHP</strong></p><p>#ll2017jp</p><p>2017-08-20 NEEC Kamata <br><strong>ODC 2017 Tokyo/ Learn Languages (LL2017)</strong></p>
-                        </div>
-                      </div>
+                      <p>関連リンクがありません。</p>
                     
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p><strong>お前誰よ</strong><br><strong>うさみけんた (@tadsan) / Zonu.EXE </strong></p><ul><li>GitHub/Packagistでは id: zonuexe<ul><li>Emacs Lisper, PHPer</li></ul></li><li>Qiitaに記事を書いたり変なコメントしてるよ</li><li>動的言語はコンピューティングの真髄</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p>世の中にはいろんな クールな言語がある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p>PHPには毛ほども興味のな さそうな皆さまにPHPの<strong>動</strong> <strong>的な言語機能</strong>を紹介します</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>サンプルコードは言 語機能を<strong>簡易に紹介</strong> <strong>する</strong>ためのものです</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>利用の際は必要性と利便性</p><p>を<strong>慎重に</strong>判断すること。<br>(メタプログラミングって基本的<br>にそーゆーものですけど…)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p><strong>アジェンダ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p>0.  前提 1. 初級篇 2. 中級篇 3. 上級篇</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p><strong>前提</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p><strong>PHPは、所謂LLと</strong><br><strong>しては遊びが少ない</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p><strong>例) 原則として関数や</strong><br><strong>クラスを再定義できない </strong><br>(致命的エラーが発生)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p><strong>RubyやPythonと違って</strong> <strong>オープンクラスではない </strong><br>(モンキーパッチができない)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p>謎なタイミングで<br>クラス定義が変更される<br>ことが ない<br>(基本的には)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p><strong>＝静的解析しやすい</strong><br><strong>条件が揃ってる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p><strong>その和を乱す邪悪な</strong><br><strong>動的メタプログラミング</strong><br><strong>テクニックが存在する</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>😇</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p><strong>初級編</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          <p>callable</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p><strong>関数として呼出し可</strong> <strong>能な値を表す擬似型</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p><strong>callable</strong></p><p>//    //   <br>Before After</p><p>if ($cond) {  $f = $cond ? &#39;foo&#39; : &#39;bar&#39;;     foo($var);  call_user_func($f, $var); <br>} else { <br>    bar($var);  //   </p><p>こうやって書いてもいい</p><p>}</p><p>$f($var);</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p><strong>map</strong></p><p>$ary = [&quot;apple&quot;, &quot;orange&quot;, &quot;banana&quot;]; <br>//=&gt; [&quot;Apple&quot;, &quot;Orange&quot;, &quot;Banana&quot;]</p><p>$bry = []; </p><p>$cry = </p><p>foreach ($ary as $i =&gt; $a) { </p><p>array_map(&#39;ucfirst&#39;, $ary);</p><p>    $bry[$i] =&gt; ucfirst($a); <br>} </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>compact()</p><p>extract()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p><strong>変数テーブルにアク</strong><br><strong>セスできる関数</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p>compact()</p><p><strong>変数テーブルから</strong><br><strong>取り出して配列にする</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p><strong>compact()</strong></p><p>$foo = foo(); $bar = bar();</p><p>hoge([  hoge(compact(&#39;foo&#39;,&#39;bar&#39;));<br>    &#39;foo&#39; =&gt; $foo,     &#39;bar&#39; =&gt; $bar <br>]);</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>extract()</p><p><strong>変数テーブルから</strong> <strong>取り出して配列に</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p><strong>extract()</strong></p><p>function (array $vs) <br>{</p><p>$hoge_foo = $vs[&#39;foo&#39;];</p><p>extract($vs, </p><p>      EXTR_PREFIX_ALL, </p><p>$hoge_bar = $vs[&#39;bar&#39;];</p><p>&#39;hoge&#39;);</p><p>本当はissetでチェックすべき</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>extract() <br><strong>未使用変数の検出できない </strong><br><strong>読みにくくなるので邪悪 </strong><br><strong>バグの温床であるばかりか、</strong> <strong>ふつうに脆弱性の温床になる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p>$$var</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p>$$var</p><p><strong>可変変数</strong></p><p><strong>(variable variables)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p><strong>可変変数</strong></p><p>$world = &quot;こんにちは世界&quot;; </p><p>$hello = &quot;world&quot;; <br>$v = &quot;hello&quot;; </p><p>var_dump($v);    //=&gt; &quot;hello&quot; var_dump($$v);   //=&gt; &quot;world&quot;</p><p>var_dump($$$v);  //=&gt; &quot;こんにちは世界&quot; </p><p>// </p><p>$$ はいくつ付けてもよい！！</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p>debug_backtrace()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p><strong>スタックトレースを</strong></p><p><strong>全部取得できる</strong><br><strong>(ファイル・引数含む)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p>(これを悪用すればどん な邪悪なことができる かは明白なので省略)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p><strong>中級編</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p><strong>マジック</strong> <strong>メソッド</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p>__get($name)</p><p>__set($name, $value)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>__get()<br><strong>アクセス不可プロパティ</strong> <strong>を読み出そうとしたとき</strong><br><strong>に呼ばれる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p>__set()<br><strong>アクセス不可プロパティ</strong> <strong>を書き込もうとしたとき</strong><br><strong>に呼ばれる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p><strong>__get(), __set()</strong></p><p>class Hoge {</p><p>    private $values = []; <br>    public function __set($name, $value) {</p><p>        $values[$name] = $value;</p><p>    } <br>    public function __get($name) {</p><p>        return $values[$name];</p><p>    }</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p>「アクセス不可」は未定</p><p>義プロパティだけはなく</p><p>private protected</p><p>,  含む</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p><strong>読み出し専用プロパティ</strong></p><p>/**</p><p> * @property-read string $name</p><p> */ <br>class Hoge {</p><p>    private $name; <br>    public function __construct($name) {</p><p>        $this-&gt;name = $name;</p><p>    } <br>    public function __get($name) {</p><p>        return $values[$name];</p><p>    }</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p><strong>書き込み禁止プロパティ</strong></p><p>    public function __set($name) {</p><p>       throw new OutOfRangeException();</p><p>    }</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p>__call($name, $args)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p>__call()<br><strong>アクセス不可メソッドを</strong> <strong>起動しようとしたときに</strong><br><strong>呼ばれる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p><strong>Proxyパターン</strong></p><p>class HogeProxy {</p><p>    private $hoge; <br>    public function __construct(Hoge $hoge) {</p><p>        $this-&gt;hoge = $hoge;</p><p>    } <br>    public function __call($name, $args) {</p><p>        return call_user_func_array($name, $args);</p><p>    }</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p><strong>Proxyパターン (PHPDoc)</strong></p><p>/**</p><p> * @method Foo getFoo()</p><p> * @method string format(string $tpl)</p><p> * @method void close()</p><p> */ <br>class HogeProxy {     /** @var Hoge */</p><p>    private $hoge; <br>    public function __construct(Hoge $hoge) {</p><p>        $this-&gt;hoge = $hoge;</p><p>    } <br>    public function __call($name, $args) {</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p><strong>上級編</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p>spl_autoload _register()</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p><strong>クラスが定義された</strong> <strong>ファイルを自動ロー</strong> <strong>ドするための仕組み</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p><strong>(ふつうはComposerが</strong> <strong>やってくれるので自分</strong> <strong>で定義する必要ない)</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p><strong>ふつうのクラスローダー</strong></p><p>spl_autoload_register(function ($class) {</p><p>    $file = strtr($class, &#39;\\&#39;, &#39;/&#39;) . &#39;.php&#39;; <br>    $path = __DIR__ . &#39;/&#39; . $file; <br>    if (file_exists($path)) {</p><p>        require $path;</p><p>    }</p><p>});</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p><strong>クラスが読み込まれ</strong><br><strong>る前に介入できる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p><strong>邪悪クラスローダー</strong></p><p>if (file_exists($path)) {</p><p>    $evil_path = evil_path($path);     if (file_exists($evil_path)) { <br>        $src = file_get_contents($path); <br>        //   </p><p>ファイルを魔改造</p><p>        $evil_src = evil_customize($src);</p><p>        file_put_contents($evil_path, $evil_src);</p><p>   } <br>   require $evil_path;</p><p>}</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p><strong>まとめ</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p><strong>PHPは制限の大い言語</strong> <strong>のようだが、遊べるポ</strong> <strong>イントはいろいろある</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p><strong>大いなる力には</strong><br><strong>大いなる責任がry</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p><strong>PHPUnit, PsySH, そのほか</strong></p><p><strong>一部のフレームワークなどは</strong> <strong>メタプログラミングのテクニッ</strong><br><strong>クを活用してる</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p><strong>それ用のライブラリ</strong></p><p><strong>もある。</strong></p><p>(Go! AOP  )</p><p>https://github.com/goaop/framework</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p><strong>実用知識！</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          <p><strong>そなえよう</strong></p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    <p>関連リンクがありません。</p>
-                  
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>

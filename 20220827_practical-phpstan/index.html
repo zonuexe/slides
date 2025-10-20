@@ -21,6 +21,7 @@
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20220827_practical-phpstan/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20220827_practical-phpstan/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20220827_practical-phpstan/">
 
           <title>実践PHPStan</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -58,33 +59,34 @@
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>実践PHPStan</h1>
-              <p>公開日: <time datetime="2022-08-27">2022年8月27日</time></p>
+              <h1 class="slide-title"><a href="/slides/20220827_practical-phpstan/" class="p-name u-url u-uid permalink-link">実践PHPStan</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2022-08-27">2022年8月27日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               
                 <div class="event-info">
-                  <p><time datetime="2022-01-21">2022年1月21日</time>に沖縄県那覇市のZORKS沖縄 および YouTube Liveで開催された『<a href="https://phpcon-okinawa.connpass.com/event/257992/" target="_blank">PHPカンファレンス沖縄2022</a>』でレギュラートーク(30分)として発表しました。</p>
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2022-01-21">2022年1月21日</time>に<span class="p-location">沖縄県那覇市</span>の<span class="p-location">ZORKS沖縄 および YouTube Live</span>で開催された『<a href="https://phpcon-okinawa.connpass.com/event/257992/" class="p-name u-url" target="_blank" rel="noopener">PHPカンファレンス沖縄2022</a>』で<span class="p-category">レギュラートーク</span> <span class="p-duration" data-duration="30">30分</span>として発表しました。</p>
                 </div>
               
 
               
                 <div class="related-articles">
                   <ul>
-                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphpcon-okinawa-2022%2Fproposal%2F604a95d0-d92d-48eb-8682-7cbdde8a8fef&size=32" alt=""><a href="https://fortee.jp/phpcon-okinawa-2022/proposal/604a95d0-d92d-48eb-8682-7cbdde8a8fef" target="_blank">実践PHPStan by うさみけんた | プロポーザル | PHPカンファレンス沖縄2022 #phpcon_okinawa - fortee.jp</a><br>プロポーザル</li>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphpcon-okinawa-2022%2Fproposal%2F604a95d0-d92d-48eb-8682-7cbdde8a8fef&size=32" alt=""><a href="https://fortee.jp/phpcon-okinawa-2022/proposal/604a95d0-d92d-48eb-8682-7cbdde8a8fef" class="u-url" target="_blank" rel="noopener">実践PHPStan by うさみけんた | プロポーザル | PHPカンファレンス沖縄2022 #phpcon_okinawa - fortee.jp</a><br>プロポーザル</li>
                   </ul>
                 </div>
               
 
               
                 <div class="hashtags">
-                  <a href="https://twitter.com/hashtag/phpcon_okinawa" target="_blank" class="hashtag">#phpcon_okinawa</a>
+                  <a href="https://twitter.com/hashtag/phpcon_okinawa" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpcon_okinawa</a>
                 </div>
               
 
@@ -99,1472 +101,1471 @@
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p><strong>実践PHPStan</strong></p><p>Practical PHPStan</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>PHP Conference Okinawa 2022 </strong></p><p><strong>2022-08-27</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>tadsanのあれこれが読める場所</p><ul><li>https://tadsan.fanbox.cc/</li><li>https://scrapbox.io/php/</li><li>https://www.phper.ninja/</li><li>https://zenn.dev/tadsan</li><li>https://qiita.com/tadsan</li><li>https://github.com/bag2php</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>https://www.phper.ninja/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>https://scrapbox.io/php/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>今回のお題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>プロポーザル</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>先日、型についての話もしました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>PHPカンファレンスでも話しました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p><strong>今回のゴール</strong></p><p>PHPStanで型を付けて <br>既存コードの型を検査</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p><strong>今回やらないこと</strong></p><p>PHPStanの詳細な設定 <br>CI環境の組み方 <br>ジェネリクス/条件型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>ジェネリクスについて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>条件付き戻り値型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>このスライドは         <br>本日中に公開されます</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>この発表では知っておくべき機能 を雑に取り上げるので本番運用／ 提案の前にドキュメントを自身で<br>しっかり読み込みましょう。</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>それでもわからないことがあれば TwitterかSlackのphpusers-ja <br>#type-safeで尋ねてください</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>PHPStan <br>使ってますか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>PHPStanとは何か</p><ul><li>静的に(=プログラムを動作させずに)コードの状態を解析するツール<ul><li>広い意味ではコードのフォーマッターやタグ生成なども含む</li></ul></li></ul><p><strong>リ ン タ ー</strong></p><ul><li>PHPStanは静的解析の中でもLinterと呼ばれるジャンルのツール</li></ul><ul><li>⇔ 動的解析 (静的解析の対義語)<ul><li>XdebugやPHPUnitはプログラムを動かしてみて性質を確かめる</li><li>従来のPHPStanは静的と動的のハイブリッドだった</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>なに? 使ってない?</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p> あなたとPHPStan いますぐダウンロー <br>ド</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>どうやって？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>Ond ej said...<br><strong>ř</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p><strong>PHP 7.2以上ならプロジェクトに追加しよう</strong></p><p>composer require--dev </p><p>phpstan/phpstan</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p><strong>プロジェクトに追加できないなら</strong></p><p>composer globalrequire </p><p>phpstan/phpstan</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>require --dev以外の方法を検討</p><ul><li>要は何らかの事情があってcomposer.jsonに追加できないなら仕方ない<ul><li>プロジェクトがPHP 7.2以前に依存しているとき</li><li>権限の問題などでcomposer.jsonに追加でないとき</li></ul></li><li>それ以外は原則Composerに追加しましょう<ul><li>PhpStormの最新版なら、いい感じに勝手にPHPStanを動かしてくれる</li><li>もっと詳細な話はぺちこん沖縄当日までの間にzennに書きます</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>PHPStanを入れてどうするの</p><ul><li>Composerの実行ファイルは ./vendor/bin/phpstan にある<ul><li>以下、パスを省略して単に phpstan コマンドとして表記</li></ul></li><li>基本は phpstan analyze のように動かすと解析できる<ul><li>phpstan analyze src/Foo/Target.php でファイル単位解析</li></ul></li><li>PHPStan ProというWebインターフェイスもある<ul><li>弊社では応援の意味も込めてProを契約しています</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>PhpStormがあるのに必要…?</p><ul><li>PhpStormもがんばってPHPStanやPsalmとの互換性を高めているが、<br>解析能力に関しては専門のツールの方が強い <ul><li>PHPStanとPsalmはユーザーがPHPで自由に拡張できる</li></ul></li><li>PhpStormの方がレガシー寄りのPHPバージョンに強い<ul><li>PHPStanはPHP 7.2を以上サポート</li><li>PhpStormのヘッドレス版のQodanaというツールがCI用途に使える</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>解析結果はリアルタイム表示しよう</p><ul><li>PhpStorm: 最近のバージョンでは標準組み込み</li></ul><p>(場合によって要設定)</p><ul><li>VS Code: sordev.phpstan ErrorLens</li></ul><p>+</p><p> (Marketplaceには古いのもあるので注意)</p><ul><li>Vim/NeoVim: coc.nvimとかALEを入れるといいと思います</li><li>Emacs: Hycheck-phpstan</li></ul><p>(私が作っています)</p><ul><li>その他のLSP対応エディタ: efm-langserver</li></ul><p>(汎用言語サーバー)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>外した方がいいPhpStorm設定</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>外した方がいいPhpStorm設定</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>外した方がいいPhpStorm設定</p><p>@param とか @returnを<br>執拗に全部埋めてくる</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>ここ最近のPHPStan</p><ul><li>完全静的解析モードがデフォルトになりました<ul><li>いままでのPHPStanは実行時リフレクションで解析コストを抑えていた</li><li>改善の積み重ねによりパフォーマンスがものすごく向上している</li><li>従来通りの実行時リフレクションも使える</li></ul></li><li>PHPStanはハイペースで改善されているのでガンガン更新しましょう<ul><li>ただし今月は開発者が夏休みを宣言している</li></ul></li></ul><p>⛱</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>PHPStanは何ではないか</p><ul><li>PHPのあらゆる関数に対して完璧な型を付けてくれるわけではない<ul><li>不具合や意図しない挙動を発見したら報告してほしい</li><li>Twitterに書くだけでも作者か日本人の誰かが反応してくれると思う</li></ul></li><li>オープンソースソフトウェアであり、商用サポートはない<ul><li>チェコ在住の個人 が開発している</li></ul></li></ul><p>(Ondřej Mirtes)</p><ul><li>コミュニティによるバグ修正や機能追加の貢献も受け入れている</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>PHPの型の基礎</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>型の基本的な考え方</p><ul><li>基本は型宣言できるPHPの型を覚える<ul><li>クラス/インターフェイス名 (PHP 5)</li><li>複合型 array / callable (PHP 5)</li><li>スカラー値 int / Hoat / string / bool (≧ PHP 7.0)</li><li>特別な戻り値型 void (≧ PHP 7.0) / never (≧ PHP 8.1)</li><li>そのほかの型表記</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>ユニオン型 </p><p><strong>A|B</strong></p><p>AまたはB <br>(複雑な式は書けない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>交(cid:20281)型 </p><p><strong>A&amp;B</strong></p><p>AおよびB <br>(複雑な式は書けない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>型 </p><p>DNF<br><strong>int|A|(B&amp;C)|null</strong></p><p>intまたはAまたは「BおよびC」またはnull <br>(一定の制約下で複雑な型も書ける)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>null許容型 </p><p>?<br><strong>A</strong></p><p>Aまたはnull <br>デフォルトで許容しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>謎のPHP用語</p><p><strong>mixed</strong></p><p>任意の(すべての)型を表す型 <br>(ほかの言語でのany)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>型をどこに書くか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>型宣言</p><p> (type declaration)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>型宣言</p><p> (type declaration)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>型宣言</p><p> (type declaration)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>型宣言</p><p> (type declaration)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>型宣言</p><p> (type declaration)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>型注釈</p><p> (type annotation)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>型注釈</p><p> (type annotation)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>型注釈</p><p> (type annotation)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>型宣言 vs PHPDoc(型注釈)</p><ul><li>型宣言された型は、実行時に100%確実に保証される実効性のある型です</li><li>PHPDocは /** ... */ 形式のブロック内に書かれる単なるコメントです<ul><li>実行時にはその通りの型であることは保証されず、型は口約束に過ぎません</li></ul></li><li>この発表内で「型を付ける」というときは型宣言と型注釈のどちらも使います<ul><li>実効性のある型と口約束に過ぎない型の二枚舌の使い分けが<br>動的言語における現実的な型の付け方になります</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>無駄なPHPDocは書かない</p><ul><li>型宣言と同じ内容をPHPDocに書き写さない<ul><li>自然言語で説明を書きたいときは書く</li><li>int→positive-int string→定数 のように型を強化する場合は書く</li></ul></li><li>継承元と同じ型の場合は何も書かない (共変型付けをしたいときは書く)<ul><li>PHP: 共変性と反変性 - Manual</li></ul></li><li>几帳面に埋めようとしてくるPhpStormの言うことを聞かない</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p>外した方がいいPhpStorm設定</p><p>(再掲)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>外した方がいいPhpStorm設定</p><p>(再掲)</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>外した方がいいPhpStorm設定</p><p>(再掲)</p><p>@param とか @returnを<br>執拗に全部埋めてくる</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>型宣言があれば <br>PHPDocなくても <br>足りるんじゃないの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p>PHPStanには <br>もっと強力な型がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p>PHPStanを 使ってみよう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p>オンライン <br>サンドボックス</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>いますぐダウンロー <br>ド </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p>いますぐダウンロー <br>ド <br>しなくてもいい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>https://phpstan.org/try</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>こういう関数を <br>考えてみましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            <p>型宣言で型のついた完璧な関数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p><p>検索ワード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p><p>検索ワード</p><p>何これ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p><p>検索ワード</p><p>何これ</p><p>何これ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p>PHPStan第一の関門(レベル6)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            <p>PHPStan第一の関門(レベル6)</p><p>$options <br>配列の中身わからん</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p>PHPStan第一の関門(レベル6)</p><p>$options <br>配列の中身わからん</p><p>returnされる <br>配列の中身わからん</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p>再度完璧に型を付けた関数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            <p>再度完璧に型を付けた関数</p><p>配列の中身には あらゆる可能性</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p>型を表示してみる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            <p>取り出してきた値の配列</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            <p>取り出してきた値の配列</p><p>配列の中身わからん</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p>型がついていないとはどういうことか</p><ul><li>プログラムで具体的なことをするために、必要な情報が揃っていない<ul><li>今回の場合だと「検索して取得した本の情報を画面に出力する」など</li><li>配列の中にどのような値が入っているのか内部構造が明示されてない</li></ul></li><li>多くの場合、mixed型の場合は具体的な操作をするための情報が欠けている</li><li>PHPStanは値を引数として渡すときに、要求する型に対して 渡す型が十分に絞り込まれていないと容赦なく叱ってくれる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            <p>このプログラムが正しいか判断できない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p>必要のないところにmixedは書かない</p><ul><li>アプリケーション実装においてmixedと適切な場面はあまりない<ul><li>mixed = いかなる種類のデータも受け入れるということ</li></ul></li><li>ビジネスロジックというよりユーティリティ的なものが該当する<ul><li>mixedが適切なのはvar_dump(), is_string() のような関数</li><li>array&lt;mixed&gt; を受け入れるのはcount()とかsort()とかだけ</li></ul></li><li>ジェネリクスを使えばmixedと型付けを両立できるが、今回は割愛</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p>コードに型を付ける</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p>型宣言があれば <br>足りるんじゃないの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p>型宣言だけでは <br>表現力が不足している</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p>array<br>“配列”の曖昧さ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            <p>別途arrayの話もしました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            <p>配列はひとつ！じゃない！！</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト<br>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], <br>] </li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト<br>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], <br>] </li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト<br>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], <br>] </li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト</li></ul><p>array{id:int, name:string}</p><p>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], </p><p>] </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト</li></ul><p>array{id:int, name:string}</p><p>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], </p><p>] </p><p>list&lt;array{id:int, name:string}&gt;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            <p>array-shapes <br>(またはobject-like arrays)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-91">
+                          <h4>Page 91</h4>
+                          <div class="page-text">
+                            <p>arrayに詳細に型を付ける</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-92">
+                          <h4>Page 92</h4>
+                          <div class="page-text">
+                            <p>arrayに詳細に型を付ける</p><p>fullかpartialのみ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-93">
+                          <h4>Page 93</h4>
+                          <div class="page-text">
+                            <p>取り出してきた値の配列</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-94">
+                          <h4>Page 94</h4>
+                          <div class="page-text">
+                            <p>取り出してきた値の配列</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-95">
+                          <h4>Page 95</h4>
+                          <div class="page-text">
+                            <p>取り出してきた値の配列</p><p>fullかpartialなのに</p><p>perfect </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-96">
+                          <h4>Page 96</h4>
+                          <div class="page-text">
+                            <p>取り出してきた値の配列</p><p>fullかpartialなのに</p><p>perfect </p><p>ほんとはtitleなのに <br>nameでアクセス </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-97">
+                          <h4>Page 97</h4>
+                          <div class="page-text">
+                            <p>PHPStanの <br>強力な型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-98">
+                          <h4>Page 98</h4>
+                          <div class="page-text">
+                            <p>型名について</p><ul><li>型名は一般的に array, int, string, bool などすべて小文字で書く</li><li>クラス名は慣習的に DateTime, App Book のようなキャメルケース</li></ul><p>(先</p><p><strong>\</strong></p><p>が一般的だが、<strong>book</strong>のように小文字も定義可 </p><p>頭と単語区切りを大文字にする)</p><ul><li>そのためツールによっては @return never と書くと App  と解釈</li></ul><p><strong>\never</strong></p><ul><li>これを避けるには @param @return @var に代えて、<br><strong>@phpstan-param</strong> <strong>@phpstan-return</strong> <strong>@phpstan-var</strong> にする</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-99">
+                          <h4>Page 99</h4>
+                          <div class="page-text">
+                            <p>整数範囲型</p><ul><li>int&lt;0, 6&gt; や int&lt;1, 10&gt;のような範囲を指定できる</li><li>positive-int, negative-int という型もある<ul><li>それぞれ int&lt;1, max&gt; / int&lt;min, -1&gt; のエイリアス</li></ul></li><li>「0以上の数」はユニオン型を組み合せて 0|positive-int と書く<ul><li>たとえば「配列の要素数」にマイナスはありえないのでこの型になる</li></ul></li><li>int === int&lt;min, max&gt; === positive-int|0|negative-int</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-100">
+                          <h4>Page 100</h4>
+                          <div class="page-text">
+                            <p>リテラル型・定数型</p><ul><li>&quot;full&quot; や &quot;partial&quot; のような文字列や 0, 1 のようなスカラー値そのもの</li><li>ふつうはユニオン型と組み合せて &quot;full&quot;|&quot;partial&quot; や 1|2|9 などと書く</li><li>constやde=neで定義された定数・クラス定数も使える<ul><li>SEARCH_MODE_FULL|SEARCH_MODE_PARTIAL</li><li>SEARCH_MODE_* でまとめて参照もできる<ul><li>新たな SEARCH_MODE_FUZZY が増えても変更の必要がない</li></ul></li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-101">
+                          <h4>Page 101</h4>
+                          <div class="page-text">
+                            <p>key-of型・value-of型</p><ul><li>定数に格納された配列のキーまたは要素</li><li>const MODES = [&#39;a&#39;, &#39;b&#39;]; のとき value-of&lt;MODES&gt; = &#39;a&#39;|&#39;b&#39;</li><li>const MESSAGES = [&#39;x&#39; =&gt; &#39;あ&#39;, &#39;y&#39; =&gt; &#39;ん&#39;] のとき<ul><li>key-of&lt;MESSAGES&gt; = &#39;x&#39;|&#39;y&#39;</li><li>value-of&lt;MESSAGES&gt; = &#39;あ&#39;|&#39;ん&#39;</li></ul></li><li>定数の * と同じく、定数の配列を編集すれば個別の箇所を修正しなくていい</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-102">
+                          <h4>Page 102</h4>
+                          <div class="page-text">
+                            <p>PHPDocに書ける配列の型について</p><ul><li>最近は string[] や Book[] のような書かれかたは好まれない<ul><li>JavaScript(TypeScript)のように配列/リストと連想配列<br>(Map/ハッシュテーブル)の区別がない </li><li>list&lt;string&gt;やarray&lt;string,Book&gt;のように書くのが望ましい</li></ul></li><li>配列の中身に同じ構造のものが繰り返されるときは array&lt;...&gt;<br>配列の中身がキーごとに別のデータが格納されるときは <strong>array{...} </strong><ul><li>この &lt;&gt; と {} のカッコの種類は瞬時に混乱しないようにしておきましょう</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-103">
+                          <h4>Page 103</h4>
+                          <div class="page-text">
+                            <p>array-shapes </p><p>(Object-like arrays)</p><ul><li>array{key: type} keyというキーが入っている連想配列</li><li>array{key?: type} keyというキーが省略されている連想配列</li><li>array{0: typeA, 1: typeB} 長さ2の配列(リスト)<ul><li>array{typeA, typeB} この形状ではキーを省略して型だけを列挙できる</li></ul></li><li>array{} 中に何も入っていない配列(空配列)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-104">
+                          <h4>Page 104</h4>
+                          <div class="page-text">
+                            <p>array&lt;Type&gt;</p><ul><li>array&lt;Type&gt; 配列の全ての値はType (キーの型が何かは明示しない)</li><li>array&lt;string, Type&gt; キーの型がstring, 値の型がType</li><li>array&lt;array{key: value}&gt;<ul><li>配列の中にarray-shapeが入っている</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-105">
+                          <h4>Page 105</h4>
+                          <div class="page-text">
+                            <p>list&lt;Type&gt;</p><ul><li>[&#39;x&#39;, &#39;y&#39;, &#39;z&#39;] のようにキーが0, 1, 2, ... のような連番の配列<ul><li>PHP 8.1で追加された array_is_list() 関数が根拠</li></ul></li><li>list&lt;Type&gt; リストの全ての値はType<ul><li>現在のPHPStanは array&lt;int, Type&gt; のエイリアス扱い</li></ul></li><li>list&lt;array{key: value}&gt;<ul><li>配列の中にarray-shapeが入っている</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-106">
+                          <h4>Page 106</h4>
+                          <div class="page-text">
+                            <p>non-empty-*型</p><ul><li>non-empty-string: 長さ1以上の文字列 (＝空文字列ではない)</li><li>non-empty-array: 長さ1以上の配列 (キーの型は問わない)</li><li>non-empty-list: 長さ1以上のリスト</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-107">
+                          <h4>Page 107</h4>
+                          <div class="page-text">
+                            <p>先程のコードを拡張する</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-108">
+                          <h4>Page 108</h4>
+                          <div class="page-text">
+                            <p>先程のコードを拡張する</p><p>検索モードのリスト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-109">
+                          <h4>Page 109</h4>
+                          <div class="page-text">
+                            <p>先程のコードを拡張する</p><p>検索モードのリスト</p><p>value-of&lt;定数&gt;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-110">
+                          <h4>Page 110</h4>
+                          <div class="page-text">
+                            <p>先程のコードを拡張する</p><p>検索モードのリスト</p><p>value-of&lt;定数&gt;</p><p>価格は正の整数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-111">
+                          <h4>Page 111</h4>
+                          <div class="page-text">
+                            <p>先程のコードを拡張する</p><p>検索モードのリスト</p><p>value-of&lt;定数&gt;</p><p>空文字列を <br>検索禁止する</p><p>価格は正の整数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-112">
+                          <h4>Page 112</h4>
+                          <div class="page-text">
+                            <p>呼出し側のコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-113">
+                          <h4>Page 113</h4>
+                          <div class="page-text">
+                            <p>呼出し側のコード</p><p>(警告) <br>空文字列を検索</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-114">
+                          <h4>Page 114</h4>
+                          <div class="page-text">
+                            <p>呼出し側のコード</p><p>(警告) <br>空文字列を検索</p><p>(警告) <br>price == 0 はありえない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-115">
+                          <h4>Page 115</h4>
+                          <div class="page-text">
+                            <p>ばっちり型が つきましたね</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-116">
+                          <h4>Page 116</h4>
+                          <div class="page-text">
+                            <p>基本的な型の付け方</p><ul><li>関数／メソッドとクラス定義に絞って詳細な型を付けていく<ul><li>パラメータ (仮引数)</li><li>戻り値</li><li>プロパティ</li></ul></li><li>ただしクロージャ(無名関数)はがんばらなくていい</li><li>基本はこれだけに絞っていけばコードに型は付く (理想論)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-117">
+                          <h4>Page 117</h4>
+                          <div class="page-text">
+                            <p>array{} とか <br>覚えなくてよくない？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-118">
+                          <h4>Page 118</h4>
+                          <div class="page-text">
+                            <p>そういう意見もある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-119">
+                          <h4>Page 119</h4>
+                          <div class="page-text">
+                            <p>DTO</p><p> (Data Transfer Object)</p><ul><li>データを格納して持ち運ぶことを目的としたクラス</li><li>C言語などの構造体(struct)をクラスで表現したものとも考えられる</li><li>典型的には単なるPOPOで実装できる</li><li>PHP 8.0からはコンストラクタプロモーションで、異様に簡潔に定義できる<ul><li>現代PHPでは小さいイミュータブルなクラスをバンバン切っていく方が<br>責務が小さく解析もしやすくなるが今回の本題ではないので割愛</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-120">
+                          <h4>Page 120</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-121">
+                          <h4>Page 121</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>検索モード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-122">
+                          <h4>Page 122</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>検索モード</p><p>オプションは配列 <br>ではなくクラス</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-123">
+                          <h4>Page 123</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-124">
+                          <h4>Page 124</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>著者</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-125">
+                          <h4>Page 125</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>著者</p><p>書籍</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-126">
+                          <h4>Page 126</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>著者</p><p>書籍</p><p>コンストラクタ プロモーション</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-127">
+                          <h4>Page 127</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-128">
+                          <h4>Page 128</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>オプション型宣言</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-129">
+                          <h4>Page 129</h4>
+                          <div class="page-text">
+                            <p>PHP 8.1時代のコード</p><p>オプション型宣言</p><p>戻り値PHPDoc</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-130">
+                          <h4>Page 130</h4>
+                          <div class="page-text">
+                            <p>クラス vs array</p><ul><li>一般論としては何でも格納できる配列より、クラス定義したオブジェクトの方<br>が静的解析もしやすく、実行時に意図しない値も紛れにくい </li><li>特にPHP8ではコンストラクタプロモーションによって定義のハードルが 一気に下がり、名前付き引数によってコード上に意図も込めやすくなった </li><li>クラスは名前を付けて定義するので、似て非なる別のクラスを<br>いくつも作ることになるとしんどくなってくる <ul><li>単なるデータとして名無しのarray-shapesが良いこともある</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-131">
+                          <h4>Page 131</h4>
+                          <div class="page-text">
+                            <p>かくしてPHPに <br>完璧な型がつきました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-132">
+                          <h4>Page 132</h4>
+                          <div class="page-text">
+                            <p>めでたしめでたし</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-133">
+                          <h4>Page 133</h4>
+                          <div class="page-text">
+                            <p>😇</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-134">
+                          <h4>Page 134</h4>
+                          <div class="page-text">
+                            <p>これで済むなら <br>PHPは型なしとか <br>呼ばれてない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-135">
+                          <h4>Page 135</h4>
+                          <div class="page-text">
+                            <p>型なしは <br>どこから来るの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-136">
+                          <h4>Page 136</h4>
+                          <div class="page-text">
+                            <p>動的型 vs 型なし</p><ul><li>型宣言しなくても、全ての値は実行時に必ず具体的な型情報を持っている<ul><li>get_debug_type() や is_string() などで動的に正しく判別できる</li><li>型宣言すると</li></ul></li><li>ここで言いたい「型なし」はソースコードを見て具体的な型が定まらないもの<ul><li>実行してみれば「動く」とわかるが、実行するまで正しいとは判断しきれない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-137">
+                          <h4>Page 137</h4>
+                          <div class="page-text">
+                            <p>型なしの値</p><ul><li>PHPではいろんなところから型がついてない値が吹き出してくる<ul><li>そのまま使えない mixed, array&lt;mixed&gt;, string, string|array, ...</li></ul></li><li>スーパーグローバル変数($_GET)、PDO、$args、fgetcsv()、などなど…</li><li>そのまま使えると信じ込んで(=間違った値は来ないと祈って)使う</li></ul><p>😇</p><ul><li>→ 一種の割り切りではあるが、最後の手段にしたい</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-138">
+                          <h4>Page 138</h4>
+                          <div class="page-text">
+                            <p>型を絞り込もう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-139">
+                          <h4>Page 139</h4>
+                          <div class="page-text">
+                            <p><strong>PHPStan dumpType()</strong><br><strong>\</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-140">
+                          <h4>Page 140</h4>
+                          <div class="page-text">
+                            <p>dumpType()関数で型を表示</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-141">
+                          <h4>Page 141</h4>
+                          <div class="page-text">
+                            <p>dumpType()関数で型を表示</p><p>関数に渡す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-142">
+                          <h4>Page 142</h4>
+                          <div class="page-text">
+                            <p>dumpType()関数で型を表示</p><p>関数に渡す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-143">
+                          <h4>Page 143</h4>
+                          <div class="page-text">
+                            <p>dumpType()関数で型を表示</p><p>関数に渡す</p><p>もちろんPhpStorm上 <br>で表示できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-144">
+                          <h4>Page 144</h4>
+                          <div class="page-text">
+                            <p>check &amp; throw</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-145">
+                          <h4>Page 145</h4>
+                          <div class="page-text">
+                            <p>check &amp; throw</p><p>falseだったら <br>関数を抜けることで</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-146">
+                          <h4>Page 146</h4>
+                          <div class="page-text">
+                            <p>check &amp; throw</p><p>falseが混じる </p><p>falseだったら </p><p>可能性を排除</p><p>関数を抜けることで</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-147">
+                          <h4>Page 147</h4>
+                          <div class="page-text">
+                            <p>assert </p><p>(表明)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-148">
+                          <h4>Page 148</h4>
+                          <div class="page-text">
+                            <p>assert </p><p>(表明)</p><p>falseではないと表明</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-149">
+                          <h4>Page 149</h4>
+                          <div class="page-text">
+                            <p>assert </p><p>(表明)</p><p>falseが混じる 可能性を排除</p><p>falseではないと表明</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-150">
+                          <h4>Page 150</h4>
+                          <div class="page-text">
+                            <p>PHPStanは分岐ごとに型を保持</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-151">
+                          <h4>Page 151</h4>
+                          <div class="page-text">
+                            <p>PHPStanは分岐ごとに型を保持</p><p>分岐ごとに範囲が分かれ <br>合流すると戻る</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-152">
+                          <h4>Page 152</h4>
+                          <div class="page-text">
+                            <p>DIコンテナ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-153">
+                          <h4>Page 153</h4>
+                          <div class="page-text">
+                            <p>任意の値を格納できるコンテナ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-154">
+                          <h4>Page 154</h4>
+                          <div class="page-text">
+                            <p>超適当に実装して</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-155">
+                          <h4>Page 155</h4>
+                          <div class="page-text">
+                            <p>値をコンテナに詰め込む</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-156">
+                          <h4>Page 156</h4>
+                          <div class="page-text">
+                            <p>値をコンテナから取り出す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-157">
+                          <h4>Page 157</h4>
+                          <div class="page-text">
+                            <p>値をコンテナから取り出す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-158">
+                          <h4>Page 158</h4>
+                          <div class="page-text">
+                            <p>値をコンテナから取り出す</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-159">
+                          <h4>Page 159</h4>
+                          <div class="page-text">
+                            <p>値をコンテナから取り出す</p><p>変数すべてmixed</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-160">
+                          <h4>Page 160</h4>
+                          <div class="page-text">
+                            <p>値をコンテナから取り出す</p><p>変数すべてmixed</p><p>型が不定のメソッド <br>呼び出し</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-161">
+                          <h4>Page 161</h4>
+                          <div class="page-text">
+                            <p>assertによるインライン型付け</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-162">
+                          <h4>Page 162</h4>
+                          <div class="page-text">
+                            <p>@varによるインライン型付け</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-163">
+                          <h4>Page 163</h4>
+                          <div class="page-text">
+                            <p>if/assert vs @var</p><ul><li>if文/assertなどは単純な型宣言よりも詳細に型付けできる<ul><li>本番でassert式の内容を評価するかは設定で制御できる(マニュアル参照)</li><li>私は無効化しない方が安全だと思います</li></ul></li><li>@varはarray-shapesなどを使って配列の構造も詳細に型を付けられる。 ただし単なるコメントなので実態に反する型も付けられてしまうので要注意</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-164">
+                          <h4>Page 164</h4>
+                          <div class="page-text">
+                            <p>if/assert vs @var の使い分け案</p><ul><li>変数を生成/取り出した直後に引数としてそのまま渡す場合は、<br>実装側の責任とする／型宣言による自動型チェックで保証されるので @var </li><li>DBのクエリ結果などは@varで済ませるか、hydratorライブラリを使って<br>期待通りの構造の配列／クラスにマッピングする </li><li>変数を生成/取り出した直後にそのオブジェクトのメソッド呼び出しをする<br>場合は、 assert($var instaceof Foo) のようにチェックしておくことで <br>エラーメッセージがわかりやすくなる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-165">
+                          <h4>Page 165</h4>
+                          <div class="page-text">
+                            <p>標準関数 vs 型</p><ul><li>失敗したらfalseを返す標準関数が多い</li><li>=le_get_contents(): string|false<ul><li>存在しないファイルにアクセスするとWarningを発生</li><li>Warningなどのエラーはset_error_handler()で振る舞いが変わる</li></ul></li><li>$content = =le_get_contents(); assert($content !== false);</li><li>Safe PHP: 全ての標準関数の失敗を例外に変換してくれるライブラリ</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-166">
+                          <h4>Page 166</h4>
+                          <div class="page-text">
+                            <p>簡潔だが型安全ではないコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-167">
+                          <h4>Page 167</h4>
+                          <div class="page-text">
+                            <p>几帳面にチェックする実装</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-168">
+                          <h4>Page 168</h4>
+                          <div class="page-text">
+                            <p>実行時／型安全なラッパー関数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-169">
+                          <h4>Page 169</h4>
+                          <div class="page-text">
+                            <p>まとめ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-170">
+                          <h4>Page 170</h4>
+                          <div class="page-text">
+                            <p>PHPStanは オンラインで <br>型チェックできる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-171">
+                          <h4>Page 171</h4>
+                          <div class="page-text">
+                            <p>https://phpstan.org/try</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-172">
+                          <h4>Page 172</h4>
+                          <div class="page-text">
+                            <p>PHPStanは 完璧じゃない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-173">
+                          <h4>Page 173</h4>
+                          <div class="page-text">
+                            <p>期待した型がつかない<br>と思ったら最小の <br>コードをオンラインで<br>チェックしましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-174">
+                          <h4>Page 174</h4>
+                          <div class="page-text">
+                            <p>バグの場合もあるし 実装してPRを送る <br>チャンスかもしれない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-175">
+                          <h4>Page 175</h4>
+                          <div class="page-text">
+                            <p>今回スルーした型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-176">
+                          <h4>Page 176</h4>
+                          <div class="page-text">
+                            <p>ジェネリクス</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-177">
+                          <h4>Page 177</h4>
+                          <div class="page-text">
+                            <p>条件付き戻り値型</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-178">
+                          <h4>Page 178</h4>
+                          <div class="page-text">
+                            <p>そもそも自明な型は付けたくない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-179">
+                          <h4>Page 179</h4>
+                          <div class="page-text">
+                            <p>こういう型を付けられると嬉しい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-180">
+                          <h4>Page 180</h4>
+                          <div class="page-text">
+                            <p>現在のPHPStanの <br>仕様上このような型は<br>つけられない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-181">
+                          <h4>Page 181</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-182">
+                          <h4>Page 182</h4>
+                          <div class="page-text">
+                            <p>そのうち </p><p>(誰かが実装完了すれば) 改善する見込みはある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-183">
+                          <h4>Page 183</h4>
+                          <div class="page-text">
+                            <p>PHPStanの実装は <br>超簡単だとは言えないが 仕事でPHPやってたら 手を出せないほど難解と <br>いうほどではない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-184">
+                          <h4>Page 184</h4>
+                          <div class="page-text">
+                            <p>みなさんもチャレンジ<br>してみましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-185">
+                          <h4>Page 185</h4>
+                          <div class="page-text">
+                            <p>PHPStanで <br>楽しい型付けライフを</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
 
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  
-                    
-                      <div class="page-content" id="page-1">
-                        <h4>Page 1</h4>
-                        <div class="page-text">
-                          <p><strong>実践PHPStan</strong></p><p>Practical PHPStan</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>PHP Conference Okinawa 2022 </strong></p><p><strong>2022-08-27</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-2">
-                        <h4>Page 2</h4>
-                        <div class="page-text">
-                          <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-text">
-                          <p>tadsanのあれこれが読める場所</p><ul><li>https://tadsan.fanbox.cc/</li><li>https://scrapbox.io/php/</li><li>https://www.phper.ninja/</li><li>https://zenn.dev/tadsan</li><li>https://qiita.com/tadsan</li><li>https://github.com/bag2php</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-4">
-                        <h4>Page 4</h4>
-                        <div class="page-text">
-                          <p>https://www.phper.ninja/</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-5">
-                        <h4>Page 5</h4>
-                        <div class="page-text">
-                          <p>https://scrapbox.io/php/</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-6">
-                        <h4>Page 6</h4>
-                        <div class="page-text">
-                          <p>今回のお題</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-7">
-                        <h4>Page 7</h4>
-                        <div class="page-text">
-                          <p>プロポーザル</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-text">
-                          <p>先日、型についての話もしました</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-text">
-                          <p>PHPカンファレンスでも話しました</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-10">
-                        <h4>Page 10</h4>
-                        <div class="page-text">
-                          <p><strong>今回のゴール</strong></p><p>PHPStanで型を付けて <br>既存コードの型を検査</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-11">
-                        <h4>Page 11</h4>
-                        <div class="page-text">
-                          <p><strong>今回やらないこと</strong></p><p>PHPStanの詳細な設定 <br>CI環境の組み方 <br>ジェネリクス/条件型</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-text">
-                          <p>ジェネリクスについて</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-text">
-                          <p>条件付き戻り値型</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-14">
-                        <h4>Page 14</h4>
-                        <div class="page-text">
-                          <p>このスライドは         <br>本日中に公開されます</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-15">
-                        <h4>Page 15</h4>
-                        <div class="page-text">
-                          <p>この発表では知っておくべき機能 を雑に取り上げるので本番運用／ 提案の前にドキュメントを自身で<br>しっかり読み込みましょう。</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-16">
-                        <h4>Page 16</h4>
-                        <div class="page-text">
-                          <p>それでもわからないことがあれば TwitterかSlackのphpusers-ja <br>#type-safeで尋ねてください</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-17">
-                        <h4>Page 17</h4>
-                        <div class="page-text">
-                          <p>PHPStan <br>使ってますか？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-18">
-                        <h4>Page 18</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-19">
-                        <h4>Page 19</h4>
-                        <div class="page-text">
-                          <p>PHPStanとは何か</p><ul><li>静的に(=プログラムを動作させずに)コードの状態を解析するツール<ul><li>広い意味ではコードのフォーマッターやタグ生成なども含む</li></ul></li></ul><p><strong>リ ン タ ー</strong></p><ul><li>PHPStanは静的解析の中でもLinterと呼ばれるジャンルのツール</li></ul><ul><li>⇔ 動的解析 (静的解析の対義語)<ul><li>XdebugやPHPUnitはプログラムを動かしてみて性質を確かめる</li><li>従来のPHPStanは静的と動的のハイブリッドだった</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-20">
-                        <h4>Page 20</h4>
-                        <div class="page-text">
-                          <p>なに? 使ってない?</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-21">
-                        <h4>Page 21</h4>
-                        <div class="page-text">
-                          <p> あなたとPHPStan いますぐダウンロー <br>ド</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-22">
-                        <h4>Page 22</h4>
-                        <div class="page-text">
-                          <p>どうやって？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-text">
-                          <p>Ond ej said...<br><strong>ř</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-24">
-                        <h4>Page 24</h4>
-                        <div class="page-text">
-                          <p><strong>PHP 7.2以上ならプロジェクトに追加しよう</strong></p><p>composer require--dev </p><p>phpstan/phpstan</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-25">
-                        <h4>Page 25</h4>
-                        <div class="page-text">
-                          <p><strong>プロジェクトに追加できないなら</strong></p><p>composer globalrequire </p><p>phpstan/phpstan</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-26">
-                        <h4>Page 26</h4>
-                        <div class="page-text">
-                          <p>require --dev以外の方法を検討</p><ul><li>要は何らかの事情があってcomposer.jsonに追加できないなら仕方ない<ul><li>プロジェクトがPHP 7.2以前に依存しているとき</li><li>権限の問題などでcomposer.jsonに追加でないとき</li></ul></li><li>それ以外は原則Composerに追加しましょう<ul><li>PhpStormの最新版なら、いい感じに勝手にPHPStanを動かしてくれる</li><li>もっと詳細な話はぺちこん沖縄当日までの間にzennに書きます</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-27">
-                        <h4>Page 27</h4>
-                        <div class="page-text">
-                          <p>PHPStanを入れてどうするの</p><ul><li>Composerの実行ファイルは ./vendor/bin/phpstan にある<ul><li>以下、パスを省略して単に phpstan コマンドとして表記</li></ul></li><li>基本は phpstan analyze のように動かすと解析できる<ul><li>phpstan analyze src/Foo/Target.php でファイル単位解析</li></ul></li><li>PHPStan ProというWebインターフェイスもある<ul><li>弊社では応援の意味も込めてProを契約しています</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-28">
-                        <h4>Page 28</h4>
-                        <div class="page-text">
-                          <p>PhpStormがあるのに必要…?</p><ul><li>PhpStormもがんばってPHPStanやPsalmとの互換性を高めているが、<br>解析能力に関しては専門のツールの方が強い <ul><li>PHPStanとPsalmはユーザーがPHPで自由に拡張できる</li></ul></li><li>PhpStormの方がレガシー寄りのPHPバージョンに強い<ul><li>PHPStanはPHP 7.2を以上サポート</li><li>PhpStormのヘッドレス版のQodanaというツールがCI用途に使える</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-text">
-                          <p>解析結果はリアルタイム表示しよう</p><ul><li>PhpStorm: 最近のバージョンでは標準組み込み</li></ul><p>(場合によって要設定)</p><ul><li>VS Code: sordev.phpstan ErrorLens</li></ul><p>+</p><p> (Marketplaceには古いのもあるので注意)</p><ul><li>Vim/NeoVim: coc.nvimとかALEを入れるといいと思います</li><li>Emacs: Hycheck-phpstan</li></ul><p>(私が作っています)</p><ul><li>その他のLSP対応エディタ: efm-langserver</li></ul><p>(汎用言語サーバー)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-30">
-                        <h4>Page 30</h4>
-                        <div class="page-text">
-                          <p>外した方がいいPhpStorm設定</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-31">
-                        <h4>Page 31</h4>
-                        <div class="page-text">
-                          <p>外した方がいいPhpStorm設定</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-32">
-                        <h4>Page 32</h4>
-                        <div class="page-text">
-                          <p>外した方がいいPhpStorm設定</p><p>@param とか @returnを<br>執拗に全部埋めてくる</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-33">
-                        <h4>Page 33</h4>
-                        <div class="page-text">
-                          <p>ここ最近のPHPStan</p><ul><li>完全静的解析モードがデフォルトになりました<ul><li>いままでのPHPStanは実行時リフレクションで解析コストを抑えていた</li><li>改善の積み重ねによりパフォーマンスがものすごく向上している</li><li>従来通りの実行時リフレクションも使える</li></ul></li><li>PHPStanはハイペースで改善されているのでガンガン更新しましょう<ul><li>ただし今月は開発者が夏休みを宣言している</li></ul></li></ul><p>⛱</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-34">
-                        <h4>Page 34</h4>
-                        <div class="page-text">
-                          <p>PHPStanは何ではないか</p><ul><li>PHPのあらゆる関数に対して完璧な型を付けてくれるわけではない<ul><li>不具合や意図しない挙動を発見したら報告してほしい</li><li>Twitterに書くだけでも作者か日本人の誰かが反応してくれると思う</li></ul></li><li>オープンソースソフトウェアであり、商用サポートはない<ul><li>チェコ在住の個人 が開発している</li></ul></li></ul><p>(Ondřej Mirtes)</p><ul><li>コミュニティによるバグ修正や機能追加の貢献も受け入れている</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-35">
-                        <h4>Page 35</h4>
-                        <div class="page-text">
-                          <p>PHPの型の基礎</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-36">
-                        <h4>Page 36</h4>
-                        <div class="page-text">
-                          <p>型の基本的な考え方</p><ul><li>基本は型宣言できるPHPの型を覚える<ul><li>クラス/インターフェイス名 (PHP 5)</li><li>複合型 array / callable (PHP 5)</li><li>スカラー値 int / Hoat / string / bool (≧ PHP 7.0)</li><li>特別な戻り値型 void (≧ PHP 7.0) / never (≧ PHP 8.1)</li><li>そのほかの型表記</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-37">
-                        <h4>Page 37</h4>
-                        <div class="page-text">
-                          <p>ユニオン型 </p><p><strong>A|B</strong></p><p>AまたはB <br>(複雑な式は書けない)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-38">
-                        <h4>Page 38</h4>
-                        <div class="page-text">
-                          <p>交(cid:20281)型 </p><p><strong>A&amp;B</strong></p><p>AおよびB <br>(複雑な式は書けない)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-39">
-                        <h4>Page 39</h4>
-                        <div class="page-text">
-                          <p>型 </p><p>DNF<br><strong>int|A|(B&amp;C)|null</strong></p><p>intまたはAまたは「BおよびC」またはnull <br>(一定の制約下で複雑な型も書ける)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-40">
-                        <h4>Page 40</h4>
-                        <div class="page-text">
-                          <p>null許容型 </p><p>?<br><strong>A</strong></p><p>Aまたはnull <br>デフォルトで許容しない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-41">
-                        <h4>Page 41</h4>
-                        <div class="page-text">
-                          <p>謎のPHP用語</p><p><strong>mixed</strong></p><p>任意の(すべての)型を表す型 <br>(ほかの言語でのany)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-42">
-                        <h4>Page 42</h4>
-                        <div class="page-text">
-                          <p>型をどこに書くか</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-43">
-                        <h4>Page 43</h4>
-                        <div class="page-text">
-                          <p>型宣言</p><p> (type declaration)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-44">
-                        <h4>Page 44</h4>
-                        <div class="page-text">
-                          <p>型宣言</p><p> (type declaration)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-45">
-                        <h4>Page 45</h4>
-                        <div class="page-text">
-                          <p>型宣言</p><p> (type declaration)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-46">
-                        <h4>Page 46</h4>
-                        <div class="page-text">
-                          <p>型宣言</p><p> (type declaration)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-47">
-                        <h4>Page 47</h4>
-                        <div class="page-text">
-                          <p>型宣言</p><p> (type declaration)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-48">
-                        <h4>Page 48</h4>
-                        <div class="page-text">
-                          <p>型注釈</p><p> (type annotation)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-49">
-                        <h4>Page 49</h4>
-                        <div class="page-text">
-                          <p>型注釈</p><p> (type annotation)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-50">
-                        <h4>Page 50</h4>
-                        <div class="page-text">
-                          <p>型注釈</p><p> (type annotation)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-51">
-                        <h4>Page 51</h4>
-                        <div class="page-text">
-                          <p>型宣言 vs PHPDoc(型注釈)</p><ul><li>型宣言された型は、実行時に100%確実に保証される実効性のある型です</li><li>PHPDocは /** ... */ 形式のブロック内に書かれる単なるコメントです<ul><li>実行時にはその通りの型であることは保証されず、型は口約束に過ぎません</li></ul></li><li>この発表内で「型を付ける」というときは型宣言と型注釈のどちらも使います<ul><li>実効性のある型と口約束に過ぎない型の二枚舌の使い分けが<br>動的言語における現実的な型の付け方になります</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-text">
-                          <p>無駄なPHPDocは書かない</p><ul><li>型宣言と同じ内容をPHPDocに書き写さない<ul><li>自然言語で説明を書きたいときは書く</li><li>int→positive-int string→定数 のように型を強化する場合は書く</li></ul></li><li>継承元と同じ型の場合は何も書かない (共変型付けをしたいときは書く)<ul><li>PHP: 共変性と反変性 - Manual</li></ul></li><li>几帳面に埋めようとしてくるPhpStormの言うことを聞かない</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-53">
-                        <h4>Page 53</h4>
-                        <div class="page-text">
-                          <p>外した方がいいPhpStorm設定</p><p>(再掲)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-54">
-                        <h4>Page 54</h4>
-                        <div class="page-text">
-                          <p>外した方がいいPhpStorm設定</p><p>(再掲)</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-55">
-                        <h4>Page 55</h4>
-                        <div class="page-text">
-                          <p>外した方がいいPhpStorm設定</p><p>(再掲)</p><p>@param とか @returnを<br>執拗に全部埋めてくる</p><p>arrayと <br>ａｒｒａｙ＜ｍｉｘｅｄ＞と <br>mixed[] を混同しない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-56">
-                        <h4>Page 56</h4>
-                        <div class="page-text">
-                          <p>型宣言があれば <br>PHPDocなくても <br>足りるんじゃないの？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-57">
-                        <h4>Page 57</h4>
-                        <div class="page-text">
-                          <p>PHPStanには <br>もっと強力な型がある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-58">
-                        <h4>Page 58</h4>
-                        <div class="page-text">
-                          <p>PHPStanを 使ってみよう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-59">
-                        <h4>Page 59</h4>
-                        <div class="page-text">
-                          <p>オンライン <br>サンドボックス</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-60">
-                        <h4>Page 60</h4>
-                        <div class="page-text">
-                          <p>いますぐダウンロー <br>ド </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-61">
-                        <h4>Page 61</h4>
-                        <div class="page-text">
-                          <p>いますぐダウンロー <br>ド <br>しなくてもいい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-text">
-                          <p>https://phpstan.org/try</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-63">
-                        <h4>Page 63</h4>
-                        <div class="page-text">
-                          <p>こういう関数を <br>考えてみましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-64">
-                        <h4>Page 64</h4>
-                        <div class="page-text">
-                          <p>型宣言で型のついた完璧な関数</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-65">
-                        <h4>Page 65</h4>
-                        <div class="page-text">
-                          <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-66">
-                        <h4>Page 66</h4>
-                        <div class="page-text">
-                          <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p><p>検索ワード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-67">
-                        <h4>Page 67</h4>
-                        <div class="page-text">
-                          <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p><p>検索ワード</p><p>何これ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-68">
-                        <h4>Page 68</h4>
-                        <div class="page-text">
-                          <p>型宣言で型のついた完璧な関数</p><p>本を検索する関数</p><p>検索ワード</p><p>何これ</p><p>何これ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-69">
-                        <h4>Page 69</h4>
-                        <div class="page-text">
-                          <p>PHPStan第一の関門(レベル6)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-70">
-                        <h4>Page 70</h4>
-                        <div class="page-text">
-                          <p>PHPStan第一の関門(レベル6)</p><p>$options <br>配列の中身わからん</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-71">
-                        <h4>Page 71</h4>
-                        <div class="page-text">
-                          <p>PHPStan第一の関門(レベル6)</p><p>$options <br>配列の中身わからん</p><p>returnされる <br>配列の中身わからん</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-72">
-                        <h4>Page 72</h4>
-                        <div class="page-text">
-                          <p>再度完璧に型を付けた関数</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-73">
-                        <h4>Page 73</h4>
-                        <div class="page-text">
-                          <p>再度完璧に型を付けた関数</p><p>配列の中身には あらゆる可能性</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-74">
-                        <h4>Page 74</h4>
-                        <div class="page-text">
-                          <p>型を表示してみる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-75">
-                        <h4>Page 75</h4>
-                        <div class="page-text">
-                          <p>取り出してきた値の配列</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-76">
-                        <h4>Page 76</h4>
-                        <div class="page-text">
-                          <p>取り出してきた値の配列</p><p>配列の中身わからん</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-77">
-                        <h4>Page 77</h4>
-                        <div class="page-text">
-                          <p>型がついていないとはどういうことか</p><ul><li>プログラムで具体的なことをするために、必要な情報が揃っていない<ul><li>今回の場合だと「検索して取得した本の情報を画面に出力する」など</li><li>配列の中にどのような値が入っているのか内部構造が明示されてない</li></ul></li><li>多くの場合、mixed型の場合は具体的な操作をするための情報が欠けている</li><li>PHPStanは値を引数として渡すときに、要求する型に対して 渡す型が十分に絞り込まれていないと容赦なく叱ってくれる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-78">
-                        <h4>Page 78</h4>
-                        <div class="page-text">
-                          <p>このプログラムが正しいか判断できない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-79">
-                        <h4>Page 79</h4>
-                        <div class="page-text">
-                          <p>必要のないところにmixedは書かない</p><ul><li>アプリケーション実装においてmixedと適切な場面はあまりない<ul><li>mixed = いかなる種類のデータも受け入れるということ</li></ul></li><li>ビジネスロジックというよりユーティリティ的なものが該当する<ul><li>mixedが適切なのはvar_dump(), is_string() のような関数</li><li>array&lt;mixed&gt; を受け入れるのはcount()とかsort()とかだけ</li></ul></li><li>ジェネリクスを使えばmixedと型付けを両立できるが、今回は割愛</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-80">
-                        <h4>Page 80</h4>
-                        <div class="page-text">
-                          <p>コードに型を付ける</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-81">
-                        <h4>Page 81</h4>
-                        <div class="page-text">
-                          <p>型宣言があれば <br>足りるんじゃないの？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-82">
-                        <h4>Page 82</h4>
-                        <div class="page-text">
-                          <p>型宣言だけでは <br>表現力が不足している</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-83">
-                        <h4>Page 83</h4>
-                        <div class="page-text">
-                          <p>array<br>“配列”の曖昧さ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-84">
-                        <h4>Page 84</h4>
-                        <div class="page-text">
-                          <p>別途arrayの話もしました</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-85">
-                        <h4>Page 85</h4>
-                        <div class="page-text">
-                          <p>配列はひとつ！じゃない！！</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト<br>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], <br>] </li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-86">
-                        <h4>Page 86</h4>
-                        <div class="page-text">
-                          <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト<br>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], <br>] </li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-87">
-                        <h4>Page 87</h4>
-                        <div class="page-text">
-                          <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト<br>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], <br>] </li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-88">
-                        <h4>Page 88</h4>
-                        <div class="page-text">
-                          <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト</li></ul><p>array{id:int, name:string}</p><p>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], </p><p>] </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-89">
-                        <h4>Page 89</h4>
-                        <div class="page-text">
-                          <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト</li></ul><p>array{id:int, name:string}</p><p>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], </p><p>] </p><p>list&lt;array{id:int, name:string}&gt;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-90">
-                        <h4>Page 90</h4>
-                        <div class="page-text">
-                          <p>array-shapes <br>(またはobject-like arrays)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-91">
-                        <h4>Page 91</h4>
-                        <div class="page-text">
-                          <p>arrayに詳細に型を付ける</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-92">
-                        <h4>Page 92</h4>
-                        <div class="page-text">
-                          <p>arrayに詳細に型を付ける</p><p>fullかpartialのみ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-93">
-                        <h4>Page 93</h4>
-                        <div class="page-text">
-                          <p>取り出してきた値の配列</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-94">
-                        <h4>Page 94</h4>
-                        <div class="page-text">
-                          <p>取り出してきた値の配列</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-95">
-                        <h4>Page 95</h4>
-                        <div class="page-text">
-                          <p>取り出してきた値の配列</p><p>fullかpartialなのに</p><p>perfect </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-96">
-                        <h4>Page 96</h4>
-                        <div class="page-text">
-                          <p>取り出してきた値の配列</p><p>fullかpartialなのに</p><p>perfect </p><p>ほんとはtitleなのに <br>nameでアクセス </p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-97">
-                        <h4>Page 97</h4>
-                        <div class="page-text">
-                          <p>PHPStanの <br>強力な型</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-98">
-                        <h4>Page 98</h4>
-                        <div class="page-text">
-                          <p>型名について</p><ul><li>型名は一般的に array, int, string, bool などすべて小文字で書く</li><li>クラス名は慣習的に DateTime, App Book のようなキャメルケース</li></ul><p>(先</p><p><strong>\</strong></p><p>が一般的だが、<strong>book</strong>のように小文字も定義可 </p><p>頭と単語区切りを大文字にする)</p><ul><li>そのためツールによっては @return never と書くと App  と解釈</li></ul><p><strong>\never</strong></p><ul><li>これを避けるには @param @return @var に代えて、<br><strong>@phpstan-param</strong> <strong>@phpstan-return</strong> <strong>@phpstan-var</strong> にする</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-99">
-                        <h4>Page 99</h4>
-                        <div class="page-text">
-                          <p>整数範囲型</p><ul><li>int&lt;0, 6&gt; や int&lt;1, 10&gt;のような範囲を指定できる</li><li>positive-int, negative-int という型もある<ul><li>それぞれ int&lt;1, max&gt; / int&lt;min, -1&gt; のエイリアス</li></ul></li><li>「0以上の数」はユニオン型を組み合せて 0|positive-int と書く<ul><li>たとえば「配列の要素数」にマイナスはありえないのでこの型になる</li></ul></li><li>int === int&lt;min, max&gt; === positive-int|0|negative-int</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-100">
-                        <h4>Page 100</h4>
-                        <div class="page-text">
-                          <p>リテラル型・定数型</p><ul><li>&quot;full&quot; や &quot;partial&quot; のような文字列や 0, 1 のようなスカラー値そのもの</li><li>ふつうはユニオン型と組み合せて &quot;full&quot;|&quot;partial&quot; や 1|2|9 などと書く</li><li>constやde=neで定義された定数・クラス定数も使える<ul><li>SEARCH_MODE_FULL|SEARCH_MODE_PARTIAL</li><li>SEARCH_MODE_* でまとめて参照もできる<ul><li>新たな SEARCH_MODE_FUZZY が増えても変更の必要がない</li></ul></li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-101">
-                        <h4>Page 101</h4>
-                        <div class="page-text">
-                          <p>key-of型・value-of型</p><ul><li>定数に格納された配列のキーまたは要素</li><li>const MODES = [&#39;a&#39;, &#39;b&#39;]; のとき value-of&lt;MODES&gt; = &#39;a&#39;|&#39;b&#39;</li><li>const MESSAGES = [&#39;x&#39; =&gt; &#39;あ&#39;, &#39;y&#39; =&gt; &#39;ん&#39;] のとき<ul><li>key-of&lt;MESSAGES&gt; = &#39;x&#39;|&#39;y&#39;</li><li>value-of&lt;MESSAGES&gt; = &#39;あ&#39;|&#39;ん&#39;</li></ul></li><li>定数の * と同じく、定数の配列を編集すれば個別の箇所を修正しなくていい</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-102">
-                        <h4>Page 102</h4>
-                        <div class="page-text">
-                          <p>PHPDocに書ける配列の型について</p><ul><li>最近は string[] や Book[] のような書かれかたは好まれない<ul><li>JavaScript(TypeScript)のように配列/リストと連想配列<br>(Map/ハッシュテーブル)の区別がない </li><li>list&lt;string&gt;やarray&lt;string,Book&gt;のように書くのが望ましい</li></ul></li><li>配列の中身に同じ構造のものが繰り返されるときは array&lt;...&gt;<br>配列の中身がキーごとに別のデータが格納されるときは <strong>array{...} </strong><ul><li>この &lt;&gt; と {} のカッコの種類は瞬時に混乱しないようにしておきましょう</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-103">
-                        <h4>Page 103</h4>
-                        <div class="page-text">
-                          <p>array-shapes </p><p>(Object-like arrays)</p><ul><li>array{key: type} keyというキーが入っている連想配列</li><li>array{key?: type} keyというキーが省略されている連想配列</li><li>array{0: typeA, 1: typeB} 長さ2の配列(リスト)<ul><li>array{typeA, typeB} この形状ではキーを省略して型だけを列挙できる</li></ul></li><li>array{} 中に何も入っていない配列(空配列)</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-104">
-                        <h4>Page 104</h4>
-                        <div class="page-text">
-                          <p>array&lt;Type&gt;</p><ul><li>array&lt;Type&gt; 配列の全ての値はType (キーの型が何かは明示しない)</li><li>array&lt;string, Type&gt; キーの型がstring, 値の型がType</li><li>array&lt;array{key: value}&gt;<ul><li>配列の中にarray-shapeが入っている</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-105">
-                        <h4>Page 105</h4>
-                        <div class="page-text">
-                          <p>list&lt;Type&gt;</p><ul><li>[&#39;x&#39;, &#39;y&#39;, &#39;z&#39;] のようにキーが0, 1, 2, ... のような連番の配列<ul><li>PHP 8.1で追加された array_is_list() 関数が根拠</li></ul></li><li>list&lt;Type&gt; リストの全ての値はType<ul><li>現在のPHPStanは array&lt;int, Type&gt; のエイリアス扱い</li></ul></li><li>list&lt;array{key: value}&gt;<ul><li>配列の中にarray-shapeが入っている</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-106">
-                        <h4>Page 106</h4>
-                        <div class="page-text">
-                          <p>non-empty-*型</p><ul><li>non-empty-string: 長さ1以上の文字列 (＝空文字列ではない)</li><li>non-empty-array: 長さ1以上の配列 (キーの型は問わない)</li><li>non-empty-list: 長さ1以上のリスト</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-107">
-                        <h4>Page 107</h4>
-                        <div class="page-text">
-                          <p>先程のコードを拡張する</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-108">
-                        <h4>Page 108</h4>
-                        <div class="page-text">
-                          <p>先程のコードを拡張する</p><p>検索モードのリスト</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-109">
-                        <h4>Page 109</h4>
-                        <div class="page-text">
-                          <p>先程のコードを拡張する</p><p>検索モードのリスト</p><p>value-of&lt;定数&gt;</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-110">
-                        <h4>Page 110</h4>
-                        <div class="page-text">
-                          <p>先程のコードを拡張する</p><p>検索モードのリスト</p><p>value-of&lt;定数&gt;</p><p>価格は正の整数</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-111">
-                        <h4>Page 111</h4>
-                        <div class="page-text">
-                          <p>先程のコードを拡張する</p><p>検索モードのリスト</p><p>value-of&lt;定数&gt;</p><p>空文字列を <br>検索禁止する</p><p>価格は正の整数</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-112">
-                        <h4>Page 112</h4>
-                        <div class="page-text">
-                          <p>呼出し側のコード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-113">
-                        <h4>Page 113</h4>
-                        <div class="page-text">
-                          <p>呼出し側のコード</p><p>(警告) <br>空文字列を検索</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-114">
-                        <h4>Page 114</h4>
-                        <div class="page-text">
-                          <p>呼出し側のコード</p><p>(警告) <br>空文字列を検索</p><p>(警告) <br>price == 0 はありえない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-115">
-                        <h4>Page 115</h4>
-                        <div class="page-text">
-                          <p>ばっちり型が つきましたね</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-116">
-                        <h4>Page 116</h4>
-                        <div class="page-text">
-                          <p>基本的な型の付け方</p><ul><li>関数／メソッドとクラス定義に絞って詳細な型を付けていく<ul><li>パラメータ (仮引数)</li><li>戻り値</li><li>プロパティ</li></ul></li><li>ただしクロージャ(無名関数)はがんばらなくていい</li><li>基本はこれだけに絞っていけばコードに型は付く (理想論)</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-117">
-                        <h4>Page 117</h4>
-                        <div class="page-text">
-                          <p>array{} とか <br>覚えなくてよくない？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-118">
-                        <h4>Page 118</h4>
-                        <div class="page-text">
-                          <p>そういう意見もある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-119">
-                        <h4>Page 119</h4>
-                        <div class="page-text">
-                          <p>DTO</p><p> (Data Transfer Object)</p><ul><li>データを格納して持ち運ぶことを目的としたクラス</li><li>C言語などの構造体(struct)をクラスで表現したものとも考えられる</li><li>典型的には単なるPOPOで実装できる</li><li>PHP 8.0からはコンストラクタプロモーションで、異様に簡潔に定義できる<ul><li>現代PHPでは小さいイミュータブルなクラスをバンバン切っていく方が<br>責務が小さく解析もしやすくなるが今回の本題ではないので割愛</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-120">
-                        <h4>Page 120</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-121">
-                        <h4>Page 121</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>検索モード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-122">
-                        <h4>Page 122</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>検索モード</p><p>オプションは配列 <br>ではなくクラス</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-123">
-                        <h4>Page 123</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-124">
-                        <h4>Page 124</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>著者</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-125">
-                        <h4>Page 125</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>著者</p><p>書籍</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-126">
-                        <h4>Page 126</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>著者</p><p>書籍</p><p>コンストラクタ プロモーション</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-127">
-                        <h4>Page 127</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-128">
-                        <h4>Page 128</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>オプション型宣言</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-129">
-                        <h4>Page 129</h4>
-                        <div class="page-text">
-                          <p>PHP 8.1時代のコード</p><p>オプション型宣言</p><p>戻り値PHPDoc</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-130">
-                        <h4>Page 130</h4>
-                        <div class="page-text">
-                          <p>クラス vs array</p><ul><li>一般論としては何でも格納できる配列より、クラス定義したオブジェクトの方<br>が静的解析もしやすく、実行時に意図しない値も紛れにくい </li><li>特にPHP8ではコンストラクタプロモーションによって定義のハードルが 一気に下がり、名前付き引数によってコード上に意図も込めやすくなった </li><li>クラスは名前を付けて定義するので、似て非なる別のクラスを<br>いくつも作ることになるとしんどくなってくる <ul><li>単なるデータとして名無しのarray-shapesが良いこともある</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-131">
-                        <h4>Page 131</h4>
-                        <div class="page-text">
-                          <p>かくしてPHPに <br>完璧な型がつきました</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-132">
-                        <h4>Page 132</h4>
-                        <div class="page-text">
-                          <p>めでたしめでたし</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-133">
-                        <h4>Page 133</h4>
-                        <div class="page-text">
-                          <p>😇</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-134">
-                        <h4>Page 134</h4>
-                        <div class="page-text">
-                          <p>これで済むなら <br>PHPは型なしとか <br>呼ばれてない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-135">
-                        <h4>Page 135</h4>
-                        <div class="page-text">
-                          <p>型なしは <br>どこから来るの？</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-136">
-                        <h4>Page 136</h4>
-                        <div class="page-text">
-                          <p>動的型 vs 型なし</p><ul><li>型宣言しなくても、全ての値は実行時に必ず具体的な型情報を持っている<ul><li>get_debug_type() や is_string() などで動的に正しく判別できる</li><li>型宣言すると</li></ul></li><li>ここで言いたい「型なし」はソースコードを見て具体的な型が定まらないもの<ul><li>実行してみれば「動く」とわかるが、実行するまで正しいとは判断しきれない</li></ul></li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-137">
-                        <h4>Page 137</h4>
-                        <div class="page-text">
-                          <p>型なしの値</p><ul><li>PHPではいろんなところから型がついてない値が吹き出してくる<ul><li>そのまま使えない mixed, array&lt;mixed&gt;, string, string|array, ...</li></ul></li><li>スーパーグローバル変数($_GET)、PDO、$args、fgetcsv()、などなど…</li><li>そのまま使えると信じ込んで(=間違った値は来ないと祈って)使う</li></ul><p>😇</p><ul><li>→ 一種の割り切りではあるが、最後の手段にしたい</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-138">
-                        <h4>Page 138</h4>
-                        <div class="page-text">
-                          <p>型を絞り込もう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-139">
-                        <h4>Page 139</h4>
-                        <div class="page-text">
-                          <p><strong>PHPStan dumpType()</strong><br><strong>\</strong></p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-140">
-                        <h4>Page 140</h4>
-                        <div class="page-text">
-                          <p>dumpType()関数で型を表示</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-141">
-                        <h4>Page 141</h4>
-                        <div class="page-text">
-                          <p>dumpType()関数で型を表示</p><p>関数に渡す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-142">
-                        <h4>Page 142</h4>
-                        <div class="page-text">
-                          <p>dumpType()関数で型を表示</p><p>関数に渡す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-143">
-                        <h4>Page 143</h4>
-                        <div class="page-text">
-                          <p>dumpType()関数で型を表示</p><p>関数に渡す</p><p>もちろんPhpStorm上 <br>で表示できる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-144">
-                        <h4>Page 144</h4>
-                        <div class="page-text">
-                          <p>check &amp; throw</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-145">
-                        <h4>Page 145</h4>
-                        <div class="page-text">
-                          <p>check &amp; throw</p><p>falseだったら <br>関数を抜けることで</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-146">
-                        <h4>Page 146</h4>
-                        <div class="page-text">
-                          <p>check &amp; throw</p><p>falseが混じる </p><p>falseだったら </p><p>可能性を排除</p><p>関数を抜けることで</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-147">
-                        <h4>Page 147</h4>
-                        <div class="page-text">
-                          <p>assert </p><p>(表明)</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-148">
-                        <h4>Page 148</h4>
-                        <div class="page-text">
-                          <p>assert </p><p>(表明)</p><p>falseではないと表明</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-149">
-                        <h4>Page 149</h4>
-                        <div class="page-text">
-                          <p>assert </p><p>(表明)</p><p>falseが混じる 可能性を排除</p><p>falseではないと表明</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-150">
-                        <h4>Page 150</h4>
-                        <div class="page-text">
-                          <p>PHPStanは分岐ごとに型を保持</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-151">
-                        <h4>Page 151</h4>
-                        <div class="page-text">
-                          <p>PHPStanは分岐ごとに型を保持</p><p>分岐ごとに範囲が分かれ <br>合流すると戻る</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-152">
-                        <h4>Page 152</h4>
-                        <div class="page-text">
-                          <p>DIコンテナ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-153">
-                        <h4>Page 153</h4>
-                        <div class="page-text">
-                          <p>任意の値を格納できるコンテナ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-154">
-                        <h4>Page 154</h4>
-                        <div class="page-text">
-                          <p>超適当に実装して</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-155">
-                        <h4>Page 155</h4>
-                        <div class="page-text">
-                          <p>値をコンテナに詰め込む</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-156">
-                        <h4>Page 156</h4>
-                        <div class="page-text">
-                          <p>値をコンテナから取り出す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-157">
-                        <h4>Page 157</h4>
-                        <div class="page-text">
-                          <p>値をコンテナから取り出す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-158">
-                        <h4>Page 158</h4>
-                        <div class="page-text">
-                          <p>値をコンテナから取り出す</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-159">
-                        <h4>Page 159</h4>
-                        <div class="page-text">
-                          <p>値をコンテナから取り出す</p><p>変数すべてmixed</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-160">
-                        <h4>Page 160</h4>
-                        <div class="page-text">
-                          <p>値をコンテナから取り出す</p><p>変数すべてmixed</p><p>型が不定のメソッド <br>呼び出し</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-161">
-                        <h4>Page 161</h4>
-                        <div class="page-text">
-                          <p>assertによるインライン型付け</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-162">
-                        <h4>Page 162</h4>
-                        <div class="page-text">
-                          <p>@varによるインライン型付け</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-163">
-                        <h4>Page 163</h4>
-                        <div class="page-text">
-                          <p>if/assert vs @var</p><ul><li>if文/assertなどは単純な型宣言よりも詳細に型付けできる<ul><li>本番でassert式の内容を評価するかは設定で制御できる(マニュアル参照)</li><li>私は無効化しない方が安全だと思います</li></ul></li><li>@varはarray-shapesなどを使って配列の構造も詳細に型を付けられる。 ただし単なるコメントなので実態に反する型も付けられてしまうので要注意</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-164">
-                        <h4>Page 164</h4>
-                        <div class="page-text">
-                          <p>if/assert vs @var の使い分け案</p><ul><li>変数を生成/取り出した直後に引数としてそのまま渡す場合は、<br>実装側の責任とする／型宣言による自動型チェックで保証されるので @var </li><li>DBのクエリ結果などは@varで済ませるか、hydratorライブラリを使って<br>期待通りの構造の配列／クラスにマッピングする </li><li>変数を生成/取り出した直後にそのオブジェクトのメソッド呼び出しをする<br>場合は、 assert($var instaceof Foo) のようにチェックしておくことで <br>エラーメッセージがわかりやすくなる</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-165">
-                        <h4>Page 165</h4>
-                        <div class="page-text">
-                          <p>標準関数 vs 型</p><ul><li>失敗したらfalseを返す標準関数が多い</li><li>=le_get_contents(): string|false<ul><li>存在しないファイルにアクセスするとWarningを発生</li><li>Warningなどのエラーはset_error_handler()で振る舞いが変わる</li></ul></li><li>$content = =le_get_contents(); assert($content !== false);</li><li>Safe PHP: 全ての標準関数の失敗を例外に変換してくれるライブラリ</li></ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-166">
-                        <h4>Page 166</h4>
-                        <div class="page-text">
-                          <p>簡潔だが型安全ではないコード</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-167">
-                        <h4>Page 167</h4>
-                        <div class="page-text">
-                          <p>几帳面にチェックする実装</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-168">
-                        <h4>Page 168</h4>
-                        <div class="page-text">
-                          <p>実行時／型安全なラッパー関数</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-169">
-                        <h4>Page 169</h4>
-                        <div class="page-text">
-                          <p>まとめ</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-170">
-                        <h4>Page 170</h4>
-                        <div class="page-text">
-                          <p>PHPStanは オンラインで <br>型チェックできる</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-171">
-                        <h4>Page 171</h4>
-                        <div class="page-text">
-                          <p>https://phpstan.org/try</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-172">
-                        <h4>Page 172</h4>
-                        <div class="page-text">
-                          <p>PHPStanは 完璧じゃない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-173">
-                        <h4>Page 173</h4>
-                        <div class="page-text">
-                          <p>期待した型がつかない<br>と思ったら最小の <br>コードをオンラインで<br>チェックしましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-174">
-                        <h4>Page 174</h4>
-                        <div class="page-text">
-                          <p>バグの場合もあるし 実装してPRを送る <br>チャンスかもしれない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-175">
-                        <h4>Page 175</h4>
-                        <div class="page-text">
-                          <p>今回スルーした型</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-176">
-                        <h4>Page 176</h4>
-                        <div class="page-text">
-                          <p>ジェネリクス</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-177">
-                        <h4>Page 177</h4>
-                        <div class="page-text">
-                          <p>条件付き戻り値型</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-178">
-                        <h4>Page 178</h4>
-                        <div class="page-text">
-                          <p>そもそも自明な型は付けたくない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-179">
-                        <h4>Page 179</h4>
-                        <div class="page-text">
-                          <p>こういう型を付けられると嬉しい</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-180">
-                        <h4>Page 180</h4>
-                        <div class="page-text">
-                          <p>現在のPHPStanの <br>仕様上このような型は<br>つけられない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-181">
-                        <h4>Page 181</h4>
-                        <div class="page-text">
-                          
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-182">
-                        <h4>Page 182</h4>
-                        <div class="page-text">
-                          <p>そのうち </p><p>(誰かが実装完了すれば) 改善する見込みはある</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-183">
-                        <h4>Page 183</h4>
-                        <div class="page-text">
-                          <p>PHPStanの実装は <br>超簡単だとは言えないが 仕事でPHPやってたら 手を出せないほど難解と <br>いうほどではない</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-184">
-                        <h4>Page 184</h4>
-                        <div class="page-text">
-                          <p>みなさんもチャレンジ<br>してみましょう</p>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-185">
-                        <h4>Page 185</h4>
-                        <div class="page-text">
-                          <p>PHPStanで <br>楽しい型付けライフを</p>
-                        </div>
-                      </div>
-                    
-                  
-                </div>
-
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  
-                    
-                      <div class="page-content" id="page-3">
-                        <h4>Page 3</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2F&size=32" alt=""><a href="https://tadsan.fanbox.cc/" target="_blank">にゃんだーすわん｜pixivFANBOX</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fscrapbox.io%2Fphp%2F&size=32" alt=""><a href="https://scrapbox.io/php/" target="_blank">PHP</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2F&size=32" alt=""><a href="https://www.phper.ninja/" target="_blank">超PHPerになろう</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzenn.dev%2Ftadsan&size=32" alt=""><a href="https://zenn.dev/tadsan" target="_blank">にゃんだーすわんさんの記事一覧 | Zenn</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan&size=32" alt=""><a href="https://qiita.com/tadsan" target="_blank">tadsan - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fbag2php&size=32" alt=""><a href="https://github.com/bag2php" target="_blank">bag2php · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-8">
-                        <h4>Page 8</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F3831762&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/3831762" target="_blank">5分でわかるPHPの型システム #tfcon ｜にゃんだーすわん｜pixivFANBOX</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-9">
-                        <h4>Page 9</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F2862076&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/2862076" target="_blank">配列、ジェネリクス、PHPで書けない型 #phpcon2021 ｜にゃんだーすわん｜pixivFANBOX</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-12">
-                        <h4>Page 12</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2020%2F03%2F01%2F054833&size=32" alt=""><a href="https://www.phper.ninja/entry/2020/03/01/054833" target="_blank">PHPDocを使ったPHPのジェネリクス - 超PHPerになろう</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-13">
-                        <h4>Page 13</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2022%2F04%2F28%2F015632&size=32" alt=""><a href="https://www.phper.ninja/entry/2022/04/28/015632" target="_blank">条件付き戻り値型とPHPStan 1.6.0の新機能 - 超PHPerになろう</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-23">
-                        <h4>Page 23</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftwitter.com%2FOndrejMirtes%2Fstatus%2F1541744071609405443&size=32" alt=""><a href="https://twitter.com/OndrejMirtes/status/1541744071609405443" target="_blank">twitter.com</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-29">
-                        <h4>Page 29</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dswordev.phpstan&size=32" alt=""><a href="https://marketplace.visualstudio.com/items?itemName=swordev.phpstan" target="_blank">PHPStan - Visual Studio Marketplace</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dusernamehw.errorlens&size=32" alt=""><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens" target="_blank">Error Lens - Visual Studio Marketplace</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fneoclide%2Fcoc.nvim&size=32" alt=""><a href="https://github.com/neoclide/coc.nvim" target="_blank">GitHub - neoclide/coc.nvim: Nodejs extension host for vim &amp; neovim, load extensions like VSCode and host language servers.</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fdense-analysis%2Fale&size=32" alt=""><a href="https://github.com/dense-analysis/ale" target="_blank">GitHub - dense-analysis/ale: Check syntax in Vim/Neovim asynchronously and fix files, with Language Server Protocol (LSP) support</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphpstan.el&size=32" alt=""><a href="https://github.com/emacs-php/phpstan.el" target="_blank">GitHub - emacs-php/phpstan.el: Interface to PHPStan (PHP static analyzer)</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fmattn%2Fefm-langserver&size=32" alt=""><a href="https://github.com/mattn/efm-langserver" target="_blank">GitHub - mattn/efm-langserver: General purpose Language Server</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-52">
-                        <h4>Page 52</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fja%2Flanguage.oop5.variance.php&size=32" alt=""><a href="https://www.php.net/manual/ja/language.oop5.variance.php" target="_blank">PHP: 共変性と反変性 - Manual</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-62">
-                        <h4>Page 62</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphpstan.org%2Ftry&size=32" alt=""><a href="https://phpstan.org/try" target="_blank">Playground | PHPStan</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-163">
-                        <h4>Page 163</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fassert&size=32" alt=""><a href="https://www.php.net/assert" target="_blank">PHP: assert - Manual</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-164">
-                        <h4>Page 164</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpackagist.org%2F%3Fquery%3Dhydrator&size=32" alt=""><a href="https://packagist.org/?query=hydrator" target="_blank">Packagist</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-165">
-                        <h4>Page 165</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fthecodingmachine%2Fsafe&size=32" alt=""><a href="https://github.com/thecodingmachine/safe" target="_blank">GitHub - thecodingmachine/safe: All PHP functions, rewritten to throw exceptions instead of returning false</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-171">
-                        <h4>Page 171</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphpstan.org%2Ftry&size=32" alt=""><a href="https://phpstan.org/try" target="_blank">Playground | PHPStan</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-176">
-                        <h4>Page 176</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2020%2F03%2F01%2F054833&size=32" alt=""><a href="https://www.phper.ninja/entry/2020/03/01/054833" target="_blank">PHPDocを使ったPHPのジェネリクス - 超PHPerになろう</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-177">
-                        <h4>Page 177</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2022%2F04%2F28%2F015632&size=32" alt=""><a href="https://www.phper.ninja/entry/2022/04/28/015632" target="_blank">条件付き戻り値型とPHPStan 1.6.0の新機能 - 超PHPerになろう</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                      <div class="page-content" id="page-181">
-                        <h4>Page 181</h4>
-                        <div class="page-links">
-                          <ul>
-                            <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphpstan%2Fphpstan%2Fissues%2F7141&size=32" alt=""><a href="https://github.com/phpstan/phpstan/issues/7141" target="_blank">Conditional return type for container · Issue #7141 · phpstan/phpstan · GitHub</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    
-                  
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2F&size=32" alt=""><a href="https://tadsan.fanbox.cc/" target="_blank" rel="noopener">にゃんだーすわん｜pixivFANBOX</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fscrapbox.io%2Fphp%2F&size=32" alt=""><a href="https://scrapbox.io/php/" target="_blank" rel="noopener">PHP</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2F&size=32" alt=""><a href="https://www.phper.ninja/" target="_blank" rel="noopener">超PHPerになろう</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzenn.dev%2Ftadsan&size=32" alt=""><a href="https://zenn.dev/tadsan" target="_blank" rel="noopener">にゃんだーすわんさんの記事一覧 | Zenn</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan&size=32" alt=""><a href="https://qiita.com/tadsan" target="_blank" rel="noopener">tadsan - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fbag2php&size=32" alt=""><a href="https://github.com/bag2php" target="_blank" rel="noopener">bag2php · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F3831762&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/3831762" target="_blank" rel="noopener">5分でわかるPHPの型システム #tfcon ｜にゃんだーすわん｜pixivFANBOX</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F2862076&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/2862076" target="_blank" rel="noopener">配列、ジェネリクス、PHPで書けない型 #phpcon2021 ｜にゃんだーすわん｜pixivFANBOX</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2020%2F03%2F01%2F054833&size=32" alt=""><a href="https://www.phper.ninja/entry/2020/03/01/054833" target="_blank" rel="noopener">PHPDocを使ったPHPのジェネリクス - 超PHPerになろう</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2022%2F04%2F28%2F015632&size=32" alt=""><a href="https://www.phper.ninja/entry/2022/04/28/015632" target="_blank" rel="noopener">条件付き戻り値型とPHPStan 1.6.0の新機能 - 超PHPerになろう</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftwitter.com%2FOndrejMirtes%2Fstatus%2F1541744071609405443&size=32" alt=""><a href="https://twitter.com/OndrejMirtes/status/1541744071609405443" target="_blank" rel="noopener">twitter.com</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dswordev.phpstan&size=32" alt=""><a href="https://marketplace.visualstudio.com/items?itemName=swordev.phpstan" target="_blank" rel="noopener">PHPStan - Visual Studio Marketplace</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fmarketplace.visualstudio.com%2Fitems%3FitemName%3Dusernamehw.errorlens&size=32" alt=""><a href="https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens" target="_blank" rel="noopener">Error Lens - Visual Studio Marketplace</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fneoclide%2Fcoc.nvim&size=32" alt=""><a href="https://github.com/neoclide/coc.nvim" target="_blank" rel="noopener">GitHub - neoclide/coc.nvim: Nodejs extension host for vim &amp; neovim, load extensions like VSCode and host language servers.</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fdense-analysis%2Fale&size=32" alt=""><a href="https://github.com/dense-analysis/ale" target="_blank" rel="noopener">GitHub - dense-analysis/ale: Check syntax in Vim/Neovim asynchronously and fix files, with Language Server Protocol (LSP) support</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Femacs-php%2Fphpstan.el&size=32" alt=""><a href="https://github.com/emacs-php/phpstan.el" target="_blank" rel="noopener">GitHub - emacs-php/phpstan.el: Interface to PHPStan (PHP static analyzer)</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fmattn%2Fefm-langserver&size=32" alt=""><a href="https://github.com/mattn/efm-langserver" target="_blank" rel="noopener">GitHub - mattn/efm-langserver: General purpose Language Server</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fmanual%2Fja%2Flanguage.oop5.variance.php&size=32" alt=""><a href="https://www.php.net/manual/ja/language.oop5.variance.php" target="_blank" rel="noopener">PHP: 共変性と反変性 - Manual</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphpstan.org%2Ftry&size=32" alt=""><a href="https://phpstan.org/try" target="_blank" rel="noopener">Playground | PHPStan</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-163">
+                          <h4>Page 163</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fassert&size=32" alt=""><a href="https://www.php.net/assert" target="_blank" rel="noopener">PHP: assert - Manual</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-164">
+                          <h4>Page 164</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fpackagist.org%2F%3Fquery%3Dhydrator&size=32" alt=""><a href="https://packagist.org/?query=hydrator" target="_blank" rel="noopener">Packagist</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-165">
+                          <h4>Page 165</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fthecodingmachine%2Fsafe&size=32" alt=""><a href="https://github.com/thecodingmachine/safe" target="_blank" rel="noopener">GitHub - thecodingmachine/safe: All PHP functions, rewritten to throw exceptions instead of returning false</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-171">
+                          <h4>Page 171</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphpstan.org%2Ftry&size=32" alt=""><a href="https://phpstan.org/try" target="_blank" rel="noopener">Playground | PHPStan</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-176">
+                          <h4>Page 176</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2020%2F03%2F01%2F054833&size=32" alt=""><a href="https://www.phper.ninja/entry/2020/03/01/054833" target="_blank" rel="noopener">PHPDocを使ったPHPのジェネリクス - 超PHPerになろう</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-177">
+                          <h4>Page 177</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2Fentry%2F2022%2F04%2F28%2F015632&size=32" alt=""><a href="https://www.phper.ninja/entry/2022/04/28/015632" target="_blank" rel="noopener">条件付き戻り値型とPHPStan 1.6.0の新機能 - 超PHPerになろう</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-181">
+                          <h4>Page 181</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphpstan%2Fphpstan%2Fissues%2F7141&size=32" alt=""><a href="https://github.com/phpstan/phpstan/issues/7141" target="_blank" rel="noopener">Conditional return type for container · Issue #7141 · phpstan/phpstan · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>
