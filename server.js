@@ -228,15 +228,29 @@ async function generateSlidesData() {
     title: slide.title ?? "",
     date: slide.date ?? "",
     content: slide.combinedContent ?? slide.searchContent ?? "",
+    snippet: slide.snippet ?? "",
     events: Array.isArray(slide.events)
       ? slide.events
-          .map((event) => (event && typeof event.name === "string" ? event.name : ""))
-          .filter(Boolean)
+        .map((event) => {
+          if (!event || typeof event !== "object") return null;
+          const name = typeof event.name === "string" ? event.name : "";
+          if (!name) return null;
+          const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
+          const location = typeof event.location === "string" ? event.location : "";
+          const place = typeof event.place === "string" ? event.place : "";
+          return {
+            name,
+            presented_at: presentedAt,
+            location,
+            place,
+          };
+        })
+        .filter(Boolean)
       : [],
     tags: Array.isArray(slide.tags)
       ? slide.tags
-          .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
-          .filter(Boolean)
+        .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
+        .filter(Boolean)
       : [],
   }));
   const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
@@ -248,6 +262,7 @@ async function generateSlidesData() {
 app.get("/slides/", async (c) => {
   try {
     const { enrichedSlides, slidesJson } = await generateSlidesData();
+    const config = await loadSiteConfig();
 
     const html = `
       <!DOCTYPE html>
@@ -264,8 +279,8 @@ app.get("/slides/", async (c) => {
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
         </head>
         <body>
-          <div class="container">
-            <h1><a href="http://twitter.com/tadsan">tadsan</a>'s slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
+          <div class="container h-feed">
+            <h1 class="site-title h-card p-author"><a href="http://twitter.com/tadsan" class="p-name u-url">tadsan</a>'s slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
             <div class="search-toolbar">
               <label class="search-label">
                 <span class="visually-hidden">スライドを検索</span>
@@ -275,38 +290,48 @@ app.get("/slides/", async (c) => {
             </div>
             <div class="slide-grid">
               ${enrichedSlides.map(slide => `
-                <div class="slide-card">
-                  <h3 ><a class="slide-link" href="/slides/${escapeHtml(slide.slug ?? "")}/">${escapeHtml(slide.title ?? "")}</a></h3>
+                <div class="slide-card h-entry">
+                  <h3><a class="slide-link p-name u-url" href="/slides/${escapeHtml(slide.slug ?? "")}/">${escapeHtml(slide.title ?? "")}</a></h3>
                   <p class="slide-card-meta">${escapeHtml(slide.slug ?? "")}</p>
-                  <p>公開日: <time datetime="${escapeHtml(slide.date ?? "")}">${escapeHtml(slide.date ?? "")}</time></p>
+                  <p>公開日: <time class="dt-published" datetime="${escapeHtml(slide.date ?? "")}">${escapeHtml(slide.date ?? "")}</time></p>
                   ${Array.isArray(slide.events) && slide.events.some(event => event && event.name) ? `
                     <div class="slide-card-events">
                       ${slide.events
-                        .map((event) => {
-                          if (!event || !event.name) return "";
-                          return `<p class="slide-card-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> ${escapeHtml(event.name)}</p>`;
-                        })
-                        .filter(Boolean)
-                        .join("")}
+          .map((event) => {
+            if (!event || !event.name) return "";
+            const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
+            const locationParts = [];
+            if (typeof event.location === "string" && event.location) locationParts.push(event.location);
+            if (typeof event.place === "string" && event.place) locationParts.push(event.place);
+            const locationText = locationParts.join(" / ");
+            const locationHtml = locationText
+              ? ` <span class="p-location visually-hidden">${escapeHtml(locationText)}</span>`
+              : "";
+            return `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${presentedAt ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>` : ""}${locationHtml}</p>`;
+          })
+          .filter(Boolean)
+          .join("")}
                     </div>
                   ` : ""}
                   ${Array.isArray(slide.tags) && slide.tags.some(tag => typeof tag === "string" && tag.trim()) ? `
                     <ul class="slide-card-tags">
                       ${slide.tags
-                        .map((tag) => {
-                          if (typeof tag !== "string" || !tag.trim()) return "";
-                          return `<li><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(tag.trim())}</li>`;
-                        })
-                        .filter(Boolean)
-                        .join("")}
+          .map((tag) => {
+            if (typeof tag !== "string" || !tag.trim()) return "";
+            return `<li class="p-category"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(tag.trim())}</li>`;
+          })
+          .filter(Boolean)
+          .join("")}
                     </ul>
                   ` : ""}
+                  ${slide.snippet ? `<p class="slide-card-snippet p-summary visually-hidden">${escapeHtml(slide.snippet)}</p>` : ""}
+                  <span class="p-author h-card visually-hidden"><a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a></span>
                 </div>
               `).join('\n')}
           </div>
         </div>
         <hr>
-        <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+        <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
         <script src="/slides/index.js" defer></script>
         <script src="/slides/js/search.js" defer></script>
@@ -400,6 +425,7 @@ app.get("/slides/:slug/", async (c) => {
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
           <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.xml">
+          <link rel="canonical" href="${config.site.url}/slides/${slide.slug}/">
 
           <title>${slide.title}</title>
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
@@ -437,22 +463,69 @@ app.get("/slides/:slug/", async (c) => {
             <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
-            <div class="slide-info">
+            <article class="slide-info h-entry">
               <button class="share-btn" onclick="shareSlide()">
                 <i class="fa-solid fa-share-nodes"></i>
               </button>
               <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
                 <i class="fa-solid fa-display"></i>
               </button>
-              <h1>${slide.title}</h1>
-              <p>公開日: <time datetime="${slide.date}">${japaneseDate}</time></p>
+              <h1 class="slide-title"><a href="/slides/${escapeHtml(slide.slug ?? "")}/" class="p-name u-url u-uid permalink-link">${escapeHtml(slide.title ?? "")}</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="${escapeHtml(slide.date ?? "")}">${japaneseDate}</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
               ${slide.events && slide.events.length > 0 ? `
                 <div class="event-info">
                   ${slide.events.map(event => {
-      const eventDate = new Date(event.presented_at);
-      const eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
-      return `<p><time datetime="${event.presented_at}">${eventJapaneseDate}</time>に${event.location}の${event.place}で開催された『<a href="${event.url}" target="_blank">${event.name}</a>』で${event.type}(${event.talk_duration}分)として発表しました。</p>`;
+      const presentedAtRaw = typeof event.presented_at === "string" ? event.presented_at : "";
+      let eventJapaneseDate = "";
+      if (presentedAtRaw) {
+        const eventDate = new Date(presentedAtRaw);
+        if (!Number.isNaN(eventDate.valueOf())) {
+          eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
+        }
+      }
+      const timeLabel = eventJapaneseDate || presentedAtRaw;
+      const timeHtml = presentedAtRaw
+        ? `<time class="dt-start" datetime="${escapeHtml(presentedAtRaw)}">${escapeHtml(timeLabel)}</time>`
+        : "";
+      const name = typeof event.name === "string" ? event.name : "";
+      if (!name) return "";
+      const locationSegments = [];
+      if (typeof event.location === "string" && event.location) {
+        locationSegments.push(`<span class="p-location">${escapeHtml(event.location)}</span>`);
+      }
+      if (typeof event.place === "string" && event.place) {
+        locationSegments.push(`<span class="p-location">${escapeHtml(event.place)}</span>`);
+      }
+      const type = typeof event.type === "string" ? event.type : "";
+      const typeHtml = type ? `<span class="p-category">${escapeHtml(type)}</span>` : "";
+      const duration =
+        typeof event.talk_duration === "number" && Number.isFinite(event.talk_duration)
+          ? `${event.talk_duration}分`
+          : "";
+      const durationHtml = duration
+        ? `<span class="p-duration" data-duration="${escapeHtml(String(event.talk_duration))}">${escapeHtml(duration)}</span>`
+        : "";
+      const url = typeof event.url === "string" ? event.url : "";
+      const nameHtml = url
+        ? `<a href="${escapeHtml(url)}" class="p-name u-url" target="_blank" rel="noopener">${escapeHtml(name)}</a>`
+        : `<span class="p-name">${escapeHtml(name)}</span>`;
+      const timeSegment = timeHtml ? `${timeHtml}に` : "";
+      const locationSegment = locationSegments.length ? `${locationSegments.join("の")}で` : "";
+      const roleParts = [];
+      if (typeHtml) {
+        roleParts.push(typeHtml);
+      } else if (type) {
+        roleParts.push(escapeHtml(type));
+      }
+      if (durationHtml) {
+        roleParts.push(durationHtml);
+      } else if (duration) {
+        roleParts.push(escapeHtml(duration));
+      }
+      const roleSegment = roleParts.length ? `で${roleParts.join(" ")}として` : "";
+      return `<p class="event-entry h-event">${timeSegment}${locationSegment}開催された『${nameHtml}』${roleSegment}発表しました。</p>`;
     }).join('')}
                 </div>
               ` : ''}
@@ -464,7 +537,7 @@ app.get("/slides/:slug/", async (c) => {
       const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(article.url)}&size=32`;
       const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
       const descHtml = article.desc ? `<br>${escapeHtml(article.desc)}` : '';
-      return `<li>${faviconImg}<a href="${escapeHtml(article.url)}" target="_blank">${escapeHtml(article.title)}</a>${descHtml}</li>`;
+      return `<li>${faviconImg}<a href="${escapeHtml(article.url)}" class="u-url" target="_blank" rel="noopener">${escapeHtml(article.title)}</a>${descHtml}</li>`;
     }).join('')}
                   </ul>
                 </div>
@@ -472,7 +545,7 @@ app.get("/slides/:slug/", async (c) => {
 
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
-                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag">#${tag}</a>`).join('')}
+                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag p-category u-url" rel="noopener">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
 
@@ -487,64 +560,63 @@ app.get("/slides/:slug/", async (c) => {
                   <i class="fa-solid fa-copy"></i> Copy Current Page
                 </button>
               </div>
-            </div>
-
-            <div class="slide-content">
-              <div class="content-panes">
-                <div class="text-pane">
-                  <h3>スライドテキスト</h3>
-                  ${pdfMeta.text && Object.keys(pdfMeta.text).length > 0 ? `
-                    ${Object.entries(pdfMeta.text).map(([pageKey, nodes]) => `
-                      <div class="page-content" id="page-${pageKey.replace('p', '')}">
-                        <h4>Page ${pageKey.replace('p', '')}</h4>
-                        <div class="page-text">
-                          ${nodes.map(node => renderNode(node)).join('')}
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    ${pdfMeta.text && Object.keys(pdfMeta.text).length > 0 ? `
+                      ${Object.entries(pdfMeta.text).map(([pageKey, nodes]) => `
+                        <div class="page-content" id="page-${pageKey.replace('p', '')}">
+                          <h4>Page ${pageKey.replace('p', '')}</h4>
+                          <div class="page-text">
+                            ${nodes.map(node => renderNode(node)).join('')}
+                          </div>
                         </div>
-                      </div>
-                    `).join('')}
-                  ` : `
-                    <p>テキスト情報がありません。</p>
-                  `}
-                </div>
+                      `).join('')}
+                    ` : `
+                      <p>テキスト情報がありません。</p>
+                    `}
+                  </div>
 
-                <div class="links-pane">
-                  <h3>関連リンク</h3>
-                  ${pdfMeta.links && Object.keys(pdfMeta.links).length > 0 ? `
-                    ${Object.entries(pdfMeta.links).map(([pageKey, links]) => `
-                      <div class="page-content" id="page-${pageKey.replace('p', '')}">
-                        <h4>Page ${pageKey.replace('p', '')}</h4>
-                        <div class="page-links">
-                          <ul>
-                            ${links.map(link => {
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    ${pdfMeta.links && Object.keys(pdfMeta.links).length > 0 ? `
+                      ${Object.entries(pdfMeta.links).map(([pageKey, links]) => `
+                        <div class="page-content" id="page-${pageKey.replace('p', '')}">
+                          <h4>Page ${pageKey.replace('p', '')}</h4>
+                          <div class="page-links">
+                            <ul>
+                              ${links.map(link => {
       const href = link.archive || link.url;
       const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(href)}&size=32`;
       const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
 
       if (link.archive) {
-        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a><br>(original: ${escapeHtml(link.url)})</li>`;
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(link.title)}</a><br>(original: <a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.url)}</a>)</li>`;
       } else {
-        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a></li>`;
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(link.title)}</a></li>`;
       }
     }).join('')}
-                          </ul>
+                            </ul>
+                          </div>
                         </div>
-                      </div>
-                    `).join('')}
-                  ` : `
-                    <p>関連リンクがありません。</p>
-                  `}
+                      `).join('')}
+                    ` : `
+                      <p>関連リンクがありません。</p>
+                    `}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="back-link">
-              <a href="/slides/" class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
-                スライド一覧に戻る
-              </a>
-            </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
           </div>
           <hr>
-          <address>&copy; 2025 USAMI Kenta (@tadsan)</address>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
       </html>
     `;
