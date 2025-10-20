@@ -19,7 +19,7 @@ text:
   p1:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 憂鬱なSQLのためのアレ
   - node: p
     children:
@@ -28,7 +28,7 @@ text:
   p2:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 近況報告
   - node: p
     children:
@@ -40,61 +40,37 @@ text:
       children:
       - node: text
         content: 「仕事で使えるComposer」
-  - node: p
-    children:
-    - node: text
-      content: 'http://niconare.nicovideo.jp/watch/kn1371 '
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB Press Vol. 92に
-  - node: ul
-    children:
+      - node: br
+      - node: text
+        content: 'http://niconare.nicovideo.jp/watch/kn1371 '
     - node: li
       children:
       - node: text
-        content: PHPからHTTPリクエストをする話を書きました
-  - node: p
-    children:
-    - node: text
-      content: http://gihyo.jp/magazine/wdpress/archive/2016/vol92
+        content: WEB+DB Press Vol. 92にPHPからHTTPリクエストをする話を書きました
+      - node: br
+      - node: text
+        content: http://gihyo.jp/magazine/wdpress/archive/2016/vol92
   p3:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: 近況報告
-  - node: p
-    children:
-    - node: text
-      content: AdventCalendarではPHPマニュアルの
   - node: ul
     children:
     - node: li
       children:
       - node: text
-        content: バージョン番号をパースする話を書きました
-  - node: p
-    children:
-    - node: text
-      content: http://qiita.com/tadsan/items/94e00f6fdf40d96c5072
-  - node: p
-    children:
-    - node: text
-      content: スレッドフロート掲示板を作りたかった少年時
-  - node: ul
-    children:
+        content: AdventCalendarではPHPマニュアルのバージョン番号をパースする話を書きました
+      - node: br
+      - node: text
+        content: http://qiita.com/tadsan/items/94e00f6fdf40d96c5072
     - node: li
       children:
       - node: text
-        content: 代の代償行為として、モダンPHP、ただし
-  - node: p
-    children:
-    - node: text
-      content: フレームワーク抜きで書き始めました
-  - node: p
-    children:
-    - node: text
-      content: http://qiita.com/tadsan/items/cdbbb5b08591af2b110d
+        content: スレッドフロート掲示板を作りたかった少年時代の代償行為として、モダンPHP、ただしフレームワーク抜きで書き始めました
+      - node: br
+      - node: text
+        content: http://qiita.com/tadsan/items/cdbbb5b08591af2b110d
   p4:
   - node: p
     children:
@@ -121,29 +97,22 @@ text:
   p5:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: Real World PHP
-  - node: p
-    children:
-    - node: text
-      content: 2015年にもなって徳丸先生がPHPカンファレン
   - node: ul
     children:
     - node: li
       children:
       - node: text
-        content: スでSQLインジェクションの話をしてるリアル
-      - node: br
-      - node: text
-        content: O/Rマッパー使っとけｗｗｗと煽ったところで、
+        content: 2015年にもなって徳丸先生がPHPカンファレンスでSQLインジェクションの話をしてるリアル
     - node: li
       children:
       - node: text
-        content: 世界にはまだ文字列結合SQLが眠ってる
+        content: O/Rマッパー使っとけｗｗｗと煽ったところで、世界にはまだ文字列結合SQLが眠ってる
   p6:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: みんな事故る
   - node: p
     children:
@@ -166,7 +135,7 @@ text:
   p7:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: Real World PHP
   - node: p
     children:
@@ -191,12 +160,12 @@ text:
   p8:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: PDOのラッパー作った
   - node: p
     children:
     - node: text
-      content: '警告：ちゃんとしたO/Rマッパーの方がいい '
+      content: 警告：ちゃんとしたO/Rマッパーの方がいい
   - node: ul
     children:
     - node: li
@@ -383,27 +352,25 @@ text:
   p13:
   - node: p
     children:
-    - node: text
+    - node: bold
       content: const
-    - node: br
-    - node: text
-      content: 'PHPのconstは(原則)実行時に変更されない '
   - node: ul
     children:
     - node: li
       children:
       - node: text
-        content: そこにパラメータを当て嵌めるだけ、なのは
-  - node: ul
-    children:
+        content: 'PHPのconstは(原則)実行時に変更されない '
     - node: li
       children:
       - node: text
-        content: なんとなく心理的な安心感がある (本当か?)
-      - node: br
+        content: そこにパラメータを当て嵌めるだけ、なのはなんとなく心理的な安心感がある (本当か?)
+    - node: li
+      children:
       - node: text
         content: 'お気付きだろうか… '
-    - node: li
-      children:
-      - node: text
-        content: このコードがPSR-1違反であることに…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: このコードがPSR-1違反であることに…

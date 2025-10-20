@@ -6,25 +6,16 @@ text:
   p1:
   - node: p
     children:
+    - node: bold
+      content: PHPにおけるメタプログラミングの温床
+  - node: p
+    children:
+  - node: p
+    children:
     - node: text
-      content: 　　 における
+      content: '2017-08-20 NEEC Kamata #ll2017jp'
     - node: br
     - node: text
-      content: ' メタプログラミングの温床'
-  - node: p
-    children:
-    - node: bold
-      content: Meta programming for PHP
-  - node: p
-    children:
-    - node: text
-      content: '#ll2017jp'
-  - node: p
-    children:
-    - node: text
-      content: '2017-08-20 NEEC Kamata '
-    - node: br
-    - node: bold
       content: ODC 2017 Tokyo/ Learn Languages (LL2017)
   p2:
   - node: p
@@ -63,47 +54,32 @@ text:
   - node: p
     children:
     - node: text
-      content: PHPには毛ほども興味のな さそうな皆さまにPHPの
+      content: PHPには毛ほども興味のなさそうな皆さまにPHPの
     - node: bold
-      content: 動
-    - node: text
-      content: ' '
-    - node: bold
-      content: 的な言語機能
+      content: 動的な言語機能
     - node: text
       content: を紹介します
   p5:
   - node: p
     children:
     - node: text
-      content: サンプルコードは言 語機能を
+      content: サンプルコードは言語機能を
     - node: bold
-      content: 簡易に紹介
-    - node: text
-      content: ' '
-    - node: bold
-      content: する
+      content: 簡易に紹介する
     - node: text
       content: ためのものです
   p6:
   - node: p
     children:
     - node: text
-      content: 利用の際は必要性と利便性
-  - node: p
-    children:
-    - node: text
-      content: を
+      content: 利用の際は必要性と利便性を
     - node: bold
       content: 慎重に
     - node: text
       content: 判断すること。
     - node: br
     - node: text
-      content: (メタプログラミングって基本的
-    - node: br
-    - node: text
-      content: にそーゆーものですけど…)
+      content: (メタプログラミングって基本的にそーゆーものですけど…)
   p7:
   - node: p
     children:
@@ -113,7 +89,16 @@ text:
   - node: p
     children:
     - node: text
-      content: 0.  前提 1. 初級篇 2. 中級篇 3. 上級篇
+      content: 0.  前提
+    - node: br
+    - node: text
+      content: 1. 初級篇
+    - node: br
+    - node: text
+      content: 2. 中級篇
+    - node: br
+    - node: text
+      content: 3. 上級篇
   p9:
   - node: p
     children:
@@ -123,18 +108,12 @@ text:
   - node: p
     children:
     - node: bold
-      content: PHPは、所謂LLと
-    - node: br
-    - node: bold
-      content: しては遊びが少ない
+      content: PHPは、所謂LLとしては遊びが少ない
   p11:
   - node: p
     children:
     - node: bold
-      content: 例) 原則として関数や
-    - node: br
-    - node: bold
-      content: 'クラスを再定義できない '
+      content: 例) 原則として関数やクラスを再定義できない
     - node: br
     - node: text
       content: (致命的エラーが発生)
@@ -201,12 +180,8 @@ text:
   p19:
   - node: p
     children:
-    - node: bold
-      content: 関数として呼出し可
     - node: text
-      content: ' '
-    - node: bold
-      content: 能な値を表す擬似型
+      content: 関数として呼出し可能な値を表す擬似型
   p20:
   - node: p
     children:
@@ -214,32 +189,37 @@ text:
       content: callable
   - node: p
     children:
-    - node: text
-      content: '//    //   '
+    - node: bold
+      content: '// Before'
     - node: br
     - node: text
-      content: Before After
-  - node: p
-    children:
-    - node: text
-      content: 'if ($cond) {  $f = $cond ? ''foo'' : ''bar'';     foo($var);  call_user_func($f,
-        $var); '
+      content: 'if ($cond) {'
     - node: br
     - node: text
-      content: '} else { '
+      content: '    foo($var);'
     - node: br
     - node: text
-      content: '    bar($var);  //   '
-  - node: p
-    children:
+      content: '} else {'
+    - node: br
     - node: text
-      content: こうやって書いてもいい
-  - node: p
-    children:
+      content: '    bar($var);'
+    - node: br
     - node: text
       content: '}'
   - node: p
     children:
+    - node: bold
+      content: '// After'
+    - node: br
+    - node: text
+      content: '$f = $cond ? ''foo'' : ''bar'';'
+    - node: br
+    - node: text
+      content: 'call_user_func($f, $var);'
+    - node: br
+    - node: br
+    - node: bold
+      content: '// こうやって書いてもいい'
     - node: text
       content: $f($var);
   p21:
@@ -463,7 +443,7 @@ text:
   - node: p
     children:
     - node: text
-      content: (これを悪用すればどん な邪悪なことができる かは明白なので省略)
+      content: (これを悪用すればどんな邪悪なことができるかは明白なので省略)
   p35:
   - node: p
     children:
@@ -473,11 +453,7 @@ text:
   - node: p
     children:
     - node: bold
-      content: マジック
-    - node: text
-      content: ' '
-    - node: bold
-      content: メソッド
+      content: マジックメソッド
   p37:
   - node: p
     children:
@@ -560,19 +536,7 @@ text:
   - node: p
     children:
     - node: text
-      content: 「アクセス不可」は未定
-  - node: p
-    children:
-    - node: text
-      content: 義プロパティだけはなく
-  - node: p
-    children:
-    - node: text
-      content: private protected
-  - node: p
-    children:
-    - node: text
-      content: ',  含む'
+      content: 「アクセス不可」は未定義プロパティだけはなくprivate, protected含む
   p42:
   - node: p
     children:
@@ -582,41 +546,33 @@ text:
     children:
     - node: text
       content: /**
-  - node: p
-    children:
+    - node: br
     - node: text
       content: ' * @property-read string $name'
-  - node: p
-    children:
-    - node: text
+    - node: br
       content: ' */ '
     - node: br
     - node: text
       content: class Hoge {
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '    private $name; '
     - node: br
     - node: text
       content: '    public function __construct($name) {'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '        $this->name = $name;'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '    } '
     - node: br
     - node: text
       content: '    public function __get($name) {'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '        return $values[$name];'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '    }'
   p43:
@@ -772,15 +728,7 @@ text:
   - node: p
     children:
     - node: bold
-      content: (ふつうはComposerが
-    - node: text
-      content: ' '
-    - node: bold
-      content: やってくれるので自分
-    - node: text
-      content: ' '
-    - node: bold
-      content: で定義する必要ない)
+      content: (ふつうはComposerがやってくれるので自分で定義する必要ない)
   p52:
   - node: p
     children:
@@ -790,8 +738,7 @@ text:
     children:
     - node: text
       content: spl_autoload_register(function ($class) {
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '    $file = strtr($class, ''\\'', ''/'') . ''.php''; '
     - node: br
@@ -800,16 +747,13 @@ text:
     - node: br
     - node: text
       content: '    if (file_exists($path)) {'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '        require $path;'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '    }'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '});'
   p53:
@@ -839,28 +783,20 @@ text:
       content: '        $src = file_get_contents($path); '
     - node: br
     - node: text
-      content: '        //   '
-  - node: p
-    children:
-    - node: text
-      content: ファイルを魔改造
-  - node: p
-    children:
+      content: '        // ファイルを魔改造'
+    - node: br
     - node: text
       content: '        $evil_src = evil_customize($src);'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '        file_put_contents($evil_path, $evil_src);'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '   } '
     - node: br
     - node: text
       content: '   require $evil_path;'
-  - node: p
-    children:
+    - node: br
     - node: text
       content: '}'
   p55:
@@ -871,57 +807,31 @@ text:
   p56:
   - node: p
     children:
-    - node: bold
-      content: PHPは制限の大い言語
     - node: text
-      content: ' '
-    - node: bold
-      content: のようだが、遊べるポ
-    - node: text
-      content: ' '
-    - node: bold
-      content: イントはいろいろある
+      content: PHPは制限の大い言語のようだが、遊べるポイントはいろいろある
   p57:
   - node: p
     children:
     - node: bold
-      content: 大いなる力には
-    - node: br
-    - node: bold
-      content: 大いなる責任がry
+      content: 大いなる力には大いなる責任がry
   p58:
   - node: p
     children:
-    - node: bold
-      content: PHPUnit, PsySH, そのほか
-  - node: p
-    children:
-    - node: bold
-      content: 一部のフレームワークなどは
     - node: text
-      content: ' '
-    - node: bold
-      content: メタプログラミングのテクニッ
-    - node: br
-    - node: bold
-      content: クを活用してる
+      content: PHPUnit, PsySH, そのほか一部のフレームワークなどはメタプログラミングのテクニックを活用してる
   p59:
   - node: p
     children:
     - node: bold
-      content: それ用のライブラリ
-  - node: p
-    children:
-    - node: bold
-      content: もある。
+      content: それ用のライブラリもある。
   - node: p
     children:
     - node: text
-      content: (Go! AOP  )
-  - node: p
-    children:
+      content: '(Go! AOP '
     - node: text
       content: https://github.com/goaop/framework
+    - node: text
+      content: )
   p60:
   - node: p
     children:
