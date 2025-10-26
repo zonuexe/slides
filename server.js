@@ -231,26 +231,26 @@ async function generateSlidesData() {
     snippet: slide.snippet ?? "",
     events: Array.isArray(slide.events)
       ? slide.events
-        .map((event) => {
-          if (!event || typeof event !== "object") return null;
-          const name = typeof event.name === "string" ? event.name : "";
-          if (!name) return null;
-          const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
-          const location = typeof event.location === "string" ? event.location : "";
-          const place = typeof event.place === "string" ? event.place : "";
-          return {
-            name,
-            presented_at: presentedAt,
-            location,
-            place,
-          };
-        })
-        .filter(Boolean)
+          .map((event) => {
+            if (!event || typeof event !== "object") return null;
+            const name = typeof event.name === "string" ? event.name : "";
+            if (!name) return null;
+            const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
+            const location = typeof event.location === "string" ? event.location : "";
+            const place = typeof event.place === "string" ? event.place : "";
+            return {
+              name,
+              presented_at: presentedAt,
+              location,
+              place,
+            };
+          })
+          .filter(Boolean)
       : [],
     tags: Array.isArray(slide.tags)
       ? slide.tags
-        .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
-        .filter(Boolean)
+          .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
+          .filter(Boolean)
       : [],
   }));
   const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
@@ -279,7 +279,7 @@ app.get("/slides/", async (c) => {
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
         </head>
         <body>
-          <div class="container h-feed">
+          <main class="container h-feed">
             <h1 class="site-title h-card p-author"><a href="http://twitter.com/tadsan" class="p-name u-url">tadsan</a>'s slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
             <div class="search-toolbar">
               <label class="search-label">
@@ -328,8 +328,7 @@ app.get("/slides/", async (c) => {
                   <span class="p-author h-card visually-hidden"><a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a></span>
                 </div>
               `).join('\n')}
-          </div>
-        </div>
+          </main>
         <hr>
         <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
@@ -452,15 +451,16 @@ app.get("/slides/:slug/", async (c) => {
           </script>
         </head>
         <body>
-          <div class="container">
-            <iframe src="${pdfUrl}" id="pdf-container" title="${slide.title}"></iframe>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="${pdfUrl}" title="${slide.title}"></iframe>
+            </div>
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
               </button>
             </div>
 
-            <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
             <article class="slide-info h-entry">
@@ -614,7 +614,7 @@ app.get("/slides/:slug/", async (c) => {
                 </a>
               </div>
             </article>
-          </div>
+          </main>
           <hr>
           <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
