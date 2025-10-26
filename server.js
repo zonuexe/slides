@@ -4,6 +4,7 @@ import { loadSlides, getSlideBySlug } from "./lib/slides.js";
 import { createReadStream } from "fs";
 import { stat } from "fs/promises";
 import { readFile } from "fs/promises";
+import { extname, resolve } from "node:path";
 import yaml from "js-yaml";
 
 // HTMLエスケープ関数（サーバーサイド用）
@@ -60,6 +61,103 @@ const app = new Hono();
 
 // サイト設定を読み込む（キャッシュなし）
 const SNIPPET_LENGTH = 160;
+
+const BASE_DIR = resolve(".");
+
+const MIME_TYPES = new Map([
+  [".css", "text/css"],
+  [".js", "application/javascript"],
+  [".mjs", "application/javascript"],
+  [".json", "application/json"],
+  [".html", "text/html"],
+  [".htm", "text/html"],
+  [".png", "image/png"],
+  [".jpg", "image/jpeg"],
+  [".jpeg", "image/jpeg"],
+  [".svg", "image/svg+xml"],
+  [".pdf", "application/pdf"],
+  [".ico", "image/x-icon"],
+]);
+
+function detectContentType(filePath, fallback) {
+  const ext = extname(filePath).toLowerCase();
+  return MIME_TYPES.get(ext) || fallback || "application/octet-stream";
+}
+
+function serveStatic(options = {}) {
+  const {
+    root = ".",
+    rewriteRequestPath,
+    fallbackContentType,
+    indexFile = null,
+    maxAge = 0,
+  } = options;
+
+  const resolvedRoot = resolve(BASE_DIR, root);
+  const cacheHeader =
+    maxAge > 0 ? `public, max-age=${maxAge}` : "public, max-age=0, must-revalidate";
+
+  return async (c) => {
+    try {
+      let requestPath = c.req.path;
+      if (typeof rewriteRequestPath === "function") {
+        const rewritten = rewriteRequestPath(requestPath, c);
+        if (typeof rewritten === "string" && rewritten) {
+          requestPath = rewritten;
+        }
+      }
+
+      if (!requestPath) {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      const decoded = decodeURIComponent(requestPath);
+      let relativePath = decoded.startsWith("/") ? decoded.slice(1) : decoded;
+      let targetPath = resolve(resolvedRoot, relativePath);
+
+      if (!targetPath.startsWith(resolvedRoot)) {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      let stats;
+      try {
+        stats = await stat(targetPath);
+      } catch {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      if (stats.isDirectory()) {
+        if (!indexFile) {
+          return c.text("ファイルが見つかりません", 404);
+        }
+        targetPath = resolve(targetPath, indexFile);
+        if (!targetPath.startsWith(resolvedRoot)) {
+          return c.text("ファイルが見つかりません", 404);
+        }
+        try {
+          stats = await stat(targetPath);
+        } catch {
+          return c.text("ファイルが見つかりません", 404);
+        }
+        if (!stats.isFile()) {
+          return c.text("ファイルが見つかりません", 404);
+        }
+      } else if (!stats.isFile()) {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      const stream = createReadStream(targetPath);
+      const headers = {
+        "Content-Type": detectContentType(targetPath, fallbackContentType),
+        "Cache-Control": cacheHeader,
+      };
+
+      return new Response(stream, { headers });
+    } catch {
+      return c.text("ファイルが見つかりません", 404);
+    }
+  };
+}
 
 function collectTextFromNode(node, collector) {
   if (!node || typeof node !== "object") return;
@@ -716,123 +814,47 @@ app.get("/slides/:slug/oembed.xml", async (c) => {
   }
 });
 
-// CSSファイルの配信
-app.get("/slides/css/*", async (c) => {
-  const path = c.req.path.replace("/slides/css/", "");
-  try {
-    const filePath = `./css/${decodeURIComponent(path)}`;
-    const stats = await stat(filePath);
-
-    if (stats.isFile()) {
-      const contentType = path.endsWith(".css") ? "text/css" : "application/octet-stream";
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else {
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
-
-// JavaScriptファイルの配信
-app.get("/slides/js/*", async (c) => {
-  const path = c.req.path.replace("/slides/js/", "");
-  try {
-    const filePath = `./js/${decodeURIComponent(path)}`;
-    const stats = await stat(filePath);
-
-    if (stats.isFile()) {
-      let contentType = "application/octet-stream";
-      if (path.endsWith(".js") || path.endsWith(".mjs")) {
-        contentType = "application/javascript";
-      }
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else {
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
-
 // 静的ファイルの配信
-app.get("/slides/pdf/*", async (c) => {
-  const path = c.req.path.replace("/slides/pdf/", "");
-  try {
-    const filePath = `./pdf/${decodeURIComponent(path)}`;
-    const stats = await stat(filePath);
+app.get(
+  "/slides/zonuexe.png",
+  serveStatic({
+    rewriteRequestPath: () => "/zonuexe.png",
+    maxAge: 3600,
+  })
+);
 
-    if (stats.isFile()) {
-      const contentType = path.endsWith(".pdf") ? "application/pdf" : "application/octet-stream";
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else {
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
+app.get(
+  "/slides/css/*",
+  serveStatic({
+    root: "./css",
+    rewriteRequestPath: (path) => path.replace(/^\/slides\/css/, ""),
+  })
+);
 
-// slide-pdf.js の静的ファイル配信
-app.get("/slide-pdf.js/*", async (c) => {
-  const path = c.req.path.replace("/slide-pdf.js/", "");
-  try {
-    // ../slide-pdf.js/ 以下のファイルを配信
-    const filePath = `../slide-pdf.js/${decodeURIComponent(path)}`;
-    console.log(`Requested path: ${c.req.path}, File path: ${filePath}`);
+app.get(
+  "/slides/js/*",
+  serveStatic({
+    root: "./js",
+    rewriteRequestPath: (path) => path.replace(/^\/slides\/js/, ""),
+  })
+);
 
-    const stats = await stat(filePath);
+app.get(
+  "/slides/pdf/*",
+  serveStatic({
+    root: "./pdf",
+    rewriteRequestPath: (path) => path.replace(/^\/slides\/pdf/, ""),
+  })
+);
 
-    if (stats.isFile()) {
-      // ファイル拡張子に基づいてContent-Typeを設定
-      let contentType = "application/octet-stream";
-      if (path.endsWith(".js") || path.endsWith(".mjs")) contentType = "application/javascript";
-      else if (path.endsWith(".css")) contentType = "text/css";
-      else if (path.endsWith(".html")) contentType = "text/html";
-      else if (path.endsWith(".json")) contentType = "application/json";
-      else if (path.endsWith(".png")) contentType = "image/png";
-      else if (path.endsWith(".jpg") || path.endsWith(".jpeg")) contentType = "image/jpeg";
-      else if (path.endsWith(".svg")) contentType = "image/svg+xml";
-
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else if (stats.isDirectory()) {
-      // ディレクトリの場合は index.html を探す
-      const indexPath = `${filePath}/index.html`;
-      try {
-        const indexStats = await stat(indexPath);
-        if (indexStats.isFile()) {
-          const stream = createReadStream(indexPath);
-          return new Response(stream, {
-            headers: { "Content-Type": "text/html" },
-          });
-        }
-      } catch (indexError) {
-        console.log(`index.html not found in directory: ${filePath}`);
-      }
-      // index.html が存在しない場合は404エラー
-      console.log(`Directory access without index.html: ${filePath}`);
-      return c.text("ファイルが見つかりません", 404);
-    } else {
-      console.log(`File not found: ${filePath}`);
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    console.error(`Error serving file: ${error.message}`);
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
+app.get(
+  "/slide-pdf.js/*",
+  serveStatic({
+    root: "../slide-pdf.js",
+    rewriteRequestPath: (path) => path.replace(/^\/slide-pdf\.js/, ""),
+    indexFile: "index.html",
+  })
+);
 
 console.log("🚀 Hono server is running on http://localhost:3000");
 
