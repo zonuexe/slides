@@ -369,6 +369,7 @@ app.get("/slides/", async (c) => {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>tadsan's slide deck</title>
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
           <link rel="preload" href="/slides/css/index.css" as="style">
           <link rel="stylesheet" href="/slides/css/index.css">
           <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
@@ -378,7 +379,7 @@ app.get("/slides/", async (c) => {
         </head>
         <body>
           <main class="container h-feed">
-            <h1 class="site-title h-card p-author"><a href="http://twitter.com/tadsan" class="p-name u-url">tadsan</a>'s slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
+            <h1 class="site-title h-card p-author"><a href="http://twitter.com/tadsan" class="p-name u-url"><img src="/slides/zonuexe.png" alt="" width="32" style="margin: 0 5px"></a>tadsan's slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
             <div class="search-toolbar">
               <label class="search-label">
                 <span class="visually-hidden">スライドを検索</span>
@@ -504,6 +505,7 @@ app.get("/slides/:slug/", async (c) => {
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
 
           <meta property="og:title" content="${slide.title}">
           <meta property="og:description" content="${config.site.description}">
