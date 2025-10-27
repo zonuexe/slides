@@ -1,0 +1,268 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: Real World Attributes
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2023-03-28 '
+  - node: p
+    children:
+    - node: bold
+      content: PHPTechCafe
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 エンジニア
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: PHPerKaigiで話した
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: 今北産業
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 今北産業
+    - node: br
+    - node: text
+      content: •••
+    - node: br
+    - node: text
+      content: 'な    んか #[Attribute] みたいなへんてこ記法がPHP 8.0で追加された'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: いままで /** DocComment */ に書かれてたやつの代用として提案
+    - node: li
+      children:
+      - node: text
+        content: クラスとかメソッドに書けるコメントみたいなもんだけどデータを取り出せる
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 'こんなの何に使うの '
+    - node: br
+    - node: text
+      content: って？
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: キミだけの最強の活用 法を見付けだせ！！！
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 'ご静聴ありがとう '
+    - node: br
+    - node: text
+      content: ございました！
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: …というひどい 発表をしてきた
+  p10:
+  - node: p
+    children:
+    - node: bold
+      content: '#[Attr()]'
+    - node: text
+      content: 'と書く 謎記法が出てきた '
+    - node: br
+    - node: text
+      content: '…ということだけ、 '
+    - node: br
+    - node: text
+      content: お見知りおきください
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '誰が使うんだ？ '
+    - node: br
+    - node: text
+      content: という話
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: PHPUnitの実行制御
+  - node: p
+    children:
+    - node: bold
+      content: '/** '
+    - node: br
+    - node: bold
+      content: ' * @dataProvider idsProvider '
+    - node: br
+    - node: bold
+      content: ' */ '
+    - node: br
+    - node: bold
+      content: 'public function test($id, $expected): '
+    - node: br
+    - node: bold
+      content: void {
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '@dataProvider'
+  - node: p
+    children:
+    - node: bold
+      content: '/** '
+    - node: br
+    - node: bold
+      content: ' * [$id, $expected] '
+    - node: br
+    - node: bold
+      content: ' */ '
+    - node: br
+    - node: bold
+      content: 'public function idsProvider() { '
+    - node: br
+    - node: bold
+      content: '    return [ '
+    - node: br
+    - node: bold
+      content: '        [1, ''value''],         [2, ''value''], '
+    - node: br
+    - node: bold
+      content: '   ]; '
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: PHPUnit 10 vs Attribute
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: PHPUnit 10でAttributeに移行、11で非推奨化、12で削除予定
+    - node: li
+      children:
+      - node: text
+        content: 超大量の移行リスト… sebastianbergmann/phpunit#4502
+    - node: li
+      children:
+      - node: text
+        content: その他の変更は02氏の
+      - node: br
+      - node: text
+        content: 発表を参照のこと
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: テスト好きかい？
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 「うん、大好きさ」
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: むかし書いた
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 実装の上にコメントでテストを書ける
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 'DataProviderを '
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'これはAttributeに '
+    - node: br
+    - node: text
+      content: できる
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: ということでやったよ
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: Attributeの定義はこれだけ
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 実装の上にAttributeでテスト
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p14:
+  - url: https://github.com/sebastianbergmann/phpunit/issues/4502
+    title: 'Support PHP 8 attributes for adding metadata to test classes and test
+      methods as well as tested code units · Issue #4502 · sebastianbergmann/phpunit
+      · GitHub'
+  - url: https://fortee.jp/phperkaigi-2023/proposal/4379c965-b88d-49c8-b316-e27e2e6b4db1
+    title: 'PHPUnit 10 概論 by 02 | トーク | PHPerKaigi 2023 #phperkaigi - fortee.jp'
+  - url: https://speakerdeck.com/cocoeyes02/introduction-of-phpunit-10
+    title: PHPUnit 10 概論 / Introduction of PHPUnit 10 - Speaker Deck
+  p17:
+  - url: https://devpixiv.hatenablog.com/entry/2016/10/25/093000
+    title: DocCommentでPHPのユニットテストの書きやすさを劇的に改善する手法 - pixiv inside [archive]
