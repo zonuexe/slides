@@ -536,17 +536,29 @@ app.get("/slides/:slug/", async (c) => {
       maxWidth = Math.round(maxHeight * aspectRatio);
     }
 
+    const eventNarratives = Array.isArray(slide.events)
+      ? slide.events.flatMap((event) => {
+          const narrative = buildEventNarrative(event);
+          return narrative ? [narrative] : [];
+        })
+      : [];
+
     const config = await loadSiteConfig();
+    const descriptionText =
+      eventNarratives.length > 0
+        ? eventNarratives.map((entry) => entry.text).join(" ")
+        : config.site.description;
     const html = `
       <!DOCTYPE html>
       <html lang="ja">
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="${escapeHtml(descriptionText)}">
           <link rel="icon" type="image/png" href="/slides/zonuexe.png">
 
           <meta property="og:title" content="${slide.title}">
-          <meta property="og:description" content="${config.site.description}">
+          <meta property="og:description" content="${escapeHtml(descriptionText)}">
           <meta property="og:type" content="website">
           <meta property="og:url" content="${config.site.url}/slides/${slide.slug}/">
           <meta property="og:image" content="${config.site.url}/slides/${slide.image}">
@@ -557,7 +569,7 @@ app.get("/slides/:slug/", async (c) => {
           <meta name="twitter:site" content="${config.twitter.site}">
           <meta name="twitter:creator" content="${config.twitter.creator}">
           <meta name="twitter:title" content="${slide.title}">
-          <meta name="twitter:description" content="${config.site.description}">
+          <meta name="twitter:description" content="${escapeHtml(descriptionText)}">
           <meta name="twitter:image" content="${config.site.url}/slides/${slide.image}">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
@@ -612,59 +624,9 @@ app.get("/slides/:slug/", async (c) => {
               <p class="published-line">公開日: <time class="dt-published" datetime="${escapeHtml(slide.date ?? "")}">${japaneseDate}</time></p>
               <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
-              ${slide.events && slide.events.length > 0 ? `
+              ${eventNarratives.length > 0 ? `
                 <div class="event-info">
-                  ${slide.events.map(event => {
-      const presentedAtRaw = typeof event.presented_at === "string" ? event.presented_at : "";
-      let eventJapaneseDate = "";
-      if (presentedAtRaw) {
-        const eventDate = new Date(presentedAtRaw);
-        if (!Number.isNaN(eventDate.valueOf())) {
-          eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
-        }
-      }
-      const timeLabel = eventJapaneseDate || presentedAtRaw;
-      const timeHtml = presentedAtRaw
-        ? `<time class="dt-start" datetime="${escapeHtml(presentedAtRaw)}">${escapeHtml(timeLabel)}</time>`
-        : "";
-      const name = typeof event.name === "string" ? event.name : "";
-      if (!name) return "";
-      const locationSegments = [];
-      if (typeof event.location === "string" && event.location) {
-        locationSegments.push(`<span class="p-location">${escapeHtml(event.location)}</span>`);
-      }
-      if (typeof event.place === "string" && event.place) {
-        locationSegments.push(`<span class="p-location">${escapeHtml(event.place)}</span>`);
-      }
-      const type = typeof event.type === "string" ? event.type : "";
-      const typeHtml = type ? `<span class="p-category">${escapeHtml(type)}</span>` : "";
-      const duration =
-        typeof event.talk_duration === "number" && Number.isFinite(event.talk_duration)
-          ? `${event.talk_duration}分`
-          : "";
-      const durationHtml = duration
-        ? `<span class="p-duration" data-duration="${escapeHtml(String(event.talk_duration))}">${escapeHtml(duration)}</span>`
-        : "";
-      const url = typeof event.url === "string" ? event.url : "";
-      const nameHtml = url
-        ? `<a href="${escapeHtml(url)}" class="p-name u-url" target="_blank" rel="noopener">${escapeHtml(name)}</a>`
-        : `<span class="p-name">${escapeHtml(name)}</span>`;
-      const timeSegment = timeHtml ? `${timeHtml}に` : "";
-      const locationSegment = locationSegments.length ? `${locationSegments.join("の")}で` : "";
-      const roleParts = [];
-      if (typeHtml) {
-        roleParts.push(typeHtml);
-      } else if (type) {
-        roleParts.push(escapeHtml(type));
-      }
-      if (durationHtml) {
-        roleParts.push(durationHtml);
-      } else if (duration) {
-        roleParts.push(escapeHtml(duration));
-      }
-      const roleSegment = roleParts.length ? `で${roleParts.join(" ")}として` : "";
-      return `<p class="event-entry h-event">${timeSegment}${locationSegment}開催された『${nameHtml}』${roleSegment}発表しました。</p>`;
-    }).join('')}
+                  ${eventNarratives.map(entry => entry.html).join('')}
                 </div>
               ` : ''}
 
@@ -903,3 +865,90 @@ serve({
   fetch: app.fetch,
   port: 3000
 });
+function buildEventRoleSegment(event) {
+  const type = typeof event.type === "string" ? event.type.trim() : "";
+  const hasDuration =
+    typeof event.talk_duration === "number" && Number.isFinite(event.talk_duration);
+  const durationMinutes = hasDuration ? `${event.talk_duration}分` : "";
+  const durationSlot = hasDuration ? `${event.talk_duration}分枠` : "";
+
+  let text = "";
+  if (type && hasDuration) {
+    text = `${type}(${durationMinutes})として`;
+  } else if (hasDuration) {
+    text = `${durationSlot}として`;
+  } else if (type) {
+    text = `${type}として`;
+  }
+
+  let html = "";
+  if (type && hasDuration) {
+    const typeHtml = `<span class="p-category">${escapeHtml(type)}</span>`;
+    const durationHtml = `<span class="p-duration" data-duration="${escapeHtml(
+      String(event.talk_duration)
+    )}">${escapeHtml(durationMinutes)}</span>`;
+    html = `${typeHtml}(${durationHtml})として`;
+  } else if (hasDuration) {
+    const durationHtml = `<span class="p-duration" data-duration="${escapeHtml(
+      String(event.talk_duration)
+    )}">${escapeHtml(durationSlot)}</span>`;
+    html = `${durationHtml}として`;
+  } else if (type) {
+    html = `<span class="p-category">${escapeHtml(type)}</span>として`;
+  }
+
+  return { html, text };
+}
+
+function buildEventNarrative(event) {
+  if (!event || typeof event !== "object") return null;
+  const name = typeof event.name === "string" ? event.name.trim() : "";
+  if (!name) return null;
+
+  const presentedAtRaw = typeof event.presented_at === "string" ? event.presented_at : "";
+  let eventJapaneseDate = "";
+  if (presentedAtRaw) {
+    const eventDate = new Date(presentedAtRaw);
+    if (!Number.isNaN(eventDate.valueOf())) {
+      eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
+    }
+  }
+  const timeLabel = eventJapaneseDate || presentedAtRaw || "";
+  const timeHtml = presentedAtRaw
+    ? `<time class="dt-start" datetime="${escapeHtml(presentedAtRaw)}">${escapeHtml(timeLabel)}</time>`
+    : "";
+  const timeSegmentHtml = timeHtml ? `${timeHtml}に` : "";
+  const timeSegmentText = timeLabel ? `${timeLabel}に` : "";
+
+  const locationHtmlSegments = [];
+  const locationTextSegments = [];
+  if (typeof event.location === "string" && event.location.trim()) {
+    locationHtmlSegments.push(`<span class="p-location">${escapeHtml(event.location.trim())}</span>`);
+    locationTextSegments.push(event.location.trim());
+  }
+  if (typeof event.place === "string" && event.place.trim()) {
+    locationHtmlSegments.push(`<span class="p-location">${escapeHtml(event.place.trim())}</span>`);
+    locationTextSegments.push(event.place.trim());
+  }
+  const locationSegmentHtml = locationHtmlSegments.length ? `${locationHtmlSegments.join("の")}で` : "";
+  const locationSegmentText = locationTextSegments.length ? `${locationTextSegments.join("の")}で` : "";
+
+  const url = typeof event.url === "string" ? event.url : "";
+  const nameHtml = url
+    ? `<a href="${escapeHtml(url)}" class="p-name u-url" target="_blank" rel="noopener">${escapeHtml(name)}</a>`
+    : `<span class="p-name">${escapeHtml(name)}</span>`;
+  const role = buildEventRoleSegment(event);
+
+  const roleHtmlSegment = role.html ? `で${role.html}` : "";
+  const roleTextSegment = role.text ? `で${role.text}` : "";
+
+  const sentenceHtml = `${timeSegmentHtml}${locationSegmentHtml}開催された『${nameHtml}』${roleHtmlSegment}発表しました。`;
+  const sentenceText = `${timeSegmentText}${locationSegmentText}開催された『${name}』${roleTextSegment}発表しました。`
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return {
+    html: `<p class="event-entry h-event">${sentenceHtml}</p>`,
+    text: sentenceText,
+  };
+}
