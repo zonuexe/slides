@@ -1,0 +1,902 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 配列に型を付ける(実践篇)
+  - node: p
+    children:
+    - node: text
+      content: Practice to type array
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2022-01-22         '
+  - node: p
+    children:
+    - node: text
+      content: 福岡
+  - node: p
+    children:
+    - node: bold
+      content: PHPerKaigi petit@
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) /   / にゃんだーすわん
+  - node: p
+    children:
+    - node: bold
+      content: Zonu.EXE
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 エンジニア
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: PHPカンファレンス実行委員、PHPerKaigi コアスタッフ
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: tadsanのあれこれが読める場所
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: https://tadsan.fanbox.cc/
+    - node: li
+      children:
+      - node: text
+        content: https://scrapbox.io/php/
+    - node: li
+      children:
+      - node: text
+        content: https://www.phper.ninja/
+    - node: li
+      children:
+      - node: text
+        content: https://zenn.dev/tadsan
+    - node: li
+      children:
+      - node: text
+        content: https://qiita.com/tadsan
+    - node: li
+      children:
+      - node: text
+        content: https://github.com/bag2php
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: WEB+DB PRESS総集編
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: Software Design 11月号
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: ツナパハに行きたかった2022
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 前回までのあらすじ
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 最後のPHP勉強会
+  - node: p
+    children:
+    - node: text
+      content: (2020年)
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス沖縄2021
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: PHPカンファレンス2021
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: PHPerKaigi petit 8.1
+  - node: p
+    children:
+    - node: text
+      content: (2021年)
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '要約： '
+    - node: br
+    - node: text
+      content: 型宣言arrayだけでは 不十分なので､もっと 詳しく書かねばならぬ
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 著者一覧を出力したい
+  - node: p
+    children:
+    - node: text
+      content: 'Book::$authors : array 中身が何かわからない！'
+  - node: p
+    children:
+    - node: text
+      content: 'class Book         '
+    - node: br
+    - node: text
+      content: '{         '
+    - node: br
+    - node: text
+      content: '    function printAuthors($fp): void {'
+    - node: br
+    - node: text
+      content: '       foreach ($this->authors as $author) {                     fwrite($fp, $author->getName());         '
+    - node: br
+    - node: text
+      content: '       }         '
+  - node: p
+    children:
+    - node: text
+      content: クラスの
+  - node: p
+    children:
+    - node: text
+      content: 'Author          '
+  - node: p
+    children:
+    - node: text
+      content: '    }'
+  - node: p
+    children:
+    - node: text
+      content: メソッドを補完できない
+  - node: p
+    children:
+    - node: text
+      content: '}         '
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: りくつはわかった
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'ならぬと言われても どう書けばいいのか '
+    - node: br
+    - node: text
+      content: わからん
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 配列に型を付ける(実践篇)
+  - node: p
+    children:
+    - node: text
+      content: Practice to type array
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: 2021.10.02
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: '配列は単一の型では '
+    - node: br
+    - node: text
+      content: ないことを認める
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: PHPマニュアルより引用
+  - node: p
+    children:
+    - node: text
+      content: '今回の主題はこれではないので '
+    - node: br
+    - node: text
+      content: 一旦忘れてください
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: '重要なのは '
+    - node: br
+    - node: text
+      content: データの持ちかた
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 配列はひとつ！じゃない！！
+  - node: p
+    children:
+    - node: text
+      content: list<int>
+  - node: p
+    children:
+    - node: text
+      content: array<int,string>
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ユーザＩＤがならんだリスト ［123, 456］
+    - node: li
+      children:
+      - node: text
+        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - node: li
+      children:
+      - node: text
+        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - node: li
+      children:
+      - node: text
+        content: ユーザを表す構造体がならんだリスト
+  - node: p
+    children:
+    - node: text
+      content: array{id:int, name:string}
+  - node: p
+    children:
+    - node: text
+      content: '[ '
+    - node: br
+    - node: text
+      content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
+    - node: br
+    - node: text
+      content: '    [''id'' => 234, ''name'' => ''源静香''], '
+  - node: p
+    children:
+    - node: text
+      content: '] '
+  - node: p
+    children:
+    - node: text
+      content: list<array{id:int, name:string}>
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 配列はどこからくるの
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: arrayのふるさと
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: PHPコードに書かれたリテラル
+    - node: li
+      children:
+      - node: text
+        content: HTTPリクエスト ($_GET, $_POST)
+    - node: li
+      children:
+      - node: text
+        content: デシリアライズ (JSON, PHPシリアライズ)・eval
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: json_decode(»le_get_contents(__DIR__ . '/con»g.json'))
+        - node: li
+          children:
+          - node: text
+            content: 外部APIリクエスト
+    - node: li
+      children:
+      - node: text
+        content: PDOStatement::fetch() 系メソッド
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: arrayリテラル
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 旧式の array() とPHP 5.4以降の [] がある
+    - node: li
+      children:
+      - node: text
+        content: '[''a'', ''b''] と [0 => ''a'', 1 => ''b'']'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: キーを省略すると 0 はじまりになる
+    - node: li
+      children:
+      - node: text
+        content: 重要： array() は関数ではない
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: array('key' => 'value') は書けるが
+          - node: br
+          - node: text
+            content: hoge('key' => 'value')はsyntax errorになる
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: デシリアライズ・eval
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 文字列に変換されたデータを解凍した結果
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: $a = json_decode("[1, 2]", true);
+        - node: li
+          children:
+          - node: text
+            content: $b = unserialize("a:2:{i:0;i:1;i:1;i:2;}");
+        - node: li
+          children:
+          - node: text
+            content: $c = eval('return [1, 2];');
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: PDOの場合
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: PDO::fetch() に渡すオプションによって配列の形状が変わる
+    - node: li
+      children:
+      - node: text
+        content: SELECT id, name FROM users; のようなＳＱＬを考える
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: PDO::FETCH_ASSOC → ['id' => '1',  'name' => '初音ミク']
+        - node: li
+          children:
+          - node: text
+            content: PDO::FETCH_NUM → [0 => '1',  1 => '初音ミク']
+        - node: li
+          children:
+          - node: text
+            content: PDO::FETCH_BOTH →
+          - node: br
+          - node: text
+            content: '[0 => ''1'',  1 => ''初音ミク'', ''id'' => ''1'',  ''name'' => ''初音ミク''] '
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: PDOの場合 (fetchAll)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: さらにfetch(の結果が並ぶ)
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: PDO::FETCH_ASSOC → [
+          - node: br
+          - node: text
+            content: '    [''id'' => ''1'',  ''name'' => ''初音ミク''],     [''id'' =>
+              ''2'',  ''name'' => ''鏡音リン''],     [''id'' => ''3'',  ''name'' => ''鏡音レン''], '
+          - node: br
+          - node: text
+            content: ']'
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: HTTPリクエスト
+  - node: p
+    children:
+    - node: text
+      content: ($_GET, $_POST)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: HTMLフォームからは実は配列も送れる
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ?data[]=a&data[]=b
+          - node: ul
+            children:
+            - node: li
+              children:
+              - node: text
+                content: $_GET['data'] = ['a', 'b']
+        - node: li
+          children:
+          - node: text
+            content: ?user[name]=a&user[addr]=b
+          - node: ul
+            children:
+            - node: li
+              children:
+              - node: text
+                content: $_GET['user'] = ['name' => 'a', 'addr' => 'b']
+    - node: li
+      children:
+      - node: text
+        content: '''user_name'', `user_addr` みたいなのを手で展開するより便利'
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: 'なぜ配列に '
+    - node: br
+    - node: text
+      content: 型がつかないのか
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: デシリアライズ・eval
+  - node: p
+    children:
+    - node: text
+      content: (再掲)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 文字列に変換されたデータを解凍した結果
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: $a = json_decode("[1, 2]", true);
+        - node: li
+          children:
+          - node: text
+            content: $b = unserialize("a:2:{i:0;i:1;i:1;i:2;}");
+        - node: li
+          children:
+          - node: text
+            content: $c = eval('return [1, 2];');
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 実際のデシリアライズ・eval
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 文字列に変換されたデータを解凍した結果
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: $a = json_decode((string)$res->getBody(), true);
+        - node: li
+          children:
+          - node: text
+            content: $b = unserialize($serialize);
+        - node: li
+          children:
+          - node: text
+            content: $c = eval($code);
+    - node: li
+      children:
+      - node: text
+        content: 変数に入っていたり、メソッドから動的に生成されたりする
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ＝ ソースコードを見てもわからない
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 型宣言にarrayとしか書かないと
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: メソッドに何を渡せばいいのかわからない
+    - node: li
+      children:
+      - node: text
+        content: どんな形式の配列を渡しても動くという関数は決して多くない
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 標準関数の count() のようなユーティリティが多め
+    - node: li
+      children:
+      - node: text
+        content: プロパティにも何が入ってるのかわからない
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 従来のLaravelは @var array まみれだった
+        - node: li
+          children:
+          - node: text
+            content: Laravel 9.xのコードベースでは配列の内部構造に型がついている
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: たとえばこういう関数
+  - node: p
+    children:
+    - node: text
+      content: からユーザーを取得する
+  - node: p
+    children:
+    - node: text
+      content: /** DB  */
+  - node: p
+    children:
+    - node: text
+      content: 'function findUsers(array $ids): array {}'
+  - node: p
+    children:
+    - node: text
+      content: こういうパラメータを渡されても困る
+  - node: p
+    children:
+    - node: text
+      content: '// '
+  - node: p
+    children:
+    - node: text
+      content: $users = findUsers(['hoge' => 'fuga'])
+  - node: p
+    children:
+    - node: text
+      content: というパラメータから推測しろ？ うーんわからん
+  - node: p
+    children:
+    - node: text
+      content: '// $ids  '
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: たとえばこういう関数
+  - node: p
+    children:
+    - node: text
+      content: 検索する
+  - node: p
+    children:
+    - node: text
+      content: /**   */
+  - node: p
+    children:
+    - node: text
+      content: 'function search(string $word, array $opt): array {}'
+  - node: p
+    children:
+    - node: text
+      content: 検索したい単語
+  - node: p
+    children:
+    - node: text
+      content: $result = search(' ');
+  - node: p
+    children:
+    - node: text
+      content: 実装を確認しに行かないとわからない
+  - node: p
+    children:
+    - node: text
+      content: '//           '
+  - node: p
+    children:
+    - node: text
+      content: 検索したい単語
+  - node: p
+    children:
+    - node: text
+      content: $result = search(' ', [?????]);
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 配列につける型
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 従来多用されていた記法
+  - node: p
+    children:
+    - node: text
+      content: /**
+    - node: br
+    - node: text
+      content: ' * @param User[] $users'
+    - node: br
+    - node: text
+      content: ' */         '
+    - node: br
+    - node: text
+      content: 'function printUsers(array $users): void {'
+    - node: br
+    - node: text
+      content: '    foreach ($users as $user) {         echo $user->name, "\n";         '
+    - node: br
+    - node: text
+      content: '    }'
+    - node: br
+    - node: text
+      content: '}'
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 従来記法の欠点
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 配列インデックスの型を指定できない
+    - node: li
+      children:
+      - node: text
+        content: 以下の配列が区別できない
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: '[12 => new User(), 34 => new User()]'
+        - node: li
+          children:
+          - node: text
+            content: '[''太郎'' => new User(), ''花子'' => new User()]'
+        - node: li
+          children:
+          - node: text
+            content: '[new User(''太郎''), new User(''花子'')]'
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: PSR-5式の配列記法(ジェネリクス)
+  - node: p
+    children:
+    - node: text
+      content: array<int,User>
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 配列インデックスの型を指定できる
+    - node: li
+      children:
+      - node: text
+        content: 以下の配列が区別できる
+  - node: p
+    children:
+    - node: text
+      content: array<string,User>
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: '[12 => new User(), 34 => new User()]'
+    - node: li
+      children:
+      - node: text
+        content: '[''太郎'' => new User(), ''花子'' => new User()]'
+    - node: li
+      children:
+      - node: text
+        content: '[new User(''太郎''), new User(''花子'')]'
+  - node: p
+    children:
+    - node: text
+      content: list<User>
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 従来多用されていた記法
+  - node: p
+    children:
+    - node: text
+      content: /**
+    - node: br
+    - node: text
+      content: ' * @param User[] $users'
+    - node: br
+    - node: text
+      content: ' */         '
+    - node: br
+    - node: text
+      content: 'function printUsers(array $users): void {'
+    - node: br
+    - node: text
+      content: '    foreach ($users as $user) {         echo $user->name, "\n";         '
+    - node: br
+    - node: text
+      content: '    }'
+    - node: br
+    - node: text
+      content: '}'
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 旧PSR-5式の記法
+  - node: p
+    children:
+    - node: text
+      content: /**
+    - node: br
+    - node: text
+      content: ' * @param array<User> $users'
+    - node: br
+    - node: text
+      content: ' */         '
+    - node: br
+    - node: text
+      content: 'function printUsers(array $users): void {'
+    - node: br
+    - node: text
+      content: '    foreach ($users as $user) {         echo $user->name, "\n";         '
+    - node: br
+    - node: text
+      content: '    }'
+    - node: br
+    - node: text
+      content: '}'
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 変数リテラルや定数は @var を避ける
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 静的解析ツールの実装にもよるが、リテラルから構造を分析できる
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: PHPStanなどは構造を読み取ってくれる
+    - node: li
+      children:
+      - node: text
+        content: むやみに書くと情報量が落ちる
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p3:
+  - url: https://tadsan.fanbox.cc/
+    title: にゃんだーすわん｜pixivFANBOX
+  - url: https://scrapbox.io/php/
+    title: PHP
+  - url: https://www.phper.ninja/
+    title: 超PHPerになろう
+  - url: https://zenn.dev/tadsan
+    title: にゃんだーすわんさんの記事一覧 | Zenn
+  - url: https://qiita.com/tadsan
+    title: tadsan - Qiita
+  - url: https://github.com/bag2php
+    title: bag2php · GitHub
+  p4:
+  - url: https://gihyo.jp/book/2021/978-4-297-12215-7
+    title: WEB+DB PRESS総集編［Vol.1～120］ | 技術評論社
+  p9:
+  - url: https://youtu.be/kOhsJCW9YIE?t=17007
+    title: PHPカンファレンス沖縄2021　Track A - YouTube
+  p10:
+  - url: https://fortee.jp/phpcon-2021/proposal/a7e53ddb-09fd-404e-bb90-b5047e8994ab
+    title: '配列、ジェネリクス、PHPで書けない型 by うさみけんた | トーク | PHP Conference Japan 2021 #phpcon
+      #phpcon2021 #php - fortee.jp'
+  p18:
+  - url: https://www.php.net/manual/ja/language.types.array.php
+    title: 'PHP: 配列 - Manual'

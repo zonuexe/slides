@@ -2,124 +2,57 @@ text:
   p1:
   - node: p
     children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 静的解析現状確認会
-  - node: p
-    children:
     - node: bold
-      content: PHP
+      content: PHP静的解析現状確認会
   - node: p
     children:
     - node: text
-      content: ピクシブ株式会社
-  - node: p
-    children:
-    - node: bold
-      content: ' / pixiv.git'
+      content: ピクシブ株式会社 / pixiv.git
   - node: p
     children:
     - node: text
       content: pixiv Inc.
     - node: br
     - node: text
-      content: うさみけんた
+      content: うさみけんた / tadsan
   - node: p
     children:
-    - node: bold
-      content: ' / tadsan'
-  - node: p
-    children:
-    - node: bold
+    - node: text
       content: '2019-02-18'
   p2:
   - node: p
     children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
+    - node: bold
       content: はじめに
-  - node: p
+  - node: ul
     children:
-    - node: text
-      content: 今回紹介する の開発環境の改善は歴代の複数のチームメンバーの創意工夫の積
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: pixiv
-  - node: p
-    children:
-    - node: text
-      content: み重ねであり、この資料は筆者 がその成果をまとめたものである
-  - node: p
-    children:
-    - node: text
-      content: (@tadsan)
-  - node: p
-    children:
-    - node: text
-      content: の型に関する見解は 個人の意見およびチーム内での議論に基く
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHP @tadsan
+    - node: li
+      children:
+      - node: text
+        content: 今回紹介するpixivの開発環境の改善は歴代の複数のチームメンバーの創意工夫の積み重ねであり、この資料は筆者(@tadsan)がその成果をまとめたものである
+    - node: li
+      children:
+      - node: text
+        content: PHPの型に関する見解は@tadsan個人の意見およびチーム内での議論に基く
   p3:
   - node: p
     children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
+    - node: bold
       content: 現状を三行で
-  - node: p
+  - node: ul
     children:
-    - node: text
-      content: 未定義クラス・メソッド・定数・変数などの使用は簡単に検出できます
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 、 や などのツールがありますが、それぞれの特徴が
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm Phan PHPStan
-  - node: p
-    children:
-    - node: text
-      content: の開発では ごとに動的解析と静的解析の結果は
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: pixiv.git Pull Request
-    - node: br
-    - node: text
-      content: 概ね 秒程度で結果を表示できてます
+    - node: li
+      children:
+      - node: text
+        content: 未定義クラス・メソッド・定数・変数などの使用は簡単に検出できます
+    - node: li
+      children:
+      - node: text
+        content: PhpStorm、PhanやPHPStanなどのツールがありますが、それぞれの特徴が
+    - node: li
+      children:
+      - node: text
+        content: pixiv.gitの開発ではPull Requestごとに動的解析と静的解析の結果は概ね60秒程度で結果を表示できてます
   p4:
   - node: p
     children:

@@ -1,0 +1,581 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: PHPの成功と失敗
+  - node: p
+    children:
+    - node: text
+      content: Let's talk successes and failures in PHP applications
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2022-06-23 '
+  - node: p
+    children:
+    - node: bold
+      content: 【非公式】PHPカンファレンス福岡・前日Meetup
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 エンジニア
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: 😎
+    - node: br
+    - node: text
+      content: 'サクセスしたい '
+    - node: br
+    - node: text
+      content: ですか？
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: '??? '
+    - node: br
+    - node: text
+      content: ｢PHPをご存じか？｣
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 世界で最も成功した プログラミング言語
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '多くの｢失敗｣を抱えた '
+    - node: br
+    - node: text
+      content: プログラミング言語
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: ……という話は ここで終了です
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 本題
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 今回のお題
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'あなたのコードは '
+    - node: br
+    - node: text
+      content: '｢絶対に｣正常に '
+    - node: br
+    - node: text
+      content: 動きますか？
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 成功と失敗を考える
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '検索して1件も '
+    - node: br
+    - node: text
+      content: 'レコードがなれば '
+    - node: br
+    - node: text
+      content: 失敗か？
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 場合による！
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: プログラムが期待通り
+    - node: br
+    - node: text
+      content: 'に動かないことを '
+    - node: br
+    - node: text
+      content: 失敗と捉える
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: もうちょっと抽象的に
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: あなたのプログラムはいつ動かない？
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: A. 基本的には絶対動く (コンピュータやOSが正常動作する限り)
+    - node: li
+      children:
+      - node: text
+        content: B. コンピュータが意図してない状態に陥ってない限りは動く
+    - node: li
+      children:
+      - node: text
+        content: C. 通信先のDB/APIが動いてる限りは動く
+    - node: li
+      children:
+      - node: text
+        content: D. ちゃんと正規の手順でセットアップしてくれる限りは動く
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 絶対動くプログラム
+  - node: p
+    children:
+    - node: text
+      content: (基本的に)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: echo "Hello"
+    - node: li
+      children:
+      - node: text
+        content: var_dump(1 + 1)
+    - node: li
+      children:
+      - node: text
+        content: count([1, 2, 3])
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: PCの環境が整っている限りは動く
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: '''le_get_contents($path) // ファイルがあれば動く'
+    - node: li
+      children:
+      - node: text
+        content: '''le_put_contents($path, $body) // ディスクに書き込めれば'
+    - node: li
+      children:
+      - node: text
+        content: ネットワークが…
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 通信先の問題がなければ動く
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 接続先のデータベースが過負荷状態で応答しない
+    - node: li
+      children:
+      - node: text
+        content: 接続先のAPIが何らかの問題で応答しない
+    - node: li
+      children:
+      - node: text
+        content: 接続先との間のネットワークが詰まっている
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: これらの問題はこちらでは対処できない
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 想定通りの前提が揃っていれば
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 通信のためにAPIキーを環境変数でセットしておく必要がある
+    - node: li
+      children:
+      - node: text
+        content: メソッド呼び出し前に正規のオプションをセットしていれば動く
+    - node: li
+      children:
+      - node: text
+        content: php.ini におかしな設定が入っていなければ動く
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 存在しないextensionを読み込もうとしてないかとか
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '想定していない '
+    - node: br
+    - node: text
+      content: 事態にどう対処するか
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: file_get_contents($path)
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: PHP標準関数はどうするか
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 失敗がありうる関数は、型としては |false のような型がつけられている
+    - node: li
+      children:
+      - node: text
+        content: '例: ''le_get_contents() などを含む'
+    - node: li
+      children:
+      - node: text
+        content: ただし、内部的にはエラーを発生させられる
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: そして発生したエラーはエラーハンドラーで握り潰される可能性がある
+        - node: li
+          children:
+          - node: text
+            content: falseが返ってくるかどうかは環境による(!)
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: エラーとは
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: throwできる例外とは別にエラーというものがある
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: PHP7で追加されたErrorとは別物(!)
+    - node: li
+      children:
+      - node: text
+        content: 発生したエラーはset_error_handler()でカスタマイズできる
+    - node: li
+      children:
+      - node: text
+        content: エラーのままでは扱いにくいのでErrorExceptionに変換するといい
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 例外とは
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: throwできるオブジェクト
+    - node: li
+      children:
+      - node: text
+        content: 例外が発生する可能性がある処理をcatchで括ると補足できる
+    - node: li
+      children:
+      - node: text
+        content: どのcatchにも捕捉されなかった例外はset_exception_handler()で
+      - node: br
+      - node: text
+        content: 'カスタマイズできる '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Webサイトの共通エラー画面を表示するのに使える
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: '@throws'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ある関数メソッドを呼び出すと例外が発生することを使用者に示す
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: そのメソッドを呼び出して発生するおそれのある例外を捕捉して対処するこ
+          - node: br
+          - node: text
+            content: 'とを例外ハンドリンクという '
+    - node: li
+      children:
+      - node: text
+        content: Javaのthrowsと検査例外(チェック例外)を模倣したもの
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 静的解析ツールやPhpStormは@throwsがあるメソッド呼び出しに対し
+          - node: br
+          - node: text
+            content: て、try-catchがなければハンドリングすることを要求する
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: ユニオン型による失敗の表現
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'function searchBooks($name): ?Book'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットしなければnullを返す
+        - node: li
+          children:
+          - node: text
+            content: ユニオン型だけで失敗を表現すると、どうすればいいのか情報不足になりが
+          - node: br
+          - node: text
+            content: ち
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: ユニオン型+throwsによる失敗表現
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: /**
+      - node: br
+      - node: text
+        content: '  * @throws SearchEngineErrorException '
+      - node: br
+      - node: text
+        content: '  */ '
+      - node: br
+      - node: text
+        content: 'function searchBook($name): ?Book '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットしなければnullを返す
+        - node: li
+          children:
+          - node: text
+            content: 検索エンジンに異常事態があれば例外を示す
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: ユニオン型+throwsによる失敗表現
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: /**
+      - node: br
+      - node: text
+        content: '  * @throws SearchEngineErrorException '
+      - node: br
+      - node: text
+        content: '  */ '
+      - node: br
+      - node: text
+        content: 'function searchBook($name): ?Book '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットしなければnullを返す
+        - node: li
+          children:
+          - node: text
+            content: 検索エンジンに異常事態があれば例外を示す
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: リスト+throwsによる失敗表現
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: /**
+      - node: br
+      - node: text
+        content: '  * @throws SearchEngineErrorException '
+      - node: br
+      - node: text
+        content: '  */ '
+      - node: br
+      - node: text
+        content: 'function searchBook($name): array '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットしなければnullを返す
+        - node: li
+          children:
+          - node: text
+            content: 検索エンジンに異常事態があれば例外を示す
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: ユニオン型+throwsによる失敗表現
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: /**
+      - node: br
+      - node: text
+        content: '  * @throws SearchEngineErrorException '
+      - node: br
+      - node: text
+        content: '  */ '
+      - node: br
+      - node: text
+        content: 'function searchBook($name): ?Book '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットしなければnullを返す
+        - node: li
+          children:
+          - node: text
+            content: 検索エンジンに異常事態があれば例外を示す
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 例外を含むユニオン型
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 'function searchBooks($name): Book|NotFound|DBError'
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットすればnullを返す
+        - node: li
+          children:
+          - node: text
+            content: 検索がヒットしなければNotFoundを返す
+        - node: li
+          children:
+          - node: text
+            content: DBが異常ならDBErrorを返す
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: その他
+size:
+  max_width: 1920
+  max_height: 1080
+links: {}

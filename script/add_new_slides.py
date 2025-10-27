@@ -25,17 +25,6 @@ LINK_EXTRACTOR_CMD = [
 ROOT = Path(__file__).resolve().parents[1]
 PDF_DIR = ROOT / "pdf"
 SLIDES_YAML = ROOT / "slides.yaml"
-PNGQUANT_ARGS = [
-    "pngquant",
-    "--force",
-    "--quality",
-    "100",
-    "--speed",
-    "1",
-    "--ext",
-    ".png",
-    "--skip-if-larger",
-]
 HASHTAG_PATTERN = re.compile(r"#([\w\-]+)")
 
 
@@ -115,10 +104,30 @@ def generate_thumbnail(pdf_path: Path) -> Path:
     subprocess.run(convert_args, check=True)
     Path(tmp_name).replace(output_path)
 
-    if shutil.which("pngquant"):
-        subprocess.run(PNGQUANT_ARGS + [str(output_path)], check=True)
+    compress_png(output_path)
 
     return output_path
+
+
+def compress_png(image_path: Path) -> None:
+    zopflipng = shutil.which("zopflipng")
+    if not zopflipng:
+        return
+
+    with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp_file:
+        tmp_name = tmp_file.name
+
+    try:
+        subprocess.run(
+            [zopflipng, "-m", "-y", str(image_path), tmp_name],
+            check=True,
+        )
+        Path(tmp_name).replace(image_path)
+    finally:
+        try:
+            Path(tmp_name).unlink()
+        except FileNotFoundError:
+            pass
 
 
 def ensure_meta_file(pdf_path: Path) -> Path:

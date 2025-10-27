@@ -4,6 +4,7 @@ import { loadSlides, getSlideBySlug } from "./lib/slides.js";
 import { createReadStream } from "fs";
 import { stat } from "fs/promises";
 import { readFile } from "fs/promises";
+import { extname, resolve } from "node:path";
 import yaml from "js-yaml";
 
 // HTMLエスケープ関数（サーバーサイド用）
@@ -60,6 +61,103 @@ const app = new Hono();
 
 // サイト設定を読み込む（キャッシュなし）
 const SNIPPET_LENGTH = 160;
+
+const BASE_DIR = resolve(".");
+
+const MIME_TYPES = new Map([
+  [".css", "text/css"],
+  [".js", "application/javascript"],
+  [".mjs", "application/javascript"],
+  [".json", "application/json"],
+  [".html", "text/html"],
+  [".htm", "text/html"],
+  [".png", "image/png"],
+  [".jpg", "image/jpeg"],
+  [".jpeg", "image/jpeg"],
+  [".svg", "image/svg+xml"],
+  [".pdf", "application/pdf"],
+  [".ico", "image/x-icon"],
+]);
+
+function detectContentType(filePath, fallback) {
+  const ext = extname(filePath).toLowerCase();
+  return MIME_TYPES.get(ext) || fallback || "application/octet-stream";
+}
+
+function serveStatic(options = {}) {
+  const {
+    root = ".",
+    rewriteRequestPath,
+    fallbackContentType,
+    indexFile = null,
+    maxAge = 0,
+  } = options;
+
+  const resolvedRoot = resolve(BASE_DIR, root);
+  const cacheHeader =
+    maxAge > 0 ? `public, max-age=${maxAge}` : "public, max-age=0, must-revalidate";
+
+  return async (c) => {
+    try {
+      let requestPath = c.req.path;
+      if (typeof rewriteRequestPath === "function") {
+        const rewritten = rewriteRequestPath(requestPath, c);
+        if (typeof rewritten === "string" && rewritten) {
+          requestPath = rewritten;
+        }
+      }
+
+      if (!requestPath) {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      const decoded = decodeURIComponent(requestPath);
+      let relativePath = decoded.startsWith("/") ? decoded.slice(1) : decoded;
+      let targetPath = resolve(resolvedRoot, relativePath);
+
+      if (!targetPath.startsWith(resolvedRoot)) {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      let stats;
+      try {
+        stats = await stat(targetPath);
+      } catch {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      if (stats.isDirectory()) {
+        if (!indexFile) {
+          return c.text("ファイルが見つかりません", 404);
+        }
+        targetPath = resolve(targetPath, indexFile);
+        if (!targetPath.startsWith(resolvedRoot)) {
+          return c.text("ファイルが見つかりません", 404);
+        }
+        try {
+          stats = await stat(targetPath);
+        } catch {
+          return c.text("ファイルが見つかりません", 404);
+        }
+        if (!stats.isFile()) {
+          return c.text("ファイルが見つかりません", 404);
+        }
+      } else if (!stats.isFile()) {
+        return c.text("ファイルが見つかりません", 404);
+      }
+
+      const stream = createReadStream(targetPath);
+      const headers = {
+        "Content-Type": detectContentType(targetPath, fallbackContentType),
+        "Cache-Control": cacheHeader,
+      };
+
+      return new Response(stream, { headers });
+    } catch {
+      return c.text("ファイルが見つかりません", 404);
+    }
+  };
+}
 
 function collectTextFromNode(node, collector) {
   if (!node || typeof node !== "object") return;
@@ -125,8 +223,9 @@ function toSearchFragment(value) {
 function collectEventsText(events) {
   if (!Array.isArray(events)) return "";
   return events
-    .map((event) =>
-      [
+    .flatMap((event) => {
+      if (!event || typeof event !== "object") return [];
+      const fragments = [
         event?.name,
         event?.type,
         event?.location,
@@ -134,25 +233,28 @@ function collectEventsText(events) {
         event?.presented_at,
         event?.url,
         event?.talk_duration,
-      ]
-        .map(toSearchFragment)
-        .filter(Boolean)
-        .join(" ")
-    )
-    .filter(Boolean)
+      ].flatMap((value) => {
+        const fragment = toSearchFragment(value);
+        return fragment ? [fragment] : [];
+      });
+      const combined = fragments.join(" ").trim();
+      return combined ? [combined] : [];
+    })
     .join(" ");
 }
 
 function collectRelatedArticlesText(relatedArticles) {
   if (!Array.isArray(relatedArticles)) return "";
   return relatedArticles
-    .map((article) =>
-      [article?.title, article?.desc, article?.url]
-        .map(toSearchFragment)
-        .filter(Boolean)
-        .join(" ")
-    )
-    .filter(Boolean)
+    .flatMap((article) => {
+      if (!article || typeof article !== "object") return [];
+      const fragments = [article?.title, article?.desc, article?.url].flatMap((value) => {
+        const fragment = toSearchFragment(value);
+        return fragment ? [fragment] : [];
+      });
+      const combined = fragments.join(" ").trim();
+      return combined ? [combined] : [];
+    })
     .join(" ");
 }
 
@@ -208,8 +310,32 @@ async function generateSlidesData() {
       console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
     }
     const eventsText = collectEventsText(slide.events);
-    const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
-    const combinedContent = [searchContent, eventsText, relatedArticlesText]
+  const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
+  const tagText = Array.isArray(slide.tags)
+      ? slide.tags
+          .flatMap((tag) => {
+            if (typeof tag !== "string") return [];
+            const value = tag.trim();
+            return value ? [value] : [];
+          })
+          .join(" ")
+      : "";
+  const hashtagText = Array.isArray(slide.hashtags)
+      ? slide.hashtags
+          .flatMap((tag) => {
+            if (typeof tag !== "string") return [];
+            const value = tag.trim();
+            return value ? [`#${value}`] : [];
+          })
+          .join(" ")
+      : "";
+    const combinedContent = [
+      searchContent,
+      eventsText,
+      relatedArticlesText,
+      tagText,
+      hashtagText,
+    ]
       .filter(Boolean)
       .join(" ");
 
@@ -230,27 +356,29 @@ async function generateSlidesData() {
     content: slide.combinedContent ?? slide.searchContent ?? "",
     snippet: slide.snippet ?? "",
     events: Array.isArray(slide.events)
-      ? slide.events
-        .map((event) => {
-          if (!event || typeof event !== "object") return null;
+      ? slide.events.flatMap((event) => {
+          if (!event || typeof event !== "object") return [];
           const name = typeof event.name === "string" ? event.name : "";
-          if (!name) return null;
+          if (!name) return [];
           const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
           const location = typeof event.location === "string" ? event.location : "";
           const place = typeof event.place === "string" ? event.place : "";
-          return {
-            name,
-            presented_at: presentedAt,
-            location,
-            place,
-          };
+          return [
+            {
+              name,
+              presented_at: presentedAt,
+              location,
+              place,
+            },
+          ];
         })
-        .filter(Boolean)
       : [],
     tags: Array.isArray(slide.tags)
-      ? slide.tags
-        .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
-        .filter(Boolean)
+      ? slide.tags.flatMap((tag) => {
+          if (typeof tag !== "string") return [];
+          const value = tag.trim();
+          return value ? [value] : [];
+        })
       : [],
   }));
   const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
@@ -271,6 +399,7 @@ app.get("/slides/", async (c) => {
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>tadsan's slide deck</title>
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
           <link rel="preload" href="/slides/css/index.css" as="style">
           <link rel="stylesheet" href="/slides/css/index.css">
           <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
@@ -279,8 +408,8 @@ app.get("/slides/", async (c) => {
           <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
         </head>
         <body>
-          <div class="container h-feed">
-            <h1 class="site-title h-card p-author"><a href="http://twitter.com/tadsan" class="p-name u-url">tadsan</a>'s slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
+          <main class="container h-feed">
+            <h1 class="site-title h-card p-author"><a href="http://twitter.com/tadsan" class="p-name u-url"><img src="/slides/zonuexe.png" alt="" width="32" style="margin: 0 5px"></a>tadsan's slide deck <wbr> ヾ(〃＞＜)ﾉﾞ</h1>
             <div class="search-toolbar">
               <label class="search-label">
                 <span class="visually-hidden">スライドを検索</span>
@@ -297,8 +426,8 @@ app.get("/slides/", async (c) => {
                   ${Array.isArray(slide.events) && slide.events.some(event => event && event.name) ? `
                     <div class="slide-card-events">
                       ${slide.events
-          .map((event) => {
-            if (!event || !event.name) return "";
+          .flatMap((event) => {
+            if (!event || !event.name) return [];
             const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
             const locationParts = [];
             if (typeof event.location === "string" && event.location) locationParts.push(event.location);
@@ -307,20 +436,28 @@ app.get("/slides/", async (c) => {
             const locationHtml = locationText
               ? ` <span class="p-location visually-hidden">${escapeHtml(locationText)}</span>`
               : "";
-            return `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${presentedAt ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>` : ""}${locationHtml}</p>`;
+            return [
+              `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${
+                presentedAt
+                  ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>`
+                  : ""
+              }${locationHtml}</p>`,
+            ];
           })
-          .filter(Boolean)
           .join("")}
                     </div>
                   ` : ""}
                   ${Array.isArray(slide.tags) && slide.tags.some(tag => typeof tag === "string" && tag.trim()) ? `
                     <ul class="slide-card-tags">
                       ${slide.tags
-          .map((tag) => {
-            if (typeof tag !== "string" || !tag.trim()) return "";
-            return `<li class="p-category"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(tag.trim())}</li>`;
+          .flatMap((tag) => {
+            if (typeof tag !== "string" || !tag.trim()) return [];
+            return [
+              `<li class="p-category"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(
+                tag.trim()
+              )}</li>`,
+            ];
           })
-          .filter(Boolean)
           .join("")}
                     </ul>
                   ` : ""}
@@ -328,8 +465,7 @@ app.get("/slides/", async (c) => {
                   <span class="p-author h-card visually-hidden"><a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a></span>
                 </div>
               `).join('\n')}
-          </div>
-        </div>
+          </main>
         <hr>
         <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" defer></script>
@@ -400,16 +536,29 @@ app.get("/slides/:slug/", async (c) => {
       maxWidth = Math.round(maxHeight * aspectRatio);
     }
 
+    const eventNarratives = Array.isArray(slide.events)
+      ? slide.events.flatMap((event) => {
+          const narrative = buildEventNarrative(event);
+          return narrative ? [narrative] : [];
+        })
+      : [];
+
     const config = await loadSiteConfig();
+    const descriptionText =
+      eventNarratives.length > 0
+        ? eventNarratives.map((entry) => entry.text).join(" ")
+        : config.site.description;
     const html = `
       <!DOCTYPE html>
       <html lang="ja">
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="${escapeHtml(descriptionText)}">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
 
           <meta property="og:title" content="${slide.title}">
-          <meta property="og:description" content="${config.site.description}">
+          <meta property="og:description" content="${escapeHtml(descriptionText)}">
           <meta property="og:type" content="website">
           <meta property="og:url" content="${config.site.url}/slides/${slide.slug}/">
           <meta property="og:image" content="${config.site.url}/slides/${slide.image}">
@@ -420,7 +569,7 @@ app.get("/slides/:slug/", async (c) => {
           <meta name="twitter:site" content="${config.twitter.site}">
           <meta name="twitter:creator" content="${config.twitter.creator}">
           <meta name="twitter:title" content="${slide.title}">
-          <meta name="twitter:description" content="${config.site.description}">
+          <meta name="twitter:description" content="${escapeHtml(descriptionText)}">
           <meta name="twitter:image" content="${config.site.url}/slides/${slide.image}">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
@@ -452,15 +601,16 @@ app.get("/slides/:slug/", async (c) => {
           </script>
         </head>
         <body>
-          <div class="container">
-            <iframe src="${pdfUrl}" id="pdf-container" title="${slide.title}"></iframe>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="${pdfUrl}" title="${slide.title}" scrolling="no"></iframe>
+            </div>
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
               </button>
             </div>
 
-            <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
             <article class="slide-info h-entry">
@@ -474,59 +624,9 @@ app.get("/slides/:slug/", async (c) => {
               <p class="published-line">公開日: <time class="dt-published" datetime="${escapeHtml(slide.date ?? "")}">${japaneseDate}</time></p>
               <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
 
-              ${slide.events && slide.events.length > 0 ? `
+              ${eventNarratives.length > 0 ? `
                 <div class="event-info">
-                  ${slide.events.map(event => {
-      const presentedAtRaw = typeof event.presented_at === "string" ? event.presented_at : "";
-      let eventJapaneseDate = "";
-      if (presentedAtRaw) {
-        const eventDate = new Date(presentedAtRaw);
-        if (!Number.isNaN(eventDate.valueOf())) {
-          eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
-        }
-      }
-      const timeLabel = eventJapaneseDate || presentedAtRaw;
-      const timeHtml = presentedAtRaw
-        ? `<time class="dt-start" datetime="${escapeHtml(presentedAtRaw)}">${escapeHtml(timeLabel)}</time>`
-        : "";
-      const name = typeof event.name === "string" ? event.name : "";
-      if (!name) return "";
-      const locationSegments = [];
-      if (typeof event.location === "string" && event.location) {
-        locationSegments.push(`<span class="p-location">${escapeHtml(event.location)}</span>`);
-      }
-      if (typeof event.place === "string" && event.place) {
-        locationSegments.push(`<span class="p-location">${escapeHtml(event.place)}</span>`);
-      }
-      const type = typeof event.type === "string" ? event.type : "";
-      const typeHtml = type ? `<span class="p-category">${escapeHtml(type)}</span>` : "";
-      const duration =
-        typeof event.talk_duration === "number" && Number.isFinite(event.talk_duration)
-          ? `${event.talk_duration}分`
-          : "";
-      const durationHtml = duration
-        ? `<span class="p-duration" data-duration="${escapeHtml(String(event.talk_duration))}">${escapeHtml(duration)}</span>`
-        : "";
-      const url = typeof event.url === "string" ? event.url : "";
-      const nameHtml = url
-        ? `<a href="${escapeHtml(url)}" class="p-name u-url" target="_blank" rel="noopener">${escapeHtml(name)}</a>`
-        : `<span class="p-name">${escapeHtml(name)}</span>`;
-      const timeSegment = timeHtml ? `${timeHtml}に` : "";
-      const locationSegment = locationSegments.length ? `${locationSegments.join("の")}で` : "";
-      const roleParts = [];
-      if (typeHtml) {
-        roleParts.push(typeHtml);
-      } else if (type) {
-        roleParts.push(escapeHtml(type));
-      }
-      if (durationHtml) {
-        roleParts.push(durationHtml);
-      } else if (duration) {
-        roleParts.push(escapeHtml(duration));
-      }
-      const roleSegment = roleParts.length ? `で${roleParts.join(" ")}として` : "";
-      return `<p class="event-entry h-event">${timeSegment}${locationSegment}開催された『${nameHtml}』${roleSegment}発表しました。</p>`;
-    }).join('')}
+                  ${eventNarratives.map(entry => entry.html).join('')}
                 </div>
               ` : ''}
 
@@ -614,7 +714,7 @@ app.get("/slides/:slug/", async (c) => {
                 </a>
               </div>
             </article>
-          </div>
+          </main>
           <hr>
           <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>
@@ -716,123 +816,47 @@ app.get("/slides/:slug/oembed.xml", async (c) => {
   }
 });
 
-// CSSファイルの配信
-app.get("/slides/css/*", async (c) => {
-  const path = c.req.path.replace("/slides/css/", "");
-  try {
-    const filePath = `./css/${decodeURIComponent(path)}`;
-    const stats = await stat(filePath);
-
-    if (stats.isFile()) {
-      const contentType = path.endsWith(".css") ? "text/css" : "application/octet-stream";
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else {
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
-
-// JavaScriptファイルの配信
-app.get("/slides/js/*", async (c) => {
-  const path = c.req.path.replace("/slides/js/", "");
-  try {
-    const filePath = `./js/${decodeURIComponent(path)}`;
-    const stats = await stat(filePath);
-
-    if (stats.isFile()) {
-      let contentType = "application/octet-stream";
-      if (path.endsWith(".js") || path.endsWith(".mjs")) {
-        contentType = "application/javascript";
-      }
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else {
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
-
 // 静的ファイルの配信
-app.get("/slides/pdf/*", async (c) => {
-  const path = c.req.path.replace("/slides/pdf/", "");
-  try {
-    const filePath = `./pdf/${decodeURIComponent(path)}`;
-    const stats = await stat(filePath);
+app.get(
+  "/slides/zonuexe.png",
+  serveStatic({
+    rewriteRequestPath: () => "/zonuexe.png",
+    maxAge: 3600,
+  })
+);
 
-    if (stats.isFile()) {
-      const contentType = path.endsWith(".pdf") ? "application/pdf" : "application/octet-stream";
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else {
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
+app.get(
+  "/slides/css/*",
+  serveStatic({
+    root: "./css",
+    rewriteRequestPath: (path) => path.replace(/^\/slides\/css/, ""),
+  })
+);
 
-// slide-pdf.js の静的ファイル配信
-app.get("/slide-pdf.js/*", async (c) => {
-  const path = c.req.path.replace("/slide-pdf.js/", "");
-  try {
-    // ../slide-pdf.js/ 以下のファイルを配信
-    const filePath = `../slide-pdf.js/${decodeURIComponent(path)}`;
-    console.log(`Requested path: ${c.req.path}, File path: ${filePath}`);
+app.get(
+  "/slides/js/*",
+  serveStatic({
+    root: "./js",
+    rewriteRequestPath: (path) => path.replace(/^\/slides\/js/, ""),
+  })
+);
 
-    const stats = await stat(filePath);
+app.get(
+  "/slides/pdf/*",
+  serveStatic({
+    root: "./pdf",
+    rewriteRequestPath: (path) => path.replace(/^\/slides\/pdf/, ""),
+  })
+);
 
-    if (stats.isFile()) {
-      // ファイル拡張子に基づいてContent-Typeを設定
-      let contentType = "application/octet-stream";
-      if (path.endsWith(".js") || path.endsWith(".mjs")) contentType = "application/javascript";
-      else if (path.endsWith(".css")) contentType = "text/css";
-      else if (path.endsWith(".html")) contentType = "text/html";
-      else if (path.endsWith(".json")) contentType = "application/json";
-      else if (path.endsWith(".png")) contentType = "image/png";
-      else if (path.endsWith(".jpg") || path.endsWith(".jpeg")) contentType = "image/jpeg";
-      else if (path.endsWith(".svg")) contentType = "image/svg+xml";
-
-      const stream = createReadStream(filePath);
-      return new Response(stream, {
-        headers: { "Content-Type": contentType },
-      });
-    } else if (stats.isDirectory()) {
-      // ディレクトリの場合は index.html を探す
-      const indexPath = `${filePath}/index.html`;
-      try {
-        const indexStats = await stat(indexPath);
-        if (indexStats.isFile()) {
-          const stream = createReadStream(indexPath);
-          return new Response(stream, {
-            headers: { "Content-Type": "text/html" },
-          });
-        }
-      } catch (indexError) {
-        console.log(`index.html not found in directory: ${filePath}`);
-      }
-      // index.html が存在しない場合は404エラー
-      console.log(`Directory access without index.html: ${filePath}`);
-      return c.text("ファイルが見つかりません", 404);
-    } else {
-      console.log(`File not found: ${filePath}`);
-      return c.text("ファイルが見つかりません", 404);
-    }
-  } catch (error) {
-    console.error(`Error serving file: ${error.message}`);
-    return c.text("ファイルが見つかりません", 404);
-  }
-});
+app.get(
+  "/slide-pdf.js/*",
+  serveStatic({
+    root: "../slide-pdf.js",
+    rewriteRequestPath: (path) => path.replace(/^\/slide-pdf\.js/, ""),
+    indexFile: "index.html",
+  })
+);
 
 console.log("🚀 Hono server is running on http://localhost:3000");
 
@@ -841,3 +865,90 @@ serve({
   fetch: app.fetch,
   port: 3000
 });
+function buildEventRoleSegment(event) {
+  const type = typeof event.type === "string" ? event.type.trim() : "";
+  const hasDuration =
+    typeof event.talk_duration === "number" && Number.isFinite(event.talk_duration);
+  const durationMinutes = hasDuration ? `${event.talk_duration}分` : "";
+  const durationSlot = hasDuration ? `${event.talk_duration}分枠` : "";
+
+  let text = "";
+  if (type && hasDuration) {
+    text = `${type}(${durationMinutes})として`;
+  } else if (hasDuration) {
+    text = `${durationSlot}として`;
+  } else if (type) {
+    text = `${type}として`;
+  }
+
+  let html = "";
+  if (type && hasDuration) {
+    const typeHtml = `<span class="p-category">${escapeHtml(type)}</span>`;
+    const durationHtml = `<span class="p-duration" data-duration="${escapeHtml(
+      String(event.talk_duration)
+    )}">${escapeHtml(durationMinutes)}</span>`;
+    html = `${typeHtml}(${durationHtml})として`;
+  } else if (hasDuration) {
+    const durationHtml = `<span class="p-duration" data-duration="${escapeHtml(
+      String(event.talk_duration)
+    )}">${escapeHtml(durationSlot)}</span>`;
+    html = `${durationHtml}として`;
+  } else if (type) {
+    html = `<span class="p-category">${escapeHtml(type)}</span>として`;
+  }
+
+  return { html, text };
+}
+
+function buildEventNarrative(event) {
+  if (!event || typeof event !== "object") return null;
+  const name = typeof event.name === "string" ? event.name.trim() : "";
+  if (!name) return null;
+
+  const presentedAtRaw = typeof event.presented_at === "string" ? event.presented_at : "";
+  let eventJapaneseDate = "";
+  if (presentedAtRaw) {
+    const eventDate = new Date(presentedAtRaw);
+    if (!Number.isNaN(eventDate.valueOf())) {
+      eventJapaneseDate = `${eventDate.getFullYear()}年${eventDate.getMonth() + 1}月${eventDate.getDate()}日`;
+    }
+  }
+  const timeLabel = eventJapaneseDate || presentedAtRaw || "";
+  const timeHtml = presentedAtRaw
+    ? `<time class="dt-start" datetime="${escapeHtml(presentedAtRaw)}">${escapeHtml(timeLabel)}</time>`
+    : "";
+  const timeSegmentHtml = timeHtml ? `${timeHtml}に` : "";
+  const timeSegmentText = timeLabel ? `${timeLabel}に` : "";
+
+  const locationHtmlSegments = [];
+  const locationTextSegments = [];
+  if (typeof event.location === "string" && event.location.trim()) {
+    locationHtmlSegments.push(`<span class="p-location">${escapeHtml(event.location.trim())}</span>`);
+    locationTextSegments.push(event.location.trim());
+  }
+  if (typeof event.place === "string" && event.place.trim()) {
+    locationHtmlSegments.push(`<span class="p-location">${escapeHtml(event.place.trim())}</span>`);
+    locationTextSegments.push(event.place.trim());
+  }
+  const locationSegmentHtml = locationHtmlSegments.length ? `${locationHtmlSegments.join("の")}で` : "";
+  const locationSegmentText = locationTextSegments.length ? `${locationTextSegments.join("の")}で` : "";
+
+  const url = typeof event.url === "string" ? event.url : "";
+  const nameHtml = url
+    ? `<a href="${escapeHtml(url)}" class="p-name u-url" target="_blank" rel="noopener">${escapeHtml(name)}</a>`
+    : `<span class="p-name">${escapeHtml(name)}</span>`;
+  const role = buildEventRoleSegment(event);
+
+  const roleHtmlSegment = role.html ? `で${role.html}` : "";
+  const roleTextSegment = role.text ? `で${role.text}` : "";
+
+  const sentenceHtml = `${timeSegmentHtml}${locationSegmentHtml}開催された『${nameHtml}』${roleHtmlSegment}発表しました。`;
+  const sentenceText = `${timeSegmentText}${locationSegmentText}開催された『${name}』${roleTextSegment}発表しました。`
+    .replace(/\s+/g, " ")
+    .trim();
+
+  return {
+    html: `<p class="event-entry h-event">${sentenceHtml}</p>`,
+    text: sentenceText,
+  };
+}

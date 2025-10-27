@@ -1,15 +1,35 @@
 // スライド表示用のJavaScript関数
 
+function getFrameElement() {
+    return document.getElementById('pdf-container');
+}
+
+function getIframeElement() {
+    const frame = getFrameElement();
+    if (!frame) return null;
+    if (frame.tagName && frame.tagName.toLowerCase() === 'iframe') {
+        return frame;
+    }
+    return frame.querySelector('iframe');
+}
+
 // フルスクリーン表示の切り替え
 function toggleExpanded() {
-    const iframe = document.getElementById('pdf-container');
+    const frame = getFrameElement();
+    if (!frame) return;
+
+    const iframe = getIframeElement();
     const controls = document.querySelector('.pdf-controls');
     const fullscreenBtn = document.querySelector('.fullscreen-btn');
-    const icon = fullscreenBtn.querySelector('i');
+    const icon = fullscreenBtn ? fullscreenBtn.querySelector('i') : null;
 
-    if (!iframe.classList.contains('expanded')) {
+    if (!controls || !fullscreenBtn || !icon) {
+        return;
+    }
+
+    if (!frame.classList.contains('expanded')) {
         // 画面全体表示に切り替え
-        iframe.classList.add('expanded');
+        frame.classList.add('expanded');
         controls.classList.add('expanded');
 
         // スライド情報と戻るリンクを非表示
@@ -26,7 +46,8 @@ function toggleExpanded() {
         const aspectRatio = window.slideConfig.maxWidth / window.slideConfig.maxHeight;
 
         // アスペクト比を保ちながら画面に完全に収まるサイズを計算
-        let calculatedWidth, calculatedHeight;
+        let calculatedWidth;
+        let calculatedHeight;
 
         if (viewportWidth / aspectRatio <= viewportHeight) {
             // 横幅基準で画面に収まる場合
@@ -38,14 +59,18 @@ function toggleExpanded() {
             calculatedWidth = viewportHeight * aspectRatio;
         }
 
-        iframe.style.width = calculatedWidth + 'px';
-        iframe.style.height = calculatedHeight + 'px';
+        frame.style.width = calculatedWidth + 'px';
+        frame.style.height = calculatedHeight + 'px';
+        if (iframe) {
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+        }
 
         icon.className = 'fa-solid fa-compress';
         fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>';
     } else {
         // 通常表示に戻す
-        iframe.classList.remove('expanded');
+        frame.classList.remove('expanded');
         controls.classList.remove('expanded');
 
         // スライド情報と戻るリンクを再表示
@@ -56,8 +81,12 @@ function toggleExpanded() {
         if (slideContent) slideContent.classList.remove('expanded');
         if (backLink) backLink.classList.remove('expanded');
 
-        iframe.style.width = '';
-        iframe.style.height = '';
+        frame.style.removeProperty('width');
+        frame.style.removeProperty('height');
+        if (iframe) {
+            iframe.style.removeProperty('width');
+            iframe.style.removeProperty('height');
+        }
         icon.className = 'fa-solid fa-expand';
         fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
     }
@@ -72,13 +101,14 @@ function base(filename) {
 // 現在のページ番号を取得する関数
 function getCurrentPageNumber() {
     try {
-        const iframe = document.getElementById('pdf-container');
+        const iframe = getIframeElement();
+        if (!iframe) return 1;
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
         // #pdf-container の data-page 属性からページ番号を取得
         const pdfContainer = iframeDoc.getElementById('pdf-container');
         if (pdfContainer && pdfContainer.dataset.page) {
-            const pageNumber = parseInt(pdfContainer.dataset.page);
+            const pageNumber = parseInt(pdfContainer.dataset.page, 10);
             if (!isNaN(pageNumber) && pageNumber > 0) {
                 return pageNumber;
             }
@@ -94,17 +124,17 @@ function getCurrentPageNumber() {
 
 // ページ変更を監視する関数
 function watchPageChanges() {
-    const iframe = document.getElementById('pdf-container');
+    const iframe = getIframeElement();
     if (!iframe) return;
 
-    // iframeの読み込み完了を待つ
-    iframe.addEventListener('load', function () {
+    const setupObservers = () => {
         try {
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            if (!iframeDoc) return;
 
             // MutationObserverでページ変更を監視
-            const observer = new MutationObserver(function (mutations) {
-                mutations.forEach(function (mutation) {
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
                     if (mutation.type === 'childList' || mutation.type === 'attributes') {
                         // ページ変更を検知したら、ボタンのファイル名を更新
                         updateButtonFilenames();
@@ -130,7 +160,7 @@ function watchPageChanges() {
             });
 
             // キーボードイベントでページ変更を監視
-            iframeDoc.addEventListener('keydown', function (event) {
+            iframeDoc.addEventListener('keydown', (event) => {
                 if (event.key === 'ArrowLeft' || event.key === 'ArrowRight' ||
                     event.key === 'PageUp' || event.key === 'PageDown') {
                     // 少し遅延させてからファイル名を更新（PDF.jsの処理完了を待つ）
@@ -139,17 +169,22 @@ function watchPageChanges() {
             });
 
             // クリックイベントでページ変更を監視
-            iframeDoc.addEventListener('click', function (event) {
+            iframeDoc.addEventListener('click', (event) => {
                 // ナビゲーションボタンのクリックを検知
                 if (event.target.closest('.navButton, .pageButton, [class*="nav"], [class*="page"]')) {
                     setTimeout(updateButtonFilenames, 100);
                 }
             });
-
         } catch (error) {
             console.error('ページ変更監視の設定に失敗しました:', error);
         }
-    });
+    };
+
+    if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+        setupObservers();
+    } else {
+        iframe.addEventListener('load', setupObservers, { once: true });
+    }
 }
 
 // ボタンのファイル名を更新する関数
@@ -175,7 +210,10 @@ function updateButtonFilenames() {
 // 現在の表示を画像としてダウンロード
 function downloadCanvasAsImage() {
     try {
-        const iframe = document.getElementById('pdf-container');
+        const iframe = getIframeElement();
+        if (!iframe) {
+            throw new Error('iframe element is not available');
+        }
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
         // iframe内のcanvas要素を探す
@@ -214,7 +252,10 @@ function downloadCanvasAsImage() {
 // 現在の表示をクリップボードにコピー
 async function copyCanvasToClipboard() {
     try {
-        const iframe = document.getElementById('pdf-container');
+        const iframe = getIframeElement();
+        if (!iframe) {
+            throw new Error('iframe element is not available');
+        }
         const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
 
         // iframe内のcanvas要素を探す
@@ -250,6 +291,7 @@ async function copyCanvasToClipboard() {
 // Toast通知を表示する関数
 function showToast(message, type = 'success') {
     const toast = document.getElementById('toast');
+    if (!toast) return;
     toast.textContent = message;
     toast.className = 'toast ' + type;
 
@@ -266,26 +308,31 @@ function showToast(message, type = 'success') {
 
 // ウィンドウリサイズ時にサイズを再調整
 function handleResize() {
-    const iframe = document.getElementById('pdf-container');
-    if (iframe.classList.contains('expanded')) {
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const aspectRatio = window.slideConfig.maxWidth / window.slideConfig.maxHeight;
+    const frame = getFrameElement();
+    if (!frame || !frame.classList.contains('expanded')) return;
 
-        let calculatedWidth, calculatedHeight;
+    const iframe = getIframeElement();
 
-        if (viewportWidth / aspectRatio <= viewportHeight) {
-            // 横幅基準で画面に収まる場合
-            calculatedWidth = viewportWidth;
-            calculatedHeight = viewportWidth / aspectRatio;
-        } else {
-            // 縦幅基準で画面に収まる場合
-            calculatedHeight = viewportHeight;
-            calculatedWidth = viewportHeight * aspectRatio;
-        }
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const aspectRatio = window.slideConfig.maxWidth / window.slideConfig.maxHeight;
 
-        iframe.style.width = calculatedWidth + 'px';
-        iframe.style.height = calculatedHeight + 'px';
+    let calculatedWidth;
+    let calculatedHeight;
+
+    if (viewportWidth / aspectRatio <= viewportHeight) {
+        calculatedWidth = viewportWidth;
+        calculatedHeight = viewportWidth / aspectRatio;
+    } else {
+        calculatedHeight = viewportHeight;
+        calculatedWidth = viewportHeight * aspectRatio;
+    }
+
+    frame.style.width = calculatedWidth + 'px';
+    frame.style.height = calculatedHeight + 'px';
+    if (iframe) {
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
     }
 }
 
@@ -301,25 +348,15 @@ function initializeSlide() {
     document.addEventListener('MSFullscreenChange', handleFullscreenChange);
 
     // ページ変更監視を開始（iframe読み込み完了後）
-    document.addEventListener('DOMContentLoaded', function () {
-        // iframeが既に読み込まれている場合
-        const iframe = document.querySelector('.pdf-container');
-        if (iframe && iframe.contentDocument) {
-            watchPageChanges();
-        } else {
-            // iframeの読み込み完了を待つ
-            const iframe = document.getElementById('pdf-container');
-            if (iframe) {
-                iframe.addEventListener('load', watchPageChanges);
-            }
-        }
+    document.addEventListener('DOMContentLoaded', () => {
+        watchPageChanges();
     });
 }
 
 // Full screen APIの状態変化を監視
 function handleFullscreenChange() {
-    const iframe = document.getElementById('pdf-container');
-    if (!iframe) return;
+    const frame = getFrameElement();
+    if (!frame) return;
 
     if (!document.fullscreenElement &&
         !document.webkitFullscreenElement &&
@@ -332,34 +369,60 @@ function handleFullscreenChange() {
 
 // Full screen APIを使った全画面表示の切り替え
 function toggleFullscreen() {
-    const iframe = document.getElementById('pdf-container');
+    const frame = getFrameElement();
+    if (!frame) return;
 
-    if (!document.fullscreenElement) {
+    const isFullscreen = document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement;
+
+    if (!isFullscreen) {
         // 全画面表示に切り替え
-        iframe.requestFullscreen().then(() => {
-            // 全画面表示になった後に少し遅延させてサイズを調整
-            setTimeout(() => {
-                adjustFullscreenSize();
-            }, 100);
-        }).catch(err => {
-            console.error('全画面表示に失敗しました:', err);
-            showToast('全画面表示に失敗しました。ブラウザが対応していない可能性があります。', 'error');
-        });
+        const requestFullscreen = frame.requestFullscreen ||
+            frame.webkitRequestFullscreen ||
+            frame.mozRequestFullScreen ||
+            frame.msRequestFullscreen;
+
+        if (requestFullscreen) {
+            const result = requestFullscreen.call(frame);
+            if (result && typeof result.then === 'function') {
+                result.then(() => {
+                    setTimeout(adjustFullscreenSize, 100);
+                }).catch((err) => {
+                    console.error('全画面表示に失敗しました:', err);
+                    showToast('全画面表示に失敗しました。ブラウザが対応していない可能性があります。', 'error');
+                });
+            } else {
+                setTimeout(adjustFullscreenSize, 100);
+            }
+        }
     } else {
         // 全画面表示を解除
-        document.exitFullscreen().then(() => {
-            // 全画面表示が解除された後にサイズをリセット
-            resetFullscreenSize();
-        }).catch(err => {
-            console.error('全画面表示の解除に失敗しました:', err);
-        });
+        const exitFullscreen = document.exitFullscreen ||
+            document.webkitExitFullscreen ||
+            document.mozCancelFullScreen ||
+            document.msExitFullscreen;
+
+        if (exitFullscreen) {
+            const result = exitFullscreen.call(document);
+            if (result && typeof result.then === 'function') {
+                result.then(() => {
+                    resetFullscreenSize();
+                }).catch((err) => {
+                    console.error('全画面表示の解除に失敗しました:', err);
+                });
+            } else {
+                resetFullscreenSize();
+            }
+        }
     }
 }
 
 // 全画面表示時のサイズ調整
 function adjustFullscreenSize() {
-    const iframe = document.getElementById('pdf-container');
-    if (!iframe) return;
+    const frame = getFrameElement();
+    if (!frame) return;
 
     // CSSの:fullscreen擬似クラスでサイズ制限を行うため、
     // JavaScriptでのサイズ調整は最小限にする
@@ -368,23 +431,28 @@ function adjustFullscreenSize() {
 
 // 全画面表示解除時のサイズリセット
 function resetFullscreenSize() {
-    const iframe = document.getElementById('pdf-container');
-    if (!iframe) return;
+    const frame = getFrameElement();
+    if (!frame) return;
 
-    // インラインスタイルを完全に削除してCSSに戻す
-    iframe.style.removeProperty('width');
-    iframe.style.removeProperty('height');
-    iframe.style.removeProperty('position');
-    iframe.style.removeProperty('top');
-    iframe.style.removeProperty('left');
-    iframe.style.removeProperty('transform');
-    iframe.style.removeProperty('z-index');
+    frame.style.removeProperty('width');
+    frame.style.removeProperty('height');
+    frame.style.removeProperty('position');
+    frame.style.removeProperty('top');
+    frame.style.removeProperty('left');
+    frame.style.removeProperty('transform');
+    frame.style.removeProperty('z-index');
+
+    const iframe = getIframeElement();
+    if (iframe) {
+        iframe.style.removeProperty('width');
+        iframe.style.removeProperty('height');
+    }
 
     // 少し遅延させてからCSSの再適用を確実にする
     setTimeout(() => {
-        iframe.style.display = 'none';
-        iframe.offsetHeight; // 強制的に再描画を発生させる
-        iframe.style.display = '';
+        frame.style.display = 'none';
+        frame.offsetHeight; // 強制的に再描画を発生させる
+        frame.style.display = '';
     }, 10);
 }
 
