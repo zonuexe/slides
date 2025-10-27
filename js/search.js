@@ -65,25 +65,25 @@
     const slug = escapeHtml(slide.slug || "");
     const date = escapeHtml(slide.date || "");
     const events = Array.isArray(slide.events)
-      ? slide.events
-          .map((event) => {
-            if (!event || typeof event !== "object") return null;
-            const name = typeof event.name === "string" ? event.name.trim() : "";
-            if (!name) return null;
-            const locations = [];
-            if (typeof event.location === "string" && event.location.trim()) {
-              locations.push(event.location.trim());
-            }
-            if (typeof event.place === "string" && event.place.trim()) {
-              locations.push(event.place.trim());
-            }
-            return {
+      ? slide.events.flatMap((event) => {
+          if (!event || typeof event !== "object") return [];
+          const name = typeof event.name === "string" ? event.name.trim() : "";
+          if (!name) return [];
+          const locations = [];
+          if (typeof event.location === "string" && event.location.trim()) {
+            locations.push(event.location.trim());
+          }
+          if (typeof event.place === "string" && event.place.trim()) {
+            locations.push(event.place.trim());
+          }
+          return [
+            {
               name,
               presented_at: typeof event.presented_at === "string" ? event.presented_at : "",
               location: locations.join(" / "),
-            };
-          })
-          .filter(Boolean)
+            },
+          ];
+        })
       : [];
     const eventsHtml = events.length
       ? `<div class="slide-card-events">${events
@@ -106,9 +106,11 @@
           .join("")}</div>`
       : "";
     const tagNames = Array.isArray(slide.tags)
-      ? slide.tags
-          .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
-          .filter(Boolean)
+      ? slide.tags.flatMap((tag) => {
+          if (typeof tag !== "string") return [];
+          const value = tag.trim();
+          return value ? [value] : [];
+        })
       : [];
     const tagsHtml = tagNames.length
       ? `<ul class="slide-card-tags">${tagNames

@@ -223,8 +223,9 @@ function toSearchFragment(value) {
 function collectEventsText(events) {
   if (!Array.isArray(events)) return "";
   return events
-    .map((event) =>
-      [
+    .flatMap((event) => {
+      if (!event || typeof event !== "object") return [];
+      const fragments = [
         event?.name,
         event?.type,
         event?.location,
@@ -232,25 +233,28 @@ function collectEventsText(events) {
         event?.presented_at,
         event?.url,
         event?.talk_duration,
-      ]
-        .map(toSearchFragment)
-        .filter(Boolean)
-        .join(" ")
-    )
-    .filter(Boolean)
+      ].flatMap((value) => {
+        const fragment = toSearchFragment(value);
+        return fragment ? [fragment] : [];
+      });
+      const combined = fragments.join(" ").trim();
+      return combined ? [combined] : [];
+    })
     .join(" ");
 }
 
 function collectRelatedArticlesText(relatedArticles) {
   if (!Array.isArray(relatedArticles)) return "";
   return relatedArticles
-    .map((article) =>
-      [article?.title, article?.desc, article?.url]
-        .map(toSearchFragment)
-        .filter(Boolean)
-        .join(" ")
-    )
-    .filter(Boolean)
+    .flatMap((article) => {
+      if (!article || typeof article !== "object") return [];
+      const fragments = [article?.title, article?.desc, article?.url].flatMap((value) => {
+        const fragment = toSearchFragment(value);
+        return fragment ? [fragment] : [];
+      });
+      const combined = fragments.join(" ").trim();
+      return combined ? [combined] : [];
+    })
     .join(" ");
 }
 
@@ -306,8 +310,32 @@ async function generateSlidesData() {
       console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
     }
     const eventsText = collectEventsText(slide.events);
-    const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
-    const combinedContent = [searchContent, eventsText, relatedArticlesText]
+  const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
+  const tagText = Array.isArray(slide.tags)
+      ? slide.tags
+          .flatMap((tag) => {
+            if (typeof tag !== "string") return [];
+            const value = tag.trim();
+            return value ? [value] : [];
+          })
+          .join(" ")
+      : "";
+  const hashtagText = Array.isArray(slide.hashtags)
+      ? slide.hashtags
+          .flatMap((tag) => {
+            if (typeof tag !== "string") return [];
+            const value = tag.trim();
+            return value ? [`#${value}`] : [];
+          })
+          .join(" ")
+      : "";
+    const combinedContent = [
+      searchContent,
+      eventsText,
+      relatedArticlesText,
+      tagText,
+      hashtagText,
+    ]
       .filter(Boolean)
       .join(" ");
 
@@ -328,27 +356,29 @@ async function generateSlidesData() {
     content: slide.combinedContent ?? slide.searchContent ?? "",
     snippet: slide.snippet ?? "",
     events: Array.isArray(slide.events)
-      ? slide.events
-          .map((event) => {
-            if (!event || typeof event !== "object") return null;
-            const name = typeof event.name === "string" ? event.name : "";
-            if (!name) return null;
-            const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
-            const location = typeof event.location === "string" ? event.location : "";
-            const place = typeof event.place === "string" ? event.place : "";
-            return {
+      ? slide.events.flatMap((event) => {
+          if (!event || typeof event !== "object") return [];
+          const name = typeof event.name === "string" ? event.name : "";
+          if (!name) return [];
+          const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
+          const location = typeof event.location === "string" ? event.location : "";
+          const place = typeof event.place === "string" ? event.place : "";
+          return [
+            {
               name,
               presented_at: presentedAt,
               location,
               place,
-            };
-          })
-          .filter(Boolean)
+            },
+          ];
+        })
       : [],
     tags: Array.isArray(slide.tags)
-      ? slide.tags
-          .map((tag) => (typeof tag === "string" ? tag.trim() : ""))
-          .filter(Boolean)
+      ? slide.tags.flatMap((tag) => {
+          if (typeof tag !== "string") return [];
+          const value = tag.trim();
+          return value ? [value] : [];
+        })
       : [],
   }));
   const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
@@ -396,8 +426,8 @@ app.get("/slides/", async (c) => {
                   ${Array.isArray(slide.events) && slide.events.some(event => event && event.name) ? `
                     <div class="slide-card-events">
                       ${slide.events
-          .map((event) => {
-            if (!event || !event.name) return "";
+          .flatMap((event) => {
+            if (!event || !event.name) return [];
             const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
             const locationParts = [];
             if (typeof event.location === "string" && event.location) locationParts.push(event.location);
@@ -406,20 +436,28 @@ app.get("/slides/", async (c) => {
             const locationHtml = locationText
               ? ` <span class="p-location visually-hidden">${escapeHtml(locationText)}</span>`
               : "";
-            return `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${presentedAt ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>` : ""}${locationHtml}</p>`;
+            return [
+              `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${
+                presentedAt
+                  ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>`
+                  : ""
+              }${locationHtml}</p>`,
+            ];
           })
-          .filter(Boolean)
           .join("")}
                     </div>
                   ` : ""}
                   ${Array.isArray(slide.tags) && slide.tags.some(tag => typeof tag === "string" && tag.trim()) ? `
                     <ul class="slide-card-tags">
                       ${slide.tags
-          .map((tag) => {
-            if (typeof tag !== "string" || !tag.trim()) return "";
-            return `<li class="p-category"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(tag.trim())}</li>`;
+          .flatMap((tag) => {
+            if (typeof tag !== "string" || !tag.trim()) return [];
+            return [
+              `<li class="p-category"><i class="fa-solid fa-tag" aria-hidden="true"></i> ${escapeHtml(
+                tag.trim()
+              )}</li>`,
+            ];
           })
-          .filter(Boolean)
           .join("")}
                     </ul>
                   ` : ""}
