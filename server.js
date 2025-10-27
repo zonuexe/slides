@@ -553,7 +553,7 @@ app.get("/slides/:slug/", async (c) => {
         <body>
           <main class="container">
             <div id="pdf-container" aria-label="Slide preview">
-              <iframe src="${pdfUrl}" title="${slide.title}"></iframe>
+              <iframe src="${pdfUrl}" title="${slide.title}" scrolling="no"></iframe>
             </div>
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
