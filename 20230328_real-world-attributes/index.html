@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年3月28日にオンラインのZoom会議で開催された『PHPerのための「PHPerKaigi2023を振り返る」 PHP TechCafe』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="Real World Attributes">
+          <meta property="og:description" content="2023年3月28日にオンラインのZoom会議で開催された『PHPerのための「PHPerKaigi2023を振り返る」 PHP TechCafe』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230328_real-world-attributes/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230328_real-world-attributes.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="Real World Attributes">
+          <meta name="twitter:description" content="2023年3月28日にオンラインのZoom会議で開催された『PHPerのための「PHPerKaigi2023を振り返る」 PHP TechCafe』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230328_real-world-attributes.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230328_real-world-attributes/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230328_real-world-attributes/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230328_real-world-attributes/">
+
+          <title>Real World Attributes</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230328_real-world-attributes.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230328_real-world-attributes.pdf" title="Real World Attributes" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230328_real-world-attributes/" class="p-name u-url u-uid permalink-link">Real World Attributes</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2023-03-28">2023年3月28日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-03-28">2023年3月28日</time>に<span class="p-location">オンライン</span>の<span class="p-location">Zoom会議</span>で開催された『<a href="https://rakus.connpass.com/event/276071/" class="p-name u-url" target="_blank" rel="noopener">PHPerのための「PHPerKaigi2023を振り返る」 PHP TechCafe</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F5592296&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/5592296" class="u-url" target="_blank" rel="noopener">Real World Attributes #PHPTechCafe ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/PHPTechCafe" target="_blank" class="hashtag p-category u-url" rel="noopener">#PHPTechCafe</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230328_real-world-attributes.pdf" download="20230328_real-world-attributes.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>Real World Attributes</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2023-03-28 </strong></p><p><strong>PHPTechCafe</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>プログラミング言語にちょっとこだわりのある素人</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>PHPerKaigiで話した</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>今北産業</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>今北産業<br>•••<br>な    んか #[Attribute] みたいなへんてこ記法がPHP 8.0で追加された</p><ul><li>いままで /** DocComment */ に書かれてたやつの代用として提案</li><li>クラスとかメソッドに書けるコメントみたいなもんだけどデータを取り出せる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>こんなの何に使うの <br>って？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>キミだけの最強の活用 法を見付けだせ！！！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>ご静聴ありがとう <br>ございました！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>…というひどい 発表をしてきた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p><strong>#[Attr()]</strong>と書く 謎記法が出てきた <br>…ということだけ、 <br>お見知りおきください</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>誰が使うんだ？ <br>という話</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>PHPUnitの実行制御</p><p><strong>/** </strong><br><strong> * @dataProvider idsProvider </strong><br><strong> */ </strong><br><strong>public function test($id, $expected): </strong><br><strong>void {</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>@dataProvider</p><p><strong>/** </strong><br><strong> * [$id, $expected] </strong><br><strong> */ </strong><br><strong>public function idsProvider() { </strong><br><strong>    return [ </strong><br><strong>        [1, &#39;value&#39;],         [2, &#39;value&#39;], </strong><br><strong>   ]; </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>PHPUnit 10 vs Attribute</p><ul><li>PHPUnit 10でAttributeに移行、11で非推奨化、12で削除予定</li><li>超大量の移行リスト… sebastianbergmann/phpunit#4502</li><li>その他の変更は02氏の<br>発表を参照のこと</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>テスト好きかい？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>「うん、大好きさ」</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>むかし書いた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>実装の上にコメントでテストを書ける</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>DataProviderを </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>これはAttributeに <br>できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>ということでやったよ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>Attributeの定義はこれだけ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>実装の上にAttributeでテスト</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fsebastianbergmann%2Fphpunit%2Fissues%2F4502&size=32" alt=""><a href="https://github.com/sebastianbergmann/phpunit/issues/4502" target="_blank" rel="noopener">Support PHP 8 attributes for adding metadata to test classes and test methods as well as tested code units · Issue #4502 · sebastianbergmann/phpunit · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2023%2Fproposal%2F4379c965-b88d-49c8-b316-e27e2e6b4db1&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2023/proposal/4379c965-b88d-49c8-b316-e27e2e6b4db1" target="_blank" rel="noopener">PHPUnit 10 概論 by 02 | トーク | PHPerKaigi 2023 #phperkaigi - fortee.jp</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fspeakerdeck.com%2Fcocoeyes02%2Fintroduction-of-phpunit-10&size=32" alt=""><a href="https://speakerdeck.com/cocoeyes02/introduction-of-phpunit-10" target="_blank" rel="noopener">PHPUnit 10 概論 / Introduction of PHPUnit 10 - Speaker Deck</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdevpixiv.hatenablog.com%2Fentry%2F2016%2F10%2F25%2F093000&size=32" alt=""><a href="https://devpixiv.hatenablog.com/entry/2016/10/25/093000" target="_blank" rel="noopener">DocCommentでPHPのユニットテストの書きやすさを劇的に改善する手法 - pixiv inside [archive]</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

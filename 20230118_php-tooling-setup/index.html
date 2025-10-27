@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年1月18日に東京都渋谷区のGMO Yours フクラスで開催された『第148回 PHP勉強会＠東京』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="めんどくさくないPHP開発ツール導入">
+          <meta property="og:description" content="2023年1月18日に東京都渋谷区のGMO Yours フクラスで開催された『第148回 PHP勉強会＠東京』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230118_php-tooling-setup/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230118_php-tooling-setup.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="めんどくさくないPHP開発ツール導入">
+          <meta name="twitter:description" content="2023年1月18日に東京都渋谷区のGMO Yours フクラスで開催された『第148回 PHP勉強会＠東京』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230118_php-tooling-setup.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230118_php-tooling-setup/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230118_php-tooling-setup/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230118_php-tooling-setup/">
+
+          <title>めんどくさくないPHP開発ツール導入</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230118_php-tooling-setup.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230118_php-tooling-setup.pdf" title="めんどくさくないPHP開発ツール導入" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230118_php-tooling-setup/" class="p-name u-url u-uid permalink-link">めんどくさくないPHP開発ツール導入</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2023-01-18">2023年1月18日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-01-18">2023年1月18日</time>に<span class="p-location">東京都渋谷区</span>の<span class="p-location">GMO Yours フクラス</span>で開催された『<a href="https://phpstudy.doorkeeper.jp/events/149335" class="p-name u-url" target="_blank" rel="noopener">第148回 PHP勉強会＠東京</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F5134807&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/5134807" class="u-url" target="_blank" rel="noopener">めんどくさくないPHP開発ツール導入 #phpstudy ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpstudy</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230118_php-tooling-setup.pdf" download="20230118_php-tooling-setup.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>めんどくさくない <br>PHP開発ツール導入</p><p>Avoid the hassle and install QA tools in your PHP project</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2023-01-18  </strong><br><strong>PHP勉強会@東京</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>あなたの会社では <br>PHPで書かれたツールを <br>利用してますか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>えっPHPってホームページ を作る言語というかHTML のテンプレートエンジンじゃ ないのそんな言語でツールて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>…ということを思って<br>るひともまだ居そう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>わかる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>が､現実には既に <br>いっぱい使われている</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>PHPのツールはPHPで書こうね</p><ul><li>Composer … 依存マネージャー(パッケージ管理ツール)</li><li>PHPUnit … xUnitテスティングフレームワーク</li><li>PHP-CS-Fixer, PHP_CodeSniffer … コードフォーマッター</li><li>PHPStan, Psalm … 静的解析ツール (型チェッカー)</li><li>Deployer … アプリケーションデプロイツール<ul><li>そのほかいろいろ！</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>PHP vs tooling</p><ul><li>PHPはWebサーバだけでなくコマンドラインで動く</li><li>PHPのためのCLIアプリケーションフレームワークがある<ul><li>最近はSymfony Consoleが主流だと思う</li></ul></li><li>PHPで書かれたPHPパーサーがある</li><li>PHPで書けばPHPに詳しいPHPerが貢献できる</li><li>PHPで書けばライブラリとして相互運用もできる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>他言語 vs tooling</p><ul><li>PhpStorm: Java (OSSではない)</li><li>Intephense: Node.js (npmにあるがOSSでない)<ul><li>php-parser (OSS)</li></ul></li><li>PHP Rust Tools (OSS)</li><li>NoVerify: Go (OSS)<ul><li>VKCOM/php-parser</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>どうやってツールを インストールするか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>Composer</p><ul><li>対象のプロジェクトと依存対象を並列な「パッケージ」として扱える</li><li>単体ファイルのcomposerコマンド(composer.phar)として利用できる</li><li>インストール方法は   に書いてある</li></ul><p>https://getcomposer.org/doc/00-intro.md</p><ul><li>Windows向けにはインストーラー がある</li></ul><p>(Composer-Setup.exe)</p><ul><li>実行ファイル(bin)も管理でき、プロジェクトの vendor/bin/ に<br>配置されて実行できる (Windowsでも動くように工夫されている!)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>composer global</p><ul><li>プロジェクトに依存しないパッケージをインストールできる</li><li>基本的にはシステムワイドではなく、 ユーザーごとにインストールされる<ul><li>場所は composer global con(cid:238)g -l などで検索できる</li><li>インストール先をPATH環境変数に追加すると通常のコマンドとして使える</li><li>たとえば PATH=$HOME/.composer/vendor/bin:$PATH など</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>Composerで 管理する問題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>依存バージョンが <br>衝突する！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>バージョン衝突問題</p><ul><li>プロジェクト本体で使いたいパッケージとツールが要求するパッケージの<br>バージョンを合わせないといけない <ul><li>PHP-CS-FixerはPHP-ParserやSymfonyパッケージに依存しているの<br>で、全部のパッケージを最新に合わせ続けないと簡単に衝突する </li><li>いろんな事情で古いSymfonyコンポーネントに依存している<br>ライブラリを使わざるを得ない事情があると詰む or バージョン上がらない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>＼(^o^)／</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>解決策はある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>Pharアーカイブ</p><ul><li>複数ファイルのPHPを一個のファイルに固めたもの</li><li>普通のスクリプトとして実行できるようにできる</li><li>プロジェクトメンバー全員に使わせるにはどうすればいいか<ul><li>ダウンロードスクリプトを作成して実行してもらう / ファイル自体をGit追加</li><li>PhiveというPharインストールツールもある</li><li>手動でインストールしないといけないので細かいバージョンが揃わない問題</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>composer bin-plugin</p><ul><li>https://github.com/bamarni/composer-bin-plugin</li><li>プロジェクト自体とは隔離したディレクトリでcomposerの依存を管理する</li><li>プラグイン側でサブディレクトリにインストールしたツールと<br>メインプロジェクト側の vendor/bin/ ディレクトリを同期してくれる </li><li>通常の composer install とは別管理なのでちょっとめんどくさい</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>これでいいのでは</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>依存バージョンを <br>合わせられない問題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>PHPStanの <br>開発者曰く</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>PHPStanを入れるなら </p><p>composer require --dev<br>を使え</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>どういうことか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>依存が… ない… <br>(PHPのバージョン制約だけ)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>どういうことか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>ここにコードはない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>GitにPharファイルを <br>直接コミット!?</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>話は長くなるので</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>Composerパッケージは Packagistで検索できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>shimとかpharとか <br>distで検索すると <br>コンフリクトしない <br>バージョンが公開されている <br>(こともある)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>コンフリクトを避ける上<br>では依存ライブラリの <br>名前空間隔離という <br>技術が不可欠</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>みんなも <br>コンフリクトフリーな <br>ツールを量産しよう</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fphp-parser&size=32" alt=""><a href="https://www.npmjs.com/package/php-parser" target="_blank" rel="noopener">php-parser - npm</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp-rust-tools&size=32" alt=""><a href="https://github.com/php-rust-tools" target="_blank" rel="noopener">PHP Rust Tools · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FVKCOM%2Fnoverify&size=32" alt=""><a href="https://github.com/VKCOM/noverify" target="_blank" rel="noopener">GitHub - VKCOM/noverify: Pretty fast linter (code static analysis utility) for PHP</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FVKCOM%2Fphp-parser&size=32" alt=""><a href="https://github.com/VKCOM/php-parser" target="_blank" rel="noopener">GitHub - VKCOM/php-parser: PHP parser written in Go</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgetcomposer.org%2Fdoc%2F00-intro.md&size=32" alt=""><a href="https://getcomposer.org/doc/00-intro.md" target="_blank" rel="noopener">Introduction - Composer</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fbamarni%2Fcomposer-bin-plugin&size=32" alt=""><a href="https://github.com/bamarni/composer-bin-plugin" target="_blank" rel="noopener">GitHub - bamarni/composer-bin-plugin: No conflicts for your bin dependencies</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

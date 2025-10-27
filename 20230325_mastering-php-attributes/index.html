@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年4月18日にオンラインのZoomウェビナーで開催された『PHPerKaigi 2023』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="Attributeを極める">
+          <meta property="og:description" content="2023年4月18日にオンラインのZoomウェビナーで開催された『PHPerKaigi 2023』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230325_mastering-php-attributes/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230325_mastering-php-attributes.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="Attributeを極める">
+          <meta name="twitter:description" content="2023年4月18日にオンラインのZoomウェビナーで開催された『PHPerKaigi 2023』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230325_mastering-php-attributes.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230325_mastering-php-attributes/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230325_mastering-php-attributes/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230325_mastering-php-attributes/">
+
+          <title>Attributeを極める</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230325_mastering-php-attributes.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230325_mastering-php-attributes.pdf" title="Attributeを極める" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230325_mastering-php-attributes/" class="p-name u-url u-uid permalink-link">Attributeを極める</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2023-03-25">2023年3月25日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-04-18">2023年4月18日</time>に<span class="p-location">オンライン</span>の<span class="p-location">Zoomウェビナー</span>で開催された『<a href="https://phperkaigi.jp/2023/" class="p-name u-url" target="_blank" rel="noopener">PHPerKaigi 2023</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F5587839&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/5587839" class="u-url" target="_blank" rel="noopener">Attributeを極める #phperkaigi ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phperkaigi" target="_blank" class="hashtag p-category u-url" rel="noopener">#phperkaigi</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230325_mastering-php-attributes.pdf" download="20230325_mastering-php-attributes.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>Attributeを極める</p><p><strong>増補版</strong></p><p>Mastering Attributes</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2022-03-25</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>プログラミング言語にちょっとこだわりのある素人</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>ゴランノスポンサー</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>先におことわり： <br>20分ではピクシブ百科事典の <br>事例紹介までたどりつけませんでした <br>(話はするけどあっさりめ)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>PHPのアップデートサイクル</p><ul><li>PHPは年に一回バージョンアップされている<ul><li>https://www.php.net/supported-versions.php</li><li>最新バージョンは2022年12月リリースの8.2.x系</li></ul></li><li>いわゆるセマンティックバージョニングではない<ul><li>8.2.0… MAJOR.MINOR.RELASEの3レベル構成</li><li>影響の大きなBC BreakはMAJOR</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>PHP8.0で <br>変わったこと</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>すべての機能を <br>使えていますか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>その中でも存在感が <br>ありながら <br>｢何に使うの｣度が高い</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>ア ト リ ビ ュ ー ト</p><p>Attributes</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>実はPHPerKaigiでは</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>毎年なにかと <br>言及されている</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>アトリビュートってなんだ？</p><ul><li>日本語での定訳としては「属性」</li><li>もっとも知られているであろう用語としてはHTMLタグ</li><li>あるもの(要素)の性質を表す情報のこと</li><li>MDNではHTMLの属性について次のように説明している<ul><li>「属性は要素を拡張し、動作を変更したりメタデータを提供したりします。」<br>Attribute (属性) - MDN Web Docs 用語集 より</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>&lt;a href=&quot;?foo&quot;&gt;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>&lt;a <strong>href</strong>=&quot;?foo&quot;&gt;</p><p>属性名</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>&lt;a <strong>href</strong>=<strong>&quot;?foo&quot;</strong>&gt;</p><p>属性名 属性値</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>&lt;a <strong>href</strong>=<strong>&quot;?foo&quot;</strong>&gt;</p><p>属性名 属性 属性値</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>&lt;<strong>a</strong> href=&quot;?foo&quot;&gt;</p><p>要素名</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>&lt;<strong>a</strong> href=&quot;?foo&quot;&gt;</p><p>要素名 (開始)タグ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>&lt;a href=&quot;?foo&quot;&gt; <br>    text <br>&lt;/a&gt;</p><p>&lt;a&gt;要素</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>今回はHTMLは 本題ではないので <br>ここまで</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>ソースコードにも <br>付加的な情報を <br>付与したい！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>付加的な情報… <br>われわれは知っている</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>Docコメント</p><p><strong>/** </strong><br><strong> * @param positive-int $id </strong><br><strong> */ </strong><br><strong>function Pnd(int $id): Book </strong><br><strong>{</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>コードに書きたい付加情報とは何か</p><p>人間だけわかれば</p><ul><li>人間に意図を伝えるためのドキュメント(コメント)</li></ul><p>ヨシ</p><p>人間もわかって <br>機械可読</p><ul><li>静的解析ツールが情報を読み取ってコードを検査するための情報</li><li>実行時に可読で<br>フレームワークなどが情報を読み取って振る舞いを制御する </li></ul><p>効率高いとうれしい</p><ul><li>プログラミング処理系(PHP)に特別な処理をさせるための指定</li></ul><p>構文の一部である<br>必要がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>コードに書きたい付加情報とは何か</p><p>人間だけわかれば</p><ul><li>人間に意図を伝えるためのドキュメント(コメント)</li></ul><p>ヨシ</p><p>人間もわかって <br>機械可読</p><ul><li>従来Docコメントが賄っていた領域<br>静的解析ツールが情報を読み取ってコードを検査するための情報 </li><li>実行時に可読で<br>フレームワークなどが情報を読み取って振る舞いを制御する </li></ul><p>効率高いとうれしい</p><ul><li>プログラミング処理系(PHP)に特別な処理をさせるための指定</li></ul><p>構文の一部である<br>必要がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>DocCommentは自由帳</p><ul><li>事実上、なんでも書ける</li><li>なにを書いても怒られないが、@hogeのような形式が一般的</li><li>phpDocumenterスタイルの「タグ」<ul><li>@param int $foo (スペース区切り)</li></ul></li><li>Doctrineスタイルの「アノテーション」<ul><li>@Annotation(&quot;arg&quot;, 1, 2, 3)</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>なぜDocコメント…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>改めてDocコメント</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>実行時に読める不思議なコメント</p><ul><li>関数やクラスなどの直前に /** ... */ のような形式でコメントを書くと、<br><strong>リ フ レ ク シ ョ ン</strong><br><strong>ReXection</strong>という機能を使って読み取れる <ul><li>Re:ection::getComment() で文字列で取得できる</li></ul></li><li>実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ<br>ングが実現できる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>メタ？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>さっきも出てきた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>アトリビュートってなんだ？</p><ul><li>日本語での定訳としては「属性」</li><li>もっとも知られているであろう用語としてはHTMLタグ</li><li>あるもの(要素)の性質を表す情報のこと</li><li>MDNではHTMLの属性について次のように説明している<ul><li>「属性は要素を拡張し、動作を変更したりメタデータを提供したりします。」<br>Attribute (属性) - MDN Web Docs 用語集 より</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>Wikipedia曰く</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p><strong>https://ja.wikipedia.org/wiki/メタ </strong><br><strong>2022-12-14T19:41:26版より</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p><strong>https://ja.wikipedia.org/wiki/メタ </strong><br><strong>2022-12-14T19:41:26版より</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>つまり？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>メタデータ <br>データについてのデータ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>例： <br>写真 に対する <br>(画像データ)<br>｢撮影場所｣や｢日時｣などの<br>情報</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>例： <br>楽曲 に対する <br>(音声データ)<br>｢演奏者｣や｢ジャンル｣など<br>の情報</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>メタプログラミング プログラムについての <br>プログラミング</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>メタプログラミングってつまり何</p><ul><li>プログラムそのものを対象にするプログラミング<ul><li>クラスや関数などを動的に呼び出したり</li><li>ある処理をしたいとき、コードに直接的に書かなくても実現したりできる</li><li>明示的に定義してなくてもなんか動いてたりするやつ</li></ul></li><li>フレームワークのようなコードは大なり小なりメタプロ的な要素がある</li><li>ブラックマジック<br>理窟がよくわからんけど動いてたりするのはこれ (魔法とか黒魔術とか…)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>メタプロするなら コードから情報を <br>読み取れるとうれしい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>(それが全てではない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>ということで</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>基本的な定義方法</p><p><strong>use Attribute; </strong></p><p><strong>#[Attribute( </strong><br><strong>    Attribute::TARGET_CLASS   | Attribute::IS_REPEATABLE </strong><br><strong>)] </strong><br><strong>class MyAttr {</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>基本的な使いかた</p><p><strong>use MyAttr; </strong></p><p><strong>#[MyAttr(&#39;foo&#39;, &#39;bar&#39;, &#39;buz&#39;)] </strong><br><strong>class Book </strong><br><strong>{</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>名前付きの呼び出しも可能</p><p><strong>use MyAttr; </strong></p><p><strong>#[MyAttr(a: &#39;foo&#39;, b: &#39;bar&#39;, c: &#39;buz&#39;)] </strong><br><strong>class Book </strong><br><strong>{</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p>Attributeはどこに書けるの？</p><ul><li>現在Re:ectionから読み取れるのは6箇所</li></ul><p><strong>宣伝</strong></p><ul><li>クラス</li><li>関数</li><li>メソッド</li><li>プロパティ</li><li>パラメータ (仮引数)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p>これでみなさまは <br>Attributeを定義でき<br>るようになりました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p>ね、簡単でしょ？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>Docコメントと <br>何が違うの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p>比べてみよう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>実行時に読める不思議なコメント</p><ul><li>関数やクラスなどの直前に /** ... */ のような形式でコメントを書くと、<br><strong>リ フ レ ク シ ョ ン</strong><br><strong>ReXection</strong>という機能を使って読み取れる <ul><li>Re:ection::getComment() で文字列で取得できる</li></ul></li><li>実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ<br>ングが実現できる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>実行時に読める不思議なXXXX</p><ul><li>関数やクラスなどの直前に #[Attr()] のような形式のコードを書くと、<br><strong>リ フ レ ク シ ョ ン</strong><br><strong>ReXection</strong>という機能を使って読み取れる <ul><li>Re:ection::getAttributes() でRe:ectionAttributeを取得できる</li></ul></li><li>実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ<br>ングが実現できる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-64">
+                          <h4>Page 64</h4>
+                          <div class="page-text">
+                            <p>Q. 何が違うの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-65">
+                          <h4>Page 65</h4>
+                          <div class="page-text">
+                            <p>A. 違うよ､全然違うよ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-66">
+                          <h4>Page 66</h4>
+                          <div class="page-text">
+                            <p>実際に見てみましょう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-67">
+                          <h4>Page 67</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-68">
+                          <h4>Page 68</h4>
+                          <div class="page-text">
+                            <p>ReﬂectionAttribute</p><ul><li>getAttributes() メソッドでとれるクラス<ul><li>$ref = new Re:ectionClass(Target::class);</li><li>$ref-&gt;getArguments() で値だけ取れる</li><li>$ref-&gt;newInstance() でアトリビュートをインスタンス化できる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-69">
+                          <h4>Page 69</h4>
+                          <div class="page-text">
+                            <p>何が変わったのか</p><ul><li>明示的にRe:ectionしないと何も起こらないのはDocコメントと同じ<ul><li>Attributeを書くだけなら、ただのコメントと同じ</li></ul></li><li>引数の区切りがとても簡単<ul><li>Docコメントでは自前で構文解析しないといけない</li></ul></li><li>静的解析ツールが自然にサポートしてくれている<ul><li>Docコメントでは変な記述をしても気付きにくい</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-70">
+                          <h4>Page 70</h4>
+                          <div class="page-text">
+                            <p>これでAttributeの <br>機能は全部です！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-71">
+                          <h4>Page 71</h4>
+                          <div class="page-text">
+                            <p>完全マスター</p><p>🎉</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-72">
+                          <h4>Page 72</h4>
+                          <div class="page-text">
+                            <p>機能はめっちゃ <br>シンプル</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-73">
+                          <h4>Page 73</h4>
+                          <div class="page-text">
+                            <p>あとはどういう <br>｢想い｣を載せるか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-74">
+                          <h4>Page 74</h4>
+                          <div class="page-text">
+                            <p>創意工夫が大事</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-75">
+                          <h4>Page 75</h4>
+                          <div class="page-text">
+                            <p>とはいえ定石はある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-text">
+                            <p>DI vs Attribute</p><ul><li>山岡さんの2021年の発表で紹介された事例</li><li>依存性注入したいデータを明示するために使う</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-text">
+                            <p>DB vs Attribute</p><ul><li>おかしょいさんの2022年の発表で紹介された事例</li><li>データベースとPHPのクラスのプロパティを紐付けるために使う</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-80">
+                          <h4>Page 80</h4>
+                          <div class="page-text">
+                            <p>バリデーション vs Attribute</p><ul><li>2022年11月に私が書いた記事</li><li>アトリビュートは自然に発火しないので明示的に呼び出す必要がある</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-81">
+                          <h4>Page 81</h4>
+                          <div class="page-text">
+                            <p>PHPUnit vs Docコメント</p><ul><li>PHPUnitはこれまでDocコメントによってテストの実行を制御できた<ul><li>@dataProvider, @testWith … パラメタライズドテスト</li><li>@runInSeparateProcess, @runTestsInSeparateProcess<br>… プロセスを隔離して実行 </li><li>@covers … カバレッジターゲットの制御</li><li>@group … テストグループの宣言</li></ul></li><li>Doctrine式のAnnotationではなくスペース区切りが多かった</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-text">
+                            <p>PHPUnit 10 vs Attribute</p><ul><li>PHPUnit 10でAttributeに移行、11で非推奨化、12で削除予定</li><li>超大量の移行リスト… sebastianbergmann/phpunit#4502</li><li>その他の変更は02氏の<br>発表を参照のこと</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-83">
+                          <h4>Page 83</h4>
+                          <div class="page-text">
+                            <p>明示 vs 黙示</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-84">
+                          <h4>Page 84</h4>
+                          <div class="page-text">
+                            <p>「こっそりやる」vs「堂々とやる」</p><ul><li>PHPにはマクロやプリプロセッサがないので、明示的が基本ではある</li><li>しかし、クラスローダーを悪用してソースコードを書き換えてしまう荒技も<ul><li>Go! AOPなどのAOPフレームワークはクラスローダーでフックする</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-85">
+                          <h4>Page 85</h4>
+                          <div class="page-text">
+                            <p>PHPの後方互換性 vs Attribute</p><ul><li>PHPでは継承するときに型宣言を厳密に合わせないといけない</li><li>PHP 8ではPHPの組み込みクラスにも型宣言が追加された</li><li>そうするとPHP 7/8両対応のライブラリで非常に困る</li><li>#[ReturnTypeWillChange] と書くと局所的に無視できるようになった<ul><li>問題の先送りができてうれしい！</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-text">
+                            <p>ひっそり佇むAttribute</p><ul><li>そこにあるだけでは何も起こさないというのは重要な性質</li><li># はPHPのコメント行なので、PHP 7以下のコードに書いても問題ない</li><li>ということは… PHP 7以下でもパフォーマンスを気にしなければ<br>Attributeを使える <ul><li>spiral/attributes というライブラリがある</li><li>開発用途やデプロイスクリプトなどで使う分には問題にならない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-text">
+                            <p>doctrine/annotations</p><ul><li>Docコメントのアノテーションを読み取るライブラリ</li><li>Attributeとだいたい同じ使い方できるが仕様が微妙に異なる<ul><li>デフォルトでは引数は __construct(array $values) として<br>一個の配列にまとめて渡されてしまう </li><li>クラスに @Annotation @namedArgumentConstructor と書くと<br>Attributeと同様に個別のパラメータで受け取れるようになる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-text">
+                            <p>spiral/attributesの互換性</p><ul><li>PHP 7で利用できるAttributeを読み取るライブラリ<ul><li>AnnotationとAttributeを相互運用できる<ul><li>doctorine/annotationsのラッパーとしてPHPDocも読める</li></ul></li><li>Annotationとの相互運用のためか、デフォルトでは引数がまとめて<br>__construct(array $values) に渡されてしまう <ul><li>クラスに #[Spiral Attributes NamedArgumentConstructor]と</li></ul></li></ul></li></ul><p>\ \</p><p>書くと通常のAttributeと同じ仕様で使える </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-text">
+                            <p>ピクシブ百科事典 vs Attribute</p><ul><li>コントローラにルーティング情報が書ける</li><li>これは実行時に読まず、スクリプトでファイルに書き出す方式</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-90">
+                          <h4>Page 90</h4>
+                          <div class="page-text">
+                            <p>キミだけの最高の <br>ユースケースを <br>見付けだせ</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Fsupported-versions.php&size=32" alt=""><a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener">PHP: Supported Versions</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Freleases%2F8.0%2Fja.php&size=32" alt=""><a href="https://www.php.net/releases/8.0/ja.php" target="_blank" rel="noopener">PHP: PHP 8.0.0 Release Announcement</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Freleases%2F8.0%2Fja.php&size=32" alt=""><a href="https://www.php.net/releases/8.0/ja.php" target="_blank" rel="noopener">PHP: PHP 8.0.0 Release Announcement</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Freleases%2F8.0%2Fja.php&size=32" alt=""><a href="https://www.php.net/releases/8.0/ja.php" target="_blank" rel="noopener">PHP: PHP 8.0.0 Release Announcement</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2021%2Fproposal%2F778d3c86-5d94-4419-aa98-f7d2c7a1962e&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2021/proposal/778d3c86-5d94-4419-aa98-f7d2c7a1962e" target="_blank" rel="noopener">PHPのDI、attributesとこれから by 山岡広幸 | トーク | PHPerKaigi 2021 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2022%2Fproposal%2F73c92632-6b7e-4d1b-9b48-fb39134dbbb8&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2022/proposal/73c92632-6b7e-4d1b-9b48-fb39134dbbb8" target="_blank" rel="noopener">Attributesを使ったメタプログラミング入門！ by おかしょい / 岡田 正平 | トーク | PHPerKaigi 2022 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FGlossary%2FAttribute&size=32" alt=""><a href="https://developer.mozilla.org/ja/docs/Glossary/Attribute" target="_blank" rel="noopener">Attribute (属性) - MDN Web Docs 用語集 | MDN</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdeveloper.mozilla.org%2Fja%2Fdocs%2FGlossary%2FAttribute&size=32" alt=""><a href="https://developer.mozilla.org/ja/docs/Glossary/Attribute" target="_blank" rel="noopener">Attribute (属性) - MDN Web Docs 用語集 | MDN</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2583%25A1%25E3%2582%25BF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF" target="_blank" rel="noopener">メタ - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3D%25E3%2583%25A1%25E3%2582%25BF%26oldid%3D92898153&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%BF&amp;oldid=92898153" target="_blank" rel="noopener">メタ - Wikipedia</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E3%2583%25A1%25E3%2582%25BF&size=32" alt=""><a href="https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%BF" target="_blank" rel="noopener">メタ - Wikipedia</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fja.wikipedia.org%2Fw%2Findex.php%3Ftitle%3D%25E3%2583%25A1%25E3%2582%25BF%26oldid%3D92898153&size=32" alt=""><a href="https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%82%BF&amp;oldid=92898153" target="_blank" rel="noopener">メタ - Wikipedia</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Freleases%2F8.0%2Fja.php&size=32" alt=""><a href="https://www.php.net/releases/8.0/ja.php" target="_blank" rel="noopener">PHP: PHP 8.0.0 Release Announcement</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2FAttribute&size=32" alt=""><a href="https://www.php.net/Attribute" target="_blank" rel="noopener">PHP: Attribute - Manual</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F4dd4d5fad4048eafa99b&size=32" alt=""><a href="https://qiita.com/tadsan/items/4dd4d5fad4048eafa99b" target="_blank" rel="noopener">PHPの関数とメソッドは別物 #PHP - Qiita</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-76">
+                          <h4>Page 76</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2021%2Fproposal%2F778d3c86-5d94-4419-aa98-f7d2c7a1962e&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2021/proposal/778d3c86-5d94-4419-aa98-f7d2c7a1962e" target="_blank" rel="noopener">PHPのDI、attributesとこれから by 山岡広幸 | トーク | PHPerKaigi 2021 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-77">
+                          <h4>Page 77</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2021%2Fproposal%2F778d3c86-5d94-4419-aa98-f7d2c7a1962e&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2021/proposal/778d3c86-5d94-4419-aa98-f7d2c7a1962e" target="_blank" rel="noopener">PHPのDI、attributesとこれから by 山岡広幸 | トーク | PHPerKaigi 2021 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-78">
+                          <h4>Page 78</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2022%2Fproposal%2F73c92632-6b7e-4d1b-9b48-fb39134dbbb8&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2022/proposal/73c92632-6b7e-4d1b-9b48-fb39134dbbb8" target="_blank" rel="noopener">Attributesを使ったメタプログラミング入門！ by おかしょい / 岡田 正平 | トーク | PHPerKaigi 2022 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-79">
+                          <h4>Page 79</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2022%2Fproposal%2F73c92632-6b7e-4d1b-9b48-fb39134dbbb8&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2022/proposal/73c92632-6b7e-4d1b-9b48-fb39134dbbb8" target="_blank" rel="noopener">Attributesを使ったメタプログラミング入門！ by おかしょい / 岡田 正平 | トーク | PHPerKaigi 2022 #phperkaigi - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-82">
+                          <h4>Page 82</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fsebastianbergmann%2Fphpunit%2Fissues%2F4502&size=32" alt=""><a href="https://github.com/sebastianbergmann/phpunit/issues/4502" target="_blank" rel="noopener">Support PHP 8 attributes for adding metadata to test classes and test methods as well as tested code units · Issue #4502 · sebastianbergmann/phpunit · GitHub</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphperkaigi-2023%2Fproposal%2F4379c965-b88d-49c8-b316-e27e2e6b4db1&size=32" alt=""><a href="https://fortee.jp/phperkaigi-2023/proposal/4379c965-b88d-49c8-b316-e27e2e6b4db1" target="_blank" rel="noopener">PHPUnit 10 概論 by 02 | トーク | PHPerKaigi 2023 #phperkaigi - fortee.jp</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fspeakerdeck.com%2Fcocoeyes02%2Fintroduction-of-phpunit-10&size=32" alt=""><a href="https://speakerdeck.com/cocoeyes02/introduction-of-phpunit-10" target="_blank" rel="noopener">PHPUnit 10 概論 / Introduction of PHPUnit 10 - Speaker Deck</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-86">
+                          <h4>Page 86</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fspiral%2Fattributes&size=32" alt=""><a href="https://github.com/spiral/attributes" target="_blank" rel="noopener">GitHub - spiral/attributes: PHP Attributes Reader. Subtree split of the Spiral Attributes component (see spiral/framework)</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-87">
+                          <h4>Page 87</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fdoctrine%2Fannotations&size=32" alt=""><a href="https://github.com/doctrine/annotations" target="_blank" rel="noopener">GitHub - doctrine/annotations: Annotations Docblock Parser</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-88">
+                          <h4>Page 88</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fspiral%2Fattributes&size=32" alt=""><a href="https://github.com/spiral/attributes" target="_blank" rel="noopener">GitHub - spiral/attributes: PHP Attributes Reader. Subtree split of the Spiral Attributes component (see spiral/framework)</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-89">
+                          <h4>Page 89</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.jdkfx.com%2Fblog%2Fpixiv-summer-bootcamp2021&size=32" alt=""><a href="https://www.jdkfx.com/blog/pixiv-summer-bootcamp2021" target="_blank" rel="noopener">www.jdkfx.com</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

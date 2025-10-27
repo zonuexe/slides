@@ -3,9 +3,11 @@
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="tadsan&#39;s slide deck">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
 
           <meta property="og:title" content="PHPパッケージを作ろう！ Lightning">
-          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:description" content="tadsan&#39;s slide deck">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/kn2336_20170522_create-a-php-package/">
           <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/kn2336_20170522_create-a-php-package.png">
@@ -16,7 +18,7 @@
           <meta name="twitter:site" content="@tadsan">
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="PHPパッケージを作ろう！ Lightning">
-          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:description" content="tadsan&#39;s slide deck">
           <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/kn2336_20170522_create-a-php-package.png">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/kn2336_20170522_create-a-php-package/oembed.json">
@@ -48,15 +50,16 @@
           </script>
         </head>
         <body>
-          <div class="container">
-            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2Fkn2336_20170522_create-a-php-package.pdf" id="pdf-container" title="PHPパッケージを作ろう！ Lightning"></iframe>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2Fkn2336_20170522_create-a-php-package.pdf" title="PHPパッケージを作ろう！ Lightning" scrolling="no"></iframe>
+            </div>
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
               </button>
             </div>
 
-            <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
             <article class="slide-info h-entry">
@@ -336,7 +339,7 @@
                 </a>
               </div>
             </article>
-          </div>
+          </main>
           <hr>
           <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2022年5月14日にオンラインのYouTube Liveで開催された『TechFeed Conference 2022』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="5分でわかるPHPの型システム">
+          <meta property="og:description" content="2022年5月14日にオンラインのYouTube Liveで開催された『TechFeed Conference 2022』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20220514_php-types-five-minutes/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20220514_php-types-five-minutes.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="5分でわかるPHPの型システム">
+          <meta name="twitter:description" content="2022年5月14日にオンラインのYouTube Liveで開催された『TechFeed Conference 2022』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20220514_php-types-five-minutes.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20220514_php-types-five-minutes/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20220514_php-types-five-minutes/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20220514_php-types-five-minutes/">
+
+          <title>5分でわかるPHPの型システム</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20220514_php-types-five-minutes.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20220514_php-types-five-minutes.pdf" title="5分でわかるPHPの型システム" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20220514_php-types-five-minutes/" class="p-name u-url u-uid permalink-link">5分でわかるPHPの型システム</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2022-05-14">2022年5月14日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2022-05-14">2022年5月14日</time>に<span class="p-location">オンライン</span>の<span class="p-location">YouTube Live</span>で開催された『<a href="https://techfeed.io/events/techfeed-conference-2022" class="p-name u-url" target="_blank" rel="noopener">TechFeed Conference 2022</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F3831762&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/3831762" class="u-url" target="_blank" rel="noopener">5分でわかるPHPの型システム #tfcon ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/wphperkaigi" target="_blank" class="hashtag p-category u-url" rel="noopener">#wphperkaigi</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20220514_php-types-five-minutes.pdf" download="20220514_php-types-five-minutes.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>5分でわかるPHPの型システム</p><p>Introducing PHP&#39;s type system in 5 minutes</p><p>にゃんだーすわん @tadsan / USAMI Kenta うさみけんた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><p>ヾ(〃＞＜)ﾉﾞ</p><ul><li>ピクシブ株式会社 pixiv事業本部 (2012〜)<ul><li>pixivやピクシブ百科事典などを担当</li></ul></li><li>TechFeed公認エキスパートNo.27</li><li>PHPカンファレンス / PHPerKaigi スタッフ</li><li>Emacs PHP Modeメンテナ</li><li>phpusers-ja/Emacs JPなどのコミュニティ</li><li>spcamp 2010 プログラミング言語組</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>PHPは簡単な言語だから <br>上級テクニックなんてないよ笑</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>PHPは簡単な言語だから <br>上級テクニックなんてないよ笑 言語が簡単なので素朴に書くとエントロピーが無限に増大する</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>PHPの型にどのような 印象を持っていますか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>脆弱性 ゆるふわ 弱い型 動的         <br>クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当<br>PHPについてのパブリックイメージ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>脆弱性 ゆるふわ 弱い型 動的         </p><p>？</p><p>クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当<br>PHPについての認識は概ね間違い</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>PHPの値は型タグと共用体の <br>組に過ぎませんが何か？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h<br></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h<br></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>PHPの値は型タグと共用体の <br>組に過ぎませんが何か？<br>過言です</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>極論はさておいてPHP <br>ランタイムの型はこれだけ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>言語処理系の内部実装について 「Rubyソースコード完全解説」 <br>が参考になる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p><strong>bool int float string </strong><br><strong>array object null</strong> </p><p>resource </p><p>(callable iterable mixed)</p><p>JSONで扱える型 + 特殊な型がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>無限の可能性を持つ </p><p><strong>array</strong></p><p>Pythonでのlist/dict <br>RubyのArray/Hashを併せ持つ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>ユニオン型 </p><p><strong>A|B</strong></p><p>AまたはB <br>(複雑な式は書けない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>交叉型 </p><p><strong>A&amp;B</strong></p><p>AおよびB <br>(複雑な式は書けない)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>null許容型 </p><p>?<br><strong>A</strong></p><p>Aまたはnull <br>デフォルトで許容しない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>謎のPHP用語</p><p><strong>mixed</strong></p><p>いわゆるany <br>(PHPマニュアルの記述に由来)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>型宣言できない特殊型 </p><p><strong>resource</strong></p><p>ファイルポインタなど <br>(徐々にobjectに置き換え)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>型はランタイムに 確実に保証される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>整数ではない文字列は <br>型宣言通りに変換</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>整数ではない文字列は <br>TypeErrorになる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>ファイル単位で<br>strict_types=1指定で <br>自動変換を抑制</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>どちらにせよ受け取った <br>関数の側ではintであることが <br>保証される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>PHPでは実行時に <br>型情報がとれる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>ユニオン型宣言で 適切に変換される</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>classとinterfaceを <br>ユーザー定義型として利用可能</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>型宣言にクラス名を指定できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>インターフェイスも指定できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>void型宣言で戻り値を <br>返さないことを明示できる</p><p>= その関数には副作用がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>never型宣言でメソッドが 正常終了しないことを宣言</p><p>= 異常状態が後続に漏れない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>WSGI/Rack/PSGI相当のWeb <br>アプリケーションのI/Fも <br>型宣言ベースで定義されている</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>MIT License - Copyright (c) 2018 PHP-FIG         <br>https://github.com/php-fig/http-factory/blob/1.0.1/src/ResponseFactoryInterface.php</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>型はランタイムに 確実に保証される<br>それはわかった</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>型が実行時に保証される点で <br>PHPは他の動的言語とは 一線を画しているといえる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>要するにPHPは </p><p>statically typed<br>静的型付き…ってコト！？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>型なしはどこから来るの？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>動的言語を型なしと呼ぶのも <br>別に誹謗中傷というわけではない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>PHPではURLクエリを <br>グローバル変数から取り出せる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>いろんなところから湧き出す <br>型の特定できないデータ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>arrayは無限の可能性を秘める <br>(悪い意味で)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>扱う対象が複数になったのに <br>型に反映されない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>PHPの組み込みの型機能では <br>どんなに型推論しても 静的に型が定まらない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>arrayの中に何が <br>入ってるのかわからん</p><p>https://www.php.net/array_map</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>几帳面に型宣言だけを追うと <br>人間にはわかる型も機械は理解できない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>無限の可能性を秘めたarrayを <br>放置するとコード全体の <br>エントロピーが増大し <br>プロジェクトは熱的死を迎える</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>ランタイムに保証 <br>されない型を書こう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>https://phpstan.org/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>http://psalm.dev/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>https://www.jetbrains.com/ja-jp/phpstorm/</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>/** */ のブロックに型を書く </p><p>array-shapes</p><p>array{key: type} で構造体 <br>のような型を記述できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p>array&lt;key, value&gt; </p><p>array&lt;T&gt;</p><p>list&lt;value&gt; のように型を書ける</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>型パラメータで戻り値を </p><p>@template</p><p>可変にできる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>ツール互換性のために </p><p>@template</p><p>@phpstan- を付けてもよい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>アプリケーションの <br>エントロピーを減少させて <br>快適に開発しよう</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp%2Fphp-src%2Fblob%2Fphp-8.1.0%2FZend%2Fzend_types.h&size=32" alt=""><a href="https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h" target="_blank" rel="noopener">php-src/Zend/zend_types.h at php-8.1.0 · php/php-src · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp%2Fphp-src%2Fblob%2Fphp-8.1.0%2FZend%2Fzend_types.h&size=32" alt=""><a href="https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h" target="_blank" rel="noopener">php-src/Zend/zend_types.h at php-8.1.0 · php/php-src · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fi.loveruby.net%2Fja%2Frhg%2Fbook%2F&size=32" alt=""><a href="https://i.loveruby.net/ja/rhg/book/" target="_blank" rel="noopener">Rubyソースコード完全解説</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fphp-fig%2Fhttp-factory%2Fblob%2F1.0.1%2Fsrc%2FResponseFactoryInterface.php&size=32" alt=""><a href="https://github.com/php-fig/http-factory/blob/1.0.1/src/ResponseFactoryInterface.php" target="_blank" rel="noopener">http-factory/src/ResponseFactoryInterface.php at 1.0.1 · php-fig/http-factory · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.php.net%2Farray_map&size=32" alt=""><a href="https://www.php.net/array_map" target="_blank" rel="noopener">PHP: array_map - Manual</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fphpstan.org%2F&size=32" alt=""><a href="https://phpstan.org/" target="_blank" rel="noopener">Find Bugs Without Writing Tests | PHPStan</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http%3A%2F%2Fpsalm.dev%2F&size=32" alt=""><a href="http://psalm.dev/" target="_blank" rel="noopener">Psalm - a static analysis tool for PHP</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.jetbrains.com%2Fja-jp%2Fphpstorm%2F&size=32" alt=""><a href="https://www.jetbrains.com/ja-jp/phpstorm/" target="_blank" rel="noopener">PhpStorm: JetBrains の PHP IDE</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

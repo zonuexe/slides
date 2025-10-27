@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2021年12月21日にオンラインのYouTube Liveで開催された『PHPerKaigi petit - PHP8.1リリース祝賀会』で発表枠(20分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="PHP8時代にarray型と向き合う">
+          <meta property="og:description" content="2021年12月21日にオンラインのYouTube Liveで開催された『PHPerKaigi petit - PHP8.1リリース祝賀会』で発表枠(20分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20211221_array-types-php8/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20211221_array-types-php8.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHP8時代にarray型と向き合う">
+          <meta name="twitter:description" content="2021年12月21日にオンラインのYouTube Liveで開催された『PHPerKaigi petit - PHP8.1リリース祝賀会』で発表枠(20分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20211221_array-types-php8.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20211221_array-types-php8/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20211221_array-types-php8/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20211221_array-types-php8/">
+
+          <title>PHP8時代にarray型と向き合う</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20211221_array-types-php8.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20211221_array-types-php8.pdf" title="PHP8時代にarray型と向き合う" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20211221_array-types-php8/" class="p-name u-url u-uid permalink-link">PHP8時代にarray型と向き合う</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2021-12-21">2021年12月21日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2021-12-21">2021年12月21日</time>に<span class="p-location">オンライン</span>の<span class="p-location">YouTube Live</span>で開催された『<a href="https://phperkaigi.connpass.com/event/233022/" class="p-name u-url" target="_blank" rel="noopener">PHPerKaigi petit - PHP8.1リリース祝賀会</a>』で<span class="p-category">発表枠</span>(<span class="p-duration" data-duration="20">20分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F5168415&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/5168415" class="u-url" target="_blank" rel="noopener">PHP8時代にarray型と向き合う + 実践篇 #phperkaigi ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phperkaigi" target="_blank" class="hashtag p-category u-url" rel="noopener">#phperkaigi</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20211221_array-types-php8.pdf" download="20211221_array-types-php8.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p><strong>PHP8時代にarray型と向き合う</strong></p><p>Faced with array type in the PHP 8.x era</p><p>pixiv Inc.<br>USAMI Kenta</p><p>Tue Dec 21 2021 09:00:00 GMT+0900 (Japan Standard Time)</p><p><strong>PHPerKaigi petit - PHP8.1リリース祝賀会</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>PHPカンファレンス実行委員、PHPerKaigi コアスタッフ</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>tadsanのあれこれが読める場所</p><ul><li>https://tadsan.fanbox.cc/</li><li>https://scrapbox.io/php/</li><li>https://www.phper.ninja/</li><li>https://zenn.dev/tadsan</li><li>https://qiita.com/tadsan</li><li>https://github.com/bag2php</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>WEB+DB PRESS総集編</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>Software Design 11月号</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>前回までのあらすじ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>最後のPHP勉強会</p><p>(2020年)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>PHPカンファレンス沖縄2021</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>PHPカンファレンス2021</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>なんかいろいろ 話してきました</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>PHPの進化は 型宣言の進化</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>型がついていない関数(PHP5)</p><p>function add($a, $b) {<br>    return $a + $b;<br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>スカラー型宣言(PHP7)</p><p>int + intって <br>本当にintなの？</p><p>function add(int $a, int $b): int {<br>    return $a + $b;<br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>広い値をとるにはﬂoatが必要</p><p>ひとつの解決策では <br>あるが… 不必要にfloat<br>を強制するのか</p><p>function add(float $a, float $b): float {<br>    return $a + $b;<br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>PHPDocの型注釈</p><p>(アノテーション)</p><p>/**<br> * @param int|float $a</p><p>あえて型宣言を省略する</p><p> * @param int|float $b<br> * @return int|float<br> */         <br>function add($a, $b) {<br>    return $a + $b;<br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>ユニオン型宣言 (PHP8.0)</p><p>function add(int|float $a, int|float $b): int|float {<br>    return $a + $b;<br>}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>クラスの型も <br>PHP7→8で進化</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>著者を持つBookクラス</p><p>class Book         <br>{         <br>    /** @var Author */         <br>    private $author         <br>    public function __construct(Author $author) {         <br>        $this-&gt;author = $author;<br>   }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>PHP 7.4でプロパティ型宣言</p><p>class Book         <br>{         <br>    /** @var Author */         <br>    private Author $author         <br>    public function __construct(Author $author) {         <br>        $this-&gt;author = $author;<br>   }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>コンストラクタプロモーション</p><p>(PHP8)</p><p>class Book         <br>{         <br>    function __construct(<br>        private Author $author         <br>    ) {</p><p>何も書かなくてもプロパティに代入される</p><p>        //           <br>    }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>readonlyプロパティ</p><p>(PHP8.1)</p><p>class Book         <br>{         <br>    function __construct(<br>        public readonly Author $author         <br>    ) {</p><p>何も書かなくてもプロパティに代入される</p><p>        //           <br>    }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>かくしてPHP <br>PHPDocの型が <br>不要な世界に</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>Bookクラスは著者を持つ</p><p>上司 </p><p>class Book         </p><p>「共著を想定できてる？」</p><p>{         <br>    function __construct(<br>        private Author $author         <br>    ) {</p><p>何も書かなくてもプロパティに代入される</p><p>        //           <br>    }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>Bookクラスは複数の著者を持つ</p><p>arrayにすることで </p><p>class Book         </p><p>複数であることを表現</p><p>{         <br>    function __construct(<br>        private array $authors         <br>    ) {</p><p>何も書かなくてもプロパティに代入される</p><p>        //           </p><p>Authorクラスの </p><p>    }</p><p>情報が減ってる…</p><p>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>著者一覧を出力したい</p><p>Book::$authors : array 中身が何かわからない！</p><p>class Book         <br>{         <br>    function printAuthors($fp): void {<br>       foreach ($this-&gt;authors as $author) {                     fwrite($fp, $author-&gt;getName());         <br>       }         </p><p>Authorクラスの </p><p>    }</p><p>メソッドを補完できない</p><p>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>何か大事なものを <br>失ってしまった <br>気がする</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>今回は配列に絞って <br>話します</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>PHPの配列は万能</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>PHPの配列はなんでもできる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>PHPマニュアルより引用</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>PHPの配列は <br>ハッシュテーブル</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>JavaScript/Rubyの場合</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>PHPの場合</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>何が違うのか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>他の言語における配列(array)</p><ul><li>C言語における配列はメモリ上の連続した領域に並べたもの<br>(ポインタとかアドレスとかの概念が絡んでくる) <ul><li>インデックスは0が始点、長さ(値の数)は最初に決める</li></ul></li><li>JavaScriptやRubyでの配列は複数の値を格納できるオブジェクト<ul><li>インデックスは0が始点、動的に拡張される</li><li>長さ以上のインデックスに代入されると、間の値はnull的な値で埋められる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>PHPの配列はハッシュテーブル</p><ul><li>PHPの配列は基本的にハッシュテーブルというデータ構造<ul><li>任意の int または string の値をキーにできる</li><li>長さ以上に代入しても間がnullで埋められることはない</li></ul></li><li>連続していない前提の配列を特に「連想配列」と呼ぶ<ul><li>英語ではassociative array (略してassoc)などと呼ばれる</li></ul></li><li>PHPだけではなくLuaという言語も似た仕様</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>PHP7の内部実装から学ぶ性能改善テクニック</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>PHP7から内部的に「配列」が入った</p><ul><li>2015年リリースのPHP 7.0ではデータ構造に大きく手が入った<ul><li>$a = [1, 2, 3] のような値は(C言語的な意味)の配列として保持される</li><li>既存の配列に $a[&#39;str&#39;] = &#39;val&#39; のように追加するとき<br>ハッシュテーブルに詰め替えられる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>連想配列 vs リスト</p><ul><li>PHPでは区別されないが、たとえば値をjson_encode()する時など<br>連想配列と連続した値を厳密に比較したいことはありうる <ul><li>JSONでは歯抜けの値があると [] ではなく {} になってしまう</li><li>array_9lter() の結果など</li></ul></li><li>array_values() で歯抜けのない配列に変換できる</li><li>PHP 8.1で array_is_list() で判定できる</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>array_is_list()について</p><ul><li>PHP 8.1で追加された関数</li><li>従来は 0 から順にforeachして歯抜けがないかチェックする必要があった</li><li>静的解析ツール(PHPStan, Psalmなど)ではPHPDocに<br>array&lt;int,string&gt; の代りに list&lt;string&gt;と書ける <ul><li>最近のPhpStormでは(検査は不十分だが)認識してくれる</li><li>Intelephenseは未実装</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>Authorsはどうなれば<br>よかったのか</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>Bookクラスは複数の著者を持つ</p><p>class Book         <br>{         <br>    function __construct(         </p><p>        private array $authors         <br>    ) {</p><p>何も書かなくてもプロパティに代入される</p><p>        //           <br>    }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>PHPDocの帰還</p><p>class Book         <br>{         <br>    function __construct(         <br>        /** @var list&lt;Authors&gt; */<br>        private array $authors         <br>    ) {</p><p>何も書かなくてもプロパティに代入される</p><p>        //           <br>    }<br>}         </p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>配列はひとつ！じゃない！！</p><p>list&lt;int&gt;</p><p>array&lt;int,string&gt;</p><ul><li>ユーザIDがならんだリスト ［123, 456］</li><li>ユーザIDと名前の対応表 [123 =&gt; &#39;野比のび太&#39;, 234 =&gt; &#39;源静香&#39;]</li><li>ユーザを表す構造体 [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;]</li><li>ユーザを表す構造体がならんだリスト</li></ul><p>array{id:int, name:string}</p><p>[ <br>    [&#39;id&#39; =&gt; 123, &#39;name&#39; =&gt; &#39;野比のび太&#39;], <br>    [&#39;id&#39; =&gt; 234, &#39;name&#39; =&gt; &#39;源静香&#39;], </p><p>] </p><p>list&lt;array{id:int, name:string}&gt;</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2F&size=32" alt=""><a href="https://tadsan.fanbox.cc/" target="_blank" rel="noopener">にゃんだーすわん｜pixivFANBOX</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fscrapbox.io%2Fphp%2F&size=32" alt=""><a href="https://scrapbox.io/php/" target="_blank" rel="noopener">PHP</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.phper.ninja%2F&size=32" alt=""><a href="https://www.phper.ninja/" target="_blank" rel="noopener">超PHPerになろう</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fzenn.dev%2Ftadsan&size=32" alt=""><a href="https://zenn.dev/tadsan" target="_blank" rel="noopener">にゃんだーすわんさんの記事一覧 | Zenn</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan&size=32" alt=""><a href="https://qiita.com/tadsan" target="_blank" rel="noopener">tadsan - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fbag2php&size=32" alt=""><a href="https://github.com/bag2php" target="_blank" rel="noopener">bag2php · GitHub</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgihyo.jp%2Fbook%2F2021%2F978-4-297-12215-7&size=32" alt=""><a href="https://gihyo.jp/book/2021/978-4-297-12215-7" target="_blank" rel="noopener">WEB+DB PRESS総集編［Vol.1～120］ | 技術評論社</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fyoutu.be%2FkOhsJCW9YIE%3Ft%3D17007&size=32" alt=""><a href="https://youtu.be/kOhsJCW9YIE?t=17007" target="_blank" rel="noopener">PHPカンファレンス沖縄2021　Track A - YouTube</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphpcon-2021%2Fproposal%2Fa7e53ddb-09fd-404e-bb90-b5047e8994ab&size=32" alt=""><a href="https://fortee.jp/phpcon-2021/proposal/a7e53ddb-09fd-404e-bb90-b5047e8994ab" target="_blank" rel="noopener">配列、ジェネリクス、PHPで書けない型 by うさみけんた | トーク | PHP Conference Japan 2021 #phpcon #phpcon2021 #php - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

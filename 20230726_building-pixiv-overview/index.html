@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年3月28日にオンラインのZoom会議で開催された『【PHP Tech Talk】PHPの今を語る！4社合同勉強会』で15分枠として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="ふつうのpixivのつくりかた">
+          <meta property="og:description" content="2023年3月28日にオンラインのZoom会議で開催された『【PHP Tech Talk】PHPの今を語る！4社合同勉強会』で15分枠として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230726_building-pixiv-overview/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230726_building-pixiv-overview.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="ふつうのpixivのつくりかた">
+          <meta name="twitter:description" content="2023年3月28日にオンラインのZoom会議で開催された『【PHP Tech Talk】PHPの今を語る！4社合同勉強会』で15分枠として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230726_building-pixiv-overview.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230726_building-pixiv-overview/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230726_building-pixiv-overview/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230726_building-pixiv-overview/">
+
+          <title>ふつうのpixivのつくりかた</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230726_building-pixiv-overview.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230726_building-pixiv-overview.pdf" title="ふつうのpixivのつくりかた" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230726_building-pixiv-overview/" class="p-name u-url u-uid permalink-link">ふつうのpixivのつくりかた</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2023-07-26">2023年7月26日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-03-28">2023年3月28日</time>に<span class="p-location">オンライン</span>の<span class="p-location">Zoom会議</span>で開催された『<a href="https://colopl.connpass.com/event/286658/" class="p-name u-url" target="_blank" rel="noopener">【PHP Tech Talk】PHPの今を語る！4社合同勉強会</a>』で<span class="p-duration" data-duration="15">15分枠</span>として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F6432897&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/6432897" class="u-url" target="_blank" rel="noopener">ふつうのpixivのつくりかた #ColoplTech ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/ColoplTech" target="_blank" class="hashtag p-category u-url" rel="noopener">#ColoplTech</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230726_building-pixiv-overview.pdf" download="20230726_building-pixiv-overview.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>ふつうのpixivのつくりかた</p><p>An introduction to building pixiv for ordinary PHPers</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2023-07-26 </strong></p><p><strong>PHP の今を語る！4社合同勉強会</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer<ul><li>2012年末から現職、APIとかCIとかいろいろなところを見つめてきました</li><li>最近はピクシブ百科事典(dic.pixiv.net)も開発しています</li></ul></li><li>Emacs PHP Modeを開発しています (2017年-)</li><li>プログラミング言語にちょっとこだわりのある素人</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>PHPカンファレンス沖縄2023</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>LLイベント</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>　　   の紹介</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>pixiv.netとは</p><ul><li>“好き”に出会えるイラスト・マンガ・小説作品の投稿プラットフォーム</li><li>2007年9月10日に開始<ul><li>累計登録ユーザー数: 約9300万ID</li><li>累計作品投稿作品数: 約1.2億作品 (うち小説1900万作品)</li><li>イラストブックマーク: 約200億件</li></ul></li><li>Web・スマートフォンアプリで展開</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>ThePHPF</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>OSPO</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>ふつう</p><p>#とは</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>フレームワークが <br>使われていない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>ただのPHP</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>※諸説あります</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>諸説ありますが 難しい構造には <br>なってない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>メタプログラミングは<br>基本的に <br>あまりやらない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>(こっそり使ってる 部分もありますが 大筋は追えるはず)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>PHP詳しくない人でも 雰囲気に従って書けば セキュリティの問題は <br>起こさないように</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>pixivのPHP</p><ul><li>PHPはApache+mod_php (一時fpmを使っていたこともある)<ul><li>nginxからリバースプロキシしてApacheにリクエスト</li><li>PHPそのものは独自でビルドしてはいるがプレーン</li></ul></li><li>DocumentRootにある.phpファイルから処理を辿っていけば全部わかる</li><li>LinuxとかMySQLとかよくあるLAMPスタックに載っている</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>よくある質問</p><ul><li>フレームワークは使ってないの？<ul><li>使ってません。マイクロフレームワークのようなものはいくつかある</li><li>べんりユーティリティの集合でフレームワークに似ているが実態はラッパー</li></ul></li><li>フレームワーク／言語の移行やフルスクラッチしないの…？<ul><li>直近での予定はありません。過去に痛い目にも遭ってるし</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>10年前のコードのイメージ</p><p>&lt;?php // www.pixiv.net/htdocs/hoge.php<br>require_once __DIR__ . &#39;/../inc/bootstrap.php&#39;;</p><p>include_onceいっぱい</p><p>include_once INC_PATH . &#39;/Hoge/Fuga.php&#39;;<br>include_once INC_PATH . &#39;/Hoge/Piyo.class.php&#39;;<br>try {<br>    display()</p><p>エラーハンドリング </p><p>} catch (Exception $e) {</p><p>(してないページもあった)</p><p>    error::exception_error($e);<br>}</p><p>この下にもいっぱい</p><p>function display() {</p><p>ファイルローカルな</p><p>    // ...</p><p>グローバル関数</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>2015年のコードのイメージ</p><p>&lt;?php // www.pixiv.net/htdocs/hoge.php<br>require_once __DIR__ . &#39;/../inc/bootstrap.php&#39;;</p><p>include_once一個だけ</p><p>AppRunner::execute(new Www_HogeController);</p><p>このクラスは <br>自動ロードされる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>2018年のコードのイメージ</p><p>final class Controller_WwwRoutes {</p><p>htdocs/hoge.phpは消滅</p><p>   public static function getRoutes() {<br>        $route_map = [<br>            &#39;/&#39; =&gt; [<br>                &#39;action&#39; =&gt; function () {</p><p>URLとファイルは切り離され　</p><p>                    Www_IndexController::main();</p><p>マップの一要素に</p><p>                },<br>            ],<br>            &#39;/hoge.php&#39; =&gt; [<br>                &#39;action&#39; =&gt; function () {</p><p>全URLが1ファイルに</p><p>                    Www_HogeController::main();<br>                },</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>カンファレンス で発表</p><p><strong>PHP 2017</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>2023年こうなりたい</p><p>&lt;?php // WwwRoutes.php</p><p>... ですっきり</p><p>    public static function getRoutes() {<br>        return [<br>            &#39;/&#39; =&gt; Www_View_IndexController::main(...),<br>            &#39;/hoge&#39; =&gt; Www_View_HogeController::main(...),<br>            &#39;/.well-known/change-password&#39; =&gt; fn() =&gt;         <br>                Util_Http::redirect_and_exit(         <br>                    ReverseRoute::fullAccountsPasswordChange([])<br>                ),<br>            ],</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>コントローラをdispatchする処理</p><p>&lt;?php</p><p>final class PCAppRunner {<br>    public static function execute(Closure $action) {<br>        try {</p><p>whoops</p><p>            Controller_Util::turnOnWhoops();<br>            Controller_Util::redirectToHttps();</p><p>            $action();</p><p>パソコン版</p><p>        } catch (\Throwable $exception) {<br>            PCAppRunner::setHttpStatus(500);<br>            Controller_Util::displayWhoops($exception);</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>開発しやすさの ための取り組み</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>CI<br> (Jenkins, GitLab CI)</p><ul><li>GitLabにブランチをpush、MergeRequestを作るとCIが走る</li><li>PHPUnit、PHPStanと独自の正規表現ベースのlinterでチェック<ul><li>PHPStanは2018年から運用開始</li><li>時間帯にもよるけどpushして10分かからずに結果がコメントされる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>PHPで開発しにくいところ</p><ul><li>外部入力(クエリパラメータ・フォーム・JSON)の取得・検証</li><li>PDOの機能の貧弱さ</li><li>テンプレートエンジンとURLの問題</li><li>RailsやLaravelにあるようなカッコイイ機能がない<ul><li>かっこいいエラー表示</li><li>対話環境/REPL (rails console)</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>クエリパラメータの問題</p><p>$id = $_GET[&#39;user_id&#39;];<br>if (is_numeric($id))  User_Common::getById($id);</p><p>不正な入力です</p><p>else error(&quot; &quot;);</p><ul><li>こういうコードを書いてはいけない<ul><li>クエリパラメータに数字ではない値が入ってくる可能性</li><li>入力が空、入力が任意の文字列、入力が不正な数字列、入力が配列<br>Mlter_input() をかけると安全にはなるが、それでも面倒</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>ParamHelper</p><p>$id = ParamHelper::get(&#39;id&#39;)-&gt;asPositiveInt();<br>$user = User_Common::getById($id);</p><ul><li>外部入力から値を取り出すヘルパー<ul><li>クエリパラメータ・フォーム・URL・JSONなどに対応・拡張可能</li></ul></li><li>未入力や不正な入力があると例外を投げる</li><li>キャッチしてエラー画面を描画する</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>ParamHelper</p><p>$mode = ParamHelper::get(&#39;mode&#39;)-&gt;asStringInArray[&#39;hoge&#39;, &#39;fuga&#39;]);</p><ul><li>?mode=hoge または ?mode=fuga のみを期待するようなパターン</li><li>不正な形式や ?mode=piyo のような期待しない入力で例外を投げる</li><li>PHPStan拡張で &#39;hoge&#39;|&#39;fuga&#39; という型をつけている</li><li>型安全と実行時安全の両立！ (PHPカンファレンス沖縄で話します)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>テンプレートとURL生成の問題</p><p>&lt;a href=&quot;{$smarty.const.SYSTEM_URL_WWW|escape}member_illust.php?id={$user.id|<br>escape}&quot;&gt;{$user.name|escape}&lt;/a&gt;</p><ul><li>こういうコードを書くと事故が入り込みやすい<ul><li>純粋にtypoの危険性</li><li>idなどのパラメータに不正な値を入れるリスク</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>→ ReverseRoute</p><p>&lt;a href=&quot;{reverse_route page=&#39;fullWwwMemberProfile&#39; id=$user.id}&quot;&gt;         <br>{$user.name|escape}&lt;/a&gt;</p><ul><li>あるページに名前をつけて、reverse_route関数に page 引数で渡す<ul><li>生成結果は変更前と同じ</li><li>ルーティングの逆関数にあたるので、一部のフレームワークは<br>ReverseRoutingやURLヘルパーなどの名前でサポートしてる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>→ ReverseRoute</p><p>    /**<br>     * @route\example https://www.pixiv.net/member.php?id=12345 {id: 12345}<br>     * @route\example https://www.pixiv.net/member.php?id=12345&amp;utm_source=xxxxx <br>{id: 12345, utm_source: &quot;xxxxx&quot;}<br>     */<br>    public static function fullWwwMemberProfile(array $params)<br>    {<br>        Util_Assert::num($params[&#39;id&#39;]);</p><p>        return ReverseRoute::buildUrl(SYSTEM_URL_WWW, &#39;/member.php&#39;, [&#39;id&#39;], <br>$params);<br>    }</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>→ Attribute最高！！</p><p>    #[RouteExample(&#39;https://www.pixiv.net/member.php?id=12345&#39;, [&#39;id&#39;=&gt; 12345])     #[RouteExample(&#39;https://www.pixiv.net/member.php?id=12345&amp;utm_source=xxxxx, <br>[&#39;id&#39; =&gt; 12345, &#39;utm_source&#39; =&gt; &#39;xxxxx&#39;])<br>    public static function fullWwwMemberProfile(array $params)<br>    {<br>        Util_Assert::num($params[&#39;id&#39;]);</p><p>        return ReverseRoute::buildUrl(SYSTEM_URL_WWW, &#39;/member.php&#39;, [&#39;id&#39;], <br>$params);<br>    }</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>に書きました</p><p><strong>blog  </strong></p><p><strong>https://devpixiv.hatenablog.com/entry/2016/10/25/093000</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>PDOの問題</p><ul><li>SQLは自動生成じゃなくて手で書きたい…<br>でもPDOで複雑なクエリを書こうとすると文字列結合が避けられない… </li><li>PDOで書きにくいクエリの代表例: id IN (1, 2, 3)</li><li>もう ? を並べてインデックスをインクリメントしながらbindValueはやだ…<ul><li>PDOのクエリのplaceholderに ? を書くか :hoge で書くか問題</li><li>型チェックできるように書くのもちょっとめんどう</li><li>だからテンプレートエンジンを作ろう → PxvSql</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>PxvSql</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>PxvSql</p><ul><li>文字列結合を一切やらなくてもクエリが書けるようになった</li><li>実行時に型検査をするのでnullなどの不穏な値は入り込まない</li><li>エラーチェックのボイラープレートがｸﾞｯと減る SQLi(脆弱性)のリスクなし</li><li>:hoge@int  で整数の埋め込み、 :fuga_ids@int[] で複数の整数を展開<br>する %if や %for の記法で条件分岐や複数SETなども可能</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>PxvSql</p><ul><li>問題意識はQiitaに書いた</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>TetoSQL</p><ul><li>tadsanが個人の責任で再実装したバージョン (PHP≧5.4)<ul><li>https://github.com/BaguettePHP/TetoSQL</li></ul></li><li>記法を自由に拡張できるように作られている</li><li>各社で必要な記法や型を柔軟に実装することも可能！</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>PDOのラッパー</p><ul><li>これは、少なくとも2011年以前からあった仕組み<ul><li>書き込み用(master)と読み込み用(slave)を明示的に分けて利用可能</li><li>slaveにINSERTやUPDATEなどのクエリを発行しようとすると例外</li></ul></li><li>全クエリにSQLのクエリ単一行にして、トレースをコメントにして埋め込む<ul><li>スロークエリのログにどのコントローラに起因するか集計しやすいスロークエ<br>リを一覧できるビューアーもある </li><li>最近ではDatadogのAPMを使えば不要になるかもしれない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>新機能のリリース時にどうする？</p><ul><li>A: 新機能が実装されたブランチをリリースするときマージする</li><li>B: リリース前にあらかじめマージして、実行されないようにしておく</li><li>よくある問題<ul><li>Aは機能の規模が大きいとビッグバンマージを引き起こし、<br>予期せぬ問題を引き起こすことがある (コンフリクト解決が大変) </li><li>理想としてはBで、一般ユーザー向けに実行されないとしても<br>鮮度のよいうちにマージしておきたい (リリース時の変更を最小限に)</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>機能の有効化／無効化</p><p>if ($_SERVER[&#39;REMOTE_ADDR&#39;] === OFFICE_IP) {<br>    hogehoge();<br>}</p><ul><li>新しい機能をサービスに実装して、社内でだけ有効化したいとする</li><li>無造作にこんなコードを書かれると後から意味不明になるそもそも社外と社<br>内での挙動が別物になるので嫌な予感しかしない</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>フィーチャートグル</p><p>if (ABTest_DevToggle::isEnabledDevToggle(&#39;hogeFunc&#39;)) {<br>    hogehoge();<br>}</p><ul><li>専用のコンソール画面でボタンを押すことで有効化／無効化される</li><li>設定を一行足すだけで一般ユーザーに対してリリースできる<ul><li>リリース後に障害などが発生しないことが確認できたらifを消す</li></ul></li><li>元はA/Bテストのための機構だった (一般ユーザーに対して確率で適用)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>まとめ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>何もない野原に秩序をつくる</p><ul><li>べんり機能を導入すると、部分的に生産性が体感で数倍になったりする<ul><li>一からサービスを作るとしたら同じことを繰り返せるかは、悩む</li><li>いまならLaravelを入れるかもしれないが、それは未来人だからできる発言</li><li>サービスの価値はコードではなく、その結果のユーザー体験</li><li>フレームワークがなかったとしても、<br>pixivが2007年からユーザーに価値を提供してきた結果は変らない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>まとめ</p><ul><li>今回の内容はPHPカンファレンス関西2018で発表したスライド<ul><li>2018年以来、良くも悪くもAPIが非常に安定している</li></ul></li><li>そろそろPHP 8.2に全面移行できるので、次のスタンダードを考えたい<ul><li>AttributesはPHP 8に全面移行できていなくても使えるので先行導入</li></ul></li><li>pixivで開発者体験と安全性のフォーカスしたアプリケーションを<br>いっしょに開発していきましょう！！！！</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>続きは で</p><p><strong>Web</strong></p><p>あと</p><p> (<strong> WEB+DB PRESS</strong>)</p><ul><li>pixiv FANBOX @tadsan</li><li>pixiv inside<ul><li>で のユニットテストの書きやすさを劇的に改善する手法<br>DocComment PHP  </li><li>連載『 大規模開発入門』を振り返る<br>WEB+DB PRESS PHP   </li><li>の基盤ノウハウ大公開！ カンファレンス 登壇レポート<br>pixiv PHP 2017</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>続きは で</p><p><strong>Web</strong></p><p>あと</p><p> (<strong> WEB+DB PRESS</strong>)</p><ul><li>Qiita<ul><li>憂鬱な のためのアレ、または と仲良くして枕を高くしてねむる</li></ul></li></ul><p>SQL PDO   </p><ul><li>の誤解<br>PSR  </li><li>インスパイヤされて掲示板を作りたくなったシリーズ</li></ul><ul><li>って書きたくない僕たちのためのオートローディングと<br>include Composer </li></ul><ul><li>GitHub<ul><li>やエラー処理の例<br>whoops  https://github.com/zonuexe/wdb-php-96-sample</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>続きは で</p><p><strong>Web</strong></p><p>あと</p><p> (<strong> WEB+DB PRESS</strong>)</p><ul><li>これ一冊を購入すれば歴代の 連載が全部</li></ul><p>PHP  </p><p>読めるのでおすすめ</p><ul><li>まとめ</li></ul><p> https://inside.pixiv.blog/tadsan/3991 </p><ul><li>今回の内容に近いものだと</li></ul><ul><li>vol.81, vol.87, vol.91, vol.94, vol. 96</li></ul><ul><li>買って読んでね！ にサンプルコードもあるよ</li></ul><p> Web</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ffortee.jp%2Fphpcon-okinawa-2023%2Fproposal%2F51d3e821-3128-414a-81df-d78d3a85698a&size=32" alt=""><a href="https://fortee.jp/phpcon-okinawa-2023/proposal/51d3e821-3128-414a-81df-d78d3a85698a" target="_blank" rel="noopener">入力＋検査＝型安全 by うさみけんた | プロポーザル | PHPカンファレンス沖縄2023 - fortee.jp</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Finside.pixiv.blog%2F2022%2F12%2F26%2F150000&size=32" alt=""><a href="https://inside.pixiv.blog/2022/12/26/150000" target="_blank" rel="noopener">The PHP Foundationへの寄付を開始しました - pixiv inside</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Finside.pixiv.blog%2Ftadsan%2F2899&size=32" alt=""><a href="https://inside.pixiv.blog/tadsan/2899" target="_blank" rel="noopener">inside.pixiv.blog</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdevpixiv.hatenablog.com%2Fentry%2F2016%2F10%2F25%2F093000&size=32" alt=""><a href="https://devpixiv.hatenablog.com/entry/2016/10/25/093000" target="_blank" rel="noopener">DocCommentでPHPのユニットテストの書きやすさを劇的に改善する手法 - pixiv inside [archive]</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fe615a779baa6eabdab47&size=32" alt=""><a href="https://qiita.com/tadsan/items/e615a779baa6eabdab47" target="_blank" rel="noopener">憂鬱なSQLのためのアレ、またはPDOと仲良くして枕を高くしてねむる #PHP - Qiita</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2FBaguettePHP%2FTetoSQL&size=32" alt=""><a href="https://github.com/BaguettePHP/TetoSQL" target="_blank" rel="noopener">GitHub - BaguettePHP/TetoSQL</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2F&size=32" alt=""><a href="https://tadsan.fanbox.cc/" target="_blank" rel="noopener">にゃんだーすわん｜pixivFANBOX</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdevpixiv.hatenablog.com%2Fentry%2F2016%2F10%2F25%2F093000&size=32" alt=""><a href="https://devpixiv.hatenablog.com/entry/2016/10/25/093000" target="_blank" rel="noopener">DocCommentでPHPのユニットテストの書きやすさを劇的に改善する手法 - pixiv inside [archive]</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Finside.pixiv.blog%2Ftadsan%2F3991&size=32" alt=""><a href="https://inside.pixiv.blog/tadsan/3991" target="_blank" rel="noopener">WEB+DB PRESS連載『PHP大規模開発入門』を振り返る - pixiv inside</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Finside.pixiv.blog%2Ftadsan%2F2899&size=32" alt=""><a href="https://inside.pixiv.blog/tadsan/2899" target="_blank" rel="noopener">inside.pixiv.blog</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fe615a779baa6eabdab47&size=32" alt=""><a href="https://qiita.com/tadsan/items/e615a779baa6eabdab47" target="_blank" rel="noopener">憂鬱なSQLのためのアレ、またはPDOと仲良くして枕を高くしてねむる #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2F942a381e952e12a8fa5a&size=32" alt=""><a href="https://qiita.com/tadsan/items/942a381e952e12a8fa5a" target="_blank" rel="noopener">PSRの誤解 #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fcdbbb5b08591af2b110d&size=32" alt=""><a href="https://qiita.com/tadsan/items/cdbbb5b08591af2b110d" target="_blank" rel="noopener">インスパイヤされて掲示板を作りたくなった(1) #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fqiita.com%2Ftadsan%2Fitems%2Fa78c9160418200e2d47a&size=32" alt=""><a href="https://qiita.com/tadsan/items/a78c9160418200e2d47a" target="_blank" rel="noopener">includeって書きたくない僕たちのためのオートローディングとComposer #PHP - Qiita</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fzonuexe%2Fwdb-php-96-sample&size=32" alt=""><a href="https://github.com/zonuexe/wdb-php-96-sample" target="_blank" rel="noopener">GitHub - zonuexe/wdb-php-96-sample: WEB+DB PRESS vol.96「PHP大規模開発入門」サンプルコード</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgihyo.jp%2Fbook%2F2021%2F978-4-297-12215-7&size=32" alt=""><a href="https://gihyo.jp/book/2021/978-4-297-12215-7" target="_blank" rel="noopener">WEB+DB PRESS総集編［Vol.1～120］ | 技術評論社</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Finside.pixiv.blog%2Ftadsan%2F3991&size=32" alt=""><a href="https://inside.pixiv.blog/tadsan/3991" target="_blank" rel="noopener">WEB+DB PRESS連載『PHP大規模開発入門』を振り返る - pixiv inside</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

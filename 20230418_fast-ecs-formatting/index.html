@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年4月18日にオンラインのZoomウェビナーで開催された『WPHPerKaigi 2023 - PHPerのためのゆるいLT会 -』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="ECSでコードを爆速にフォーマットする">
+          <meta property="og:description" content="2023年4月18日にオンラインのZoomウェビナーで開催された『WPHPerKaigi 2023 - PHPerのためのゆるいLT会 -』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230418_fast-ecs-formatting/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230418_fast-ecs-formatting.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="ECSでコードを爆速にフォーマットする">
+          <meta name="twitter:description" content="2023年4月18日にオンラインのZoomウェビナーで開催された『WPHPerKaigi 2023 - PHPerのためのゆるいLT会 -』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230418_fast-ecs-formatting.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230418_fast-ecs-formatting/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230418_fast-ecs-formatting/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230418_fast-ecs-formatting/">
+
+          <title>ECSでコードを爆速にフォーマットする</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230418_fast-ecs-formatting.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230418_fast-ecs-formatting.pdf" title="ECSでコードを爆速にフォーマットする" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230418_fast-ecs-formatting/" class="p-name u-url u-uid permalink-link">ECSでコードを爆速にフォーマットする</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2023-04-18">2023年4月18日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-04-18">2023年4月18日</time>に<span class="p-location">オンライン</span>の<span class="p-location">Zoomウェビナー</span>で開催された『<a href="https://weddingpark.connpass.com/event/278417/" class="p-name u-url" target="_blank" rel="noopener">WPHPerKaigi 2023 - PHPerのためのゆるいLT会 -</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F5754587&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/5754587" class="u-url" target="_blank" rel="noopener">ECSでコードを爆速にフォーマットする #wphperkaigi｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/wphperkaigi" target="_blank" class="hashtag p-category u-url" rel="noopener">#wphperkaigi</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230418_fast-ecs-formatting.pdf" download="20230418_fast-ecs-formatting.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>正しいプログラムは 綺麗なコードに宿る</p><p>A good program resides in clean code.</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>WPHPerKaigi 2023 - PHPerのためのゆるいLT会 - </strong></p><p><strong>2022-04-18</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>プログラミング言語にちょっとこだわりのある素人</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>ふだんはEmacsとか PHPとかやってます</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>綺麗なコード <br>書いてますか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>コードの乱れは <br>心の乱れ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>正しいプログラムは 綺麗なコードに宿る</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>綺麗なコードが <br>モダーンなコード</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>美しいコードを書くのは <br>靴を脱いで揃えるのと同じ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>きたないコードは <br>争いを生む</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>さあ美しいコードを <br>書きましょう…</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>そう思いませんか？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>どうやってコードをインデントする？</p><p><strong>https://www.emacswiki.org/pics/static/TabsSpacesBoth.png より</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>均整でないソースコードの弊害</p><ul><li>チーム内での認知的な摩擦</li><li>同じリポジトリ内でも「ナワバリ」によってフォーマットの慣習が違う(!)</li><li>コードレビューで「ここにスペースを入れてください」「ここで改行してくださ<br>い」などの不毛すぎる指摘をする羽目に… </li><li>「レビュー対応」というコードスタイルを直すだけの最悪のコミットが履歴に積<br>まれる (そういう些細な変更は‰xupで直して…という意見はある)</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>誰がコードを書いても 同じスタイルにしたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>Code Formatter</p><p>コードスタイルを整形<br>するツールの総称</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>フォーマッター導入 <br>待ったなし</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>退屈なことは機械にやらせよう</p><ul><li>ツールを呼び出すとフォーマッタが全てのコードを整形してくれる</li><li>人間が細かいところに気をつけながらコーディングしなくていい</li><li>最悪、人間がコードフォーマットをまったく把握してなくてもいい</li><li>コミットする前にフォーマッターをかけてくれることだけ徹底してくれれば</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>それでだ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>モダーンな言語の定義</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p>言語標準の <br>フォーマッターがある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p><strong>go fmt </strong><br><strong>dart format </strong><br><strong>rustfmt</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>われらが最新最高言語 <br>PHPはどうだ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>ただ普及してる <br>フォーマッターはある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p><strong>PHP-CS-Fixer </strong><br><strong>PHP_CodeSiffer</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>＿人人人人人人＿  ＞　二つある　＜  ￣Y^Y^Y^Y^Y￣</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>語ると長いが… <br>設計思想の違いがある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>(設定ファイル名も ややこしかった…)</p><p><strong>phpcs.xml</strong> vs <strong>.php_cs</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>まじめなプロジェクトでは <br>どちらかを選んで使う</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>二つのツールで同じような<br>設定をしても結果が <br>一致しなかったりする</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>≒ 似た設定をしても フォーマット結果が <br>競合しかねない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>プロジェクト内で <br>フォーマットツールを <br>統一する必要がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>で､あんたは どっち派？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>どうやってコードをインデントする？</p><p>CodeSniﬀer</p><p>CS-Fixer</p><p>両方</p><p>もちつけ</p><p>tadsan</p><p><strong>https://www.emacswiki.org/pics/static/TabsSpacesBoth.png より</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>そこで出てくるのが</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>ということで</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>ECS！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>最速最強コードフォーマッター</p><p>E  C  S<br>asy oding tandard</p><p>ECS - The fastest and strongest code formatter</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>WPHPerKaigi 2023 - PHPerのためのゆるいLT会 - </strong></p><p><strong>2022-04-18</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>ECSってなあに?</p><ul><li>Tomas Votruba氏が開発しているスタイルチェック/フォーマットツール<ul><li>RectorというPHPStanベースのリファクタリングツールも作っている</li></ul></li><li>内部的にPHP-CS-FixerとPHP_CodeSnifferを使っている<ul><li>両方のツールに内蔵されたルールが使える！</li></ul></li><li>並列実行してくれて爆速！ 一度実行したらキャッシュされるので待たせない</li><li>ひとつのツール内で両方のルールを合せてくれるのでツール間で喧嘩しない</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>インストール方法</p><ul><li>非常に簡単！<ul><li>composer require --dev symplify/easy-coding-standard:&quot;^11.2&quot;</li><li>バージョン指定しないとインストール時にかなり待たされるので注意</li></ul></li><li>./vendor/bin/ecs で実行できる<ul><li>初回実行時に勝手に設定ファイル(ecs.php)が作成される</li><li>PHP-CS-FixerやPHP_CodeSnifferのルールを指定する</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>清浄なコードベースを <br>保つには</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>こきたないコードをマージさせない</p><ul><li>コードベース全体を (勇気をもって) 全フォーマットする</li><li>メンバー全員に「コミットする直前に」必ずフォーマットすることを根付かせる</li><li>CIでECSを呼び出してスタイルが合ってないファイルがあれば失敗させる</li><li>僕は編集中にテキストエディタから非同期フォーマットを実行するようにする<br>拡張を書きました</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>完璧主義の <br>みなさんにも <br>安心！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p>おまえら<br>pixivは <br>どうなのかって？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>俺たちの戦いは これからだ！！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>続きはWebで</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.emacswiki.org%2Fpics%2Fstatic%2FTabsSpacesBoth.png&size=32" alt=""><a href="https://www.emacswiki.org/pics/static/TabsSpacesBoth.png" target="_blank" rel="noopener">www.emacswiki.org</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdic.pixiv.net%2Fa%2F%25E3%2581%259D%25E3%2582%2593%25E3%2581%25AA%25E3%2582%2582%25E3%2581%25AE%25E3%2581%25AF%25E3%2581%25AA%25E3%2581%2584&size=32" alt=""><a href="https://dic.pixiv.net/a/%E3%81%9D%E3%82%93%E3%81%AA%E3%82%82%E3%81%AE%E3%81%AF%E3%81%AA%E3%81%84" target="_blank" rel="noopener">そんなものはない (そんなものはない)とは【ピクシブ百科事典】</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fwww.emacswiki.org%2Fpics%2Fstatic%2FTabsSpacesBoth.png&size=32" alt=""><a href="https://www.emacswiki.org/pics/static/TabsSpacesBoth.png" target="_blank" rel="noopener">www.emacswiki.org</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Feasy-coding-standard%2Feasy-coding-standard&size=32" alt=""><a href="https://github.com/easy-coding-standard/easy-coding-standard" target="_blank" rel="noopener">GitHub - easy-coding-standard/easy-coding-standard: The Easiest way to add coding standard to your PHP project</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

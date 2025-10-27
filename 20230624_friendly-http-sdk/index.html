@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年6月23日に福岡市博多区の福岡ファッションビル・FFBホールで開催された『PHPカンファレンス福岡2023』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="【令和最新版】開発者フレンドリーなHTTP SDK作るには">
+          <meta property="og:description" content="2023年6月23日に福岡市博多区の福岡ファッションビル・FFBホールで開催された『PHPカンファレンス福岡2023』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230624_friendly-http-sdk/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230624_friendly-http-sdk.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="【令和最新版】開発者フレンドリーなHTTP SDK作るには">
+          <meta name="twitter:description" content="2023年6月23日に福岡市博多区の福岡ファッションビル・FFBホールで開催された『PHPカンファレンス福岡2023』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230624_friendly-http-sdk.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230624_friendly-http-sdk/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230624_friendly-http-sdk/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230624_friendly-http-sdk/">
+
+          <title>【令和最新版】開発者フレンドリーなHTTP SDK作るには</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230624_friendly-http-sdk.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230624_friendly-http-sdk.pdf" title="【令和最新版】開発者フレンドリーなHTTP SDK作るには" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230624_friendly-http-sdk/" class="p-name u-url u-uid permalink-link">【令和最新版】開発者フレンドリーなHTTP SDK作るには</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2022-06-24">2022年6月24日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-06-23">2023年6月23日</time>に<span class="p-location">福岡市博多区</span>の<span class="p-location">福岡ファッションビル・FFBホール</span>で開催された『<a href="https://phpcon.fukuoka.jp/2023/" class="p-name u-url" target="_blank" rel="noopener">PHPカンファレンス福岡2023</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F6216133&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/6216133" class="u-url" target="_blank" rel="noopener">ぺちこん福岡tadsan発表資料 #phpconfuk #prtimes_dev ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpconfuk" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpconfuk</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230624_friendly-http-sdk.pdf" download="20230624_friendly-http-sdk.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>【令和最新版】</p><p>開発者フレンドリーな HTTP SDK作るには</p><p>Creating Developer-Friendly HTTP SDKs</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2022-06-24 </strong></p><p><strong>PHP Conference Fukuoka</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>プログラミング言語にちょっとこだわりのある素人</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>内容を詰め込んでるの でメモとかは無理です <br>後日詳細なフォロー アップを公開します</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>今回のお題</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            <p>つまり…？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>そういう話です<br>🤖</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>そういう話です<br>🤖</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>テストの話はしますが <br>主題には <br>なりませんでした</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>SDKを書く前に おさえておきたい <br>PHPでのHTTPの <br>使いかた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>大昔に別の <br>アプローチについて <br>書いたこともあります</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>WEB+DB PRESS Vol.96</p><p>(2016年)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>関数ベースの処理は <br>イケてないから <br>Guzzle使おうぜ！ <br>…という内容</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>Zennに再掲しました</p><p>(2016年版)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>今回しない話 </p><p>(発表時間15分なので)</p><ul><li>OpenAPI(Swagger)の定義からコードを自動生成するとか</li><li>具体的なSDKの実装方法<ul><li>もうちょっと手前のHTTPの話が中心です</li><li>後日、私がいままで作ったSDKをいくつか紹介します</li></ul></li><li>具体的なテスト手法について… 間に合いませんでした！<ul><li>スライドじゃなくていい感じにするライブラリをちょこちょこ書いてます</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>超ざっくり </p><p>PHP vs HTTP</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>PHPからHTTPリクエスト</p><ul><li>グローバル関数を使うと超かんたんにHTTPリクエストを発行できる<ul><li>Ole_get_contents($url)<ul><li>名前に反してPOSTなど任意のメソッドのリクエストを発行できる(!)</li></ul></li><li>cURL関数 [curl_init(), curl_exec(), ...]</li><li>こいつらは事実上の標準関数みたいな感じで外部ライブラリも要らないし<br>簡単だけどリクエスト・レスポンスの組み立てがちょっとめんどい</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p>そうだ､HTTPクライアントを使おう</p><ul><li>実際にはuopzで可能<br>「リクエスト関数」から「クライアントオブジェクト」へ </li></ul><p>(例: clock-mock)</p><ul><li>PHPではグローバル関数をモックすることはちょっと大変</li><li>インスタンスを外部から受け取ることで、HTTP通信が置換可能になる</li></ul><ul><li>ガ ズ ル シ ン フ ォ ニ ー<br>よく知られた実装: Guzzle, Symfony HTTP Client</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p>Guzzle</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p>つまり…？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p>PSRとは何か</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>PHP-FIGとかいう <br>有志の団体が勧告して<br>いる標準仕様</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p><strong>F</strong>ramework<strong> </strong><br><strong>I</strong>nterop<strong> </strong><br><strong>G</strong>roup</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p>フレームワークを 作ってる人たちの <br>寄合所帯</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p>PSRの誤解</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>ワシのPSRは <br>20式まであるぞ</p><p>一般的にはオートロードや コーディング規約が知られ<br>ていると思う </p><p>(たぶん)</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p>PSRではHTTPに 関連する仕様も多く <br>勧告されている</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>最重要資料</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>PSR-18は <br>HTTP Clientの インターフェイス</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>PSR-18は <br>PSR-15と似ているが <br>よりシンプル</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>PSR-15 vs PSR-18</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>＿人人人人人人人人人人人人人人人人人＿ ＞　僕の知ってるHTTPClientと違う　＜ ￣Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^￣</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p>僕の知ってる <br>HTTP Clientって？</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p>GuzzleのREADMEに書いてる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p>それに引き換えなんだこのPSR-18</p><p>シンプルすぎる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>だがそれがいい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>PSR-7/18 vs Guzzle (1)</p><ul><li>PSRはフレームワークの相互運用できる共通部品となるべく設計された<ul><li>PSR-7/18はHTTPの仕様を(PHPで扱える範囲で)そのまま表現できる</li></ul></li><li>Guzzleはエンドユーザーが使いやすいように設計されていて、<br>ユーザーはHTTPやPSRの仕様を考えなくても簡単に使えるようになってる <ul><li>リクエスト生成やHTTPヘッダの組み立てなどの実装も含んでいる</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>PSR-7/18 vs Guzzle (2)</p><ul><li>PSR-7/18は仕様がコンパクトなので気のきいた機能は定義されてない<ul><li>HTTPを理解していないと正しくリクエストを送れないこともありうる</li></ul></li><li>Guzzleは充実した便利機能を内包しているので、少ない記述量で<br>複数のHTTPリクエストを発行できる <ul><li>なおかつPSR-18のClientInterfaceも実装している</li><li>Guzzle独自の便利メソッドとPSR-18のシンプルメソッド両方使える</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p>PSR-15 vs PSR-18</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>一年前に話した</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>Middleware呼び出しイメージ</p><p><strong>Middleware</strong></p><p><strong>RequestHandler</strong></p><p>ServerRequest</p><p>Response</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p>Middleware呼び出しイメージ</p><p><strong>Middleware</strong></p><p><strong>RReeqquueessttHHaannddlleerr</strong></p><p>ServerRequest</p><p>Response</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p>特定の場合に <br>処理を横取りできると <br>うれしいことがある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p>例：ユニットテスト</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>HttpClient呼び出しイメージ</p><p><strong>外部API</strong></p><p><strong>HttpClient</strong></p><p>Request</p><p>Response</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>外部にリクエストを送らない</p><p><strong>外部API</strong></p><p>リクエスト送らない</p><p><strong>MockHttpClient</strong></p><p>Request</p><p>Response</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>外部にリクエストが送られないように</p><ul><li>PSR-18の場合、仕様がとてもシンプルなのでClientInterfaceを実装し<br>たシンプルな無名クラスを作ってしまうのが簡単 </li><li>Guzzleの場合、MockHandlerというハンドラを有効化して<br>テスト用に任意のレスポンスを返す関数を登録してやることができる </li><li>重要: アプリケーション内に不用意に new Guzzle Client()とか書かない</li></ul><p>\</p><ul><li>普通の方法で処理を横取りできなくなってしまう</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>依存の注入 </p><p>(Dependency Injection)</p><ul><li>オブジェクトはメソッド内でその都度生成するのではなく、<br>呼び出し側(もしくはさらに上位のモジュール)から入れ込むことで 共通のインターフェイスを持ったものに交換できることを保証する </li><li>同一機能を持った別のライブラリに乗り換えることもできるし、<br>テスト時に決まった値を返すモックオブジェクトに差し替えることも簡単 </li><li>くわしくは「ちょうぜつソフトウェア設計入門」を読んで！</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>ここまでで <br>準備ができた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p>概ねいままで <br>言ってきたことをやるな <br>という話</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p>Guzzle便利なのはいいんだけど</p><ul><li>世の中、Guzzleを使いたいひとばかりではない<ul><li>僕はkriswallsmith/Buzzという素朴なPSR-18実装が好きです</li></ul></li><li>SDKとしてはpsr/http-clientとpsr/http-factoryにだけ<br>依存するのが理想 <ul><li>SDKの実装としてはGuzzleの便利機能に頼れないのを不便に感じること<br>はあるかもしれない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p>ユーザーの利便性 vs 依存の注入</p><ul><li>ユーザーがSDKを使いはじめるときに事前準備が多すぎると辟易させる</li><li>プログラミングがあんまり得意じゃないユーザーにも使ってもらうことを考え<br>ると、事前準備は少なければ少ないほどいい <ul><li>一方で、依存を注入してテストで差し替えたいという<br>利用者の邪魔をしてはいけない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p>利用者の邪魔をするパターン</p><ul><li>SDKの実装の中で new Guzzle Client() って書く</li></ul><p>\</p><ul><li>SDKの実装の中で file_get_contents() とか curl 関数を呼ぶ<ul><li>ただしこれらのパターンはPHP-VCRというテスト用ライブラリを<br>活用することで通信をフックして任意のレスポンスに書き換えたりすること<br>もできなくはない</li></ul></li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>php-http/discovery</p><ul><li>php-httpという団体が提供しているライブラリ<ul><li>動作実績のとれているHTTPライブラリがハードコードされている</li></ul></li><li>インストール済みのPSR-HTTPライブラリを検出して自動で生成してくれる<ul><li>これはstaticに状態を持っておりDIパターンではないが、<br>DIが使えない環境における強い味方 </li></ul></li><li>欠点：ドキュメントが不親切め</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p>ユーザーを邪魔しない<br>使いやすいSDKを <br>作ろう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fslope-it%2Fclock-mock&size=32" alt=""><a href="https://github.com/slope-it/clock-mock" target="_blank" rel="noopener">GitHub - slope-it/clock-mock: A PHP library for mocking date and time in tests</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-links">
+                            <ul>
+                              <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fgithub.com%2Fguzzle%2Fguzzle&size=32" alt=""><a href="https://github.com/guzzle/guzzle" target="_blank" rel="noopener">GitHub - guzzle/guzzle: Guzzle, an extensible PHP HTTP client</a></li><li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Fdocs.guzzlephp.org%2Fen%2Fstable%2Fquickstart.html%23query-string-parameters&size=32" alt=""><a href="https://docs.guzzlephp.org/en/stable/quickstart.html#query-string-parameters" target="_blank" rel="noopener">Quickstart — Guzzle Documentation</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>

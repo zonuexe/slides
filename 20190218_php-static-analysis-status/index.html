@@ -3,9 +3,11 @@
         <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2019年2月18日にオンラインのビデオ会議で開催された『PHP静的解析現状確認会』発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
 
           <meta property="og:title" content="PHP静的解析現状確認会 - pixiv.git">
-          <meta property="og:description" content="tadsan's slide deck">
+          <meta property="og:description" content="2019年2月18日にオンラインのビデオ会議で開催された『PHP静的解析現状確認会』発表しました。">
           <meta property="og:type" content="website">
           <meta property="og:url" content="https://zonuexe.github.io/slides/20190218_php-static-analysis-status/">
           <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20190218_php-static-analysis-status.png">
@@ -16,7 +18,7 @@
           <meta name="twitter:site" content="@tadsan">
           <meta name="twitter:creator" content="@tadsan">
           <meta name="twitter:title" content="PHP静的解析現状確認会 - pixiv.git">
-          <meta name="twitter:description" content="tadsan's slide deck">
+          <meta name="twitter:description" content="2019年2月18日にオンラインのビデオ会議で開催された『PHP静的解析現状確認会』発表しました。">
           <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20190218_php-static-analysis-status.png">
 
           <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20190218_php-static-analysis-status/oembed.json">
@@ -48,15 +50,16 @@
           </script>
         </head>
         <body>
-          <div class="container">
-            <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20190218_php-static-analysis-status.pdf" id="pdf-container" title="PHP静的解析現状確認会 - pixiv.git"></iframe>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20190218_php-static-analysis-status.pdf" title="PHP静的解析現状確認会 - pixiv.git" scrolling="no"></iframe>
+            </div>
             <div class="pdf-controls">
               <button class="fullscreen-btn" onclick="toggleExpanded()">
                 <i class="fa-solid fa-expand"></i>
               </button>
             </div>
 
-            <!-- Toast通知用の要素 -->
             <div id="toast" class="toast"></div>
 
             <article class="slide-info h-entry">
@@ -100,21 +103,21 @@
                         <div class="page-content" id="page-1">
                           <h4>Page 1</h4>
                           <div class="page-text">
-                            <p>2540</p><p>静的解析現状確認会</p><p><strong>PHP</strong></p><p>ピクシブ株式会社</p><p><strong> / pixiv.git</strong></p><p>pixiv Inc.<br>うさみけんた</p><p><strong> / tadsan</strong></p><p><strong>2019-02-18</strong></p>
+                            <p><strong>PHP静的解析現状確認会</strong></p><p>ピクシブ株式会社 / pixiv.git</p><p>pixiv Inc.<br>うさみけんた / tadsan</p><p>2019-02-18</p>
                           </div>
                         </div>
                       
                         <div class="page-content" id="page-2">
                           <h4>Page 2</h4>
                           <div class="page-text">
-                            <p>2540</p><p>はじめに</p><p>今回紹介する の開発環境の改善は歴代の複数のチームメンバーの創意工夫の積</p><p>●</p><p>pixiv</p><p>み重ねであり、この資料は筆者 がその成果をまとめたものである</p><p>(@tadsan)</p><p>の型に関する見解は 個人の意見およびチーム内での議論に基く</p><p>●</p><p>PHP @tadsan</p>
+                            <p><strong>はじめに</strong></p><ul><li>今回紹介するpixivの開発環境の改善は歴代の複数のチームメンバーの創意工夫の積み重ねであり、この資料は筆者(@tadsan)がその成果をまとめたものである</li><li>PHPの型に関する見解は@tadsan個人の意見およびチーム内での議論に基く</li></ul>
                           </div>
                         </div>
                       
                         <div class="page-content" id="page-3">
                           <h4>Page 3</h4>
                           <div class="page-text">
-                            <p>2540</p><p>現状を三行で</p><p>未定義クラス・メソッド・定数・変数などの使用は簡単に検出できます</p><p>●</p><p>、 や などのツールがありますが、それぞれの特徴が</p><p>●</p><p>PhpStorm Phan PHPStan</p><p>の開発では ごとに動的解析と静的解析の結果は</p><p>●</p><p>pixiv.git Pull Request<br>概ね 秒程度で結果を表示できてます</p>
+                            <p><strong>現状を三行で</strong></p><ul><li>未定義クラス・メソッド・定数・変数などの使用は簡単に検出できます</li><li>PhpStorm、PhanやPHPStanなどのツールがありますが、それぞれの特徴が</li><li>pixiv.gitの開発ではPull Requestごとに動的解析と静的解析の結果は概ね60秒程度で結果を表示できてます</li></ul>
                           </div>
                         </div>
                       
@@ -245,7 +248,7 @@
                 </a>
               </div>
             </article>
-          </div>
+          </main>
           <hr>
           <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
         </body>

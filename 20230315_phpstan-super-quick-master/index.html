@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+      <html lang="ja">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="description" content="2023年3月15日に東京都渋谷区のGMO Yours フクラスで開催された『第150回 PHP勉強会＠東京』でライトニングトーク(5分)として発表しました。">
+          <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+
+          <meta property="og:title" content="PHPStan超クイックマスター">
+          <meta property="og:description" content="2023年3月15日に東京都渋谷区のGMO Yours フクラスで開催された『第150回 PHP勉強会＠東京』でライトニングトーク(5分)として発表しました。">
+          <meta property="og:type" content="website">
+          <meta property="og:url" content="https://zonuexe.github.io/slides/20230315_phpstan-super-quick-master/">
+          <meta property="og:image" content="https://zonuexe.github.io/slides/pdf/20230315_phpstan-super-quick-master.png">
+          <meta property="og:site_name" content="tadsan's slide deck">
+          <meta property="og:locale" content="ja_JP">
+
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@tadsan">
+          <meta name="twitter:creator" content="@tadsan">
+          <meta name="twitter:title" content="PHPStan超クイックマスター">
+          <meta name="twitter:description" content="2023年3月15日に東京都渋谷区のGMO Yours フクラスで開催された『第150回 PHP勉強会＠東京』でライトニングトーク(5分)として発表しました。">
+          <meta name="twitter:image" content="https://zonuexe.github.io/slides/pdf/20230315_phpstan-super-quick-master.png">
+
+          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/20230315_phpstan-super-quick-master/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/20230315_phpstan-super-quick-master/oembed.xml">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/20230315_phpstan-super-quick-master/">
+
+          <title>PHPStan超クイックマスター</title>
+          <script src="https://kit.fontawesome.com/ca9a253b70.js" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="/slides/css/slide.css">
+          <style>
+            :root {
+              --max-width: 1920px;
+              --aspect-ratio: 1920 / 1080;
+              --max-height: 66.67vh;
+            }
+          </style>
+          <script>
+            // スライド設定をグローバル変数として定義
+            window.slideConfig = {
+              maxWidth: 1920,
+              maxHeight: 1080,
+              download: '20230315_phpstan-super-quick-master.pdf'
+            };
+          </script>
+          <script src="/slides/js/slide-functions.js"></script>
+          <script>
+            // スライドの初期化
+            initializeSlide();
+          </script>
+        </head>
+        <body>
+          <main class="container">
+            <div id="pdf-container" aria-label="Slide preview">
+              <iframe src="/slide-pdf.js/?slide=%2Fslides%2Fpdf%2F20230315_phpstan-super-quick-master.pdf" title="PHPStan超クイックマスター" scrolling="no"></iframe>
+            </div>
+            <div class="pdf-controls">
+              <button class="fullscreen-btn" onclick="toggleExpanded()">
+                <i class="fa-solid fa-expand"></i>
+              </button>
+            </div>
+
+            <div id="toast" class="toast"></div>
+
+            <article class="slide-info h-entry">
+              <button class="share-btn" onclick="shareSlide()">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="fullscreen-info-btn" onclick="toggleFullscreen()">
+                <i class="fa-solid fa-display"></i>
+              </button>
+              <h1 class="slide-title"><a href="/slides/20230315_phpstan-super-quick-master/" class="p-name u-url u-uid permalink-link">PHPStan超クイックマスター</a></h1>
+              <p class="published-line">公開日: <time class="dt-published" datetime="2023-03-15">2023年3月15日</time></p>
+              <p class="byline p-author h-card">by <a href="https://twitter.com/tadsan" class="p-name u-url">USAMI Kenta</a> <span class="p-nickname">@tadsan</span></p>
+
+              
+                <div class="event-info">
+                  <p class="event-entry h-event"><time class="dt-start" datetime="2023-03-15">2023年3月15日</time>に<span class="p-location">東京都渋谷区</span>の<span class="p-location">GMO Yours フクラス</span>で開催された『<a href="https://phpstudy.doorkeeper.jp/events/152645" class="p-name u-url" target="_blank" rel="noopener">第150回 PHP勉強会＠東京</a>』で<span class="p-category">ライトニングトーク</span>(<span class="p-duration" data-duration="5">5分</span>)として発表しました。</p>
+                </div>
+              
+
+              
+                <div class="related-articles">
+                  <ul>
+                    <li><img width="16" src="https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https%3A%2F%2Ftadsan.fanbox.cc%2Fposts%2F5500743&size=32" alt=""><a href="https://tadsan.fanbox.cc/posts/5500743" class="u-url" target="_blank" rel="noopener">PHPStan超クイックマスター #phpstudy ｜にゃんだーすわん｜pixivFANBOX</a><br>発表の背景・補足説明</li>
+                  </ul>
+                </div>
+              
+
+              
+                <div class="hashtags">
+                  <a href="https://twitter.com/hashtag/phpstudy" target="_blank" class="hashtag p-category u-url" rel="noopener">#phpstudy</a>
+                </div>
+              
+
+              <div class="download-section">
+                <a href="/slides/pdf/20230315_phpstan-super-quick-master.pdf" download="20230315_phpstan-super-quick-master.pdf" class="download-btn">
+                  <i class="fa-solid fa-download"></i> Download PDF
+                </a>
+                <button class="download-image-btn" onclick="downloadCanvasAsImage()">
+                  <i class="fa-solid fa-image"></i> Save Current Page
+                </button>
+                <button class="copy-image-btn" onclick="copyCanvasToClipboard()">
+                  <i class="fa-solid fa-copy"></i> Copy Current Page
+                </button>
+              </div>
+              <div class="slide-content e-content">
+                <div class="content-panes">
+                  <div class="text-pane">
+                    <h3>スライドテキスト</h3>
+                    
+                      
+                        <div class="page-content" id="page-1">
+                          <h4>Page 1</h4>
+                          <div class="page-text">
+                            <p>PHPStan超クイックマスター</p><p>PHPStan “super” quick master</p><p>pixiv Inc. <br>USAMI Kenta</p><p><strong>2021.10.02</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-2">
+                          <h4>Page 2</h4>
+                          <div class="page-text">
+                            <p>お前誰よ</p><ul><li>うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん</li><li>ピクシブ株式会社 pixiv事業本部 エンジニア<ul><li>最近はピクシブ百科事典(dic.pixiv.net)を開発しています</li></ul></li><li>Emacs Lisper, PHPer<ul><li>Emacs PHP Modeを開発しています (2017年-)</li></ul></li><li>プログラミング言語にちょっとこだわりのある素人</li></ul>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-3">
+                          <h4>Page 3</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-4">
+                          <h4>Page 4</h4>
+                          <div class="page-text">
+                            <p>さて</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-5">
+                          <h4>Page 5</h4>
+                          <div class="page-text">
+                            <p>PHPerKaigiの <br>チケットを買うと <br>パンフレットがもらえる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-6">
+                          <h4>Page 6</h4>
+                          <div class="page-text">
+                            
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-7">
+                          <h4>Page 7</h4>
+                          <div class="page-text">
+                            <p>PHPStan <br>= <br>Static Analyzer</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-8">
+                          <h4>Page 8</h4>
+                          <div class="page-text">
+                            <p>実行しなくても バグの可能性を <br>検知できる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-9">
+                          <h4>Page 9</h4>
+                          <div class="page-text">
+                            <p>全8ページで PHPStanの <br>基礎を押えられる</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-10">
+                          <h4>Page 10</h4>
+                          <div class="page-text">
+                            <p>実務で最低限使うため に知っておきたいこと を詰め込んだ… はず</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-11">
+                          <h4>Page 11</h4>
+                          <div class="page-text">
+                            <p>PHP本来の型のコン セプトからPHPDoc による拡張までを網羅</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-12">
+                          <h4>Page 12</h4>
+                          <div class="page-text">
+                            <p>僕と契約して<br>PHPStanを完全に <br>マスターしてよ</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-13">
+                          <h4>Page 13</h4>
+                          <div class="page-text">
+                            <p>という話をしたい <br>のではない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-14">
+                          <h4>Page 14</h4>
+                          <div class="page-text">
+                            <p>PHPStanは <br>完全無料なので <br>いますぐ入れよう</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-15">
+                          <h4>Page 15</h4>
+                          <div class="page-text">
+                            <p>これからプロになりた い人に本当に伝えたい PHPDocの書きかた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-16">
+                          <h4>Page 16</h4>
+                          <div class="page-text">
+                            <p>その1 <br>配列は使い分ける</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-17">
+                          <h4>Page 17</h4>
+                          <div class="page-text">
+                            <p>世の中には <br>いろんな配列がある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-18">
+                          <h4>Page 18</h4>
+                          <div class="page-text">
+                            <p><strong>[1, 2, 3]</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-19">
+                          <h4>Page 19</h4>
+                          <div class="page-text">
+                            <p><strong>[ </strong><br><strong>     &#39;name&#39; =&gt; &#39;Miku&#39;, </strong><br><strong>     &#39;age&#39; =&gt; 14, </strong><br><strong>] </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-20">
+                          <h4>Page 20</h4>
+                          <div class="page-text">
+                            <p><strong>[ </strong><br><strong>    &#39;Miku&#39;, &#39;Rin&#39;, &#39;Luka&#39;, </strong><br><strong>]</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-21">
+                          <h4>Page 21</h4>
+                          <div class="page-text">
+                            <p><strong>[ </strong><br><strong>    &#39;main&#39;    =&gt; &#39;Miku&#39;,     &#39;sub&#39;      =&gt; &#39;Rin&#39;, </strong><br><strong>    &#39;chorus&#39; =&gt; &#39;Luka&#39;, </strong><br><strong>]</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-22">
+                          <h4>Page 22</h4>
+                          <div class="page-text">
+                            <p>単なる型で書くと </p><p>array</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-23">
+                          <h4>Page 23</h4>
+                          <div class="page-text">
+                            <p><strong>interface X </strong><br><strong>{ </strong><br><strong>    function a(): array; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-24">
+                          <h4>Page 24</h4>
+                          <div class="page-text">
+                            <p><strong>function (X $obj) {     $a = $obj-&gt;a(); </strong><br><strong>};</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-25">
+                          <h4>Page 25</h4>
+                          <div class="page-text">
+                            <p><strong>function (X $x) {     $a = $x-&gt;a(); </strong><br><strong>    $v = $a[0]; </strong><br><strong>};</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-26">
+                          <h4>Page 26</h4>
+                          <div class="page-text">
+                            <p>配列から取り出した <br>要素の型がわからない <br>のは都合が悪い</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-27">
+                          <h4>Page 27</h4>
+                          <div class="page-text">
+                            <p><strong>array&lt;int&gt; </strong><br><strong>array&lt;string&gt;</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-28">
+                          <h4>Page 28</h4>
+                          <div class="page-text">
+                            <p>ちょっと前は <br> とか   </p><p><strong>int[] string[]</strong><br>とか書かれてた</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-29">
+                          <h4>Page 29</h4>
+                          <div class="page-text">
+                            <p>PSR-5式の配列記法(ジェネリクス)</p><p>array&lt;int,User&gt;</p><ul><li>配列インデックスの型を指定できる</li><li>以下の配列が区別できる</li></ul><p>array&lt;string, User&gt;</p><ul><li>[12 =&gt; new User(), 34 =&gt; new User()]</li><li>[&#39;太郎&#39; =&gt; new User(), &#39;花子&#39; =&gt; new User()]</li><li>[new User(&#39;太郎&#39;), new User(&#39;花子&#39;)]</li></ul><p>list&lt;User&gt;</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-30">
+                          <h4>Page 30</h4>
+                          <div class="page-text">
+                            <p>配列には2通りある</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-31">
+                          <h4>Page 31</h4>
+                          <div class="page-text">
+                            <p>同じような構造が <br>繰り返す配列</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-32">
+                          <h4>Page 32</h4>
+                          <div class="page-text">
+                            <p>キーによって <br>別の意味の値が 入っている配列</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-33">
+                          <h4>Page 33</h4>
+                          <div class="page-text">
+                            <p><strong>$a = [ </strong><br><strong>    &#39;name&#39; =&gt; &#39;初音ミク&#39;, </strong></p><p><strong>    &#39;age&#39; =&gt; 16, </strong><br><strong>]; </strong><br><strong>// array{name:string, age: int}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-34">
+                          <h4>Page 34</h4>
+                          <div class="page-text">
+                            <p><strong>array{ </strong><br><strong>    name: string, </strong><br><strong>    age: int </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-35">
+                          <h4>Page 35</h4>
+                          <div class="page-text">
+                            <p><strong>$a = [&#39;初音ミク&#39;, 16]; </strong></p><p><strong>// array{0: string, 1: int}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-36">
+                          <h4>Page 36</h4>
+                          <div class="page-text">
+                            <p>繰り返すなら&lt;&gt; <br>キーごとに違うなら{}</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-37">
+                          <h4>Page 37</h4>
+                          <div class="page-text">
+                            <p>その2 <br>型は入出力に宿る</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-38">
+                          <h4>Page 38</h4>
+                          <div class="page-text">
+                            <p>クエリパラメータから<br>値をとりたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-39">
+                          <h4>Page 39</h4>
+                          <div class="page-text">
+                            <p><strong>function getById(int $id): Article </strong><br><strong>{ </strong><br><strong>    // </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-40">
+                          <h4>Page 40</h4>
+                          <div class="page-text">
+                            <p>クエリパラメータから<br>ID値をとりたい</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-41">
+                          <h4>Page 41</h4>
+                          <div class="page-text">
+                            <p>実際あぶない</p><p><strong>$id = $_GET[&#39;id&#39;]; </strong><br><strong>$article=getById($id);</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-42">
+                          <h4>Page 42</h4>
+                          <div class="page-text">
+                            <p><strong>// ?id=1 </strong><br><strong>$_GET[&#39;id&#39;] === &#39;1&#39;;</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-43">
+                          <h4>Page 43</h4>
+                          <div class="page-text">
+                            <p><strong>// ?id=a </strong><br><strong>$_GET[&#39;id&#39;] === &#39;a&#39;;</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-44">
+                          <h4>Page 44</h4>
+                          <div class="page-text">
+                            <p><strong>// ?id[]=a </strong><br><strong>$_GET[&#39;id&#39;] === [&#39;a&#39;];</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-45">
+                          <h4>Page 45</h4>
+                          <div class="page-text">
+                            <p>危険ではないが <br>よくはない</p><p><strong>$id = (int)$_GET[&#39;id&#39;];</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-46">
+                          <h4>Page 46</h4>
+                          <div class="page-text">
+                            <p>安全に </p><p>int|false</p><p><strong>$id = mlter_var( </strong><br><strong>    $_GET[&#39;id&#39;] ?? &#39;&#39;, </strong><br><strong>    FILTER_VALIDATE_INT </strong><br><strong>);</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-47">
+                          <h4>Page 47</h4>
+                          <div class="page-text">
+                            <p>その3 <br>むやみに@var書かない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-48">
+                          <h4>Page 48</h4>
+                          <div class="page-text">
+                            <p>初心者殺しなことに @varには複数の用法</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-49">
+                          <h4>Page 49</h4>
+                          <div class="page-text">
+                            <p>@varはプロパティに<br>付けて書くもの</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-50">
+                          <h4>Page 50</h4>
+                          <div class="page-text">
+                            <p><strong>class Book </strong><br><strong>{ </strong><br><strong>    /** @var string */ </strong><br><strong>    public $name; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-51">
+                          <h4>Page 51</h4>
+                          <div class="page-text">
+                            <p><strong>class Book </strong><br><strong>{ </strong></p><p><strong>    public string $name; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-52">
+                          <h4>Page 52</h4>
+                          <div class="page-text">
+                            <p><strong>class Book </strong><br><strong>{ </strong><br><strong>    /** @var list&lt;Author&gt; */ </strong><br><strong>    public $authors; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-53">
+                          <h4>Page 53</h4>
+                          <div class="page-text">
+                            <p><strong>class Book </strong><br><strong>{ </strong></p><p><strong>    public list&lt;Author&gt; $authors; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-54">
+                          <h4>Page 54</h4>
+                          <div class="page-text">
+                            <p><strong>class Book </strong><br><strong>{ </strong><br><strong>    /** @var list&lt;Author&gt; */     public array $authors; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-55">
+                          <h4>Page 55</h4>
+                          <div class="page-text">
+                            <p>@varはconstには 基本的に付けない</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-56">
+                          <h4>Page 56</h4>
+                          <div class="page-text">
+                            <p><strong>class Book </strong><br><strong>{ </strong><br><strong>    /** @var list&lt;int&gt; */     const IDS = [1, 2, 3]; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-57">
+                          <h4>Page 57</h4>
+                          <div class="page-text">
+                            <p>できれば <br>つけない方がいい</p><p><strong>class Book </strong><br><strong>{ </strong><br><strong>    /** @var list&lt;int&gt; */     const IDS = [1, 2, 3]; </strong><br><strong>}</strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-58">
+                          <h4>Page 58</h4>
+                          <div class="page-text">
+                            <p>@varを <br>つけない場合</p><p><strong>Book::IDS[0] // =&gt; 1 Book::IDS[1] // =&gt; 2 Book::IDS[2] // =&gt; 3 </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-59">
+                          <h4>Page 59</h4>
+                          <div class="page-text">
+                            <p>@varを付けると <br>弱くなる</p><p><strong>Book::IDS[0] // =&gt; int Book::IDS[1] // =&gt; int Book::IDS[2] // =&gt; int </strong></p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-60">
+                          <h4>Page 60</h4>
+                          <div class="page-text">
+                            <p>ローカル変数に <br>@varを書く</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-61">
+                          <h4>Page 61</h4>
+                          <div class="page-text">
+                            <p>できれば <br>書かないでくれ！！</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-62">
+                          <h4>Page 62</h4>
+                          <div class="page-text">
+                            <p>むやみに <br>@varを書かないテク</p>
+                          </div>
+                        </div>
+                      
+                        <div class="page-content" id="page-63">
+                          <h4>Page 63</h4>
+                          <div class="page-text">
+                            <p>そのうちどこかに <br>ちゃんと書きます…</p>
+                          </div>
+                        </div>
+                      
+                    
+                  </div>
+
+                  <div class="links-pane">
+                    <h3>関連リンク</h3>
+                    
+                      <p>関連リンクがありません。</p>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="back-link">
+                <a href="/slides/" class="back-btn">
+                  <i class="fa-solid fa-arrow-left"></i>
+                  スライド一覧に戻る
+                </a>
+              </div>
+            </article>
+          </main>
+          <hr>
+          <address class="site-footer h-card">&copy; 2025 <span class="p-name">USAMI Kenta</span> (<a href="https://twitter.com/tadsan" class="u-url">@tadsan</a>)</address>
+        </body>
+      </html>
