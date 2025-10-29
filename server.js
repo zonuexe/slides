@@ -310,8 +310,8 @@ async function generateSlidesData() {
       console.warn(`メタデータ読み込み時の警告 (${slide.slug}):`, error);
     }
     const eventsText = collectEventsText(slide.events);
-  const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
-  const tagText = Array.isArray(slide.tags)
+    const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
+    const tagText = Array.isArray(slide.tags)
       ? slide.tags
           .flatMap((tag) => {
             if (typeof tag !== "string") return [];
@@ -320,7 +320,7 @@ async function generateSlidesData() {
           })
           .join(" ")
       : "";
-  const hashtagText = Array.isArray(slide.hashtags)
+    const hashtagText = Array.isArray(slide.hashtags)
       ? slide.hashtags
           .flatMap((tag) => {
             if (typeof tag !== "string") return [];
@@ -329,12 +329,14 @@ async function generateSlidesData() {
           })
           .join(" ")
       : "";
+    const downloadText = typeof slide.download === "string" ? slide.download : "";
     const combinedContent = [
       searchContent,
       eventsText,
       relatedArticlesText,
       tagText,
       hashtagText,
+      downloadText,
     ]
       .filter(Boolean)
       .join(" ");
@@ -400,6 +402,7 @@ app.get("/slides/", async (c) => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>tadsan's slide deck</title>
           <link rel="icon" type="image/png" href="/slides/zonuexe.png">
+          <link rel="canonical" href="https://zonuexe.github.io/slides/">
           <link rel="preload" href="/slides/css/index.css" as="style">
           <link rel="stylesheet" href="/slides/css/index.css">
           <link rel="preload" href="https://cdn.jsdelivr.net/npm/fuse.js@7.1.0/dist/fuse.min.js" as="script" crossorigin="anonymous">
@@ -572,8 +575,9 @@ app.get("/slides/:slug/", async (c) => {
           <meta name="twitter:description" content="${escapeHtml(descriptionText)}">
           <meta name="twitter:image" content="${config.site.url}/slides/${slide.image}">
 
-          <link rel="alternate" type="application/json+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.json">
-          <link rel="alternate" type="text/xml+oembed" href="https://zonuexe.github.io/slides/${slide.slug}/oembed.xml">
+          <link rel="alternate" type="application/json+oembed" href="${config.site.url}/slides/${slide.slug}/oembed.json">
+          <link rel="alternate" type="text/xml+oembed" href="${config.site.url}/slides/${slide.slug}/oembed.xml">
+          <link rel="alternate" type="application/pdf" href="${config.site.url}${slidePath}">
           <link rel="canonical" href="${config.site.url}/slides/${slide.slug}/">
 
           <title>${slide.title}</title>
