@@ -313,21 +313,21 @@ async function generateSlidesData() {
     const relatedArticlesText = collectRelatedArticlesText(slide.related_articles);
     const tagText = Array.isArray(slide.tags)
       ? slide.tags
-          .flatMap((tag) => {
-            if (typeof tag !== "string") return [];
-            const value = tag.trim();
-            return value ? [value] : [];
-          })
-          .join(" ")
+        .flatMap((tag) => {
+          if (typeof tag !== "string") return [];
+          const value = tag.trim();
+          return value ? [value] : [];
+        })
+        .join(" ")
       : "";
     const hashtagText = Array.isArray(slide.hashtags)
       ? slide.hashtags
-          .flatMap((tag) => {
-            if (typeof tag !== "string") return [];
-            const value = tag.trim();
-            return value ? [`#${value}`] : [];
-          })
-          .join(" ")
+        .flatMap((tag) => {
+          if (typeof tag !== "string") return [];
+          const value = tag.trim();
+          return value ? [`#${value}`] : [];
+        })
+        .join(" ")
       : "";
     const downloadText = typeof slide.download === "string" ? slide.download : "";
     const combinedContent = [
@@ -359,28 +359,28 @@ async function generateSlidesData() {
     snippet: slide.snippet ?? "",
     events: Array.isArray(slide.events)
       ? slide.events.flatMap((event) => {
-          if (!event || typeof event !== "object") return [];
-          const name = typeof event.name === "string" ? event.name : "";
-          if (!name) return [];
-          const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
-          const location = typeof event.location === "string" ? event.location : "";
-          const place = typeof event.place === "string" ? event.place : "";
-          return [
-            {
-              name,
-              presented_at: presentedAt,
-              location,
-              place,
-            },
-          ];
-        })
+        if (!event || typeof event !== "object") return [];
+        const name = typeof event.name === "string" ? event.name : "";
+        if (!name) return [];
+        const presentedAt = typeof event.presented_at === "string" ? event.presented_at : "";
+        const location = typeof event.location === "string" ? event.location : "";
+        const place = typeof event.place === "string" ? event.place : "";
+        return [
+          {
+            name,
+            presented_at: presentedAt,
+            location,
+            place,
+          },
+        ];
+      })
       : [],
     tags: Array.isArray(slide.tags)
       ? slide.tags.flatMap((tag) => {
-          if (typeof tag !== "string") return [];
-          const value = tag.trim();
-          return value ? [value] : [];
-        })
+        if (typeof tag !== "string") return [];
+        const value = tag.trim();
+        return value ? [value] : [];
+      })
       : [],
   }));
   const slidesJson = JSON.stringify(slidesForClient).replace(/</g, "\\u003c");
@@ -440,10 +440,9 @@ app.get("/slides/", async (c) => {
               ? ` <span class="p-location visually-hidden">${escapeHtml(locationText)}</span>`
               : "";
             return [
-              `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${
-                presentedAt
-                  ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>`
-                  : ""
+              `<p class="slide-card-event h-event"><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i> <span class="p-name">${escapeHtml(event.name)}</span>${presentedAt
+                ? ` <time class="dt-start visually-hidden" datetime="${escapeHtml(presentedAt)}">${escapeHtml(presentedAt)}</time>`
+                : ""
               }${locationHtml}</p>`,
             ];
           })
@@ -541,9 +540,9 @@ app.get("/slides/:slug/", async (c) => {
 
     const eventNarratives = Array.isArray(slide.events)
       ? slide.events.flatMap((event) => {
-          const narrative = buildEventNarrative(event);
-          return narrative ? [narrative] : [];
-        })
+        const narrative = buildEventNarrative(event);
+        return narrative ? [narrative] : [];
+      })
       : [];
 
     const config = await loadSiteConfig();
