@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onMounted, watch, nextTick } from "vue";
-import { withBase, useData, useHead } from "vitepress";
+import { withBase, useData } from "vitepress";
+import { useHead } from "@unhead/vue";
 import { slides, siteConfig } from "virtual:slides-data";
 import { buildEventNarratives } from "../../../../lib/events.js";
 import SlideTextNodes from "./SlideTextNodes.vue";
