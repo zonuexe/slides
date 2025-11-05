@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onMounted, watch, nextTick } from "vue";
-import { withBase, useData } from "vitepress";
+import { withBase, useData, useHead } from "vitepress";
 import { slides, siteConfig } from "virtual:slides-data";
 import { buildEventNarratives } from "../../../../lib/events.js";
 import SlideTextNodes from "./SlideTextNodes.vue";
@@ -27,6 +27,35 @@ const japaneseDate = computed(() => {
 
 const slidePermalink = computed(() => (slide.value ? withBase(`/${slide.value.slug}/`) : withBase("/")));
 const slidesIndexUrl = computed(() => withBase("/"));
+
+// oEmbedのリンクタグを追加
+const oembedJsonUrl = computed(() => {
+  if (!slide.value?.slug) return "";
+  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.slug}/oembed.json`;
+});
+
+const oembedXmlUrl = computed(() => {
+  if (!slide.value?.slug) return "";
+  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.slug}/oembed.xml`;
+});
+
+useHead(() => {
+  if (!slide.value?.slug) return {};
+  return {
+    link: [
+      {
+        rel: "alternate",
+        type: "application/json+oembed",
+        href: oembedJsonUrl.value,
+      },
+      {
+        rel: "alternate",
+        type: "text/xml+oembed",
+        href: oembedXmlUrl.value,
+      },
+    ],
+  };
+});
 
 const downloadUrl = computed(() => {
   if (!slide.value) return "#";
