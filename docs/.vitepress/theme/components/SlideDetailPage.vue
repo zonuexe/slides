@@ -153,7 +153,7 @@ function callGlobalFunction(fnName) {
           <ul>
             <li v-for="article in relatedArticles" :key="article.url">
               <img :src="faviconUrl(article.url)" width="16" height="16" alt="" />
-              <a :href="article.url" class="u-url" target="_blank" rel="noopener">{{ article.title }}</a>
+              <a :href="article.url" class="u-url" target="_blank">{{ article.title }}</a>
               <template v-if="article.desc">
                 <br />
                 {{ article.desc }}
@@ -169,7 +169,6 @@ function callGlobalFunction(fnName) {
             :href="`https://twitter.com/hashtag/${tag}`"
             target="_blank"
             class="hashtag p-category u-url"
-            rel="noopener"
           >
             #{{ tag }}
           </a>
@@ -209,10 +208,10 @@ function callGlobalFunction(fnName) {
                     <ul>
                       <li v-for="link in page.links" :key="`${page.page}-${link.href}`">
                         <img :src="faviconUrl(link.href)" width="16" height="16" alt="" />
-                        <a :href="link.href" target="_blank" rel="noopener">{{ link.title || link.href }}</a>
+                        <a :href="link.href" target="_blank">{{ link.title || link.href }}</a>
                         <template v-if="link.archive">
                           <br />(original:
-                          <a :href="link.url" target="_blank" rel="noopener">{{ link.url }}</a>)
+                          <a :href="link.url" target="_blank">{{ link.url }}</a>)
                         </template>
                       </li>
                     </ul>

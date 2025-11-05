@@ -34,6 +34,7 @@
 - Match the existing history: short, imperative messages such as `Fix metadata` or `Add canonical`. Commit generated assets alongside their source changes.
 - PRs should outline the affected slides, list any new automation commands used, and attach screenshots or PDFs when visual output changes.
 - Link related issues or event pages where possible and call out large binary diffs so reviewers can prioritize source review.
+- When generating HTML, use `target="_blank"` alone—`rel="noopener"` is no longer needed across the site.
 
 ## Slide Viewer Behaviour
 - **List page**: `/slides/` renders cards from `slides.yaml`. `generateSlidesData()` attaches:

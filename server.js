@@ -257,7 +257,7 @@ app.get("/slides/:slug/", async (c) => {
       const faviconUrl = `https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${encodeURIComponent(article.url)}&size=32`;
       const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
       const descHtml = article.desc ? `<br>${escapeHtml(article.desc)}` : '';
-      return `<li>${faviconImg}<a href="${escapeHtml(article.url)}" class="u-url" target="_blank" rel="noopener">${escapeHtml(article.title)}</a>${descHtml}</li>`;
+      return `<li>${faviconImg}<a href="${escapeHtml(article.url)}" class="u-url" target="_blank">${escapeHtml(article.title)}</a>${descHtml}</li>`;
     }).join('')}
                   </ul>
                 </div>
@@ -265,7 +265,7 @@ app.get("/slides/:slug/", async (c) => {
 
               ${slide.hashtags && slide.hashtags.length > 0 ? `
                 <div class="hashtags">
-                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag p-category u-url" rel="noopener">#${tag}</a>`).join('')}
+                  ${slide.hashtags.map(tag => `<a href="https://twitter.com/hashtag/${tag}" target="_blank" class="hashtag p-category u-url">#${tag}</a>`).join('')}
                 </div>
               ` : ''}
 
@@ -312,9 +312,9 @@ app.get("/slides/:slug/", async (c) => {
       const faviconImg = `<img width="16" src="${faviconUrl}" alt="">`;
 
       if (link.archive) {
-        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(link.title)}</a><br>(original: <a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">${escapeHtml(link.url)}</a>)</li>`;
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a><br>(original: <a href="${escapeHtml(link.url)}" target="_blank">${escapeHtml(link.url)}</a>)</li>`;
       } else {
-        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank" rel="noopener">${escapeHtml(link.title)}</a></li>`;
+        return `<li>${faviconImg}<a href="${escapeHtml(href)}" target="_blank">${escapeHtml(link.title)}</a></li>`;
       }
     }).join('')}
                             </ul>
