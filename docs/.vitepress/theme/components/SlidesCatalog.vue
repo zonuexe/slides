@@ -1,7 +1,6 @@
 <script setup>
-import { computed, onMounted, ref, watch } from "vue";
+import { computed, onMounted, ref, watch, shallowRef } from "vue";
 import { withBase } from "vitepress";
-import Fuse from "fuse.js";
 import SlideCard from "./SlideCard.vue";
 import { slides, siteConfig } from "virtual:slides-data";
 
@@ -9,20 +8,22 @@ const allSlides = ref([...slides]);
 
 const sortedSlides = computed(() => [...allSlides.value].sort((a, b) => new Date(b.date) - new Date(a.date)));
 
-const fuse = computed(
-  () =>
-    new Fuse(sortedSlides.value, {
-      keys: [
-        { name: "title", weight: 0.4 },
-        { name: "slug", weight: 0.3 },
-        { name: "date", weight: 0.2 },
-        { name: "combinedContent", weight: 0.1 },
-      ],
-      threshold: 0.3,
-      ignoreLocation: true,
-      includeScore: true,
-    })
-);
+// Fuse.jsを動的インポート
+const Fuse = shallowRef(null);
+const fuse = computed(() => {
+  if (!Fuse.value || !sortedSlides.value.length) return null;
+  return new Fuse.value(sortedSlides.value, {
+    keys: [
+      { name: "title", weight: 0.4 },
+      { name: "slug", weight: 0.3 },
+      { name: "date", weight: 0.2 },
+      { name: "combinedContent", weight: 0.1 },
+    ],
+    threshold: 0.3,
+    ignoreLocation: true,
+    includeScore: true,
+  });
+});
 
 // URLのクエリパラメータから初期値を取得
 const getInitialQuery = () => {
@@ -38,12 +39,23 @@ const filteredSlides = computed(() => {
   if (!term) {
     return sortedSlides.value;
   }
+  if (!fuse.value) {
+    return sortedSlides.value;
+  }
   return fuse.value.search(term).map((result) => result.item);
 });
 
 const totalCount = sortedSlides.value.length;
 const resultCount = computed(() => filteredSlides.value.length);
 const heroSubtitle = computed(() => siteConfig.site?.description ?? "Slide archive");
+
+// Fuse.jsを動的にロード
+const loadFuse = async () => {
+  if (typeof window !== "undefined" && !Fuse.value) {
+    const FuseModule = await import("fuse.js");
+    Fuse.value = FuseModule.default;
+  }
+};
 
 // クエリパラメータの変更を監視してURLを更新
 watch(
@@ -54,6 +66,8 @@ watch(
     const trimmedQuery = newQuery.trim();
     if (trimmedQuery) {
       url.searchParams.set("q", trimmedQuery);
+      // 検索クエリがある場合のみFuse.jsをロード
+      loadFuse();
     } else {
       url.searchParams.delete("q");
     }
@@ -66,6 +80,10 @@ watch(
 onMounted(() => {
   if (Array.isArray(window.slidesData) && window.slidesData.length) {
     allSlides.value = window.slidesData;
+  }
+  // 初期クエリがある場合はFuse.jsをロード
+  if (query.value.trim()) {
+    loadFuse();
   }
 });
 </script>
