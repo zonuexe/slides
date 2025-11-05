@@ -15,10 +15,6 @@ function buildHead({ slide, description, site }) {
   const pdfUrl = `${siteUrl}/slides/${slide.file}`;
   const twitterSite = site.twitter?.site ?? site.author?.twitter ?? "@tadsan";
   const twitterCreator = site.twitter?.creator ?? site.author?.twitter ?? "@tadsan";
-  const displayWidth = slide.displaySize?.width ?? slide.max_width ?? 1024;
-  const displayHeight = slide.displaySize?.height ?? slide.max_height ?? 768;
-  const styleContent = `:root { --max-width: ${displayWidth}px; --aspect-ratio: ${displayWidth} / ${displayHeight}; --max-height: 66.67vh; }`;
-
   return [
     ["meta", { name: "description", content: description }],
     ["link", { rel: "canonical", href: canonical }],
@@ -39,7 +35,6 @@ function buildHead({ slide, description, site }) {
     ["link", { rel: "stylesheet", href: "/slides/css/slide.css" }],
     ["script", { src: "https://kit.fontawesome.com/ca9a253b70.js", crossorigin: "anonymous" }],
     ["script", { src: "/slides/js/slide-functions.js", defer: true }],
-    ["style", {}, styleContent],
   ];
 }
 

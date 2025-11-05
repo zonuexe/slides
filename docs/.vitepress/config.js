@@ -8,12 +8,34 @@ export default defineConfig(async () => {
   const site = await loadSiteConfig();
   const siteName = site.site?.name ?? "Slide Deck";
   const siteDescription = site.site?.description ?? "Talks and slide archives";
+  const siteUrl = site.site?.url ?? "https://zonuexe.github.io";
+  const slidesOrigin = `${siteUrl.replace(/\/$/, "")}/slides`;
+  const imageUrl = `${slidesOrigin}/zonuexe.png`;
 
   return {
     lang: "ja-JP",
     base: "/slides/",
     title: siteName,
     description: siteDescription,
+    head: [
+      ["meta", { name: "description", content: siteDescription }],
+      ["link", { rel: "canonical", href: `${slidesOrigin}/` }],
+      ["link", { rel: "icon", type: "image/png", href: imageUrl }],
+      ["meta", { property: "og:title", content: siteName }],
+      ["meta", { property: "og:description", content: siteDescription }],
+      ["meta", { property: "og:type", content: site.ogp?.type ?? "website" }],
+      ["meta", { property: "og:url", content: `${slidesOrigin}/` }],
+      ["meta", { property: "og:image", content: imageUrl }],
+      ["meta", { property: "og:site_name", content: site.ogp?.site_name ?? siteName }],
+      ["meta", { property: "og:locale", content: site.ogp?.locale ?? "ja_JP" }],
+      ["meta", { name: "twitter:card", content: site.twitter?.card ?? "summary_large_image" }],
+      ["meta", { name: "twitter:site", content: site.twitter?.site ?? site.author?.twitter ?? "@tadsan" }],
+      ["meta", { name: "twitter:creator", content: site.twitter?.creator ?? site.author?.twitter ?? "@tadsan" }],
+      ["meta", { name: "twitter:title", content: siteName }],
+      ["meta", { name: "twitter:description", content: siteDescription }],
+      ["meta", { name: "twitter:image", content: imageUrl }],
+      ["script", { src: "https://kit.fontawesome.com/ca9a253b70.js", crossorigin: "anonymous" }],
+    ],
     cleanUrls: true,
     appearance: "dark",
     vite: {

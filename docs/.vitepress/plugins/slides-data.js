@@ -1,4 +1,5 @@
-import { resolve } from "node:path";
+import { resolve, dirname } from "node:path";
+import { writeFile, mkdir } from "node:fs/promises";
 import { generateSlidesData } from "../../../lib/slides-data.js";
 import { loadSiteConfig } from "../../../lib/site-config.js";
 
@@ -9,6 +10,13 @@ export function slidesDataPlugin() {
   const root = resolve(process.cwd());
   const slidesYamlPath = resolve(root, "slides.yaml");
   const siteYamlPath = resolve(root, "_site.yaml");
+  const publicSlidesScript = resolve(root, "docs/public/index.js");
+
+  async function writeSlidesDataScript(slides) {
+    await mkdir(dirname(publicSlidesScript), { recursive: true });
+    const script = `window.slidesData = ${JSON.stringify(slides).replace(/</g, "\\u003c")};\n`;
+    await writeFile(publicSlidesScript, script, "utf8");
+  }
 
   return {
     name: "slides-data-plugin",
@@ -20,7 +28,8 @@ export function slidesDataPlugin() {
       this.addWatchFile(slidesYamlPath);
       this.addWatchFile(siteYamlPath);
 
-      const { enrichedSlides } = await generateSlidesData({ includePdfMeta: true });
+      const { enrichedSlides, slidesForClient } = await generateSlidesData({ includePdfMeta: true });
+      await writeSlidesDataScript(slidesForClient);
       for (const slide of enrichedSlides) {
         if (slide.meta) {
           this.addWatchFile(resolve(root, slide.meta));

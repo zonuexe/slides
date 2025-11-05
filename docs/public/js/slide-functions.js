@@ -27,40 +27,50 @@ function toggleExpanded() {
         return;
     }
 
+    const slideInfo = document.querySelector('.slide-info');
+    const slideContent = document.querySelector('.slide-content');
+    const backLink = document.querySelector('.back-link');
+
     if (!frame.classList.contains('expanded')) {
-        // 画面全体表示に切り替え
         frame.classList.add('expanded');
         controls.classList.add('expanded');
 
-        // スライド情報と戻るリンクを非表示
-        const slideInfo = document.querySelector('.slide-info');
-        const slideContent = document.querySelector('.slide-content');
-        const backLink = document.querySelector('.back-link');
-        if (slideInfo) slideInfo.classList.add('expanded');
-        if (slideContent) slideContent.classList.add('expanded');
-        if (backLink) backLink.classList.add('expanded');
+        // Hide ancillary sections while expanded
+        [slideInfo, slideContent, backLink].forEach((el) => {
+            if (el) {
+                el.classList.add('hidden');
+            }
+        });
 
-        // 画面サイズに応じて適切なサイズを設定
+        document.body.classList.add('overflow-hidden');
+
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         const aspectRatio = window.slideConfig.maxWidth / window.slideConfig.maxHeight;
 
-        // アスペクト比を保ちながら画面に完全に収まるサイズを計算
         let calculatedWidth;
         let calculatedHeight;
 
         if (viewportWidth / aspectRatio <= viewportHeight) {
-            // 横幅基準で画面に収まる場合
             calculatedWidth = viewportWidth;
             calculatedHeight = viewportWidth / aspectRatio;
         } else {
-            // 縦幅基準で画面に収まる場合
             calculatedHeight = viewportHeight;
             calculatedWidth = viewportHeight * aspectRatio;
         }
 
+        frame.style.position = 'fixed';
+        frame.style.top = '50%';
+        frame.style.left = '50%';
+        frame.style.transform = 'translate(-50%, -50%)';
+        frame.style.maxWidth = '100vw';
+        frame.style.maxHeight = '100vh';
+        frame.style.margin = '0';
+        frame.style.zIndex = '1000';
+        frame.style.background = '#ffffff';
         frame.style.width = calculatedWidth + 'px';
         frame.style.height = calculatedHeight + 'px';
+
         if (iframe) {
             iframe.style.width = '100%';
             iframe.style.height = '100%';
@@ -69,24 +79,34 @@ function toggleExpanded() {
         icon.className = 'fa-solid fa-compress';
         fullscreenBtn.innerHTML = '<i class="fa-solid fa-compress"></i>';
     } else {
-        // 通常表示に戻す
         frame.classList.remove('expanded');
         controls.classList.remove('expanded');
 
-        // スライド情報と戻るリンクを再表示
-        const slideInfo = document.querySelector('.slide-info');
-        const slideContent = document.querySelector('.slide-content');
-        const backLink = document.querySelector('.back-link');
-        if (slideInfo) slideInfo.classList.remove('expanded');
-        if (slideContent) slideContent.classList.remove('expanded');
-        if (backLink) backLink.classList.remove('expanded');
+        [slideInfo, slideContent, backLink].forEach((el) => {
+            if (el) {
+                el.classList.remove('hidden');
+            }
+        });
 
+        document.body.classList.remove('overflow-hidden');
+
+        frame.style.removeProperty('position');
+        frame.style.removeProperty('top');
+        frame.style.removeProperty('left');
+        frame.style.removeProperty('transform');
+        frame.style.removeProperty('max-width');
+        frame.style.removeProperty('max-height');
+        frame.style.removeProperty('margin');
+        frame.style.removeProperty('z-index');
+        frame.style.removeProperty('background');
         frame.style.removeProperty('width');
         frame.style.removeProperty('height');
+
         if (iframe) {
             iframe.style.removeProperty('width');
             iframe.style.removeProperty('height');
         }
+
         icon.className = 'fa-solid fa-expand';
         fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
     }

@@ -1,61 +1,97 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
+import { withBase } from "vitepress";
 import Fuse from "fuse.js";
 import SlideCard from "./SlideCard.vue";
 import { slides, siteConfig } from "virtual:slides-data";
 
-const sortedSlides = [...slides].sort((a, b) => new Date(b.date) - new Date(a.date));
-const fuse = new Fuse(sortedSlides, {
-  keys: [
-    { name: "title", weight: 0.4 },
-    { name: "slug", weight: 0.3 },
-    { name: "date", weight: 0.2 },
-    { name: "combinedContent", weight: 0.1 },
-  ],
-  threshold: 0.35,
-  includeScore: true,
-});
+const allSlides = ref([...slides]);
 
-const query = ref("");
+const sortedSlides = computed(() => [...allSlides.value].sort((a, b) => new Date(b.date) - new Date(a.date)));
+
+const fuse = computed(
+  () =>
+    new Fuse(sortedSlides.value, {
+      keys: [
+        { name: "title", weight: 0.4 },
+        { name: "slug", weight: 0.3 },
+        { name: "date", weight: 0.2 },
+        { name: "combinedContent", weight: 0.1 },
+      ],
+      threshold: 0.3,
+      ignoreLocation: true,
+      includeScore: true,
+    })
+);
+
+// URLのクエリパラメータから初期値を取得
+const getInitialQuery = () => {
+  if (typeof window === "undefined") return "";
+  const params = new URLSearchParams(window.location.search);
+  return params.get("q") || "";
+};
+
+const query = ref(getInitialQuery());
+
 const filteredSlides = computed(() => {
   const term = query.value.trim();
   if (!term) {
-    return sortedSlides;
+    return sortedSlides.value;
   }
-  return fuse.search(term).map((result) => result.item);
+  return fuse.value.search(term).map((result) => result.item);
 });
 
-const totalCount = sortedSlides.length;
+const totalCount = sortedSlides.value.length;
 const resultCount = computed(() => filteredSlides.value.length);
 const heroSubtitle = computed(() => siteConfig.site?.description ?? "Slide archive");
+
+// クエリパラメータの変更を監視してURLを更新
+watch(
+  query,
+  (newQuery) => {
+    if (typeof window === "undefined") return;
+    const url = new URL(window.location.href);
+    const trimmedQuery = newQuery.trim();
+    if (trimmedQuery) {
+      url.searchParams.set("q", trimmedQuery);
+    } else {
+      url.searchParams.delete("q");
+    }
+    // 履歴を追加せずにURLを更新（ブラウザの戻る/進むボタンに影響しない）
+    window.history.replaceState({}, "", url.toString());
+  },
+  { immediate: false }
+);
+
+onMounted(() => {
+  if (Array.isArray(window.slidesData) && window.slidesData.length) {
+    allSlides.value = window.slidesData;
+  }
+});
 </script>
 
 <template>
-  <section class="space-y-10">
-    <header class="text-center space-y-3">
-      <p class="text-sm uppercase tracking-widest text-slate-300">tadsan</p>
-      <h1 class="text-3xl font-bold text-white">
-        {{ siteConfig.site?.name ?? "Slide Deck" }}
-      </h1>
-      <p class="text-white/80">{{ heroSubtitle }}</p>
-    </header>
+  <main class="container page-offset h-feed">
+    <h1 class="site-title h-card p-author">
+    </h1>
 
-    <div class="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-      <label class="text-sm font-medium text-white/60" for="slide-search">スライド検索</label>
-      <input
-        id="slide-search"
-        v-model="query"
-        placeholder="タイトル・スラッグ・日付・本文で検索"
-        class="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-lg text-white outline-none transition focus:border-sky-300 focus:ring-2 focus:ring-sky-500/50"
-        type="search"
-      />
-      <p class="text-sm text-white/70">
-        {{ resultCount }} / {{ totalCount }} 件
-      </p>
+    <div class="search-toolbar">
+      <label class="search-label">
+        <span class="visually-hidden">スライドを検索</span>
+        <input
+          id="search-input"
+          class="search-input"
+          type="search"
+          placeholder="タイトル・スラッグ・日付・本文で検索"
+          autocomplete="off"
+          v-model="query"
+        />
+      </label>
+      <p id="search-result-count" class="search-result">全 {{ query.trim() ? resultCount : totalCount }}件</p>
     </div>
 
-    <div class="slide-grid two-columns">
-      <SlideCard v-for="slide in filteredSlides" :key="slide.slug" :slide="slide" />
+    <div class="slide-grid">
+      <SlideCard v-for="slide in filteredSlides" :key="slide.slug" :slide="slide" :query="query" />
     </div>
-  </section>
+  </main>
 </template>

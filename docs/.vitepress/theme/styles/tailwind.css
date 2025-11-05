@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  color-scheme: dark;
+}
+
+@layer utilities {
+  /* Container */
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Search Toolbar */
+  .search-toolbar {
+    @apply flex flex-wrap gap-3 items-center my-5;
+  }
+
+  .search-label {
+    @apply flex-1 min-w-[280px] max-w-[600px];
+  }
+
+  .search-input {
+    @apply flex-1 min-w-[280px] w-full px-3.5 py-2.5 border border-gray-300 rounded-full text-base;
+    @apply transition-all duration-200;
+    @apply focus:outline-none focus:border-blue-500 focus:shadow-[0_0_0_3px_rgba(0,123,255,0.15)];
+  }
+
+  .search-result {
+    @apply text-sm text-gray-500 m-0;
+  }
+
+  /* Slide Grid */
+  .slide-grid {
+    @apply grid gap-5;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .slide-grid.two-columns {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  /* Slide Card */
+  .slide-card {
+    @apply border border-gray-300 p-5 rounded-lg bg-white shadow-sm;
+  }
+
+  .slide-card h3 {
+    @apply mt-0 mb-0;
+  }
+
+  .slide-card-meta {
+    @apply text-sm text-gray-500 m-0 mb-2;
+  }
+
+  .slide-card-snippet {
+    @apply mt-3 text-[0.95rem] text-gray-700 leading-relaxed;
+  }
+
+  .slide-card-snippet mark {
+    @apply bg-[rgba(255,230,0,0.6)] px-0.5 rounded;
+  }
+
+  .slide-link {
+    @apply text-blue-600 no-underline;
+  }
+
+  .slide-link:hover {
+    @apply underline;
+  }
+
+  /* Visually Hidden */
+  .visually-hidden {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Slide Card Events */
+  .slide-card-events {
+    @apply mt-2.5 flex flex-col gap-1.5 text-[0.95rem] text-gray-800;
+  }
+
+  .slide-card-event {
+    @apply flex items-center gap-2 m-0;
+  }
+
+  .slide-card-event i {
+    @apply text-[#ff5722] inline-block w-[19px];
+  }
+
+  /* Slide Card Tags */
+  .slide-card-tags {
+    @apply mt-3 mb-0 p-0 list-none flex flex-wrap gap-2;
+  }
+
+  .slide-card-tags li {
+    @apply flex items-center gap-1.5 bg-blue-50 rounded-full px-2.5 py-1 text-sm text-slate-700;
+  }
+
+  .slide-card-tags li i {
+    @apply text-slate-700 inline-block w-[18px] text-center;
+  }
+
+  /* No Results */
+  .no-results {
+    @apply col-span-full text-center py-10 text-gray-600 text-base;
+  }
+}

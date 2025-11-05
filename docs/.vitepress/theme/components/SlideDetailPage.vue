@@ -2,8 +2,8 @@
 import { computed, onMounted, watch, nextTick } from "vue";
 import { withBase, useData } from "vitepress";
 import { slides, siteConfig } from "virtual:slides-data";
-import { renderNode } from "../../../../lib/html.js";
 import { buildEventNarratives } from "../../../../lib/events.js";
+import SlideTextNodes from "./SlideTextNodes.vue";
 
 const props = defineProps({
   slug: {
@@ -51,7 +51,7 @@ const textPages = computed(() => {
     .map(([pageKey, nodes]) => ({
       page: pageKey.replace(/^p/, ""),
       order: Number(pageKey.replace(/\D/g, "")) || 0,
-      html: nodes.map((node) => renderNode(node)).join(""),
+      nodes: Array.isArray(nodes) ? nodes : [],
     }))
     .sort((a, b) => a.order - b.order);
 });
@@ -80,6 +80,17 @@ const slideConfigPayload = computed(() => {
     maxWidth: width,
     maxHeight: height,
     download: slide.value.download ?? slide.value.file,
+  };
+});
+
+const pdfContainerStyle = computed(() => {
+  if (!slide.value) return {};
+  const width = slide.value.displaySize?.width ?? slide.value.max_width ?? 1024;
+  const height = slide.value.displaySize?.height ?? slide.value.max_height ?? 768;
+  return {
+    maxWidth: `${width}px`,
+    maxHeight: "66.67vh",
+    aspectRatio: `${width} / ${height}`,
   };
 });
 
@@ -118,7 +129,7 @@ function callGlobalFunction(fnName) {
 <template>
   <section v-if="slide" class="slide-detail-page">
     <main class="container">
-      <div id="pdf-container" aria-label="Slide preview">
+      <div id="pdf-container" :style="pdfContainerStyle" aria-label="Slide preview">
         <iframe v-if="iframeUrl" :src="iframeUrl" :title="slide.title" scrolling="no"></iframe>
       </div>
       <div class="pdf-controls">
@@ -193,7 +204,7 @@ function callGlobalFunction(fnName) {
               <template v-if="textPages.length">
                 <div v-for="page in textPages" :key="`text-${page.page}`" class="page-content" :id="`page-${page.page}`">
                   <h4>Page {{ page.page }}</h4>
-                  <div class="page-text" v-html="page.html" />
+                  <SlideTextNodes :nodes="page.nodes" />
                 </div>
               </template>
               <p v-else>テキスト情報がありません。</p>
@@ -237,7 +248,7 @@ function callGlobalFunction(fnName) {
     </address>
   </section>
 
-  <section v-else class="rounded-2xl border border-white/10 bg-white/5 p-10 text-center text-white/80">
+  <section v-else class="rounded-2xl border p-10 text-center">
     <p>指定されたスライドが見つかりませんでした。</p>
     <div class="back-link" style="margin-top: 1rem;">
       <a :href="slidesIndexUrl" class="back-btn">
