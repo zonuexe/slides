@@ -46,6 +46,24 @@ export default defineConfig(async () => {
       },
       publicDir: resolve(process.cwd(), "docs/public"),
       plugins: [slidesDataPlugin(), pdfAssetsPlugin()],
+      build: {
+        rollupOptions: {
+          output: {
+            manualChunks(id) {
+              if (id.includes("node_modules")) {
+                if (id.includes("fuse.js")) {
+                  return "vendor-fuse";
+                }
+                if (id.includes("js-yaml")) {
+                  return "vendor-yaml";
+                }
+
+                return "vendor";
+              }
+            },
+          },
+        },
+      },
     },
     themeConfig: {
       logo: "/zonuexe.png",
