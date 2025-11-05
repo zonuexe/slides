@@ -1,0 +1,41 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  color-scheme: dark;
+}
+
+.slide-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.slide-grid.two-columns {
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.slide-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  backdrop-filter: blur(16px);
+}
+
+.slide-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.slide-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.slide-card a:hover {
+  text-decoration: underline;
+}
+
+.slide-meta-row {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -1,17 +1,22 @@
 {
-    "name": "slides-viewer",
-    "version": "1.0.0",
+    "name": "slide-deck",
+    "version": "2.0.0",
     "type": "module",
+    "packageManager": "pnpm@9.12.0",
     "scripts": {
-        "dev": "node --watch server.js",
-        "start": "node server.js"
+        "dev": "vitepress dev docs",
+        "build": "vitepress build docs",
+        "preview": "vitepress serve docs"
     },
     "dependencies": {
-        "@hono/node-server": "^1.8.2",
-        "hono": "^4.9.2",
-        "js-yaml": "^4.1.0"
+        "fuse.js": "^7.1.0",
+        "js-yaml": "^4.1.0",
+        "vue": "^3.5.13"
     },
     "devDependencies": {
-        "@types/js-yaml": "^4.0.0"
+        "autoprefixer": "^10.4.20",
+        "postcss": "^8.4.49",
+        "tailwindcss": "^3.4.15",
+        "vitepress": "^1.3.0"
     }
 }

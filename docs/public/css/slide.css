@@ -1,0 +1,686 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#pdf-container {
+    max-width: var(--max-width);
+    max-height: var(--max-height);
+    aspect-ratio: var(--aspect-ratio);
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+#pdf-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: contain;
+    background: #fff;
+}
+
+.pdf-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.fullscreen-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #6c757d;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    min-width: auto;
+}
+
+.fullscreen-btn:hover {
+    background: #5a6268;
+}
+
+.fullscreen-btn i {
+    font-size: 14px;
+}
+
+.slide-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.share-btn {
+    position: absolute;
+    top: 15px;
+    right: 65px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #28a745;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    min-width: auto;
+    z-index: 10;
+}
+
+.share-btn:hover {
+    background: #1e7e34;
+}
+
+.share-btn i {
+    font-size: 16px;
+}
+
+.fullscreen-info-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 6px;
+    width: 44px;
+    height: 44px;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    min-width: auto;
+    z-index: 10;
+}
+
+.fullscreen-info-btn:hover {
+    background: #0056b3;
+}
+
+.fullscreen-info-btn i {
+    font-size: 16px;
+}
+
+.back-link {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #6c757d;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    font-size: 14px;
+}
+
+.back-btn:hover {
+    background: #5a6268;
+}
+
+.back-btn i {
+    font-size: 14px;
+}
+
+/* Toast通知のスタイル */
+.toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.toast.success {
+    background: rgba(40, 167, 69, 0.9);
+}
+
+.toast.error {
+    background: rgba(220, 53, 69, 0.9);
+}
+
+.slide-info h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+body.laser-pointer-active {
+    cursor: none;
+}
+
+.laser-pointer-dot {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, rgba(255, 95, 95, 0.98) 0%, rgba(255, 20, 20, 0.8) 45%, rgba(255, 20, 20, 0.35) 65%, transparent 80%);
+    border-radius: 50%;
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, 0.75),
+        0 0 32px rgba(255, 0, 0, 0.45);
+    transform: translate3d(-9999px, -9999px, 0);
+    opacity: 0;
+    transition: opacity 0.15s ease, transform 0.12s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 2000;
+    will-change: transform, opacity;
+}
+
+.laser-pointer-dot::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 170, 170, 0.5) 0%, rgba(255, 110, 110, 0.3) 55%, transparent 80%);
+    filter: blur(3px);
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+
+body.laser-pointer-active .laser-pointer-dot {
+    opacity: 1;
+}
+
+.slide-title {
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.slide-title a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.slide-title a:hover,
+.slide-title a:focus {
+    text-decoration: underline;
+}
+
+.published-line {
+    margin: 12px 0 4px;
+    color: #555;
+    font-weight: 500;
+}
+
+.byline {
+    margin: 0 0 20px;
+    color: #6c6c6c;
+    font-size: 0.95rem;
+}
+
+.byline a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.byline a:hover,
+.byline a:focus {
+    text-decoration: underline;
+}
+
+.byline .p-nickname {
+    font-style: normal;
+    color: inherit;
+}
+
+.slide-info time {
+    color: #666;
+    font-weight: 500;
+}
+
+.download-btn {
+    display: inline-flex;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    /* <a>タグのデフォルトスタイルをリセット */
+    text-decoration: none;
+    outline: none;
+    /* ボタンと同じように動作 */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.download-btn:hover {
+    background: #0056b3;
+}
+
+.download-btn i {
+    font-size: 16px;
+}
+
+.download-btn,
+.download-image-btn,
+.copy-image-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 10px;
+    height: 48px;
+    /* 高さを固定 */
+    box-sizing: border-box;
+    /* パディングとボーダーを高さに含める */
+    line-height: 1;
+    /* 行の高さを1に設定 */
+}
+
+.download-image-btn {
+    background: #28a745;
+    color: white;
+}
+
+.download-image-btn:hover {
+    background: #1e7e34;
+}
+
+.download-image-btn i {
+    font-size: 16px;
+}
+
+.copy-image-btn {
+    background: #6f42c1;
+    color: white;
+}
+
+.copy-image-btn:hover {
+    background: #5a32a3;
+}
+
+.copy-image-btn i {
+    font-size: 16px;
+}
+
+.event-info {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+    border-radius: 4px;
+}
+
+.event-info p {
+    margin: 0;
+    color: #495057;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.event-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.event-info a:hover {
+    text-decoration: underline;
+}
+
+.related-articles {
+    margin: 15px 0;
+}
+
+.related-articles h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.related-articles ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.related-articles li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+}
+
+.related-articles li img {
+    position: absolute;
+    left: 0px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.related-articles li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.related-articles li a:hover {
+    text-decoration: underline;
+}
+
+.hashtags {
+    margin-top: 10px;
+}
+
+.hashtag {
+    background: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 8px;
+    text-decoration: none;
+    color: #495057;
+    transition: background-color 0.2s;
+}
+
+.hashtag:hover {
+    background: #dee2e6;
+}
+
+/* 画面全体表示時のスタイル */
+#pdf-container.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100vw;
+    max-height: 100vh;
+    aspect-ratio: auto;
+    margin: 0;
+    z-index: 1000;
+    background: white;
+    overflow: hidden;
+}
+
+#pdf-container.expanded iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* 拡大表示時にスライドとコントロール以外の要素を非表示 */
+.slide-info.expanded {
+    display: none;
+}
+
+.slide-content.expanded {
+    display: none;
+}
+
+.back-link.expanded {
+    display: none;
+}
+
+/* 拡大表示時のボタンスタイル調整 */
+.pdf-controls.expanded {
+    /* 位置は常に固定なので変更なし */
+}
+
+/* 関連リンクのスタイル */
+.page-links ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.page-links li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+}
+
+.page-links li img {
+    position: absolute;
+    left: -5px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.page-links li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.page-links li a:hover {
+    text-decoration: underline;
+}
+
+/* スライド一覧ページのスタイル */
+.slide-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.slide-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.slide-card h3 {
+    margin-top: 0;
+}
+
+.slide-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* 個別スライドページのスタイル */
+.slide-info {
+    background: white;
+    border-top: 1px solid #ddd;
+    z-index: 10;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide-content {
+    position: relative;
+    background: white;
+    border-top: 1px solid #ddd;
+    max-height: 50vh;
+    overflow-y: auto;
+    z-index: 5;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.slide-content-star {
+    align-self: flex-end;
+    min-height: 24px;
+}
+
+.content-panes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-pane,
+.links-pane {
+    min-height: 200px;
+}
+
+.text-pane h3,
+.links-pane h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+.text-pane ul {
+    padding-left: 1.2em;
+}
+
+.page-content {
+    margin-bottom: 30px;
+}
+
+.page-content h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #666;
+    font-weight: bold;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.page-text {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.page-text li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.page-text p {
+    white-space: pre-wrap;
+}
+
+.download-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.download-section .download-btn,
+.download-section .download-image-btn,
+.download-section .copy-image-btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* Full screen APIでのサイズ制限 */
+#pdf-container:fullscreen,
+#pdf-container:-webkit-full-screen {
+    width: 90vw !important;
+    height: 90vh !important;
+    max-width: 90vw !important;
+    max-height: 90vh !important;
+    object-fit: contain;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 9999 !important;
+}
+
+/* PDFテキストレイヤーの高さ調整 */
+.pdf-textLayer {
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
+/* 画面の高さが足りない場合の調整 */
+@media (max-height: 800px) {
+    .pdf-textLayer {
+        transform: scale(0.8);
+    }
+}
+
+@media (max-height: 600px) {
+    .pdf-textLayer {
+        transform: scale(0.6);
+    }
+}
+
+@media (max-height: 400px) {
+    .pdf-textLayer {
+        transform: scale(0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    .content-panes {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .slide-content {
+        padding: 15px;
+        max-height: 40vh;
+        /* モバイルでは少し小さく */
+    }
+
+    .slide-info {
+        padding: 15px;
+    }
+}
