@@ -8,6 +8,7 @@ const laserPointerDocuments = new Set([document]);
 const LASER_POINTER_HALF = 12;
 let laserPointerIdleTimer = null;
 const LASER_POINTER_IDLE_TIMEOUT = 3000;
+const laserPointerEnabled = matchMedia('(pointer: fine)').matches;
 
 function getFrameElement() {
     return document.getElementById('pdf-container');
@@ -515,6 +516,9 @@ function ensureLaserPointerElement() {
 }
 
 function setLaserPointer(active) {
+    if (!laserPointerEnabled && active) {
+        return;
+    }
     if (active) {
         if (laserPointerActive) return;
         const pointer = ensureLaserPointerElement();
@@ -574,6 +578,10 @@ function isFrameFullscreen() {
 }
 
 function updateLaserPointerState() {
+    if (!laserPointerEnabled) {
+        setLaserPointer(false);
+        return;
+    }
     const frame = getFrameElement();
     const isExpanded = frame ? frame.classList.contains('expanded') : false;
     const isFullscreen = isFrameFullscreen();

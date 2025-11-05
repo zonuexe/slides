@@ -34,3 +34,23 @@
 - Match the existing history: short, imperative messages such as `Fix metadata` or `Add canonical`. Commit generated assets alongside their source changes.
 - PRs should outline the affected slides, list any new automation commands used, and attach screenshots or PDFs when visual output changes.
 - Link related issues or event pages where possible and call out large binary diffs so reviewers can prioritize source review.
+
+## Slide Viewer Behaviour
+- **List page**: `/slides/` renders cards from `slides.yaml`. `generateSlidesData()` attaches:
+  - `combinedContent`: search text composed of the extracted PDF text (via YAML), event metadata, related articles, tags, hashtags (`#tag`), and the download filename.
+  - `events`: reduced to `{name, presented_at, location, place}` for display.
+- **Search** (`js/search.js`):
+  - Uses Fuse.js with keys `title`, `slug`, `date`, `content`.
+  - Snippet highlights matches inside `slide.content`. Cards show events/tags only when present.
+- **Detail page** (`server.js`):
+  - Builds “発表しました。” narratives via `buildEventNarrative()` from each event. The first concatenated text becomes `<meta name="description">`, OGP、Twitter Card description. If no events exist, falls back to the site description.
+  - Event section shares the same narrative HTML.
+  - Related links show favicons, hashtags list as `#tag` links, download panel exposes PDF download plus image copy buttons.
+- **Laser pointer** (`js/slide-functions.js` + `css/slide.css`):
+  - Active only on devices where `matchMedia('(pointer: fine)')` is true.
+  - Shows a 24 px red dot with glow whenever the slide is expanded (`toggleExpanded`) or in Fullscreen API mode; hides and removes listeners otherwise.
+  - Pointer position is synced against `window` and the slide iframe via `mousemove`. Auto-hides after 15 s of inactivity and reappears on the next movement.
+  - Pointer DOM is reparented into the fullscreen container to keep it above the PDF.
+- **Speaker view button** (`slide-pdf.js`):
+  - Desktop-only: hidden via JS guard (`isFinePointer`) and CSS `@media (pointer: coarse)` to avoid showing it on touch/mobile devices.
+  - Visible on page 1 by default and toggles off on later slides; clicking opens `/slide-pdf.js/speaker.html` with the PDF mirrored for presenters.
