@@ -39,22 +39,9 @@ const oembedXmlUrl = computed(() => {
   return `${siteConfig.site?.url ?? ""}/slides/${slide.value.slug}/oembed.xml`;
 });
 
-useHead(() => {
-  if (!slide.value?.slug) return {};
-  return {
-    link: [
-      {
-        rel: "alternate",
-        type: "application/json+oembed",
-        href: oembedJsonUrl.value,
-      },
-      {
-        rel: "alternate",
-        type: "text/xml+oembed",
-        href: oembedXmlUrl.value,
-      },
-    ],
-  };
+const pdfAlternateUrl = computed(() => {
+  if (!slide.value?.file) return "";
+  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.file}`;
 });
 
 const downloadUrl = computed(() => {
@@ -73,6 +60,124 @@ const iframeUrl = computed(() => {
 const eventNarratives = computed(() => buildEventNarratives(slide.value?.events ?? []));
 const relatedArticles = computed(() => slide.value?.related_articles ?? []);
 const hashtags = computed(() => slide.value?.hashtags ?? []);
+
+const descriptionText = computed(() => {
+  if (eventNarratives.value.length > 0) {
+    return eventNarratives.value.map((entry) => entry.text).join(" ");
+  }
+  return siteConfig.site?.description ?? "";
+});
+
+const ogImageUrl = computed(() => {
+  if (!slide.value?.image) return "";
+  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.image}`;
+});
+
+const canonicalUrl = computed(() => {
+  if (!slide.value?.slug) return "";
+  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.slug}/`;
+});
+
+useHead(() => {
+  if (!slide.value?.slug) return {};
+  const links = [
+    {
+      rel: "alternate",
+      type: "application/json+oembed",
+      href: oembedJsonUrl.value,
+    },
+    {
+      rel: "alternate",
+      type: "text/xml+oembed",
+      href: oembedXmlUrl.value,
+    },
+    {
+      rel: "stylesheet",
+      href: withBase("/css/slide.css"),
+    },
+    {
+      rel: "canonical",
+      href: canonicalUrl.value,
+    },
+  ];
+
+  if (pdfAlternateUrl.value) {
+    links.push({
+      rel: "alternate",
+      type: "application/pdf",
+      href: pdfAlternateUrl.value,
+    });
+  }
+
+  return {
+    title: slide.value.title ?? "",
+    meta: [
+      {
+        name: "description",
+        content: descriptionText.value,
+      },
+      {
+        property: "og:title",
+        content: slide.value.title ?? "",
+      },
+      {
+        property: "og:description",
+        content: descriptionText.value,
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:url",
+        content: canonicalUrl.value,
+      },
+      {
+        property: "og:image",
+        content: ogImageUrl.value,
+      },
+      {
+        property: "og:site_name",
+        content: siteConfig.ogp?.site_name ?? siteConfig.site?.name ?? "",
+      },
+      {
+        property: "og:locale",
+        content: siteConfig.ogp?.locale ?? "ja_JP",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:site",
+        content: siteConfig.twitter?.site ?? siteConfig.author?.twitter ?? "@tadsan",
+      },
+      {
+        name: "twitter:creator",
+        content: siteConfig.twitter?.creator ?? siteConfig.author?.twitter ?? "@tadsan",
+      },
+      {
+        name: "twitter:title",
+        content: slide.value.title ?? "",
+      },
+      {
+        name: "twitter:description",
+        content: descriptionText.value,
+      },
+      {
+        name: "twitter:image",
+        content: ogImageUrl.value,
+      },
+    ],
+    link: links,
+    script: [
+      {
+        src: withBase("/js/slide-functions.js"),
+        defer: true,
+      },
+    ],
+  };
+});
 
 const textPages = computed(() => {
   if (!slide.value?.pdfMeta?.text) return [];
