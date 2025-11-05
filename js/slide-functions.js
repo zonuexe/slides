@@ -1,15 +1,5 @@
 // スライド表示用のJavaScript関数
 
-let laserPointerElement = null;
-let laserPointerMoveHandler = null;
-let laserPointerActive = false;
-const laserPointerTargets = new Set([window]);
-const laserPointerDocuments = new Set([document]);
-const LASER_POINTER_HALF = 12;
-let laserPointerIdleTimer = null;
-const LASER_POINTER_IDLE_TIMEOUT = 3000;
-const laserPointerEnabled = matchMedia('(pointer: fine)').matches;
-
 function getFrameElement() {
     return document.getElementById('pdf-container');
 }
@@ -100,7 +90,6 @@ function toggleExpanded() {
         icon.className = 'fa-solid fa-expand';
         fullscreenBtn.innerHTML = '<i class="fa-solid fa-expand"></i>';
     }
-    updateLaserPointerState();
 }
 
 // ファイル名から拡張子を取り除く関数
@@ -138,27 +127,10 @@ function watchPageChanges() {
     const iframe = getIframeElement();
     if (!iframe) return;
 
-    registerLaserPointerTarget(window);
-    try {
-        if (iframe.contentWindow) {
-            registerLaserPointerTarget(iframe.contentWindow);
-        }
-    } catch (error) {
-        console.warn('iframeのレーザーポインタ登録に失敗しました:', error);
-    }
-
     const setupObservers = () => {
         try {
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             if (!iframeDoc) return;
-
-            try {
-                if (iframe.contentWindow) {
-                    registerLaserPointerTarget(iframe.contentWindow);
-                }
-            } catch (error) {
-                console.warn('iframeのレーザーポインタ登録に失敗しました:', error);
-            }
 
             // MutationObserverでページ変更を監視
             const observer = new MutationObserver((mutations) => {
@@ -380,7 +352,6 @@ function initializeSlide() {
         watchPageChanges();
     });
 
-    updateLaserPointerState();
 }
 
 // Full screen APIの状態変化を監視
@@ -395,7 +366,6 @@ function handleFullscreenChange() {
         // 全画面表示が解除された場合
         resetFullscreenSize();
     }
-    updateLaserPointerState();
 }
 
 // Full screen APIを使った全画面表示の切り替え
@@ -421,17 +391,14 @@ function toggleFullscreen() {
                 result.then(() => {
                     setTimeout(() => {
                         adjustFullscreenSize();
-                        updateLaserPointerState();
                     }, 100);
                 }).catch((err) => {
                     console.error('全画面表示に失敗しました:', err);
                     showToast('全画面表示に失敗しました。ブラウザが対応していない可能性があります。', 'error');
-                    updateLaserPointerState();
                 });
             } else {
                 setTimeout(() => {
                     adjustFullscreenSize();
-                    updateLaserPointerState();
                 }, 100);
             }
         }
@@ -492,79 +459,6 @@ function resetFullscreenSize() {
         frame.offsetHeight; // 強制的に再描画を発生させる
         frame.style.display = '';
     }, 10);
-    updateLaserPointerState();
-}
-
-function getLaserPointerContainer() {
-    const frame = getFrameElement();
-    if (frame && isFrameFullscreen()) {
-        return frame;
-    }
-    return document.body;
-}
-
-function ensureLaserPointerElement() {
-    if (!laserPointerElement) {
-        laserPointerElement = document.createElement('div');
-        laserPointerElement.className = 'laser-pointer-dot';
-    }
-    const container = getLaserPointerContainer();
-    if (laserPointerElement.parentNode !== container) {
-        container.appendChild(laserPointerElement);
-    }
-    return laserPointerElement;
-}
-
-function setLaserPointer(active) {
-    if (!laserPointerEnabled && active) {
-        return;
-    }
-    if (active) {
-        if (laserPointerActive) return;
-        const pointer = ensureLaserPointerElement();
-        laserPointerMoveHandler = (event) => {
-            pointer.style.opacity = '';
-            pointer.style.transform = `translate3d(${event.clientX - LASER_POINTER_HALF}px, ${event.clientY - LASER_POINTER_HALF}px, 0)`;
-            resetLaserPointerIdleTimer();
-        };
-        laserPointerTargets.forEach((targetWindow) => {
-            try {
-                targetWindow.addEventListener('mousemove', laserPointerMoveHandler, { passive: true });
-            } catch (error) {
-                console.warn('レーザーポインタのmousemove監視に失敗しました:', error);
-            }
-        });
-        laserPointerDocuments.forEach((doc) => {
-            try {
-                doc.body?.classList.add('laser-pointer-active');
-            } catch (error) {
-                console.warn('レーザーポインタ用クラスの付与に失敗しました:', error);
-            }
-        });
-        laserPointerActive = true;
-        resetLaserPointerIdleTimer();
-    } else if (laserPointerActive) {
-        clearLaserPointerIdleTimer();
-        if (laserPointerMoveHandler) {
-        laserPointerTargets.forEach((targetWindow) => {
-            try {
-                targetWindow.removeEventListener('mousemove', laserPointerMoveHandler);
-            } catch (error) {
-                console.warn('レーザーポインタのmousemove解除に失敗しました:', error);
-            }
-        });
-        laserPointerMoveHandler = null;
-    }
-    laserPointerDocuments.forEach((doc) => {
-        try {
-            doc.body?.classList.remove('laser-pointer-active');
-        } catch (error) {
-            console.warn('レーザーポインタ用クラスの除去に失敗しました:', error);
-        }
-    });
-    hideLaserPointerTemporarily(true);
-    laserPointerActive = false;
-}
 }
 
 function isFrameFullscreen() {
@@ -575,63 +469,6 @@ function isFrameFullscreen() {
         document.mozFullScreenElement ||
         document.msFullscreenElement;
     return fullscreenElement === frame;
-}
-
-function updateLaserPointerState() {
-    if (!laserPointerEnabled) {
-        setLaserPointer(false);
-        return;
-    }
-    const frame = getFrameElement();
-    const isExpanded = frame ? frame.classList.contains('expanded') : false;
-    const isFullscreen = isFrameFullscreen();
-    if (laserPointerElement) {
-        ensureLaserPointerElement();
-    }
-    setLaserPointer(isExpanded || isFullscreen);
-}
-
-function resetLaserPointerIdleTimer() {
-    clearLaserPointerIdleTimer();
-    laserPointerIdleTimer = setTimeout(() => {
-        hideLaserPointerTemporarily();
-    }, LASER_POINTER_IDLE_TIMEOUT);
-}
-
-function clearLaserPointerIdleTimer() {
-    if (laserPointerIdleTimer) {
-        clearTimeout(laserPointerIdleTimer);
-        laserPointerIdleTimer = null;
-    }
-}
-
-function hideLaserPointerTemporarily(force = false) {
-    const pointer = ensureLaserPointerElement();
-    pointer.style.opacity = '0';
-    if (force) {
-        pointer.style.transform = 'translate3d(-9999px, -9999px, 0)';
-    }
-}
-
-function registerLaserPointerTarget(targetWindow) {
-    if (!targetWindow || laserPointerTargets.has(targetWindow)) {
-        return;
-    }
-    laserPointerTargets.add(targetWindow);
-    try {
-        if (targetWindow.document) {
-            laserPointerDocuments.add(targetWindow.document);
-        }
-    } catch (error) {
-        console.warn('レーザーポインタ用のドキュメント登録に失敗しました:', error);
-    }
-    if (laserPointerActive && laserPointerMoveHandler) {
-        try {
-            targetWindow.addEventListener('mousemove', laserPointerMoveHandler, { passive: true });
-        } catch (error) {
-            console.warn('レーザーポインタ用のターゲット登録に失敗しました:', error);
-        }
-    }
 }
 
 // Web Share APIを使ったスライド共有
