@@ -39,12 +39,16 @@ function buildHead({ slide, description, site }) {
 }
 
 function buildMarkdown({ slide, description, site }) {
+  const canonical = `${site.site?.url ?? ""}/slides/${slide.slug}/`;
   const frontmatter = {
     title: slide.title,
     description,
     layout: "page",
     sidebar: false,
-    head: buildHead({ slide, description, site }),
+    head: [
+      ...buildHead({ slide, description, site }),
+      ["link", { rel: "canonical", href: canonical }],
+    ],
   };
   const frontmatterBlock = yaml.dump(frontmatter, { lineWidth: 1000 }).trim();
   return `---\n${frontmatterBlock}\n---\n\n<SlideDetailPage slug="${slide.slug}" />\n`;
