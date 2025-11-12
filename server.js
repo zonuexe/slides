@@ -448,7 +448,7 @@ app.get(
 app.get(
   "/slides/css/*",
   serveStatic({
-    root: "./css",
+    root: "./docs/public/css",
     rewriteRequestPath: (path) => path.replace(/^\/slides\/css/, ""),
   })
 );

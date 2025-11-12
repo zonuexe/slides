@@ -94,7 +94,7 @@ const showSnippet = computed(() => {
     </h3>
     <p class="slide-card-meta">{{ slide.slug }}</p>
     <p>
-      公開日:
+      <i class="fa-solid fa-calendar-day"></i> 公開日:
       <time class="dt-published" :datetime="slide.date">{{ slide.date }}</time>
     </p>
     <div v-if="hasEvents" class="slide-card-events">
