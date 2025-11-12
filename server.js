@@ -462,6 +462,14 @@ app.get(
 );
 
 app.get(
+  "/slides/theme-transition.js",
+  serveStatic({
+    rewriteRequestPath: () => "/theme-transition.js",
+    root: "./docs/public",
+  })
+);
+
+app.get(
   "/slides/pdf/*",
   serveStatic({
     root: "./pdf",

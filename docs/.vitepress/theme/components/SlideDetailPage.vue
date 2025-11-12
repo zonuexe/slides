@@ -12,6 +12,7 @@ const props = defineProps({
   },
 });
 
+const { params } = useData();
 const activeSlug = computed(() => props.slug ?? params.value?.slug ?? "");
 const slide = computed(() => slides.find((entry) => entry.slug === activeSlug.value));
 
@@ -26,22 +27,6 @@ const japaneseDate = computed(() => {
 
 const slidePermalink = computed(() => (slide.value ? withBase(`/${slide.value.slug}/`) : withBase("/")));
 const slidesIndexUrl = computed(() => withBase("/"));
-
-// oEmbedのリンクタグを追加
-const oembedJsonUrl = computed(() => {
-  if (!slide.value?.slug) return "";
-  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.slug}/oembed.json`;
-});
-
-const oembedXmlUrl = computed(() => {
-  if (!slide.value?.slug) return "";
-  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.slug}/oembed.xml`;
-});
-
-const pdfAlternateUrl = computed(() => {
-  if (!slide.value?.file) return "";
-  return `${siteConfig.site?.url ?? ""}/slides/${slide.value.file}`;
-});
 
 const downloadUrl = computed(() => {
   if (!slide.value) return "#";
@@ -263,9 +248,9 @@ function callGlobalFunction(fnName) {
     </address>
   </section>
 
-  <section v-else class="rounded-2xl border p-10 text-center">
+  <section v-else class="slide-not-found">
     <p>指定されたスライドが見つかりませんでした。</p>
-    <div class="back-link" style="margin-top: 1rem;">
+    <div class="back-link">
       <a :href="slidesIndexUrl" class="back-btn">
         <i class="fa-solid fa-arrow-left"></i>
         スライド一覧に戻る

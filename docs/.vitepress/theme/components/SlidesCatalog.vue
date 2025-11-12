@@ -98,7 +98,6 @@ onMounted(() => {
         <span class="visually-hidden">スライドを検索</span>
         <input
           id="search-input"
-          class="search-input"
           type="search"
           placeholder="タイトル・スラッグ・日付・本文で検索"
           autocomplete="off"

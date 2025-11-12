@@ -13,12 +13,16 @@ function buildHead({ slide, description, site }) {
   const imagePath = slide.image ? `/slides/${slide.image}` : "/slides/zonuexe.png";
   const imageUrl = `${siteUrl}${imagePath}`;
   const pdfUrl = `${siteUrl}/slides/${slide.file}`;
+  const oembedJsonUrl = `${canonical}oembed.json`;
+  const oembedXmlUrl = `${canonical}oembed.xml`;
   const twitterSite = site.twitter?.site ?? site.author?.twitter ?? "@tadsan";
   const twitterCreator = site.twitter?.creator ?? site.author?.twitter ?? "@tadsan";
   return [
     ["meta", { name: "description", content: description }],
     ["link", { rel: "canonical", href: canonical }],
     ["link", { rel: "alternate", type: "application/pdf", href: pdfUrl }],
+    ["link", { rel: "alternate", type: "application/json+oembed", href: oembedJsonUrl }],
+    ["link", { rel: "alternate", type: "text/xml+oembed", href: oembedXmlUrl }],
     ["meta", { property: "og:title", content: slide.title }],
     ["meta", { property: "og:description", content: description }],
     ["meta", { property: "og:type", content: site.ogp?.type ?? "website" }],
@@ -39,16 +43,12 @@ function buildHead({ slide, description, site }) {
 }
 
 function buildMarkdown({ slide, description, site }) {
-  const canonical = `${site.site?.url ?? ""}/slides/${slide.slug}/`;
   const frontmatter = {
     title: slide.title,
     description,
     layout: "page",
     sidebar: false,
-    head: [
-      ...buildHead({ slide, description, site }),
-      ["link", { rel: "canonical", href: canonical }],
-    ],
+    head: buildHead({ slide, description, site }),
   };
   const frontmatterBlock = yaml.dump(frontmatter, { lineWidth: 1000 }).trim();
   return `---\n${frontmatterBlock}\n---\n\n<SlideDetailPage slug="${slide.slug}" />\n`;

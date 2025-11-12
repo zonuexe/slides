@@ -16,11 +16,11 @@ const href = computed(() => (typeof props.node?.href === "string" ? props.node.h
 </script>
 
 <template>
-  <p v-if="node?.node === 'p'" class="mb-2 leading-relaxed">
+  <p v-if="node?.node === 'p'" class="slide-text-paragraph">
     <SlideTextNode v-for="(child, index) in children" :key="index" :node="child" />
   </p>
 
-  <strong v-else-if="node?.node === 'bold'" class="font-semibold">
+  <strong v-else-if="node?.node === 'bold'" class="slide-text-strong">
     <template v-if="children.length">
       <SlideTextNode v-for="(child, index) in children" :key="index" :node="child" />
     </template>
@@ -31,23 +31,18 @@ const href = computed(() => (typeof props.node?.href === "string" ? props.node.h
     {{ textContent }}
   </span>
 
-  <a
-    v-else-if="node?.node === 'link'"
-    :href="href"
-    target="_blank"
-    class="underline-offset-2 hover:underline"
-  >
+  <a v-else-if="node?.node === 'link'" :href="href" target="_blank" class="slide-text-link">
     <template v-if="children.length">
       <SlideTextNode v-for="(child, index) in children" :key="index" :node="child" />
     </template>
     <template v-else>{{ textContent || href }}</template>
   </a>
 
-  <ul v-else-if="node?.node === 'ul'" class="mb-2 ml-5 list-disc space-y-1">
+  <ul v-else-if="node?.node === 'ul'" class="slide-text-list">
     <SlideTextNode v-for="(child, index) in children" :key="index" :node="child" />
   </ul>
 
-  <li v-else-if="node?.node === 'li'" class="mb-1 ml-4 list-disc">
+  <li v-else-if="node?.node === 'li'" class="slide-text-list-item">
     <template v-if="children.length">
       <SlideTextNode v-for="(child, index) in children" :key="index" :node="child" />
     </template>
@@ -56,7 +51,7 @@ const href = computed(() => (typeof props.node?.href === "string" ? props.node.h
 
   <br v-else-if="node?.node === 'br'" />
 
-  <span v-else-if="node?.node === 'img'" class="text-sm">[image]</span>
+  <span v-else-if="node?.node === 'img'" class="slide-text-image-label">[image]</span>
 
   <template v-else>
     {{ textContent }}
