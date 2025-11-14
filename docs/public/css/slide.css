@@ -443,48 +443,6 @@ body {
   }
 }
 
-html.theme-transition-ready {
-  body,
-  #pdf-container,
-  .slide-info,
-  .slide-content,
-  .content-panes .text-pane,
-  .content-panes .links-pane,
-  .hashtags .hashtag,
-  .download-section .download-btn,
-  .download-section .download-image-btn,
-  .download-section .copy-image-btn,
-  .download-section .back-btn,
-  .event-info,
-  .related-articles li,
-  .slide-text-nodes,
-  .slide-not-found {
-    transition: background-color 0.7s ease, color 0.7s ease, border-color 0.7s ease,
-      box-shadow 0.7s ease;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html.theme-transition-ready {
-    body,
-    #pdf-container,
-    .slide-info,
-    .slide-content,
-    .content-panes .text-pane,
-    .content-panes .links-pane,
-    .hashtags .hashtag,
-    .download-section .download-btn,
-    .download-section .download-image-btn,
-    .download-section .copy-image-btn,
-    .download-section .back-btn,
-    .event-info,
-    .related-articles li,
-    .slide-text-nodes,
-    .slide-not-found {
-      transition: none !important;
-    }
-  }
-}
 
 @media (max-width: 768px) {
   .container {

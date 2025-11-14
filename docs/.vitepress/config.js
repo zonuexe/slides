@@ -35,7 +35,6 @@ export default defineConfig(async () => {
       ["meta", { name: "twitter:title", content: siteName }],
       ["meta", { name: "twitter:description", content: siteDescription }],
       ["meta", { name: "twitter:image", content: imageUrl }],
-      ["script", { src: "/slides/theme-transition.js", defer: true }],
       ["script", { src: "https://kit.fontawesome.com/ca9a253b70.js", crossorigin: "anonymous" }],
     ],
     cleanUrls: true,
