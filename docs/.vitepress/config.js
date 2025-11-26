@@ -20,7 +20,6 @@ export default defineConfig(async () => {
     description: siteDescription,
     head: [
       ["meta", { name: "description", content: siteDescription }],
-      ["link", { rel: "canonical", href: `${slidesOrigin}/` }],
       ["link", { rel: "icon", type: "image/png", href: imageUrl }],
       ["meta", { property: "og:title", content: siteName }],
       ["meta", { property: "og:description", content: siteDescription }],
@@ -39,6 +38,13 @@ export default defineConfig(async () => {
     ],
     cleanUrls: true,
     appearance: "dark",
+    transformHead({ pageData }) {
+      if (pageData.relativePath === "index.md") {
+        return [["link", { rel: "canonical", href: `${slidesOrigin}/` }]];
+      }
+
+      return [];
+    },
     vite: {
       server: {
         fs: {
