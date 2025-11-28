@@ -1,21 +1,21 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `server.js` hosts the Hono server, wires static routes, and delegates slide parsing to `lib/slides.js`, which reads the top-level `slides.yaml`.
+- `docs/` hosts the VitePress site. Slide data flows from `slides.yaml` through helpers in `lib/` (`generateSlidesData`, `loadSiteConfig`, `buildEventNarratives`), surfaced via `virtual:slides-data` and the per-slide page generator `docs/[slug]/index.paths.js`.
 - Year-specific directories such as `20150722esm/`, `20181124-vimconf/`, and `20191103-vimconf/` hold deck assets. Shared styling lives under `css/`, shared scripts in `js/`, and reusable templates in `deck/`.
-- Binary artifacts and exports belong in `pdf/`, `zonuexe.png`, and the generated `slides/` HTML snapshots. Keep raw source files alongside their assets so automation can discover them.
+- Binary artifacts and exports belong in `pdf/`, `zonuexe.png`, and the built static output under `docs/.vitepress/dist/`. Keep raw source files alongside their assets so automation can discover them.
 - Python automation in `script/` orchestrates fetching static pages and updating metadata. Keep paths relative to repo root and do not hard-code user-specific locations.
 - `slides.yaml` defines the list metadata displayed on the index, while each `pdf/${slug}.yaml` stores per-slide details used on individual pages; keep the YAML aligned with its companion `pdf/${slug}.pdf`, editing extracted fields manually when the automatic scraper needs correction.
 
 ## Branch Strategy
-- `master` receives new slide PDFs, companion metadata updates in `slides.yaml`, and any supporting server or automation tweaks required to display them.
-- `gh-pages` stores the static output from `make fetch-static`; commit the generated HTML and assets there so GitHub Pages can publish directly from that branch.
+- `master` receives new slide PDFs, companion metadata updates in `slides.yaml`, and any supporting VitePress or automation tweaks required to display them.
+- `gh-pages` stores the VitePress build output from `npm run build` (i.e. `docs/.vitepress/dist`); commit the generated HTML and assets there so GitHub Pages can publish directly from that branch.
 
 ## Build, Test, and Development Commands
 - `npm install` hydrates Node dependencies before any local run.
-- `npm run dev` starts the watch-mode server at `http://localhost:3000`; use it while tweaking content or routes.
-- `npm start` serves the same app without file watching, useful for quick smoke tests or deploying behind a process manager.
-- `make fetch-static` runs `script/fetch_static_slides.py` to export the currently served slides into `slides/`.
+- `npm run dev` starts the VitePress dev server (base `/slides/`, defaults to `http://localhost:5173`); pass `--host --port` if you need a different origin.
+- `npm run build` emits the static site to `docs/.vitepress/dist`, and `npm run preview` serves that build for spot checks.
+- `make fetch-static` runs `script/fetch_static_slides.py` against a running site (defaults to `http://localhost:5173`) to scrape pages into the specified output dir.
 - `UV_CACHE_DIR=.uv-cache uv run python script/add_new_slides.py` processes staged PDFs, generates thumbnails, and amends `slides.yaml`; append `--pdf pdf/new-talk.pdf` to target a specific file.
 - `make script-format` and `make script-lint` invoke Ruff through `uvx` to keep Python helpers consistent.
 
@@ -27,8 +27,8 @@
 
 ## Testing Guidelines
 - There is no automated test suite; validate changes manually via `npm run dev`, refreshing slides that were touched.
-- After modifying assets or YAML, rerun `make fetch-static` to confirm static generation still succeeds and compare diffs under `slides/`.
-- To sanity-check YAML parsing without starting the server, run `node -e "import('./lib/slides.js').then(m => m.loadSlides())"`; it prints parse errors immediately.
+- After modifying assets or YAML, run `npm run build` to ensure the static generation completes; use `npm run preview` or `make fetch-static` if you need to inspect the built output.
+- To sanity-check YAML parsing without starting the site, run `node -e "import('./lib/slides.js').then(m => m.loadSlides())"`; it prints parse errors immediately.
 
 ## Commit & Pull Request Guidelines
 - Match the existing history: short, imperative messages such as `Fix metadata` or `Add canonical`. Commit generated assets alongside their source changes.
@@ -37,16 +37,7 @@
 - When generating HTML, use `target="_blank"` alone—`rel="noopener"` is no longer needed across the site.
 
 ## Slide Viewer Behaviour
-- **List page**: `/slides/` renders cards from `slides.yaml`. `generateSlidesData()` attaches:
-  - `combinedContent`: search text composed of the extracted PDF text (via YAML), event metadata, related articles, tags, hashtags (`#tag`), and the download filename.
-  - `events`: reduced to `{name, presented_at, location, place}` for display.
-- **Search** (`js/search.js`):
-  - Uses Fuse.js with keys `title`, `slug`, `date`, `content`.
-  - Snippet highlights matches inside `slide.content`. Cards show events/tags only when present.
-- **Detail page** (`server.js`):
-  - Builds “発表しました。” narratives via `buildEventNarrative()` from each event. The first concatenated text becomes `<meta name="description">`, OGP、Twitter Card description. If no events exist, falls back to the site description.
-  - Event section shares the same narrative HTML.
-  - Related links show favicons, hashtags list as `#tag` links, download panel exposes PDF download plus image copy buttons.
-- **Speaker view button** (`slide-pdf.js`):
-  - Desktop-only: hidden via JS guard (`isFinePointer`) and CSS `@media (pointer: coarse)` to avoid showing it on touch/mobile devices.
-  - Visible on page 1 by default and toggles off on later slides; clicking opens `/slide-pdf.js/speaker.html` with the PDF mirrored for presenters.
+- **List page** (`docs/index.md` + `SlidesCatalog.vue`): uses `generateSlidesData()` via `virtual:slides-data`; cards sort by date descending. `combinedContent` blends extracted PDF text, events, related articles, tags, hashtags (`#tag`), and download filenames; `events` are reduced to `{name, presented_at, location, place}` for display. Client-side data also hydrates from `docs/public/index.js` (`window.slidesData`).
+- **Search** (`SlidesCatalog.vue` / `SlideCard.vue`): lazy-loads Fuse.js on demand with keys `title`, `slug`, `date`, `combinedContent`; query is mirrored to `?q=`. Snippets highlight matches and show events/tags only when present.
+- **Detail page** (`docs/[slug]/index.paths.js` + `SlideDetailPage.vue`): builds head tags and descriptions from `buildEventNarratives` (falling back to the site description). OGP/Twitter and alternate links for PDF + oEmbed are emitted, the viewer iframe uses `siteConfig.embed` to point at the PDF mirror, and `window.slideConfig` drives `docs/public/js/slide-functions.js` for sizing, fullscreen, sharing, and image download/copy controls. PDF text/links render from `pdfMeta` with page ordering preserved.
+- **Speaker view button** (`slide-pdf.js` embed): desktop-only; stays visible on page 1 and hides on later pages, opening `/slide-pdf.js/speaker.html` with the mirrored PDF for presenters.

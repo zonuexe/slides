@@ -57,12 +57,12 @@ def fetch(url: str, accept: str | None = None) -> bytes:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Fetch slide pages from a running server and store them as static files."
+        description="Fetch slide pages from a running site and store them as static files."
     )
     parser.add_argument(
         "--base-url",
-        default="http://localhost:3000",
-        help="Base URL of the running slides server (default: %(default)s)",
+        default="http://localhost:5173",
+        help="Base URL of the running slides site (default: %(default)s)",
     )
     parser.add_argument(
         "--slides-yaml",
