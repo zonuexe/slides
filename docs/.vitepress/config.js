@@ -4,6 +4,7 @@ import { loadSiteConfig } from "../../lib/site-config.js";
 import { slidesDataPlugin } from "./plugins/slides-data.js";
 import { pdfAssetsPlugin } from "./plugins/pdf-assets.js";
 import { oembedPlugin } from "./plugins/oembed.js";
+import { sitemapPlugin } from "./plugins/sitemap.js";
 
 export default defineConfig(async () => {
   const site = await loadSiteConfig();
@@ -53,7 +54,7 @@ export default defineConfig(async () => {
         },
       },
       publicDir: resolve(process.cwd(), "docs/public"),
-      plugins: [slidesDataPlugin(), pdfAssetsPlugin(), oembedPlugin()],
+      plugins: [slidesDataPlugin(), pdfAssetsPlugin(), oembedPlugin(), sitemapPlugin()],
       build: {
         rollupOptions: {
           output: {
