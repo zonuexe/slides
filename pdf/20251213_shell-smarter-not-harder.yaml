@@ -1,0 +1,478 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: がんばりすぎないシェルの使いかた
+  - node: p
+    children:
+    - node: text
+      content: Shell Smarter, Not Harder
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2025-12-15 牛込箪笥地域センター  '
+  - node: p
+    children:
+    - node: bold
+      content: '神楽坂第2ターミナル #kagurazaka_terminal'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+        - node: li
+          children:
+          - node: text
+            content: 最近チームが再編されてインフラっぽい仕事もしてます
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 'シェル '
+    - node: br
+    - node: text
+      content: 使ってますか？
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: シェルは沼
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 'なんかすごい '
+    - node: br
+    - node: text
+      content: シェル機能とか
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: なんかすごい コマンドとか
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 覚えきれん
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 暗記は最低限にしたい
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 'もっと雑に '
+    - node: br
+    - node: text
+      content: 触っていこう
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 'シェルは '
+    - node: br
+    - node: text
+      content: 割となんでもいい
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 'Fish Bash '
+    - node: br
+    - node: text
+      content: Z Shell
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: 漢のzsh
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: 最終回
+  p14:
+  - node: p
+    children:
+    - node: bold
+      content: https://github.com/
+    - node: br
+    - node: bold
+      content: zonuexe/dotiles
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'シェルの固有機能は '
+    - node: br
+    - node: text
+      content: あんまり使わない
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: zplugとか使ったら 便利だろうとは思う
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 'パッケージマネージャ '
+  - node: p
+    children:
+    - node: text
+      content: '+ '
+    - node: br
+    - node: bold
+      content: $HOME/local/bin
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 'エイリアスの定義は '
+    - node: br
+    - node: text
+      content: 最小限にする
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 他人の環境で 操作しにくい
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: '(シェル)スクリプト '
+    - node: br
+    - node: text
+      content: ＞ シェル関数 ＞ エイリアス
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'ターミナル '
+    - node: br
+    - node: text
+      content: マルチプレクサは 必要に応じて使う
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 'Screen '
+    - node: br
+    - node: text
+      content: tmux Zellij
+  p23: []
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: 'シェルのキーは '
+    - node: br
+    - node: text
+      content: 'とりあえず '
+    - node: br
+    - node: text
+      content: 最低限だけ覚える
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 意味
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + C 中断 (SIGINT)
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + A  行頭に移動 Ctrl + E 行末に移動
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + L 画面消去
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + R 履歴
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 意味
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + C 中断 (SIGINT)
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + A  行頭に移動 Ctrl + E 行末に移動
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + L 画面消去
+  - node: p
+    children:
+    - node: text
+      content: Ctrl + R 履歴
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: '履歴をシェル操作の '
+    - node: br
+    - node: text
+      content: 基盤にする
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: git push alias で検索した
+  - node: p
+    children:
+    - node: bold
+      content: gitで現在のブランチを簡単にpush/pullするalias (zenn.dev/imaizume)より引用 2025年12月15日
+        閲覧
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 'git push -u '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 'git push -u '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: C-r -u
+  - node: p
+    children:
+    - node: text
+      content: 'git push -u '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 'git push -f '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 'git push -f '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: C-r -f
+  - node: p
+    children:
+    - node: text
+      content: 'git push -f '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: git push
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 使わない
+  - node: p
+    children:
+    - node: text
+      content: git push
+  p37:
+  - node: p
+    children:
+    - node: text
+      content: 常にこれでいい
+  - node: p
+    children:
+    - node: text
+      content: 'git push -u '
+    - node: br
+    - node: text
+      content: origin HEAD
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: 'うろおぼえで使える '
+    - node: br
+    - node: text
+      content: コマンドを入れる
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: Zoxide
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 現在どこにいようと
+  - node: p
+    children:
+    - node: text
+      content: (過去に訪問したことがあれば)
+    - node: br
+    - node: text
+      content: '細かい階層を覚えて '
+    - node: br
+    - node: text
+      content: なくても飛べる
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: 'ディレクトリの移動は '
+    - node: br
+    - node: text
+      content: 最小限にする
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 基本はプロジェクト ルートから動かない
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 'プロジェクト内の '
+    - node: br
+    - node: text
+      content: '階層をまたいで '
+    - node: br
+    - node: text
+      content: 複数ファイルを操作
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: その都度cdするのか
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: cd -
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 複数移動したら？
+  - node: p
+    children:
+    - node: text
+      content: cd -
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: cd $(git rev-parse --show-toplevel)
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: cd $(git rev-parse --show-toplevel)
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: C-r -top
+  - node: p
+    children:
+    - node: text
+      content: cd $(git rev-parse --show-toplevel)
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 'C-r からのファイル名 '
+    - node: br
+    - node: text
+      content: '検索の相対位置が '
+    - node: br
+    - node: text
+      content: 一貫する
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p12:
+  - url: https://web.archive.org/web/20121230190221/https://news.mynavi.jp/column/zsh/001/
+    title: 【コラム】漢のzsh (1) 最強のシェル、それは「zsh」 | 開発・SE | マイナビニュース
+  p13:
+  - url: https://news.mynavi.jp/techplus/article/zsh-24/
+    title: 漢のzsh(24) グッバイ野郎ども! コピペではじめるzshファイナル | TECH+（テックプラス）
+  p14:
+  - url: https://github.com/zonuexe/dotfiles
+    title: 'GitHub - zonuexe/dotfiles: tadsan@zonuexe''s dotfiles (.emacs, .zsh*,
+      .profile... etc.)'
+  p16:
+  - url: https://github.com/zplug/zplug
+    title: 'GitHub - zplug/zplug: :hibiscus: A next-generation plugin manager for
+      zsh'
+  p28:
+  - url: https://zenn.dev/imaizume/articles/61d37580ef6cdb
+    title: gitで現在のブランチを簡単にpush/pullするalias
+  p39:
+  - url: https://github.com/ajeetdsouza/zoxide
+    title: 'GitHub - ajeetdsouza/zoxide: A smarter cd command. Supports all major
+      shells.'
