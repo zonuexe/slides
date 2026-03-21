@@ -1,0 +1,1053 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: 文字コードへの道
+  - node: p
+    children:
+    - node: text
+      content: The Road to Character Encodings
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2024-01-28  #retro_games_any  '
+  - node: p
+    children:
+    - node: bold
+      content: 'レトロゲームから得た学びの発表 #01'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+    - node: li
+      children:
+      - node: text
+        content: ゲーム開発経験は学生時代にDXLibとか一瞬使ったくらい
+    - node: li
+      children:
+      - node: text
+        content: 好きなゲームはスーパーロボット大戦シリーズ
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 今回の発表の背景
+  - node: p
+    children:
+    - node: text
+      content: ' (phpcon2024)'
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: コンピュータ内の データのイメージ
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: 非常に大雑把なイメージ
+  - node: p
+    children:
+    - node: text
+      content: 'コンピュータのメモリ '
+    - node: br
+    - node: text
+      content: = データを格納する箱が並んでいる
+  - node: p
+    children:
+    - node: text
+      content: 0 1 2 3 4 5 6 7 8 9 … 1,073,741,824
+  - node: p
+    children:
+    - node: text
+      content: (1GBメモリ)
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: データを整列して見る
+    - node: br
+    - node: text
+      content: 1列で表示するとわかりにくいので 16個単位で折り返すことがよくある
+  - node: p
+    children:
+    - node: text
+      content: 0 1 2 3 4 5 6 7 8 9 A B C D E F
+  - node: p
+    children:
+    - node: text
+      content: 1x 2x 3x 4x
+  - node: p
+    children:
+    - node: text
+      content: 列 = 下1桁
+  - node: p
+    children:
+    - node: text
+      content: 5x 6x 7x 8x
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: 非常に大雑把なイメージ
+  - node: p
+    children:
+    - node: text
+      content: '四角い箱 '
+  - node: p
+    children:
+    - node: text
+      content: 文字列
+    - node: bold
+      content: '  Abc12'
+  - node: p
+    children:
+    - node: bold
+      content: '" "'
+  - node: p
+    children:
+    - node: text
+      content: = メモリ
+  - node: p
+    children:
+    - node: text
+      content: A b c 1 2
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 'ところでコンピュータって '
+    - node: br
+    - node: text
+      content: 0と1の世界 なのでは…？
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: '0と1の世界 '
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '0と1の世界 '
+  - node: p
+    children:
+    - node: text
+      content: '= binary  '
+  - node: p
+    children:
+    - node: text
+      content: ' (2進法)'
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '0と1の世界 '
+  - node: p
+    children:
+    - node: text
+      content: '= binary  '
+  - node: p
+    children:
+    - node: text
+      content: ' (2進法)'
+  - node: p
+    children:
+    - node: text
+      content: = bit
+  - node: p
+    children:
+    - node: text
+      content: ' (2値データ)'
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '粒度が細かすぎる '
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: '粒度が細かすぎる → まとめて扱おう '
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: '粒度が細かすぎる → まとめて扱おう '
+  - node: p
+    children:
+    - node: text
+      content: = bytes
+  - node: p
+    children:
+    - node: text
+      content: ' (バイト)'
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: 非常に大雑把なイメージ
+  - node: p
+    children:
+    - node: text
+      content: ' (再掲)'
+  - node: p
+    children:
+    - node: text
+      content: '四角い箱 '
+    - node: br
+    - node: text
+      content: '箱に入るのは '
+  - node: p
+    children:
+    - node: text
+      content: 文字列
+    - node: bold
+      content: '  Abc12'
+  - node: p
+    children:
+    - node: bold
+      content: '" "'
+  - node: p
+    children:
+    - node: text
+      content: = メモリ
+    - node: br
+    - node: text
+      content: 0〜256の数字だけ
+  - node: p
+    children:
+    - node: text
+      content: A b c 1 2
+  - node: p
+    children:
+    - node: text
+      content: 数字に置き換えて箱に入れる
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: データをまとめて扱う
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: コンピュータ上のデータを0と1だけで表現するのはわかりにくい
+    - node: li
+      children:
+      - node: text
+        content: 現代では「1バイト=8個のビット」の塊として扱うのが標準的
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 歴史的には、1バイト=7個のビットで扱う流れもあった
+        - node: li
+          children:
+          - node: text
+            content: この「7」という数は現在までひっそりと影響を残している…
+    - node: li
+      children:
+      - node: text
+        content: 8バイトの場合、0〜2 までの数を格納できる
+  - node: p
+    children:
+    - node: text
+      content: '8'
+    - node: br
+    - node: text
+      content: (=256)
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: 日本語文字列をメモリに入れよう
+    - node: br
+    - node: bold
+      content: ×
+    - node: text
+      content: ' 文字列'
+    - node: bold
+      content: ' '
+  - node: p
+    children:
+    - node: bold
+      content: '"あいうえお"'
+  - node: p
+    children:
+    - node: text
+      content: あ い う え お
+  - node: p
+    children:
+    - node: text
+      content: 数字に置き換える方法を…
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: '文字をデータに '
+    - node: br
+    - node: text
+      content: してみよう
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 英語の文字をデータにしてみよう
+  - node: p
+    children:
+    - node: text
+      content: 2進数 10進数 文字
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: A, B, C, ... Z までのアルファベットだけを扱う
+  - node: p
+    children:
+    - node: text
+      content: 00000 0 A
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 00001 1 B
+      - node: br
+      - node: text
+        content: 'アルファベット26種類なので、 '
+  - node: p
+    children:
+    - node: text
+      content: 00010 2 C
+  - node: p
+    children:
+    - node: text
+      content: 5bit = 2 =32(種類)で表現できる
+  - node: p
+    children:
+    - node: text
+      content: '5 '
+  - node: p
+    children:
+    - node: text
+      content: 00011 3 D
+  - node: p
+    children:
+    - node: text
+      content: 00100 4 E
+  - node: p
+    children:
+    - node: text
+      content: 00101 5 F
+  - node: p
+    children:
+    - node: text
+      content: 00110 6 G
+  - node: p
+    children:
+    - node: text
+      content: 00111 7 H
+  - node: p
+    children:
+    - node: text
+      content: … …
+  - node: p
+    children:
+    - node: text
+      content: 11001 25 Z
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: ひらがなをデータにしてみよう
+  - node: p
+    children:
+    - node: text
+      content: 2進数 10進数 文字
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: あいうえお… わ を ん までの五十音を扱えるように
+  - node: p
+    children:
+    - node: text
+      content: 000000 0 あ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 6bit = 2 =64(種類)に収まる
+  - node: p
+    children:
+    - node: text
+      content: '6 '
+  - node: p
+    children:
+    - node: text
+      content: 000001 1 い
+  - node: p
+    children:
+    - node: text
+      content: 000010 2 う
+  - node: p
+    children:
+    - node: text
+      content: 000011 3 え
+  - node: p
+    children:
+    - node: text
+      content: 000100 4 お
+  - node: p
+    children:
+    - node: text
+      content: … … …
+  - node: p
+    children:
+    - node: text
+      content: 101100 44 わ
+  - node: p
+    children:
+    - node: text
+      content: 101101 45 を
+  - node: p
+    children:
+    - node: text
+      content: 101110 46 ん
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: ひらがなをデータにしてみよう
+  - node: p
+    children:
+    - node: text
+      content: 2進数 10進数 文字
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: あいうえお… わ を ん までの五十音を扱えるように
+  - node: p
+    children:
+    - node: text
+      content: 000000 0 あ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 6bit = 2 =64(種類)に収まる
+  - node: p
+    children:
+    - node: text
+      content: '6 '
+  - node: p
+    children:
+    - node: text
+      content: 000001 1 い
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 000010 2 う
+      - node: br
+      - node: text
+        content: カタカナや濁点を扱うには… どうすれば？
+  - node: p
+    children:
+    - node: text
+      content: 000011 3 え
+  - node: p
+    children:
+    - node: text
+      content: 000100 4 お
+  - node: p
+    children:
+    - node: text
+      content: … … …
+  - node: p
+    children:
+    - node: text
+      content: 101100 44 わ
+  - node: p
+    children:
+    - node: text
+      content: 101101 45 を
+  - node: p
+    children:
+    - node: text
+      content: 101110 46 ん
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: ひらがなをデータにしてみよう
+  - node: p
+    children:
+    - node: text
+      content: 2進数 10進数 文字
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: あいうえお… わ を ん までの五十音を扱えるように
+  - node: p
+    children:
+    - node: text
+      content: 000000 0 あ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 6bit = 2 =64(種類)に収まる
+  - node: p
+    children:
+    - node: text
+      content: '6 '
+  - node: p
+    children:
+    - node: text
+      content: 000001 1 い
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 000010 2 う
+      - node: br
+      - node: text
+        content: 'カタカナや濁点を扱うには… どうすれば？ '
+  - node: p
+    children:
+    - node: text
+      content: 000011 3 え
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ＼ﾋﾟｺｰｿ／ そうだ、先頭ビットを濁点とカタカナに
+      - node: br
+      - node: text
+        content: 💡
+  - node: p
+    children:
+    - node: text
+      content: 000100 4 お
+  - node: p
+    children:
+    - node: text
+      content: … … …
+  - node: p
+    children:
+    - node: text
+      content: 101100 44 わ
+  - node: p
+    children:
+    - node: text
+      content: 101101 45 を
+  - node: p
+    children:
+    - node: text
+      content: 101110 46 ん
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: ひらがなをデータにしてみよう
+  - node: p
+    children:
+    - node: text
+      content: 2進数 10進数 文字
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: あいうえお… わ を ん までの五十音を扱えるように
+  - node: p
+    children:
+    - node: text
+      content: 000000 0 あ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 6bit = 2 =64(種類)に収まる
+  - node: p
+    children:
+    - node: text
+      content: '6 '
+  - node: p
+    children:
+    - node: text
+      content: 000001 1 い
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 000010 2 う
+      - node: br
+      - node: text
+        content: 'カタカナや濁点を扱うには… どうすれば？ '
+  - node: p
+    children:
+    - node: text
+      content: 000011 3 え
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ＼ﾋﾟｺｰｿ／ そうだ、先頭ビットを濁点とカタカナに
+      - node: br
+      - node: text
+        content: 💡
+  - node: p
+    children:
+    - node: text
+      content: 000100 4 お
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ↑ 小文字とか半濁点のこと考えてないよね…
+  - node: p
+    children:
+    - node: text
+      content: … … …
+  - node: p
+    children:
+    - node: text
+      content: 101100 44 わ
+  - node: p
+    children:
+    - node: text
+      content: 101101 45 を
+  - node: p
+    children:
+    - node: text
+      content: 101110 46 ん
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: 16進数表
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 文字エンコーディングとかバイナリファイルを向き合っていると
+      - node: br
+      - node: text
+        content: 'ちょくちょくこの形式の表を見ることになるかと思います '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: メモリやディスク上のデータの表示 (バイナリエディタ)
+        - node: li
+          children:
+          - node: text
+            content: エンコーディングのバイトデータと文字の対応表
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: そういうことを考えると 文字コードを設計できる
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: '現在のコンピュータは '
+    - node: br
+    - node: text
+      content: どうやって文字を扱うか
+  p28:
+  - node: p
+    children:
+    - node: bold
+      content: ASCII
+    - node: text
+      content: ' (アスキー)'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: American Standard Code for Information Interchange
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ↑ 正式名称は覚えなくていい
+    - node: li
+      children:
+      - node: text
+        content: いわゆる「半角文字」「半角英数」とか呼ばれる文字コード
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: アメリカ英語で使用されるアルファベット(ラテン文字)をカバー
+    - node: li
+      children:
+      - node: text
+        content: 0〜127までの7bitだけを使うので、1バイト=8bitとして扱うと
+      - node: br
+      - node: text
+        content: 必ず先頭が0になる
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: Unicode
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 大統一文字コード
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 世界中の文字を統合して一個の表にしようぜ！ プロジェクト
+        - node: li
+          children:
+          - node: text
+            content: 表に割り当てられた文字を「コードポイント」と呼ぶ
+          - node: ul
+            children:
+            - node: li
+              children:
+              - node: text
+                content: U+1234 のように書く
+    - node: li
+      children:
+      - node: text
+        content: 最初は16bit = 2  = 65536種類の空間あれば十分じゃね？と
+  - node: p
+    children:
+    - node: text
+      content: '16'
+  - node: p
+    children:
+    - node: text
+      content: '思われていたらしい '
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: UTF-8
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 8bit固定で1〜4バイトの可変長エンコーディング
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ASCIIの文字(いわゆる半角文字)は1バイトで扱える
+        - node: li
+          children:
+          - node: text
+            content: そのほかの文字は可変長
+          - node: ul
+            children:
+            - node: li
+              children:
+              - node: text
+                content: 典型的な日本語の文字は3バイト
+            - node: li
+              children:
+              - node: text
+                content: 半角カナは4バイト
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 制御文字
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: '21世紀の環境で Unicode以外を '
+    - node: br
+    - node: text
+      content: 採用する動機は激減
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 'かつてはそうでは '
+    - node: br
+    - node: text
+      content: 'なかった '
+    - node: br
+    - node: text
+      content: (と伝え聞く)
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 歴史的な事例
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 有名な逸話
+  - node: p
+    children:
+    - node: bold
+      content: '『しんでしまうとは なにごとだ!』 堀井雄二(編集・執筆) '
+    - node: br
+    - node: text
+      content: '株式会社スクウェア・エニックス '
+    - node: br
+    - node: text
+      content: デジタル版 Ver.1.00 2018年9月1日(Kindle)
+    - node: bold
+      content: ' '
+    - node: br
+    - node: bold
+      content: p11より引用
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: ドラゴンクエスト
+  - node: p
+    children:
+    - node: text
+      content: (ファミリーコンピュータ)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 1986年5月27日発売
+    - node: li
+      children:
+      - node: text
+        content: 512Kbitロムカセット (64KBytes)
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: プログラムROMとキャラクタROMがそれぞれ32キロバイト
+          - node: ul
+            children:
+            - node: li
+              children:
+              - node: text
+                content: モンスターやキャラクターなどの画像とフォントなどを
+              - node: br
+              - node: text
+                content: '全部この32キロバイトに押し込める必要がある '
+            - node: li
+              children:
+              - node: text
+                content: プログラムとテキストデータが残り32キロバイト
+  p37:
+  - node: p
+    children:
+    - node: bold
+      content: ドラゴンクエスト (FC) 解析資料 - 文字コード より引用 (2025年1月28日閲覧)
+  p38:
+  - node: p
+    children:
+    - node: bold
+      content: ドラゴンクエスト (FC) 解析資料 - 文字コード より引用 (2025年1月28日閲覧)
+  - node: p
+    children:
+    - node: bold
+      content: '第三章 自分だけのオリジナルマップを作ろう (kuwatan.jp) より引用 '
+    - node: br
+    - node: bold
+      content: (2025年1月28日閲覧)
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 'ドラゴンクエストV '
+  - node: p
+    children:
+    - node: text
+      content: (スーパーファミコン)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 1992年9月27日発売
+    - node: li
+      children:
+      - node: text
+        content: 12MBitロムカセット (1.5MBytes)
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: DQ1の時代から考えれば無限に広く見えるが…
+        - node: li
+          children:
+          - node: text
+            content: プログラム・テキスト・グラフィック・音楽などあらゆる要素がリッチに
+        - node: li
+          children:
+          - node: text
+            content: テキストデータはハフマン符号による可変長ビット(!)
+          - node: br
+          - node: text
+            content: ドラクエ命 第 II 部 解析 第 3 章 SFC 版ドラクエ 5 (1992) 3.6. テキスト解析
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: ポケットモンスター
+  - node: p
+    children:
+    - node: text
+      content: (ゲームボーイ)
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 1996年2月27日発売 (DQのほぼ10年後)
+    - node: li
+      children:
+      - node: text
+        content: 8Mbitロムカセット (1MBytes)：DQの16倍
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 'DQ1の時代から考えれば無限に広く見えるが… 151匹のポケモンを押し込むには明らかに大変 '
+        - node: li
+          children:
+          - node: text
+            content: 文字列は独自の2バイトコードを定義している
+          - node: ul
+            children:
+            - node: li
+              children:
+              - node: text
+                content: アルファベットは13文字しか含まれていない(!)
+  p41:
+  - node: p
+    children:
+    - node: bold
+      content: 文字コード対応表 - pokemonbug @ ウィキ - atwiki より引用 (2024年12月22日閲覧)
+  p42:
+  - node: p
+    children:
+    - node: bold
+      content: 社長が訊く『ポケットモンスター ハートゴールド・ソウルシルバー』 より引用 (2025年1月28日閲覧)
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 今や文字コードを独自設計し たり､フォントをビット単位 で押し込めるような時代では
+    - node: br
+    - node: text
+      content: なくなった
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: サイズ削減のためバンドルするフォント
+    - node: br
+    - node: text
+      content: 'ファイルの文字種を削ったり、 '
+    - node: br
+    - node: text
+      content: 独自の文字を表示するためにUnicodeの
+    - node: br
+    - node: text
+      content: 私用領域を使うことはあると思う
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p3:
+  - url: https://fortee.jp/phpcon-2024/proposal/2a260b2c-c921-430d-882c-040f102e2ec1
+    title: '入門 文字列 by うさみけんた | トーク | PHP Conference Japan 2024 #phpcon - fortee.jp'
+  p31:
+  - url: https://php-play.dev/?c=DwfgDgFmBQDGD2A7AzgFwAQGEAqAlAMugLzoDa06l6ARADoCuA3gEwAsADOwL7UA0NDFhwCMPfnSZt2zMQMkcAzLIlD2rZYKkBWDfPYA2XaoDsYilRVSAHEakBOWxwCCj9gCFXmVwBFXAUVcAMTMqOSFhbj4wtmFRKMtWYRl4zUSlFPlhdQzwnRyYw3zE0z5zSgThGyLhB2qXao9qr2rfaoDq4NLQhOZI-iTjYgA+aNZmOOgAXQBuaGgQIehgVABDACMAGwBTdDX4ACcAEy399DQAT22ialQtgA9UAFoVjYBLAHNEAC50WC3EW77aiLZb7IbLQ7ggD0qEhS3AUHQADMDlsVrAIOgABT7FaId5bLHsfpaACU6BWyHQABJEKSfgsyuhlpiLldqAB3V6HVAQH7MLYAW2BoBIEFQgo2yDAW1grxeGJW+2QWOl+1eAKRWOoAFIABpRWmk8kLYAwiAghFgdD-Q4o-ZojHoRlm1Bg+GQa32x2YrFK3HnAD6GPoiAA1ji8QSif1mMZSf19OTKTTXsMaft4Bz6c7FqFQXmqCyzqhLltrlyeXz0ALheCQGKJVKZXKFRAlSq1RrUFrdYc7obXsbc66LUzQJ7kaj0b7qZmORSqUaGYXQpQIfXG5LpbL5RtFcqsTgCKRaZNnSBfhB9lijSbobDV8yrTbEHbp07GfmYe6J4jbd6M65kAA&v=8.3&f=html
+    title: PHP Playground
+  p37:
+  - url: https://taotao54321.github.io/DQ1Resource/char/
+    title: ドラゴンクエスト (FC) 解析資料 - 文字コード
+  p38:
+  - url: https://kuwatan.jp/2392/3syou.html
+    title: 第三章 自分だけのオリジナルマップを作ろう
+  - url: https://taotao54321.github.io/DQ1Resource/char/
+    title: ドラゴンクエスト (FC) 解析資料 - 文字コード
+  p39:
+  - url: https://showa-yojyo.github.io/dqbook/dq5_text.html
+    title: 3.6. テキスト解析
+  p41:
+  - url: https://w.atwiki.jp/pokemonbug/pages/20.html
+    title: w.atwiki.jp
+  p42:
+  - url: https://www.nintendo.co.jp/ds/interview/ipkj/vol1/index3.html
+    title: 社長が訊く『ポケットモンスター ハートゴールド・ソウルシルバー』

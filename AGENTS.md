@@ -18,6 +18,7 @@
 - `make fetch-static` runs `script/fetch_static_slides.py` against a running site (defaults to `http://localhost:5173`) to scrape pages into the specified output dir.
 - `UV_CACHE_DIR=.uv-cache uv run python script/add_new_slides.py` processes staged PDFs, generates thumbnails, and amends `slides.yaml`; append `--pdf pdf/new-talk.pdf` to target a specific file.
 - `make script-format` and `make script-lint` invoke Ruff through `uvx` to keep Python helpers consistent.
+- End-to-end PDF publishing steps are documented in `PDF_PUBLISH_SKILL.md`.
 
 ## Coding Style & Naming Conventions
 - JavaScript uses ES modules, 2-space indentation, camelCase identifiers, and double-quoted strings. Group imports external → internal to match existing files.
