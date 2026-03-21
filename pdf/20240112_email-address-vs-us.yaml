@@ -1,0 +1,924 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: メールアドレス vs 俺たち
+  - node: p
+    children:
+    - node: text
+      content: Our stand against the challenges posed by E-mail addresses
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2024-01-12 Sapporo Community Plaza  '
+  - node: p
+    children:
+    - node: bold
+      content: PHPカンファレンス北海道2024 前夜祭
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 2012年末から現職でPHPを書いているWebプログラマ
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+    - node: li
+      children:
+      - node: text
+        content: 2011年頃にPython札幌というコミュニティをやっていました
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 今回のお題
+  p4:
+  - node: p
+    children:
+    - node: bold
+      content: '出典: Wikipedia： ID (2023-07-09T09:38:16版)'
+  p5:
+  - node: p
+    children:
+    - node: bold
+      content: '出典: Wikipedia： デジタルアイデンティティ ( 2023-10-20T14:01:45版)'
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: '今回はIDとは何か '
+    - node: br
+    - node: text
+      content: '(本質) '
+    - node: br
+    - node: text
+      content: の話には深入りしません
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 'おことわり '
+    - node: br
+    - node: text
+      content: '発表者は現時点において '
+    - node: br
+    - node: text
+      content: 現職のID設計判断や実装に
+    - node: br
+    - node: text
+      content: 関わっていません！
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: ID､Auth､アカウント基盤など
+  - node: p
+    children:
+    - node: text
+      content: 'AAA(Authentication, '
+    - node: br
+    - node: text
+      content: Authorization, Accounting)
+    - node: br
+    - node: text
+      content: は高度な専門技術領域
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 発表のねらい
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 今回のゴール
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: ただメールアドレスを扱うだけのよくある仕組みだとしても、
+      - node: br
+      - node: text
+        content: '考慮事項がいくつもあってシンプルな実装では済まない(こともある)こと '
+    - node: li
+      children:
+      - node: text
+        content: これらの考慮事項には唯一の正解はなく、ビジネス要件や
+      - node: br
+      - node: text
+        content: 'ユーザーのニーズに応じて取捨選択する必要があるということを理解し、 '
+      - node: br
+      - node: text
+        content: 必要十分なものを設計・実装できること
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: ゴールではないこと
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: メールアドレスに関係しないアカウント設計の考慮事項
+    - node: li
+      children:
+      - node: text
+        content: こう実装すれば間違いないという指針を提示すること
+    - node: li
+      children:
+      - node: text
+        content: デジタルアイデンティティを完全理解してIDエキスパートになること
+    - node: li
+      children:
+      - node: text
+        content: オブジェクト指向設計についてマスターすること
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 今回提示することをそのまま実装するとユニットテストしにくい構造になる 場合があるので、適切に依存を分割・注入することは読者への課題とする
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '今回は専門職ではない 我々が実装するための '
+    - node: br
+    - node: text
+      content: お話をします
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '初心者の方も '
+    - node: br
+    - node: text
+      content: '怖がらずに '
+    - node: br
+    - node: text
+      content: お聞きください
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: '難しいことは置いておいて '
+    - node: br
+    - node: text
+      content: ユーザーからメールアドレスを
+    - node: br
+    - node: text
+      content: '収集したい(せざるを得ない) '
+    - node: br
+    - node: text
+      content: ことは現代でも多い
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: メールアドレスを何に使うか
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: マーケティング (メールによる告知など)
+    - node: li
+      children:
+      - node: text
+        content: Webサービスのログイン機能のIDとして
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Laravelのようなフレームワークは基本機能として持っていて、
+          - node: br
+          - node: text
+            content: 'スキャッフォールド(コードの自動生成)で最低限のものは簡単に作れる '
+          - node: br
+          - node: text
+            content: '(生成されるので実装の必要すらない) '
+        - node: li
+          children:
+          - node: text
+            content: ログイン通知 (心あたりのないログインでないかユーザ自身に知らせる)
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: メールアドレスを何に使うか
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: アカウント登録させてマーケティングに活用…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 利用規約に同意させた上なら問題はないが、やりすぎは嫌われるので要注意
+        - node: li
+          children:
+          - node: text
+            content: メールマガジンなど送りすぎてフィルタリングされてしまっては、本当に大事
+          - node: br
+          - node: text
+            content: 'な連絡が届かなくなるのはよくない '
+        - node: li
+          children:
+          - node: text
+            content: 個人的な意見では、私信のような体裁や「あなただけ特別に…」のような
+          - node: br
+          - node: text
+            content: 文言のキャンペーンメールは非常にストレスが大きい
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: '個人的感情は '
+    - node: br
+    - node: text
+      content: おいといて
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 'DBに入れるだけだし '
+    - node: br
+    - node: text
+      content: フレームワークとか要らん
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: ですよね？
+  - node: p
+    children:
+    - node: text
+      content: '[要出典]'
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'すごくシンプルな '
+    - node: br
+    - node: text
+      content: ログインシステムを 作っていきましょう
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: '[要件1] '
+    - node: br
+    - node: text
+      content: '変な形式の文字列が '
+    - node: br
+    - node: text
+      content: 登録できないこと
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: aaa@example,com
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: example.com
+  p25: []
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: ググったら最適解が 出てくる良い時代…
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 良くなかった時代とは
+  p28: []
+  p29: []
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: どういうこと？
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'そもそも '
+    - node: br
+    - node: text
+      content: メールアドレスとは
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: tadsan@pixiv.com
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: '"tadsan"@pixiv.com'
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: <tadsan@pixiv.com>
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: USAMI Kenta <tadsan@pixiv.com>
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: どれも｢メールアドレス｣
+  p37:
+  - node: p
+    children:
+    - node: bold
+      content: '出典: Wikipedia： メールアドレス (2023-11-07T03:00:31版)'
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: メールアドレスとは
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 特に断りがなければ tadsan@pixiv.com のような文字列を指す
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: RFC 5322ではaddr-specと呼ばれるもの
+    - node: li
+      children:
+      - node: text
+        content: USAMI Kenta <tadsan@pixiv.com> のような、
+      - node: br
+      - node: text
+        content: '名前や <> を含んだものもメールアドレス '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 先述のブログで「正規表現でマッチできない」と言われているのはこれを
+          - node: br
+          - node: text
+            content: 含めたメールアドレスのこと
+  p39:
+  - node: p
+    children:
+    - node: bold
+      content: '出典: Wikipedia： メールアドレス (2023-11-07T03:00:31版)'
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: 一般的なメールアドレス
+    - node: br
+    - node: text
+      content: 'を収集する用途で addr-spec以外が '
+    - node: br
+    - node: text
+      content: 必要になることはない
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: '基本的にaddr-spec だけを相手にすれば '
+    - node: br
+    - node: text
+      content: いいとわかった
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 改めて
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: ドメイン名
+  - node: p
+    children:
+    - node: text
+      content: ローカルパート
+  - node: p
+    children:
+    - node: text
+      content: tadsan@pixiv.com
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: ローカルパートの制約
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: dot-atom形式 (いわゆる普通のメールアドレス)
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ASCIIの英数文字 [a-zA-Z0-9]
+        - node: li
+          children:
+          - node: text
+            content: 'ASCIIの記号 ! # $ % & '' * + - / = ? ^ _ ` { | } ~'
+        - node: li
+          children:
+          - node: text
+            content: . (ドット)は先頭と末尾以外に使用できるが、2個以上連続できない
+    - node: li
+      children:
+      - node: text
+        content: 大文字小文字は区別する… が… 現実には区別せずに扱うサービスも
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: むしろ多数
+  p45: []
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: RFC違反メールアドレス
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 2009年頃まで一部の携帯キャリアで発行できていたメールアドレス
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: good..by..@example.com のようなアドレスが発行できた
+    - node: li
+      children:
+      - node: text
+        content: 仕様違反のメールアドレスでも動作するサービスが存在していたが…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 2020年にiOS 14、2021年にSendGridで利用不可能に
+    - node: li
+      children:
+      - node: text
+        content: quoted-string形式  good..by.. @example.com に変換すれば合法
+  - node: p
+    children:
+    - node: bold
+      content: '" "'
+  - node: p
+    children:
+    - node: text
+      content: だが、残念なことに受信側のメールサービスが対応している必要がある
+  p47: []
+  p48: []
+  p49: []
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPでは '
+    - node: br
+    - node: text
+      content: 'これを使えば '
+    - node: br
+    - node: text
+      content: 安全！
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: '…ここまでに説明した '
+    - node: br
+    - node: text
+      content: 範囲では
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: '[要件2] '
+    - node: br
+    - node: text
+      content: '存在しないドメインの メールアドレス登録を '
+    - node: br
+    - node: text
+      content: 弾きたい
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: a@b.c
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 'ﬁlter_var(''a@b.c'', '
+    - node: br
+    - node: text
+      content: 'FILTER_VALIDATE_EMAIL) '
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: 'ﬁlter_var(''a@b.c'', '
+    - node: br
+    - node: text
+      content: 'FILTER_VALIDATE_EMAIL) '
+    - node: br
+    - node: text
+      content: '// => "a@b.c" '
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: '定石： '
+    - node: br
+    - node: text
+      content: 入力されたアドレスに 送信してメール内の コードを入力させる
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: '実メール送る前に '
+    - node: br
+    - node: text
+      content: どうしても確認したい
+    - node: br
+    - node: text
+      content: のだとしましょう
+  p58: []
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: DNSをチェックしよう
+  p60: []
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: 'この方法で '
+    - node: br
+    - node: text
+      content: 良いといえば良い だめといえばだめ
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: (非常に言葉を濁す)
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: メールはどうやって届くのか
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 白ヤギさんと黒ヤギさんが… という話から始めると15分では無理
+    - node: li
+      children:
+      - node: text
+        content: メールに関係するDNSレコードにはAとMXがある
+    - node: li
+      children:
+      - node: text
+        content: メール配送の仕組みとしてはAレコードがあればいいのだが、
+      - node: br
+      - node: text
+        content: '今日の多くはメールアドレスのドメイン部分に対応したMXレコードがある '
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Aレコードしかないメールアドレスは個人や小規模なメールサーバの
+          - node: br
+          - node: text
+            content: 独自運用されている傾向にあるのでAレコードもサポートするかは各自判断
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: 'DNSではなくSMTP でチェックする別解も '
+    - node: br
+    - node: text
+      content: あるが…
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: '(僕は運用経験がない '
+    - node: br
+    - node: text
+      content: ので言葉を濁す)
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: 'ついでに '
+    - node: br
+    - node: text
+      content: メールアドレス
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: IPアドレス
+  - node: p
+    children:
+    - node: text
+      content: a@0.0.0.0
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: 'ﬁlter_var(''a@0.0.0.0'', '
+    - node: br
+    - node: text
+      content: 'FILTER_VALIDATE_EMAIL) '
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: 'ﬁlter_var(''a@0.0.0.0'', '
+    - node: br
+    - node: text
+      content: 'FILTER_VALIDATE_EMAIL) '
+    - node: br
+    - node: text
+      content: '// => "a@0.0.0.0" '
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: ドメインがIP
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: '[要件3] '
+    - node: br
+    - node: text
+      content: 'メールアドレスの '
+    - node: br
+    - node: text
+      content: 重複登録を弾きたい！
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: DBに登録
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: ユニークキー制約
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: 大勝利
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: かと思いましたか？
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: ローカルパートの制約
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: dot-atom形式 (いわゆる普通のメールアドレス)
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: ASCIIの英数文字 [a-zA-Z0-9]
+        - node: li
+          children:
+          - node: text
+            content: 'ASCIIの記号 ! # $ % & '' * + - / = ? ^ _ ` { | } ~'
+        - node: li
+          children:
+          - node: text
+            content: . (ドット)は先頭と末尾以外に使用できるが、2個以上連続できない
+    - node: li
+      children:
+      - node: text
+        content: 大文字小文字は区別する… が… 現実には区別せずに扱うサービスも
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: むしろ多数
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: a@example.com
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: A@example.com
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: '同一かもしれないし '
+    - node: br
+    - node: text
+      content: 別人かもしれない
+  p80: []
+  p81:
+  - node: p
+    children:
+    - node: text
+      content: 'unicode_ciは 大文字小文字を '
+    - node: br
+    - node: text
+      content: 同一視する
+  p82:
+  - node: p
+    children:
+    - node: text
+      content: 'utf8mb4_binで '
+    - node: br
+    - node: text
+      content: '厳密チェックすれば '
+    - node: br
+    - node: text
+      content: いいのか？
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: 'もっとひどい穴を 簡単に作れるので binで比較はやめた '
+    - node: br
+    - node: text
+      content: 方がいいと思う
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: Laravelは全部小文字の
+    - node: br
+    - node: text
+      content: 'アドレスのみ許可 '
+    - node: br
+    - node: text
+      content: (これが無難)
+  p85:
+  - node: p
+    children:
+    - node: text
+      content: この問題を騙り尽すには 15分枠はあまりに短い…
+  p86:
+  - node: p
+    children:
+    - node: text
+      content: Gmailエイリアス沼
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 同じメールアカウントに対応するアドレスはたくさんある
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: fafnir127@gmail.com, fafnir127+alias@gmail.com
+        - node: li
+          children:
+          - node: text
+            content: f.a.f.n.i.r.1.2.7@gmail.com, fafnir127@googlemail.com
+    - node: li
+      children:
+      - node: text
+        content: これらはGoogle Workspaceを使った独自ドメインのメールでも有効
+  p87: []
+  p88:
+  - node: p
+    children:
+    - node: text
+      content: 'ご静聴ありがとう '
+    - node: br
+    - node: text
+      content: ございました
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p4:
+  - url: https://ja.wikipedia.org/wiki/ID
+    title: ID - Wikipedia
+  - url: http://www.apple.com/jp
+    title: Apple（日本）
+  p5:
+  - url: https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3
+    title: デジタルアイデンティティ - Wikipedia
+  - url: https://ja.wikipedia.org/w/index.php?title=%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%82%A2%E3%82%A4%E3%83%87%E3%83%B3%E3%83%86%E3%82%A3%E3%83%86%E3%82%A3&oldid=97507545
+    title: デジタルアイデンティティ - Wikipedia
+  p35:
+  - url: mailto:tadsan@pixiv.com
+    title: ''
+  p37:
+  - url: https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9
+    title: メールアドレス - Wikipedia
+  - url: https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9&oldid=97781717
+    title: メールアドレス - Wikipedia
+  - url: http://www.apple.com/jp
+    title: Apple（日本）
+  p39:
+  - url: https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9
+    title: メールアドレス - Wikipedia
+  - url: https://ja.wikipedia.org/w/index.php?title=%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%A2%E3%83%89%E3%83%AC%E3%82%B9&oldid=97781717
+    title: メールアドレス - Wikipedia
+  - url: http://www.apple.com/jp
+    title: Apple（日本）
+  p46:
+  - url: http://example.com
+    title: Example Domain
+  p77:
+  - url: mailto:a@example.com
+    title: ''
+  p78:
+  - url: mailto:a@example.com
+    title: ''
+  p86:
+  - url: mailto:fafnir127@gmail.com
+    title: ''
+  - url: mailto:fafnir127+alias@gmail.com
+    title: ''
+  - url: mailto:fafnir127@googlemail.com
+    title: ''

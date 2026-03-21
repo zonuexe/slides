@@ -1,0 +1,719 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: “慈悲深いユニオン”とは何か
+  - node: p
+    children:
+    - node: text
+      content: What's benevolent union?
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: 'PHP勉強会 in 神戸 '
+  - node: p
+    children:
+    - node: bold
+      content: '2024-07-19 #関ガレ'
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+        - node: li
+          children:
+          - node: text
+            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 最近のプログラミング言語っぽい発表
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: 「コードを自在に操るためのPHP文法入門」
+      - node: br
+      - node: text
+        content: '(2月 PHPカンファレンス関西2024) '
+    - node: li
+      children:
+      - node: text
+        content: 「こんな静的解析導入は負けフラグ」 (3月 PHPerKaigi)
+    - node: li
+      children:
+      - node: text
+        content: 「動的言語型付けバトル」 (3月 PHPerKaigi)
+  p4:
+  - node: p
+    children:
+    - node: text
+      content: さてみなさん
+  - node: p
+    children:
+    - node: text
+      content: Now, everyone
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: '静的解析は '
+    - node: br
+    - node: text
+      content: 好きですか？
+  - node: p
+    children:
+    - node: text
+      content: 'Do you like static '
+    - node: br
+    - node: text
+      content: type analysis?
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$v = [1, 2, 3]; '
+    - node: br
+    - node: text
+      content: 'echo json_decode($v); '
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$v = [1, 2, 3]; '
+    - node: br
+    - node: text
+      content: 'echo json_decode($v); '
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$v = [1, 2, 3]; '
+    - node: br
+    - node: text
+      content: 'echo json_encode($v); '
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$v = ''[1, 2, 3]''; '
+    - node: br
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 静的型検査万歳
+  - node: p
+    children:
+    - node: text
+      content: '型チェッカーは常に愚かな我々に '
+    - node: br
+    - node: text
+      content: '先んじてプログラムのミスを '
+    - node: br
+    - node: text
+      content: 指摘してくれる… そうですよね？
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '次のスライドのコードは '
+    - node: br
+    - node: text
+      content: どうでしょうか？
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$v = ﬁle_get_contents( ); '
+  - node: p
+    children:
+    - node: text
+      content: '''data.json'''
+  - node: p
+    children:
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: '$v = ﬁle_get_contents( ); '
+  - node: p
+    children:
+    - node: text
+      content: '''data.json'''
+  - node: p
+    children:
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p14: []
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: なんでfalse？？
+  - node: p
+    children:
+    - node: text
+      content: どうしてこの関数は失敗したら falseを返すのはなんで？？？
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: デプロイのミス
+  - node: p
+    children:
+    - node: text
+      content: 'A-1. '
+    - node: br
+    - node: text
+      content: '要求されたファイルが '
+    - node: br
+    - node: text
+      content: 正しく配置されなかった
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: ファイルの存在
+    - node: br
+    - node: text
+      content: チェックしてない
+  - node: p
+    children:
+    - node: text
+      content: 'A-2. '
+    - node: br
+    - node: text
+      content: 動的に生成されるファイルを
+    - node: br
+    - node: text
+      content: '!le_exists()でチェックせずに '
+    - node: br
+    - node: text
+      content: アクセスしてしまった この手法は潜在的なリスクがある…
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'if (!ﬁle_exists(''data.json'')) { '
+    - node: br
+    - node: text
+      content: '     return; '
+    - node: br
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: '// maybe safe '
+    - node: br
+    - node: text
+      content: '$v = ﬁle_get_contents(''data.json''); '
+    - node: br
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: 'if (!ﬁle_exists(''data.json'')) { '
+  - node: p
+    children:
+    - node: text
+      content: この関数がfalseを返すこ
+    - node: br
+    - node: text
+      content: 'とはない… たぶん… '
+  - node: p
+    children:
+    - node: text
+      content: '     return; '
+  - node: p
+    children:
+    - node: text
+      content: おそらく… きっと…
+  - node: p
+    children:
+    - node: text
+      content: '} '
+  - node: p
+    children:
+    - node: text
+      content: '// maybe safe? '
+    - node: br
+    - node: text
+      content: '$v = ﬁle_get_contents(''data.json''); '
+    - node: br
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: '$vが絶対にfalseに なっていないことを '
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: アサーション(表明)
+  - node: p
+    children:
+    - node: text
+      content: '$v = ﬁle_get_contents(''data.json''); '
+  - node: p
+    children:
+    - node: text
+      content: 'assert($v !== false); '
+    - node: br
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: '実際にはfalseが返って '
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: くる可能性を見て見ぬふり
+  - node: p
+    children:
+    - node: text
+      content: '/** @var string */ '
+    - node: br
+    - node: text
+      content: '$v = ﬁle_get_contents(''data.json''); '
+  - node: p
+    children:
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: ほんとにfalse返すの？
+  - node: p
+    children:
+    - node: text
+      content: 'Q. ところで !le_get_contents() '
+    - node: br
+    - node: text
+      content: ほんとにほんとにfalse返すの？
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: 実行時のハンドラー
+    - node: br
+    - node: text
+      content: 設定に依存する
+  - node: p
+    children:
+    - node: text
+      content: 'Q. 実行時のハンドラー設定に '
+    - node: br
+    - node: text
+      content: 依存する
+  p24: []
+  p25: []
+  p26: []
+  p27: []
+  p28: []
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 状況整理
+  - node: p
+    children:
+    - node: text
+      content: 'どういう状況が考えられるか '
+    - node: br
+    - node: text
+      content: 一度確認してみましょう
+  p30:
+  - node: p
+    children:
+    - node: bold
+      content: Gle_get_contents()
+    - node: text
+      content: ' が返すのは...'
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: error_reporting(0) 設定のとき…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 関数は常に string と false のどちらも返す可能性がある
+        - node: li
+          children:
+          - node: text
+            content: PHPの既定の振る舞いではファイルが読み込めなくても停止しない
+    - node: li
+      children:
+      - node: text
+        content: ハンドラでエラーをErrorExceptionに変換しているとき…
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 関数は常に string 値を返す。falseが返ってくることはありえない。
+        - node: li
+          children:
+          - node: text
+            content: 多くのPHPアプリケーションではフレームワークによって設定済み
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'falseが返ってこないなら '
+  - node: p
+    children:
+    - node: text
+      content: '<?php '
+  - node: p
+    children:
+    - node: text
+      content: この確認は常に無駄！
+  - node: p
+    children:
+    - node: text
+      content: '$v = ﬁle_get_contents(''data.json''); '
+  - node: p
+    children:
+    - node: text
+      content: 'assert($v !== false); '
+    - node: br
+    - node: text
+      content: 'var_dump(json_decode($v)); '
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 本題
+  - node: p
+    children:
+    - node: text
+      content: ここからがタイトルのネタ
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: “慈悲深いユニオン”とは何か
+  - node: p
+    children:
+    - node: text
+      content: What's benevolent union?
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: 'PHP勉強会 in 神戸 '
+  - node: p
+    children:
+    - node: bold
+      content: '2024-07-19 #関ガレ'
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 謎の型
+  - node: p
+    children:
+    - node: text
+      content: '__benevolent<> は '
+    - node: br
+    - node: text
+      content: PHPStanに実装された隠し機能
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: functionMap
+  - node: p
+    children:
+    - node: text
+      content: TypeResolver
+  - node: p
+    children:
+    - node: text
+      content: Test code
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: なんだこれ？
+  - node: p
+    children:
+    - node: text
+      content: で、結局なにこれ????
+  p37: []
+  p38: []
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 'これらの関数の共通点を '
+    - node: br
+    - node: text
+      content: 探ってみましょう
+  p40: []
+  p41: []
+  p42: []
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: __benevolent<>が使われた関数の共通点は？
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: これらの関数は異常な状態でfalseを返す可能性がある
+    - node: li
+      children:
+      - node: text
+        content: 引数に適切なパラメータを渡して呼び出す限りfalseが返されることはない
+      - node: br
+      - node: text
+        content: 'ので、呼び出し後に毎回型検査をするのは不毛 '
+    - node: li
+      children:
+      - node: text
+        content: PHP 8でfalseを返す代りにErrorがthrowされるようになった
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: '__benevolent<>って '
+    - node: br
+    - node: text
+      content: 結局どう動くの？
+  p45: []
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'この型を使えば標準関数を '
+    - node: br
+    - node: text
+      content: 使いやすくするラッパーも作れる
+  p47: []
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: '便利っぽい…? '
+    - node: br
+    - node: text
+      content: んだけど、使わないでね！
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: benevolent unionを濫用するな
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: この型は、例外的な状態でfalseを返すまれなケースを表現するのに役立つ
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: その関数が間違った前提条件で呼び出された場合は、false を返す代わり
+          - node: br
+          - node: text
+            content: 'に例外を発生させ、呼び出しコードを修正する。  '
+        - node: li
+          children:
+          - node: text
+            content: その他の例外的な状況では、例外をスローして呼び出し元に処理させるべ
+          - node: br
+          - node: text
+            content: き。Javaのチェック例外みたいに。
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: '安全性を保ち '
+    - node: br
+    - node: text
+      content: コードの繰り返しを防ぐには？
+  p51: []
+  p52: []
+  p53: []
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: この関数はFileSystemExceptionをthrowsする
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: PhpStormはハンドリングしない例外を警告する
+  p56: []
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 'benevolent unionよりも '
+    - node: br
+    - node: text
+      content: 構造化された例外を！！
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: 'みんなのコードでは '
+    - node: br
+    - node: text
+      content: 'benevolent unionsを '
+    - node: br
+    - node: text
+      content: 使わないでね！
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p3:
+  - url: https://2024.kphpug.jp/
+    title: PHPカンファレンス関西2024
+  - url: https://phperkaigi.jp/2024/
+    title: PHPerKaigi 2024
+  p35:
+  - url: https://github.com/search?q=repo:phpstan/phpstan-src%20__benevolent&type=code
+    title: Code search results · GitHub
+  p37:
+  - url: https://github.com/phpstan/phpstan/discussions/6440
+    title: 'benevolent union docs · phpstan/phpstan · Discussion #6440 · GitHub'
+  p38:
+  - url: https://github.com/phpstan/phpstan/discussions/6440
+    title: 'benevolent union docs · phpstan/phpstan · Discussion #6440 · GitHub'
+  p40:
+  - url: https://www.php.net/manual/en/function.password-hash.php
+    title: 'PHP: password_hash - Manual'
+  p41:
+  - url: https://www.php.net/manual/en/function.substr.php
+    title: 'PHP: substr - Manual'
+  p42:
+  - url: https://www.php.net/manual/en/function.date-sun-info.php
+    title: 'PHP: date_sun_info - Manual'
+  p45:
+  - url: https://phpstan.org/r/8df5f781-0702-40fc-85a3-e2e54c534931
+    title: Playground | PHPStan
+  p47:
+  - url: https://phpstan.org/r/614f47fa-720c-4f8a-b2f0-d1daa01bc643
+    title: Playground | PHPStan
+  p51:
+  - url: https://github.com/thecodingmachine/safe
+    title: 'GitHub - thecodingmachine/safe: All PHP functions, rewritten to throw
+      exceptions instead of returning false'
+  p52:
+  - url: https://github.com/thecodingmachine/safe
+    title: 'GitHub - thecodingmachine/safe: All PHP functions, rewritten to throw
+      exceptions instead of returning false'
+  p53:
+  - url: https://github.com/thecodingmachine/safe
+    title: 'GitHub - thecodingmachine/safe: All PHP functions, rewritten to throw
+      exceptions instead of returning false'
+  p54:
+  - url: https://github.com/thecodingmachine/safe/blob/3a6e43b4be3d3d65b272c2660300a50658ce168b/generated/filesystem.php#L260-L279
+    title: safe/generated/filesystem.php at 3a6e43b4be3d3d65b272c2660300a50658ce168b
+      · thecodingmachine/safe · GitHub
+  p56:
+  - url: https://phpstan.org/blog/bring-your-exceptions-under-control
+    title: Bring your exceptions under control with @throws | PHPStan

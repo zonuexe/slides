@@ -1,0 +1,596 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: Emacs as a VM
+  - node: p
+    children:
+    - node: text
+      content: A Virtual Machine called Emacs
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: 2024-07-13 TechFeed Expert Night
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 pixiv事業本部 エンジニア
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - node: li
+      children:
+      - node: text
+        content: Emacs Lisper, PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: TechFeed公認PHPエキスパート
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 私の立ち位置
+  p4: []
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: Emacs最新情報！
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: といいたいのですが
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 'わかりやすい '
+    - node: br
+    - node: text
+      content: 'ニュースとしての '
+    - node: br
+    - node: text
+      content: 変化は多くない
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: Emacs30の開発は 着々と進んでいます
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: AIなど使えるような 拡張も登場している
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: 前回のおさらい
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: Vimはいいぞ！
+  p13: []
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 'Emacsの '
+    - node: br
+    - node: text
+      content: 本質とは何か
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'A modern '
+    - node: br
+    - node: text
+      content: Lisp machine
+  p16: []
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: 'そういう機械が '
+    - node: br
+    - node: text
+      content: 40年以上前にあった
+  p18:
+  - node: p
+    children:
+    - node: bold
+      content: '「Multi-Paradigm Language TAO」より引用 '
+  - node: p
+    children:
+    - node: bold
+      content: ' https://www.nue.org/nue/tao/bitao/s001.html'
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: この写真は国産LISPマシンのELIS なので本家Emacsの開発経緯とは直 接関係ないのだが内蔵されたZENと いうEmacs風独自エディタの日本語
+        入力メソッドKanzenが後のSKKに 繋がりIME史に影響を及ぼしている
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'みなさんご存じ 通り '
+  - node: p
+    children:
+    - node: text
+      content: (ない)
+  - node: p
+    children:
+    - node: text
+      content: 'LISPマシンのような 高級言語専用マシンは '
+    - node: br
+    - node: text
+      content: 廃れている
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: 'だが、Lispは '
+    - node: br
+    - node: text
+      content: 死滅していなかった！
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 世紀末救世主伝説Emacs
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: スクリプトで拡張できる テキストエディタの元祖
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '元祖Emacsは '
+    - node: br
+    - node: text
+      content: TECOというエディタの
+    - node: br
+    - node: text
+      content: '拡張マクロ集 '
+  - node: p
+    children:
+    - node: text
+      content: (EditorMACroS)
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: この人が作りました
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: なんだかんだありまして
+  p27: []
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: リチャードストールマン(RMS)とかいう若者 がマサチューセッツ工科大学で自由を求めて 戦ったりAI研究所でLispを書いてたりしてた
+        らラボ内がLISPマシンを作ってる企業の派閥 で分裂ちゃったのでどうしようもなくなって AIラボを去ってGNUっていう自由なOSを作
+    - node: br
+    - node: text
+      content: ろうぜ！という物語があったりするのは後の話
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: '自由なOSを作りたいよ '
+    - node: br
+    - node: text
+      content: 'まずコンパイラと '
+    - node: br
+    - node: text
+      content: エディタを作ったよ
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: 'そうしてGCCと '
+    - node: br
+    - node: text
+      content: Emacsができましたとさ
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: めでたしめでたし
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: 振り返りここまで
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: 改めて
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: Emacsで何ができるか ユーザーと非ユーザーで 大きな認識の開きがある
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: (ある種のジョークとして)
+    - node: br
+    - node: text
+      content: 'しばしば '
+    - node: br
+    - node: text
+      content: 'Emacsはエディタではない '
+    - node: br
+    - node: text
+      content: と言及される
+  p36: []
+  p37: []
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: Emacsはなんでもできる
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: 'メーラーでもあり '
+    - node: br
+    - node: text
+      content: RSSリーダーでもあり EPUBやPDFも読める
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: EmacsはOS Emacsは環境
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: ジョークではなく
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: Emacsの大きな誤解
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: '｢Emacsってターミナルの '
+    - node: br
+    - node: text
+      content: エディタでしょ？｣
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: EmacsはGUIでも動く
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 起動時から目立つEmacsロゴ
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: フォントを扱える
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: PDFが開ける
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: EPUBも開ける
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: EPUBも開ける
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: ディレクトリを開いて画像見れる
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: ディレクトリを開いて画像見れる
+  p52: []
+  p53: []
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 'ウィンドウ内で '
+    - node: br
+    - node: text
+      content: 'ブラウザも開ける！ '
+    - node: br
+    - node: text
+      content: (が､macOSで動作しなかった…)
+  p55: []
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 'Emacsは単なる エディタではなく '
+    - node: br
+    - node: text
+      content: アプリケーション実行環境
+  p57:
+  - node: p
+    children:
+    - node: text
+      content: 'OSを問わず実行できる '
+  - node: p
+    children:
+    - node: text
+      content: '(Windows, GNU/Linux, *BSD, '
+    - node: br
+    - node: text
+      content: macOS, Haiku, ...)
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: '…といいたいが、 '
+    - node: br
+    - node: text
+      content: 外部プロセスやファイル
+    - node: br
+    - node: text
+      content: 'システムに依存すると '
+    - node: br
+    - node: text
+      content: 意図通り動かない
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 'WindowsではWSLで '
+    - node: br
+    - node: text
+      content: '動かすこともできる '
+    - node: br
+    - node: text
+      content: (WSLgでGUI起動もできる)
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: '問題意識を持って 高速な非同期UIを '
+    - node: br
+    - node: text
+      content: 実装している人も居る
+  p61: []
+  p62: []
+  p63: []
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: Emacsは環境！
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 仮想環境？
+  p66:
+  - node: p
+    children:
+    - node: bold
+      content: '「Multi-Paradigm Language TAO」より引用 '
+  - node: p
+    children:
+    - node: bold
+      content: ' https://www.nue.org/nue/tao/bitao/s001.html'
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: 現代に残る最後の (仮想)Lispマシン
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: 言語にはパワーがある
+  p69:
+  - node: p
+    children:
+    - node: bold
+      content: '「普通のやつらの上を行け ---Beating the Averages---」より引用 '
+  - node: p
+    children:
+    - node: bold
+      content: ' http://practical-scheme.net/trans/beating-the-averages-j.html'
+  p70:
+  - node: p
+    children:
+    - node: bold
+      content: '「普通のやつらの上を行け ---Beating the Averages---」より引用 '
+  - node: p
+    children:
+    - node: bold
+      content: ' http://practical-scheme.net/trans/beating-the-averages-j.html'
+  p71:
+  - node: p
+    children:
+    - node: bold
+      content: '「普通のやつらの上を行け ---Beating the Averages---」より引用 '
+  - node: p
+    children:
+    - node: bold
+      content: ' http://practical-scheme.net/trans/beating-the-averages-j.html'
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: 'ということを '
+    - node: br
+    - node: text
+      content: 'Yコンビネータ創始者の '
+    - node: br
+    - node: text
+      content: 'ポールグレアムが '
+    - node: br
+    - node: text
+      content: 言ってる
+  p73: []
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: 'ハッカーになりたければ '
+  - node: p
+    children:
+    - node: text
+      content: Emacs
+  p75: []
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: 外見に変化はなくても 中身は洗練されている
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: コンピュータサイエンス
+    - node: br
+    - node: text
+      content: 'の問題に立ち向かって '
+    - node: br
+    - node: text
+      content: 最強の環境を作りたい人
+    - node: br
+    - node: text
+      content: はEmacsを
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 'コミュニティは '
+    - node: br
+    - node: text
+      content: Emacs JPのSlackに (不定期にオンラインミートアップも
+    - node: br
+    - node: text
+      content: やってるよ)
+  p79: []
+  p80: []
+  p81: []
+  p82: []
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p4:
+  - url: http://www.apple.com/jp
+    title: Apple（日本）
+  p13:
+  - url: https://twitter.com/ezoeryou/status/1260422064755953664
+    title: twitter.com
+  p16:
+  - url: https://ja.wikipedia.org/wiki/LISP%E3%83%9E%E3%82%B7%E3%83%B3
+    title: LISPマシン - Wikipedia
+  p18:
+  - url: https://www.nue.org/nue/tao/bitao/s001.html
+    title: Multi-Paradigm Language TAO
+  p19:
+  - url: https://www.nue.org/nue/tao/kanzen/dtph.html
+    title: TAO/ELIS の日本語環境
+  p27:
+  - url: https://amzn.to/3WODESF
+    title: 'Amazon.co.jp: ハッカーズ : スティーブン・レビー, 信子, 松田, 古橋 芳恵: 本'
+  p36:
+  - url: https://twitter.com/ezoeryou/status/1260422064755953664
+    title: twitter.com
+  p37:
+  - url: https://github.com/emacs-evil/evil
+    title: 'GitHub - emacs-evil/evil: The extensible vi layer for Emacs.'
+  p66:
+  - url: https://www.nue.org/nue/tao/bitao/s001.html
+    title: Multi-Paradigm Language TAO
+  p69:
+  - url: http://practical-scheme.net/trans/beating-the-averages-j.html
+    title: Beating the Averages
+  p70:
+  - url: http://practical-scheme.net/trans/beating-the-averages-j.html
+    title: Beating the Averages
+  p71:
+  - url: http://practical-scheme.net/trans/beating-the-averages-j.html
+    title: Beating the Averages
+  p74:
+  - url: https://cruel.org/freeware/hacker.html
+    title: 'How To Become A Hacker: Japanese'
+  p75:
+  - url: https://blog.tomoya.dev/posts/only-those-who-want-to-be-the-wind-should-use-emacs-2020/
+    title: 風になりたい奴だけがEmacsを使えばいい 2020 | 日々、とんは語る。
+  p78:
+  - url: https://emacs-jp.github.io/
+    title: 日本のEmacsユーザーのためのハブサイト | Emacs JP
+  p79:
+  - url: https://techramenconf.net/
+    title: Redirecting...
+  p80:
+  - url: https://fortee.jp/techramen-24-conf/proposal/aa99311c-7414-4455-ae61-a96db017463a
+    title: 'なぜテキストエディタを極めるのか by うさみけんた | トーク | TechRAMEN 2024 Conference #techramen24conf
+      - fortee.jp'
+  p81:
+  - url: https://tokyo-emacs.connpass.com/event/321255/
+    title: 東京Emacs勉強会 サマーフェスティバル2024 - connpass
+  p82:
+  - url: https://tokyo-emacs.connpass.com/event/321255/
+    title: 東京Emacs勉強会 サマーフェスティバル2024 - connpass
