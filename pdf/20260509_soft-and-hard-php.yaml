@@ -1,0 +1,1295 @@
+text:
+  p1:
+  - node: p
+    children:
+    - node: text
+      content: やわPHP カタPHP
+  - node: p
+    children:
+    - node: text
+      content: 'Al Dente PHP: Finding the Perfect Resilience'
+  - node: p
+    children:
+    - node: text
+      content: 'pixiv Inc. '
+    - node: br
+    - node: text
+      content: USAMI Kenta
+  - node: p
+    children:
+    - node: bold
+      content: '2026-05-09 #phpconkagawa '
+  - node: p
+    children:
+    - node: bold
+      content: 香川県高松市 玉藻公園内 披雲閣
+  p2:
+  - node: p
+    children:
+    - node: text
+      content: お前誰よ
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - node: li
+      children:
+      - node: text
+        content: ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+        - node: li
+          children:
+          - node: text
+            content: 最近チームが再編されてインフラっぽい仕事もしてます
+    - node: li
+      children:
+      - node: text
+        content: Emacs PHP Modeを開発しています (2017年-)
+    - node: li
+      children:
+      - node: text
+        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP界隈で型の話を '
+    - node: br
+    - node: text
+      content: 始めて10年くらい
+  p4: []
+  p5:
+  - node: p
+    children:
+    - node: text
+      content: 'レガシープロジェクトの '
+    - node: br
+    - node: text
+      content: 'ウィークポイントは '
+    - node: br
+    - node: text
+      content: 圧倒的な｢未定義挙動｣
+  p6:
+  - node: p
+    children:
+    - node: text
+      content: '型… ドキュメント… '
+    - node: br
+    - node: text
+      content: '設計意図… '
+    - node: br
+    - node: text
+      content: あらゆる情報が足りない
+  p7:
+  - node: p
+    children:
+    - node: text
+      content: 'せめて型を固めておけば '
+    - node: br
+    - node: text
+      content: '静的型付き言語に '
+  - node: p
+    children:
+    - node: text
+      content: 移植
+  - node: p
+    children:
+    - node: text
+      content: しやすくなるのでは…?
+  p8:
+  - node: p
+    children:
+    - node: text
+      content: そろそろ現実が見えてきた
+  - node: p
+    children:
+    - node: text
+      content: 🗓🫠
+  p9:
+  - node: p
+    children:
+    - node: text
+      content: 今回のお題
+  p10:
+  - node: p
+    children:
+    - node: text
+      content: 型で消耗しないように
+  p11:
+  - node: p
+    children:
+    - node: text
+      content: '今回は具体的な '
+    - node: br
+    - node: text
+      content: 'tipsより '
+    - node: br
+    - node: text
+      content: 考えの話がメイン
+  p12:
+  - node: p
+    children:
+    - node: text
+      content: …………
+  p13:
+  - node: p
+    children:
+    - node: text
+      content: '202x年 '
+    - node: br
+    - node: text
+      content: '世界は生成AIの炎に '
+    - node: br
+    - node: text
+      content: 包まれた！
+  p14:
+  - node: p
+    children:
+    - node: text
+      content: 'あらゆるコードが生成され '
+    - node: br
+    - node: text
+      content: 'テストは自動化され '
+    - node: br
+    - node: text
+      content: 'すべてのコーディングが '
+    - node: br
+    - node: text
+      content: 駆逐されたかに見えた
+  p15:
+  - node: p
+    children:
+    - node: text
+      content: 'だがプログラマは '
+    - node: br
+    - node: text
+      content: 死滅していなかった！
+  p16:
+  - node: p
+    children:
+    - node: text
+      content: '世紀末救世主伝説 '
+  - node: p
+    children:
+    - node: text
+      content: <?php
+  p17:
+  - node: p
+    children:
+    - node: text
+      content: ……
+  p18:
+  - node: p
+    children:
+    - node: text
+      content: ほんとうに？
+  p19:
+  - node: p
+    children:
+    - node: text
+      content: 'もう墓穴に足をつっこんでる '
+  - node: p
+    children:
+    - node: text
+      content: 自覚がないだけでは？
+  - node: p
+    children:
+    - node: text
+      content: 🪦
+  p20:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPStan Lv.maxで '
+    - node: br
+    - node: text
+      content: 消耗してませんか？
+  p21:
+  - node: p
+    children:
+    - node: text
+      content: '生成AIによる開発は '
+    - node: br
+    - node: text
+      content: '1年前とは信じられない '
+    - node: br
+    - node: text
+      content: ほど前進した
+  p22:
+  - node: p
+    children:
+    - node: text
+      content: 2025年2月
+  p23:
+  - node: p
+    children:
+    - node: text
+      content: '大規模言語モデル '
+    - node: br
+    - node: text
+      content: 生成AI万歳！
+  p24:
+  - node: p
+    children:
+    - node: text
+      content: '業務時間中ほとんど '
+    - node: br
+    - node: text
+      content: 'コードを書いていない '
+    - node: br
+    - node: text
+      content: という話も珍しくない
+  p25:
+  - node: p
+    children:
+    - node: text
+      content: '人間が書かないなら '
+    - node: br
+    - node: text
+      content: 別に良い言語が あるのでは…？
+  p26:
+  - node: p
+    children:
+    - node: text
+      content: 'かっこいい言語には '
+    - node: br
+    - node: text
+      content: 枚挙に暇がない
+  p27:
+  - node: p
+    children:
+    - node: text
+      content: 世界には良い言語はいっぱいある
+  - node: p
+    children:
+    - node: text
+      content: Rust…
+  - node: p
+    children:
+    - node: text
+      content: C#…
+  - node: p
+    children:
+    - node: text
+      content: PowerShell…
+  - node: p
+    children:
+    - node: text
+      content: JavaScript…
+  - node: p
+    children:
+    - node: text
+      content: Common Lisp…
+  - node: p
+    children:
+    - node: text
+      content: Java…
+  - node: p
+    children:
+    - node: text
+      content: Ruby…
+  - node: p
+    children:
+    - node: text
+      content: F#…
+  - node: p
+    children:
+    - node: text
+      content: TypeScript…
+  - node: p
+    children:
+    - node: text
+      content: Python…
+  - node: p
+    children:
+    - node: text
+      content: Haskell…
+  - node: p
+    children:
+    - node: text
+      content: Go…
+  - node: p
+    children:
+    - node: text
+      content: Swift…
+  - node: p
+    children:
+    - node: text
+      content: Kotlin…
+  - node: p
+    children:
+    - node: text
+      content: Java…
+  - node: p
+    children:
+    - node: text
+      content: Smalltalk…
+  - node: p
+    children:
+    - node: text
+      content: Clojure…
+  - node: p
+    children:
+    - node: text
+      content: Scheme…
+  p28:
+  - node: p
+    children:
+    - node: text
+      content: '今後使うべき '
+    - node: br
+    - node: text
+      content: 'プログラミング言語 '
+    - node: br
+    - node: text
+      content: '#とは'
+  p29:
+  - node: p
+    children:
+    - node: text
+      content: 言語選択の 重要な要素
+  p30:
+  - node: p
+    children:
+    - node: text
+      content: '実行速度が速い？ '
+    - node: br
+    - node: text
+      content: 簡単に書ける？
+  p31:
+  - node: p
+    children:
+    - node: text
+      content: 'いままでは採用が '
+    - node: br
+    - node: text
+      content: 開発のボトルネック
+  p32:
+  - node: p
+    children:
+    - node: text
+      content: '○○言語を書ける '
+    - node: br
+    - node: text
+      content: 人が採用市場にいない
+  p33:
+  - node: p
+    children:
+    - node: text
+      content: PHPを書ける人は 割とあちこちに居る
+  p34:
+  - node: p
+    children:
+    - node: text
+      content: 書けるがキャリアアップの ためにPHP案件を好んで 請ける人が減ってる…？
+  p35:
+  - node: p
+    children:
+    - node: text
+      content: 'AIエージェントの力を '
+    - node: br
+    - node: text
+      content: '借りれば別に詳しくなくても '
+    - node: br
+    - node: text
+      content: 'メンテできる時代に '
+    - node: br
+    - node: text
+      content: なってしまった…
+  p36:
+  - node: p
+    children:
+    - node: text
+      content: 2025年2月
+  p37: []
+  p38:
+  - node: p
+    children:
+    - node: text
+      content: mametterさんの実験
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: https://github.com/mame/ai-coding-lang-bench
+    - node: li
+      children:
+      - node: text
+        content: 簡易Gitの仕様書と受け入れテストを用意してClaudeCodeに生成させる
+    - node: li
+      children:
+      - node: text
+        content: 生成させるコードはv1とv2というマイルストーンに分ける
+      - node: ul
+        children:
+        - node: li
+          children:
+          - node: text
+            content: 'SPEC-v1: 基本機能(init, add, commit, log)'
+        - node: li
+          children:
+          - node: text
+            content: 'SPEC-v2: 拡張機能(status, diff, checkout, reset)'
+    - node: li
+      children:
+      - node: text
+        content: Ruby, Pythonはプレーン、型あり版を別に計測する
+  p39:
+  - node: p
+    children:
+    - node: text
+      content: mametterさんの結果考察
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: Ruby, Python, JavaScriptの群(型なし)は安定して低コスト
+    - node: li
+      children:
+      - node: text
+        content: Go, Rust, Javaの群も平均すると低コストだが、最悪の場合に上ぶれ
+    - node: li
+      children:
+      - node: text
+        content: Ruby, Pythonの型付き＋TypeScriptは、型なしよりも安定しない
+    - node: li
+      children:
+      - node: text
+        content: そのほかの言語は分散が大きく、うまく行く場合と最悪の差が大きい
+  p40:
+  - node: p
+    children:
+    - node: text
+      content: '厳密な計測はできてないが '
+    - node: br
+    - node: text
+      content: 'PHP/PHPStanも '
+    - node: br
+    - node: text
+      content: 似た傾向を示している
+  p41:
+  - node: p
+    children:
+    - node: text
+      content: '型は全部捨てろ！ '
+    - node: br
+    - node: text
+      content: PHPStanやめろ！
+  p42:
+  - node: p
+    children:
+    - node: text
+      content: 'これが21世紀の '
+  - node: p
+    children:
+    - node: text
+      content: AIファースト開発
+  - node: p
+    children:
+    - node: text
+      content: 😇
+  p43:
+  - node: p
+    children:
+    - node: text
+      content: 完
+  p44:
+  - node: p
+    children:
+    - node: text
+      content: ……
+  p45:
+  - node: p
+    children:
+    - node: text
+      content: 'これでよかったの '
+    - node: br
+    - node: text
+      content: だろうか…
+  p46:
+  - node: p
+    children:
+    - node: text
+      content: 'そもそもPHPは '
+    - node: br
+    - node: text
+      content: 'どんな場面で '
+    - node: br
+    - node: text
+      content: 使われてきたのか
+  p47:
+  - node: p
+    children:
+    - node: text
+      content: 私見
+  p48:
+  - node: p
+    children:
+    - node: text
+      content: '重厚長大な '
+    - node: br
+    - node: text
+      content: 'コンパイル言語 '
+    - node: br
+    - node: text
+      content: IDEのアンチテーゼ
+  p49:
+  - node: p
+    children:
+    - node: text
+      content: 'LL言語を使えば '
+    - node: br
+    - node: text
+      content: 'シンプルなエディタで '
+    - node: br
+    - node: text
+      content: サクサク書けるよ！
+  p50:
+  - node: p
+    children:
+    - node: text
+      content: 'Perl Python '
+    - node: br
+    - node: text
+      content: Ruby PHP
+  p51:
+  - node: p
+    children:
+    - node: text
+      content: '型宣言？ '
+    - node: br
+    - node: text
+      content: そんな機能ないよ？
+  p52:
+  - node: p
+    children:
+    - node: text
+      content: 型なんて変数名見れば
+    - node: br
+    - node: text
+      content: 'わかるだろ… '
+    - node: br
+    - node: text
+      content: 常識的に考えて
+  p53:
+  - node: p
+    children:
+    - node: text
+      content: 'スクリプト言語！ '
+    - node: br
+    - node: text
+      content: アジャイル！
+  p54:
+  - node: p
+    children:
+    - node: text
+      content: 'そういう時代も '
+    - node: br
+    - node: text
+      content: ありました
+  p55:
+  - node: p
+    children:
+    - node: text
+      content: 現実は甘くない…
+  p56:
+  - node: p
+    children:
+    - node: text
+      content: 2006年のPHP特集誌
+  p57: []
+  p58:
+  - node: p
+    children:
+    - node: text
+      content: '正直つっこみどころ '
+    - node: br
+    - node: text
+      content: だらけだが…
+  p59:
+  - node: p
+    children:
+    - node: text
+      content: 'われわれは20年後の '
+    - node: br
+    - node: text
+      content: '技術を使いこなす '
+    - node: br
+    - node: text
+      content: チート未来人である
+  p60:
+  - node: p
+    children:
+    - node: text
+      content: 'この記事が '
+    - node: br
+    - node: text
+      content: 示唆するものは多い
+  p61:
+  - node: p
+    children:
+    - node: text
+      content: '欲しかったのは '
+    - node: br
+    - node: text
+      content: ガードレール
+  p62:
+  - node: p
+    children:
+    - node: text
+      content: '｢ありえない｣状態を '
+    - node: br
+    - node: text
+      content: '食い止めるのが '
+    - node: br
+    - node: text
+      content: ガードレール
+  p63:
+  - node: p
+    children:
+    - node: text
+      content: 動的解析
+  - node: p
+    children:
+    - node: text
+      content: '実行してみて '
+    - node: br
+    - node: text
+      content: エラーが出ないか
+  p64:
+  - node: p
+    children:
+    - node: text
+      content: 静的解析
+  - node: p
+    children:
+    - node: text
+      content: 'コードを分析して '
+    - node: br
+    - node: text
+      content: 怪しいところがないか
+  p65:
+  - node: p
+    children:
+    - node: text
+      content: 'ユニットテスト '
+  - node: p
+    children:
+    - node: text
+      content: 'vs '
+    - node: br
+    - node: text
+      content: 型チェック
+  p66:
+  - node: p
+    children:
+    - node: text
+      content: '｢ありえない｣状態を '
+    - node: br
+    - node: text
+      content: どちらかで食い止めたい
+  p67:
+  - node: p
+    children:
+    - node: text
+      content: '｢ありえない｣状態は '
+    - node: br
+    - node: text
+      content: すみやかにしばく
+  p68:
+  - node: p
+    children:
+    - node: text
+      content: 過去の定説
+  - node: p
+    children:
+    - node: text
+      content: '型なし言語は '
+    - node: br
+    - node: text
+      content: 静的検査と相性が悪い
+  p69:
+  - node: p
+    children:
+    - node: text
+      content: '型がついている '
+    - node: br
+    - node: text
+      content: '#とは'
+  p70:
+  - node: p
+    children:
+    - node: text
+      content: '型推論規則に従って '
+    - node: br
+    - node: text
+      content: 'すべての項に矛盾なく '
+    - node: br
+    - node: text
+      content: '型が割り当てられた状態 '
+    - node: br
+    - node: text
+      content: …ですが何か？
+  p71:
+  - node: p
+    children:
+    - node: text
+      content: 型チェッカー
+  - node: p
+    children:
+    - node: text
+      content: int
+  - node: p
+    children:
+    - node: text
+      content: int
+  - node: p
+    children:
+    - node: text
+      content: '$a = 3; $b = 2; '
+    - node: br
+    - node: text
+      content: $c = pow($a, $b);
+  - node: p
+    children:
+    - node: text
+      content: 引数ok
+  - node: p
+    children:
+    - node: text
+      content: 引数ok
+  - node: p
+    children:
+    - node: text
+      content: int
+  p72:
+  - node: p
+    children:
+    - node: text
+      content: 'PHP処理系はそういう チェックをしないので '
+    - node: br
+    - node: text
+      content: ｢型なし｣と呼ばれる
+  p73:
+  - node: p
+    children:
+    - node: text
+      content: 型チェックをしたとしても 実用的な推論結果にならない
+  p74:
+  - node: p
+    children:
+    - node: text
+      content: mixed
+  - node: p
+    children:
+    - node: text
+      content: 型チェッカー
+  - node: p
+    children:
+    - node: text
+      content: string欲しいんだけど…
+  - node: p
+    children:
+    - node: text
+      content: '$json = $_POST[''json'']; '
+    - node: br
+    - node: text
+      content: '$a = json_decode($json); '
+    - node: br
+    - node: text
+      content: var_dump($a[‘name']);
+  - node: p
+    children:
+    - node: text
+      content: このキーあるの…？
+  - node: p
+    children:
+    - node: text
+      content: ?array|int|float|string|bool
+  p75:
+  - node: p
+    children:
+    - node: text
+      content: つまり
+  p76:
+  - node: p
+    children:
+    - node: text
+      content: 'そのため動的言語では '
+    - node: br
+    - node: text
+      content: 'テストの重要性が '
+    - node: br
+    - node: text
+      content: 高かった
+  p77:
+  - node: p
+    children:
+    - node: text
+      content: 'だが… 今は違う！ '
+    - node: br
+    - node: text
+      content: ギュッ
+  p78:
+  - node: p
+    children:
+    - node: text
+      content: 'TypeScript '
+    - node: br
+    - node: text
+      content: PHPStan
+  p79:
+  - node: p
+    children:
+    - node: text
+      content: '単なる '
+    - node: br
+    - node: text
+      content: '｢型書けるようにした版｣ '
+    - node: br
+    - node: text
+      content: ではない
+  p80:
+  - node: p
+    children:
+    - node: text
+      content: '型理論 '
+    - node: br
+    - node: text
+      content: 計算機科学の結晶
+  p81:
+  - node: p
+    children:
+    - node: text
+      content: '型は｢ありうる｣ '
+    - node: br
+    - node: text
+      content: 状態を記述する言語
+  p82:
+  - node: p
+    children:
+    - node: text
+      content: '適切に推論できれば '
+    - node: br
+    - node: text
+      content: テストを書くまでもなく 変なコードが炙りだせる
+  p83:
+  - node: p
+    children:
+    - node: text
+      content: 'むかしのことを '
+    - node: br
+    - node: text
+      content: 思い出してみよう
+  p84:
+  - node: p
+    children:
+    - node: text
+      content: 型なんて変数名見れば
+    - node: br
+    - node: text
+      content: 'わかるだろ… '
+    - node: br
+    - node: text
+      content: 常識的に考えて
+  p85:
+  - node: p
+    children:
+    - node: text
+      content: 'ちっちゃいスクリプト ／書き捨てのコードを '
+    - node: br
+    - node: text
+      content: '書く分には '
+    - node: br
+    - node: text
+      content: 型なんていらなかった
+  p86:
+  - node: p
+    children:
+    - node: text
+      content: '型はコードの規模が '
+    - node: br
+    - node: text
+      content: 長大になると効く
+  p87:
+  - node: p
+    children:
+    - node: text
+      content: '｢型なんていらない｣の '
+    - node: br
+    - node: text
+      content: 'サイズの閾値が '
+    - node: br
+    - node: text
+      content: 大きく変わってしまった
+  p88:
+  - node: p
+    children:
+    - node: text
+      content: 'コード生成ベンチマークは '
+    - node: br
+    - node: text
+      content: 仕様と受け入れテストが 最初からゴールまで明確
+  p89:
+  - node: p
+    children:
+    - node: text
+      content: '型なしRubyの '
+    - node: br
+    - node: text
+      content: '生成コストが低いのは '
+    - node: br
+    - node: text
+      content: 非常に理にかなっている
+  p90:
+  - node: p
+    children:
+    - node: text
+      content: '生成する段階では '
+    - node: br
+    - node: text
+      content: '型はいらないというのは '
+    - node: br
+    - node: text
+      content: 非常に理にかなってる
+  p91:
+  - node: p
+    children:
+    - node: text
+      content: 最近ふわっと考えてる仮説
+    - node: br
+    - node: text
+      content: '生成されたコードに ガードレールとして '
+    - node: br
+    - node: text
+      content: '追加で型を敷設する方が '
+    - node: br
+    - node: text
+      content: 効率がいい？
+  p92:
+  - node: p
+    children:
+    - node: text
+      content: さらなる仮説
+    - node: br
+    - node: text
+      content: 'コード上に書く型は '
+    - node: br
+    - node: text
+      content: '型宣言だけに留めた方が '
+    - node: br
+    - node: text
+      content: トークン効率が 良いのでは…？
+  p93:
+  - node: p
+    children:
+    - node: text
+      content: 'このあたりの話題は '
+    - node: br
+    - node: text
+      content: もうちょっと探究したい ので､そのうちどこかで
+  p94:
+  - node: p
+    children:
+    - node: text
+      content: 'ともあれ '
+    - node: br
+    - node: text
+      content: '普通にコードを書けば 自然に型がついている '
+    - node: br
+    - node: text
+      content: 状況が理想
+  p95:
+  - node: p
+    children:
+    - node: text
+      content: さて
+  p96:
+  - node: p
+    children:
+    - node: text
+      content: 大規模言語モデル
+  p97:
+  - node: p
+    children:
+    - node: text
+      content: '得意不得意が '
+    - node: br
+    - node: text
+      content: はっきりしている
+  p98:
+  - node: p
+    children:
+    - node: text
+      content: '決定論的な処理は '
+    - node: br
+    - node: text
+      content: '苦手だし '
+    - node: br
+    - node: text
+      content: 圧倒的に非効率
+  p99:
+  - node: p
+    children:
+    - node: text
+      content: '決定論的 '
+  - node: p
+    children:
+    - node: text
+      content: '= '
+    - node: br
+    - node: text
+      content: '入力に対して答えが '
+    - node: br
+    - node: text
+      content: 定められる問題
+  p100:
+  - node: p
+    children:
+    - node: text
+      content: '計算はAIに直接 '
+    - node: br
+    - node: text
+      content: 返答させるのではなく コード生成させて実行
+  p101:
+  - node: p
+    children:
+    - node: text
+      content: '生成AIにスペースや '
+    - node: br
+    - node: text
+      content: 改行位置を細かく指示 するのは圧倒的非効率
+  p102:
+  - node: p
+    children:
+    - node: text
+      content: フォーマッターを実行して
+    - node: br
+    - node: text
+      content: '常に同じスタイルに '
+    - node: br
+    - node: text
+      content: 整形されるようにする
+  p103:
+  - node: p
+    children:
+    - node: text
+      content: '非決定的な問題を '
+    - node: br
+    - node: text
+      content: 決定的な土俵に持ち込む
+  p104:
+  - node: p
+    children:
+    - node: text
+      content: '型推論規則に従って '
+    - node: br
+    - node: text
+      content: 'すべての項に矛盾なく '
+    - node: br
+    - node: text
+      content: '型が割り当てられた状態 '
+    - node: br
+    - node: text
+      content: …ですが何か？
+  p105:
+  - node: p
+    children:
+    - node: text
+      content: '型推論は典型的な '
+    - node: br
+    - node: text
+      content: 決定論的な計算
+  p106:
+  - node: p
+    children:
+    - node: text
+      content: '型のことは '
+    - node: br
+    - node: text
+      content: '型チェッカーに '
+    - node: br
+    - node: text
+      content: やらせる
+  p107:
+  - node: p
+    children:
+    - node: text
+      content: 静的解析ツール いろいろある
+  - node: ul
+    children:
+    - node: li
+      children:
+      - node: text
+        content: Phan
+    - node: li
+      children:
+      - node: text
+        content: PHPStan
+    - node: li
+      children:
+      - node: text
+        content: Psalm
+    - node: li
+      children:
+      - node: text
+        content: Mago
+  p108:
+  - node: p
+    children:
+    - node: text
+      content: 拡張を書きましょう
+  p109:
+  - node: p
+    children:
+    - node: text
+      content: 型推論ロジックを記述できる
+  p110:
+  - node: p
+    children:
+    - node: text
+      content: '複雑な型を '
+    - node: br
+    - node: text
+      content: 書きまくるのが 型付けではない
+  p111:
+  - node: p
+    children:
+    - node: text
+      content: 'PHPStanは '
+    - node: br
+    - node: text
+      content: '普通にコードを書いて '
+    - node: br
+    - node: text
+      content: '警告が増加しない '
+    - node: br
+    - node: text
+      content: レベルが適正
+  p112:
+  - node: p
+    children:
+    - node: text
+      content: 'そこからレベルを '
+    - node: br
+    - node: text
+      content: '上げるには '
+    - node: br
+    - node: text
+      content: 拡張で解決したい
+  p113:
+  - node: p
+    children:
+    - node: text
+      content: 'お使いのAIさんと '
+    - node: br
+    - node: text
+      content: '相談しながらサクっと '
+    - node: br
+    - node: text
+      content: 作れる時代になった
+  p114:
+  - node: p
+    children:
+    - node: text
+      content: やるなら今
+  p115:
+  - node: p
+    children:
+    - node: text
+      content: 'LLMにとって '
+    - node: br
+    - node: text
+      content: 'プログラミング言語と '
+    - node: br
+    - node: text
+      content: 人間の言語は同列
+  p116:
+  - node: p
+    children:
+    - node: text
+      content: '流暢なコードは '
+    - node: br
+    - node: text
+      content: 効率よく処理しやすい
+  p117:
+  - node: p
+    children:
+    - node: text
+      content: 'コードに@varを '
+    - node: br
+    - node: text
+      content: 書いてる場合ではない
+  p118:
+  - node: p
+    children:
+    - node: text
+      content: '理想的な変数名は '
+    - node: br
+    - node: text
+      content: '名前から内容が '
+    - node: br
+    - node: text
+      content: '自然に想像できて '
+    - node: br
+    - node: text
+      content: 期待に反しない
+  p119:
+  - node: p
+    children:
+    - node: text
+      content: 'コードは少ないほど '
+    - node: br
+    - node: text
+      content: 見通しがよくなる
+  p120:
+  - node: p
+    children:
+    - node: text
+      content: 見通しがよいコードほど 人間もAIも理解しやすい
+  p121:
+  - node: p
+    children:
+    - node: text
+      content: 'ややこしい構造や 紛らわしい名前は '
+    - node: br
+    - node: text
+      content: 人間もAIも混乱する
+  p122:
+  - node: p
+    children:
+    - node: text
+      content: リーダブルコードが輝く時代
+  p123:
+  - node: p
+    children:
+    - node: text
+      content: 蘇鉄の間
+  p124:
+  - node: p
+    children:
+    - node: text
+      content: 桐の間
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p22:
+  - url: https://zenn.dev/mizchi/articles/all-in-on-cline
+    title: CLINEに全部賭けろ
+  p36:
+  - url: https://zenn.dev/mametter/articles/3e8580ec034201
+    title: Claude Code に向いているプログラミング言語
+  p38:
+  - url: https://github.com/mame/ai-coding-lang-bench
+    title: 'GitHub - mame/ai-coding-lang-bench: Which programming language is best
+      for AI coding agents? Benchmarking 13 languages with Claude Code. · GitHub'
