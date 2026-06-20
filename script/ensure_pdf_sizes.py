@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from typing import Dict, Any
 
-import pdfplumber
+import fitz  # PyMuPDF
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,13 +13,16 @@ PDF_DIR = ROOT / "pdf"
 
 
 def get_page_size(pdf_path: Path) -> Dict[str, int]:
-    with pdfplumber.open(pdf_path) as pdf:
-        if not pdf.pages:
+    with fitz.open(pdf_path) as doc:
+        if not doc.page_count:
             return {"max_width": 1024, "max_height": 768}
-        page = pdf.pages[0]
+        page = doc[0]
         try:
-            width = int(round(float(page.width)))
-            height = int(round(float(page.height)))
+            rect = page.rect
+            width = int(round(float(rect.width)))
+            height = int(round(float(rect.height)))
+            if page.rotation in (90, 270):
+                width, height = height, width
         except Exception:
             width, height = 1024, 768
         return {"max_width": width, "max_height": height}
