@@ -160,9 +160,7 @@ text:
     level: 2
     text: ?>,
   - kind: para
-    text: 不明瞭だがMySQLのAUTO_INCREMENT
-  - kind: para
-    text: なサロゲートキーなら不適切
+    text: 不明瞭だがMySQLのAUTO_INCREMENTなサロゲートキーなら不適切
   p24:
   - kind: para
     text: short open tagはphp.iniの設定依存なので、php.ini依存かつ、
@@ -193,15 +191,9 @@ text:
     level: 2
     text: ?>,
   - kind: para
-    text: 不明瞭だがMySQLのAUTO_INCREMENT
+    text: 不明瞭だがMySQLのAUTO_INCREMENTなサロゲートキーなら不適切
   - kind: para
-    text: なサロゲートキーなら不適切
-  - kind: para
-    text: printfフォーマットに
-  - kind: para
-    text: 変数埋め込みをしない (入力値に%が含まれる
-  - kind: para
-    text: とWarningが発生)
+    text: printfフォーマットに変数埋め込みをしない (入力値に%が含まれるとWarningが発生)
   p25:
   - kind: para
     text: short open tagはphp.iniの設定依存なので、php.ini依存かつ、
@@ -232,15 +224,9 @@ text:
     level: 2
     text: ?>,
   - kind: para
-    text: 不明瞭だがMySQLのAUTO_INCREMENT
+    text: 不明瞭だがMySQLのAUTO_INCREMENTなサロゲートキーなら不適切
   - kind: para
-    text: なサロゲートキーなら不適切
-  - kind: para
-    text: printfフォーマットに
-  - kind: para
-    text: 脆弱性ではないが変な文字が混
-  - kind: para
-    text: 変数埋め込みをしない (入力値に%が含まれる
+    text: printfフォーマットに脆弱性ではないが変な文字が混変数埋め込みをしない (入力値に%が含まれる
   - kind: para
     text: ざってるので ?> は消す
   - kind: para
@@ -261,9 +247,7 @@ text:
   - kind: para
     text: いされる傾向がある
   - kind: para
-    text: 脆弱性じゃないけど { は一文で
-  - kind: para
-    text: も几帳面に付ける方がオススメ
+    text: 脆弱性じゃないけど { は一文でも几帳面に付ける方がオススメ
   - kind: heading
     level: 2
     text: $id = $_REQUEST['id'];
@@ -279,15 +263,9 @@ text:
     level: 2
     text: ?>,
   - kind: para
-    text: 不明瞭だがMySQLのAUTO_INCREMENT
+    text: 不明瞭だがMySQLのAUTO_INCREMENTなサロゲートキーなら不適切
   - kind: para
-    text: なサロゲートキーなら不適切
-  - kind: para
-    text: printfフォーマットに
-  - kind: para
-    text: 脆弱性ではないが変な文字が混
-  - kind: para
-    text: 変数埋め込みをしない (入力値に%が含まれる
+    text: printfフォーマットに脆弱性ではないが変な文字が混変数埋め込みをしない (入力値に%が含まれる
   - kind: para
     text: ざってるので ?> は消す
   - kind: para
@@ -335,9 +313,7 @@ text:
       $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p31:
   - kind: para
-    text: PCRE正規表現は /x 修飾子を付ける
-  - kind: para
-    text: と空白が無視されるので、これはGood
+    text: PCRE正規表現は /x 修飾子を付けると空白が無視されるので、これはGood
   - kind: heading
     level: 1
     text: 例題2
@@ -357,9 +333,7 @@ text:
       $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p32:
   - kind: para
-    text: PCRE正規表現は /x 修飾子を付ける
-  - kind: para
-    text: と空白が無視されるので、これはGood
+    text: PCRE正規表現は /x 修飾子を付けると空白が無視されるので、これはGood
   - kind: heading
     level: 1
     text: 例題2
@@ -383,9 +357,7 @@ text:
       $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p33:
   - kind: para
-    text: PCRE正規表現は /x 修飾子を付ける
-  - kind: para
-    text: と空白が無視されるので、これはGood
+    text: PCRE正規表現は /x 修飾子を付けると空白が無視されるので、これはGood
   - kind: heading
     level: 1
     text: 例題2

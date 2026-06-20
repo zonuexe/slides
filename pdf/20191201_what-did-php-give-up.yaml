@@ -323,9 +323,7 @@ text:
   - kind: para
     text: 従来のPHP文字列はバイト列
   - kind: para
-    text: PHP 5.2で(binary)キャスト
-  - kind: para
-    text: と b"string" が追加された
+    text: PHP 5.2で(binary)キャストと b"string" が追加された
   - kind: para
     text: 結局Unicode化しなかったので、ただのエイリアス
   p57:
@@ -451,9 +449,7 @@ text:
     level: 1
     text: PHPのクロージャ
   - kind: para
-    text: この記述だと$i=0のコピーされるだけ。 &を付けると変数リファ
-  - kind: para
-    text: レンスで値を更新できる
+    text: この記述だと$i=0のコピーされるだけ。 &を付けると変数リファレンスで値を更新できる
   - kind: para
     text: <?php$make_counter = function() {$i = 0;return function () use ($i) {return
       $i++;};};
@@ -571,9 +567,7 @@ text:
   - kind: para
     text: または<?= ... ?> だが、<? ... ?>という形式もある
   - kind: para
-    text: php.iniで有効無効を切替られる環境によってOnだったりOffだっ
-  - kind: para
-    text: たり
+    text: php.iniで有効無効を切替られる環境によってOnだったりOffだったり
   p101:
   - kind: para
     text: Deprecate PHP's short open tags, again
@@ -611,9 +605,7 @@ text:
   p106: []
   p107:
   - kind: para
-    text: 続きは
-  - kind: para
-    text: Webで
+    text: 続きはWebで
   p108: []
   p109:
   - kind: para
@@ -626,9 +618,7 @@ text:
     text: 現在のPHPは静的解析できる環境が年々強まって往年のざっくりさは息をひそめつつある
   p112:
   - kind: para
-    text: 銀河の平和は
-  - kind: para
-    text: どっちだ
+    text: 銀河の平和はどっちだ
 size:
   max_width: 1024
   max_height: 768

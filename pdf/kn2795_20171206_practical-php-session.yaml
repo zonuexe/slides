@@ -27,9 +27,7 @@ text:
     text: ※今回ログインの話はしません
   p6:
   - kind: para
-    text: セッション
-  - kind: para
-    text: とは何か
+    text: セッションとは何か
   p7:
   - kind: para
     text: この用語(セッション)が意味するところはいろいろあるけど
@@ -129,9 +127,7 @@ text:
     text: まあとりあえずsession_start()で簡単にできる
   p26:
   - kind: para
-    text: ね、かんたん
-  - kind: para
-    text: でしょ？
+    text: ね、かんたんでしょ？
   p27:
   - kind: para
     text: 完
@@ -143,9 +139,7 @@ text:
     text: だと思ったか
   p30:
   - kind: para
-    text: どうしてセッションは
-  - kind: para
-    text: 動くのか
+    text: どうしてセッションは動くのか
   p31:
   - kind: heading
     level: 1
@@ -249,9 +243,7 @@ text:
     level: 1
     text: 次回に訪問するとき
   - kind: para
-    text: 'GET /index HTTP/1.1 Host: example.com Cookie:'
-  - kind: para
-    text: PHPSESSID=xxxxx
+    text: 'GET /index HTTP/1.1 Host: example.com Cookie:PHPSESSID=xxxxx'
   - kind: para
     text: Webサイト
   p41:
@@ -263,9 +255,7 @@ text:
   - kind: para
     text: 「こんちわー またきたね」
   - kind: para
-    text: 'GET /index HTTP/1.1 Host: example.com Cookie:'
-  - kind: para
-    text: PHPSESSID=xxxxx
+    text: 'GET /index HTTP/1.1 Host: example.com Cookie:PHPSESSID=xxxxx'
   - kind: para
     text: Webサイト
   p42:
@@ -285,9 +275,7 @@ text:
     text: Webサイト
   p43:
   - kind: para
-    text: どうしてセッションは
-  - kind: para
-    text: 動くのか
+    text: どうしてセッションは動くのか
   p44:
   - kind: para
     text: Ｑ.どうしてセッションは特に設定しなくても動くのはなぜ？
@@ -377,9 +365,7 @@ text:
     text: 実装って何をすればいいの？
   p69:
   - kind: para
-    text: Redis/Memcached/
-  - kind: para
-    text: SQLなどに保存する
+    text: Redis/Memcached/SQLなどに保存する
   p70:
   - kind: para
     text: 極端な話、データベースじゃなくてもいい
@@ -400,9 +386,7 @@ text:
     text: デフォルトでは、CookieにSecure,httpOnly属性がついてない
   p75:
   - kind: para
-    text: 現代においては
-  - kind: para
-    text: ありえない
+    text: 現代においてはありえない
   p76:
   - kind: para
     text: http://php.net/manual/ja/function.session-set-cookie-params.php

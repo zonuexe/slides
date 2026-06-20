@@ -50,9 +50,7 @@ text:
     text: CIとは何かCIで何ができるかCI実行環境の種類ゆるふわにCIを始める実際の事例について
   p9:
   - kind: para
-    text: CodeIgniter
-  - kind: para
-    text: (Web Framework)の話はしません
+    text: CodeIgniter(Web Framework)の話はしません
   p10:
   - kind: para
     text: CD (Continuous delivery/deployment)の話もしません
@@ -456,21 +454,13 @@ text:
     text: 毎回全ファイルをチェックするのはさすがにつらい
   p70:
   - kind: para
-    text: デプロイ時に常にgit tagをつける
-  - kind: para
-    text: デプロイスクリプトで、デプロイ成功したら日時と作業者名を含むタグを生成してoriginにpushする
+    text: デプロイ時に常にgit tagをつけるデプロイスクリプトで、デプロイ成功したら日時と作業者名を含むタグを生成してoriginにpushする
   p71:
   - kind: para
-    text: 最新のリリースタグとの差分をとる
-  - kind: para
-    text: これで最新デプロイと手元の差分があるファイル抽出できる
+    text: 最新のリリースタグとの差分をとるこれで最新デプロイと手元の差分があるファイル抽出できる
   p72:
   - kind: para
-    text: デプロイ時にphp -lを行う
-  - kind: para
-    text: 差分のあるファイル全部に対してチェックを実施し、一つでもエラーのファイルがあったらデプロイ処理を中断する
-  - kind: para
-    text: 中断されるとtagはつかないので、差分が隠れることはない
+    text: デプロイ時にphp -lを行う差分のあるファイル全部に対してチェックを実施し、一つでもエラーのファイルがあったらデプロイ処理を中断する中断されるとtagはつかないので、差分が隠れることはない
   p73:
   - kind: para
     text: MergeRequestと二種類のビルド

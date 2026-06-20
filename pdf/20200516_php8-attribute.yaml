@@ -63,65 +63,39 @@ text:
     text: RFC
   p16:
   - kind: para
-    text: PHPへの
-  - kind: para
-    text: 変更提案
+    text: PHPへの変更提案
   p17:
   - kind: para
-    text: 全てのPHPへの
-  - kind: para
-    text: 変更はここで議決
+    text: 全てのPHPへの変更はここで議決
   p18:
   - kind: para
-    text: ここを観察すれば
-  - kind: para
-    text: 次のPHPがわかる
+    text: ここを観察すれば次のPHPがわかる
   p19:
   - kind: para
-    text: ウォッチ
-  - kind: para
-    text: してますか？
+    text: ウォッチしてますか？
   p20: []
   p21:
   - kind: para
-    text: '@'
-  - kind: para
-    text: PHPRFCBot
+    text: '@PHPRFCBot'
   p22:
   - kind: para
     text: 今年12月にリリース予定のPHP8.0に向けてさまざまな機能が提案
   p23:
   - kind: para
-    text: Feature freeze
-  - kind: para
-    text: は
-  - kind: para
-    text: 7月だが既にPHP8向け
-  - kind: para
-    text: にいろいろ決まってる
+    text: Feature freezeは7月だが既にPHP8向けにいろいろ決まってる
   p24:
   - kind: para
     text: さて
   p25: []
   p26:
   - kind: para
-    text: RFCは受理された
-  - kind: para
-    text: が
-  - kind: para
-    text: ､
-  - kind: para
-    text: 実装はまだマー
-  - kind: para
-    text: ジされてない
+    text: RFCは受理されたが､実装はまだマージされてない
   p27:
   - kind: para
     text: 過去何度も提案されてきたが今回の仕様でようやく受理された
   p28:
   - kind: para
-    text: そもそも
-  - kind: para
-    text: これは何だ
+    text: そもそもこれは何だ
   p29: []
   p30:
   - kind: para
@@ -161,26 +135,10 @@ text:
       @ ベースの擬似言語がさまざまなPHPサブコミュニティによって提案されてきました。
   p35:
   - kind: para
-    text: Doc-commentは
-  - kind: para
-    text: リフレクションAPI経由で
-  - kind: para
-    text: 実行時に
-  - kind: para
-    text: 文字列として
-  - kind: para
-    text: 取得できる
+    text: Doc-commentはリフレクションAPI経由で実行時に文字列として取得できる
   p36:
   - kind: para
-    text: 実行時に影響するこ
-  - kind: para
-    text: ともあるし
-  - kind: para
-    text: ､
-  - kind: para
-    text: しないこ
-  - kind: para
-    text: ともある特殊なやつ
+    text: 実行時に影響することもあるし､しないこともある特殊なやつ
   p37:
   - kind: para
     text: /**
@@ -235,45 +193,19 @@ text:
     text: '*/'
   p43:
   - kind: para
-    text: 各プロジェクトが
-  - kind: para
-    text: 雰囲気で
-  - kind: para
-    text: 定義してる
+    text: 各プロジェクトが雰囲気で定義してる
   p44:
   - kind: para
-    text: 各プロジェクト固有タグは
-  - kind: para
-    text: '@'
-  - kind: para
-    text: phan-param みたいに
-  - kind: para
-    text: 共通のタグにprefixを
-  - kind: para
-    text: つけたりアノテーションを
-  - kind: para
-    text: \ で名前空間で区切ってる
+    text: 各プロジェクト固有タグは@phan-param みたいに共通のタグにprefixをつけたりアノテーションを\ で名前空間で区切ってる
   p45:
   - kind: para
-    text: 文字列を解析してるだけ
-  - kind: para
-    text: だからPHPに存在しない
-  - kind: para
-    text: 名前付き引数も好き勝手
-  - kind: para
-    text: に使えるぜ！！！１１
+    text: 文字列を解析してるだけだからPHPに存在しない名前付き引数も好き勝手に使えるぜ！！！１１
   p46:
   - kind: para
     text: ‒ PHPerKaigi 2020 (Feb 9, 2020)
   p47:
   - kind: para
-    text: 大雑把に言うと
-  - kind: para
-    text: IDEや静的解析のヒント
-  - kind: para
-    text: 実行時メタプログラミング
-  - kind: para
-    text: に分類できる
+    text: 大雑把に言うとIDEや静的解析のヒント実行時メタプログラミングに分類できる
   p48:
   - kind: para
     text: なんとなくの風潮として
@@ -293,77 +225,19 @@ text:
     text: と呼び分け
   p49:
   - kind: para
-    text: あくまで
-  - kind: para
-    text: ｢
-  - kind: para
-    text: なんとなく
-  - kind: para
-    text: ｣
-  - kind: para
-    text: で
-  - kind: para
-    text: あって
-  - kind: para
-    text: ､
-  - kind: para
-    text: 各
-  - kind: para
-    text: サブコミュニティ
-  - kind: para
-    text: が
-  - kind: para
-    text: 勝手に実装してるだけ
-  - kind: para
-    text: なので厳密な定義はない
+    text: あくまで｢なんとなく｣であって､各サブコミュニティが勝手に実装してるだけなので厳密な定義はない
   p50:
   - kind: para
-    text: 区別はかなり曖昧だが
-  - kind: para
-    text: PSR-19
-  - kind: para
-    text: は
-  - kind: para
-    text: タグカタログ
-  - kind: para
-    text: であり
-  - kind: para
-    text: ､
-  - kind: para
-    text: アノテーション
-  - kind: para
-    text: カタログ
-  - kind: para
-    text: ではない
+    text: 区別はかなり曖昧だがPSR-19はタグカタログであり､アノテーションカタログではない
   p51:
   - kind: para
-    text: どちらにせよ
-  - kind: para
-    text: ､
-  - kind: para
-    text: PHPス
-  - kind: para
-    text: クリプトに書く以上の
-  - kind: para
-    text: 付加情報を記述できる
+    text: どちらにせよ､PHPスクリプトに書く以上の付加情報を記述できる
   p52:
   - kind: para
-    text: あるいは
-  - kind: para
-    text: 実装から分離して
-  - kind: para
-    text: アノテーションとして
-  - kind: para
-    text: 記述
-  - kind: para
-    text: することで
-  - kind: para
-    text: AOPを実現
+    text: あるいは実装から分離してアノテーションとして記述することでAOPを実現
   p53:
   - kind: para
-    text: 実行時メタプログ
-  - kind: para
-    text: ラミングの温床
+    text: 実行時メタプログラミングの温床
   p54:
   - kind: para
     text: '例:'
@@ -371,9 +245,7 @@ text:
     text: Go! AOP
   p55:
   - kind: para
-    text: そんなわけで
-  - kind: para
-    text: Attributeが入ると
+    text: そんなわけでAttributeが入ると
   p56:
   - kind: para
     text: /**
@@ -426,19 +298,7 @@ text:
     text: Doc-commentから取得できるのは文字列なので､実行時に活用するにはそれを構文解析する必要
   p60:
   - kind: para
-    text: Attribute
-  - kind: para
-    text: はDoc-
-  - kind: para
-    text: commentと同じように実
-  - kind: para
-    text: 行時に取得でき
-  - kind: para
-    text: ､
-  - kind: para
-    text: 構造化さ
-  - kind: para
-    text: れており構文解析不要
+    text: AttributeはDoc-commentと同じように実行時に取得でき､構造化されており構文解析不要
   p61:
   - kind: para
     text: 好き勝手な記法が使えるタグ/アノテーションと違ってAttributes v2仕様は単純な関数呼び出し風構文と静的な式
@@ -476,33 +336,13 @@ text:
     text: '}'
   p67:
   - kind: para
-    text: ある意味ではコメントと
-  - kind: para
-    text: 同じで
-  - kind: para
-    text: ､
-  - kind: para
-    text: 取得されない限り
-  - kind: para
-    text: Attributeは実行に影響を
-  - kind: para
-    text: 及ぼさない
+    text: ある意味ではコメントと同じで､取得されない限りAttributeは実行に影響を及ぼさない
   p68:
   - kind: para
-    text: 先程のAttributeクラス
-  - kind: para
-    text: は静的解析のためのヒン
-  - kind: para
-    text: トであって
-  - kind: para
-    text: 必須ではない
+    text: 先程のAttributeクラスは静的解析のためのヒントであって必須ではない
   p69:
   - kind: para
-    text: その意味でPythonの
-  - kind: para
-    text: デコレータとは
-  - kind: para
-    text: 全然違う
+    text: その意味でPythonのデコレータとは全然違う
   p70:
   - kind: para
     text: アトリビュートを加味してインスタンスを生成する実行時のファクトリーまたはクラスローダーで近似させることはできる
@@ -514,9 +354,7 @@ text:
     text: PHPコンパイラ(処理系)のためのアトリビュートがあることが示唆されている(詳細はRFC範囲外)
   p73:
   - kind: para
-    text: PHP
-  - kind: para
-    text: やるじゃん
+    text: PHPやるじゃん
   p74:
   - kind: para
     text: ほんとに？
@@ -525,25 +363,13 @@ text:
     text: 🤔
   p75:
   - kind: para
-    text: 誰のための
-  - kind: para
-    text: アトリビュート?
+    text: 誰のためのアトリビュート?
   p76:
   - kind: para
-    text: コンパイラアトリビュー
-  - kind: para
-    text: ト
-  - kind: para
-    text: (処理系への指示)は
-  - kind: para
-    text: なんとなくわかる
+    text: コンパイラアトリビュート(処理系への指示)はなんとなくわかる
   p77:
   - kind: para
-    text: ユーザーランドアト
-  - kind: para
-    text: リビュート
-  - kind: para
-    text: は…？
+    text: ユーザーランドアトリビュートは…？
   p78:
   - kind: para
     text: ユースケース
@@ -551,11 +377,7 @@ text:
     text: は…？
   p79:
   - kind: para
-    text: RFC
-  - kind: para
-    text: で実例が
-  - kind: para
-    text: 紹介されている
+    text: RFCで実例が紹介されている
   p80:
   - kind: para
     text: これはわかる
@@ -614,22 +436,10 @@ text:
     text: 関数やメソッド以外にプロパティや定数の非推奨化もできる
   p95:
   - kind: para
-    text: が
-  - kind: para
-    text: ､
-  - kind: para
-    text: メーリングリス
-  - kind: para
-    text: トでは存在意義につ
-  - kind: para
-    text: いて割と揉めてる
+    text: が､メーリングリストでは存在意義について割と揉めてる
   p96:
   - kind: para
-    text: ついでに引数へのア
-  - kind: para
-    text: トリビュートの付け
-  - kind: para
-    text: かたについても議論
+    text: ついでに引数へのアトリビュートの付けかたについても議論
   p97:
   - kind: heading
     level: 1
@@ -658,13 +468,7 @@ text:
     text: ){}
   p99:
   - kind: para
-    text: 引数
-  - kind: para
-    text: のアトリビュート
-  - kind: para
-    text: ってほんとに
-  - kind: para
-    text: 必要なんですか…
+    text: 引数のアトリビュートってほんとに必要なんですか…
   p100:
   - kind: para
     text: そもそも名前空間
@@ -679,11 +483,7 @@ text:
     text: Attributesのfuture scopeの段階では名前空間がついてたのに､しれっとグローバル名前空間に移動している
   p102:
   - kind: para
-    text: Attributeが
-  - kind: para
-    text: 解決できない
-  - kind: para
-    text: 問題
+    text: Attributeが解決できない問題
   p103:
   - kind: para
     text: /** @duplicated */
@@ -712,21 +512,7 @@ text:
     text: 実行時に無視される
   p105:
   - kind: para
-    text: あ
-  - kind: para
-    text: と単純に名前空間との
-  - kind: para
-    text: 相性が悪くて
-  - kind: para
-    text: ､
-  - kind: para
-    text: IDEや
-  - kind: para
-    text: 静的解析を使ってないと
-  - kind: para
-    text: useし忘れて無意味な
-  - kind: para
-    text: おまじないとして残り…
+    text: あと単純に名前空間との相性が悪くて､IDEや静的解析を使ってないとuseし忘れて無意味なおまじないとして残り…
   p106:
   - kind: para
     text: この問題はアノテーションベースAOPで結構深刻だと思うんですけど皆さんどうやって解決してるんだろ
@@ -735,9 +521,7 @@ text:
     text: 全部のタグ/アノテーションがアトリビュートに移行されるの？
   p108:
   - kind: para
-    text: されない
-  - kind: para
-    text: と思う
+    text: されないと思う
   p109:
   - kind: heading
     level: 1
@@ -773,26 +557,16 @@ text:
     text: ){}
   p111:
   - kind: para
-    text: IDEの入力補完があっ
-  - kind: para
-    text: たとしても書きにくい
+    text: IDEの入力補完があったとしても書きにくい
   - kind: heading
     level: 1
     text: 🙃
   p112:
   - kind: para
-    text: Attributeの
-  - kind: para
-    text: 明日はどっちだ
+    text: Attributeの明日はどっちだ
   p113:
   - kind: para
-    text: PHP
-  - kind: para
-    text: 先生の
-  - kind: para
-    text: 次回作に
-  - kind: para
-    text: ご期待ください
+    text: PHP先生の次回作にご期待ください
 size:
   max_width: 1024
   max_height: 768

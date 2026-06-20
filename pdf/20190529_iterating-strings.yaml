@@ -41,9 +41,7 @@ text:
     text: おさらい
   p12:
   - kind: para
-    text: イテレータ
-  - kind: para
-    text: とは何か
+    text: イテレータとは何か
   p13:
   - kind: para
     text: 任意の処理を繰り返しの構造に落とし込める
@@ -52,9 +50,7 @@ text:
     text: 繰り返し？
   p15:
   - kind: para
-    text: みんなだいすき
-  - kind: para
-    text: foreach
+    text: みんなだいすきforeach
   p16:
   - kind: para
     text: どうするの？
@@ -69,14 +65,10 @@ text:
     text: ジェネレータ
   p22:
   - kind: para
-    text: 関数でイテレータを
-  - kind: para
-    text: つくれる
+    text: 関数でイテレータをつくれる
   p23:
   - kind: para
-    text: 時間がない
-  - kind: para
-    text: ので割愛
+    text: 時間がないので割愛
   p24:
   - kind: para
     text: このあとさんざん出ます
@@ -175,9 +167,7 @@ text:
     text: 前提2:UTF-8は可変長バイト
   p50:
   - kind: para
-    text: ひとつの符号位置を
-  - kind: para
-    text: 表すために
+    text: ひとつの符号位置を表すために
   - kind: heading
     level: 1
     text: 1〜4バイト
@@ -186,9 +176,7 @@ text:
     text: まだ日本語文字を「2バイト文字」と呼んだりしませんね？
   p52:
   - kind: para
-    text: Unicodeより
-  - kind: para
-    text: 前の時代
+    text: Unicodeより前の時代
   p53:
   - kind: para
     text: Shift_JISではガ (2バイト)
@@ -226,16 +214,12 @@ text:
     text: これがまさにバイトごとのイテレーション
   p63:
   - kind: para
-    text: これをジェネレータに
-  - kind: para
-    text: 変換
+    text: これをジェネレータに変換
   p64: []
   p65: []
   p66:
   - kind: para
-    text: ライブラリとしては｢foreachできるオブジェクト｣
-  - kind: para
-    text: (＝ジェネレータ)として提供
+    text: ライブラリとしては｢foreachできるオブジェクト｣(＝ジェネレータ)として提供
   p67:
   - kind: para
     text: そうすることで汎用的に利用できるようになる
@@ -251,9 +235,7 @@ text:
     text: ごと
   p72:
   - kind: para
-    text: コードポイント
-  - kind: para
-    text: (符号位置)
+    text: コードポイント(符号位置)
   p73: []
   p74:
   - kind: para
@@ -261,25 +243,19 @@ text:
   p75: []
   p76:
   - kind: para
-    text: 書記素クラスタ
-  - kind: para
-    text: ごと
+    text: 書記素クラスタごと
   p77:
   - kind: para
     text: 書記素とは？
   p78:
   - kind: para
-    text: 人間の目に1文字に見える
-  - kind: para
-    text: 単位
+    text: 人間の目に1文字に見える単位
   p79:
   - kind: para
     text: あ漢ガ
   p80:
   - kind: para
-    text: どれも単独の
-  - kind: para
-    text: 書記素
+    text: どれも単独の書記素
   p81:
   - kind: para
     text: ところでUnicodeには「ガ」の複数の表現方法が存在する
@@ -292,9 +268,7 @@ text:
     text: ｶﾞ (U+FF76 U+FF9E)
   p83:
   - kind: para
-    text: 結合したガ
-  - kind: para
-    text: カ + ゛(結合文字)
+    text: 結合したガカ + ゛(結合文字)
   - kind: heading
     level: 1
     text: ガ (U+30AC)
@@ -320,9 +294,7 @@ text:
     text: 書記素クラスタのターンはまだまだ終らないぜ
   p88:
   - kind: para
-    text: 絵文字が開いてしまった
-  - kind: para
-    text: パンドラの匣
+    text: 絵文字が開いてしまったパンドラの匣
   p89:
   - kind: para
     text: 'Case1: 国旗'
@@ -428,17 +400,13 @@ text:
     text: 👦
   p104:
   - kind: para
-    text: Zero Width
-  - kind: para
-    text: Joiner
+    text: Zero Width Joiner
   p105:
   - kind: para
     text: さて
   p106:
   - kind: para
-    text: そんな文字でも
-  - kind: para
-    text: 一安心
+    text: そんな文字でも一安心
   p107: []
   p108:
   - kind: heading

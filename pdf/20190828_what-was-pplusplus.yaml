@@ -143,30 +143,10 @@ text:
     text: PythonでのPEPに相当
   p29:
   - kind: para
-    text: RFCの提案をもとに、
-  - kind: para
-    text: PHP開発者
-  - kind: para
-    text: (
-  - kind: para
-    text: php.net
-  - kind: para
-    text: のVCSアカウント所有者)
-  - kind: para
-    text: が
-  - kind: para
-    text: 一人一票を投じる仕組み
+    text: RFCの提案をもとに、PHP開発者(php.netのVCSアカウント所有者)が一人一票を投じる仕組み
   p30:
   - kind: para
-    text: 単純に
-  - kind: para
-    text: ｢
-  - kind: para
-    text: 追加された数
-  - kind: para
-    text: ｣
-  - kind: para
-    text: ではないが
+    text: 単純に｢追加された数｣ではないが
   p31:
   - kind: para
     text: PHPの行く末を知りたければRFCをウォッチすればよい
@@ -199,23 +179,7 @@ text:
     text: 意外に変わってるなって感じはする
   p39:
   - kind: para
-    text: とてもざっくり言うとレガ
-  - kind: para
-    text: シー仕様は消え
-  - kind: para
-    text: ､
-  - kind: para
-    text: 不条理な
-  - kind: para
-    text: 挙動は是正され
-  - kind: para
-    text: ､
-  - kind: para
-    text: 他言語に
-  - kind: para
-    text: あるようなカッコイイ機能
-  - kind: para
-    text: が追加提案されてる
+    text: とてもざっくり言うとレガシー仕様は消え､不条理な挙動は是正され､他言語にあるようなカッコイイ機能が追加提案されてる
   p40:
   - kind: para
     text: 😇
@@ -224,26 +188,16 @@ text:
     text: ところでRasmusはこう言った
   p42:
   - kind: para
-    text: “We have things like protected properties.
-  - kind: para
-    text: We have abstract methods. We have all
-  - kind: para
-    text: this stuff that your computer science teacher told you you should be using.
+    text: “We have things like protected properties.We have abstract methods. We have
+      all this stuff that your computer science teacher told you you should be using.
   - kind: para
     text: I don't care about this crap at all.”
   - kind: para
     text: –Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p43:
   - kind: para
-    text: “PHPにはprotectedプロパティも抽象メ
-  - kind: para
-    text: ソッドもありますよ。計算機科学の教授が
-  - kind: para
-    text: 「使え」と言ってるものは全部。
-  - kind: para
-    text: そんなことはクソ興味ないですけど”
-  - kind: para
-    text: –Rasmus Lerdorf
+    text: “PHPにはprotectedプロパティも抽象メソッドもありますよ。計算機科学の教授が「使え」と言ってるものは全部。そんなことはクソ興味ないですけど”–Rasmus
+      Lerdorf
   p44:
   - kind: para
     text: 改めてPHPの言語仕様が追加された時系列を見てみよう
@@ -364,30 +318,17 @@ text:
   - kind: para
     text: JavaScriptのfunctionに似てる
   - kind: para
-    text: が、レキシカルスコープ(変数の捕
-  - kind: para
-    text: 捉)のためにuseキーワードが必要
+    text: が、レキシカルスコープ(変数の捕捉)のためにuseキーワードが必要
   p54:
   - kind: para
-    text: 抽象クラス, トレイト, インターフェイス, ジェネレータ, イテレータ, クロージャ, 函数の動的呼び出
-  - kind: para
-    text: し, 無名クラス, eval, 型宣言, 連想配列, リフレクションAPI, 自己
-  - kind: para
-    text: 文書化, 標準入出力の読み書き,
-  - kind: para
-    text: REPL, クラスの遅延ロード
+    text: 抽象クラス, トレイト, インターフェイス, ジェネレータ, イテレータ, クロージャ, 函数の動的呼び出し, 無名クラス, eval, 型宣言,
+      連想配列, リフレクションAPI, 自己文書化, 標準入出力の読み書き,REPL, クラスの遅延ロード
   p55:
   - kind: para
     text: これらの新機能をフルに活用してコードを書いてる人はどれだけ居るの？
   p56:
   - kind: para
-    text: (そういう人は居るけど
-  - kind: para
-    text: ､
-  - kind: para
-    text: そうじゃない人たちと二
-  - kind: para
-    text: 極化してるのは確実)
+    text: (そういう人は居るけど､そうじゃない人たちと二極化してるのは確実)
   p57:
   - kind: para
     text: PHPの古参開発者たちは冷ややか
@@ -415,17 +356,8 @@ text:
   p65: []
   p66:
   - kind: para
-    text: Deprecate PHP's short open tags, again
-  - kind: para
-    text: 一般的なPHPタグは<?php ... ?>
-  - kind: para
-    text: または<?= ... ?> だが、<? ... ?>と
-  - kind: para
-    text: いう形式もある
-  - kind: para
-    text: php.iniで有効無効を切替られる
-  - kind: para
-    text: 環境によってOnだったりOffだっ
+    text: Deprecate PHP's short open tags, again一般的なPHPタグは<?php ... ?>または<?= ... ?>
+      だが、<? ... ?>という形式もあるphp.iniで有効無効を切替られる環境によってOnだったりOffだっ
   - kind: para
     text: たり
   p67:
@@ -499,32 +431,12 @@ text:
     text: めちゃくちゃ燃えた
   p77:
   - kind: para
-    text: Deprecate PHP's short open tags, again
-  - kind: para
-    text: <? ... ?> 使ってないひとは使ってな
-  - kind: para
-    text: いし、廃止したからと言って文法が簡
-  - kind: para
-    text: 単になるか…？
-  - kind: para
-    text: この仕様を削除してもパフォーマンス
-  - kind: para
-    text: は特に向上しないし、コードもちょっ
+    text: Deprecate PHP's short open tags, again<? ... ?> 使ってないひとは使ってないし、廃止したからと言って文法が簡単になるか…？この仕様を削除してもパフォーマンスは特に向上しないし、コードもちょっ
   - kind: para
     text: としか消えない
   p78:
   - kind: para
-    text: Deprecate PHP's short open tags, again
-  - kind: para
-    text: 大山鳴動して鼠一匹
-  - kind: para
-    text: 大騒ぎして文法変更する割に得られる
-  - kind: para
-    text: メリットが少なすぎないか…？
-  - kind: para
-    text: だからと言って負債になった文法は
-  - kind: para
-    text: ずっと変えられないままなのか？！
+    text: Deprecate PHP's short open tags, again大山鳴動して鼠一匹大騒ぎして文法変更する割に得られるメリットが少なすぎないか…？だからと言って負債になった文法はずっと変えられないままなのか？！
   - kind: para
     text: 喧喧諤諤非難轟々
   p79:
@@ -549,19 +461,7 @@ text:
     text: PHPの意思決定機関が開発者によるRFCの多数決であることを知っていれば誤解はしないはず
   p87:
   - kind: para
-    text: 本の虫で紹介された
-  - kind: para
-    text: ｢
-  - kind: para
-    text: ソース
-  - kind: para
-    text: ｣
-  - kind: para
-    text: はメーリン
-  - kind: para
-    text: グリストでの議論の
-  - kind: para
-    text: ためのメモ書き
+    text: 本の虫で紹介された｢ソース｣はメーリングリストでの議論のためのメモ書き
   p88:
   - kind: para
     text: 燃え拡がる
