@@ -103,7 +103,7 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/pdf_link_extractor.
   --update-meta --meta-file pdf/<slug>.yaml pdf/<slug>.pdf
 ```
 
-仕上がり YAML には少なくとも `text` (各ページ p1/p2... の段落配列)、`links`、`size` が入る。**`text` が空のまま build が通ると詳細ページが描画されない**ので必ず目視する。
+仕上がり YAML には少なくとも `text` (各ページ p1/p2... の **ブロック配列**)、`links`、`size` が入る。`text` の各ブロックは `{kind: heading, level, text}` / `{kind: para, text}` / `{kind: list, items: [...]}` のいずれか (抽出は PyMuPDF ベース)。**`text` が空のまま build が通ると詳細ページが描画されない**ので必ず目視する。
 
 ### 3-3. slides/<slug>.yaml は手で書く
 

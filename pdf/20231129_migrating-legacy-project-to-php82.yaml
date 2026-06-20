@@ -1,581 +1,317 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: n
-    - node: br
-    - node: text
-      content: '年塩漬けされていたプロジェクトを '
-    - node: br
-    - node: text
-      content: 8.2移行するときにやったこと
-  - node: p
-    children:
-    - node: text
-      content: Migrate a PHP project that has been neglected for several years to
-        8.2.
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-11-29 '
-  - node: p
-    children:
-    - node: bold
-      content: 'PHP勉強会@東京 #phpstudy'
+  - kind: heading
+    level: 1
+    text: n 年塩漬けされていたプロジェクトを
+  - kind: heading
+    level: 2
+    text: 8.2移行するときにやったこと
+  - kind: heading
+    level: 3
+    text: Migrate a PHP project that has been neglected for several years to 8.2.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2023-11-29'
+  - kind: para
+    text: 'PHP勉強会@東京 #phpstudy'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職でPHPを書いているWebプログラマ
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職でPHPを書いているWebプログラマ
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p4:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP 8.3リリース '
-    - node: br
-    - node: text
-      content: 'されましたね '
-  - node: p
-    children:
-    - node: text
-      content: 🎉
+  - kind: para
+    text: PHP 8.3リリース
+  - kind: para
+    text: されましたね
+  - kind: para
+    text: 🎉
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: みなさまが愛した
-    - node: br
-    - node: text
-      content: PHP7.xは全てEOL
+  - kind: para
+    text: みなさまが愛した
+  - kind: para
+    text: PHP7.xは全てEOL
   p7:
-  - node: p
-    children:
-    - node: text
-      content: '社内のプロダクトは '
-    - node: br
-    - node: text
-      content: 全て8.2移行済み
+  - kind: para
+    text: 社内のプロダクトは
+  - kind: para
+    text: 全て8.2移行済み
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 'その前にPHP '
-    - node: br
-    - node: text
-      content: 'バージョンアップの '
-    - node: br
-    - node: text
-      content: 定石おさらい
+  - kind: para
+    text: その前にPHP
+  - kind: para
+    text: バージョンアップの
+  - kind: para
+    text: 定石おさらい
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 開発を止めずにバージョン更新する
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: アプリケーションコード内の非推奨記法をすべて置き換える
-    - node: li
-      children:
-      - node: text
-        content: 依存パッケージを現行と移行先の両方で動作するバージョンにアップデート
-    - node: li
-      children:
-      - node: text
-        content: ユニットテストを現行と移行先バージョンの両方で完動するように
-    - node: li
-      children:
-      - node: text
-        content: CI(ユニットテスト・静的解析)が両バージョンで動作するようにし、
-      - node: br
-      - node: text
-        content: '開発メンバーには互換性を維持して開発してもらう '
-    - node: li
-      children:
-      - node: text
-        content: 本番環境をどうにかして新しいバージョンに切り替える
+  - kind: para
+    text: 開発を止めずにバージョン更新する
+  - kind: list
+    items:
+    - アプリケーションコード内の非推奨記法をすべて置き換える
+    - 依存パッケージを現行と移行先の両方で動作するバージョンにアップデート
+    - ユニットテストを現行と移行先バージョンの両方で完動するように
+    - CI(ユニットテスト・静的解析)が両バージョンで動作するようにし、
+  - kind: para
+    text: 開発メンバーには互換性を維持して開発してもらう
+  - kind: list
+    items:
+    - 本番環境をどうにかして新しいバージョンに切り替える
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'というわけで無事に '
-    - node: br
-    - node: text
-      content: 'PHP 8.2化 '
-  - node: p
-    children:
-    - node: text
-      content: 🎉
+  - kind: para
+    text: というわけで無事に
+  - kind: para
+    text: PHP 8.2化
+  - kind: para
+    text: 🎉
   p11:
-  - node: p
-    children:
-    - node: text
-      content: ……こいつ以外は
+  - kind: heading
+    level: 1
+    text: ……こいつ以外は
   p12:
-  - node: p
-    children:
-    - node: text
-      content: ContestCMS
+  - kind: heading
+    level: 1
+    text: ContestCMS
   p13:
-  - node: p
-    children:
-    - node: text
-      content: ContestCMS
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: pixivのコンテスト機能のデータを入稿するための仕組み
-    - node: li
-      children:
-      - node: text
-        content: 2013年に内製の独自フレームワークで書かれた
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 入社1年目のtadsanが開発に参加、紆余曲折あって今まで運用担当
-    - node: li
-      children:
-      - node: text
-        content: 弊社のPHPコードの多くは2013年頃からpixiv.gitという
-      - node: br
-      - node: text
-        content: 'モノレポで運用しているが、歴史的経緯により合流せずに存続している '
-    - node: li
-      children:
-      - node: text
-        content: 'アプリケーション: 13,900行、テストコード3,430行の規模'
+  - kind: para
+    text: ContestCMS
+  - kind: list
+    items:
+    - pixivのコンテスト機能のデータを入稿するための仕組み
+    - 2013年に内製の独自フレームワークで書かれた
+    - 入社1年目のtadsanが開発に参加、紆余曲折あって今まで運用担当
+    - 弊社のPHPコードの多くは2013年頃からpixiv.gitという
+  - kind: para
+    text: モノレポで運用しているが、歴史的経緯により合流せずに存続している
+  - kind: list
+    items:
+    - 'アプリケーション: 13,900行、テストコード3,430行の規模'
   p14:
-  - node: p
-    children:
-    - node: text
-      content: '塩漬けにしていたのは '
-    - node: br
-    - node: text
-      content: ほかならぬ私です
-  - node: p
-    children:
-    - node: text
-      content: 😇
+  - kind: para
+    text: 塩漬けにしていたのは
+  - kind: para
+    text: ほかならぬ私です
+  - kind: para
+    text: 😇
   p15:
-  - node: p
-    children:
-    - node: text
-      content: '10年前のプロジェクト '
-    - node: br
-    - node: text
-      content: ここが辛い
+  - kind: para
+    text: 10年前のプロジェクト
+  - kind: para
+    text: ここが辛い
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 年季の入った放置プロジェクトあるある
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: E_NOTICEをハンドリングしてない
-    - node: li
-      children:
-      - node: text
-        content: 依存パッケージがめちゃくちゃ古い
-    - node: li
-      children:
-      - node: text
-        content: PHPStanで解析しようにもフレームワークが型のことを
-      - node: br
-      - node: text
-        content: 'まるで配慮していないのでひたすら警告が出まくる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '`@return int|int[]` のような型はついてないのといっしょ！'
-    - node: li
-      children:
-      - node: text
-        content: そもそも既存バージョンでもPHPUnitが… 通ってないんだが…
+  - kind: para
+    text: 年季の入った放置プロジェクトあるある
+  - kind: list
+    items:
+    - E_NOTICEをハンドリングしてない
+    - 依存パッケージがめちゃくちゃ古い
+    - PHPStanで解析しようにもフレームワークが型のことを
+  - kind: para
+    text: まるで配慮していないのでひたすら警告が出まくる
+  - kind: list
+    items:
+    - '`@return int|int[]` のような型はついてないのといっしょ！'
+    - そもそも既存バージョンでもPHPUnitが… 通ってないんだが…
   p17:
-  - node: p
-    children:
-    - node: text
-      content: '嘆いても '
-    - node: br
-    - node: text
-      content: 仕方ないので直す
+  - kind: para
+    text: 嘆いても
+  - kind: para
+    text: 仕方ないので直す
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 0. 通らないなりに PHPStanを入れる
+  - kind: para
+    text: 0. 通らないなりに
+  - kind: para
+    text: PHPStanを入れる
   p19:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの導入
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: いきなりレベルを高めに上げる必要はまったくない
-    - node: li
-      children:
-      - node: text
-        content: 現状の問題をphpstan-baseline.neonに記録してコミットする
-    - node: li
-      children:
-      - node: text
-        content: コードを弄ったり、依存パッケージのバージョンアップをしたときに
-      - node: br
-      - node: text
-        content: その都度baselineを再生成して変な差分が出ていないかチェックする
+  - kind: para
+    text: PHPStanの導入
+  - kind: list
+    items:
+    - いきなりレベルを高めに上げる必要はまったくない
+    - 現状の問題をphpstan-baseline.neonに記録してコミットする
+    - コードを弄ったり、依存パッケージのバージョンアップをしたときに
+  - kind: para
+    text: その都度baselineを再生成して変な差分が出ていないかチェックする
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 1. Syntaxの非互換
+  - kind: heading
+    level: 1
+    text: 1. Syntaxの非互換
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 文字列補間の非互換
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: いままでPHPの文字列に $var という変数を埋め込むときに
-      - node: br
-      - node: text
-        content: 'シェル風の "${var}" と "{$var}" が両方使えた '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP 8.2から "${var}" が非互換になったので "{$var}" に置き換える
+  - kind: heading
+    level: 1
+    text: 文字列補間の非互換
+  - kind: list
+    items:
+    - いままでPHPの文字列に $var という変数を埋め込むときに
+  - kind: para
+    text: シェル風の "${var}" と "{$var}" が両方使えた
+  - kind: list
+    items:
+    - PHP 8.2から "${var}" が非互換になったので "{$var}" に置き換える
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 2. インターフェイスの
-    - node: br
-    - node: text
-      content: 非互換
+  - kind: para
+    text: 2. インターフェイスの
+  - kind: para
+    text: 非互換
   p23:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1の非互換変更 (その1)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: インターフェイスに型宣言が追加された
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: MySession::gc($max_lifetime) ↓
-          - node: br
-          - node: text
-            content: 'SessionHandlerInterface::gc(int $max_lifetime): int|false '
-        - node: li
-          children:
-          - node: text
-            content: int|false なんてPHP 8.0にならないと書けないんだが？？？
-        - node: li
-          children:
-          - node: text
-            content: 'メソッド定義に #[ReturnTypeWillChange] を付ければ黙ってくれる'
+  - kind: heading
+    level: 1
+    text: PHP 8.1の非互換変更 (その1)
+  - kind: list
+    items:
+    - インターフェイスに型宣言が追加された
+    - MySession::gc($max_lifetime) ↓
+  - kind: para
+    text: 'SessionHandlerInterface::gc(int $max_lifetime): int|false'
+  - kind: list
+    items:
+    - int|false なんてPHP 8.0にならないと書けないんだが？？？
+    - 'メソッド定義に #[ReturnTypeWillChange] を付ければ黙ってくれる'
   p24:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1の非互換変更 (その2)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PDO::query() の非互換
+  - kind: para
+    text: PHP 8.1の非互換変更 (その2)
+  - kind: list
+    items:
+    - PDO::query() の非互換
   p25:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1の非互換変更 (その2)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PDO::query() の非互換
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: こんなのどうしろという感じだが、トレイト動的定義という荒技で回避可能
-        - node: li
-          children:
-          - node: text
-            content: ……そもそもそんな変なことをしなくても、PDO::prepare()を使えばいい
-    - node: li
-      children:
-      - node: text
-        content: そもそもこの問題自体、PDOを自前拡張してるようなプロジェクト以外には
-      - node: br
-      - node: text
-        content: 刺さらない
+  - kind: heading
+    level: 1
+    text: PHP 8.1の非互換変更 (その2)
+  - kind: list
+    items:
+    - PDO::query() の非互換
+    - こんなのどうしろという感じだが、トレイト動的定義という荒技で回避可能
+    - ……そもそもそんな変なことをしなくても、PDO::prepare()を使えばいい
+    - そもそもこの問題自体、PDOを自前拡張してるようなプロジェクト以外には
+  - kind: para
+    text: 刺さらない
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'ここで手間暇かけて 両バージョン対応を '
-    - node: br
-    - node: text
-      content: '諦める '
-    - node: br
-    - node: text
-      content: (社内サービスなので)
+  - kind: para
+    text: ここで手間暇かけて
+  - kind: para
+    text: 両バージョン対応を
+  - kind: para
+    text: 諦める
+  - kind: para
+    text: (社内サービスなので)
   p27:
-  - node: p
-    children:
-    - node: text
-      content: '3. PHPUnitの '
-    - node: br
-    - node: text
-      content: バージョンを上げる
+  - kind: para
+    text: 3. PHPUnitの
+  - kind: para
+    text: バージョンを上げる
   p28:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit 9.5
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPUnit 9.5 は ≧PHP 7.3 をサポートしているので、単に上げればヨシ
-    - node: li
-      children:
-      - node: text
-        content: PHP 7.3未満からPHP 8.xまで上げる場合はその方法が使えないので…
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: composer require --dev phpunit/phpunit:'^7.0|^8.0'
+  - kind: para
+    text: PHPUnit 9.5
+  - kind: list
+    items:
+    - PHPUnit 9.5 は ≧PHP 7.3 をサポートしているので、単に上げればヨシ
+    - PHP 7.3未満からPHP 8.xまで上げる場合はその方法が使えないので…
+    - composer require --dev phpunit/phpunit:'^7.0|^8.0'
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 4. Smartyの アップデート
+  - kind: para
+    text: 4. Smartyの
+  - kind: para
+    text: アップデート
   p30:
-  - node: p
-    children:
-    - node: text
-      content: Smarty 3.x → 4.0に移行
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 社内ではSmarty 2が多く残っているが、今回のプロジェクトは3だった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 3.xと4.xは互換が高いのであまり気にせず上げていい
-        - node: li
-          children:
-          - node: text
-            content: 'Smartyはmodi|erという仕組みで $var|func と書くとプラグインが未 定義だったときに func($var)
-              に置き換えられたが、4.0から非互換に '
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: 明示的にmodi|er pluginとして定義してやればいい
+  - kind: heading
+    level: 1
+    text: Smarty 3.x → 4.0に移行
+  - kind: list
+    items:
+    - 社内ではSmarty 2が多く残っているが、今回のプロジェクトは3だった
+    - 3.xと4.xは互換が高いのであまり気にせず上げていい
+    - Smartyはmodifierという仕組みで $var|func と書くとプラグインが未
+  - kind: para
+    text: 定義だったときに func($var) に置き換えられたが、4.0から非互換に
+  - kind: list
+    items:
+    - 明示的にmodifier pluginとして定義してやればいい
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 5.その他パッケージの
-    - node: br
-    - node: text
-      content: アップデート
+  - kind: para
+    text: 5.その他パッケージの
+  - kind: para
+    text: アップデート
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 依存パッケージのアップデートなど
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 依存パッケージに非互換の問題がある場合は手を入れなければいけない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: cweagans/composer-patches プラグインで
-          - node: br
-          - node: text
-            content: 'composer install時に書き換えられる '
-        - node: li
-          children:
-          - node: text
-            content: symplify/vendor-patches というツールを使うと
-          - node: br
-          - node: text
-            content: 'composer-patches用のパッチを簡単に作れるのでおすすめ '
-    - node: li
-      children:
-      - node: text
-        content: composer-patchesは本番運用向けに必要なので、うっかり
-      - node: br
-      - node: text
-        content: composer require --devしないように注意
+  - kind: heading
+    level: 1
+    text: 依存パッケージのアップデートなど
+  - kind: list
+    items:
+    - 依存パッケージに非互換の問題がある場合は手を入れなければいけない
+    - cweagans/composer-patches プラグインで
+  - kind: para
+    text: composer install時に書き換えられる
+  - kind: list
+    items:
+    - symplify/vendor-patches というツールを使うと
+  - kind: para
+    text: composer-patches用のパッチを簡単に作れるのでおすすめ
+  - kind: list
+    items:
+    - composer-patchesは本番運用向けに必要なので、うっかり
+  - kind: para
+    text: composer require --devしないように注意
   p33:
-  - node: p
-    children:
-    - node: text
-      content: '5. E_WARNINGを '
-    - node: br
-    - node: text
-      content: 潰す
+  - kind: para
+    text: 5. E_WARNINGを
+  - kind: para
+    text: 潰す
   p34:
-  - node: p
-    children:
-    - node: text
-      content: E_WARNING
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: いままで未定義変数アクセスや未定義配列アクセスはE_NOTICEだったが、
-      - node: br
-      - node: text
-        content: 'PHP 8からE_WARNINGに昇格した '
-    - node: li
-      children:
-      - node: text
-        content: カバレッジが十分なプロジェクトならテストを通せば十分なはずだが…
-    - node: li
-      children:
-      - node: text
-        content: レガシープロジェクトにそんなものはない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 地道に動かして動作チェックする…
+  - kind: para
+    text: E_WARNING
+  - kind: list
+    items:
+    - いままで未定義変数アクセスや未定義配列アクセスはE_NOTICEだったが、
+  - kind: para
+    text: PHP 8からE_WARNINGに昇格した
+  - kind: list
+    items:
+    - カバレッジが十分なプロジェクトならテストを通せば十分なはずだが…
+    - レガシープロジェクトにそんなものはない
+    - 地道に動かして動作チェックする…
   p35:
-  - node: p
-    children:
-    - node: text
-      content: エラーハンドラのカスタマイズ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 未定義アクセスエラーは雨後の筍のように出てくる
-    - node: li
-      children:
-      - node: text
-        content: エラーハンドリングはset_error_handler()でカスタマイズできる
-    - node: li
-      children:
-      - node: text
-        content: E_WARNINGは無視しつつエラーログに流すようなコードを書けばいい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 流量などはいろいろな方法で調整しつつ、最終的には全量流す
-    - node: li
-      children:
-      - node: text
-        content: エラーログに簡単にアクセスできるようにする or 無駄なものを だらだらとエラーログに流し続けない(フィルタできるようにする)
+  - kind: para
+    text: エラーハンドラのカスタマイズ
+  - kind: list
+    items:
+    - 未定義アクセスエラーは雨後の筍のように出てくる
+    - エラーハンドリングはset_error_handler()でカスタマイズできる
+    - E_WARNINGは無視しつつエラーログに流すようなコードを書けばいい
+    - 流量などはいろいろな方法で調整しつつ、最終的には全量流す
+    - エラーログに簡単にアクセスできるようにする or 無駄なものを
+  - kind: para
+    text: だらだらとエラーログに流し続けない(フィルタできるようにする)
   p36:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: heading
+    level: 1
+    text: まとめ
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PHP7.xからの移行は 最後は地道なもぐら叩き
+  - kind: para
+    text: PHP7.xからの移行は
+  - kind: para
+    text: 最後は地道なもぐら叩き
   p38:
-  - node: p
-    children:
-    - node: text
-      content: '本番環境も活用しながら '
-    - node: br
-    - node: text
-      content: '完全は求めず '
-    - node: br
-    - node: text
-      content: 安全に移行しような
+  - kind: para
+    text: 本番環境も活用しながら
+  - kind: para
+    text: 完全は求めず
+  - kind: para
+    text: 安全に移行しような
 size:
   max_width: 1920
   max_height: 1080

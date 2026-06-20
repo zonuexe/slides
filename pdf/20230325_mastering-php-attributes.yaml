@@ -1,1320 +1,690 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: Attributeを極める
-  - node: p
-    children:
-    - node: bold
-      content: 増補版
-  - node: p
-    children:
-    - node: text
-      content: Mastering Attributes
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2022-03-25'
+  - kind: heading
+    level: 1
+    text: Attributeを極める
+  - kind: heading
+    level: 3
+    text: 増補版
+  - kind: heading
+    level: 2
+    text: Mastering Attributes
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2022-03-25'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人
   p3:
-  - node: p
-    children:
-    - node: text
-      content: ゴランノスポンサー
+  - kind: heading
+    level: 1
+    text: ゴランノスポンサー
   p4:
-  - node: p
-    children:
-    - node: text
-      content: '先におことわり： '
-    - node: br
-    - node: text
-      content: '20分ではピクシブ百科事典の '
-    - node: br
-    - node: text
-      content: '事例紹介までたどりつけませんでした '
-    - node: br
-    - node: text
-      content: (話はするけどあっさりめ)
+  - kind: heading
+    level: 1
+    text: 先におことわり：
+  - kind: para
+    text: 20分ではピクシブ百科事典の
+  - kind: para
+    text: 事例紹介までたどりつけませんでした
+  - kind: para
+    text: (話はするけどあっさりめ)
   p5:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p6:
-  - node: p
-    children:
-    - node: text
-      content: PHPのアップデートサイクル
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPは年に一回バージョンアップされている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: https://www.php.net/supported-versions.php
-        - node: li
-          children:
-          - node: text
-            content: 最新バージョンは2022年12月リリースの8.2.x系
-    - node: li
-      children:
-      - node: text
-        content: いわゆるセマンティックバージョニングではない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 8.2.0… MAJOR.MINOR.RELASEの3レベル構成
-        - node: li
-          children:
-          - node: text
-            content: 影響の大きなBC BreakはMAJOR
+  - kind: heading
+    level: 1
+    text: PHPのアップデートサイクル
+  - kind: list
+    items:
+    - PHPは年に一回バージョンアップされている
+    - https://www.php.net/supported-versions.php
+    - 最新バージョンは2022年12月リリースの8.2.x系
+    - いわゆるセマンティックバージョニングではない
+    - 8.2.0… MAJOR.MINOR.RELASEの3レベル構成
+    - 影響の大きなBC BreakはMAJOR
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP8.0で '
-    - node: br
-    - node: text
-      content: 変わったこと
+  - kind: para
+    text: PHP8.0で
+  - kind: para
+    text: 変わったこと
   p8: []
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 'すべての機能を '
-    - node: br
-    - node: text
-      content: 使えていますか？
+  - kind: para
+    text: すべての機能を
+  - kind: para
+    text: 使えていますか？
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'その中でも存在感が '
-    - node: br
-    - node: text
-      content: 'ありながら '
-    - node: br
-    - node: text
-      content: ｢何に使うの｣度が高い
+  - kind: para
+    text: その中でも存在感が
+  - kind: para
+    text: ありながら
+  - kind: para
+    text: 「何に使うの」度が高い
   p11: []
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: ア ト リ ビ ュ ー ト
-  - node: p
-    children:
-    - node: text
-      content: Attributes
+  - kind: heading
+    level: 2
+    text: アトリビュート
+  - kind: heading
+    level: 1
+    text: Attributes
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 実はPHPerKaigiでは
+  - kind: heading
+    level: 1
+    text: 実はPHPerKaigiでは
   p15: []
   p16: []
   p17:
-  - node: p
-    children:
-    - node: text
-      content: '毎年なにかと '
-    - node: br
-    - node: text
-      content: 言及されている
+  - kind: para
+    text: 毎年なにかと
+  - kind: para
+    text: 言及されている
   p18:
-  - node: p
-    children:
-    - node: text
-      content: アトリビュートってなんだ？
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 日本語での定訳としては「属性」
-    - node: li
-      children:
-      - node: text
-        content: もっとも知られているであろう用語としてはHTMLタグ
-    - node: li
-      children:
-      - node: text
-        content: あるもの(要素)の性質を表す情報のこと
-    - node: li
-      children:
-      - node: text
-        content: MDNではHTMLの属性について次のように説明している
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 「属性は要素を拡張し、動作を変更したりメタデータを提供したりします。」
-          - node: br
-          - node: text
-            content: Attribute (属性) - MDN Web Docs 用語集 より
+  - kind: para
+    text: アトリビュートってなんだ？
+  - kind: list
+    items:
+    - 日本語での定訳としては「属性」
+    - もっとも知られているであろう用語としてはHTMLタグ
+    - あるもの(要素)の性質を表す情報のこと
+    - MDNではHTMLの属性について次のように説明している
+    - 「属性は要素を拡張し、動作を変更したりメタデータを提供したりします。」
+  - kind: para
+    text: Attribute (属性) - MDN Web Docs 用語集 より
   p19:
-  - node: p
-    children:
-    - node: text
-      content: <a href="?foo">
+  - kind: heading
+    level: 1
+    text: <a href="?foo">
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '<a '
-    - node: bold
-      content: href
-    - node: text
-      content: ="?foo">
-  - node: p
-    children:
-    - node: text
-      content: 属性名
+  - kind: heading
+    level: 1
+    text: <a href="?foo">
+  - kind: heading
+    level: 2
+    text: 属性名
   p21:
-  - node: p
-    children:
-    - node: text
-      content: '<a '
-    - node: bold
-      content: href
-    - node: text
-      content: '='
-    - node: bold
-      content: '"?foo"'
-    - node: text
-      content: '>'
-  - node: p
-    children:
-    - node: text
-      content: 属性名 属性値
+  - kind: heading
+    level: 1
+    text: <a href="?foo">
+  - kind: para
+    text: 属性名
+  - kind: para
+    text: 属性値
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '<a '
-    - node: bold
-      content: href
-    - node: text
-      content: '='
-    - node: bold
-      content: '"?foo"'
-    - node: text
-      content: '>'
-  - node: p
-    children:
-    - node: text
-      content: 属性名 属性 属性値
+  - kind: heading
+    level: 1
+    text: <a href="?foo">
+  - kind: para
+    text: 属性名
+  - kind: para
+    text: 属性
+  - kind: para
+    text: 属性値
   p23:
-  - node: p
-    children:
-    - node: text
-      content: <
-    - node: bold
-      content: a
-    - node: text
-      content: ' href="?foo">'
-  - node: p
-    children:
-    - node: text
-      content: 要素名
+  - kind: heading
+    level: 1
+    text: <a href="?foo">
+  - kind: heading
+    level: 2
+    text: 要素名
   p24:
-  - node: p
-    children:
-    - node: text
-      content: <
-    - node: bold
-      content: a
-    - node: text
-      content: ' href="?foo">'
-  - node: p
-    children:
-    - node: text
-      content: 要素名 (開始)タグ
+  - kind: heading
+    level: 1
+    text: <a href="?foo">
+  - kind: para
+    text: 要素名
+  - kind: para
+    text: (開始)タグ
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '<a href="?foo"> '
-    - node: br
-    - node: text
-      content: '    text '
-    - node: br
-    - node: text
-      content: </a>
-  - node: p
-    children:
-    - node: text
-      content: <a>要素
+  - kind: para
+    text: <a href="?foo">
+  - kind: para
+    text: text
+  - kind: para
+    text: </a>
+  - kind: para
+    text: <a>要素
   p26:
-  - node: p
-    children:
-    - node: text
-      content: '今回はHTMLは 本題ではないので '
-    - node: br
-    - node: text
-      content: ここまで
+  - kind: para
+    text: 今回はHTMLは
+  - kind: para
+    text: 本題ではないので
+  - kind: para
+    text: ここまで
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 'ソースコードにも '
-    - node: br
-    - node: text
-      content: '付加的な情報を '
-    - node: br
-    - node: text
-      content: 付与したい！
+  - kind: para
+    text: ソースコードにも
+  - kind: para
+    text: 付加的な情報を
+  - kind: para
+    text: 付与したい！
   p28:
-  - node: p
-    children:
-    - node: text
-      content: '付加的な情報… '
-    - node: br
-    - node: text
-      content: われわれは知っている
+  - kind: para
+    text: 付加的な情報…
+  - kind: para
+    text: われわれは知っている
   p29:
-  - node: p
-    children:
-    - node: text
-      content: Docコメント
-  - node: p
-    children:
-    - node: bold
-      content: '/** '
-    - node: br
-    - node: bold
-      content: ' * @param positive-int $id '
-    - node: br
-    - node: bold
-      content: ' */ '
-    - node: br
-    - node: bold
-      content: 'function Pnd(int $id): Book '
-    - node: br
-    - node: bold
-      content: '{'
+  - kind: para
+    text: Docコメント
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param positive-int $id'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: 'function find(int $id): Book'
+  - kind: para
+    text: '{'
   p30:
-  - node: p
-    children:
-    - node: text
-      content: コードに書きたい付加情報とは何か
-  - node: p
-    children:
-    - node: text
-      content: 人間だけわかれば
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 人間に意図を伝えるためのドキュメント(コメント)
-  - node: p
-    children:
-    - node: text
-      content: ヨシ
-  - node: p
-    children:
-    - node: text
-      content: '人間もわかって '
-    - node: br
-    - node: text
-      content: 機械可読
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 静的解析ツールが情報を読み取ってコードを検査するための情報
-    - node: li
-      children:
-      - node: text
-        content: 実行時に可読で
-      - node: br
-      - node: text
-        content: 'フレームワークなどが情報を読み取って振る舞いを制御する '
-  - node: p
-    children:
-    - node: text
-      content: 効率高いとうれしい
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プログラミング処理系(PHP)に特別な処理をさせるための指定
-  - node: p
-    children:
-    - node: text
-      content: 構文の一部である
-    - node: br
-    - node: text
-      content: 必要がある
+  - kind: heading
+    level: 1
+    text: コードに書きたい付加情報とは何か
+  - kind: para
+    text: 人間だけわかれば
+  - kind: para
+    text: ヨシ
+  - kind: para
+    text: 人間もわかって
+  - kind: para
+    text: 機械可読
+  - kind: para
+    text: 実行時に可読で
+  - kind: para
+    text: 効率高いとうれしい
+  - kind: list
+    items:
+    - 人間に意図を伝えるためのドキュメント(コメント)
+    - 静的解析ツールが情報を読み取ってコードを検査するための情報
+    - フレームワークなどが情報を読み取って振る舞いを制御する
+    - プログラミング処理系(PHP)に特別な処理をさせるための指定
+  - kind: para
+    text: 構文の一部である
+  - kind: para
+    text: 必要がある
   p31:
-  - node: p
-    children:
-    - node: text
-      content: コードに書きたい付加情報とは何か
-  - node: p
-    children:
-    - node: text
-      content: 人間だけわかれば
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 人間に意図を伝えるためのドキュメント(コメント)
-  - node: p
-    children:
-    - node: text
-      content: ヨシ
-  - node: p
-    children:
-    - node: text
-      content: '人間もわかって '
-    - node: br
-    - node: text
-      content: 機械可読
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 従来Docコメントが賄っていた領域
-      - node: br
-      - node: text
-        content: '静的解析ツールが情報を読み取ってコードを検査するための情報 '
-    - node: li
-      children:
-      - node: text
-        content: 実行時に可読で
-      - node: br
-      - node: text
-        content: 'フレームワークなどが情報を読み取って振る舞いを制御する '
-  - node: p
-    children:
-    - node: text
-      content: 効率高いとうれしい
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プログラミング処理系(PHP)に特別な処理をさせるための指定
-  - node: p
-    children:
-    - node: text
-      content: 構文の一部である
-    - node: br
-    - node: text
-      content: 必要がある
+  - kind: heading
+    level: 1
+    text: コードに書きたい付加情報とは何か
+  - kind: para
+    text: 人間だけわかれば
+  - kind: para
+    text: ヨシ
+  - kind: para
+    text: 人間もわかって
+  - kind: para
+    text: 機械可読
+  - kind: heading
+    level: 2
+    text: 従来Docコメントが賄っていた領域
+  - kind: para
+    text: 実行時に可読で
+  - kind: para
+    text: 効率高いとうれしい
+  - kind: list
+    items:
+    - 人間に意図を伝えるためのドキュメント(コメント)
+    - 静的解析ツールが情報を読み取ってコードを検査するための情報
+    - フレームワークなどが情報を読み取って振る舞いを制御する
+    - プログラミング処理系(PHP)に特別な処理をさせるための指定
+  - kind: para
+    text: 構文の一部である
+  - kind: para
+    text: 必要がある
   p32:
-  - node: p
-    children:
-    - node: text
-      content: DocCommentは自由帳
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 事実上、なんでも書ける
-    - node: li
-      children:
-      - node: text
-        content: なにを書いても怒られないが、@hogeのような形式が一般的
-    - node: li
-      children:
-      - node: text
-        content: phpDocumenterスタイルの「タグ」
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '@param int $foo (スペース区切り)'
-    - node: li
-      children:
-      - node: text
-        content: Doctrineスタイルの「アノテーション」
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '@Annotation("arg", 1, 2, 3)'
+  - kind: para
+    text: DocCommentは自由帳
+  - kind: list
+    items:
+    - 事実上、なんでも書ける
+    - なにを書いても怒られないが、@hogeのような形式が一般的
+    - phpDocumenterスタイルの「タグ」
+    - '@param int $foo (スペース区切り)'
+    - Doctrineスタイルの「アノテーション」
+    - '@Annotation("arg", 1, 2, 3)'
   p33:
-  - node: p
-    children:
-    - node: text
-      content: なぜDocコメント…
+  - kind: heading
+    level: 1
+    text: なぜDocコメント…
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 改めてDocコメント
+  - kind: heading
+    level: 1
+    text: 改めてDocコメント
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 実行時に読める不思議なコメント
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 関数やクラスなどの直前に /** ... */ のような形式でコメントを書くと、
-      - node: br
-      - node: bold
-        content: リ フ レ ク シ ョ ン
-      - node: br
-      - node: bold
-        content: ReXection
-      - node: text
-        content: 'という機能を使って読み取れる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Re:ection::getComment() で文字列で取得できる
-    - node: li
-      children:
-      - node: text
-        content: 実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ
-      - node: br
-      - node: text
-        content: ングが実現できる
+  - kind: heading
+    level: 1
+    text: 実行時に読める不思議なコメント
+  - kind: para
+    text: リフレクション
+  - kind: list
+    items:
+    - 関数やクラスなどの直前に /** ... */ のような形式でコメントを書くと、
+  - kind: para
+    text: Reflectionという機能を使って読み取れる
+  - kind: list
+    items:
+    - Reflection::getComment() で文字列で取得できる
+    - 実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ
+  - kind: para
+    text: ングが実現できる
   p36: []
   p37:
-  - node: p
-    children:
-    - node: text
-      content: メタ？
+  - kind: heading
+    level: 1
+    text: メタ？
   p38:
-  - node: p
-    children:
-    - node: text
-      content: さっきも出てきた
+  - kind: heading
+    level: 1
+    text: さっきも出てきた
   p39:
-  - node: p
-    children:
-    - node: text
-      content: アトリビュートってなんだ？
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 日本語での定訳としては「属性」
-    - node: li
-      children:
-      - node: text
-        content: もっとも知られているであろう用語としてはHTMLタグ
-    - node: li
-      children:
-      - node: text
-        content: あるもの(要素)の性質を表す情報のこと
-    - node: li
-      children:
-      - node: text
-        content: MDNではHTMLの属性について次のように説明している
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 「属性は要素を拡張し、動作を変更したりメタデータを提供したりします。」
-          - node: br
-          - node: text
-            content: Attribute (属性) - MDN Web Docs 用語集 より
+  - kind: para
+    text: アトリビュートってなんだ？
+  - kind: list
+    items:
+    - 日本語での定訳としては「属性」
+    - もっとも知られているであろう用語としてはHTMLタグ
+    - あるもの(要素)の性質を表す情報のこと
+    - MDNではHTMLの属性について次のように説明している
+    - 「属性は要素を拡張し、動作を変更したりメタデータを提供したりします。」
+  - kind: para
+    text: Attribute (属性) - MDN Web Docs 用語集 より
   p40:
-  - node: p
-    children:
-    - node: text
-      content: Wikipedia曰く
+  - kind: heading
+    level: 1
+    text: Wikipedia曰く
   p41:
-  - node: p
-    children:
-    - node: bold
-      content: 'https://ja.wikipedia.org/wiki/メタ '
-    - node: br
-    - node: bold
-      content: 2022-12-14T19:41:26版より
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/メタ
+  - kind: para
+    text: 2022-12-14T19:41:26版より
   p42:
-  - node: p
-    children:
-    - node: bold
-      content: 'https://ja.wikipedia.org/wiki/メタ '
-    - node: br
-    - node: bold
-      content: 2022-12-14T19:41:26版より
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/メタ
+  - kind: para
+    text: 2022-12-14T19:41:26版より
   p43:
-  - node: p
-    children:
-    - node: text
-      content: つまり？
+  - kind: heading
+    level: 1
+    text: つまり？
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 'メタデータ '
-    - node: br
-    - node: text
-      content: データについてのデータ
+  - kind: heading
+    level: 1
+    text: メタデータ
+  - kind: heading
+    level: 2
+    text: データについてのデータ
   p45:
-  - node: p
-    children:
-    - node: text
-      content: '例： '
-    - node: br
-    - node: text
-      content: '写真 に対する '
-    - node: br
-    - node: text
-      content: (画像データ)
-    - node: br
-    - node: text
-      content: ｢撮影場所｣や｢日時｣などの
-    - node: br
-    - node: text
-      content: 情報
+  - kind: para
+    text: 例：
+  - kind: para
+    text: 写真(画像データ)に対する
+  - kind: para
+    text: 「撮影場所」や「日時」などの
+  - kind: para
+    text: 情報
   p46:
-  - node: p
-    children:
-    - node: text
-      content: '例： '
-    - node: br
-    - node: text
-      content: '楽曲 に対する '
-    - node: br
-    - node: text
-      content: (音声データ)
-    - node: br
-    - node: text
-      content: ｢演奏者｣や｢ジャンル｣など
-    - node: br
-    - node: text
-      content: の情報
+  - kind: para
+    text: 例：
+  - kind: para
+    text: 楽曲(音声データ)に対する
+  - kind: para
+    text: 「演奏者」や「ジャンル」など
+  - kind: para
+    text: の情報
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 'メタプログラミング プログラムについての '
-    - node: br
-    - node: text
-      content: プログラミング
+  - kind: para
+    text: メタプログラミング
+  - kind: para
+    text: プログラムについての
+  - kind: para
+    text: プログラミング
   p48:
-  - node: p
-    children:
-    - node: text
-      content: メタプログラミングってつまり何
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プログラムそのものを対象にするプログラミング
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: クラスや関数などを動的に呼び出したり
-        - node: li
-          children:
-          - node: text
-            content: ある処理をしたいとき、コードに直接的に書かなくても実現したりできる
-        - node: li
-          children:
-          - node: text
-            content: 明示的に定義してなくてもなんか動いてたりするやつ
-    - node: li
-      children:
-      - node: text
-        content: フレームワークのようなコードは大なり小なりメタプロ的な要素がある
-    - node: li
-      children:
-      - node: text
-        content: ブラックマジック
-      - node: br
-      - node: text
-        content: 理窟がよくわからんけど動いてたりするのはこれ (魔法とか黒魔術とか…)
+  - kind: heading
+    level: 1
+    text: メタプログラミングってつまり何
+  - kind: para
+    text: ブラックマジック
+  - kind: list
+    items:
+    - プログラムそのものを対象にするプログラミング
+    - クラスや関数などを動的に呼び出したり
+    - ある処理をしたいとき、コードに直接的に書かなくても実現したりできる
+    - 明示的に定義してなくてもなんか動いてたりするやつ
+    - フレームワークのようなコードは大なり小なりメタプロ的な要素がある
+    - 理窟がよくわからんけど動いてたりするのはこれ (魔法とか黒魔術とか…)
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 'メタプロするなら コードから情報を '
-    - node: br
-    - node: text
-      content: 読み取れるとうれしい
+  - kind: para
+    text: メタプロするなら
+  - kind: para
+    text: コードから情報を
+  - kind: para
+    text: 読み取れるとうれしい
   p50:
-  - node: p
-    children:
-    - node: text
-      content: (それが全てではない)
+  - kind: heading
+    level: 1
+    text: (それが全てではない)
   p51:
-  - node: p
-    children:
-    - node: text
-      content: ということで
+  - kind: heading
+    level: 1
+    text: ということで
   p52: []
   p53: []
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 基本的な定義方法
-  - node: p
-    children:
-    - node: bold
-      content: 'use Attribute; '
-  - node: p
-    children:
-    - node: bold
-      content: '#[Attribute( '
-    - node: br
-    - node: bold
-      content: '    Attribute::TARGET_CLASS   | Attribute::IS_REPEATABLE '
-    - node: br
-    - node: bold
-      content: ')] '
-    - node: br
-    - node: bold
-      content: class MyAttr {
+  - kind: para
+    text: 基本的な定義方法
+  - kind: para
+    text: use Attribute;
+  - kind: para
+    text: '#[Attribute('
+  - kind: para
+    text: Attribute::TARGET_CLASS
+  - kind: para
+    text: '| Attribute::IS_REPEATABLE'
+  - kind: para
+    text: )]
+  - kind: para
+    text: class MyAttr {
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 基本的な使いかた
-  - node: p
-    children:
-    - node: bold
-      content: 'use MyAttr; '
-  - node: p
-    children:
-    - node: bold
-      content: '#[MyAttr(''foo'', ''bar'', ''buz'')] '
-    - node: br
-    - node: bold
-      content: 'class Book '
-    - node: br
-    - node: bold
-      content: '{'
+  - kind: para
+    text: 基本的な使いかた
+  - kind: para
+    text: use MyAttr;
+  - kind: para
+    text: '#[MyAttr(''foo'', ''bar'', ''buz'')]'
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 名前付きの呼び出しも可能
-  - node: p
-    children:
-    - node: bold
-      content: 'use MyAttr; '
-  - node: p
-    children:
-    - node: bold
-      content: '#[MyAttr(a: ''foo'', b: ''bar'', c: ''buz'')] '
-    - node: br
-    - node: bold
-      content: 'class Book '
-    - node: br
-    - node: bold
-      content: '{'
+  - kind: para
+    text: 名前付きの呼び出しも可能
+  - kind: para
+    text: use MyAttr;
+  - kind: para
+    text: '#[MyAttr(a: ''foo'', b: ''bar'', c: ''buz'')]'
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
   p57:
-  - node: p
-    children:
-    - node: text
-      content: Attributeはどこに書けるの？
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 現在Re:ectionから読み取れるのは6箇所
-  - node: p
-    children:
-    - node: bold
-      content: 宣伝
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: クラス
-    - node: li
-      children:
-      - node: text
-        content: 関数
-    - node: li
-      children:
-      - node: text
-        content: メソッド
-    - node: li
-      children:
-      - node: text
-        content: プロパティ
-    - node: li
-      children:
-      - node: text
-        content: パラメータ (仮引数)
+  - kind: heading
+    level: 1
+    text: Attributeはどこに書けるの？
+  - kind: para
+    text: 宣伝
+  - kind: list
+    items:
+    - 現在Reflectionから読み取れるのは6箇所
+    - クラス
+    - 関数
+    - メソッド
+    - プロパティ
+    - パラメータ (仮引数)
   p58:
-  - node: p
-    children:
-    - node: text
-      content: 'これでみなさまは '
-    - node: br
-    - node: text
-      content: Attributeを定義でき
-    - node: br
-    - node: text
-      content: るようになりました
+  - kind: para
+    text: これでみなさまは
+  - kind: para
+    text: Attributeを定義でき
+  - kind: para
+    text: るようになりました
   p59:
-  - node: p
-    children:
-    - node: text
-      content: ね、簡単でしょ？
+  - kind: heading
+    level: 1
+    text: ね、簡単でしょ？
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 'Docコメントと '
-    - node: br
-    - node: text
-      content: 何が違うの？
+  - kind: para
+    text: Docコメントと
+  - kind: para
+    text: 何が違うの？
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 比べてみよう
+  - kind: heading
+    level: 1
+    text: 比べてみよう
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 実行時に読める不思議なコメント
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 関数やクラスなどの直前に /** ... */ のような形式でコメントを書くと、
-      - node: br
-      - node: bold
-        content: リ フ レ ク シ ョ ン
-      - node: br
-      - node: bold
-        content: ReXection
-      - node: text
-        content: 'という機能を使って読み取れる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Re:ection::getComment() で文字列で取得できる
-    - node: li
-      children:
-      - node: text
-        content: 実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ
-      - node: br
-      - node: text
-        content: ングが実現できる
+  - kind: heading
+    level: 1
+    text: 実行時に読める不思議なコメント
+  - kind: para
+    text: リフレクション
+  - kind: list
+    items:
+    - 関数やクラスなどの直前に /** ... */ のような形式でコメントを書くと、
+  - kind: para
+    text: Reflectionという機能を使って読み取れる
+  - kind: list
+    items:
+    - Reflection::getComment() で文字列で取得できる
+    - 実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ
+  - kind: para
+    text: ングが実現できる
   p63:
-  - node: p
-    children:
-    - node: text
-      content: 実行時に読める不思議なXXXX
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '関数やクラスなどの直前に #[Attr()] のような形式のコードを書くと、'
-      - node: br
-      - node: bold
-        content: リ フ レ ク シ ョ ン
-      - node: br
-      - node: bold
-        content: ReXection
-      - node: text
-        content: 'という機能を使って読み取れる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Re:ection::getAttributes() でRe:ectionAttributeを取得できる
-    - node: li
-      children:
-      - node: text
-        content: 実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ
-      - node: br
-      - node: text
-        content: ングが実現できる
+  - kind: heading
+    level: 1
+    text: 実行時に読める不思議なXXXX
+  - kind: para
+    text: リフレクション
+  - kind: list
+    items:
+    - '関数やクラスなどの直前に #[Attr()] のような形式のコードを書くと、'
+  - kind: para
+    text: Reflectionという機能を使って読み取れる
+  - kind: list
+    items:
+    - Reflection::getAttributes() でReflectionAttributeを取得できる
+    - 実行時とかにいい感じに情報を読み取って処理をしてやるとメタプログラミ
+  - kind: para
+    text: ングが実現できる
   p64:
-  - node: p
-    children:
-    - node: text
-      content: Q. 何が違うの？
+  - kind: heading
+    level: 1
+    text: Q. 何が違うの？
   p65:
-  - node: p
-    children:
-    - node: text
-      content: A. 違うよ､全然違うよ
+  - kind: heading
+    level: 1
+    text: A. 違うよ、全然違うよ
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 実際に見てみましょう
+  - kind: heading
+    level: 1
+    text: 実際に見てみましょう
   p67: []
   p68:
-  - node: p
-    children:
-    - node: text
-      content: ReﬂectionAttribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: getAttributes() メソッドでとれるクラス
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: $ref = new Re:ectionClass(Target::class);
-        - node: li
-          children:
-          - node: text
-            content: $ref->getArguments() で値だけ取れる
-        - node: li
-          children:
-          - node: text
-            content: $ref->newInstance() でアトリビュートをインスタンス化できる
+  - kind: heading
+    level: 1
+    text: ReflectionAttribute
+  - kind: list
+    items:
+    - getAttributes() メソッドでとれるクラス
+    - $ref = new ReflectionClass(Target::class);
+    - $ref->getArguments() で値だけ取れる
+    - $ref->newInstance() でアトリビュートをインスタンス化できる
   p69:
-  - node: p
-    children:
-    - node: text
-      content: 何が変わったのか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 明示的にRe:ectionしないと何も起こらないのはDocコメントと同じ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Attributeを書くだけなら、ただのコメントと同じ
-    - node: li
-      children:
-      - node: text
-        content: 引数の区切りがとても簡単
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Docコメントでは自前で構文解析しないといけない
-    - node: li
-      children:
-      - node: text
-        content: 静的解析ツールが自然にサポートしてくれている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Docコメントでは変な記述をしても気付きにくい
+  - kind: para
+    text: 何が変わったのか
+  - kind: list
+    items:
+    - 明示的にReflectionしないと何も起こらないのはDocコメントと同じ
+    - Attributeを書くだけなら、ただのコメントと同じ
+    - 引数の区切りがとても簡単
+    - Docコメントでは自前で構文解析しないといけない
+    - 静的解析ツールが自然にサポートしてくれている
+    - Docコメントでは変な記述をしても気付きにくい
   p70:
-  - node: p
-    children:
-    - node: text
-      content: 'これでAttributeの '
-    - node: br
-    - node: text
-      content: 機能は全部です！
+  - kind: para
+    text: これでAttributeの
+  - kind: para
+    text: 機能は全部です！
   p71:
-  - node: p
-    children:
-    - node: text
-      content: 完全マスター
-  - node: p
-    children:
-    - node: text
-      content: 🎉
+  - kind: para
+    text: 完全マスター
+  - kind: para
+    text: 🎉
   p72:
-  - node: p
-    children:
-    - node: text
-      content: '機能はめっちゃ '
-    - node: br
-    - node: text
-      content: シンプル
+  - kind: para
+    text: 機能はめっちゃ
+  - kind: para
+    text: シンプル
   p73:
-  - node: p
-    children:
-    - node: text
-      content: 'あとはどういう '
-    - node: br
-    - node: text
-      content: ｢想い｣を載せるか
+  - kind: para
+    text: あとはどういう
+  - kind: para
+    text: 「想い」を載せるか
   p74:
-  - node: p
-    children:
-    - node: text
-      content: 創意工夫が大事
+  - kind: heading
+    level: 1
+    text: 創意工夫が大事
   p75:
-  - node: p
-    children:
-    - node: text
-      content: とはいえ定石はある
+  - kind: heading
+    level: 1
+    text: とはいえ定石はある
   p76: []
   p77:
-  - node: p
-    children:
-    - node: text
-      content: DI vs Attribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 山岡さんの2021年の発表で紹介された事例
-    - node: li
-      children:
-      - node: text
-        content: 依存性注入したいデータを明示するために使う
+  - kind: para
+    text: DI vs Attribute
+  - kind: list
+    items:
+    - 山岡さんの2021年の発表で紹介された事例
+    - 依存性注入したいデータを明示するために使う
   p78: []
   p79:
-  - node: p
-    children:
-    - node: text
-      content: DB vs Attribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: おかしょいさんの2022年の発表で紹介された事例
-    - node: li
-      children:
-      - node: text
-        content: データベースとPHPのクラスのプロパティを紐付けるために使う
+  - kind: para
+    text: DB vs Attribute
+  - kind: list
+    items:
+    - おかしょいさんの2022年の発表で紹介された事例
+    - データベースとPHPのクラスのプロパティを紐付けるために使う
   p80:
-  - node: p
-    children:
-    - node: text
-      content: バリデーション vs Attribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2022年11月に私が書いた記事
-    - node: li
-      children:
-      - node: text
-        content: アトリビュートは自然に発火しないので明示的に呼び出す必要がある
+  - kind: para
+    text: バリデーション vs Attribute
+  - kind: list
+    items:
+    - 2022年11月に私が書いた記事
+    - アトリビュートは自然に発火しないので明示的に呼び出す必要がある
   p81:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit vs Docコメント
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPUnitはこれまでDocコメントによってテストの実行を制御できた
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '@dataProvider, @testWith … パラメタライズドテスト'
-        - node: li
-          children:
-          - node: text
-            content: '@runInSeparateProcess, @runTestsInSeparateProcess'
-          - node: br
-          - node: text
-            content: '… プロセスを隔離して実行 '
-        - node: li
-          children:
-          - node: text
-            content: '@covers … カバレッジターゲットの制御'
-        - node: li
-          children:
-          - node: text
-            content: '@group … テストグループの宣言'
-    - node: li
-      children:
-      - node: text
-        content: Doctrine式のAnnotationではなくスペース区切りが多かった
+  - kind: heading
+    level: 1
+    text: PHPUnit vs Docコメント
+  - kind: list
+    items:
+    - PHPUnitはこれまでDocコメントによってテストの実行を制御できた
+    - '@dataProvider, @testWith … パラメタライズドテスト'
+    - '@runInSeparateProcess, @runTestsInSeparateProcess'
+  - kind: para
+    text: … プロセスを隔離して実行
+  - kind: list
+    items:
+    - '@covers … カバレッジターゲットの制御'
+    - '@group … テストグループの宣言'
+    - Doctrine式のAnnotationではなくスペース区切りが多かった
   p82:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit 10 vs Attribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPUnit 10でAttributeに移行、11で非推奨化、12で削除予定
-    - node: li
-      children:
-      - node: text
-        content: 超大量の移行リスト… sebastianbergmann/phpunit#4502
-    - node: li
-      children:
-      - node: text
-        content: その他の変更は02氏の
-      - node: br
-      - node: text
-        content: 発表を参照のこと
+  - kind: para
+    text: PHPUnit 10 vs Attribute
+  - kind: list
+    items:
+    - PHPUnit 10でAttributeに移行、11で非推奨化、12で削除予定
+    - 超大量の移行リスト… sebastianbergmann/phpunit#4502
+    - その他の変更は02氏の
+  - kind: para
+    text: 発表を参照のこと
   p83:
-  - node: p
-    children:
-    - node: text
-      content: 明示 vs 黙示
+  - kind: heading
+    level: 1
+    text: 明示 vs 黙示
   p84:
-  - node: p
-    children:
-    - node: text
-      content: 「こっそりやる」vs「堂々とやる」
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPにはマクロやプリプロセッサがないので、明示的が基本ではある
-    - node: li
-      children:
-      - node: text
-        content: しかし、クラスローダーを悪用してソースコードを書き換えてしまう荒技も
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Go! AOPなどのAOPフレームワークはクラスローダーでフックする
+  - kind: para
+    text: 「こっそりやる」vs「堂々とやる」
+  - kind: list
+    items:
+    - PHPにはマクロやプリプロセッサがないので、明示的が基本ではある
+    - しかし、クラスローダーを悪用してソースコードを書き換えてしまう荒技も
+    - Go! AOPなどのAOPフレームワークはクラスローダーでフックする
   p85:
-  - node: p
-    children:
-    - node: text
-      content: PHPの後方互換性 vs Attribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPでは継承するときに型宣言を厳密に合わせないといけない
-    - node: li
-      children:
-      - node: text
-        content: PHP 8ではPHPの組み込みクラスにも型宣言が追加された
-    - node: li
-      children:
-      - node: text
-        content: そうするとPHP 7/8両対応のライブラリで非常に困る
-    - node: li
-      children:
-      - node: text
-        content: '#[ReturnTypeWillChange] と書くと局所的に無視できるようになった'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 問題の先送りができてうれしい！
+  - kind: para
+    text: PHPの後方互換性 vs Attribute
+  - kind: list
+    items:
+    - PHPでは継承するときに型宣言を厳密に合わせないといけない
+    - PHP 8ではPHPの組み込みクラスにも型宣言が追加された
+    - そうするとPHP 7/8両対応のライブラリで非常に困る
+    - '#[ReturnTypeWillChange] と書くと局所的に無視できるようになった'
+    - 問題の先送りができてうれしい！
   p86:
-  - node: p
-    children:
-    - node: text
-      content: ひっそり佇むAttribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そこにあるだけでは何も起こさないというのは重要な性質
-    - node: li
-      children:
-      - node: text
-        content: '# はPHPのコメント行なので、PHP 7以下のコードに書いても問題ない'
-    - node: li
-      children:
-      - node: text
-        content: ということは… PHP 7以下でもパフォーマンスを気にしなければ
-      - node: br
-      - node: text
-        content: 'Attributeを使える '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: spiral/attributes というライブラリがある
-        - node: li
-          children:
-          - node: text
-            content: 開発用途やデプロイスクリプトなどで使う分には問題にならない
+  - kind: para
+    text: ひっそり佇むAttribute
+  - kind: list
+    items:
+    - そこにあるだけでは何も起こさないというのは重要な性質
+    - '# はPHPのコメント行なので、PHP 7以下のコードに書いても問題ない'
+    - ということは… PHP 7以下でもパフォーマンスを気にしなければ
+  - kind: para
+    text: Attributeを使える
+  - kind: list
+    items:
+    - spiral/attributes というライブラリがある
+    - 開発用途やデプロイスクリプトなどで使う分には問題にならない
   p87:
-  - node: p
-    children:
-    - node: text
-      content: doctrine/annotations
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Docコメントのアノテーションを読み取るライブラリ
-    - node: li
-      children:
-      - node: text
-        content: Attributeとだいたい同じ使い方できるが仕様が微妙に異なる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: デフォルトでは引数は __construct(array $values) として
-          - node: br
-          - node: text
-            content: '一個の配列にまとめて渡されてしまう '
-        - node: li
-          children:
-          - node: text
-            content: クラスに @Annotation @namedArgumentConstructor と書くと
-          - node: br
-          - node: text
-            content: Attributeと同様に個別のパラメータで受け取れるようになる
+  - kind: heading
+    level: 1
+    text: doctrine/annotations
+  - kind: list
+    items:
+    - Docコメントのアノテーションを読み取るライブラリ
+    - Attributeとだいたい同じ使い方できるが仕様が微妙に異なる
+    - デフォルトでは引数は __construct(array $values) として
+  - kind: para
+    text: 一個の配列にまとめて渡されてしまう
+  - kind: list
+    items:
+    - クラスに @Annotation @namedArgumentConstructor と書くと
+  - kind: para
+    text: Attributeと同様に個別のパラメータで受け取れるようになる
   p88:
-  - node: p
-    children:
-    - node: text
-      content: spiral/attributesの互換性
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP 7で利用できるAttributeを読み取るライブラリ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: AnnotationとAttributeを相互運用できる
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: doctorine/annotationsのラッパーとしてPHPDocも読める
-        - node: li
-          children:
-          - node: text
-            content: Annotationとの相互運用のためか、デフォルトでは引数がまとめて
-          - node: br
-          - node: text
-            content: '__construct(array $values) に渡されてしまう '
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: 'クラスに #[Spiral Attributes NamedArgumentConstructor]と'
-  - node: p
-    children:
-    - node: text
-      content: \ \
-  - node: p
-    children:
-    - node: text
-      content: '書くと通常のAttributeと同じ仕様で使える '
+  - kind: heading
+    level: 1
+    text: spiral/attributesの互換性
+  - kind: list
+    items:
+    - PHP 7で利用できるAttributeを読み取るライブラリ
+    - AnnotationとAttributeを相互運用できる
+    - doctorine/annotationsのラッパーとしてPHPDocも読める
+    - Annotationとの相互運用のためか、デフォルトでは引数がまとめて
+  - kind: para
+    text: __construct(array $values) に渡されてしまう
+  - kind: list
+    items:
+    - 'クラスに #[Spiral\Attributes\NamedArgumentConstructor]と'
+  - kind: para
+    text: 書くと通常のAttributeと同じ仕様で使える
   p89:
-  - node: p
-    children:
-    - node: text
-      content: ピクシブ百科事典 vs Attribute
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: コントローラにルーティング情報が書ける
-    - node: li
-      children:
-      - node: text
-        content: これは実行時に読まず、スクリプトでファイルに書き出す方式
+  - kind: para
+    text: ピクシブ百科事典 vs Attribute
+  - kind: list
+    items:
+    - コントローラにルーティング情報が書ける
+    - これは実行時に読まず、スクリプトでファイルに書き出す方式
   p90:
-  - node: p
-    children:
-    - node: text
-      content: 'キミだけの最高の '
-    - node: br
-    - node: text
-      content: 'ユースケースを '
-    - node: br
-    - node: text
-      content: 見付けだせ
+  - kind: para
+    text: キミだけの最高の
+  - kind: para
+    text: ユースケースを
+  - kind: para
+    text: 見付けだせ
 size:
   max_width: 1920
   max_height: 1080

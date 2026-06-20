@@ -1,859 +1,460 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: PHPの20年とこれから
-  - node: p
-    children:
-    - node: text
-      content: 20 years of PHP and beyond
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: ' 2023-09-15 ZORKS沖縄 '
-  - node: p
-    children:
-    - node: bold
-      content: (非公式)PHPカンファレンス沖縄2024 前夜祭LT会
+  - kind: heading
+    level: 1
+    text: PHPの20年とこれから
+  - kind: heading
+    level: 2
+    text: 20 years of PHP and beyond
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2023-09-15 ZORKS沖縄
+  - kind: para
+    text: (非公式)PHPカンファレンス沖縄2024 前夜祭LT会
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職でPHPを書いているWebプログラマ
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職でPHPを書いているWebプログラマ
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: emacs-php
+  - kind: heading
+    level: 1
+    text: emacs-php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: このトークの文脈
+  - kind: heading
+    level: 1
+    text: このトークの文脈
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 毎年開催されている言語横断イベント
+  - kind: heading
+    level: 1
+    text: 毎年開催されている言語横断イベント
   p7: []
   p8: []
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 2017以降
+  - kind: heading
+    level: 1
+    text: 2017以降
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 2023年のLLイベントは
+  - kind: heading
+    level: 1
+    text: 2023年のLLイベントは
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 改めて
+  - kind: heading
+    level: 1
+    text: 改めて
   p12:
-  - node: p
-    children:
-    - node: text
-      content: <?php
+  - kind: heading
+    level: 1
+    text: <?php
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPって '
-    - node: br
-    - node: text
-      content: どんな言語？
+  - kind: para
+    text: PHPって
+  - kind: para
+    text: どんな言語？
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 'とにかく毀誉褒貶が '
-    - node: br
-    - node: text
-      content: 激しい言語ランタイム
+  - kind: para
+    text: とにかく毀誉褒貶が
+  - kind: para
+    text: 激しい言語ランタイム
   p15:
-  - node: p
-    children:
-    - node: text
-      content: Webトラフィック
+  - kind: heading
+    level: 1
+    text: Webトラフィック
   p16:
-  - node: p
-    children:
-    - node: text
-      content: W3Techs 統計
+  - kind: para
+    text: W3Techs 統計
   p17:
-  - node: p
-    children:
-    - node: text
-      content: パッケージ数
+  - kind: para
+    text: パッケージ数
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPはどこで '
-    - node: br
-    - node: text
-      content: 使えるのか
+  - kind: para
+    text: PHPはどこで
+  - kind: para
+    text: 使えるのか
   p19:
-  - node: p
-    children:
-    - node: text
-      content: PHPは汎用プログラミング言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTTP = Webサービス
+  - kind: para
+    text: PHPは汎用プログラミング言語
+  - kind: list
+    items:
+    - HTTP = Webサービス
   p20:
-  - node: p
-    children:
-    - node: text
-      content: PHPは汎用プログラミング言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTTP = Webサービス
-    - node: li
-      children:
-      - node: text
-        content: それ以外の任意のあらゆること (得意とは言ってない)
+  - kind: para
+    text: PHPは汎用プログラミング言語
+  - kind: list
+    items:
+    - HTTP = Webサービス
+    - それ以外の任意のあらゆること (得意とは言ってない)
   p21:
-  - node: p
-    children:
-    - node: text
-      content: PHPは汎用プログラミング言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTTP = Webサービス
-    - node: li
-      children:
-      - node: text
-        content: それ以外の任意のあらゆること (得意とは言ってない)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: CLI
-        - node: li
-          children:
-          - node: text
-            content: GUIもいちおう… (得意とは言ってない)
+  - kind: para
+    text: PHPは汎用プログラミング言語
+  - kind: list
+    items:
+    - HTTP = Webサービス
+    - それ以外の任意のあらゆること (得意とは言ってない)
+    - CLI
+    - GUIもいちおう… (得意とは言ってない)
   p22:
-  - node: p
-    children:
-    - node: text
-      content: みなさんの想像する
-    - node: br
-    - node: text
-      content: PHPとは
+  - kind: para
+    text: みなさんの想像する
+  - kind: para
+    text: PHPとは
   p23:
-  - node: p
-    children:
-    - node: text
-      content: A
-  - node: p
-    children:
-    - node: text
-      content: '<!DOCTYPE html> '
-    - node: br
-    - node: text
-      content: '<html><head><title>Hello, PHP!</title></head> '
-    - node: br
-    - node: text
-      content: '<p> '
-    - node: br
-    - node: text
-      content: '<?php if (date(''H'') < 19): ?> '
-    - node: br
-    - node: text
-      content: '     こんにちは '
-  - node: p
-    children:
-    - node: text
-      content: '<?php else: ?>      こんばんは '
-  - node: p
-    children:
-    - node: text
-      content: '<?php endif; ?> '
-    - node: br
-    - node: text
-      content: '</p> '
-    - node: br
-    - node: text
-      content: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+  - kind: heading
+    level: 1
+    text: A
+  - kind: para
+    text: <!DOCTYPE html>
+  - kind: para
+    text: <html><head><title>Hello, PHP!</title></head>
+  - kind: para
+    text: <p>
+  - kind: para
+    text: '<?php if (date(''H'') < 19): ?>'
+  - kind: para
+    text: こんにちは
+  - kind: para
+    text: '<?php else: ?>'
+  - kind: para
+    text: こんばんは
+  - kind: para
+    text: <?php endif; ?>
+  - kind: para
+    text: </p>
+  - kind: para
+    text: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
   p24:
-  - node: p
-    children:
-    - node: text
-      content: B
-  - node: p
-    children:
-    - node: text
-      content: '<?php require ''bootstrap.php''; '
-  - node: p
-    children:
-    - node: text
-      content: '$db = mysqli_connect(); '
-    - node: br
-    - node: text
-      content: '$stmt = mysqli_prepare($db, ''SELECT * FROM books''); '
-    - node: br
-    - node: text
-      content: 'mysqli_stmt_execute($stmt); print ''<h1>本の一覧</h1>''; '
-  - node: p
-    children:
-    - node: text
-      content: 'print ''<ul>''; '
-    - node: br
-    - node: text
-      content: 'foreach ($stmt as $s) { '
-    - node: br
-    - node: text
-      content: '    print ''<li>''; print $s->name; print ''</li>''; '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: print '</ul>';
+  - kind: heading
+    level: 1
+    text: B
+  - kind: para
+    text: <?php require 'bootstrap.php';
+  - kind: para
+    text: $db = mysqli_connect();
+  - kind: para
+    text: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
+  - kind: para
+    text: mysqli_stmt_execute($stmt);
+  - kind: para
+    text: print '<h1>本の一覧</h1>';
+  - kind: para
+    text: print '<ul>';
+  - kind: para
+    text: foreach ($stmt as $s) {
+  - kind: para
+    text: print '<li>'; print $s->name; print '</li>';
+  - kind: para
+    text: '}'
+  - kind: para
+    text: print '</ul>';
   p25:
-  - node: p
-    children:
-    - node: text
-      content: C
-  - node: p
-    children:
-    - node: text
-      content: '<?php declare(strict_types=1); '
-  - node: p
-    children:
-    - node: text
-      content: 'namespace Foo\Http\Controller; '
-  - node: p
-    children:
-    - node: text
-      content: 'class BooksController extends BaseController { '
-    - node: br
-    - node: text
-      content: '    public function index() { '
-    - node: br
-    - node: text
-      content: '        $books = Books::getAll(); '
-  - node: p
-    children:
-    - node: text
-      content: '        $this->render(compact("books")); '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: C
+  - kind: para
+    text: <?php declare(strict_types=1);
+  - kind: para
+    text: namespace Foo\Http\Controller;
+  - kind: para
+    text: class BooksController extends BaseController {
+  - kind: para
+    text: public function index() {
+  - kind: para
+    text: $books = Books::getAll();
+  - kind: para
+    text: $this->render(compact("books"));
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
   p26:
-  - node: p
-    children:
-    - node: bold
-      content: P H P の原作者
-    - node: br
-    - node: text
-      content: ラスマスかく語りき
+  - kind: heading
+    level: 2
+    text: P H P の原作者
+  - kind: heading
+    level: 1
+    text: ラスマスかく語りき
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 2007年 MySQL Conference
-  - node: p
-    children:
-    - node: bold
-      content: '“We have things like protected properties. We have abstract methods.
-        We have all this stuff that your computer science teacher told '
-    - node: br
-    - node: bold
-      content: 'you you should be using.  '
-    - node: br
-    - node: bold
-      content: I don't care about this crap at all.”
-  - node: p
-    children:
-    - node: bold
-      content: '–Rasmus Lerdorf '
-    - node: br
-    - node: bold
-      content: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+  - kind: heading
+    level: 1
+    text: 2007年 MySQL Conference
+  - kind: para
+    text: “We have things like protected properties.
+  - kind: para
+    text: We have abstract methods. We have all this
+  - kind: para
+    text: stuff that your computer science teacher told
+  - kind: para
+    text: you you should be using.
+  - kind: para
+    text: I don't care about this crap at all.”
+  - kind: para
+    text: –Rasmus Lerdorf
+  - kind: para
+    text: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 2007年 MySQL Conference
-  - node: p
-    children:
-    - node: text
-      content: には プロパティも
-    - node: br
-    - node: bold
-      content: '“PHP protected  '
-    - node: br
-    - node: text
-      content: 抽象メソッドもありますよ。計算機科学の
-    - node: br
-    - node: text
-      content: 教授が「使え」と言ってるものは全部。
-  - node: p
-    children:
-    - node: text
-      content: そんなことはクソ興味ないですけど
-  - node: p
-    children:
-    - node: bold
-      content: ”
-  - node: p
-    children:
-    - node: bold
-      content: (tadsan )
-  - node: p
-    children:
-    - node: bold
-      content: '–Rasmus Lerdorf '
-  - node: p
-    children:
-    - node: text
-      content: による超訳
+  - kind: heading
+    level: 1
+    text: 2007年 MySQL Conference
+  - kind: para
+    text: “PHPにはprotectedプロパティも
+  - kind: para
+    text: 抽象メソッドもありますよ。計算機科学の
+  - kind: para
+    text: 教授が「使え」と言ってるものは全部。
+  - kind: para
+    text: そんなことはクソ興味ないですけど”
+  - kind: para
+    text: –Rasmus Lerdorf (tadsanによる超訳)
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '変数に$があって '
-    - node: br
-    - node: text
-      content: Perlっぽくて
+  - kind: para
+    text: 変数に$があって
+  - kind: para
+    text: Perlっぽくて
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 'C言語っぽい '
-    - node: br
-    - node: text
-      content: '関数と '
-    - node: br
-    - node: text
-      content: -> があって
+  - kind: para
+    text: C言語っぽい
+  - kind: para
+    text: 関数と
+  - kind: para
+    text: -> があって
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 雰囲気Javaっぽい オブジェクト指向で
+  - kind: para
+    text: 雰囲気Javaっぽい
+  - kind: para
+    text: オブジェクト指向で
   p32:
-  - node: p
-    children:
-    - node: text
-      content: PHPは見る人の心を映す
+  - kind: heading
+    level: 1
+    text: PHPは見る人の心を映す
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 改めて2003年
+  - kind: heading
+    level: 1
+    text: 改めて2003年
   p34:
-  - node: p
-    children:
-    - node: text
-      content: PHPの歴史 (LLイベント以前)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '1994: PHP Tools 1.0   → SSI風構文のテンプレートエンジン'
-    - node: li
-      children:
-      - node: text
-        content: '1996: PHP/FI 2.0        → 汎用言語として使用できるように'
-    - node: li
-      children:
-      - node: text
-        content: '1998: PHP 3.0             → クラス構文のサポート'
-    - node: li
-      children:
-      - node: text
-        content: '1999: PHP 4.0             → Zend Engine (インタプリタVM化)'
-    - node: li
-      children:
-      - node: text
-        content: '2003: PHP 5.0(開発中) → オブジェクト指向構文の刷新'
+  - kind: para
+    text: PHPの歴史 (LLイベント以前)
+  - kind: list
+    items:
+    - '1994: PHP Tools 1.0 → SSI風構文のテンプレートエンジン'
+    - '1996: PHP/FI 2.0 → 汎用言語として使用できるように'
+    - '1998: PHP 3.0 → クラス構文のサポート'
+    - '1999: PHP 4.0 → Zend Engine (インタプリタVM化)'
+    - '2003: PHP 5.0(開発中) → オブジェクト指向構文の刷新'
   p35:
-  - node: p
-    children:
-    - node: text
-      content: '‒ PHPの今とこれから '
-  - node: p
-    children:
-    - node: text
-      content: http://ll.jus.or.jp/2003/document/p1-php.pdf
+  - kind: para
+    text: ‒ PHPの今とこれから
+  - kind: para
+    text: http://ll.jus.or.jp/2003/document/p1-php.pdf
   p36:
-  - node: p
-    children:
-    - node: text
-      content: '‒ PHPの今とこれから2009 '
-  - node: p
-    children:
-    - node: text
-      content: https://www.slideshare.net/hirokawa/php2009
+  - kind: para
+    text: ‒ PHPの今とこれから2009
+  - kind: para
+    text: https://www.slideshare.net/hirokawa/php2009
   p37:
-  - node: p
-    children:
-    - node: text
-      content: '‒ PHPの今とこれから2009 '
-  - node: p
-    children:
-    - node: text
-      content: https://www.slideshare.net/hirokawa/php2009
+  - kind: para
+    text: ‒ PHPの今とこれから2009
+  - kind: para
+    text: https://www.slideshare.net/hirokawa/php2009
   p38:
-  - node: p
-    children:
-    - node: text
-      content: '‒ 開発中の PHP 6、UTF-16 化に失敗。開発ブランチも 5.3 系に巻き戻し '
-  - node: p
-    children:
-    - node: text
-      content: https://srad.jp/story/10/03/19/0136250/
+  - kind: para
+    text: ‒ 開発中の PHP 6、UTF-16 化に失敗。開発ブランチも 5.3 系に巻き戻し
+  - kind: para
+    text: https://srad.jp/story/10/03/19/0136250/
   p39:
-  - node: p
-    children:
-    - node: text
-      content: PHPと文字列
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: string型 = バイト列 (任意のバイナリが格納できる)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Ruby 1.8、Python 2.xと同等
-    - node: li
-      children:
-      - node: text
-        content: PHP 6.xでICUと統合してUCS正規化しようとした
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 規定路線だったので、PHP 5.2(2006年)にbinaryキャストが追加
-        - node: li
-          children:
-          - node: text
-            content: 当時期待されていたパフォーマンス要件を満たせず2010年に断念
-    - node: li
-      children:
-      - node: text
-        content: 文字列以外の機能は5.3(2009年)、5.4(2012年)でリリース
+  - kind: para
+    text: PHPと文字列
+  - kind: list
+    items:
+    - string型 = バイト列 (任意のバイナリが格納できる)
+    - Ruby 1.8、Python 2.xと同等
+    - PHP 6.xでICUと統合してUCS正規化しようとした
+    - 規定路線だったので、PHP 5.2(2006年)にbinaryキャストが追加
+    - 当時期待されていたパフォーマンス要件を満たせず2010年に断念
+    - 文字列以外の機能は5.3(2009年)、5.4(2012年)でリリース
   p40:
-  - node: p
-    children:
-    - node: text
-      content: '‒ Lightweight Language Saturday プログラム '
-  - node: p
-    children:
-    - node: text
-      content: http://ll.jus.or.jp/2003/program.html
+  - kind: para
+    text: ‒ Lightweight Language Saturday プログラム
+  - kind: para
+    text: http://ll.jus.or.jp/2003/program.html
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '‒ PHPにおけるオブジェクト指向「的」機能の特徴 '
-  - node: p
-    children:
-    - node: text
-      content: http://ll.jus.or.jp/2003/document/p2-php.pdf
+  - kind: para
+    text: ‒ PHPにおけるオブジェクト指向「的」機能の特徴
+  - kind: para
+    text: http://ll.jus.or.jp/2003/document/p2-php.pdf
   p42:
-  - node: p
-    children:
-    - node: text
-      content: '‒ PHPにおけるオブジェクト指向「的」機能の特徴 '
-  - node: p
-    children:
-    - node: text
-      content: http://ll.jus.or.jp/2003/document/p2-php.pdf
+  - kind: para
+    text: ‒ PHPにおけるオブジェクト指向「的」機能の特徴
+  - kind: para
+    text: http://ll.jus.or.jp/2003/document/p2-php.pdf
   p43:
-  - node: p
-    children:
-    - node: text
-      content: PHPのオブジェクト指向機能
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP 5.0
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 可視性 (public/protected/private)
-        - node: li
-          children:
-          - node: text
-            content: abstract/interfaceが導入
-        - node: li
-          children:
-          - node: text
-            content: オブジェクトが参照型に (それまではCoW)
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 5.4: traitが導入'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 5.6: 定数式 (それまではリテラルしか記述できなかった)'
+  - kind: para
+    text: PHPのオブジェクト指向機能
+  - kind: list
+    items:
+    - PHP 5.0
+    - 可視性 (public/protected/private)
+    - abstract/interfaceが導入
+    - オブジェクトが参照型に (それまではCoW)
+    - 'PHP 5.4: traitが導入'
+    - 'PHP 5.6: 定数式 (それまではリテラルしか記述できなかった)'
   p44:
-  - node: p
-    children:
-    - node: text
-      content: PHPのオブジェクト指向機能
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 7.4: 型付きプロパティ'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.0: コンストラクタプロモーション (PHP 8.2)'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.1: readonlyプロパティ'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.2: trait定数宣言'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.3: 型付き定数宣言'
+  - kind: para
+    text: PHPのオブジェクト指向機能
+  - kind: list
+    items:
+    - 'PHP 7.4: 型付きプロパティ'
+    - 'PHP 8.0: コンストラクタプロモーション (PHP 8.2)'
+    - 'PHP 8.1: readonlyプロパティ'
+    - 'PHP 8.2: trait定数宣言'
+    - 'PHP 8.3: 型付き定数宣言'
   p45:
-  - node: p
-    children:
-    - node: text
-      content: '<?php  <?php '
-  - node: p
-    children:
-    - node: text
-      content: 'class Book {  class Book { '
-    - node: br
-    - node: text
-      content: '  /**      public function __construct( '
-    - node: br
-    - node: text
-      content: '   * @var string          public readonly string $name, '
-    - node: br
-    - node: text
-      content: '   * @readonly      ) {    */      } '
-    - node: br
-    - node: text
-      content: '  private $name; '
-    - node: br
-    - node: text
-      content: '     ... '
-    - node: br
-    - node: text
-      content: '  /** @param string $name */ '
-    - node: br
-    - node: text
-      content: '  public function __construct($name) { '
-    - node: br
-    - node: text
-      content: '    $this->name = $name; '
-  - node: p
-    children:
-    - node: text
-      content: '  ...'
+  - kind: para
+    text: <?php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: class Book {
+  - kind: para
+    text: public function __construct(
+  - kind: para
+    text: public readonly string $name,
+  - kind: para
+    text: ) {
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '...'
+  - kind: para
+    text: class Book {
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @var string'
+  - kind: para
+    text: '* @readonly'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: private $name;
+  - kind: para
+    text: /** @param string $name */
+  - kind: para
+    text: public function __construct($name) {
+  - kind: para
+    text: $this->name = $name;
+  - kind: para
+    text: '...'
   p46:
-  - node: p
-    children:
-    - node: text
-      content: PHPの歴史 (LLイベント以後)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '2004: PHP 5.0'
-    - node: li
-      children:
-      - node: text
-        content: '2005: PHP 5.1'
-    - node: li
-      children:
-      - node: text
-        content: '2006: PHP 5.2 (PHP 6との互換性を見越したsyntax追加)'
-    - node: li
-      children:
-      - node: text
-        content: '2009: PHP 5.3 (PHP 6予定の機能の一部を先行マージ)'
-    - node: li
-      children:
-      - node: text
-        content: '2012: PHP 5.4 (PHP 6開発断念、文字列以外の機能をマージ)'
+  - kind: para
+    text: PHPの歴史 (LLイベント以後)
+  - kind: list
+    items:
+    - '2004: PHP 5.0'
+    - '2005: PHP 5.1'
+    - '2006: PHP 5.2 (PHP 6との互換性を見越したsyntax追加)'
+    - '2009: PHP 5.3 (PHP 6予定の機能の一部を先行マージ)'
+    - '2012: PHP 5.4 (PHP 6開発断念、文字列以外の機能をマージ)'
   p47:
-  - node: p
-    children:
-    - node: text
-      content: PHPの開発体制
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Request for Comments https://wiki.php.net/rfc
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 言語機能の改廃提案と投票プロセス、リリース周期が明文化
-    - node: li
-      children:
-      - node: text
-        content: 機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意する
-    - node: li
-      children:
-      - node: text
-        content: PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない
-    - node: li
-      children:
-      - node: text
-        content: PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 品質保障のためのfeature freeze、RC版なども定められた
+  - kind: para
+    text: PHPの開発体制
+  - kind: list
+    items:
+    - Request for Comments https://wiki.php.net/rfc
+    - 言語機能の改廃提案と投票プロセス、リリース周期が明文化
+    - 機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意する
+    - PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない
+    - PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着
+    - 品質保障のためのfeature freeze、RC版なども定められた
   p48:
-  - node: p
-    children:
-    - node: text
-      content: PHPは誰が開発しているのか
+  - kind: heading
+    level: 1
+    text: PHPは誰が開発しているのか
   p49: []
   p50: []
   p51: []
   p52:
-  - node: p
-    children:
-    - node: text
-      content: PHPはどこに行くのか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: おそらく、どの言語よりも利用者の幅が広い言語
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 動的なホームページを作りたい個人
-        - node: li
-          children:
-          - node: text
-            content: Web制作からのステップアップ
-        - node: li
-          children:
-          - node: text
-            content: CMSを使ったWebサイト構築
-        - node: li
-          children:
-          - node: text
-            content: 各種システム開発 (大規模Webサイト、ゲームのAPIサーバ…)
+  - kind: heading
+    level: 1
+    text: PHPはどこに行くのか
+  - kind: list
+    items:
+    - おそらく、どの言語よりも利用者の幅が広い言語
+    - 動的なホームページを作りたい個人
+    - Web制作からのステップアップ
+    - CMSを使ったWebサイト構築
+    - 各種システム開発 (大規模Webサイト、ゲームのAPIサーバ…)
   p53:
-  - node: p
-    children:
-    - node: text
-      content: おそらく溝は広まりつつある
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの先進的な言語機能を取り入れて使っているか
-    - node: li
-      children:
-      - node: text
-        content: PHPの品質保障(テスト・静的解析)のトレンドに乗れているか
-    - node: li
-      children:
-      - node: text
-        content: PHP 8.xへのアップデートはかなり大変
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP 7以前よりもエラーがかなり厳格化した
-    - node: li
-      children:
-      - node: text
-        content: レンタルサーバーやVPSを放置している人もおそらく多い
+  - kind: para
+    text: おそらく溝は広まりつつある
+  - kind: list
+    items:
+    - PHPの先進的な言語機能を取り入れて使っているか
+    - PHPの品質保障(テスト・静的解析)のトレンドに乗れているか
+    - PHP 8.xへのアップデートはかなり大変
+    - PHP 7以前よりもエラーがかなり厳格化した
+    - レンタルサーバーやVPSを放置している人もおそらく多い
   p54: []
   p55: []
   p56: []
   p57:
-  - node: p
-    children:
-    - node: text
-      content: PHPは過去と未来を繋ぐ言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの仕様はCGIの時代から地続き
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PerlやRubyはApache mod時代やPost WSGI時代に断絶がある
-        - node: li
-          children:
-          - node: text
-            content: PHPはpreforkなサーバ上でもCGI互換のシェアードナッシング
-          - node: br
-          - node: text
-            content: '(すべての状態が隔離され、リクエストごとに初期化される) '
-    - node: li
-      children:
-      - node: text
-        content: 汎用プログラミング言語の能力を持ちながら根幹がテンプレートエンジンに
-      - node: br
-      - node: text
-        content: あるので、小規模からある程度大規模なアプリケーションにもフィットする
+  - kind: heading
+    level: 1
+    text: PHPは過去と未来を繋ぐ言語
+  - kind: list
+    items:
+    - PHPの仕様はCGIの時代から地続き
+    - PerlやRubyはApache mod時代やPost WSGI時代に断絶がある
+    - PHPはpreforkなサーバ上でもCGI互換のシェアードナッシング
+  - kind: para
+    text: (すべての状態が隔離され、リクエストごとに初期化される)
+  - kind: list
+    items:
+    - 汎用プログラミング言語の能力を持ちながら根幹がテンプレートエンジンに
+  - kind: para
+    text: あるので、小規模からある程度大規模なアプリケーションにもフィットする
   p58:
-  - node: p
-    children:
-    - node: text
-      content: Webの世界のトレンド
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: シェアを伸張する各言語
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Node.js, SPA
-        - node: li
-          children:
-          - node: text
-            content: パフォーマンスに優れた静的型付き言語
-    - node: li
-      children:
-      - node: text
-        content: 相対的にPHPの存在感は薄れつつある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: このままPHPは滅びるしかないのか…？
+  - kind: heading
+    level: 1
+    text: Webの世界のトレンド
+  - kind: list
+    items:
+    - シェアを伸張する各言語
+    - Node.js, SPA
+    - パフォーマンスに優れた静的型付き言語
+    - 相対的にPHPの存在感は薄れつつある
+    - このままPHPは滅びるしかないのか…？
   p59:
-  - node: p
-    children:
-    - node: text
-      content: PHPはどこでも65点がとれる言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '「現代におけるプロダクト開発とPHPを選定するワケ #phpkansai」'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: By @potato4d (PHPカンファレンス関西2017)
-    - node: li
-      children:
-      - node: text
-        content: 小難しいことを考えずに簡単にWebアプリを書ける(HTML+α)の言語
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: なんだかんだいってWEB+DB連携がさくっとできる言語ランタイムとして
-          - node: br
-          - node: text
-            content: 'の存在感は健在 '
-    - node: li
-      children:
-      - node: text
-        content: 求められているのは素晴らしい言語ではなく簡単に使える言語
+  - kind: para
+    text: PHPはどこでも65点がとれる言語
+  - kind: list
+    items:
+    - '「現代におけるプロダクト開発とPHPを選定するワケ #phpkansai」'
+    - By @potato4d (PHPカンファレンス関西2017)
+    - 小難しいことを考えずに簡単にWebアプリを書ける(HTML+α)の言語
+    - なんだかんだいってWEB+DB連携がさくっとできる言語ランタイムとして
+  - kind: para
+    text: の存在感は健在
+  - kind: list
+    items:
+    - 求められているのは素晴らしい言語ではなく簡単に使える言語
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP先生の '
-    - node: br
-    - node: text
-      content: '雑草のような生命力に '
-    - node: br
-    - node: text
-      content: ご期待ください！
+  - kind: para
+    text: PHP先生の
+  - kind: para
+    text: 雑草のような生命力に
+  - kind: para
+    text: ご期待ください！
 size:
   max_width: 1920
   max_height: 1080

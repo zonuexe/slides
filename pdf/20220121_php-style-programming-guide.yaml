@@ -1,795 +1,481 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: PHP式プログラミング入門
-  - node: p
-    children:
-    - node: text
-      content: Guide to expression-oriented programming in PHP
-  - node: p
-    children:
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 2022.01.21
+  - kind: heading
+    level: 1
+    text: PHP式プログラミング入門
+  - kind: heading
+    level: 2
+    text: Guide to expression-oriented programming in PHP
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2022.01.21
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: 仕事ではPHPという静的型付き関数型プログラミング言語を書いています
-    - node: li
-      children:
-      - node: text
-        content: 趣味ではEmacs Lispという雑草のような生命力の言語を書いています
-  - node: p
-    children:
-    - node: bold
-      content: '*'
-  - node: p
-    children:
-    - node: text
-      content: (出典： 『初めての人のためのLISP』)
-  - node: p
-    children:
-    - node: bold
-      content: '*'
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - 仕事ではPHPという静的型付き関数型プログラミング言語を書いています
+    - 趣味ではEmacs Lispという雑草のような生命力*の言語を書いています
+  - kind: para
+    text: (*出典： 『初めての人のためのLISP』)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 普段はEmacsという
-    - node: br
-    - node: text
-      content: Lisp専用OSでPHP開発
-    - node: br
-    - node: text
-      content: する環境を作ってます
+  - kind: para
+    text: 普段はEmacsという
+  - kind: para
+    text: Lisp専用OSでPHP開発
+  - kind: para
+    text: する環境を作ってます
   p4:
-  - node: p
-    children:
-    - node: text
-      content: 'こういうバック '
-    - node: br
-    - node: text
-      content: 'グラウンドなので '
-    - node: br
-    - node: text
-      content: 関数型よくわからない…
+  - kind: para
+    text: こういうバック
+  - kind: para
+    text: グラウンドなので
+  - kind: para
+    text: 関数型よくわからない…
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 'map/reduceが '
-    - node: br
-    - node: text
-      content: '関数プログラミング '
-    - node: br
-    - node: text
-      content: なんでしょ
+  - kind: para
+    text: map/reduceが
+  - kind: para
+    text: 関数プログラミング
+  - kind: para
+    text: なんでしょ
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 僕はあらゆるループを LispのLOOPマクロ で書きたい派なんで…
+  - kind: para
+    text: 僕はあらゆるループを
+  - kind: para
+    text: LispのLOOPマクロ
+  - kind: para
+    text: で書きたい派なんで…
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 'ちなみにLispはElixir '
-    - node: br
-    - node: text
-      content: と同様に、基本的に returnを書けません
+  - kind: para
+    text: ちなみにLispはElixir
+  - kind: para
+    text: と同様に、基本的に
+  - kind: para
+    text: returnを書けません
   p8:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPって '
-    - node: br
-    - node: text
-      content: どういう言語
+  - kind: para
+    text: PHPって
+  - kind: para
+    text: どういう言語
   p10:
-  - node: p
-    children:
-    - node: text
-      content: PHPはHTMLに書く言語？
-  - node: p
-    children:
-    - node: text
-      content: <!DOCTYPE html public>
-  - node: p
-    children:
-    - node: text
-      content: 現在は 時 分 秒です
-  - node: p
-    children:
-    - node: text
-      content: <p> <?= date('%H %i %s ') ?></p>
+  - kind: heading
+    level: 1
+    text: PHPはHTMLに書く言語？
+  - kind: para
+    text: <!DOCTYPE html public>
+  - kind: para
+    text: <p>現在は<?= date('%H時%i分%s秒です') ?></p>
   p11:
-  - node: p
-    children:
-    - node: text
-      content: PHPスクリプト
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo "<!DOCTYPE html public>\n\n";
-  - node: p
-    children:
-    - node: text
-      content: 現在は 時 分 秒です
-  - node: p
-    children:
-    - node: text
-      content: echo "<p> ", date('%H %i %s '), "</p>\n";
+  - kind: heading
+    level: 1
+    text: PHPスクリプト
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo "<!DOCTYPE html public>\n\n";
+  - kind: para
+    text: echo "<p>現在は", date('%H時%i分%s秒です'), "</p>\n";
   p12:
-  - node: p
-    children:
-    - node: text
-      content: 'こういうノリで '
-    - node: br
-    - node: text
-      content: Webアプリがサクっと
-    - node: br
-    - node: text
-      content: 書ける素朴な言語
+  - kind: para
+    text: こういうノリで
+  - kind: para
+    text: Webアプリがサクっと
+  - kind: para
+    text: 書ける素朴な言語
   p13:
-  - node: p
-    children:
-    - node: text
-      content: PHPはこんな言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 汎用プログラミング言語 (Webだけではない)
-    - node: li
-      children:
-      - node: text
-        content: 昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体
-    - node: li
-      children:
-      - node: text
-        content: <?php タグの内側のシンタックスはCっぽい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: C言語っぽい {} を使った制御構造がある
-        - node: li
-          children:
-          - node: text
-            content: 式文が ; で終端する
+  - kind: para
+    text: PHPはこんな言語
+  - kind: list
+    items:
+    - 汎用プログラミング言語 (Webだけではない)
+    - 昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体
+    - <?php タグの内側のシンタックスはCっぽい
+    - C言語っぽい {} を使った制御構造がある
+    - 式文が ; で終端する
   p14:
-  - node: p
-    children:
-    - node: text
-      content: PHPとクロージャ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本的にレキシカルスコープです
+  - kind: heading
+    level: 1
+    text: PHPとクロージャ
+  - kind: list
+    items:
+    - 基本的にレキシカルスコープです
   p15:
-  - node: p
-    children:
-    - node: text
-      content: PHPとクロージャ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本的にレキシカルスコープです
-    - node: li
-      children:
-      - node: text
-        content: function ($a, $b)  { return $a + $b; } のような無名関数
+  - kind: heading
+    level: 1
+    text: PHPとクロージャ
+  - kind: list
+    items:
+    - 基本的にレキシカルスコープです
+    - function ($a, $b) { return $a + $b; } のような無名関数
   p16:
-  - node: p
-    children:
-    - node: text
-      content: PHPとクロージャ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本的にレキシカルスコープです
-    - node: li
-      children:
-      - node: text
-        content: function ($a, $b)  { return $a + $b; } のような無名関数
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 外側の変数をキャプチャするには明示が必要
-          - node: br
-          - node: text
-            content: function ($a, $b) use ($c)  { return $a + $b + $c; }
+  - kind: heading
+    level: 1
+    text: PHPとクロージャ
+  - kind: list
+    items:
+    - 基本的にレキシカルスコープです
+    - function ($a, $b) { return $a + $b; } のような無名関数
+    - 外側の変数をキャプチャするには明示が必要
+  - kind: para
+    text: function ($a, $b) use ($c) { return $a + $b + $c; }
   p17:
-  - node: p
-    children:
-    - node: text
-      content: PHPとクロージャ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本的にレキシカルスコープです
-    - node: li
-      children:
-      - node: text
-        content: function ($a, $b)  { return $a + $b; } のような無名関数
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 外側の変数をキャプチャするには明示が必要
-          - node: br
-          - node: text
-            content: 'function ($a, $b) use ($c)  { return $a + $b + $c; } '
-    - node: li
-      children:
-      - node: text
-        content: PHP 7.4からは  fn($a, $b) => $a + $b + $c;
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 明示しなくても キャプチャできて便利
+  - kind: heading
+    level: 1
+    text: PHPとクロージャ
+  - kind: list
+    items:
+    - 基本的にレキシカルスコープです
+    - function ($a, $b) { return $a + $b; } のような無名関数
+    - 外側の変数をキャプチャするには明示が必要
+  - kind: para
+    text: function ($a, $b) use ($c) { return $a + $b + $c; }
+  - kind: list
+    items:
+    - PHP 7.4からは fn($a, $b) => $a + $b + $c;
+    - 明示しなくても キャプチャできて便利
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'これだけ知れば おもしろいこと '
-    - node: br
-    - node: text
-      content: いろいろできそう
+  - kind: para
+    text: これだけ知れば
+  - kind: para
+    text: おもしろいこと
+  - kind: para
+    text: いろいろできそう
   p19:
-  - node: p
-    children:
-    - node: text
-      content: ところで
+  - kind: heading
+    level: 1
+    text: ところで
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '世の中にはいろんな '
-    - node: br
-    - node: text
-      content: '制約を課した '
-    - node: br
-    - node: text
-      content: プログラミングがある
+  - kind: para
+    text: 世の中にはいろんな
+  - kind: para
+    text: 制約を課した
+  - kind: para
+    text: プログラミングがある
   p21:
-  - node: p
-    children:
-    - node: text
-      content: セミコロンなしで Javaを書くとか
+  - kind: para
+    text: セミコロンなしで
+  - kind: para
+    text: Javaを書くとか
   p22:
-  - node: p
-    children:
-    - node: text
-      content: Pythonワンライナー
-    - node: br
-    - node: text
-      content: とか
+  - kind: para
+    text: Pythonワンライナー
+  - kind: para
+    text: とか
   p23:
-  - node: p
-    children:
-    - node: text
-      content: '$なしでPHPを '
-    - node: br
-    - node: text
-      content: 書くとか
+  - kind: para
+    text: $なしでPHPを
+  - kind: para
+    text: 書くとか
   p24:
-  - node: p
-    children:
-    - node: text
-      content: https://tadsan.fanbox.cc/posts/329540
+  - kind: heading
+    level: 1
+    text: https://tadsan.fanbox.cc/posts/329540
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 'これはこれで '
-    - node: br
-    - node: text
-      content: おもしろい
+  - kind: para
+    text: これはこれで
+  - kind: para
+    text: おもしろい
   p26:
-  - node: p
-    children:
-    - node: text
-      content: (再掲)PHPはこんな言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 汎用プログラミング言語 (Webだけではない)
-    - node: li
-      children:
-      - node: text
-        content: 昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体
-    - node: li
-      children:
-      - node: text
-        content: <?php タグの内側のシンタックスはCっぽい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: C言語っぽい {} を使った制御構造がある
-        - node: li
-          children:
-          - node: text
-            content: 式文が ; で終端する
+  - kind: para
+    text: (再掲)PHPはこんな言語
+  - kind: list
+    items:
+    - 汎用プログラミング言語 (Webだけではない)
+    - 昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体
+    - <?php タグの内側のシンタックスはCっぽい
+    - C言語っぽい {} を使った制御構造がある
+    - 式文が ; で終端する
   p27:
-  - node: p
-    children:
-    - node: text
-      content: (再掲)PHPはこんな言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 汎用プログラミング言語 (Webだけではない)
-    - node: li
-      children:
-      - node: text
-        content: 昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体
-    - node: li
-      children:
-      - node: text
-        content: <?php タグの内側のシンタックスはCっぽい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: C言語っぽい {} を使った制御構造がある
-        - node: li
-          children:
-          - node: text
-            content: 式文が ; で終端する
-  - node: p
-    children:
-    - node: text
-      content: 'こいつら目障り '
-    - node: br
-    - node: text
-      content: じゃないですか？
+  - kind: heading
+    level: 1
+    text: (再掲)PHPはこんな言語
+  - kind: list
+    items:
+    - 汎用プログラミング言語 (Webだけではない)
+    - 昨今ではHTMLにそのまま埋め込むよりもクラス定義が主体
+    - <?php タグの内側のシンタックスはCっぽい
+    - C言語っぽい {} を使った制御構造がある
+    - 式文が ; で終端する
+  - kind: para
+    text: こいつら目障り
+  - kind: para
+    text: じゃないですか？
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 'セミコロンレス '
-    - node: br
-    - node: text
-      content: Javaでは
+  - kind: para
+    text: セミコロンレス
+  - kind: para
+    text: Javaでは
   p29:
-  - node: p
-    children:
-    - node: text
-      content: https://horosora.hatenablog.com/entry/2018/08/03/162147より引用
+  - kind: heading
+    level: 1
+    text: https://horosora.hatenablog.com/entry/2018/08/03/162147より引用
   p30:
-  - node: p
-    children:
-    - node: text
-      content: '; だけじゃなくて '
-    - node: br
-    - node: text
-      content: '{} も縛りたくない？'
+  - kind: para
+    text: ; だけじゃなくて
+  - kind: para
+    text: '{} も縛りたくない？'
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 今回の本題
+  - kind: heading
+    level: 1
+    text: 今回の本題
   p32:
-  - node: p
-    children:
-    - node: text
-      content: (再掲)PHPはHTMLに書く言語
-  - node: p
-    children:
-    - node: text
-      content: <!DOCTYPE html public>
-  - node: p
-    children:
-    - node: text
-      content: 現在は 時 分 秒です
-  - node: p
-    children:
-    - node: text
-      content: <p> <?= date('%H %i %s ') ?></p>
-  - node: p
-    children:
-    - node: text
-      content: ?> 直前は ; を削れる
+  - kind: heading
+    level: 1
+    text: (再掲)PHPはHTMLに書く言語
+  - kind: para
+    text: <!DOCTYPE html public>
+  - kind: para
+    text: <p>現在は<?= date('%H時%i分%s秒です') ?></p>
+  - kind: para
+    text: ?> 直前は
+  - kind: para
+    text: ; を削れる
   p33:
-  - node: p
-    children:
-    - node: text
-      content: すべての処理を <?= に押し込む
+  - kind: para
+    text: すべての処理を
+  - kind: para
+    text: <?= に押し込む
   p34:
-  - node: p
-    children:
-    - node: text
-      content: できれば一個の <?= に押し込む
+  - kind: para
+    text: できれば一個の
+  - kind: para
+    text: <?= に押し込む
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPは式指向 '
-    - node: br
-    - node: text
-      content: プログラミングできる
-    - node: br
-    - node: text
-      content: 下地はいろいろある
+  - kind: para
+    text: PHPは式指向
+  - kind: para
+    text: プログラミングできる
+  - kind: para
+    text: 下地はいろいろある
   p36:
-  - node: p
-    children:
-    - node: text
-      content: PHPの特徴
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: スクリプト言語にありがちな定義せずに代入したら使える変数
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 代入は式！
-    - node: li
-      children:
-      - node: text
-        content: C言語とほぼ同じ制御構造なので if や while は {} または ; 必須
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '分岐は条件演算子 $cond ? $then : $else でどうにか'
-        - node: li
-          children:
-          - node: text
-            content: ループは array_map(), array_reduce() でどうにか
+  - kind: heading
+    level: 1
+    text: PHPの特徴
+  - kind: list
+    items:
+    - スクリプト言語にありがちな定義せずに代入したら使える変数
+    - 代入は式！
+    - C言語とほぼ同じ制御構造なので if や while は {} または ; 必須
+    - '分岐は条件演算子 $cond ? $then : $else でどうにか'
+    - ループは array_map(), array_reduce() でどうにか
   p37:
-  - node: p
-    children:
-    - node: text
-      content: これだけできれば チューリング完全 であることは自明
+  - kind: para
+    text: これだけできれば
+  - kind: para
+    text: チューリング完全
+  - kind: para
+    text: であることは自明
   p38:
-  - node: p
-    children:
-    - node: text
-      content: FizzBuzzを書いてみよう
-  - node: p
-    children:
-    - node: text
-      content: から を改行区切りで出力
-  - node: p
-    children:
-    - node: text
-      content: 1 100
-  - node: p
-    children:
-    - node: text
-      content: <?= implode(range(1, 100), "\n") ?>
+  - kind: heading
+    level: 1
+    text: FizzBuzzを書いてみよう
+  - kind: para
+    text: 1から100を改行区切りで出力
+  - kind: para
+    text: <?= implode(range(1, 100), "\n") ?>
   p39:
-  - node: p
-    children:
-    - node: text
-      content: FizzBuzzを書いてみよう
-  - node: p
-    children:
-    - node: text
-      content: から を に変換して改行区切りで出力
-  - node: p
-    children:
-    - node: text
-      content: 1 100 FizzBuzz
-  - node: p
-    children:
-    - node: text
-      content: <?= implode(array_map(
-    - node: br
-    - node: text
-      content: 'fn(int $n): string => [[$n, ''Buzz''],          '
-    - node: br
-    - node: text
-      content: '  [''Fizz'', ''FizzBuzz'']][$n%3==0][$n%5==0],'
-    - node: br
-    - node: text
-      content: range(1, 100), "\n") ?>
+  - kind: heading
+    level: 1
+    text: FizzBuzzを書いてみよう
+  - kind: para
+    text: 1から100をFizzBuzzに変換して改行区切りで出力
+  - kind: para
+    text: <?= implode(array_map(
+  - kind: para
+    text: 'fn(int $n): string => [[$n, ''Buzz''],'
+  - kind: para
+    text: '[''Fizz'', ''FizzBuzz'']][$n%3==0][$n%5==0],'
+  - kind: para
+    text: range(1, 100), "\n") ?>
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 'こういうノリで map/reduceに '
-    - node: br
-    - node: text
-      content: '変形できれば '
-    - node: br
-    - node: text
-      content: 任意の処理が可能
+  - kind: para
+    text: こういうノリで
+  - kind: para
+    text: map/reduceに
+  - kind: para
+    text: 変形できれば
+  - kind: para
+    text: 任意の処理が可能
   p41:
-  - node: p
-    children:
-    - node: text
-      content: パイプライン演算子が
-    - node: br
-    - node: text
-      content: '欲しくなってくるぜ '
-    - node: br
-    - node: text
-      content: (Lispならスレッドマクロがあるのに)
+  - kind: para
+    text: パイプライン演算子が
+  - kind: para
+    text: 欲しくなってくるぜ
+  - kind: para
+    text: (Lispならスレッドマクロがあるのに)
   p42:
-  - node: p
-    children:
-    - node: text
-      content: これはLispですね
+  - kind: heading
+    level: 1
+    text: これはLispですね
   p43:
-  - node: p
-    children:
-    - node: text
-      content: そう思ったことが 私にもありました
+  - kind: para
+    text: そう思ったことが
+  - kind: para
+    text: 私にもありました
   p44:
-  - node: p
-    children:
-    - node: text
-      content: ある日のこと…
+  - kind: heading
+    level: 1
+    text: ある日のこと…
   p45:
-  - node: p
-    children:
-    - node: text
-      content: https://qiita.com/perpouh/items/807775de16986a956d1c より引用
+  - kind: heading
+    level: 1
+    text: https://qiita.com/perpouh/items/807775de16986a956d1c より引用
   p46:
-  - node: p
-    children:
-    - node: text
-      content: https://qiita.com/perpouh/items/807775de16986a956d1c より引用
+  - kind: heading
+    level: 1
+    text: https://qiita.com/perpouh/items/807775de16986a956d1c より引用
   p47:
-  - node: p
-    children:
-    - node: text
-      content: これはやばい
+  - kind: heading
+    level: 1
+    text: これはやばい
   p48:
-  - node: p
-    children:
-    - node: text
-      content: https://qiita.com/perpouh/items/807775de16986a956d1c より引用
-  - node: p
-    children:
-    - node: text
-      content: 文を多用してるので fn() に置き換え困難
+  - kind: para
+    text: https://qiita.com/perpouh/items/807775de16986a956d1c より引用
+  - kind: para
+    text: 文を多用してるので
+  - kind: para
+    text: fn() に置き換え困難
   p49:
-  - node: p
-    children:
-    - node: text
-      content: この路線の限界
+  - kind: heading
+    level: 1
+    text: この路線の限界
   p50:
-  - node: p
-    children:
-    - node: text
-      content: array_map/
-    - node: br
-    - node: text
-      content: array_reduceは あくまで配列処理
+  - kind: para
+    text: array_map/
+  - kind: para
+    text: array_reduceは
+  - kind: para
+    text: あくまで配列処理
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 無限ループできない
+  - kind: heading
+    level: 1
+    text: 無限ループできない
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 旧式のfunctionでは自己再帰可能
-  - node: p
-    children:
-    - node: text
-      content: '変数を参照として '
-    - node: br
-    - node: text
-      content: 'キャプチャしないと '
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: いけない
-  - node: p
-    children:
-    - node: text
-      content: $fib = function (int $n) use (&$fib) {
-    - node: br
-    - node: text
-      content: '    return ($n < 2)         '
-    - node: br
-    - node: text
-      content: '        ? 1         '
-    - node: br
-    - node: text
-      content: '        : $fib($n - 1) + $fib($n -2);'
-    - node: br
-    - node: text
-      content: '};'
+  - kind: heading
+    level: 1
+    text: 旧式のfunctionでは自己再帰可能
+  - kind: para
+    text: 変数を参照として
+  - kind: para
+    text: キャプチャしないと
+  - kind: para
+    text: <?php
+  - kind: para
+    text: いけない
+  - kind: para
+    text: $fib = function (int $n) use (&$fib) {
+  - kind: para
+    text: return ($n < 2)
+  - kind: para
+    text: '? 1'
+  - kind: para
+    text: ': $fib($n - 1) + $fib($n -2);'
+  - kind: para
+    text: '};'
   p53:
-  - node: p
-    children:
-    - node: text
-      content: アロー関数(fn)では自己再帰不能
-  - node: p
-    children:
-    - node: text
-      content: 'クロージャ作成時には '
-    - node: br
-    - node: text
-      content: クロージャ自体は作られてない
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: ので束縛できない
-  - node: p
-    children:
-    - node: text
-      content: '$fib = fn (int $n) =>         '
-    - node: br
-    - node: text
-      content: '    ($n < 2)                  ? 1         '
-    - node: br
-    - node: text
-      content: '        : $fib($n - 1) + $fib($n -2);'
+  - kind: heading
+    level: 1
+    text: アロー関数(fn)では自己再帰不能
+  - kind: para
+    text: クロージャ作成時には
+  - kind: para
+    text: クロージャ自体は作られてない
+  - kind: para
+    text: <?php
+  - kind: para
+    text: ので束縛できない
+  - kind: para
+    text: $fib = fn (int $n) =>
+  - kind: para
+    text: ($n < 2)
+  - kind: para
+    text: '? 1'
+  - kind: para
+    text: ': $fib($n - 1) + $fib($n -2);'
   p54:
-  - node: p
-    children:
-    - node: text
-      content: じゃあどうすればいい
+  - kind: heading
+    level: 1
+    text: じゃあどうすればいい
   p55:
-  - node: p
-    children:
-    - node: text
-      content: そうですね
+  - kind: heading
+    level: 1
+    text: そうですね
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 不動点演算子
+  - kind: heading
+    level: 1
+    text: 不動点演算子
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 'いわゆる '
-    - node: br
-    - node: text
-      content: Yコンビネータ (Zコンビネータ)
+  - kind: para
+    text: いわゆる
+  - kind: para
+    text: Yコンビネータ
+  - kind: para
+    text: (Zコンビネータ)
   p58:
-  - node: p
-    children:
-    - node: text
-      content: Zコンビネータ
+  - kind: heading
+    level: 1
+    text: Zコンビネータ
   p59:
-  - node: p
-    children:
-    - node: text
-      content: これで勝てる
+  - kind: heading
+    level: 1
+    text: これで勝てる
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 可読性重視版
+  - kind: heading
+    level: 1
+    text: 可読性重視版
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 圧縮版
+  - kind: heading
+    level: 1
+    text: 圧縮版
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 完
+  - kind: heading
+    level: 1
+    text: 完
   p63:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: heading
+    level: 1
+    text: まとめ
   p64:
-  - node: p
-    children:
-    - node: text
-      content: PHPはLispじゃない 式指向プログラミング
-    - node: br
-    - node: text
-      content: は大変
+  - kind: para
+    text: PHPはLispじゃない
+  - kind: para
+    text: 式指向プログラミング
+  - kind: para
+    text: は大変
   p65:
-  - node: p
-    children:
-    - node: text
-      content: 'エクストリーム '
-    - node: br
-    - node: text
-      content: スポーツを楽しもう
+  - kind: para
+    text: エクストリーム
+  - kind: para
+    text: スポーツを楽しもう
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 'ご静聴ありがとう '
-    - node: br
-    - node: text
-      content: ございました
+  - kind: para
+    text: ご静聴ありがとう
+  - kind: para
+    text: ございました
   p67:
-  - node: p
-    children:
-    - node: text
-      content: あとPHPでもかなり 実用的な静的型検査が できるようになってる
+  - kind: para
+    text: あとPHPでもかなり
+  - kind: para
+    text: 実用的な静的型検査が
+  - kind: para
+    text: できるようになってる
   p68:
-  - node: p
-    children:
-    - node: text
-      content: 関連記事
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP式プログラミング入門 (原稿版)
-    - node: li
-      children:
-      - node: text
-        content: PHPの無名関数式とは何か、そしてPHP7.4のアロー関数にそなえよう
-    - node: li
-      children:
-      - node: text
-        content: Functoolsを作った
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Functoolsで過剰にスマートなPHPを書こう (無名再帰篇)
+  - kind: para
+    text: 関連記事
+  - kind: list
+    items:
+    - PHP式プログラミング入門 (原稿版)
+    - PHPの無名関数式とは何か、そしてPHP7.4のアロー関数にそなえよう
+    - Functoolsを作った
+    - Functoolsで過剰にスマートなPHPを書こう (無名再帰篇)
 size:
   max_width: 1920
   max_height: 1080

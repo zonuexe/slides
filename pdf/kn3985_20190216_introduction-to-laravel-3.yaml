@@ -1,3 +1,412 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: Laravel3に入門してみる
+  - kind: para
+    text: Let's begin with Laravel 3
+  - kind: para
+    text: 2019-02-16 Laravel JP Conference
+  - kind: para
+    text: 'Shibaura, Tokyo, Japan #laraveljpcon'
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4: []
+  p5:
+  - kind: para
+    text: さて
+  p6:
+  - kind: para
+    text: PHP界隈でのLTデビュー戦(2015年11月)
+  p7:
+  - kind: para
+    text: 経歴上PHPのフレー
+  - kind: para
+    text: ムワークを深く使う
+  - kind: para
+    text: ことは全然なかった
+  p8:
+  - kind: para
+    text: PHP界隈でのLTデビュー戦(2015年11月)
+  p9:
+  - kind: para
+    text: フレームワーク
+  - kind: para
+    text: を作るのは
+  - kind: para
+    text: 難しいのか？
+  p10:
+  - kind: para
+    text: Laravelのように多くの
+  - kind: para
+    text: 局面で受け入れられる
+  - kind: para
+    text: フレームワークを
+  - kind: para
+    text: 設計するのは難しい
+  p11:
+  - kind: para
+    text: 自分の問題を解決する
+  - kind: para
+    text: 小さなフレームワークを
+  - kind: para
+    text: 作るのはそれほどでもない
+  p12:
+  - kind: para
+    text: Create your own PHP Framework
+  p13:
+  - kind: para
+    text: PHPer人生、一度はフレームワークを作っておこう
+  p14:
+  - kind: para
+    text: 実運用する上での数々の
+  - kind: para
+    text: リスクは一旦置いておいて
+  - kind: para
+    text: (セキュリティとか)
+  p15:
+  - kind: heading
+    level: 1
+    text: 理解＞作る
+  - kind: para
+    text: (自分で動かすだけなら)
+  p16:
+  - kind: para
+    text: それからまあまあ
+  - kind: para
+    text: 経験を積んで
+  - kind: para
+    text: 2019年
+  p17:
+  - kind: para
+    text: そういえばLaravel JP
+  - kind: para
+    text: Conferenceのスタッフに
+  - kind: para
+    text: なったけど人生でLaravelを
+  - kind: para
+    text: 10行くらいしか書いてない
+  p18:
+  - kind: heading
+    level: 1
+    text: そうだLaravelやろう
+  - kind: para
+    text: '|'
+  - kind: para
+    text: ＼ __ ／
+  - kind: para
+    text: ＿ （ｍ） ＿ ﾋﾟｺｰﾝ
+  - kind: para
+    text: '|ミ|'
+  - kind: para
+    text: ／ ｀´ ＼
+  - kind: para
+    text: ('A`)
+  - kind: para
+    text: ノヽノヽ
+  - kind: para
+    text: くく
+  p19:
+  - kind: para
+    text: しかし良い解説書は既にあ
+  - kind: para
+    text: るし、ここはLaravel JP
+  - kind: para
+    text: Conferenceなんだから
+  - kind: para
+    text: 大多数は体験済み
+  p20:
+  - kind: heading
+    level: 1
+    text: そうだ、Laravel 1.0
+  - kind: para
+    text: '|'
+  - kind: para
+    text: ＼ __ ／
+  - kind: para
+    text: ＿ （ｍ） ＿ ﾋﾟｺｰﾝ
+  - kind: para
+    text: '|ミ|'
+  - kind: para
+    text: ／ ｀´ ＼
+  - kind: para
+    text: ('A`)
+  - kind: para
+    text: ノヽノヽ
+  - kind: para
+    text: くく
+  p21:
+  - kind: para
+    text: 元ねた：Rails 1.0のコードを読む
+  p22:
+  - kind: para
+    text: そうして我々は
+  - kind: para
+    text: GitHubの奥地へと
+  - kind: para
+    text: 旅立った
+  p23:
+  - kind: para
+    text: https://github.com/laravel/laravel/releases?
+  - kind: para
+    text: after=v3.0.1
+  p24:
+  - kind: para
+    text: ＿人人人人人人人人＿
+  - kind: para
+    text: ＞ 3.0以前がない ＜
+  - kind: para
+    text: ￣Y^Y^Y^Y^Y^Y^Y^Y^￣
+  p25:
+  - kind: para
+    text: じゃあ3.2.14で
+  p26:
+  - kind: heading
+    level: 1
+    text: Laravel3に入門してみる
+  - kind: para
+    text: Let's begin with Laravel 3
+  - kind: para
+    text: 2019-02-16 Laravel JP Conference
+  - kind: para
+    text: 'Shibaura, Tokyo, Japan #laraveljpcon'
+  p27:
+  - kind: para
+    text: このバージョン
+  - kind: para
+    text: を選んだ理由
+  p28:
+  - kind: para
+    text: https://github.com/laravel/laravel/releases/tag/v3.2.14
+  p29:
+  - kind: para
+    text: たぶん1.xとか2.x
+  - kind: para
+    text: のコードも漁れば
+  - kind: para
+    text: あるとは思うけど
+  p30:
+  - kind: para
+    text: Laravel 3.2.14の特徴
+  - kind: para
+    text: 2013年3月22日リリース
+  - kind: para
+    text: 3.x系の最終バージョン
+  - kind: para
+    text: 新しい方が些細なバグも解消
+  - kind: para
+    text: されてるだろ、という日和
+  - kind: para
+    text: 古いPHPフレームワークの特徴
+  - kind: para
+    text: が色濃く残っている
+  p31:
+  - kind: para
+    text: 古いフレームワークの特徴？
+  - kind: para
+    text: 依存パッケージ(Symfony)の
+  - kind: para
+    text: コピーも直接コミットされてる
+  - kind: para
+    text: Symfonyのcomposer.jsonは
+  - kind: para
+    text: 同梱されてるが、Laravel自体
+  - kind: para
+    text: はComposer未採用
+  - kind: para
+    text: 全コードが1リポジトリにある
+  p32:
+  - kind: para
+    text: ということで
+  - kind: para
+    text: コードリーディングを
+  - kind: para
+    text: 始めました
+  p33:
+  - kind: para
+    text: この時点で
+  - kind: para
+    text: 14時くらい
+  - kind: para
+    text: (当日スタッフのシフト後)
+  p34:
+  - kind: para
+    text: やったこと
+  p35:
+  - kind: para
+    text: Phanを
+  - kind: para
+    text: 使いましょう
+  p36:
+  - kind: para
+    text: 理由
+  - kind: para
+    text: PHP7の非互換を早めに潰す
+  - kind: para
+    text: Laravelの特徴的なメタプログ
+  - kind: para
+    text: ラミングを炙りだす
+  - kind: para
+    text: Phanで静的にわからない＝
+  - kind: para
+    text: 妖怪のしわざメタプログラミング
+  p37:
+  - kind: para
+    text: yield関数 (5.5以降SyntaxError)
+  p38:
+  - kind: para
+    text: SyntaxErrorに
+  - kind: para
+    text: なるような
+  - kind: para
+    text: 非互換はこれだけ
+  p39:
+  - kind: para
+    text: 改行位置 (C#っぽい)
+  p40:
+  - kind: para
+    text: PHPDocはかなり書かれてる
+  p41:
+  - kind: heading
+    level: 1
+    text: namespaceの位置が独特
+  - kind: para
+    text: ファイル名が
+  - kind: para
+    text: 小文字
+  p42:
+  - kind: para
+    text: 表層的な
+  - kind: para
+    text: ことはもういい
+  p43:
+  - kind: para
+    text: 動かそう
+  p44:
+  - kind: para
+    text: PHP 7.3で
+  p45:
+  - kind: para
+    text: mcryptに依存してる
+  p46:
+  - kind: para
+    text: キー長のパディング
+  p47:
+  - kind: para
+    text: めんどくさいのでビルトインWebサーバ
+  - kind: para
+    text: php -S localhost:3939 public/index.php
+  p48:
+  - kind: para
+    text: 動いた！
+  p49:
+  - kind: para
+    text: 見ためがプレーン
+  - kind: para
+    text: だけど実はHTML5
+  p50:
+  - kind: para
+    text: localhostでドキュメントも読める
+  p51:
+  - kind: para
+    text: 2013年時点で
+  - kind: para
+    text: ホスピタリティ
+  - kind: para
+    text: すごい
+  p52:
+  - kind: para
+    text: 動いたので
+  - kind: para
+    text: 雑に実装していく
+  p53:
+  - kind: para
+    text: ルーティング追加は(表面的に)大差ない
+  p54:
+  - kind: para
+    text: フォームの受け取りがわからなかった
+  - kind: para
+    text: (Symfony\HttpFoundation依存)
+  p55:
+  - kind: para
+    text: Bladeは
+  - kind: para
+    text: Laravel3で導入
+  p56:
+  - kind: para
+    text: いま気付いたけどBlade
+  - kind: para
+    text: ってASP.netのRazorの
+  - kind: para
+    text: オマージュじゃん
+  p57:
+  - kind: para
+    text: オチはないけど
+  - kind: para
+    text: まとめ
+  p58:
+  - kind: para
+    text: 雑にWebアプリっ
+  - kind: para
+    text: ぽいものを作る
+  - kind: para
+    text: ことはできた
+  p59:
+  - kind: para
+    text: 癖がわかれば
+  - kind: para
+    text: コードは読み
+  - kind: para
+    text: やすかった
+  p60:
+  - kind: para
+    text: 依存関係がリポジト
+  - kind: para
+    text: リ内に全部あるので
+  - kind: para
+    text: 追いやすかった
+  p61:
+  - kind: para
+    text: コードは90000行くらい
+  - kind: para
+    text: (コメント/空行含む)
+  - kind: para
+    text: 当然全部は読んでない
+  p62:
+  - kind: para
+    text: doc消し忘れた
+  - kind: para
+    text: Laravelアプリとか
+  - kind: para
+    text: この世にありそう
+  p63:
+  - kind: para
+    text: 内部実装的なエッセン
+  - kind: para
+    text: スがどの程度Laravel4以
+  - kind: para
+    text: 降に引き継がれてるか
+  - kind: para
+    text: はわからない
+  p64:
+  - kind: para
+    text: 表面的には同じだと
+  - kind: para
+    text: 言ったが細かいAPI
+  - kind: para
+    text: は「かなり」異なる
 size:
   max_width: 1024
   max_height: 768
@@ -27,657 +436,3 @@ links:
   p28:
   - url: https://github.com/laravel/laravel/releases/tag/v3.2.14
     title: Release v3.2.14 · laravel/laravel · GitHub
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: Laravel3に入門してみる
-  - node: p
-    children:
-    - node: text
-      content: Let's begin with Laravel 3
-  - node: p
-    children:
-    - node: text
-      content: 2019-02-16 Laravel JP Conference
-  - node: p
-    children:
-    - node: text
-      content: 'Shibaura, Tokyo, Japan '
-  - node: p
-    children:
-    - node: bold
-      content: '#laraveljpcon '
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
-  p3: []
-  p4: []
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: さて
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: PHP界隈でのLTデビュー戦(2015年11月)
-  p7:
-  - node: p
-    children:
-    - node: text
-      content: 経歴上PHPのフレー ムワークを深く使う ことは全然なかった
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: PHP界隈でのLTデビュー戦(2015年11月)
-  p9:
-  - node: p
-    children:
-    - node: text
-      content: フレームワーク
-    - node: br
-    - node: text
-      content: を作るのは
-  - node: p
-    children:
-    - node: text
-      content: 難しいのか？
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: Laravelのように多くの
-  - node: p
-    children:
-    - node: text
-      content: 局面で受け入れられる
-  - node: p
-    children:
-    - node: text
-      content: フレームワークを
-  - node: p
-    children:
-    - node: text
-      content: 設計するのは難しい
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: 自分の問題を解決する
-    - node: br
-    - node: text
-      content: 小さなフレームワークを 作るのはそれほどでもない
-  p12:
-  - node: p
-    children:
-    - node: text
-      content: Create your own PHP Framework
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: PHPer人生、一度はフレームワークを作っておこう
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: 実運用する上での数々の リスクは一旦置いておいて
-  - node: p
-    children:
-    - node: text
-      content: (セキュリティとか)
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: 理解＞作る
-    - node: br
-    - node: text
-      content: (自分で動かすだけなら)
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: それからまあまあ
-  - node: p
-    children:
-    - node: text
-      content: 経験を積んで
-  - node: p
-    children:
-    - node: text
-      content: 2019年
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: 'そういえばLaravel JP '
-    - node: br
-    - node: text
-      content: Conferenceのスタッフに
-  - node: p
-    children:
-    - node: text
-      content: なったけど人生でLaravelを
-  - node: p
-    children:
-    - node: text
-      content: 10行くらいしか書いてない
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: '　 　　　　 | '
-    - node: br
-    - node: text
-      content: '　 　＼　　__　　／ '
-    - node: br
-    - node: text
-      content: '　 　＿　（ｍ）　＿ ﾋﾟｺｰﾝ '
-    - node: br
-    - node: text
-      content: '　 　　　　|ミ| '
-  - node: p
-    children:
-    - node: text
-      content: そうだLaravelやろう
-  - node: p
-    children:
-    - node: text
-      content: '　 　 ／ 　｀´　 ＼ '
-    - node: br
-    - node: text
-      content: '　　　　　(''A`) '
-    - node: br
-    - node: text
-      content: 　　　　　ノヽノヽ 　　　　　　　くく
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: しかし良い解説書は既にあ るし、ここはLaravel JP Conferenceなんだから
-  - node: p
-    children:
-    - node: text
-      content: 大多数は体験済み
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: '　 　　　　 | '
-    - node: br
-    - node: text
-      content: '　 　＼　　__　　／ '
-    - node: br
-    - node: text
-      content: '　 　＿　（ｍ）　＿ ﾋﾟｺｰﾝ '
-    - node: br
-    - node: text
-      content: '　 　　　　|ミ| '
-  - node: p
-    children:
-    - node: text
-      content: そうだ、Laravel 1.0
-  - node: p
-    children:
-    - node: text
-      content: '　 　 ／ 　｀´　 ＼ '
-    - node: br
-    - node: text
-      content: '　　　　　(''A`) '
-    - node: br
-    - node: text
-      content: 　　　　　ノヽノヽ 　　　　　　　くく
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: 元ねた：Rails 1.0のコードを読む
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: そうして我々は
-    - node: br
-    - node: text
-      content: GitHubの奥地へと
-    - node: br
-    - node: text
-      content: 旅立った
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/laravel/laravel/releases?
-    - node: br
-    - node: text
-      content: after=v3.0.1
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: '＿人人人人人人人人＿ '
-    - node: br
-    - node: text
-      content: 3.0以前がない
-    - node: br
-    - node: text
-      content: ＞　 　＜ ￣Y^Y^Y^Y^Y^Y^Y^Y^￣
-  p25:
-  - node: p
-    children:
-    - node: text
-      content: じゃあ3.2.14で
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: Laravel3に入門してみる
-  - node: p
-    children:
-    - node: text
-      content: Let's begin with Laravel 3
-  - node: p
-    children:
-    - node: text
-      content: 2019-02-16 Laravel JP Conference
-  - node: p
-    children:
-    - node: text
-      content: 'Shibaura, Tokyo, Japan '
-  - node: p
-    children:
-    - node: bold
-      content: '#laraveljpcon '
-  p27:
-  - node: p
-    children:
-    - node: text
-      content: このバージョン
-    - node: br
-    - node: text
-      content: を選んだ理由
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/laravel/laravel/releases/tag/v3.2.14
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: たぶん1.xとか2.x のコードも漁れば あるとは思うけど
-  p30:
-  - node: p
-    children:
-    - node: text
-      content: Laravel 3.2.14の特徴
-  - node: p
-    children:
-    - node: text
-      content: 2013年3月22日リリース 3.x系の最終バージョン
-    - node: br
-    - node: text
-      content: 新しい方が些細なバグも解消 されてるだろ、という日和
-    - node: br
-    - node: text
-      content: 古いPHPフレームワークの特徴
-    - node: br
-    - node: text
-      content: が色濃く残っている
-  p31:
-  - node: p
-    children:
-    - node: text
-      content: 古いフレームワークの特徴？
-  - node: p
-    children:
-    - node: text
-      content: 依存パッケージ(Symfony)の コピーも直接コミットされてる Symfonyのcomposer.jsonは 同梱されてるが、Laravel自体
-    - node: br
-    - node: text
-      content: はComposer未採用
-    - node: br
-    - node: text
-      content: 全コードが1リポジトリにある
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: ということで
-  - node: p
-    children:
-    - node: text
-      content: コードリーディングを
-  - node: p
-    children:
-    - node: text
-      content: 始めました
-  p33:
-  - node: p
-    children:
-    - node: text
-      content: この時点で
-  - node: p
-    children:
-    - node: text
-      content: 14時くらい
-  - node: p
-    children:
-    - node: text
-      content: (当日スタッフのシフト後)
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: やったこと
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: Phanを
-  - node: p
-    children:
-    - node: text
-      content: 使いましょう
-  p36:
-  - node: p
-    children:
-    - node: text
-      content: 理由
-  - node: p
-    children:
-    - node: text
-      content: PHP7の非互換を早めに潰す
-    - node: br
-    - node: text
-      content: Laravelの特徴的なメタプログ
-    - node: br
-    - node: text
-      content: ラミングを炙りだす
-    - node: br
-    - node: text
-      content: Phanで静的にわからない＝
-  - node: p
-    children:
-    - node: text
-      content: メタプログラミング
-  - node: p
-    children:
-    - node: text
-      content: 妖怪のしわざ
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: yield関数 (5.5以降SyntaxError)
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: SyntaxErrorに
-  - node: p
-    children:
-    - node: text
-      content: なるような
-  - node: p
-    children:
-    - node: text
-      content: 非互換はこれだけ
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: 改行位置 (C#っぽい)
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocはかなり書かれてる
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: namespaceの位置が独特
-  - node: p
-    children:
-    - node: text
-      content: ファイル名が
-  - node: p
-    children:
-    - node: text
-      content: 小文字
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: 表層的な
-  - node: p
-    children:
-    - node: text
-      content: ことはもういい
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: 動かそう
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.3で
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: mcryptに依存してる
-  p46:
-  - node: p
-    children:
-    - node: text
-      content: キー長のパディング
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: めんどくさいのでビルトインWebサーバ
-  - node: p
-    children:
-    - node: bold
-      content: php -S localhost:3939 public/index.php
-  p48:
-  - node: p
-    children:
-    - node: text
-      content: 動いた！
-  p49:
-  - node: p
-    children:
-    - node: text
-      content: 見ためがプレーン
-  - node: p
-    children:
-    - node: text
-      content: だけど実はHTML5
-  p50:
-  - node: p
-    children:
-    - node: text
-      content: localhostでドキュメントも読める
-  p51:
-  - node: p
-    children:
-    - node: text
-      content: 2013年時点で
-  - node: p
-    children:
-    - node: text
-      content: ホスピタリティ
-    - node: br
-    - node: text
-      content: すごい
-  p52:
-  - node: p
-    children:
-    - node: text
-      content: 動いたので
-  - node: p
-    children:
-    - node: text
-      content: 雑に実装していく
-  p53:
-  - node: p
-    children:
-    - node: text
-      content: ルーティング追加は(表面的に)大差ない
-  p54:
-  - node: p
-    children:
-    - node: text
-      content: フォームの受け取りがわからなかった
-  - node: p
-    children:
-    - node: text
-      content: ( )
-    - node: br
-    - node: bold
-      content: Symfony\HttpFoundation依存
-  p55:
-  - node: p
-    children:
-    - node: text
-      content: Bladeは
-    - node: br
-    - node: text
-      content: Laravel3で導入
-  p56:
-  - node: p
-    children:
-    - node: text
-      content: いま気付いたけどBlade
-  - node: p
-    children:
-    - node: text
-      content: ってASP.netのRazorの
-  - node: p
-    children:
-    - node: text
-      content: オマージュじゃん
-  p57:
-  - node: p
-    children:
-    - node: text
-      content: オチはないけど
-    - node: br
-    - node: text
-      content: まとめ
-  p58:
-  - node: p
-    children:
-    - node: text
-      content: 雑にWebアプリっ
-    - node: br
-    - node: text
-      content: ぽいものを作る
-    - node: br
-    - node: text
-      content: ことはできた
-  p59:
-  - node: p
-    children:
-    - node: text
-      content: 癖がわかれば
-  - node: p
-    children:
-    - node: text
-      content: コードは読み
-  - node: p
-    children:
-    - node: text
-      content: やすかった
-  p60:
-  - node: p
-    children:
-    - node: text
-      content: 依存関係がリポジト リ内に全部あるので
-    - node: br
-    - node: text
-      content: 追いやすかった
-  p61:
-  - node: p
-    children:
-    - node: text
-      content: コードは90000行くらい
-  - node: p
-    children:
-    - node: text
-      content: (コメント/空行含む)
-    - node: br
-    - node: text
-      content: 当然全部は読んでない
-  p62:
-  - node: p
-    children:
-    - node: text
-      content: doc消し忘れた
-    - node: br
-    - node: text
-      content: Laravelアプリとか この世にありそう
-  p63:
-  - node: p
-    children:
-    - node: text
-      content: 内部実装的なエッセン
-    - node: br
-    - node: text
-      content: スがどの程度Laravel4以
-    - node: br
-    - node: text
-      content: 降に引き継がれてるか
-    - node: br
-    - node: text
-      content: はわからない
-  p64:
-  - node: p
-    children:
-    - node: text
-      content: 表面的には同じだと 言ったが細かいAPI は「かなり」異なる

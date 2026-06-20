@@ -1,1239 +1,734 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: '配列、ジェネリクス､ '
-    - node: br
-    - node: text
-      content: PHPで書けない型
-  - node: p
-    children:
-    - node: bold
-      content: 公開補訂版
-  - node: p
-    children:
-    - node: text
-      content: Arrays, Generics, and Types that cannot be type-declared.
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 2021.10.03
+  - kind: heading
+    level: 1
+    text: 配列、ジェネリクス､
+  - kind: heading
+    level: 1
+    text: PHPで書けない型
+  - kind: heading
+    level: 2
+    text: 公開補訂版
+  - kind: heading
+    level: 3
+    text: Arrays, Generics, and Types that cannot be type-declared.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2021.10.03
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: PHPカンファレンス実行委員、PHPerKaigi コアスタッフ
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - PHPカンファレンス実行委員、PHPerKaigi コアスタッフ
   p3:
-  - node: p
-    children:
-    - node: text
-      content: tadsanのあれこれが読める場所
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://tadsan.fanbox.cc/
-    - node: li
-      children:
-      - node: text
-        content: https://scrapbox.io/php/
-    - node: li
-      children:
-      - node: text
-        content: https://www.phper.ninja/
-    - node: li
-      children:
-      - node: text
-        content: https://zenn.dev/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://qiita.com/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://github.com/bag2php
+  - kind: para
+    text: tadsanのあれこれが読める場所
+  - kind: list
+    items:
+    - https://tadsan.fanbox.cc/
+    - https://scrapbox.io/php/
+    - https://www.phper.ninja/
+    - https://zenn.dev/tadsan
+    - https://qiita.com/tadsan
+    - https://github.com/bag2php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB PRESS総集編
+  - kind: heading
+    level: 1
+    text: WEB+DB PRESS総集編
   p5:
-  - node: p
-    children:
-    - node: text
-      content: Software Design 11月号
+  - kind: heading
+    level: 1
+    text: Software Design 11月号
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p7:
-  - node: p
-    children:
-    - node: text
-      content: プロポーザル
+  - kind: heading
+    level: 1
+    text: プロポーザル
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 'いきなりですが '
-    - node: br
-    - node: text
-      content: 問題です
+  - kind: para
+    text: いきなりですが
+  - kind: para
+    text: 問題です
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 値をそのまま返す関数
-  - node: p
-    children:
-    - node: text
-      content: 'function id(mixed $value): mixed {'
-    - node: br
-    - node: text
-      content: '    return $value;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 値をそのまま返す関数
+  - kind: para
+    text: 'function id(mixed $value): mixed {'
+  - kind: para
+    text: return $value;
+  - kind: para
+    text: '}'
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 値をそのまま返す関数
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStormとかで '
-  - node: p
-    children:
-    - node: text
-      content: メソッド名補完がきく
-  - node: p
-    children:
-    - node: text
-      content: $date = new DateTimeImmutable();
-    - node: br
-    - node: text
-      content: $date->diff(
+  - kind: heading
+    level: 1
+    text: 値をそのまま返す関数
+  - kind: para
+    text: PhpStormとかで
+  - kind: para
+    text: メソッド名補完がきく
+  - kind: para
+    text: $date = new DateTimeImmutable();
+  - kind: para
+    text: $date->diff(
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 値をそのまま返す関数
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStormとかで '
-  - node: p
-    children:
-    - node: text
-      content: 'メソッド名補完が '
-    - node: br
-    - node: text
-      content: き…かない
-  - node: p
-    children:
-    - node: text
-      content: $date = new DateTimeImmutable();
-    - node: br
-    - node: text
-      content: id($date)->diff(
+  - kind: heading
+    level: 1
+    text: 値をそのまま返す関数
+  - kind: para
+    text: PhpStormとかで
+  - kind: para
+    text: メソッド名補完が
+  - kind: para
+    text: き…かない
+  - kind: para
+    text: $date = new DateTimeImmutable();
+  - kind: para
+    text: id($date)->diff(
   p12:
-  - node: p
-    children:
-    - node: text
-      content: 値をそのまま返す関数
-  - node: p
-    children:
-    - node: text
-      content: なんでも受け取って
-  - node: p
-    children:
-    - node: text
-      content: 'function id(mixed $value): mixed {'
-    - node: br
-    - node: text
-      content: '    return $value;'
-  - node: p
-    children:
-    - node: text
-      content: なんでも返す
-  - node: p
-    children:
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 値をそのまま返す関数
+  - kind: para
+    text: なんでも受け取って
+  - kind: para
+    text: なんでも返す
+  - kind: para
+    text: 'function id(mixed $value): mixed {'
+  - kind: para
+    text: return $value;
+  - kind: para
+    text: '}'
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '本日の目標は '
-    - node: br
-    - node: text
-      content: 'こういうときに怯えず '
-    - node: br
-    - node: text
-      content: 型を付けることです
+  - kind: para
+    text: 本日の目標は
+  - kind: para
+    text: こういうときに怯えず
+  - kind: para
+    text: 型を付けることです
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 個々の静的解析ツール
-    - node: br
-    - node: text
-      content: '導入方法などは '
-    - node: br
-    - node: text
-      content: 今回は扱いません
+  - kind: para
+    text: 個々の静的解析ツール
+  - kind: para
+    text: 導入方法などは
+  - kind: para
+    text: 今回は扱いません
   p15:
-  - node: p
-    children:
-    - node: text
-      content: ただし最新のPhpStorm 2021.2では静的解析ツー ルを導入しなくてもすんな
-    - node: br
-    - node: text
-      content: り動くと思います
+  - kind: para
+    text: ただし最新のPhpStorm
+  - kind: para
+    text: 2021.2では静的解析ツー
+  - kind: para
+    text: ルを導入しなくてもすんな
+  - kind: para
+    text: り動くと思います
   p16:
-  - node: p
-    children:
-    - node: text
-      content: これまでのあらすじ
+  - kind: heading
+    level: 1
+    text: これまでのあらすじ
   p17:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス2016
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス2016
   p18:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス福岡2019
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス福岡2019
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP勉強会＠東京 '
-  - node: p
-    children:
-    - node: text
-      content: '(2020年2月) '
+  - kind: heading
+    level: 1
+    text: PHP勉強会＠東京 (2020年2月)
   p20:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス沖縄2021
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス沖縄2021
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 型とPHPの歴史
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2004年 PHP 5.0で限定的ながら型宣言(type hinting)が可能に
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: arrayおよびクラス名(インターフェイス)のみ記述可能
-    - node: li
-      children:
-      - node: text
-        content: 2012年頃(?) PhpStormがPHPDocベースの静的解析を提供
-    - node: li
-      children:
-      - node: text
-        content: 2015年12月 PHP 7.0リリース、スカラー型宣言とstrict_typesが追加
-    - node: li
-      children:
-      - node: text
-        content: 2016年頃 Phan, PHPStan, Psalmが開発開始
-    - node: li
-      children:
-      - node: text
-        content: 2019年12月 PHP 7.4リリース、プロパティに型宣言が追加
+  - kind: para
+    text: 型とPHPの歴史
+  - kind: list
+    items:
+    - 2004年 PHP 5.0で限定的ながら型宣言(type hinting)が可能に
+    - arrayおよびクラス名(インターフェイス)のみ記述可能
+    - 2012年頃(?) PhpStormがPHPDocベースの静的解析を提供
+    - 2015年12月 PHP 7.0リリース、スカラー型宣言とstrict_typesが追加
+    - 2016年頃 Phan, PHPStan, Psalmが開発開始
+    - 2019年12月 PHP 7.4リリース、プロパティに型宣言が追加
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 型についておさらい
+  - kind: heading
+    level: 1
+    text: 型についておさらい
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 型とは何か
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本的には値の種類のこと
-    - node: li
-      children:
-      - node: text
-        content: PHPのデータ型は以下のように分類できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 'スカラー型: bool / int / ¸oat / string'
-        - node: li
-          children:
-          - node: text
-            content: '複合型: array / object / callable / iterable / (mixed)'
-        - node: li
-          children:
-          - node: text
-            content: '特殊型: null / resource'
-    - node: li
-      children:
-      - node: text
-        content: クラスとインターフェイスをユーザー定義型として利用できる
+  - kind: para
+    text: 型とは何か
+  - kind: list
+    items:
+    - 基本的には値の種類のこと
+    - PHPのデータ型は以下のように分類できる
+    - 'スカラー型: bool / int / Ëoat / string'
+    - '複合型: array / object / callable / iterable / (mixed)'
+    - '特殊型: null / resource'
+    - クラスとインターフェイスをユーザー定義型として利用できる
   p24:
-  - node: p
-    children:
-    - node: text
-      content: PHPは動的言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 変数には型宣言がない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 基本的にどのような値でも入れることができる
-        - node: li
-          children:
-          - node: text
-            content: 値の型は実行時にいつでも確認できる
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: is_int(), is_bool(), is_array() などの関数
-    - node: li
-      children:
-      - node: text
-        content: 関数とプロパティは型宣言できるし、省略もできる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: パラメータや戻り値の型はRe¸ectionで実行時にいつでも確認できる
+  - kind: heading
+    level: 1
+    text: PHPは動的言語
+  - kind: list
+    items:
+    - 変数には型宣言がない
+    - 基本的にどのような値でも入れることができる
+    - 値の型は実行時にいつでも確認できる
+    - is_int(), is_bool(), is_array() などの関数
+    - 関数とプロパティは型宣言できるし、省略もできる
+    - パラメータや戻り値の型はReËectionで実行時にいつでも確認できる
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 型チェックは実行時まで遅延する
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: '$a : array'
-  - node: p
-    children:
-    - node: text
-      content: '$b : int'
-  - node: p
-    children:
-    - node: text
-      content: $a = [];
-  - node: p
-    children:
-    - node: text
-      content: 'そもそも '
-  - node: p
-    children:
-    - node: text
-      content: $b = 1;
-  - node: p
-    children:
-    - node: text
-      content: 計算できない
-  - node: p
-    children:
-    - node: text
-      content: echo $a + $b;
+  - kind: heading
+    level: 1
+    text: 型チェックは実行時まで遅延する
+  - kind: heading
+    level: 2
+    text: <?php
+  - kind: para
+    text: '$a : array'
+  - kind: para
+    text: '$b : int'
+  - kind: para
+    text: そもそも
+  - kind: para
+    text: 計算できない
+  - kind: heading
+    level: 2
+    text: $a = [];
+  - kind: heading
+    level: 2
+    text: $b = 1;
+  - kind: heading
+    level: 2
+    text: echo $a + $b;
   p26:
-  - node: p
-    children:
-    - node: text
-      content: PHPの型宣言の特徴
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 実行時に型を確実にチェックされる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: スカラー型(bool, int, ¸oat, string)を宣言したとき、
-          - node: br
-          - node: text
-            content: 'デフォルトではキャストよりも厳密に値を判定した上で型変換を行う '
-        - node: li
-          children:
-          - node: text
-            content: それ以外の型は一致しなかった場合にTypeErrorを発生する
-    - node: li
-      children:
-      - node: text
-        content: ファイル単位で declare(strict_types=1) と書くと厳密な型モードになる
-    - node: li
-      children:
-      - node: text
-        content: 関数の呼び出し側で宣言したモードが反映される
+  - kind: para
+    text: PHPの型宣言の特徴
+  - kind: list
+    items:
+    - 実行時に型を確実にチェックされる
+    - スカラー型(bool, int, Ëoat, string)を宣言したとき、
+  - kind: para
+    text: デフォルトではキャストよりも厳密に値を判定した上で型変換を行う
+  - kind: list
+    items:
+    - それ以外の型は一致しなかった場合にTypeErrorを発生する
+    - ファイル単位で declare(strict_types=1) と書くと厳密な型モードになる
+    - 関数の呼び出し側で宣言したモードが反映される
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 型チェックは実行時まで遅延する
-  - node: p
-    children:
-    - node: text
-      content: '返り値でintに '
-  - node: p
-    children:
-    - node: text
-      content: 'パラメータ '
-  - node: p
-    children:
-    - node: text
-      content: 変換する
-  - node: p
-    children:
-    - node: text
-      content: mixed
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: '1 : int'
-  - node: p
-    children:
-    - node: text
-      content: '$toint = fn($n): int => $n;         '
-  - node: p
-    children:
-    - node: text
-      content: '0 : int'
-  - node: p
-    children:
-    - node: text
-      content: var_dump($toint('1'));
-    - node: br
-    - node: text
-      content: var_dump($toint((int)''));
-  - node: p
-    children:
-    - node: text
-      content: 返り値で厳密な
-  - node: p
-    children:
-    - node: text
-      content: var_dump($toint(''));
-  - node: p
-    children:
-    - node: text
-      content: チェック
+  - kind: heading
+    level: 1
+    text: 型チェックは実行時まで遅延する
+  - kind: para
+    text: 返り値でintに
+  - kind: para
+    text: パラメータ
+  - kind: para
+    text: 変換する
+  - kind: para
+    text: mixed
+  - kind: para
+    text: '1 : int'
+  - kind: para
+    text: '0 : int'
+  - kind: para
+    text: 返り値で厳密な
+  - kind: heading
+    level: 2
+    text: <?php
+  - kind: heading
+    level: 2
+    text: '$toint = fn($n): int => $n;'
+  - kind: heading
+    level: 2
+    text: var_dump($toint('1'));
+  - kind: heading
+    level: 2
+    text: var_dump($toint((int)''));
+  - kind: heading
+    level: 2
+    text: var_dump($toint(''));
+  - kind: para
+    text: チェック
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 漸進的型付けで動的言語を型検査する
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 何も型宣言されていない状態をmixed型(何でもあり)とする
-    - node: li
-      children:
-      - node: text
-        content: より詳細に状態を絞りたいポイントに型宣言やPHPDocなどを付けていく
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PhpStormやPHPStanなどのツールはPHPDocの内容を考慮してくれる
+  - kind: para
+    text: 漸進的型付けで動的言語を型検査する
+  - kind: list
+    items:
+    - 何も型宣言されていない状態をmixed型(何でもあり)とする
+    - より詳細に状態を絞りたいポイントに型宣言やPHPDocなどを付けていく
+    - PhpStormやPHPStanなどのツールはPHPDocの内容を考慮してくれる
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 型がついていない関数
-  - node: p
-    children:
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 型がついていない関数
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言すればいい？
-  - node: p
-    children:
-    - node: text
-      content: 'int + intって '
-    - node: br
-    - node: text
-      content: 本当にintなの？
-  - node: p
-    children:
-    - node: text
-      content: function add(int $a, int $b):int {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 型宣言すればいい？
+  - kind: para
+    text: int + intって
+  - kind: para
+    text: 本当にintなの？
+  - kind: para
+    text: function add(int $a, int $b):int {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p31:
-  - node: p
-    children:
-    - node: text
-      content: ﬂoatにすればいい？
-  - node: p
-    children:
-    - node: text
-      content: 'ひとつの解決策では '
-    - node: br
-    - node: text
-      content: あるが… 不必要に¸oat
-    - node: br
-    - node: text
-      content: を強制するのか
-  - node: p
-    children:
-    - node: text
-      content: function add(float $a, float $b):float {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: ﬂoatにすればいい？
+  - kind: para
+    text: ひとつの解決策では
+  - kind: para
+    text: あるが… 不必要にËoat
+  - kind: para
+    text: を強制するのか
+  - kind: para
+    text: function add(float $a, float $b):float {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p32:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの型注釈
-  - node: p
-    children:
-    - node: text
-      content: (アノテーション)
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @param int|float $a'
-  - node: p
-    children:
-    - node: text
-      content: あえて型宣言を省略する
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int|float $b'
-    - node: br
-    - node: text
-      content: ' * @return int|float'
-    - node: br
-    - node: text
-      content: ' */         '
-    - node: br
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int|float $a'
+  - kind: para
+    text: '* @param int|float $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p33:
-  - node: p
-    children:
-    - node: text
-      content: Union型宣言(PHP8.0)
-  - node: p
-    children:
-    - node: text
-      content: 'function add(         '
-    - node: br
-    - node: text
-      content: '    int|float $a,              int|float $b         '
-    - node: br
-    - node: text
-      content: '): int|float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: Union型宣言(PHP8.0)
+  - kind: para
+    text: function add(
+  - kind: para
+    text: int|float $a,
+  - kind: para
+    text: int|float $b
+  - kind: para
+    text: '): int|float {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 'かくしてPHPは PHPDocなんか 書かなくても良い '
-    - node: br
-    - node: text
-      content: 平和な世界になりました
+  - kind: para
+    text: かくしてPHPは
+  - kind: para
+    text: PHPDocなんか
+  - kind: para
+    text: 書かなくても良い
+  - kind: para
+    text: 平和な世界になりました
   p35:
-  - node: p
-    children:
-    - node: text
-      content: HAPPY END?
+  - kind: heading
+    level: 1
+    text: HAPPY END?
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 😇
+  - kind: heading
+    level: 1
+    text: 😇
   p37:
-  - node: p
-    children:
-    - node: text
-      content: ほんとうにそうか？
+  - kind: heading
+    level: 1
+    text: ほんとうにそうか？
   p38:
-  - node: p
-    children:
-    - node: text
-      content: Bookクラスは著者を持つ
-  - node: p
-    children:
-    - node: text
-      content: '上司 '
-    - node: br
-    - node: text
-      content: 「共著を想定できてる？」
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        private Author $author         '
-    - node: br
-    - node: text
-      content: '    ) {'
-    - node: br
-    - node: text
-      content: '        // ...         '
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: Bookクラスは著者を持つ
+  - kind: para
+    text: 上司
+  - kind: para
+    text: 「共著を想定できてる？」
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
+  - kind: para
+    text: function __construct(
+  - kind: para
+    text: private Author $author
+  - kind: para
+    text: ) {
+  - kind: para
+    text: // ...
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
   p39:
-  - node: p
-    children:
-    - node: text
-      content: Bookの著者は複数居る
-  - node: p
-    children:
-    - node: text
-      content: 'arrayにすることで '
-    - node: br
-    - node: text
-      content: 複数であることを表現
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        private array $authors         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 'Authorクラスの '
-  - node: p
-    children:
-    - node: text
-      content: '        // ...         '
-  - node: p
-    children:
-    - node: text
-      content: 情報が減ってる…
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: Bookの著者は複数居る
+  - kind: para
+    text: arrayにすることで
+  - kind: para
+    text: 複数であることを表現
+  - kind: para
+    text: Authorクラスの
+  - kind: para
+    text: 情報が減ってる…
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
+  - kind: para
+    text: function __construct(
+  - kind: para
+    text: private array $authors
+  - kind: para
+    text: ) {
+  - kind: para
+    text: // ...
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 著者一覧を出力したい
-  - node: p
-    children:
-    - node: text
-      content: 'Book::$authors : array 中身が何かわからない！'
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function printAuthors($fp): void {'
-    - node: br
-    - node: text
-      content: '       foreach ($this->authors as $author) {                     fwrite($fp, $author->getName());         '
-    - node: br
-    - node: text
-      content: '       }         '
-  - node: p
-    children:
-    - node: text
-      content: 'Authorクラスの '
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: メソッドを補完できない
-  - node: p
-    children:
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: 著者一覧を出力したい
+  - kind: para
+    text: 'Book::$authors : array'
+  - kind: para
+    text: 中身が何かわからない！
+  - kind: para
+    text: Authorクラスの
+  - kind: para
+    text: メソッドを補完できない
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
+  - kind: para
+    text: 'function printAuthors($fp): void {'
+  - kind: para
+    text: foreach ($this->authors as $author) {
+  - kind: para
+    text: fwrite($fp, $author->getName());
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
   p41:
-  - node: p
-    children:
-    - node: text
-      content: Bookの著者は複数居る
-  - node: p
-    children:
-    - node: text
-      content: 'arrayにすることで '
-    - node: br
-    - node: text
-      content: 複数であることを表現
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        private array $authors         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 'Authorクラスの '
-  - node: p
-    children:
-    - node: text
-      content: '        // ...         '
-  - node: p
-    children:
-    - node: text
-      content: 情報が減ってる…
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: Bookの著者は複数居る
+  - kind: para
+    text: arrayにすることで
+  - kind: para
+    text: 複数であることを表現
+  - kind: para
+    text: Authorクラスの
+  - kind: para
+    text: 情報が減ってる…
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
+  - kind: para
+    text: function __construct(
+  - kind: para
+    text: private array $authors
+  - kind: para
+    text: ) {
+  - kind: para
+    text: // ...
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 著者は複数居る
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの復活
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct(         '
-    - node: br
-    - node: text
-      content: '        /** @var array<Author> */'
-    - node: br
-    - node: text
-      content: '        private array $authors         '
-    - node: br
-    - node: text
-      content: '    ) {'
-    - node: br
-    - node: text
-      content: '        // ...         '
-    - node: br
-    - node: text
-      content: '    }'
+  - kind: heading
+    level: 1
+    text: 著者は複数居る
+  - kind: para
+    text: PHPDocの復活
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
+  - kind: para
+    text: function __construct(
+  - kind: para
+    text: /** @var array<Author> */
+  - kind: para
+    text: private array $authors
+  - kind: para
+    text: ) {
+  - kind: para
+    text: // ...
+  - kind: para
+    text: '}'
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 著者一覧を出力したい
-  - node: p
-    children:
-    - node: text
-      content: 'Book::$authors : '
-    - node: br
-    - node: text
-      content: array<Author>
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function printAuthors($fp): void {'
-    - node: br
-    - node: text
-      content: '       foreach ($this->authors as $author) {                     fwrite($fp, $author->getName());         '
-    - node: br
-    - node: text
-      content: '       }         '
-  - node: p
-    children:
-    - node: text
-      content: 'Authorクラスの '
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: メソッドが補完できる
-  - node: p
-    children:
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: 著者一覧を出力したい
+  - kind: para
+    text: 'Book::$authors :'
+  - kind: para
+    text: array<Author>
+  - kind: para
+    text: Authorクラスの
+  - kind: para
+    text: メソッドが補完できる
+  - kind: para
+    text: class Book
+  - kind: para
+    text: '{'
+  - kind: para
+    text: 'function printAuthors($fp): void {'
+  - kind: para
+    text: foreach ($this->authors as $author) {
+  - kind: para
+    text: fwrite($fp, $author->getName());
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
   p44:
-  - node: p
-    children:
-    - node: text
-      content: この事例からわかること
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: arrayは独立した型だが、中に何が入っているかはわからない
-    - node: li
-      children:
-      - node: text
-        content: array型宣言されていても、どんな配列でも正常に動くわけじゃない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: むしろ「arrayなら何でも受け付ける」という関数はかなり少数派
-        - node: li
-          children:
-          - node: text
-            content: 「いったいどんな配列なのか」を詳細に説明する必要が生じる
-        - node: li
-          children:
-          - node: text
-            content: 配列の内部詳細を書くための記法がある
+  - kind: heading
+    level: 1
+    text: この事例からわかること
+  - kind: list
+    items:
+    - arrayは独立した型だが、中に何が入っているかはわからない
+    - array型宣言されていても、どんな配列でも正常に動くわけじゃない
+    - むしろ「arrayなら何でも受け付ける」という関数はかなり少数派
+    - 「いったいどんな配列なのか」を詳細に説明する必要が生じる
+    - 配列の内部詳細を書くための記法がある
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: p
-    children:
-    - node: text
-      content: list<int>
-  - node: p
-    children:
-    - node: text
-      content: array<int,string>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザＩＤがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-  - node: p
-    children:
-    - node: text
-      content: array{id:int, name:string}
-  - node: p
-    children:
-    - node: text
-      content: '[ '
-    - node: br
-    - node: text
-      content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-    - node: br
-    - node: text
-      content: '    [''id'' => 234, ''name'' => ''源静香''], '
-  - node: p
-    children:
-    - node: text
-      content: '] '
-  - node: p
-    children:
-    - node: text
-      content: list<array{id:int, name:string}>
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: list
+    items:
+    - ユーザＩＤがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '['
+  - kind: para
+    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
+  - kind: para
+    text: '[''id'' => 234, ''name'' => ''源静香''],'
+  - kind: para
+    text: ']'
+  - kind: para
+    text: list<array{id:int, name:string}>
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 配列の記法
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 従来は Author[] とか int[] みたいに [] を後置する記法が主流だった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: この記法では構造体のような配列の内部構造を記述できない
-    - node: li
-      children:
-      - node: text
-        content: array<Author> や array<int> で要素を表現できる
-    - node: li
-      children:
-      - node: text
-        content: array<int, Author> のように書くとキーも表現できる
-    - node: li
-      children:
-      - node: text
-        content: array{id:int, name:string} のような値はarray-shapesと呼ばれる
+  - kind: para
+    text: 配列の記法
+  - kind: list
+    items:
+    - 従来は Author[] とか int[] みたいに [] を後置する記法が主流だった
+    - この記法では構造体のような配列の内部構造を記述できない
+    - array<Author> や array<int> で要素を表現できる
+    - array<int, Author> のように書くとキーも表現できる
+    - array{id:int, name:string} のような値はarray-shapesと呼ばれる
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 型パラメータ
+  - kind: heading
+    level: 1
+    text: 型パラメータ
   p48:
-  - node: p
-    children:
-    - node: text
-      content: array<int>
+  - kind: heading
+    level: 1
+    text: array<int>
   p49:
-  - node: p
-    children:
-    - node: text
-      content: array<Author>
+  - kind: heading
+    level: 1
+    text: array<Author>
   p50:
-  - node: p
-    children:
-    - node: text
-      content: いろんなものが書ける
+  - kind: heading
+    level: 1
+    text: いろんなものが書ける
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '再掲: 値をそのまま返す関数'
-  - node: p
-    children:
-    - node: text
-      content: 'function id(mixed $value): mixed {'
-    - node: br
-    - node: text
-      content: '    return $value;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: '再掲: 値をそのまま返す関数'
+  - kind: para
+    text: 'function id(mixed $value): mixed {'
+  - kind: para
+    text: return $value;
+  - kind: para
+    text: '}'
   p52:
-  - node: p
-    children:
-    - node: text
-      content: '再掲: 値をそのまま返す関数'
-  - node: p
-    children:
-    - node: text
-      content: '/**         '
-    - node: br
-    - node: text
-      content: ' * @template T         '
-    - node: br
-    - node: text
-      content: ' * @phpstan-param T $value         '
-    - node: br
-    - node: text
-      content: ' * @phpstan-return T         '
-    - node: br
-    - node: text
-      content: ' */'
-    - node: br
-    - node: text
-      content: 'function id(mixed $value): mixed {'
-    - node: br
-    - node: text
-      content: '    return $value;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: '再掲: 値をそのまま返す関数'
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @template T'
+  - kind: para
+    text: '* @phpstan-param T $value'
+  - kind: para
+    text: '* @phpstan-return T'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: 'function id(mixed $value): mixed {'
+  - kind: para
+    text: return $value;
+  - kind: para
+    text: '}'
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 値をそのまま返す関数
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStormとかで '
-  - node: p
-    children:
-    - node: text
-      content: メソッド名補完が きくようになった
-  - node: p
-    children:
-    - node: text
-      content: $date = new DateTimeImmutable();
-    - node: br
-    - node: text
-      content: id($date)->diff(
+  - kind: heading
+    level: 1
+    text: 値をそのまま返す関数
+  - kind: para
+    text: PhpStormとかで
+  - kind: para
+    text: メソッド名補完が
+  - kind: para
+    text: きくようになった
+  - kind: para
+    text: $date = new DateTimeImmutable();
+  - kind: para
+    text: id($date)->diff(
   p54:
-  - node: p
-    children:
-    - node: text
-      content: これを活用する
+  - kind: heading
+    level: 1
+    text: これを活用する
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 配列の先頭要素をとる関数
-  - node: p
-    children:
-    - node: text
-      content: '/          **         '
-    - node: br
-    - node: text
-      content: '           * @template T         '
-    - node: br
-    - node: text
-      content: '           * @param array<T> $XS         '
-    - node: br
-    - node: text
-      content: '           * @param T $default         '
-    - node: br
-    - node: text
-      content: ' * @return T         '
-    - node: br
-    - node: text
-      content: ' */'
-    - node: br
-    - node: text
-      content: 'function first(array $xs, mixed $default): mixed {          f u n c ftoiroen afcih r(s$tx(sa rarsa y$ x$)x sr,e tsutrrni n$gx ;$default):
-        mixed {'
-    - node: br
-    - node: text
-      content: '        rreettuurrnn  $$vdaelfuaeu;lt;'
-    - node: br
-    - node: text
-      content: '}}'
+  - kind: heading
+    level: 1
+    text: 配列の先頭要素をとる関数
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @template T'
+  - kind: para
+    text: '* @param array<T> $XS'
+  - kind: para
+    text: '* @param T $default'
+  - kind: para
+    text: '* @return T'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: 'function first(array $xs, string $default): mixed {'
+  - kind: para
+    text: return $value;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: 'function first(array $xs, mixed $default): mixed {'
+  - kind: para
+    text: foreach ($xs as $x) return $x;
+  - kind: para
+    text: return $default;
+  - kind: para
+    text: '}'
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 配列の先頭要素をとる関数
-  - node: p
-    children:
-    - node: text
-      content: '/**         '
-    - node: br
-    - node: text
-      content: ' * @template T         '
-    - node: br
-    - node: text
-      content: ' * @param array<T> $xs         '
-    - node: br
-    - node: text
-      content: ' * @param T $default         '
-    - node: br
-    - node: text
-      content: ' * @return T         '
-    - node: br
-    - node: text
-      content: ' */'
-    - node: br
-    - node: text
-      content: 'function first(array $xs, mixed $default): mixed {         '
-    - node: br
-    - node: text
-      content: '    foreach ($xs as $x) return $x;'
-    - node: br
-    - node: text
-      content: '    return $default;'
+  - kind: heading
+    level: 1
+    text: 配列の先頭要素をとる関数
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @template T'
+  - kind: para
+    text: '* @param array<T> $xs'
+  - kind: para
+    text: '* @param T $default'
+  - kind: para
+    text: '* @return T'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: 'function first(array $xs, mixed $default): mixed {'
+  - kind: para
+    text: foreach ($xs as $x) return $x;
+  - kind: para
+    text: return $default;
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 配列の先頭要素を受け取る
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStormとかで '
-  - node: p
-    children:
-    - node: text
-      content: メソッド名補完がきく
-  - node: p
-    children:
-    - node: text
-      content: を返す関数
-  - node: p
-    children:
-    - node: text
-      content: '// list<DateTimeImmutable>           '
-    - node: br
-    - node: text
-      content: $dates = get_dates();
-    - node: br
-    - node: text
-      content: '$first = first($dates, new DateTimeImmutable);         '
-    - node: br
-    - node: text
-      content: $first->diff(
+  - kind: heading
+    level: 1
+    text: 配列の先頭要素を受け取る
+  - kind: para
+    text: PhpStormとかで
+  - kind: para
+    text: メソッド名補完がきく
+  - kind: para
+    text: // list<DateTimeImmutable> を返す関数
+  - kind: para
+    text: $dates = get_dates();
+  - kind: para
+    text: $first = first($dates, new DateTimeImmutable);
+  - kind: para
+    text: $first->diff(
   p58:
-  - node: p
-    children:
-    - node: text
-      content: これを活用する
+  - kind: heading
+    level: 1
+    text: これを活用する
   p59:
-  - node: p
-    children:
-    - node: text
-      content: kane.php
+  - kind: heading
+    level: 1
+    text: kane.php
   p60:
-  - node: p
-    children:
-    - node: text
-      content: フォント
-  - node: p
-    children:
-    - node: text
-      content: 'FOT-ハミング Std (M) '
-    - node: br
-    - node: text
-      content: 'BIZ UDPゴシック (Regular) '
-  - node: p
-    children:
-    - node: text
-      content: Courier (Regular)
+  - kind: heading
+    level: 1
+    text: フォント
+  - kind: para
+    text: FOT-ハミング Std (M)
+  - kind: para
+    text: BIZ UDPゴシック (Regular)
+  - kind: para
+    text: Courier (Regular)
 size:
   max_width: 1920
   max_height: 1080

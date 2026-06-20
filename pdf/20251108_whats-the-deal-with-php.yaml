@@ -1,419 +1,218 @@
-size:
-  max_width: 1920
-  max_height: 1080
-links: {}
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: ぶっちゃけどうなのPHP
-  - node: p
-    children:
-    - node: text
-      content: Honestly, What's the Deal with PHP?
-  - node: p
-    children:
-    - node: text
-      content: pixiv Inc.
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: text
-      content: '2025-11-08 #phpcon_fuk'
-  - node: p
-    children:
-    - node: bold
-      content: PHPカンファレンス福岡2025
+  - kind: heading
+    level: 1
+    text: ぶっちゃけどうなのPHP
+  - kind: heading
+    level: 2
+    text: Honestly, What's the Deal with PHP?
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2025-11-08 #phpcon_fuk'
+  - kind: para
+    text: PHPカンファレンス福岡2025
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近チームが再編されてインフラっぽい仕事もしてます
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p4:
-  - node: p
-    children:
-    - node: text
-      content: <?php
+  - kind: heading
+    level: 1
+    text: <?php
   p5:
-  - node: p
-    children:
-    - node: text
-      content: PHP… ぶっちゃけどう思う？
+  - kind: heading
+    level: 1
+    text: PHP… ぶっちゃけどう思う？
   p6:
-  - node: p
-    children:
-    - node: text
-      content: おぼろげながら浮かんできたんです
-  - node: p
-    children:
-    - node: text
-      content: C#… ASP.NET…
-  - node: p
-    children:
-    - node: text
-      content: Node.js…
-  - node: p
-    children:
-    - node: text
-      content: Rust…
-  - node: p
-    children:
-    - node: text
-      content: Common Lisp…
-  - node: p
-    children:
-    - node: text
-      content: Go…
-  - node: p
-    children:
-    - node: text
-      content: Java…
-  - node: p
-    children:
-    - node: text
-      content: Python…
-  - node: p
-    children:
-    - node: text
-      content: TypeScript…
-  - node: p
-    children:
-    - node: text
-      content: Ruby on Rails…
-  - node: p
-    children:
-    - node: text
-      content: Smalltalk…
-  - node: p
-    children:
-    - node: text
-      content: Swift…
-  - node: p
-    children:
-    - node: text
-      content: Kotlin…
+  - kind: heading
+    level: 1
+    text: おぼろげながら浮かんできたんです
+  - kind: para
+    text: C#… ASP.NET…
+  - kind: para
+    text: Node.js…
+  - kind: para
+    text: Rust…
+  - kind: para
+    text: Common Lisp…
+  - kind: para
+    text: Go…
+  - kind: para
+    text: Python…
+  - kind: para
+    text: TypeScript…
+  - kind: para
+    text: Java…
+  - kind: para
+    text: Ruby on Rails…
+  - kind: para
+    text: Smalltalk…
+  - kind: para
+    text: Kotlin…
+  - kind: para
+    text: Swift…
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 'いろいろな選択肢が '
-    - node: br
-    - node: text
-      content: 'あるのに我々は '
-    - node: br
-    - node: text
-      content: PHPにしがみつくのか
+  - kind: para
+    text: いろいろな選択肢が
+  - kind: para
+    text: あるのに我々は
+  - kind: para
+    text: PHPにしがみつくのか
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '個人的には楽しい '
-    - node: br
-    - node: text
-      content: '言語をいろいろ '
-    - node: br
-    - node: text
-      content: 選んできた
+  - kind: para
+    text: 個人的には楽しい
+  - kind: para
+    text: 言語をいろいろ
+  - kind: para
+    text: 選んできた
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 俺 vs プログラミング言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '2005-2009: PHS(携帯電話)でぽちぽちHTMLとJSを書いてた'
-    - node: li
-      children:
-      - node: text
-        content: '2010: 札幌でRubyコミュニティに出入りしてた'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: この頃からプログラミング言語論とか言語処理系に興味を持つ
-    - node: li
-      children:
-      - node: text
-        content: '2011: 札幌でPython勉強会に参加したり、F#を教わる'
-    - node: li
-      children:
-      - node: text
-        content: '2012: 東京に引っ越してRubyKaigi, Shibuya.rbなどに出入り'
-    - node: li
-      children:
-      - node: text
-        content: '2016-: PHP系のカンファレンス発表、Emacsのイベント運営'
+  - kind: para
+    text: 俺 vs プログラミング言語
+  - kind: list
+    items:
+    - '2005-2009: PHS(携帯電話)でぽちぽちHTMLとJSを書いてた'
+    - '2010: 札幌でRubyコミュニティに出入りしてた'
+    - この頃からプログラミング言語論とか言語処理系に興味を持つ
+    - '2011: 札幌でPython勉強会に参加したり、F#を教わる'
+    - '2012: 東京に引っ越してRubyKaigi, Shibuya.rbなどに出入り'
+    - '2016-: PHP系のカンファレンス発表、Emacsのイベント運営'
   p10:
-  - node: p
-    children:
-    - node: text
-      content: '仕事では12年くらい '
-    - node: br
-    - node: text
-      content: 登壇は9年くらい
+  - kind: para
+    text: 仕事では12年くらい
+  - kind: para
+    text: 登壇は9年くらい
   p11:
-  - node: p
-    children:
-    - node: text
-      content: プログラミング言語と Webとフレームワーク にこだわりのある人間
+  - kind: para
+    text: プログラミング言語と
+  - kind: para
+    text: Webとフレームワーク
+  - kind: para
+    text: にこだわりのある人間
   p12:
-  - node: p
-    children:
-    - node: text
-      content: アジェンダ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 前PHP時代 〜 Rasmusは何を革命したのか
-    - node: li
-      children:
-      - node: text
-        content: Webフレームワークの中世期断絶
-    - node: li
-      children:
-      - node: text
-        content: PHPが往かなかったWebフレームワークの世界線
-    - node: li
-      children:
-      - node: text
-        content: 非同期I/OとWeb
+  - kind: para
+    text: アジェンダ
+  - kind: list
+    items:
+    - 前PHP時代 〜 Rasmusは何を革命したのか
+    - Webフレームワークの中世期断絶
+    - PHPが往かなかったWebフレームワークの世界線
+    - 非同期I/OとWeb
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '話は '
-    - node: br
-    - node: text
-      content: 1993年に さかのぼる
+  - kind: para
+    text: 話は
+  - kind: para
+    text: 1993年に
+  - kind: para
+    text: さかのぼる
   p14:
-  - node: p
-    children:
-    - node: bold
-      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用 '
-    - node: br
-    - node: bold
-      content: 'https://ja.wikipedia.org/wiki/ラスマス・ラードフ '
-  - node: p
-    children:
-    - node: text
-      content: 2021-07-01T14:10:55版
+  - kind: para
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用'
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/ラスマス・ラードフ 2021-07-01T14:10:55版
   p15:
-  - node: p
-    children:
-    - node: bold
-      content: '出典: 伝説のPHP作者「Rasmus Lerdorf」名言集を聞くと嫌PHP厨がファビョる '
-  - node: p
-    children:
-    - node: bold
-      content: https://web.archive.org/web/20100501140915/http://anond.hatelabo.jp/20100427231539
+  - kind: para
+    text: '出典: 伝説のPHP作者「Rasmus Lerdorf」名言集を聞くと嫌PHP厨がファビョる'
+  - kind: para
+    text: https://web.archive.org/web/20100501140915/http://anond.hatelabo.jp/20100427231539
   p16:
-  - node: p
-    children:
-    - node: bold
-      content: '出典:伝説の喫煙者「黒木　灰次郎」名言集を聞くと嫌煙がファビョる '
-  - node: p
-    children:
-    - node: bold
-      content: http://blog.livedoor.jp/hokanisurukotoha/archives/1121714.html
+  - kind: para
+    text: 出典:伝説の喫煙者「黒木 灰次郎」名言集を聞くと嫌煙がファビョる
+  - kind: para
+    text: http://blog.livedoor.jp/hokanisurukotoha/archives/1121714.html
   p17:
-  - node: p
-    children:
-    - node: bold
-      content: '出典: ウィキクォート https://ja.wikiquote.org/wiki/ラスマス・ラードフ'
+  - kind: para
+    text: '出典: ウィキクォート https://ja.wikiquote.org/wiki/ラスマス・ラードフ'
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPは多くの人から疎まれ、 '
-    - node: br
-    - node: text
-      content: まじめなプログラミング言語として
-    - node: br
-    - node: text
-      content: 考察対象とされていない節がある
+  - kind: para
+    text: PHPは多くの人から疎まれ、
+  - kind: para
+    text: まじめなプログラミング言語として
+  - kind: para
+    text: 考察対象とされていない節がある
   p19:
-  - node: p
-    children:
-    - node: bold
-      content: '出典: IT Conversations | Rasmus Lerdorf | PHP on Hormones '
-  - node: p
-    children:
-    - node: bold
-      content: https://web.archive.org/web/20130729204354/http://itc.conversationsnetwork.org/shows/detail3298.html
+  - kind: para
+    text: '出典: IT Conversations | Rasmus Lerdorf | PHP on Hormones'
+  - kind: para
+    text: https://web.archive.org/web/20130729204354/http://itc.conversationsnetwork.org/shows/detail3298.html
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 'Rasmus LerdorfはMySQLとPostgreSQLの両方に 導入されているSQL標準(ANSI92 SQL)を無視した '
-    - node: br
-    - node: text
-      content: mSQLのLIMIT句のオリジナル作者です
-  - node: p
-    children:
-    - node: bold
-      content: '出典: IT Conversations | Rasmus Lerdorf | PHP on Hormones '
-  - node: p
-    children:
-    - node: bold
-      content: https://web.archive.org/web/20130729204354/http://itc.conversationsnetwork.org/shows/detail3298.html
+  - kind: heading
+    level: 1
+    text: Rasmus LerdorfはMySQLとPostgreSQLの両方に
+  - kind: heading
+    level: 1
+    text: 導入されているSQL標準(ANSI92 SQL)を無視した
+  - kind: heading
+    level: 1
+    text: mSQLのLIMIT句のオリジナル作者です
+  - kind: para
+    text: '出典: IT Conversations | Rasmus Lerdorf | PHP on Hormones'
+  - kind: para
+    text: https://web.archive.org/web/20130729204354/http://itc.conversationsnetwork.org/shows/detail3298.html
   p21: []
   p22: []
   p23: []
   p24: []
   p25:
-  - node: p
-    children:
-    - node: text
-      content: CGIとは何か
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Common Gateway Interfaceの略、1993年頃に登場
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: HTTPサーバを独自実装しなくても、シンプルなスクリプトを書くだけで
-          - node: br
-          - node: text
-            content: '動的ページを実現できる '
-        - node: li
-          children:
-          - node: text
-            content: ユーザーからリクエストが来る度にプロセスを起動する
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: シェアードナッシング (並行して処理するリクエストと干渉しない)
+  - kind: heading
+    level: 1
+    text: CGIとは何か
+  - kind: list
+    items:
+    - Common Gateway Interfaceの略、1993年頃に登場
+    - HTTPサーバを独自実装しなくても、シンプルなスクリプトを書くだけで
+  - kind: para
+    text: 動的ページを実現できる
+  - kind: list
+    items:
+    - ユーザーからリクエストが来る度にプロセスを起動する
+    - シェアードナッシング (並行して処理するリクエストと干渉しない)
   p26:
-  - node: p
-    children:
-    - node: text
-      content: CGIとプログラミング言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 仕様上、標準入出力(stdio)と環境変数が使える言語ならなんでもいい
-    - node: li
-      children:
-      - node: text
-        content: 開発の利便性などから、Perlスクリプトが普及した
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 文字列処理のしやすさ、正規表現、cgi-lib.pl、言語としての書き心地…
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: C言語での文字列処理は本質的に難しい
-    - node: li
-      children:
-      - node: text
-        content: ラスマスが重要視したのはそこではなかった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: パフォーマンス、HTMLとSQLとの統合…
+  - kind: heading
+    level: 1
+    text: CGIとプログラミング言語
+  - kind: list
+    items:
+    - 仕様上、標準入出力(stdio)と環境変数が使える言語ならなんでもいい
+    - 開発の利便性などから、Perlスクリプトが普及した
+    - 文字列処理のしやすさ、正規表現、cgi-lib.pl、言語としての書き心地…
+    - C言語での文字列処理は本質的に難しい
+    - ラスマスが重要視したのはそこではなかった
+    - パフォーマンス、HTMLとSQLとの統合…
   p27: []
   p28:
-  - node: p
-    children:
-    - node: text
-      content: Rasmusは何をしたか
-  - node: p
-    children:
-    - node: text
-      content: ' (〜1995年くらい)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: パフォーマンスのため、C言語でCGIを書いた
-    - node: li
-      children:
-      - node: text
-        content: 自分で書いたCGIツールに「PHP」という名前をつけた
-    - node: li
-      children:
-      - node: text
-        content: CGIをやめ、Apache HTTP Serverのモジュール化した
-    - node: li
-      children:
-      - node: text
-        content: ソースコードごとフリーソフトウェアとして公開した
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Perl, Apacheなどの先例はあるが、「オープンソース」ブーム前
+  - kind: heading
+    level: 1
+    text: Rasmusは何をしたか (～1995年くらい)
+  - kind: list
+    items:
+    - パフォーマンスのため、C言語でCGIを書いた
+    - 自分で書いたCGIツールに「PHP」という名前をつけた
+    - CGIをやめ、Apache HTTP Serverのモジュール化した
+    - ソースコードごとフリーソフトウェアとして公開した
+    - Perl, Apacheなどの先例はあるが、「オープンソース」ブーム前
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '1993年時点で存在したデータベースソフトウェア。 '
-    - node: br
-    - node: text
-      content: 'フリーソフトウェアではないがソースコードが '
-    - node: br
-    - node: text
-      content: 公開されていて、MySQLなどに影響を及ぼした。
+  - kind: para
+    text: 1993年時点で存在したデータベースソフトウェア。
+  - kind: para
+    text: フリーソフトウェアではないがソースコードが
+  - kind: para
+    text: 公開されていて、MySQLなどに影響を及ぼした。
   p30: []
   p31: []
   p32: []
@@ -426,695 +225,438 @@ text:
   p39: []
   p40: []
   p41:
-  - node: p
-    children:
-    - node: text
-      content: 'Q. つまりPHPって '
-    - node: br
-    - node: text
-      content: 何だったの？
+  - kind: para
+    text: Q. つまりPHPって
+  - kind: para
+    text: 何だったの？
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'A. '
-  - node: p
-    children:
-    - node: text
-      content: 異常に行動力があるRasmus
-    - node: br
-    - node: text
-      content: さんが自分のためにPHPを作っ て、何回か書き直した後に利己的 な動機でソースコード公開したら 世界的に開発が盛り上がっちゃった
+  - kind: para
+    text: A. 異常に行動力があるRasmus
+  - kind: para
+    text: さんが自分のためにPHPを作っ
+  - kind: para
+    text: て、何回か書き直した後に利己的
+  - kind: para
+    text: な動機でソースコード公開したら
+  - kind: para
+    text: 世界的に開発が盛り上がっちゃった
   p43: []
   p44:
-  - node: p
-    children:
-    - node: text
-      content: PHPはWebに何をもたらしたか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTMLテンプレート (HTML内に制御構造や変数展開)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: JSP(Java), eRuby/ERBなどのHTMLテンプレートに影響
-        - node: li
-          children:
-          - node: text
-            content: それ以前は print "<div>Hello</div>"; のようなコード
-    - node: li
-      children:
-      - node: text
-        content: CGIの代替としてのサーバーモジュール組み込みと開発者体験
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 現代ではコンパイルが必要な言語でも「ホットリロード」が普及
-    - node: li
-      children:
-      - node: text
-        content: フリーソフトウェアとして公開された言語(の先行事例のひとつ)
+  - kind: para
+    text: PHPはWebに何をもたらしたか
+  - kind: list
+    items:
+    - HTMLテンプレート (HTML内に制御構造や変数展開)
+    - JSP(Java), eRuby/ERBなどのHTMLテンプレートに影響
+    - それ以前は print "<div>Hello</div>"; のようなコード
+    - CGIの代替としてのサーバーモジュール組み込みと開発者体験
+    - 現代ではコンパイルが必要な言語でも「ホットリロード」が普及
+    - フリーソフトウェアとして公開された言語(の先行事例のひとつ)
   p45:
-  - node: p
-    children:
-    - node: text
-      content: '第2部 '
-    - node: br
-    - node: text
-      content: 'Webフレームワークの '
-    - node: br
-    - node: text
-      content: 中世期断絶
+  - kind: para
+    text: 第2部
+  - kind: para
+    text: Webフレームワークの
+  - kind: para
+    text: 中世期断絶
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'あるいは '
-    - node: br
-    - node: text
-      content: 幼年期の終わり
+  - kind: para
+    text: あるいは
+  - kind: para
+    text: 幼年期の終わり
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 'コードを書くと 何らかの単位で '
-    - node: br
-    - node: text
-      content: 抽象化したくなる
+  - kind: para
+    text: コードを書くと
+  - kind: para
+    text: 何らかの単位で
+  - kind: para
+    text: 抽象化したくなる
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'コードが増えると '
-    - node: br
-    - node: text
-      content: バグも増える
+  - kind: para
+    text: コードが増えると
+  - kind: para
+    text: バグも増える
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 'コードが減れば '
-    - node: br
-    - node: text
-      content: バグも減る
+  - kind: para
+    text: コードが減れば
+  - kind: para
+    text: バグも減る
   p50:
-  - node: p
-    children:
-    - node: text
-      content: 'ライブラリ化 '
-    - node: br
-    - node: text
-      content: 'フレームワーク化 '
-    - node: br
-    - node: text
-      content: レイヤー化
+  - kind: para
+    text: ライブラリ化
+  - kind: para
+    text: フレームワーク化
+  - kind: para
+    text: レイヤー化
   p51:
-  - node: p
-    children:
-    - node: text
-      content: ライブラリ化
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 処理を関数やクラスの形でまとめて呼び出せるようにする
-    - node: li
-      children:
-      - node: text
-        content: ある人曰く「PHPの関数の数は、人間がWebでやりたいことの数」であると
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 完全に同意するわけではないが、本質の一面を捉えていると思う
-    - node: li
-      children:
-      - node: text
-        content: PHPの関数は外付けのライブラリに留まらず、HTTPをネイティブサポート
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: これは良し悪しあるが、セキュリティに関しては単なるCGIライブラリでは実
-          - node: br
-          - node: text
-            content: 現できないレベルでヘッダインジェクションの対策ができる
+  - kind: para
+    text: ライブラリ化
+  - kind: list
+    items:
+    - 処理を関数やクラスの形でまとめて呼び出せるようにする
+    - ある人曰く「PHPの関数の数は、人間がWebでやりたいことの数」であると
+    - 完全に同意するわけではないが、本質の一面を捉えていると思う
+    - PHPの関数は外付けのライブラリに留まらず、HTTPをネイティブサポート
+    - これは良し悪しあるが、セキュリティに関しては単なるCGIライブラリでは実
+  - kind: para
+    text: 現できないレベルでヘッダインジェクションの対策ができる
   p52:
-  - node: p
-    children:
-    - node: text
-      content: フレームワーク化
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ライブラリとの最も明確な違いは「制御の反転」
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: あなたはコードを書いてライブラリ関数を呼び出す
-        - node: li
-          children:
-          - node: text
-            content: フレームワークはあなたの書いたコードを呼び出す
-    - node: li
-      children:
-      - node: text
-        content: どのような規則でコードを実行するかはフレームワークの性質による
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Webフレームワークはユーザーのリクエストによって対象を起動
-        - node: li
-          children:
-          - node: text
-            content: テストフレームワークはディレクトリやファイル名によって対象を起動
+  - kind: heading
+    level: 1
+    text: フレームワーク化
+  - kind: list
+    items:
+    - ライブラリとの最も明確な違いは「制御の反転」
+    - あなたはコードを書いてライブラリ関数を呼び出す
+    - フレームワークはあなたの書いたコードを呼び出す
+    - どのような規則でコードを実行するかはフレームワークの性質による
+    - Webフレームワークはユーザーのリクエストによって対象を起動
+    - テストフレームワークはディレクトリやファイル名によって対象を起動
   p53:
-  - node: p
-    children:
-    - node: text
-      content: レイヤー化
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 処理を「層(レイヤー)」に分けて整理する
-    - node: li
-      children:
-      - node: text
-        content: これにはさまざまな観点がある：
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: MVC (Model-View-Controller)
-        - node: li
-          children:
-          - node: text
-            content: 3層アーキテクチャ、Ports and Adapters(クリーンアーキテクチャ)
-        - node: li
-          children:
-          - node: text
-            content: HTTPインフラとロジックの分離
+  - kind: heading
+    level: 1
+    text: レイヤー化
+  - kind: list
+    items:
+    - 処理を「層(レイヤー)」に分けて整理する
+    - これにはさまざまな観点がある：
+    - MVC (Model-View-Controller)
+    - 3層アーキテクチャ、Ports and Adapters(クリーンアーキテクチャ)
+    - HTTPインフラとロジックの分離
   p54:
-  - node: p
-    children:
-    - node: text
-      content: HTTP層のレイヤー化
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPはHTTP機能を言語が直接サポートする(Server API)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: mod_php, php-fpm, cgi, cliなどがあるが、あまり意識の必要がない
-    - node: li
-      children:
-      - node: text
-        content: 他言語では従来のCGIスクリプトは廃れて、サーバとアプリケーションを
-      - node: br
-      - node: text
-        content: '分離するインターフェイスを定める方向にシフトした '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Python=WSGI, Ruby=Rack, Perl=PSGI
-    - node: li
-      children:
-      - node: text
-        content: GoやNode.jsも標準でHTTPサーバをバンドルしている
+  - kind: para
+    text: HTTP層のレイヤー化
+  - kind: list
+    items:
+    - PHPはHTTP機能を言語が直接サポートする(Server API)
+    - mod_php, php-fpm, cgi, cliなどがあるが、あまり意識の必要がない
+    - 他言語では従来のCGIスクリプトは廃れて、サーバとアプリケーションを
+  - kind: para
+    text: 分離するインターフェイスを定める方向にシフトした
+  - kind: list
+    items:
+    - Python=WSGI, Ruby=Rack, Perl=PSGI
+    - GoやNode.jsも標準でHTTPサーバをバンドルしている
   p55:
-  - node: p
-    children:
-    - node: text
-      content: Ruby on Railsの登場
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Webフレームワーク界の風雲児・フルスタックフレームワーク
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: CoC (設定より規約)： 重厚な設定が必要なFWのアンチテーゼ
-          - node: br
-          - node: text
-            content: '設定を書かなくても慣習通りに配置すれば勝手に呼び出してくれる '
-        - node: li
-          children:
-          - node: text
-            content: '多数の高機能な組み込みライブラリ:'
-          - node: br
-          - node: text
-            content: 'O/Rマッパー、ルーター/URLヘルパー、 '
-        - node: li
-          children:
-          - node: text
-            content: 積極的なコード生成(スキャフォルディング)：
-          - node: br
-          - node: text
-            content: 最初期は「15分でブログを作れる」と宣伝された (2005年)
+  - kind: heading
+    level: 1
+    text: Ruby on Railsの登場
+  - kind: list
+    items:
+    - Webフレームワーク界の風雲児・フルスタックフレームワーク
+    - CoC (設定より規約)： 重厚な設定が必要なFWのアンチテーゼ
+  - kind: para
+    text: 設定を書かなくても慣習通りに配置すれば勝手に呼び出してくれる
+  - kind: list
+    items:
+    - '多数の高機能な組み込みライブラリ:'
+  - kind: para
+    text: O/Rマッパー、ルーター/URLヘルパー、
+  - kind: list
+    items:
+    - 積極的なコード生成(スキャフォルディング)：
+  - kind: para
+    text: 最初期は「15分でブログを作れる」と宣伝された (2005年)
   p56:
-  - node: p
-    children:
-    - node: text
-      content: RubyにとってRailsは何を変えたか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Rails 1.0は独自のHTTPレイヤーで実装されていた
-    - node: li
-      children:
-      - node: text
-        content: 現代のRails(Rack)アプリケーションをCGIで実行することは可能だが、
-      - node: br
-      - node: text
-        content: 'オーバーヘッドが大きい '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: CGI時代のRubyスクリプトと、RailsのControllerクラスの実装は
-          - node: br
-          - node: text
-            content: '互換性がない '
-        - node: li
-          children:
-          - node: text
-            content: 「コード書き直し」 or 「捨てる」の二択を迫られる
+  - kind: heading
+    level: 1
+    text: RubyにとってRailsは何を変えたか
+  - kind: list
+    items:
+    - Rails 1.0は独自のHTTPレイヤーで実装されていた
+    - 現代のRails(Rack)アプリケーションをCGIで実行することは可能だが、
+  - kind: para
+    text: オーバーヘッドが大きい
+  - kind: list
+    items:
+    - CGI時代のRubyスクリプトと、RailsのControllerクラスの実装は
+  - kind: para
+    text: 互換性がない
+  - kind: list
+    items:
+    - 「コード書き直し」 or 「捨てる」の二択を迫られる
   p57:
-  - node: p
-    children:
-    - node: text
-      content: PerlとHTTPレイヤー
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2000年代まで「WebアプリといえばPerlでCGI」という感じだった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: SNS以前はKENT WEBの掲示板やチャットをレンタルサーバーに置いて
-          - node: br
-          - node: text
-            content: 'コミュニケーションをとっていた時代もあった '
-    - node: li
-      children:
-      - node: text
-        content: CGI時代のPerlスクリプトと、業務で開発するPerlアプリケーションの
-      - node: br
-      - node: text
-        content: 世界は分たれてしまった…
+  - kind: heading
+    level: 1
+    text: PerlとHTTPレイヤー
+  - kind: list
+    items:
+    - 2000年代まで「WebアプリといえばPerlでCGI」という感じだった
+    - SNS以前はKENT WEBの掲示板やチャットをレンタルサーバーに置いて
+  - kind: para
+    text: コミュニケーションをとっていた時代もあった
+  - kind: list
+    items:
+    - CGI時代のPerlスクリプトと、業務で開発するPerlアプリケーションの
+  - kind: para
+    text: 世界は分たれてしまった…
   p58:
-  - node: p
-    children:
-    - node: text
-      content: PHP界への余波
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2004年を画期として、「フレームワーク」というものの見方が変わった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: CakePHPは当時の機能で再現可能な範囲で最大限Railsを模倣している
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: ルーティングすら書かなくてもコントローラーが呼ばれる(!)
-              - node: ul
-                children:
-                - node: li
-                  children:
-                  - node: text
-                    content: GET /users → UserController::index()
-        - node: li
-          children:
-          - node: text
-            content: さらに後発のフレームワーク(Laravelなど)は、Rails風の便利さは
-          - node: br
-          - node: text
-            content: 残しつつも明示的に設定させることでコードの追いやすさを意識
+  - kind: heading
+    level: 1
+    text: PHP界への余波
+  - kind: list
+    items:
+    - 2004年を画期として、「フレームワーク」というものの見方が変わった
+    - CakePHPは当時の機能で再現可能な範囲で最大限Railsを模倣している
+    - ルーティングすら書かなくてもコントローラーが呼ばれる(!)
+    - GET /users → UserController::index()
+    - さらに後発のフレームワーク(Laravelなど)は、Rails風の便利さは
+  - kind: para
+    text: 残しつつも明示的に設定させることでコードの追いやすさを意識
   p59:
-  - node: p
-    children:
-    - node: bold
-      content: /data/www/www.pixiv.net
-    - node: text
-      content: ' (document root) '
-    - node: br
-    - node: text
-      content: '├── index.php '
-    - node: br
-    - node: text
-      content: '├── novel '
-    - node: br
-    - node: text
-      content: '│　　　└── show.php '
-    - node: br
-    - node: text
-      content: ├── yyy.php └── zzz.php
+  - kind: para
+    text: /data/www/www.pixiv.net (document root)
+  - kind: para
+    text: ├── index.php
+  - kind: para
+    text: ├── novel
+  - kind: para
+    text: │ └── show.php
+  - kind: para
+    text: ├── yyy.php
+  - kind: para
+    text: └── zzz.php
   p60:
-  - node: p
-    children:
-    - node: text
-      content: NovelController#show
-  - node: p
-    children:
-    - node: text
-      content: '# routes.rb '
-    - node: br
-    - node: text
-      content: 'get ''/'', to: ''index'' '
-    - node: br
-    - node: text
-      content: 'get ''/n/:id'', to: ''novel#show'' get ''/u/:id'', to: ''user#show'' '
-    - node: br
-    - node: text
-      content: 'get ''/yyy'', to: ''yyy'' get ''/zzz'', to: ''zzz'''
+  - kind: para
+    text: NovelController#show
+  - kind: para
+    text: '# routes.rb'
+  - kind: para
+    text: 'get ''/'', to: ''index'''
+  - kind: para
+    text: 'get ''/n/:id'', to: ''novel#show'''
+  - kind: para
+    text: 'get ''/u/:id'', to: ''user#show'''
+  - kind: para
+    text: 'get ''/yyy'', to: ''yyy'''
+  - kind: para
+    text: 'get ''/zzz'', to: ''zzz'''
   p61:
-  - node: p
-    children:
-    - node: text
-      content: PHPにとってのFW
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: RailsアプリケーションはControllerを書かないと、そもそも実行されない
-    - node: li
-      children:
-      - node: text
-        content: PHPにとってのフレームワークは、便利ライブラリ集と見分けがつかない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: あるいは、お行儀よいアプリケーションを書くための拘束具に過ぎない
-        - node: li
-          children:
-          - node: text
-            content: Controllerで setcookie() や header() 関数も動く(!)
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: そんなことをするとユニットテストが書けなくなってしまう！
-    - node: li
-      children:
-      - node: text
-        content: PHP自体は依然としてCGI時代と地続き
+  - kind: para
+    text: PHPにとってのFW
+  - kind: list
+    items:
+    - RailsアプリケーションはControllerを書かないと、そもそも実行されない
+    - PHPにとってのフレームワークは、便利ライブラリ集と見分けがつかない
+    - あるいは、お行儀よいアプリケーションを書くための拘束具に過ぎない
+    - Controllerで setcookie() や header() 関数も動く(!)
+    - そんなことをするとユニットテストが書けなくなってしまう！
+    - PHP自体は依然としてCGI時代と地続き
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP以外は CGI時代との '
-    - node: br
-    - node: text
-      content: 分断・断絶を経験
+  - kind: para
+    text: PHP以外は
+  - kind: para
+    text: CGI時代との
+  - kind: para
+    text: 分断・断絶を経験
   p63:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPは '
-    - node: br
-    - node: text
-      content: 'FWが一般化後も '
-    - node: br
-    - node: text
-      content: 断絶を経験してない
+  - kind: para
+    text: PHPは
+  - kind: para
+    text: FWが一般化後も
+  - kind: para
+    text: 断絶を経験してない
   p64:
-  - node: p
-    children:
-    - node: text
-      content: ここまでは 過去の栄光
+  - kind: para
+    text: ここまでは
+  - kind: para
+    text: 過去の栄光
   p65:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPは現在も '
-    - node: br
-    - node: text
-      content: 'パフォーマンス改善 '
-    - node: br
-    - node: text
-      content: されているが、
+  - kind: para
+    text: PHPは現在も
+  - kind: para
+    text: パフォーマンス改善
+  - kind: para
+    text: されているが、
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 頭にはいろんな言語が浮かぶ
-  - node: p
-    children:
-    - node: text
-      content: C#… ASP.NET…
-  - node: p
-    children:
-    - node: text
-      content: Node.js…
-  - node: p
-    children:
-    - node: text
-      content: Rust…
-  - node: p
-    children:
-    - node: text
-      content: Common Lisp…
-  - node: p
-    children:
-    - node: text
-      content: Go…
-  - node: p
-    children:
-    - node: text
-      content: Java…
-  - node: p
-    children:
-    - node: text
-      content: Python…
-  - node: p
-    children:
-    - node: text
-      content: TypeScript…
-  - node: p
-    children:
-    - node: text
-      content: Ruby on Rails…
-  - node: p
-    children:
-    - node: text
-      content: Smalltalk…
-  - node: p
-    children:
-    - node: text
-      content: Swift…
-  - node: p
-    children:
-    - node: text
-      content: Kotlin…
+  - kind: heading
+    level: 1
+    text: 頭にはいろんな言語が浮かぶ
+  - kind: para
+    text: C#… ASP.NET…
+  - kind: para
+    text: Node.js…
+  - kind: para
+    text: Rust…
+  - kind: para
+    text: Common Lisp…
+  - kind: para
+    text: Go…
+  - kind: para
+    text: Python…
+  - kind: para
+    text: TypeScript…
+  - kind: para
+    text: Java…
+  - kind: para
+    text: Ruby on Rails…
+  - kind: para
+    text: Smalltalk…
+  - kind: para
+    text: Kotlin…
+  - kind: para
+    text: Swift…
   p67:
-  - node: p
-    children:
-    - node: text
-      content: PHPよりもっと速い言語で書いた方がいいじゃん
+  - kind: para
+    text: PHPよりもっと
+  - kind: para
+    text: 速い言語で書いた方が
+  - kind: para
+    text: いいじゃん
   p68:
-  - node: p
-    children:
-    - node: text
-      content: PHPよりエレガントな言語で再構築すべきだ
+  - kind: para
+    text: PHPより
+  - kind: para
+    text: エレガントな言語で
+  - kind: para
+    text: 再構築すべきだ
   p69:
-  - node: p
-    children:
-    - node: text
-      content: 常にさまざまな誘惑がある
+  - kind: para
+    text: 常にさまざまな
+  - kind: para
+    text: 誘惑がある
   p70: []
   p71: []
   p72:
-  - node: p
-    children:
-    - node: text
-      content: コードをエレガントに書き直すのは今やるべきなのか？
+  - kind: para
+    text: コードをエレガントに
+  - kind: para
+    text: 書き直すのは
+  - kind: para
+    text: 今やるべきなのか？
   p73:
-  - node: p
-    children:
-    - node: text
-      content: 高速な言語で書き直すのは今やるべきなのか？
+  - kind: para
+    text: 高速な言語で
+  - kind: para
+    text: 書き直すのは
+  - kind: para
+    text: 今やるべきなのか？
   p74:
-  - node: p
-    children:
-    - node: text
-      content: リソース配分
-    - node: br
-    - node: text
-      content: ⚖
+  - kind: para
+    text: リソース配分
+  - kind: para
+    text: ⚖
   p75:
-  - node: p
-    children:
-    - node: text
-      content: PHPはどこでも65点を出せる言語
+  - kind: para
+    text: PHPはどこでも
+  - kind: para
+    text: 65点を出せる言語
   p76:
-  - node: p
-    children:
-    - node: text
-      content: …と言いたいが、PHPにも歯が立たない局面もある
+  - kind: para
+    text: …と言いたいが、
+  - kind: para
+    text: PHPにも歯が
+  - kind: para
+    text: 立たない局面もある
   p77:
-  - node: p
-    children:
-    - node: text
-      content: C10K Problem
+  - kind: heading
+    level: 1
+    text: C10K Problem
   p78:
-  - node: p
-    children:
-    - node: text
-      content: チャットアプリで結果をリアルタイムに返す
+  - kind: heading
+    level: 1
+    text: チャットアプリで
+  - kind: heading
+    level: 2
+    text: 結果をリアルタイムに返す
   p79:
-  - node: p
-    children:
-    - node: text
-      content: WebSocket
-    - node: br
-    - node: text
-      content: Server-Sent Events
+  - kind: para
+    text: WebSocket
+  - kind: para
+    text: Server-Sent Events
   p80:
-  - node: p
-    children:
-    - node: text
-      content: preforkモデル(mod_php, PHP-FPM)は相性最悪
+  - kind: para
+    text: preforkモデル
+  - kind: para
+    text: (mod_php, PHP-FPM)は
+  - kind: para
+    text: 相性最悪
   p81:
-  - node: p
-    children:
-    - node: text
-      content: PHPはこのまま白旗を上げるしかないのか
+  - kind: para
+    text: PHPはこのまま
+  - kind: para
+    text: 白旗を上げる
+  - kind: para
+    text: しかないのか
   p82: []
   p83:
-  - node: p
-    children:
-    - node: text
-      content: 勝った！
-    - node: br
-    - node: text
-      content: PHP大勝利
+  - kind: para
+    text: 勝った！
+  - kind: para
+    text: PHP大勝利
   p84:
-  - node: p
-    children:
-    - node: text
-      content: ……とは行かない
+  - kind: heading
+    level: 1
+    text: ……とは行かない
   p85:
-  - node: p
-    children:
-    - node: text
-      content: グローバル変数や静的プロパティがリセットされない
+  - kind: para
+    text: グローバル変数や
+  - kind: para
+    text: 静的プロパティが
+  - kind: para
+    text: リセットされない
   p86:
-  - node: p
-    children:
-    - node: text
-      content: CGIとは何か
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Common Gateway Interfaceの略、1993年頃に登場
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: HTTPサーバを独自実装しなくても、シンプルなスクリプトを書くだけで動的ページを実現できる
-        - node: li
-          children:
-          - node: text
-            content: ユーザーからリクエストが来る度にプロセスを起動する
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: シェアードナッシング (並行して処理するリクエストと干渉しない)
+  - kind: heading
+    level: 1
+    text: CGIとは何か
+  - kind: list
+    items:
+    - Common Gateway Interfaceの略、1993年頃に登場
+    - HTTPサーバを独自実装しなくても、シンプルなスクリプトを書くだけで
+  - kind: para
+    text: 動的ページを実現できる
+  - kind: list
+    items:
+    - ユーザーからリクエストが来る度にプロセスを起動する
+    - シェアードナッシング (並行して処理するリクエストと干渉しない)
   p87:
-  - node: p
-    children:
-    - node: text
-      content: この環境を全部捨てることになる
+  - kind: para
+    text: この環境を全部
+  - kind: para
+    text: 捨てることになる
   p88:
-  - node: p
-    children:
-    - node: text
-      content: Notes on Programming in C
-  - node: p
-    children:
-    - node: text
-      content: 'ルール2: 計測すべし。計測するまでは速度のための調整をしてはならない。コードの一部が残りを圧倒しないのであれば、なおさらである。'
-  - node: p
-    children:
-    - node: text
-      content: — Rob Pike
-  - node: p
-    children:
-    - node: text
-      content: 'https://www.lysator.liu.se/c/pikestyle.html '
-  - node: p
-    children:
-    - node: text
-      content: 訳語はUNIX哲学 - Wikipediaより引用
-    - node: br
-    - node: text
-      content: (2025年10日2日12:33:03版)
+  - kind: para
+    text: Notes on Programming in C
+  - kind: para
+    text: 'ルール2: 計測すべし。計測する'
+  - kind: para
+    text: までは速度のための調整をしては
+  - kind: para
+    text: ならない。コードの一部が残りを
+  - kind: para
+    text: 圧倒しないのであれば、なおさら
+  - kind: para
+    text: である。
+  - kind: para
+    text: ̶ Rob Pike
+  - kind: para
+    text: https://www.lysator.liu.se/c/pikestyle.html
+  - kind: para
+    text: 訳語はUNIX哲学 - Wikipediaより引用
+  - kind: para
+    text: (2025年10日2日12:33:03版)
   p89:
-  - node: p
-    children:
-    - node: text
-      content: 問題になっていないことを悩んでも仕方ない
+  - kind: para
+    text: 問題になっていない
+  - kind: para
+    text: ことを悩んでも
+  - kind: para
+    text: 仕方ない
   p90:
-  - node: p
-    children:
-    - node: text
-      content: 本当にPHPに不得意な仕事をさせる必要があるのか？
+  - kind: para
+    text: 本当にPHPに
+  - kind: para
+    text: 不得意な仕事をさせる
+  - kind: para
+    text: 必要があるのか？
   p91:
-  - node: p
-    children:
-    - node: text
-      content: 本質的な問題を解決できる言語を使おう
+  - kind: para
+    text: 本質的な問題を
+  - kind: para
+    text: 解決できる
+  - kind: para
+    text: 言語を使おう
+size:
+  max_width: 1920
+  max_height: 1080
+links: {}

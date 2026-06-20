@@ -1,844 +1,555 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: における
+  - kind: heading
+    level: 1
+    text: メタプログラミングの温床
+  - kind: para
+    text: Meta programming for PHP
+  - kind: para
+    text: '2017-08-20 NEEC Kamata #ll2017jp'
+  - kind: para
+    text: ODC 2017 Tokyo/ Learn Languages (LL2017)
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - Emacs Lisper, PHPer
+    - Qiitaに記事を書いたり変なコメントしてるよ
+    - 動的言語はコンピューティングの真髄
+  p3:
+  - kind: para
+    text: 世の中にはいろんな
+  - kind: para
+    text: クールな言語がある
+  p4:
+  - kind: para
+    text: PHPには毛ほども興味のな
+  - kind: para
+    text: さそうな皆さまにPHPの動
+  - kind: para
+    text: 的な言語機能を紹介します
+  p5:
+  - kind: para
+    text: サンプルコードは言
+  - kind: para
+    text: 語機能を簡易に紹介
+  - kind: para
+    text: するためのものです
+  p6:
+  - kind: para
+    text: 利用の際は必要性と利便性
+  - kind: para
+    text: を慎重に判断すること。
+  - kind: para
+    text: (メタプログラミングって基本的
+  - kind: para
+    text: にそーゆーものですけど…)
+  p7:
+  - kind: para
+    text: アジェンダ
+  p8:
+  - kind: para
+    text: 0. 前提
+  - kind: para
+    text: 1. 初級篇
+  - kind: para
+    text: 2. 中級篇
+  - kind: para
+    text: 3. 上級篇
+  p9:
+  - kind: para
+    text: 前提
+  p10:
+  - kind: para
+    text: PHPは、所謂LLと
+  - kind: para
+    text: しては遊びが少ない
+  p11:
+  - kind: para
+    text: 例) 原則として関数や
+  - kind: para
+    text: クラスを再定義できない
+  - kind: para
+    text: (致命的エラーが発生)
+  p12:
+  - kind: para
+    text: RubyやPythonと違って
+  - kind: para
+    text: オープンクラスではない
+  - kind: para
+    text: (モンキーパッチができない)
+  p13:
+  - kind: para
+    text: 謎なタイミングで
+  - kind: para
+    text: クラス定義が変更される
+  - kind: para
+    text: ことが(基本的には)ない
+  p14:
+  - kind: para
+    text: ＝静的解析しやすい
+  - kind: para
+    text: 条件が揃ってる
+  p15:
+  - kind: para
+    text: その和を乱す邪悪な
+  - kind: para
+    text: 動的メタプログラミング
+  - kind: para
+    text: テクニックが存在する
+  p16:
+  - kind: para
+    text: 😇
+  p17:
+  - kind: para
+    text: 初級編
+  p18:
+  - kind: para
+    text: callable
+  p19:
+  - kind: para
+    text: 関数として呼出し可
+  - kind: para
+    text: 能な値を表す擬似型
+  p20:
+  - kind: heading
+    level: 1
+    text: callable
+  - kind: para
+    text: // After
+  - kind: para
+    text: '$f = $cond ? ''foo'' : ''bar'';'
+  - kind: para
+    text: call_user_func($f, $var);
+  - kind: para
+    text: // Before
+  - kind: para
+    text: if ($cond) {
+  - kind: para
+    text: foo($var);
+  - kind: para
+    text: '} else {'
+  - kind: para
+    text: bar($var);
+  - kind: para
+    text: '}'
+  - kind: para
+    text: // こうやって書いてもいい
+  - kind: para
+    text: $f($var);
+  p21:
+  - kind: heading
+    level: 1
+    text: map
+  - kind: para
+    text: $ary = ["apple", "orange", "banana"];
+  - kind: para
+    text: //=> ["Apple", "Orange", "Banana"]
+  - kind: para
+    text: $bry = [];
+  - kind: para
+    text: foreach ($ary as $i => $a) {
+  - kind: para
+    text: $cry =
+  - kind: para
+    text: array_map('ucfirst', $ary);
+  - kind: para
+    text: $bry[$i] => ucfirst($a);
+  - kind: para
+    text: '}'
+  p22:
+  - kind: para
+    text: compact()
+  - kind: para
+    text: extract()
+  p23:
+  - kind: para
+    text: 変数テーブルにアク
+  - kind: para
+    text: セスできる関数
+  p24:
+  - kind: para
+    text: compact()
+  - kind: para
+    text: 変数テーブルから
+  - kind: para
+    text: 取り出して配列にする
+  p25:
+  - kind: heading
+    level: 1
+    text: compact()
+  - kind: para
+    text: $foo = foo();
+  - kind: para
+    text: $bar = bar();
+  - kind: para
+    text: hoge(compact('foo','bar'));
+  - kind: para
+    text: hoge([
+  - kind: para
+    text: '''foo'' => $foo,'
+  - kind: para
+    text: '''bar'' => $bar'
+  - kind: para
+    text: ']);'
+  p26:
+  - kind: para
+    text: extract()
+  - kind: para
+    text: 変数テーブルから
+  - kind: para
+    text: 取り出して配列に
+  p27:
+  - kind: heading
+    level: 1
+    text: extract()
+  - kind: para
+    text: function (array $vs)
+  - kind: para
+    text: '{'
+  - kind: para
+    text: extract($vs,
+  - kind: para
+    text: EXTR_PREFIX_ALL,
+  - kind: para
+    text: $hoge_foo = $vs['foo'];
+  - kind: para
+    text: $hoge_bar = $vs['bar'];
+  - kind: para
+    text: '''hoge'');'
+  - kind: heading
+    level: 2
+    text: 本当はissetでチェックすべき
+  p28:
+  - kind: para
+    text: extract()
+  - kind: para
+    text: 未使用変数の検出できない
+  - kind: para
+    text: 読みにくくなるので邪悪
+  - kind: para
+    text: バグの温床であるばかりか、
+  - kind: para
+    text: ふつうに脆弱性の温床になる
+  p29:
+  - kind: para
+    text: $$var
+  p30:
+  - kind: para
+    text: $$var
+  - kind: para
+    text: 可変変数
+  - kind: para
+    text: (variable variables)
+  p31:
+  - kind: heading
+    level: 1
+    text: 可変変数
+  - kind: para
+    text: $world = "こんにちは世界";
+  - kind: para
+    text: $hello = "world";
+  - kind: para
+    text: $v = "hello";
+  - kind: para
+    text: var_dump($v); //=> "hello"
+  - kind: para
+    text: var_dump($$v); //=> "world"
+  - kind: para
+    text: var_dump($$$v); //=> "こんにちは世界"
+  - kind: para
+    text: // $$ はいくつ付けてもよい！！
+  p32:
+  - kind: para
+    text: debug_backtrace()
+  p33:
+  - kind: para
+    text: スタックトレースを
+  - kind: para
+    text: 全部取得できる
+  - kind: para
+    text: (ファイル・引数含む)
+  p34:
+  - kind: para
+    text: (これを悪用すればどん
+  - kind: para
+    text: な邪悪なことができる
+  - kind: para
+    text: かは明白なので省略)
+  p35:
+  - kind: para
+    text: 中級編
+  p36:
+  - kind: para
+    text: マジック
+  - kind: para
+    text: メソッド
+  p37:
+  - kind: para
+    text: __get($name)
+  - kind: para
+    text: __set($name, $value)
+  p38:
+  - kind: para
+    text: __get()
+  - kind: para
+    text: アクセス不可プロパティ
+  - kind: para
+    text: を読み出そうとしたとき
+  - kind: para
+    text: に呼ばれる
+  p39:
+  - kind: para
+    text: __set()
+  - kind: para
+    text: アクセス不可プロパティ
+  - kind: para
+    text: を書き込もうとしたとき
+  - kind: para
+    text: に呼ばれる
+  p40:
+  - kind: heading
+    level: 1
+    text: __get(), __set()
+  - kind: para
+    text: class Hoge {
+  - kind: para
+    text: private $values = [];
+  - kind: para
+    text: public function __set($name, $value) {
+  - kind: para
+    text: $values[$name] = $value;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: public function __get($name) {
+  - kind: para
+    text: return $values[$name];
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  p41:
+  - kind: para
+    text: 「アクセス不可」は未定
+  - kind: para
+    text: 義プロパティだけはなく
+  - kind: para
+    text: private, protected含む
+  p42:
+  - kind: heading
+    level: 1
+    text: 読み出し専用プロパティ
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @property-read string $name'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: class Hoge {
+  - kind: para
+    text: private $name;
+  - kind: para
+    text: public function __construct($name) {
+  - kind: para
+    text: $this->name = $name;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: public function __get($name) {
+  - kind: para
+    text: return $values[$name];
+  - kind: para
+    text: '}'
+  p43:
+  - kind: heading
+    level: 1
+    text: 書き込み禁止プロパティ
+  - kind: para
+    text: public function __set($name) {
+  - kind: para
+    text: throw new OutOfRangeException();
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  p44:
+  - kind: para
+    text: __call($name, $args)
+  p45:
+  - kind: para
+    text: __call()
+  - kind: para
+    text: アクセス不可メソッドを
+  - kind: para
+    text: 起動しようとしたときに
+  - kind: para
+    text: 呼ばれる
+  p46:
+  - kind: heading
+    level: 1
+    text: Proxyパターン
+  - kind: para
+    text: class HogeProxy {
+  - kind: para
+    text: private $hoge;
+  - kind: para
+    text: public function __construct(Hoge $hoge) {
+  - kind: para
+    text: $this->hoge = $hoge;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: public function __call($name, $args) {
+  - kind: para
+    text: return call_user_func_array($name, $args);
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  p47:
+  - kind: heading
+    level: 1
+    text: Proxyパターン (PHPDoc)
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @method Foo getFoo()'
+  - kind: para
+    text: '* @method string format(string $tpl)'
+  - kind: para
+    text: '* @method void close()'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: class HogeProxy {
+  - kind: para
+    text: /** @var Hoge */
+  - kind: para
+    text: private $hoge;
+  - kind: para
+    text: public function __construct(Hoge $hoge) {
+  - kind: para
+    text: $this->hoge = $hoge;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: public function __call($name, $args) {
+  p48:
+  - kind: para
+    text: 上級編
+  p49:
+  - kind: para
+    text: spl_autoload
+  - kind: para
+    text: _register()
+  p50:
+  - kind: para
+    text: クラスが定義された
+  - kind: para
+    text: ファイルを自動ロー
+  - kind: para
+    text: ドするための仕組み
+  p51:
+  - kind: para
+    text: (ふつうはComposerが
+  - kind: para
+    text: やってくれるので自分
+  - kind: para
+    text: で定義する必要ない)
+  p52:
+  - kind: heading
+    level: 1
+    text: ふつうのクラスローダー
+  - kind: para
+    text: spl_autoload_register(function ($class) {
+  - kind: para
+    text: $file = strtr($class, '\\', '/') . '.php';
+  - kind: para
+    text: $path = __DIR__ . '/' . $file;
+  - kind: para
+    text: if (file_exists($path)) {
+  - kind: para
+    text: require $path;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '});'
+  p53:
+  - kind: para
+    text: クラスが読み込まれ
+  - kind: para
+    text: る前に介入できる
+  p54:
+  - kind: heading
+    level: 1
+    text: 邪悪クラスローダー
+  - kind: para
+    text: if (file_exists($path)) {
+  - kind: para
+    text: $evil_path = evil_path($path);
+  - kind: para
+    text: if (file_exists($evil_path)) {
+  - kind: para
+    text: $src = file_get_contents($path);
+  - kind: para
+    text: // ファイルを魔改造
+  - kind: para
+    text: $evil_src = evil_customize($src);
+  - kind: para
+    text: file_put_contents($evil_path, $evil_src);
+  - kind: para
+    text: '}'
+  - kind: para
+    text: require $evil_path;
+  - kind: para
+    text: '}'
+  p55:
+  - kind: para
+    text: まとめ
+  p56:
+  - kind: para
+    text: PHPは制限の大い言語
+  - kind: para
+    text: のようだが、遊べるポ
+  - kind: para
+    text: イントはいろいろある
+  p57:
+  - kind: para
+    text: 大いなる力には
+  - kind: para
+    text: 大いなる責任がry
+  p58:
+  - kind: para
+    text: PHPUnit, PsySH, そのほか
+  - kind: para
+    text: 一部のフレームワークなどは
+  - kind: para
+    text: メタプログラミングのテクニッ
+  - kind: para
+    text: クを活用してる
+  p59:
+  - kind: para
+    text: それ用のライブラリ
+  - kind: para
+    text: もある。
+  - kind: para
+    text: (Go! AOP https://github.com/goaop/framework)
+  p60:
+  - kind: para
+    text: 実用知識！
+  p61:
+  - kind: para
+    text: そなえよう
 size:
   max_width: 1024
   max_height: 768
 links: {}
-text:
-  p1:
-  - node: p
-    children:
-    - node: bold
-      content: PHPにおけるメタプログラミングの温床
-  - node: p
-    children:
-  - node: p
-    children:
-    - node: text
-      content: '2017-08-20 NEEC Kamata #ll2017jp'
-    - node: br
-    - node: text
-      content: ODC 2017 Tokyo/ Learn Languages (LL2017)
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Qiitaに記事を書いたり変なコメントしてるよ
-    - node: li
-      children:
-      - node: text
-        content: 動的言語はコンピューティングの真髄
-  p3:
-  - node: p
-    children:
-    - node: text
-      content: 世の中にはいろんな クールな言語がある
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: PHPには毛ほども興味のなさそうな皆さまにPHPの
-    - node: bold
-      content: 動的な言語機能
-    - node: text
-      content: を紹介します
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: サンプルコードは言語機能を
-    - node: bold
-      content: 簡易に紹介する
-    - node: text
-      content: ためのものです
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: 利用の際は必要性と利便性を
-    - node: bold
-      content: 慎重に
-    - node: text
-      content: 判断すること。
-    - node: br
-    - node: text
-      content: (メタプログラミングって基本的にそーゆーものですけど…)
-  p7:
-  - node: p
-    children:
-    - node: bold
-      content: アジェンダ
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: 0.  前提
-    - node: br
-    - node: text
-      content: 1. 初級篇
-    - node: br
-    - node: text
-      content: 2. 中級篇
-    - node: br
-    - node: text
-      content: 3. 上級篇
-  p9:
-  - node: p
-    children:
-    - node: bold
-      content: 前提
-  p10:
-  - node: p
-    children:
-    - node: bold
-      content: PHPは、所謂LLとしては遊びが少ない
-  p11:
-  - node: p
-    children:
-    - node: bold
-      content: 例) 原則として関数やクラスを再定義できない
-    - node: br
-    - node: text
-      content: (致命的エラーが発生)
-  p12:
-  - node: p
-    children:
-    - node: bold
-      content: RubyやPythonと違って
-    - node: text
-      content: ' '
-    - node: bold
-      content: 'オープンクラスではない '
-    - node: br
-    - node: text
-      content: (モンキーパッチができない)
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: 謎なタイミングで
-    - node: br
-    - node: text
-      content: クラス定義が変更される
-    - node: br
-    - node: text
-      content: ことが ない
-    - node: br
-    - node: text
-      content: (基本的には)
-  p14:
-  - node: p
-    children:
-    - node: bold
-      content: ＝静的解析しやすい
-    - node: br
-    - node: bold
-      content: 条件が揃ってる
-  p15:
-  - node: p
-    children:
-    - node: bold
-      content: その和を乱す邪悪な
-    - node: br
-    - node: bold
-      content: 動的メタプログラミング
-    - node: br
-    - node: bold
-      content: テクニックが存在する
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: 😇
-  p17:
-  - node: p
-    children:
-    - node: bold
-      content: 初級編
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: callable
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: 関数として呼出し可能な値を表す擬似型
-  p20:
-  - node: p
-    children:
-    - node: bold
-      content: callable
-  - node: p
-    children:
-    - node: bold
-      content: '// Before'
-    - node: br
-    - node: text
-      content: 'if ($cond) {'
-    - node: br
-    - node: text
-      content: '    foo($var);'
-    - node: br
-    - node: text
-      content: '} else {'
-    - node: br
-    - node: text
-      content: '    bar($var);'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: bold
-      content: '// After'
-    - node: br
-    - node: text
-      content: '$f = $cond ? ''foo'' : ''bar'';'
-    - node: br
-    - node: text
-      content: 'call_user_func($f, $var);'
-    - node: br
-    - node: br
-    - node: bold
-      content: '// こうやって書いてもいい'
-    - node: text
-      content: $f($var);
-  p21:
-  - node: p
-    children:
-    - node: bold
-      content: map
-  - node: p
-    children:
-    - node: text
-      content: '$ary = ["apple", "orange", "banana"]; '
-    - node: br
-    - node: text
-      content: //=> ["Apple", "Orange", "Banana"]
-  - node: p
-    children:
-    - node: text
-      content: '$bry = []; '
-  - node: p
-    children:
-    - node: text
-      content: '$cry = '
-  - node: p
-    children:
-    - node: text
-      content: 'foreach ($ary as $i => $a) { '
-  - node: p
-    children:
-    - node: text
-      content: array_map('ucfirst', $ary);
-  - node: p
-    children:
-    - node: text
-      content: '    $bry[$i] => ucfirst($a); '
-    - node: br
-    - node: text
-      content: '} '
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: compact()
-  - node: p
-    children:
-    - node: text
-      content: extract()
-  p23:
-  - node: p
-    children:
-    - node: bold
-      content: 変数テーブルにアク
-    - node: br
-    - node: bold
-      content: セスできる関数
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: compact()
-  - node: p
-    children:
-    - node: bold
-      content: 変数テーブルから
-    - node: br
-    - node: bold
-      content: 取り出して配列にする
-  p25:
-  - node: p
-    children:
-    - node: bold
-      content: compact()
-  - node: p
-    children:
-    - node: text
-      content: $foo = foo(); $bar = bar();
-  - node: p
-    children:
-    - node: text
-      content: hoge([  hoge(compact('foo','bar'));
-    - node: br
-    - node: text
-      content: '    ''foo'' => $foo,     ''bar'' => $bar '
-    - node: br
-    - node: text
-      content: ']);'
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: extract()
-  - node: p
-    children:
-    - node: bold
-      content: 変数テーブルから
-    - node: text
-      content: ' '
-    - node: bold
-      content: 取り出して配列に
-  p27:
-  - node: p
-    children:
-    - node: bold
-      content: extract()
-  - node: p
-    children:
-    - node: text
-      content: 'function (array $vs) '
-    - node: br
-    - node: text
-      content: '{'
-  - node: p
-    children:
-    - node: text
-      content: $hoge_foo = $vs['foo'];
-  - node: p
-    children:
-    - node: text
-      content: 'extract($vs, '
-  - node: p
-    children:
-    - node: text
-      content: '      EXTR_PREFIX_ALL, '
-  - node: p
-    children:
-    - node: text
-      content: $hoge_bar = $vs['bar'];
-  - node: p
-    children:
-    - node: text
-      content: '''hoge'');'
-  - node: p
-    children:
-    - node: text
-      content: 本当はissetでチェックすべき
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: 'extract() '
-    - node: br
-    - node: bold
-      content: '未使用変数の検出できない '
-    - node: br
-    - node: bold
-      content: '読みにくくなるので邪悪 '
-    - node: br
-    - node: bold
-      content: バグの温床であるばかりか、
-    - node: text
-      content: ' '
-    - node: bold
-      content: ふつうに脆弱性の温床になる
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: $$var
-  p30:
-  - node: p
-    children:
-    - node: text
-      content: $$var
-  - node: p
-    children:
-    - node: bold
-      content: 可変変数
-  - node: p
-    children:
-    - node: bold
-      content: (variable variables)
-  p31:
-  - node: p
-    children:
-    - node: bold
-      content: 可変変数
-  - node: p
-    children:
-    - node: text
-      content: '$world = "こんにちは世界"; '
-  - node: p
-    children:
-    - node: text
-      content: '$hello = "world"; '
-    - node: br
-    - node: text
-      content: '$v = "hello"; '
-  - node: p
-    children:
-    - node: text
-      content: var_dump($v);    //=> "hello" var_dump($$v);   //=> "world"
-  - node: p
-    children:
-    - node: text
-      content: 'var_dump($$$v);  //=> "こんにちは世界" '
-  - node: p
-    children:
-    - node: text
-      content: '// '
-  - node: p
-    children:
-    - node: text
-      content: $$ はいくつ付けてもよい！！
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: debug_backtrace()
-  p33:
-  - node: p
-    children:
-    - node: bold
-      content: スタックトレースを
-  - node: p
-    children:
-    - node: bold
-      content: 全部取得できる
-    - node: br
-    - node: bold
-      content: (ファイル・引数含む)
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: (これを悪用すればどんな邪悪なことができるかは明白なので省略)
-  p35:
-  - node: p
-    children:
-    - node: bold
-      content: 中級編
-  p36:
-  - node: p
-    children:
-    - node: bold
-      content: マジックメソッド
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: __get($name)
-  - node: p
-    children:
-    - node: text
-      content: __set($name, $value)
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: __get()
-    - node: br
-    - node: bold
-      content: アクセス不可プロパティ
-    - node: text
-      content: ' '
-    - node: bold
-      content: を読み出そうとしたとき
-    - node: br
-    - node: bold
-      content: に呼ばれる
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: __set()
-    - node: br
-    - node: bold
-      content: アクセス不可プロパティ
-    - node: text
-      content: ' '
-    - node: bold
-      content: を書き込もうとしたとき
-    - node: br
-    - node: bold
-      content: に呼ばれる
-  p40:
-  - node: p
-    children:
-    - node: bold
-      content: __get(), __set()
-  - node: p
-    children:
-    - node: text
-      content: class Hoge {
-  - node: p
-    children:
-    - node: text
-      content: '    private $values = []; '
-    - node: br
-    - node: text
-      content: '    public function __set($name, $value) {'
-  - node: p
-    children:
-    - node: text
-      content: '        $values[$name] = $value;'
-  - node: p
-    children:
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '    public function __get($name) {'
-  - node: p
-    children:
-    - node: text
-      content: '        return $values[$name];'
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '}'
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: 「アクセス不可」は未定義プロパティだけはなくprivate, protected含む
-  p42:
-  - node: p
-    children:
-    - node: bold
-      content: 読み出し専用プロパティ
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @property-read string $name'
-    - node: br
-      content: ' */ '
-    - node: br
-    - node: text
-      content: class Hoge {
-    - node: br
-    - node: text
-      content: '    private $name; '
-    - node: br
-    - node: text
-      content: '    public function __construct($name) {'
-    - node: br
-    - node: text
-      content: '        $this->name = $name;'
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '    public function __get($name) {'
-    - node: br
-    - node: text
-      content: '        return $values[$name];'
-    - node: br
-    - node: text
-      content: '    }'
-  p43:
-  - node: p
-    children:
-    - node: bold
-      content: 書き込み禁止プロパティ
-  - node: p
-    children:
-    - node: text
-      content: '    public function __set($name) {'
-  - node: p
-    children:
-    - node: text
-      content: '       throw new OutOfRangeException();'
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '}'
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: __call($name, $args)
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: __call()
-    - node: br
-    - node: bold
-      content: アクセス不可メソッドを
-    - node: text
-      content: ' '
-    - node: bold
-      content: 起動しようとしたときに
-    - node: br
-    - node: bold
-      content: 呼ばれる
-  p46:
-  - node: p
-    children:
-    - node: bold
-      content: Proxyパターン
-  - node: p
-    children:
-    - node: text
-      content: class HogeProxy {
-  - node: p
-    children:
-    - node: text
-      content: '    private $hoge; '
-    - node: br
-    - node: text
-      content: '    public function __construct(Hoge $hoge) {'
-  - node: p
-    children:
-    - node: text
-      content: '        $this->hoge = $hoge;'
-  - node: p
-    children:
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '    public function __call($name, $args) {'
-  - node: p
-    children:
-    - node: text
-      content: '        return call_user_func_array($name, $args);'
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '}'
-  p47:
-  - node: p
-    children:
-    - node: bold
-      content: Proxyパターン (PHPDoc)
-  - node: p
-    children:
-    - node: text
-      content: /**
-  - node: p
-    children:
-    - node: text
-      content: ' * @method Foo getFoo()'
-  - node: p
-    children:
-    - node: text
-      content: ' * @method string format(string $tpl)'
-  - node: p
-    children:
-    - node: text
-      content: ' * @method void close()'
-  - node: p
-    children:
-    - node: text
-      content: ' */ '
-    - node: br
-    - node: text
-      content: class HogeProxy {     /** @var Hoge */
-  - node: p
-    children:
-    - node: text
-      content: '    private $hoge; '
-    - node: br
-    - node: text
-      content: '    public function __construct(Hoge $hoge) {'
-  - node: p
-    children:
-    - node: text
-      content: '        $this->hoge = $hoge;'
-  - node: p
-    children:
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '    public function __call($name, $args) {'
-  p48:
-  - node: p
-    children:
-    - node: bold
-      content: 上級編
-  p49:
-  - node: p
-    children:
-    - node: text
-      content: spl_autoload _register()
-  p50:
-  - node: p
-    children:
-    - node: bold
-      content: クラスが定義された
-    - node: text
-      content: ' '
-    - node: bold
-      content: ファイルを自動ロー
-    - node: text
-      content: ' '
-    - node: bold
-      content: ドするための仕組み
-  p51:
-  - node: p
-    children:
-    - node: bold
-      content: (ふつうはComposerがやってくれるので自分で定義する必要ない)
-  p52:
-  - node: p
-    children:
-    - node: bold
-      content: ふつうのクラスローダー
-  - node: p
-    children:
-    - node: text
-      content: spl_autoload_register(function ($class) {
-    - node: br
-    - node: text
-      content: '    $file = strtr($class, ''\\'', ''/'') . ''.php''; '
-    - node: br
-    - node: text
-      content: '    $path = __DIR__ . ''/'' . $file; '
-    - node: br
-    - node: text
-      content: '    if (file_exists($path)) {'
-    - node: br
-    - node: text
-      content: '        require $path;'
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '});'
-  p53:
-  - node: p
-    children:
-    - node: bold
-      content: クラスが読み込まれ
-    - node: br
-    - node: bold
-      content: る前に介入できる
-  p54:
-  - node: p
-    children:
-    - node: bold
-      content: 邪悪クラスローダー
-  - node: p
-    children:
-    - node: text
-      content: if (file_exists($path)) {
-  - node: p
-    children:
-    - node: text
-      content: '    $evil_path = evil_path($path);     if (file_exists($evil_path))
-        { '
-    - node: br
-    - node: text
-      content: '        $src = file_get_contents($path); '
-    - node: br
-    - node: text
-      content: '        // ファイルを魔改造'
-    - node: br
-    - node: text
-      content: '        $evil_src = evil_customize($src);'
-    - node: br
-    - node: text
-      content: '        file_put_contents($evil_path, $evil_src);'
-    - node: br
-    - node: text
-      content: '   } '
-    - node: br
-    - node: text
-      content: '   require $evil_path;'
-    - node: br
-    - node: text
-      content: '}'
-  p55:
-  - node: p
-    children:
-    - node: bold
-      content: まとめ
-  p56:
-  - node: p
-    children:
-    - node: text
-      content: PHPは制限の大い言語のようだが、遊べるポイントはいろいろある
-  p57:
-  - node: p
-    children:
-    - node: bold
-      content: 大いなる力には大いなる責任がry
-  p58:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit, PsySH, そのほか一部のフレームワークなどはメタプログラミングのテクニックを活用してる
-  p59:
-  - node: p
-    children:
-    - node: bold
-      content: それ用のライブラリもある。
-  - node: p
-    children:
-    - node: text
-      content: '(Go! AOP '
-    - node: text
-      content: https://github.com/goaop/framework
-    - node: text
-      content: )
-  p60:
-  - node: p
-    children:
-    - node: bold
-      content: 実用知識！
-  p61:
-  - node: p
-    children:
-    - node: bold
-      content: そなえよう

@@ -3,618 +3,184 @@ from __future__ import annotations
 import argparse
 import re
 import sys
-from collections import defaultdict
+import unicodedata
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, NamedTuple, Optional, Tuple
+from statistics import median
+from typing import Any, Dict, Iterable, List
 
-import pdfplumber
+import fitz  # PyMuPDF
 import yaml
 
-BULLET_CHAR = "•"
-LINE_ROUND_DIGITS = 1
-GAP_THRESHOLD = 1.5
-BULLET_INDENT_TOLERANCE = 30.0
+# 1 ページ分のブロック列。各ブロックは次のいずれか:
+#   {"kind": "heading", "level": 1-3, "text": str}
+#   {"kind": "para", "text": str}
+#   {"kind": "list", "items": [str, ...]}
+PageBlocks = List[Dict[str, Any]]
+PageMap = Dict[str, PageBlocks]
 
-Segment = Tuple[str, bool]
-
-
-class LineData(NamedTuple):
-    segments: List[Segment]
-    top: float
-    bottom: float
-    left: float
-    right: float
-    width: float
-    height: float
-    center: float
-    text_left: float
-    text: str
+# フォントサイズが本文(最頻サイズ)の何倍以上なら見出しとみなすか
+HEADING_RATIO = 1.2
+# 見出しレベルの最大値
+MAX_HEADING_LEVEL = 3
+# 行頭の箇条書きマーカー (誤検出しやすい "-" や "*" は含めない)
+BULLET_CHARS = "•‣◦・·▪▫●○■□◆◇▶➤»›→✓✔"
+BULLET_PREFIX = re.compile(rf"^[{re.escape(BULLET_CHARS)}]+\s*")
+WHITESPACE = re.compile(r"\s+")
 
 
-PageNodes = List[Dict[str, object]]
-PageMap = Dict[str, PageNodes]
+class Line:
+    __slots__ = ("text", "size", "bold", "x0", "block")
 
-CID_MAP = {
-    "13495": "誹",
-    "141": "fi",
-    "1417": "開",
-    "146": "fl",
-    "1516": "完",
-    "1964": "公",
-    "20281": "叉",
-    "219": "fi",
-    "224": "fi",
-    "237": "fi",
-    "238": "fi",
-    "2742": "全",
-    "3095": "訂",
-    "3419": "版",
-    "3636": "補",
-    "3899": "用",
-    "512": "【",
-    "513": "】",
-    "7766": "謎",
-    "7972": "煽",
-    "7979": "篇",
-}
-CID_PATTERN = re.compile(r"\(cid:(\d+)\)")
-NUMERIC_LINE_PATTERN = re.compile(r"^[0-9A-Za-z０-９Ａ-Ｚａ-ｚ\s]+$")
-JAPANESE_PATTERN = re.compile(r"[ぁ-んァ-ヶ一-龯]")
+    def __init__(self, text: str, size: float, bold: bool, x0: float, block: int):
+        self.text = text
+        self.size = size
+        self.bold = bold
+        self.x0 = x0
+        self.block = block
 
 
-def clean_character(text: str) -> str:
-    """Normalize raw character data from the PDF."""
-    if not text:
-        return ""
-    text = text.replace("\x03", "")  # EOT
-    text = text.replace("\t", " ")
-    text = text.replace("\r\n", "\n").replace("\r", "\n")
-    text = text.replace("\u00a0", " ")
-    text = CID_PATTERN.sub(
-        lambda match: CID_MAP.get(match.group(1), match.group(0)), text
-    )
-    return text
+def _clean_text(text: str) -> str:
+    """Normalise span text: drop control/replacement chars, collapse spaces."""
+    text = unicodedata.normalize("NFC", text)
+    text = text.replace("�", "").replace("\x00", "")
+    text = text.replace(" ", " ").replace("\t", " ")
+    return WHITESPACE.sub(" ", text).strip()
 
 
-def clean_segment_text(text: str) -> str:
-    """Trim trailing control characters while keeping leading/trailing spaces."""
-    if not text:
-        return ""
-    text = text.replace("\n", " ")
-    return text
+def _is_bold(span: Dict[str, Any]) -> bool:
+    # flags bit 4 (16) marks synthetic/embedded bold; fall back to font name.
+    if span.get("flags", 0) & 16:
+        return True
+    name = (span.get("font") or "").lower()
+    return any(k in name for k in ("bold", "black", "heavy", "semibold", "demi"))
 
 
-def is_bold_font(fontname: Optional[str]) -> bool:
-    """Best-effort bold detection using font metadata."""
-    if not fontname:
-        return False
-    lowered = fontname.lower()
-    keywords = (
-        "bold",
-        "black",
-        "heavy",
-        "semibold",
-        "demi",
-        "medium",
-        "extrabold",
-    )
-    return any(keyword in lowered for keyword in keywords)
-
-
-SPLIT_PATTERNS: List[re.Pattern[str]] = [
-    re.compile(r"(.*in PHP)(pixiv.*)"),
-    re.compile(r"([A-Za-z\s]+)([ぁ-んァ-ヶ一-龯\s]+)"),
-    re.compile(r"([A-Za-z\s]{20,})([A-Za-z\s]+Inc\.?)"),
-]
-
-
-def _split_text_content(text: str) -> List[str]:
-    """Re-split edge cases where titles and company names are glued."""
-    for pattern in SPLIT_PATTERNS:
-        match = pattern.fullmatch(text)
-        if match:
-            return [group for group in match.groups() if group]
-    return [text]
-
-
-def merge_adjacent_nodes(nodes: List[Dict[str, str]]) -> List[Dict[str, str]]:
-    """Combine consecutive nodes of the same type."""
-    merged: List[Dict[str, str]] = []
-    for node in nodes:
-        node_type = node.get("node")
-        if node_type == "br":
-            merged.append({"node": "br"})
+def _collect_lines(page: "fitz.Page") -> List[Line]:
+    """Flatten a page into ordered visual lines with size/bold metadata."""
+    data = page.get_text("dict", sort=True)
+    lines: List[Line] = []
+    for block_index, block in enumerate(data.get("blocks", [])):
+        if block.get("type") != 0:  # skip image blocks
             continue
-        if node_type in {"text", "bold"}:
-            content = node.get("content", "")
-            if not content:
+        for raw_line in block.get("lines", []):
+            spans = raw_line.get("spans", [])
+            text = _clean_text("".join(span.get("text", "") for span in spans))
+            if not text:
                 continue
-            if merged and merged[-1].get("node") == node_type:
-                merged[-1]["content"] += content
-            else:
-                merged.append({"node": node_type, "content": content})
-            continue
-        merged.append(dict(node))
-    return merged
-
-
-def needs_space(node: Dict[str, str]) -> bool:
-    """Check whether the last node requires an extra space before appending new content."""
-    if node.get("node") not in {"text", "bold"}:
-        return False
-    content = node.get("content", "")
-    if not content:
-        return False
-    return not content.endswith((" ", "\u3000"))
-
-
-def _strip_trailing_page_number(
-    children: List[Dict[str, str]],
-) -> Tuple[List[Dict[str, str]], bool]:
-    """Remove digit-only tail nodes that represent page numbers."""
-    trimmed = list(children)
-    removed = False
-    while trimmed:
-        child = trimmed[-1]
-        if child.get("node") not in {"text", "bold"}:
-            break
-        content = child.get("content", "")
-        if content is None:
-            content = ""
-        stripped = content.strip()
-        if stripped == "":
-            trimmed.pop()
-            removed = True
-            continue
-        if stripped.isdigit():
-            trimmed.pop()
-            removed = True
-            continue
-        break
-    return trimmed, removed
-
-
-def _is_page_number_node(node: Dict[str, object], target: str) -> bool:
-    """Return True when the entire paragraph matches the page number marker."""
-    if node.get("node") != "p":
-        return False
-    children = node.get("children")
-    if not isinstance(children, list) or not children:
-        return False
-    text_fragments: List[str] = []
-    for child in children:
-        if child.get("node") not in {"text", "bold"}:
-            return False
-        content = child.get("content", "")
-        if content is None:
-            content = ""
-        text_fragments.append(content)
-    combined = "".join(text_fragments).strip()
-    return combined.isdigit() and combined == target
-
-
-def _remove_page_numbers(nodes: PageNodes, page_number: int) -> PageNodes:
-    """Strip page number markers from the node list."""
-    cleaned = list(nodes)
-    while cleaned:
-        last = cleaned[-1]
-        if last.get("node") != "p":
-            break
-        children = last.get("children")
-        if not isinstance(children, list):
-            break
-        trimmed, removed = _strip_trailing_page_number(children)
-        if not removed:
-            break
-        if trimmed:
-            last["children"] = trimmed
-            break
-        cleaned.pop()
-
-    target = str(page_number)
-    filtered: PageNodes = []
-    for node in cleaned:
-        if _is_page_number_node(node, target):
-            continue
-        filtered.append(node)
-    return filtered
-
-
-def extract_segments_from_page(page) -> List[LineData]:
-    """Group characters into ordered segments per visual line."""
-    grouped: Dict[float, List[dict]] = defaultdict(list)
-    for char in page.chars:
-        text = clean_character(char.get("text", ""))
-        if not text:
-            continue
-        line_key = round(char["top"], LINE_ROUND_DIGITS)
-        grouped[line_key].append(char)
-
-    lines: List[LineData] = []
-    for key in sorted(grouped.keys()):
-        chars = sorted(grouped[key], key=lambda c: c["x0"])
-        if not chars:
-            continue
-        segments: List[Segment] = []
-        current_text = ""
-        current_bold: Optional[bool] = None
-        prev_x1: Optional[float] = None
-        prev_char_width: Optional[float] = None
-        for char in chars:
-            raw_text = clean_character(char.get("text", ""))
-            if not raw_text:
-                prev_x1 = char.get("x1")
-                prev_char_width = char.get("x1", 0) - char.get("x0", 0)
-                continue
-            gap = 0.0
-            if prev_x1 is not None:
-                gap = char["x0"] - prev_x1
-            char_width = char.get("x1", 0) - char.get("x0", 0)
-            threshold = max(
-                GAP_THRESHOLD, (char_width + (prev_char_width or char_width)) / 4
-            )
-            text = raw_text
-            if gap > threshold:
-                text = " " + text
-            bold = is_bold_font(char.get("fontname"))
-            if current_bold is None:
-                current_bold = bold
-            if bold != current_bold:
-                cleaned = clean_segment_text(current_text)
-                if cleaned:
-                    segments.append((cleaned, current_bold))
-                current_text = text
-                current_bold = bold
-            else:
-                current_text += text
-            prev_x1 = char.get("x1")
-            prev_char_width = char_width
-        cleaned = clean_segment_text(current_text)
-        if cleaned:
-            segments.append((cleaned, current_bold is True))
-        if not segments:
-            continue
-
-        min_top = min(c["top"] for c in chars)
-        max_bottom = max(
-            c.get("bottom", c["top"] + c.get("height", 0.0)) for c in chars
-        )
-        min_left = min(c["x0"] for c in chars)
-        max_right = max(c["x1"] for c in chars)
-        width = max(1.0, max_right - min_left)
-        height = max(1.0, max_bottom - min_top)
-        center = min_left + (width / 2.0)
-        non_bullet_chars = [
-            c
-            for c in chars
-            if clean_character(c.get("text", "")).strip()
-            and clean_character(c.get("text", "")) != BULLET_CHAR
-        ]
-        if non_bullet_chars:
-            text_left = min(c["x0"] for c in non_bullet_chars)
-        else:
-            text_left = min_left
-        line_text = "".join(text for text, _ in segments)
-        lines.append(
-            LineData(
-                segments=segments,
-                top=min_top,
-                bottom=max_bottom,
-                left=min_left,
-                right=max_right,
-                width=width,
-                height=height,
-                center=center,
-                text_left=text_left,
-                text=line_text,
-            )
-        )
+            sizes = [span.get("size", 0.0) for span in spans if span.get("text", "").strip()]
+            size = max(sizes) if sizes else 0.0
+            bold = any(_is_bold(span) for span in spans if span.get("text", "").strip())
+            x0 = raw_line.get("bbox", [0, 0, 0, 0])[0]
+            lines.append(Line(text, round(size, 1), bold, x0, block_index))
     return lines
 
 
-def segments_to_nodes(segments: Iterable[Segment]) -> List[Dict[str, str]]:
-    """Convert line segments into node dictionaries."""
-    nodes: List[Dict[str, str]] = []
-    for text, is_bold in segments:
-        parts = _split_text_content(text)
-        for part in parts:
-            if not part:
-                continue
-            node_type = "bold" if is_bold else "text"
-            nodes.append({"node": node_type, "content": part})
-    return merge_adjacent_nodes(nodes)
+def _body_size(lines: List[Line]) -> float:
+    """Estimate the dominant body-text size (mode, then median fallback)."""
+    sizes = [line.size for line in lines if line.size > 0]
+    if not sizes:
+        return 0.0
+    counts: Dict[float, int] = {}
+    for size in sizes:
+        counts[size] = counts.get(size, 0) + 1
+    top = max(counts.values())
+    # 最頻が複数あるときは小さい方 (本文は小さく数が多い側に寄る)
+    mode = min(size for size, count in counts.items() if count == top)
+    return min(mode, median(sizes)) if mode else median(sizes)
 
 
-def _line_relationship(previous: LineData, current: LineData) -> str:
-    """Classify how two consecutive lines should be combined."""
-    baseline = max(previous.height, current.height, 1.0)
-    vertical_gap = current.top - previous.bottom
-    if vertical_gap > baseline * 0.8:
-        return "break"
-    height_ratio = min(previous.height, current.height) / baseline
-    if height_ratio < 0.4 and vertical_gap > baseline * 0.3:
-        return "break"
-
-    indent_diff = abs(current.left - previous.left)
-    center_diff = abs(current.center - previous.center)
-    width_ratio = current.width / max(previous.width, 1.0)
-    inverse_width_ratio = previous.width / max(current.width, 1.0)
-    prev_text = previous.text.strip()
-    curr_text = current.text.strip()
-
-    if indent_diff > baseline * 1.4 and center_diff > baseline * 1.4:
-        return "break"
-
-    if JAPANESE_PATTERN.search(prev_text) and not JAPANESE_PATTERN.search(curr_text):
-        if curr_text and all(ch in " ,." or ch.isascii() for ch in curr_text):
-            return "break"
-
-    if (
-        indent_diff > baseline * 0.35
-        and all(unit in prev_text for unit in ("年", "月", "日"))
-        and NUMERIC_LINE_PATTERN.match(curr_text)
-    ):
-        return "space"
-
-    if (
-        indent_diff > baseline * 0.35
-        or center_diff > baseline * 0.5
-        or width_ratio > 1.8
-        or inverse_width_ratio > 1.8
-    ):
-        return "line_break"
-
-    return "space"
+def _is_page_number(text: str) -> bool:
+    return bool(re.fullmatch(r"[0-9０-９]{1,3}", text))
 
 
-def process_lines(lines: List[LineData]) -> PageNodes:
-    """Transform lines into paragraph/ul nodes."""
-    page_nodes: PageNodes = []
-    pending_paragraph: List[Dict[str, str]] = []
-    bullet_holdover = False
-    bullet_holdover_indent: Optional[float] = None
-    bullet_stack: List[Dict[str, Any]] = []
-    bullet_roots: List[Dict[str, Any]] = []
-    previous_line: Optional[LineData] = None
+def _heading_levels(sizes: Iterable[float]) -> Dict[float, int]:
+    """Map distinct heading sizes (desc) to levels 1..MAX_HEADING_LEVEL."""
+    ordered = sorted({s for s in sizes}, reverse=True)
+    return {size: min(rank, MAX_HEADING_LEVEL) for rank, size in enumerate(ordered, start=1)}
 
-    def flush_bullet_lists() -> None:
-        if not bullet_roots:
-            return
-        page_nodes.extend(bullet_roots)
-        bullet_roots.clear()
-        bullet_stack.clear()
 
-    def ensure_list_level(indent: float) -> Dict[str, Any]:
-        tolerance = BULLET_INDENT_TOLERANCE
-        if not bullet_stack:
-            ul_node: Dict[str, Any] = {"node": "ul", "children": []}
-            bullet_roots.append(ul_node)
-            bullet_stack.append(
-                {
-                    "indent": indent,
-                    "node": ul_node,
-                    "last_li": None,
-                    "last_li_indent": None,
-                }
-            )
-            return bullet_stack[-1]
+def _build_blocks(lines: List[Line]) -> PageBlocks:
+    body = _body_size(lines)
+    heading_cut = body * HEADING_RATIO if body else 0.0
+    heading_sizes = [
+        line.size
+        for line in lines
+        if heading_cut and line.size >= heading_cut and not BULLET_PREFIX.match(line.text)
+    ]
+    levels = _heading_levels(heading_sizes)
 
-        while bullet_stack and indent < bullet_stack[-1]["indent"] - tolerance:
-            bullet_stack.pop()
-        if not bullet_stack:
-            ul_node = {"node": "ul", "children": []}
-            bullet_roots.append(ul_node)
-            bullet_stack.append(
-                {
-                    "indent": indent,
-                    "node": ul_node,
-                    "last_li": None,
-                    "last_li_indent": None,
-                }
-            )
-            return bullet_stack[-1]
+    blocks: PageBlocks = []
+    list_items: List[str] = []
+    pending_bullet = False
 
-        current = bullet_stack[-1]
-        if indent > current["indent"] + tolerance:
-            parent_li = current.get("last_li")
-            if parent_li is None:
-                return current
-            child_list = {"node": "ul", "children": []}
-            parent_li.setdefault("children", []).append(child_list)
-            bullet_stack.append(
-                {
-                    "indent": indent,
-                    "node": child_list,
-                    "last_li": None,
-                    "last_li_indent": None,
-                }
-            )
-            current = bullet_stack[-1]
-        return current
-
-    def add_bullet_item(indent: float, text: str, content_indent: float) -> None:
-        text = text.strip()
-        if not text:
-            return
-        level = ensure_list_level(indent)
-        li_node: Dict[str, Any] = {
-            "node": "li",
-            "children": [{"node": "text", "content": text}],
-        }
-        level["node"]["children"].append(li_node)
-        level["last_li"] = li_node
-        level["last_li_indent"] = content_indent
+    def flush_list() -> None:
+        nonlocal list_items
+        if list_items:
+            blocks.append({"kind": "list", "items": list_items})
+            list_items = []
 
     for line in lines:
-        combined_text = line.text
-        stripped = combined_text.strip()
-        nodes = segments_to_nodes(line.segments)
-
-        if not stripped:
-            if pending_paragraph:
-                page_nodes.append(
-                    {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
-                )
-                pending_paragraph = []
-            flush_bullet_lists()
-            bullet_holdover = False
-            bullet_holdover_indent = None
-            previous_line = None
+        text = line.text
+        if _is_page_number(text) and (not body or line.size <= body * 1.1):
             continue
 
-        if stripped == BULLET_CHAR:
-            bullet_holdover = True
-            bullet_holdover_indent = line.left
-            previous_line = None
+        # 箇条書きマーカー単独行 → 次行を項目として扱う
+        if text in BULLET_CHARS:
+            pending_bullet = True
             continue
 
-        bullet_texts: List[str] = []
-        is_bullet = False
-
-        if bullet_holdover:
-            bullet_texts.append(stripped)
-            is_bullet = True
-            bullet_holdover = False
-            indent_value = (
-                bullet_holdover_indent
-                if bullet_holdover_indent is not None
-                else line.left
-            )
-            bullet_holdover_indent = None
-        elif stripped.startswith(BULLET_CHAR):
-            content = stripped.lstrip(BULLET_CHAR).strip()
-            if content:
-                bullet_texts.append(content)
-                is_bullet = True
-            indent_value = line.left
-        elif BULLET_CHAR in stripped:
-            parts = [
-                part.strip() for part in stripped.split(BULLET_CHAR) if part.strip()
-            ]
-            if len(parts) > 1:
-                bullet_texts.extend(parts)
-                is_bullet = True
-            indent_value = line.left
-
+        is_bullet = pending_bullet or bool(BULLET_PREFIX.match(text))
+        pending_bullet = False
         if is_bullet:
-            if pending_paragraph:
-                page_nodes.append(
-                    {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
-                )
-                pending_paragraph = []
-            if not bullet_texts:
-                bullet_texts.append(stripped)
-            for text in bullet_texts:
-                add_bullet_item(indent_value, text, line.text_left)
-            previous_line = line
+            item = BULLET_PREFIX.sub("", text).strip()
+            if item:
+                list_items.append(item)
             continue
 
-        continued = False
-        if bullet_stack:
-            current_level = bullet_stack[-1]
-            last_li = current_level.get("last_li")
-            if last_li is not None:
-                base_indent = current_level.get("indent", 0.0)
-                content_indent = current_level.get("last_li_indent", base_indent)
-                lower_bound = current_level.get("indent", 0.0) - BULLET_INDENT_TOLERANCE
-                upper_bound = (
-                    max(content_indent, current_level.get("indent", 0.0))
-                    + BULLET_INDENT_TOLERANCE * 3
-                )
-                if lower_bound <= line.left <= upper_bound:
-                    relation = "line_break"
-                    if previous_line is not None:
-                        relation = _line_relationship(previous_line, line)
-                    child_nodes = nodes
-                    if child_nodes:
-                        last_children = last_li.setdefault("children", [])
-                        if relation == "space":
-                            if last_children and needs_space(last_children[-1]):
-                                last_children.append({"node": "text", "content": " "})
-                        else:
-                            if last_children and last_children[-1].get("node") != "br":
-                                last_children.append({"node": "br"})
-                        last_children.extend(child_nodes)
-                        last_children[:] = merge_adjacent_nodes(last_children)
-                        current_level["last_li_indent"] = line.left
-                        previous_line = line
-                        continued = True
-        if continued:
-            continue
-
-        flush_bullet_lists()
-        bullet_holdover = False
-        bullet_holdover_indent = None
-
-        if not nodes:
-            previous_line = None
-            continue
-
-        if not pending_paragraph:
-            pending_paragraph = list(nodes)
-            previous_line = line
-            continue
-
-        relation = "break"
-        if previous_line is not None:
-            relation = _line_relationship(previous_line, line)
-
-        if relation == "break":
-            page_nodes.append(
-                {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
-            )
-            pending_paragraph = list(nodes)
+        flush_list()
+        if line.size in levels:
+            blocks.append({"kind": "heading", "level": levels[line.size], "text": text})
         else:
-            if relation == "line_break":
-                if not pending_paragraph or pending_paragraph[-1].get("node") != "br":
-                    pending_paragraph.append({"node": "br"})
-            else:
-                if needs_space(pending_paragraph[-1]):
-                    pending_paragraph.append({"node": "text", "content": " "})
-            pending_paragraph.extend(nodes)
-        previous_line = line
+            blocks.append({"kind": "para", "text": text})
 
-    if pending_paragraph:
-        page_nodes.append(
-            {"node": "p", "children": merge_adjacent_nodes(pending_paragraph)}
-        )
-    flush_bullet_lists()
-
-    return page_nodes
+    flush_list()
+    return blocks
 
 
-def extract_pdf_to_nodes(pdf_path: Path) -> PageMap:
-    """Extract structured nodes for each page in the PDF."""
+def extract_pdf_to_pages(pdf_path: Path) -> PageMap:
+    """Extract structured blocks for each page in the PDF."""
     page_map: PageMap = {}
-    with pdfplumber.open(pdf_path) as pdf:
-        for index, page in enumerate(pdf.pages, start=1):
-            lines = extract_segments_from_page(page)
-            nodes = process_lines(lines)
-            nodes = _remove_page_numbers(nodes, index)
-            page_map[f"p{index}"] = nodes
+    with fitz.open(pdf_path) as doc:
+        for index, page in enumerate(doc, start=1):
+            page_map[f"p{index}"] = _build_blocks(_collect_lines(page))
     return page_map
 
 
 def update_yaml_text(yaml_path: Path, text_map: PageMap) -> None:
-    """Insert the generated text map into the YAML file."""
+    """Insert the generated text map into the YAML file, keeping other keys."""
     yaml_path.parent.mkdir(parents=True, exist_ok=True)
-    data = {}
+    data: Dict[str, Any] = {}
     if yaml_path.exists():
         with yaml_path.open("r", encoding="utf-8") as handle:
             loaded = yaml.safe_load(handle)
             if isinstance(loaded, dict):
                 data = loaded
-    data["text"] = text_map
+    # text を先頭に保ちつつ他キー (links/size) を維持する
+    rebuilt: Dict[str, Any] = {"text": text_map}
+    for key, value in data.items():
+        if key != "text":
+            rebuilt[key] = value
     with yaml_path.open("w", encoding="utf-8") as handle:
-        yaml.safe_dump(data, handle, allow_unicode=True, sort_keys=False)
+        yaml.safe_dump(rebuilt, handle, allow_unicode=True, sort_keys=False)
 
 
 def iter_pdf_targets(pdf_dir: Path, explicit: Iterable[str]) -> Iterable[Path]:
     """Select target PDF files either explicitly or via directory scan."""
+    explicit = list(explicit)
     if explicit:
         for item in explicit:
             path = Path(item)
-            if not path.suffix.lower().endswith("pdf"):
+            if path.suffix.lower() != ".pdf":
                 path = pdf_dir / f"{path.stem}.pdf"
             if path.exists():
                 yield path
@@ -626,34 +192,16 @@ def iter_pdf_targets(pdf_dir: Path, explicit: Iterable[str]) -> Iterable[Path]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Extract PDF text and update corresponding YAML text nodes."
+        description="Extract PDF text into structured per-page blocks and update YAML."
     )
-    parser.add_argument(
-        "--pdf-dir",
-        default="pdf",
-        type=Path,
-        help="Directory containing PDF files (default: %(default)s)",
-    )
-    parser.add_argument(
-        "--yaml-dir",
-        default="pdf",
-        type=Path,
-        help="Directory containing YAML files (default: %(default)s)",
-    )
-    parser.add_argument(
-        "--verbose",
-        action="store_true",
-        help="Print progress information for each processed file.",
-    )
-    parser.add_argument(
-        "targets",
-        nargs="*",
-        help="Optional specific PDF files to process.",
-    )
+    parser.add_argument("--pdf-dir", default="pdf", type=Path, help="PDF directory (default: %(default)s)")
+    parser.add_argument("--yaml-dir", default="pdf", type=Path, help="YAML directory (default: %(default)s)")
+    parser.add_argument("--verbose", action="store_true", help="Print progress per file.")
+    parser.add_argument("targets", nargs="*", help="Optional specific PDF files to process.")
     args = parser.parse_args()
 
-    pdf_dir = args.pdf_dir
-    yaml_dir = args.yaml_dir
+    pdf_dir: Path = args.pdf_dir
+    yaml_dir: Path = args.yaml_dir
     if not pdf_dir.exists():
         print(f"[error] pdf directory not found: {pdf_dir}", file=sys.stderr)
         return 1
@@ -661,10 +209,7 @@ def main() -> int:
     processed = False
     for pdf_path in iter_pdf_targets(pdf_dir, args.targets):
         yaml_path = yaml_dir / f"{pdf_path.stem}.yaml"
-        yaml_path.parent.mkdir(parents=True, exist_ok=True)
-        if not yaml_path.exists():
-            yaml_path.touch()
-        text_map = extract_pdf_to_nodes(pdf_path)
+        text_map = extract_pdf_to_pages(pdf_path)
         update_yaml_text(yaml_path, text_map)
         processed = True
         if args.verbose:

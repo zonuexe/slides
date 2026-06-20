@@ -1,371 +1,245 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 『えこひいき』される関数たち
-  - node: p
-    children:
-    - node: text
-      content: Functions Specialized by Zend Engine
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2022-12-20 '
-  - node: p
-    children:
-    - node: bold
-      content: PHP勉強会@東京
+  - kind: heading
+    level: 1
+    text: 『えこひいき』される関数たち
+  - kind: heading
+    level: 2
+    text: Functions Specialized by Zend Engine
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2022-12-20'
+  - kind: para
+    text: PHP勉強会@東京
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 'Zend Engineって '
-    - node: br
-    - node: text
-      content: なあに
+  - kind: para
+    text: Zend Engineって
+  - kind: para
+    text: なあに
   p7: []
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 仮想機械？
+  - kind: heading
+    level: 1
+    text: 仮想機械？
   p9: []
   p10: []
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 'I am CPU. '
+  - kind: heading
+    level: 1
+    text: I am CPU.
   p12:
-  - node: p
-    children:
-    - node: text
-      content: つまり？
+  - kind: heading
+    level: 1
+    text: つまり？
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 自分のことをCPU だと思い込んだ象
+  - kind: para
+    text: 自分のことをCPU
+  - kind: para
+    text: だと思い込んだ象
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 'CPUの言葉でしゃべれ '
+  - kind: heading
+    level: 1
+    text: CPUの言葉でしゃべれ
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 'Zend Engine '
-    - node: br
-    - node: text
-      content: オ ペ コ ー ド
-  - node: p
-    children:
-    - node: text
-      content: opcode
+  - kind: heading
+    level: 1
+    text: Zend Engine
+  - kind: para
+    text: オペコード
+  - kind: heading
+    level: 1
+    text: opcode
   p16:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo 1; ECHO                 1
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo 1;
+  - kind: para
+    text: ECHO 1
   p17:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo 'foo'; ECHO             'foo'
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo 'foo';
+  - kind: para
+    text: ECHO 'foo'
   p18:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: print 'foo'; ECHO             'foo'
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: print 'foo';
+  - kind: para
+    text: ECHO 'foo'
   p19:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo 1 + 2; ECHO                 3
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo 1 + 2;
+  - kind: para
+    text: ECHO 3
   p20:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: '$a = 1; ASSIGN           !0, 1         '
-  - node: p
-    children:
-    - node: text
-      content: 'ADD          ~2  !0, 2         '
-  - node: p
-    children:
-    - node: text
-      content: echo $a + 2;
-  - node: p
-    children:
-    - node: text
-      content: ECHO                ~2
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $a = 1;
+  - kind: para
+    text: echo $a + 2;
+  - kind: para
+    text: ASSIGN !0, 1
+  - kind: para
+    text: ADD ~2 !0, 2
+  - kind: para
+    text: ECHO ~2
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 'opcodeでおｋ '
-  - node: p
-    children:
-    - node: text
-      content: <?php echo "foo";
-  - node: p
-    children:
-    - node: text
-      content: 'ECHO ''foo'' '
+  - kind: para
+    text: opcodeでおｋ
+  - kind: para
+    text: <?php echo "foo";
+  - kind: para
+    text: ECHO 'foo'
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 'なんで '
-    - node: br
-    - node: text
-      content: こんなことするの
+  - kind: para
+    text: なんで
+  - kind: para
+    text: こんなことするの
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP '
-    - node: br
-    - node: text
-      content: 高度な構文解析が必要 な高級なシンタックス
+  - kind: para
+    text: PHP
+  - kind: para
+    text: 高度な構文解析が必要
+  - kind: para
+    text: な高級なシンタックス
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'opcode '
-    - node: br
-    - node: text
-      content: '構文解析不要な '
-    - node: br
-    - node: text
-      content: シンプルな命令セット
+  - kind: para
+    text: opcode
+  - kind: para
+    text: 構文解析不要な
+  - kind: para
+    text: シンプルな命令セット
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '分けて開発することで '
-    - node: br
-    - node: text
-      content: 最適化しやすくなる
+  - kind: para
+    text: 分けて開発することで
+  - kind: para
+    text: 最適化しやすくなる
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'これを極めれば '
-    - node: br
-    - node: text
-      content: パフォーマンス改善に
-    - node: br
-    - node: text
-      content: 役立つのか？
+  - kind: para
+    text: これを極めれば
+  - kind: para
+    text: パフォーマンス改善に
+  - kind: para
+    text: 役立つのか？
   p27: []
   p28:
-  - node: p
-    children:
-    - node: text
-      content: ここまでが前振り
+  - kind: heading
+    level: 1
+    text: ここまでが前振り
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 関数呼び出し
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: 'INIT_FCALL  ''var_dump'' SEND_VAL         ''foo''         '
-  - node: p
-    children:
-    - node: text
-      content: var_dump("foo");
-  - node: p
-    children:
-    - node: text
-      content: DO_ICALL
+  - kind: heading
+    level: 1
+    text: 関数呼び出し
+  - kind: para
+    text: <?php
+  - kind: para
+    text: var_dump("foo");
+  - kind: para
+    text: INIT_FCALL 'var_dump'
+  - kind: para
+    text: SEND_VAL 'foo'
+  - kind: para
+    text: DO_ICALL
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 関数呼び出しは 関数呼び出しに
+  - kind: para
+    text: 関数呼び出しは
+  - kind: para
+    text: 関数呼び出しに
   p31:
-  - node: p
-    children:
-    - node: text
-      content: なるとは限らない
+  - kind: heading
+    level: 1
+    text: なるとは限らない
   p32:
-  - node: p
-    children:
-    - node: text
-      content: ！？
-  - node: p
-    children:
-    - node: text
-      content: 関数呼び出し
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: TYPE_CHECK 16 ~0 'foo'
-  - node: p
-    children:
-    - node: text
-      content: 'echo '
-    - node: br
-    - node: text
-      content: is_int('foo'); ECHO                ~0
+  - kind: para
+    text: ！？
+  - kind: heading
+    level: 1
+    text: 関数呼び出し
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo
+  - kind: para
+    text: is_int('foo');
+  - kind: para
+    text: TYPE_CHECK 16 ~0 'foo'
+  - kind: para
+    text: ECHO ~0
   p33:
-  - node: p
-    children:
-    - node: text
-      content: ！？
-  - node: p
-    children:
-    - node: text
-      content: 関数呼び出し
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: ECHO                3
-  - node: p
-    children:
-    - node: text
-      content: 'echo '
-    - node: br
-    - node: text
-      content: strlen('foo');
+  - kind: para
+    text: ！？
+  - kind: heading
+    level: 1
+    text: 関数呼び出し
+  - kind: para
+    text: <?php
+  - kind: para
+    text: ECHO 3
+  - kind: para
+    text: echo
+  - kind: para
+    text: strlen('foo');
   p34:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: heading
+    level: 1
+    text: まとめ
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 『えこひいき』とは何だったのか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの処理系の心臓部は,Zend Engine5と呼ばれる仮想機械
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 実行時にOPCode(Zend Engineのマシン語)にコンパイルする
-        - node: li
-          children:
-          - node: text
-            content: 現代的なスクリプト言語はほとんど同じような構造になっている
-    - node: li
-      children:
-      - node: text
-        content: PHPコードはOPCodeにコンパイルされるが一対一で変換されず、
-      - node: br
-      - node: text
-        content: '一部の関数呼び出しは特別な最適化が施される '
-    - node: li
-      children:
-      - node: text
-        content: 一般的なアプリケーションではあまりパフォーマンスに寄与しないかも
+  - kind: para
+    text: 『えこひいき』とは何だったのか
+  - kind: list
+    items:
+    - PHPの処理系の心臓部は“Zend Engine”と呼ばれる仮想機械
+    - 実行時にOPCode(Zend Engineのマシン語)にコンパイルする
+    - 現代的なスクリプト言語はほとんど同じような構造になっている
+    - PHPコードはOPCodeにコンパイルされるが一対一で変換されず、
+  - kind: para
+    text: 一部の関数呼び出しは特別な最適化が施される
+  - kind: list
+    items:
+    - 一般的なアプリケーションではあまりパフォーマンスに寄与しないかも
 size:
   max_width: 1920
   max_height: 1080

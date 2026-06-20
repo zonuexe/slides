@@ -1,722 +1,495 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: ジェネレータで無限を手玉に取る術
-  - node: p
-    children:
-    - node: text
-      content: Techniques for controlling infinity using generator
-  - node: p
-    children:
-    - node: text
-      content: '2020-02-11 PHPerKaigi 2020 Day 2 '
-    - node: br
-    - node: text
-      content: 'Coconeri Hall, Nerima, Tokyo #phperkaigi'
+  - kind: heading
+    level: 1
+    text: ジェネレータで
+  - kind: heading
+    level: 1
+    text: 無限を手玉に取る術
+  - kind: para
+    text: Techniques for controlling infinity using generator
+  - kind: para
+    text: 2020-02-11 PHPerKaigi 2020 Day 2
+  - kind: para
+    text: 'Coconeri Hall, Nerima, Tokyo #phperkaigi'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-    - node: br
-    - node: text
-      content: 'うさみけんた (@tadsan)  '
-  - node: p
-    children:
-    - node: text
-      content: ' / Zonu.EXE'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer, Rubyist
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer, Rubyist
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3: []
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 近況
+  - kind: para
+    text: 近況
   p7: []
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 本日のお題
+  - kind: para
+    text: 本日のお題
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 '
-  - node: p
-    children:
-    - node: text
-      content: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+  - kind: heading
+    level: 1
+    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
+  - kind: para
+    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p10:
-  - node: p
-    children:
-    - node: text
-      content: '無限を '
-    - node: br
-    - node: text
-      content: 手玉に取る
+  - kind: para
+    text: 無限を
+  - kind: para
+    text: 手玉に取る
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 元ねたがある
+  - kind: para
+    text: 元ねたがある
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 'いますぐ皆さんに '
-    - node: br
-    - node: text
-      content: 函数プログラミングを 学べという話ではない
+  - kind: para
+    text: いますぐ皆さんに
+  - kind: para
+    text: 函数プログラミングを
+  - kind: para
+    text: 学べという話
+  - kind: para
+    text: ではない
   p14:
-  - node: p
-    children:
-    - node: text
-      content: '(個人的に) 大事なのは '
-    - node: br
-    - node: text
-      content: 以下のページ
+  - kind: para
+    text: (個人的に)
+  - kind: para
+    text: 大事なのは
+  - kind: para
+    text: 以下のページ
   p15: []
   p16: []
   p17: []
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 言ってることは よくわからんが
-    - node: br
-    - node: text
-      content: カッコイイ
+  - kind: para
+    text: 言ってることは
+  - kind: para
+    text: よくわからんが
+  - kind: para
+    text: カッコイイ
   p19:
-  - node: p
-    children:
-    - node: text
-      content: '何が '
-    - node: br
-    - node: text
-      content: 言いたいのか？
+  - kind: para
+    text: 何が
+  - kind: para
+    text: 言いたいのか？
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '遅延評価 '
-    - node: br
-    - node: text
-      content: 必要になるまで 計算を遅らせる
+  - kind: para
+    text: 遅延評価
+  - kind: para
+    text: 必要になるまで
+  - kind: para
+    text: 計算を遅らせる
   p21:
-  - node: p
-    children:
-    - node: text
-      content: '関数型知識ゼロでも '
-    - node: br
-    - node: text
-      content: 'その神髄の一端を '
-    - node: br
-    - node: text
-      content: いとも簡単に扱える 機能がPHPにはある
+  - kind: para
+    text: 関数型知識ゼロでも
+  - kind: para
+    text: その神髄の一端を
+  - kind: para
+    text: いとも簡単に扱える
+  - kind: para
+    text: 機能がPHPにはある
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 'ここまで言えば '
-    - node: br
-    - node: text
-      content: おわかりですね？
+  - kind: para
+    text: ここまで言えば
+  - kind: para
+    text: おわかりですね？
   p23:
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータ
-  - node: p
-    children:
-    - node: text
-      content: Generator
+  - kind: para
+    text: ジェネレータ
+  - kind: heading
+    level: 1
+    text: Generator
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'ジェネレータ '
-    - node: br
-    - node: text
-      content: とは何か？
+  - kind: para
+    text: ジェネレータ
+  - kind: para
+    text: とは何か？
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 「PHPでforeachで反復できるものは何でしょう？」配列、オ ブジェクト、Iterator、そして“ジェネレータ”です。ジェネレー
-        タは言語によってコルーチン、semicoroutineやFiberとも呼 ばれるものと同等の言語機能であり、SICPのような計算機科学 の教科書で説明されるストリーム・無限リストを簡潔に実現で
-        きます。foreachループで配列を反復するのは既に作成済みの データを頭から辿っていくだけのものであるのに対して、ジェ ネレータは配列のキーや要素に相当するものを計算によって生
-        み出すことができるため、省メモリで効率のよい計算が可能で す。このトークではジェネレータの基礎概念と、実際に応用で
-    - node: br
-    - node: text
-      content: きるパターンについて紹介していきます。
-  - node: p
-    children:
-    - node: text
-      content: '‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 '
-  - node: p
-    children:
-    - node: text
-      content: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+  - kind: para
+    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オ
+  - kind: para
+    text: ブジェクト、Iterator、そして“ジェネレータ”です。ジェネレー
+  - kind: para
+    text: タは言語によってコルーチン、semicoroutineやFiberとも呼
+  - kind: para
+    text: ばれるものと同等の言語機能であり、SICPのような計算機科学
+  - kind: para
+    text: の教科書で説明されるストリーム・無限リストを簡潔に実現で
+  - kind: para
+    text: きます。foreachループで配列を反復するのは既に作成済みの
+  - kind: para
+    text: データを頭から辿っていくだけのものであるのに対して、ジェ
+  - kind: para
+    text: ネレータは配列のキーや要素に相当するものを計算によって生
+  - kind: para
+    text: み出すことができるため、省メモリで効率のよい計算が可能で
+  - kind: para
+    text: す。このトークではジェネレータの基礎概念と、実際に応用で
+  - kind: para
+    text: きるパターンについて紹介していきます。
+  - kind: para
+    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
+  - kind: para
+    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p26:
-  - node: p
-    children:
-    - node: text
-      content: この説明で全部
-    - node: br
-    - node: text
-      content: なのですが…
+  - kind: para
+    text: この説明で全部
+  - kind: para
+    text: なのですが…
   p27:
-  - node: p
-    children:
-    - node: text
-      content: ざっくり説明 していきます
+  - kind: para
+    text: ざっくり説明
+  - kind: para
+    text: していきます
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 「PHPでforeachで反復できるものは何でしょう？」 配列、オブジェクト、Iterator、そして“ジェネレータ”
-    - node: br
-    - node: text
-      content: です。
-  - node: p
-    children:
-    - node: text
-      content: '‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 '
-  - node: p
-    children:
-    - node: text
-      content: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+  - kind: para
+    text: 「PHPでforeachで反復できるものは何でしょう？」
+  - kind: para
+    text: 配列、オブジェクト、Iterator、そして“ジェネレータ”
+  - kind: para
+    text: です。
+  - kind: para
+    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
+  - kind: para
+    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p29:
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータはforeachできる
-  - node: p
-    children:
-    - node: text
-      content: '配列を代用できる場面がある '
-    - node: br
-    - node: text
-      content: 全てを置き換えるものではない あくまでforeachで順次実行
-    - node: br
-    - node: text
-      content: 'するもののみ '
-    - node: br
-    - node: text
-      content: その他の反復可能オブジェクト
-    - node: br
-    - node: text
-      content: については今回触れません
+  - kind: para
+    text: ジェネレータはforeachできる
+  - kind: para
+    text: 配列を代用できる場面がある
+  - kind: para
+    text: 全てを置き換えるものではない
+  - kind: para
+    text: あくまでforeachで順次実行
+  - kind: para
+    text: するもののみ
+  - kind: para
+    text: その他の反復可能オブジェクト
+  - kind: para
+    text: については今回触れません
   p30:
-  - node: p
-    children:
-    - node: text
-      content: iterable擬似型 (PHP 7.1)
-  - node: p
-    children:
-    - node: text
-      content: 擬似型とは実態のある一種類の 型ではなく同じように扱える複 数の型とクラスをひとまとめに
-    - node: br
-    - node: text
-      content: 'した便宜上のもの '
-    - node: br
-    - node: text
-      content: iterable = foreachできる値
+  - kind: para
+    text: iterable擬似型 (PHP 7.1)
+  - kind: para
+    text: 擬似型とは実態のある一種類の
+  - kind: para
+    text: 型ではなく同じように扱える複
+  - kind: para
+    text: 数の型とクラスをひとまとめに
+  - kind: para
+    text: した便宜上のもの
+  - kind: para
+    text: iterable = foreachできる値
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 'おまけ: 擬似型'
-  - node: p
-    children:
-    - node: text
-      content: 前述したように特定の型ではな いが、型宣言(引数・戻り値)の
-    - node: br
-    - node: text
-      content: '型として記述できる '
-    - node: br
-    - node: text
-      content: 'callable擬似型 '
-    - node: br
-    - node: text
-      content: 関数として呼び出せる値
+  - kind: para
+    text: 'おまけ: 擬似型'
+  - kind: para
+    text: 前述したように特定の型ではな
+  - kind: para
+    text: いが、型宣言(引数・戻り値)の
+  - kind: para
+    text: 型として記述できる
+  - kind: para
+    text: callable擬似型
+  - kind: para
+    text: 関数として呼び出せる値
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 'おまけ: iterableと型定義'
-  - node: p
-    children:
-    - node: text
-      content: 'DocCommentに型を書くとき '
-    - node: br
-    - node: text
-      content: 'キーと値の型を書ける '
-  - node: p
-    children:
-    - node: text
-      content: 'や '
-  - node: p
-    children:
-    - node: text
-      content: iterable<int,string>
-  - node: p
-    children:
-    - node: text
-      content: 'のように '
-  - node: p
-    children:
-    - node: text
-      content: Generator<int,string>
-    - node: br
-    - node: text
-      content: 'PhpStormは未対応なので '
-  - node: p
-    children:
-    - node: text
-      content: ' で代用…'
-  - node: p
-    children:
-    - node: text
-      content: iterable|string[]
+  - kind: para
+    text: 'おまけ: iterableと型定義'
+  - kind: para
+    text: DocCommentに型を書くとき
+  - kind: para
+    text: キーと値の型を書ける
+  - kind: para
+    text: iterable<int,string>や
+  - kind: para
+    text: Generator<int,string>のように
+  - kind: para
+    text: PhpStormは未対応なので
+  - kind: para
+    text: iterable|string[] で代用…
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 'おまけ: iterableと型定義'
-  - node: p
-    children:
-    - node: text
-      content: iterableの型をちゃんと書いておくと
-    - node: br
-    - node: text
-      content: 'foreachの中身も静的解析できる '
-    - node: br
-    - node: text
-      content: PHPStanは書かないと叱ってくれる JetBrainsさん早くPhpStorm対応し て(deep-assocプラグインで補完可能)
-        詳細は｢2018年のPHPDoc事情とPSR-5｣に書きました
+  - kind: para
+    text: 'おまけ: iterableと型定義'
+  - kind: para
+    text: iterableの型をちゃんと書いておくと
+  - kind: para
+    text: foreachの中身も静的解析できる
+  - kind: para
+    text: PHPStanは書かないと叱ってくれる
+  - kind: para
+    text: JetBrainsさん早くPhpStorm対応し
+  - kind: para
+    text: て(deep-assocプラグインで補完可能)
+  - kind: para
+    text: 詳細は｢2018年のPHPDoc事情とPSR-5｣に書きました
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 置換できる可能性がある
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: どこかから取得してきた リスト
-  - node: p
-    children:
-    - node: text
-      content: //  ID
-    - node: br
-    - node: text
-      content: $target_ids = [85490, 54352, 34242, 45090];
-  - node: p
-    children:
-    - node: text
-      content: foreach ($target_ids as $id) {
-    - node: br
-    - node: text
-      content: '    shori($id);'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 置換できる可能性がある
+  - kind: para
+    text: <?php
+  - kind: para
+    text: // どこかから取得してきたIDリスト
+  - kind: para
+    text: $target_ids = [85490, 54352, 34242, 45090];
+  - kind: para
+    text: foreach ($target_ids as $id) {
+  - kind: para
+    text: shori($id);
+  - kind: para
+    text: '}'
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 置換できる可能性がある
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータのイメージ
-  - node: p
-    children:
-    - node: text
-      content: '// '
-    - node: br
-    - node: text
-      content: $target_ids = function () { ... };
-  - node: p
-    children:
-    - node: text
-      content: foreach ($target_ids as $id) {
-    - node: br
-    - node: text
-      content: '    shori($id);'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 置換できる可能性がある
+  - kind: para
+    text: <?php
+  - kind: para
+    text: // ジェネレータのイメージ
+  - kind: para
+    text: $target_ids = function () { ... };
+  - kind: para
+    text: foreach ($target_ids as $id) {
+  - kind: para
+    text: shori($id);
+  - kind: para
+    text: '}'
   p36:
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータは言語によってコルーチン、
-    - node: br
-    - node: text
-      content: semicoroutineやFiberとも呼ばれるものと同等の言
-    - node: br
-    - node: text
-      content: 語機能であり、
-  - node: p
-    children:
-    - node: text
-      content: '‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 '
-  - node: p
-    children:
-    - node: text
-      content: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+  - kind: para
+    text: ジェネレータは言語によってコルーチン、
+  - kind: para
+    text: semicoroutineやFiberとも呼ばれるものと同等の言
+  - kind: para
+    text: 語機能であり、
+  - kind: para
+    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
+  - kind: para
+    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 用語 (呼ばれかた)
-  - node: p
-    children:
-    - node: text
-      content: 言語によって呼びかたや機能が
-    - node: br
-    - node: text
-      content: '若干違います '
-    - node: br
-    - node: text
-      content: 'JavaScriptやPythonのジェ ネレータはPHPと似ています '
-    - node: br
-    - node: text
-      content: RubyにはEnumeratorと Fiberというものがあります
+  - kind: para
+    text: 用語 (呼ばれかた)
+  - kind: para
+    text: 言語によって呼びかたや機能が
+  - kind: para
+    text: 若干違います
+  - kind: para
+    text: JavaScriptやPythonのジェ
+  - kind: para
+    text: ネレータはPHPと似ています
+  - kind: para
+    text: RubyにはEnumeratorと
+  - kind: para
+    text: Fiberというものがあります
   p38:
-  - node: p
-    children:
-    - node: text
-      content: コルーチン (coroutine)
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータは古典的なコルー チンと同等のものですが、現代 でコルーチンと呼ばれているも のは意味がかなり拡大している
-    - node: br
-    - node: text
-      content: ので注意が必要です
+  - kind: para
+    text: コルーチン (coroutine)
+  - kind: para
+    text: ジェネレータは古典的なコルー
+  - kind: para
+    text: チンと同等のものですが、現代
+  - kind: para
+    text: でコルーチンと呼ばれているも
+  - kind: para
+    text: のは意味がかなり拡大している
+  - kind: para
+    text: ので注意が必要です
   p39:
-  - node: p
-    children:
-    - node: text
-      content: SICPのような計算機科学の教科書で説明されるスト
-    - node: br
-    - node: text
-      content: リーム・無限リストを簡潔に実現できます。
-  - node: p
-    children:
-    - node: text
-      content: '‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 '
-  - node: p
-    children:
-    - node: text
-      content: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+  - kind: para
+    text: SICPのような計算機科学の教科書で説明されるスト
+  - kind: para
+    text: リーム・無限リストを簡潔に実現できます。
+  - kind: para
+    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
+  - kind: para
+    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 'SICP '
-    - node: br
-    - node: text
-      content: 計算機プログラムの
-    - node: br
-    - node: text
-      content: 構造と解釈
+  - kind: heading
+    level: 1
+    text: SICP
+  - kind: para
+    text: 計算機プログラムの
+  - kind: para
+    text: 構造と解釈
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '‒計算機プログラムの構造と解釈 第2版 '
-  - node: p
-    children:
-    - node: text
-      content: https://www.amazon.co.jp/dp/4798135984
+  - kind: heading
+    level: 1
+    text: ‒計算機プログラムの構造と解釈 第2版
+  - kind: para
+    text: https://www.amazon.co.jp/dp/4798135984
   p42:
-  - node: p
-    children:
-    - node: text
-      content: Webで無料で
-    - node: br
-    - node: text
-      content: も読めます
+  - kind: para
+    text: Webで無料で
+  - kind: para
+    text: も読めます
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '‒計算機プログラムの構造と解釈 第2版 '
-  - node: p
-    children:
-    - node: text
-      content: https://sicp.iijlab.net/fulltext/
+  - kind: heading
+    level: 1
+    text: ‒計算機プログラムの構造と解釈 第2版
+  - kind: para
+    text: https://sicp.iijlab.net/fulltext/
   p44:
-  - node: p
-    children:
-    - node: text
-      content: '‒アスペ日記 非公式PDF版SICP・新訳 '
-  - node: p
-    children:
-    - node: text
-      content: https://takeda25.hatenablog.jp/entry/20151030/1446174031
+  - kind: heading
+    level: 1
+    text: ‒アスペ日記 非公式PDF版SICP・新訳
+  - kind: para
+    text: https://takeda25.hatenablog.jp/entry/20151030/1446174031
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 計算機科学の入門 書という扱いだが､ 簡単な本ではない
+  - kind: para
+    text: 計算機科学の入門
+  - kind: para
+    text: 書という扱いだが
+  - kind: para
+    text: ､
+  - kind: para
+    text: 簡単な本ではない
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'この本の序盤 2章あたりに '
-    - node: br
-    - node: text
-      content: 書いてあること
+  - kind: para
+    text: この本の序盤
+  - kind: para
+    text: 2章あたりに
+  - kind: para
+    text: 書いてあること
   p47:
-  - node: p
-    children:
-    - node: text
-      content: ペア
-  - node: p
-    children:
-    - node: text
-      content: (二値の組を持つオブ
-    - node: br
-    - node: text
-      content: があれば様々
-  - node: p
-    children:
-    - node: text
-      content: ジェクト)
-    - node: br
-    - node: text
-      content: なデータ構造が作れる
+  - kind: para
+    text: (二値の組を持つオブ
+  - kind: para
+    text: ペア
+  - kind: para
+    text: ジェクト)
+  - kind: para
+    text: があれば様々
+  - kind: para
+    text: なデータ構造が作れる
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'ペアの片方を関数で '
-    - node: br
-    - node: text
-      content: '遅延させることで '
-    - node: br
-    - node: text
-      content: ストリーム(遅延リス
-    - node: br
-    - node: text
-      content: ト)というものが作れる
+  - kind: para
+    text: ペアの片方を関数で
+  - kind: para
+    text: 遅延させることで
+  - kind: para
+    text: ストリーム(遅延リス
+  - kind: para
+    text: ト)というものが作れる
   p49:
-  - node: p
-    children:
-    - node: text
-      content: ストリーム (遅延リスト)
-  - node: p
-    children:
-    - node: text
-      content: 配列・オブジェクトのようなも のとクロージャがあれば実現で
-    - node: br
-    - node: text
-      content: 'きる '
-    - node: br
-    - node: text
-      content: 'PHPで実装してみた '
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/zonuexe/phperkaigi-generator/blob/master/
-    - node: br
-    - node: text
-      content: stream.php
+  - kind: para
+    text: ストリーム (遅延リスト)
+  - kind: para
+    text: 配列・オブジェクトのようなも
+  - kind: para
+    text: のとクロージャがあれば実現で
+  - kind: para
+    text: きる
+  - kind: para
+    text: PHPで実装してみた
+  - kind: para
+    text: https://github.com/zonuexe/phperkaigi-generator/blob/master/
+  - kind: para
+    text: stream.php
   p50:
-  - node: p
-    children:
-    - node: text
-      content: ストリームでできる ことはジェネレータ
-    - node: br
-    - node: text
-      content: で表現できる
+  - kind: para
+    text: ストリームでできる
+  - kind: para
+    text: ことはジェネレータ
+  - kind: para
+    text: で表現できる
   p51:
-  - node: p
-    children:
-    - node: text
-      content: foreachループで配列を反復するのは既に作成済みの データを頭から辿っていくだけのものであるのに対し
-    - node: br
-    - node: text
-      content: て、ジェネレータは配列のキーや要素に相当するものを 計算によって生み出すことができるため、省メモリで効
-    - node: br
-    - node: text
-      content: 率のよい計算が可能です。
-  - node: p
-    children:
-    - node: text
-      content: '‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020 '
-  - node: p
-    children:
-    - node: text
-      content: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+  - kind: para
+    text: foreachループで配列を反復するのは既に作成済みの
+  - kind: para
+    text: データを頭から辿っていくだけのものであるのに対し
+  - kind: para
+    text: て、ジェネレータは配列のキーや要素に相当するものを
+  - kind: para
+    text: 計算によって生み出すことができるため、省メモリで効
+  - kind: para
+    text: 率のよい計算が可能です。
+  - kind: para
+    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
+  - kind: para
+    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 'ということで、 ジェネレータを '
-    - node: br
-    - node: text
-      content: 説明します
+  - kind: para
+    text: ということで、
+  - kind: para
+    text: ジェネレータを
+  - kind: para
+    text: 説明します
   p53:
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータの
-    - node: br
-    - node: text
-      content: 書きかた
+  - kind: para
+    text: ジェネレータの
+  - kind: para
+    text: 書きかた
   p54:
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータ=特別な関数
-  - node: p
-    children:
-    - node: text
-      content: 関数定義(メソッド・クロー
-    - node: br
-    - node: text
-      content: ジャを含む)の中でyieldと書く
-    - node: br
-    - node: text
-      content: 'とジェネレータになる '
-    - node: br
-    - node: text
-      content: yieldに渡した値はforeachの
-    - node: br
-    - node: text
-      content: 値として受け渡される
+  - kind: para
+    text: ジェネレータ=特別な関数
+  - kind: para
+    text: 関数定義(メソッド・クロー
+  - kind: para
+    text: ジャを含む)の中でyieldと書く
+  - kind: para
+    text: とジェネレータになる
+  - kind: para
+    text: yieldに渡した値はforeachの
+  - kind: para
+    text: 値として受け渡される
   p55:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit dataProvider
-  - node: p
-    children:
-    - node: text
-      content: テストケースに必要なパラメー
-    - node: br
-    - node: text
-      content: 'タを生成するメソッド '
-    - node: br
-    - node: text
-      content: 配列を返すように作るのが一般 的だが、実はジェネレータでも
-    - node: br
-    - node: text
-      content: 作れる
+  - kind: para
+    text: PHPUnit dataProvider
+  - kind: para
+    text: テストケースに必要なパラメー
+  - kind: para
+    text: タを生成するメソッド
+  - kind: para
+    text: 配列を返すように作るのが一般
+  - kind: para
+    text: 的だが、実はジェネレータでも
+  - kind: para
+    text: 作れる
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 基本的なジェネレータ
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: どこかから取得してきた リスト
-  - node: p
-    children:
-    - node: text
-      content: '//  ID          '
-    - node: br
-    - node: text
-      content: f
-    - node: br
-    - node: text
-      content: $target_ids = [85490, 54352, 34242, 45090];
-  - node: p
-    children:
-    - node: text
-      content: foreach ($target_ids as $id) {
-    - node: br
-    - node: text
-      content: '    shori($id);'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 基本的なジェネレータ
+  - kind: para
+    text: <?php
+  - kind: para
+    text: // どこかから取得してきたIDリスト
+  - kind: para
+    text: f
+  - kind: para
+    text: $target_ids = [85490, 54352, 34242, 45090];
+  - kind: para
+    text: foreach ($target_ids as $id) {
+  - kind: para
+    text: shori($id);
+  - kind: para
+    text: '}'
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 基本的なジェネレータ
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: どこかから取得してきた リスト
-  - node: p
-    children:
-    - node: text
-      content: '//  ID          '
-    - node: br
-    - node: text
-      content: f
-    - node: br
-    - node: text
-      content: $target_ids = [85490, 54352, 34242, 45090];
-  - node: p
-    children:
-    - node: text
-      content: foreach ($target_ids as $id) {
-    - node: br
-    - node: text
-      content: '    shori($id);'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 基本的なジェネレータ
+  - kind: para
+    text: <?php
+  - kind: para
+    text: // どこかから取得してきたIDリスト
+  - kind: para
+    text: f
+  - kind: para
+    text: $target_ids = [85490, 54352, 34242, 45090];
+  - kind: para
+    text: foreach ($target_ids as $id) {
+  - kind: para
+    text: shori($id);
+  - kind: para
+    text: '}'
 size:
   max_width: 1024
   max_height: 768

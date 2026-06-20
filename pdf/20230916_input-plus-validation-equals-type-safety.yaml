@@ -1,837 +1,514 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 入力＋検査＝型安全
-  - node: p
-    children:
-    - node: text
-      content: Make PHP type safe by validating input
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-09-16 '
-  - node: p
-    children:
-    - node: bold
-      content: PHPカンファレンス沖縄2023
+  - kind: heading
+    level: 1
+    text: 入力＋検査＝型安全
+  - kind: heading
+    level: 2
+    text: Make PHP type safe by validating input
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2023-09-16'
+  - kind: para
+    text: PHPカンファレンス沖縄2023
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3: []
   p4: []
   p5:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 型､つけてますか？
+  - kind: heading
+    level: 1
+    text: 型、つけてますか？
   p7:
-  - node: p
-    children:
-    - node: text
-      content: PHPの進化は 型宣言の進化
+  - kind: para
+    text: PHPの進化は
+  - kind: para
+    text: 型宣言の進化
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 型がついていない関数(PHP5)
-  - node: p
-    children:
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 型がついていない関数(PHP5)
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p9:
-  - node: p
-    children:
-    - node: text
-      content: スカラー型宣言(PHP7)
-  - node: p
-    children:
-    - node: text
-      content: 'int + intって '
-    - node: br
-    - node: text
-      content: 本当にintなの？
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: スカラー型宣言(PHP7)
+  - kind: para
+    text: int + intって
+  - kind: para
+    text: 本当にintなの？
+  - kind: para
+    text: 'function add(int $a, int $b): int {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 広い値をとるにはﬂoatが必要
-  - node: p
-    children:
-    - node: text
-      content: 'ひとつの解決策では '
-    - node: br
-    - node: text
-      content: あるが… 不必要に(cid:152)oat
-    - node: br
-    - node: text
-      content: を強制するのか
-  - node: p
-    children:
-    - node: text
-      content: 'function add(float $a, float $b): float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 広い値をとるにはfloatが必要
+  - kind: para
+    text: ひとつの解決策では
+  - kind: para
+    text: あるが… 不必要にfloat
+  - kind: para
+    text: を強制するのか
+  - kind: para
+    text: 'function add(float $a, float $b): float {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p11:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの型注釈
-  - node: p
-    children:
-    - node: text
-      content: (アノテーション)
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @param int|float $a'
-  - node: p
-    children:
-    - node: text
-      content: あえて型宣言を省略する
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int|float $b'
-    - node: br
-    - node: text
-      content: ' * @return int|float'
-    - node: br
-    - node: text
-      content: ' */         '
-    - node: br
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int|float $a'
+  - kind: para
+    text: '* @param int|float $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p12:
-  - node: p
-    children:
-    - node: text
-      content: ユニオン型宣言 (PHP8.0)
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int|float $a, int|float $b): int|float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: ユニオン型宣言 (PHP8.0)
+  - kind: para
+    text: 'function add(int|float $a, int|float $b): int|float {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p13:
-  - node: p
-    children:
-    - node: text
-      content: いたるところに型が 書けるようになった
+  - kind: para
+    text: いたるところに型が
+  - kind: para
+    text: 書けるようになった
   p14:
-  - node: p
-    children:
-    - node: text
-      content: PHP Static Analysis Tool
+  - kind: heading
+    level: 1
+    text: PHP Static Analysis Tool
   p15:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanとは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2016年から開発されているPHPの静的解析ツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Ondřej Mirtesさんの個人プロジェクト、2021年からフルタイム開発
-    - node: li
-      children:
-      - node: text
-        content: 開発当初は純粋な静的解析ではなく実行時リフレクションを用いることで
-      - node: br
-      - node: text
-        content: '高速な解析を実現していた '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 現在は静的解析がデフォルトで、レガシープロジェクトに導入しやすくなった
-    - node: li
-      children:
-      - node: text
-        content: その他のPHP静的解析ツールにはPsalm, Phan, Qodana(PhpStorm)
+  - kind: para
+    text: PHPStanとは
+  - kind: list
+    items:
+    - 2016年から開発されているPHPの静的解析ツール
+    - Ondřej Mirtesさんの個人プロジェクト、2021年からフルタイム開発
+    - 開発当初は純粋な静的解析ではなく実行時リフレクションを用いることで
+  - kind: para
+    text: 高速な解析を実現していた
+  - kind: list
+    items:
+    - 現在は静的解析がデフォルトで、レガシープロジェクトに導入しやすくなった
+    - その他のPHP静的解析ツールにはPsalm, Phan, Qodana(PhpStorm)
   p16: []
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 201X年､PHPは 型の炎に包まれた!!
+  - kind: para
+    text: 201X年、PHPは
+  - kind: para
+    text: 型の炎に包まれた!!
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'いまやPHPは '
-    - node: br
-    - node: text
-      content: 静的型付きと言っても
-    - node: br
-    - node: text
-      content: '過言ではない '
-    - node: br
-    - node: text
-      content: (本当か…？)
+  - kind: para
+    text: いまやPHPは
+  - kind: para
+    text: 静的型付きと言っても
+  - kind: para
+    text: 過言ではない
+  - kind: para
+    text: (本当か…？)
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 'だが型なしは '
-    - node: br
-    - node: text
-      content: 滅びていなかった
+  - kind: para
+    text: だが型なしは
+  - kind: para
+    text: 滅びていなかった
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '型なしは '
-    - node: br
-    - node: text
-      content: どこからくるの？
+  - kind: para
+    text: 型なしは
+  - kind: para
+    text: どこからくるの？
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p22:
-  - node: p
-    children:
-    - node: text
-      content: そうです
+  - kind: heading
+    level: 1
+    text: そうです
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'みなさんに '
-    - node: br
-    - node: text
-      content: '覚えておいて '
-    - node: br
-    - node: text
-      content: ほしいこと
+  - kind: para
+    text: みなさんに
+  - kind: para
+    text: 覚えておいて
+  - kind: para
+    text: ほしいこと
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 型なしとは何か
+  - kind: heading
+    level: 1
+    text: 型なしとは何か
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'Validation '
+  - kind: heading
+    level: 1
+    text: Validation
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 'Validation '
-    - node: br
-    - node: text
-      content: 'Sanitize '
+  - kind: para
+    text: Validation
+  - kind: para
+    text: Sanitize
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 'Validation '
-    - node: br
-    - node: text
-      content: Sanitize Escape
+  - kind: para
+    text: Validation
+  - kind: para
+    text: Sanitize
+  - kind: para
+    text: Escape
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 'Validation '
-  - node: p
-    children:
-    - node: text
-      content: 'これは気に '
-    - node: br
-    - node: text
-      content: しなくていい
-  - node: p
-    children:
-    - node: text
-      content: Sanitize Escape
+  - kind: para
+    text: これは気に
+  - kind: para
+    text: しなくていい
+  - kind: heading
+    level: 1
+    text: Validation
+  - kind: heading
+    level: 1
+    text: Sanitize
+  - kind: heading
+    level: 1
+    text: Escape
   p30:
-  - node: p
-    children:
-    - node: text
-      content: '自信をもって '
-    - node: br
-    - node: text
-      content: 説明できますか？
+  - kind: para
+    text: 自信をもって
+  - kind: para
+    text: 説明できますか？
   p31:
-  - node: p
-    children:
-    - node: text
-      content: …ここから本題
+  - kind: heading
+    level: 1
+    text: …ここから本題
   p32:
-  - node: p
-    children:
-    - node: text
-      content: クエリパラメータから
-    - node: br
-    - node: text
-      content: ID値をとりたい
+  - kind: para
+    text: クエリパラメータから
+  - kind: para
+    text: ID値をとりたい
   p33:
-  - node: p
-    children:
-    - node: bold
-      content: '/** IDから記事を取得 */ '
-  - node: p
-    children:
-    - node: bold
-      content: 'function getById(int $id): Article '
-    - node: br
-    - node: bold
-      content: '{ '
-    - node: br
-    - node: bold
-      content: '    // 中でデータベースに問い合わせ '
-  - node: p
-    children:
-    - node: bold
-      content: '}'
+  - kind: para
+    text: /** IDから記事を取得 */
+  - kind: para
+    text: 'function getById(int $id): Article'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: // 中でデータベースに問い合わせ
+  - kind: para
+    text: '}'
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 実際あぶない
-  - node: p
-    children:
-    - node: bold
-      content: '$id = $_GET[''id'']; '
-    - node: br
-    - node: bold
-      content: $article=getById($id);
+  - kind: para
+    text: 実際あぶない
+  - kind: heading
+    level: 1
+    text: $id = $_GET['id'];
+  - kind: heading
+    level: 1
+    text: $article = getById($id);
   p35:
-  - node: p
-    children:
-    - node: text
-      content: そもそも何者
-  - node: p
-    children:
-    - node: bold
-      content: '$id = $_GET[''id'']; '
-    - node: br
-    - node: bold
-      content: $article=getById($id);
+  - kind: para
+    text: そもそも何者
+  - kind: heading
+    level: 1
+    text: $id = $_GET['id'];
+  - kind: heading
+    level: 1
+    text: $article = getById($id);
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 'ここでブラウザ開く '
-  - node: p
-    children:
-    - node: text
-      content: https://phpstan.org/try
+  - kind: heading
+    level: 1
+    text: ここでブラウザ開く
+  - kind: heading
+    level: 2
+    text: https://phpstan.org/try
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 型なしとはどういう状態か
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ある式の値の型が静的に定まっていない (mixed, TSのunknown/any)
-    - node: li
-      children:
-      - node: text
-        content: 型付けされた関数に渡したときに要求された文脈に従っているか
-      - node: br
-      - node: text
-        content: '(関数呼び出しをしたときにTypeErrorが出ないか安全だと言いきれない) '
-    - node: li
-      children:
-      - node: text
-        content: PHPではいろんなところから型なしが吹き出す
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: スーパーグローバル、eval、json_decode()、unserialize ()、
-          - node: br
-          - node: text
-            content: PDOStatement::fetch()
+  - kind: para
+    text: 型なしとはどういう状態か
+  - kind: list
+    items:
+    - ある式の値の型が静的に定まっていない (mixed, TSのunknown/any)
+    - 型付けされた関数に渡したときに要求された文脈に従っているか
+  - kind: para
+    text: (関数呼び出しをしたときにTypeErrorが出ないか安全だと言いきれない)
+  - kind: list
+    items:
+    - PHPではいろんなところから型なしが吹き出す
+    - スーパーグローバル、eval、json_decode()、unserialize ()、
+  - kind: para
+    text: PDOStatement::fetch()
   p38:
-  - node: p
-    children:
-    - node: bold
-      content: '// ?id=1 '
-    - node: br
-    - node: bold
-      content: $_GET['id'] === '1';
+  - kind: para
+    text: // ?id=1
+  - kind: para
+    text: $_GET['id'] === '1';
   p39:
-  - node: p
-    children:
-    - node: bold
-      content: '// ?id=a '
-    - node: br
-    - node: bold
-      content: $_GET['id'] === 'a';
+  - kind: para
+    text: // ?id=a
+  - kind: para
+    text: $_GET['id'] === 'a';
   p40:
-  - node: p
-    children:
-    - node: bold
-      content: '// ?id[]=a '
-    - node: br
-    - node: bold
-      content: $_GET['id'] === ['a'];
+  - kind: para
+    text: // ?id[]=a
+  - kind: para
+    text: $_GET['id'] === ['a'];
   p41:
-  - node: p
-    children:
-    - node: bold
-      content: '// ?id[foo]=bar $_GET[''id''] === '
-    - node: br
-    - node: bold
-      content: '          [''foo'' => ''bar''];'
+  - kind: para
+    text: // ?id[foo]=bar
+  - kind: para
+    text: $_GET['id'] ===
+  - kind: para
+    text: '[''foo'' => ''bar''];'
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'キャストすれば '
-    - node: br
-    - node: text
-      content: いいのか
+  - kind: para
+    text: キャストすれば
+  - kind: para
+    text: いいのか
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '危険ではないが '
-    - node: br
-    - node: text
-      content: よくはない
-  - node: p
-    children:
-    - node: bold
-      content: '$id = (int)$_GET[''id'']; '
+  - kind: para
+    text: 危険ではないが
+  - kind: para
+    text: よくはない
+  - kind: heading
+    level: 1
+    text: $id = (int)$_GET['id'];
   p44:
-  - node: p
-    children:
-    - node: bold
-      content: '// ?id=32x '
-    - node: br
-    - node: bold
-      content: '$id = (int)$_GET[''id'']; '
-    - node: br
-    - node: bold
-      content: $id === 32;
+  - kind: para
+    text: // ?id=32x
+  - kind: para
+    text: $id = (int)$_GET['id'];
+  - kind: para
+    text: $id === 32;
   p45:
-  - node: p
-    children:
-    - node: bold
-      content: 'if (is_numeric($_GET[''id''])) { '
-  - node: p
-    children:
-    - node: bold
-      content: throw new BadRequestException();
-    - node: br
-    - node: bold
-      content: '} '
-  - node: p
-    children:
-    - node: bold
-      content: $id = (int)$_GET['id'];
+  - kind: para
+    text: if (is_numeric($_GET['id'])) {
+  - kind: para
+    text: throw new BadRequestException();
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $id = (int)$_GET['id'];
   p46:
-  - node: p
-    children:
-    - node: text
-      content: is_numeric()
+  - kind: heading
+    level: 1
+    text: is_numeric()
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 整数 123
-  - node: p
-    children:
-    - node: text
-      content: 小数 1.23
-  - node: p
-    children:
-    - node: text
-      content: '指数表記 '
-  - node: p
-    children:
-    - node: text
-      content: '1.844674407371E+1'
-  - node: p
-    children:
-    - node: text
-      content: 前後にスペース
+  - kind: para
+    text: 整数 123
+  - kind: para
+    text: 小数 1.23
+  - kind: para
+    text: 指数表記
+  - kind: para
+    text: '1.844674407371E+1'
+  - kind: para
+    text: 前後にスペース
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'だいたいのIDは '
-    - node: br
-    - node: text
-      content: 正の整数だけ
+  - kind: para
+    text: だいたいのIDは
+  - kind: para
+    text: 正の整数だけ
   p49:
-  - node: p
-    children:
-    - node: bold
-      content: '// ?id=1.23 '
-    - node: br
-    - node: bold
-      content: 'if (is_numeric($_GET[''id''])) { '
-  - node: p
-    children:
-    - node: bold
-      content: throw new BadRequestException();
-    - node: br
-    - node: bold
-      content: '} '
-  - node: p
-    children:
-    - node: bold
-      content: $id = (int)$_GET['id'];
+  - kind: para
+    text: // ?id=1.23
+  - kind: para
+    text: if (is_numeric($_GET['id'])) {
+  - kind: para
+    text: throw new BadRequestException();
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $id = (int)$_GET['id'];
   p50:
-  - node: p
-    children:
-    - node: text
-      content: '安全に '
-  - node: p
-    children:
-    - node: text
-      content: int|false
-  - node: p
-    children:
-    - node: bold
-      content: '$id = filter_var( '
-    - node: br
-    - node: bold
-      content: '    $_GET[''id''] ?? '''', '
-    - node: br
-    - node: bold
-      content: '    FILTER_VALIDATE_INT '
-    - node: br
-    - node: bold
-      content: );
+  - kind: para
+    text: 安全に
+  - kind: para
+    text: int|false
+  - kind: para
+    text: $id = filter_var(
+  - kind: para
+    text: $_GET['id'] ?? '',
+  - kind: para
+    text: FILTER_VALIDATE_INT
+  - kind: para
+    text: );
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '安全に '
-  - node: p
-    children:
-    - node: bold
-      content: '$id = filter_var( '
-  - node: p
-    children:
-    - node: text
-      content: int|false
-  - node: p
-    children:
-    - node: bold
-      content: '    $_GET[''id''] ?? '''', '
-    - node: br
-    - node: bold
-      content: '    FILTER_VALIDATE_INT, '
-    - node: br
-    - node: bold
-      content: '    [''options'' => [ '
-    - node: br
-    - node: bold
-      content: '        ''min_range'' => 1, '
-    - node: br
-    - node: bold
-      content: '    ]]);'
+  - kind: para
+    text: 安全に
+  - kind: para
+    text: int|false
+  - kind: para
+    text: $id = filter_var(
+  - kind: para
+    text: $_GET['id'] ?? '',
+  - kind: para
+    text: FILTER_VALIDATE_INT,
+  - kind: para
+    text: '[''options'' => ['
+  - kind: para
+    text: '''min_range'' => 1,'
+  - kind: para
+    text: ']]);'
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 'ここでブラウザ開く '
-  - node: p
-    children:
-    - node: text
-      content: https://phpstan.org/try
-    - node: br
-    - node: text
-      content: https://php-play.dev/
+  - kind: heading
+    level: 1
+    text: ここでブラウザ開く
+  - kind: para
+    text: https://phpstan.org/try
+  - kind: para
+    text: https://php-play.dev/
   p53:
-  - node: p
-    children:
-    - node: text
-      content: ﬁlter_var()
+  - kind: heading
+    level: 1
+    text: filter_var()
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 'うまいこと値の '
-    - node: br
-    - node: text
-      content: 'バリデーションできる '
-    - node: br
-    - node: text
-      content: 標準関数
+  - kind: para
+    text: うまいこと値の
+  - kind: para
+    text: バリデーションできる
+  - kind: para
+    text: 標準関数
   p55:
-  - node: p
-    children:
-    - node: text
-      content: '……話は遡り '
-    - node: br
-    - node: text
-      content: 2007年
+  - kind: para
+    text: ……話は遡り
+  - kind: para
+    text: 2007年
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 伝説のプレゼン
+  - kind: heading
+    level: 1
+    text: 伝説のプレゼン
   p57:
-  - node: p
-    children:
-    - node: text
-      content: ホルモンのPHP (前半)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Rasmus LerdorfがPHPを作った歴史的経緯を話している
-    - node: li
-      children:
-      - node: text
-        content: 昔のPHPコードとか開発体制とか
-    - node: li
-      children:
-      - node: text
-        content: 構文解析とか苦手なのでPHPの構文がめちゃくちゃだったという自虐
-    - node: li
-      children:
-      - node: text
-        content: 利己的な動機で始めたプロジェクトだが開発者を惹きつけるように工夫して
-      - node: br
-      - node: text
-        content: 'いる様子 '
-    - node: li
-      children:
-      - node: text
-        content: 自宅サーバに入れたDrupalが遅いのでプロファイリングした
+  - kind: para
+    text: ホルモンのPHP (前半)
+  - kind: list
+    items:
+    - Rasmus LerdorfがPHPを作った歴史的経緯を話している
+    - 昔のPHPコードとか開発体制とか
+    - 構文解析とか苦手なのでPHPの構文がめちゃくちゃだったという自虐
+    - 利己的な動機で始めたプロジェクトだが開発者を惹きつけるように工夫して
+  - kind: para
+    text: いる様子
+  - kind: list
+    items:
+    - 自宅サーバに入れたDrupalが遅いのでプロファイリングした
   p58:
-  - node: p
-    children:
-    - node: text
-      content: ホルモンのPHP (後半)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 世の中にセキュリティの問題が多いウェブサイトが多すぎる
-    - node: li
-      children:
-      - node: text
-        content: IEとかFlashとかAdobe ReaderとかUTF-7とか罠がいっぱい
-    - node: li
-      children:
-      - node: text
-        content: 俺たちのウェブは完全に壊れている。特にXSSがヤバイ。JS実行されちゃう。
-    - node: li
-      children:
-      - node: text
-        content: '58'
+  - kind: para
+    text: ホルモンのPHP (後半)
+  - kind: list
+    items:
+    - 世の中にセキュリティの問題が多いウェブサイトが多すぎる
+    - IEとかFlashとかAdobe ReaderとかUTF-7とか罠がいっぱい
+    - 俺たちのウェブは完全に壊れている。特にXSSがヤバイ。JS実行されちゃう。
   p59:
-  - node: p
-    children:
-    - node: text
-      content: ホルモンのPHP (後半)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 世の中にセキュリティの問題が多いウェブサイトが多すぎる
-    - node: li
-      children:
-      - node: text
-        content: IEとかFlashとかAdobe ReaderとかUTF-7とか罠がいっぱい
-    - node: li
-      children:
-      - node: text
-        content: 俺たちのウェブは完全に壊れている。特にXSSがヤバイ。JS実行されちゃう。
-    - node: li
-      children:
-      - node: text
-        content: だからFlter関数作ったよ！ サニタイズすれば絶対にXSS起こらない！
+  - kind: para
+    text: ホルモンのPHP (後半)
+  - kind: list
+    items:
+    - 世の中にセキュリティの問題が多いウェブサイトが多すぎる
+    - IEとかFlashとかAdobe ReaderとかUTF-7とか罠がいっぱい
+    - 俺たちのウェブは完全に壊れている。特にXSSがヤバイ。JS実行されちゃう。
+    - だからfilter関数作ったよ！ サニタイズすれば絶対にXSS起こらない！
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 'フィルタには '
-    - node: br
-    - node: text
-      content: 'サニタイズ機能もある '
+  - kind: para
+    text: フィルタには
+  - kind: para
+    text: サニタイズ機能もある
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 'フィルタには '
-    - node: br
-    - node: text
-      content: 'サニタイズ機能もある '
-    - node: br
-    - node: text
-      content: 使わないで！！
+  - kind: para
+    text: フィルタには
+  - kind: para
+    text: サニタイズ機能もある
+  - kind: para
+    text: 使わないで！！
   p62:
-  - node: p
-    children:
-    - node: text
-      content: サニタイズとは何か
+  - kind: heading
+    level: 1
+    text: サニタイズとは何か
   p63:
-  - node: p
-    children:
-    - node: text
-      content: わからん
+  - kind: heading
+    level: 1
+    text: わからん
   p64:
-  - node: p
-    children:
-    - node: text
-      content: ？？？
+  - kind: heading
+    level: 1
+    text: ？？？
   p65:
-  - node: p
-    children:
-    - node: text
-      content: 今年書いた記事
+  - kind: heading
+    level: 1
+    text: 今年書いた記事
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 'フィルタ関数を '
-    - node: br
-    - node: text
-      content: 使えば解決するのか
+  - kind: para
+    text: フィルタ関数を
+  - kind: para
+    text: 使えば解決するのか
   p67:
-  - node: p
-    children:
-    - node: text
-      content: 今年書いた記事
+  - kind: heading
+    level: 1
+    text: 今年書いた記事
   p68:
-  - node: p
-    children:
-    - node: text
-      content: 'なんだよ '
-    - node: br
-    - node: text
-      content: '外部公開してない '
-    - node: br
-    - node: text
-      content: ライブラリの自慢かよ
+  - kind: para
+    text: なんだよ
+  - kind: para
+    text: 外部公開してない
+  - kind: para
+    text: ライブラリの自慢かよ
   p69:
-  - node: p
-    children:
-    - node: text
-      content: 'キタカミの里から '
-    - node: br
-    - node: text
-      content: '帰ってきたら '
-    - node: br
-    - node: text
-      content: 公開したい！！
+  - kind: para
+    text: キタカミの里から
+  - kind: para
+    text: 帰ってきたら
+  - kind: para
+    text: 公開したい！！
   p70:
-  - node: p
-    children:
-    - node: text
-      content: 対応予定
-  - node: p
-    children:
-    - node: text
-      content: スーパーグローバル
-  - node: p
-    children:
-    - node: text
-      content: ($_XXX)
-  - node: p
-    children:
-    - node: text
-      content: PSR-7 ServerRequest
+  - kind: para
+    text: 対応予定
+  - kind: para
+    text: スーパーグローバル($_XXX)
+  - kind: para
+    text: PSR-7 ServerRequest
 size:
   max_width: 1920
   max_height: 1080

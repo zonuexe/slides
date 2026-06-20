@@ -1,3 +1,1189 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: PHPでテスティングフレ…ryを
+  - kind: heading
+    level: 1
+    text: 実装する前に知っておきたい勘所
+  - kind: para
+    text: Tips for implementing Testing Framework in PHP.
+  - kind: para
+    text: 2018-03-09 PHPerKaigi 2018 前夜祭
+  - kind: para
+    text: 'Nerima Coconeri Hall #phperkaigi'
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社技術基盤チーム (pixiv.net)
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4:
+  - kind: para
+    text: pixivのコードは
+  - kind: para
+    text: 毎日どんどん
+  - kind: para
+    text: 刷新されてるよ
+  p5:
+  - kind: para
+    text: 明日のpixivを
+  - kind: para
+    text: 作るのは俺たちだ
+  p6:
+  - kind: para
+    text: We are hiring!
+  p7:
+  - kind: para
+    text: アジェンダ
+  p8:
+  - kind: para
+    text: 本日しない話
+  p9:
+  - kind: para
+    text: オブジェクト
+  - kind: para
+    text: 指向
+  p10:
+  - kind: para
+    text: TDD/BDDの
+  - kind: para
+    text: 教義的な話
+  p11:
+  - kind: para
+    text: 定義に従った
+  - kind: para
+    text: 厳密な用語
+  p12:
+  - kind: heading
+    level: 1
+    text: Emacs
+  - kind: para
+    text: (私はphpunit.elの開発者でもあります)
+  p13:
+  - kind: para
+    text: 
+  p14:
+  - kind: para
+    text: 一連のストーリー
+  - kind: para
+    text: などはない
+  p15:
+  - kind: para
+    text: オムニバス
+  p16:
+  - kind: para
+    text: 1. フレームワークなしのテスト
+  - kind: para
+    text: 2. できる！ フレームワーク
+  - kind: para
+    text: 3. PHPで注意すべき「状態」
+  p17:
+  - kind: para
+    text: 1. フレームワークなしのテスト
+  - kind: para
+    text: 2. できる！ フレームワーク
+  - kind: para
+    text: 3. PHPで注意すべき「状態」
+  - kind: para
+    text: ↑時間なくて収まらなかった
+  p18:
+  - kind: para
+    text: 本題の前に
+  p19: []
+  p20:
+  - kind: para
+    text: pixivは主に
+  - kind: para
+    text: PHPUnitでテスト
+  p21:
+  - kind: para
+    text: 僕がテストを新規を増や
+  - kind: para
+    text: すならPHPUnitでテスト
+  p22:
+  - kind: para
+    text: '% cd ~/pixiv/tests'
+  - kind: para
+    text: '% git ls-files ''*Test.php'' | wc -l'
+  - kind: para
+    text: '1606'
+  - kind: para
+    text: '% git ls-files ''*Test.php'' | xargs cat | wc -l'
+  - kind: para
+    text: '191890'
+  p23:
+  - kind: para
+    text: どうすれば書きやすく
+  - kind: para
+    text: メンテできる
+  - kind: para
+    text: テストが書けるか悩み
+  p24:
+  - kind: para
+    text: 本題の前に
+  p25:
+  - kind: para
+    text: さて
+  p26:
+  - kind: para
+    text: まれによく聞く
+  p27:
+  - kind: para
+    text: PHPUnitとかphpspecとか
+  - kind: para
+    text: 巨大な依存関係入れたくない
+  p28:
+  - kind: para
+    text: せやな
+  p29:
+  - kind: para
+    text: 懸念の妥当性はともかく
+  - kind: para
+    text: 依存パッケージの数が
+  - kind: para
+    text: それなりに多いのはたしか
+  p30:
+  - kind: para
+    text: 「簡単なテストだけ
+  - kind: para
+    text: できればいいよ」
+  p31:
+  - kind: para
+    text: おう
+  p32:
+  - kind: para
+    text: じゃ、作るか
+  p33:
+  - kind: para
+    text: その前に
+  p34:
+  - kind: para
+    text: ところでPHP標準のテス
+  - kind: para
+    text: ティングフレームワーク
+  - kind: para
+    text: がある
+  p35:
+  - kind: para
+    text: http://qa.php.net/write-test.php
+  p36:
+  - kind: para
+    text: PHP本体の
+  - kind: para
+    text: テストコード
+  p37:
+  - kind: para
+    text: php-srcに入ってる
+  - kind: para
+    text: run-tests.phpで
+  - kind: para
+    text: 実行できる
+  p38:
+  - kind: para
+    text: 実はPHPUnitでも
+  - kind: para
+    text: おまけ機能として
+  - kind: para
+    text: テスト実行できる
+  p39:
+  - kind: heading
+    level: 1
+    text: バッファの出力をテストする
+  - kind: para
+    text: --TEST--
+  - kind: para
+    text: Compute 1 + 1 test
+  - kind: para
+    text: --FILE--
+  - kind: para
+    text: <?= 1 + 1 ?>
+  - kind: para
+    text: --EXPECT--
+  - kind: para
+    text: '2'
+  - kind: para
+    text: --TEST--
+  - kind: para
+    text: GET $_ENV test
+  - kind: para
+    text: --ENV--
+  - kind: para
+    text: return <<<END
+  - kind: para
+    text: a=AAA
+  - kind: para
+    text: b=BBB
+  - kind: para
+    text: END;
+  - kind: para
+    text: --FILE--
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo getenv('a'), "\n";
+  - kind: para
+    text: echo getenv('b'), "\n";
+  - kind: para
+    text: ?>
+  - kind: para
+    text: --EXPECT--
+  - kind: para
+    text: AAA
+  - kind: para
+    text: BBB
+  p40:
+  - kind: para
+    text: ただし(意図的なのか)
+  - kind: para
+    text: 仕様を完全には
+  - kind: para
+    text: サポートしてません
+  p41:
+  - kind: para
+    text: もしphptを採用する
+  - kind: para
+    text: ならrun-tests.php
+  - kind: para
+    text: を使った方がいい
+  p42:
+  - kind: para
+    text: テスト
+  - kind: para
+    text: スクリプト
+  p43:
+  - kind: para
+    text: なぜ人は
+  - kind: para
+    text: テストを書くのか
+  p44:
+  - kind: para
+    text: 実装前に入出力の
+  - kind: para
+    text: 例を明示したい
+  p45:
+  - kind: para
+    text: 機能追加や
+  - kind: para
+    text: リファクタリングで
+  - kind: para
+    text: 意図した挙動が壊れな
+  - kind: para
+    text: いことを保障したい
+  p46:
+  - kind: para
+    text: テストを書こう
+  p47:
+  - kind: para
+    text: そうすると
+  p48:
+  - kind: para
+    text: 関心がどうとか
+  - kind: para
+    text: って話になってくる
+  p49:
+  - kind: para
+    text: うるせえ
+  p50:
+  - kind: para
+    text: やりたいことは
+  - kind: para
+    text: 動作確認
+  p51:
+  - kind: para
+    text: それだけ
+  p52:
+  - kind: para
+    text: テストスクリプトを
+  - kind: para
+    text: 書こう
+  p53:
+  - kind: heading
+    level: 1
+    text: test.php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: require_once __DIR__ . '/vendor/autoload.php';
+  - kind: para
+    text: '(2 === 1 + 1) or die("LINE: ". __LINE__);'
+  - kind: para
+    text: '(3 === 1.5 + 1.5) or die("LINE: ". __LINE__);'
+  - kind: para
+    text: $date = date('Y-m-d',4502304000);
+  - kind: para
+    text: '("2112-09-13" === $date) or die("LINE: ". __LINE__);'
+  - kind: para
+    text: $a = [1, 2, 3];
+  - kind: para
+    text: '(1 == array_shift($a)) or die("LINE: ". __LINE__);'
+  - kind: para
+    text: echo 'ok.', PHP_EOL;
+  p54:
+  - kind: para
+    text: 失敗すると行が
+  - kind: para
+    text: 出力されて終了
+  p55:
+  - kind: para
+    text: or die()
+  - kind: para
+    text: 書くのだるい
+  p56:
+  - kind: para
+    text: もうちょっと
+  - kind: para
+    text: わかりやすく
+  p57:
+  - kind: para
+    text: assert()
+  p58:
+  - kind: heading
+    level: 1
+    text: test.php
+  - kind: para
+    text: '#!/usr/bin/env php'
+  - kind: para
+    text: <?php
+  - kind: para
+    text: require_once __DIR__ . '/vendor/autoload.php';
+  - kind: para
+    text: assert(2 === 1 + 1);
+  - kind: para
+    text: assert(3 === 1.5 + 1.5);
+  - kind: para
+    text: assert("2112-09-13" === date('Y-m-d', 4503168000));
+  - kind: para
+    text: $a = [1, 2, 3];
+  - kind: para
+    text: assert(1 == array_shift($a));
+  p59:
+  - kind: heading
+    level: 1
+    text: 出力
+  - kind: para
+    text: 'PHP Warning: assert(): assert(3 === 1.5 + 1.5) failed in /Users/'
+  - kind: para
+    text: megurine/repo/php/phperkaigi-test/assert-test.php on line 11
+  - kind: para
+    text: 'Warning: assert(): assert(3 === 1.5 + 1.5) failed in /Users/megurine/'
+  - kind: para
+    text: repo/php/phperkaigi-test/assert-test.php on line 11
+  - kind: para
+    text: 'PHP Warning: assert(): assert(''2112-09-03'' === date(''Y-m-d'','
+  - kind: para
+    text: 4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-
+  - kind: para
+    text: test.php on line 12
+  - kind: para
+    text: 'Warning: assert(): assert(''2112-09-03'' === date(''Y-m-d'', 4503168000))'
+  - kind: para
+    text: failed in /Users/megurine/repo/php/phperkaigi-test/assert-test.php on
+  - kind: para
+    text: line 12
+  p60:
+  - kind: para
+    text: エラーハンドリングの
+  - kind: para
+    text: 設定をしないと
+  - kind: para
+    text: 出力が二重化される
+  p61:
+  - kind: para
+    text: まあ雑だけど
+  - kind: para
+    text: テストにはなる
+  p62:
+  - kind: para
+    text: 完
+  p63:
+  - kind: para
+    text: ☺
+  p64:
+  - kind: para
+    text: 最低限ができると
+  - kind: para
+    text: 人間は欲が出てくる
+  p65:
+  - kind: para
+    text: できる！
+  - kind: para
+    text: フレームワーク
+  p66:
+  - kind: para
+    text: フレームワーク
+  - kind: para
+    text: とは
+  p67:
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/ソフトウェアフレームワーク
+  p68:
+  - kind: para
+    text: 制御の反転が
+  - kind: para
+    text: ソフトウェアフレームワークの
+  - kind: para
+    text: 特徴
+  p69:
+  - kind: para
+    text: ふつうのライブラリは
+  - kind: para
+    text: あなたが書いたコードから
+  - kind: para
+    text: 呼び出される
+  p70:
+  - kind: para
+    text: フレームワークは
+  - kind: para
+    text: あなたが書いたコードを
+  - kind: para
+    text: 呼び出す
+  p71:
+  - kind: para
+    text: これが
+  - kind: para
+    text: 制御の反転
+  p72:
+  - kind: para
+    text: ここからは
+  - kind: para
+    text: どんどんいきます
+  p73:
+  - kind: heading
+    level: 1
+    text: '仕様1: コードをべたに実行'
+  - kind: para
+    text: テストファイルは xxx_test.phpの形式
+  - kind: para
+    text: assert()を使ってテストする
+  - kind: para
+    text: スクリプトを実行すると実行
+  p74:
+  - kind: heading
+    level: 1
+    text: assert_tests/run
+  - kind: para
+    text: '#!/usr/bin/env php'
+  - kind: para
+    text: <?php
+  - kind: para
+    text: require __DIR__ . '/../vendor/autoload.php';
+  - kind: para
+    text: $testing = include __DIR__ . '/bootstrap.php';
+  - kind: para
+    text: chdir(__DIR__);
+  - kind: para
+    text: foreach (glob('*_test.php') as $file) {
+  - kind: para
+    text: try {
+  - kind: para
+    text: include $file;
+  - kind: para
+    text: '} catch (\Throwable $e) {'
+  - kind: para
+    text: dump($e);
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $testing->finalize();
+  p75:
+  - kind: para
+    text: assert()に失敗した
+  - kind: para
+    text: ときの結果は
+  - kind: para
+    text: カスタマイズできる
+  p76:
+  - kind: para
+    text: (実はPHP5方式と
+  - kind: para
+    text: PHP7方式で異なる)
+  - kind: heading
+    level: 1
+    text: 今回はPHP5方式
+  p77:
+  - kind: heading
+    level: 1
+    text: bootstrap.php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: require_once __DIR__ . '/define.php';
+  - kind: para
+    text: ini_set('zend.assertions', 1);
+  - kind: para
+    text: ini_set('assert.exception', 0);
+  - kind: para
+    text: assert_options(ASSERT_ACTIVE, 1);
+  - kind: para
+    text: assert_options(ASSERT_BAIL, 0);
+  - kind: para
+    text: assert_options(ASSERT_QUIET_EVAL, 0);
+  - kind: para
+    text: assert_options(ASSERT_WARNING, 0);
+  - kind: para
+    text: $testing = new Testing();
+  - kind: para
+    text: assert_options(ASSERT_CALLBACK, [$testing, 'handler']);
+  - kind: para
+    text: return $testing;
+  p78:
+  - kind: heading
+    level: 1
+    text: Testing.php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: class Testing {
+  - kind: para
+    text: /** @var bool テスト失敗停止するか */
+  - kind: para
+    text: private $stop_on_failure = false;
+  - kind: para
+    text: /** @var array[] 実行結果 */
+  - kind: para
+    text: private $result = [];
+  - kind: para
+    text: public function __construct(array $options) {
+  - kind: para
+    text: $this->stop_on_failure = $options['stop_on_failure'] ?? false;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: /** assert()の失敗時にこいつが呼ばれるように設定 */
+  - kind: para
+    text: public function handler($file, $line, $code, $desc = null) {
+  - kind: para
+    text: $this->result[] = [$file, $line, $desc];
+  - kind: para
+    text: if ($this->stop_on_failure) $this->finalize();
+  - kind: para
+    text: '}'
+  p79:
+  - kind: heading
+    level: 1
+    text: Testing.php
+  - kind: para
+    text: /** いままで失敗したテストをまとめて結果表示 */
+  - kind: para
+    text: 'public function finalize(): void'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: if ($this->result) {
+  - kind: para
+    text: foreach ($this->result as [$file, $line, $desc])
+  - kind: para
+    text: '{'
+  - kind: para
+    text: $this->output($file, $line, $desc);
+  - kind: para
+    text: '}'
+  - kind: para
+    text: exit(1); // エラー終了
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $this->result = [];
+  - kind: para
+    text: echo 'ok.', PHP_EOL;
+  - kind: para
+    text: exit(0);
+  - kind: para
+    text: '}'
+  p80:
+  - kind: heading
+    level: 1
+    text: Testing.php
+  - kind: para
+    text: 'private function output($file, $line, $desc): void'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: // ソースコードの該当行を取得
+  - kind: para
+    text: $code = trim(file($file)[$line-1]);
+  - kind: para
+    text: 'echo "FILE: {$file} ({$line})", PHP_EOL;'
+  - kind: para
+    text: 'echo "CODE: {$code}", PHP_EOL;'
+  - kind: para
+    text: 'echo "DESC: {$desc}", PHP_EOL;'
+  - kind: para
+    text: '}'
+  p81:
+  - kind: para
+    text: 完成！
+  p82:
+  - kind: para
+    text: テストを記述
+  p83:
+  - kind: heading
+    level: 1
+    text: fizzbuzz_test.php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: // to_fizzbuzz() 関数は別に定義済みの想定
+  - kind: para
+    text: assert("1" === $actual = to_fizzbuzz(1));
+  - kind: para
+    text: assert("Fizz" === $actual = to_fizzbuzz(3));
+  - kind: para
+    text: assert("Buzz" === $actual = to_fizzbuzz(5));
+  - kind: para
+    text: assert("Buzz" === $actual = to_fizzbuzz(10));
+  - kind: para
+    text: assert("FizzBuzz" === $actual = to_fizzbuzz(15));
+  p84: []
+  p85:
+  - kind: heading
+    level: 1
+    text: 完璧では
+  - kind: para
+    text: (ただしassertは一行で書かれるものとする)
+  p86:
+  - kind: para
+    text: 😊
+  p87:
+  - kind: para
+    text: さらに
+  - kind: para
+    text: パワーアップ
+  p88:
+  - kind: heading
+    level: 1
+    text: PowerAssert
+  - kind: para
+    text: (のようなもの)
+  p89:
+  - kind: para
+    text: Groovyのテストで
+  - kind: para
+    text: 一躍知られた
+  p90:
+  - kind: para
+    text: t-wadaさんの
+  - kind: para
+    text: power-assert.jsが有名
+  p91:
+  - kind: para
+    text: http://hamcrest.org/
+  p92:
+  - kind: para
+    text: PHPでちゃんと
+  - kind: para
+    text: 作ろうとすると大変
+  p93:
+  - kind: para
+    text: それっぽいもの
+  - kind: para
+    text: なら作れる！
+  p94: []
+  p95:
+  - kind: para
+    text: 欠点
+  p96:
+  - kind: para
+    text: assert()では失敗しかフック
+  - kind: para
+    text: できないから、「98/100成功」
+  - kind: para
+    text: のようなカウントができない
+  p97:
+  - kind: para
+    text: PowerAssert(もどき)
+  - kind: para
+    text: 書くのがめんどい
+  p98: []
+  p99:
+  - kind: heading
+    level: 1
+    text: define.php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: const collect_vars = 'return v(get_defined_vars()+
+  - kind: para
+    text: '["this"=>isset($this)?$this:null]);'';'
+  - kind: para
+    text: 'function v(array $variables): string'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: // $GLOBALSは長大なので消しとく
+  - kind: para
+    text: unset($variables['GLOBALS']);
+  - kind: para
+    text: return \serialize($variables);
+  - kind: para
+    text: '}'
+  p100:
+  - kind: para
+    text: 次のパターンに
+  - kind: para
+    text: 行きましょう
+  p101:
+  - kind: heading
+    level: 1
+    text: '仕様2: 関数を実行'
+  - kind: para
+    text: テストファイルは xxx_test.phpの形式
+  - kind: para
+    text: その中に test_xxxx() 関数が定義する
+  - kind: para
+    text: Hamcrestを使ってテストしてみる
+  - kind: para
+    text: スクリプトを実行すると実行
+  p102:
+  - kind: para
+    text: http://hamcrest.org/
+  p103:
+  - kind: heading
+    level: 1
+    text: Hamcrest (hamcrest-php)
+  - kind: para
+    text: マッチャー (値がマッチするか比較)
+  - kind: para
+    text: もともとはJavaのライブラリ
+  - kind: para
+    text: assertXXX()みたいなのが定義されてる
+  - kind: para
+    text: \Hamcrest\Util::registerGlobalFunctions()
+  - kind: para
+    text: を呼ぶとグローバル関数として定義される
+  p104:
+  - kind: heading
+    level: 1
+    text: assert_tests/run (1/3)
+  - kind: para
+    text: '#!/usr/bin/env php'
+  - kind: para
+    text: <?php
+  - kind: para
+    text: require __DIR__ . '/../vendor/autoload.php';
+  - kind: para
+    text: \Hamcrest\Util::registerGlobalFunctions();
+  - kind: para
+    text: chdir(__DIR__);
+  - kind: para
+    text: foreach (glob('*_test.php') as $file) {
+  - kind: para
+    text: require_once $file;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $failures = [];
+  - kind: para
+    text: $errors = [];
+  p105:
+  - kind: heading
+    level: 1
+    text: assert_tests/run (2/3)
+  - kind: para
+    text: foreach (get_defined_functions(true)['user'] as $func) {
+  - kind: para
+    text: if (strpos($func, 'test_') === 0) {
+  - kind: para
+    text: try {
+  - kind: para
+    text: $func();
+  - kind: para
+    text: echo '.';
+  - kind: para
+    text: '} catch (\Hamcrest\AssertionError $e) {'
+  - kind: para
+    text: $failures[] = $e;
+  - kind: para
+    text: echo 'F';
+  - kind: para
+    text: '}catch (\Throwable $e) {'
+  - kind: para
+    text: $errors[] = $e;
+  - kind: para
+    text: echo 'E';
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: echo PHP_EOL;
+  p106:
+  - kind: heading
+    level: 1
+    text: assert_tests/run (3/3)
+  - kind: para
+    text: if ($failures) {
+  - kind: para
+    text: echo "Failures:", PHP_EOL;
+  - kind: para
+    text: foreach ($failures as $f) {
+  - kind: para
+    text: echo PHP_EOL;
+  - kind: para
+    text: 'echo "FILE: {$f->getFile()} ({$f->getLine()})", PHP_EOL;'
+  - kind: para
+    text: 'echo "DESC: {$f->getMessage()})", PHP_EOL;'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: if ($errors) {
+  - kind: para
+    text: echo "Errors:", PHP_EOL;
+  - kind: para
+    text: dump($errors);
+  - kind: para
+    text: '}'
+  p107:
+  - kind: para
+    text: また完成して
+  - kind: para
+    text: しまった…
+  p108:
+  - kind: para
+    text: テストを記述
+  p109:
+  - kind: heading
+    level: 1
+    text: fizzbuzz_test.php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: function test_fizzbuzz()
+  - kind: para
+    text: '{'
+  - kind: para
+    text: assertThat(to_fizzbuzz(1), equalTo("1"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(3), equalTo("Fizz"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(5), equalTo("Buzz"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(10), equalTo("Buzz"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(15), equalTo("FizzBuzz"));
+  - kind: para
+    text: '}'
+  p110: []
+  p111:
+  - kind: para
+    text: 🤔
+  p112:
+  - kind: para
+    text: 出力差分はわかるけど
+  - kind: para
+    text: いまいちわかりにくい
+  p113:
+  - kind: para
+    text: そうだ
+  - kind: para
+    text: パラメタライズテスト
+  - kind: para
+    text: をしよう
+  p114:
+  - kind: para
+    text: 引数だけを変更して
+  - kind: para
+    text: 同じテストをする
+  p115:
+  - kind: para
+    text: PHPUnitでの
+  - kind: para
+    text: '@dataProvider'
+  p116:
+  - kind: para
+    text: 名前も拝借して
+  - kind: para
+    text: いきましょう
+  p117:
+  - kind: heading
+    level: 1
+    text: fizzbuzz_test.php (Before)
+  - kind: para
+    text: <?php
+  - kind: para
+    text: function test_fizzbuzz()
+  - kind: para
+    text: '{'
+  - kind: para
+    text: assertThat(to_fizzbuzz(1), equalTo("1"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(3), equalTo("Fizz"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(5), equalTo("Buzz"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(10), equalTo("Buzz"));
+  - kind: para
+    text: assertThat(to_fizzbuzz(15), equalTo("FizzBuzz"));
+  - kind: para
+    text: '}'
+  p118:
+  - kind: heading
+    level: 1
+    text: fizzbuzz_test.php (After)
+  - kind: para
+    text: <?php
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @dataProvider fizzbuzz_number_provider'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function test_fizzbuzz2($expected, $input)
+  - kind: para
+    text: '{'
+  - kind: para
+    text: assertThat(to_fizzbuzz($input), equalTo($expected));
+  - kind: para
+    text: '}'
+  - kind: para
+    text: function fizzbuzz_number_provider()
+  - kind: para
+    text: '{'
+  - kind: para
+    text: return [
+  - kind: para
+    text: '["1", 1],'
+  - kind: para
+    text: '["Fizz", 3],'
+  - kind: para
+    text: '["Buzz", 5],'
+  - kind: para
+    text: '["Buzz", 10],'
+  - kind: para
+    text: '["FizzBuzz", 15],'
+  - kind: para
+    text: '];'
+  - kind: para
+    text: '}'
+  p119:
+  - kind: para
+    text: 実行側も
+  - kind: para
+    text: 書き換えていきます
+  p120:
+  - kind: heading
+    level: 1
+    text: assert_tests/run (2/3)
+  - kind: para
+    text: foreach (get_defined_functions(true)['user'] as $func) {
+  - kind: para
+    text: if (strpos($func, 'test_') === 0) {
+  - kind: para
+    text: try {
+  - kind: para
+    text: $func();
+  - kind: para
+    text: echo '.';
+  - kind: para
+    text: '} catch (\Hamcrest\AssertionError $e) {'
+  - kind: para
+    text: $failures[] = $e;
+  - kind: para
+    text: echo 'F';
+  - kind: para
+    text: '}catch (\Throwable $e) {'
+  - kind: para
+    text: $errors[] = $e;
+  - kind: para
+    text: echo 'E';
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: echo PHP_EOL;
+  p121:
+  - kind: heading
+    level: 1
+    text: assert_tests/run After
+  - kind: para
+    text: foreach (get_defined_functions(true)['user'] as $func) {
+  - kind: para
+    text: if (strpos($func, 'test_') === 0) {
+  - kind: para
+    text: '$provider = get_provider($func) ?: function (){ yield []; };'
+  - kind: para
+    text: foreach ($provider() as $args) {
+  - kind: para
+    text: try {
+  - kind: para
+    text: $func(...$args);
+  - kind: para
+    text: echo '.';
+  - kind: para
+    text: '} catch (\Hamcrest\AssertionError $e) {'
+  - kind: para
+    text: $failures[] = ['error' => $e, 'args' => $args];
+  - kind: para
+    text: echo 'F';
+  - kind: para
+    text: '}catch (\Throwable $e) {'
+  - kind: para
+    text: $errors[] = $e;
+  - kind: para
+    text: echo 'E';
+  - kind: para
+    text: '}'
+  p122:
+  - kind: heading
+    level: 1
+    text: assert_tests/run getProvider
+  - kind: para
+    text: 'function get_provider(string $func_name): ?string'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: $ref = new \ReflectionFunction($func_name);
+  - kind: para
+    text: // @dataProvider hogehoge を取り出す
+  - kind: para
+    text: if (preg_match('/@dataProvider +(?<provider>\S+)/',
+  - kind: para
+    text: $ref->getDocComment(), $m)) {
+  - kind: para
+    text: return trim($m['provider']);
+  - kind: para
+    text: '}'
+  - kind: para
+    text: return null;
+  - kind: para
+    text: '}'
+  p123: []
+  p124:
+  - kind: para
+    text: まとめると
+  p125:
+  - kind: para
+    text: 単にテストを実行する
+  - kind: para
+    text: フレームワークっぽいもの
+  - kind: para
+    text: は意外と簡単に作れる
+  p126:
+  - kind: para
+    text: PHPでテスト
+  - kind: para
+    text: しにくい状態
+  p127:
+  - kind: para
+    text: ここまでは「理想的な」
+  - kind: para
+    text: 関数をテストすること
+  - kind: para
+    text: しか想定してない
+  p128:
+  - kind: para
+    text: 理想的
+  - kind: para
+    text: '||'
+  - kind: para
+    text: 引数と返り値だけ
+  p129:
+  - kind: para
+    text: PHPで書かれる
+  - kind: para
+    text: 「現実」のコードは
+  - kind: para
+    text: それだけじゃない
+  p130:
+  - kind: para
+    text: ファイル書き込み、データベース、
+  - kind: para
+    text: 外部HTTP API呼び出し、グロー
+  - kind: para
+    text: バル変数、メール送信、HTTP
+  - kind: para
+    text: ヘッダ、クッキー…… などなど
+  p131:
+  - kind: para
+    text: '例: CLIでcookie()とか'
+  - kind: para
+    text: header()が呼び出され
+  - kind: para
+    text: るとFatal errorになる
+  p132:
+  - kind: para
+    text: これはテスティングフレーム
+  - kind: para
+    text: ワークだけではなくアプリケー
+  - kind: para
+    text: ションの構造も再設計しない
+  - kind: para
+    text: とうまくテストできない
+  p133:
+  - kind: para
+    text: HTTPはPSR-7に
+  - kind: para
+    text: するとか
+  p134:
+  - kind: para
+    text: 外部への依存を
+  - kind: para
+    text: 抽象化して
+  - kind: para
+    text: 注入するとか
+  p135:
+  - kind: para
+    text: テスト実行中に
+  - kind: para
+    text: 専用のDBを
+  - kind: para
+    text: 起動して利用するとか
+  p136:
+  - kind: para
+    text: テストしたいと思った
+  - kind: para
+    text: 瞬間に直さなきゃ
+  - kind: para
+    text: いけないことが
+  - kind: para
+    text: 爆発的に発生して氏ぬ
+  p137:
+  - kind: para
+    text: 😇
+  p138:
+  - kind: para
+    text: 次回に続く…?
+  p139:
+  - kind: para
+    text: まじめにテスト
+  - kind: para
+    text: やりたいひとへ
+  p140:
+  - kind: para
+    text: おまけ
+  p141: []
+  p142: []
+  p143:
+  - kind: para
+    text: PHPUnitも
+  - kind: para
+    text: 良いが
+  p144:
+  - kind: para
+    text: phpspecも
+  - kind: para
+    text: すごいぞ
+  p145: []
+  p146: []
 size:
   max_width: 1024
   max_height: 768
@@ -43,1839 +1229,3 @@ links:
   p145:
   - url: http://iakio.hatenablog.com/entry/2015/06/14/164729
     title: OSC2015北海道で「phpspecで学ぶLondon School TDD」という発表をしてきました - iakioの日記
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: で
-    - node: bold
-      content: テスティングフレ…ry
-    - node: text
-      content: を
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-    - node: br
-    - node: text
-      content: ' 実装する前に知っておきたい勘所'
-  - node: p
-    children:
-    - node: bold
-      content: Tips for implementing Testing Framework in PHP.
-  - node: p
-    children:
-    - node: text
-      content: 2018-03-09 PHPerKaigi 2018 前夜祭
-  - node: p
-    children:
-    - node: text
-      content: 'Nerima Coconeri Hall #phperkaigi'
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社技術基盤チーム (pixiv.net)
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
-  p3: []
-  p4:
-  - node: p
-    children:
-    - node: bold
-      content: pixiv
-    - node: text
-      content: のコードは
-  - node: p
-    children:
-    - node: text
-      content: 毎日どんどん
-    - node: br
-    - node: text
-      content: 刷新されてるよ
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: 明日の
-    - node: bold
-      content: pixiv
-    - node: text
-      content: を
-    - node: br
-    - node: text
-      content: 作るのは俺たちだ
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: We are hiring!
-  p7:
-  - node: p
-    children:
-    - node: bold
-      content: アジェンダ
-  p8:
-  - node: p
-    children:
-    - node: bold
-      content: 本日しない話
-  p9:
-  - node: p
-    children:
-    - node: text
-      content: オブジェクト
-    - node: br
-    - node: text
-      content: 指向
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: TDD/BDDの 教義的な話
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: 定義に従った
-    - node: br
-    - node: text
-      content: 厳密な用語
-  p12:
-  - node: p
-    children:
-    - node: text
-      content: 'Emacs '
-    - node: br
-    - node: text
-      content: (私はphpunit.elの開発者でもあります)
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: '!'
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: 一連のストーリー
-    - node: br
-    - node: text
-      content: などは
-    - node: bold
-      content: ない
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: オムニバス
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: 1. フレームワークなしのテスト
-    - node: br
-    - node: text
-      content: 2. できる！ フレームワーク 3. PHPで注意すべき「状態」
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: 1. フレームワークなしのテスト
-    - node: br
-    - node: text
-      content: 2. できる！ フレームワーク 3. PHPで注意すべき「状態」 ↑時間なくて収まらなかった
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: 本題の前に
-  p19: []
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: pixivは主に
-    - node: br
-    - node: text
-      content: PHPUnitでテスト
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: 僕がテストを新規を増や すならPHPUnitでテスト
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: '% cd ~/pixiv/tests'
-  - node: p
-    children:
-    - node: text
-      content: '% git ls-files ''*Test.php'' | wc -l'
-  - node: p
-    children:
-    - node: text
-      content: '1606'
-  - node: p
-    children:
-    - node: text
-      content: '% git ls-files ''*Test.php'' | xargs cat | wc -l '
-    - node: br
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: どうすれば書きやすく
-  - node: p
-    children:
-    - node: text
-      content: メンテできる
-    - node: br
-    - node: text
-      content: テストが書けるか悩み
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: 本題の前に
-  p25:
-  - node: p
-    children:
-    - node: bold
-      content: さて
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: まれによく聞く
-  p27:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnitとかphpspecとか 巨大な依存関係入れたくない
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: せやな
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: 懸念の妥当性はともかく
-  - node: p
-    children:
-    - node: text
-      content: 依存パッケージの数が
-    - node: br
-    - node: text
-      content: それなりに多いのはたしか
-  p30:
-  - node: p
-    children:
-    - node: text
-      content: 「簡単なテストだけ 　できればいいよ」
-  p31:
-  - node: p
-    children:
-    - node: text
-      content: おう
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: じゃ、作るか
-  p33:
-  - node: p
-    children:
-    - node: text
-      content: その前に
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: ところでPHP標準のテス ティングフレームワーク
-    - node: br
-    - node: text
-      content: がある
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: http://qa.php.net/write-test.php
-  p36:
-  - node: p
-    children:
-    - node: text
-      content: PHP本体の
-    - node: br
-    - node: text
-      content: テストコード
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: php-srcに入ってる
-  - node: p
-    children:
-    - node: text
-      content: run-tests.php
-  - node: p
-    children:
-    - node: text
-      content: で
-  - node: p
-    children:
-    - node: text
-      content: 実行できる
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: 実はPHPUnitでも おまけ機能として テスト実行できる
-  p39:
-  - node: p
-    children:
-    - node: bold
-      content: バッファの出力をテストする
-  - node: p
-    children:
-    - node: text
-      content: '--TEST-- '
-  - node: p
-    children:
-    - node: text
-      content: '--TEST-- '
-  - node: p
-    children:
-    - node: text
-      content: 'GET $_ENV test '
-  - node: p
-    children:
-    - node: text
-      content: 'Compute 1 + 1 test '
-  - node: p
-    children:
-    - node: text
-      content: '--ENV-- '
-  - node: p
-    children:
-    - node: text
-      content: '--FILE-- '
-  - node: p
-    children:
-    - node: text
-      content: 'return <<<END '
-  - node: p
-    children:
-    - node: text
-      content: '<?= 1 + 1 ?> '
-  - node: p
-    children:
-    - node: text
-      content: 'a=AAA '
-  - node: p
-    children:
-    - node: text
-      content: '--EXPECT-- '
-  - node: p
-    children:
-    - node: text
-      content: 'b=BBB '
-  - node: p
-    children:
-    - node: text
-      content: '2 '
-  - node: p
-    children:
-    - node: text
-      content: 'END; '
-    - node: br
-    - node: text
-      content: '--FILE-- '
-    - node: br
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'echo getenv(''a''), "\n"; echo getenv(''b''), "\n"; '
-    - node: br
-    - node: text
-      content: '?> '
-    - node: br
-    - node: text
-      content: '--EXPECT-- '
-    - node: br
-    - node: text
-      content: AAA BBB
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: ただし
-  - node: p
-    children:
-    - node: text
-      content: (意図的なのか)
-  - node: p
-    children:
-    - node: text
-      content: 仕様を完全には
-    - node: br
-    - node: text
-      content: サポートしてません
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: もしphptを採用する
-  - node: p
-    children:
-    - node: text
-      content: run-tests.php
-  - node: p
-    children:
-    - node: text
-      content: なら
-    - node: br
-    - node: text
-      content: を使った方がいい
-  p42:
-  - node: p
-    children:
-    - node: bold
-      content: テスト
-    - node: br
-    - node: bold
-      content: スクリプト
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: なぜ人は
-    - node: br
-    - node: text
-      content: テストを書くのか
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: 実装前に入出力の
-    - node: br
-    - node: text
-      content: 例を明示したい
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: 機能追加や
-  - node: p
-    children:
-    - node: text
-      content: リファクタリングで
-    - node: br
-    - node: text
-      content: 意図した挙動が壊れな
-    - node: br
-    - node: text
-      content: いことを保障したい
-  p46:
-  - node: p
-    children:
-    - node: text
-      content: テストを書こう
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: そうすると
-  p48:
-  - node: p
-    children:
-    - node: text
-      content: 関心がどうとか
-    - node: br
-    - node: text
-      content: って話になってくる
-  p49:
-  - node: p
-    children:
-    - node: bold
-      content: うるせえ
-  p50:
-  - node: p
-    children:
-    - node: text
-      content: やりたいことは
-    - node: br
-    - node: text
-      content: 動作確認
-  p51:
-  - node: p
-    children:
-    - node: text
-      content: それだけ
-  p52:
-  - node: p
-    children:
-    - node: text
-      content: テストスクリプトを
-    - node: br
-    - node: text
-      content: 書こう
-  p53:
-  - node: p
-    children:
-    - node: bold
-      content: test.php
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'require_once __DIR__ . ''/vendor/autoload.php''; '
-  - node: p
-    children:
-    - node: text
-      content: '(2 === 1 + 1) or die("LINE: ". __LINE__); '
-    - node: br
-    - node: text
-      content: '(3 === 1.5 + 1.5) or die("LINE: ". __LINE__);'
-  - node: p
-    children:
-    - node: text
-      content: '$date = date(''Y-m-d'',4502304000); '
-    - node: br
-    - node: text
-      content: '("2112-09-13" === $date) or die("LINE: ". __LINE__); '
-  - node: p
-    children:
-    - node: text
-      content: '$a = [1, 2, 3]; '
-    - node: br
-    - node: text
-      content: '(1 == array_shift($a)) or die("LINE: ". __LINE__); '
-  - node: p
-    children:
-    - node: text
-      content: echo 'ok.', PHP_EOL;
-  p54:
-  - node: p
-    children:
-    - node: text
-      content: 失敗すると行が 出力されて終了
-  p55:
-  - node: p
-    children:
-    - node: text
-      content: or die()
-    - node: br
-    - node: text
-      content: 書くのだるい
-  p56:
-  - node: p
-    children:
-    - node: text
-      content: もうちょっと わかりやすく
-  p57:
-  - node: p
-    children:
-    - node: text
-      content: assert()
-  p58:
-  - node: p
-    children:
-    - node: bold
-      content: test.php
-  - node: p
-    children:
-    - node: text
-      content: '#!/usr/bin/env php '
-    - node: br
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'require_once __DIR__ . ''/vendor/autoload.php''; '
-  - node: p
-    children:
-    - node: text
-      content: 'assert(2 === 1 + 1); '
-    - node: br
-    - node: text
-      content: 'assert(3 === 1.5 + 1.5); '
-    - node: br
-    - node: text
-      content: 'assert("2112-09-13" === date(''Y-m-d'', 4503168000)); '
-  - node: p
-    children:
-    - node: text
-      content: '$a = [1, 2, 3]; '
-    - node: br
-    - node: text
-      content: assert(1 == array_shift($a));
-  p59:
-  - node: p
-    children:
-    - node: bold
-      content: 出力
-  - node: p
-    children:
-    - node: text
-      content: 'PHP Warning:  assert(): assert(3 === 1.5 + 1.5) failed in /Users/'
-    - node: br
-    - node: text
-      content: 'megurine/repo/php/phperkaigi-test/assert-test.php on line 11 '
-  - node: p
-    children:
-    - node: text
-      content: 'Warning: assert(): assert(3 === 1.5 + 1.5) failed in /Users/megurine/'
-    - node: br
-    - node: text
-      content: 'repo/php/phperkaigi-test/assert-test.php on line 11 '
-    - node: br
-    - node: text
-      content: 'PHP Warning:  assert(): assert(''2112-09-03'' === date(''Y-m-d'', '
-    - node: br
-    - node: text
-      content: 4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-
-    - node: br
-    - node: text
-      content: 'test.php on line 12 '
-  - node: p
-    children:
-    - node: text
-      content: 'Warning: assert(): assert(''2112-09-03'' === date(''Y-m-d'', 4503168000))
-        failed in /Users/megurine/repo/php/phperkaigi-test/assert-test.php on '
-    - node: br
-    - node: text
-      content: line 12
-  p60:
-  - node: p
-    children:
-    - node: text
-      content: エラーハンドリングの
-  - node: p
-    children:
-    - node: text
-      content: 設定をしないと
-    - node: br
-    - node: text
-      content: 出力が二重化される
-  p61:
-  - node: p
-    children:
-    - node: text
-      content: まあ雑だけど
-    - node: br
-    - node: text
-      content: テストにはなる
-  p62:
-  - node: p
-    children:
-    - node: text
-      content: 完
-  p63:
-  - node: p
-    children:
-    - node: text
-      content: ☺
-  p64:
-  - node: p
-    children:
-    - node: text
-      content: 最低限ができると
-    - node: br
-    - node: text
-      content: 人間は欲が出てくる
-  p65:
-  - node: p
-    children:
-    - node: bold
-      content: できる！
-    - node: br
-    - node: bold
-      content: フレームワーク
-  p66:
-  - node: p
-    children:
-    - node: text
-      content: フレームワーク
-    - node: br
-    - node: text
-      content: とは
-  p67:
-  - node: p
-    children:
-    - node: text
-      content: https://ja.wikipedia.org/wiki/ソフトウェアフレームワーク
-  p68:
-  - node: p
-    children:
-    - node: bold
-      content: 制御の反転
-    - node: text
-      content: が
-    - node: br
-    - node: text
-      content: ソフトウェアフレームワークの
-    - node: br
-    - node: text
-      content: 特徴
-  p69:
-  - node: p
-    children:
-    - node: text
-      content: ふつうのライブラリは
-  - node: p
-    children:
-    - node: text
-      content: あなたが書いたコードから
-    - node: br
-    - node: text
-      content: 呼び出される
-  p70:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークは
-    - node: br
-    - node: text
-      content: あなたが書いたコードを
-    - node: br
-    - node: text
-      content: 呼び出す
-  p71:
-  - node: p
-    children:
-    - node: text
-      content: これが
-    - node: br
-    - node: text
-      content: 制御の反転
-  p72:
-  - node: p
-    children:
-    - node: text
-      content: ここからは
-    - node: br
-    - node: text
-      content: どんどんいきます
-  p73:
-  - node: p
-    children:
-    - node: bold
-      content: '仕様1: コードをべたに実行'
-  - node: p
-    children:
-    - node: text
-      content: 'テストファイルは xxx_test.phpの形式 '
-  - node: p
-    children:
-    - node: text
-      content: 'assert()を使ってテストする '
-  - node: p
-    children:
-    - node: text
-      content: スクリプトを実行すると実行
-  p74:
-  - node: p
-    children:
-    - node: bold
-      content: assert_tests/run
-  - node: p
-    children:
-    - node: text
-      content: '#!/usr/bin/env php '
-    - node: br
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'require __DIR__ . ''/../vendor/autoload.php''; $testing = include
-        __DIR__ . ''/bootstrap.php''; '
-    - node: br
-    - node: text
-      content: 'chdir(__DIR__); '
-    - node: br
-    - node: text
-      content: 'foreach (glob(''*_test.php'') as $file) { '
-    - node: br
-    - node: text
-      content: '    try { '
-    - node: br
-    - node: text
-      content: '        include $file; '
-    - node: br
-    - node: text
-      content: '    } catch (\Throwable $e) { '
-    - node: br
-    - node: text
-      content: '        dump($e); '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: $testing->finalize();
-  p75:
-  - node: p
-    children:
-    - node: text
-      content: assert()に失敗した
-  - node: p
-    children:
-    - node: text
-      content: ときの結果は
-    - node: br
-    - node: text
-      content: カスタマイズできる
-  p76:
-  - node: p
-    children:
-    - node: text
-      content: (実はPHP5方式と
-    - node: br
-    - node: text
-      content: 'PHP7方式で異なる) '
-    - node: bold
-      content: 今回はPHP5方式
-  p77:
-  - node: p
-    children:
-    - node: bold
-      content: bootstrap.php
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'require_once __DIR__ . ''/define.php''; '
-    - node: br
-    - node: text
-      content: 'ini_set(''zend.assertions'', 1); ini_set(''assert.exception'', 0);
-        assert_options(ASSERT_ACTIVE, 1); assert_options(ASSERT_BAIL, 0); '
-    - node: br
-    - node: text
-      content: 'assert_options(ASSERT_QUIET_EVAL, 0); '
-    - node: br
-    - node: text
-      content: assert_options(ASSERT_WARNING, 0);
-  - node: p
-    children:
-    - node: text
-      content: '$testing = new Testing(); '
-    - node: br
-    - node: text
-      content: 'assert_options(ASSERT_CALLBACK, [$testing, ''handler'']); '
-    - node: br
-    - node: text
-      content: return $testing;
-  p78:
-  - node: p
-    children:
-    - node: bold
-      content: Testing.php
-    - node: br
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'class Testing { '
-    - node: br
-    - node: text
-      content: '    /** @var bool テスト失敗停止するか */ '
-  - node: p
-    children:
-    - node: text
-      content: '    private $stop_on_failure = false; '
-    - node: br
-    - node: text
-      content: '    /** @var array[] 実行結果 */ '
-  - node: p
-    children:
-    - node: text
-      content: '    private $result = [];'
-  - node: p
-    children:
-    - node: text
-      content: '    public function __construct(array $options) { '
-    - node: br
-    - node: text
-      content: '        $this->stop_on_failure = $options[''stop_on_failure''] ??
-        false; '
-    - node: br
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '    /** assert()の失敗時にこいつが呼ばれるように設定 */ '
-  - node: p
-    children:
-    - node: text
-      content: '    public function handler($file, $line, $code, $desc = null) { '
-    - node: br
-    - node: text
-      content: '        $this->result[] = [$file, $line, $desc]; '
-    - node: br
-    - node: text
-      content: '        if ($this->stop_on_failure) $this->finalize(); '
-    - node: br
-    - node: text
-      content: '    }'
-  p79:
-  - node: p
-    children:
-    - node: bold
-      content: Testing.php
-    - node: br
-    - node: text
-      content: '    /** いままで失敗したテストをまとめて結果表示 */'
-  - node: p
-    children:
-    - node: text
-      content: '    public function finalize(): void '
-    - node: br
-    - node: text
-      content: '    { '
-    - node: br
-    - node: text
-      content: '        if ($this->result) { '
-    - node: br
-    - node: text
-      content: '            foreach ($this->result as [$file, $line, $desc]) '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '                $this->output($file, $line, $desc); '
-    - node: br
-    - node: text
-      content: '            } '
-    - node: br
-    - node: text
-      content: '            exit(1); // エラー終了 '
-  - node: p
-    children:
-    - node: text
-      content: '        } '
-    - node: br
-    - node: text
-      content: '        $this->result = [];         echo ''ok.'', PHP_EOL; '
-    - node: br
-    - node: text
-      content: '        exit(0); '
-    - node: br
-    - node: text
-      content: '    }'
-  p80:
-  - node: p
-    children:
-    - node: bold
-      content: Testing.php
-    - node: br
-    - node: text
-      content: '    private function output($file, $line, $desc): void '
-    - node: br
-    - node: text
-      content: '    { '
-    - node: br
-    - node: text
-      content: '        // ソースコードの該当行を取得 '
-  - node: p
-    children:
-    - node: text
-      content: '        $code = trim(file($file)[$line-1]); '
-  - node: p
-    children:
-    - node: text
-      content: '        echo "FILE: {$file} ({$line})", PHP_EOL; '
-    - node: br
-    - node: text
-      content: '        echo "CODE: {$code}", PHP_EOL;'
-  - node: p
-    children:
-    - node: text
-      content: '        echo "DESC: {$desc}", PHP_EOL; '
-    - node: br
-    - node: text
-      content: '    } '
-  p81:
-  - node: p
-    children:
-    - node: text
-      content: 完成！
-  p82:
-  - node: p
-    children:
-    - node: text
-      content: テストを記述
-  p83:
-  - node: p
-    children:
-    - node: bold
-      content: fizzbuzz_test.php
-    - node: br
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: '// to_fizzbuzz() 関数は別に定義済みの想定 '
-  - node: p
-    children:
-    - node: text
-      content: 'assert("1"    === $actual = to_fizzbuzz(1)); assert("Fizz" === $actual
-        = to_fizzbuzz(3)); assert("Buzz" === $actual = to_fizzbuzz(5)); assert("Buzz"
-        === $actual = to_fizzbuzz(10)); '
-    - node: br
-    - node: text
-      content: 'assert("FizzBuzz" === $actual = to_fizzbuzz(15)); '
-  p84: []
-  p85:
-  - node: p
-    children:
-    - node: text
-      content: 完璧では
-    - node: br
-    - node: text
-      content: (ただしassertは一行で書かれるものとする)
-  p86:
-  - node: p
-    children:
-    - node: text
-      content: 😊
-  p87:
-  - node: p
-    children:
-    - node: text
-      content: さらに
-    - node: br
-    - node: text
-      content: パワーアップ
-  p88:
-  - node: p
-    children:
-    - node: text
-      content: PowerAssert (のようなもの)
-  p89:
-  - node: p
-    children:
-    - node: text
-      content: Groovyのテストで
-    - node: br
-    - node: text
-      content: 一躍知られた
-  p90:
-  - node: p
-    children:
-    - node: text
-      content: t-wadaさんの
-    - node: br
-    - node: text
-      content: power-assert.jsが有名
-  p91:
-  - node: p
-    children:
-    - node: text
-      content: http://hamcrest.org/
-  p92:
-  - node: p
-    children:
-    - node: text
-      content: PHPでちゃんと
-    - node: br
-    - node: text
-      content: 作ろうとすると大変
-  p93:
-  - node: p
-    children:
-    - node: text
-      content: それっぽいもの
-    - node: br
-    - node: text
-      content: なら作れる！
-  p94: []
-  p95:
-  - node: p
-    children:
-    - node: text
-      content: 欠点
-  p96:
-  - node: p
-    children:
-    - node: text
-      content: assert()では失敗しかフック できないから、「98/100成功」 のようなカウントができない
-  p97:
-  - node: p
-    children:
-    - node: text
-      content: PowerAssert(もどき)
-    - node: br
-    - node: text
-      content: 書くのがめんどい
-  p98: []
-  p99:
-  - node: p
-    children:
-    - node: bold
-      content: define.php
-    - node: br
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: const collect_vars = 'return v(get_defined_vars()+
-    - node: br
-    - node: text
-      content: '["this"=>isset($this)?$this:null]);''; '
-  - node: p
-    children:
-    - node: text
-      content: 'function v(array $variables): string '
-    - node: br
-    - node: text
-      content: '{'
-  - node: p
-    children:
-    - node: text
-      content: '    // $GLOBALSは長大なので消しとく '
-  - node: p
-    children:
-    - node: text
-      content: '    unset($variables[''GLOBALS'']);     return \serialize($variables); '
-    - node: br
-    - node: text
-      content: '} '
-  p100:
-  - node: p
-    children:
-    - node: text
-      content: 次のパターンに
-    - node: br
-    - node: text
-      content: 行きましょう
-  p101:
-  - node: p
-    children:
-    - node: bold
-      content: '仕様2: 関数を実行'
-  - node: p
-    children:
-    - node: text
-      content: 'テストファイルは xxx_test.phpの形式 '
-  - node: p
-    children:
-    - node: text
-      content: 'その中に test_xxxx() 関数が定義する '
-  - node: p
-    children:
-    - node: text
-      content: 'Hamcrestを使ってテストしてみる '
-  - node: p
-    children:
-    - node: text
-      content: スクリプトを実行すると実行
-  p102:
-  - node: p
-    children:
-    - node: text
-      content: http://hamcrest.org/
-  p103:
-  - node: p
-    children:
-    - node: bold
-      content: Hamcrest (hamcrest-php)
-  - node: p
-    children:
-    - node: text
-      content: 'マッチャー  '
-  - node: p
-    children:
-    - node: text
-      content: ' (値がマッチするか比較)'
-  - node: p
-    children:
-    - node: text
-      content: 'もともとはJavaのライブラリ '
-  - node: p
-    children:
-    - node: text
-      content: 'assertXXX()みたいなのが定義されてる '
-  - node: p
-    children:
-    - node: text
-      content: \Hamcrest\Util::registerGlobalFunctions()
-  - node: p
-    children:
-    - node: text
-      content: を呼ぶとグローバル関数として定義される
-  p104:
-  - node: p
-    children:
-    - node: bold
-      content: 'assert_tests/run '
-    - node: text
-      content: (1/3)
-  - node: p
-    children:
-    - node: text
-      content: '#!/usr/bin/env php '
-    - node: br
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'require __DIR__ . ''/../vendor/autoload.php''; '
-  - node: p
-    children:
-    - node: text
-      content: '\Hamcrest\Util::registerGlobalFunctions(); '
-  - node: p
-    children:
-    - node: text
-      content: 'chdir(__DIR__); '
-    - node: br
-    - node: text
-      content: 'foreach (glob(''*_test.php'') as $file) { '
-    - node: br
-    - node: text
-      content: '    require_once $file; '
-    - node: br
-    - node: text
-      content: '} '
-  - node: p
-    children:
-    - node: text
-      content: $failures = []; $errors   = [];
-  p105:
-  - node: p
-    children:
-    - node: bold
-      content: 'assert_tests/run '
-    - node: text
-      content: (2/3)
-  - node: p
-    children:
-    - node: text
-      content: 'foreach (get_defined_functions(true)[''user''] as $func) { '
-    - node: br
-    - node: text
-      content: '    if (strpos($func, ''test_'') === 0) { '
-    - node: br
-    - node: text
-      content: '        try { '
-    - node: br
-    - node: text
-      content: '            $func();             echo ''.''; '
-    - node: br
-    - node: text
-      content: '        } catch (\Hamcrest\AssertionError $e) { '
-    - node: br
-    - node: text
-      content: '            $failures[] = $e; '
-    - node: br
-    - node: text
-      content: '            echo ''F''; '
-    - node: br
-    - node: text
-      content: '        }catch (\Throwable $e) { '
-    - node: br
-    - node: text
-      content: '            $errors[] = $e; '
-    - node: br
-    - node: text
-      content: '            echo ''E''; '
-    - node: br
-    - node: text
-      content: '        } '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: echo PHP_EOL;
-  p106:
-  - node: p
-    children:
-    - node: bold
-      content: 'assert_tests/run '
-    - node: text
-      content: (3/3)
-  - node: p
-    children:
-    - node: text
-      content: 'if ($failures) { '
-    - node: br
-    - node: text
-      content: '    echo "Failures:", PHP_EOL; '
-  - node: p
-    children:
-    - node: text
-      content: '    foreach ($failures as $f) { '
-    - node: br
-    - node: text
-      content: '        echo PHP_EOL; '
-    - node: br
-    - node: text
-      content: '        echo "FILE: {$f->getFile()} ({$f->getLine()})", PHP_EOL; '
-    - node: br
-    - node: text
-      content: '        echo "DESC: {$f->getMessage()})", PHP_EOL; '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '} '
-  - node: p
-    children:
-    - node: text
-      content: 'if ($errors) { '
-    - node: br
-    - node: text
-      content: '    echo "Errors:", PHP_EOL; '
-    - node: br
-    - node: text
-      content: '    dump($errors); '
-    - node: br
-    - node: text
-      content: '}'
-  p107:
-  - node: p
-    children:
-    - node: text
-      content: また完成して
-    - node: br
-    - node: text
-      content: しまった…
-  p108:
-  - node: p
-    children:
-    - node: text
-      content: テストを記述
-  p109:
-  - node: p
-    children:
-    - node: bold
-      content: fizzbuzz_test.php
-    - node: br
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: 'function test_fizzbuzz() '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz(1), equalTo("1")); '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz(3), equalTo("Fizz"));     assertThat(to_fizzbuzz(5),
-        equalTo("Buzz"));     assertThat(to_fizzbuzz(10), equalTo("Buzz")); '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz(15), equalTo("FizzBuzz")); '
-    - node: br
-    - node: text
-      content: '} '
-  p110: []
-  p111:
-  - node: p
-    children:
-    - node: text
-      content: 🤔
-  p112:
-  - node: p
-    children:
-    - node: text
-      content: 出力差分はわかるけど いまいちわかりにくい
-  p113:
-  - node: p
-    children:
-    - node: text
-      content: そうだ
-  - node: p
-    children:
-    - node: text
-      content: パラメタライズテスト
-    - node: br
-    - node: text
-      content: をしよう
-  p114:
-  - node: p
-    children:
-    - node: text
-      content: 引数だけを変更して
-    - node: br
-    - node: text
-      content: 同じテストをする
-  p115:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPUnitでの '
-  - node: p
-    children:
-    - node: text
-      content: '@dataProvider'
-  p116:
-  - node: p
-    children:
-    - node: text
-      content: 名前も拝借して
-    - node: br
-    - node: text
-      content: いきましょう
-  p117:
-  - node: p
-    children:
-    - node: bold
-      content: fizzbuzz_test.php (Before)
-    - node: br
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: 'function test_fizzbuzz() '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz(1), equalTo("1")); '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz(3), equalTo("Fizz"));     assertThat(to_fizzbuzz(5),
-        equalTo("Buzz"));     assertThat(to_fizzbuzz(10), equalTo("Buzz")); '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz(15), equalTo("FizzBuzz")); '
-    - node: br
-    - node: text
-      content: '} '
-  p118:
-  - node: p
-    children:
-    - node: bold
-      content: fizzbuzz_test.php (After)
-  - node: p
-    children:
-    - node: text
-      content: '<?php /** '
-    - node: br
-    - node: text
-      content: ' * @dataProvider fizzbuzz_number_provider '
-    - node: br
-    - node: text
-      content: ' */ '
-    - node: br
-    - node: text
-      content: 'function test_fizzbuzz2($expected, $input) '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    assertThat(to_fizzbuzz($input), equalTo($expected)); '
-    - node: br
-    - node: text
-      content: '} '
-  - node: p
-    children:
-    - node: text
-      content: 'function fizzbuzz_number_provider() '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    return [ '
-    - node: br
-    - node: text
-      content: '        ["1",         1],         ["Fizz",      3],         ["Buzz",      5],         ["Buzz",     10],         ["FizzBuzz",
-        15], '
-    - node: br
-    - node: text
-      content: '    ]; '
-    - node: br
-    - node: text
-      content: '}'
-  p119:
-  - node: p
-    children:
-    - node: text
-      content: 実行側も
-    - node: br
-    - node: text
-      content: 書き換えていきます
-  p120:
-  - node: p
-    children:
-    - node: bold
-      content: 'assert_tests/run '
-    - node: text
-      content: (2/3)
-  - node: p
-    children:
-    - node: text
-      content: 'foreach (get_defined_functions(true)[''user''] as $func) { '
-    - node: br
-    - node: text
-      content: '    if (strpos($func, ''test_'') === 0) { '
-    - node: br
-    - node: text
-      content: '        try { '
-    - node: br
-    - node: text
-      content: '            $func();             echo ''.''; '
-    - node: br
-    - node: text
-      content: '        } catch (\Hamcrest\AssertionError $e) { '
-    - node: br
-    - node: text
-      content: '            $failures[] = $e; '
-    - node: br
-    - node: text
-      content: '            echo ''F''; '
-    - node: br
-    - node: text
-      content: '        }catch (\Throwable $e) { '
-    - node: br
-    - node: text
-      content: '            $errors[] = $e; '
-    - node: br
-    - node: text
-      content: '            echo ''E''; '
-    - node: br
-    - node: text
-      content: '        } '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: echo PHP_EOL;
-  p121:
-  - node: p
-    children:
-    - node: bold
-      content: assert_tests/run After
-  - node: p
-    children:
-    - node: text
-      content: 'foreach (get_defined_functions(true)[''user''] as $func) { '
-    - node: br
-    - node: text
-      content: '    if (strpos($func, ''test_'') === 0) { '
-    - node: br
-    - node: text
-      content: '        $provider = get_provider($func) ?: function (){ yield [];
-        }; '
-  - node: p
-    children:
-    - node: text
-      content: '        foreach ($provider() as $args) { '
-    - node: br
-    - node: text
-      content: '            try { '
-    - node: br
-    - node: text
-      content: '                $func(...$args); '
-    - node: br
-    - node: text
-      content: '                echo ''.''; '
-    - node: br
-    - node: text
-      content: '            } catch (\Hamcrest\AssertionError $e) { '
-    - node: br
-    - node: text
-      content: '                $failures[] = [''error'' => $e, ''args'' => $args]; '
-    - node: br
-    - node: text
-      content: '                echo ''F''; '
-    - node: br
-    - node: text
-      content: '            }catch (\Throwable $e) { '
-    - node: br
-    - node: text
-      content: '                $errors[] = $e; '
-    - node: br
-    - node: text
-      content: '                echo ''E''; '
-    - node: br
-    - node: text
-      content: '            } '
-  p122:
-  - node: p
-    children:
-    - node: bold
-      content: assert_tests/run getProvider
-  - node: p
-    children:
-    - node: text
-      content: 'function get_provider(string $func_name): ?string '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    $ref = new \ReflectionFunction($func_name); '
-  - node: p
-    children:
-    - node: text
-      content: '    // @dataProvider hogehoge を取り出す '
-  - node: p
-    children:
-    - node: text
-      content: '    if (preg_match(''/@dataProvider +(?<provider>\S+)/'', '
-    - node: br
-    - node: text
-      content: '$ref->getDocComment(), $m)) { '
-    - node: br
-    - node: text
-      content: '        return trim($m[''provider'']); '
-    - node: br
-    - node: text
-      content: '    } '
-  - node: p
-    children:
-    - node: text
-      content: '    return null; '
-    - node: br
-    - node: text
-      content: '}'
-  p123: []
-  p124:
-  - node: p
-    children:
-    - node: text
-      content: まとめると
-  p125:
-  - node: p
-    children:
-    - node: text
-      content: 単にテストを実行する
-  - node: p
-    children:
-    - node: text
-      content: フレームワークっぽいもの
-    - node: br
-    - node: text
-      content: は意外と簡単に作れる
-  p126:
-  - node: p
-    children:
-    - node: bold
-      content: PHPでテスト
-    - node: text
-      content: ' '
-    - node: bold
-      content: しにくい状態
-  p127:
-  - node: p
-    children:
-    - node: text
-      content: ここまでは「理想的な」
-  - node: p
-    children:
-    - node: text
-      content: 関数をテストすること
-    - node: br
-    - node: text
-      content: しか想定してない
-  p128:
-  - node: p
-    children:
-    - node: text
-      content: 理想的
-  - node: p
-    children:
-    - node: text
-      content: '|| '
-    - node: br
-    - node: text
-      content: 引数と返り値だけ
-  p129:
-  - node: p
-    children:
-    - node: text
-      content: PHPで書かれる
-  - node: p
-    children:
-    - node: text
-      content: 「現実」のコードは
-    - node: br
-    - node: text
-      content: それだけじゃない
-  p130:
-  - node: p
-    children:
-    - node: text
-      content: ファイル書き込み、データベース、
-    - node: br
-    - node: text
-      content: 外部HTTP API呼び出し、グロー
-    - node: br
-    - node: text
-      content: バル変数、メール送信、HTTP
-    - node: br
-    - node: text
-      content: ヘッダ、クッキー…… などなど
-  p131:
-  - node: p
-    children:
-    - node: text
-      content: '例: CLIでcookie()とか header()が呼び出され るとFatal errorになる'
-  p132:
-  - node: p
-    children:
-    - node: text
-      content: これはテスティングフレーム ワークだけではなくアプリケー ションの構造も再設計しない
-    - node: br
-    - node: text
-      content: と
-    - node: bold
-      content: うまくテストできない
-  p133:
-  - node: p
-    children:
-    - node: text
-      content: HTTPはPSR-7に
-    - node: br
-    - node: text
-      content: するとか
-  p134:
-  - node: p
-    children:
-    - node: text
-      content: 外部への依存を
-  - node: p
-    children:
-    - node: text
-      content: 抽象化して
-    - node: br
-    - node: text
-      content: 注入するとか
-  p135:
-  - node: p
-    children:
-    - node: text
-      content: テスト実行中に
-  - node: p
-    children:
-    - node: text
-      content: 専用のDBを
-    - node: br
-    - node: text
-      content: 起動して利用するとか
-  p136:
-  - node: p
-    children:
-    - node: text
-      content: テストしたいと思った
-  - node: p
-    children:
-    - node: text
-      content: 瞬間に直さなきゃ
-  - node: p
-    children:
-    - node: text
-      content: いけないことが
-    - node: br
-    - node: text
-      content: 爆発的に発生して氏ぬ
-  p137:
-  - node: p
-    children:
-    - node: text
-      content: 😇
-  p138:
-  - node: p
-    children:
-    - node: text
-      content: 次回に続く…?
-  p139:
-  - node: p
-    children:
-    - node: bold
-      content: まじめにテスト
-    - node: text
-      content: ' '
-    - node: bold
-      content: やりたいひとへ
-  p140:
-  - node: p
-    children:
-    - node: bold
-      content: おまけ
-  p141: []
-  p142: []
-  p143:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnitも
-    - node: br
-    - node: text
-      content: 良いが
-  p144:
-  - node: p
-    children:
-    - node: text
-      content: phpspecも
-    - node: br
-    - node: text
-      content: すごいぞ
-  p145: []
-  p146: []

@@ -1,487 +1,324 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: お前はPHPの標準関数の数を知っているか
-  - node: p
-    children:
-    - node: text
-      content: Do you know the number of standard functions in PHP?
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2022-10-05'
+  - kind: heading
+    level: 1
+    text: お前はPHPの
+  - kind: heading
+    level: 1
+    text: 標準関数の数を知っているか
+  - kind: heading
+    level: 2
+    text: Do you know the number of standard functions in PHP?
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2022-10-05'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: PHPerKaigi コアスタッフ、
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス実行委員は今年はお休み
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - PHPerKaigi コアスタッフ、PHPカンファレンス実行委員は今年はお休み
   p3:
-  - node: p
-    children:
-    - node: text
-      content: このLTについて
+  - kind: heading
+    level: 1
+    text: このLTについて
   p4:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス2022
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス2022
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 問題です
+  - kind: heading
+    level: 1
+    text: 問題です
   p6:
-  - node: p
-    children:
-    - node: text
-      content: PHPの標準関数の数は いくつあるでしょうか
+  - kind: para
+    text: PHPの標準関数の数は
+  - kind: para
+    text: いくつあるでしょうか
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 'ヒント： '
-    - node: br
-    - node: text
-      content: Python 3.10は71個 (型を除くと56個くらい)
+  - kind: para
+    text: ヒント：
+  - kind: para
+    text: Python 3.10は71個
+  - kind: para
+    text: (型を除くと56個くらい)
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '答え： '
-    - node: br
-    - node: text
-      content: わかんない
+  - kind: para
+    text: 答え：
+  - kind: para
+    text: わかんない
   p9: []
   p10:
-  - node: p
-    children:
-    - node: text
-      content: ？？？
+  - kind: heading
+    level: 1
+    text: ？？？
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 'この状況を理解するには '
-    - node: br
-    - node: text
-      content: 'モジュールシステムを '
-    - node: br
-    - node: text
-      content: 理解する必要がある
+  - kind: para
+    text: この状況を理解するには
+  - kind: para
+    text: モジュールシステムを
+  - kind: para
+    text: 理解する必要がある
   p12:
-  - node: p
-    children:
-    - node: text
-      content: '関数は '
-    - node: br
-    - node: text
-      content: どこからくるの？
+  - kind: para
+    text: 関数は
+  - kind: para
+    text: どこからくるの？
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 関数定義を探しにいこう
+  - kind: heading
+    level: 1
+    text: 関数定義を探しにいこう
   p14:
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/php/php-src
+  - kind: heading
+    level: 1
+    text: https://github.com/php/php-src
   p15:
-  - node: p
-    children:
-    - node: text
-      content: C言語で定義されています
+  - kind: heading
+    level: 1
+    text: C言語で定義されています
   p16:
-  - node: p
-    children:
-    - node: text
-      content: C言語で定義されています
-  - node: p
-    children:
-    - node: text
-      content: 'ここを抜き出せば '
-    - node: br
-    - node: text
-      content: 関数一覧を作れる？
+  - kind: heading
+    level: 1
+    text: C言語で定義されています
+  - kind: para
+    text: ここを抜き出せば
+  - kind: para
+    text: 関数一覧を作れる？
   p17:
-  - node: p
-    children:
-    - node: text
-      content: rg -g '*.c' -o
-  - node: p
-    children:
-    - node: text
-      content: '''^(?:ZEND|PHP)_FUNCTION\(.+\)'' | '
-  - node: p
-    children:
-    - node: text
-      content: ' cut -d: -f2 | sort -u | wc -l '
+  - kind: para
+    text: rg -g '*.c' -o
+  - kind: para
+    text: '''^(?:ZEND|PHP)_FUNCTION\(.+\)'' |'
+  - kind: para
+    text: 'cut -d: -f2 | sort -u | wc -l'
+  - kind: heading
+    level: 1
+    text: '2132'
   p18:
-  - node: p
-    children:
-    - node: text
-      content: まじで？？？
+  - kind: heading
+    level: 1
+    text: まじで？？？
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPマニュアルを '
-    - node: br
-    - node: text
-      content: 見にいこう
+  - kind: para
+    text: PHPマニュアルを
+  - kind: para
+    text: 見にいこう
   p20:
-  - node: p
-    children:
-    - node: text
-      content: PHPには関数がいっぱい
+  - kind: heading
+    level: 1
+    text: PHPには関数がいっぱい
   p21:
-  - node: p
-    children:
-    - node: text
-      content: PHPには関数がいっぱい
-  - node: p
-    children:
-    - node: text
-      content: これ全部読むの…?
+  - kind: heading
+    level: 2
+    text: PHPには関数がいっぱい
+  - kind: heading
+    level: 1
+    text: これ全部読むの…?
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 実は関数一覧のJSONがある
+  - kind: heading
+    level: 1
+    text: 実は関数一覧のJSONがある
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 'curl  '
-  - node: p
-    children:
-    - node: text
-      content: http://doc.php.net/downloads/json/php_manual_en.json
-    - node: br
-    - node: text
-      content: '| jq-rs ''[ .[] | keys ] | flatten | '
-  - node: p
-    children:
-    - node: text
-      content: 'unique | .[]'' | grep -v :: | wc -l '
+  - kind: para
+    text: curl http://doc.php.net/downloads/json/php_manual_en.json
+  - kind: para
+    text: '| jq -rs ''[ .[] | keys ] | flatten |'
+  - kind: para
+    text: 'unique | .[]'' | grep -v :: | wc -l'
+  - kind: heading
+    level: 1
+    text: '3759'
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 増えたんですが…
+  - kind: heading
+    level: 1
+    text: 増えたんですが…
   p25:
-  - node: p
-    children:
-    - node: text
-      content: PHPには関数がいっぱい
-  - node: p
-    children:
-    - node: text
-      content: ここから辿る
+  - kind: heading
+    level: 1
+    text: PHPには関数がいっぱい
+  - kind: heading
+    level: 2
+    text: ここから辿る
   p26:
-  - node: p
-    children:
-    - node: text
-      content: PHPには関数がいっぱい
-  - node: p
-    children:
-    - node: text
-      content: 'われわれの知る '
-    - node: br
-    - node: text
-      content: 標準関数はこのへん
+  - kind: heading
+    level: 1
+    text: PHPには関数がいっぱい
+  - kind: para
+    text: われわれの知る
+  - kind: para
+    text: 標準関数はこのへん
   p27:
-  - node: p
-    children:
-    - node: text
-      content: おなじみの関数がいっぱい
+  - kind: heading
+    level: 1
+    text: おなじみの関数がいっぱい
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 拡張モジュール(Extension)とは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPにコンパイル時または起動時にロードされる機能単位
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPスクリプトではなく動的モジュール(*.so, *.dll)で提供される
-    - node: li
-      children:
-      - node: text
-        content: コンパイル時に有効化／無効化するか、php.iniに記述する必要あり
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: オンプレで実行していたりするとシステム管理者の作業が必要な場合あり
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: レンタルサーバー(非VPS)では利用者が設定できないかもしれない
-    - node: li
-      children:
-      - node: text
-        content: ApacheやPHP-FPMでは設定変更後に再起動することで反映される
+  - kind: para
+    text: 拡張モジュール(Extension)とは
+  - kind: list
+    items:
+    - PHPにコンパイル時または起動時にロードされる機能単位
+    - PHPスクリプトではなく動的モジュール(*.so, *.dll)で提供される
+    - コンパイル時に有効化／無効化するか、php.iniに記述する必要あり
+    - オンプレで実行していたりするとシステム管理者の作業が必要な場合あり
+    - レンタルサーバー(非VPS)では利用者が設定できないかもしれない
+    - ApacheやPHP-FPMでは設定変更後に再起動することで反映される
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 拡張モジュールの種類
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: コア拡張 → PHPの標準機能として組み込まれており無効化できない
-    - node: li
-      children:
-      - node: text
-        content: バンドル拡張 → PHPに同梱されていてコンパイル時に有効化できる
-    - node: li
-      children:
-      - node: text
-        content: 外部拡張 → PHP以外のライブラリとリンクすることで有効になる機能
-    - node: li
-      children:
-      - node: text
-        content: PECL拡張 → pecl.php.net でインストールできるモジュール
-    - node: li
-      children:
-      - node: text
-        content: その他(野良) → コードからphpizeしてcon(cid:219)gureしてmake install
+  - kind: para
+    text: 拡張モジュールの種類
+  - kind: list
+    items:
+    - コア拡張 → PHPの標準機能として組み込まれており無効化できない
+    - バンドル拡張 → PHPに同梱されていてコンパイル時に有効化できる
+    - 外部拡張 → PHP以外のライブラリとリンクすることで有効になる機能
+    - PECL拡張 → pecl.php.net でインストールできるモジュール
+    - その他(野良) → コードからphpizeしてconfigureしてmake install
   p30:
-  - node: p
-    children:
-    - node: text
-      content: Docker
-  - node: p
-    children:
-    - node: text
-      content: (PHP Ofﬁcial Image)
-  - node: p
-    children:
-    - node: bold
-      content: mbstringはデフォルト有効
+  - kind: heading
+    level: 1
+    text: Docker(PHP Official Image)
+  - kind: heading
+    level: 2
+    text: mbstringはデフォルト有効
   p31:
-  - node: p
-    children:
-    - node: text
-      content: Debianではモジュールごとのapt
-  - node: p
-    children:
-    - node: bold
-      content: よく使われるモジュールも 明示的にインストールが必要
+  - kind: heading
+    level: 1
+    text: Debianではモジュールごとのapt
+  - kind: para
+    text: よく使われるモジュールも
+  - kind: para
+    text: 明示的にインストールが必要
   p32:
-  - node: p
-    children:
-    - node: text
-      content: WindowsではDLL同梱
+  - kind: heading
+    level: 1
+    text: WindowsではDLL同梱
   p33:
-  - node: p
-    children:
-    - node: text
-      content: php.ini
+  - kind: heading
+    level: 1
+    text: php.ini
   p34:
-  - node: p
-    children:
-    - node: text
-      content: Windowsの場合のphp.ini
-  - node: p
-    children:
-    - node: bold
-      content: 必要なところだけ ; を消す
+  - kind: heading
+    level: 1
+    text: Windowsの場合のphp.ini
+  - kind: heading
+    level: 2
+    text: 必要なところだけ ; を消す
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 話を戻しましょう
+  - kind: heading
+    level: 1
+    text: 話を戻しましょう
   p36:
-  - node: p
-    children:
-    - node: text
-      content: '狭義の標準関数= '
-    - node: br
-    - node: text
-      content: コア拡張に属する関数
+  - kind: para
+    text: 狭義の標準関数=
+  - kind: para
+    text: コア拡張に属する関数
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 取材班は関数の数を 数えるためJSONに 向き合うことにした
+  - kind: para
+    text: 取材班は関数の数を
+  - kind: para
+    text: 数えるためJSONに
+  - kind: para
+    text: 向き合うことにした
   p38:
-  - node: p
-    children:
-    - node: text
-      content: php_manual_en.json
+  - kind: heading
+    level: 1
+    text: php_manual_en.json
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 区切り文字がない関数名
+  - kind: heading
+    level: 1
+    text: 区切り文字がない関数名
   p40:
-  - node: p
-    children:
-    - node: text
-      content: ていねいな正規表現でキャッチ
+  - kind: heading
+    level: 1
+    text: ていねいな正規表現でキャッチ
   p41:
-  - node: p
-    children:
-    - node: text
-      content: スクリプトはここにあります
+  - kind: heading
+    level: 1
+    text: スクリプトはここにあります
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'ていねいな正規表現調べ '
+  - kind: heading
+    level: 1
+    text: ていねいな正規表現調べ
+  - kind: heading
+    level: 2
+    text: '774'
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '774個の関数を '
-    - node: br
-    - node: text
-      content: 覚えられるか
+  - kind: para
+    text: 774個の関数を
+  - kind: para
+    text: 覚えられるか
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 😇
+  - kind: heading
+    level: 1
+    text: 😇
   p45:
-  - node: p
-    children:
-    - node: text
-      content: '数が多すぎるので '
-    - node: br
-    - node: text
-      content: 馴染みのない関数を 調べる方が筋がいい
+  - kind: para
+    text: 数が多すぎるので
+  - kind: para
+    text: 馴染みのない関数を
+  - kind: para
+    text: 調べる方が筋がいい
   p46:
-  - node: p
-    children:
-    - node: text
-      content: どうやって関数を探す？
+  - kind: heading
+    level: 1
+    text: どうやって関数を探す？
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 関数名 検索
-  - node: p
-    children:
-    - node: text
-      content: php   [ ]
+  - kind: heading
+    level: 1
+    text: php 関数名 [検索]
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 🙅
+  - kind: heading
+    level: 1
+    text: 🙅
   p49:
-  - node: p
-    children:
-    - node: text
-      content: php.net/json_encode
+  - kind: heading
+    level: 1
+    text: php.net/json_encode
   p50:
-  - node: p
-    children:
-    - node: text
-      content: php.net/DateTime
+  - kind: heading
+    level: 1
+    text: php.net/DateTime
   p51:
-  - node: p
-    children:
-    - node: text
-      content: php.net/$_SERVER
+  - kind: heading
+    level: 1
+    text: php.net/$_SERVER
   p52:
-  - node: p
-    children:
-    - node: text
-      content: '特定の関数から '
-    - node: br
-    - node: text
-      content: 追っていく
+  - kind: para
+    text: 特定の関数から
+  - kind: para
+    text: 追っていく
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 'たとえば '
-    - node: br
-    - node: text
-      content: 配列を処理したい
+  - kind: para
+    text: たとえば
+  - kind: para
+    text: 配列を処理したい
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 適当な配列関数にアクセス
-  - node: p
-    children:
-    - node: text
-      content: ここから辿る
+  - kind: heading
+    level: 1
+    text: 適当な配列関数にアクセス
+  - kind: heading
+    level: 2
+    text: ここから辿る
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 日本語説明付き一覧がある
+  - kind: heading
+    level: 1
+    text: 日本語説明付き一覧がある
   p56:
-  - node: p
-    children:
-    - node: text
-      content: '言語を横断して関数に '
-    - node: br
-    - node: text
-      content: '使われがちな語彙も '
-    - node: br
-    - node: text
-      content: 身につけられる
+  - kind: para
+    text: 言語を横断して関数に
+  - kind: para
+    text: 使われがちな語彙も
+  - kind: para
+    text: 身につけられる
 size:
   max_width: 1920
   max_height: 1080

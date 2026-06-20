@@ -1,1173 +1,718 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispは関数型言語 '
-    - node: br
-    - node: text
-      content: (ではない)
-  - node: p
-    children:
-    - node: text
-      content: Lisp is (not) a functional language
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2025-06-15  #fp_matsuri '
-  - node: p
-    children:
-    - node: bold
-      content: 関数型まつり 2025
+  - kind: heading
+    level: 1
+    text: Lispは関数型言語
+  - kind: heading
+    level: 2
+    text: (ではない)
+  - kind: heading
+    level: 3
+    text: Lisp is (not) a functional language
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2025-06-15 #fp_matsuri'
+  - kind: para
+    text: 関数型まつり 2025
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3: []
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 私とλ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プログラミング苦手なのでいろんな言語をつまみぐいしてきました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2010年… 魔法言語 リリカル☆Lispに出会う
-        - node: li
-          children:
-          - node: text
-            content: 2011年… 「β簡約！λカ娘」(同人誌)を読む
-          - node: br
-          - node: text
-            content: '　　　　　　　 アルバイト先のF#マスターに単純型なしラムダ計算を教わる '
-        - node: li
-          children:
-          - node: text
-            content: 2012年… SICPを解いてSchemeをちょっとかじる
-        - node: li
-          children:
-          - node: text
-            content: 2013年… Emacs Lispパッケージをごりごり書きはじめる
+  - kind: heading
+    level: 1
+    text: 私とλ
+  - kind: list
+    items:
+    - プログラミング苦手なのでいろんな言語をつまみぐいしてきました
+    - 2010年… 魔法言語 リリカル☆Lispに出会う
+    - 2011年… 「β簡約！λカ娘」(同人誌)を読む
+  - kind: para
+    text: アルバイト先のF#マスターに単純型なしラムダ計算を教わる
+  - kind: list
+    items:
+    - 2012年… SICPを解いてSchemeをちょっとかじる
+    - 2013年… Emacs Lispパッケージをごりごり書きはじめる
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 楽しみましたか？
+  - kind: heading
+    level: 1
+    text: 楽しみましたか？
   p8:
-  - node: p
-    children:
-    - node: text
-      content: ' Scott Wlaschinさんの招待講演、最高でしたね…'
+  - kind: heading
+    level: 1
+    text: Scott Wlaschinさんの招待講演、最高でしたね…
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '関数型言語 '
-    - node: br
-    - node: text
-      content: 使ってますか？
+  - kind: para
+    text: 関数型言語
+  - kind: para
+    text: 使ってますか？
   p10:
-  - node: p
-    children:
-    - node: text
-      content: '関数型プログラミング '
-    - node: br
-    - node: text
-      content: してますか？
+  - kind: para
+    text: 関数型プログラミング
+  - kind: para
+    text: してますか？
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 'みなさまそれぞれの '
-    - node: br
-    - node: text
-      content: 「関数型」観が あると思います
+  - kind: para
+    text: みなさまそれぞれの
+  - kind: para
+    text: 「関数型」観が
+  - kind: para
+    text: あると思います
   p12:
-  - node: p
-    children:
-    - node: text
-      content: map/reduceが 使えたら関数型？
+  - kind: para
+    text: map/reduceが
+  - kind: para
+    text: 使えたら関数型？
   p13:
-  - node: p
-    children:
-    - node: text
-      content: λ関数型言語とはλ
-  - node: p
-    children:
-    - node: text
-      content: ' (私の偏見に基く認識)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: C言語
-      - node: br
-      - node: text
-        content: '関数定義ができれば関数型言語だよ派 '
-    - node: li
-      children:
-      - node: text
-        content: Python
-      - node: br
-      - node: text
-        content: 'ファーストクラスの関数抽象があれば関数型言語だよ派 '
-    - node: li
-      children:
-      - node: text
-        content: Lisp
-      - node: br
-      - node: text
-        content: '標準ライブラリで高階関数(map/reduce)が扱えればいいよ派 '
-    - node: li
-      children:
-      - node: text
-        content: 動的／静的の壁
-      - node: br
-      - node: text
-        content: '代数的データ型が扱えない言語は関数型言語じゃないよ派 '
-    - node: li
-      children:
-      - node: text
-        content: 型推論の完全性がある静的型付き言語が関数型だよ派
-  - node: p
-    children:
-    - node: bold
-      content: ML系
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 関数型というのは純粋関数型のことだよ派
-  - node: p
-    children:
-    - node: bold
-      content: Haskell
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: モナディックな表示的意味論を持つ言語だよ派
+  - kind: heading
+    level: 1
+    text: λ関数型言語とはλ (私の偏見に基く認識)
+  - kind: para
+    text: C言語
+  - kind: para
+    text: Python
+  - kind: para
+    text: Lisp
+  - kind: para
+    text: 動的／静的の壁
+  - kind: para
+    text: ML系
+  - kind: para
+    text: Haskell
+  - kind: list
+    items:
+    - 関数定義ができれば関数型言語だよ派
+    - ファーストクラスの関数抽象があれば関数型言語だよ派
+    - 標準ライブラリで高階関数(map/reduce)が扱えればいいよ派
+    - 代数的データ型が扱えない言語は関数型言語じゃないよ派
+    - 型推論の完全性がある静的型付き言語が関数型だよ派
+    - 関数型というのは純粋関数型のことだよ派
+    - モナディックな表示的意味論を持つ言語だよ派
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 日本人も漢字使ってるし 中国語読めるでしょ？
+  - kind: para
+    text: 日本人も漢字使ってるし
+  - kind: para
+    text: 中国語読めるでしょ？
   p15:
-  - node: p
-    children:
-    - node: text
-      content: '関数型得意だし '
-    - node: br
-    - node: text
-      content: Lisp書けるでしょ？
+  - kind: para
+    text: 関数型得意だし
+  - kind: para
+    text: Lisp書けるでしょ？
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 'いやいや… '
-    - node: br
-    - node: text
-      content: 厳しい…
+  - kind: para
+    text: いやいや…
+  - kind: para
+    text: 厳しい…
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 'それくらい 「関数型」 '
-    - node: br
-    - node: text
-      content: アプローチは多様
+  - kind: para
+    text: それくらい
+  - kind: para
+    text: 「関数型」
+  - kind: para
+    text: アプローチは多様
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispで '
-    - node: br
-    - node: text
-      content: '｢関数プログラミング｣ '
-    - node: br
-    - node: text
-      content: してますか？
+  - kind: para
+    text: Lispで
+  - kind: para
+    text: 「関数プログラミング」
+  - kind: para
+    text: してますか？
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 'Lisp族の中ですら '
-    - node: br
-    - node: text
-      content: '言語 ごとに '
-    - node: br
-    - node: text
-      content: (方言)
-    - node: br
-    - node: text
-      content: 文化が違う
+  - kind: para
+    text: Lisp族の中ですら
+  - kind: para
+    text: 言語(方言)ごとに
+  - kind: para
+    text: 文化が違う
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 'みなさんは '
-    - node: br
-    - node: text
-      content: 'Lispを '
-    - node: br
-    - node: text
-      content: ご存じですか
+  - kind: para
+    text: みなさんは
+  - kind: para
+    text: Lispを
+  - kind: para
+    text: ご存じですか
   p21:
-  - node: p
-    children:
-    - node: bold
-      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 関数型プログラミング '
-    - node: text
-      content: より引用
+  - kind: para
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 関数型プログラミング より引用'
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '1958年登場の言語 '
-    - node: br
-    - node: text
-      content: (現役では最古級)
+  - kind: heading
+    level: 1
+    text: 1958年登場の言語
+  - kind: heading
+    level: 2
+    text: (現役では最古級)
   p23:
-  - node: p
-    children:
-    - node: text
-      content: C言語
-  - node: p
-    children:
-    - node: text
-      content: puts("foo")
+  - kind: para
+    text: C言語
+  - kind: heading
+    level: 1
+    text: puts("foo")
   p24:
-  - node: p
-    children:
-    - node: text
-      content: Ruby
-  - node: p
-    children:
-    - node: text
-      content: puts "foo"
+  - kind: para
+    text: Ruby(
+  - kind: heading
+    level: 1
+    text: puts "foo"
   p25:
-  - node: p
-    children:
-    - node: text
-      content: Lisp
-  - node: p
-    children:
-    - node: text
-      content: (puts "foo")
+  - kind: para
+    text: Lisp(
+  - kind: heading
+    level: 1
+    text: (puts "foo")
   p26:
-  - node: p
-    children:
-    - node: text
-      content: (imaginary)
-  - node: p
-    children:
-    - node: text
-      content: (((((LISP)))))
+  - kind: para
+    text: (imaginary)
+  - kind: heading
+    level: 1
+    text: (((((LISP)))))
   p27:
-  - node: p
-    children:
-    - node: text
-      content: (((カッコが多い)))
+  - kind: heading
+    level: 1
+    text: (((カッコが多い)))
   p28:
-  - node: p
-    children:
-    - node: text
-      content: カッコだらけの構文
-  - node: p
-    children:
-    - node: text
-      content: ' (S式)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: (a b c) のように並べたリストを構文の基本単位とする
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 式と文の区別はない。全てが式。
-    - node: li
-      children:
-      - node: text
-        content: このリストによるコードをS-expressionと呼ぶ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 日本語ではS式 (またはS表現とも)
-    - node: li
-      children:
-      - node: text
-        content: Lisp族の言語の構文に基礎であるほか、
-      - node: br
-      - node: text
-        content: WebAssembly テキスト形式 (.wat) でも採用されている
+  - kind: para
+    text: カッコだらけの構文 (S式)
+  - kind: list
+    items:
+    - (a b c) のように並べたリストを構文の基本単位とする
+    - 式と文の区別はない。全てが式。
+    - このリストによるコードをS-expressionと呼ぶ
+    - 日本語ではS式 (またはS表現とも)
+    - Lisp族の言語の構文に基礎であるほか、
+  - kind: para
+    text: WebAssembly テキスト形式 (.wat) でも採用されている
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '結構ひとによって '
-    - node: br
-    - node: text
-      content: '印象が違う '
-    - node: br
-    - node: text
-      content: 言語だと思う
+  - kind: para
+    text: 結構ひとによって
+  - kind: para
+    text: 印象が違う
+  - kind: para
+    text: 言語だと思う
   p30: []
   p31: []
   p32: []
   p33: []
   p34:
-  - node: p
-    children:
-    - node: bold
-      content: (Lispって結局何-p)
+  - kind: heading
+    level: 1
+    text: (Lispって結局何-p)
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 虚実に包まれたLisp
+  - kind: heading
+    level: 1
+    text: 虚実に包まれたLisp
   p36:
-  - node: p
-    children:
-    - node: text
-      content: ということで
+  - kind: heading
+    level: 1
+    text: ということで
   p37: []
   p38:
-  - node: p
-    children:
-    - node: text
-      content: 関数型言語
-  - node: p
-    children:
-    - node: text
-      content: (じゃないの！？？)
+  - kind: heading
+    level: 1
+    text: 関数型言語
+  - kind: heading
+    level: 2
+    text: (じゃないの！？？)
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 話をきいてください
+  - kind: heading
+    level: 1
+    text: 話をきいてください
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 'そもそも '
-    - node: br
-    - node: text
-      content: '関数型って '
-    - node: br
-    - node: text
-      content: なんだ
+  - kind: para
+    text: そもそも
+  - kind: para
+    text: 関数型って
+  - kind: para
+    text: なんだ
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '｢関数型｣と呼んだのは '
-    - node: br
-    - node: text
-      content: 'ジョンバッカス '
-    - node: br
-    - node: text
-      content: (1977年)
+  - kind: para
+    text: 「関数型」と呼んだのは
+  - kind: para
+    text: ジョンバッカス
+  - kind: para
+    text: (1977年)
   p42:
-  - node: p
-    children:
-    - node: bold
-      content: '“Can programming be liberated from the von Neumann style?: a functional
-        style '
-    - node: br
-    - node: bold
-      content: 'and its algebra of programs: Communications of the ACM: Vol 21, No
-        8”'
-    - node: text
-      content: より引用
+  - kind: para
+    text: '“Can programming be liberated from the von Neumann style?: a functional
+      style'
+  - kind: para
+    text: 'and its algebra of programs: Communications of the ACM: Vol 21, No 8”より引用'
   p43:
-  - node: p
-    children:
-    - node: text
-      content: combinatory logic
-    - node: br
-    - node: text
-      content: 'コンビネータ論理 '
-    - node: br
-    - node: text
-      content: (1929年-)
+  - kind: heading
+    level: 3
+    text: combinatory logic
+  - kind: heading
+    level: 1
+    text: コンビネータ論理
+  - kind: heading
+    level: 2
+    text: (1929年-)
   p44:
-  - node: p
-    children:
-    - node: text
-      content: λ-calculus
-    - node: br
-    - node: text
-      content: ラムダ計算 (1930年代-)
+  - kind: heading
+    level: 3
+    text: λ-calculus
+  - kind: heading
+    level: 1
+    text: ラムダ計算
+  - kind: heading
+    level: 2
+    text: (1930年代-)
   p45: []
   p46:
-  - node: p
-    children:
-    - node: text
-      content: (λ計算)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
+  - kind: para
+    text: (λ計算)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
   p47:
-  - node: p
-    children:
-    - node: text
-      content: (Haskell)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
-    - node: br
-    - node: text
-      content: \x -> \y => \x
-    - node: br
-    - node: text
-      content: (const)
+  - kind: para
+    text: (Haskell)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
+  - kind: heading
+    level: 1
+    text: \x -> \y => \x
+  - kind: para
+    text: (const)
   p48:
-  - node: p
-    children:
-    - node: text
-      content: (JavaScript)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
-    - node: br
-    - node: text
-      content: x => y => x
+  - kind: para
+    text: (JavaScript)
+  - kind: para
+    text: λx.λy.x
+  - kind: para
+    text: x => y => x
   p49:
-  - node: p
-    children:
-    - node: text
-      content: λx.λy.x
-  - node: p
-    children:
-    - node: text
-      content: (太古のJavaScript)
-  - node: p
-    children:
-    - node: text
-      content: 'function (x) { '
-    - node: br
-    - node: text
-      content: '    return function (y) { '
-    - node: br
-    - node: text
-      content: '        return x; '
-    - node: br
-    - node: text
-      content: '    }; '
-    - node: br
-    - node: text
-      content: '};'
+  - kind: para
+    text: (太古のJavaScript)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
+  - kind: para
+    text: function (x) {
+  - kind: para
+    text: return function (y) {
+  - kind: para
+    text: return x;
+  - kind: para
+    text: '};'
+  - kind: para
+    text: '};'
   p50:
-  - node: p
-    children:
-    - node: text
-      content: (PHP)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
-    - node: br
-    - node: text
-      content: fn($x) => fn($y) => $x
+  - kind: para
+    text: (PHP)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
+  - kind: para
+    text: fn($x) => fn($y) => $x
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '単純型なしλ計算は チューリング完全で '
-    - node: br
-    - node: text
-      content: あることが知られている
+  - kind: para
+    text: 単純型なしλ計算は
+  - kind: para
+    text: チューリング完全で
+  - kind: para
+    text: あることが知られている
   p52:
-  - node: p
-    children:
-    - node: text
-      content: '関数と適用しかないが '
-    - node: br
-    - node: text
-      content: 工夫して制御構造も データ構造も作れる
+  - kind: para
+    text: 関数と適用しかないが
+  - kind: para
+    text: 工夫して制御構造も
+  - kind: para
+    text: データ構造も作れる
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 'こういう積み重ねで 現代の関数型っぽい '
-    - node: br
-    - node: text
-      content: 要素が整理された
+  - kind: para
+    text: こういう積み重ねで
+  - kind: para
+    text: 現代の関数型っぽい
+  - kind: para
+    text: 要素が整理された
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 'レキシカルスコープとか 不変性とかカリー化とか '
-    - node: br
-    - node: text
-      content: 型推論とか代数的データ型
-    - node: br
-    - node: text
-      content: 'とか遅延評価とかモナドとか '
-    - node: br
-    - node: text
-      content: 関数合成とか参照透過とか
+  - kind: para
+    text: レキシカルスコープとか
+  - kind: para
+    text: 不変性とかカリー化とか
+  - kind: para
+    text: 型推論とか代数的データ型
+  - kind: para
+    text: とか遅延評価とかモナドとか
+  - kind: para
+    text: 関数合成とか参照透過とか
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 'で、Lispはどういう '
-    - node: br
-    - node: text
-      content: 関数型言語なの？
+  - kind: para
+    text: で、Lispはどういう
+  - kind: para
+    text: 関数型言語なの？
   p56:
-  - node: p
-    children:
-    - node: text
-      content: λ関数型言語とはλ
-  - node: p
-    children:
-    - node: text
-      content: ' (私の偏見に基く認識)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: C言語
-      - node: br
-      - node: text
-        content: '関数定義ができれば関数型言語だよ派 '
-    - node: li
-      children:
-      - node: text
-        content: Python
-      - node: br
-      - node: text
-        content: 'ファーストクラスの関数抽象があれば関数型言語だよ派 '
-    - node: li
-      children:
-      - node: text
-        content: Lisp
-      - node: br
-      - node: text
-        content: '標準ライブラリで高階関数(map/reduce)が扱えればいいよ派 '
-    - node: li
-      children:
-      - node: text
-        content: 動的／静的の壁
-      - node: br
-      - node: text
-        content: '代数的データ型が扱えない言語は関数型言語じゃないよ派 '
-    - node: li
-      children:
-      - node: text
-        content: 型推論の完全性がある静的型付き言語が関数型だよ派
-  - node: p
-    children:
-    - node: bold
-      content: ML系
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 関数型というのは純粋関数型のことだよ派
-  - node: p
-    children:
-    - node: bold
-      content: Haskell
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: モナディックな表示的意味論を持つ言語だよ派
+  - kind: heading
+    level: 1
+    text: λ関数型言語とはλ (私の偏見に基く認識)
+  - kind: para
+    text: C言語
+  - kind: para
+    text: Python
+  - kind: para
+    text: Lisp
+  - kind: para
+    text: 動的／静的の壁
+  - kind: para
+    text: ML系
+  - kind: para
+    text: Haskell
+  - kind: list
+    items:
+    - 関数定義ができれば関数型言語だよ派
+    - ファーストクラスの関数抽象があれば関数型言語だよ派
+    - 標準ライブラリで高階関数(map/reduce)が扱えればいいよ派
+    - 代数的データ型が扱えない言語は関数型言語じゃないよ派
+    - 型推論の完全性がある静的型付き言語が関数型だよ派
+    - 関数型というのは純粋関数型のことだよ派
+    - モナディックな表示的意味論を持つ言語だよ派
   p57:
-  - node: p
-    children:
-    - node: text
-      content: '関数型的な主観だけで '
-    - node: br
-    - node: text
-      content: '比較してしまうと '
-    - node: br
-    - node: text
-      content: LispとPHPは同等
+  - kind: para
+    text: 関数型的な主観だけで
+  - kind: para
+    text: 比較してしまうと
+  - kind: para
+    text: LispとPHPは同等
   p58:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispは関数型言語 '
-    - node: br
-    - node: text
-      content: ではない
-  - node: p
-    children:
-    - node: text
-      content: NOT
-  - node: p
-    children:
-    - node: text
-      content: Lisp is   a functional language
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2025-06-15  #fp_matsuri '
-  - node: p
-    children:
-    - node: bold
-      content: 関数型まつり 2025
+  - kind: heading
+    level: 2
+    text: Lispは関数型言語
+  - kind: heading
+    level: 1
+    text: ではない
+  - kind: heading
+    level: 3
+    text: Lisp is NOT a functional language
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2025-06-15 #fp_matsuri'
+  - kind: para
+    text: 関数型まつり 2025
   p59:
-  - node: p
-    children:
-    - node: text
-      content: λ-calculus
-    - node: br
-    - node: text
-      content: ラムダ計算 (1930年代-)
+  - kind: heading
+    level: 3
+    text: λ-calculus
+  - kind: heading
+    level: 1
+    text: ラムダ計算
+  - kind: heading
+    level: 2
+    text: (1930年代-)
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 'LISPは '
-    - node: br
-    - node: text
-      content: ラムダ計算の 実装ではない
+  - kind: para
+    text: LISPは
+  - kind: para
+    text: ラムダ計算の
+  - kind: para
+    text: 実装ではない
   p61:
-  - node: p
-    children:
-    - node: text
-      content: (すくなくとも初期は)
+  - kind: heading
+    level: 1
+    text: (すくなくとも初期は)
   p62: []
   p63: []
   p64: []
   p65: []
   p66:
-  - node: p
-    children:
-    - node: text
-      content: LISPと変数スコープ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 初期のLISP(LISP1〜MACLISP)は変数スコープの概念が未確立
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: レキシカルスコープかダイナミックスコープかが定かではない(!)
-          - node: br
-          - node: text
-            content: 'FUNARG問題 '
-    - node: li
-      children:
-      - node: text
-        content: 1975年に登場したSchemeではクロージャ(レキシカルスコープ)が導入
-    - node: li
-      children:
-      - node: text
-        content: 1984年に登場したCommon Lispはレキシカルスコープが基本だが、
-      - node: br
-      - node: text
-        content: スペシャル変数として定義することでダイナミックスコープも使える
+  - kind: para
+    text: LISPと変数スコープ
+  - kind: list
+    items:
+    - 初期のLISP(LISP1〜MACLISP)は変数スコープの概念が未確立
+    - レキシカルスコープかダイナミックスコープかが定かではない(!)
+  - kind: para
+    text: FUNARG問題
+  - kind: list
+    items:
+    - 1975年に登場したSchemeではクロージャ(レキシカルスコープ)が導入
+    - 1984年に登場したCommon Lispはレキシカルスコープが基本だが、
+  - kind: para
+    text: スペシャル変数として定義することでダイナミックスコープも使える
   p67: []
   p68:
-  - node: p
-    children:
-    - node: text
-      content: (PHP)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
-    - node: br
-    - node: text
-      content: fn($x) => fn($y) => $x
+  - kind: para
+    text: (PHP)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
+  - kind: para
+    text: fn($x) => fn($y) => $x
   p69:
-  - node: p
-    children:
-    - node: text
-      content: (Scheme)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
-    - node: br
-    - node: text
-      content: '(lambda (x)    (lambda (y) '
-    - node: br
-    - node: text
-      content: '    x))'
+  - kind: para
+    text: (Scheme)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
+  - kind: para
+    text: (lambda (x)
+  - kind: para
+    text: (lambda (y)
+  - kind: para
+    text: x))
   p70:
-  - node: p
-    children:
-    - node: text
-      content: (Racket)
-  - node: p
-    children:
-    - node: text
-      content: 'λx.λy.x '
-    - node: br
-    - node: text
-      content: (λ (x) (λ(y) x))
+  - kind: para
+    text: (Racket)
+  - kind: heading
+    level: 1
+    text: λx.λy.x
+  - kind: heading
+    level: 2
+    text: (λ (x) (λ(y) x))
   p71:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispでも '
-    - node: br
-    - node: text
-      content: 'ラムダ計算できるが '
-    - node: br
-    - node: text
-      content: 書きやすくはない
+  - kind: para
+    text: Lispでも
+  - kind: para
+    text: ラムダ計算できるが
+  - kind: para
+    text: 書きやすくはない
   p72:
-  - node: p
-    children:
-    - node: text
-      content: '関数の純粋性を '
-    - node: br
-    - node: text
-      content: '担保する仕組みが '
-    - node: br
-    - node: text
-      content: 不足している
+  - kind: para
+    text: 関数の純粋性を
+  - kind: para
+    text: 担保する仕組みが
+  - kind: para
+    text: 不足している
   p73:
-  - node: p
-    children:
-    - node: text
-      content: 'とはいえ '
-    - node: br
-    - node: text
-      content: 関数プログラミングの
-    - node: br
-    - node: text
-      content: 道具は揃っている
+  - kind: para
+    text: とはいえ
+  - kind: para
+    text: 関数プログラミングの
+  - kind: para
+    text: 道具は揃っている
   p74:
-  - node: p
-    children:
-    - node: text
-      content: 'その道具を '
-    - node: br
-    - node: text
-      content: 'どう使うかによって '
-    - node: br
-    - node: text
-      content: Lispの文化がある
+  - kind: para
+    text: その道具を
+  - kind: para
+    text: どう使うかによって
+  - kind: para
+    text: Lispの文化がある
   p75:
-  - node: p
-    children:
-    - node: text
-      content: LISPとLisp系言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 「方言」と呼ばれるが、C言語とC#とJavaとJavaScriptくらい違う
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 'Scheme:       比較的シンプルな言語仕様と衛生的マクロ'
-        - node: li
-          children:
-          - node: text
-            content: 'Common Lisp:  機能豊富で処理系も多い'
-        - node: li
-          children:
-          - node: text
-            content: Clojure：        関数型重視でJVMで動く。Rich Hickeyの哲学
-        - node: li
-          children:
-          - node: text
-            content: 'Emacs Lisp:    GNU Emacsで動く。Emacsそのもの'
+  - kind: heading
+    level: 1
+    text: LISPとLisp系言語
+  - kind: list
+    items:
+    - 「方言」と呼ばれるが、C言語とC#とJavaとJavaScriptくらい違う
+    - 'Scheme:'
+  - kind: para
+    text: 比較的シンプルな言語仕様と衛生的マクロ
+  - kind: list
+    items:
+    - 'Common Lisp: 機能豊富で処理系も多い'
+    - Clojure：
+  - kind: para
+    text: 関数型重視でJVMで動く。Rich Hickeyの哲学
+  - kind: list
+    items:
+    - 'Emacs Lisp:'
+  - kind: para
+    text: GNU Emacsで動く。Emacsそのもの
   p76: []
   p77:
-  - node: p
-    children:
-    - node: text
-      content: '機能的には '
-    - node: br
-    - node: text
-      content: 'どのLispでも '
-    - node: br
-    - node: text
-      content: 他のスタイルで書ける
+  - kind: para
+    text: 機能的には
+  - kind: para
+    text: どのLispでも
+  - kind: para
+    text: 他のスタイルで書ける
   p78: []
   p79: []
   p80: []
   p81:
-  - node: p
-    children:
-    - node: text
-      content: 「
-    - node: bold
-      content: 初めての人のためのLISP [増補改訂版]
-    - node: text
-      content: '」 より引用 '
-    - node: br
-    - node: text
-      content: '竹内郁雄著, 2010年3月9日 初版第1刷発行, 翔泳社刊 '
-    - node: br
-    - node: text
-      content: (電子書籍版を底本とする)
+  - kind: para
+    text: 「初めての人のためのLISP [増補改訂版]」 より引用
+  - kind: para
+    text: 竹内郁雄著, 2010年3月9日 初版第1刷発行, 翔泳社刊
+  - kind: para
+    text: (電子書籍版を底本とする)
   p82:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispは関数型言語 '
-    - node: br
-    - node: text
-      content: 'ではないが '
-    - node: br
-    - node: text
-      content: '能力と文化によって '
-    - node: br
-    - node: text
-      content: 実現している
+  - kind: para
+    text: Lispは関数型言語
+  - kind: para
+    text: ではないが
+  - kind: para
+    text: 能力と文化によって
+  - kind: para
+    text: 実現している
   p83:
-  - node: p
-    children:
-    - node: text
-      content: ＿人人人人人人人＿ ＞　Lispは雑草　＜ ￣Y^Y^Y^Y^Y^￣
+  - kind: para
+    text: ＿人人人人人人人＿
+  - kind: para
+    text: ＞ Lispは雑草 ＜
+  - kind: para
+    text: ‾Y^Y^Y^Y^Y^‾
   p84:
-  - node: p
-    children:
-    - node: text
-      content: 'Emacs Lisp '
-    - node: br
-    - node: text
-      content: 広く普及したLispでありながら Lispらしくないと敬遠された
-  p85:
-  - node: p
-    children:
-    - node: text
-      content: 歴史的経緯の塊
+  - kind: heading
+    level: 1
+    text: Emacs Lisp
+  - kind: para
+    text: 広く普及したLispでありながら
+  - kind: para
+    text: Lispらしくないと敬遠された
+  p85: []
   p86: []
   p87:
-  - node: p
-    children:
-    - node: text
-      content: Emacs Lispの弱点
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: クロージャと真正のレキシカルスコープがなかった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: マクロで擬似的に再現したレキシカルスコープはあった
-    - node: li
-      children:
-      - node: text
-        content: 末尾再帰最適化がない
-    - node: li
-      children:
-      - node: text
-        content: カジュアルに副作用がある
-    - node: li
-      children:
-      - node: text
-        content: 名前空間 (パッケージ) がない
-    - node: li
-      children:
-      - node: text
-        content: リーダーマクロがない
-    - node: li
-      children:
-      - node: text
-        content: Emacsと密結合している
+  - kind: para
+    text: Emacs Lispの弱点
+  - kind: list
+    items:
+    - クロージャと真正のレキシカルスコープがなかった
+    - マクロで擬似的に再現したレキシカルスコープはあった
+    - 末尾再帰最適化がない
+    - カジュアルに副作用がある
+    - 名前空間 (パッケージ) がない
+    - リーダーマクロがない
+    - Emacsと密結合している
   p88:
-  - node: p
-    children:
-    - node: text
-      content: Emacs Lisp
-  - node: p
-    children:
-    - node: text
-      content: ' (elisp)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Richard Stallman (RMS)のこだわりのLisp方言
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: RMSが最近も機能追加しようとしている
-    - node: li
-      children:
-      - node: text
-        content: 現存するメジャーな方言ではCommon Lisp寄りではあるが結構違う
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Lisp Machine LispやGosling MLispの影響がある
-        - node: li
-          children:
-          - node: text
-            content: Common Lisp風の機能はcl-libという標準ライブラリで同梱
+  - kind: heading
+    level: 1
+    text: Emacs Lisp (elisp)
+  - kind: list
+    items:
+    - Richard Stallman (RMS)のこだわりのLisp方言
+    - RMSが最近も機能追加しようとしている
+    - 現存するメジャーな方言ではCommon Lisp寄りではあるが結構違う
+    - Lisp Machine LispやGosling MLispの影響がある
+    - Common Lisp風の機能はcl-libという標準ライブラリで同梱
   p89:
-  - node: p
-    children:
-    - node: text
-      content: Emacs
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Lispを内蔵したエディタというべきか、
-      - node: br
-      - node: text
-        content: '言語処理系にエディタ機能がついているべきか '
-    - node: li
-      children:
-      - node: text
-        content: init.el というファイルにLispで設定を書くが、
-      - node: br
-      - node: text
-        content: '初期化設定とEmacsで動かす機能の開発には境目がまったくない '
-    - node: li
-      children:
-      - node: text
-        content: Lispが動く仮想的なLispマシンそのもの
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Evilという互換性が極めて高いVimインターフェイスが実装されている
+  - kind: para
+    text: Emacs
+  - kind: list
+    items:
+    - Lispを内蔵したエディタというべきか、
+  - kind: para
+    text: 言語処理系にエディタ機能がついているべきか
+  - kind: list
+    items:
+    - init.el というファイルにLispで設定を書くが、
+  - kind: para
+    text: 初期化設定とEmacsで動かす機能の開発には境目がまったくない
+  - kind: list
+    items:
+    - Lispが動く仮想的なLispマシンそのもの
+    - Evilという互換性が極めて高いVimインターフェイスが実装されている
   p90:
-  - node: p
-    children:
-    - node: text
-      content: Emacs Lispの弱点
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: クロージャと真正のレキシカルスコープがなかった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: マクロで擬似的に再現したレキシカルスコープはあった
-    - node: li
-      children:
-      - node: text
-        content: 末尾再帰最適化がない
-    - node: li
-      children:
-      - node: text
-        content: カジュアルに副作用がある
-    - node: li
-      children:
-      - node: text
-        content: 名前空間 (パッケージ) がない
-    - node: li
-      children:
-      - node: text
-        content: リーダーマクロがない
-    - node: li
-      children:
-      - node: text
-        content: Emacsと密結合している
+  - kind: para
+    text: Emacs Lispの弱点
+  - kind: list
+    items:
+    - クロージャと真正のレキシカルスコープがなかった
+    - マクロで擬似的に再現したレキシカルスコープはあった
+    - 末尾再帰最適化がない
+    - カジュアルに副作用がある
+    - 名前空間 (パッケージ) がない
+    - リーダーマクロがない
+    - Emacsと密結合している
   p91: []
   p92:
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Emacsの検索には副作用があるが -p のついた述語関数で避けられる
-    - node: li
-      children:
-      - node: text
-        content: (declare (side-effect-free t)) で純粋関数としてマークできる
+  - kind: list
+    items:
+    - Emacsの検索には副作用があるが -p のついた述語関数で避けられる
+    - (declare (side-effect-free t)) で純粋関数としてマークできる
   p93:
-  - node: p
-    children:
-    - node: text
-      content: 'Emacs Lisp '
-    - node: br
-    - node: text
-      content: かつては不出来な末っ子扱い 現在は必死に追い上げている
+  - kind: heading
+    level: 1
+    text: Emacs Lisp
+  - kind: para
+    text: かつては不出来な末っ子扱い
+  - kind: para
+    text: 現在は必死に追い上げている
   p94:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispは '
-    - node: br
-    - node: text
-      content: マルチパラダイム
+  - kind: para
+    text: Lispは
+  - kind: para
+    text: マルチパラダイム
   p95:
-  - node: p
-    children:
-    - node: text
-      content: 'Lisp Machine '
-  - node: p
-    children:
-    - node: text
-      content: AIブームを牽引した専用機
-    - node: br
-    - node: text
-      content: (1970年代後半-)
+  - kind: heading
+    level: 1
+    text: Lisp Machine
+  - kind: para
+    text: AIブームを牽引した専用機
+  - kind: para
+    text: (1970年代後半-)
   p96:
-  - node: p
-    children:
-    - node: text
-      content: 'そういう機械が '
-    - node: br
-    - node: text
-      content: 40年以上前にあった
+  - kind: para
+    text: そういう機械が
+  - kind: para
+    text: 40年以上前にあった
   p97:
-  - node: p
-    children:
-    - node: bold
-      content: '「Multi-Paradigm Language TAO」より引用 '
-  - node: p
-    children:
-    - node: bold
-      content: ' https://www.nue.org/nue/tao/bitao/s001.html'
+  - kind: para
+    text: 「Multi-Paradigm Language TAO」より引用
+  - kind: para
+    text: https://www.nue.org/nue/tao/bitao/s001.html
   p98:
-  - node: p
-    children:
-    - node: text
-      content: この写真は国産LISPマシンのELIS なので本家Emacsの開発経緯とは直 接関係ないのだが内蔵されたZENと いうEmacs風独自エディタの日本語
-        入力メソッドKanzenが後のSKKに 繋がりIME史に影響を及ぼしている
+  - kind: para
+    text: この写真は国産LISPマシンのELIS
+  - kind: para
+    text: なので本家Emacsの開発経緯とは直
+  - kind: para
+    text: 接関係ないのだが内蔵されたZENと
+  - kind: para
+    text: いうEmacs風独自エディタの日本語
+  - kind: para
+    text: 入力メソッドKanzenが後のSKKに
+  - kind: para
+    text: 繋がりIME史に影響を及ぼしている
   p99: []
   p100: []
   p101: []
   p102:
-  - node: p
-    children:
-    - node: text
-      content: 'TAO/ELISの '
-    - node: br
-    - node: text
-      content: 特徴は現代Lispには 受け継がれていない
+  - kind: para
+    text: TAO/ELISの
+  - kind: para
+    text: 特徴は現代Lispには
+  - kind: para
+    text: 受け継がれていない
   p103:
-  - node: p
-    children:
-    - node: text
-      content: 'どのLispも多かれ '
-    - node: br
-    - node: text
-      content: '少なかれ '
-    - node: br
-    - node: text
-      content: マルチパラダイム
+  - kind: para
+    text: どのLispも多かれ
+  - kind: para
+    text: 少なかれ
+  - kind: para
+    text: マルチパラダイム
   p104:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispは '
-    - node: br
-    - node: text
-      content: '関数型の枠に '
-    - node: br
-    - node: text
-      content: 留まっていない
+  - kind: para
+    text: Lispは
+  - kind: para
+    text: 関数型の枠に
+  - kind: para
+    text: 留まっていない
   p105:
-  - node: p
-    children:
-    - node: text
-      content: 'Lispのパワーの根源は '
-    - node: br
-    - node: text
-      content: S式・マクロ
+  - kind: para
+    text: Lispのパワーの根源は
+  - kind: para
+    text: S式・マクロ
   p106: []
   p107: []
   p108: []
   p109:
-  - node: p
-    children:
-    - node: text
-      content: 'Lisp一族の '
-    - node: br
-    - node: text
-      content: '雑草のような生命力に '
-    - node: br
-    - node: text
-      content: ご期待ください！
+  - kind: para
+    text: Lisp一族の
+  - kind: para
+    text: 雑草のような生命力に
+  - kind: para
+    text: ご期待ください！
 size:
   max_width: 1920
   max_height: 1080

@@ -1,1004 +1,777 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: なぜPHPに型がつくのか
+  - kind: heading
+    level: 2
+    text: All Your PHP Code Are Typed by Us
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2025-12-13 #TechGyoza'
+  - kind: para
+    text: 小山市立 生涯学習センター ギャラリー
+  p2:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3: []
+  p4: []
+  p5:
+  - kind: heading
+    level: 1
+    text: PHPcon新潟
+  p6:
+  - kind: para
+    text: PHPcon新潟
+  - kind: para
+    text: PHPcon広島
+  p7:
+  - kind: para
+    text: TechRAMEN
+  - kind: para
+    text: PHPcon新潟
+  - kind: para
+    text: PHPcon広島
+  p8:
+  - kind: para
+    text: 趣味は
+  - kind: para
+    text: プログラミング言語
+  p9:
+  - kind: para
+    text: 特に動的言語／
+  - kind: para
+    text: スクリプト言語が好き
+  p10:
+  - kind: para
+    text: 動的言語には
+  - kind: para
+    text: 無限の可能性()が
+  - kind: para
+    text: あります
+  p11:
+  - kind: heading
+    level: 1
+    text: さて
+  p12:
+  - kind: heading
+    level: 1
+    text: 近年の流れ
+  p13:
+  - kind: para
+    text: 2000年代は
+  - kind: para
+    text: 動的言語が
+  - kind: para
+    text: 大活躍した時代
+  p14:
+  - kind: para
+    text: 重厚なIDE…
+  - kind: para
+    text: 長大なコンパイル時間…
+  p15:
+  - kind: para
+    text: スクリプト言語は
+  - kind: para
+    text: シンプルなエディタで
+  - kind: para
+    text: 簡単に書ける！
+  p16:
+  - kind: para
+    text: 2000年前後
+  - kind: para
+    text: CGIで簡単に
+  - kind: para
+    text: Webアプリが書ける
+  p17:
+  - kind: para
+    text: 2010年前後
+  - kind: para
+    text: Railsで高機能な
+  - kind: para
+    text: ものが簡単に書ける
+  p18:
+  - kind: para
+    text: アプリケーションが
+  - kind: para
+    text: 大規模に「育つ」と
+  - kind: para
+    text: 収拾がつかなくなってくる
+  p19:
+  - kind: para
+    text: メソッドの実装を
+  - kind: para
+    text: わざわざ探して
+  - kind: para
+    text: コードを読まなければ
+  - kind: para
+    text: 引数の種類すらわからん
+  p20:
+  - kind: heading
+    level: 1
+    text: ……
+  p21:
+  - kind: para
+    text: 202x年
+  - kind: para
+    text: 世界は型の炎に
+  - kind: para
+    text: 包まれた！
+  p22:
+  - kind: para
+    text: JavaScript
+  - kind: para
+    text: ↓
+  p23:
+  - kind: para
+    text: JavaScript
+  - kind: para
+    text: ↓
+  - kind: para
+    text: TypeScript
+  p24:
+  - kind: para
+    text: Python
+  - kind: para
+    text: ↓
+  p25:
+  - kind: para
+    text: Python
+  - kind: para
+    text: ↓
+  - kind: para
+    text: typing module
+  p26:
+  - kind: para
+    text: Ruby
+  - kind: para
+    text: ↓
+  p27:
+  - kind: para
+    text: Ruby
+  - kind: para
+    text: ↓
+  - kind: para
+    text: Inline RBS
+  p28:
+  - kind: para
+    text: 海は枯れ、地は裂け、
+  - kind: para
+    text: 全ての型なしが
+  - kind: para
+    text: 死滅したかのように見えた
+  p29:
+  - kind: para
+    text: だが、PHPは
+  - kind: para
+    text: 死滅していなかった！
+  p30:
+  - kind: para
+    text: 世紀末救世主伝説
+  - kind: para
+    text: <?php
+  p31:
+  - kind: para
+    text: 誰でも簡単に
+  - kind: para
+    text: ホームページが作れる
+  - kind: para
+    text: ゆるふわ言語
+  p32:
+  - kind: para
+    text: PHPについてのパブリックイメージ
+  - kind: para
+    text: 脆弱性 ゆるふわ 弱い型 動的
+  - kind: para
+    text: クソザコ 型なし 意味不明 弱い
+  - kind: para
+    text: 自動変換 貧弱 Perlっぽい 適当
+  p33:
+  - kind: para
+    text: PHPについての認識は概ね間違い
+  - kind: para
+    text: 脆弱性 ゆるふわ 弱い型 動的
+  - kind: para
+    text: クソザコ 型なし 意味不明 弱い
+  - kind: para
+    text: 自動変換 貧弱 Perlっぽい 適当
+  p34:
+  - kind: para
+    text: 認識を揃えて
+  - kind: para
+    text: おきましょう
+  p35:
+  - kind: para
+    text: 動的言語／スクリプト言語
+  - kind: list
+    items:
+    - 実行時の宣言、evalなどプログラム自身を操作対象としながら実行できがち
+    - スクリプト／インタプリタなどの特徴は直交する概念だが、結びつきがち
+    - 関数・変数に静的な型がついてない言語でしょ、という回答は30点くらい
+    - C#はいわゆる静的型付きの言語だが、dynamicとして動的な機能も提供
+  p36:
+  - kind: para
+    text: 言語としてのPHP
+  - kind: list
+    items:
+    - よくあるC言語風の制御構文と標準関数をもったスクリプト言語
+    - if, else, switch, while, for, goto
+    - PHPのgotoは綺麗なgoto
+    - 関数定義、クラス定義(class, interface, trait, enum)
+    - クラスや関数の再定義(オープンクラス・モンキーパッチ)はできない
+  p37:
+  - kind: para
+    text: 動的言語でも
+  - kind: para
+    text: 型を書くことが
+  - kind: para
+    text: 広まってきた
+  p38:
+  - kind: para
+    text: ドキュメント
+  - kind: para
+    text: としての型
+  p39:
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p40:
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int $a'
+  - kind: para
+    text: '* @param int $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p41:
+  - kind: para
+    text: 宣言の構文内にも
+  - kind: para
+    text: 型を書けるようになった
+  p42:
+  - kind: para
+    text: 'function add(int $a, int $b): int|float'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p43:
+  - kind: para
+    text: 関数に入出力の
+  - kind: para
+    text: 型を書いておくことで
+  - kind: para
+    text: 影響を想像しやすく
+  p44:
+  - kind: para
+    text: ここまでは人間が
+  - kind: para
+    text: 型を付ける(書く)話
+  p45:
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int $a'
+  - kind: para
+    text: '* @param int $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p46:
+  - kind: para
+    text: DocCommentとかいう
+  - kind: para
+    text: 机上の空論
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int $a'
+  - kind: para
+    text: '* @param int $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p47:
+  - kind: para
+    text: DocCommentとかいう
+  - kind: para
+    text: 机上の空論
+  - kind: para
+    text: コーディング時の
+  - kind: para
+    text: ヒントとして役に立つ…
+  - kind: para
+    text: かもしれない
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int $a'
+  - kind: para
+    text: '* @param int $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p48:
+  - kind: para
+    text: 'function add(int $a, int $b): int|float'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p49:
+  - kind: para
+    text: intしか渡されないことは
+  - kind: para
+    text: 実行時に保証される
+  - kind: para
+    text: 'function add(int $a, int $b): int|float'
+  - kind: para
+    text: '{'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
+  p50:
+  - kind: para
+    text: intしか渡されないことは
+  - kind: para
+    text: 実行時に保証される
+  - kind: heading
+    level: 1
+    text: 'function add(int $a, int $b): int|float'
+  - kind: heading
+    level: 1
+    text: '{'
+  - kind: heading
+    level: 1
+    text: return $a + $b;
+  - kind: heading
+    level: 1
+    text: '}'
+  - kind: para
+    text: 型宣言に反する値が
+  - kind: para
+    text: 返されたら実行時エラー
+  p51:
+  - kind: para
+    text: 実際には型宣言を
+  - kind: para
+    text: もとに型を再構築する
+  p52:
+  - kind: para
+    text: PHP
+  - kind: para
+    text: $a = 1;
+  - kind: para
+    text: $b = 2;
+  - kind: para
+    text: $c = $a + $b;
+  p53:
+  - kind: para
+    text: PHP
+  - kind: para
+    text: C言語
+  - kind: para
+    text: $a = 1;
+  - kind: para
+    text: $b = 2;
+  - kind: para
+    text: $c = $a + $b;
+  - kind: para
+    text: int a = 1;
+  - kind: para
+    text: int b = 2;
+  - kind: para
+    text: int c = a + b;
+  p54:
+  - kind: para
+    text: PHP
+  - kind: para
+    text: $a = 1;
+  - kind: para
+    text: $b = 2;
+  - kind: para
+    text: $c = $a + $b;
+  p55:
+  - kind: para
+    text: PHP
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p56:
+  - kind: para
+    text: PHP
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p57:
+  - kind: para
+    text: PHP
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p58:
+  - kind: para
+    text: PHPでは処理系の外で
+  - kind: para
+    text: 静的型チェッカーの
+  - kind: para
+    text: 文明が広がった
+  p59:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: $a = 1;
+  - kind: para
+    text: $b = 2;
+  - kind: para
+    text: $c = $a + $b;
+  p60:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int(1)
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p61:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int(1)
+  - kind: para
+    text: int(2)
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p62:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int(1)
+  - kind: para
+    text: int(2)
+  - kind: para
+    text: int(3)
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p63:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: $a = ‘foo’;
+  - kind: para
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: para
+    text: $c = $a + $b;
+  p64:
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: 型チェッカー
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p65:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''foo'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p66:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p67:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p68:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  - kind: para
+    text: '''foo''|''bar'''
+  p69:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''foo'''
+  - kind: para
+    text: '''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  - kind: para
+    text: '''foo''|''bar'''
+  - kind: para
+    text: '''foofoo''|''foobar'''
+  p70:
+  - kind: heading
+    level: 1
+    text: いろんなところから湧き出す
+  - kind: heading
+    level: 1
+    text: 型の特定できないデータ
+  p71:
+  - kind: heading
+    level: 1
+    text: arrayは無限の可能性を秘める
+  - kind: heading
+    level: 1
+    text: (悪い意味で)
+  p72:
+  - kind: heading
+    level: 1
+    text: 扱う対象が複数になったのに
+  - kind: heading
+    level: 1
+    text: 型に反映されない
+  p73:
+  - kind: para
+    text: PHPの組み込みの
+  - kind: para
+    text: 型機能ではどんなに
+  - kind: para
+    text: 型推論しても
+  - kind: para
+    text: 静的に型が定まらない
+  p74:
+  - kind: para
+    text: 無限の可能性を秘めたarray
+  - kind: para
+    text: を放置するとコード全体の
+  - kind: para
+    text: エントロピーが増大し
+  - kind: para
+    text: プロジェクトは熱的死を迎える
+  p75:
+  - kind: heading
+    level: 1
+    text: TypeScriptにとっての型
+  - kind: list
+    items:
+    - 型宣言をもとに型チェックを行なって、分析情報を報告
+    - 実行時には型情報は何も残らない
+    - JavaScriptにコンパイル ≒ 型定義の部分をひっぺがして実行
+    - Node.js 25.2ではType Strippingで直接実行できるようになった
+    - 実際にはTypeScript enum など別のコード生成をする機能もある
+    - 型がついたコードは実行時にはエラーが出ないでほしい(願望)
+  p76:
+  - kind: heading
+    level: 1
+    text: PHPにとっての型
+  - kind: list
+    items:
+    - 構文内の型宣言に含まれる型情報は実行時に必ず検証される
+    - エラーなく動いているとき、型宣言と実行時の状態が必ず一致する
+    - 実行時に検査するのは重そうだが(先入観) 実際にはJITで最適化
+    - PHPDoc(コメント)に書いた型注釈はIDE/静的解析ツールが解釈する
+    - PHPDocに書かれたものは机上の空論に過ぎない
+  p77:
+  - kind: heading
+    level: 1
+    text: 動的言語と型
+  - kind: list
+    items:
+    - 自分のプロジェクト内で型を書き始めるのは簡単だが…
+  - kind: para
+    text: 現実には外部のライブラリで型が書かれていないこともある
+  - kind: list
+    items:
+    - 型が書かれていても実態と一致しないこともよくある
+    - Ruby, Python, JavaScriptでは外部プロジェクトで
+  - kind: para
+    text: ライブラリの型をメンテナンスされているものもある
+  - kind: list
+    items:
+    - PHPでは実行時に強制力のある型宣言があるので、
+  - kind: para
+    text: 実装と一致した型がきちんと書かれていることが多い
+  p78:
+  - kind: para
+    text: そんなに動的言語を
+  - kind: para
+    text: 書きたいか
+  p79:
+  - kind: heading
+    level: 1
+    text: 書きたい！
+  p80:
+  - kind: para
+    text: 静的型付きと動的の
+  - kind: para
+    text: 良いとこどりができる
+  - kind: para
+    text: ゆるふわ言語PHPに
+  - kind: para
+    text: これからもご期待ください
 size:
   max_width: 1920
   max_height: 1080
 links: {}
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: なぜPHPに型がつくのか
-  - node: p
-    children:
-    - node: text
-      content: All Your PHP Code Are Typed by Us
-  - node: p
-    children:
-    - node: text
-      content: pixiv Inc.
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2025-12-13 #TechGyoza'
-  - node: p
-    children:
-    - node: bold
-      content: 小山市立 生涯学習センター ギャラリー
-  p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近チームが再編されてインフラっぽい仕事もしてます
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
-  p3: []
-  p4: []
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: PHPcon新潟
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: PHPcon新潟
-  - node: p
-    children:
-    - node: text
-      content: PHPcon広島
-  p7:
-  - node: p
-    children:
-    - node: text
-      content: TechRAMEN
-  - node: p
-    children:
-    - node: text
-      content: PHPcon新潟
-  - node: p
-    children:
-    - node: text
-      content: PHPcon広島
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: 趣味はプログラミング言語
-  p9:
-  - node: p
-    children:
-    - node: text
-      content: 特に動的言語／スクリプト言語が好き
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語には無限の可能性()があります
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: さて
-  p12:
-  - node: p
-    children:
-    - node: text
-      content: 近年の流れ
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: 2000年代は動的言語が大活躍した時代
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: 重厚なIDE…
-    - node: br
-    - node: text
-      content: 長大なコンパイル時間…
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: スクリプト言語はシンプルなエディタで簡単に書ける！
-  p16:
-  - node: p
-    children:
-    - node: bold
-      content: 2000年前後
-    - node: br
-    - node: text
-      content: CGIで簡単にWebアプリが書ける
-  p17:
-  - node: p
-    children:
-    - node: bold
-      content: 2010年前後
-    - node: br
-    - node: text
-      content: Railsで高機能なものが簡単に書ける
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: アプリケーションが大規模に｢育つ｣と収拾がつかなくなってくる
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: メソッドの実装をわざわざ探してコードを読まなければ引数の種類すらわからん
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: ……
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: 202x年
-    - node: br
-    - node: text
-      content: 世界は型の炎に包まれた！
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: JavaScript
-    - node: br
-    - node: text
-      content: ↓
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: JavaScript
-    - node: br
-    - node: text
-      content: ↓
-    - node: br
-    - node: text
-      content: TypeScript
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: Python
-    - node: br
-    - node: text
-      content: ↓
-  p25:
-  - node: p
-    children:
-    - node: text
-      content: Python
-    - node: br
-    - node: text
-      content: ↓
-    - node: br
-    - node: text
-      content: typing module
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: Ruby
-    - node: br
-    - node: text
-      content: ↓
-  p27:
-  - node: p
-    children:
-    - node: text
-      content: Ruby
-    - node: br
-    - node: text
-      content: ↓
-    - node: br
-    - node: text
-      content: Inline RBS
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: 海は枯れ､地は裂け､ 全ての型なしが死滅したかのように見えた
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: だが､PHPは死滅していなかった！
-  p30:
-  - node: p
-    children:
-    - node: bold
-      content: 世紀末救世主伝説
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  p31:
-  - node: p
-    children:
-    - node: text
-      content: 誰でも簡単にホームページが作れるゆるふわ言語
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: PHPについてのパブリックイメージ
-  - node: p
-    children:
-    - node: text
-      content: '脆弱性 ゆるふわ 弱い型 動的         '
-    - node: br
-    - node: text
-      content: クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当
-  p33:
-  - node: p
-    children:
-    - node: text
-      content: PHPについての認識は概ね間違い
-  - node: p
-    children:
-    - node: text
-      content: '脆弱性 ゆるふわ 弱い型 動的         '
-    - node: br
-    - node: text
-      content: クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: 認識を揃えて おきましょう
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語／スクリプト言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 実行時の宣言、evalなどプログラム自身を操作対象としながら実行できがち
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: スクリプト／インタプリタなどの特徴は直交する概念だが、結びつきがち
-    - node: li
-      children:
-      - node: text
-        content: 関数・変数に静的な型がついてない言語でしょ、という回答は30点くらい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: C#はいわゆる静的型付きの言語だが、dynamicとして動的な機能も提供
-  p36:
-  - node: p
-    children:
-    - node: text
-      content: 言語としてのPHP
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: よくあるC言語風の制御構文と標準関数をもったスクリプト言語
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: if, else, switch, while, for, goto
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: PHPのgotoは綺麗なgoto
-    - node: li
-      children:
-      - node: text
-        content: 関数定義、クラス定義(class, interface, trait, enum)
-    - node: li
-      children:
-      - node: text
-        content: クラスや関数の再定義(オープンクラス・モンキーパッチ)はできない
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: '動的言語でも '
-    - node: br
-    - node: text
-      content: '型を書くことが '
-    - node: br
-    - node: text
-      content: 広まってきた
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: 'ドキュメント '
-    - node: br
-    - node: text
-      content: としての型
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: 'function add($a, $b) { '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: '/** '
-    - node: br
-    - node: text
-      content: ' * @param int $a  * @param int $b '
-    - node: br
-    - node: text
-      content: ' * @return int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: ' */ '
-    - node: br
-    - node: text
-      content: 'function add($a, $b) { '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-  - node: p
-    children:
-    - node: text
-      content: '}'
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: '宣言の構文内にも '
-    - node: br
-    - node: text
-      content: 型を書けるようになった
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: '関数に入出力の '
-    - node: br
-    - node: text
-      content: '型を書いておくことで '
-    - node: br
-    - node: text
-      content: 影響を想像しやすく
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: 'ここまでは人間が '
-    - node: br
-    - node: text
-      content: 型を付ける(書く)話
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: '/** '
-    - node: br
-    - node: text
-      content: ' * @param int $a  * @param int $b '
-    - node: br
-    - node: text
-      content: ' * @return int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: ' */ '
-    - node: br
-    - node: text
-      content: 'function add($a, $b) { '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  p46:
-  - node: p
-    children:
-    - node: text
-      content: 'DocCommentとかいう '
-  - node: p
-    children:
-    - node: text
-      content: '/** '
-  - node: p
-    children:
-    - node: text
-      content: 机上の空論
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int $a  * @param int $b '
-    - node: br
-    - node: text
-      content: ' * @return int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: ' */ '
-    - node: br
-    - node: text
-      content: 'function add($a, $b) { '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: 'DocCommentとかいう '
-  - node: p
-    children:
-    - node: text
-      content: '/** '
-  - node: p
-    children:
-    - node: text
-      content: 机上の空論
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int $a  * @param int $b '
-    - node: br
-    - node: text
-      content: ' * @return int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: ' */ '
-    - node: br
-    - node: text
-      content: 'function add($a, $b) { '
-  - node: p
-    children:
-    - node: text
-      content: 'コーディング時の '
-    - node: br
-    - node: text
-      content: 'ヒントとして役に立つ… '
-  - node: p
-    children:
-    - node: text
-      content: '    return $a + $b; '
-  - node: p
-    children:
-    - node: text
-      content: かもしれない
-  - node: p
-    children:
-    - node: text
-      content: '}'
-  p48:
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  p49:
-  - node: p
-    children:
-    - node: text
-      content: 'intしか渡されないことは '
-    - node: br
-    - node: text
-      content: 実行時に保証される
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  p50:
-  - node: p
-    children:
-    - node: text
-      content: 'intしか渡されないことは '
-    - node: br
-    - node: text
-      content: 実行時に保証される
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int|(cid:210)oat '
-    - node: br
-    - node: text
-      content: '{ '
-    - node: br
-    - node: text
-      content: '    return $a + $b; '
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: '型宣言に反する値が '
-    - node: br
-    - node: text
-      content: 返されたら実行時エラー
-  p51:
-  - node: p
-    children:
-    - node: text
-      content: '実際には型宣言を '
-    - node: br
-    - node: text
-      content: もとに型を再構築する
-  p52:
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-  - node: p
-    children:
-    - node: text
-      content: $a = 1;
-    - node: br
-    - node: text
-      content: $b = 2;
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p53:
-  - node: p
-    children:
-    - node: bold
-      content: C言語
-  - node: p
-    children:
-    - node: text
-      content: int a = 1;
-    - node: br
-    - node: text
-      content: int b = 2;
-    - node: br
-    - node: text
-      content: int c = a + b;
-  p58:
-  - node: p
-    children:
-    - node: text
-      content: PHPでは処理系の外で静的型チェッカーの文明が広がった
-  p60:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: int(1)
-  - node: p
-    children:
-    - node: text
-      content: '$a = 1; $b = 2; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p61:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: int(1)
-  - node: p
-    children:
-    - node: text
-      content: int(2)
-  - node: p
-    children:
-    - node: text
-      content: '$a = 1; $b = 2; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p62:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: int(1)
-  - node: p
-    children:
-    - node: text
-      content: int(2)
-  - node: p
-    children:
-    - node: text
-      content: '$a = 1; $b = 2; '
-  - node: p
-    children:
-    - node: text
-      content: int(3)
-  - node: p
-    children:
-    - node: text
-      content: $c = $a + $b;
-  p63:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p64:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p65:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p66:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '''foo'' ''bar'''
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p67:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '''foo'' ''bar'''
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  p68:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '''foo'' ''bar'''
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  - node: p
-    children:
-    - node: text
-      content: '''foo''|''bar'''
-  p69:
-  - node: p
-    children:
-    - node: bold
-      content: 型チェッカー
-  - node: p
-    children:
-    - node: text
-      content: '''foo'''
-  - node: p
-    children:
-    - node: text
-      content: '''foo'' ''bar'''
-  - node: p
-    children:
-    - node: text
-      content: '$a = ‘foo’; '
-    - node: br
-    - node: text
-      content: '$b = rand() === 1 ? ‘foo’ : ‘bar’; '
-    - node: br
-    - node: text
-      content: $c = $a + $b;
-  - node: p
-    children:
-    - node: text
-      content: '''foo''|''bar'''
-  - node: p
-    children:
-    - node: text
-      content: '''foofoo''|''foobar'''
-  p70:
-  - node: p
-    children:
-    - node: text
-      content: いろんなところから湧き出す型の特定できないデータ
-  p71:
-  - node: p
-    children:
-    - node: text
-      content: arrayは無限の可能性を秘める(悪い意味で)
-  p72:
-  - node: p
-    children:
-    - node: text
-      content: 扱う対象が複数になったのに型に反映されない
-  p73:
-  - node: p
-    children:
-    - node: text
-      content: PHPの組み込みの型機能ではどんなに型推論しても静的に型が定まらない
-  p74:
-  - node: p
-    children:
-    - node: text
-      content: 無限の可能性を秘めたarrayを放置するとコード全体のエントロピーが増大しプロジェクトは熱的死を迎える
-  p75:
-  - node: p
-    children:
-    - node: text
-      content: TypeScriptにとっての型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 型宣言をもとに型チェックを行なって、分析情報を報告
-    - node: li
-      children:
-      - node: text
-        content: 実行時には型情報は何も残らない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: JavaScriptにコンパイル ≒ 型定義の部分をひっぺがして実行
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: Node.js 25.2ではType Strippingで直接実行できるようになった
-            - node: li
-              children:
-              - node: text
-                content: 実際にはTypeScript enum など別のコード生成をする機能もある
-        - node: li
-          children:
-          - node: text
-            content: 型がついたコードは実行時にはエラーが出ないでほしい(願望)
-  p76:
-  - node: p
-    children:
-    - node: text
-      content: PHPにとっての型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 構文内の型宣言に含まれる型情報は実行時に必ず検証される
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: エラーなく動いているとき、型宣言と実行時の状態が必ず一致する
-        - node: li
-          children:
-          - node: text
-            content: 実行時に検査するのは重そうだが(先入観) 実際にはJITで最適化
-    - node: li
-      children:
-      - node: text
-        content: PHPDoc(コメント)に書いた型注釈はIDE/静的解析ツールが解釈する
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPDocに書かれたものは机上の空論に過ぎない
-  p77:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語と型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 自分のプロジェクト内で型を書き始めるのは簡単だが…
-      - node: br
-      - node: text
-        content: 現実には外部のライブラリで型が書かれていないこともある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 型が書かれていても実態と一致しないこともよくある
-        - node: li
-          children:
-          - node: text
-            content: Ruby, Python, JavaScriptでは外部プロジェクトでライブラリの型をメンテナンスされているものもある
-    - node: li
-      children:
-      - node: text
-        content: PHPでは実行時に強制力のある型宣言があるので、 実装と一致した型がきちんと書かれていることが多い
-  p78:
-  - node: p
-    children:
-    - node: text
-      content: そんなに動的言語を書きたいか
-  p79:
-  - node: p
-    children:
-    - node: text
-      content: 書きたい！
-  p80:
-  - node: p
-    children:
-    - node: text
-      content: 静的型付きと動的の '
-    - node: br
-    - node: text
-      content: '良いとこどりができる ゆるふわ言語PHPに '
-    - node: br
-    - node: text
-      content: これからもご期待ください

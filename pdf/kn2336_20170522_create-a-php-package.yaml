@@ -1,3 +1,397 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: パッケージを作ろう！ LT
+  - kind: para
+    text: Create your PHP library/package!
+  - kind: para
+    text: '2017-05-22 PHP BLT #7'
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - GitHub/Packagistでは id:zonuexe
+    - ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+    - フレームワークなき道にフレームを作るおしごと
+    - 最近やってること
+    - ひたすらに要らないコードを整理したり、
+  - kind: para
+    text: コアの部分をぐにゃっとできるように悩んでるよ
+  - kind: list
+    items:
+    - Mastodon API Client/SDK作ったよ
+  p3:
+  - kind: para
+    text: Mastodon
+  - kind: para
+    text: たのしいんですよ
+  p4:
+  - kind: para
+    text: PHPからMastodonの
+  - kind: para
+    text: APIを簡単に触れる
+  - kind: para
+    text: クラスを作った
+  p5:
+  - kind: para
+    text: $composer require
+  - kind: para
+    text: zonuexe/mastodon-api
+  p6:
+  - kind: para
+    text: コンポーザーを手
+  - kind: para
+    text: 元に入れる方法は
+  - kind: para
+    text: キータに書いた
+  p7:
+  - kind: para
+    text: パッケージ作るときに決めること
+  - kind: para
+    text: パッケージ名 (vendor/package)
+  - kind: para
+    text: 対象PHPバージョン
+  - kind: para
+    text: ディレクトリ構成
+  - kind: para
+    text: ライセンス
+  p8:
+  - kind: heading
+    level: 1
+    text: パッケージ名
+  - kind: para
+    text: パッケージ名はvendor/package 形式
+  - kind: para
+    text: ([-0-9a-z]+ -と数字小文字のみ)
+  - kind: para
+    text: GitHubと一致させておくと親切
+  - kind: para
+    text: zonuexe/mastodon-api にした
+  p9:
+  - kind: heading
+    level: 1
+    text: 対象PHPバージョン
+  - kind: para
+    text: どこから対応するか？ HHVMは？
+  - kind: para
+    text: 5.3.2+ (Composer最低)
+  - kind: para
+    text: 5.5+ (旧安定版、サポート終了済み)
+  - kind: para
+    text: 7.0+ (旧安定版)
+  - kind: para
+    text: 5.6+, 7.1+ (現安定版)
+  p10:
+  - kind: heading
+    level: 1
+    text: ディレクトリ構成
+  - kind: para
+    text: 拘りがなければsrc/とtests/に置く
+  - kind: para
+    text: git init; mkdir src/ tests/;
+  - kind: para
+    text: コマンドを配布したければ bin/ に
+  - kind: para
+    text: docs/ にドキュメントを置くと、
+  - kind: para
+    text: GitHub Pagesに展開できて便利
+  p11:
+  - kind: heading
+    level: 1
+    text: オートローディング
+  - kind: para
+    text: モダンなPHPにrequireは最低限
+  - kind: para
+    text: 各クラスにincludeとか書かない
+  - kind: para
+    text: composer.jsonに設定を書く
+  - kind: para
+    text: 起動スクリプトでだけ
+  - kind: para
+    text: autoload.phpを読み込むようにする
+  p12:
+  - kind: heading
+    level: 1
+    text: オートローディング(PSR-4)
+  - kind: para
+    text: '{'
+  - kind: para
+    text: '"autoload": {'
+  - kind: para
+    text: '"psr-4": {'
+  - kind: para
+    text: '"Mastodon\\": "src/"'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '},'
+  - kind: para
+    text: 'autoload-dev": {'
+  - kind: para
+    text: '"psr-4": {'
+  - kind: para
+    text: '"Mastodon\\": "tests/"'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  p13:
+  - kind: heading
+    level: 1
+    text: オートローディング(files)
+  - kind: heading
+    level: 2
+    text: クラスは遅延ロードできるが、
+  - kind: heading
+    level: 2
+    text: 関数はできないので読み込む
+  - kind: para
+    text: '{'
+  - kind: para
+    text: '"autoload": {'
+  - kind: para
+    text: '"files": ["src/functions.php"]'
+  - kind: para
+    text: '},'
+  - kind: para
+    text: '"autoload-dev": {'
+  - kind: para
+    text: '"files": ["tests/helpers.php"]'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  p14:
+  - kind: heading
+    level: 1
+    text: オートローディング(classmap)
+  - kind: heading
+    level: 2
+    text: 名前空間とディレクトリ構成が
+  - kind: heading
+    level: 2
+    text: 一致しない雑なPHPも力強く読める
+  - kind: para
+    text: '{'
+  - kind: para
+    text: '"autoload": {'
+  - kind: para
+    text: '"classmap": ["src/"]'
+  - kind: para
+    text: '},'
+  - kind: para
+    text: '"autoload-dev": {'
+  - kind: para
+    text: '"classmap": ["tests/"]'
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '}'
+  p15:
+  - kind: heading
+    level: 1
+    text: ライセンス (利用許諾)
+  - kind: para
+    text: 二次利用させるためのガイドライン
+  - kind: para
+    text: 好き勝手に利用させたいなら
+  - kind: para
+    text: Apache-2.0かMITがオススメ
+  - kind: para
+    text: 他人が行なった変更を合法的に
+  - kind: para
+    text: 自分にも取り込みたいならGPL-3.0
+  p16:
+  - kind: heading
+    level: 1
+    text: 極論
+  - kind: para
+    text: ライセンス(利用許諾)を明示せずに
+  - kind: para
+    text: ソースコードをパブリックな場所に
+  - kind: para
+    text: 置いてはいけない
+  - kind: para
+    text: そのソースコードを見付けたひとが
+  - kind: para
+    text: 合法的に再利用することができない
+  p17:
+  - kind: para
+    text: よしこれで
+  - kind: para
+    text: 準備が整った
+  p18:
+  - kind: heading
+    level: 1
+    text: パッケージを探す
+  - kind: heading
+    level: 2
+    text: 定番パッケージはawesome-php
+  - kind: para
+    text: https://github.com/ziadoz/awesome-php
+  - kind: heading
+    level: 2
+    text: Packagistでぐぐる
+  - kind: para
+    text: https://packagist.org/
+  p19:
+  - kind: heading
+    level: 1
+    text: 鉄則
+  - kind: para
+    text: composer.jsonのrequireは弄るな
+  - kind: para
+    text: composer requireはコマンドで。
+  - kind: para
+    text: JSONファイルはいい感じに変更される
+  - kind: para
+    text: バージョンはいい感じに解決される
+  - kind: para
+    text: $ composer require guzzlehttp/guzzle respect/validation
+  - kind: para
+    text: $ composer require --dev phpunit/phpunit:^4.8
+  p20:
+  - kind: para
+    text: SDKがやること
+  p21:
+  - kind: heading
+    level: 1
+    text: SDKのおしごと
+  - kind: para
+    text: HTTPリクエストする
+  - kind: para
+    text: それをPHPにマッピングする
+  - kind: para
+    text: 複雑さを隠すための工夫をする
+  p22:
+  - kind: heading
+    level: 1
+    text: Entity
+  - kind: heading
+    level: 2
+    text: Mastodon本家のAPIリファレンスを
+  - kind: heading
+    level: 2
+    text: ひたすらひたすらひたすら写してく
+  - kind: para
+    text: https://github.com/tootsuite/documentation/blob/
+  - kind: para
+    text: master/Using-the-API/API.md#entities
+  - kind: heading
+    level: 2
+    text: 自作のライブラリで型付け
+  - kind: para
+    text: https://github.com/BaguettePHP/objectsystem
+  p23:
+  - kind: heading
+    level: 1
+    text: あんまり複雑なことを見せない
+  - kind: heading
+    level: 2
+    text: ちょーかんたんっぽく
+  - kind: para
+    text: <?php use Baguette\Mastodon as m;
+  - kind: para
+    text: $mastodon = m\session(
+  - kind: para
+    text: '''pawoo.net'', $client_id, $client_secret, ['
+  - kind: para
+    text: '''scope'' => ''read write follow'','
+  - kind: para
+    text: '''grant'' => [''username'' => $mail, ''password'' => $passwd],'
+  - kind: para
+    text: ']);'
+  - kind: para
+    text: $account = $mastodon->getAccount(42);
+  - kind: para
+    text: $mastodon->postStatus(m\toot('トゥートゥー'));
+  p24:
+  - kind: heading
+    level: 1
+    text: OOPであることには拘らない
+  - kind: heading
+    level: 2
+    text: Requestするメソッド
+  - kind: para
+    text: public static function getAccount(
+  - kind: para
+    text: Client $client, SessionStorage $session, $id
+  - kind: para
+    text: ) {
+  - kind: para
+    text: v::intVal()->min(0)->assert($id);
+  - kind: para
+    text: return static::map(
+  - kind: para
+    text: Entity\Account::class,
+  - kind: para
+    text: $client->requestAPI('GET',
+  - kind: para
+    text: sprintf('/api/v1/accounts/%d', $id), [], $session)
+  - kind: para
+    text: );
+  - kind: para
+    text: '}'
+  p25:
+  - kind: heading
+    level: 1
+    text: 中では再帰的にクラスを生成
+  - kind: heading
+    level: 2
+    text: APIの結果をデコードしてぶっこむ
+  - kind: para
+    text: public function __construct(array $properties) {
+  - kind: para
+    text: $this->setProperties(mapValues($properties, [
+  - kind: para
+    text: '''account'' => Account::class,'
+  - kind: para
+    text: '''reblog'' => Status::class,'
+  - kind: para
+    text: '''created_at'' => \DateTimeImmutable::class,'
+  - kind: para
+    text: '''media_attachments'' => [Attachment::class],'
+  - kind: para
+    text: '''mentions'' => [Mention::class],'
+  - kind: para
+    text: '''tags'' => [Tag::class],'
+  - kind: para
+    text: '''application'' => Application::class,'
+  - kind: para
+    text: ']));'
+  - kind: para
+    text: '}'
+  p26:
+  - kind: para
+    text: テストの
+  - kind: para
+    text: 書きかた
+  p27:
+  - kind: heading
+    level: 1
+    text: テスト
+  - kind: para
+    text: がんばりすぎない
+  - kind: para
+    text: 踏み外したくない道をしっかり書く
+  - kind: para
+    text: HTTPリクエストはGuzzleで隠蔽
+  p28:
+  - kind: para
+    text: Mastodon
+  - kind: para
+    text: たのしいんですよ
+  p29:
+  - kind: para
+    text: まだ未実装なAPIは
+  - kind: para
+    text: たくさん／(^o^)＼
 size:
   max_width: 1024
   max_height: 768
@@ -13,801 +407,3 @@ links:
     title: github.com
   - url: https://github.com/BaguettePHP/objectsystem
     title: 'GitHub - BaguettePHP/objectsystem: Object system implementation for PHP'
-text:
-  p1:
-  - node: p
-    children:
-    - node: bold
-      content: パッケージを作ろう！ LT
-  - node: p
-    children:
-    - node: bold
-      content: Create your PHP library/package!
-  - node: p
-    children:
-    - node: bold
-      content: '2017-05-22 PHP BLT #7'
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: GitHub/Packagistでは id:zonuexe
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社でひたすらPHPやってる p(ixi)v
-    - node: li
-      children:
-      - node: text
-        content: フレームワークなき道にフレームを作るおしごと
-    - node: li
-      children:
-      - node: text
-        content: 最近やってること
-  - node: p
-    children:
-    - node: text
-      content: ひたすらに要らないコードを整理したり、
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: コアの部分をぐにゃっとできるように悩んでるよ
-      - node: br
-      - node: text
-        content: Mastodon API Client/SDK作ったよ
-  p3:
-  - node: p
-    children:
-    - node: bold
-      content: Mastodon
-    - node: br
-    - node: bold
-      content: たのしいんですよ
-  p4:
-  - node: p
-    children:
-    - node: bold
-      content: PHPからMastodonの
-  - node: p
-    children:
-    - node: bold
-      content: APIを簡単に触れる
-    - node: br
-    - node: bold
-      content: クラスを作った
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: $composer require zonuexe/mastodon-api
-  p6:
-  - node: p
-    children:
-    - node: bold
-      content: コンポーザーを手
-    - node: text
-      content: ' '
-    - node: bold
-      content: 元に入れる方法は
-    - node: br
-    - node: bold
-      content: キータに書いた
-  p7:
-  - node: p
-    children:
-    - node: bold
-      content: パッケージ作るときに決めること
-  - node: p
-    children:
-    - node: text
-      content: vendor/package
-  - node: p
-    children:
-    - node: text
-      content: 'パッケージ名 ( ) '
-  - node: p
-    children:
-    - node: text
-      content: '対象PHPバージョン '
-  - node: p
-    children:
-    - node: text
-      content: 'ディレクトリ構成 '
-  - node: p
-    children:
-    - node: text
-      content: ライセンス
-  p8:
-  - node: p
-    children:
-    - node: bold
-      content: パッケージ名
-  - node: p
-    children:
-    - node: text
-      content: vendor/package
-  - node: p
-    children:
-    - node: text
-      content: パッケージ名は
-    - node: bold
-      content: '  '
-    - node: text
-      content: 形式
-  - node: p
-    children:
-    - node: text
-      content: '[-0-9a-z]+ '
-    - node: br
-    - node: text
-      content: ( -と数字小文字のみ)
-    - node: bold
-      content: ' '
-  - node: p
-    children:
-    - node: text
-      content: 'GitHubと一致させておくと親切 '
-  - node: p
-    children:
-    - node: text
-      content: zonuexe/mastodon-api
-  - node: p
-    children:
-    - node: bold
-      content: ' '
-    - node: text
-      content: にした
-  p9:
-  - node: p
-    children:
-    - node: bold
-      content: 対象PHPバージョン
-  - node: p
-    children:
-    - node: bold
-      content: どこから対応するか？ HHVM
-    - node: text
-      content: は？
-    - node: bold
-      content: ' '
-  - node: p
-    children:
-    - node: bold
-      content: '5.3.2+  '
-  - node: p
-    children:
-    - node: text
-      content: ' (Composer最低)'
-  - node: p
-    children:
-    - node: bold
-      content: '5.5+  '
-    - node: br
-    - node: text
-      content: ' (旧安定版、'
-    - node: bold
-      content: サポート終了済み
-    - node: text
-      content: )
-  - node: p
-    children:
-    - node: bold
-      content: '7.0+  '
-    - node: br
-    - node: text
-      content: ' (旧安定版)'
-  - node: p
-    children:
-    - node: bold
-      content: 5.6+, 7.1+
-  - node: p
-    children:
-    - node: text
-      content: ' (現安定版)'
-  p10:
-  - node: p
-    children:
-    - node: bold
-      content: ディレクトリ構成
-  - node: p
-    children:
-    - node: text
-      content: src/ tests/
-  - node: p
-    children:
-    - node: text
-      content: 拘りがなければ と に置く
-  - node: p
-    children:
-    - node: text
-      content: git init; mkdir src/ tests/;
-  - node: p
-    children:
-    - node: text
-      content: bin/
-  - node: p
-    children:
-    - node: text
-      content: コマンドを配布したければ
-    - node: bold
-      content: '   '
-    - node: text
-      content: に
-    - node: bold
-      content: ' '
-  - node: p
-    children:
-    - node: text
-      content: docs/
-  - node: p
-    children:
-    - node: bold
-      content: ' '
-    - node: text
-      content: にドキュメントを置くと、
-  - node: p
-    children:
-    - node: text
-      content: GitHub Pagesに展開できて便利
-  p11:
-  - node: p
-    children:
-    - node: bold
-      content: オートローディング
-  - node: p
-    children:
-    - node: text
-      content: require
-  - node: p
-    children:
-    - node: text
-      content: 'モダンなPHPに は最低限 '
-  - node: p
-    children:
-    - node: text
-      content: include
-    - node: br
-    - node: text
-      content: '各クラスに とか書かない '
-  - node: p
-    children:
-    - node: text
-      content: composer.json
-  - node: p
-    children:
-    - node: text
-      content: 'に設定を書く '
-  - node: p
-    children:
-    - node: text
-      content: 起動スクリプトでだけ
-  - node: p
-    children:
-    - node: text
-      content: autoload.php
-  - node: p
-    children:
-    - node: text
-      content: を読み込むようにする
-  p12:
-  - node: p
-    children:
-    - node: bold
-      content: オートローディング(PSR-4)
-  - node: p
-    children:
-    - node: bold
-      content: '{'
-  - node: p
-    children:
-    - node: bold
-      content: '    "autoload": {'
-  - node: p
-    children:
-    - node: bold
-      content: '        "psr-4": {'
-  - node: p
-    children:
-    - node: bold
-      content: '            "Mastodon\\": "src/"'
-  - node: p
-    children:
-    - node: bold
-      content: '        }'
-  - node: p
-    children:
-    - node: bold
-      content: '    },'
-  - node: p
-    children:
-    - node: bold
-      content: '    autoload-dev": {'
-  - node: p
-    children:
-    - node: bold
-      content: '        "psr-4": {'
-  - node: p
-    children:
-    - node: bold
-      content: '            "Mastodon\\": "tests/"'
-  - node: p
-    children:
-    - node: bold
-      content: '        }'
-  - node: p
-    children:
-    - node: bold
-      content: '    }'
-  - node: p
-    children:
-    - node: bold
-      content: '}'
-  p13:
-  - node: p
-    children:
-    - node: bold
-      content: オートローディング(files)
-  - node: p
-    children:
-    - node: text
-      content: クラスは遅延ロードできるが、 関数はできないので読み込む
-  - node: p
-    children:
-    - node: bold
-      content: '{'
-  - node: p
-    children:
-    - node: bold
-      content: '    "autoload": {'
-  - node: p
-    children:
-    - node: bold
-      content: '        "files": ["src/functions.php"]'
-  - node: p
-    children:
-    - node: bold
-      content: '    },'
-  - node: p
-    children:
-    - node: bold
-      content: '    "autoload-dev": {'
-  - node: p
-    children:
-    - node: bold
-      content: '        "files": ["tests/helpers.php"]'
-  - node: p
-    children:
-    - node: bold
-      content: '    }'
-  - node: p
-    children:
-    - node: bold
-      content: '}'
-  p14:
-  - node: p
-    children:
-    - node: bold
-      content: オートローディング(classmap)
-  - node: p
-    children:
-    - node: text
-      content: 名前空間とディレクトリ構成が
-    - node: br
-    - node: text
-      content: 一致しない雑なPHPも力強く読める
-  - node: p
-    children:
-    - node: bold
-      content: '{'
-  - node: p
-    children:
-    - node: bold
-      content: '    "autoload": {'
-  - node: p
-    children:
-    - node: bold
-      content: '        "classmap": ["src/"]'
-  - node: p
-    children:
-    - node: bold
-      content: '    },'
-  - node: p
-    children:
-    - node: bold
-      content: '    "autoload-dev": {'
-  - node: p
-    children:
-    - node: bold
-      content: '        "classmap": ["tests/"]'
-  - node: p
-    children:
-    - node: bold
-      content: '    }'
-  - node: p
-    children:
-    - node: bold
-      content: '}'
-  p15:
-  - node: p
-    children:
-    - node: bold
-      content: ライセンス
-  - node: p
-    children:
-    - node: text
-      content: ' (利用許諾)'
-  - node: p
-    children:
-    - node: bold
-      content: '二次利用させるためのガイドライン '
-  - node: p
-    children:
-    - node: text
-      content: '好き勝手に利用させたいなら '
-    - node: bold
-      content: Apache-2.0
-    - node: text
-      content: か
-    - node: bold
-      content: MIT
-    - node: text
-      content: がオススメ
-    - node: bold
-      content: ' '
-  - node: p
-    children:
-    - node: text
-      content: 他人が行なった変更を合法的に
-    - node: br
-    - node: text
-      content: 自分にも取り込みたいなら
-    - node: bold
-      content: GPL-3.0
-  p16:
-  - node: p
-    children:
-    - node: bold
-      content: 極論
-  - node: p
-    children:
-    - node: text
-      content: (利用許諾)
-  - node: p
-    children:
-    - node: text
-      content: ライセンス を明示せずに
-  - node: p
-    children:
-    - node: text
-      content: ソースコードをパブリックな場所に
-    - node: br
-    - node: text
-      content: '置いてはいけない '
-  - node: p
-    children:
-    - node: text
-      content: そのソースコードを見付けたひとが
-  - node: p
-    children:
-    - node: text
-      content: 合法的に再利用することができない
-  p17:
-  - node: p
-    children:
-    - node: bold
-      content: よしこれで
-    - node: br
-    - node: bold
-      content: 準備が整った
-  p18:
-  - node: p
-    children:
-    - node: bold
-      content: パッケージを探す
-  - node: p
-    children:
-    - node: bold
-      content: 定番パッケージはawesome-php
-  - node: p
-    children:
-    - node: bold
-      content: https://github.com/ziadoz/awesome-php
-  - node: p
-    children:
-    - node: bold
-      content: Packagistでぐぐる
-  - node: p
-    children:
-    - node: bold
-      content: https://packagist.org/
-  p19:
-  - node: p
-    children:
-    - node: bold
-      content: 鉄則
-  - node: p
-    children:
-    - node: text
-      content: composer.json require
-  - node: p
-    children:
-    - node: text
-      content: 'の は弄るな '
-  - node: p
-    children:
-    - node: text
-      content: composer require
-  - node: p
-    children:
-    - node: text
-      content: はコマンドで。
-  - node: p
-    children:
-    - node: text
-      content: 'JSONファイルはいい感じに変更される '
-  - node: p
-    children:
-    - node: text
-      content: バージョンはいい感じに解決される
-  - node: p
-    children:
-    - node: bold
-      content: $ composer require guzzlehttp/guzzle respect/validation
-  - node: p
-    children:
-    - node: bold
-      content: $ composer require --dev phpunit/phpunit:^4.8
-  p20:
-  - node: p
-    children:
-    - node: bold
-      content: SDKがやること
-  p21:
-  - node: p
-    children:
-    - node: bold
-      content: SDKのおしごと
-  - node: p
-    children:
-    - node: bold
-      content: 'HTTPリクエストする '
-  - node: p
-    children:
-    - node: bold
-      content: 'それをPHPにマッピングする '
-  - node: p
-    children:
-    - node: bold
-      content: 複雑さを隠すための工夫をする
-  p22:
-  - node: p
-    children:
-    - node: bold
-      content: Entity
-  - node: p
-    children:
-    - node: bold
-      content: Mastodon本家のAPIリファレンスを
-  - node: p
-    children:
-    - node: bold
-      content: ひたすらひたすらひたすら写してく
-  - node: p
-    children:
-    - node: bold
-      content: https://github.com/tootsuite/documentation/blob/
-  - node: p
-    children:
-    - node: bold
-      content: master/Using-the-API/API.md#entities
-  - node: p
-    children:
-    - node: bold
-      content: 自作のライブラリで型付け
-  - node: p
-    children:
-    - node: bold
-      content: https://github.com/BaguettePHP/objectsystem
-  p23:
-  - node: p
-    children:
-    - node: bold
-      content: あんまり複雑なことを見せない
-  - node: p
-    children:
-    - node: text
-      content: ちょーかんたんっぽく
-  - node: p
-    children:
-    - node: bold
-      content: <?php use Baguette\Mastodon as m;
-  - node: p
-    children:
-    - node: bold
-      content: $mastodon = m\session(
-  - node: p
-    children:
-    - node: bold
-      content: '''pawoo.net'', $client_id, $client_secret, ['
-  - node: p
-    children:
-    - node: bold
-      content: '''scope'' => ''read write follow'','
-  - node: p
-    children:
-    - node: bold
-      content: '''grant'' =>  ,'
-  - node: p
-    children:
-    - node: bold
-      content: '[''username'' => $mail, ''password'' => $passwd]'
-  - node: p
-    children:
-    - node: bold
-      content: ']);'
-  - node: p
-    children:
-    - node: bold
-      content: $account = $mastodon->getAccount(42);
-  - node: p
-    children:
-    - node: bold
-      content: $mastodon->postStatus(m\toot('トゥートゥー'));
-  p24:
-  - node: p
-    children:
-    - node: bold
-      content: OOPであることには拘らない
-  - node: p
-    children:
-    - node: text
-      content: Requestするメソッド
-  - node: p
-    children:
-    - node: bold
-      content: public static function getAccount(
-  - node: p
-    children:
-    - node: bold
-      content: '    Client $client, SessionStorage $session, $id'
-  - node: p
-    children:
-    - node: bold
-      content: ) {
-  - node: p
-    children:
-    - node: bold
-      content: '    v::intVal()->min(0)->assert($id);'
-  - node: p
-    children:
-    - node: bold
-      content: '    return static::map('
-  - node: p
-    children:
-    - node: bold
-      content: '        Entity\Account::class,'
-  - node: p
-    children:
-    - node: bold
-      content: '        $client->requestAPI(''GET'','
-  - node: p
-    children:
-    - node: bold
-      content: sprintf('/api/v1/accounts/%d', $id), [], $session)
-  - node: p
-    children:
-    - node: bold
-      content: '    );'
-  - node: p
-    children:
-    - node: bold
-      content: '}'
-  p25:
-  - node: p
-    children:
-    - node: bold
-      content: 中では再帰的にクラスを生成
-  - node: p
-    children:
-    - node: text
-      content: APIの結果をデコードしてぶっこむ
-  - node: p
-    children:
-    - node: bold
-      content: public function __construct(array $properties) {
-  - node: p
-    children:
-    - node: bold
-      content: '    $this->setProperties(mapValues($properties, ['
-  - node: p
-    children:
-    - node: bold
-      content: '        ''account''           => Account::class,'
-  - node: p
-    children:
-    - node: bold
-      content: '        ''reblog''            => Status::class,'
-  - node: p
-    children:
-    - node: bold
-      content: '        ''created_at''        => \DateTimeImmutable::class,'
-  - node: p
-    children:
-    - node: bold
-      content: '        ''media_attachments'' => [Attachment::class],'
-  - node: p
-    children:
-    - node: bold
-      content: '        ''mentions''          => [Mention::class],'
-  - node: p
-    children:
-    - node: bold
-      content: '        ''tags''              => [Tag::class],'
-  - node: p
-    children:
-    - node: bold
-      content: '        ''application''       => Application::class,'
-  - node: p
-    children:
-    - node: bold
-      content: '    ]));'
-  - node: p
-    children:
-    - node: bold
-      content: '}'
-  p26:
-  - node: p
-    children:
-    - node: bold
-      content: テストの
-    - node: text
-      content: ' '
-    - node: bold
-      content: 書きかた
-  p27:
-  - node: p
-    children:
-    - node: bold
-      content: テスト
-  - node: p
-    children:
-    - node: bold
-      content: 'がんばりすぎない '
-  - node: p
-    children:
-    - node: text
-      content: '踏み外したくない道をしっかり書く '
-  - node: p
-    children:
-    - node: text
-      content: HTTPリクエストはGuzzleで隠蔽
-  p28:
-  - node: p
-    children:
-    - node: bold
-      content: Mastodon
-    - node: br
-    - node: bold
-      content: たのしいんですよ
-  p29:
-  - node: p
-    children:
-    - node: bold
-      content: まだ未実装なAPIは
-    - node: text
-      content: ' '
-    - node: bold
-      content: たくさん／(^o^)＼

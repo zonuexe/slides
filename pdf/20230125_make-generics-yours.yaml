@@ -1,690 +1,425 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 'ジェネリクスを '
-    - node: br
-    - node: text
-      content: 自分のものにする
-  - node: p
-    children:
-    - node: text
-      content: Getting Started with Generic Programming
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2022-01-25 '
-  - node: p
-    children:
-    - node: bold
-      content: 'Qiita Night ～PHP～ '
+  - kind: heading
+    level: 1
+    text: ジェネリクスを
+  - kind: heading
+    level: 1
+    text: 自分のものにする
+  - kind: heading
+    level: 2
+    text: Getting Started with Generic Programming
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2022-01-25'
+  - kind: para
+    text: Qiita Night ～PHP～
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-        - node: li
-          children:
-          - node: text
-            content: すごい肩書の発表者が多いですが僕はヒラのPHPerです (IC?)
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - すごい肩書の発表者が多いですが僕はヒラのPHPerです (IC?)
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
   p3: []
   p4: []
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 静的解析してますか？
+  - kind: heading
+    level: 1
+    text: 静的解析してますか？
   p6: []
   p7: []
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 'ジェネリクスの '
-    - node: br
-    - node: text
-      content: 話をしよう
+  - kind: para
+    text: ジェネリクスの
+  - kind: para
+    text: 話をしよう
   p9:
-  - node: p
-    children:
-    - node: bold
-      content: ジェネリックプログラミング - Wikipedia(2022-05-02T17:30:09の版)より引用
+  - kind: heading
+    level: 1
+    text: ジェネリックプログラミング - Wikipedia(2022-05-02T17:30:09の版)より引用
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'データ型に '
-    - node: br
-    - node: text
-      content: 依存しない…？
+  - kind: para
+    text: データ型に
+  - kind: para
+    text: 依存しない…？
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 抽象的かつ 汎用的…？
+  - kind: para
+    text: 抽象的かつ
+  - kind: para
+    text: 汎用的…？
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 'まず基本的な '
-    - node: br
-    - node: text
-      content: 静的型の話
+  - kind: para
+    text: まず基本的な
+  - kind: para
+    text: 静的型の話
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 静的型付け
-  - node: p
-    children:
-    - node: text
-      content: ' (statically typing)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 静的 = 実行しなくても型がわかる状態 (反対語は動的 = プログラム実行)
-    - node: li
-      children:
-      - node: text
-        content: 型宣言 (コードに型を書く)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 現状のPHPではパラメータとプロパティに型宣言できる
-        - node: li
-          children:
-          - node: text
-            content: PHPは処理系が実行時の型を保障してくれる (口約束ではない！)
-    - node: li
-      children:
-      - node: text
-        content: 型推論 (文字で型を書かなくても空気を読んでくれる)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: $a = count($array)  のとき $a の型は常に int
-        - node: li
-          children:
-          - node: text
-            content: $b = 1 + 2 の結果は int(3)
+  - kind: heading
+    level: 1
+    text: 静的型付け (statically typing)
+  - kind: list
+    items:
+    - 静的 = 実行しなくても型がわかる状態 (反対語は動的 = プログラム実行)
+    - 型宣言 (コードに型を書く)
+    - 現状のPHPではパラメータとプロパティに型宣言できる
+    - PHPは処理系が実行時の型を保障してくれる (口約束ではない！)
+    - 型推論 (文字で型を書かなくても空気を読んでくれる)
+    - $a = count($array) のとき $a の型は常に int
+    - $b = 1 + 2 の結果は int(3)
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 型付けの具体例を 見ていきましょう
+  - kind: para
+    text: 型付けの具体例を
+  - kind: para
+    text: 見ていきましょう
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 'まずはジェネリクスと '
-    - node: br
-    - node: text
-      content: あまり関係ない例
+  - kind: para
+    text: まずはジェネリクスと
+  - kind: para
+    text: あまり関係ない例
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 型がついていない関数(PHP5)
-  - node: p
-    children:
-    - node: text
-      content: 型宣言なし ＝ mixed
-  - node: p
-    children:
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 型がついていない関数(PHP5)
+  - kind: para
+    text: 型宣言なし
+  - kind: para
+    text: ＝ mixed
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p18:
-  - node: p
-    children:
-    - node: text
-      content: スカラー型宣言(PHP7)
-  - node: p
-    children:
-    - node: text
-      content: 'int + intって '
-    - node: br
-    - node: text
-      content: 本当にintなの？
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: スカラー型宣言(PHP7)
+  - kind: para
+    text: int + intって
+  - kind: para
+    text: 本当にintなの？
+  - kind: para
+    text: 'function add(int $a, int $b): int {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 広い値をとるにはﬂoatが必要
-  - node: p
-    children:
-    - node: text
-      content: 'ひとつの解決策では '
-    - node: br
-    - node: text
-      content: あるが… 不必要に(cid:190)oat
-    - node: br
-    - node: text
-      content: を強制するのか
-  - node: p
-    children:
-    - node: text
-      content: 'function add(float $a, float $b): float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 広い値をとるにはfloatが必要
+  - kind: para
+    text: ひとつの解決策では
+  - kind: para
+    text: あるが… 不必要にfloat
+  - kind: para
+    text: を強制するのか
+  - kind: para
+    text: 'function add(float $a, float $b): float {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p20:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの型注釈
-  - node: p
-    children:
-    - node: text
-      content: (アノテーション)
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @param int|float $a'
-  - node: p
-    children:
-    - node: text
-      content: あえて型宣言を省略する
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int|float $b'
-    - node: br
-    - node: text
-      content: ' * @return int|float'
-    - node: br
-    - node: text
-      content: ' */         '
-    - node: br
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @param int|float $a'
+  - kind: para
+    text: '* @param int|float $b'
+  - kind: para
+    text: '* @return int|float'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function add($a, $b) {
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p21:
-  - node: p
-    children:
-    - node: text
-      content: ユニオン型宣言 (PHP8.0)
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int|float $a, int|float $b): int|float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: ユニオン型宣言 (PHP8.0)
+  - kind: para
+    text: 'function add(int|float $a, int|float $b): int|float {'
+  - kind: para
+    text: return $a + $b;
+  - kind: para
+    text: '}'
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 基本的な型宣言
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの言語として記述できる静的な型宣言は大まかに3種類
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 具体的な型
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: int, (cid:190)oat, string, bool, array, DateTimeInterface,
-                  ...
-        - node: li
-          children:
-          - node: text
-            content: 複合的な型
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: A|B, int|false, ?DateTime, ArrayAccess&Traversable ...
-        - node: li
-          children:
-          - node: text
-            content: 型定義をしない (または mixed)
+  - kind: heading
+    level: 1
+    text: 基本的な型宣言
+  - kind: list
+    items:
+    - PHPの言語として記述できる静的な型宣言は大まかに3種類
+    - 具体的な型
+    - int, float, string, bool, array, DateTimeInterface, ...
+    - 複合的な型
+    - A|B, int|false, ?DateTime, ArrayAccess&Traversable ...
+    - 型定義をしない (または mixed)
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 'かくして世界は '
-    - node: br
-    - node: text
-      content: 型の炎に包まれた
+  - kind: para
+    text: かくして世界は
+  - kind: para
+    text: 型の炎に包まれた
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'だが型なしは '
-    - node: br
-    - node: text
-      content: 死滅していなかった
+  - kind: para
+    text: だが型なしは
+  - kind: para
+    text: 死滅していなかった
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '別の例を '
-    - node: br
-    - node: text
-      content: 考えてみましょう
+  - kind: para
+    text: 別の例を
+  - kind: para
+    text: 考えてみましょう
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 配列の先頭要素を返す関数
-  - node: p
-    children:
-    - node: text
-      content: 'function first(array $a, mixed $default): mixed {'
-    - node: br
-    - node: text
-      content: '    return $a[0] ?? $default;'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: $vの型は何？
-  - node: p
-    children:
-    - node: text
-      content: $v = first([0, 1, 2], 'default');
+  - kind: heading
+    level: 1
+    text: 配列の先頭要素を返す関数
+  - kind: para
+    text: 'function first(array $a, mixed $default): mixed {'
+  - kind: para
+    text: return $a[0] ?? $default;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $vの型は何？
+  - kind: para
+    text: $v = first([0, 1, 2], 'default');
   p27:
-  - node: p
-    children:
-    - node: text
-      content: int専用関数をつくろう
-  - node: p
-    children:
-    - node: text
-      content: 'function first_int(array $a): ?int {'
-    - node: br
-    - node: text
-      content: '    return $a[0] ?? null;'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: $v = first_int([0, 1, 2]) ?? 'default';
+  - kind: heading
+    level: 1
+    text: int専用関数をつくろう
+  - kind: para
+    text: 'function first_int(array $a): ?int {'
+  - kind: para
+    text: return $a[0] ?? null;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $v = first_int([0, 1, 2]) ?? 'default';
   p28:
-  - node: p
-    children:
-    - node: text
-      content: string専用関数をつくろう
-  - node: p
-    children:
-    - node: text
-      content: 'function first_string(array $a): ?string'
-    - node: br
-    - node: text
-      content: '    return $a[0] ?? null;'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: $v = first_string(['a', 'b', 'c']) ?? 'default';
+  - kind: heading
+    level: 1
+    text: string専用関数をつくろう
+  - kind: para
+    text: 'function first_string(array $a): ?string'
+  - kind: para
+    text: return $a[0] ?? null;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $v = first_string(['a', 'b', 'c']) ?? 'default';
   p29:
-  - node: p
-    children:
-    - node: text
-      content: DateTime専用関数をつくろう
-  - node: p
-    children:
-    - node: text
-      content: 'function first_DateTime(array $a): ?DateTime'
-    - node: br
-    - node: text
-      content: '    return $a[0] ?? null;'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: $v = first_DataTime([]) ?? 'default';
+  - kind: heading
+    level: 1
+    text: DateTime専用関数をつくろう
+  - kind: para
+    text: 'function first_DateTime(array $a): ?DateTime'
+  - kind: para
+    text: return $a[0] ?? null;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: $v = first_DataTime([]) ?? 'default';
   p30:
-  - node: p
-    children:
-    - node: text
-      content: '関数量産は '
-    - node: br
-    - node: text
-      content: めんどくさい
+  - kind: para
+    text: 関数量産は
+  - kind: para
+    text: めんどくさい
   p31:
-  - node: p
-    children:
-    - node: text
-      content: ユニオン型は問題解決しない
-  - node: p
-    children:
-    - node: text
-      content: 'function first(array $a): int|string|DateTime|null {'
-    - node: br
-    - node: text
-      content: '    return $a[0] ?? $default;'
-  - node: p
-    children:
-    - node: text
-      content: なんでDateTimeとか
-  - node: p
-    children:
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: 出てくるの？
-  - node: p
-    children:
-    - node: text
-      content: $v = first([0, 1, 2], 'default');
+  - kind: heading
+    level: 1
+    text: ユニオン型は問題解決しない
+  - kind: para
+    text: なんでDateTimeとか
+  - kind: para
+    text: 'function first(array $a): int|string|DateTime|null {'
+  - kind: para
+    text: return $a[0] ?? $default;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: 出てくるの？
+  - kind: para
+    text: $v = first([0, 1, 2], 'default');
   p32:
-  - node: p
-    children:
-    - node: text
-      content: '?DateTimeとか '
-    - node: br
-    - node: text
-      content: 'int|falseくらいなら '
-    - node: br
-    - node: text
-      content: 問題ない
+  - kind: para
+    text: ?DateTimeとか
+  - kind: para
+    text: int|falseくらいなら
+  - kind: para
+    text: 問題ない
   p33:
-  - node: p
-    children:
-    - node: text
-      content: それを補うのが
-  - node: p
-    children:
-    - node: text
-      content: PHPDoc
+  - kind: para
+    text: それを補うのが
+  - kind: para
+    text: PHPDoc
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPDocタグ '
-    - node: br
-    - node: text
-      content: いくついえるかな
+  - kind: para
+    text: PHPDocタグ
+  - kind: para
+    text: いくついえるかな
   p35:
-  - node: p
-    children:
-    - node: text
-      content: '@param'
+  - kind: heading
+    level: 1
+    text: '@param'
   p36:
-  - node: p
-    children:
-    - node: text
-      content: '@return'
+  - kind: heading
+    level: 1
+    text: '@return'
   p37:
-  - node: p
-    children:
-    - node: text
-      content: '@var'
+  - kind: heading
+    level: 1
+    text: '@var'
   p38:
-  - node: p
-    children:
-    - node: text
-      content: '@template'
+  - kind: heading
+    level: 1
+    text: '@template'
   p39:
-  - node: p
-    children:
-    - node: text
-      content: …なにそれ？
+  - kind: heading
+    level: 1
+    text: …なにそれ？
   p40:
-  - node: p
-    children:
-    - node: text
-      content: '@template は型変数'
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @template TValue'
-    - node: br
-    - node: text
-      content: ' * @template TDefault'
-    - node: br
-    - node: text
-      content: ' * @param array<TValue> $a  * @param TDefault $default  * @return
-        TValue|TDefault'
-    - node: br
-    - node: text
-      content: ' */'
-    - node: br
-    - node: text
-      content: function first(array $a, mixed $default) {
+  - kind: heading
+    level: 1
+    text: '@template は型変数'
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @template TValue'
+  - kind: para
+    text: '* @template TDefault'
+  - kind: para
+    text: '* @param array<TValue> $a'
+  - kind: para
+    text: '* @param TDefault $default'
+  - kind: para
+    text: '* @return TValue|TDefault'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: function first(array $a, mixed $default) {
   p41: []
   p42: []
   p43:
-  - node: p
-    children:
-    - node: text
-      content: やっていきましょう
+  - kind: heading
+    level: 1
+    text: やっていきましょう
   p44: []
   p45: []
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'いまは内部型表現の '
-    - node: br
-    - node: text
-      content: 制約でシンプルな 型しか付かないが
+  - kind: para
+    text: いまは内部型表現の
+  - kind: para
+    text: 制約でシンプルな
+  - kind: para
+    text: 型しか付かないが
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 'そのうち '
-    - node: br
-    - node: text
-      content: 万病に効くようになる
+  - kind: para
+    text: そのうち
+  - kind: para
+    text: 万病に効くようになる
   p48: []
   p49: []
   p50:
-  - node: p
-    children:
-    - node: text
-      content: 'テンプレートは '
-    - node: br
-    - node: text
-      content: クラスにも書ける
+  - kind: para
+    text: テンプレートは
+  - kind: para
+    text: クラスにも書ける
   p51: []
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 'ジェネレータでも '
-    - node: br
-    - node: text
-      content: 使える
+  - kind: para
+    text: ジェネレータでも
+  - kind: para
+    text: 使える
   p53: []
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 'コレクションも '
-    - node: br
-    - node: text
-      content: 簡単に定義できる
+  - kind: para
+    text: コレクションも
+  - kind: para
+    text: 簡単に定義できる
   p55: []
   p56:
-  - node: p
-    children:
-    - node: text
-      content: tagged union
+  - kind: heading
+    level: 1
+    text: tagged union
   p57: []
   p58:
-  - node: p
-    children:
-    - node: text
-      content: モナド
+  - kind: heading
+    level: 1
+    text: モナド
   p59: []
   p60:
-  - node: p
-    children:
-    - node: text
-      content: '実際難しいことは '
-  - node: p
-    children:
-    - node: text
-      content: (そんなに)
-    - node: br
-    - node: text
-      content: やってない
+  - kind: para
+    text: 実際難しいことは
+  - kind: para
+    text: (そんなに)
+  - kind: para
+    text: やってない
   p61:
-  - node: p
-    children:
-    - node: text
-      content: '試行錯誤したことが '
-    - node: br
-    - node: text
-      content: 'ない技術が難しいのは '
-    - node: br
-    - node: text
-      content: あたりまえ
+  - kind: para
+    text: 試行錯誤したことが
+  - kind: para
+    text: ない技術が難しいのは
+  - kind: para
+    text: あたりまえ
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanは '
-    - node: br
-    - node: text
-      content: 'Webでこねこね '
-    - node: br
-    - node: text
-      content: 試行錯誤がやりやすい
+  - kind: para
+    text: PHPStanは
+  - kind: para
+    text: Webでこねこね
+  - kind: para
+    text: 試行錯誤がやりやすい
   p63:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStan '
-    - node: br
-    - node: text
-      content: 完全にマスターしよう
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: 完全にマスターしよう
   p64: []
   p65:
-  - node: p
-    children:
-    - node: text
-      content: '今回はひたすら '
-    - node: br
-    - node: text
-      content: '実例を詰め込んで '
-    - node: br
-    - node: text
-      content: 話しました
+  - kind: para
+    text: 今回はひたすら
+  - kind: para
+    text: 実例を詰め込んで
+  - kind: para
+    text: 話しました
   p66:
-  - node: p
-    children:
-    - node: text
-      content: ジェネリクスの知識は
-    - node: br
-    - node: text
-      content: 'なくても '
-    - node: br
-    - node: text
-      content: PHPStanは使える
+  - kind: para
+    text: ジェネリクスの知識は
+  - kind: para
+    text: なくても
+  - kind: para
+    text: PHPStanは使える
   p67: []
   p68:
-  - node: p
-    children:
-    - node: text
-      content: 宣伝
+  - kind: heading
+    level: 1
+    text: 宣伝
   p69: []
   p70: []
   p71:
-  - node: p
-    children:
-    - node: text
-      content: '会社で実用しよう '
-  - node: p
-    children:
-    - node: text
-      content: PHPStan
+  - kind: para
+    text: 会社で実用しよう
+  - kind: para
+    text: PHPStan
 size:
   max_width: 1920
   max_height: 1080

@@ -1,592 +1,399 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 5分でわかるPHPの型システム
-  - node: p
-    children:
-    - node: text
-      content: Introducing PHP's type system in 5 minutes
-  - node: p
-    children:
-    - node: text
-      content: にゃんだーすわん @tadsan / USAMI Kenta うさみけんた
+  - kind: heading
+    level: 1
+    text: 5分でわかるPHPの型システム
+  - kind: heading
+    level: 2
+    text: Introducing PHP's type system in 5 minutes
+  - kind: heading
+    level: 3
+    text: にゃんだーすわん @tadsan / USAMI Kenta うさみけんた
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: p
-    children:
-    - node: text
-      content: ヾ(〃＞＜)ﾉﾞ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 (2012〜)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: pixivやピクシブ百科事典などを担当
-    - node: li
-      children:
-      - node: text
-        content: TechFeed公認エキスパートNo.27
-    - node: li
-      children:
-      - node: text
-        content: PHPカンファレンス / PHPerKaigi スタッフ
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeメンテナ
-    - node: li
-      children:
-      - node: text
-        content: phpusers-ja/Emacs JPなどのコミュニティ
-    - node: li
-      children:
-      - node: text
-        content: spcamp 2010 プログラミング言語組
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: para
+    text: ヾ(〃＞＜)ﾉﾞ
+  - kind: list
+    items:
+    - ピクシブ株式会社 pixiv事業本部 (2012～)
+    - pixivやピクシブ百科事典などを担当
+    - TechFeed公認エキスパートNo.27
+    - PHPカンファレンス / PHPerKaigi スタッフ
+    - Emacs PHP Modeメンテナ
+    - phpusers-ja/Emacs JPなどのコミュニティ
+    - spcamp 2010 プログラミング言語組
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPは簡単な言語だから '
-    - node: br
-    - node: text
-      content: 上級テクニックなんてないよ笑
+  - kind: para
+    text: PHPは簡単な言語だから
+  - kind: para
+    text: 上級テクニックなんてないよ笑
   p4:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPは簡単な言語だから '
-    - node: br
-    - node: text
-      content: 上級テクニックなんてないよ笑 言語が簡単なので素朴に書くとエントロピーが無限に増大する
+  - kind: heading
+    level: 1
+    text: PHPは簡単な言語だから
+  - kind: heading
+    level: 1
+    text: 上級テクニックなんてないよ笑
+  - kind: para
+    text: 言語が簡単なので素朴に書くとエントロピーが無限に増大する
   p5:
-  - node: p
-    children:
-    - node: text
-      content: PHPの型にどのような 印象を持っていますか？
+  - kind: para
+    text: PHPの型にどのような
+  - kind: para
+    text: 印象を持っていますか？
   p6:
-  - node: p
-    children:
-    - node: text
-      content: '脆弱性 ゆるふわ 弱い型 動的         '
-    - node: br
-    - node: text
-      content: クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当
-    - node: br
-    - node: text
-      content: PHPについてのパブリックイメージ
+  - kind: para
+    text: 脆弱性 ゆるふわ 弱い型 動的
+  - kind: para
+    text: クソザコ 型なし 意味不明 弱い
+  - kind: para
+    text: 自動変換 貧弱 Perlっぽい 適当
+  - kind: para
+    text: PHPについてのパブリックイメージ
   p7:
-  - node: p
-    children:
-    - node: text
-      content: '脆弱性 ゆるふわ 弱い型 動的         '
-  - node: p
-    children:
-    - node: text
-      content: ？
-  - node: p
-    children:
-    - node: text
-      content: クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当
-    - node: br
-    - node: text
-      content: PHPについての認識は概ね間違い
+  - kind: para
+    text: ？
+  - kind: para
+    text: 脆弱性 ゆるふわ 弱い型 動的
+  - kind: para
+    text: クソザコ 型なし 意味不明 弱い
+  - kind: para
+    text: 自動変換 貧弱 Perlっぽい 適当
+  - kind: para
+    text: PHPについての認識は概ね間違い
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPの値は型タグと共用体の '
-    - node: br
-    - node: text
-      content: 組に過ぎませんが何か？
+  - kind: para
+    text: PHPの値は型タグと共用体の
+  - kind: para
+    text: 組に過ぎませんが何か？
   p9:
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h
-    - node: br
+  - kind: heading
+    level: 1
+    text: https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h
   p10:
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h
-    - node: br
+  - kind: heading
+    level: 1
+    text: https://github.com/php/php-src/blob/php-8.1.0/Zend/zend_types.h
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPの値は型タグと共用体の '
-    - node: br
-    - node: text
-      content: 組に過ぎませんが何か？
-    - node: br
-    - node: text
-      content: 過言です
+  - kind: heading
+    level: 1
+    text: PHPの値は型タグと共用体の
+  - kind: heading
+    level: 1
+    text: 組に過ぎませんが何か？
+  - kind: para
+    text: 過言です
   p12:
-  - node: p
-    children:
-    - node: text
-      content: '極論はさておいてPHP '
-    - node: br
-    - node: text
-      content: ランタイムの型はこれだけ
+  - kind: para
+    text: 極論はさておいてPHP
+  - kind: para
+    text: ランタイムの型はこれだけ
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '言語処理系の内部実装について 「Rubyソースコード完全解説」 '
-    - node: br
-    - node: text
-      content: が参考になる
+  - kind: para
+    text: 言語処理系の内部実装について
+  - kind: para
+    text: 「Rubyソースコード完全解説」
+  - kind: para
+    text: が参考になる
   p14:
-  - node: p
-    children:
-    - node: bold
-      content: 'bool int float string '
-    - node: br
-    - node: bold
-      content: array object null
-    - node: text
-      content: ' '
-  - node: p
-    children:
-    - node: text
-      content: 'resource '
-  - node: p
-    children:
-    - node: text
-      content: (callable iterable mixed)
-  - node: p
-    children:
-    - node: text
-      content: JSONで扱える型 + 特殊な型がある
+  - kind: para
+    text: bool int float string
+  - kind: para
+    text: array object null
+  - kind: para
+    text: resource (callable iterable mixed)
+  - kind: para
+    text: JSONで扱える型 + 特殊な型がある
   p15:
-  - node: p
-    children:
-    - node: text
-      content: '無限の可能性を持つ '
-  - node: p
-    children:
-    - node: bold
-      content: array
-  - node: p
-    children:
-    - node: text
-      content: 'Pythonでのlist/dict '
-    - node: br
-    - node: text
-      content: RubyのArray/Hashを併せ持つ
+  - kind: heading
+    level: 1
+    text: 無限の可能性を持つ
+  - kind: heading
+    level: 1
+    text: array
+  - kind: para
+    text: Pythonでのlist/dict
+  - kind: para
+    text: RubyのArray/Hashを併せ持つ
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 'ユニオン型 '
-  - node: p
-    children:
-    - node: bold
-      content: A|B
-  - node: p
-    children:
-    - node: text
-      content: 'AまたはB '
-    - node: br
-    - node: text
-      content: (複雑な式は書けない)
+  - kind: heading
+    level: 1
+    text: ユニオン型
+  - kind: heading
+    level: 1
+    text: A|B
+  - kind: para
+    text: AまたはB
+  - kind: para
+    text: (複雑な式は書けない)
   p17:
-  - node: p
-    children:
-    - node: text
-      content: '交叉型 '
-  - node: p
-    children:
-    - node: bold
-      content: A&B
-  - node: p
-    children:
-    - node: text
-      content: 'AおよびB '
-    - node: br
-    - node: text
-      content: (複雑な式は書けない)
+  - kind: heading
+    level: 1
+    text: 交叉型
+  - kind: heading
+    level: 1
+    text: A&B
+  - kind: para
+    text: AおよびB
+  - kind: para
+    text: (複雑な式は書けない)
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'null許容型 '
-  - node: p
-    children:
-    - node: text
-      content: '?'
-    - node: br
-    - node: bold
-      content: A
-  - node: p
-    children:
-    - node: text
-      content: 'Aまたはnull '
-    - node: br
-    - node: text
-      content: デフォルトで許容しない
+  - kind: heading
+    level: 1
+    text: null許容型
+  - kind: heading
+    level: 1
+    text: ?A
+  - kind: para
+    text: Aまたはnull
+  - kind: para
+    text: デフォルトで許容しない
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 謎のPHP用語
-  - node: p
-    children:
-    - node: bold
-      content: mixed
-  - node: p
-    children:
-    - node: text
-      content: 'いわゆるany '
-    - node: br
-    - node: text
-      content: (PHPマニュアルの記述に由来)
+  - kind: heading
+    level: 1
+    text: 謎のPHP用語
+  - kind: heading
+    level: 1
+    text: mixed
+  - kind: para
+    text: いわゆるany
+  - kind: para
+    text: (PHPマニュアルの記述に由来)
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '型宣言できない特殊型 '
-  - node: p
-    children:
-    - node: bold
-      content: resource
-  - node: p
-    children:
-    - node: text
-      content: 'ファイルポインタなど '
-    - node: br
-    - node: text
-      content: (徐々にobjectに置き換え)
+  - kind: heading
+    level: 1
+    text: 型宣言できない特殊型
+  - kind: heading
+    level: 1
+    text: resource
+  - kind: para
+    text: ファイルポインタなど
+  - kind: para
+    text: (徐々にobjectに置き換え)
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 型はランタイムに 確実に保証される
+  - kind: para
+    text: 型はランタイムに
+  - kind: para
+    text: 確実に保証される
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '整数ではない文字列は '
-    - node: br
-    - node: text
-      content: 型宣言通りに変換
+  - kind: para
+    text: 整数ではない文字列は
+  - kind: para
+    text: 型宣言通りに変換
   p23:
-  - node: p
-    children:
-    - node: text
-      content: '整数ではない文字列は '
-    - node: br
-    - node: text
-      content: TypeErrorになる
+  - kind: para
+    text: 整数ではない文字列は
+  - kind: para
+    text: TypeErrorになる
   p24:
-  - node: p
-    children:
-    - node: text
-      content: ファイル単位で
-    - node: br
-    - node: text
-      content: 'strict_types=1指定で '
-    - node: br
-    - node: text
-      content: 自動変換を抑制
+  - kind: para
+    text: ファイル単位で
+  - kind: para
+    text: strict_types=1指定で
+  - kind: para
+    text: 自動変換を抑制
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 'どちらにせよ受け取った '
-    - node: br
-    - node: text
-      content: '関数の側ではintであることが '
-    - node: br
-    - node: text
-      content: 保証される
+  - kind: para
+    text: どちらにせよ受け取った
+  - kind: para
+    text: 関数の側ではintであることが
+  - kind: para
+    text: 保証される
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPでは実行時に '
-    - node: br
-    - node: text
-      content: 型情報がとれる
+  - kind: para
+    text: PHPでは実行時に
+  - kind: para
+    text: 型情報がとれる
   p27:
-  - node: p
-    children:
-    - node: text
-      content: ユニオン型宣言で 適切に変換される
+  - kind: para
+    text: ユニオン型宣言で
+  - kind: para
+    text: 適切に変換される
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 'classとinterfaceを '
-    - node: br
-    - node: text
-      content: ユーザー定義型として利用可能
+  - kind: para
+    text: classとinterfaceを
+  - kind: para
+    text: ユーザー定義型として利用可能
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言にクラス名を指定できる
+  - kind: heading
+    level: 1
+    text: 型宣言にクラス名を指定できる
   p30:
-  - node: p
-    children:
-    - node: text
-      content: インターフェイスも指定できる
+  - kind: heading
+    level: 1
+    text: インターフェイスも指定できる
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 'void型宣言で戻り値を '
-    - node: br
-    - node: text
-      content: 返さないことを明示できる
-  - node: p
-    children:
-    - node: text
-      content: = その関数には副作用がある
+  - kind: para
+    text: void型宣言で戻り値を
+  - kind: para
+    text: 返さないことを明示できる
+  - kind: para
+    text: = その関数には副作用がある
   p32:
-  - node: p
-    children:
-    - node: text
-      content: never型宣言でメソッドが 正常終了しないことを宣言
-  - node: p
-    children:
-    - node: text
-      content: = 異常状態が後続に漏れない
+  - kind: para
+    text: never型宣言でメソッドが
+  - kind: para
+    text: 正常終了しないことを宣言
+  - kind: para
+    text: = 異常状態が後続に漏れない
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 'WSGI/Rack/PSGI相当のWeb '
-    - node: br
-    - node: text
-      content: 'アプリケーションのI/Fも '
-    - node: br
-    - node: text
-      content: 型宣言ベースで定義されている
+  - kind: para
+    text: WSGI/Rack/PSGI相当のWeb
+  - kind: para
+    text: アプリケーションのI/Fも
+  - kind: para
+    text: 型宣言ベースで定義されている
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 'MIT License - Copyright (c) 2018 PHP-FIG         '
-    - node: br
-    - node: text
-      content: https://github.com/php-fig/http-factory/blob/1.0.1/src/ResponseFactoryInterface.php
+  - kind: para
+    text: MIT License - Copyright (c) 2018 PHP-FIG
+  - kind: para
+    text: https://github.com/php-fig/http-factory/blob/1.0.1/src/ResponseFactoryInterface.php
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 型はランタイムに 確実に保証される
-    - node: br
-    - node: text
-      content: それはわかった
+  - kind: heading
+    level: 1
+    text: 型はランタイムに
+  - kind: heading
+    level: 1
+    text: 確実に保証される
+  - kind: para
+    text: それはわかった
   p36:
-  - node: p
-    children:
-    - node: text
-      content: '型が実行時に保証される点で '
-    - node: br
-    - node: text
-      content: PHPは他の動的言語とは 一線を画しているといえる
+  - kind: para
+    text: 型が実行時に保証される点で
+  - kind: para
+    text: PHPは他の動的言語とは
+  - kind: para
+    text: 一線を画しているといえる
   p37:
-  - node: p
-    children:
-    - node: text
-      content: '要するにPHPは '
-  - node: p
-    children:
-    - node: text
-      content: statically typed
-    - node: br
-    - node: text
-      content: 静的型付き…ってコト！？
+  - kind: heading
+    level: 1
+    text: 要するにPHPは
+  - kind: para
+    text: statically
+  - kind: para
+    text: typed
+  - kind: heading
+    level: 1
+    text: 静的型付き…ってコト！？
   p38:
-  - node: p
-    children:
-    - node: text
-      content: 型なしはどこから来るの？
+  - kind: heading
+    level: 1
+    text: 型なしはどこから来るの？
   p39:
-  - node: p
-    children:
-    - node: text
-      content: '動的言語を型なしと呼ぶのも '
-    - node: br
-    - node: text
-      content: 別に誹謗中傷というわけではない
+  - kind: para
+    text: 動的言語を型なしと呼ぶのも
+  - kind: para
+    text: 別に誹謗中傷というわけではない
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPではURLクエリを '
-    - node: br
-    - node: text
-      content: グローバル変数から取り出せる
+  - kind: para
+    text: PHPではURLクエリを
+  - kind: para
+    text: グローバル変数から取り出せる
   p41:
-  - node: p
-    children:
-    - node: text
-      content: 'いろんなところから湧き出す '
-    - node: br
-    - node: text
-      content: 型の特定できないデータ
+  - kind: para
+    text: いろんなところから湧き出す
+  - kind: para
+    text: 型の特定できないデータ
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'arrayは無限の可能性を秘める '
-    - node: br
-    - node: text
-      content: (悪い意味で)
+  - kind: para
+    text: arrayは無限の可能性を秘める
+  - kind: para
+    text: (悪い意味で)
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '扱う対象が複数になったのに '
-    - node: br
-    - node: text
-      content: 型に反映されない
+  - kind: para
+    text: 扱う対象が複数になったのに
+  - kind: para
+    text: 型に反映されない
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPの組み込みの型機能では '
-    - node: br
-    - node: text
-      content: どんなに型推論しても 静的に型が定まらない
+  - kind: para
+    text: PHPの組み込みの型機能では
+  - kind: para
+    text: どんなに型推論しても
+  - kind: para
+    text: 静的に型が定まらない
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 'arrayの中に何が '
-    - node: br
-    - node: text
-      content: 入ってるのかわからん
-  - node: p
-    children:
-    - node: text
-      content: https://www.php.net/array_map
+  - kind: heading
+    level: 1
+    text: arrayの中に何が
+  - kind: heading
+    level: 1
+    text: 入ってるのかわからん
+  - kind: para
+    text: https://www.php.net/array_map
   p46:
-  - node: p
-    children:
-    - node: text
-      content: '几帳面に型宣言だけを追うと '
-    - node: br
-    - node: text
-      content: 人間にはわかる型も機械は理解できない
+  - kind: para
+    text: 几帳面に型宣言だけを追うと
+  - kind: para
+    text: 人間にはわかる型も機械は理解できない
   p47:
-  - node: p
-    children:
-    - node: text
-      content: '無限の可能性を秘めたarrayを '
-    - node: br
-    - node: text
-      content: '放置するとコード全体の '
-    - node: br
-    - node: text
-      content: 'エントロピーが増大し '
-    - node: br
-    - node: text
-      content: プロジェクトは熱的死を迎える
+  - kind: para
+    text: 無限の可能性を秘めたarrayを
+  - kind: para
+    text: 放置するとコード全体の
+  - kind: para
+    text: エントロピーが増大し
+  - kind: para
+    text: プロジェクトは熱的死を迎える
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'ランタイムに保証 '
-    - node: br
-    - node: text
-      content: されない型を書こう
+  - kind: para
+    text: ランタイムに保証
+  - kind: para
+    text: されない型を書こう
   p49:
-  - node: p
-    children:
-    - node: text
-      content: https://phpstan.org/
+  - kind: heading
+    level: 1
+    text: https://phpstan.org/
   p50:
-  - node: p
-    children:
-    - node: text
-      content: http://psalm.dev/
+  - kind: heading
+    level: 1
+    text: http://psalm.dev/
   p51:
-  - node: p
-    children:
-    - node: text
-      content: https://www.jetbrains.com/ja-jp/phpstorm/
+  - kind: heading
+    level: 1
+    text: https://www.jetbrains.com/ja-jp/phpstorm/
   p52:
-  - node: p
-    children:
-    - node: text
-      content: '/** */ のブロックに型を書く '
-  - node: p
-    children:
-    - node: text
-      content: array-shapes
-  - node: p
-    children:
-    - node: text
-      content: 'array{key: type} で構造体 '
-    - node: br
-    - node: text
-      content: のような型を記述できる
+  - kind: para
+    text: /** */ のブロックに型を書く
+  - kind: para
+    text: 'array{key: type} で構造体'
+  - kind: para
+    text: のような型を記述できる
+  - kind: heading
+    level: 1
+    text: array-shapes
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 'array<key, value> '
-  - node: p
-    children:
-    - node: text
-      content: array<T>
-  - node: p
-    children:
-    - node: text
-      content: list<value> のように型を書ける
+  - kind: para
+    text: array<key, value>
+  - kind: para
+    text: list<value> のように型を書ける
+  - kind: heading
+    level: 1
+    text: array<T>
   p54:
-  - node: p
-    children:
-    - node: text
-      content: '型パラメータで戻り値を '
-  - node: p
-    children:
-    - node: text
-      content: '@template'
-  - node: p
-    children:
-    - node: text
-      content: 可変にできる
+  - kind: para
+    text: 型パラメータで戻り値を
+  - kind: para
+    text: 可変にできる
+  - kind: heading
+    level: 1
+    text: '@template'
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 'ツール互換性のために '
-  - node: p
-    children:
-    - node: text
-      content: '@template'
-  - node: p
-    children:
-    - node: text
-      content: '@phpstan- を付けてもよい'
+  - kind: para
+    text: ツール互換性のために
+  - kind: para
+    text: '@phpstan- を付けてもよい'
+  - kind: heading
+    level: 1
+    text: '@template'
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 'アプリケーションの '
-    - node: br
-    - node: text
-      content: 'エントロピーを減少させて '
-    - node: br
-    - node: text
-      content: 快適に開発しよう
+  - kind: para
+    text: アプリケーションの
+  - kind: para
+    text: エントロピーを減少させて
+  - kind: para
+    text: 快適に開発しよう
 size:
   max_width: 1920
   max_height: 1080

@@ -1,620 +1,452 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 配列の型と向き合う
-  - node: p
-    children:
-    - node: text
-      content: '2020-02-26 PHP勉強会@東京 '
-  - node: p
-    children:
-    - node: text
-      content: '#phpstudy'
+  - kind: heading
+    level: 1
+    text: 配列の型と向き合う
+  - kind: para
+    text: 2020-02-26 PHP勉強会@東京
+  - kind: para
+    text: '#phpstudy'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-    - node: br
-    - node: text
-      content: 'うさみけんた (@tadsan)  '
-  - node: p
-    children:
-    - node: text
-      content: ' / Zonu.EXE'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer, Rubyist
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer, Rubyist
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3: []
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 近況
+  - kind: para
+    text: 近況
   p7:
-  - node: p
-    children:
-    - node: text
-      content: ⛳
+  - kind: para
+    text: ⛳
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '文字を書いても '
-    - node: br
-    - node: text
-      content: 書いても終らない
+  - kind: para
+    text: 文字を書いても
+  - kind: para
+    text: 書いても終らない
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '何が '
-    - node: br
-    - node: text
-      content: あったのか？
+  - kind: para
+    text: 何が
+  - kind: para
+    text: あったのか？
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 本日のお題
+  - kind: para
+    text: 本日のお題
   p11: []
   p12:
-  - node: p
-    children:
-    - node: text
-      content: 型､ついて ますか？
+  - kind: para
+    text: 型
+  - kind: para
+    text: ､
+  - kind: para
+    text: ついて
+  - kind: para
+    text: ますか？
   p13: []
   p14: []
   p15: []
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 今回はLTなので皆様既に PhpStormのために型を つけてる前提でいきます
+  - kind: para
+    text: 今回はLTなので皆様既に
+  - kind: para
+    text: PhpStormのために型を
+  - kind: para
+    text: つけてる前提でいきます
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 前提
+  - kind: para
+    text: 前提
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'mixedは '
-    - node: br
-    - node: text
-      content: 災いのもと
+  - kind: para
+    text: mixedは
+  - kind: para
+    text: 災いのもと
   p19:
-  - node: p
-    children:
-    - node: text
-      content: mixedすると何が起こるか
-  - node: p
-    children:
-    - node: text
-      content: '間違って引数に渡しても '
-    - node: br
-    - node: text
-      content: '誰も怒ってくれない '
-    - node: br
-    - node: text
-      content: PhpStormで補完が効かなくて
-    - node: br
-    - node: text
-      content: '非常に気持ち悪い '
-    - node: br
-    - node: text
-      content: 静的解析性も開発体験も損ねる
+  - kind: para
+    text: mixedすると何が起こるか
+  - kind: para
+    text: 間違って引数に渡しても
+  - kind: para
+    text: 誰も怒ってくれない
+  - kind: para
+    text: PhpStormで補完が効かなくて
+  - kind: para
+    text: 非常に気持ち悪い
+  - kind: para
+    text: 静的解析性も開発体験も損ねる
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStormでの '
-    - node: br
-    - node: text
-      content: 開発体験を上げるには
-    - node: br
-    - node: text
-      content: 'mixedを追放して '
-    - node: br
-    - node: text
-      content: 型を付けていくしかない
+  - kind: para
+    text: PhpStorm
+  - kind: para
+    text: での
+  - kind: para
+    text: 開発体験を上げるには
+  - kind: para
+    text: mixedを追放して
+  - kind: para
+    text: 型を付けていくしかない
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 肝に命じて
-    - node: br
-    - node: text
-      content: ほしい
+  - kind: para
+    text: 肝に命じて
+  - kind: para
+    text: ほしい
   p22:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: para
+    text: さて
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 日曜の夜くらいから
-    - node: br
-    - node: text
-      content: 記事を書いていた
+  - kind: para
+    text: 日曜の夜くらいから
+  - kind: para
+    text: 記事を書いていた
   p24: []
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '概要だけ書いて '
-    - node: br
-    - node: text
-      content: 'さくっと投稿する '
-    - node: br
-    - node: text
-      content: つもりだった
+  - kind: para
+    text: 概要だけ書いて
+  - kind: para
+    text: さくっと投稿する
+  - kind: para
+    text: つもりだった
   p26:
-  - node: p
-    children:
-    - node: text
-      content: '書いても 書いても '
-    - node: br
-    - node: text
-      content: 終らん
+  - kind: para
+    text: 書いても
+  - kind: para
+    text: 書いても
+  - kind: para
+    text: 終らん
   p27:
-  - node: p
-    children:
-    - node: text
-      content: なので配列の 話だけします
+  - kind: para
+    text: なので配列の
+  - kind: para
+    text: 話だけします
   p28:
-  - node: p
-    children:
-    - node: text
-      content: '@paramarray'
+  - kind: para
+    text: '@param'
+  - kind: para
+    text: array
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '@returnarray'
+  - kind: para
+    text: '@return'
+  - kind: para
+    text: array
   p30:
-  - node: p
-    children:
-    - node: text
-      content: '@vararray'
+  - kind: para
+    text: '@var'
+  - kind: para
+    text: array
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 書いてます
-    - node: br
-    - node: text
-      content: か？
+  - kind: para
+    text: 書いてます
+  - kind: para
+    text: か？
   p32: []
   p33:
-  - node: p
-    children:
-    - node: text
-      content: こいつは何を
-    - node: br
-    - node: text
-      content: 言っているのか
+  - kind: para
+    text: こいつは何を
+  - kind: para
+    text: 言っているのか
   p34:
-  - node: p
-    children:
-    - node: text
-      content: return array
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: 'function getIds(): array {'
-    - node: br
-    - node: text
-      content: '    return ...'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: foreach (getIds() as $id) {
-    - node: br
-    - node: text
-      content: '    $id'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: return array
+  - kind: para
+    text: <?php
+  - kind: para
+    text: 'function getIds(): array {'
+  - kind: para
+    text: return ...
+  - kind: para
+    text: '}'
+  - kind: para
+    text: foreach (getIds() as $id) {
+  - kind: para
+    text: $id
+  - kind: para
+    text: '}'
   p35:
-  - node: p
-    children:
-    - node: text
-      content: return array
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: 'function getIds(): array {'
-    - node: br
-    - node: text
-      content: '    return ...'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: foreach (getIds() as $id) {
-  - node: p
-    children:
-    - node: text
-      content: こいつの型がわからん
-    - node: br
-    - node: text
-      content: ←
-  - node: p
-    children:
-    - node: text
-      content: '    $id // '
-  - node: p
-    children:
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: return array
+  - kind: para
+    text: <?php
+  - kind: para
+    text: 'function getIds(): array {'
+  - kind: para
+    text: return ...
+  - kind: para
+    text: '}'
+  - kind: para
+    text: foreach (getIds() as $id) {
+  - kind: heading
+    level: 2
+    text: $id // ← こいつの型がわからん
+  - kind: para
+    text: '}'
   p36:
-  - node: p
-    children:
-    - node: text
-      content: arrayは
-  - node: p
-    children:
-    - node: text
-      content: mixed
+  - kind: para
+    text: arrayは
+  - kind: para
+    text: mixed
   p37:
-  - node: p
-    children:
-    - node: text
-      content: arrayを 許しては いけない
+  - kind: para
+    text: arrayを
+  - kind: para
+    text: 許しては
+  - kind: para
+    text: いけない
   p38:
-  - node: p
-    children:
-    - node: text
-      content: Laravelのコードを
-    - node: br
-    - node: text
-      content: 読んでもarrayまみれ
+  - kind: para
+    text: Laravelのコードを
+  - kind: para
+    text: 読んでもarrayまみれ
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 'じゃあ '
-    - node: br
-    - node: text
-      content: どうすればいいの
+  - kind: para
+    text: じゃあ
+  - kind: para
+    text: どうすればいいの
   p40:
-  - node: p
-    children:
-    - node: text
-      content: '@return int[]'
+  - kind: para
+    text: '@return int[]'
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '@return BookId[]'
+  - kind: para
+    text: '@return BookId[]'
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 解決
+  - kind: para
+    text: 解決
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 本当に？
+  - kind: para
+    text: 本当に？
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 🙅
+  - kind: para
+    text: 🙅
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 配列の用途 は複数ある
+  - kind: para
+    text: 配列の用途
+  - kind: para
+    text: は複数ある
   p46:
-  - node: p
-    children:
-    - node: text
-      content: リストの
-  - node: p
-    children:
-    - node: text
-      content: array
+  - kind: para
+    text: リストの
+  - kind: para
+    text: array
   p47:
-  - node: p
-    children:
-    - node: text
-      content: $ids = [1, 5, 9];
+  - kind: para
+    text: $ids =
+  - kind: para
+    text: '[1, 5, 9];'
   p48:
-  - node: p
-    children:
-    - node: text
-      content: // @return int[]
-  - node: p
-    children:
-    - node: text
-      content: // @return array<int>
-    - node: br
-    - node: text
-      content: $ids = [1, 5, 9];
+  - kind: para
+    text: // @return int[]
+  - kind: para
+    text: // @return array<int>
+  - kind: para
+    text: $ids =
+  - kind: para
+    text: '[1, 5, 9];'
   p49:
-  - node: p
-    children:
-    - node: text
-      content: '@return int[]'
-    - node: br
-    - node: text
-      content: phpDocumentor
-    - node: br
-    - node: text
-      content: 形式
+  - kind: para
+    text: '@return int[]'
+  - kind: para
+    text: phpDocumentor
+  - kind: para
+    text: 形式
   p50:
-  - node: p
-    children:
-    - node: text
-      content: '@return array<int>'
-  - node: p
-    children:
-    - node: text
-      content: コレクションジェネリクス記法
-    - node: br
-    - node: text
-      content: 旧PSR-5形式
+  - kind: para
+    text: '@return array<int>'
+  - kind: para
+    text: コレクションジェネリクス記法
+  - kind: para
+    text: 旧PSR-5形式
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '@return '
-  - node: p
-    children:
-    - node: text
-      content: ArrayObject<int>
-  - node: p
-    children:
-    - node: text
-      content: コレクションジェネリクス記法
-    - node: br
-    - node: text
-      content: 旧PSR-5形式
+  - kind: para
+    text: '@return'
+  - kind: para
+    text: ArrayObject<int>
+  - kind: para
+    text: コレクションジェネリクス記法
+  - kind: para
+    text: 旧PSR-5形式
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 連想配列の
-  - node: p
-    children:
-    - node: text
-      content: array
+  - kind: para
+    text: 連想配列の
+  - kind: para
+    text: array
   p53:
-  - node: p
-    children:
-    - node: text
-      content: '$id_name_table = [ '
-    - node: br
-    - node: text
-      content: '    1 => "田中",     5 => "佐藤",     9 => "山田", '
-  - node: p
-    children:
-    - node: text
-      content: '];'
+  - kind: para
+    text: $id_name_table =
+  - kind: para
+    text: '['
+  - kind: para
+    text: 1 => "田中",
+  - kind: para
+    text: 5 => "佐藤",
+  - kind: para
+    text: 9 => "山田",
+  - kind: para
+    text: '];'
   p54:
-  - node: p
-    children:
-    - node: text
-      content: // @return array<int,string>
-    - node: br
-    - node: text
-      content: '$id_name_table = [ '
-    - node: br
-    - node: text
-      content: '    1 => "田中",     5 => "佐藤",     9 => "山田", '
-  - node: p
-    children:
-    - node: text
-      content: '];'
+  - kind: para
+    text: // @return array<int,string>
+  - kind: para
+    text: $id_name_table =
+  - kind: para
+    text: '['
+  - kind: para
+    text: 1 => "田中",
+  - kind: para
+    text: 5 => "佐藤",
+  - kind: para
+    text: 9 => "山田",
+  - kind: para
+    text: '];'
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 構造体の
-  - node: p
-    children:
-    - node: text
-      content: array
+  - kind: para
+    text: 構造体の
+  - kind: para
+    text: array
   p56:
-  - node: p
-    children:
-    - node: text
-      content: '$record = [     "id" => 1, '
-    - node: br
-    - node: text
-      content: '    "name" => "田中", '
-  - node: p
-    children:
-    - node: text
-      content: '];'
+  - kind: para
+    text: $record =
+  - kind: para
+    text: '['
+  - kind: para
+    text: '"id" => 1,'
+  - kind: para
+    text: '"name" => "田中",'
+  - kind: para
+    text: '];'
   p57:
-  - node: p
-    children:
-    - node: text
-      content: これはPSR-5形式 では表現できない
+  - kind: para
+    text: これはPSR-5形式
+  - kind: para
+    text: では表現できない
   p58:
-  - node: p
-    children:
-    - node: text
-      content: '// @return '
-  - node: p
-    children:
-    - node: text
-      content: ' array{id:int, name:string}'
-    - node: br
-    - node: text
-      content: '$record = [     "id" => 1, '
-    - node: br
-    - node: text
-      content: '    "name" => "田中", '
-  - node: p
-    children:
-    - node: text
-      content: '];'
+  - kind: para
+    text: // @return
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: para
+    text: $record =
+  - kind: para
+    text: '['
+  - kind: para
+    text: '"id" => 1,'
+  - kind: para
+    text: '"name" => "田中",'
+  - kind: para
+    text: '];'
   p59:
-  - node: p
-    children:
-    - node: text
-      content: '// @return '
-  - node: p
-    children:
-    - node: text
-      content: ' array{id:int, name:string} array-shapes記法 またはobject-like array'
+  - kind: para
+    text: // @return
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: heading
+    level: 1
+    text: array-shapes記法
+  - kind: para
+    text: またはobject-like array
   p60:
-  - node: p
-    children:
-    - node: text
-      content: '// @return '
-  - node: p
-    children:
-    - node: text
-      content: ' array{id?:int, name:string} 名前と:の間に ? を 付けると省略可能キー'
+  - kind: para
+    text: // @return
+  - kind: para
+    text: array{id
+  - kind: para
+    text: '?'
+  - kind: para
+    text: :int, name:string}
+  - kind: heading
+    level: 1
+    text: 名前と:の間に ? を
+  - kind: heading
+    level: 1
+    text: 付けると
+  - kind: heading
+    level: 1
+    text: 省略可能キー
   p61: []
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 現在はPSR-5(Draft)から 外されたが､既にほとんど の静的解析ツールには実 装されているので使える
+  - kind: para
+    text: 現在はPSR-5(Draft)から
+  - kind: para
+    text: 外されたが
+  - kind: para
+    text: ､
+  - kind: para
+    text: 既にほとんど
+  - kind: para
+    text: の静的解析ツールには実
+  - kind: para
+    text: 装されているので使える
   p63:
-  - node: p
-    children:
-    - node: text
-      content: ほとんどの？
+  - kind: para
+    text: ほとんどの？
   p64:
-  - node: p
-    children:
-    - node: text
-      content: 'Psalm Phan '
-    - node: br
-    - node: text
-      content: PHPStan
+  - kind: para
+    text: Psalm
+  - kind: para
+    text: Phan
+  - kind: para
+    text: PHPStan
   p65:
-  - node: p
-    children:
-    - node: text
-      content: 'ほとんど= '
-    - node: br
-    - node: text
-      content: PhpStorm以外
+  - kind: para
+    text: ほとんど=
+  - kind: para
+    text: PhpStorm以外
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 型付けられな いのお前だけ
+  - kind: para
+    text: 型付けられな
+  - kind: para
+    text: いのお前だけ
   p67:
-  - node: p
-    children:
-    - node: text
-      content: 使おう
-  - node: p
-    children:
-    - node: text
-      content: いますぐ
+  - kind: para
+    text: いますぐ
+  - kind: para
+    text: 使おう
   p68:
-  - node: p
-    children:
-    - node: text
-      content: 'Psalm Phan '
-    - node: br
-    - node: text
-      content: PHPStan
+  - kind: para
+    text: Psalm
+  - kind: para
+    text: Phan
+  - kind: para
+    text: PHPStan
   p69:
-  - node: p
-    children:
-    - node: text
-      content: 安心ください
+  - kind: para
+    text: 安心ください
   p70: []
   p71:
-  - node: p
-    children:
-    - node: text
-      content: たとえばこういう
-    - node: br
-    - node: text
-      content: コードがあるじゃろ
+  - kind: para
+    text: たとえばこういう
+  - kind: para
+    text: コードがあるじゃろ
   p72: []
   p73: []
   p74: []
   p75:
-  - node: p
-    children:
-    - node: text
-      content: 付けよう
-    - node: br
-    - node: text
-      content: 型
+  - kind: para
+    text: 付けよう
+  - kind: para
+    text: 型
   p76:
-  - node: p
-    children:
-    - node: text
-      content: '入れよう '
-  - node: p
-    children:
-    - node: text
-      content: deep-assoc
+  - kind: para
+    text: 入れよう
+  - kind: para
+    text: deep-assoc
   p77:
-  - node: p
-    children:
-    - node: text
-      content: いますぐ
+  - kind: para
+    text: いますぐ
   p78:
-  - node: p
-    children:
-    - node: text
-      content: 'ダウンロー '
-    - node: br
-    - node: text
-      content: ド
+  - kind: para
+    text: ダウンロー
+  - kind: para
+    text: ド
 size:
   max_width: 1024
   max_height: 768

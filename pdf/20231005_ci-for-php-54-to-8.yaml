@@ -1,536 +1,345 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP 5.4から8までを '
-    - node: br
-    - node: text
-      content: ⚡
-    - node: br
-    - node: text
-      content: サポートするCIを構築する
-  - node: p
-    children:
-    - node: text
-      content: 'Build a CI that supports PHP 5.4 to 8.x '
-  - node: p
-    children:
-    - node: text
-      content: ⚡
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-10-05 '
-  - node: p
-    children:
-    - node: bold
-      content: '【Cybozu Tech Meetup #22】PHPカンファレンス 2023 リジェクトコン '
+  - kind: heading
+    level: 1
+    text: ⚡PHP 5.4から8までを
+  - kind: heading
+    level: 1
+    text: サポートするCIを構築する
+  - kind: heading
+    level: 2
+    text: Build a CI that supports PHP 5.4 to 8.x
+  - kind: heading
+    level: 2
+    text: ⚡
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2023-10-05'
+  - kind: para
+    text: '【Cybozu Tech Meetup #22】PHPカンファレンス 2023 リジェクトコン'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職でPHPを書いているWebプログラマ
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職でPHPを書いているWebプログラマ
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: emacs-php
+  - kind: heading
+    level: 1
+    text: emacs-php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: このトークの文脈
+  - kind: heading
+    level: 1
+    text: このトークの文脈
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p6:
-  - node: p
-    children:
-    - node: text
-      content: '※注意： '
-    - node: br
-    - node: text
-      content: 本発表はレガシーPHPを 使い続けることを推奨する ものではございませぬぞ
+  - kind: para
+    text: ※注意：
+  - kind: para
+    text: 本発表はレガシーPHPを
+  - kind: para
+    text: 使い続けることを推奨する
+  - kind: para
+    text: ものではございませぬぞ
   p7:
-  - node: p
-    children:
-    - node: text
-      content: みなさんライブラリを
-    - node: br
-    - node: text
-      content: 公開していますか?
+  - kind: para
+    text: みなさんライブラリを
+  - kind: para
+    text: 公開していますか?
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '(たぶんあまり居ないと思うので) '
-    - node: br
-    - node: text
-      content: しましょう
+  - kind: heading
+    level: 2
+    text: (たぶんあまり居ないと思うので)
+  - kind: heading
+    level: 1
+    text: しましょう
   p9:
-  - node: p
-    children:
-    - node: text
-      content: PHPどこまで切るか
+  - kind: heading
+    level: 1
+    text: PHPどこまで切るか
   p10:
-  - node: p
-    children:
-    - node: text
-      content: そもそも誰が 使ってるの？
+  - kind: para
+    text: そもそも誰が
+  - kind: para
+    text: 使ってるの？
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 数を見てみよう
+  - kind: heading
+    level: 1
+    text: 数を見てみよう
   p12: []
   p13: []
   p14: []
   p15:
-  - node: p
-    children:
-    - node: text
-      content: Packagist Statsについて
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Packagist = Composerのデフォルトリポジトリ
-    - node: li
-      children:
-      - node: text
-        content: composer install時に送られるPHPバージョンが集計される
-    - node: li
-      children:
-      - node: text
-        content: インストール回数なので本番運用環境での利用回数ではないので注意
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 開発者が多かったりデプロイ回数が多かったりキャッシュ構造に左右
-        - node: li
-          children:
-          - node: text
-            content: とはいえ、ある種の勢いが表現されていることは確か
+  - kind: para
+    text: Packagist Statsについて
+  - kind: list
+    items:
+    - Packagist = Composerのデフォルトリポジトリ
+    - composer install時に送られるPHPバージョンが集計される
+    - インストール回数なので本番運用環境での利用回数ではないので注意
+    - 開発者が多かったりデプロイ回数が多かったりキャッシュ構造に左右
+    - とはいえ、ある種の勢いが表現されていることは確か
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 私が開発している ライブラリの場合
+  - kind: para
+    text: 私が開発している
+  - kind: para
+    text: ライブラリの場合
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 5.x
-  - node: p
-    children:
-    - node: text
-      content: 7.x
-  - node: p
-    children:
-    - node: text
-      content: 8.x
+  - kind: para
+    text: 5.x
+  - kind: para
+    text: 7.x
+  - kind: para
+    text: 8.x
   p18:
-  - node: p
-    children:
-    - node: text
-      content: zonuexe/tetosqlについて
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: これが何者かはPHPカンファレンスで話します！！！
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 間接的にPDOに依存しているが、PHPのバージョン依存はあまりない
-    - node: li
-      children:
-      - node: text
-        content: もともとは5.5以上の対応だったが途中で心変わりして5.4対応にした
-    - node: li
-      children:
-      - node: text
-        content: 2022年4月に何かが起こった (お察しください)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 途中で7.2と8.2が増え、5.xは潰えた (たぶんそれは…)
+  - kind: para
+    text: zonuexe/tetosqlについて
+  - kind: list
+    items:
+    - これが何者かはPHPカンファレンスで話します！！！
+    - 間接的にPDOに依存しているが、PHPのバージョン依存はあまりない
+    - もともとは5.5以上の対応だったが途中で心変わりして5.4対応にした
+    - 2022年4月に何かが起こった (お察しください)
+    - 途中で7.2と8.2が増え、5.xは潰えた (たぶんそれは…)
   p19:
-  - node: p
-    children:
-    - node: bold
-      content: '5.xが全滅したので '
-    - node: br
-    - node: bold
-      content: 'サポート終了の判断が '
-    - node: br
-    - node: bold
-      content: できる
-  - node: p
-    children:
-    - node: text
-      content: 5.x
-  - node: p
-    children:
-    - node: text
-      content: 7.x
-  - node: p
-    children:
-    - node: text
-      content: 8.x
+  - kind: heading
+    level: 1
+    text: 5.xが全滅したので
+  - kind: heading
+    level: 1
+    text: サポート終了の判断が
+  - kind: heading
+    level: 1
+    text: できる
+  - kind: para
+    text: 5.x
+  - kind: para
+    text: 7.x
+  - kind: para
+    text: 8.x
   p20:
-  - node: p
-    children:
-    - node: text
-      content: サポート対象の決め方
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP Groupが公式サポートしているバージョンを対象にする
-    - node: li
-      children:
-      - node: text
-        content: 自分が(個人|会社)で使っているバージョンをサポートする
-    - node: li
-      children:
-      - node: text
-        content: 現実的にサポート可能なバージョンは全てサポートする
-  - node: p
-    children:
-    - node: text
-      content: 💪
-  - node: p
-    children:
-    - node: text
-      content: '一般論としてはバージョンが上がれば '
-    - node: br
-    - node: text
-      content: 新しい機能や新しい構文が使えて嬉しい！！！
+  - kind: heading
+    level: 1
+    text: サポート対象の決め方
+  - kind: para
+    text: 💪
+  - kind: list
+    items:
+    - PHP Groupが公式サポートしているバージョンを対象にする
+    - 自分が(個人|会社)で使っているバージョンをサポートする
+    - 現実的にサポート可能なバージョンは全てサポートする
+  - kind: para
+    text: 一般論としてはバージョンが上がれば
+  - kind: para
+    text: 新しい機能や新しい構文が使えて嬉しい！！！
   p21: []
   p22:
-  - node: p
-    children:
-    - node: text
-      content: PHPのオブジェクト指向機能
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 7.4: 型付きプロパティ'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.0: コンストラクタプロモーション (PHP 8.2)'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.1: readonlyプロパティ'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.2: trait定数宣言'
-    - node: li
-      children:
-      - node: text
-        content: 'PHP 8.3: 型付き定数宣言'
+  - kind: para
+    text: PHPのオブジェクト指向機能
+  - kind: list
+    items:
+    - 'PHP 7.4: 型付きプロパティ'
+    - 'PHP 8.0: コンストラクタプロモーション (PHP 8.2)'
+    - 'PHP 8.1: readonlyプロパティ'
+    - 'PHP 8.2: trait定数宣言'
+    - 'PHP 8.3: 型付き定数宣言'
   p23:
-  - node: p
-    children:
-    - node: text
-      content: '<?php  <?php '
-  - node: p
-    children:
-    - node: text
-      content: 'class Book {  class Book { '
-    - node: br
-    - node: text
-      content: '  /**      public function __construct( '
-    - node: br
-    - node: text
-      content: '   * @var string          public readonly string $name, '
-    - node: br
-    - node: text
-      content: '   * @readonly      ) {    */      } '
-    - node: br
-    - node: text
-      content: '  private $name; '
-    - node: br
-    - node: text
-      content: '     ... '
-    - node: br
-    - node: text
-      content: '  /** @param string $name */ '
-    - node: br
-    - node: text
-      content: '  public function __construct($name) { '
-    - node: br
-    - node: text
-      content: '    $this->name = $name; '
-  - node: p
-    children:
-    - node: text
-      content: '  ...'
+  - kind: para
+    text: <?php
+  - kind: para
+    text: <?php
+  - kind: para
+    text: class Book {
+  - kind: para
+    text: public function __construct(
+  - kind: para
+    text: public readonly string $name,
+  - kind: para
+    text: ) {
+  - kind: para
+    text: '}'
+  - kind: para
+    text: '...'
+  - kind: para
+    text: class Book {
+  - kind: para
+    text: /**
+  - kind: para
+    text: '* @var string'
+  - kind: para
+    text: '* @readonly'
+  - kind: para
+    text: '*/'
+  - kind: para
+    text: private $name;
+  - kind: para
+    text: /** @param string $name */
+  - kind: para
+    text: public function __construct($name) {
+  - kind: para
+    text: $this->name = $name;
+  - kind: para
+    text: '...'
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'そういうおしゃれな '
-    - node: br
-    - node: text
-      content: 言語機能は使えない！
+  - kind: para
+    text: そういうおしゃれな
+  - kind: para
+    text: 言語機能は使えない！
   p25:
-  - node: p
-    children:
-    - node: text
-      content: ここから本題
+  - kind: heading
+    level: 1
+    text: ここから本題
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'この後のコードは '
-    - node: br
-    - node: text
-      content: 'zonuexe/tetosqlを '
-    - node: br
-    - node: text
-      content: ご参照ください
+  - kind: para
+    text: この後のコードは
+  - kind: para
+    text: zonuexe/tetosqlを
+  - kind: para
+    text: ご参照ください
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 'むかしのバージョンの '
-    - node: br
-    - node: text
-      content: 'PHPは '
-    - node: br
-    - node: text
-      content: どうすれば使えるか
+  - kind: para
+    text: むかしのバージョンの
+  - kind: para
+    text: PHPは
+  - kind: para
+    text: どうすれば使えるか
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 古いPHPを動かす方法
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ソースコードからコンパイルする
-    - node: li
-      children:
-      - node: text
-        content: Dockerの公式コンテナ
-    - node: li
-      children:
-      - node: text
-        content: GitHub Actions (shivammathur/setup-php)
+  - kind: para
+    text: 古いPHPを動かす方法
+  - kind: list
+    items:
+    - ソースコードからコンパイルする
+    - Dockerの公式コンテナ
+    - GitHub Actions (shivammathur/setup-php)
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 'GitHub使ってるなら '
-    - node: br
-    - node: text
-      content: Actionsが簡単
+  - kind: para
+    text: GitHub使ってるなら
+  - kind: para
+    text: Actionsが簡単
   p30: []
   p31:
-  - node: p
-    children:
-    - node: text
-      content: これで動かす 環境はできた
+  - kind: para
+    text: これで動かす
+  - kind: para
+    text: 環境はできた
   p32:
-  - node: p
-    children:
-    - node: text
-      content: '新しいバージョン '
-    - node: br
-    - node: text
-      content: 使えないと辛くない？
+  - kind: para
+    text: 新しいバージョン
+  - kind: para
+    text: 使えないと辛くない？
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 辛いところもあるし 辛くないこともある
+  - kind: para
+    text: 辛いところもあるし
+  - kind: para
+    text: 辛くないこともある
   p34:
-  - node: p
-    children:
-    - node: text
-      content: Polyﬁllを使おう
+  - kind: heading
+    level: 1
+    text: Polyfillを使おう
   p35: []
   p36: []
   p37: []
   p38:
-  - node: p
-    children:
-    - node: text
-      content: '古いPHPでも '
-    - node: br
-    - node: text
-      content: 新しい関数は使える！
+  - kind: para
+    text: 古いPHPでも
+  - kind: para
+    text: 新しい関数は使える！
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 問題はPHPUnit
+  - kind: heading
+    level: 1
+    text: 問題はPHPUnit
   p40: []
   p41:
-  - node: p
-    children:
-    - node: bold
-      content: 'PHP 5.3〜8.2 '
-    - node: br
-    - node: bold
-      content: '全部が動く都合のいい '
-    - node: br
-    - node: bold
-      content: PHPUnitなんてものはない
+  - kind: para
+    text: PHP 5.3〜8.2
+  - kind: para
+    text: 全部が動く都合のいい
+  - kind: para
+    text: PHPUnitなんてものはない
   p42:
-  - node: p
-    children:
-    - node: text
-      content: ならどうするか
+  - kind: heading
+    level: 1
+    text: ならどうするか
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPUnit4.8を '
-    - node: br
-    - node: text
-      content: 'PHP8で動くように '
-    - node: br
-    - node: text
-      content: 魔改造する
-  - node: p
-    children:
-    - node: text
-      content: 😈
+  - kind: para
+    text: PHPUnit4.8を
+  - kind: para
+    text: PHP8で動くように
+  - kind: para
+    text: 魔改造する
+  - kind: para
+    text: 😈
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPUnit4.8を '
-    - node: br
-    - node: text
-      content: 'PHP8で動くように '
-    - node: br
-    - node: text
-      content: 魔改造する
-  - node: p
-    children:
-    - node: text
-      content: 😈
+  - kind: para
+    text: PHPUnit4.8を
+  - kind: para
+    text: PHP8で動くように
+  - kind: para
+    text: 魔改造する
+  - kind: para
+    text: 😈
   p45: []
   p46: []
   p47:
-  - node: p
-    children:
-    - node: text
-      content: メンテが… つらい…
+  - kind: heading
+    level: 1
+    text: メンテが… つらい…
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'もっとよくできた '
-    - node: br
-    - node: text
-      content: ものがある
+  - kind: para
+    text: もっとよくできた
+  - kind: para
+    text: ものがある
   p49: []
   p50: []
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '不思議な力で '
-    - node: br
-    - node: text
-      content: 複数バージョンの PHPUnitが動く
+  - kind: para
+    text: 不思議な力で
+  - kind: para
+    text: 複数バージョンの
+  - kind: para
+    text: PHPUnitが動く
   p52: []
   p53:
-  - node: p
-    children:
-    - node: text
-      content: '不思議な力で '
-    - node: br
-    - node: text
-      content: '互換性を '
-    - node: br
-    - node: text
-      content: 合わせてくれる
-  - node: p
-    children:
-    - node: text
-      content: 😇
+  - kind: para
+    text: 不思議な力で
+  - kind: para
+    text: 互換性を
+  - kind: para
+    text: 合わせてくれる
+  - kind: para
+    text: 😇
   p54: []
   p55: []
   p56:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: heading
+    level: 1
+    text: まとめ
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 'TetoSQLは依存が '
-    - node: br
-    - node: text
-      content: 少ないので複数 サポートが簡単
+  - kind: para
+    text: TetoSQLは依存が
+  - kind: para
+    text: 少ないので複数
+  - kind: para
+    text: サポートが簡単
   p58:
-  - node: p
-    children:
-    - node: text
-      content: 'みんなは '
-    - node: br
-    - node: text
-      content: '必要ないバージョンは '
-    - node: br
-    - node: text
-      content: さくっと切ろうね！
+  - kind: para
+    text: みんなは
+  - kind: para
+    text: 必要ないバージョンは
+  - kind: para
+    text: さくっと切ろうね！
 size:
   max_width: 1920
   max_height: 1080

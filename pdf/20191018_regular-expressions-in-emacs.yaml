@@ -1,548 +1,438 @@
-size:
-  max_width: 1024
-  max_height: 768
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: Emacsと正規表現
-  - node: p
-    children:
-    - node: text
-      content: Regular expressions in Emacs
-  - node: p
-    children:
-    - node: text
-      content: 'Regex Festa '
-  - node: p
-    children:
-    - node: text
-      content: '2019-10-18 #regexfesta'
+  - kind: heading
+    level: 1
+    text: Emacsと正規表現
+  - kind: para
+    text: Regular expressions in Emacs
+  - kind: para
+    text: Regex Festa
+  - kind: para
+    text: '2019-10-18 #regexfesta'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-    - node: br
-    - node: text
-      content: 'うさみけんた (@tadsan)  '
-  - node: p
-    children:
-    - node: text
-      content: ' / Zonu.EXE'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv事業本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv事業本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3: []
   p4: []
   p5:
-  - node: p
-    children:
-    - node: text
-      content: せっかくなので PHPの話を先に
+  - kind: para
+    text: せっかくなので
+  - kind: para
+    text: PHPの話を先に
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPには複数の '
-    - node: br
-    - node: text
-      content: 正規表現エンジンが
-    - node: br
-    - node: text
-      content: あります
+  - kind: para
+    text: PHPには複数の
+  - kind: para
+    text: 正規表現エンジンが
+  - kind: para
+    text: あります
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 'ereg (POSIX ERE) '
-    - node: br
-    - node: text
-      content: preg (PCRE) mb_ereg (鬼車)
+  - kind: para
+    text: ereg
+  - kind: para
+    text: (POSIX ERE)
+  - kind: para
+    text: preg
+  - kind: para
+    text: (PCRE)
+  - kind: para
+    text: mb_ereg
+  - kind: para
+    text: (鬼車)
   p8:
-  - node: p
-    children:
-    - node: text
-      content: PHP5系で廃止
-  - node: p
-    children:
-    - node: text
-      content: 'ereg (POSIX ERE) '
-    - node: br
-    - node: text
-      content: preg (PCRE) mb_ereg (鬼車)
+  - kind: para
+    text: PHP5系で廃止
+  - kind: para
+    text: ereg
+  - kind: para
+    text: (POSIX ERE)
+  - kind: para
+    text: preg
+  - kind: para
+    text: (PCRE)
+  - kind: para
+    text: mb_ereg
+  - kind: para
+    text: (鬼車)
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 現代のPHPでは
-    - node: br
-    - node: text
-      content: preg関数(PCRE)
-    - node: br
-    - node: text
-      content: が一般的
+  - kind: para
+    text: 現代のPHPでは
+  - kind: para
+    text: preg関数(PCRE)
+  - kind: para
+    text: が一般的
   p10:
-  - node: p
-    children:
-    - node: text
-      content: PHPには正規表現
-    - node: br
-    - node: text
-      content: リテラルがない
+  - kind: para
+    text: PHPには正規表現
+  - kind: para
+    text: リテラルがない
   p11:
-  - node: p
-    children:
-    - node: text
-      content: (そもそも複数エンジン があるのでリテラルで 特権扱いされると困る)
+  - kind: para
+    text: (そもそも複数エンジン
+  - kind: para
+    text: があるのでリテラルで
+  - kind: para
+    text: 特権扱いされると困る)
   p12:
-  - node: p
-    children:
-    - node: text
-      content: バックスラッシュのエスケープ
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: $subject = 'a\b';
-    - node: br
-    - node: text
-      content: preg_match('/(?<bs>\\\\)/', $subject, $m);
-  - node: p
-    children:
-    - node: text
-      content: var_dump($m['bs']);
-    - node: br
-    - node: text
-      content: // string(1) "\"
+  - kind: heading
+    level: 1
+    text: バックスラッシュのエスケープ
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $subject = 'a\b';
+  - kind: para
+    text: preg_match('/(?<bs>\\\\)/', $subject, $m);
+  - kind: para
+    text: var_dump($m['bs']);
+  - kind: para
+    text: // string(1) "\"
   p13:
-  - node: p
-    children:
-    - node: text
-      content: デリミタの変更
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: $subject = 'https://example.com/';
-    - node: br
-    - node: text
-      content: // Bad pattern
-    - node: br
-    - node: text
-      content: preg_match('/^https:\/\/([.+])/i', $subject);
-  - node: p
-    children:
-    - node: text
-      content: preg_match('@^https://([.+])@i', $subject); preg_match('#^https://([.+])#i',
-        $subject);
+  - kind: heading
+    level: 1
+    text: デリミタの変更
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $subject = 'https://example.com/';
+  - kind: para
+    text: // Bad pattern
+  - kind: para
+    text: preg_match('/^https:\/\/([.+])/i', $subject);
+  - kind: para
+    text: preg_match('@^https://([.+])@i', $subject);
+  - kind: para
+    text: preg_match('#^https://([.+])#i', $subject);
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 関数形式だがコンパ イル結果は内部的に
-    - node: br
-    - node: text
-      content: 保持されている
+  - kind: para
+    text: 関数形式だがコンパ
+  - kind: para
+    text: イル結果は内部的に
+  - kind: para
+    text: 保持されている
   p15:
-  - node: p
-    children:
-    - node: text
-      content: PCRE関数はリクエ
-    - node: br
-    - node: text
-      content: ストをまたいでコンパ イル結果が保持される
+  - kind: para
+    text: PCRE関数はリクエ
+  - kind: para
+    text: ストをまたいでコンパ
+  - kind: para
+    text: イル結果が保持される
   p16:
-  - node: p
-    children:
-    - node: text
-      content: PHPの話ここまで
+  - kind: para
+    text: PHPの話ここまで
   p17:
-  - node: p
-    children:
-    - node: text
-      content: Emacs
+  - kind: para
+    text: Emacs
   p18:
-  - node: p
-    children:
-    - node: text
-      content: Emacsは正規表現
-    - node: br
-    - node: text
-      content: でできている
+  - kind: para
+    text: Emacsは正規表現
+  - kind: para
+    text: でできている
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 1. エディタの 検索機能として
+  - kind: para
+    text: 1. エディタの
+  - kind: para
+    text: 検索機能として
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 2. 構文ハイライト
+  - kind: para
+    text: 2. 構文ハイライト
   p21:
-  - node: p
-    children:
-    - node: text
-      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 '
-    - node: br
-    - node: text
-      content: 'https://ja.wikipedia.org/wiki/正規表現 '
-    - node: br
-    - node: text
-      content: 最終更新 2019年7月9日 12:45 版
+  - kind: para
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』'
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/正規表現
+  - kind: para
+    text: 最終更新 2019年7月9日 12:45 版
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 '
-    - node: br
-    - node: text
-      content: 'https://ja.wikipedia.org/wiki/正規表現 '
-    - node: br
-    - node: text
-      content: 最終更新 2019年7月9日 12:45 版
+  - kind: para
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』'
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/正規表現
+  - kind: para
+    text: 最終更新 2019年7月9日 12:45 版
   p23:
-  - node: p
-    children:
-    - node: text
-      content: '出典: フリー百科事典『ウィキペディア（Wikipedia）』 '
-    - node: br
-    - node: text
-      content: 'https://ja.wikipedia.org/wiki/正規表現 '
-    - node: br
-    - node: text
-      content: 最終更新 2019年7月9日 12:45 版
+  - kind: para
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』'
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/正規表現
+  - kind: para
+    text: 最終更新 2019年7月9日 12:45 版
   p24:
-  - node: p
-    children:
-    - node: text
-      content: これしか書いてない
+  - kind: para
+    text: これしか書いてない
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '基本正規表現とも 拡張正規表現とも '
-    - node: br
-    - node: text
-      content: 違う
+  - kind: para
+    text: 基本正規表現とも
+  - kind: para
+    text: 拡張正規表現とも
+  - kind: para
+    text: 違う
   p26:
-  - node: p
-    children:
-    - node: text
-      content: Emacsの正規表現は
-    - node: br
-    - node: text
-      content: NFAに分類される (最小量指定子がある)
+  - kind: para
+    text: Emacsの正規表現は
+  - kind: para
+    text: NFAに分類される
+  - kind: para
+    text: (最小量指定子がある)
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 基本 拡張 Emacs
-  - node: p
-    children:
-    - node: text
-      content: グループ \(regexp\) (regexp) \(regexp\)
-  - node: p
-    children:
-    - node: text
-      content: 繰り返し \{n,m} {n,m} \{n,m}
-  - node: p
-    children:
-    - node: text
-      content: 文字クラス [abc] [abc] [abc]
-  - node: p
-    children:
-    - node: text
-      content: 1回以上 + +
-  - node: p
-    children:
-    - node: text
-      content: 選言 | \|
+  - kind: para
+    text: 基本
+  - kind: para
+    text: 拡張
+  - kind: para
+    text: Emacs
+  - kind: para
+    text: グループ
+  - kind: para
+    text: \(regexp\)
+  - kind: para
+    text: (regexp)
+  - kind: para
+    text: \(regexp\)
+  - kind: para
+    text: 繰り返し
+  - kind: para
+    text: \{n,m}
+  - kind: para
+    text: '{n,m}'
+  - kind: para
+    text: \{n,m}
+  - kind: para
+    text: 文字クラス
+  - kind: para
+    text: '[abc]'
+  - kind: para
+    text: '[abc]'
+  - kind: para
+    text: '[abc]'
+  - kind: para
+    text: 1回以上
+  - kind: para
+    text: +
+  - kind: para
+    text: +
+  - kind: para
+    text: 選言
+  - kind: para
+    text: '|'
+  - kind: para
+    text: \|
   p28:
-  - node: p
-    children:
-    - node: text
-      content: Perl Emacs
-  - node: p
-    children:
-    - node: text
-      content: 先頭・末尾 \A \z \` \'
-  - node: p
-    children:
-    - node: text
-      content: '単語構成文字 '
-  - node: p
-    children:
-    - node: text
-      content: \w \b \w \b
-  - node: p
-    children:
-    - node: text
-      content: ／単語境界
-  - node: p
-    children:
-    - node: text
-      content: '[[:space:]] '
-  - node: p
-    children:
-    - node: text
-      content: 空白文字 \s
-  - node: p
-    children:
-    - node: text
-      content: \s-
+  - kind: para
+    text: Perl
+  - kind: para
+    text: Emacs
+  - kind: para
+    text: 先頭・末尾
+  - kind: para
+    text: \A \z
+  - kind: para
+    text: \` \'
+  - kind: para
+    text: 単語構成文字
+  - kind: para
+    text: ／単語境界
+  - kind: para
+    text: \w \b
+  - kind: para
+    text: \w \b
+  - kind: para
+    text: 空白文字
+  - kind: para
+    text: \s
+  - kind: para
+    text: '[[:space:]]'
+  - kind: para
+    text: \s-
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '僕の知ってる '
-    - node: br
-    - node: text
-      content: 正規表現と違う！
+  - kind: para
+    text: 僕の知ってる
+  - kind: para
+    text: 正規表現と違う！
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 'シンタックス '
-    - node: br
-    - node: text
-      content: テーブル
+  - kind: para
+    text: シンタックス
+  - kind: para
+    text: テーブル
   p31:
-  - node: p
-    children:
-    - node: text
-      content: メジャーモードごと
-    - node: br
-    - node: text
-      content: に文字の意味を 定義できる機能
+  - kind: para
+    text: メジャーモードごと
+  - kind: para
+    text: に文字の意味を
+  - kind: para
+    text: 定義できる機能
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 言語ごとにシンボル
-    - node: br
-    - node: text
-      content: 構成文字は異なる
+  - kind: para
+    text: 言語ごとにシンボル
+  - kind: para
+    text: 構成文字は異なる
   p33:
-  - node: p
-    children:
-    - node: text
-      content: Lispでは foo-bar は一つのシンボル (変数名や関数名になる)
+  - kind: para
+    text: Lispでは foo-bar
+  - kind: para
+    text: は一つのシンボル
+  - kind: para
+    text: (変数名や関数名になる)
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 'Cなどの言語では '
-    - node: br
-    - node: text
-      content: 'foo-barは別シンボル '
-  - node: p
-    children:
-    - node: text
-      content: (foo - bar)
+  - kind: para
+    text: Cなどの言語では
+  - kind: para
+    text: foo-barは別シンボル
+  - kind: para
+    text: (foo - bar)
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 'その構文情報 '
-  - node: p
-    children:
-    - node: text
-      content: 'を '
-  - node: p
-    children:
-    - node: text
-      content: (syntax table)
-    - node: br
-    - node: text
-      content: 正規表現から使える
+  - kind: para
+    text: その構文情報
+  - kind: para
+    text: (syntax table)
+  - kind: para
+    text: を
+  - kind: para
+    text: 正規表現から使える
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 逆に言うと正規表現の
-    - node: br
-    - node: text
-      content: マッチ結果はシンタック
-    - node: br
-    - node: text
-      content: ステーブルに依存する
+  - kind: para
+    text: 逆に言うと正規表現の
+  - kind: para
+    text: マッチ結果はシンタック
+  - kind: para
+    text: ステーブルに依存する
   p37: []
   p38:
-  - node: p
-    children:
-    - node: text
-      content: で、実際どうなの
+  - kind: para
+    text: で、実際どうなの
   p39:
-  - node: p
-    children:
-    - node: text
-      content: '文脈によって エスケープが '
-  - node: p
-    children:
-    - node: text
-      content: 変わってる
-  - node: p
-    children:
-    - node: text
-      content: (ように見える)
+  - kind: para
+    text: 文脈によって
+  - kind: para
+    text: エスケープが
+  - kind: para
+    text: (ように見える)
+  - kind: para
+    text: 変わってる
   p40: []
   p41: []
   p42:
-  - node: p
-    children:
-    - node: text
-      content: Emacsのメジャー
-    - node: br
-    - node: text
-      content: モード(言語モード)の 実装には大量の正規表
-    - node: br
-    - node: text
-      content: 現を書く必要がある
+  - kind: para
+    text: Emacsのメジャー
+  - kind: para
+    text: モード(言語モード)の
+  - kind: para
+    text: 実装には大量の正規表
+  - kind: para
+    text: 現を書く必要がある
   p43: []
   p44:
-  - node: p
-    children:
-    - node: text
-      content: これは読みにくい
+  - kind: para
+    text: これは読みにくい
   p45:
-  - node: p
-    children:
-    - node: text
-      content: でもご安心ください
+  - kind: para
+    text: でもご安心ください
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'rxという正規表現 '
-    - node: br
-    - node: text
-      content: 組み立てDSLがある
+  - kind: para
+    text: rxという正規表現
+  - kind: para
+    text: 組み立てDSLがある
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 文字列 rx
-  - node: p
-    children:
-    - node: text
-      content: グループ \(regexp\) (group "regexp")
-  - node: p
-    children:
-    - node: text
-      content: 繰り返し \{n,m} (repeat n m pattern)
-  - node: p
-    children:
-    - node: text
-      content: 文字クラス [abc] (in "abc")
-  - node: p
-    children:
-    - node: text
-      content: 1回以上 + (+ pattern)
-  - node: p
-    children:
-    - node: text
-      content: 選言 \| (or a b)
+  - kind: para
+    text: 文字列
+  - kind: para
+    text: rx
+  - kind: para
+    text: グループ
+  - kind: para
+    text: \(regexp\)
+  - kind: para
+    text: (group "regexp")
+  - kind: para
+    text: 繰り返し
+  - kind: para
+    text: \{n,m}
+  - kind: para
+    text: (repeat n m pattern)
+  - kind: para
+    text: 文字クラス
+  - kind: para
+    text: '[abc]'
+  - kind: para
+    text: (in "abc")
+  - kind: para
+    text: 1回以上
+  - kind: para
+    text: +
+  - kind: para
+    text: (+ pattern)
+  - kind: para
+    text: 選言
+  - kind: para
+    text: \|
+  - kind: para
+    text: (or a b)
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 文字列 rx
-  - node: p
-    children:
-    - node: text
-      content: 'string-start '
-  - node: p
-    children:
-    - node: text
-      content: 先頭・末尾 \` \'
-  - node: p
-    children:
-    - node: text
-      content: string-end
-  - node: p
-    children:
-    - node: text
-      content: '単語構成文字  wordchar '
-  - node: p
-    children:
-    - node: text
-      content: \w \b
-    - node: br
-    - node: text
-      content: ／単語境界 word-boundary
-  - node: p
-    children:
-    - node: text
-      content: '[[:space:]]  space '
-  - node: p
-    children:
-    - node: text
-      content: 空白文字
-  - node: p
-    children:
-    - node: text
-      content: \s- (syntax whitespace)
+  - kind: para
+    text: 文字列
+  - kind: para
+    text: rx
+  - kind: para
+    text: 先頭・末尾
+  - kind: para
+    text: \` \'
+  - kind: para
+    text: string-start
+  - kind: para
+    text: string-end
+  - kind: para
+    text: 単語構成文字
+  - kind: para
+    text: ／単語境界
+  - kind: para
+    text: \w \b
+  - kind: para
+    text: wordchar
+  - kind: para
+    text: word-boundary
+  - kind: para
+    text: 空白文字
+  - kind: para
+    text: '[[:space:]]'
+  - kind: para
+    text: \s-
+  - kind: para
+    text: space
+  - kind: para
+    text: (syntax whitespace)
   p49: []
   p50:
-  - node: p
-    children:
-    - node: text
-      content: ツールはいろいろ
-    - node: br
-    - node: text
-      content: 揃ってる
+  - kind: para
+    text: ツールはいろいろ
+  - kind: para
+    text: 揃ってる
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 're-builder '
-    - node: br
-    - node: text
-      content: (Emacs標準添付)
+  - kind: heading
+    level: 1
+    text: re-builder
+  - kind: para
+    text: (Emacs標準添付)
   p52:
-  - node: p
-    children:
-    - node: text
-      content: font-lock-studio (強調表示の色付けを順番
-    - node: br
-    - node: text
-      content: に実行してくれる)
+  - kind: heading
+    level: 1
+    text: font-lock-studio
+  - kind: para
+    text: (強調表示の色付けを順番
+  - kind: para
+    text: に実行してくれる)
+size:
+  max_width: 1024
+  max_height: 768
 links:
   p2:
   - url: https://github.com/emacs-php/php-mode

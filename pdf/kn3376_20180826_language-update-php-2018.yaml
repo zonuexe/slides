@@ -1,3 +1,577 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: Language Update PHP 2018
+  - kind: para
+    text: <?php
+  - kind: para
+    text: 2018-08-26 Learn Languages 2018
+  - kind: para
+    text: '#ll2018'
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
+  p3:
+  - kind: heading
+    level: 1
+    text: 言語的なバックグラウンド
+  - kind: list
+    items:
+    - '2004年頃: ISO-HTML'
+    - '2006年頃: JavaScript'
+    - '2010年頃: Ruby, 魔法言語 リリカル☆Lisp'
+    - '2011年頃: Python, shell(Bash), F#/OCaml'
+    - '2013年頃: Emacs Lisp, PHP'
+  - kind: para
+    text: 基本はWebから始まって動的言語やってきた
+  p4:
+  - kind: para
+    text: <?php
+  p5:
+  - kind: para
+    text: みんな大好きPHP
+  p6:
+  - kind: heading
+    level: 1
+    text: ですよね？
+  - kind: para
+    text: (暗黒微笑)
+  p7:
+  - kind: para
+    text: リアルワールドでのシェア
+  - kind: para
+    text: の割にプログラミング言語
+  - kind: para
+    text: として興味関心の対象と
+  - kind: para
+    text: してる人は多くない印象
+  p8:
+  - kind: para
+    text: 😇
+  p9:
+  - kind: para
+    text: “We have things like protected properties.
+  - kind: para
+    text: We have abstract methods. We have all
+  - kind: para
+    text: this stuff that your computer science
+  - kind: para
+    text: teacher told you you should be using.
+  - kind: para
+    text: I don't care about this crap at all.”
+  - kind: para
+    text: –Rasmus Lerdorf
+  - kind: para
+    text: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+  p10:
+  - kind: para
+    text: “PHPにはprotectedプロパティも抽象メ
+  - kind: para
+    text: ソッドもありますよ。計算機科学の教授が
+  - kind: para
+    text: 「使え」と言ってるものは全部。
+  - kind: para
+    text: そんなことはクソ興味ないですけど”
+  - kind: para
+    text: –Rasmus Lerdorf
+  p11:
+  - kind: para
+    text: 原作者のRasmusはプロ
+  - kind: para
+    text: グラミング言語の設計
+  - kind: para
+    text: にはあまり関心がない
+  p12:
+  - kind: para
+    text: おしながき
+  p13:
+  - kind: para
+    text: 1. PHPの開発体制
+  - kind: para
+    text: 2. 言語としての特徴
+  - kind: para
+    text: 3. 最近の動向と「次」
+  p14:
+  - kind: para
+    text: PHPの
+  - kind: para
+    text: 開発体制
+  p15:
+  - kind: para
+    text: Rasmusは「最初の開発者」
+  - kind: para
+    text: であってGuidoやMatzの
+  - kind: para
+    text: ようなBDFLではない
+  - kind: para
+    text: (Wikipediaの一覧には載ってるけど…)
+  p16:
+  - kind: para
+    text: 機能追加や改廃はRFCに
+  - kind: para
+    text: まとめられMLで議論され
+  - kind: para
+    text: た後にコミッターによる
+  - kind: para
+    text: 投票で決まるプロセス
+  - kind: para
+    text: https://wiki.php.net/rfc/voting
+  p17:
+  - kind: para
+    text: PHPの行く末を
+  - kind: para
+    text: 知りたければRFCを
+  - kind: para
+    text: ウォッチすればよい
+  p18:
+  - kind: para
+    text: https://wiki.php.net/rfc
+  p19:
+  - kind: para
+    text: https://php-rfc-watch.beberlei.de/
+  p20: []
+  p21:
+  - kind: para
+    text: https://wiki.php.net/rfc
+  p22:
+  - kind: para
+    text: 言語としての
+  - kind: para
+    text: 特徴
+  p23:
+  - kind: para
+    text: Webアプリを最も
+  - kind: para
+    text: ゆるふわ簡単に
+  - kind: para
+    text: 構築できる言語
+  p24:
+  - kind: para
+    text: 昔ながらのCGIと同じく
+  - kind: para
+    text: レンタルサーバー借りて
+  - kind: para
+    text: ファイルを置けば設置完了
+  p25:
+  - kind: para
+    text: 現在ではレン鯖にFTPで転送とか
+  - kind: para
+    text: よりHerokuにgit pushした方が
+  - kind: para
+    text: ずっと簡単じゃね？
+  - kind: para
+    text: と僕も思ってるけど、PHPが利用
+  - kind: para
+    text: される界隈的にそこまで主流の
+  - kind: para
+    text: 選択肢とはされない感じがある
+  p26:
+  - kind: para
+    text: PHPは様々な
+  - kind: para
+    text: 要素を併せ持つ
+  p27:
+  - kind: para
+    text: 1. HTMLテンプレート
+  - kind: para
+    text: 2. PerlっぽいCGI
+  - kind: para
+    text: 3. Javaっぽいクラス
+  p28:
+  - kind: para
+    text: “PHPにはprotectedプロパティも抽象メ
+  - kind: para
+    text: ソッドもありますよ。計算機科学の教授が
+  - kind: para
+    text: 「使え」と言ってるものは全部。
+  - kind: para
+    text: そんなことはクソ興味ないですけど”
+  - kind: para
+    text: –Rasmus Lerdorf
+  p29:
+  - kind: heading
+    level: 1
+    text: ほかの言語にあるよ
+  - kind: heading
+    level: 1
+    text: うな機能は概ねある
+  - kind: para
+    text: 計算機科学の教授が使えと言ってるものは全部
+  - kind: para
+    text: 全部とは言ってない↑↑↑
+  p30:
+  - kind: para
+    text: 抽象クラス, トレイト, インターフェ
+  - kind: para
+    text: イス, ジェネレータ, イテレータ, クロー
+  - kind: para
+    text: ジャ, 函数の動的呼び出し, 無名クラ
+  - kind: para
+    text: ス, eval, 型宣言, 連想配列, リフレク
+  - kind: para
+    text: ションAPI, 自己文書化, 標準入出力の
+  - kind: para
+    text: 読み書き, REPL, クラスの遅延ロード
+  p31:
+  - kind: heading
+    level: 1
+    text: イテレータ・ジェネレータ
+  - kind: para
+    text: foreachでイテレーションできる
+  - kind: para
+    text: モノをユーザー定義で作れる
+  - kind: para
+    text: ストリーム(遅延リスト・無限リスト)も
+  - kind: para
+    text: 当然扱える
+  - kind: para
+    text: 創意工夫でかなりの使いでがある
+  p32:
+  - kind: heading
+    level: 1
+    text: トレイト (trait)
+  - kind: para
+    text: 継承なしでクラスに実装追加できる
+  - kind: para
+    text: 複数トレイトの衝突を解決できる
+  - kind: para
+    text: 優先順位の定義・メソッド名変更
+  - kind: para
+    text: つまり「本物の」トレイトの実装
+  - kind: para
+    text: Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, Andrew P. Black(2002)
+  - kind: para
+    text: 'Traits: Composable Units of Behaviour'
+  p33:
+  - kind: heading
+    level: 1
+    text: クラスの遅延ロード
+  - kind: para
+    text: 実行時に未定義クラスが登場したと
+  - kind: para
+    text: きにファイルを読み込むロジックを
+  - kind: para
+    text: ユーザー定義できる
+  - kind: para
+    text: いちいちrequire_onceを書かない
+  - kind: para
+    text: 不必要なファイルが読み込まれない
+  - kind: para
+    text: AOP メタプログラミングの温床
+  - kind: para
+    text: Composerを利用するのが鉄板構成
+  p34:
+  - kind: para
+    text: 最近の動向
+  p35:
+  - kind: para
+    text: PHP7.0は12月1日前後に
+  - kind: para
+    text: リリースされるスケジュー
+  - kind: para
+    text: ルで概ね固定されてる
+  p36:
+  - kind: para
+    text: http://php.net/supported-versions.php
+  p37:
+  - kind: para
+    text: 2年間のメンテと
+  - kind: para
+    text: 1年間のセキュリティ修正
+  p38:
+  - kind: para
+    text: 大事な
+  - kind: para
+    text: お知らせです
+  p39:
+  - kind: para
+    text: 2004年から長らくご愛顧いた
+  - kind: para
+    text: だいだきましたPHP5.xの公式
+  - kind: para
+    text: サポートは2018年をもって
+  - kind: para
+    text: 完全に終了いたします。
+  - kind: para
+    text: (5.6のSecurity fixes終了)
+  p40:
+  - kind: para
+    text: ついでにPHP7.0の
+  - kind: para
+    text: Security fixesも12月3日に
+  - kind: para
+    text: 終了するので7.1または7.2系
+  - kind: para
+    text: にアップデートしましょう。
+  p41:
+  - kind: para
+    text: あくまでThe PHP Groupから
+  - kind: para
+    text: のリリースの話なので、脆弱性
+  - kind: para
+    text: が出たら各ディストリ独自のアッ
+  - kind: para
+    text: プデートがあると思いますが。
+  p42:
+  - kind: para
+    text: ご安全に。
+  p43:
+  - kind: heading
+    level: 1
+    text: 最近の動向
+  - kind: para
+    text: (言語コア)
+  p44:
+  - kind: para
+    text: PHP 5.6→ 7.0
+  p45:
+  - kind: para
+    text: これは内部構造の
+  - kind: para
+    text: 最適化と型宣言の
+  - kind: para
+    text: 追加が目玉
+  p46:
+  - kind: para
+    text: http://d.hatena.ne.jp/hnw/20160828
+  p47:
+  - kind: para
+    text: PHP 7.1以降
+  p48:
+  - kind: para
+    text: 微妙に書きにくかった
+  - kind: para
+    text: 文法の修正と危険な機能
+  - kind: para
+    text: の非推奨化(削除)が中心
+  p49:
+  - kind: heading
+    level: 1
+    text: PHP 7.1
+  - kind: para
+    text: nullableの追加
+  - kind: para
+    text: 函数戻り値にvoidが書けるように
+  - kind: para
+    text: 配列分解の短縮構文
+  - kind: para
+    text: クラス定数に可視性を定義可能に
+  - kind: para
+    text: private const
+  p50:
+  - kind: heading
+    level: 1
+    text: PHP 7.2
+  - kind: para
+    text: 型宣言にobjectが書けるように
+  - kind: para
+    text: 継承時にメソッドの型宣言を省略可
+  - kind: para
+    text: クラスのグループ表記ケツカンマ可
+  p51:
+  - kind: heading
+    level: 1
+    text: PHP 7.3 (12月リリース予定)
+  - kind: para
+    text: 7月にfeature freezeされ現在beta2
+  - kind: para
+    text: 函数呼び出し引数のケツカンマ可
+  - kind: para
+    text: ヒアドキュメント／nowdocの改善
+  - kind: para
+    text: 終端行判定がシビアだったのが緩和
+  - kind: para
+    text: 行頭空白をトリムできるように
+  p52:
+  - kind: para
+    text: PHP 7.4?
+  p53:
+  - kind: heading
+    level: 1
+    text: PHP 7.4
+  - kind: para
+    text: typed propertyが入る…かも(議論中)
+  - kind: para
+    text: これは比較的確度高そう
+  - kind: para
+    text: Fiberが入る… かも(議論中)
+  - kind: para
+    text: PHPで非同期処理は伝統的に鬼門
+  - kind: para
+    text: 取り込まれるまでハードル高そう
+  p54:
+  - kind: heading
+    level: 1
+    text: PHP 8?
+  - kind: para
+    text: PHP5時代の負債っぽい仕様は一掃？
+  - kind: para
+    text: 臆測です
+  - kind: para
+    text: JITが入る…?
+  - kind: para
+    text: ほんとにうまくいくの？
+  - kind: para
+    text: ローカル変数の型付け？
+  - kind: para
+    text: typed propertyの流れで視野内
+  p55:
+  - kind: heading
+    level: 1
+    text: 最近の動向
+  - kind: para
+    text: (関連コミュニティ)
+  p56:
+  - kind: heading
+    level: 1
+    text: PHPカンファレンスは活発
+  - kind: para
+    text: 2018年はPHPコミュニティ・カンファ
+  - kind: para
+    text: レンスが活発化した一年だった
+  - kind: para
+    text: iOSDC主宰の長谷川さん(@tomzoh)
+  - kind: para
+    text: がPHPカンファレンスと別にPHPer
+  - kind: para
+    text: Kaigiを開催してコミュニティに火
+  - kind: para
+    text: をつけた
+  - kind: para
+    text: 各地域のCFP応募数が倍増した
+  p57:
+  - kind: heading
+    level: 1
+    text: 2018年のPHPカンファレンス
+  - kind: para
+    text: 2019年は既に例年以上の開催告知
+  - kind: para
+    text: PHPerKaigi 2019
+  - kind: para
+    text: '地域: 福岡/仙台(New!)/札幌'
+  - kind: para
+    text: 'フレームワーク: CakePHP, Laravel'
+  p58:
+  - kind: heading
+    level: 1
+    text: PhpStormの普及
+  - kind: para
+    text: JetBrains社のPHP(+WEB)専用IDE
+  - kind: para
+    text: 静的解析機能がめっちゃ※強い(PHP比)
+  - kind: para
+    text: 入力補完やエラー表示が強い
+  - kind: para
+    text: 簡単な型推論はしてくれる
+  - kind: para
+    text: PHPDocの型記述を読んでくれる
+  - kind: para
+    text: リファクタリング機能がある
+  p59:
+  - kind: heading
+    level: 1
+    text: PHPと静的解析
+  - kind: para
+    text: PhpStorm登場以前は単純なコードの
+  - kind: para
+    text: スタイルや複雑度を検査するものが
+  - kind: para
+    text: 多かった
+  - kind: para
+    text: PhpStorm以後は変数のスコープや
+  - kind: para
+    text: 静的な型検査をベースにチェックで
+  - kind: para
+    text: きるツールが増えた
+  - kind: para
+    text: Phan, PHPStan, Psalm
+  p60:
+  - kind: heading
+    level: 1
+    text: PHPDocの現状
+  - kind: para
+    text: ポピュラーなライブラリやフレーム
+  - kind: para
+    text: ワークはPHPDocが整備されてるので、
+  - kind: para
+    text: PhpStormを入れるだけで十分補完が
+  - kind: para
+    text: 機能する状態
+  - kind: para
+    text: 一方で仕様の標準化と実装は難航
+  - kind: para
+    text: PhpStormがPSR-5入れてくれない
+  - kind: para
+    text: IntersectionType(非標準)入りそう
+  p61:
+  - kind: heading
+    level: 1
+    text: 並列処理・非同期処理
+  - kind: para
+    text: PHPでは実行モデル的に鬼門
+  - kind: para
+    text: ↑情報科学の教授に怒られそう
+  - kind: para
+    text: それを解決しようとする動きがある
+  - kind: para
+    text: Swoole https://www.swoole.com/
+  - kind: para
+    text: Fiber(RFC) https://wiki.php.net/rfc/fiber
+  - kind: para
+    text: PHP-Promise(ext)
+  - kind: para
+    text: https://github.com/php-promise/promise
+  p62:
+  - kind: heading
+    level: 1
+    text: 書籍
+  - kind: para
+    text: あんまり景気よくなさそう
+  - kind: para
+    text: 初心者向けの入門書は結構出てる
+  - kind: para
+    text: 最新のモダンな開発事情を伝える
+  - kind: para
+    text: ものはずっと出てない
+  - kind: para
+    text: パーフェクトPHPは2014年
+  - kind: para
+    text: いまがんばって企画書を書いてます
+  p63:
+  - kind: para
+    text: まとめ
+  p64:
+  - kind: para
+    text: PHPの活用領域
+  - kind: para
+    text: は多様
+  p65:
+  - kind: para
+    text: 言語としては従来の
+  - kind: para
+    text: 「負債」を解消する
+  - kind: para
+    text: 方向の変更が多い
+  p66:
+  - kind: para
+    text: PHPを継続的に静的解析できる
+  - kind: para
+    text: 環境が既に揃ってるので既存プ
+  - kind: para
+    text: ロジェクトの改善や新規開発の
+  - kind: para
+    text: 効率化の大きな武器になる
 size:
   max_width: 1024
   max_height: 768
@@ -44,921 +618,3 @@ links:
   - url: https://github.com/php-promise/promise
     title: 'GitHub - php-promise/promise: The PHP Promise is a library that asynchronously
       processes PHP like JavaScript Promise.'
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: Language Update   2018
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-  - node: p
-    children:
-    - node: bold
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: '2018-08-26 Learn Languages 2018 '
-  - node: p
-    children:
-    - node: bold
-      content: '#ll2018'
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
-  p3:
-  - node: p
-    children:
-    - node: bold
-      content: 言語的なバックグラウンド
-    - node: br
-    - node: bold
-      content: '2004年頃: ISO-HTML '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '2006年頃: JavaScript'
-    - node: li
-      children:
-      - node: text
-        content: '2010年頃: Ruby, 魔法言語 リリカル☆Lisp'
-    - node: li
-      children:
-      - node: text
-        content: '2011年頃: Python, shell(Bash), F#/OCaml'
-    - node: li
-      children:
-      - node: text
-        content: '2013年頃: Emacs Lisp, PHP'
-    - node: li
-      children:
-      - node: text
-        content: 基本はWebから始まって動的言語やってきた
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  p5:
-  - node: p
-    children:
-    - node: bold
-      content: みんな大好きPHP
-  p6:
-  - node: p
-    children:
-    - node: bold
-      content: ですよね？
-    - node: br
-    - node: bold
-      content: (暗黒微笑)
-  p7:
-  - node: p
-    children:
-    - node: text
-      content: リアルワールドでのシェア の割にプログラミング言語
-  - node: p
-    children:
-    - node: text
-      content: として興味関心の対象と してる人は多くない印象
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: 😇
-  p9:
-  - node: p
-    children:
-    - node: bold
-      content: '“We have things like protected properties. '
-    - node: br
-    - node: bold
-      content: 'We have abstract methods. We have all '
-    - node: br
-    - node: bold
-      content: 'this stuff that your computer science '
-  - node: p
-    children:
-    - node: bold
-      content: 'teacher told you you should be using. '
-    - node: br
-    - node: bold
-      content: I don't care about this crap at all.”
-  - node: p
-    children:
-    - node: bold
-      content: –Rasmus Lerdorf
-    - node: br
-    - node: bold
-      content: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: には プロパティも抽象メ
-  - node: p
-    children:
-    - node: bold
-      content: “PHP protected
-    - node: br
-    - node: text
-      content: ソッドもありますよ。計算機科学の教授が
-    - node: br
-    - node: text
-      content: 「使え」と言ってるものは全部。
-  - node: p
-    children:
-    - node: text
-      content: そんなことはクソ興味ないですけど
-  - node: p
-    children:
-    - node: bold
-      content: ”
-  - node: p
-    children:
-    - node: bold
-      content: –Rasmus Lerdorf
-  p11:
-  - node: p
-    children:
-    - node: bold
-      content: 原作者のRasmusはプロ
-    - node: text
-      content: ' '
-    - node: bold
-      content: グラミング言語の設計
-    - node: text
-      content: ' '
-    - node: bold
-      content: にはあまり関心がない
-  p12:
-  - node: p
-    children:
-    - node: bold
-      content: おしながき
-  p13:
-  - node: p
-    children:
-    - node: bold
-      content: '1. PHPの開発体制 '
-    - node: br
-    - node: bold
-      content: 2. 言語としての特徴 3. 最近の動向と「次」
-  p14:
-  - node: p
-    children:
-    - node: bold
-      content: PHPの
-    - node: br
-    - node: bold
-      content: 開発体制
-  p15:
-  - node: p
-    children:
-    - node: bold
-      content: Rasmusは「最初の開発者」
-    - node: text
-      content: ' '
-    - node: bold
-      content: であってGuidoやMatzの
-    - node: br
-    - node: bold
-      content: 'ようなBDFLではない '
-    - node: br
-    - node: bold
-      content: (Wikipediaの一覧には載ってるけど…)
-  p16:
-  - node: p
-    children:
-    - node: bold
-      content: 機能追加や改廃はRFCに
-    - node: text
-      content: ' '
-    - node: bold
-      content: まとめられMLで議論され
-    - node: text
-      content: ' '
-    - node: bold
-      content: た後にコミッターによる
-  - node: p
-    children:
-    - node: bold
-      content: 投票で決まるプロセス
-  - node: p
-    children:
-    - node: bold
-      content: https://wiki.php.net/rfc/voting
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: PHPの行く末を
-  - node: p
-    children:
-    - node: text
-      content: 知りたければ
-    - node: bold
-      content: RFCを
-    - node: text
-      content: ' '
-    - node: bold
-      content: ウォッチ
-    - node: text
-      content: すればよい
-  p18:
-  - node: p
-    children:
-    - node: bold
-      content: https://wiki.php.net/rfc
-  p19:
-  - node: p
-    children:
-    - node: bold
-      content: https://php-rfc-watch.beberlei.de/
-  p20: []
-  p21:
-  - node: p
-    children:
-    - node: bold
-      content: https://wiki.php.net/rfc
-  p22:
-  - node: p
-    children:
-    - node: bold
-      content: 言語としての
-    - node: br
-    - node: bold
-      content: 特徴
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: Webアプリを最も
-  - node: p
-    children:
-    - node: text
-      content: ゆるふわ簡単に 構築できる言語
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: 昔ながらのCGIと同じく
-  - node: p
-    children:
-    - node: text
-      content: レンタルサーバー借りて
-    - node: br
-    - node: text
-      content: ファイルを置けば設置完了
-  p25:
-  - node: p
-    children:
-    - node: text
-      content: 現在ではレン鯖にFTPで転送とか よりHerokuにgit pushした方が
-  - node: p
-    children:
-    - node: text
-      content: ずっと簡単じゃね？
-    - node: br
-    - node: text
-      content: と僕も思ってるけど、PHPが利用
-    - node: br
-    - node: text
-      content: される界隈的にそこまで主流の 選択肢とはされない感じがある
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: PHPは
-    - node: bold
-      content: 様々な
-    - node: br
-    - node: bold
-      content: 要素
-    - node: text
-      content: を併せ持つ
-  p27:
-  - node: p
-    children:
-    - node: bold
-      content: '1. HTMLテンプレート '
-    - node: br
-    - node: bold
-      content: '2. PerlっぽいCGI '
-    - node: br
-    - node: bold
-      content: 3. Javaっぽいクラス
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: には プロパティも抽象メ
-  - node: p
-    children:
-    - node: bold
-      content: “PHP protected
-    - node: br
-    - node: text
-      content: ソッドもありますよ。計算機科学の教授が
-    - node: br
-    - node: text
-      content: 「使え」と言ってるものは全部。
-  - node: p
-    children:
-    - node: text
-      content: そんなことはクソ興味ないですけど
-  - node: p
-    children:
-    - node: bold
-      content: ”
-  - node: p
-    children:
-    - node: bold
-      content: –Rasmus Lerdorf
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: ほかの言語にあるよ
-  - node: p
-    children:
-    - node: text
-      content: うな機能は
-    - node: bold
-      content: 概ね
-    - node: text
-      content: 'ある '
-    - node: bold
-      content: '計算機科学の教授が使えと言ってるものは全部 '
-  - node: p
-    children:
-    - node: bold
-      content: 全部とは言ってない↑↑↑
-  p30:
-  - node: p
-    children:
-    - node: bold
-      content: 抽象クラス, トレイト, インターフェ
-    - node: br
-    - node: bold
-      content: イス, ジェネレータ, イテレータ, クロー
-    - node: br
-    - node: bold
-      content: ジャ, 函数の動的呼び出し, 無名クラ
-    - node: text
-      content: ' '
-    - node: bold
-      content: ス, eval, 型宣言, 連想配列, リフレク
-    - node: text
-      content: ' '
-    - node: bold
-      content: ションAPI, 自己文書化, 標準入出力の
-    - node: text
-      content: ' '
-    - node: bold
-      content: 読み書き, REPL, クラスの遅延ロード
-  p31:
-  - node: p
-    children:
-    - node: bold
-      content: イテレータ・ジェネレータ
-  - node: p
-    children:
-    - node: text
-      content: foreachでイテレーションできる
-    - node: br
-    - node: text
-      content: 'モノをユーザー定義で作れる '
-    - node: br
-    - node: text
-      content: ストリーム も
-  - node: p
-    children:
-    - node: text
-      content: (遅延リスト・無限リスト)
-  - node: p
-    children:
-    - node: text
-      content: '当然扱える '
-    - node: br
-    - node: text
-      content: 創意工夫でかなりの使いでがある
-  p32:
-  - node: p
-    children:
-    - node: bold
-      content: トレイト (trait)
-  - node: p
-    children:
-    - node: text
-      content: '継承なしでクラスに実装追加できる 複数トレイトの衝突を解決できる '
-    - node: br
-    - node: text
-      content: '優先順位の定義・メソッド名変更 '
-    - node: br
-    - node: text
-      content: 'つまり「本物の」トレイトの実装 '
-  - node: p
-    children:
-    - node: bold
-      content: Nathanael Schärli, Stéphane Ducasse, Oscar Nierstrasz, Andrew P. Black(2002)
-    - node: br
-    - node: bold
-      content: 'Traits: Composable Units of Behaviour'
-  p33:
-  - node: p
-    children:
-    - node: bold
-      content: クラスの遅延ロード
-  - node: p
-    children:
-    - node: text
-      content: 実行時に未定義クラスが登場したと きにファイルを読み込むロジックを
-    - node: br
-    - node: text
-      content: 'ユーザー定義できる '
-    - node: br
-    - node: text
-      content: 'いちいちrequire_onceを書かない 不必要なファイルが読み込まれない '
-    - node: br
-    - node: bold
-      content: AOP
-    - node: text
-      content: ' メタプログラミングの温床 '
-    - node: br
-    - node: text
-      content: Composerを利用するのが鉄板構成
-  p34:
-  - node: p
-    children:
-    - node: bold
-      content: 最近の動向
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: PHP7.0は12月1日前後に リリースされるスケジュー
-    - node: br
-    - node: text
-      content: ルで概ね固定されてる
-  p36:
-  - node: p
-    children:
-    - node: bold
-      content: http://php.net/supported-versions.php
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: 2年間のメンテと
-    - node: br
-    - node: text
-      content: 1年間のセキュリティ修正
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: 大事な
-    - node: br
-    - node: text
-      content: お知らせです
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: 2004年から長らくご愛顧いた だいだきましたPHP5.xの公式
-  - node: p
-    children:
-    - node: text
-      content: サポートは2018年をもって
-  - node: p
-    children:
-    - node: text
-      content: 完全に終了いたします。
-    - node: br
-    - node: text
-      content: (5.6のSecurity fixes終了)
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: ついでにPHP7.0の
-  - node: p
-    children:
-    - node: text
-      content: Security fixesも12月3日に 終了するので7.1または7.2系 にアップデートしましょう。
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: あくまでThe PHP Groupから のリリースの話なので、脆弱性 が出たら各ディストリ独自のアッ プデートがあると思いますが。
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: ご安全に。
-  p43:
-  - node: p
-    children:
-    - node: bold
-      content: 最近の動向
-    - node: br
-    - node: bold
-      content: (言語コア)
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: PHP 5.6→ 7.0
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: これは内部構造の
-  - node: p
-    children:
-    - node: text
-      content: 最適化と型宣言の
-    - node: br
-    - node: text
-      content: 追加が目玉
-  p46:
-  - node: p
-    children:
-    - node: bold
-      content: http://d.hatena.ne.jp/hnw/20160828
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.1以降
-  p48:
-  - node: p
-    children:
-    - node: text
-      content: 微妙に書きにくかった
-    - node: br
-    - node: text
-      content: 文法の修正と危険な機能 の非推奨化 が中心
-    - node: br
-    - node: text
-      content: (削除)
-  p49:
-  - node: p
-    children:
-    - node: bold
-      content: PHP 7.1
-  - node: p
-    children:
-    - node: text
-      content: 'nullableの追加 '
-    - node: br
-    - node: text
-      content: '函数戻り値にvoidが書けるように '
-    - node: br
-    - node: text
-      content: '配列分解の短縮構文 '
-    - node: br
-    - node: text
-      content: 'クラス定数に可視性を定義可能に '
-  - node: p
-    children:
-    - node: text
-      content: private const
-  p50:
-  - node: p
-    children:
-    - node: bold
-      content: PHP 7.2
-  - node: p
-    children:
-    - node: text
-      content: '型宣言にobjectが書けるように '
-    - node: br
-    - node: text
-      content: 継承時にメソッドの型宣言を省略可 クラスのグループ表記ケツカンマ可
-  p51:
-  - node: p
-    children:
-    - node: bold
-      content: PHP 7.3 (12月リリース予定)
-  - node: p
-    children:
-    - node: text
-      content: '7月にfeature freezeされ現在beta2 '
-    - node: br
-    - node: text
-      content: '函数呼び出し引数のケツカンマ可 ヒアドキュメント／nowdocの改善 '
-    - node: br
-    - node: text
-      content: '終端行判定がシビアだったのが緩和 '
-    - node: br
-    - node: text
-      content: 行頭空白をトリムできるように
-  p52:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.4?
-  p53:
-  - node: p
-    children:
-    - node: bold
-      content: PHP 7.4
-  - node: p
-    children:
-    - node: text
-      content: 'typed propertyが入る…かも(議論中) '
-    - node: br
-    - node: text
-      content: 'これは比較的確度高そう '
-    - node: br
-    - node: text
-      content: 'Fiberが入る… かも(議論中) '
-    - node: br
-    - node: text
-      content: PHPで非同期処理は伝統的に鬼門 取り込まれるまでハードル高そう
-  p54:
-  - node: p
-    children:
-    - node: bold
-      content: PHP 8?
-  - node: p
-    children:
-    - node: text
-      content: 'PHP5時代の負債っぽい仕様は一掃？ '
-    - node: br
-    - node: text
-      content: '臆測です '
-    - node: br
-    - node: text
-      content: 'JITが入る…? '
-    - node: br
-    - node: text
-      content: 'ほんとにうまくいくの？ '
-    - node: br
-    - node: text
-      content: 'ローカル変数の型付け？ '
-    - node: br
-    - node: text
-      content: typed propertyの流れで視野内
-  p55:
-  - node: p
-    children:
-    - node: bold
-      content: 最近の動向
-    - node: br
-    - node: bold
-      content: (関連コミュニティ)
-  p56:
-  - node: p
-    children:
-    - node: bold
-      content: PHPカンファレンスは活発
-  - node: p
-    children:
-    - node: text
-      content: 2018年はPHPコミュニティ・カンファ
-    - node: br
-    - node: text
-      content: 'レンスが活発化した一年だった '
-    - node: br
-    - node: text
-      content: 'iOSDC主宰の長谷川さん(@tomzoh) がPHPカンファレンスと別にPHPer '
-    - node: br
-    - node: text
-      content: Kaigiを開催してコミュニティに火
-    - node: br
-    - node: text
-      content: 'をつけた '
-    - node: br
-    - node: text
-      content: 各地域のCFP応募数が倍増した
-  p57:
-  - node: p
-    children:
-    - node: bold
-      content: 2018年のPHPカンファレンス
-  - node: p
-    children:
-    - node: text
-      content: '2019年は既に例年以上の開催告知 '
-  - node: p
-    children:
-    - node: text
-      content: 'PHPerKaigi 2019 '
-    - node: br
-    - node: text
-      content: '地域: 福岡/仙台 /札幌 '
-  - node: p
-    children:
-    - node: text
-      content: (New!)
-    - node: br
-    - node: bold
-      content: フレームワーク
-    - node: text
-      content: ': CakePHP, Laravel'
-  p58:
-  - node: p
-    children:
-    - node: bold
-      content: PhpStormの普及
-  - node: p
-    children:
-    - node: text
-      content: 'JetBrains社のPHP(+WEB)専用IDE 静的解析機能がめっちゃ強い  '
-  - node: p
-    children:
-    - node: text
-      content: ※
-  - node: p
-    children:
-    - node: text
-      content: (PHP比)
-  - node: p
-    children:
-    - node: text
-      content: '入力補完やエラー表示が強い 簡単な型推論はしてくれる '
-    - node: br
-    - node: text
-      content: 'PHPDocの型記述を読んでくれる '
-    - node: br
-    - node: text
-      content: リファクタリング機能がある
-  p59:
-  - node: p
-    children:
-    - node: bold
-      content: PHPと静的解析
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm登場以前は単純なコードの スタイルや複雑度を検査するものが
-    - node: br
-    - node: text
-      content: '多かった '
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm以後は変数のスコープや 静的な型検査をベースにチェックで
-    - node: br
-    - node: text
-      content: 'きるツールが増えた '
-  - node: p
-    children:
-    - node: text
-      content: Phan, PHPStan, Psalm
-  p60:
-  - node: p
-    children:
-    - node: bold
-      content: PHPDocの現状
-  - node: p
-    children:
-    - node: text
-      content: ポピュラーなライブラリやフレーム ワークはPHPDocが整備されてるので、 PhpStormを入れるだけで十分補完が
-    - node: br
-    - node: text
-      content: '機能する状態 '
-    - node: br
-    - node: text
-      content: '一方で仕様の標準化と実装は難航 '
-    - node: br
-    - node: text
-      content: PhpStormがPSR-5入れてくれない IntersectionType 入りそう
-  - node: p
-    children:
-    - node: text
-      content: (非標準)
-  p61:
-  - node: p
-    children:
-    - node: bold
-      content: 並列処理・非同期処理
-  - node: p
-    children:
-    - node: text
-      content: PHPでは実行モデル的に鬼門
-    - node: br
-    - node: text
-      content: '↑情報科学の教授に怒られそう '
-    - node: br
-    - node: text
-      content: 'それを解決しようとする動きがある '
-  - node: p
-    children:
-    - node: text
-      content: 'Swoole    '
-  - node: p
-    children:
-    - node: text
-      content: https://www.swoole.com/
-    - node: br
-    - node: text
-      content: 'Fiber(RFC)   '
-  - node: p
-    children:
-    - node: text
-      content: https://wiki.php.net/rfc/fiber
-  - node: p
-    children:
-    - node: text
-      content: PHP-Promise(ext)
-    - node: br
-    - node: text
-      content: https://github.com/php-promise/promise
-  p62:
-  - node: p
-    children:
-    - node: bold
-      content: 書籍
-  - node: p
-    children:
-    - node: text
-      content: 'あんまり景気よくなさそう '
-    - node: br
-    - node: text
-      content: '初心者向けの入門書は結構出てる '
-  - node: p
-    children:
-    - node: text
-      content: 最新のモダンな開発事情を伝える
-    - node: br
-    - node: text
-      content: 'ものはずっと出てない '
-    - node: br
-    - node: text
-      content: 'パーフェクトPHPは2014年 '
-    - node: br
-    - node: text
-      content: いまがんばって企画書を書いてます
-  p63:
-  - node: p
-    children:
-    - node: bold
-      content: まとめ
-  p64:
-  - node: p
-    children:
-    - node: text
-      content: PHPの活用領域
-    - node: br
-    - node: text
-      content: は多様
-  p65:
-  - node: p
-    children:
-    - node: text
-      content: 言語としては従来の 「負債」を解消する
-    - node: br
-    - node: text
-      content: 方向の変更が多い
-  p66:
-  - node: p
-    children:
-    - node: text
-      content: PHPを継続的に静的解析できる 環境が既に揃ってるので既存プ ロジェクトの改善や新規開発の
-    - node: br
-    - node: text
-      content: 効率化の大きな武器になる

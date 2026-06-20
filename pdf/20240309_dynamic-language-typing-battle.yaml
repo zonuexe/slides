@@ -1,307 +1,263 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語型付けバトル
-  - node: p
-    children:
-    - node: text
-      content: Dynamic Language Typings Battle
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 1 2024-03-09
+  - kind: heading
+    level: 1
+    text: 動的言語型付けバトル
+  - kind: heading
+    level: 2
+    text: Dynamic Language Typings Battle
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2024-03-09'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語とは何か
-    - node: br
-    - node: text
-      content: 　
-    - node: bold
-      content: 動的プログラミング言語
-    - node: text
-      content: (dynamic programming languages)はプログ ラミング言語の一類型で、実行時(run-time)にプログラムの性質を制御したり、
-    - node: br
-    - node: text
-      content: '実行時まで決定が遅延される性質が強いプログラミング言語の総称です。 '
-    - node: br
-    - node: text
-      content: 　プログラムの実行時に何ができるか(どんな操作を許すか)は、プログラミング 言語設計の重要な一要素であり、言語によってかなり大きく異なるといえます。
-        　一般に動的言語といわれる言語にはLisp族, シェルスクリプト, AWK, Perl, Smalltalk, Python, Ruby, JavaScriptなどがあります。動的言語に特徴的
-        な機能としては
-    - node: bold
-      content: eval
-    - node: text
-      content: があります。これは文字列またはリストなどでソースコード を構築し、実行時に評価(evaluate)できると機能です。これは柔軟な処理がで
-        きる反面、不用意な実装によって脆弱性を孕むリスクがあるため敬遠される傾向 にある一方、ライブラリ(スクリプト)の動的ロードなどは意識せず使われる場面も
-    - node: br
-    - node: text
-      content: 多いでしょう。
+  - kind: heading
+    level: 1
+    text: 動的言語とは何か
+  - kind: para
+    text: 動的プログラミング言語(dynamic programming languages)はプログ
+  - kind: para
+    text: ラミング言語の一類型で、実行時(run-time)にプログラムの性質を制御したり、
+  - kind: para
+    text: 実行時まで決定が遅延される性質が強いプログラミング言語の総称です。
+  - kind: para
+    text: プログラムの実行時に何ができるか(どんな操作を許すか)は、プログラミング
+  - kind: para
+    text: 言語設計の重要な一要素であり、言語によってかなり大きく異なるといえます。
+  - kind: para
+    text: 一般に動的言語といわれる言語にはLisp族, シェルスクリプト, AWK, Perl,
+  - kind: para
+    text: Smalltalk, Python, Ruby, JavaScriptなどがあります。動的言語に特徴的
+  - kind: para
+    text: な機能としてはevalがあります。これは文字列またはリストなどでソースコード
+  - kind: para
+    text: を構築し、実行時に評価(evaluate)できると機能です。これは柔軟な処理がで
+  - kind: para
+    text: きる反面、不用意な実装によって脆弱性を孕むリスクがあるため敬遠される傾向
+  - kind: para
+    text: にある一方、ライブラリ(スクリプト)の動的ロードなどは意識せず使われる場面も
+  - kind: para
+    text: 多いでしょう。
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 静的型付き vs 動的型チェック
-    - node: br
-    - node: text
-      content: 　
-    - node: bold
-      content: 静的型付き言語
-    - node: text
-      content: (statically typed languages)は静的、つまりプログラム を実行する前に関数・変数・項などのとりうる型が決定される言語のことです。
-        　誤解しないでおきたいのは、静的型のプログラミング言語というのはソース
-    - node: br
-    - node: text
-      content: コードに型をいちいち書かなければいけない言語、
-    - node: bold
-      content: というわけではありません
-    - node: text
-      content: '。 '
-  - node: p
-    children:
-    - node: text
-      content: 　
-    - node: bold
-      content: 動的言語
-    - node: text
-      content: と呼ばれる言語では一般に静的には型を書かず(あるいは型付けの機 能そのものを持たず)実行時まで型が定まりません。動的言語では実行時に値の
-        型情報(型タグ)を検査することで安全に実行できます。このような性質を
-    - node: bold
-      content: 型な
-    - node: text
-      content: ' '
-    - node: bold
-      content: し
-    - node: text
-      content: 、あるいは便宜的に
-    - node: bold
-      content: 動的型付け
-    - node: text
-      content: '(dynamic typing)と呼ぶことがあります。 '
-  - node: p
-    children:
-    - node: text
-      content: 　静的型付き言語は収集した情報をもとに効率的かつ実行効率のよい実行ファイ ルにコンパイルできる余地があります。
-    - node: bold
-      content: これは語弊のある表現ですが
-    - node: text
-      content: 、コンパイル されたプログラムは鉄道のようなもので、バスと違って道路信号で頻繁に一時停 止させられることなく移動できるもの、のように考えられるかもしれませんね。
+  - kind: heading
+    level: 1
+    text: 静的型付き vs 動的型チェック
+  - kind: para
+    text: 静的型付き言語(statically typed languages)は静的、つまりプログラム
+  - kind: para
+    text: を実行する前に関数・変数・項などのとりうる型が決定される言語のことです。
+  - kind: para
+    text: 誤解しないでおきたいのは、静的型のプログラミング言語というのはソース
+  - kind: para
+    text: コードに型をいちいち書かなければいけない言語、というわけではありません。
+  - kind: para
+    text: 動的言語と呼ばれる言語では一般に静的には型を書かず(あるいは型付けの機
+  - kind: para
+    text: 能そのものを持たず)実行時まで型が定まりません。動的言語では実行時に値の
+  - kind: para
+    text: 型情報(型タグ)を検査することで安全に実行できます。このような性質を型な
+  - kind: para
+    text: し、あるいは便宜的に動的型付け(dynamic typing)と呼ぶことがあります。
+  - kind: para
+    text: 静的型付き言語は収集した情報をもとに効率的かつ実行効率のよい実行ファイ
+  - kind: para
+    text: ルにコンパイルできる余地があります。これは語弊のある表現ですが、コンパイル
+  - kind: para
+    text: されたプログラムは鉄道のようなもので、バスと違って道路信号で頻繁に一時停
+  - kind: para
+    text: 止させられることなく移動できるもの、のように考えられるかもしれませんね。
   p4:
-  - node: p
-    children:
-    - node: text
-      content: 静的型にもグラデーションがある
-    - node: br
-    - node: text
-      content: 　
-    - node: bold
-      content: 静的型付き言語
-    - node: text
-      content: として分類される言語は多くありますが、ひとえに静的型付き
-    - node: br
-    - node: text
-      content: 'と言っても言語が提供する型システムには大きな違いがあります。 '
-    - node: br
-    - node: text
-      content: 　型システムは、
-    - node: bold
-      content: 健全性
-    - node: text
-      content: (soundness)=正しく型がついていればエラーなく実行 できるか、
-    - node: bold
-      content: 完全性
-    - node: text
-      content: (completeness)=プログラムの性質を適切に型で表現でき
-    - node: br
-    - node: text
-      content: 'るか、といった指標で評価できます。 '
-    - node: br
-    - node: text
-      content: 　一般に静的型付き言語と分類される言語でも、C++のように実行時型情報
-    - node: br
-    - node: text
-      content: (RTTI)を提供して動的な処理を可能にする言語があります。C#もdynamic型 を提供しています。これらの機能は、プログラムの柔軟性を上げることと引き換
-        えに健全性が低下し、コンパイル時に検出できないエラーのリスクが生じます。 　また、
-    - node: bold
-      content: 代数的データ型
-    - node: text
-      content: (ADT)という型同士を式のように扱える型も考えられま す。これをサポートする言語の型システムでは、静的な型として簡潔かつ柔軟な
-    - node: br
-    - node: text
-      content: コード記述が可能になります。
+  - kind: heading
+    level: 1
+    text: 静的型にもグラデーションがある
+  - kind: para
+    text: 静的型付き言語として分類される言語は多くありますが、ひとえに静的型付き
+  - kind: para
+    text: と言っても言語が提供する型システムには大きな違いがあります。
+  - kind: para
+    text: 型システムは、健全性(soundness)=正しく型がついていればエラーなく実行
+  - kind: para
+    text: できるか、完全性(completeness)=プログラムの性質を適切に型で表現でき
+  - kind: para
+    text: るか、といった指標で評価できます。
+  - kind: para
+    text: 一般に静的型付き言語と分類される言語でも、C++のように実行時型情報
+  - kind: para
+    text: (RTTI)を提供して動的な処理を可能にする言語があります。C#もdynamic型
+  - kind: para
+    text: を提供しています。これらの機能は、プログラムの柔軟性を上げることと引き換
+  - kind: para
+    text: えに健全性が低下し、コンパイル時に検出できないエラーのリスクが生じます。
+  - kind: para
+    text: また、代数的データ型(ADT)という型同士を式のように扱える型も考えられま
+  - kind: para
+    text: す。これをサポートする言語の型システムでは、静的な型として簡潔かつ柔軟な
+  - kind: para
+    text: コード記述が可能になります。
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 型推論の完全性
-    - node: br
-    - node: text
-      content: 　
-    - node: bold
-      content: 静的型付き言語
-    - node: text
-      content: と呼ばれる言語の中にも、型を明示しなくてもコンパイラがコー
-    - node: br
-    - node: text
-      content: 'ドをきちんと調べ上げることで、静的な型を与えてくれるものがあります。 '
-  - node: p
-    children:
-    - node: text
-      content: 'val add : int -> int -> int = <fun> '
-  - node: p
-    children:
-    - node: text
-      content: '# let add x y = x + y;; '
-  - node: p
-    children:
-    - node: text
-      content: 'val id : ''a -> ''a = <fun> '
-  - node: p
-    children:
-    - node: text
-      content: '# let id a = a ;; '
-  - node: p
-    children:
-    - node: text
-      content: 　これはOCamlというプログラミング言語の例ですが、きちんと関数に型がつい ている(add関数は二つのint引数をとってintを返す、id関数は引数と同じ型を
-    - node: br
-    - node: text
-      content: 'そのまま返す)ことが確認できます。 '
-    - node: br
-    - node: text
-      content: '　すべての言語で同じように型がつけばハッピーなのですが、現実は厳しい。 '
-    - node: br
-    - node: text
-      content: 特に動的言語ではevalなど動的な言語機能により推論困難な場面が多いです。 静的型付きの言語でも型システムの兼ね合いで完全なものは難しいのですが、
-    - node: br
-    - node: text
-      content: ローカル変数に型を明示する必要がない言語が近年浸透しつつあります。
+  - kind: heading
+    level: 1
+    text: 型推論の完全性
+  - kind: para
+    text: 静的型付き言語と呼ばれる言語の中にも、型を明示しなくてもコンパイラがコー
+  - kind: para
+    text: ドをきちんと調べ上げることで、静的な型を与えてくれるものがあります。
+  - kind: para
+    text: 'val add : int -> int -> int = <fun>'
+  - kind: para
+    text: 'val id : ''a -> ''a = <fun>'
+  - kind: para
+    text: '# let add x y = x + y;;'
+  - kind: para
+    text: '# let id a = a ;;'
+  - kind: para
+    text: これはOCamlというプログラミング言語の例ですが、きちんと関数に型がつい
+  - kind: para
+    text: ている(add関数は二つのint引数をとってintを返す、id関数は引数と同じ型を
+  - kind: para
+    text: そのまま返す)ことが確認できます。
+  - kind: para
+    text: すべての言語で同じように型がつけばハッピーなのですが、現実は厳しい。
+  - kind: para
+    text: 特に動的言語ではevalなど動的な言語機能により推論困難な場面が多いです。
+  - kind: para
+    text: 静的型付きの言語でも型システムの兼ね合いで完全なものは難しいのですが、
+  - kind: para
+    text: ローカル変数に型を明示する必要がない言語が近年浸透しつつあります。
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語、世にはばかる
-    - node: br
-    - node: text
-      content: 　
-    - node: bold
-      content: 動的言語
-    - node: text
-      content: の処理系は静的言語のコンパイラのように実行前にプログラムの型の 整合性をチェックすることは(あまり)やりません。つまり型の健全性なんてあった
-    - node: br
-    - node: text
-      content: 'ものではなく、基本的にノーガード戦法をとっています。 '
-    - node: br
-    - node: text
-      content: 　どうしてそんな安全性も保障できない不安全なプログラミング言語が世の中に 蔓延しているのでしょうか。コンパイラによる検査も無料ではなく、型システムが
-    - node: br
-    - node: text
-      content: '高度になり対象コードが増えるほどコンパイル時間が増加します。 '
-    - node: br
-    - node: text
-      content: 　動的言語は90年代から2000年代にかけて、コンパイル時間がなく型の知識も 不要で軽快に実行できるストレスフリーな言語として普及した側面があります。
-        特にWebアプリケーションではボトルネックがデータベースアクセスなどであり、 言語による実行速度が生じない（あるいは、処理系の性能改善によって許容範囲
-        内に抑えられている）ことが現代でも動的言語が許容される理由のひとつです。
+  - kind: heading
+    level: 1
+    text: 動的言語、世にはばかる
+  - kind: para
+    text: 動的言語の処理系は静的言語のコンパイラのように実行前にプログラムの型の
+  - kind: para
+    text: 整合性をチェックすることは(あまり)やりません。つまり型の健全性なんてあった
+  - kind: para
+    text: ものではなく、基本的にノーガード戦法をとっています。
+  - kind: para
+    text: どうしてそんな安全性も保障できない不安全なプログラミング言語が世の中に
+  - kind: para
+    text: 蔓延しているのでしょうか。コンパイラによる検査も無料ではなく、型システムが
+  - kind: para
+    text: 高度になり対象コードが増えるほどコンパイル時間が増加します。
+  - kind: para
+    text: 動的言語は90年代から2000年代にかけて、コンパイル時間がなく型の知識も
+  - kind: para
+    text: 不要で軽快に実行できるストレスフリーな言語として普及した側面があります。
+  - kind: para
+    text: 特にWebアプリケーションではボトルネックがデータベースアクセスなどであり、
+  - kind: para
+    text: 言語による実行速度が生じない（あるいは、処理系の性能改善によって許容範囲
+  - kind: para
+    text: 内に抑えられている）ことが現代でも動的言語が許容される理由のひとつです。
   p7:
-  - node: p
-    children:
-    - node: text
-      content: なぜ動的言語に… 型がつかないのか 　
-    - node: bold
-      content: 型推論
-    - node: text
-      content: という素晴しいものがあるなら、PHPのような動的言語のソースコード も丹念に解析してやればOCamlのような静的型付き言語と同等になるのではな
-    - node: br
-    - node: text
-      content: 'いか。……そう思っていた時代が私にもありました。 '
-    - node: br
-    - node: text
-      content: 　とても残念なことに動的言語にはそれを阻むダイナミックな性質がたくさんあ ります。evalやjson_decode()、unserialize()などの関数、include式によ
-    - node: br
-    - node: text
-      content: 'る動的ロードなどは、原理上あらゆる型の値を返します。 '
-    - node: br
-    - node: text
-      content: 　PHPには存在しない(ことになっている)関数の再定義や、Rubyにはクラスで はなくインスタンス固有の特異メソッドというものも存在します。PHP関数マニュ
-        アルを手がかりに型を付けても、実用にならない型に発散していくばかりです。 　動的言語での演算子のオーバーロードは型推論と非常に相性が悪いです。PHP
-        は基本はオーバーロードはない(ことになっている)のですが、問題があります。
+  - kind: heading
+    level: 1
+    text: なぜ動的言語に… 型がつかないのか
+  - kind: para
+    text: 型推論という素晴しいものがあるなら、PHPのような動的言語のソースコード
+  - kind: para
+    text: も丹念に解析してやればOCamlのような静的型付き言語と同等になるのではな
+  - kind: para
+    text: いか。……そう思っていた時代が私にもありました。
+  - kind: para
+    text: とても残念なことに動的言語にはそれを阻むダイナミックな性質がたくさんあ
+  - kind: para
+    text: ります。evalやjson_decode()、unserialize()などの関数、include式によ
+  - kind: para
+    text: る動的ロードなどは、原理上あらゆる型の値を返します。
+  - kind: para
+    text: PHPには存在しない(ことになっている)関数の再定義や、Rubyにはクラスで
+  - kind: para
+    text: はなくインスタンス固有の特異メソッドというものも存在します。PHP関数マニュ
+  - kind: para
+    text: アルを手がかりに型を付けても、実用にならない型に発散していくばかりです。
+  - kind: para
+    text: 動的言語での演算子のオーバーロードは型推論と非常に相性が悪いです。PHP
+  - kind: para
+    text: は基本はオーバーロードはない(ことになっている)のですが、問題があります。
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 動的言語でも静的解析したい
-    - node: br
-    - node: text
-      content: 　二項演算子 + が整数の加算のみをサポートしている言語を考えてみましょう。 関数 add(x, y) => x + y (引数xとyをとって加算結果を返す)を定義すると
-    - node: br
-    - node: text
-      content: 'き、 add(1, false) のような呼び出しが間違っていることは明らかです。 '
-    - node: br
-    - node: text
-      content: 　静的な型検査(つまり実行する前にソースコードの整合性を調べる)ことで、 そのような明らかに間違ったコードを見過さないようにできます。静的型付き言
-        語の多くで実行ファイルのコンパイルの一部として型検査を実施することで、実行 すると間違った動作をするプログラム実行ファイルを生成しないようにします。
-        　これが先述の
-    - node: bold
-      content: 健全性
-    - node: text
-      content: という概念ですが、多くの動的言語ではほとんど何の期待 もできませんでした。足し算をするadd(1, false)が間違ったコードだというこ
-        とは人間様の目には自明ですが、常に人間が整合性を監視し続けることは困難で す。コード規模が大きくなるほど不整合を事前に確かめたくなるでしょう。いかに
-    - node: br
-    - node: text
-      content: 人間様が賢くても、24/365で人間の手を煩わせるわけにはいきません。
+  - kind: heading
+    level: 1
+    text: 動的言語でも静的解析したい
+  - kind: para
+    text: 二項演算子 + が整数の加算のみをサポートしている言語を考えてみましょう。
+  - kind: para
+    text: 関数 add(x, y) => x + y (引数xとyをとって加算結果を返す)を定義すると
+  - kind: para
+    text: き、 add(1, false) のような呼び出しが間違っていることは明らかです。
+  - kind: para
+    text: 静的な型検査(つまり実行する前にソースコードの整合性を調べる)ことで、
+  - kind: para
+    text: そのような明らかに間違ったコードを見過さないようにできます。静的型付き言
+  - kind: para
+    text: 語の多くで実行ファイルのコンパイルの一部として型検査を実施することで、実行
+  - kind: para
+    text: すると間違った動作をするプログラム実行ファイルを生成しないようにします。
+  - kind: para
+    text: これが先述の健全性という概念ですが、多くの動的言語ではほとんど何の期待
+  - kind: para
+    text: もできませんでした。足し算をするadd(1, false)が間違ったコードだというこ
+  - kind: para
+    text: とは人間様の目には自明ですが、常に人間が整合性を監視し続けることは困難で
+  - kind: para
+    text: す。コード規模が大きくなるほど不整合を事前に確かめたくなるでしょう。いかに
+  - kind: para
+    text: 人間様が賢くても、24/365で人間の手を煩わせるわけにはいきません。
   p9:
-  - node: p
-    children:
-    - node: text
-      content: どうして動的言語に型をつけたがるの 　ここまで説明した通り、動的言語の静的解析、特に型をつける簡単なことではあ
-    - node: br
-    - node: text
-      content: 'りません。それでも型検査をしたくなるのはなぜでしょうか。 '
-    - node: br
-    - node: text
-      content: 　ひとつは、実行ファイルのコンパイルが必要なくとも実装中(コーディング中)の linterや継続的インテグレーションの一環として静的解析することで、確実では
-        なくとも辻褄の合わない不安全な可能性を早めに検知したいという需要です。 　もうひとつの動機としてはIDEなどのツールの支援を受けやすくして生産性を
-        高めることも挙げられるでしょうか。動的言語ではスクリプトとしてコードそのも のが再配布されることが多いため、パラメータや戻り値の型がわからなければマ
-    - node: br
-    - node: text
-      content: 'ニュアルを読むかコードそのものを読み解け、という思想でもあります。 '
-    - node: br
-    - node: text
-      content: '　型が明示されていれば、そのような手間と迷いを減らせるほか、戻り値の型が 適切に定義されていれば、静的解析に基いた入力補完で、コーディング作業を '
-    - node: br
-    - node: text
-      content: よりなめらかにできるかもしれません。
+  - kind: heading
+    level: 1
+    text: どうして動的言語に型をつけたがるの
+  - kind: para
+    text: ここまで説明した通り、動的言語の静的解析、特に型をつける簡単なことではあ
+  - kind: para
+    text: りません。それでも型検査をしたくなるのはなぜでしょうか。
+  - kind: para
+    text: ひとつは、実行ファイルのコンパイルが必要なくとも実装中(コーディング中)の
+  - kind: para
+    text: linterや継続的インテグレーションの一環として静的解析することで、確実では
+  - kind: para
+    text: なくとも辻褄の合わない不安全な可能性を早めに検知したいという需要です。
+  - kind: para
+    text: もうひとつの動機としてはIDEなどのツールの支援を受けやすくして生産性を
+  - kind: para
+    text: 高めることも挙げられるでしょうか。動的言語ではスクリプトとしてコードそのも
+  - kind: para
+    text: のが再配布されることが多いため、パラメータや戻り値の型がわからなければマ
+  - kind: para
+    text: ニュアルを読むかコードそのものを読み解け、という思想でもあります。
+  - kind: para
+    text: 型が明示されていれば、そのような手間と迷いを減らせるほか、戻り値の型が
+  - kind: para
+    text: 適切に定義されていれば、静的解析に基いた入力補完で、コーディング作業を
+  - kind: para
+    text: よりなめらかにできるかもしれません。
   p10:
-  - node: p
-    children:
-    - node: text
-      content: PHP vs 型
-    - node: br
-    - node: text
-      content: 　PHPは紛れもなく
-    - node: bold
-      content: 強い動的型
-    - node: text
-      content: の言語であり変数に型はありませんが、関数・メ ソッドやプロパティには型宣言ができます。これは実行時に処理系が型をチェック してくれるので、型宣言された文脈では確実に型が保障されるという有利な特徴
-        があります。もちろん関数呼び出しの度に型を調べるので実行時コストはかかる のですが、一般的な用途で型宣言がボトルネックになることは多くないと考えら
-        れます。パフォーマンスをプロファイラで検査した上でボトルネックになることも 考えられますが、そのような場合は単に型宣言を削除すると検査コストを削減で
-    - node: br
-    - node: text
-      content: 'きます。 '
-  - node: p
-    children:
-    - node: text
-      content: 　ただし私の持論では
+  - kind: heading
+    level: 1
+    text: PHP vs 型
+  - kind: para
+    text: PHPは紛れもなく強い動的型の言語であり変数に型はありませんが、関数・メ
+  - kind: para
+    text: ソッドやプロパティには型宣言ができます。これは実行時に処理系が型をチェック
+  - kind: para
+    text: してくれるので、型宣言された文脈では確実に型が保障されるという有利な特徴
+  - kind: para
+    text: があります。もちろん関数呼び出しの度に型を調べるので実行時コストはかかる
+  - kind: para
+    text: のですが、一般的な用途で型宣言がボトルネックになることは多くないと考えら
+  - kind: para
+    text: れます。パフォーマンスをプロファイラで検査した上でボトルネックになることも
+  - kind: para
+    text: 考えられますが、そのような場合は単に型宣言を削除すると検査コストを削減で
+  - kind: para
+    text: きます。
+  - kind: para
+    text: ただし私の持論では
 size:
   max_width: 1920
   max_height: 1080

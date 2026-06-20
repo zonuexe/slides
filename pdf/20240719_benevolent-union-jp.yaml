@@ -1,670 +1,413 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: “慈悲深いユニオン”とは何か
-  - node: p
-    children:
-    - node: text
-      content: What's benevolent union?
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 'PHP勉強会 in 神戸 '
-  - node: p
-    children:
-    - node: bold
-      content: '2024-07-19 #関ガレ'
+  - kind: heading
+    level: 1
+    text: “慈悲深いユニオン”とは何か
+  - kind: heading
+    level: 2
+    text: What's benevolent union?
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: PHP勉強会 in 神戸
+  - kind: para
+    text: '2024-07-19 #関ガレ'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 最近のプログラミング言語っぽい発表
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 「コードを自在に操るためのPHP文法入門」
-      - node: br
-      - node: text
-        content: '(2月 PHPカンファレンス関西2024) '
-    - node: li
-      children:
-      - node: text
-        content: 「こんな静的解析導入は負けフラグ」 (3月 PHPerKaigi)
-    - node: li
-      children:
-      - node: text
-        content: 「動的言語型付けバトル」 (3月 PHPerKaigi)
+  - kind: para
+    text: 最近のプログラミング言語っぽい発表
+  - kind: list
+    items:
+    - 「コードを自在に操るためのPHP文法入門」
+  - kind: para
+    text: (2月 PHPカンファレンス関西2024)
+  - kind: list
+    items:
+    - 「こんな静的解析導入は負けフラグ」 (3月 PHPerKaigi)
+    - 「動的言語型付けバトル」 (3月 PHPerKaigi)
   p4:
-  - node: p
-    children:
-    - node: text
-      content: さてみなさん
-  - node: p
-    children:
-    - node: text
-      content: Now, everyone
+  - kind: heading
+    level: 2
+    text: さてみなさん
+  - kind: heading
+    level: 1
+    text: Now, everyone
   p5:
-  - node: p
-    children:
-    - node: text
-      content: '静的解析は '
-    - node: br
-    - node: text
-      content: 好きですか？
-  - node: p
-    children:
-    - node: text
-      content: 'Do you like static '
-    - node: br
-    - node: text
-      content: type analysis?
+  - kind: para
+    text: 静的解析は
+  - kind: para
+    text: 好きですか？
+  - kind: heading
+    level: 1
+    text: Do you like static
+  - kind: heading
+    level: 1
+    text: type analysis?
   p6:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: '$v = [1, 2, 3]; '
-    - node: br
-    - node: text
-      content: 'echo json_decode($v); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = [1, 2, 3];
+  - kind: para
+    text: echo json_decode($v);
   p7:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: '$v = [1, 2, 3]; '
-    - node: br
-    - node: text
-      content: 'echo json_decode($v); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = [1, 2, 3];
+  - kind: para
+    text: echo json_decode($v);
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: '$v = [1, 2, 3]; '
-    - node: br
-    - node: text
-      content: 'echo json_encode($v); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = [1, 2, 3];
+  - kind: para
+    text: echo json_encode($v);
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: '$v = ''[1, 2, 3]''; '
-    - node: br
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = '[1, 2, 3]';
+  - kind: para
+    text: var_dump(json_decode($v));
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 静的型検査万歳
-  - node: p
-    children:
-    - node: text
-      content: '型チェッカーは常に愚かな我々に '
-    - node: br
-    - node: text
-      content: '先んじてプログラムのミスを '
-    - node: br
-    - node: text
-      content: 指摘してくれる… そうですよね？
+  - kind: para
+    text: 静的型検査万歳
+  - kind: para
+    text: 型チェッカーは常に愚かな我々に
+  - kind: para
+    text: 先んじてプログラムのミスを
+  - kind: para
+    text: 指摘してくれる… そうですよね？
   p11:
-  - node: p
-    children:
-    - node: text
-      content: '次のスライドのコードは '
-    - node: br
-    - node: text
-      content: どうでしょうか？
+  - kind: para
+    text: 次のスライドのコードは
+  - kind: para
+    text: どうでしょうか？
   p12:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: '$v = ﬁle_get_contents( ); '
-  - node: p
-    children:
-    - node: text
-      content: '''data.json'''
-  - node: p
-    children:
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = file_get_contents('data.json');
+  - kind: para
+    text: var_dump(json_decode($v));
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: '$v = ﬁle_get_contents( ); '
-  - node: p
-    children:
-    - node: text
-      content: '''data.json'''
-  - node: p
-    children:
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = file_get_contents('data.json');
+  - kind: para
+    text: var_dump(json_decode($v));
   p14: []
   p15:
-  - node: p
-    children:
-    - node: text
-      content: なんでfalse？？
-  - node: p
-    children:
-    - node: text
-      content: どうしてこの関数は失敗したら falseを返すのはなんで？？？
+  - kind: para
+    text: なんでfalse？？
+  - kind: heading
+    level: 1
+    text: どうしてこの関数は失敗したら
+  - kind: heading
+    level: 1
+    text: falseを返すのはなんで？？？
   p16:
-  - node: p
-    children:
-    - node: text
-      content: デプロイのミス
-  - node: p
-    children:
-    - node: text
-      content: 'A-1. '
-    - node: br
-    - node: text
-      content: '要求されたファイルが '
-    - node: br
-    - node: text
-      content: 正しく配置されなかった
+  - kind: para
+    text: デプロイのミス
+  - kind: para
+    text: A-1.
+  - kind: para
+    text: 要求されたファイルが
+  - kind: para
+    text: 正しく配置されなかった
   p17:
-  - node: p
-    children:
-    - node: text
-      content: ファイルの存在
-    - node: br
-    - node: text
-      content: チェックしてない
-  - node: p
-    children:
-    - node: text
-      content: 'A-2. '
-    - node: br
-    - node: text
-      content: 動的に生成されるファイルを
-    - node: br
-    - node: text
-      content: '!le_exists()でチェックせずに '
-    - node: br
-    - node: text
-      content: アクセスしてしまった この手法は潜在的なリスクがある…
+  - kind: para
+    text: ファイルの存在
+  - kind: para
+    text: チェックしてない
+  - kind: heading
+    level: 1
+    text: A-2.
+  - kind: heading
+    level: 1
+    text: 動的に生成されるファイルを
+  - kind: heading
+    level: 1
+    text: file_exists()でチェックせずに
+  - kind: heading
+    level: 1
+    text: アクセスしてしまった
+  - kind: para
+    text: この手法は潜在的なリスクがある…
   p18:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: 'if (!ﬁle_exists(''data.json'')) { '
-    - node: br
-    - node: text
-      content: '     return; '
-    - node: br
-    - node: text
-      content: '} '
-  - node: p
-    children:
-    - node: text
-      content: '// maybe safe '
-    - node: br
-    - node: text
-      content: '$v = ﬁle_get_contents(''data.json''); '
-    - node: br
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: if (!file_exists('data.json')) {
+  - kind: para
+    text: return;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: // maybe safe
+  - kind: para
+    text: $v = file_get_contents('data.json');
+  - kind: para
+    text: var_dump(json_decode($v));
   p19:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: 'if (!ﬁle_exists(''data.json'')) { '
-  - node: p
-    children:
-    - node: text
-      content: この関数がfalseを返すこ
-    - node: br
-    - node: text
-      content: 'とはない… たぶん… '
-  - node: p
-    children:
-    - node: text
-      content: '     return; '
-  - node: p
-    children:
-    - node: text
-      content: おそらく… きっと…
-  - node: p
-    children:
-    - node: text
-      content: '} '
-  - node: p
-    children:
-    - node: text
-      content: '// maybe safe? '
-    - node: br
-    - node: text
-      content: '$v = ﬁle_get_contents(''data.json''); '
-    - node: br
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: <?php
+  - kind: para
+    text: この関数がfalseを返すこ
+  - kind: para
+    text: とはない… たぶん…
+  - kind: para
+    text: おそらく… きっと…
+  - kind: para
+    text: if (!file_exists('data.json')) {
+  - kind: para
+    text: return;
+  - kind: para
+    text: '}'
+  - kind: para
+    text: // maybe safe?
+  - kind: para
+    text: $v = file_get_contents('data.json');
+  - kind: para
+    text: var_dump(json_decode($v));
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '$vが絶対にfalseに なっていないことを '
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: アサーション(表明)
-  - node: p
-    children:
-    - node: text
-      content: '$v = ﬁle_get_contents(''data.json''); '
-  - node: p
-    children:
-    - node: text
-      content: 'assert($v !== false); '
-    - node: br
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: heading
+    level: 1
+    text: <?php
+  - kind: para
+    text: $vが絶対にfalseに
+  - kind: para
+    text: なっていないことを
+  - kind: para
+    text: アサーション(表明)
+  - kind: heading
+    level: 1
+    text: $v = file_get_contents('data.json');
+  - kind: heading
+    level: 1
+    text: assert($v !== false);
+  - kind: heading
+    level: 1
+    text: var_dump(json_decode($v));
   p21:
-  - node: p
-    children:
-    - node: text
-      content: '実際にはfalseが返って '
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: くる可能性を見て見ぬふり
-  - node: p
-    children:
-    - node: text
-      content: '/** @var string */ '
-    - node: br
-    - node: text
-      content: '$v = ﬁle_get_contents(''data.json''); '
-  - node: p
-    children:
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: 実際にはfalseが返って
+  - kind: para
+    text: くる可能性を見て見ぬふり
+  - kind: para
+    text: <?php
+  - kind: para
+    text: /** @var string */
+  - kind: para
+    text: $v = file_get_contents('data.json');
+  - kind: para
+    text: var_dump(json_decode($v));
   p22:
-  - node: p
-    children:
-    - node: text
-      content: ほんとにfalse返すの？
-  - node: p
-    children:
-    - node: text
-      content: 'Q. ところで !le_get_contents() '
-    - node: br
-    - node: text
-      content: ほんとにほんとにfalse返すの？
+  - kind: para
+    text: ほんとにfalse返すの？
+  - kind: heading
+    level: 1
+    text: Q. ところで file_get_contents()
+  - kind: heading
+    level: 1
+    text: ほんとにほんとにfalse返すの？
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 実行時のハンドラー
-    - node: br
-    - node: text
-      content: 設定に依存する
-  - node: p
-    children:
-    - node: text
-      content: 'Q. 実行時のハンドラー設定に '
-    - node: br
-    - node: text
-      content: 依存する
+  - kind: para
+    text: 実行時のハンドラー
+  - kind: para
+    text: 設定に依存する
+  - kind: heading
+    level: 1
+    text: Q. 実行時のハンドラー設定に
+  - kind: heading
+    level: 1
+    text: 依存する
   p24: []
   p25: []
   p26: []
   p27: []
   p28: []
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 状況整理
-  - node: p
-    children:
-    - node: text
-      content: 'どういう状況が考えられるか '
-    - node: br
-    - node: text
-      content: 一度確認してみましょう
+  - kind: para
+    text: 状況整理
+  - kind: heading
+    level: 1
+    text: どういう状況が考えられるか
+  - kind: heading
+    level: 1
+    text: 一度確認してみましょう
   p30:
-  - node: p
-    children:
-    - node: bold
-      content: Gle_get_contents()
-    - node: text
-      content: ' が返すのは...'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: error_reporting(0) 設定のとき…
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 関数は常に string と false のどちらも返す可能性がある
-        - node: li
-          children:
-          - node: text
-            content: PHPの既定の振る舞いではファイルが読み込めなくても停止しない
-    - node: li
-      children:
-      - node: text
-        content: ハンドラでエラーをErrorExceptionに変換しているとき…
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 関数は常に string 値を返す。falseが返ってくることはありえない。
-        - node: li
-          children:
-          - node: text
-            content: 多くのPHPアプリケーションではフレームワークによって設定済み
+  - kind: heading
+    level: 1
+    text: file_get_contents() が返すのは...
+  - kind: list
+    items:
+    - error_reporting(0) 設定のとき…
+    - 関数は常に string と false のどちらも返す可能性がある
+    - PHPの既定の振る舞いではファイルが読み込めなくても停止しない
+    - ハンドラでエラーをErrorExceptionに変換しているとき…
+    - 関数は常に string 値を返す。falseが返ってくることはありえない。
+    - 多くのPHPアプリケーションではフレームワークによって設定済み
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 'falseが返ってこないなら '
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-  - node: p
-    children:
-    - node: text
-      content: この確認は常に無駄！
-  - node: p
-    children:
-    - node: text
-      content: '$v = ﬁle_get_contents(''data.json''); '
-  - node: p
-    children:
-    - node: text
-      content: 'assert($v !== false); '
-    - node: br
-    - node: text
-      content: 'var_dump(json_decode($v)); '
+  - kind: para
+    text: falseが返ってこないなら
+  - kind: para
+    text: この確認は常に無駄！
+  - kind: para
+    text: <?php
+  - kind: para
+    text: $v = file_get_contents('data.json');
+  - kind: para
+    text: assert($v !== false);
+  - kind: para
+    text: var_dump(json_decode($v));
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 本題
-  - node: p
-    children:
-    - node: text
-      content: ここからがタイトルのネタ
+  - kind: heading
+    level: 2
+    text: 本題
+  - kind: heading
+    level: 1
+    text: ここからがタイトルのネタ
   p33:
-  - node: p
-    children:
-    - node: text
-      content: “慈悲深いユニオン”とは何か
-  - node: p
-    children:
-    - node: text
-      content: What's benevolent union?
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 'PHP勉強会 in 神戸 '
-  - node: p
-    children:
-    - node: bold
-      content: '2024-07-19 #関ガレ'
+  - kind: heading
+    level: 1
+    text: “慈悲深いユニオン”とは何か
+  - kind: heading
+    level: 2
+    text: What's benevolent union?
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: PHP勉強会 in 神戸
+  - kind: para
+    text: '2024-07-19 #関ガレ'
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 謎の型
-  - node: p
-    children:
-    - node: text
-      content: '__benevolent<> は '
-    - node: br
-    - node: text
-      content: PHPStanに実装された隠し機能
+  - kind: para
+    text: 謎の型
+  - kind: heading
+    level: 1
+    text: __benevolent<> は
+  - kind: heading
+    level: 1
+    text: PHPStanに実装された隠し機能
   p35:
-  - node: p
-    children:
-    - node: text
-      content: functionMap
-  - node: p
-    children:
-    - node: text
-      content: TypeResolver
-  - node: p
-    children:
-    - node: text
-      content: Test code
+  - kind: para
+    text: functionMap
+  - kind: para
+    text: TypeResolver
+  - kind: para
+    text: Test code
   p36:
-  - node: p
-    children:
-    - node: text
-      content: なんだこれ？
-  - node: p
-    children:
-    - node: text
-      content: で、結局なにこれ????
+  - kind: heading
+    level: 2
+    text: なんだこれ？
+  - kind: heading
+    level: 1
+    text: で、結局なにこれ????
   p37: []
   p38: []
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 'これらの関数の共通点を '
-    - node: br
-    - node: text
-      content: 探ってみましょう
+  - kind: para
+    text: これらの関数の共通点を
+  - kind: para
+    text: 探ってみましょう
   p40: []
   p41: []
   p42: []
   p43:
-  - node: p
-    children:
-    - node: text
-      content: __benevolent<>が使われた関数の共通点は？
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: これらの関数は異常な状態でfalseを返す可能性がある
-    - node: li
-      children:
-      - node: text
-        content: 引数に適切なパラメータを渡して呼び出す限りfalseが返されることはない
-      - node: br
-      - node: text
-        content: 'ので、呼び出し後に毎回型検査をするのは不毛 '
-    - node: li
-      children:
-      - node: text
-        content: PHP 8でfalseを返す代りにErrorがthrowされるようになった
+  - kind: para
+    text: __benevolent<>が使われた関数の共通点は？
+  - kind: list
+    items:
+    - これらの関数は異常な状態でfalseを返す可能性がある
+    - 引数に適切なパラメータを渡して呼び出す限りfalseが返されることはない
+  - kind: para
+    text: ので、呼び出し後に毎回型検査をするのは不毛
+  - kind: list
+    items:
+    - PHP 8でfalseを返す代りにErrorがthrowされるようになった
   p44:
-  - node: p
-    children:
-    - node: text
-      content: '__benevolent<>って '
-    - node: br
-    - node: text
-      content: 結局どう動くの？
+  - kind: para
+    text: __benevolent<>って
+  - kind: para
+    text: 結局どう動くの？
   p45: []
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'この型を使えば標準関数を '
-    - node: br
-    - node: text
-      content: 使いやすくするラッパーも作れる
+  - kind: para
+    text: この型を使えば標準関数を
+  - kind: para
+    text: 使いやすくするラッパーも作れる
   p47: []
   p48:
-  - node: p
-    children:
-    - node: text
-      content: '便利っぽい…? '
-    - node: br
-    - node: text
-      content: んだけど、使わないでね！
+  - kind: para
+    text: 便利っぽい…?
+  - kind: para
+    text: んだけど、使わないでね！
   p49:
-  - node: p
-    children:
-    - node: text
-      content: benevolent unionを濫用するな
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: この型は、例外的な状態でfalseを返すまれなケースを表現するのに役立つ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: その関数が間違った前提条件で呼び出された場合は、false を返す代わり
-          - node: br
-          - node: text
-            content: 'に例外を発生させ、呼び出しコードを修正する。  '
-        - node: li
-          children:
-          - node: text
-            content: その他の例外的な状況では、例外をスローして呼び出し元に処理させるべ
-          - node: br
-          - node: text
-            content: き。Javaのチェック例外みたいに。
+  - kind: heading
+    level: 1
+    text: benevolent unionを濫用するな
+  - kind: list
+    items:
+    - この型は、例外的な状態でfalseを返すまれなケースを表現するのに役立つ
+    - その関数が間違った前提条件で呼び出された場合は、false を返す代わり
+  - kind: para
+    text: に例外を発生させ、呼び出しコードを修正する。
+  - kind: list
+    items:
+    - その他の例外的な状況では、例外をスローして呼び出し元に処理させるべ
+  - kind: para
+    text: き。Javaのチェック例外みたいに。
   p50:
-  - node: p
-    children:
-    - node: text
-      content: '安全性を保ち '
-    - node: br
-    - node: text
-      content: コードの繰り返しを防ぐには？
+  - kind: para
+    text: 安全性を保ち
+  - kind: para
+    text: コードの繰り返しを防ぐには？
   p51: []
   p52: []
   p53: []
   p54:
-  - node: p
-    children:
-    - node: text
-      content: この関数はFileSystemExceptionをthrowsする
+  - kind: heading
+    level: 1
+    text: この関数はFileSystemExceptionをthrowsする
   p55:
-  - node: p
-    children:
-    - node: text
-      content: PhpStormはハンドリングしない例外を警告する
+  - kind: heading
+    level: 1
+    text: PhpStormはハンドリングしない例外を警告する
   p56: []
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 'benevolent unionよりも '
-    - node: br
-    - node: text
-      content: 構造化された例外を！！
+  - kind: para
+    text: benevolent unionよりも
+  - kind: para
+    text: 構造化された例外を！！
   p58:
-  - node: p
-    children:
-    - node: text
-      content: 'みんなのコードでは '
-    - node: br
-    - node: text
-      content: 'benevolent unionsを '
-    - node: br
-    - node: text
-      content: 使わないでね！
+  - kind: para
+    text: みんなのコードでは
+  - kind: para
+    text: benevolent unionsを
+  - kind: para
+    text: 使わないでね！
 size:
   max_width: 1920
   max_height: 1080

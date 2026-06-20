@@ -1,2667 +1,1424 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: 実践PHPStan
-  - node: p
-    children:
-    - node: text
-      content: Practical PHPStan
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 'PHP Conference Okinawa 2022 '
-  - node: p
-    children:
-    - node: bold
-      content: '2022-08-27'
+  - kind: heading
+    level: 1
+    text: 実践PHPStan
+  - kind: heading
+    level: 2
+    text: Practical PHPStan
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: PHP Conference Okinawa 2022
+  - kind: para
+    text: '2022-08-27'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: tadsanのあれこれが読める場所
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://tadsan.fanbox.cc/
-    - node: li
-      children:
-      - node: text
-        content: https://scrapbox.io/php/
-    - node: li
-      children:
-      - node: text
-        content: https://www.phper.ninja/
-    - node: li
-      children:
-      - node: text
-        content: https://zenn.dev/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://qiita.com/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://github.com/bag2php
+  - kind: para
+    text: tadsanのあれこれが読める場所
+  - kind: list
+    items:
+    - https://tadsan.fanbox.cc/
+    - https://scrapbox.io/php/
+    - https://www.phper.ninja/
+    - https://zenn.dev/tadsan
+    - https://qiita.com/tadsan
+    - https://github.com/bag2php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: https://www.phper.ninja/
+  - kind: heading
+    level: 1
+    text: https://www.phper.ninja/
   p5:
-  - node: p
-    children:
-    - node: text
-      content: https://scrapbox.io/php/
+  - kind: heading
+    level: 1
+    text: https://scrapbox.io/php/
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p7:
-  - node: p
-    children:
-    - node: text
-      content: プロポーザル
+  - kind: heading
+    level: 1
+    text: プロポーザル
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 先日、型についての話もしました
+  - kind: heading
+    level: 1
+    text: 先日、型についての話もしました
   p9:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンスでも話しました
+  - kind: heading
+    level: 1
+    text: PHPカンファレンスでも話しました
   p10:
-  - node: p
-    children:
-    - node: bold
-      content: 今回のゴール
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanで型を付けて '
-    - node: br
-    - node: text
-      content: 既存コードの型を検査
+  - kind: para
+    text: 今回のゴール
+  - kind: heading
+    level: 1
+    text: PHPStanで型を付けて
+  - kind: heading
+    level: 1
+    text: 既存コードの型を検査
   p11:
-  - node: p
-    children:
-    - node: bold
-      content: 今回やらないこと
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanの詳細な設定 '
-    - node: br
-    - node: text
-      content: 'CI環境の組み方 '
-    - node: br
-    - node: text
-      content: ジェネリクス/条件型
+  - kind: para
+    text: 今回やらないこと
+  - kind: para
+    text: PHPStanの詳細な設定
+  - kind: para
+    text: CI環境の組み方
+  - kind: para
+    text: ジェネリクス/条件型
   p12:
-  - node: p
-    children:
-    - node: text
-      content: ジェネリクスについて
+  - kind: heading
+    level: 1
+    text: ジェネリクスについて
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 条件付き戻り値型
+  - kind: heading
+    level: 1
+    text: 条件付き戻り値型
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 'このスライドは         '
-    - node: br
-    - node: text
-      content: 本日中に公開されます
+  - kind: para
+    text: このスライドは
+  - kind: para
+    text: 本日中に公開されます
   p15:
-  - node: p
-    children:
-    - node: text
-      content: この発表では知っておくべき機能 を雑に取り上げるので本番運用／ 提案の前にドキュメントを自身で
-    - node: br
-    - node: text
-      content: しっかり読み込みましょう。
+  - kind: para
+    text: この発表では知っておくべき機能
+  - kind: para
+    text: を雑に取り上げるので本番運用／
+  - kind: para
+    text: 提案の前にドキュメントを自身で
+  - kind: para
+    text: しっかり読み込みましょう。
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 'それでもわからないことがあれば TwitterかSlackのphpusers-ja '
-    - node: br
-    - node: text
-      content: '#type-safeで尋ねてください'
+  - kind: para
+    text: それでもわからないことがあれば
+  - kind: para
+    text: TwitterかSlackのphpusers-ja
+  - kind: para
+    text: '#type-safeで尋ねてください'
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStan '
-    - node: br
-    - node: text
-      content: 使ってますか？
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: 使ってますか？
   p18: []
   p19:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanとは何か
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 静的に(=プログラムを動作させずに)コードの状態を解析するツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 広い意味ではコードのフォーマッターやタグ生成なども含む
-  - node: p
-    children:
-    - node: bold
-      content: リ ン タ ー
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPStanは静的解析の中でもLinterと呼ばれるジャンルのツール
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ⇔ 動的解析 (静的解析の対義語)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: XdebugやPHPUnitはプログラムを動かしてみて性質を確かめる
-        - node: li
-          children:
-          - node: text
-            content: 従来のPHPStanは静的と動的のハイブリッドだった
+  - kind: heading
+    level: 1
+    text: PHPStanとは何か
+  - kind: para
+    text: リンター
+  - kind: list
+    items:
+    - 静的に(=プログラムを動作させずに)コードの状態を解析するツール
+    - 広い意味ではコードのフォーマッターやタグ生成なども含む
+    - PHPStanは静的解析の中でもLinterと呼ばれるジャンルのツール
+    - ⇔ 動的解析 (静的解析の対義語)
+    - XdebugやPHPUnitはプログラムを動かしてみて性質を確かめる
+    - 従来のPHPStanは静的と動的のハイブリッドだった
   p20:
-  - node: p
-    children:
-    - node: text
-      content: なに? 使ってない?
+  - kind: heading
+    level: 1
+    text: なに? 使ってない?
   p21:
-  - node: p
-    children:
-    - node: text
-      content: ' あなたとPHPStan いますぐダウンロー '
-    - node: br
-    - node: text
-      content: ド
+  - kind: para
+    text: あなたとPHPStan
+  - kind: para
+    text: いますぐダウンロー
+  - kind: para
+    text: ド
   p22:
-  - node: p
-    children:
-    - node: text
-      content: どうやって？
+  - kind: heading
+    level: 1
+    text: どうやって？
   p23:
-  - node: p
-    children:
-    - node: text
-      content: Ond ej said...
-    - node: br
-    - node: bold
-      content: ř
+  - kind: heading
+    level: 1
+    text: Ondřej said...
   p24:
-  - node: p
-    children:
-    - node: bold
-      content: PHP 7.2以上ならプロジェクトに追加しよう
-  - node: p
-    children:
-    - node: text
-      content: 'composer require--dev '
-  - node: p
-    children:
-    - node: text
-      content: phpstan/phpstan
+  - kind: para
+    text: PHP 7.2以上ならプロジェクトに追加しよう
+  - kind: heading
+    level: 1
+    text: composer require --dev
+  - kind: heading
+    level: 1
+    text: phpstan/phpstan
   p25:
-  - node: p
-    children:
-    - node: bold
-      content: プロジェクトに追加できないなら
-  - node: p
-    children:
-    - node: text
-      content: 'composer globalrequire '
-  - node: p
-    children:
-    - node: text
-      content: phpstan/phpstan
+  - kind: para
+    text: プロジェクトに追加できないなら
+  - kind: heading
+    level: 1
+    text: composer global require
+  - kind: heading
+    level: 1
+    text: phpstan/phpstan
   p26:
-  - node: p
-    children:
-    - node: text
-      content: require --dev以外の方法を検討
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 要は何らかの事情があってcomposer.jsonに追加できないなら仕方ない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: プロジェクトがPHP 7.2以前に依存しているとき
-        - node: li
-          children:
-          - node: text
-            content: 権限の問題などでcomposer.jsonに追加でないとき
-    - node: li
-      children:
-      - node: text
-        content: それ以外は原則Composerに追加しましょう
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PhpStormの最新版なら、いい感じに勝手にPHPStanを動かしてくれる
-        - node: li
-          children:
-          - node: text
-            content: もっと詳細な話はぺちこん沖縄当日までの間にzennに書きます
+  - kind: heading
+    level: 1
+    text: require --dev以外の方法を検討
+  - kind: list
+    items:
+    - 要は何らかの事情があってcomposer.jsonに追加できないなら仕方ない
+    - プロジェクトがPHP 7.2以前に依存しているとき
+    - 権限の問題などでcomposer.jsonに追加でないとき
+    - それ以外は原則Composerに追加しましょう
+    - PhpStormの最新版なら、いい感じに勝手にPHPStanを動かしてくれる
+    - もっと詳細な話はぺちこん沖縄当日までの間にzennに書きます
   p27:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanを入れてどうするの
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Composerの実行ファイルは ./vendor/bin/phpstan にある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 以下、パスを省略して単に phpstan コマンドとして表記
-    - node: li
-      children:
-      - node: text
-        content: 基本は phpstan analyze のように動かすと解析できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: phpstan analyze src/Foo/Target.php でファイル単位解析
-    - node: li
-      children:
-      - node: text
-        content: PHPStan ProというWebインターフェイスもある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 弊社では応援の意味も込めてProを契約しています
+  - kind: para
+    text: PHPStanを入れてどうするの
+  - kind: list
+    items:
+    - Composerの実行ファイルは ./vendor/bin/phpstan にある
+    - 以下、パスを省略して単に phpstan コマンドとして表記
+    - 基本は phpstan analyze のように動かすと解析できる
+    - phpstan analyze src/Foo/Target.php でファイル単位解析
+    - PHPStan ProというWebインターフェイスもある
+    - 弊社では応援の意味も込めてProを契約しています
   p28:
-  - node: p
-    children:
-    - node: text
-      content: PhpStormがあるのに必要…?
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PhpStormもがんばってPHPStanやPsalmとの互換性を高めているが、
-      - node: br
-      - node: text
-        content: '解析能力に関しては専門のツールの方が強い '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPStanとPsalmはユーザーがPHPで自由に拡張できる
-    - node: li
-      children:
-      - node: text
-        content: PhpStormの方がレガシー寄りのPHPバージョンに強い
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPStanはPHP 7.2を以上サポート
-        - node: li
-          children:
-          - node: text
-            content: PhpStormのヘッドレス版のQodanaというツールがCI用途に使える
+  - kind: heading
+    level: 1
+    text: PhpStormがあるのに必要…?
+  - kind: list
+    items:
+    - PhpStormもがんばってPHPStanやPsalmとの互換性を高めているが、
+  - kind: para
+    text: 解析能力に関しては専門のツールの方が強い
+  - kind: list
+    items:
+    - PHPStanとPsalmはユーザーがPHPで自由に拡張できる
+    - PhpStormの方がレガシー寄りのPHPバージョンに強い
+    - PHPStanはPHP 7.2を以上サポート
+    - PhpStormのヘッドレス版のQodanaというツールがCI用途に使える
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 解析結果はリアルタイム表示しよう
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'PhpStorm: 最近のバージョンでは標準組み込み'
-  - node: p
-    children:
-    - node: text
-      content: (場合によって要設定)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'VS Code: sordev.phpstan ErrorLens'
-  - node: p
-    children:
-    - node: text
-      content: +
-  - node: p
-    children:
-    - node: text
-      content: ' (Marketplaceには古いのもあるので注意)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'Vim/NeoVim: coc.nvimとかALEを入れるといいと思います'
-    - node: li
-      children:
-      - node: text
-        content: 'Emacs: Hycheck-phpstan'
-  - node: p
-    children:
-    - node: text
-      content: (私が作っています)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'その他のLSP対応エディタ: efm-langserver'
-  - node: p
-    children:
-    - node: text
-      content: (汎用言語サーバー)
+  - kind: para
+    text: 解析結果はリアルタイム表示しよう
+  - kind: list
+    items:
+    - 'PhpStorm: 最近のバージョンでは標準組み込み (場合によって要設定)'
+    - 'VS Code: sordev.phpstan+ErrorLens (Marketplaceには古いのもあるので注意)'
+    - 'Vim/NeoVim: coc.nvimとかALEを入れるといいと思います'
+    - 'Emacs: flycheck-phpstan (私が作っています)'
+    - 'その他のLSP対応エディタ: efm-langserver (汎用言語サーバー)'
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 外した方がいいPhpStorm設定
+  - kind: heading
+    level: 1
+    text: 外した方がいいPhpStorm設定
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 外した方がいいPhpStorm設定
-  - node: p
-    children:
-    - node: text
-      content: 'arrayと '
-    - node: br
-    - node: text
-      content: 'ａｒｒａｙ＜ｍｉｘｅｄ＞と '
-    - node: br
-    - node: text
-      content: mixed[] を混同しない
+  - kind: heading
+    level: 1
+    text: 外した方がいいPhpStorm設定
+  - kind: para
+    text: arrayと
+  - kind: para
+    text: ａｒｒａｙ＜ｍｉｘｅｄ＞と
+  - kind: para
+    text: mixed[] を混同しない
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 外した方がいいPhpStorm設定
-  - node: p
-    children:
-    - node: text
-      content: '@param とか @returnを'
-    - node: br
-    - node: text
-      content: 執拗に全部埋めてくる
-  - node: p
-    children:
-    - node: text
-      content: 'arrayと '
-    - node: br
-    - node: text
-      content: 'ａｒｒａｙ＜ｍｉｘｅｄ＞と '
-    - node: br
-    - node: text
-      content: mixed[] を混同しない
+  - kind: heading
+    level: 1
+    text: 外した方がいいPhpStorm設定
+  - kind: para
+    text: '@param とか @returnを'
+  - kind: para
+    text: 執拗に全部埋めてくる
+  - kind: para
+    text: arrayと
+  - kind: para
+    text: ａｒｒａｙ＜ｍｉｘｅｄ＞と
+  - kind: para
+    text: mixed[] を混同しない
   p33:
-  - node: p
-    children:
-    - node: text
-      content: ここ最近のPHPStan
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 完全静的解析モードがデフォルトになりました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: いままでのPHPStanは実行時リフレクションで解析コストを抑えていた
-        - node: li
-          children:
-          - node: text
-            content: 改善の積み重ねによりパフォーマンスがものすごく向上している
-        - node: li
-          children:
-          - node: text
-            content: 従来通りの実行時リフレクションも使える
-    - node: li
-      children:
-      - node: text
-        content: PHPStanはハイペースで改善されているのでガンガン更新しましょう
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ただし今月は開発者が夏休みを宣言している
-  - node: p
-    children:
-    - node: text
-      content: ⛱
+  - kind: heading
+    level: 1
+    text: ここ最近のPHPStan
+  - kind: list
+    items:
+    - 完全静的解析モードがデフォルトになりました
+    - いままでのPHPStanは実行時リフレクションで解析コストを抑えていた
+    - 改善の積み重ねによりパフォーマンスがものすごく向上している
+    - 従来通りの実行時リフレクションも使える
+    - PHPStanはハイペースで改善されているのでガンガン更新しましょう
+  - kind: para
+    text: ⛱
+  - kind: list
+    items:
+    - ただし今月は開発者が夏休みを宣言している
   p34:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanは何ではないか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPのあらゆる関数に対して完璧な型を付けてくれるわけではない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 不具合や意図しない挙動を発見したら報告してほしい
-        - node: li
-          children:
-          - node: text
-            content: Twitterに書くだけでも作者か日本人の誰かが反応してくれると思う
-    - node: li
-      children:
-      - node: text
-        content: オープンソースソフトウェアであり、商用サポートはない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: チェコ在住の個人 が開発している
-  - node: p
-    children:
-    - node: text
-      content: (Ondřej Mirtes)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: コミュニティによるバグ修正や機能追加の貢献も受け入れている
+  - kind: heading
+    level: 1
+    text: PHPStanは何ではないか
+  - kind: list
+    items:
+    - PHPのあらゆる関数に対して完璧な型を付けてくれるわけではない
+    - 不具合や意図しない挙動を発見したら報告してほしい
+    - Twitterに書くだけでも作者か日本人の誰かが反応してくれると思う
+    - オープンソースソフトウェアであり、商用サポートはない
+    - チェコ在住の個人(Ondřej Mirtes)が開発している
+    - コミュニティによるバグ修正や機能追加の貢献も受け入れている
   p35:
-  - node: p
-    children:
-    - node: text
-      content: PHPの型の基礎
+  - kind: heading
+    level: 1
+    text: PHPの型の基礎
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 型の基本的な考え方
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本は型宣言できるPHPの型を覚える
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: クラス/インターフェイス名 (PHP 5)
-        - node: li
-          children:
-          - node: text
-            content: 複合型 array / callable (PHP 5)
-        - node: li
-          children:
-          - node: text
-            content: スカラー値 int / Hoat / string / bool (≧ PHP 7.0)
-        - node: li
-          children:
-          - node: text
-            content: 特別な戻り値型 void (≧ PHP 7.0) / never (≧ PHP 8.1)
-        - node: li
-          children:
-          - node: text
-            content: そのほかの型表記
+  - kind: heading
+    level: 1
+    text: 型の基本的な考え方
+  - kind: list
+    items:
+    - 基本は型宣言できるPHPの型を覚える
+    - クラス/インターフェイス名 (PHP 5)
+    - 複合型 array / callable (PHP 5)
+    - スカラー値 int / float / string / bool (≧ PHP 7.0)
+    - 特別な戻り値型 void (≧ PHP 7.0) / never (≧ PHP 8.1)
+    - そのほかの型表記
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 'ユニオン型 '
-  - node: p
-    children:
-    - node: bold
-      content: A|B
-  - node: p
-    children:
-    - node: text
-      content: 'AまたはB '
-    - node: br
-    - node: text
-      content: (複雑な式は書けない)
+  - kind: heading
+    level: 1
+    text: ユニオン型
+  - kind: heading
+    level: 1
+    text: A|B
+  - kind: para
+    text: AまたはB
+  - kind: para
+    text: (複雑な式は書けない)
   p38:
-  - node: p
-    children:
-    - node: text
-      content: '交(cid:20281)型 '
-  - node: p
-    children:
-    - node: bold
-      content: A&B
-  - node: p
-    children:
-    - node: text
-      content: 'AおよびB '
-    - node: br
-    - node: text
-      content: (複雑な式は書けない)
+  - kind: heading
+    level: 1
+    text: 交叉型
+  - kind: heading
+    level: 1
+    text: A&B
+  - kind: para
+    text: AおよびB
+  - kind: para
+    text: (複雑な式は書けない)
   p39:
-  - node: p
-    children:
-    - node: text
-      content: '型 '
-  - node: p
-    children:
-    - node: text
-      content: DNF
-    - node: br
-    - node: bold
-      content: int|A|(B&C)|null
-  - node: p
-    children:
-    - node: text
-      content: 'intまたはAまたは「BおよびC」またはnull '
-    - node: br
-    - node: text
-      content: (一定の制約下で複雑な型も書ける)
+  - kind: heading
+    level: 1
+    text: DNF型
+  - kind: heading
+    level: 1
+    text: int|A|(B&C)|null
+  - kind: para
+    text: intまたはAまたは「BおよびC」またはnull
+  - kind: para
+    text: (一定の制約下で複雑な型も書ける)
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 'null許容型 '
-  - node: p
-    children:
-    - node: text
-      content: '?'
-    - node: br
-    - node: bold
-      content: A
-  - node: p
-    children:
-    - node: text
-      content: 'Aまたはnull '
-    - node: br
-    - node: text
-      content: デフォルトで許容しない
+  - kind: heading
+    level: 1
+    text: null許容型
+  - kind: heading
+    level: 1
+    text: ?A
+  - kind: para
+    text: Aまたはnull
+  - kind: para
+    text: デフォルトで許容しない
   p41:
-  - node: p
-    children:
-    - node: text
-      content: 謎のPHP用語
-  - node: p
-    children:
-    - node: bold
-      content: mixed
-  - node: p
-    children:
-    - node: text
-      content: '任意の(すべての)型を表す型 '
-    - node: br
-    - node: text
-      content: (ほかの言語でのany)
+  - kind: heading
+    level: 1
+    text: 謎のPHP用語
+  - kind: heading
+    level: 1
+    text: mixed
+  - kind: para
+    text: 任意の(すべての)型を表す型
+  - kind: para
+    text: (ほかの言語でのany)
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 型をどこに書くか
+  - kind: heading
+    level: 1
+    text: 型をどこに書くか
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言
-  - node: p
-    children:
-    - node: text
-      content: ' (type declaration)'
+  - kind: heading
+    level: 1
+    text: 型宣言 (type declaration)
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言
-  - node: p
-    children:
-    - node: text
-      content: ' (type declaration)'
+  - kind: heading
+    level: 1
+    text: 型宣言 (type declaration)
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言
-  - node: p
-    children:
-    - node: text
-      content: ' (type declaration)'
+  - kind: heading
+    level: 1
+    text: 型宣言 (type declaration)
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言
-  - node: p
-    children:
-    - node: text
-      content: ' (type declaration)'
+  - kind: heading
+    level: 1
+    text: 型宣言 (type declaration)
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言
-  - node: p
-    children:
-    - node: text
-      content: ' (type declaration)'
+  - kind: heading
+    level: 1
+    text: 型宣言 (type declaration)
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 型注釈
-  - node: p
-    children:
-    - node: text
-      content: ' (type annotation)'
+  - kind: heading
+    level: 1
+    text: 型注釈 (type annotation)
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 型注釈
-  - node: p
-    children:
-    - node: text
-      content: ' (type annotation)'
+  - kind: heading
+    level: 1
+    text: 型注釈 (type annotation)
   p50:
-  - node: p
-    children:
-    - node: text
-      content: 型注釈
-  - node: p
-    children:
-    - node: text
-      content: ' (type annotation)'
+  - kind: heading
+    level: 1
+    text: 型注釈 (type annotation)
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言 vs PHPDoc(型注釈)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 型宣言された型は、実行時に100%確実に保証される実効性のある型です
-    - node: li
-      children:
-      - node: text
-        content: PHPDocは /** ... */ 形式のブロック内に書かれる単なるコメントです
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 実行時にはその通りの型であることは保証されず、型は口約束に過ぎません
-    - node: li
-      children:
-      - node: text
-        content: この発表内で「型を付ける」というときは型宣言と型注釈のどちらも使います
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 実効性のある型と口約束に過ぎない型の二枚舌の使い分けが
-          - node: br
-          - node: text
-            content: 動的言語における現実的な型の付け方になります
+  - kind: para
+    text: 型宣言 vs PHPDoc(型注釈)
+  - kind: list
+    items:
+    - 型宣言された型は、実行時に100%確実に保証される実効性のある型です
+    - PHPDocは /** ... */ 形式のブロック内に書かれる単なるコメントです
+    - 実行時にはその通りの型であることは保証されず、型は口約束に過ぎません
+    - この発表内で「型を付ける」というときは型宣言と型注釈のどちらも使います
+    - 実効性のある型と口約束に過ぎない型の二枚舌の使い分けが
+  - kind: para
+    text: 動的言語における現実的な型の付け方になります
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 無駄なPHPDocは書かない
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 型宣言と同じ内容をPHPDocに書き写さない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 自然言語で説明を書きたいときは書く
-        - node: li
-          children:
-          - node: text
-            content: int→positive-int string→定数 のように型を強化する場合は書く
-    - node: li
-      children:
-      - node: text
-        content: 継承元と同じ型の場合は何も書かない (共変型付けをしたいときは書く)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 'PHP: 共変性と反変性 - Manual'
-    - node: li
-      children:
-      - node: text
-        content: 几帳面に埋めようとしてくるPhpStormの言うことを聞かない
+  - kind: para
+    text: 無駄なPHPDocは書かない
+  - kind: list
+    items:
+    - 型宣言と同じ内容をPHPDocに書き写さない
+    - 自然言語で説明を書きたいときは書く
+    - int→positive-int string→定数 のように型を強化する場合は書く
+    - 継承元と同じ型の場合は何も書かない (共変型付けをしたいときは書く)
+    - 'PHP: 共変性と反変性 - Manual'
+    - 几帳面に埋めようとしてくるPhpStormの言うことを聞かない
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 外した方がいいPhpStorm設定
-  - node: p
-    children:
-    - node: text
-      content: (再掲)
+  - kind: heading
+    level: 1
+    text: 外した方がいいPhpStorm設定(再掲)
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 外した方がいいPhpStorm設定
-  - node: p
-    children:
-    - node: text
-      content: (再掲)
-  - node: p
-    children:
-    - node: text
-      content: 'arrayと '
-    - node: br
-    - node: text
-      content: 'ａｒｒａｙ＜ｍｉｘｅｄ＞と '
-    - node: br
-    - node: text
-      content: mixed[] を混同しない
+  - kind: heading
+    level: 1
+    text: 外した方がいいPhpStorm設定(再掲)
+  - kind: para
+    text: arrayと
+  - kind: para
+    text: ａｒｒａｙ＜ｍｉｘｅｄ＞と
+  - kind: para
+    text: mixed[] を混同しない
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 外した方がいいPhpStorm設定
-  - node: p
-    children:
-    - node: text
-      content: (再掲)
-  - node: p
-    children:
-    - node: text
-      content: '@param とか @returnを'
-    - node: br
-    - node: text
-      content: 執拗に全部埋めてくる
-  - node: p
-    children:
-    - node: text
-      content: 'arrayと '
-    - node: br
-    - node: text
-      content: 'ａｒｒａｙ＜ｍｉｘｅｄ＞と '
-    - node: br
-    - node: text
-      content: mixed[] を混同しない
+  - kind: heading
+    level: 1
+    text: 外した方がいいPhpStorm設定(再掲)
+  - kind: para
+    text: '@param とか @returnを'
+  - kind: para
+    text: 執拗に全部埋めてくる
+  - kind: para
+    text: arrayと
+  - kind: para
+    text: ａｒｒａｙ＜ｍｉｘｅｄ＞と
+  - kind: para
+    text: mixed[] を混同しない
   p56:
-  - node: p
-    children:
-    - node: text
-      content: '型宣言があれば '
-    - node: br
-    - node: text
-      content: 'PHPDocなくても '
-    - node: br
-    - node: text
-      content: 足りるんじゃないの？
+  - kind: para
+    text: 型宣言があれば
+  - kind: para
+    text: PHPDocなくても
+  - kind: para
+    text: 足りるんじゃないの？
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanには '
-    - node: br
-    - node: text
-      content: もっと強力な型がある
+  - kind: para
+    text: PHPStanには
+  - kind: para
+    text: もっと強力な型がある
   p58:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanを 使ってみよう
+  - kind: para
+    text: PHPStanを
+  - kind: para
+    text: 使ってみよう
   p59:
-  - node: p
-    children:
-    - node: text
-      content: 'オンライン '
-    - node: br
-    - node: text
-      content: サンドボックス
+  - kind: para
+    text: オンライン
+  - kind: para
+    text: サンドボックス
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 'いますぐダウンロー '
-    - node: br
-    - node: text
-      content: 'ド '
+  - kind: para
+    text: いますぐダウンロー
+  - kind: para
+    text: ド
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 'いますぐダウンロー '
-    - node: br
-    - node: text
-      content: 'ド '
-    - node: br
-    - node: text
-      content: しなくてもいい
+  - kind: para
+    text: いますぐダウンロー
+  - kind: para
+    text: ド
+  - kind: para
+    text: しなくてもいい
   p62:
-  - node: p
-    children:
-    - node: text
-      content: https://phpstan.org/try
+  - kind: heading
+    level: 1
+    text: https://phpstan.org/try
   p63:
-  - node: p
-    children:
-    - node: text
-      content: 'こういう関数を '
-    - node: br
-    - node: text
-      content: 考えてみましょう
+  - kind: para
+    text: こういう関数を
+  - kind: para
+    text: 考えてみましょう
   p64:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言で型のついた完璧な関数
+  - kind: heading
+    level: 1
+    text: 型宣言で型のついた完璧な関数
   p65:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言で型のついた完璧な関数
-  - node: p
-    children:
-    - node: text
-      content: 本を検索する関数
+  - kind: heading
+    level: 1
+    text: 型宣言で型のついた完璧な関数
+  - kind: heading
+    level: 2
+    text: 本を検索する関数
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言で型のついた完璧な関数
-  - node: p
-    children:
-    - node: text
-      content: 本を検索する関数
-  - node: p
-    children:
-    - node: text
-      content: 検索ワード
+  - kind: heading
+    level: 1
+    text: 型宣言で型のついた完璧な関数
+  - kind: para
+    text: 本を検索する関数
+  - kind: para
+    text: 検索ワード
   p67:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言で型のついた完璧な関数
-  - node: p
-    children:
-    - node: text
-      content: 本を検索する関数
-  - node: p
-    children:
-    - node: text
-      content: 検索ワード
-  - node: p
-    children:
-    - node: text
-      content: 何これ
+  - kind: heading
+    level: 1
+    text: 型宣言で型のついた完璧な関数
+  - kind: para
+    text: 本を検索する関数
+  - kind: para
+    text: 検索ワード
+  - kind: para
+    text: 何これ
   p68:
-  - node: p
-    children:
-    - node: text
-      content: 型宣言で型のついた完璧な関数
-  - node: p
-    children:
-    - node: text
-      content: 本を検索する関数
-  - node: p
-    children:
-    - node: text
-      content: 検索ワード
-  - node: p
-    children:
-    - node: text
-      content: 何これ
-  - node: p
-    children:
-    - node: text
-      content: 何これ
+  - kind: heading
+    level: 1
+    text: 型宣言で型のついた完璧な関数
+  - kind: para
+    text: 本を検索する関数
+  - kind: para
+    text: 検索ワード
+  - kind: para
+    text: 何これ
+  - kind: para
+    text: 何これ
   p69:
-  - node: p
-    children:
-    - node: text
-      content: PHPStan第一の関門(レベル6)
+  - kind: heading
+    level: 1
+    text: PHPStan第一の関門(レベル6)
   p70:
-  - node: p
-    children:
-    - node: text
-      content: PHPStan第一の関門(レベル6)
-  - node: p
-    children:
-    - node: text
-      content: '$options '
-    - node: br
-    - node: text
-      content: 配列の中身わからん
+  - kind: heading
+    level: 1
+    text: PHPStan第一の関門(レベル6)
+  - kind: para
+    text: $options
+  - kind: para
+    text: 配列の中身わからん
   p71:
-  - node: p
-    children:
-    - node: text
-      content: PHPStan第一の関門(レベル6)
-  - node: p
-    children:
-    - node: text
-      content: '$options '
-    - node: br
-    - node: text
-      content: 配列の中身わからん
-  - node: p
-    children:
-    - node: text
-      content: 'returnされる '
-    - node: br
-    - node: text
-      content: 配列の中身わからん
+  - kind: heading
+    level: 1
+    text: PHPStan第一の関門(レベル6)
+  - kind: para
+    text: $options
+  - kind: para
+    text: 配列の中身わからん
+  - kind: para
+    text: returnされる
+  - kind: para
+    text: 配列の中身わからん
   p72:
-  - node: p
-    children:
-    - node: text
-      content: 再度完璧に型を付けた関数
+  - kind: heading
+    level: 1
+    text: 再度完璧に型を付けた関数
   p73:
-  - node: p
-    children:
-    - node: text
-      content: 再度完璧に型を付けた関数
-  - node: p
-    children:
-    - node: text
-      content: 配列の中身には あらゆる可能性
+  - kind: heading
+    level: 1
+    text: 再度完璧に型を付けた関数
+  - kind: para
+    text: 配列の中身には
+  - kind: para
+    text: あらゆる可能性
   p74:
-  - node: p
-    children:
-    - node: text
-      content: 型を表示してみる
+  - kind: heading
+    level: 1
+    text: 型を表示してみる
   p75:
-  - node: p
-    children:
-    - node: text
-      content: 取り出してきた値の配列
+  - kind: heading
+    level: 1
+    text: 取り出してきた値の配列
   p76:
-  - node: p
-    children:
-    - node: text
-      content: 取り出してきた値の配列
-  - node: p
-    children:
-    - node: text
-      content: 配列の中身わからん
+  - kind: heading
+    level: 1
+    text: 取り出してきた値の配列
+  - kind: heading
+    level: 2
+    text: 配列の中身わからん
   p77:
-  - node: p
-    children:
-    - node: text
-      content: 型がついていないとはどういうことか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プログラムで具体的なことをするために、必要な情報が揃っていない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 今回の場合だと「検索して取得した本の情報を画面に出力する」など
-        - node: li
-          children:
-          - node: text
-            content: 配列の中にどのような値が入っているのか内部構造が明示されてない
-    - node: li
-      children:
-      - node: text
-        content: 多くの場合、mixed型の場合は具体的な操作をするための情報が欠けている
-    - node: li
-      children:
-      - node: text
-        content: PHPStanは値を引数として渡すときに、要求する型に対して 渡す型が十分に絞り込まれていないと容赦なく叱ってくれる
+  - kind: para
+    text: 型がついていないとはどういうことか
+  - kind: list
+    items:
+    - プログラムで具体的なことをするために、必要な情報が揃っていない
+    - 今回の場合だと「検索して取得した本の情報を画面に出力する」など
+    - 配列の中にどのような値が入っているのか内部構造が明示されてない
+    - 多くの場合、mixed型の場合は具体的な操作をするための情報が欠けている
+    - PHPStanは値を引数として渡すときに、要求する型に対して
+  - kind: para
+    text: 渡す型が十分に絞り込まれていないと容赦なく叱ってくれる
   p78:
-  - node: p
-    children:
-    - node: text
-      content: このプログラムが正しいか判断できない
+  - kind: heading
+    level: 1
+    text: このプログラムが正しいか判断できない
   p79:
-  - node: p
-    children:
-    - node: text
-      content: 必要のないところにmixedは書かない
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: アプリケーション実装においてmixedと適切な場面はあまりない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: mixed = いかなる種類のデータも受け入れるということ
-    - node: li
-      children:
-      - node: text
-        content: ビジネスロジックというよりユーティリティ的なものが該当する
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: mixedが適切なのはvar_dump(), is_string() のような関数
-        - node: li
-          children:
-          - node: text
-            content: array<mixed> を受け入れるのはcount()とかsort()とかだけ
-    - node: li
-      children:
-      - node: text
-        content: ジェネリクスを使えばmixedと型付けを両立できるが、今回は割愛
+  - kind: para
+    text: 必要のないところにmixedは書かない
+  - kind: list
+    items:
+    - アプリケーション実装においてmixedと適切な場面はあまりない
+    - mixed = いかなる種類のデータも受け入れるということ
+    - ビジネスロジックというよりユーティリティ的なものが該当する
+    - mixedが適切なのはvar_dump(), is_string() のような関数
+    - array<mixed> を受け入れるのはcount()とかsort()とかだけ
+    - ジェネリクスを使えばmixedと型付けを両立できるが、今回は割愛
   p80:
-  - node: p
-    children:
-    - node: text
-      content: コードに型を付ける
+  - kind: heading
+    level: 1
+    text: コードに型を付ける
   p81:
-  - node: p
-    children:
-    - node: text
-      content: '型宣言があれば '
-    - node: br
-    - node: text
-      content: 足りるんじゃないの？
+  - kind: para
+    text: 型宣言があれば
+  - kind: para
+    text: 足りるんじゃないの？
   p82:
-  - node: p
-    children:
-    - node: text
-      content: '型宣言だけでは '
-    - node: br
-    - node: text
-      content: 表現力が不足している
+  - kind: para
+    text: 型宣言だけでは
+  - kind: para
+    text: 表現力が不足している
   p83:
-  - node: p
-    children:
-    - node: text
-      content: array
-    - node: br
-    - node: text
-      content: “配列”の曖昧さ
+  - kind: heading
+    level: 2
+    text: a r r a y
+  - kind: heading
+    level: 1
+    text: “配列”の曖昧さ
   p84:
-  - node: p
-    children:
-    - node: text
-      content: 別途arrayの話もしました
+  - kind: heading
+    level: 1
+    text: 別途arrayの話もしました
   p85:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-      - node: br
-      - node: text
-        content: '[ '
-      - node: br
-      - node: text
-        content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-      - node: br
-      - node: text
-        content: '    [''id'' => 234, ''name'' => ''源静香''], '
-      - node: br
-      - node: text
-        content: '] '
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: list
+    items:
+    - ユーザIDがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '['
+  - kind: para
+    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
+  - kind: para
+    text: '[''id'' => 234, ''name'' => ''源静香''],'
+  - kind: para
+    text: ']'
   p86:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: p
-    children:
-    - node: text
-      content: list<int>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-      - node: br
-      - node: text
-        content: '[ '
-      - node: br
-      - node: text
-        content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-      - node: br
-      - node: text
-        content: '    [''id'' => 234, ''name'' => ''源静香''], '
-      - node: br
-      - node: text
-        content: '] '
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: list
+    items:
+    - ユーザIDがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '['
+  - kind: para
+    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
+  - kind: para
+    text: '[''id'' => 234, ''name'' => ''源静香''],'
+  - kind: para
+    text: ']'
   p87:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: p
-    children:
-    - node: text
-      content: list<int>
-  - node: p
-    children:
-    - node: text
-      content: array<int,string>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-      - node: br
-      - node: text
-        content: '[ '
-      - node: br
-      - node: text
-        content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-      - node: br
-      - node: text
-        content: '    [''id'' => 234, ''name'' => ''源静香''], '
-      - node: br
-      - node: text
-        content: '] '
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: list
+    items:
+    - ユーザIDがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '['
+  - kind: para
+    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
+  - kind: para
+    text: '[''id'' => 234, ''name'' => ''源静香''],'
+  - kind: para
+    text: ']'
   p88:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: p
-    children:
-    - node: text
-      content: list<int>
-  - node: p
-    children:
-    - node: text
-      content: array<int,string>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-  - node: p
-    children:
-    - node: text
-      content: array{id:int, name:string}
-  - node: p
-    children:
-    - node: text
-      content: '[ '
-    - node: br
-    - node: text
-      content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-    - node: br
-    - node: text
-      content: '    [''id'' => 234, ''name'' => ''源静香''], '
-  - node: p
-    children:
-    - node: text
-      content: '] '
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: list
+    items:
+    - ユーザIDがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '['
+  - kind: para
+    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
+  - kind: para
+    text: '[''id'' => 234, ''name'' => ''源静香''],'
+  - kind: para
+    text: ']'
   p89:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: p
-    children:
-    - node: text
-      content: list<int>
-  - node: p
-    children:
-    - node: text
-      content: array<int,string>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-  - node: p
-    children:
-    - node: text
-      content: array{id:int, name:string}
-  - node: p
-    children:
-    - node: text
-      content: '[ '
-    - node: br
-    - node: text
-      content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-    - node: br
-    - node: text
-      content: '    [''id'' => 234, ''name'' => ''源静香''], '
-  - node: p
-    children:
-    - node: text
-      content: '] '
-  - node: p
-    children:
-    - node: text
-      content: list<array{id:int, name:string}>
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: list
+    items:
+    - ユーザIDがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '['
+  - kind: para
+    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
+  - kind: para
+    text: '[''id'' => 234, ''name'' => ''源静香''],'
+  - kind: para
+    text: ']'
+  - kind: para
+    text: list<array{id:int, name:string}>
   p90:
-  - node: p
-    children:
-    - node: text
-      content: 'array-shapes '
-    - node: br
-    - node: text
-      content: (またはobject-like arrays)
+  - kind: heading
+    level: 1
+    text: array-shapes
+  - kind: heading
+    level: 2
+    text: (またはobject-like arrays)
   p91:
-  - node: p
-    children:
-    - node: text
-      content: arrayに詳細に型を付ける
+  - kind: heading
+    level: 1
+    text: arrayに詳細に型を付ける
   p92:
-  - node: p
-    children:
-    - node: text
-      content: arrayに詳細に型を付ける
-  - node: p
-    children:
-    - node: text
-      content: fullかpartialのみ
+  - kind: heading
+    level: 1
+    text: arrayに詳細に型を付ける
+  - kind: heading
+    level: 2
+    text: fullかpartialのみ
   p93:
-  - node: p
-    children:
-    - node: text
-      content: 取り出してきた値の配列
+  - kind: heading
+    level: 1
+    text: 取り出してきた値の配列
   p94:
-  - node: p
-    children:
-    - node: text
-      content: 取り出してきた値の配列
+  - kind: heading
+    level: 1
+    text: 取り出してきた値の配列
   p95:
-  - node: p
-    children:
-    - node: text
-      content: 取り出してきた値の配列
-  - node: p
-    children:
-    - node: text
-      content: fullかpartialなのに
-  - node: p
-    children:
-    - node: text
-      content: 'perfect '
+  - kind: heading
+    level: 1
+    text: 取り出してきた値の配列
+  - kind: para
+    text: fullかpartialなのに
+  - kind: para
+    text: perfect
   p96:
-  - node: p
-    children:
-    - node: text
-      content: 取り出してきた値の配列
-  - node: p
-    children:
-    - node: text
-      content: fullかpartialなのに
-  - node: p
-    children:
-    - node: text
-      content: 'perfect '
-  - node: p
-    children:
-    - node: text
-      content: 'ほんとはtitleなのに '
-    - node: br
-    - node: text
-      content: 'nameでアクセス '
+  - kind: heading
+    level: 1
+    text: 取り出してきた値の配列
+  - kind: para
+    text: fullかpartialなのに
+  - kind: para
+    text: perfect
+  - kind: para
+    text: ほんとはtitleなのに
+  - kind: para
+    text: nameでアクセス
   p97:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanの '
-    - node: br
-    - node: text
-      content: 強力な型
+  - kind: para
+    text: PHPStanの
+  - kind: para
+    text: 強力な型
   p98:
-  - node: p
-    children:
-    - node: text
-      content: 型名について
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 型名は一般的に array, int, string, bool などすべて小文字で書く
-    - node: li
-      children:
-      - node: text
-        content: クラス名は慣習的に DateTime, App Book のようなキャメルケース
-  - node: p
-    children:
-    - node: text
-      content: (先
-  - node: p
-    children:
-    - node: bold
-      content: \
-  - node: p
-    children:
-    - node: text
-      content: が一般的だが、
-    - node: bold
-      content: book
-    - node: text
-      content: 'のように小文字も定義可 '
-  - node: p
-    children:
-    - node: text
-      content: 頭と単語区切りを大文字にする)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そのためツールによっては @return never と書くと App  と解釈
-  - node: p
-    children:
-    - node: bold
-      content: \never
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: これを避けるには @param @return @var に代えて、
-      - node: br
-      - node: bold
-        content: '@phpstan-param'
-      - node: text
-        content: ' '
-      - node: bold
-        content: '@phpstan-return'
-      - node: text
-        content: ' '
-      - node: bold
-        content: '@phpstan-var'
-      - node: text
-        content: ' にする'
+  - kind: para
+    text: 型名について
+  - kind: list
+    items:
+    - 型名は一般的に array, int, string, bool などすべて小文字で書く
+    - クラス名は慣習的に DateTime, App\Book のようなキャメルケース (先
+  - kind: para
+    text: 頭と単語区切りを大文字にする)が一般的だが、bookのように小文字も定義可
+  - kind: list
+    items:
+    - そのためツールによっては @return never と書くと App\never と解釈
+    - これを避けるには @param @return @var に代えて、
+  - kind: para
+    text: '@phpstan-param @phpstan-return @phpstan-var にする'
   p99:
-  - node: p
-    children:
-    - node: text
-      content: 整数範囲型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: int<0, 6> や int<1, 10>のような範囲を指定できる
-    - node: li
-      children:
-      - node: text
-        content: positive-int, negative-int という型もある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: それぞれ int<1, max> / int<min, -1> のエイリアス
-    - node: li
-      children:
-      - node: text
-        content: 「0以上の数」はユニオン型を組み合せて 0|positive-int と書く
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: たとえば「配列の要素数」にマイナスはありえないのでこの型になる
-    - node: li
-      children:
-      - node: text
-        content: int === int<min, max> === positive-int|0|negative-int
+  - kind: para
+    text: 整数範囲型
+  - kind: list
+    items:
+    - int<0, 6> や int<1, 10>のような範囲を指定できる
+    - positive-int, negative-int という型もある
+    - それぞれ int<1, max> / int<min, -1> のエイリアス
+    - 「0以上の数」はユニオン型を組み合せて 0|positive-int と書く
+    - たとえば「配列の要素数」にマイナスはありえないのでこの型になる
+    - int === int<min, max> === positive-int|0|negative-int
   p100:
-  - node: p
-    children:
-    - node: text
-      content: リテラル型・定数型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '"full" や "partial" のような文字列や 0, 1 のようなスカラー値そのもの'
-    - node: li
-      children:
-      - node: text
-        content: ふつうはユニオン型と組み合せて "full"|"partial" や 1|2|9 などと書く
-    - node: li
-      children:
-      - node: text
-        content: constやde=neで定義された定数・クラス定数も使える
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: SEARCH_MODE_FULL|SEARCH_MODE_PARTIAL
-        - node: li
-          children:
-          - node: text
-            content: SEARCH_MODE_* でまとめて参照もできる
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: 新たな SEARCH_MODE_FUZZY が増えても変更の必要がない
+  - kind: para
+    text: リテラル型・定数型
+  - kind: list
+    items:
+    - '"full" や "partial" のような文字列や 0, 1 のようなスカラー値そのもの'
+    - ふつうはユニオン型と組み合せて "full"|"partial" や 1|2|9 などと書く
+    - constやdefineで定義された定数・クラス定数も使える
+    - SEARCH_MODE_FULL|SEARCH_MODE_PARTIAL
+    - SEARCH_MODE_* でまとめて参照もできる
+    - 新たな SEARCH_MODE_FUZZY が増えても変更の必要がない
   p101:
-  - node: p
-    children:
-    - node: text
-      content: key-of型・value-of型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 定数に格納された配列のキーまたは要素
-    - node: li
-      children:
-      - node: text
-        content: const MODES = ['a', 'b']; のとき value-of<MODES> = 'a'|'b'
-    - node: li
-      children:
-      - node: text
-        content: const MESSAGES = ['x' => 'あ', 'y' => 'ん'] のとき
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: key-of<MESSAGES> = 'x'|'y'
-        - node: li
-          children:
-          - node: text
-            content: value-of<MESSAGES> = 'あ'|'ん'
-    - node: li
-      children:
-      - node: text
-        content: 定数の * と同じく、定数の配列を編集すれば個別の箇所を修正しなくていい
+  - kind: para
+    text: key-of型・value-of型
+  - kind: list
+    items:
+    - 定数に格納された配列のキーまたは要素
+    - const MODES = ['a', 'b']; のとき value-of<MODES> = 'a'|'b'
+    - const MESSAGES = ['x' => 'あ', 'y' => 'ん'] のとき
+    - key-of<MESSAGES> = 'x'|'y'
+    - value-of<MESSAGES> = 'あ'|'ん'
+    - 定数の * と同じく、定数の配列を編集すれば個別の箇所を修正しなくていい
   p102:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocに書ける配列の型について
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 最近は string[] や Book[] のような書かれかたは好まれない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: JavaScript(TypeScript)のように配列/リストと連想配列
-          - node: br
-          - node: text
-            content: '(Map/ハッシュテーブル)の区別がない '
-        - node: li
-          children:
-          - node: text
-            content: list<string>やarray<string,Book>のように書くのが望ましい
-    - node: li
-      children:
-      - node: text
-        content: 配列の中身に同じ構造のものが繰り返されるときは array<...>
-      - node: br
-      - node: text
-        content: '配列の中身がキーごとに別のデータが格納されるときは '
-      - node: bold
-        content: 'array{...} '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: この <> と {} のカッコの種類は瞬時に混乱しないようにしておきましょう
+  - kind: heading
+    level: 1
+    text: PHPDocに書ける配列の型について
+  - kind: list
+    items:
+    - 最近は string[] や Book[] のような書かれかたは好まれない
+    - JavaScript(TypeScript)のように配列/リストと連想配列
+  - kind: para
+    text: (Map/ハッシュテーブル)の区別がない
+  - kind: list
+    items:
+    - list<string>やarray<string,Book>のように書くのが望ましい
+    - 配列の中身に同じ構造のものが繰り返されるときは array<...>
+  - kind: para
+    text: 配列の中身がキーごとに別のデータが格納されるときは array{...}
+  - kind: list
+    items:
+    - この <> と {} のカッコの種類は瞬時に混乱しないようにしておきましょう
   p103:
-  - node: p
-    children:
-    - node: text
-      content: 'array-shapes '
-  - node: p
-    children:
-    - node: text
-      content: (Object-like arrays)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'array{key: type} keyというキーが入っている連想配列'
-    - node: li
-      children:
-      - node: text
-        content: 'array{key?: type} keyというキーが省略されている連想配列'
-    - node: li
-      children:
-      - node: text
-        content: 'array{0: typeA, 1: typeB} 長さ2の配列(リスト)'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: array{typeA, typeB} この形状ではキーを省略して型だけを列挙できる
-    - node: li
-      children:
-      - node: text
-        content: array{} 中に何も入っていない配列(空配列)
+  - kind: para
+    text: array-shapes (Object-like arrays)
+  - kind: list
+    items:
+    - 'array{key: type} keyというキーが入っている連想配列'
+    - 'array{key?: type} keyというキーが省略されている連想配列'
+    - 'array{0: typeA, 1: typeB} 長さ2の配列(リスト)'
+    - array{typeA, typeB} この形状ではキーを省略して型だけを列挙できる
+    - array{} 中に何も入っていない配列(空配列)
   p104:
-  - node: p
-    children:
-    - node: text
-      content: array<Type>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: array<Type> 配列の全ての値はType (キーの型が何かは明示しない)
-    - node: li
-      children:
-      - node: text
-        content: array<string, Type> キーの型がstring, 値の型がType
-    - node: li
-      children:
-      - node: text
-        content: 'array<array{key: value}>'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 配列の中にarray-shapeが入っている
+  - kind: para
+    text: array<Type>
+  - kind: list
+    items:
+    - array<Type> 配列の全ての値はType (キーの型が何かは明示しない)
+    - array<string, Type> キーの型がstring, 値の型がType
+    - 'array<array{key: value}>'
+    - 配列の中にarray-shapeが入っている
   p105:
-  - node: p
-    children:
-    - node: text
-      content: list<Type>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '[''x'', ''y'', ''z''] のようにキーが0, 1, 2, ... のような連番の配列'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP 8.1で追加された array_is_list() 関数が根拠
-    - node: li
-      children:
-      - node: text
-        content: list<Type> リストの全ての値はType
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 現在のPHPStanは array<int, Type> のエイリアス扱い
-    - node: li
-      children:
-      - node: text
-        content: 'list<array{key: value}>'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 配列の中にarray-shapeが入っている
+  - kind: para
+    text: list<Type>
+  - kind: list
+    items:
+    - '[''x'', ''y'', ''z''] のようにキーが0, 1, 2, ... のような連番の配列'
+    - PHP 8.1で追加された array_is_list() 関数が根拠
+    - list<Type> リストの全ての値はType
+    - 現在のPHPStanは array<int, Type> のエイリアス扱い
+    - 'list<array{key: value}>'
+    - 配列の中にarray-shapeが入っている
   p106:
-  - node: p
-    children:
-    - node: text
-      content: non-empty-*型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'non-empty-string: 長さ1以上の文字列 (＝空文字列ではない)'
-    - node: li
-      children:
-      - node: text
-        content: 'non-empty-array: 長さ1以上の配列 (キーの型は問わない)'
-    - node: li
-      children:
-      - node: text
-        content: 'non-empty-list: 長さ1以上のリスト'
+  - kind: para
+    text: non-empty-*型
+  - kind: list
+    items:
+    - 'non-empty-string: 長さ1以上の文字列 (＝空文字列ではない)'
+    - 'non-empty-array: 長さ1以上の配列 (キーの型は問わない)'
+    - 'non-empty-list: 長さ1以上のリスト'
   p107:
-  - node: p
-    children:
-    - node: text
-      content: 先程のコードを拡張する
+  - kind: heading
+    level: 1
+    text: 先程のコードを拡張する
   p108:
-  - node: p
-    children:
-    - node: text
-      content: 先程のコードを拡張する
-  - node: p
-    children:
-    - node: text
-      content: 検索モードのリスト
+  - kind: heading
+    level: 1
+    text: 先程のコードを拡張する
+  - kind: heading
+    level: 2
+    text: 検索モードのリスト
   p109:
-  - node: p
-    children:
-    - node: text
-      content: 先程のコードを拡張する
-  - node: p
-    children:
-    - node: text
-      content: 検索モードのリスト
-  - node: p
-    children:
-    - node: text
-      content: value-of<定数>
+  - kind: heading
+    level: 1
+    text: 先程のコードを拡張する
+  - kind: para
+    text: 検索モードのリスト
+  - kind: para
+    text: value-of<定数>
   p110:
-  - node: p
-    children:
-    - node: text
-      content: 先程のコードを拡張する
-  - node: p
-    children:
-    - node: text
-      content: 検索モードのリスト
-  - node: p
-    children:
-    - node: text
-      content: value-of<定数>
-  - node: p
-    children:
-    - node: text
-      content: 価格は正の整数
+  - kind: heading
+    level: 1
+    text: 先程のコードを拡張する
+  - kind: para
+    text: 検索モードのリスト
+  - kind: para
+    text: value-of<定数>
+  - kind: para
+    text: 価格は正の整数
   p111:
-  - node: p
-    children:
-    - node: text
-      content: 先程のコードを拡張する
-  - node: p
-    children:
-    - node: text
-      content: 検索モードのリスト
-  - node: p
-    children:
-    - node: text
-      content: value-of<定数>
-  - node: p
-    children:
-    - node: text
-      content: '空文字列を '
-    - node: br
-    - node: text
-      content: 検索禁止する
-  - node: p
-    children:
-    - node: text
-      content: 価格は正の整数
+  - kind: heading
+    level: 1
+    text: 先程のコードを拡張する
+  - kind: para
+    text: 検索モードのリスト
+  - kind: para
+    text: value-of<定数>
+  - kind: para
+    text: 空文字列を
+  - kind: para
+    text: 検索禁止する
+  - kind: para
+    text: 価格は正の整数
   p112:
-  - node: p
-    children:
-    - node: text
-      content: 呼出し側のコード
+  - kind: heading
+    level: 1
+    text: 呼出し側のコード
   p113:
-  - node: p
-    children:
-    - node: text
-      content: 呼出し側のコード
-  - node: p
-    children:
-    - node: text
-      content: '(警告) '
-    - node: br
-    - node: text
-      content: 空文字列を検索
+  - kind: heading
+    level: 1
+    text: 呼出し側のコード
+  - kind: para
+    text: (警告)
+  - kind: para
+    text: 空文字列を検索
   p114:
-  - node: p
-    children:
-    - node: text
-      content: 呼出し側のコード
-  - node: p
-    children:
-    - node: text
-      content: '(警告) '
-    - node: br
-    - node: text
-      content: 空文字列を検索
-  - node: p
-    children:
-    - node: text
-      content: '(警告) '
-    - node: br
-    - node: text
-      content: price == 0 はありえない
+  - kind: heading
+    level: 1
+    text: 呼出し側のコード
+  - kind: para
+    text: (警告)
+  - kind: para
+    text: 空文字列を検索
+  - kind: para
+    text: (警告)
+  - kind: para
+    text: price == 0 はありえない
   p115:
-  - node: p
-    children:
-    - node: text
-      content: ばっちり型が つきましたね
+  - kind: para
+    text: ばっちり型が
+  - kind: para
+    text: つきましたね
   p116:
-  - node: p
-    children:
-    - node: text
-      content: 基本的な型の付け方
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 関数／メソッドとクラス定義に絞って詳細な型を付けていく
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: パラメータ (仮引数)
-        - node: li
-          children:
-          - node: text
-            content: 戻り値
-        - node: li
-          children:
-          - node: text
-            content: プロパティ
-    - node: li
-      children:
-      - node: text
-        content: ただしクロージャ(無名関数)はがんばらなくていい
-    - node: li
-      children:
-      - node: text
-        content: 基本はこれだけに絞っていけばコードに型は付く (理想論)
+  - kind: para
+    text: 基本的な型の付け方
+  - kind: list
+    items:
+    - 関数／メソッドとクラス定義に絞って詳細な型を付けていく
+    - パラメータ (仮引数)
+    - 戻り値
+    - プロパティ
+    - ただしクロージャ(無名関数)はがんばらなくていい
+    - 基本はこれだけに絞っていけばコードに型は付く (理想論)
   p117:
-  - node: p
-    children:
-    - node: text
-      content: 'array{} とか '
-    - node: br
-    - node: text
-      content: 覚えなくてよくない？
+  - kind: para
+    text: array{} とか
+  - kind: para
+    text: 覚えなくてよくない？
   p118:
-  - node: p
-    children:
-    - node: text
-      content: そういう意見もある
+  - kind: heading
+    level: 1
+    text: そういう意見もある
   p119:
-  - node: p
-    children:
-    - node: text
-      content: DTO
-  - node: p
-    children:
-    - node: text
-      content: ' (Data Transfer Object)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: データを格納して持ち運ぶことを目的としたクラス
-    - node: li
-      children:
-      - node: text
-        content: C言語などの構造体(struct)をクラスで表現したものとも考えられる
-    - node: li
-      children:
-      - node: text
-        content: 典型的には単なるPOPOで実装できる
-    - node: li
-      children:
-      - node: text
-        content: PHP 8.0からはコンストラクタプロモーションで、異様に簡潔に定義できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 現代PHPでは小さいイミュータブルなクラスをバンバン切っていく方が
-          - node: br
-          - node: text
-            content: 責務が小さく解析もしやすくなるが今回の本題ではないので割愛
+  - kind: para
+    text: DTO (Data Transfer Object)
+  - kind: list
+    items:
+    - データを格納して持ち運ぶことを目的としたクラス
+    - C言語などの構造体(struct)をクラスで表現したものとも考えられる
+    - 典型的には単なるPOPOで実装できる
+    - PHP 8.0からはコンストラクタプロモーションで、異様に簡潔に定義できる
+    - 現代PHPでは小さいイミュータブルなクラスをバンバン切っていく方が
+  - kind: para
+    text: 責務が小さく解析もしやすくなるが今回の本題ではないので割愛
   p120:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
   p121:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: 検索モード
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: heading
+    level: 2
+    text: 検索モード
   p122:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: 検索モード
-  - node: p
-    children:
-    - node: text
-      content: 'オプションは配列 '
-    - node: br
-    - node: text
-      content: ではなくクラス
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: para
+    text: 検索モード
+  - kind: para
+    text: オプションは配列
+  - kind: para
+    text: ではなくクラス
   p123:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
   p124:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: 著者
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: heading
+    level: 2
+    text: 著者
   p125:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: 著者
-  - node: p
-    children:
-    - node: text
-      content: 書籍
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: para
+    text: 著者
+  - kind: para
+    text: 書籍
   p126:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: 著者
-  - node: p
-    children:
-    - node: text
-      content: 書籍
-  - node: p
-    children:
-    - node: text
-      content: コンストラクタ プロモーション
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: para
+    text: 著者
+  - kind: para
+    text: 書籍
+  - kind: para
+    text: コンストラクタ
+  - kind: para
+    text: プロモーション
   p127:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
   p128:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: オプション型宣言
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: heading
+    level: 2
+    text: オプション型宣言
   p129:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.1時代のコード
-  - node: p
-    children:
-    - node: text
-      content: オプション型宣言
-  - node: p
-    children:
-    - node: text
-      content: 戻り値PHPDoc
+  - kind: heading
+    level: 1
+    text: PHP 8.1時代のコード
+  - kind: para
+    text: オプション型宣言
+  - kind: para
+    text: 戻り値PHPDoc
   p130:
-  - node: p
-    children:
-    - node: text
-      content: クラス vs array
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 一般論としては何でも格納できる配列より、クラス定義したオブジェクトの方
-      - node: br
-      - node: text
-        content: 'が静的解析もしやすく、実行時に意図しない値も紛れにくい '
-    - node: li
-      children:
-      - node: text
-        content: '特にPHP8ではコンストラクタプロモーションによって定義のハードルが 一気に下がり、名前付き引数によってコード上に意図も込めやすくなった '
-    - node: li
-      children:
-      - node: text
-        content: クラスは名前を付けて定義するので、似て非なる別のクラスを
-      - node: br
-      - node: text
-        content: 'いくつも作ることになるとしんどくなってくる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 単なるデータとして名無しのarray-shapesが良いこともある
+  - kind: heading
+    level: 1
+    text: クラス vs array
+  - kind: list
+    items:
+    - 一般論としては何でも格納できる配列より、クラス定義したオブジェクトの方
+  - kind: para
+    text: が静的解析もしやすく、実行時に意図しない値も紛れにくい
+  - kind: list
+    items:
+    - 特にPHP8ではコンストラクタプロモーションによって定義のハードルが
+  - kind: para
+    text: 一気に下がり、名前付き引数によってコード上に意図も込めやすくなった
+  - kind: list
+    items:
+    - クラスは名前を付けて定義するので、似て非なる別のクラスを
+  - kind: para
+    text: いくつも作ることになるとしんどくなってくる
+  - kind: list
+    items:
+    - 単なるデータとして名無しのarray-shapesが良いこともある
   p131:
-  - node: p
-    children:
-    - node: text
-      content: 'かくしてPHPに '
-    - node: br
-    - node: text
-      content: 完璧な型がつきました
+  - kind: para
+    text: かくしてPHPに
+  - kind: para
+    text: 完璧な型がつきました
   p132:
-  - node: p
-    children:
-    - node: text
-      content: めでたしめでたし
+  - kind: heading
+    level: 1
+    text: めでたしめでたし
   p133:
-  - node: p
-    children:
-    - node: text
-      content: 😇
+  - kind: heading
+    level: 1
+    text: 😇
   p134:
-  - node: p
-    children:
-    - node: text
-      content: 'これで済むなら '
-    - node: br
-    - node: text
-      content: 'PHPは型なしとか '
-    - node: br
-    - node: text
-      content: 呼ばれてない
+  - kind: para
+    text: これで済むなら
+  - kind: para
+    text: PHPは型なしとか
+  - kind: para
+    text: 呼ばれてない
   p135:
-  - node: p
-    children:
-    - node: text
-      content: '型なしは '
-    - node: br
-    - node: text
-      content: どこから来るの？
+  - kind: para
+    text: 型なしは
+  - kind: para
+    text: どこから来るの？
   p136:
-  - node: p
-    children:
-    - node: text
-      content: 動的型 vs 型なし
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 型宣言しなくても、全ての値は実行時に必ず具体的な型情報を持っている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: get_debug_type() や is_string() などで動的に正しく判別できる
-        - node: li
-          children:
-          - node: text
-            content: 型宣言すると
-    - node: li
-      children:
-      - node: text
-        content: ここで言いたい「型なし」はソースコードを見て具体的な型が定まらないもの
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 実行してみれば「動く」とわかるが、実行するまで正しいとは判断しきれない
+  - kind: heading
+    level: 1
+    text: 動的型 vs 型なし
+  - kind: list
+    items:
+    - 型宣言しなくても、全ての値は実行時に必ず具体的な型情報を持っている
+    - get_debug_type() や is_string() などで動的に正しく判別できる
+    - 型宣言すると
+    - ここで言いたい「型なし」はソースコードを見て具体的な型が定まらないもの
+    - 実行してみれば「動く」とわかるが、実行するまで正しいとは判断しきれない
   p137:
-  - node: p
-    children:
-    - node: text
-      content: 型なしの値
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPではいろんなところから型がついてない値が吹き出してくる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: そのまま使えない mixed, array<mixed>, string, string|array, ...
-    - node: li
-      children:
-      - node: text
-        content: スーパーグローバル変数($_GET)、PDO、$args、fgetcsv()、などなど…
-    - node: li
-      children:
-      - node: text
-        content: そのまま使えると信じ込んで(=間違った値は来ないと祈って)使う
-  - node: p
-    children:
-    - node: text
-      content: 😇
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: → 一種の割り切りではあるが、最後の手段にしたい
+  - kind: para
+    text: 型なしの値
+  - kind: para
+    text: 😇
+  - kind: list
+    items:
+    - PHPではいろんなところから型がついてない値が吹き出してくる
+    - そのまま使えない mixed, array<mixed>, string, string|array, ...
+    - スーパーグローバル変数($_GET)、PDO、$args、fgetcsv()、などなど…
+    - そのまま使えると信じ込んで(=間違った値は来ないと祈って)使う
+    - → 一種の割り切りではあるが、最後の手段にしたい
   p138:
-  - node: p
-    children:
-    - node: text
-      content: 型を絞り込もう
+  - kind: heading
+    level: 1
+    text: 型を絞り込もう
   p139:
-  - node: p
-    children:
-    - node: bold
-      content: PHPStan dumpType()
-    - node: br
-    - node: bold
-      content: \
+  - kind: heading
+    level: 1
+    text: PHPStan\dumpType()
   p140:
-  - node: p
-    children:
-    - node: text
-      content: dumpType()関数で型を表示
+  - kind: heading
+    level: 1
+    text: dumpType()関数で型を表示
   p141:
-  - node: p
-    children:
-    - node: text
-      content: dumpType()関数で型を表示
-  - node: p
-    children:
-    - node: text
-      content: 関数に渡す
+  - kind: heading
+    level: 1
+    text: dumpType()関数で型を表示
+  - kind: heading
+    level: 2
+    text: 関数に渡す
   p142:
-  - node: p
-    children:
-    - node: text
-      content: dumpType()関数で型を表示
-  - node: p
-    children:
-    - node: text
-      content: 関数に渡す
+  - kind: heading
+    level: 1
+    text: dumpType()関数で型を表示
+  - kind: heading
+    level: 2
+    text: 関数に渡す
   p143:
-  - node: p
-    children:
-    - node: text
-      content: dumpType()関数で型を表示
-  - node: p
-    children:
-    - node: text
-      content: 関数に渡す
-  - node: p
-    children:
-    - node: text
-      content: 'もちろんPhpStorm上 '
-    - node: br
-    - node: text
-      content: で表示できる
+  - kind: heading
+    level: 1
+    text: dumpType()関数で型を表示
+  - kind: para
+    text: 関数に渡す
+  - kind: para
+    text: もちろんPhpStorm上
+  - kind: para
+    text: で表示できる
   p144:
-  - node: p
-    children:
-    - node: text
-      content: check & throw
+  - kind: heading
+    level: 1
+    text: check & throw
   p145:
-  - node: p
-    children:
-    - node: text
-      content: check & throw
-  - node: p
-    children:
-    - node: text
-      content: 'falseだったら '
-    - node: br
-    - node: text
-      content: 関数を抜けることで
+  - kind: heading
+    level: 1
+    text: check & throw
+  - kind: para
+    text: falseだったら
+  - kind: para
+    text: 関数を抜けることで
   p146:
-  - node: p
-    children:
-    - node: text
-      content: check & throw
-  - node: p
-    children:
-    - node: text
-      content: 'falseが混じる '
-  - node: p
-    children:
-    - node: text
-      content: 'falseだったら '
-  - node: p
-    children:
-    - node: text
-      content: 可能性を排除
-  - node: p
-    children:
-    - node: text
-      content: 関数を抜けることで
+  - kind: heading
+    level: 1
+    text: check & throw
+  - kind: para
+    text: falseが混じる
+  - kind: para
+    text: 可能性を排除
+  - kind: para
+    text: falseだったら
+  - kind: para
+    text: 関数を抜けることで
   p147:
-  - node: p
-    children:
-    - node: text
-      content: 'assert '
-  - node: p
-    children:
-    - node: text
-      content: (表明)
+  - kind: heading
+    level: 1
+    text: assert (表明)
   p148:
-  - node: p
-    children:
-    - node: text
-      content: 'assert '
-  - node: p
-    children:
-    - node: text
-      content: (表明)
-  - node: p
-    children:
-    - node: text
-      content: falseではないと表明
+  - kind: heading
+    level: 1
+    text: assert (表明)
+  - kind: heading
+    level: 2
+    text: falseではないと表明
   p149:
-  - node: p
-    children:
-    - node: text
-      content: 'assert '
-  - node: p
-    children:
-    - node: text
-      content: (表明)
-  - node: p
-    children:
-    - node: text
-      content: falseが混じる 可能性を排除
-  - node: p
-    children:
-    - node: text
-      content: falseではないと表明
+  - kind: heading
+    level: 1
+    text: assert (表明)
+  - kind: para
+    text: falseが混じる
+  - kind: para
+    text: 可能性を排除
+  - kind: para
+    text: falseではないと表明
   p150:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanは分岐ごとに型を保持
+  - kind: heading
+    level: 1
+    text: PHPStanは分岐ごとに型を保持
   p151:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanは分岐ごとに型を保持
-  - node: p
-    children:
-    - node: text
-      content: '分岐ごとに範囲が分かれ '
-    - node: br
-    - node: text
-      content: 合流すると戻る
+  - kind: heading
+    level: 1
+    text: PHPStanは分岐ごとに型を保持
+  - kind: para
+    text: 分岐ごとに範囲が分かれ
+  - kind: para
+    text: 合流すると戻る
   p152:
-  - node: p
-    children:
-    - node: text
-      content: DIコンテナ
+  - kind: heading
+    level: 1
+    text: DIコンテナ
   p153:
-  - node: p
-    children:
-    - node: text
-      content: 任意の値を格納できるコンテナ
+  - kind: heading
+    level: 1
+    text: 任意の値を格納できるコンテナ
   p154:
-  - node: p
-    children:
-    - node: text
-      content: 超適当に実装して
+  - kind: heading
+    level: 1
+    text: 超適当に実装して
   p155:
-  - node: p
-    children:
-    - node: text
-      content: 値をコンテナに詰め込む
+  - kind: heading
+    level: 1
+    text: 値をコンテナに詰め込む
   p156:
-  - node: p
-    children:
-    - node: text
-      content: 値をコンテナから取り出す
+  - kind: heading
+    level: 1
+    text: 値をコンテナから取り出す
   p157:
-  - node: p
-    children:
-    - node: text
-      content: 値をコンテナから取り出す
+  - kind: heading
+    level: 1
+    text: 値をコンテナから取り出す
   p158:
-  - node: p
-    children:
-    - node: text
-      content: 値をコンテナから取り出す
+  - kind: heading
+    level: 1
+    text: 値をコンテナから取り出す
   p159:
-  - node: p
-    children:
-    - node: text
-      content: 値をコンテナから取り出す
-  - node: p
-    children:
-    - node: text
-      content: 変数すべてmixed
+  - kind: heading
+    level: 1
+    text: 値をコンテナから取り出す
+  - kind: heading
+    level: 2
+    text: 変数すべてmixed
   p160:
-  - node: p
-    children:
-    - node: text
-      content: 値をコンテナから取り出す
-  - node: p
-    children:
-    - node: text
-      content: 変数すべてmixed
-  - node: p
-    children:
-    - node: text
-      content: '型が不定のメソッド '
-    - node: br
-    - node: text
-      content: 呼び出し
+  - kind: heading
+    level: 1
+    text: 値をコンテナから取り出す
+  - kind: para
+    text: 変数すべてmixed
+  - kind: para
+    text: 型が不定のメソッド
+  - kind: para
+    text: 呼び出し
   p161:
-  - node: p
-    children:
-    - node: text
-      content: assertによるインライン型付け
+  - kind: heading
+    level: 1
+    text: assertによるインライン型付け
   p162:
-  - node: p
-    children:
-    - node: text
-      content: '@varによるインライン型付け'
+  - kind: heading
+    level: 1
+    text: '@varによるインライン型付け'
   p163:
-  - node: p
-    children:
-    - node: text
-      content: if/assert vs @var
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: if文/assertなどは単純な型宣言よりも詳細に型付けできる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 本番でassert式の内容を評価するかは設定で制御できる(マニュアル参照)
-        - node: li
-          children:
-          - node: text
-            content: 私は無効化しない方が安全だと思います
-    - node: li
-      children:
-      - node: text
-        content: '@varはarray-shapesなどを使って配列の構造も詳細に型を付けられる。 ただし単なるコメントなので実態に反する型も付けられてしまうので要注意'
+  - kind: heading
+    level: 1
+    text: if/assert vs @var
+  - kind: list
+    items:
+    - if文/assertなどは単純な型宣言よりも詳細に型付けできる
+    - 本番でassert式の内容を評価するかは設定で制御できる(マニュアル参照)
+    - 私は無効化しない方が安全だと思います
+    - '@varはarray-shapesなどを使って配列の構造も詳細に型を付けられる。'
+  - kind: para
+    text: ただし単なるコメントなので実態に反する型も付けられてしまうので要注意
   p164:
-  - node: p
-    children:
-    - node: text
-      content: if/assert vs @var の使い分け案
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 変数を生成/取り出した直後に引数としてそのまま渡す場合は、
-      - node: br
-      - node: text
-        content: '実装側の責任とする／型宣言による自動型チェックで保証されるので @var '
-    - node: li
-      children:
-      - node: text
-        content: DBのクエリ結果などは@varで済ませるか、hydratorライブラリを使って
-      - node: br
-      - node: text
-        content: '期待通りの構造の配列／クラスにマッピングする '
-    - node: li
-      children:
-      - node: text
-        content: 変数を生成/取り出した直後にそのオブジェクトのメソッド呼び出しをする
-      - node: br
-      - node: text
-        content: '場合は、 assert($var instaceof Foo) のようにチェックしておくことで '
-      - node: br
-      - node: text
-        content: エラーメッセージがわかりやすくなる
+  - kind: heading
+    level: 1
+    text: if/assert vs @var の使い分け案
+  - kind: list
+    items:
+    - 変数を生成/取り出した直後に引数としてそのまま渡す場合は、
+  - kind: para
+    text: 実装側の責任とする／型宣言による自動型チェックで保証されるので @var
+  - kind: list
+    items:
+    - DBのクエリ結果などは@varで済ませるか、hydratorライブラリを使って
+  - kind: para
+    text: 期待通りの構造の配列／クラスにマッピングする
+  - kind: list
+    items:
+    - 変数を生成/取り出した直後にそのオブジェクトのメソッド呼び出しをする
+  - kind: para
+    text: 場合は、 assert($var instaceof Foo) のようにチェックしておくことで
+  - kind: para
+    text: エラーメッセージがわかりやすくなる
   p165:
-  - node: p
-    children:
-    - node: text
-      content: 標準関数 vs 型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 失敗したらfalseを返す標準関数が多い
-    - node: li
-      children:
-      - node: text
-        content: '=le_get_contents(): string|false'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 存在しないファイルにアクセスするとWarningを発生
-        - node: li
-          children:
-          - node: text
-            content: Warningなどのエラーはset_error_handler()で振る舞いが変わる
-    - node: li
-      children:
-      - node: text
-        content: $content = =le_get_contents(); assert($content !== false);
-    - node: li
-      children:
-      - node: text
-        content: 'Safe PHP: 全ての標準関数の失敗を例外に変換してくれるライブラリ'
+  - kind: para
+    text: 標準関数 vs 型
+  - kind: list
+    items:
+    - 失敗したらfalseを返す標準関数が多い
+    - 'file_get_contents(): string|false'
+    - 存在しないファイルにアクセスするとWarningを発生
+    - Warningなどのエラーはset_error_handler()で振る舞いが変わる
+    - $content = file_get_contents(); assert($content !== false);
+    - 'Safe PHP: 全ての標準関数の失敗を例外に変換してくれるライブラリ'
   p166:
-  - node: p
-    children:
-    - node: text
-      content: 簡潔だが型安全ではないコード
+  - kind: heading
+    level: 1
+    text: 簡潔だが型安全ではないコード
   p167:
-  - node: p
-    children:
-    - node: text
-      content: 几帳面にチェックする実装
+  - kind: heading
+    level: 1
+    text: 几帳面にチェックする実装
   p168:
-  - node: p
-    children:
-    - node: text
-      content: 実行時／型安全なラッパー関数
+  - kind: heading
+    level: 1
+    text: 実行時／型安全なラッパー関数
   p169:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: heading
+    level: 1
+    text: まとめ
   p170:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanは オンラインで '
-    - node: br
-    - node: text
-      content: 型チェックできる
+  - kind: para
+    text: PHPStanは
+  - kind: para
+    text: オンラインで
+  - kind: para
+    text: 型チェックできる
   p171:
-  - node: p
-    children:
-    - node: text
-      content: https://phpstan.org/try
+  - kind: heading
+    level: 1
+    text: https://phpstan.org/try
   p172:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanは 完璧じゃない
+  - kind: para
+    text: PHPStanは
+  - kind: para
+    text: 完璧じゃない
   p173:
-  - node: p
-    children:
-    - node: text
-      content: 期待した型がつかない
-    - node: br
-    - node: text
-      content: 'と思ったら最小の '
-    - node: br
-    - node: text
-      content: コードをオンラインで
-    - node: br
-    - node: text
-      content: チェックしましょう
+  - kind: para
+    text: 期待した型がつかない
+  - kind: para
+    text: と思ったら最小の
+  - kind: para
+    text: コードをオンラインで
+  - kind: para
+    text: チェックしましょう
   p174:
-  - node: p
-    children:
-    - node: text
-      content: 'バグの場合もあるし 実装してPRを送る '
-    - node: br
-    - node: text
-      content: チャンスかもしれない
+  - kind: para
+    text: バグの場合もあるし
+  - kind: para
+    text: 実装してPRを送る
+  - kind: para
+    text: チャンスかもしれない
   p175:
-  - node: p
-    children:
-    - node: text
-      content: 今回スルーした型
+  - kind: heading
+    level: 1
+    text: 今回スルーした型
   p176:
-  - node: p
-    children:
-    - node: text
-      content: ジェネリクス
+  - kind: heading
+    level: 1
+    text: ジェネリクス
   p177:
-  - node: p
-    children:
-    - node: text
-      content: 条件付き戻り値型
+  - kind: heading
+    level: 1
+    text: 条件付き戻り値型
   p178:
-  - node: p
-    children:
-    - node: text
-      content: そもそも自明な型は付けたくない
+  - kind: heading
+    level: 1
+    text: そもそも自明な型は付けたくない
   p179:
-  - node: p
-    children:
-    - node: text
-      content: こういう型を付けられると嬉しい
+  - kind: heading
+    level: 1
+    text: こういう型を付けられると嬉しい
   p180:
-  - node: p
-    children:
-    - node: text
-      content: '現在のPHPStanの '
-    - node: br
-    - node: text
-      content: 仕様上このような型は
-    - node: br
-    - node: text
-      content: つけられない
+  - kind: para
+    text: 現在のPHPStanの
+  - kind: para
+    text: 仕様上このような型は
+  - kind: para
+    text: つけられない
   p181: []
   p182:
-  - node: p
-    children:
-    - node: text
-      content: 'そのうち '
-  - node: p
-    children:
-    - node: text
-      content: (誰かが実装完了すれば) 改善する見込みはある
+  - kind: para
+    text: そのうち
+  - kind: para
+    text: (誰かが実装完了すれば)
+  - kind: para
+    text: 改善する見込みはある
   p183:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanの実装は '
-    - node: br
-    - node: text
-      content: '超簡単だとは言えないが 仕事でPHPやってたら 手を出せないほど難解と '
-    - node: br
-    - node: text
-      content: いうほどではない
+  - kind: para
+    text: PHPStanの実装は
+  - kind: para
+    text: 超簡単だとは言えないが
+  - kind: para
+    text: 仕事でPHPやってたら
+  - kind: para
+    text: 手を出せないほど難解と
+  - kind: para
+    text: いうほどではない
   p184:
-  - node: p
-    children:
-    - node: text
-      content: みなさんもチャレンジ
-    - node: br
-    - node: text
-      content: してみましょう
+  - kind: para
+    text: みなさんもチャレンジ
+  - kind: para
+    text: してみましょう
   p185:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanで '
-    - node: br
-    - node: text
-      content: 楽しい型付けライフを
+  - kind: para
+    text: PHPStanで
+  - kind: para
+    text: 楽しい型付けライフを
 size:
   max_width: 1920
   max_height: 1080
