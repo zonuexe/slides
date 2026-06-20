@@ -65,6 +65,23 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/add_new_slides.py -
 
 を流す。**(1) のサムネイル生成が落ちると以降の手順まで走らない** ので、その場合は §3 でバラバラに再現する。
 
+なお `pdf_text_extractor.py` は同一ブロック内の折り返しは自動で結合するが、**ブロックを跨いだ段落の泣き別れ**(大きな装飾文字や境界での単語分断)は残る。気になる場合は §2.5 で補正する。
+
+## 2.5 段落の泣き別れを補正する (任意・新規 slug のみ)
+
+ブロック跨ぎの泣き別れを直すには **paragraph-merge スキル**(`.claude/skills/paragraph-merge/SKILL.md`)を、今回の slug **1 デッキだけ**に適用する。1 デッキなら候補 run は数十なので、サブエージェントに分けず、その場で判断 → apply で十分。
+
+```bash
+# 1. 結合候補を棚卸し
+UV_CACHE_DIR=.uv-cache uv run --project script python script/merge_paragraphs.py inventory pdf/<slug>.yaml --out /tmp/para_runs.json
+# 2. /tmp/para_runs.json を読み、結合可否を判断して /tmp/para_decisions.json を書く
+#    (結合する/しないの基準は paragraph-merge SKILL の §2 に従う)
+# 3. 決定的に適用 (ページ単位の不変条件で内容バイト等価を保証)
+UV_CACHE_DIR=.uv-cache uv run --project script python script/merge_paragraphs.py apply --decisions /tmp/para_decisions.json pdf/<slug>.yaml
+```
+
+判断は**この手順を実行しているエージェント自身**が行う(コードから LLM API は呼ばない)。`apply` は空白除去テキストが変化するページを書き込まないので、誤判断や並べ替えは弾かれる。
+
 ## 3. 自動化が落ちたときのフォールバック
 
 代表的な詰まりどころは ImageMagick の PDF ラスタライズ。`magick convert` は内部で Ghostscript (`gs`) を呼ぶため、`gs` が入っていない macOS では `FailedToExecuteCommand 'gs'` で死ぬ。Ghostscript を入れるなら `brew install ghostscript` で済むが、入れたくない場合 (CI / 一時環境 / 依存を増やしたくない) は次の手順で個別に作る。**ここで作るファイル名・サイズ・形式は §2 のスクリプト出力と同等にする** こと。後続の build はファイルの存在しか見ない。
