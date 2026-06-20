@@ -17,6 +17,7 @@
 - `npm run build` emits the static site to `docs/.vitepress/dist`, and `npm run preview` serves that build for spot checks.
 - `make fetch-static` runs `script/fetch_static_slides.py` against a running site (defaults to `http://localhost:5173`) to scrape pages into the specified output dir.
 - `UV_CACHE_DIR=.uv-cache uv run python script/add_new_slides.py` processes staged PDFs, generates thumbnails, and writes `slides/${slug}.yaml`; append `--pdf pdf/new-talk.pdf` to target a specific file.
+- `ANTHROPIC_API_KEY=… uv run --project script python script/merge_paragraphs_llm.py` runs an optional LLM pass that joins cross-block "泣き別れ" paragraphs in `pdf/*.yaml` left by the extractor's within-block merge. The LLM only decides which consecutive `para` fragments to merge; joining is deterministic and a per-page whitespace-stripped invariant guarantees no text changes. Decisions cache to `script/.merge_cache.json` (gitignored) so re-runs are cheap and idempotent; `--model claude-haiku-4-5` is far cheaper for this mechanical task, and `--dry-run` previews.
 - `make script-format` and `make script-lint` invoke Ruff through `uvx` to keep Python helpers consistent.
 - End-to-end PDF publishing steps are documented in `PDF_PUBLISH_SKILL.md`.
 
