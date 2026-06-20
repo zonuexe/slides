@@ -21,35 +21,38 @@ logger = logging.getLogger(__name__)
 
 
 def load_slides_config():
-    """slides.yamlを読み込む"""
-    slides_file = Path("../slides.yaml")
-    if not slides_file.exists():
-        logger.error("slides.yamlが見つかりません")
+    """slides/*.yaml を読み込み、{slug: data} の辞書を返す"""
+    slides_dir = Path("../slides")
+    if not slides_dir.is_dir():
+        logger.error("slides/ ディレクトリが見つかりません")
         return None
 
-    with open(slides_file, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
+    config = {}
+    for path in sorted(slides_dir.glob("*.yaml")):
+        with open(path, "r", encoding="utf-8") as f:
+            config[path.stem] = yaml.safe_load(f) or {}
+    return config
 
 
 def main():
     """メイン処理"""
-    # slides.yamlを読み込み
+    # slides/ を読み込み
     slides_config = load_slides_config()
     if not slides_config:
         return
 
-    # PDFファイルのリストを取得
+    # PDFファイルのリストを取得 (file/meta は slug または stem から導出)
     pdf_files = []
     for slide_id, slide_info in slides_config.items():
-        if "file" in slide_info:
-            pdf_path = slide_info["file"]
-            if pdf_path.startswith("pdf/"):
-                pdf_path = f"../{pdf_path}"
+        stem = slide_info.get("stem") or slide_id
+        pdf_path = slide_info.get("file", f"pdf/{stem}.pdf")
+        if pdf_path.startswith("pdf/"):
+            pdf_path = f"../{pdf_path}"
 
-            if os.path.exists(pdf_path):
-                pdf_files.append((slide_id, pdf_path, slide_info))
-            else:
-                logger.warning(f"PDFファイルが見つかりません: {pdf_path}")
+        if os.path.exists(pdf_path):
+            pdf_files.append((slide_id, pdf_path, slide_info))
+        else:
+            logger.warning(f"PDFファイルが見つかりません: {pdf_path}")
 
     logger.info(f"処理対象のPDFファイル数: {len(pdf_files)}")
 
@@ -58,8 +61,9 @@ def main():
         logger.info(f"[{i}/{len(pdf_files)}] 処理中: {slide_id}")
 
         try:
-            # メタファイルのパスを取得
-            meta_file = slide_info.get("meta", f"../pdf/{slide_id}.yaml")
+            # メタファイルのパスを取得 (slug または stem から導出)
+            stem = slide_info.get("stem") or slide_id
+            meta_file = slide_info.get("meta", f"pdf/{stem}.yaml")
             if not meta_file.startswith("../"):
                 meta_file = f"../{meta_file}"
 

@@ -1,6 +1,6 @@
 ---
 name: pdf-publish
-description: tadsan の slides リポジトリ (VitePress) で新しい発表登壇 PDF を公開する標準手順。元PDFを `pdf/YYYYMMDD_slug.pdf` に配置し、サムネイル PNG と本文/リンクメタ YAML を生成し、`slides.yaml` 先頭に新規エントリを追加して、VitePress ビルドが通る状態に持っていく。「スライドを公開」「発表資料を追加」「PDF を publish」「slides.yaml に新しい登壇を載せる」「新しい資料をサイトに反映」のような依頼が来たら、たとえ明示的にスキル名が呼ばれていなくても、自動化スクリプトと手動フォールバック (Ghostscript 不在時の pypdfium2 ルートを含む) の両方を理解しているこの SKILL を必ず参照すること。
+description: tadsan の slides リポジトリ (VitePress) で新しい発表登壇 PDF を公開する標準手順。元PDFを `pdf/YYYYMMDD_slug.pdf` に配置し、サムネイル PNG と本文/リンクメタ YAML を生成し、`slides/<slug>.yaml` を新規作成して、VitePress ビルドが通る状態に持っていく。「スライドを公開」「発表資料を追加」「PDF を publish」「スライド一覧に新しい登壇を載せる」「新しい資料をサイトに反映」のような依頼が来たら、たとえ明示的にスキル名が呼ばれていなくても、自動化スクリプトと手動フォールバック (Ghostscript 不在時の pypdfium2 ルートを含む) の両方を理解しているこの SKILL を必ず参照すること。
 ---
 
 # PDF Publish
@@ -13,16 +13,16 @@ master ブランチに次の 4 点が揃った状態にする:
 
 - `pdf/<slug>.pdf` — リネーム済みの本体
 - `pdf/<slug>.png` — 1200x630 のサムネイル
-- `pdf/<slug>.yaml` — `text` / `links` / `size` を含むメタ
-- `slides.yaml` の先頭に追加された新規エントリ
+- `pdf/<slug>.yaml` — `text` / `links` / `size` を含むメタ (機械所有)
+- `slides/<slug>.yaml` — 一覧用の手書きメタ (1スライド1ファイル)
 
-ここまで揃えば一覧ページ、詳細ページ、OGP がすべて成立する。
+ここまで揃えば一覧ページ、詳細ページ、OGP がすべて成立する。`slides/<slug>.yaml` の `file`/`meta`/`image` は slug から自動導出されるので書かない。一覧の並び順は描画側が日付降順でソートするので、ファイルの追加位置・順序は気にしなくてよい。
 
 ## 1. slug を決めて PDF を配置する
 
 slug の方針:
 
-- 先頭は発表日 `YYYYMMDD` (slug 日付と `slides.yaml` の `date` がずれると並び順と検索結果が崩れる)
+- 先頭は発表日 `YYYYMMDD` (slug 日付と `slides/<slug>.yaml` の `date` がずれると並び順と検索結果が崩れる)
 - 後半は内容を端的に表す英数 kebab-case
 - 英語副題の丸写しよりも、話題が伝わる名前を優先する
 
@@ -53,7 +53,7 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/add_new_slides.py -
 
 - `pdf/<slug>.png`
 - `pdf/<slug>.yaml`
-- `slides.yaml` の先頭に最低限の新規エントリ (title / date / file / meta / download / image / 検出された hashtags)
+- `slides/<slug>.yaml` に最低限のメタ (title / date / download / 検出された hashtags)。`file`/`meta`/`image` は書かない (slug から導出)
 
 スクリプトは内部で順に:
 
@@ -61,7 +61,7 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/add_new_slides.py -
 2. `zopflipng` があれば PNG を再圧縮
 3. `pdf_text_extractor.py` で本文を YAML 化
 4. `pdf_link_extractor.py` でハイパーリンクを既存 YAML にマージ
-5. `slides.yaml` の先頭にエントリを差し込む
+5. `slides/<slug>.yaml` を書き出す
 
 を流す。**(1) のサムネイル生成が落ちると以降の手順まで走らない** ので、その場合は §3 でバラバラに再現する。
 
@@ -105,42 +105,39 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/pdf_link_extractor.
 
 仕上がり YAML には少なくとも `text` (各ページ p1/p2... の段落配列)、`links`、`size` が入る。**`text` が空のまま build が通ると詳細ページが描画されない**ので必ず目視する。
 
-### 3-3. slides.yaml は手で追記する
+### 3-3. slides/<slug>.yaml は手で書く
 
-スクリプトが落ちると slides.yaml の最終更新ステップも走らないので、自分で先頭に書き足す。最低限は §4 のテンプレートをそのまま使う。
+スクリプトが落ちると `slides/<slug>.yaml` の書き出しステップも走らないので、自分で新規作成する。最低限は §4 のテンプレートをそのまま使う。
 
-## 4. `slides.yaml` を整える
+## 4. `slides/<slug>.yaml` を整える
 
-スクリプトが自動で入れるのは title / date / file / meta / download / image / (検出された) hashtags まで。`events` 以下は人間が補う。最低限のテンプレート:
+スクリプトが自動で入れるのは title / date / download / (検出された) hashtags まで。`events` 以下は人間が補う。1スライド1ファイルなので、ファイル名 `slides/<slug>.yaml` がそのまま slug になる。最低限のテンプレート:
 
 ```yaml
-<slug>:
-  title: 発表タイトル
-  date: 'YYYY-MM-DD'
-  file: pdf/<slug>.pdf
-  meta: pdf/<slug>.yaml
-  download: YYYYMMDD_発表タイトル.pdf
-  image: pdf/<slug>.png
-  hashtags:
-  - イベントハッシュタグ
-  events:
-  - name: イベント名
-    url: https://example.com/
-    location: 都道府県市区町村
-    place: 会場名
-    presented_at: 'YYYY-MM-DD'
-    type: レギュラーセッション
-    talk_duration: 30
-  tags:
-  - lang:PHP
+title: 発表タイトル
+date: 'YYYY-MM-DD'
+download: YYYYMMDD_発表タイトル.pdf
+hashtags:
+- イベントハッシュタグ
+events:
+- name: イベント名
+  url: https://example.com/
+  location: 都道府県市区町村
+  place: 会場名
+  presented_at: 'YYYY-MM-DD'
+  type: レギュラーセッション
+  talk_duration: 30
+tags:
+- lang:PHP
 ```
 
 ポイント:
 
+- **`file`/`meta`/`image` は書かない**。ローダーが slug から `pdf/<slug>.{pdf,yaml,png}` を導出する。物理 PDF 名が slug と違う場合 (旧 `knNNNN_` ファイル等) だけ `stem: kn1259_<slug>` の 1 行で上書きする
 - **`download` は静的サイトから DL されるときのファイル名で、日本語 OK**。リポジトリ慣例は `YYYYMMDD_日本語タイトル.pdf`
 - 1 ページ目の `#hashtag YYYY-MM-DD 都道府県市区町村 会場名` 行から `events` をほぼ機械的に埋められる
 - `type` (`レギュラーセッション` / `ライトニングトーク` / `LT` 等) と `talk_duration` はスライドだけからは確定しない。確証がなければ推測値を入れた上で、ユーザーに「要確認」と伝える
-- 同じイベントの過去エントリを `grep <イベントhashtag> slides.yaml` で引くと、フィールドの埋め方が真似できる
+- 同じイベントの過去エントリを `grep -rl <イベントhashtag> slides/` で引くと、フィールドの埋め方が真似できる
 - 必要に応じて `related_articles` (関連記事 url/title/desc) を足す
 
 ## 5. 動作確認
@@ -148,7 +145,7 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/pdf_link_extractor.
 YAML がパースできるか:
 
 ```bash
-node -e "import('./lib/slides.js').then(m => m.loadSlides()).then(s => console.log(Object.keys(s)[0]))"
+node -e "import('./lib/slides.js').then(m => m.loadSlides()).then(s => console.log(s.length, s.find(x => x.slug === '<slug>')))"
 ```
 
 初回は `node_modules` がないので、先に `npm install` する。`package-lock.json` はリポジトリで管理されているので、更新があれば一緒にコミットする。
@@ -169,15 +166,15 @@ git status -sb
 
 期待される変化:
 
-- 新規: `pdf/<slug>.pdf` / `pdf/<slug>.png` / `pdf/<slug>.yaml`
-- 変更: `slides.yaml` (および `npm install` を回したなら `package-lock.json`)
+- 新規: `pdf/<slug>.pdf` / `pdf/<slug>.png` / `pdf/<slug>.yaml` / `slides/<slug>.yaml`
+- 変更: (`npm install` を回したなら `package-lock.json`)
 - 出てきても無視: `.uv-cache/` (uv キャッシュ、gitignore 済)
 
 ユーザーから明示的に依頼されない限り、勝手にコミットしない。
 
 ## 7. 反映ブランチ
 
-- `master`: PDF / PNG / YAML / `slides.yaml` / 実装変更すべて
+- `master`: PDF / PNG / `pdf/<slug>.yaml` / `slides/<slug>.yaml` / 実装変更すべて
 - `gh-pages`: 公開ビルド出力 (`docs/.vitepress/dist`)。通常は CI が反映するので触らない
 
 ## 8. よくある詰まりどころ
@@ -185,6 +182,7 @@ git status -sb
 - **`gs not found`**: §3 のフォールバック、または `brew install ghostscript`。CI など環境を汚せない場合は pypdfium2 ルート一択
 - **PDF を手動 mv した後、git の古いパスが staged で残る**: `git status` で確認、必要なら `git restore --staged <old>` で剥がす
 - **`pdf/<slug>.yaml` が空のまま build が通る**: 詳細ページが描画されない。`text:` セクションがあるか必ず目視
-- **slug の `YYYYMMDD` と `slides.yaml` の `date` がずれている**: 並び順と検索が崩れる
+- **slug の `YYYYMMDD` と `slides/<slug>.yaml` の `date` がずれている**: 並び順と検索が崩れる
+- **`slides/<slug>.yaml` の `file`/`meta`/`image` を書いてしまう**: 不要。slug から導出されるので、物理名が違うとき以外は書かない (違うときは `stem:` 1 行)
 - **`events` 未記入**: 致命ではないが、詳細ページの description がサイト既定値にフォールバックして OGP が弱くなる
 - **`download` のファイル名がしょぼい**: ブラウザでの DL 時にそのまま使われる。タイトル日本語を含めて読み手にとってわかりやすい名前にする

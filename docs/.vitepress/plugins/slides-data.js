@@ -1,5 +1,5 @@
 import { resolve, dirname } from "node:path";
-import { writeFile, mkdir } from "node:fs/promises";
+import { writeFile, mkdir, readdir } from "node:fs/promises";
 import { generateSlidesData } from "../../../lib/slides-data.js";
 import { loadSiteConfig } from "../../../lib/site-config.js";
 
@@ -8,7 +8,7 @@ const resolvedVirtualModuleId = `\0${virtualModuleId}`;
 
 export function slidesDataPlugin() {
   const root = resolve(process.cwd());
-  const slidesYamlPath = resolve(root, "slides.yaml");
+  const slidesDir = resolve(root, "slides");
   const siteYamlPath = resolve(root, "_site.yaml");
   const publicSlidesScript = resolve(root, "docs/public/index.js");
 
@@ -25,7 +25,17 @@ export function slidesDataPlugin() {
         return null;
       }
 
-      this.addWatchFile(slidesYamlPath);
+      this.addWatchFile(slidesDir);
+      try {
+        const slideFiles = await readdir(slidesDir);
+        for (const name of slideFiles) {
+          if (name.endsWith(".yaml")) {
+            this.addWatchFile(resolve(slidesDir, name));
+          }
+        }
+      } catch {
+        // slides/ が無い場合は generateSlidesData 側で空配列にフォールバックする
+      }
       this.addWatchFile(siteYamlPath);
 
       const { enrichedSlides, slidesForClient } = await generateSlidesData({ includePdfMeta: true });

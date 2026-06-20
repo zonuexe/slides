@@ -24,7 +24,7 @@ LINK_EXTRACTOR_CMD = [
 
 ROOT = Path(__file__).resolve().parents[1]
 PDF_DIR = ROOT / "pdf"
-SLIDES_YAML = ROOT / "slides.yaml"
+SLIDES_DIR = ROOT / "slides"
 HASHTAG_PATTERN = re.compile(r"#([\w\-]+)")
 
 
@@ -37,7 +37,7 @@ def detect_convert_command() -> List[str]:
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate assets (PNG + YAML) for newly added PDFs and update slides.yaml."
+        description="Generate assets (PNG + YAML) for newly added PDFs and write slides/<slug>.yaml."
     )
     parser.add_argument(
         "--pdf", action="append", default=[], help="Specific PDF(s) to process."
@@ -239,25 +239,14 @@ def derive_links(meta: Dict[str, Any]) -> List[Dict[str, str]]:
     return list(collected.values())
 
 
-def update_slides_yaml(entries: List[Dict[str, Any]]) -> None:
-    with SLIDES_YAML.open("r", encoding="utf-8") as handle:
-        slides_data = yaml.safe_load(handle) or {}
-    if not isinstance(slides_data, dict):
-        raise SystemExit("slides.yaml is not a mapping.")
-
-    new_items = []
+def write_slide_files(entries: List[Dict[str, Any]]) -> None:
+    SLIDES_DIR.mkdir(parents=True, exist_ok=True)
     for entry in entries:
-        slug = entry.pop("_slug")
-        data = entry
-        new_items.append((slug, data))
-
-    existing_items = [(slug, data) for slug, data in slides_data.items()]
-    for slug, _ in new_items:
-        existing_items = [(s, d) for s, d in existing_items if s != slug]
-
-    ordered = dict(new_items + existing_items)
-    with SLIDES_YAML.open("w", encoding="utf-8") as handle:
-        yaml.dump(ordered, handle, allow_unicode=True, sort_keys=False)
+        data = dict(entry)
+        slug = data.pop("_slug")
+        slide_path = SLIDES_DIR / f"{slug}.yaml"
+        with slide_path.open("w", encoding="utf-8") as handle:
+            yaml.dump(data, handle, allow_unicode=True, sort_keys=False)
 
 
 def main() -> int:
@@ -282,7 +271,7 @@ def main() -> int:
             print(f"Skip missing PDF: {pdf_path}", file=sys.stderr)
             continue
         try:
-            pdf_rel = pdf_path.relative_to(ROOT)
+            pdf_path.relative_to(ROOT)
         except ValueError:
             print(f"Skip PDF outside repository: {pdf_path}", file=sys.stderr)
             continue
@@ -318,28 +307,22 @@ def main() -> int:
             else ""
         )
 
-        try:
-            meta_rel = meta_path.relative_to(ROOT)
-        except ValueError:
-            meta_rel = meta_path
-        image_rel = pdf_rel.with_suffix(".png")
+        # file / meta / image は slug から導出されるので保存しない。
+        # 新規 PDF の stem は slug と一致するため stem 上書きも不要。
         entry: Dict[str, Any] = {
             "_slug": slug,
             "title": title,
             "date": date_formatted,
-            "file": str(pdf_rel).replace("\\", "/"),
-            "meta": str(meta_rel).replace("\\", "/"),
             "download": pdf_path.name,
-            "image": str(image_rel).replace("\\", "/"),
         }
         if hashtags:
             entry["hashtags"] = hashtags
         processed_entries.append(entry)
 
     if processed_entries:
-        update_slides_yaml(processed_entries)
+        write_slide_files(processed_entries)
         print(
-            f"Updated slides.yaml with {len(processed_entries)} entr{'y' if len(processed_entries) == 1 else 'ies'}."
+            f"Wrote {len(processed_entries)} slide file(s) under slides/."
         )
     return 0
 

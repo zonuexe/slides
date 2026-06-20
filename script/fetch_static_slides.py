@@ -9,18 +9,14 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-import yaml
 
-
-def load_slugs(slides_yaml: Path) -> list[str]:
-    try:
-        with slides_yaml.open("r", encoding="utf-8") as handle:
-            data = yaml.safe_load(handle)
-    except FileNotFoundError as exc:
-        raise SystemExit(f"slides.yaml not found: {slides_yaml}") from exc
-    if not isinstance(data, dict):
-        raise SystemExit(f"Unexpected slides.yaml format: {type(data)}")
-    return sorted(str(slug) for slug in data.keys())
+def load_slugs(slides_dir: Path) -> list[str]:
+    if not slides_dir.is_dir():
+        raise SystemExit(f"slides directory not found: {slides_dir}")
+    slugs = [path.stem for path in slides_dir.glob("*.yaml")]
+    if not slugs:
+        raise SystemExit(f"No slide files found under: {slides_dir}")
+    return sorted(slugs)
 
 
 def resolve_output_path(url_path: str) -> Path:
@@ -65,9 +61,9 @@ def main() -> int:
         help="Base URL of the running slides site (default: %(default)s)",
     )
     parser.add_argument(
-        "--slides-yaml",
-        default="slides.yaml",
-        help="Path to slides.yaml (default: %(default)s)",
+        "--slides-dir",
+        default="slides",
+        help="Path to the slides/ directory (default: %(default)s)",
     )
     parser.add_argument(
         "--output-dir",
@@ -77,10 +73,10 @@ def main() -> int:
     args = parser.parse_args()
 
     base_url = args.base_url.rstrip("/")
-    slides_yaml = Path(args.slides_yaml)
+    slides_dir = Path(args.slides_dir)
     output_dir = Path(args.output_dir)
 
-    slugs = load_slugs(slides_yaml)
+    slugs = load_slugs(slides_dir)
 
     targets: list[tuple[str, str | None]] = []
     targets.append(("/slides/", None))
