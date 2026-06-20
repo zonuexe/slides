@@ -30,15 +30,11 @@ text:
     text: 先に
   p7:
   - kind: para
-    text: 今回話す内容は平成最後のLT大会で
-  - kind: para
-    text: 発表した内容に由来
+    text: 今回話す内容は平成最後のLT大会で発表した内容に由来
   p8: []
   p9:
   - kind: para
-    text: 今回話す実装は既にライブラリ化
-  - kind: para
-    text: しました
+    text: 今回話す実装は既にライブラリ化しました
   p10: []
   p11:
   - kind: para
@@ -100,9 +96,7 @@ text:
     text: 問題です
   p28:
   - kind: para
-    text: 入力した文字列を
-  - kind: para
-    text: 1文字ごとに改行区切りで出力せよ
+    text: 入力した文字列を1文字ごとに改行区切りで出力せよ
   p29:
   - kind: para
     text: 簡単じゃん
@@ -149,9 +143,7 @@ text:
     text: 1バイトを取り出す
   p42:
   - kind: para
-    text: 逆に言うとstringにはどんなバイナ
-  - kind: para
-    text: リも格納できる
+    text: 逆に言うとstringにはどんなバイナリも格納できる
   p43:
   - kind: heading
     level: 1
@@ -165,22 +157,16 @@ text:
   p45: []
   p46:
   - kind: para
-    text: mb関数はencodingを常に指定しないと(環境依存せず)
-  - kind: para
-    text: 確実に処理できない
+    text: mb関数はencodingを常に指定しないと(環境依存せず)確実に処理できない
   - kind: heading
     level: 1
     text: 🤔
   p47:
   - kind: para
-    text: PHP5.6以降ではdefault_charsetのデフォルト値が"UTF-8"に、mbstring.internal_encodingが
-  - kind: para
-    text: 非推奨になったのは嬉しい
+    text: PHP5.6以降ではdefault_charsetのデフォルト値が"UTF-8"に、mbstring.internal_encodingが非推奨になったのは嬉しい
   p48:
   - kind: para
-    text: それはencodingを明示的に指定しなくても安全に処理
-  - kind: para
-    text: できることを意味しない
+    text: それはencodingを明示的に指定しなくても安全に処理できることを意味しない
   - kind: heading
     level: 1
     text: 🙃
@@ -197,9 +183,7 @@ text:
     text: 1〜4バイト
   p51:
   - kind: para
-    text: まだ日本語文字を「2バイト文字」と
-  - kind: para
-    text: 呼んだりしませんね？
+    text: まだ日本語文字を「2バイト文字」と呼んだりしませんね？
   p52:
   - kind: para
     text: Unicodeより
@@ -220,9 +204,7 @@ text:
     text: ｶﾞ (3バイト+3バイト)
   p56:
   - kind: para
-    text: Unicode(UTF-8)で
-  - kind: para
-    text: 表現すると半角カナは単純にバイト数が倍になる
+    text: Unicode(UTF-8)で表現すると半角カナは単純にバイト数が倍になる
   p57:
   - kind: para
     text: たいへんですね
@@ -231,9 +213,7 @@ text:
     text: ☺
   p58:
   - kind: para
-    text: その上でUnicode時代の今日
-  - kind: para
-    text: 何を「文字」と呼ぶかを考える
+    text: その上でUnicode時代の今日何を「文字」と呼ぶかを考える
   p59:
   - kind: para
     text: 1. バイトごと2. コードポイントごと3. 書記素クラスタごと
@@ -277,11 +257,7 @@ text:
   p73: []
   p74:
   - kind: para
-    text: PHP(コア言語)はUnicodeを
-  - kind: para
-    text: 知らないが､PCRE関数preg_match()はUnicodeを
-  - kind: para
-    text: 知ってる ( /u 修飾子)
+    text: PHP(コア言語)はUnicodeを知らないが､PCRE関数preg_match()はUnicodeを知ってる ( /u 修飾子)
   p75: []
   p76:
   - kind: para
@@ -306,9 +282,7 @@ text:
     text: 書記素
   p81:
   - kind: para
-    text: ところでUnicodeに
-  - kind: para
-    text: は「ガ」の複数の表現方法が存在する
+    text: ところでUnicodeには「ガ」の複数の表現方法が存在する
   p82:
   - kind: para
     text: ガ (U+30AC)
@@ -337,13 +311,7 @@ text:
     text: Unicode正規化
   p85:
   - kind: para
-    text: '余談: ファイル名に濁点のついた文字をGitで管理するとMacと'
-  - kind: para
-    text: そのほかのファイルシステムで諸々の厄介な事態が起こるので禁忌。これはAppleのファイルシ
-  - kind: para
-    text: ステムが伝統的にファイル名を
-  - kind: para
-    text: Unicode正規化することが問題
+    text: '余談: ファイル名に濁点のついた文字をGitで管理するとMacとそのほかのファイルシステムで諸々の厄介な事態が起こるので禁忌。これはAppleのファイルシステムが伝統的にファイル名をUnicode正規化することが問題'
   p86:
   - kind: para
     text: (本筋から逸れるので各自ggr)
@@ -477,9 +445,7 @@ text:
     level: 1
     text: ICU(intl)に依存
   - kind: para
-    text: (常に正しく計算するにはシステムに最新のUnicode定義
-  - kind: para
-    text: が実装されたICUが必要)
+    text: (常に正しく計算するにはシステムに最新のUnicode定義が実装されたICUが必要)
   p109:
   - kind: para
     text: 今回の話題はただのトリビアか？
@@ -488,11 +454,7 @@ text:
     text: 'No'
   p111:
   - kind: para
-    text: Webアプリとしては「文字数」を制限し
-  - kind: para
-    text: なければいけない
-  - kind: para
-    text: 場合が多々ある
+    text: Webアプリとしては「文字数」を制限しなければいけない場合が多々ある
   p112:
   - kind: para
     text: サービス都合の制限ストレージ(DB)都合制限
@@ -501,14 +463,10 @@ text:
     text: 自分がどういう理由で文字数を制限しようとしているのか考えよう
   p114:
   - kind: para
-    text: 例:MySQLのインデックス長のデフォルト設定が767バイトだからutf8mb4のカラムの文字数を
-  - kind: para
-    text: VARCHAR(191)以下にしたい
+    text: 例:MySQLのインデックス長のデフォルト設定が767バイトだからutf8mb4のカラムの文字数をVARCHAR(191)以下にしたい
   p115:
   - kind: para
-    text: 例:長いユーザー名は画面に収まりきらないから
-  - kind: para
-    text: 30文字以下にしたい
+    text: 例:長いユーザー名は画面に収まりきらないから30文字以下にしたい
   p116:
   - kind: para
     text: たいていはmb_strlen($s, 'UTF-8')
@@ -522,23 +480,13 @@ text:
     level: 1
     text: 全然違う概念なので厄介
   - kind: para
-    text: (なので、今回紹介したeach_grapheme()を使って計算して
-  - kind: para
-    text: もうまくいかない)
+    text: (なので、今回紹介したeach_grapheme()を使って計算してもうまくいかない)
   p118:
   - kind: para
-    text: オチはないけど各位よく考えて「文字」
-  - kind: para
-    text: 単位とつきあって
-  - kind: para
-    text: いきましょう
+    text: オチはないけど各位よく考えて「文字」単位とつきあっていきましょう
   p119:
   - kind: para
-    text: ちなみにTwitterの140
-  - kind: para
-    text: 文字制限がDBの制約
-  - kind: para
-    text: ではないことは明白
+    text: ちなみにTwitterの140文字制限がDBの制約ではないことは明白
 size:
   max_width: 1024
   max_height: 768

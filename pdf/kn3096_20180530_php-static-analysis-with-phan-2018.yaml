@@ -44,9 +44,7 @@ text:
     text: 今回は最近のPhanについて軽くまとめます
   p15:
   - kind: para
-    text: 最近のPhanの
-  - kind: para
-    text: 動向
+    text: 最近のPhanの動向
   p16:
   - kind: para
     text: 相変らず恐しいペースで開発が進んでる
@@ -66,42 +64,26 @@ text:
   p22: []
   p23:
   - kind: para
-    text: 実行して調べるのが
-  - kind: para
-    text: 動的解析
+    text: 実行して調べるのが動的解析
   p24:
   - kind: para
-    text: 実行せず調べるのが
-  - kind: para
-    text: 静的解析
+    text: 実行せず調べるのが静的解析
   p25:
   - kind: para
-    text: Xdebug, phpdbgなどのデバッガは
-  - kind: para
-    text: 動的解析
+    text: Xdebug, phpdbgなどのデバッガは動的解析
   p26:
   - kind: para
-    text: PHPUnitなどの
-  - kind: para
-    text: テスティングフレームワークも
-  - kind: para
-    text: 動的解析
+    text: PHPUnitなどのテスティングフレームワークも動的解析
   p27:
   - kind: para
-    text: php -l は
-  - kind: para
-    text: 静的解析
+    text: php -l は静的解析
   p28: []
   p29:
   - kind: para
-    text: PHPStanは実行時情報を使って
-  - kind: para
-    text: 静的解析する
+    text: PHPStanは実行時情報を使って静的解析する
   p30:
   - kind: para
-    text: Phanはコードを実行せず
-  - kind: para
-    text: 静的解析する
+    text: Phanはコードを実行せず静的解析する
   p31:
   - kind: para
     text: 得意なことがちょっと異なる
@@ -110,54 +92,36 @@ text:
     text: 導入しやすさもちょっと異なる
   p33:
   - kind: para
-    text: '@tadsanはPHPStanもPhanも'
-  - kind: para
-    text: 両方使ってます
+    text: '@tadsanはPHPStanもPhanも両方使ってます'
   p34:
   - kind: para
-    text: 詳しいことは
-  - kind: para
-    text: 直接きいて
+    text: 詳しいことは直接きいて
   p35:
   - kind: para
     text: (ここまで5分)
   p36:
   - kind: para
-    text: Phanを使って
-  - kind: para
-    text: できること
+    text: Phanを使ってできること
   p37:
   - kind: para
     text: 説明
   p38:
   - kind: para
-    text: “Phan is a static analyzer for PHP that
-  - kind: para
-    text: prefers to minimize false-positives.Phan attempts to prove incorrectness
-      rather
-  - kind: para
-    text: than correctness.”
+    text: “Phan is a static analyzer for PHP that prefers to minimize false-positives.Phan
+      attempts to prove incorrectness rather than correctness.”
   - kind: para
     text: https://github.com/phan/phan
   p39:
   - kind: para
-    text: “Phanは偽陽性を最小化することを
-  - kind: para
-    text: 好むPHP静的解析器です。Phanは正しいと証明することよりも誤りであることを証明しようとします。”
+    text: “Phanは偽陽性を最小化することを好むPHP静的解析器です。Phanは正しいと証明することよりも誤りであることを証明しようとします。”
   - kind: para
     text: https://github.com/phan/phan
   p40:
   - kind: para
-    text: Phanでエラーが検出されなければ
-  - kind: para
-    text: 正しく動く…わけではない
+    text: Phanでエラーが検出されなければ正しく動く…わけではない
   p41:
   - kind: para
-    text: Phanでエラーが
-  - kind: para
-    text: 検出されるからコードは動かない…
-  - kind: para
-    text: わけではない
+    text: Phanでエラーが検出されるからコードは動かない…わけではない
   p42:
   - kind: para
     text: 「動かないかもしれない」
@@ -173,9 +137,7 @@ text:
     text: ざっくり
   p45:
   - kind: para
-    text: 要はPhpStormを使ってできるよう
-  - kind: para
-    text: な検査ができる
+    text: 要はPhpStormを使ってできるような検査ができる
   p46:
   - kind: heading
     level: 1
@@ -291,24 +253,19 @@ text:
     text: やるなら composer global require
   p57:
   - kind: para
-    text: どうやって
-  - kind: para
-    text: 動かすの
+    text: どうやって動かすの
   p58:
   - kind: heading
     level: 1
     text: Composerの初期設定
   - kind: para
-    text: プロジェクトルートがある場所でphan --init を実行すると.phan/config.php が自動生成される
-  - kind: para
-    text: phan -o phan.log のように実行する
+    text: プロジェクトルートがある場所でphan --init を実行すると.phan/config.php が自動生成されるphan -o phan.log
+      のように実行する
   - kind: para
     text: とphan.logに行区切りのレポートが表示される
   p59:
   - kind: para
-    text: Phan以外の
-  - kind: para
-    text: 最近の動向
+    text: Phan以外の最近の動向
   p60:
   - kind: para
     text: PHPStan

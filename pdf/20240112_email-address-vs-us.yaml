@@ -49,16 +49,10 @@ text:
     level: 1
     text: おことわり
   - kind: para
-    text: 発表者は現時点において現職のID設計判断や実装に
-  - kind: para
-    text: 関わっていません！
+    text: 発表者は現時点において現職のID設計判断や実装に関わっていません！
   p8:
   - kind: para
-    text: ID、Auth、アカウント基盤など
-  - kind: para
-    text: AAA(Authentication,Authorization, Accounting)
-  - kind: para
-    text: は高度な専門技術領域
+    text: ID、Auth、アカウント基盤などAAA(Authentication,Authorization, Accounting)は高度な専門技術領域
   p9:
   - kind: heading
     level: 1
@@ -91,25 +85,17 @@ text:
     text: 場合があるので、適切に依存を分割・注入することは読者への課題とする
   p12:
   - kind: para
-    text: 今回は専門職ではない我々が実装するための
-  - kind: para
-    text: お話をします
+    text: 今回は専門職ではない我々が実装するためのお話をします
   p13:
   - kind: para
-    text: 初心者の方も
-  - kind: para
-    text: 怖がらずにお聞きください
+    text: 初心者の方も怖がらずにお聞きください
   p14:
   - kind: heading
     level: 1
     text: さて
   p15:
   - kind: para
-    text: 難しいことは置いておいてユーザーからメールアドレスを
-  - kind: para
-    text: 収集したい(せざるを得ない)
-  - kind: para
-    text: ことは現代でも多い
+    text: 難しいことは置いておいてユーザーからメールアドレスを収集したい(せざるを得ない)ことは現代でも多い
   p16:
   - kind: heading
     level: 1
@@ -142,9 +128,7 @@ text:
     text: 文言のキャンペーンメールは非常にストレスが大きい
   p18:
   - kind: para
-    text: 個人的感情は
-  - kind: para
-    text: おいといて
+    text: 個人的感情はおいといて
   p19:
   - kind: para
     text: DBに入れるだけだしフレームワークとか要らん
@@ -157,9 +141,7 @@ text:
     text: すごくシンプルなログインシステムを作っていきましょう
   p22:
   - kind: para
-    text: '[要件1]変な形式の文字列が'
-  - kind: para
-    text: 登録できないこと
+    text: '[要件1]変な形式の文字列が登録できないこと'
   p23:
   - kind: heading
     level: 1
@@ -229,16 +211,10 @@ text:
     text: '出典: Wikipedia： メールアドレス (2023-11-07T03:00:31版)'
   p40:
   - kind: para
-    text: 一般的なメールアドレス
-  - kind: para
-    text: を収集する用途でaddr-spec以外が必要になることはない
+    text: 一般的なメールアドレスを収集する用途でaddr-spec以外が必要になることはない
   p41:
   - kind: para
-    text: 基本的にaddr-spec
-  - kind: para
-    text: だけを相手にすれば
-  - kind: para
-    text: いいとわかった
+    text: 基本的にaddr-specだけを相手にすればいいとわかった
   p42:
   - kind: heading
     level: 1
@@ -279,19 +255,13 @@ text:
   p49: []
   p50:
   - kind: para
-    text: PHPではこれを使えば
-  - kind: para
-    text: 安全！
+    text: PHPではこれを使えば安全！
   p51:
   - kind: para
-    text: …ここまでに説明した
-  - kind: para
-    text: 範囲では
+    text: …ここまでに説明した範囲では
   p52:
   - kind: para
-    text: '[要件2]存在しないドメインのメールアドレス登録を'
-  - kind: para
-    text: 弾きたい
+    text: '[要件2]存在しないドメインのメールアドレス登録を弾きたい'
   p53:
   - kind: heading
     level: 1
@@ -307,9 +277,7 @@ text:
     text: 定石：入力されたアドレスに送信してメール内のコードを入力させる
   p57:
   - kind: para
-    text: 実メール送る前にどうしても確認したい
-  - kind: para
-    text: のだとしましょう
+    text: 実メール送る前にどうしても確認したいのだとしましょう
   p58: []
   p59:
   - kind: heading
@@ -340,14 +308,10 @@ text:
     text: 独自運用されている傾向にあるのでAレコードもサポートするかは各自判断
   p64:
   - kind: para
-    text: DNSではなくSMTPでチェックする別解も
-  - kind: para
-    text: あるが…
+    text: DNSではなくSMTPでチェックする別解もあるが…
   p65:
   - kind: para
-    text: (僕は運用経験がない
-  - kind: para
-    text: ので言葉を濁す)
+    text: (僕は運用経験がないので言葉を濁す)
   p66:
   - kind: para
     text: ついでにメールアドレス
@@ -409,32 +373,20 @@ text:
     text: A@example.com
   p79:
   - kind: para
-    text: 同一かもしれないし
-  - kind: para
-    text: 別人かもしれない
+    text: 同一かもしれないし別人かもしれない
   p80: []
   p81:
   - kind: para
-    text: unicode_ciは大文字小文字を
-  - kind: para
-    text: 同一視する
+    text: unicode_ciは大文字小文字を同一視する
   p82:
   - kind: para
-    text: utf8mb4_binで厳密チェックすれば
-  - kind: para
-    text: いいのか？
+    text: utf8mb4_binで厳密チェックすればいいのか？
   p83:
   - kind: para
-    text: もっとひどい穴を簡単に作れるのでbinで比較はやめた
-  - kind: para
-    text: 方がいいと思う
+    text: もっとひどい穴を簡単に作れるのでbinで比較はやめた方がいいと思う
   p84:
   - kind: para
-    text: Laravelは全部小文字の
-  - kind: para
-    text: アドレスのみ許可
-  - kind: para
-    text: (これが無難)
+    text: Laravelは全部小文字のアドレスのみ許可(これが無難)
   p85:
   - kind: para
     text: この問題を騙り尽すには15分枠はあまりに短い…
@@ -450,9 +402,7 @@ text:
   p87: []
   p88:
   - kind: para
-    text: ご静聴ありがとう
-  - kind: para
-    text: ございました
+    text: ご静聴ありがとうございました
 size:
   max_width: 1920
   max_height: 1080

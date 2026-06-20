@@ -35,37 +35,19 @@ text:
     text: やや元気
   p8:
   - kind: para
-    text: PHPカンファレンス関西
-  - kind: para
-    text: にはPHP-Parserの話を
-  - kind: para
-    text: しようと応募してました
+    text: PHPカンファレンス関西にはPHP-Parserの話をしようと応募してました
   p9:
   - kind: para
     text: はじめに
   p10:
   - kind: para
-    text: 今回紹介する内容に
-  - kind: para
-    text: よって今すぐ何かが変
-  - kind: para
-    text: わることはあまりない
+    text: 今回紹介する内容によって今すぐ何かが変わることはあまりない
   p11:
   - kind: para
-    text: 少なくともコードを
-  - kind: para
-    text: PHP7系から8に移行
-  - kind: para
-    text: できないと使えない
+    text: 少なくともコードをPHP7系から8に移行できないと使えない
   p12:
   - kind: para
-    text: これから一年くらい
-  - kind: para
-    text: かけて対応するツールや
-  - kind: para
-    text: フレームワークも徐々に
-  - kind: para
-    text: 出てくると思う
+    text: これから一年くらいかけて対応するツールやフレームワークも徐々に出てくると思う
   p13:
   - kind: para
     text: PHP8
@@ -107,11 +89,7 @@ text:
     text: PHPRFCBot
   p22:
   - kind: para
-    text: 今年12月にリリース予
-  - kind: para
-    text: 定のPHP8.0に向けて
-  - kind: para
-    text: さまざまな機能が提案
+    text: 今年12月にリリース予定のPHP8.0に向けてさまざまな機能が提案
   p23:
   - kind: para
     text: Feature freeze
@@ -138,11 +116,7 @@ text:
     text: ジされてない
   p27:
   - kind: para
-    text: 過去何度も提案されて
-  - kind: para
-    text: きたが今回の仕様で
-  - kind: para
-    text: ようやく受理された
+    text: 過去何度も提案されてきたが今回の仕様でようやく受理された
   p28:
   - kind: para
     text: そもそも
@@ -151,19 +125,11 @@ text:
   p29: []
   p30:
   - kind: para
-    text: このRFCはクラス・プロパティ・関数・
-  - kind: para
-    text: メソッド・引数および定数の宣言に対する構文的メタデータの構造化された形式として「アトリビュート」を提案
-  - kind: para
-    text: します。アトリビュートによって宣言に直接埋め込まれた構成ディレクティ
-  - kind: para
-    text: ブを定義できます。
+    text: このRFCはクラス・プロパティ・関数・メソッド・引数および定数の宣言に対する構文的メタデータの構造化された形式として「アトリビュート」を提案します。アトリビュートによって宣言に直接埋め込まれた構成ディレクティブを定義できます。
   p31: []
   p32:
   - kind: para
-    text: 似たようなコンセプトは｢アノテーション｣としてJavaに､｢アトリビュート｣としてC#・C++・Rust・Hackに、そして
-  - kind: para
-    text: ｢デコレータ｣としてPython･JavaScriptにあります。
+    text: 似たようなコンセプトは｢アノテーション｣としてJavaに､｢アトリビュート｣としてC#・C++・Rust・Hackに、そして｢デコレータ｣としてPython･JavaScriptにあります。
   p33:
   - kind: para
     text: attribute
@@ -191,13 +157,8 @@ text:
     text: '>'
   p34:
   - kind: para
-    text: これまでPHPは構造化されていない形
-  - kind: para
-    text: 式のメタデータとしてDoc-commentだけを提供しています。ただ、Doc-commentは単なる文字列であり、構
-  - kind: para
-    text: 造化情報を保持するための @ ベースの擬似言語がさまざまなPHPサブコミュ
-  - kind: para
-    text: ニティによって提案されてきました。
+    text: これまでPHPは構造化されていない形式のメタデータとしてDoc-commentだけを提供しています。ただ、Doc-commentは単なる文字列であり、構造化情報を保持するための
+      @ ベースの擬似言語がさまざまなPHPサブコミュニティによって提案されてきました。
   p35:
   - kind: para
     text: Doc-commentは
@@ -462,15 +423,7 @@ text:
     text: '}'
   p59:
   - kind: para
-    text: Doc-commentから取得
-  - kind: para
-    text: できるのは文字列なので
-  - kind: para
-    text: ､
-  - kind: para
-    text: 実行時に活用するには
-  - kind: para
-    text: それを構文解析する必要
+    text: Doc-commentから取得できるのは文字列なので､実行時に活用するにはそれを構文解析する必要
   p60:
   - kind: para
     text: Attribute
@@ -488,51 +441,19 @@ text:
     text: れており構文解析不要
   p61:
   - kind: para
-    text: 好き勝手な記法が使え
-  - kind: para
-    text: るタグ/アノテーション
-  - kind: para
-    text: と違ってAttributes v2
-  - kind: para
-    text: 仕様は単純な関数呼び
-  - kind: para
-    text: 出し風構文と
-  - kind: para
-    text: 静的な式
+    text: 好き勝手な記法が使えるタグ/アノテーションと違ってAttributes v2仕様は単純な関数呼び出し風構文と静的な式
   p62:
   - kind: para
-    text: 静的な式 = PHPで有効な
-  - kind: para
-    text: 式のうちリテラルと定数
-  - kind: para
-    text: と演算子式で解決できる
-  - kind: para
-    text: (実行時に変わらない)
+    text: 静的な式 = PHPで有効な式のうちリテラルと定数と演算子式で解決できる(実行時に変わらない)
   p63:
   - kind: para
-    text: たぶんPHP-Parserから
-  - kind: para
-    text: もリフレクションと似た
-  - kind: para
-    text: APIが用意されて
-  - kind: para
-    text: 簡単に取得できるだろう
+    text: たぶんPHP-Parserからもリフレクションと似たAPIが用意されて簡単に取得できるだろう
   p64:
   - kind: para
-    text: アトリビュートはク
-  - kind: para
-    text: ラスと同じようにuse
-  - kind: para
-    text: で名前解決できる
+    text: アトリビュートはクラスと同じようにuseで名前解決できる
   p65:
   - kind: para
-    text: アトリビュートはクラ
-  - kind: para
-    text: スにマッピングし、
-  - kind: para
-    text: Reflectionから
-  - kind: para
-    text: インスタンスがとれる
+    text: アトリビュートはクラスにマッピングし、Reflectionからインスタンスがとれる
   p66:
   - kind: heading
     level: 1
@@ -584,33 +505,13 @@ text:
     text: 全然違う
   p70:
   - kind: para
-    text: アトリビュートを加味し
-  - kind: para
-    text: てインスタンスを生成す
-  - kind: para
-    text: る実行時のファクトリー
-  - kind: para
-    text: またはクラスローダーで
-  - kind: para
-    text: 近似させることはできる
+    text: アトリビュートを加味してインスタンスを生成する実行時のファクトリーまたはクラスローダーで近似させることはできる
   p71:
   - kind: para
-    text: 明確な分類はできない
-  - kind: para
-    text: が、タグよりもアノテー
-  - kind: para
-    text: ション系の方がアトリ
-  - kind: para
-    text: ビュートで表現しやすい
+    text: 明確な分類はできないが、タグよりもアノテーション系の方がアトリビュートで表現しやすい
   p72:
   - kind: para
-    text: PHPコンパイラ(処理系)
-  - kind: para
-    text: のためのアトリビュート
-  - kind: para
-    text: があることが示唆されて
-  - kind: para
-    text: いる(詳細はRFC範囲外)
+    text: PHPコンパイラ(処理系)のためのアトリビュートがあることが示唆されている(詳細はRFC範囲外)
   p73:
   - kind: para
     text: PHP
@@ -672,68 +573,26 @@ text:
     text: もうつらたん
   p85:
   - kind: para
-    text: DSLを喜んで覚え直し
-  - kind: para
-    text: たいひとは居るのか？
+    text: DSLを喜んで覚え直したいひとは居るのか？
   - kind: heading
     level: 1
     text: 🙃
   p86:
   - kind: para
-    text: 移行対象ではなく例とし
-  - kind: para
-    text: て考えれば
-  - kind: para
-    text: ､
-  - kind: para
-    text: アノテーショ
-  - kind: para
-    text: ンベースDSLの新規実装
-  - kind: para
-    text: コストは多少
-  - kind: para
-    text: 下がってそう
+    text: 移行対象ではなく例として考えれば､アノテーションベースDSLの新規実装コストは多少下がってそう
   p87:
   - kind: para
-    text: とはいえライブラリは既
-  - kind: para
-    text: にあるし
-  - kind: para
-    text: ､
-  - kind: para
-    text: コードイン
-  - kind: para
-    text: ジェクションもキャッ
-  - kind: para
-    text: シュ機構があるので実行
-  - kind: para
-    text: 時コストには影響しない
+    text: とはいえライブラリは既にあるし､コードインジェクションもキャッシュ機構があるので実行時コストには影響しない
   p88:
   - kind: para
-    text: 実は
-  - kind: para
-    text: 'PHP RFC:'
-  - kind: para
-    text: Named Arguments
-  - kind: para
-    text: も
-  - kind: para
-    text: 復活してPHP8に向けて
-  - kind: para
-    text: 議論されそうな雰囲気が
-  - kind: para
-    text: あるので影響あるかもね
+    text: 実はPHP RFC:Named Argumentsも復活してPHP8に向けて議論されそうな雰囲気があるので影響あるかもね
   p89:
   - kind: para
     text: <<Deprecated>>
   p90: []
   p91:
   - kind: para
-    text: アトリビュートの
-  - kind: para
-    text: 実際の利用例とし
-  - kind: para
-    text: ての新しいRFC
+    text: アトリビュートの実際の利用例としての新しいRFC
   p92:
   - kind: para
     text: trigger_error
@@ -749,26 +608,10 @@ text:
     text: み込みのアトリビュート
   p93:
   - kind: para
-    text: 言語組み込みのアトリ
-  - kind: para
-    text: ビュートがある意義もわ
-  - kind: para
-    text: かるし
-  - kind: para
-    text: ､
-  - kind: para
-    text: ユーザーランド
-  - kind: para
-    text: で再現もめんどいので助
-  - kind: para
-    text: かるといえば助かる
+    text: 言語組み込みのアトリビュートがある意義もわかるし､ユーザーランドで再現もめんどいので助かるといえば助かる
   p94:
   - kind: para
-    text: 関数やメソッド以外
-  - kind: para
-    text: にプロパティや定数
-  - kind: para
-    text: の非推奨化もできる
+    text: 関数やメソッド以外にプロパティや定数の非推奨化もできる
   p95:
   - kind: para
     text: が
@@ -833,17 +676,7 @@ text:
     text: じゃなくていいの？
   p101:
   - kind: para
-    text: Attributesのfuture
-  - kind: para
-    text: scopeの段階では
-  - kind: para
-    text: 名前空間がついてたのに
-  - kind: para
-    text: ､
-  - kind: para
-    text: しれっとグローバル名前
-  - kind: para
-    text: 空間に移動している
+    text: Attributesのfuture scopeの段階では名前空間がついてたのに､しれっとグローバル名前空間に移動している
   p102:
   - kind: para
     text: Attributeが
@@ -896,22 +729,10 @@ text:
     text: おまじないとして残り…
   p106:
   - kind: para
-    text: この問題はアノテー
-  - kind: para
-    text: ションベースAOPで
-  - kind: para
-    text: 結構深刻だと思うんで
-  - kind: para
-    text: すけど皆さんどうやっ
-  - kind: para
-    text: て解決してるんだろ
+    text: この問題はアノテーションベースAOPで結構深刻だと思うんですけど皆さんどうやって解決してるんだろ
   p107:
   - kind: para
-    text: 全部のタグ/アノテー
-  - kind: para
-    text: ションがアトリビュー
-  - kind: para
-    text: トに移行されるの？
+    text: 全部のタグ/アノテーションがアトリビュートに移行されるの？
   p108:
   - kind: para
     text: されない

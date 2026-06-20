@@ -32,9 +32,7 @@ text:
     text: さて
   p5:
   - kind: para
-    text: PHPerKaigiのチケットを買うと
-  - kind: para
-    text: パンフレットがもらえる
+    text: PHPerKaigiのチケットを買うとパンフレットがもらえる
   p6: []
   p7:
   - kind: para
@@ -43,38 +41,28 @@ text:
     text: =Static Analyzer
   p8:
   - kind: para
-    text: 実行しなくてもバグの可能性を
-  - kind: para
-    text: 検知できる
+    text: 実行しなくてもバグの可能性を検知できる
   p9:
   - kind: para
     text: 全8ページでPHPStanの基礎を押えられる
   p10:
   - kind: para
-    text: 実務で最低限使うために知っておきたいこと
-  - kind: para
-    text: を詰め込んだ… はず
+    text: 実務で最低限使うために知っておきたいことを詰め込んだ… はず
   p11:
   - kind: para
     text: PHP本来の型のコンセプトからPHPDocによる拡張までを網羅
   p12:
   - kind: para
-    text: 僕と契約してPHPStanを完全に
-  - kind: para
-    text: マスターしてよ
+    text: 僕と契約してPHPStanを完全にマスターしてよ
   p13:
   - kind: para
-    text: という話をしたい
-  - kind: para
-    text: のではない
+    text: という話をしたいのではない
   p14:
   - kind: para
     text: PHPStanは完全無料なのでいますぐ入れよう
   p15:
   - kind: para
-    text: これからプロになりたい人に本当に伝えたい
-  - kind: para
-    text: PHPDocの書きかた
+    text: これからプロになりたい人に本当に伝えたいPHPDocの書きかた
   p16:
   - kind: para
     text: その1配列は使い分ける
@@ -110,17 +98,13 @@ text:
     text: function (X $x) {$a = $x->a();$v = $a[0];};
   p26:
   - kind: para
-    text: 配列から取り出した要素の型がわからない
-  - kind: para
-    text: のは都合が悪い
+    text: 配列から取り出した要素の型がわからないのは都合が悪い
   p27:
   - kind: para
     text: array<int>array<string>
   p28:
   - kind: para
-    text: ちょっと前はint[] とか string[]
-  - kind: para
-    text: とか書かれてた
+    text: ちょっと前はint[] とか string[]とか書かれてた
   p29:
   - kind: heading
     level: 1
@@ -144,9 +128,7 @@ text:
     text: 配列には2通りある
   p31:
   - kind: para
-    text: 同じような構造が
-  - kind: para
-    text: 繰り返す配列
+    text: 同じような構造が繰り返す配列
   p32:
   - kind: para
     text: キーによって別の意味の値が入っている配列
@@ -169,17 +151,13 @@ text:
     text: その2型は入出力に宿る
   p38:
   - kind: para
-    text: クエリパラメータから
-  - kind: para
-    text: 値をとりたい
+    text: クエリパラメータから値をとりたい
   p39:
   - kind: para
     text: 'function getById(int $id): Article{//}'
   p40:
   - kind: para
-    text: クエリパラメータから
-  - kind: para
-    text: ID値をとりたい
+    text: クエリパラメータからID値をとりたい
   p41:
   - kind: para
     text: 実際あぶない
@@ -200,9 +178,7 @@ text:
     text: // ?id[]=a$_GET['id'] === ['a'];
   p45:
   - kind: para
-    text: 危険ではないが
-  - kind: para
-    text: よくはない
+    text: 危険ではないがよくはない
   - kind: heading
     level: 1
     text: $id = (int)$_GET['id'];
@@ -221,9 +197,7 @@ text:
     text: 初心者殺しなことに@varには複数の用法
   p49:
   - kind: para
-    text: '@varはプロパティに'
-  - kind: para
-    text: 付けて書くもの
+    text: '@varはプロパティに付けて書くもの'
   p50:
   - kind: para
     text: class Book{/** @var string */public $name;}
@@ -245,9 +219,7 @@ text:
     text: class Book{/** @var list<Author> */public array $authors;}
   p55:
   - kind: para
-    text: '@varはconstには'
-  - kind: para
-    text: 基本的に付けない
+    text: '@varはconstには基本的に付けない'
   p56:
   - kind: para
     text: class Book{/** @var list<int> */const IDS = [1, 2, 3];}
@@ -260,9 +232,7 @@ text:
     text: class Book{/** @var list<int> */const IDS = [1, 2, 3];}
   p58:
   - kind: para
-    text: '@varを'
-  - kind: para
-    text: つけない場合
+    text: '@varをつけない場合'
   - kind: heading
     level: 1
     text: Book::IDS[0] // => 1
@@ -274,9 +244,7 @@ text:
     text: Book::IDS[2] // => 3
   p59:
   - kind: para
-    text: '@varを付けると'
-  - kind: para
-    text: 弱くなる
+    text: '@varを付けると弱くなる'
   - kind: heading
     level: 1
     text: Book::IDS[0] // => int
@@ -288,9 +256,7 @@ text:
     text: Book::IDS[2] // => int
   p60:
   - kind: para
-    text: ローカル変数に
-  - kind: para
-    text: '@varを書く'
+    text: ローカル変数に@varを書く
   p61:
   - kind: para
     text: できれば書かないでくれ！！

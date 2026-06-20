@@ -41,9 +41,7 @@ text:
     text: 本日しない話
   p9:
   - kind: para
-    text: PHPのクラスのオート
-  - kind: para
-    text: ローディングの説明
+    text: PHPのクラスのオートローディングの説明
   p10:
   - kind: para
     text: プロジェクトでのComposerの運用方法
@@ -62,9 +60,7 @@ text:
     text: https://qiita.com/tadsan/items/a78c9160418200e2d47a
   p16:
   - kind: para
-    text: Composerで
-  - kind: para
-    text: できること
+    text: Composerでできること
   p17:
   - kind: para
     text: ざっくり
@@ -73,19 +69,13 @@ text:
     text: プロジェクトが依存するパッケージをダウンロードしてくる
   p19:
   - kind: para
-    text: プロジェクトが依存するパッケージを
-  - kind: para
-    text: 利用可能にする
+    text: プロジェクトが依存するパッケージを利用可能にする
   p20:
   - kind: para
-    text: 今日は実行時の
-  - kind: para
-    text: 話をします
+    text: 今日は実行時の話をします
   p21:
   - kind: para
-    text: 基本はComposerのautoload.phpを読み込
-  - kind: para
-    text: めば準備完了する
+    text: 基本はComposerのautoload.phpを読み込めば準備完了する
   p22: []
   p23:
   - kind: para
@@ -116,11 +106,7 @@ text:
   - kind: para
     text: ファイルシステム内のフルパス
   - kind: para
-    text: require __DIR__.'/../Klass.php';
-  - kind: para
-    text: マジック定数__DIR__で
-  - kind: para
-    text: スクリプトのディレクトリが入る
+    text: require __DIR__.'/../Klass.php';マジック定数__DIR__でスクリプトのディレクトリが入る
   p30:
   - kind: para
     text: include_pathからの相対パス
@@ -139,17 +125,9 @@ text:
     level: 1
     text: プロトコル(ラッパー)
   - kind: para
-    text: fopen('php://stderr', 'r') とか
+    text: fopen('php://stderr', 'r') とかfile_get_contents('http://example.com/')とかやるための仕組み
   - kind: para
-    text: file_get_contents('http://example.com/')
-  - kind: para
-    text: とかやるための仕組み
-  - kind: para
-    text: ……が、セキュリティの懸念もあるの
-  - kind: para
-    text: で、デフォルトでは php.ini で
-  - kind: para
-    text: allow_url_include = Off になってる
+    text: ……が、セキュリティの懸念もあるので、デフォルトでは php.ini でallow_url_include = Off になってる
   p32:
   - kind: para
     text: 改めてComposer
@@ -162,14 +140,10 @@ text:
     text: どうやって読み込んでるの？
   p36:
   - kind: para
-    text: autoload.phpを
-  - kind: para
-    text: 読もう
+    text: autoload.phpを読もう
   p37:
   - kind: para
-    text: みなさまの手元のComposer
-  - kind: para
-    text: プロジェクトを見比べながらお聞きください
+    text: みなさまの手元のComposerプロジェクトを見比べながらお聞きください
   p38:
   - kind: para
     text: '% composer --version Composer version 1.5.2 2017-09-11 16:59:25% composer
@@ -189,9 +163,7 @@ text:
     level: 1
     text: vendor/autoload.php
   - kind: para
-    text: 1.autoload_real.phpを読み込む
-  - kind: para
-    text: 2.謎のクラスの静的メソッドを実行
+    text: 1.autoload_real.phpを読み込む2.謎のクラスの静的メソッドを実行
   - kind: para
     text: たぶん変なバイトキャッシュを残さないためにcontent-hashが付いたクラス名
   p41: []
@@ -200,9 +172,7 @@ text:
     level: 1
     text: autoload_real.php
   - kind: para
-    text: 1.$loaderが生成済みなら返すだけ
-  - kind: para
-    text: 2.クラスローダーを読み込むだけのクラス
+    text: 1.$loaderが生成済みなら返すだけ2.クラスローダーを読み込むだけのクラス
   - kind: para
     text: ローダーを登録して、使ったらすぐにspl_autoload_unregister する
   - kind: list
@@ -230,9 +200,7 @@ text:
     level: 1
     text: autoload_real.php
   - kind: para
-    text: 1.PHPの実行時環境によってクラス定義の
-  - kind: para
-    text: 読み込みを変更
+    text: 1.PHPの実行時環境によってクラス定義の読み込みを変更
   - kind: para
     text: 2.autoload_static.php VS 三兄弟
   - kind: list
@@ -324,13 +292,9 @@ text:
     level: 1
     text: ClassLoader.php
   - kind: para
-    text: クラスローダーの実装本体
+    text: クラスローダーの実装本体いままで設定された情報をもとにクラス名の解決・ファイルロードをする
   - kind: para
-    text: いままで設定された情報をもとにクラス名の解決・ファイルロードをする
-  - kind: para
-    text: 動的に変動する部分は分離されてるので、
-  - kind: para
-    text: バイトコードがキャッシュされても特に問題なさそうに作ってるっぽい
+    text: 動的に変動する部分は分離されてるので、バイトコードがキャッシュされても特に問題なさそうに作ってるっぽい
   p51:
   - kind: heading
     level: 1
@@ -350,33 +314,19 @@ text:
     text: これによって得られる知見
   p53:
   - kind: para
-    text: Composerは、いろんなPHP
-  - kind: para
-    text: のバージョンとか実行環境
-  - kind: para
-    text: で動くように書かれてる
+    text: Composerは、いろんなPHPのバージョンとか実行環境で動くように書かれてる
   p54:
   - kind: para
-    text: 実行時にcomposer.jsonとかcomposer.lockは使ってなく
-  - kind: para
-    text: て、静的なPHPスクリプト
-  - kind: para
-    text: ファイルが書き出される
+    text: 実行時にcomposer.jsonとかcomposer.lockは使ってなくて、静的なPHPスクリプトファイルが書き出される
   p55:
   - kind: para
-    text: サーバーでcomposer installの必要はなく、手元でインストールしてvendorディレクト
-  - kind: para
-    text: リごと転送してやればいい
+    text: サーバーでcomposer installの必要はなく、手元でインストールしてvendorディレクトリごと転送してやればいい
   p56:
   - kind: para
     text: よくある誤解
   p57:
   - kind: para
-    text: 「レンタルサーバーの最安プ
-  - kind: para
-    text: ランでPHP動かしてるからComposer入らないんだ…」
-  - kind: para
-    text: といったことはない
+    text: 「レンタルサーバーの最安プランでPHP動かしてるからComposer入らないんだ…」といったことはない
   p58:
   - kind: para
     text: 本筋から外れた話
@@ -387,9 +337,7 @@ text:
     text: https://getcomposer.org/doc/articles/autoloader-optimization.md
   p60:
   - kind: para
-    text: Level 1本番運用時は
-  - kind: para
-    text: --optimize-autoloaderが基本
+    text: Level 1本番運用時は--optimize-autoloaderが基本
   p61:
   - kind: para
     text: ……そのほかは効果あるのかな？
@@ -400,9 +348,7 @@ text:
     text: 予告
   p63:
   - kind: para
-    text: PHP AdventCalendar 2017ではComposerとか全然考慮されてない(zipで配布されてる)SDKをむりやり
-  - kind: para
-    text: Composerで管理する話を書きます
+    text: PHP AdventCalendar 2017ではComposerとか全然考慮されてない(zipで配布されてる)SDKをむりやりComposerで管理する話を書きます
 size:
   max_width: 1024
   max_height: 768

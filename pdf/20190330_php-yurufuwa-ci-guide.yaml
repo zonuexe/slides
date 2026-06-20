@@ -52,23 +52,13 @@ text:
   - kind: para
     text: CodeIgniter
   - kind: para
-    text: (Web Framework)の
-  - kind: para
-    text: 話はしません
+    text: (Web Framework)の話はしません
   p10:
   - kind: para
-    text: CD (Continuous
-  - kind: para
-    text: delivery/deployment)
-  - kind: para
-    text: の話もしません
+    text: CD (Continuous delivery/deployment)の話もしません
   p11:
   - kind: para
-    text: 個別のCI製品の
-  - kind: para
-    text: 設定の話も
-  - kind: para
-    text: しません
+    text: 個別のCI製品の設定の話もしません
   p12:
   - kind: para
     text: CIとは何かCIで何ができるかCI実行環境の種類ゆるふわにCIを始める実際の事例について
@@ -77,34 +67,24 @@ text:
     text: 本題の前に
   p14:
   - kind: para
-    text: 今回紹介するツールとGitLab CIの設定をまとめてセットアップできるプロジェ
-  - kind: para
-    text: クトを用意してます
+    text: 今回紹介するツールとGitLab CIの設定をまとめてセットアップできるプロジェクトを用意してます
   - kind: para
     text: https://gitlab.com/zonuexe/phperkaigi-ci
   p15:
   - kind: para
-    text: 予め断っておきますがこの構成では規模の大きなプロジェクトではパフォーマンス目立ち
-  - kind: para
-    text: ます(断言)
+    text: 予め断っておきますがこの構成では規模の大きなプロジェクトではパフォーマンス目立ちます(断言)
   p16:
   - kind: para
-    text: 実プロジェクトに導入する際は各自の責任で取捨選択
-  - kind: para
-    text: してください
+    text: 実プロジェクトに導入する際は各自の責任で取捨選択してください
   p17:
   - kind: para
-    text: あとすみません
-  - kind: para
-    text: Windowsではたぶん動きません
+    text: あとすみませんWindowsではたぶん動きません
   p18:
   - kind: para
     text: CIとは何か
   p19:
   - kind: para
-    text: 単にシーアイ
-  - kind: para
-    text: と呼びます
+    text: 単にシーアイと呼びます
   - kind: para
     text: CIとは
   - kind: para
@@ -409,24 +389,16 @@ text:
     text: 御託はわかった
   p53:
   - kind: para
-    text: で、結局いろいろ準備
-  - kind: para
-    text: しなくちゃいけなくてめんどくさいんでしょ？
+    text: で、結局いろいろ準備しなくちゃいけなくてめんどくさいんでしょ？
   p54:
   - kind: para
-    text: ゆるふわに始める
-  - kind: para
-    text: CI
+    text: ゆるふわに始めるCI
   p55:
   - kind: para
-    text: もっと気軽に手を付けられるところから
-  - kind: para
-    text: やっていきましょう
+    text: もっと気軽に手を付けられるところからやっていきましょう
   p56:
   - kind: para
-    text: 継続して動かせる
-  - kind: para
-    text: サーバがないさてどうするか
+    text: 継続して動かせるサーバがないさてどうするか
   p57:
   - kind: heading
     level: 1
@@ -451,9 +423,7 @@ text:
     text: ところで
   p60:
   - kind: para
-    text: みなさんSyntaxErrorのPHP
-  - kind: para
-    text: スクリプトを本番に反映して事故ったことはありますか？
+    text: みなさんSyntaxErrorのPHPスクリプトを本番に反映して事故ったことはありますか？
   p61:
   - kind: para
     text: 私はたくさんあります
@@ -462,27 +432,19 @@ text:
     text: 
   p62:
   - kind: para
-    text: Syntax Errorになる
-  - kind: para
-    text: ファイルを確実に捕捉してみましょう
+    text: Syntax Errorになるファイルを確実に捕捉してみましょう
   p63:
   - kind: para
     text: git ls-files '*\.php' |xargs -I{} php -l {}
   p64:
   - kind: para
-    text: Windowsにはxargsがない(たぶん)のでPHPで
-  - kind: para
-    text: https://gist.github.com/zonuexe/a513afd1d6933b3cc5cca0eb866f2834
+    text: Windowsにはxargsがない(たぶん)のでPHPでhttps://gist.github.com/zonuexe/a513afd1d6933b3cc5cca0eb866f2834
   p65:
   - kind: para
-    text: ファイルが数十個単位ならすぐに終るが、数千単位になる
-  - kind: para
-    text: と全数の検査はかなり時間が掛かるので注意
+    text: ファイルが数十個単位ならすぐに終るが、数千単位になると全数の検査はかなり時間が掛かるので注意
   p66:
   - kind: para
-    text: 弊社での事例に
-  - kind: para
-    text: ついて
+    text: 弊社での事例について
   p67: []
   p68:
   - kind: para
@@ -596,14 +558,10 @@ text:
   - kind: para
     text: Phanであればmasterでのログ出力とブランチでの出力が減る(増えない)ことだけに注目する
   - kind: para
-    text: PHPStanであれば、ブランチで変更したファイル(と、そのクラス/関数を
-  - kind: para
-    text: 使ったファイル)だけを対象にしてみる
+    text: PHPStanであれば、ブランチで変更したファイル(と、そのクラス/関数を使ったファイル)だけを対象にしてみる
   p85:
   - kind: para
-    text: 解析に怯えすぎず
-  - kind: para
-    text: ご安全に
+    text: 解析に怯えすぎずご安全に
 size:
   max_width: 1024
   max_height: 768

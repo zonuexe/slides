@@ -104,19 +104,13 @@ text:
     text: 日本語のPSR-HTTP関連資料集
   p19:
   - kind: para
-    text: Webフレームワークを
-  - kind: para
-    text: 作りたい人や内部構造
-  - kind: para
-    text: を理解したい人向け
+    text: Webフレームワークを作りたい人や内部構造を理解したい人向け
   p20:
   - kind: para
     text: 前半はフレームワーク一般の概念の話もします
   p21:
   - kind: para
-    text: 後半もPSR-15入門とテスト方法みたいな
-  - kind: para
-    text: 話に終始します
+    text: 後半もPSR-15入門とテスト方法みたいな話に終始します
   p22:
   - kind: para
     text: 最後のスライド
@@ -354,9 +348,7 @@ text:
     - PSR-7オブジェクトを生成する役割のインターフェイス
     - $res = new GuzzleHttp\Psr7\Response()と書く代りに
   - kind: para
-    text: $res = $response_factory->createResponse()でオブジェクトを
-  - kind: para
-    text: 生成できる
+    text: $res = $response_factory->createResponse()でオブジェクトを生成できる
   - kind: list
     items:
     - これがなぜ重要なのかは田中ひさてるさんの発表を見てください
@@ -557,9 +549,7 @@ text:
     - 処理を全部追わないと最終的な出力 (レスポンスヘッダ・ボディ)がわからん
   p61:
   - kind: para
-    text: こういう世界とどうやって整合性を
-  - kind: para
-    text: 合わせるのか
+    text: こういう世界とどうやって整合性を合わせるのか
   p62:
   - kind: para
     text: PSR-7の出力 (emit)
@@ -947,9 +937,7 @@ text:
     text: 値を渡して戻り値を検査する
   p103:
   - kind: para
-    text: もうちょっと
-  - kind: para
-    text: 具体的に
+    text: もうちょっと具体的に
   p104:
   - kind: heading
     level: 1
@@ -1668,9 +1656,7 @@ text:
       = $request;throw $this->e;}'
   p165:
   - kind: para
-    text: 実アプリケーション
-  - kind: para
-    text: への適用を考える
+    text: 実アプリケーションへの適用を考える
   p166:
   - kind: para
     text: 大雑把な処理の流れ
@@ -1779,9 +1765,7 @@ text:
     text: RequestHandler
   p172:
   - kind: para
-    text: これまではMiddleware1個
-  - kind: para
-    text: Handler1個しか考えてない
+    text: これまではMiddleware1個Handler1個しか考えてない
   p173:
   - kind: heading
     level: 1
@@ -1792,9 +1776,7 @@ text:
     text: RequestHandler
   p174:
   - kind: para
-    text: せっかくの既存ミドルウェアたくさん
-  - kind: para
-    text: 重ねたくないですか
+    text: せっかくの既存ミドルウェアたくさん重ねたくないですか
   p175:
   - kind: heading
     level: 1
@@ -1860,9 +1842,7 @@ text:
     text: if ($session instanceof LoggedIn) {// ...}}
   p180:
   - kind: para
-    text: どうやってユーザーに
-  - kind: para
-    text: コードを書かせるか
+    text: どうやってユーザーにコードを書かせるか
   p181:
   - kind: heading
     level: 1
@@ -1881,14 +1861,10 @@ text:
     - 妥協せずにバトルさせたあとに使いやすいフレームワークができる(気がする)
   p182:
   - kind: para
-    text: ここまでできれば
-  - kind: para
-    text: 外の枠組みは結構できてきた
+    text: ここまでできれば外の枠組みは結構できてきた
   p183:
   - kind: para
-    text: アプリケーションって
-  - kind: para
-    text: どこにあるの？
+    text: アプリケーションってどこにあるの？
   p184:
   - kind: para
     text: いわゆるコントローラやアクション
@@ -1980,9 +1956,7 @@ text:
     text: ParamHelperにPSR-7とValueObject の力を授けた話
   p194:
   - kind: para
-    text: 今回の発表の参照実装とか便利なライブラリとかそのうちいろいろ
-  - kind: para
-    text: 出します！！！！
+    text: 今回の発表の参照実装とか便利なライブラリとかそのうちいろいろ出します！！！！
   p195:
   - kind: heading
     level: 1

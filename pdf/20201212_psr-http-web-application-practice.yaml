@@ -106,9 +106,7 @@ text:
     text: 3. PSR-7/15/17ベースの実装と勘所
   p12:
   - kind: para
-    text: 1. HTTPの概説と
-  - kind: para
-    text: PHPの制約
+    text: 1. HTTPの概説とPHPの制約
   p13:
   - kind: para
     text: ネットのアドレスのやつ？
@@ -148,9 +146,7 @@ text:
       (火) 13:19
   p19:
   - kind: para
-    text: Enterを押すとHTTP
-  - kind: para
-    text: 通信が走る
+    text: Enterを押すとHTTP通信が走る
   p20:
   - kind: para
     text: HTTP/3は違いますが…
@@ -289,9 +285,7 @@ text:
     text: HTTPSだろうとブラウザからは通信は簡単に見れる
   p32:
   - kind: para
-    text: Webブラウザの
-  - kind: para
-    text: 開発者ツール
+    text: Webブラウザの開発者ツール
   p33:
   - kind: heading
     level: 1
@@ -301,17 +295,13 @@ text:
     text: リクエストを送る人が居ればリクエストを受け取る人も居る
   p35:
   - kind: para
-    text: 実際にはGoかもしれないしRubyかも
-  - kind: para
-    text: しれない…
+    text: 実際にはGoかもしれないしRubyかもしれない…
   - kind: heading
     level: 1
     text: そうですPHPです
   p36:
   - kind: para
-    text: ブラウザでPHPの実行結果が見えるということはPHPがHTTPリクエストを受け取って
-  - kind: para
-    text: レスポンスを返しているにほかならない
+    text: ブラウザでPHPの実行結果が見えるということはPHPがHTTPリクエストを受け取ってレスポンスを返しているにほかならない
   p37:
   - kind: para
     text: スーパーグローバル変数
@@ -412,9 +402,7 @@ text:
     text: <!DOCTYPE html><html><head>
   p46:
   - kind: para
-    text: PHPではechoなどで出力したものは
-  - kind: para
-    text: そのままレスポンスボディになる
+    text: PHPではechoなどで出力したものはそのままレスポンスボディになる
   - kind: para
     text: (レスポンスヘッダは、ボディをechoする前にheader()を呼んでおく)
   p47:
@@ -447,11 +435,7 @@ text:
     items:
     - PerlやRubyなどの言語のCGI機能はあ
   - kind: para
-    text: くまでもライブラリだが、PHPはServer
-  - kind: para
-    text: APIとしてHTTP処理が言語処理系と統
-  - kind: para
-    text: 合されている
+    text: くまでもライブラリだが、PHPはServer APIとしてHTTP処理が言語処理系と統合されている
   p51:
   - kind: list
     items:
@@ -472,9 +456,7 @@ text:
     text: そうともいかない事情がある
   p54:
   - kind: para
-    text: グローバルはテストとひたすら相
-  - kind: para
-    text: 性が悪い
+    text: グローバルはテストとひたすら相性が悪い
   - kind: list
     items:
     - スーパーグローバル変数
@@ -533,14 +515,10 @@ text:
     - 弊社ではStaticMockで対応
   p59:
   - kind: para
-    text: 2. HTTPとフレームワー
-  - kind: para
-    text: クとPSR
+    text: 2. HTTPとフレームワークとPSR
   p60:
   - kind: para
-    text: ここまでの問題点を
-  - kind: para
-    text: 整理しよう
+    text: ここまでの問題点を整理しよう
   p61:
   - kind: list
     items:
@@ -557,9 +535,7 @@ text:
     text: それならHTTPを引数と返り値で扱える場所に持ってくればいい
   p63:
   - kind: para
-    text: HTTPの構造は決まってる
-  - kind: para
-    text: わけじゃないですか
+    text: HTTPの構造は決まってるわけじゃないですか
   p64:
   - kind: heading
     level: 1
@@ -593,21 +569,13 @@ text:
     text: '{"json":"response..."}'
   p66:
   - kind: para
-    text: いかにもクラスに
-  - kind: para
-    text: できそう
+    text: いかにもクラスにできそう
   p67:
   - kind: para
-    text: システムの奥深くでグローバル
-  - kind: para
-    text: 変数を参照されたら困るならリクエストオブジェクトを渡してそこから状態を取得させればいい
+    text: システムの奥深くでグローバル変数を参照されたら困るならリクエストオブジェクトを渡してそこから状態を取得させればいい
   p68:
   - kind: para
-    text: header()関数をコールされたら困る
-  - kind: para
-    text: なら、送信したいヘッダをレスポンスオブジェクトに記録して受
-  - kind: para
-    text: け渡していけばいい
+    text: header()関数をコールされたら困るなら、送信したいヘッダをレスポンスオブジェクトに記録して受け渡していけばいい
   p69:
   - kind: heading
     level: 1
@@ -640,9 +608,7 @@ text:
     text: https://stackphp.com/ より引用
   p74:
   - kind: para
-    text: そこで出てくるのが
-  - kind: para
-    text: PHP-FIGとPSR
+    text: そこで出てくるのがPHP-FIGとPSR
   p75:
   - kind: list
     items:
@@ -672,23 +638,13 @@ text:
     text: が受理
   p78:
   - kind: para
-    text: これで晴れて具象への依存を避けつつPSRベースのWebアプリを書けるようになったとい
-  - kind: para
-    text: う話は、田中ひさてるさんのPHP-FIGのHTTP処理標準の設計はなぜ
-  - kind: para
-    text: PSR-7/15/17になったのか
-  - kind: para
-    text: を参照ください
+    text: これで晴れて具象への依存を避けつつPSRベースのWebアプリを書けるようになったという話は、田中ひさてるさんのPHP-FIGのHTTP処理標準の設計はなぜPSR-7/15/17になったのかを参照ください
   p79:
   - kind: para
-    text: 3. PSR-7/15/17ベー
-  - kind: para
-    text: スの実装と勘所
+    text: 3. PSR-7/15/17ベースの実装と勘所
   p80:
   - kind: para
-    text: お待たせしましたここからWebアプリを
-  - kind: para
-    text: 作りはじめましょう
+    text: お待たせしましたここからWebアプリを作りはじめましょう
   p81:
   - kind: list
     items:

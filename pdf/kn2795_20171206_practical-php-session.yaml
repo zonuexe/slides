@@ -21,11 +21,7 @@ text:
     text: 注意
   p4:
   - kind: para
-    text: この発表は新規のWebサイトWebアプリケーションフレー
-  - kind: para
-    text: ムワークに依存しないPHP開
-  - kind: para
-    text: 発を推奨する目的ではない
+    text: この発表は新規のWebサイトWebアプリケーションフレームワークに依存しないPHP開発を推奨する目的ではない
   p5:
   - kind: para
     text: ※今回ログインの話はしません
@@ -36,14 +32,10 @@ text:
     text: とは何か
   p7:
   - kind: para
-    text: この用語(セッション)が意味するところは
-  - kind: para
-    text: いろいろあるけど
+    text: この用語(セッション)が意味するところはいろいろあるけど
   p8:
   - kind: para
-    text: ここではWebで、ユーザーと継続的に
-  - kind: para
-    text: 通信する機構
+    text: ここではWebで、ユーザーと継続的に通信する機構
   p9:
   - kind: para
     text: 継続的？
@@ -78,9 +70,7 @@ text:
     text: Webサイト
   p13:
   - kind: para
-    text: Webブラウザでセッションを
-  - kind: para
-    text: 実現するには、一般的にはCookie(クッキー)が利用される
+    text: Webブラウザでセッションを実現するには、一般的にはCookie(クッキー)が利用される
   p14:
   - kind: para
     text: あとで話すよ
@@ -97,9 +87,7 @@ text:
   - kind: para
     text: TIPS
   - kind: para
-    text: Cookieを使ったセッション
-  - kind: para
-    text: を利用するときはプライバシーポリシーを明記しよう
+    text: Cookieを使ったセッションを利用するときはプライバシーポリシーを明記しよう
   p19:
   - kind: para
     text: PHPでセッション
@@ -130,21 +118,15 @@ text:
     level: 1
     text: TIPS
   - kind: para
-    text: PHPのフレームワークはセッション機構がいい感じに統合されてることがある。ただし、マイクロフレームワークではオ
-  - kind: para
-    text: ミットされてることが多くPHPデフォルトのセッションを気にする必要がある。
+    text: PHPのフレームワークはセッション機構がいい感じに統合されてることがある。ただし、マイクロフレームワークではオミットされてることが多くPHPデフォルトのセッションを気にする必要がある。
   p24:
   - kind: para
     text: TIPS
   - kind: para
-    text: session_start()および後述するセッション設定は個別のページで呼ぶのではなく、共通初期
-  - kind: para
-    text: 化スクリプトに記述すること
+    text: session_start()および後述するセッション設定は個別のページで呼ぶのではなく、共通初期化スクリプトに記述すること
   p25:
   - kind: para
-    text: まあとりあえずsession_start()で
-  - kind: para
-    text: 簡単にできる
+    text: まあとりあえずsession_start()で簡単にできる
   p26:
   - kind: para
     text: ね、かんたん
@@ -252,9 +234,7 @@ text:
     text: RFC 6265 HTTP State Management Mechanism
   p36:
   - kind: para
-    text: HTTP上でWebサイトと
-  - kind: para
-    text: UA(ブラウザ)が状態を共有するためのしくみ
+    text: HTTP上でWebサイトとUA(ブラウザ)が状態を共有するためのしくみ
   p37:
   - kind: para
     text: 状態？
@@ -263,11 +243,7 @@ text:
     text: 話は長くなる
   p39:
   - kind: para
-    text: Cookieに対応したユーザーエー
-  - kind: para
-    text: ジェント(Webブラウザ)がSet-Cookieを受け取ると、次からそのサイトにリクエストするときにCookieヘッダを
-  - kind: para
-    text: 付加する
+    text: Cookieに対応したユーザーエージェント(Webブラウザ)がSet-Cookieを受け取ると、次からそのサイトにリクエストするときにCookieヘッダを付加する
   p40:
   - kind: heading
     level: 1
@@ -314,16 +290,10 @@ text:
     text: 動くのか
   p44:
   - kind: para
-    text: Ｑ.どうしてセッショ
-  - kind: para
-    text: ンは特に設定しなくても動くのはなぜ？
+    text: Ｑ.どうしてセッションは特に設定しなくても動くのはなぜ？
   p45:
   - kind: para
-    text: Ａ.PHPはきみのことを
-  - kind: para
-    text: ファイルに保存して
-  - kind: para
-    text: 覚えてるからだよ
+    text: Ａ.PHPはきみのことをファイルに保存して覚えてるからだよ
   p46:
   - kind: para
     text: ファイルっすか
@@ -338,9 +308,7 @@ text:
     text: 😇
   p50:
   - kind: para
-    text: session_save_path()保存するディレクトリ
-  - kind: para
-    text: を設定できる
+    text: session_save_path()保存するディレクトリを設定できる
   p51:
   - kind: para
     text: http://php.net/manual/ja/function.session-save-path.php
@@ -355,9 +323,7 @@ text:
     text: 🤔
   p55:
   - kind: para
-    text: Ａ.サーバーまたいで
-  - kind: para
-    text: セッションを共有できない！
+    text: Ａ.サーバーまたいでセッションを共有できない！
   p56:
   - kind: para
     text: 🙃
@@ -366,9 +332,7 @@ text:
     text: Ｑ.具体的に何が起こる？
   p58:
   - kind: para
-    text: Ａ.サーバーを増やして分散させた瞬間に、セッ
-  - kind: para
-    text: ションが消えたりする
+    text: Ａ.サーバーを増やして分散させた瞬間に、セッションが消えたりする
   p59:
   - kind: para
     text: ／(^o^)＼
@@ -430,16 +394,10 @@ text:
     text: 設定
   p73:
   - kind: para
-    text: デフォルト設定
-  - kind: para
-    text: の問題
+    text: デフォルト設定の問題
   p74:
   - kind: para
-    text: デフォルトでは、Cookie
-  - kind: para
-    text: にSecure,httpOnly属性
-  - kind: para
-    text: がついてない
+    text: デフォルトでは、CookieにSecure,httpOnly属性がついてない
   p75:
   - kind: para
     text: 現代においては
@@ -468,39 +426,25 @@ text:
     text: session_start();
   p80:
   - kind: para
-    text: php.ini
-  - kind: para
-    text: VS PHP関数
+    text: php.ini VS PHP関数
   p81:
   - kind: para
     text: セッション系の設定設定ファイル(*.ini)とPHP両方で設定できる
   p82:
   - kind: para
-    text: 環境によってphp.iniは手を入
-  - kind: para
-    text: れにくいので、実行時にPHPスクリプトで設定関数を呼ぶ
-  - kind: para
-    text: ようにする方がおすすめ
+    text: 環境によってphp.iniは手を入れにくいので、実行時にPHPスクリプトで設定関数を呼ぶようにする方がおすすめ
   p83:
   - kind: para
-    text: 関数で書いてやれば(同じコードである限り)
-  - kind: para
-    text: 事故が起きにくい
+    text: 関数で書いてやれば(同じコードである限り)事故が起きにくい
   p84:
   - kind: para
-    text: 今回しなかっ
-  - kind: para
-    text: た話
+    text: 今回しなかった話
   p85:
   - kind: para
-    text: ログインの
-  - kind: para
-    text: 実装方法
+    text: ログインの実装方法
   p86:
   - kind: para
-    text: ログイン処理を実装するためにはセキュリティ的に考慮す
-  - kind: para
-    text: べき事柄がいろいろあるよ
+    text: ログイン処理を実装するためにはセキュリティ的に考慮すべき事柄がいろいろあるよ
   p87:
   - kind: para
     text: この発表の反響があったら続きを書くよ！

@@ -30,9 +30,7 @@ text:
     text: サンプルコードは言語機能を簡易に紹介するためのものです
   p5:
   - kind: para
-    text: 利用の際は必要性と利便性
-  - kind: para
-    text: を慎重に判断すること。
+    text: 利用の際は必要性と利便性を慎重に判断すること。
   p6:
   - kind: para
     text: アジェンダ
@@ -54,11 +52,7 @@ text:
     text: 前提
   p13:
   - kind: para
-    text: メタプログラミング(metaprogramming)とはプログラミング技法の一種で、ロジックを直接コーディングするのではなく、あるパター
-  - kind: para
-    text: ンをもったロジックを生成する高位ロジックによってプログラミングを行う方法、またそ
-  - kind: para
-    text: の高位ロジックを定義する方法のこと。
+    text: メタプログラミング(metaprogramming)とはプログラミング技法の一種で、ロジックを直接コーディングするのではなく、あるパターンをもったロジックを生成する高位ロジックによってプログラミングを行う方法、またその高位ロジックを定義する方法のこと。
   - kind: para
     text: https://ja.wikipedia.org/wiki/メタプログラミング
   p14:
@@ -69,43 +63,31 @@ text:
     text: https://ja.wikipedia.org/wiki/メタプログラミング
   p15:
   - kind: para
-    text: 突き詰めていくと関数呼び出しすら「直接コーディング」
-  - kind: para
-    text: しないと解釈できる
+    text: 突き詰めていくと関数呼び出しすら「直接コーディング」しないと解釈できる
   p16:
   - kind: para
-    text: それよりはちょっと
-  - kind: para
-    text: 複雑なものがメタプログラミング
+    text: それよりはちょっと複雑なものがメタプログラミング
   p17:
   - kind: para
     text: PHPは、所謂LLとしては遊びが少ない
   p18:
   - kind: para
-    text: 例) 原則として関数やクラスを再定義できない
-  - kind: para
-    text: (致命的エラーが発生)
+    text: 例) 原則として関数やクラスを再定義できない(致命的エラーが発生)
   p19:
   - kind: para
     text: RubyやPythonと違ってオープンクラスではない(モンキーパッチができない)
   p20:
   - kind: para
-    text: 謎なタイミングでクラス定義が変更される
-  - kind: para
-    text: ことが(基本的には)ない
+    text: 謎なタイミングでクラス定義が変更されることが(基本的には)ない
   p21:
   - kind: para
-    text: ＝静的解析しやすい
-  - kind: para
-    text: 条件が揃ってる
+    text: ＝静的解析しやすい条件が揃ってる
   p22:
   - kind: para
     text: 変数スコープが(比較的)シンプル
   p23:
   - kind: para
-    text: その和を乱す邪悪な動的メタプログラミング
-  - kind: para
-    text: テクニックが存在する
+    text: その和を乱す邪悪な動的メタプログラミングテクニックが存在する
   p24:
   - kind: para
     text: 😇
@@ -195,29 +177,21 @@ text:
     level: 1
     text: ★★☆☆☆
   - kind: para
-    text: 僕はコードレビューで「foreachの方が読
-  - kind: para
-    text: みやすい」ってマジレスすることもある
+    text: 僕はコードレビューで「foreachの方が読みやすい」ってマジレスすることもある
   - kind: para
     text: (★が多いほど邪悪)
   p36:
   - kind: para
-    text: (メタプログラミングと
-  - kind: para
-    text: 呼ぶかは議論がある)
+    text: (メタプログラミングと呼ぶかは議論がある)
   p37:
   - kind: para
-    text: PHPの「ふつう」はひとによって境界が
-  - kind: para
-    text: 異なる
+    text: PHPの「ふつう」はひとによって境界が異なる
   p38:
   - kind: para
     text: compact()extract()
   p39:
   - kind: para
-    text: 変数テーブルにアク
-  - kind: para
-    text: セスできる関数
+    text: 変数テーブルにアクセスできる関数
   p40:
   - kind: para
     text: compact()変数テーブルから取り出して配列にする
@@ -239,9 +213,7 @@ text:
     level: 1
     text: ★☆☆☆☆
   - kind: para
-    text: 何が起こるか把握して
-  - kind: para
-    text: 書くぶんには罠が少ない
+    text: 何が起こるか把握して書くぶんには罠が少ない
   - kind: para
     text: (★が多いほど邪悪)
   p43:
@@ -272,9 +244,7 @@ text:
     level: 1
     text: ★★★★★
   - kind: para
-    text: 何が起こるか把握して
-  - kind: para
-    text: 書くぶんには罠が少ない
+    text: 何が起こるか把握して書くぶんには罠が少ない
   - kind: para
     text: (★が多いほど邪悪)
   p46:
@@ -307,9 +277,7 @@ text:
     level: 1
     text: ★★★★★
   - kind: para
-    text: 純粋に読みにくい……。error_reporing
-  - kind: para
-    text: のレベルが低いと警告なしでnullになる。
+    text: 純粋に読みにくい……。error_reporingのレベルが低いと警告なしでnullになる。
   - kind: para
     text: (★が多いほど邪悪)
   p51:
@@ -317,9 +285,7 @@ text:
     text: debug_backtrace()
   p52:
   - kind: para
-    text: スタックトレースを
-  - kind: para
-    text: 全部取得できる(ファイル・引数含む)
+    text: スタックトレースを全部取得できる(ファイル・引数含む)
   p53:
   - kind: para
     text: 'Baguette\FriendsClass\CalledByOutsiderException: It is not allowed for'
@@ -336,9 +302,7 @@ text:
     text: 0.0020 552864 4. Baguette\assert_called_by_friend() ~/friends/tests/test.php:12
   p54:
   - kind: para
-    text: (これを悪用すればどんな邪悪なことが
-  - kind: para
-    text: できるかは明白)
+    text: (これを悪用すればどんな邪悪なことができるかは明白)
   p55:
   - kind: heading
     level: 1
@@ -368,9 +332,7 @@ text:
     level: 1
     text: ★★★☆☆
   - kind: para
-    text: ロギングは問題なし。
-  - kind: para
-    text: ワークアラウンドはギルティ。
+    text: ロギングは問題なし。ワークアラウンドはギルティ。
   - kind: para
     text: (★が多いほど邪悪)
   p58:
@@ -387,24 +349,16 @@ text:
     text: 大いなる力には大いなる責任が伴う
   p62:
   - kind: para
-    text: メタプログラミングの採用で劇的に便利
-  - kind: para
-    text: になることもある
+    text: メタプログラミングの採用で劇的に便利になることもある
   p63:
   - kind: para
-    text: 単に初心者殺しな意味不明なコードに
-  - kind: para
-    text: なることがある
+    text: 単に初心者殺しな意味不明なコードになることがある
   p64:
   - kind: para
-    text: (経験豊富な先輩に「若
-  - kind: para
-    text: いなあ」となまあたたかく見られるかも)
+    text: (経験豊富な先輩に「若いなあ」となまあたたかく見られるかも)
   p65:
   - kind: para
-    text: 用法容量を守って
-  - kind: para
-    text: たのしいプログラミングを
+    text: 用法容量を守ってたのしいプログラミングを
   - kind: para
     text: To Be Continued
 size:

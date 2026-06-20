@@ -35,27 +35,19 @@ text:
   p8: []
   p9:
   - kind: para
-    text: 出ちゃいま
-  - kind: para
-    text: したね
+    text: 出ちゃいましたね
   p10: []
   p11:
   - kind: para
-    text: このときは
-  - kind: para
-    text: 構文が違った
+    text: このときは構文が違った
   p12: []
   p13:
   - kind: para
-    text: そのあといろ
-  - kind: para
-    text: いろあった
+    text: そのあといろいろあった
   p14: []
   p15:
   - kind: para
-    text: いろいろ
-  - kind: para
-    text: あった
+    text: いろいろあった
   p16:
   - kind: para
     text: '@@Attr'
@@ -67,44 +59,22 @@ text:
     text: '@:Attr @{Attr}'
   p17:
   - kind: para
-    text: 書きかた工夫すれば
-  - kind: para
-    text: PHP7と矛盾せずに導入
-  - kind: para
-    text: できるのは
-  - kind: para
-    text: '#[Attr] 形式だけ'
+    text: 書きかた工夫すればPHP7と矛盾せずに導入できるのは#[Attr] 形式だけ
   p18:
   - kind: para
-    text: それは
-  - kind: para
-    text: わかる
+    text: それはわかる
   p19:
   - kind: para
-    text: 話は変り
-  - kind: para
-    text: ますが
+    text: 話は変りますが
   p20:
   - kind: para
-    text: テキストエディタの
-  - kind: para
-    text: 構文色付けというの
-  - kind: para
-    text: は意外に難しい
+    text: テキストエディタの構文色付けというのは意外に難しい
   p21:
   - kind: para
-    text: エディタの種類によって
-  - kind: para
-    text: 色付けアルゴリズムの
-  - kind: para
-    text: 違いには結構違いがある
+    text: エディタの種類によって色付けアルゴリズムの違いには結構違いがある
   p22:
   - kind: para
-    text: 一番よくあるのは
-  - kind: para
-    text: コードのキーワード
-  - kind: para
-    text: だけ色付ける方法
+    text: 一番よくあるのはコードのキーワードだけ色付ける方法
   p23:
   - kind: para
     text: if, else, for, endif,
@@ -120,11 +90,7 @@ text:
     text: とコメントブロックだけ
   p24:
   - kind: para
-    text: PHPだとそれでは
-  - kind: para
-    text: 不十分なことがある
-  - kind: para
-    text: (HereDoc/NowDoc)
+    text: PHPだとそれでは不十分なことがある(HereDoc/NowDoc)
   p25:
   - kind: para
     text: Attributeも
@@ -169,53 +135,23 @@ text:
   p28: []
   p29:
   - kind: para
-    text: エディタの構文色付けは
-  - kind: para
-    text: 言語のパーサをそのまま
-  - kind: para
-    text: 使えばいいわけではない
+    text: エディタの構文色付けは言語のパーサをそのまま使えばいいわけではない
   p30:
   - kind: para
-    text: キーボードで1文字ごと
-  - kind: para
-    text: に入力されるので
-  - kind: para
-    text: 画面に表示されている
-  - kind: para
-    text: コードがPHPとして
-  - kind: para
-    text: 正しいわけではない
+    text: キーボードで1文字ごとに入力されるので画面に表示されているコードがPHPとして正しいわけではない
   p31:
   - kind: para
-    text: 最近一番注目されて
-  - kind: para
-    text: るのはtree-sitter
-  - kind: para
-    text: というやつ
+    text: 最近一番注目されてるのはtree-sitterというやつ
   p32:
   - kind: para
-    text: PHP
-  - kind: para
-    text: ではMicrosoftが
-  - kind: para
-    text: 開発している
-  - kind: para
-    text: Tolerant PHP Parser
-  - kind: para
-    text: というやつもある
+    text: PHPではMicrosoftが開発しているTolerant PHP Parserというやつもある
   p33:
   - kind: para
-    text: 何が言いたい
-  - kind: para
-    text: のかというと
+    text: 何が言いたいのかというと
   p34: []
   p35:
   - kind: para
-    text: EmacsにはCc Mode
-  - kind: para
-    text: という言語モード用の
-  - kind: para
-    text: フレームワークがある
+    text: EmacsにはCc Modeという言語モード用のフレームワークがある
   p36:
   - kind: para
     text: Emacs
@@ -259,47 +195,27 @@ text:
     text: を継承している！！
   p39:
   - kind: para
-    text: ここまで言っておいて
-  - kind: para
-    text: なんだけど表示自体の
-  - kind: para
-    text: 対応は全然難しくない
+    text: ここまで言っておいてなんだけど表示自体の対応は全然難しくない
   p40: []
   p41: []
   p42:
   - kind: para
-    text: 画面表示は割と
-  - kind: para
-    text: ちゃんとしてる
+    text: 画面表示は割とちゃんとしてる
   p43:
   - kind: para
-    text: じゃあ何が
-  - kind: para
-    text: 問題なのか
+    text: じゃあ何が問題なのか
   p44:
   - kind: para
-    text: なぜかインデント処理の
-  - kind: para
-    text: どこかで正規表現マッチ
-  - kind: para
-    text: に文字列を渡すべき
-  - kind: para
-    text: ところnilが渡ってエラー
+    text: なぜかインデント処理のどこかで正規表現マッチに文字列を渡すべきところnilが渡ってエラー
   p45:
   - kind: para
-    text: バックトレースは
-  - kind: para
-    text: あるが行数なし
+    text: バックトレースはあるが行数なし
   p46:
   - kind: para
-    text: そしてその関数は
-  - kind: para
-    text: 2000行近くある…
+    text: そしてその関数は2000行近くある…
   p47:
   - kind: para
-    text: 俺たちのデバッグ
-  - kind: para
-    text: はこれからだ！
+    text: 俺たちのデバッグはこれからだ！
 size:
   max_width: 1024
   max_height: 768

@@ -43,22 +43,14 @@ text:
     text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p10:
   - kind: para
-    text: 無限を
-  - kind: para
-    text: 手玉に取る
+    text: 無限を手玉に取る
   p11:
   - kind: para
     text: 元ねたがある
   p12: []
   p13:
   - kind: para
-    text: いますぐ皆さんに
-  - kind: para
-    text: 函数プログラミングを
-  - kind: para
-    text: 学べという話
-  - kind: para
-    text: ではない
+    text: いますぐ皆さんに函数プログラミングを学べという話ではない
   p14:
   - kind: para
     text: (個人的に)
@@ -78,9 +70,7 @@ text:
     text: カッコイイ
   p19:
   - kind: para
-    text: 何が
-  - kind: para
-    text: 言いたいのか？
+    text: 何が言いたいのか？
   p20:
   - kind: para
     text: 遅延評価
@@ -90,18 +80,10 @@ text:
     text: 計算を遅らせる
   p21:
   - kind: para
-    text: 関数型知識ゼロでも
-  - kind: para
-    text: その神髄の一端を
-  - kind: para
-    text: いとも簡単に扱える
-  - kind: para
-    text: 機能がPHPにはある
+    text: 関数型知識ゼロでもその神髄の一端をいとも簡単に扱える機能がPHPにはある
   p22:
   - kind: para
-    text: ここまで言えば
-  - kind: para
-    text: おわかりですね？
+    text: ここまで言えばおわかりですね？
   p23:
   - kind: para
     text: ジェネレータ
@@ -110,24 +92,10 @@ text:
     text: Generator
   p24:
   - kind: para
-    text: ジェネレータ
-  - kind: para
-    text: とは何か？
+    text: ジェネレータとは何か？
   p25:
   - kind: para
-    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オ
-  - kind: para
-    text: ブジェクト、Iterator、そして“ジェネレータ”です。ジェネレー
-  - kind: para
-    text: タは言語によってコルーチン、semicoroutineやFiberとも呼
-  - kind: para
-    text: ばれるものと同等の言語機能であり、SICPのような計算機科学
-  - kind: para
-    text: の教科書で説明されるストリーム・無限リストを簡潔に実現で
-  - kind: para
-    text: きます。foreachループで配列を反復するのは既に作成済みの
-  - kind: para
-    text: データを頭から辿っていくだけのものであるのに対して、ジェ
+    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”です。ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言語機能であり、SICPのような計算機科学の教科書で説明されるストリーム・無限リストを簡潔に実現できます。foreachループで配列を反復するのは既に作成済みのデータを頭から辿っていくだけのものであるのに対して、ジェ
   - kind: para
     text: ネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能で
   - kind: para
@@ -140,19 +108,13 @@ text:
     text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p26:
   - kind: para
-    text: この説明で全部
-  - kind: para
-    text: なのですが…
+    text: この説明で全部なのですが…
   p27:
   - kind: para
-    text: ざっくり説明
-  - kind: para
-    text: していきます
+    text: ざっくり説明していきます
   p28:
   - kind: para
-    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”
-  - kind: para
-    text: です。
+    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”です。
   - kind: para
     text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
   - kind: para
@@ -234,9 +196,7 @@ text:
     text: foreach ($target_ids as $id) {shori($id);}
   p36:
   - kind: para
-    text: ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言
-  - kind: para
-    text: 語機能であり、
+    text: ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言語機能であり、
   - kind: para
     text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
   - kind: para
@@ -257,9 +217,7 @@ text:
     text: ジェネレータは古典的なコルーチンと同等のものですが、現代でコルーチンと呼ばれているものは意味がかなり拡大しているので注意が必要です
   p39:
   - kind: para
-    text: SICPのような計算機科学の教科書で説明されるスト
-  - kind: para
-    text: リーム・無限リストを簡潔に実現できます。
+    text: SICPのような計算機科学の教科書で説明されるストリーム・無限リストを簡潔に実現できます。
   - kind: para
     text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
   - kind: para
@@ -269,9 +227,7 @@ text:
     level: 1
     text: SICP
   - kind: para
-    text: 計算機プログラムの
-  - kind: para
-    text: 構造と解釈
+    text: 計算機プログラムの構造と解釈
   p41:
   - kind: heading
     level: 1
@@ -280,9 +236,7 @@ text:
     text: https://www.amazon.co.jp/dp/4798135984
   p42:
   - kind: para
-    text: Webで無料で
-  - kind: para
-    text: も読めます
+    text: Webで無料でも読めます
   p43:
   - kind: heading
     level: 1
@@ -297,13 +251,7 @@ text:
     text: https://takeda25.hatenablog.jp/entry/20151030/1446174031
   p45:
   - kind: para
-    text: 計算機科学の入門
-  - kind: para
-    text: 書という扱いだが
-  - kind: para
-    text: ､
-  - kind: para
-    text: 簡単な本ではない
+    text: 計算機科学の入門書という扱いだが､簡単な本ではない
   p46:
   - kind: para
     text: この本の序盤
@@ -313,24 +261,10 @@ text:
     text: 書いてあること
   p47:
   - kind: para
-    text: (二値の組を持つオブ
-  - kind: para
-    text: ペア
-  - kind: para
-    text: ジェクト)
-  - kind: para
-    text: があれば様々
-  - kind: para
-    text: なデータ構造が作れる
+    text: (二値の組を持つオブペアジェクト)があれば様々なデータ構造が作れる
   p48:
   - kind: para
-    text: ペアの片方を関数で
-  - kind: para
-    text: 遅延させることで
-  - kind: para
-    text: ストリーム(遅延リス
-  - kind: para
-    text: ト)というものが作れる
+    text: ペアの片方を関数で遅延させることでストリーム(遅延リスト)というものが作れる
   p49:
   - kind: para
     text: ストリーム (遅延リスト)
@@ -342,36 +276,20 @@ text:
     text: https://github.com/zonuexe/phperkaigi-generator/blob/master/stream.php
   p50:
   - kind: para
-    text: ストリームでできる
-  - kind: para
-    text: ことはジェネレータ
-  - kind: para
-    text: で表現できる
+    text: ストリームでできることはジェネレータで表現できる
   p51:
   - kind: para
-    text: foreachループで配列を反復するのは既に作成済みの
-  - kind: para
-    text: データを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを
-  - kind: para
-    text: 計算によって生み出すことができるため、省メモリで効
-  - kind: para
-    text: 率のよい計算が可能です。
+    text: foreachループで配列を反復するのは既に作成済みのデータを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能です。
   - kind: para
     text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
   - kind: para
     text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p52:
   - kind: para
-    text: ということで、
-  - kind: para
-    text: ジェネレータを
-  - kind: para
-    text: 説明します
+    text: ということで、ジェネレータを説明します
   p53:
   - kind: para
-    text: ジェネレータの
-  - kind: para
-    text: 書きかた
+    text: ジェネレータの書きかた
   p54:
   - kind: para
     text: ジェネレータ=特別な関数

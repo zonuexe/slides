@@ -53,23 +53,15 @@ text:
   p9: []
   p10:
   - kind: para
-    text: PHPカンファレンス
-  - kind: para
-    text: 関西2018
+    text: PHPカンファレンス関西2018
   p11: []
   p12: []
   p13:
   - kind: para
-    text: このときは2012年以後に改善したことを
-  - kind: para
-    text: 主に話しました
+    text: このときは2012年以後に改善したことを主に話しました
   p14:
   - kind: para
-    text: 今回は私の入社時（2012年以前）に既に
-  - kind: para
-    text: あったものについて
-  - kind: para
-    text: 紹介していきます
+    text: 今回は私の入社時（2012年以前）に既にあったものについて紹介していきます
   p15:
   - kind: para
     text: 前提を揃えましょう
@@ -78,9 +70,7 @@ text:
     text: ふつうのPHP？
   p17:
   - kind: para
-    text: URLに.phpが
-  - kind: para
-    text: 入っている
+    text: URLに.phpが入っている
   p18:
   - kind: para
     text: http://www.pixiv.net/member.php?id=105589
@@ -89,14 +79,10 @@ text:
     text: http://www.pixiv.net/member.php?id=105589
   p20:
   - kind: para
-    text: https://www.pixiv.net
-  - kind: para
-    text: /users/105589
+    text: https://www.pixiv.net/users/105589
   p21:
   - kind: para
-    text: URLとスクリプト
-  - kind: para
-    text: ファイルが1:1で対応する時代だった
+    text: URLとスクリプトファイルが1:1で対応する時代だった
   p22:
   - kind: para
     text: （当時の世間では）
@@ -106,19 +92,13 @@ text:
     text: ≒ Perl or PHP
   p23:
   - kind: para
-    text: pixivリリースの
-  - kind: para
-    text: 2007年はまだそういう時代
+    text: pixivリリースの2007年はまだそういう時代
   p24:
   - kind: para
     text: 参考までにRails2.0が出て日本で注目されだしたのが2008年
   p25:
   - kind: para
-    text: Ruby関係者に怒られないよ
-  - kind: para
-    text: う言及するとRails以前にもtDiaryのようなRuby CGIな
-  - kind: para
-    text: Webアプリもあったし現在もRackでばっちり動きます
+    text: Ruby関係者に怒られないよう言及するとRails以前にもtDiaryのようなRuby CGIなWebアプリもあったし現在もRackでばっちり動きます
   p26:
   - kind: para
     text: 重要なこと：ファイル=URLのCGI的な構造でFWに依存してない（これは2015年まで続く）
@@ -150,21 +130,13 @@ text:
     level: 1
     text: Git
   - kind: para
-    text: (2012年は普及時期だけど
-  - kind: para
-    text: 会社としてSVNから完全
-  - kind: para
-    text: 移行したのは割と早め)
+    text: (2012年は普及時期だけど会社としてSVNから完全移行したのは割と早め)
   p34:
   - kind: para
     text: あとは制限時間で打ち切られるまで個別要素を語っていくぞ
   p35:
   - kind: para
-    text: pixiv開発メンバーでも何が一般的で何がpixiv独自
-  - kind: para
-    text: 要素なのか把握できてる
-  - kind: para
-    text: ひとは多くないと思う
+    text: pixiv開発メンバーでも何が一般的で何がpixiv独自要素なのか把握できてるひとは多くないと思う
   p36:
   - kind: heading
     level: 1
@@ -173,20 +145,10 @@ text:
     text: (PHP Database Object)
   p37:
   - kind: para
-    text: 入社時には僅かなmysql関数
-  - kind: para
-    text: も残ってたけど、ほぼPDO
-  - kind: para
-    text: 化が済んでた（時代的には
-  - kind: para
-    text: PEAR::DBやMDB2でもおかしくない）
+    text: 入社時には僅かなmysql関数も残ってたけど、ほぼPDO化が済んでた（時代的にはPEAR::DBやMDB2でもおかしくない）
   p38:
   - kind: para
-    text: SQLのクエリ末尾にスタッ
-  - kind: para
-    text: クトレースを付加することでスロークエリの発生箇所
-  - kind: para
-    text: を容易に特定できる
+    text: SQLのクエリ末尾にスタックトレースを付加することでスロークエリの発生箇所を容易に特定できる
   p39:
   - kind: para
     text: それもPDOを生で使わずにラッパークラスを設けて使ってたのが本当にすごい
@@ -197,16 +159,10 @@ text:
     text: Proxyクラス+べんりメソッドの追加
   p41:
   - kind: para
-    text: 系統とmaster/slaveごと
-  - kind: para
-    text: にPDOのシングルトンを
-  - kind: para
-    text: 管理するクラス
+    text: 系統とmaster/slaveごとにPDOのシングルトンを管理するクラス
   p42:
   - kind: para
-    text: slaveに対して書き込みクエリが発行されることを
-  - kind: para
-    text: 事前に防ぐ構造を提供
+    text: slaveに対して書き込みクエリが発行されることを事前に防ぐ構造を提供
   p43:
   - kind: heading
     level: 1
@@ -215,94 +171,56 @@ text:
     text: (HTMLテンプレートエンジン)
   p44:
   - kind: para
-    text: SmartyはPHPの定番テンプレートエンジンだが、それ自体はXSS耐性がなく
-  - kind: para
-    text: 全ての値を明示的にエス
-  - kind: para
-    text: ケープしないといけない
+    text: SmartyはPHPの定番テンプレートエンジンだが、それ自体はXSS耐性がなく全ての値を明示的にエスケープしないといけない
   p45:
   - kind: para
-    text: pixivではSmarty_Compilerを拡張してattributeで明示的にエス
-  - kind: para
-    text: ケープしない出力を拒否
+    text: pixivではSmarty_Compilerを拡張してattributeで明示的にエスケープしない出力を拒否
   p46:
   - kind: para
-    text: SmartyはPHPスクリプトとして
-  - kind: para
-    text: 変換されるものが実行され(コン
-  - kind: para
-    text: パイルキャッシュ)、チェッカー
-  - kind: para
-    text: が走るのはコンパイル時のみで
-  - kind: para
-    text: 実行時コストは掛からない
+    text: SmartyはPHPスクリプトとして変換されるものが実行され(コンパイルキャッシュ)、チェッカーが走るのはコンパイル時のみで実行時コストは掛からない
   p47:
   - kind: para
     text: フレームワーク
   p48:
   - kind: para
-    text: pixiv本体はフレームワー
-  - kind: para
-    text: クに依存していない
+    text: pixiv本体はフレームワークに依存していない
   p49:
   - kind: para
-    text: が、部分的に薄いフレームワークのような機能を持つ層
-  - kind: para
-    text: は複数あった
+    text: が、部分的に薄いフレームワークのような機能を持つ層は複数あった
   p50:
   - kind: para
     text: 独自フレームワークそのものも複数あった
   p51: []
   p52:
   - kind: para
-    text: (いわゆる)RESTful APIの
-  - kind: para
-    text: pixiv内における初期事例(PHPカンファレンス2013)
+    text: (いわゆる)RESTful APIのpixiv内における初期事例(PHPカンファレンス2013)
   p53:
   - kind: para
-    text: 身近に24ファイル程度の
-  - kind: para
-    text: 読めるフレームワークがあったのはPHPの理解に
-  - kind: para
-    text: 非常に大きく役立った
+    text: 身近に24ファイル程度の読めるフレームワークがあったのはPHPの理解に非常に大きく役立った
   p54:
   - kind: para
-    text: タグジャンプできない(=静的解析しにくい)制約は反面教師として現在の改善に
-  - kind: para
-    text: 活かされている
+    text: タグジャンプできない(=静的解析しにくい)制約は反面教師として現在の改善に活かされている
   p55:
   - kind: para
     text: 総括
   p56:
   - kind: para
-    text: 今回は2012年以前の
-  - kind: para
-    text: 前期pixivから現在も現役の実装を紹介した
+    text: 今回は2012年以前の前期pixivから現在も現役の実装を紹介した
   p57:
   - kind: para
-    text: 前期pixivの内部実装について情報が外に出
-  - kind: para
-    text: る機会は少なかった
+    text: 前期pixivの内部実装について情報が外に出る機会は少なかった
   p58:
   - kind: para
-    text: CGI時代の空気を色濃く
-  - kind: para
-    text: 残していたコードは2015年頃にフレームワーク
-  - kind: para
-    text: 的な構造に移植されている
+    text: CGI時代の空気を色濃く残していたコードは2015年頃にフレームワーク的な構造に移植されている
   p59:
   - kind: para
     text: 良いアーキテクチャとは言いがたいが、実装面としてユニークなものは多くある
   p60:
   - kind: para
-    text: 良い遺産だからと全肯定して残したい
-  - kind: para
-    text: わけではない
+    text: 良い遺産だからと全肯定して残したいわけではない
   p61:
   - kind: para
-    text: 歴史から学んでもっと良いもので
-  - kind: para
-    text: 置き換えていこう
+    text: 歴史から学んでもっと良いもので置き換えていこう
   p62:
   - kind: heading
     level: 1

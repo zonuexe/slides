@@ -13,9 +13,7 @@ text:
     text: 講義資料です
   p4:
   - kind: para
-    text: このスライドはWebで公開します
-  - kind: para
-    text: (メモはとらなくても良いです、の意味)
+    text: このスライドはWebで公開します(メモはとらなくても良いです、の意味)
   p5:
   - kind: heading
     level: 1
@@ -47,9 +45,7 @@ text:
   - kind: para
     text: コードの美しさはユーザーに見えない
   - kind: para
-    text: 汚ないコードでも、動けばユーザーに
-  - kind: para
-    text: とっては最大の価値を生み出す
+    text: 汚ないコードでも、動けばユーザーにとっては最大の価値を生み出す
   p10:
   - kind: heading
     level: 1
@@ -57,9 +53,7 @@ text:
   - kind: para
     text: コードの美しさはユーザーに見えない
   - kind: para
-    text: 汚ないコードでも、動けばユーザーに
-  - kind: para
-    text: とっては最大の価値を生み出す
+    text: 汚ないコードでも、動けばユーザーにとっては最大の価値を生み出す
   p11:
   - kind: heading
     level: 1
@@ -80,20 +74,14 @@ text:
     level: 1
     text: まとめると
   - kind: para
-    text: ソースコードの美醜は現在の
+    text: ソースコードの美醜は現在のプログラムの価値とは関係ない
   - kind: para
-    text: プログラムの価値とは関係ない
-  - kind: para
-    text: ただし美しくないコードは
-  - kind: para
-    text: 将来の可能性を閉ざしかねない
+    text: ただし美しくないコードは将来の可能性を閉ざしかねない
   p14:
   - kind: para
     text: リーダブル
   - kind: para
-    text: そのために「読める」
-  - kind: para
-    text: コードの追求とお作法の共有が必要
+    text: そのために「読める」コードの追求とお作法の共有が必要
   p15:
   - kind: para
     text: 今回は大仰な設計の話ではなく、単にコーディングルールの共有をします
@@ -161,9 +149,7 @@ text:
   - kind: para
     text: PHPは <?php 〜 ?> の範囲外に
   - kind: para
-    text: 書かれた文字列を出力します
-  - kind: para
-    text: 不随意にコード中に変な文字が混入し
+    text: 書かれた文字列を出力します不随意にコード中に変な文字が混入し
   - kind: para
     text: たとき、文法エラーにもならず出力されかねないリスクがあります
   p23:
@@ -171,13 +157,9 @@ text:
     level: 1
     text: クラス定義
   - kind: para
-    text: クラスの概要を一行で要約すること
+    text: クラスの概要を一行で要約すること一行で説明が不可能なら、クラスが持つ責任は明らかに多すぎます
   - kind: para
-    text: 一行で説明が不可能なら、クラスが持つ責任は明らかに多すぎます
-  - kind: para
-    text: クラス継承は慎重に設計してください
-  - kind: para
-    text: 個人的な経験では継承よりも委譲や
+    text: クラス継承は慎重に設計してください個人的な経験では継承よりも委譲や
   - kind: para
     text: interfaceの方がうまくいきます
   p24:
@@ -196,13 +178,9 @@ text:
     level: 1
     text: メソッド定義
   - kind: para
-    text: メソッドの概要を一行で要約し、引数と返り値の型をデザインします
+    text: メソッドの概要を一行で要約し、引数と返り値の型をデザインします一行で説明できないメソッドは
   - kind: para
-    text: 一行で説明できないメソッドは
-  - kind: para
-    text: その存在の軸が容易に揺らいでいく
-  - kind: para
-    text: 複数の型の値を返すメソッドは
+    text: その存在の軸が容易に揺らいでいく複数の型の値を返すメソッドは
   - kind: para
     text: 機能が多すぎ、利用側が煩雑になる
   p27:
@@ -263,9 +241,7 @@ text:
     text: なんでPHPなのにわざわざ型を書くの
   p33:
   - kind: para
-    text: バグるのと型書くの
-  - kind: para
-    text: どっちがええねん
+    text: バグるのと型書くのどっちがええねん
   - kind: heading
     level: 1
     text: 😎
@@ -274,9 +250,7 @@ text:
     level: 1
     text: PHPは動的プログラミング言語
   - kind: para
-    text: 静的型解析器(コンパイラ)は一般に実行前(コンパイル時)に変数や関数の型を特定する
-  - kind: para
-    text: PHPのVM(インタプリタ)は、
+    text: 静的型解析器(コンパイラ)は一般に実行前(コンパイル時)に変数や関数の型を特定するPHPのVM(インタプリタ)は、
   - kind: para
     text: 変数や関数の型は基本的に特定せず、実行時に動的型解析する
   p35:
@@ -284,9 +258,7 @@ text:
     text: PHPの多くのバグは実行時まで遅延する
   p36:
   - kind: para
-    text: 要は動かさないと
-  - kind: para
-    text: わからない
+    text: 要は動かさないとわからない
   p37:
   - kind: para
     text: 動かさなくてもバグを検出できるうれしみは大きい
@@ -345,11 +317,7 @@ text:
     text: PHP Framework Interop Group PHPフレームワーク相互運用グループ
   p50:
   - kind: para
-    text: フレームワークや
-  - kind: para
-    text: CMSを開発する
-  - kind: para
-    text: 組織の寄合
+    text: フレームワークやCMSを開発する組織の寄合
   p51:
   - kind: heading
     level: 1
@@ -371,11 +339,7 @@ text:
   p55: []
   p56:
   - kind: para
-    text: ばらばらに作ってたのを
-  - kind: para
-    text: 仕様化して相互に利用しやすくしようぜ！
-  - kind: para
-    text: ……みたいな人類の夢
+    text: ばらばらに作ってたのを仕様化して相互に利用しやすくしようぜ！……みたいな人類の夢
   p57:
   - kind: para
     text: みんな仲良く
@@ -403,25 +367,15 @@ text:
   - kind: para
     text: 文字コードはUTF-8(BOMなし)
   - kind: para
-    text: クラスや定義のファイルは分けて、
+    text: クラスや定義のファイルは分けて、副作用のある処理とは分割する
   - kind: para
-    text: 副作用のある処理とは分割する
-  - kind: para
-    text: クラス名はStudlyCaps(UpperCamlCase)、
-  - kind: para
-    text: メソッド名はlowerCamelCase、
-  - kind: para
-    text: プロパティ名は規定しないけど一貫せよ
+    text: クラス名はStudlyCaps(UpperCamlCase)、メソッド名はlowerCamelCase、プロパティ名は規定しないけど一貫せよ
   p60:
   - kind: heading
     level: 1
     text: PSR-2 Coding Style Guide
   - kind: para
-    text: 具体的なコーディングスタイルガイド
-  - kind: para
-    text: PSRに準拠したライブラリが必ず遵守しなければいけないルールではなく、プロジェクトごとにガイドラインを
-  - kind: para
-    text: 決めるための叩き台
+    text: 具体的なコーディングスタイルガイドPSRに準拠したライブラリが必ず遵守しなければいけないルールではなく、プロジェクトごとにガイドラインを決めるための叩き台
   - kind: para
     text: ↑ここ誤解してるひとが意外と多い
   p61:
@@ -460,9 +414,7 @@ text:
     text: サブ名前空間とベースディレクトリの概念が導入
   p65:
   - kind: para
-    text: わしのPSRは17まで
-  - kind: para
-    text: あるぞ
+    text: わしのPSRは17まであるぞ
   p66:
   - kind: para
     text: さて
@@ -480,26 +432,16 @@ text:
     text: 😎
   p69:
   - kind: para
-    text: プライベートなプロ
-  - kind: para
-    text: ジェクトがPSRに厳密に従っても得ら
-  - kind: para
-    text: れるものは乏しい
+    text: プライベートなプロジェクトがPSRに厳密に従っても得られるものは乏しい
   p70:
   - kind: para
-    text: プライベートなプロ
-  - kind: para
-    text: ジェクトがPSRに厳密に従っても得ら
-  - kind: para
-    text: れるものは乏しい
+    text: プライベートなプロジェクトがPSRに厳密に従っても得られるものは乏しい
   p71:
   - kind: para
     text: 厳密に
   p72:
   - kind: para
-    text: 都合のいいところだけ
-  - kind: para
-    text: 持ってくればいい
+    text: 都合のいいところだけ持ってくればいい
   - kind: heading
     level: 1
     text: 😊
@@ -508,9 +450,7 @@ text:
     text: 規則とは理想的には自分たちの足を撃ち抜かないためにある
   p74:
   - kind: para
-    text: 実態に即しない規則
-  - kind: para
-    text: は改正すべし
+    text: 実態に即しない規則は改正すべし
   p75:
   - kind: heading
     level: 1
@@ -557,9 +497,7 @@ text:
   - kind: para
     text: (これに限らず)ルールやお作法は、われわれ人類が自爆しないための鎖
   - kind: para
-    text: ルールが作られた背景には事情がある
-  - kind: para
-    text: ので、それを共有していくのが重要
+    text: ルールが作られた背景には事情があるので、それを共有していくのが重要
   - kind: para
     text: 「どうしてこうなってるの」と感じたら質問していこう
 size:

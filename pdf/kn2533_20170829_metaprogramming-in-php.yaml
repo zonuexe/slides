@@ -26,21 +26,15 @@ text:
     text: 世の中にはいろんなクールな言語がある
   p4:
   - kind: para
-    text: PHPには毛ほども興味のな
-  - kind: para
-    text: さそうな皆さまにPHPの動的な言語機能を紹介します
+    text: PHPには毛ほども興味のなさそうな皆さまにPHPの動的な言語機能を紹介します
   p5:
   - kind: para
     text: サンプルコードは言語機能を簡易に紹介するためのものです
   p6:
   - kind: para
-    text: 利用の際は必要性と利便性
+    text: 利用の際は必要性と利便性を慎重に判断すること。
   - kind: para
-    text: を慎重に判断すること。
-  - kind: para
-    text: (メタプログラミングって基本的
-  - kind: para
-    text: にそーゆーものですけど…)
+    text: (メタプログラミングって基本的にそーゆーものですけど…)
   p7:
   - kind: para
     text: アジェンダ
@@ -55,27 +49,19 @@ text:
     text: PHPは、所謂LLとしては遊びが少ない
   p11:
   - kind: para
-    text: 例) 原則として関数やクラスを再定義できない
-  - kind: para
-    text: (致命的エラーが発生)
+    text: 例) 原則として関数やクラスを再定義できない(致命的エラーが発生)
   p12:
   - kind: para
     text: RubyやPythonと違ってオープンクラスではない(モンキーパッチができない)
   p13:
   - kind: para
-    text: 謎なタイミングでクラス定義が変更される
-  - kind: para
-    text: ことが(基本的には)ない
+    text: 謎なタイミングでクラス定義が変更されることが(基本的には)ない
   p14:
   - kind: para
-    text: ＝静的解析しやすい
-  - kind: para
-    text: 条件が揃ってる
+    text: ＝静的解析しやすい条件が揃ってる
   p15:
   - kind: para
-    text: その和を乱す邪悪な動的メタプログラミング
-  - kind: para
-    text: テクニックが存在する
+    text: その和を乱す邪悪な動的メタプログラミングテクニックが存在する
   p16:
   - kind: para
     text: 😇
@@ -115,9 +101,7 @@ text:
     text: compact()extract()
   p23:
   - kind: para
-    text: 変数テーブルにアク
-  - kind: para
-    text: セスできる関数
+    text: 変数テーブルにアクセスできる関数
   p24:
   - kind: para
     text: compact()変数テーブルから取り出して配列にする
@@ -178,16 +162,10 @@ text:
     text: debug_backtrace()
   p33:
   - kind: para
-    text: スタックトレースを
-  - kind: para
-    text: 全部取得できる(ファイル・引数含む)
+    text: スタックトレースを全部取得できる(ファイル・引数含む)
   p34:
   - kind: para
-    text: (これを悪用すればどん
-  - kind: para
-    text: な邪悪なことができる
-  - kind: para
-    text: かは明白なので省略)
+    text: (これを悪用すればどんな邪悪なことができるかは明白なので省略)
   p35:
   - kind: para
     text: 中級編
@@ -199,14 +177,10 @@ text:
     text: __get($name)__set($name, $value)
   p38:
   - kind: para
-    text: __get()アクセス不可プロパティを読み出そうとしたとき
-  - kind: para
-    text: に呼ばれる
+    text: __get()アクセス不可プロパティを読み出そうとしたときに呼ばれる
   p39:
   - kind: para
-    text: __set()アクセス不可プロパティを書き込もうとしたとき
-  - kind: para
-    text: に呼ばれる
+    text: __set()アクセス不可プロパティを書き込もうとしたときに呼ばれる
   p40:
   - kind: heading
     level: 1
@@ -216,9 +190,7 @@ text:
       = $value;}public function __get($name) {return $values[$name];}}
   p41:
   - kind: para
-    text: 「アクセス不可」は未定義プロパティだけはなく
-  - kind: para
-    text: private, protected含む
+    text: 「アクセス不可」は未定義プロパティだけはなくprivate, protected含む
   p42:
   - kind: heading
     level: 1
@@ -238,9 +210,7 @@ text:
     text: __call($name, $args)
   p45:
   - kind: para
-    text: __call()アクセス不可メソッドを起動しようとしたときに
-  - kind: para
-    text: 呼ばれる
+    text: __call()アクセス不可メソッドを起動しようとしたときに呼ばれる
   p46:
   - kind: heading
     level: 1
@@ -262,19 +232,13 @@ text:
     text: 上級編
   p49:
   - kind: para
-    text: spl_autoload
-  - kind: para
-    text: _register()
+    text: spl_autoload_register()
   p50:
   - kind: para
     text: クラスが定義されたファイルを自動ロードするための仕組み
   p51:
   - kind: para
-    text: (ふつうはComposerが
-  - kind: para
-    text: やってくれるので自分
-  - kind: para
-    text: で定義する必要ない)
+    text: (ふつうはComposerがやってくれるので自分で定義する必要ない)
   p52:
   - kind: heading
     level: 1
@@ -284,9 +248,7 @@ text:
       . '.php';$path = __DIR__ . '/' . $file;if (file_exists($path)) {require $path;}});
   p53:
   - kind: para
-    text: クラスが読み込まれ
-  - kind: para
-    text: る前に介入できる
+    text: クラスが読み込まれる前に介入できる
   p54:
   - kind: heading
     level: 1
@@ -306,14 +268,10 @@ text:
     text: 大いなる力には大いなる責任がry
   p58:
   - kind: para
-    text: PHPUnit, PsySH, そのほか一部のフレームワークなどはメタプログラミングのテクニッ
-  - kind: para
-    text: クを活用してる
+    text: PHPUnit, PsySH, そのほか一部のフレームワークなどはメタプログラミングのテクニックを活用してる
   p59:
   - kind: para
-    text: それ用のライブラリ
-  - kind: para
-    text: もある。
+    text: それ用のライブラリもある。
   - kind: para
     text: (Go! AOP https://github.com/goaop/framework)
   p60:

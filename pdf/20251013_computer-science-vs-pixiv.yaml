@@ -78,14 +78,10 @@ text:
   p10: []
   p11:
   - kind: para
-    text: pixivとDBを直接共有しているのは
-  - kind: para
-    text: PHP (モノレポ)
+    text: pixivとDBを直接共有しているのはPHP (モノレポ)
   p12:
   - kind: para
-    text: それ以外は開発時期や体制に
-  - kind: para
-    text: 応じていろいろ
+    text: それ以外は開発時期や体制に応じていろいろ
   p13: []
   p14:
   - kind: para
@@ -105,9 +101,7 @@ text:
   - kind: para
     text: C10K問題
   - kind: para
-    text: 普通のWebサービスはDBのI/Oで律速するので
-  - kind: para
-    text: 言語は支配的ではない
+    text: 普通のWebサービスはDBのI/Oで律速するので言語は支配的ではない
   p17:
   - kind: heading
     level: 1
@@ -121,9 +115,7 @@ text:
     - とてもPerlっぽい構文 (特に変数の $ と、文末の ; )
   p18:
   - kind: para
-    text: こういう言語の型解析とかFWについて
-  - kind: para
-    text: 発信してます
+    text: こういう言語の型解析とかFWについて発信してます
   - kind: heading
     level: 1
     text: 'PHP: Hypertext Preprocessor'
@@ -140,31 +132,21 @@ text:
     text: PHPは見る人の心を映す
   p20:
   - kind: para
-    text: 現役の学生にはPHPへの感情は
-  - kind: para
-    text: 特にないかも
+    text: 現役の学生にはPHPへの感情は特にないかも
   p21:
   - kind: para
-    text: 20年以上Webを
-  - kind: para
-    text: 支えている言語
+    text: 20年以上Webを支えている言語
   p22:
   - kind: para
-    text: 個人的にはハックしがいのある
-  - kind: para
-    text: おもしろ言語
+    text: 個人的にはハックしがいのあるおもしろ言語
   p23: []
   p24: []
   p25:
   - kind: para
-    text: pixivは2007年から
-  - kind: para
-    text: 絶え間なく開発が続いている
+    text: pixivは2007年から絶え間なく開発が続いている
   p26:
   - kind: para
-    text: いろんな人たちの
-  - kind: para
-    text: 問題解決が詰まっている
+    text: いろんな人たちの問題解決が詰まっている
   p27:
   - kind: para
     text: さも自分がやった仕事のように紹介します
@@ -219,9 +201,7 @@ text:
       yyy.php└── zzz.php
   p41:
   - kind: para
-    text: ファイルをサーバに
-  - kind: para
-    text: コピーすればデプロイ完了する
+    text: ファイルをサーバにコピーすればデプロイ完了する
   p42:
   - kind: para
     text: Railsとか使えば綺麗なURLになるよね
@@ -269,9 +249,7 @@ text:
       ''/u/:id'', to: ''user#show''get ''/yyy'', to: ''yyy''get ''/zzz'', to: ''zzz'''
   p50:
   - kind: para
-    text: pixivはフレームワークに
-  - kind: para
-    text: 乗ってない
+    text: pixivはフレームワークに乗ってない
   p51:
   - kind: heading
     level: 1
@@ -325,14 +303,10 @@ text:
     level: 1
     text: 'get ''/zzz'', to: ''zzz'''
   - kind: para
-    text: 定数URLはハッシュテーブルで
-  - kind: para
-    text: O(n)で取得
+    text: 定数URLはハッシュテーブルでO(n)で取得
   p58:
   - kind: para
-    text: ボトルネックじゃなけりゃ雑に処理すればいいじゃん
-  - kind: para
-    text: (大富豪の発想)
+    text: ボトルネックじゃなけりゃ雑に処理すればいいじゃん(大富豪の発想)
   p59: []
   p60:
   - kind: heading
@@ -347,9 +321,7 @@ text:
   p62: []
   p63:
   - kind: para
-    text: たったの100個でこの有様
-  - kind: para
-    text: これだから線形時間はだめ
+    text: たったの100個でこの有様これだから線形時間はだめ
   p64:
   - kind: heading
     level: 1
@@ -359,9 +331,7 @@ text:
     text: (と競プロ得意な同僚が言った)
   p65:
   - kind: para
-    text: URLルーティングには
-  - kind: para
-    text: 実装の定石がある
+    text: URLルーティングには実装の定石がある
   p66:
   - kind: para
     text: 正規表現ベース実装
@@ -425,9 +395,7 @@ text:
   p73: []
   p74:
   - kind: para
-    text: 選ばれたのはパトリシアトライ
-  - kind: para
-    text: でした
+    text: 選ばれたのはパトリシアトライでした
   p75:
   - kind: para
     text: パトリシアトライを実装しよう
@@ -441,9 +409,7 @@ text:
     - マッチしない場合も処理時間のペナルティがない
   p76:
   - kind: para
-    text: ルーティングは
-  - kind: para
-    text: できた
+    text: ルーティングはできた
   p77:
   - kind: para
     text: めでたしめでたし
@@ -451,9 +417,7 @@ text:
     text: 🎉
   p78:
   - kind: para
-    text: あとは既存コードを
-  - kind: para
-    text: URLルーターに載せればいいだけ
+    text: あとは既存コードをURLルーターに載せればいいだけ
   p79:
   - kind: para
     text: /data/www/www.pixiv.net (document root)├── index.php├── novel│ └── show.php├──
@@ -494,9 +458,7 @@ text:
       zzz.php(実際にはファイルが数百個)
   p88:
   - kind: para
-    text: 手で移植するのは
-  - kind: para
-    text: ナンセンス
+    text: 手で移植するのはナンセンス
   p89:
   - kind: heading
     level: 1
@@ -537,9 +499,7 @@ text:
     text: 訳語はUNIX哲学 - Wikipediaより引用(2025年10日2日12:33:03版)
   p100:
   - kind: para
-    text: 裏返せば、計測してみてスループット悪化の主要因
-  - kind: para
-    text: と判断されない限り安全性と開発者体験を優先
+    text: 裏返せば、計測してみてスループット悪化の主要因と判断されない限り安全性と開発者体験を優先
   p101:
   - kind: para
     text: PHPには型宣言の機能がある
@@ -559,26 +519,16 @@ text:
     text: かつてはそうだった
   p105:
   - kind: para
-    text: 言語のホットスポットは
-  - kind: para
-    text: 処理系で改善されると
-  - kind: para
-    text: 嬉しい
+    text: 言語のホットスポットは処理系で改善されると嬉しい
   p106:
   - kind: para
-    text: 現代はJITが改善され
-  - kind: para
-    text: 型宣言した方が最適化の恩恵を受ける
+    text: 現代はJITが改善され型宣言した方が最適化の恩恵を受ける
   p107:
   - kind: para
-    text: 当てずっぽうで「速い」ものを選んでも
-  - kind: para
-    text: 問題解決にならない
+    text: 当てずっぽうで「速い」ものを選んでも問題解決にならない
   p108:
   - kind: para
-    text: これからの時代こそ
-  - kind: para
-    text: 自我をもって問題解決しよう
+    text: これからの時代こそ自我をもって問題解決しよう
 size:
   max_width: 1920
   max_height: 1080

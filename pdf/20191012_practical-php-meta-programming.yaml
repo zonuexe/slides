@@ -28,9 +28,7 @@ text:
     text: さて
   p7:
   - kind: para
-    text: メタプログラミング
-  - kind: para
-    text: とは何か
+    text: メタプログラミングとは何か
   p8:
   - kind: para
     text: そもそも
@@ -54,29 +52,19 @@ text:
     text: https://ja.wikipedia.org/wiki/メタ最終更新 2019年1月10日 10:01 版
   p13:
   - kind: para
-    text: メタプログラミング
-  - kind: para
-    text: とは何か
+    text: メタプログラミングとは何か
   p14:
   - kind: para
-    text: プログラム自身に
-  - kind: para
-    text: 言及するような
-  - kind: para
-    text: プログラミング
+    text: プログラム自身に言及するようなプログラミング
   p15:
   - kind: para
-    text: プログラムを
-  - kind: para
-    text: プログラミングする
+    text: プログラムをプログラミングする
   p16:
   - kind: para
     text: どういうこと？
   p17:
   - kind: para
-    text: たとえば実行時に
-  - kind: para
-    text: 関数を定義する
+    text: たとえば実行時に関数を定義する
   p18:
   - kind: para
     text: たとえば実行時に
@@ -90,48 +78,22 @@ text:
     text: を決める
   p19:
   - kind: para
-    text: たとえばプロパティや
-  - kind: para
-    text: メソッドのアクセス
-  - kind: para
-    text: 権限を制御する
+    text: たとえばプロパティやメソッドのアクセス権限を制御する
   p20:
   - kind: para
-    text: たとえば実装コード
-  - kind: para
-    text: から自動でテスト
-  - kind: para
-    text: コードを生成する
+    text: たとえば実装コードから自動でテストコードを生成する
   p21:
   - kind: para
-    text: 厳密にプログラミング
-  - kind: para
-    text: とメタプログラミング
-  - kind: para
-    text: を分けるものはないが
+    text: 厳密にプログラミングとメタプログラミングを分けるものはないが
   p22:
   - kind: para
-    text: フレームワークは大な
-  - kind: para
-    text: り小なりメタプログラ
-  - kind: para
-    text: ミングを利用している
-  - kind: para
-    text: (ことが多い)
+    text: フレームワークは大なり小なりメタプログラミングを利用している(ことが多い)
   p23:
   - kind: para
-    text: PHPの可能性を
-  - kind: para
-    text: 広げるのが
-  - kind: para
-    text: メタプログラミング
+    text: PHPの可能性を広げるのがメタプログラミング
   p24:
   - kind: para
-    text: メタプログラミング
-  - kind: para
-    text: できることで
-  - kind: para
-    text: 有名な言語
+    text: メタプログラミングできることで有名な言語
   p25:
   - kind: para
     text: Ruby
@@ -152,19 +114,13 @@ text:
     text: 最終更新 2017年12月6日 23:08 版
   p29:
   - kind: para
-    text: PHPではできない
-  - kind: para
-    text: ことの方が多い
+    text: PHPではできないことの方が多い
   p30:
   - kind: para
-    text: オープンクラスがない
-  - kind: para
-    text: プリプロセスもない
+    text: オープンクラスがないプリプロセスもない
   p31:
   - kind: para
-    text: PHPならではの
-  - kind: para
-    text: 戦いかたがある！
+    text: PHPならではの戦いかたがある！
   p32:
   - kind: para
     text: 関数
@@ -218,9 +174,7 @@ text:
       === "Fizz");assert(to_fizzbuzz(4) === "4");assert(to_fizzbuzz(5) === "Buzz");
   p39:
   - kind: para
-    text: 無茶振
-  - kind: para
-    text: りをしましょう
+    text: 無茶振りをしましょう
   p40:
   - kind: para
     text: 関数に分けたい
@@ -245,9 +199,7 @@ text:
       { return "Buzz"; }
   p42:
   - kind: para
-    text: 手書きで
-  - kind: para
-    text: 100個書くの!?
+    text: 手書きで100個書くの!?
   p43:
   - kind: heading
     level: 1
@@ -292,11 +244,7 @@ text:
     text: あったがPHP7.2で非推奨)
   p46:
   - kind: para
-    text: 無名関数
-  - kind: para
-    text: (クロージャ)
-  - kind: para
-    text: を使いましょう
+    text: 無名関数(クロージャ)を使いましょう
   p47:
   - kind: heading
     level: 1
@@ -345,9 +293,7 @@ text:
       === "Fizz");assert($fizzbuzz[4]() === "4");assert($fizzbuzz[5]() === "Buzz");
   p50:
   - kind: para
-    text: クロージャを使った
-  - kind: para
-    text: コード
+    text: クロージャを使ったコード
   p51:
   - kind: heading
     level: 1
@@ -361,11 +307,7 @@ text:
       16, 18, 20]
   p52:
   - kind: para
-    text: クロージャをうまく使って
-  - kind: para
-    text: 「関数を作る関数」も
-  - kind: para
-    text: 作れる
+    text: クロージャをうまく使って「関数を作る関数」も作れる
   p53:
   - kind: heading
     level: 1
@@ -381,16 +323,10 @@ text:
     text: マジックメソッド
   p55:
   - kind: para
-    text: オブジェクトの
-  - kind: para
-    text: 挙動を制御する
-  - kind: para
-    text: 特殊なメソッド
+    text: オブジェクトの挙動を制御する特殊なメソッド
   p56:
   - kind: para
-    text: プロパティアクセス
-  - kind: para
-    text: を乗っ取ろう
+    text: プロパティアクセスを乗っ取ろう
   p57:
   - kind: heading
     level: 1
@@ -404,14 +340,10 @@ text:
     text: __isset() と __unset() も定義すべき
   p58:
   - kind: para
-    text: アクセス不能
-  - kind: para
-    text: ＝privateなども含む
+    text: アクセス不能＝privateなども含む
   p59:
   - kind: para
-    text: この仕様を悪用して
-  - kind: para
-    text: こんなこともできる
+    text: この仕様を悪用してこんなこともできる
   p60:
   - kind: heading
     level: 1
@@ -433,14 +365,10 @@ text:
     text: class B {use ReadOnly;}
   p62:
   - kind: para
-    text: メソッドアクセスも
-  - kind: para
-    text: 乗っ取ろう
+    text: メソッドアクセスも乗っ取ろう
   p63:
   - kind: para
-    text: オーバーロード
-  - kind: para
-    text: (ただしPHP用語)
+    text: オーバーロード(ただしPHP用語)
   p64:
   - kind: para
     text: '出典: PHP: オーバーロード - Manual'
@@ -450,11 +378,7 @@ text:
     text: Copyright © 2001-2019 The PHP Group
   p65:
   - kind: para
-    text: 一般的なプログラミング
-  - kind: para
-    text: 用語「オーバーロード」
-  - kind: para
-    text: とは全然別物なので注意
+    text: 一般的なプログラミング用語「オーバーロード」とは全然別物なので注意
   p66:
   - kind: heading
     level: 1
@@ -479,31 +403,15 @@ text:
     text: リフレクション
   p69:
   - kind: para
-    text: 実行時に情報を取得
-  - kind: para
-    text: (一部上書き)
-  - kind: para
-    text: できるAPI
+    text: 実行時に情報を取得(一部上書き)できるAPI
   p70:
   - kind: para
-    text: 関数・クラス・オブジェクト・
-  - kind: para
-    text: メソッド・プロパティ・パラメー
-  - kind: para
-    text: タ(引数)・返値の型・クラス定数
-  - kind: para
-    text: など
+    text: 関数・クラス・オブジェクト・メソッド・プロパティ・パラメータ(引数)・返値の型・クラス定数など
   - kind: para
     text: https://www.php.net/manual/ja/book.reflection.php
   p71:
   - kind: para
-    text: PHPUnitの
-  - kind: para
-    text: dataProvider
-  - kind: para
-    text: (パラメタライズテスト)
-  - kind: para
-    text: とも組み合わせられる
+    text: PHPUnitのdataProvider(パラメタライズテスト)とも組み合わせられる
   p72:
   - kind: heading
     level: 1
@@ -519,25 +427,13 @@ text:
     text: まとめ
   p74:
   - kind: para
-    text: メタプログラミングの技術を
-  - kind: para
-    text: 使うと
-  - kind: para
-    text: 「コードに書いてある通りで
-  - kind: para
-    text: はない」動きをさせられる
+    text: メタプログラミングの技術を使うと「コードに書いてある通りではない」動きをさせられる
   p75:
   - kind: para
-    text: 代償としてPhpStorm
-  - kind: para
-    text: などの支援を受けにく
-  - kind: para
-    text: くなることがある
+    text: 代償としてPhpStormなどの支援を受けにくくなることがある
   p76:
   - kind: para
-    text: 大いなる力には
-  - kind: para
-    text: 大いなる責任が伴う
+    text: 大いなる力には大いなる責任が伴う
 size:
   max_width: 1024
   max_height: 768

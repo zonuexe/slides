@@ -24,16 +24,10 @@ text:
   p4: []
   p5:
   - kind: para
-    text: せっかくなので
-  - kind: para
-    text: PHPの話を先に
+    text: せっかくなのでPHPの話を先に
   p6:
   - kind: para
-    text: PHPには複数の
-  - kind: para
-    text: 正規表現エンジンが
-  - kind: para
-    text: あります
+    text: PHPには複数の正規表現エンジンがあります
   p7:
   - kind: para
     text: ereg
@@ -71,16 +65,10 @@ text:
     text: が一般的
   p10:
   - kind: para
-    text: PHPには正規表現
-  - kind: para
-    text: リテラルがない
+    text: PHPには正規表現リテラルがない
   p11:
   - kind: para
-    text: (そもそも複数エンジン
-  - kind: para
-    text: があるのでリテラルで
-  - kind: para
-    text: 特権扱いされると困る)
+    text: (そもそも複数エンジンがあるのでリテラルで特権扱いされると困る)
   p12:
   - kind: heading
     level: 1
@@ -105,18 +93,10 @@ text:
       $subject);
   p14:
   - kind: para
-    text: 関数形式だがコンパ
-  - kind: para
-    text: イル結果は内部的に
-  - kind: para
-    text: 保持されている
+    text: 関数形式だがコンパイル結果は内部的に保持されている
   p15:
   - kind: para
-    text: PCRE関数はリクエ
-  - kind: para
-    text: ストをまたいでコンパ
-  - kind: para
-    text: イル結果が保持される
+    text: PCRE関数はリクエストをまたいでコンパイル結果が保持される
   p16:
   - kind: para
     text: PHPの話ここまで
@@ -125,9 +105,7 @@ text:
     text: Emacs
   p18:
   - kind: para
-    text: Emacsは正規表現
-  - kind: para
-    text: でできている
+    text: Emacsは正規表現でできている
   p19:
   - kind: para
     text: 1. エディタの
@@ -162,18 +140,10 @@ text:
     text: これしか書いてない
   p25:
   - kind: para
-    text: 基本正規表現とも
-  - kind: para
-    text: 拡張正規表現とも
-  - kind: para
-    text: 違う
+    text: 基本正規表現とも拡張正規表現とも違う
   p26:
   - kind: para
-    text: Emacsの正規表現は
-  - kind: para
-    text: NFAに分類される
-  - kind: para
-    text: (最小量指定子がある)
+    text: Emacsの正規表現はNFAに分類される(最小量指定子がある)
   p27:
   - kind: para
     text: 基本拡張Emacs
@@ -202,26 +172,16 @@ text:
     text: \s-
   p29:
   - kind: para
-    text: 僕の知ってる
-  - kind: para
-    text: 正規表現と違う！
+    text: 僕の知ってる正規表現と違う！
   p30:
   - kind: para
-    text: シンタックス
-  - kind: para
-    text: テーブル
+    text: シンタックステーブル
   p31:
   - kind: para
-    text: メジャーモードごと
-  - kind: para
-    text: に文字の意味を
-  - kind: para
-    text: 定義できる機能
+    text: メジャーモードごとに文字の意味を定義できる機能
   p32:
   - kind: para
-    text: 言語ごとにシンボル
-  - kind: para
-    text: 構成文字は異なる
+    text: 言語ごとにシンボル構成文字は異なる
   p33:
   - kind: para
     text: Lispでは foo-bar
@@ -238,44 +198,22 @@ text:
     text: (foo - bar)
   p35:
   - kind: para
-    text: その構文情報
-  - kind: para
-    text: (syntax table)
-  - kind: para
-    text: を
-  - kind: para
-    text: 正規表現から使える
+    text: その構文情報(syntax table)を正規表現から使える
   p36:
   - kind: para
-    text: 逆に言うと正規表現の
-  - kind: para
-    text: マッチ結果はシンタック
-  - kind: para
-    text: ステーブルに依存する
+    text: 逆に言うと正規表現のマッチ結果はシンタックステーブルに依存する
   p37: []
   p38:
   - kind: para
     text: で、実際どうなの
   p39:
   - kind: para
-    text: 文脈によって
-  - kind: para
-    text: エスケープが
-  - kind: para
-    text: (ように見える)
-  - kind: para
-    text: 変わってる
+    text: 文脈によってエスケープが(ように見える)変わってる
   p40: []
   p41: []
   p42:
   - kind: para
-    text: Emacsのメジャー
-  - kind: para
-    text: モード(言語モード)の
-  - kind: para
-    text: 実装には大量の正規表
-  - kind: para
-    text: 現を書く必要がある
+    text: Emacsのメジャーモード(言語モード)の実装には大量の正規表現を書く必要がある
   p43: []
   p44:
   - kind: para
@@ -285,9 +223,7 @@ text:
     text: でもご安心ください
   p46:
   - kind: para
-    text: rxという正規表現
-  - kind: para
-    text: 組み立てDSLがある
+    text: rxという正規表現組み立てDSLがある
   p47:
   - kind: para
     text: 文字列rx
@@ -321,9 +257,7 @@ text:
   p49: []
   p50:
   - kind: para
-    text: ツールはいろいろ
-  - kind: para
-    text: 揃ってる
+    text: ツールはいろいろ揃ってる
   p51:
   - kind: heading
     level: 1
@@ -335,9 +269,7 @@ text:
     level: 1
     text: font-lock-studio
   - kind: para
-    text: (強調表示の色付けを順番
-  - kind: para
-    text: に実行してくれる)
+    text: (強調表示の色付けを順番に実行してくれる)
 size:
   max_width: 1024
   max_height: 768

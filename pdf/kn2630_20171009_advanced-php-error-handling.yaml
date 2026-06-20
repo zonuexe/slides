@@ -14,9 +14,7 @@ text:
     text: 'Kamata Tokyo, PiO #phpcon2017'
   p2:
   - kind: para
-    text: 2017年10月8日に開催されたPHPカンファレンスで発表した「ここで差がつくエラー処理」の
-  - kind: para
-    text: 発表資料を補訂した完全版です
+    text: 2017年10月8日に開催されたPHPカンファレンスで発表した「ここで差がつくエラー処理」の発表資料を補訂した完全版です
   p3:
   - kind: heading
     level: 1
@@ -43,9 +41,7 @@ text:
   p8: []
   p9:
   - kind: para
-    text: こんな画面を見せて
-  - kind: para
-    text: しまってませんか
+    text: こんな画面を見せてしまってませんか
   p10: []
   p11:
   - kind: para
@@ -57,16 +53,10 @@ text:
   p14: []
   p15:
   - kind: para
-    text: エラーになってもWebサイトの体裁は
-  - kind: para
-    text: なんとか保ちたい
-  - kind: para
-    text: ……ですよね？
+    text: エラーになってもWebサイトの体裁はなんとか保ちたい……ですよね？
   p16:
   - kind: para
-    text: 画面はpixivの実在のバグではなく
-  - kind: para
-    text: 故意に例外を発生させたものです
+    text: 画面はpixivの実在のバグではなく故意に例外を発生させたものです
   p17:
   - kind: para
     text: アジェンダ
@@ -279,11 +269,7 @@ text:
     text: $i = mt_rand(1, 2);echo $i;if ($i === 1) {$x = 1 + [];}
   p38:
   - kind: para
-    text: PHP7は賢いので、実際に実行されることがなくても
-  - kind: para
-    text: (絶対実行されないifの中だろうと)
-  - kind: para
-    text: コンパイル時に検出してくれる
+    text: PHP7は賢いので、実際に実行されることがなくても(絶対実行されないifの中だろうと)コンパイル時に検出してくれる
   p39:
   - kind: para
     text: 例外
@@ -304,18 +290,14 @@ text:
   - kind: para
     text: 例外オブジェクト
   - kind: para
-    text: PHP5ではExceptionまたは、Exceptionを継承したクラス
-  - kind: para
-    text: PHP7ではThrowableインターフェイスと、Exceptionを継承しないErrorとその派生クラスが追加
+    text: PHP5ではExceptionまたは、Exceptionを継承したクラスPHP7ではThrowableインターフェイスと、Exceptionを継承しないErrorとその派生クラスが追加
   - kind: para
     text: 便宜上まとめて「例外」と呼ぶ
   p42:
   - kind: para
     text: ErrorとエラーとE_ERROR
   - kind: para
-    text: PHP5系でエラーが発生したものが、7系では例外(Errorクラス)をthrowするように徐々に移行
-  - kind: para
-    text: すべての移行されたわけではなく、まだエラーと例外の概念を両方知っておく必要がある
+    text: PHP5系でエラーが発生したものが、7系では例外(Errorクラス)をthrowするように徐々に移行すべての移行されたわけではなく、まだエラーと例外の概念を両方知っておく必要がある
   - kind: para
     text: E_ERRORレベルのエラー…ややこしい
   p43:
@@ -473,9 +455,7 @@ text:
   - kind: para
     text: エラー抑制とerror_reporting
   - kind: para
-    text: ＠(エラー抑制演算子)は一時的にerror_reporting(0)に設定して処理を実行するだけ
-  - kind: para
-    text: 独自設定したエラーハンドラがerror_reporting()を考慮してくれないと、エラーが握り潰されない
+    text: ＠(エラー抑制演算子)は一時的にerror_reporting(0)に設定して処理を実行するだけ独自設定したエラーハンドラがerror_reporting()を考慮してくれないと、エラーが握り潰されない
   p61:
   - kind: heading
     level: 1
@@ -490,9 +470,7 @@ text:
   - kind: para
     text: error_reporting()
   - kind: para
-    text: error_reporting()で設定したエラーレベルはデフォルトのエラーハンドラで利用される
-  - kind: para
-    text: 自作のエラーハンドラを設定するときは、error_reporting()を考慮して実装しなければならない
+    text: error_reporting()で設定したエラーレベルはデフォルトのエラーハンドラで利用される自作のエラーハンドラを設定するときは、error_reporting()を考慮して実装しなければならない
   - kind: para
     text: 実際グローバル変数みたいなもの
   p63:
@@ -516,9 +494,7 @@ text:
   - kind: para
     text: PHPの標準機能error_log()は、ちょっと弱い
   - kind: para
-    text: rollbar, faultlineなどに送る
-  - kind: para
-    text: pixivの場合は例外情報をバックトレースも含めてJSONエンコードしてファイルに追記、Fluentdで収集
+    text: rollbar, faultlineなどに送るpixivの場合は例外情報をバックトレースも含めてJSONエンコードしてファイルに追記、Fluentdで収集
   p65:
   - kind: para
     text: http://k1low.hatenablog.com/entry/2017/06/13/083000
@@ -604,9 +580,7 @@ text:
     text: whoops!
   p75:
   - kind: para
-    text: whoops!
-  - kind: para
-    text: “PHP errors for cool kids”
+    text: whoops!“PHP errors for cool kids”
   - kind: para
     text: エラー処理用フレームワーク
   - kind: para
@@ -614,9 +588,7 @@ text:
   p76: []
   p77:
   - kind: para
-    text: whoops! ハンドラー
-  - kind: para
-    text: ハンドラー(関数)は複数登録できるスタック (FIFO, 後入れ先出し)
+    text: whoops! ハンドラーハンドラー(関数)は複数登録できるスタック (FIFO, 後入れ先出し)
   - kind: para
     text: ロギング・デバッグだけでなくエラー画面の表示にも利用できる
   - kind: para
@@ -625,9 +597,7 @@ text:
     text: http://gihyo.jp/magazine/wdpress/archive/2017/vol96
   p78:
   - kind: para
-    text: whoops! 注意点
-  - kind: para
-    text: PrettyPageHandlerはべんりだがもし本番環境で有効化されてしまうと脆弱性や情報漏洩の原因にすらなりかねない
+    text: whoops! 注意点PrettyPageHandlerはべんりだがもし本番環境で有効化されてしまうと脆弱性や情報漏洩の原因にすらなりかねない
   - kind: para
     text: 設定に自信がなければ、単に開発環境用のカッコイイエラー画面として割り切るのが安全
   p79:
@@ -681,9 +651,7 @@ text:
   - kind: para
     text: もうひとつのエラーハンドリング
   - kind: para
-    text: set_exception_handler()を使ったハンドリングは…実際(説明)難しい
-  - kind: para
-    text: 細かなエラーハンドリングはtry-catchを使った方がやりやすい
+    text: set_exception_handler()を使ったハンドリングは…実際(説明)難しい細かなエラーハンドリングはtry-catchを使った方がやりやすい
   - kind: para
     text: エラーの仕組み(このセッションで説明した内容！)よりは把握しやすい
   - kind: para
@@ -692,9 +660,7 @@ text:
   - kind: para
     text: pixivの場合 (AppRunnerパターン)
   - kind: para
-    text: アプリケーション(PC版, スマートフォン版,etc...)ごとにAppRunner(社内用語)と呼ばれるクラスを定義する
-  - kind: para
-    text: 例外の種類ごとにcatchして、適切な処理(ロギング・エラー表示)などをする
+    text: アプリケーション(PC版, スマートフォン版,etc...)ごとにAppRunner(社内用語)と呼ばれるクラスを定義する例外の種類ごとにcatchして、適切な処理(ロギング・エラー表示)などをする
   - kind: para
     text: http://inside.pixiv.net/entry/2015/12/18/210721
   p87:
@@ -767,37 +733,25 @@ text:
   - kind: para
     text: 知っておくとためにはなる…かも
   - kind: para
-    text: でも完全に理解してないといけないわけではない
-  - kind: para
-    text: とは言っても社内で誰かが知っておかないと困ることではある
+    text: でも完全に理解してないといけないわけではないとは言っても社内で誰かが知っておかないと困ることではある
   - kind: para
     text: 「Noticeを潰せ」だけ周知したい
   p94: []
   p95:
   - kind: para
-    text: Webサービスの開発基盤
-  - kind: para
-    text: を設計したいひとも
+    text: Webサービスの開発基盤を設計したいひとも
   p96:
   - kind: para
-    text: 創作文化のための開発に
-  - kind: para
-    text: 興味があるひとも
+    text: 創作文化のための開発に興味があるひとも
   p97:
   - kind: para
     text: 今回の内容がいまいちぴんと来なくても大丈夫
   p98:
   - kind: para
-    text: PHP, JavaScript, Ruby,
-  - kind: para
-    text: Scala, Go, データ分析,
-  - kind: para
-    text: インフラ, その他…
+    text: PHP, JavaScript, Ruby,Scala, Go, データ分析,インフラ, その他…
   p99:
   - kind: para
-    text: まずは一度オフィスに
-  - kind: para
-    text: 遊びに来ませんか
+    text: まずは一度オフィスに遊びに来ませんか
   - kind: para
     text: ヾ(〃＞＜)ﾉﾞ☆
   p100:

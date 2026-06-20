@@ -1,11 +1,7 @@
 text:
   p1:
   - kind: para
-    text: PHPプロジェクトに
-  - kind: para
-    text: 静的解析を新規導入する
-  - kind: para
-    text: Introduce static analyzers to PHP project
+    text: PHPプロジェクトに静的解析を新規導入するIntroduce static analyzers to PHP project
   p2:
   - kind: heading
     level: 1
@@ -33,86 +29,40 @@ text:
     text: さて
   p11:
   - kind: para
-    text: PHPカンファレンス
-  - kind: para
-    text: '2016'
+    text: PHPカンファレンス2016
   p12: []
   p13:
   - kind: para
-    text: まだユニットテストと同
-  - kind: para
-    text: 様に
-  - kind: para
-    text: ｢
-  - kind: para
-    text: あって当然
-  - kind: para
-    text: ｣
-  - kind: para
-    text: のもの
-  - kind: para
-    text: とまでは普及できてない
+    text: まだユニットテストと同様に｢あって当然｣のものとまでは普及できてない
   p14: []
   p15:
   - kind: para
-    text: 既存のプロジェクトに
-  - kind: para
-    text: 導入する話は
-  - kind: para
-    text: あまりできてなかった
+    text: 既存のプロジェクトに導入する話はあまりできてなかった
   p16: []
   p17:
   - kind: para
-    text: なぜ静的解析を
-  - kind: para
-    text: するのか
+    text: なぜ静的解析をするのか
   p18:
   - kind: para
-    text: 関数がどのような引数
-  - kind: para
-    text: を期待しどんな値を
-  - kind: para
-    text: 返すのか明示したい
+    text: 関数がどのような引数を期待しどんな値を返すのか明示したい
   p19:
   - kind: para
-    text: プログラムが
-  - kind: para
-    text: 間違ってることを
-  - kind: para
-    text: 実行前に検証したい
+    text: プログラムが間違ってることを実行前に検証したい
   p20:
   - kind: para
     text: それ以上に
   p21:
   - kind: para
-    text: オブジェクトのメソッド
-  - kind: para
-    text: やプロパティが適切に補完されると気持ち良い
+    text: オブジェクトのメソッドやプロパティが適切に補完されると気持ち良い
   p22:
   - kind: para
-    text: 補完がきちんと機能
-  - kind: para
-    text: するようにPHPに
-  - kind: para
-    text: 型をつけていこう
+    text: 補完がきちんと機能するようにPHPに型をつけていこう
   p23:
   - kind: para
     text: ただし
   p24:
   - kind: para
-    text: 静的解析は
-  - kind: para
-    text: ､
-  - kind: para
-    text: 現に
-  - kind: para
-    text: ｢
-  - kind: para
-    text: 動いている
-  - kind: para
-    text: ｣
-  - kind: para
-    text: 事実を
+    text: 静的解析は､現に｢動いている｣事実を
   - kind: para
     text: 覆すものではない
   p25:
@@ -130,36 +80,16 @@ text:
     text: を炙り出すことはある
   p26:
   - kind: para
-    text: 変更によって動かなく
-  - kind: para
-    text: なってしまうことを
-  - kind: para
-    text: ｢
-  - kind: para
-    text: 動かさずに
-  - kind: para
-    text: ｣
-  - kind: para
-    text: 発見できる
-  - kind: para
-    text: かもしれない
+    text: 変更によって動かなくなってしまうことを｢動かさずに｣発見できるかもしれない
   p27:
   - kind: para
-    text: 静的解析基盤を整えた
-  - kind: para
-    text: 瞬間に致命的な問題を
-  - kind: para
-    text: 検出できることはまれ
+    text: 静的解析基盤を整えた瞬間に致命的な問題を検出できることはまれ
   p28:
   - kind: para
-    text: ということで静的
-  - kind: para
-    text: 解析をしましょう
+    text: ということで静的解析をしましょう
   p29:
   - kind: para
-    text: 静的解析
-  - kind: para
-    text: ツールの種類
+    text: 静的解析ツールの種類
   p30:
   - kind: para
     text: 現行の高度な静的解析ツール
@@ -279,26 +209,16 @@ text:
     text: function drop_table($connection){$connection->exec('DROP TABLE `users`;');}
   p39:
   - kind: para
-    text: 静的解析を
-  - kind: para
-    text: 導入しよう
+    text: 静的解析を導入しよう
   p40: []
   p41: []
   p42: []
   p43:
   - kind: para
-    text: CakePHP 4.0.0では
-  - kind: para
-    text: PHPStanとPsalmで
-  - kind: para
-    text: 型定義が大幅に改善
-  - kind: para
-    text: (現在RC1)
+    text: CakePHP 4.0.0ではPHPStanとPsalmで型定義が大幅に改善(現在RC1)
   p44:
   - kind: para
-    text: じゃあPhanを
-  - kind: para
-    text: 入れるか
+    text: じゃあPhanを入れるか
   p45:
   - kind: para
     text: 基本は
@@ -312,20 +232,10 @@ text:
     text: ダウンロードするだけ
   p46:
   - kind: para
-    text: forteeは
-  - kind: para
-    text: レガシー
-  - kind: para
-    text: を自称しているが
-  - kind: para
-    text: Docker Compose
+    text: forteeはレガシーを自称しているがDocker Compose
   p47:
   - kind: para
-    text: Docker Compose
-  - kind: para
-    text: 使ったことない僕の方が
-  - kind: para
-    text: レガシーなんですけど…
+    text: Docker Compose使ったことない僕の方がレガシーなんですけど…
   p48:
   - kind: para
     text: Docker Phan
@@ -344,16 +254,10 @@ text:
     text: 古すぎる！
   p53:
   - kind: para
-    text: Phanはほぼ毎週
-  - kind: para
-    text: アップデートされて
-  - kind: para
-    text: さまざまな改善がある
+    text: Phanはほぼ毎週アップデートされてさまざまな改善がある
   p54:
   - kind: para
-    text: 最新のPhanだけが
-  - kind: para
-    text: 良いPhanだ
+    text: 最新のPhanだけが良いPhanだ
   p55:
   - kind: para
     text: Phanの要求環境
@@ -381,9 +285,7 @@ text:
     text: RUN pecl install ast
   p58:
   - kind: para
-    text: 別のコンテナイメー
-  - kind: para
-    text: ジに分割したい場合
+    text: 別のコンテナイメージに分割したい場合
   p59:
   - kind: heading
     level: 1
@@ -407,13 +309,7 @@ text:
       entrypoint: php /root/.composer/vendor/bin/phan working_dir: /var/www/html'
   p61:
   - kind: para
-    text: 独立したコンテナに分ける
-  - kind: para
-    text: メリットも大きくない気がする
-  - kind: para
-    text: ので既存のPHP用コンテナに
-  - kind: para
-    text: 混ぜ込めばいいと思います
+    text: 独立したコンテナに分けるメリットも大きくない気がするので既存のPHP用コンテナに混ぜ込めばいいと思います
   p62:
   - kind: para
     text: composer require --devを使うべき？
@@ -427,11 +323,7 @@ text:
     text: composer-bin-pluginを使ってもいいかも
   p63:
   - kind: para
-    text: 以後./phan という
-  - kind: para
-    text: ラッパースクリプト
-  - kind: para
-    text: を使うことにします
+    text: 以後./phan というラッパースクリプトを使うことにします
   p64:
   - kind: heading
     level: 1
@@ -487,9 +379,7 @@ text:
     text: diff -u phan-master.log phan.log
   p70:
   - kind: para
-    text: 実際に検出
-  - kind: para
-    text: されたミス
+    text: 実際に検出されたミス
   p71:
   - kind: heading
     level: 1
@@ -507,17 +397,13 @@ text:
     level: 1
     text: deprecatedコードの検出
   - kind: para
-    text: CakePHP 4.0.0でプロパティにアクセス
-  - kind: para
-    text: できなくなる
+    text: CakePHP 4.0.0でプロパティにアクセスできなくなる
   p74:
   - kind: heading
     level: 1
     text: 未定義クラスの検出
   - kind: para
-    text: use Exceptionがないので
-  - kind: para
-    text: 現在の名前空間を指してる
+    text: use Exceptionがないので現在の名前空間を指してる
   p75:
   - kind: para
     text: 'おまけ: 謎のException'
@@ -538,41 +424,19 @@ text:
     text: そろそろまとめ
   p78:
   - kind: para
-    text: 実際稼動しているアプリ
-  - kind: para
-    text: なので致命的な問題は
-  - kind: para
-    text: なかなか見つからない
+    text: 実際稼動しているアプリなので致命的な問題はなかなか見つからない
   p79:
   - kind: para
-    text: リファクタリングや
-  - kind: para
-    text: フレームワークの
-  - kind: para
-    text: バージョンアップでは
-  - kind: para
-    text: 大きな武器になる
+    text: リファクタリングやフレームワークのバージョンアップでは大きな武器になる
   p80:
   - kind: para
-    text: 地味なものも
-  - kind: para
-    text: 目立つが地道に
-  - kind: para
-    text: 潰していこう
+    text: 地味なものも目立つが地道に潰していこう
   p81:
   - kind: para
     text: おまけ
   p82:
   - kind: para
-    text: 今回forteeのコードで
-  - kind: para
-    text: 初めてDocker Compose
-  - kind: para
-    text: で
-  - kind: para
-    text: 構築されたPHPアプリ
-  - kind: para
-    text: ケーションに触れた
+    text: 今回forteeのコードで初めてDocker Composeで構築されたPHPアプリケーションに触れた
   p83:
   - kind: heading
     level: 1
@@ -581,11 +445,7 @@ text:
     text: なるほどわからん
   p84:
   - kind: para
-    text: 手持ちのレガシーPHP
-  - kind: para
-    text: をDocker Compose
-  - kind: para
-    text: に載せてみるか
+    text: 手持ちのレガシーPHPをDocker Composeに載せてみるか
   p85: []
   p86: []
   p87:
@@ -600,15 +460,7 @@ text:
     text: .env → conf/.env
   p89:
   - kind: para
-    text: docker-composeを
-  - kind: para
-    text: 噛ませてsetupスクリプト
-  - kind: para
-    text: を
-  - kind: para
-    text: 実行できるように
-  - kind: para
-    text: 場所を変更
+    text: docker-composeを噛ませてsetupスクリプトを実行できるように場所を変更
   p90:
   - kind: para
     text: php -S →
@@ -616,9 +468,7 @@ text:
     text: Apache HTTP
   p91:
   - kind: para
-    text: 初めてでも
-  - kind: para
-    text: できちゃった
+    text: 初めてでもできちゃった
 size:
   max_width: 1024
   max_height: 768

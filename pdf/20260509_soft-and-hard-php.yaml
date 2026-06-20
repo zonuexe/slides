@@ -29,25 +29,17 @@ text:
     - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
   - kind: para
-    text: PHP界隈で型の話を
-  - kind: para
-    text: 始めて10年くらい
+    text: PHP界隈で型の話を始めて10年くらい
   p4: []
   p5:
   - kind: para
-    text: レガシープロジェクトの
-  - kind: para
-    text: ウィークポイントは圧倒的な「未定義挙動」
+    text: レガシープロジェクトのウィークポイントは圧倒的な「未定義挙動」
   p6:
   - kind: para
-    text: 型… ドキュメント…
-  - kind: para
-    text: 設計意図…あらゆる情報が足りない
+    text: 型… ドキュメント…設計意図…あらゆる情報が足りない
   p7:
   - kind: para
-    text: せめて型を固めておけば
-  - kind: para
-    text: 静的型付き言語に移植しやすくなるのでは…?
+    text: せめて型を固めておけば静的型付き言語に移植しやすくなるのでは…?
   p8:
   - kind: para
     text: そろそろ現実が見えてきた
@@ -67,25 +59,17 @@ text:
     text: 型で消耗しないように
   p11:
   - kind: para
-    text: 今回は具体的な
-  - kind: para
-    text: tipsより考えの話がメイン
+    text: 今回は具体的なtipsより考えの話がメイン
   p12:
   - kind: heading
     level: 1
     text: …………
   p13:
   - kind: para
-    text: 202x年世界は生成AIの炎に
-  - kind: para
-    text: 包まれた！
+    text: 202x年世界は生成AIの炎に包まれた！
   p14:
   - kind: para
-    text: あらゆるコードが生成され
-  - kind: para
-    text: テストは自動化されすべてのコーディングが
-  - kind: para
-    text: 駆逐されたかに見えた
+    text: あらゆるコードが生成されテストは自動化されすべてのコーディングが駆逐されたかに見えた
   p15:
   - kind: para
     text: だがプログラマは死滅していなかった！
@@ -104,22 +88,16 @@ text:
     text: ほんとうに？
   p19:
   - kind: para
-    text: もう墓穴に足をつっこんでる
-  - kind: para
-    text: 自覚がないだけでは？
+    text: もう墓穴に足をつっこんでる自覚がないだけでは？
   - kind: heading
     level: 1
     text: 🪦
   p20:
   - kind: para
-    text: PHPStan Lv.maxで
-  - kind: para
-    text: 消耗してませんか？
+    text: PHPStan Lv.maxで消耗してませんか？
   p21:
   - kind: para
-    text: 生成AIによる開発は1年前とは信じられない
-  - kind: para
-    text: ほど前進した
+    text: 生成AIによる開発は1年前とは信じられないほど前進した
   p22:
   - kind: heading
     level: 1
@@ -131,19 +109,13 @@ text:
     text: 生成AI万歳！
   p24:
   - kind: para
-    text: 業務時間中ほとんどコードを書いていない
-  - kind: para
-    text: という話も珍しくない
+    text: 業務時間中ほとんどコードを書いていないという話も珍しくない
   p25:
   - kind: para
-    text: 人間が書かないなら
-  - kind: para
-    text: 別に良い言語があるのでは…？
+    text: 人間が書かないなら別に良い言語があるのでは…？
   p26:
   - kind: para
-    text: かっこいい言語には
-  - kind: para
-    text: 枚挙に暇がない
+    text: かっこいい言語には枚挙に暇がない
   p27:
   - kind: heading
     level: 1
@@ -201,18 +173,10 @@ text:
     text: PHPを書ける人は割とあちこちに居る
   p34:
   - kind: para
-    text: 書けるがキャリアアップの
-  - kind: para
-    text: ためにPHP案件を好んで
-  - kind: para
-    text: 請ける人が減ってる…？
+    text: 書けるがキャリアアップのためにPHP案件を好んで請ける人が減ってる…？
   p35:
   - kind: para
-    text: AIエージェントの力を借りれば別に詳しくなくても
-  - kind: para
-    text: メンテできる時代に
-  - kind: para
-    text: なってしまった…
+    text: AIエージェントの力を借りれば別に詳しくなくてもメンテできる時代になってしまった…
   p36:
   - kind: heading
     level: 1
@@ -240,9 +204,7 @@ text:
     - そのほかの言語は分散が大きく、うまく行く場合と最悪の差が大きい
   p40:
   - kind: para
-    text: 厳密な計測はできてないが
-  - kind: para
-    text: PHP/PHPStanも似た傾向を示している
+    text: 厳密な計測はできてないがPHP/PHPStanも似た傾向を示している
   p41:
   - kind: para
     text: 型は全部捨てろ！PHPStanやめろ！
@@ -262,14 +224,10 @@ text:
     text: ……
   p45:
   - kind: para
-    text: これでよかったの
-  - kind: para
-    text: だろうか…
+    text: これでよかったのだろうか…
   p46:
   - kind: para
-    text: そもそもPHPは
-  - kind: para
-    text: どんな場面で使われてきたのか
+    text: そもそもPHPはどんな場面で使われてきたのか
   p47:
   - kind: heading
     level: 1
@@ -279,9 +237,7 @@ text:
     text: 重厚長大なコンパイル言語IDEのアンチテーゼ
   p49:
   - kind: para
-    text: LL言語を使えばシンプルなエディタで
-  - kind: para
-    text: サクサク書けるよ！
+    text: LL言語を使えばシンプルなエディタでサクサク書けるよ！
   p50:
   - kind: para
     text: Perl Python
@@ -292,9 +248,7 @@ text:
     text: 型宣言？そんな機能ないよ？
   p52:
   - kind: para
-    text: 型なんて変数名見れば
-  - kind: para
-    text: わかるだろ…常識的に考えて
+    text: 型なんて変数名見ればわかるだろ…常識的に考えて
   p53:
   - kind: para
     text: スクリプト言語！
@@ -302,9 +256,7 @@ text:
     text: アジャイル！
   p54:
   - kind: para
-    text: そういう時代も
-  - kind: para
-    text: ありました
+    text: そういう時代もありました
   p55:
   - kind: heading
     level: 1
@@ -316,29 +268,19 @@ text:
   p57: []
   p58:
   - kind: para
-    text: 正直つっこみどころ
-  - kind: para
-    text: だらけだが…
+    text: 正直つっこみどころだらけだが…
   p59:
   - kind: para
-    text: われわれは20年後の
-  - kind: para
-    text: 技術を使いこなすチート未来人である
+    text: われわれは20年後の技術を使いこなすチート未来人である
   p60:
   - kind: para
     text: この記事が示唆するものは多い
   p61:
   - kind: para
-    text: 欲しかったのは
-  - kind: para
-    text: ガードレール
+    text: 欲しかったのはガードレール
   p62:
   - kind: para
-    text: 「ありえない」状態を
-  - kind: para
-    text: 食い止めるのが
-  - kind: para
-    text: ガードレール
+    text: 「ありえない」状態を食い止めるのがガードレール
   p63:
   - kind: para
     text: 動的解析
@@ -367,9 +309,7 @@ text:
     text: 「ありえない」状態をどちらかで食い止めたい
   p67:
   - kind: para
-    text: 「ありえない」状態は
-  - kind: para
-    text: すみやかにしばく
+    text: 「ありえない」状態はすみやかにしばく
   p68:
   - kind: para
     text: 過去の定説
@@ -413,16 +353,10 @@ text:
     text: int
   p72:
   - kind: para
-    text: PHP処理系はそういう
-  - kind: para
-    text: チェックをしないので
-  - kind: para
-    text: 「型なし」と呼ばれる
+    text: PHP処理系はそういうチェックをしないので「型なし」と呼ばれる
   p73:
   - kind: para
-    text: 型チェックをしたとしても
-  - kind: para
-    text: 実用的な推論結果にならない
+    text: 型チェックをしたとしても実用的な推論結果にならない
   p74:
   - kind: para
     text: mixed
@@ -445,11 +379,7 @@ text:
     text: つまり
   p76:
   - kind: para
-    text: そのため動的言語では
-  - kind: para
-    text: テストの重要性が
-  - kind: para
-    text: 高かった
+    text: そのため動的言語ではテストの重要性が高かった
   p77:
   - kind: heading
     level: 1
@@ -464,9 +394,7 @@ text:
     text: PHPStan
   p79:
   - kind: para
-    text: 単なる「型書けるようにした版」
-  - kind: para
-    text: ではない
+    text: 単なる「型書けるようにした版」ではない
   p80:
   - kind: para
     text: 型理論計算機科学の結晶
@@ -481,63 +409,37 @@ text:
     text: むかしのことを思い出してみよう
   p84:
   - kind: para
-    text: 型なんて変数名見れば
-  - kind: para
-    text: わかるだろ…常識的に考えて
+    text: 型なんて変数名見ればわかるだろ…常識的に考えて
   p85:
   - kind: para
-    text: ちっちゃいスクリプト／書き捨てのコードを
-  - kind: para
-    text: 書く分には型なんていらなかった
+    text: ちっちゃいスクリプト／書き捨てのコードを書く分には型なんていらなかった
   p86:
   - kind: para
-    text: 型はコードの規模が
-  - kind: para
-    text: 長大になると効く
+    text: 型はコードの規模が長大になると効く
   p87:
   - kind: para
-    text: 「型なんていらない」の
-  - kind: para
-    text: サイズの閾値が
-  - kind: para
-    text: 大きく変わってしまった
+    text: 「型なんていらない」のサイズの閾値が大きく変わってしまった
   p88:
   - kind: para
-    text: コード生成ベンチマークは
-  - kind: para
-    text: 仕様と受け入れテストが最初からゴールまで明確
+    text: コード生成ベンチマークは仕様と受け入れテストが最初からゴールまで明確
   p89:
   - kind: para
     text: 型なしRubyの生成コストが低いのは非常に理にかなっている
   p90:
   - kind: para
-    text: 生成する段階では型はいらないというのは
-  - kind: para
-    text: 非常に理にかなってる
+    text: 生成する段階では型はいらないというのは非常に理にかなってる
   p91:
   - kind: para
-    text: 最近ふわっと考えてる仮説
-  - kind: para
-    text: 生成されたコードにガードレールとして追加で型を敷設する方が
-  - kind: para
-    text: 効率がいい？
+    text: 最近ふわっと考えてる仮説生成されたコードにガードレールとして追加で型を敷設する方が効率がいい？
   p92:
   - kind: para
-    text: さらなる仮説
-  - kind: para
-    text: コード上に書く型は型宣言だけに留めた方が
-  - kind: para
-    text: トークン効率が良いのでは…？
+    text: さらなる仮説コード上に書く型は型宣言だけに留めた方がトークン効率が良いのでは…？
   p93:
   - kind: para
-    text: このあたりの話題はもうちょっと探究したい
-  - kind: para
-    text: ので、そのうちどこかで
+    text: このあたりの話題はもうちょっと探究したいので、そのうちどこかで
   p94:
   - kind: para
-    text: ともあれ普通にコードを書けば自然に型がついている
-  - kind: para
-    text: 状況が理想
+    text: ともあれ普通にコードを書けば自然に型がついている状況が理想
   p95:
   - kind: heading
     level: 1
@@ -551,16 +453,10 @@ text:
     text: 得意不得意がはっきりしている
   p98:
   - kind: para
-    text: 決定論的な処理は
-  - kind: para
-    text: 苦手だし圧倒的に非効率
+    text: 決定論的な処理は苦手だし圧倒的に非効率
   p99:
   - kind: para
-    text: 決定論的
-  - kind: para
-    text: =入力に対して答えが
-  - kind: para
-    text: 定められる問題
+    text: 決定論的=入力に対して答えが定められる問題
   p100:
   - kind: para
     text: 計算はAIに直接返答させるのではなくコード生成させて実行
@@ -569,27 +465,19 @@ text:
     text: 生成AIにスペースや改行位置を細かく指示するのは圧倒的非効率
   p102:
   - kind: para
-    text: フォーマッターを実行して
-  - kind: para
-    text: 常に同じスタイルに整形されるようにする
+    text: フォーマッターを実行して常に同じスタイルに整形されるようにする
   p103:
   - kind: para
     text: 非決定的な問題を決定的な土俵に持ち込む
   p104:
   - kind: para
-    text: 型推論規則に従ってすべての項に矛盾なく型が割り当てられた状態
-  - kind: para
-    text: …ですが何か？
+    text: 型推論規則に従ってすべての項に矛盾なく型が割り当てられた状態…ですが何か？
   p105:
   - kind: para
-    text: 型推論は典型的な
-  - kind: para
-    text: 決定論的な計算
+    text: 型推論は典型的な決定論的な計算
   p106:
   - kind: para
-    text: 型のことは型チェッカーに
-  - kind: para
-    text: やらせる
+    text: 型のことは型チェッカーにやらせる
   p107:
   - kind: para
     text: 静的解析ツール いろいろある
@@ -612,30 +500,20 @@ text:
     text: 複雑な型を書きまくるのが型付けではない
   p111:
   - kind: para
-    text: PHPStanは普通にコードを書いて
-  - kind: para
-    text: 警告が増加しない
-  - kind: para
-    text: レベルが適正
+    text: PHPStanは普通にコードを書いて警告が増加しないレベルが適正
   p112:
   - kind: para
-    text: そこからレベルを
-  - kind: para
-    text: 上げるには拡張で解決したい
+    text: そこからレベルを上げるには拡張で解決したい
   p113:
   - kind: para
-    text: お使いのAIさんと相談しながらサクっと
-  - kind: para
-    text: 作れる時代になった
+    text: お使いのAIさんと相談しながらサクっと作れる時代になった
   p114:
   - kind: heading
     level: 1
     text: やるなら今
   p115:
   - kind: para
-    text: LLMにとってプログラミング言語と
-  - kind: para
-    text: 人間の言語は同列
+    text: LLMにとってプログラミング言語と人間の言語は同列
   p116:
   - kind: para
     text: 流暢なコードは効率よく処理しやすい
@@ -644,16 +522,10 @@ text:
     text: コードに@varを書いてる場合ではない
   p118:
   - kind: para
-    text: 理想的な変数名は
-  - kind: para
-    text: 名前から内容が自然に想像できて
-  - kind: para
-    text: 期待に反しない
+    text: 理想的な変数名は名前から内容が自然に想像できて期待に反しない
   p119:
   - kind: para
-    text: コードは少ないほど
-  - kind: para
-    text: 見通しがよくなる
+    text: コードは少ないほど見通しがよくなる
   p120:
   - kind: para
     text: 見通しがよいコードほど人間もAIも理解しやすい

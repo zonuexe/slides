@@ -28,9 +28,7 @@ text:
   p3: []
   p4:
   - kind: para
-    text: pixivのコードは
-  - kind: para
-    text: 毎日どんどん刷新されてるよ
+    text: pixivのコードは毎日どんどん刷新されてるよ
   p5:
   - kind: para
     text: 明日のpixivを
@@ -92,18 +90,14 @@ text:
     text: pixivは主にPHPUnitでテスト
   p21:
   - kind: para
-    text: 僕がテストを新規を増や
-  - kind: para
-    text: すならPHPUnitでテスト
+    text: 僕がテストを新規を増やすならPHPUnitでテスト
   p22:
   - kind: para
     text: '% cd ~/pixiv/tests% git ls-files ''*Test.php'' | wc -l 1606% git ls-files
       ''*Test.php'' | xargs cat | wc -l 191890'
   p23:
   - kind: para
-    text: どうすれば書きやすく
-  - kind: para
-    text: メンテできるテストが書けるか悩み
+    text: どうすれば書きやすくメンテできるテストが書けるか悩み
   p24:
   - kind: para
     text: 本題の前に
@@ -115,17 +109,13 @@ text:
     text: まれによく聞く
   p27:
   - kind: para
-    text: PHPUnitとかphpspecとか
-  - kind: para
-    text: 巨大な依存関係入れたくない
+    text: PHPUnitとかphpspecとか巨大な依存関係入れたくない
   p28:
   - kind: para
     text: せやな
   p29:
   - kind: para
-    text: 懸念の妥当性はともかく
-  - kind: para
-    text: 依存パッケージの数がそれなりに多いのはたしか
+    text: 懸念の妥当性はともかく依存パッケージの数がそれなりに多いのはたしか
   p30:
   - kind: para
     text: 「簡単なテストだけ
@@ -142,9 +132,7 @@ text:
     text: その前に
   p34:
   - kind: para
-    text: ところでPHP標準のテスティングフレームワーク
-  - kind: para
-    text: がある
+    text: ところでPHP標準のテスティングフレームワークがある
   p35:
   - kind: para
     text: http://qa.php.net/write-test.php
@@ -153,11 +141,7 @@ text:
     text: PHP本体のテストコード
   p37:
   - kind: para
-    text: php-srcに入ってる
-  - kind: para
-    text: run-tests.phpで
-  - kind: para
-    text: 実行できる
+    text: php-srcに入ってるrun-tests.phpで実行できる
   p38:
   - kind: para
     text: 実はPHPUnitでもおまけ機能としてテスト実行できる
@@ -172,16 +156,10 @@ text:
       echo getenv('a'), "\n";echo getenv('b'), "\n";?>--EXPECT--AAA BBB
   p40:
   - kind: para
-    text: ただし(意図的なのか)
-  - kind: para
-    text: 仕様を完全にはサポートしてません
+    text: ただし(意図的なのか)仕様を完全にはサポートしてません
   p41:
   - kind: para
-    text: もしphptを採用する
-  - kind: para
-    text: ならrun-tests.php
-  - kind: para
-    text: を使った方がいい
+    text: もしphptを採用するならrun-tests.phpを使った方がいい
   p42:
   - kind: para
     text: テストスクリプト
@@ -190,14 +168,10 @@ text:
     text: なぜ人はテストを書くのか
   p44:
   - kind: para
-    text: 実装前に入出力の
-  - kind: para
-    text: 例を明示したい
+    text: 実装前に入出力の例を明示したい
   p45:
   - kind: para
-    text: 機能追加やリファクタリングで意図した挙動が壊れな
-  - kind: para
-    text: いことを保障したい
+    text: 機能追加やリファクタリングで意図した挙動が壊れないことを保障したい
   p46:
   - kind: para
     text: テストを書こう
@@ -212,17 +186,13 @@ text:
     text: うるせえ
   p50:
   - kind: para
-    text: やりたいことは
-  - kind: para
-    text: 動作確認
+    text: やりたいことは動作確認
   p51:
   - kind: para
     text: それだけ
   p52:
   - kind: para
-    text: テストスクリプトを
-  - kind: para
-    text: 書こう
+    text: テストスクリプトを書こう
   p53:
   - kind: heading
     level: 1
@@ -239,9 +209,7 @@ text:
     text: echo 'ok.', PHP_EOL;
   p54:
   - kind: para
-    text: 失敗すると行が
-  - kind: para
-    text: 出力されて終了
+    text: 失敗すると行が出力されて終了
   p55:
   - kind: para
     text: or die()書くのだるい
@@ -283,9 +251,7 @@ text:
     text: line 12
   p60:
   - kind: para
-    text: エラーハンドリングの
-  - kind: para
-    text: 設定をしないと出力が二重化される
+    text: エラーハンドリングの設定をしないと出力が二重化される
   p61:
   - kind: para
     text: まあ雑だけどテストにはなる
@@ -303,27 +269,19 @@ text:
     text: できる！フレームワーク
   p66:
   - kind: para
-    text: フレームワーク
-  - kind: para
-    text: とは
+    text: フレームワークとは
   p67:
   - kind: para
     text: https://ja.wikipedia.org/wiki/ソフトウェアフレームワーク
   p68:
   - kind: para
-    text: 制御の反転がソフトウェアフレームワークの
-  - kind: para
-    text: 特徴
+    text: 制御の反転がソフトウェアフレームワークの特徴
   p69:
   - kind: para
-    text: ふつうのライブラリはあなたが書いたコードから
-  - kind: para
-    text: 呼び出される
+    text: ふつうのライブラリはあなたが書いたコードから呼び出される
   p70:
   - kind: para
-    text: フレームワークはあなたが書いたコードを
-  - kind: para
-    text: 呼び出す
+    text: フレームワークはあなたが書いたコードを呼び出す
   p71:
   - kind: para
     text: これが制御の反転
@@ -350,9 +308,7 @@ text:
       as $file) {try {include $file;} catch (\Throwable $e) {dump($e);}}$testing->finalize();'
   p75:
   - kind: para
-    text: assert()に失敗した
-  - kind: para
-    text: ときの結果はカスタマイズできる
+    text: assert()に失敗したときの結果はカスタマイズできる
   p76:
   - kind: para
     text: (実はPHP5方式とPHP7方式で異なる)
@@ -447,9 +403,7 @@ text:
     text: (のようなもの)
   p89:
   - kind: para
-    text: Groovyのテストで
-  - kind: para
-    text: 一躍知られた
+    text: Groovyのテストで一躍知られた
   p90:
   - kind: para
     text: t-wadaさんのpower-assert.jsが有名
@@ -461,18 +415,14 @@ text:
     text: PHPでちゃんと作ろうとすると大変
   p93:
   - kind: para
-    text: それっぽいもの
-  - kind: para
-    text: なら作れる！
+    text: それっぽいものなら作れる！
   p94: []
   p95:
   - kind: para
     text: 欠点
   p96:
   - kind: para
-    text: assert()では失敗しかフックできないから、「98/100成功」
-  - kind: para
-    text: のようなカウントができない
+    text: assert()では失敗しかフックできないから、「98/100成功」のようなカウントができない
   p97:
   - kind: para
     text: PowerAssert(もどき)
@@ -492,9 +442,7 @@ text:
       \serialize($variables);}'
   p100:
   - kind: para
-    text: 次のパターンに
-  - kind: para
-    text: 行きましょう
+    text: 次のパターンに行きましょう
   p101:
   - kind: heading
     level: 1
@@ -558,9 +506,7 @@ text:
     text: if ($errors) {echo "Errors:", PHP_EOL;dump($errors);}
   p107:
   - kind: para
-    text: また完成して
-  - kind: para
-    text: しまった…
+    text: また完成してしまった…
   p108:
   - kind: para
     text: テストを記述
@@ -583,22 +529,16 @@ text:
     text: 出力差分はわかるけどいまいちわかりにくい
   p113:
   - kind: para
-    text: そうだパラメタライズテスト
-  - kind: para
-    text: をしよう
+    text: そうだパラメタライズテストをしよう
   p114:
   - kind: para
-    text: 引数だけを変更して
-  - kind: para
-    text: 同じテストをする
+    text: 引数だけを変更して同じテストをする
   p115:
   - kind: para
     text: PHPUnitでの@dataProvider
   p116:
   - kind: para
-    text: 名前も拝借して
-  - kind: para
-    text: いきましょう
+    text: 名前も拝借していきましょう
   p117:
   - kind: heading
     level: 1
@@ -667,19 +607,13 @@ text:
     text: まとめると
   p125:
   - kind: para
-    text: 単にテストを実行するフレームワークっぽいもの
-  - kind: para
-    text: は意外と簡単に作れる
+    text: 単にテストを実行するフレームワークっぽいものは意外と簡単に作れる
   p126:
   - kind: para
     text: PHPでテストしにくい状態
   p127:
   - kind: para
-    text: ここまでは「理想的な」
-  - kind: para
-    text: 関数をテストすること
-  - kind: para
-    text: しか想定してない
+    text: ここまでは「理想的な」関数をテストすることしか想定してない
   p128:
   - kind: para
     text: 理想的
@@ -687,50 +621,28 @@ text:
     text: '||引数と返り値だけ'
   p129:
   - kind: para
-    text: PHPで書かれる「現実」のコードは
-  - kind: para
-    text: それだけじゃない
+    text: PHPで書かれる「現実」のコードはそれだけじゃない
   p130:
   - kind: para
-    text: ファイル書き込み、データベース、
-  - kind: para
-    text: 外部HTTP API呼び出し、グロー
-  - kind: para
-    text: バル変数、メール送信、HTTPヘッダ、クッキー…… などなど
+    text: ファイル書き込み、データベース、外部HTTP API呼び出し、グローバル変数、メール送信、HTTPヘッダ、クッキー…… などなど
   p131:
   - kind: para
-    text: '例: CLIでcookie()とか'
-  - kind: para
-    text: header()が呼び出されるとFatal errorになる
+    text: '例: CLIでcookie()とかheader()が呼び出されるとFatal errorになる'
   p132:
   - kind: para
-    text: これはテスティングフレームワークだけではなくアプリケー
-  - kind: para
-    text: ションの構造も再設計しない
-  - kind: para
-    text: とうまくテストできない
+    text: これはテスティングフレームワークだけではなくアプリケーションの構造も再設計しないとうまくテストできない
   p133:
   - kind: para
-    text: HTTPはPSR-7に
-  - kind: para
-    text: するとか
+    text: HTTPはPSR-7にするとか
   p134:
   - kind: para
-    text: 外部への依存を
-  - kind: para
-    text: 抽象化して注入するとか
+    text: 外部への依存を抽象化して注入するとか
   p135:
   - kind: para
-    text: テスト実行中に
-  - kind: para
-    text: 専用のDBを起動して利用するとか
+    text: テスト実行中に専用のDBを起動して利用するとか
   p136:
   - kind: para
-    text: テストしたいと思った
-  - kind: para
-    text: 瞬間に直さなきゃ
-  - kind: para
-    text: いけないことが爆発的に発生して氏ぬ
+    text: テストしたいと思った瞬間に直さなきゃいけないことが爆発的に発生して氏ぬ
   p137:
   - kind: para
     text: 😇
@@ -747,14 +659,10 @@ text:
   p142: []
   p143:
   - kind: para
-    text: PHPUnitも
-  - kind: para
-    text: 良いが
+    text: PHPUnitも良いが
   p144:
   - kind: para
-    text: phpspecも
-  - kind: para
-    text: すごいぞ
+    text: phpspecもすごいぞ
   p145: []
   p146: []
 size:
