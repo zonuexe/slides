@@ -80,11 +80,7 @@ text:
     level: 1
     text: 値をそのまま返す関数
   - kind: para
-    text: PhpStormとかで
-  - kind: para
-    text: メソッド名補完が
-  - kind: para
-    text: き…かない
+    text: PhpStormとかでメソッド名補完がき…かない
   - kind: para
     text: $date = new DateTimeImmutable();id($date)->diff(
   p12:
@@ -92,9 +88,7 @@ text:
     level: 1
     text: 値をそのまま返す関数
   - kind: para
-    text: なんでも受け取って
-  - kind: para
-    text: なんでも返す
+    text: なんでも受け取ってなんでも返す
   - kind: para
     text: 'function id(mixed $value): mixed {return $value;}'
   p13:
@@ -102,9 +96,7 @@ text:
     text: 本日の目標はこういうときに怯えず型を付けることです
   p14:
   - kind: para
-    text: 個々の静的解析ツール
-  - kind: para
-    text: 導入方法などは今回は扱いません
+    text: 個々の静的解析ツール導入方法などは今回は扱いません
   p15:
   - kind: para
     text: ただし最新のPhpStorm 2021.2では静的解析ツールを導入しなくてもすんなり動くと思います
@@ -302,9 +294,7 @@ text:
     level: 1
     text: Bookクラスは著者を持つ
   - kind: para
-    text: 上司
-  - kind: para
-    text: 「共著を想定できてる？」
+    text: 上司「共著を想定できてる？」
   - kind: para
     text: class Book{function __construct(private Author $author) {// ...}}
   p39:
@@ -312,9 +302,7 @@ text:
     level: 1
     text: Bookの著者は複数居る
   - kind: para
-    text: arrayにすることで
-  - kind: para
-    text: 複数であることを表現
+    text: arrayにすることで複数であることを表現
   - kind: para
     text: Authorクラスの情報が減ってる…
   - kind: para
@@ -337,9 +325,7 @@ text:
     level: 1
     text: Bookの著者は複数居る
   - kind: para
-    text: arrayにすることで
-  - kind: para
-    text: 複数であることを表現
+    text: arrayにすることで複数であることを表現
   - kind: para
     text: Authorクラスの情報が減ってる…
   - kind: para
@@ -358,9 +344,7 @@ text:
     level: 1
     text: 著者一覧を出力したい
   - kind: para
-    text: 'Book::$authors :'
-  - kind: para
-    text: array<Author>
+    text: Book::$authors :array<Author>
   - kind: para
     text: Authorクラスのメソッドが補完できる
   - kind: para

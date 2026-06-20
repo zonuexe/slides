@@ -83,11 +83,8 @@ text:
     text: ジェネレータとは何か？
   p25:
   - kind: para
-    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”です。ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言語機能であり、SICPのような計算機科学の教科書で説明されるストリーム・無限リストを簡潔に実現できます。foreachループで配列を反復するのは既に作成済みのデータを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能です。このトークではジェネレータの基礎概念と、実際に応用できるパターンについて紹介していきます。
-  - kind: para
-    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
-  - kind: para
-    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”です。ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言語機能であり、SICPのような計算機科学の教科書で説明されるストリーム・無限リストを簡潔に実現できます。foreachループで配列を反復するのは既に作成済みのデータを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能です。このトークではジェネレータの基礎概念と、実際に応用できるパターンについて紹介していきます。‒ジェネレータで無限を手玉に取る術
+      PHPerKaigi 2020 https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p26:
   - kind: para
     text: この説明で全部なのですが…
@@ -96,11 +93,8 @@ text:
     text: ざっくり説明していきます
   p28:
   - kind: para
-    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”です。
-  - kind: para
-    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
-  - kind: para
-    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”です。‒ジェネレータで無限を手玉に取る術
+      PHPerKaigi 2020 https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p29:
   - kind: para
     text: ジェネレータはforeachできる
@@ -172,11 +166,8 @@ text:
     text: foreach ($target_ids as $id) {shori($id);}
   p36:
   - kind: para
-    text: ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言語機能であり、
-  - kind: para
-    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
-  - kind: para
-    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+    text: ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言語機能であり、‒ジェネレータで無限を手玉に取る術
+      PHPerKaigi 2020 https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p37:
   - kind: para
     text: 用語 (呼ばれかた)
@@ -193,11 +184,8 @@ text:
     text: ジェネレータは古典的なコルーチンと同等のものですが、現代でコルーチンと呼ばれているものは意味がかなり拡大しているので注意が必要です
   p39:
   - kind: para
-    text: SICPのような計算機科学の教科書で説明されるストリーム・無限リストを簡潔に実現できます。
-  - kind: para
-    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
-  - kind: para
-    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+    text: SICPのような計算機科学の教科書で説明されるストリーム・無限リストを簡潔に実現できます。‒ジェネレータで無限を手玉に取る術 PHPerKaigi
+      2020 https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p40:
   - kind: heading
     level: 1
@@ -251,11 +239,8 @@ text:
     text: ストリームでできることはジェネレータで表現できる
   p51:
   - kind: para
-    text: foreachループで配列を反復するのは既に作成済みのデータを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能です。
-  - kind: para
-    text: ‒ジェネレータで無限を手玉に取る術 PHPerKaigi 2020
-  - kind: para
-    text: https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
+    text: foreachループで配列を反復するのは既に作成済みのデータを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能です。‒ジェネレータで無限を手玉に取る術
+      PHPerKaigi 2020 https://fortee.jp/phperkaigi-2020/proposal/5b1651a5-0a01-4b49-b338-e332f981bf5d
   p52:
   - kind: para
     text: ということで、ジェネレータを説明します
