@@ -83,13 +83,19 @@ const slideConfigPayload = computed(() => {
   };
 });
 
+// スライドの表示高さ上限（ビューポート高さ比）。これより画面が低いときは
+// アスペクト比を保ったまま全体を縮小する。
+const MAX_HEIGHT_VH = 66.67;
+
 const pdfContainerStyle = computed(() => {
   if (!slide.value) return {};
   const width = slide.value.displaySize?.width ?? slide.value.max_width ?? 1024;
   const height = slide.value.displaySize?.height ?? slide.value.max_height ?? 768;
+  // 高さの上限(MAX_HEIGHT_VH)を「幅の上限」に換算しておくことで、画面の高さが
+  // 不足したときは max-height でクランプ(=比率が崩れる)させず、幅ごと縮小させる。
+  const heightBoundWidthVh = (MAX_HEIGHT_VH * width / height).toFixed(2);
   return {
-    maxWidth: `${width}px`,
-    maxHeight: "66.67vh",
+    width: `min(100%, ${width}px, ${heightBoundWidthVh}vh)`,
     aspectRatio: `${width} / ${height}`,
   };
 });
