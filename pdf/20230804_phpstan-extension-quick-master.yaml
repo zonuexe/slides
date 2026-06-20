@@ -142,9 +142,7 @@ text:
     level: 1
     text: ユニオン型宣言 (PHP8.0)
   - kind: para
-    text: intとfloat以外は
-  - kind: para
-    text: 絶対にありえない
+    text: intとfloat以外は絶対にありえない
   - kind: para
     text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p23:
@@ -152,11 +150,7 @@ text:
     level: 1
     text: PHPDocの型注釈(アノテーション)
   - kind: para
-    text: ランタイムにとっては
-  - kind: para
-    text: ただのコメント
-  - kind: para
-    text: (口約束)
+    text: ランタイムにとってはただのコメント(口約束)
   - kind: para
     text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
       add($a, $b) {return $a + $b;}
@@ -191,9 +185,7 @@ text:
     level: 1
     text: Bookクラスは複数の著者を持つ
   - kind: para
-    text: arrayにすることで
-  - kind: para
-    text: 複数であることを表現
+    text: arrayにすることで複数であることを表現
   - kind: para
     text: class Book{function __construct(private array $authors) {// 何も書かなくてもプロパティに代入される
   - kind: para

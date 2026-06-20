@@ -167,22 +167,16 @@ text:
   - kind: para
     text: 前提
   - kind: para
-    text: PHP 5.0からクラスのオートローディング(遅延ロード)に対応
-  - kind: para
-    text: =必要あるまで読み込まない
+    text: PHP 5.0からクラスのオートローディング(遅延ロード)に対応=必要あるまで読み込まない
   - kind: para
     text: それ以前はinclude_pathからinclude/require(_once)が主流
   p52:
   - kind: para
     text: ざっくりPSR-0
   - kind: para
-    text: クラス名の構造の規則
+    text: クラス名の構造の規則\<Vendor Name>\(<Namespace>\)*<Class Name>
   - kind: para
-    text: \<Vendor Name>\(<Namespace>\)*<Class Name>
-  - kind: para
-    text: _ 区切りの擬似名前空間も許容
-  - kind: para
-    text: \<Vendor Name>_(<Namespace>_)*<Class Name>
+    text: _ 区切りの擬似名前空間も許容\<Vendor Name>_(<Namespace>_)*<Class Name>
   p53:
   - kind: heading
     level: 1
@@ -248,9 +242,7 @@ text:
   - kind: para
     text: 現状
   - kind: para
-    text: 以前はライブラリごとにクラスローダーを提供してた
-  - kind: para
-    text: Requests::register_autoloader() など
+    text: 以前はライブラリごとにクラスローダーを提供してたRequests::register_autoloader() など
   - kind: para
     text: 最近はComposerがオートロード機能を提供してくれるのでcomposer.jsonに書くだけ
   p59:
