@@ -106,9 +106,7 @@ text:
   - kind: para
     text: namespaceは必要か？
   - kind: para
-    text: namespaceを利用すべきかは、
-  - kind: para
-    text: プロジェクトごとの事情に強く依存します
+    text: namespaceを利用すべきかは、プロジェクトごとの事情に強く依存します
   - kind: para
     text: pixiv-libでは原則として利用しません
   - kind: para
@@ -134,9 +132,7 @@ text:
   - kind: para
     text: 1ファイルにつき1クラスを定義する
   - kind: para
-    text: 関数定義などは基本的には
-  - kind: para
-    text: 初期化ファイルから読み込みます
+    text: 関数定義などは基本的には初期化ファイルから読み込みます
   - kind: para
     text: (composer.jsonのautoload.files)
   p22:
@@ -145,11 +141,7 @@ text:
   - kind: para
     text: 省略可能、書くメリットが皆無
   - kind: para
-    text: PHPは <?php 〜 ?> の範囲外に
-  - kind: para
-    text: 書かれた文字列を出力します不随意にコード中に変な文字が混入し
-  - kind: para
-    text: たとき、文法エラーにもならず出力されかねないリスクがあります
+    text: PHPは <?php 〜 ?> の範囲外に書かれた文字列を出力します不随意にコード中に変な文字が混入したとき、文法エラーにもならず出力されかねないリスクがあります
   p23:
   - kind: heading
     level: 1
@@ -470,9 +462,7 @@ text:
   - kind: para
     text: PSR-0, PSR-4の規約通りに配置するだけで、Composerがいい感じにロードできる
   - kind: para
-    text: まあ文字列マッチしてるだけなので、
-  - kind: para
-    text: ベンダー名とか省略しても実際動く
+    text: まあ文字列マッチしてるだけなので、ベンダー名とか省略しても実際動く
   - kind: para
     text: そもそもローダーを自作してもいい
   p78:
