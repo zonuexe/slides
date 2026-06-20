@@ -1,3 +1,322 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: PhanでPHPコード静的解析2018
+  - kind: para
+    text: Static analysis of PHP code using Phan.
+  - kind: para
+    text: '2018-05-30 PHP勉強会@東京 #phpstudy'
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
+  p3: []
+  p4:
+  - kind: para
+    text: We are hiring!
+  p5:
+  - kind: para
+    text: 近況報告
+  p6: []
+  p7: []
+  p8: []
+  p9:
+  - kind: para
+    text: そして
+  p10: []
+  p11:
+  - kind: para
+    text: Phanって何
+  p12: []
+  p13: []
+  p14:
+  - kind: para
+    text: 今回は最近のPhanについて軽くまとめます
+  p15:
+  - kind: para
+    text: 最近のPhanの動向
+  p16:
+  - kind: para
+    text: 相変らず恐しいペースで開発が進んでる
+  p17: []
+  p18:
+  - kind: para
+    text: 連想配列の静的解析の鬼
+  p19:
+  - kind: para
+    text: LSPの実装
+  p20:
+  - kind: para
+    text: 復讐
+  p21:
+  - kind: para
+    text: 静的解析とは
+  p22: []
+  p23:
+  - kind: para
+    text: 実行して調べるのが動的解析
+  p24:
+  - kind: para
+    text: 実行せず調べるのが静的解析
+  p25:
+  - kind: para
+    text: Xdebug, phpdbgなどのデバッガは動的解析
+  p26:
+  - kind: para
+    text: PHPUnitなどのテスティングフレームワークも動的解析
+  p27:
+  - kind: para
+    text: php -l は静的解析
+  p28: []
+  p29:
+  - kind: para
+    text: PHPStanは実行時情報を使って静的解析する
+  p30:
+  - kind: para
+    text: Phanはコードを実行せず静的解析する
+  p31:
+  - kind: para
+    text: 得意なことがちょっと異なる
+  p32:
+  - kind: para
+    text: 導入しやすさもちょっと異なる
+  p33:
+  - kind: para
+    text: '@tadsanはPHPStanもPhanも両方使ってます'
+  p34:
+  - kind: para
+    text: 詳しいことは直接きいて
+  p35:
+  - kind: para
+    text: (ここまで5分)
+  p36:
+  - kind: para
+    text: Phanを使ってできること
+  p37:
+  - kind: para
+    text: 説明
+  p38:
+  - kind: para
+    text: “Phan is a static analyzer for PHP that prefers to minimize false-positives.Phan
+      attempts to prove incorrectness rather than correctness.”
+  - kind: para
+    text: https://github.com/phan/phan
+  p39:
+  - kind: para
+    text: “Phanは偽陽性を最小化することを好むPHP静的解析器です。Phanは正しいと証明することよりも誤りであることを証明しようとします。”
+  - kind: para
+    text: https://github.com/phan/phan
+  p40:
+  - kind: para
+    text: Phanでエラーが検出されなければ正しく動く…わけではない
+  p41:
+  - kind: para
+    text: Phanでエラーが検出されるからコードは動かない…わけではない
+  p42:
+  - kind: para
+    text: 「動かないかもしれない」
+  - kind: para
+    text: ちゃんとしてないコードから怪しい箇所を検出するのに強い
+  p43:
+  - kind: para
+    text: で、Phanは何をやってくれるの？
+  p44:
+  - kind: para
+    text: ざっくり
+  p45:
+  - kind: para
+    text: 要はPhpStormを使ってできるような検査ができる
+  p46:
+  - kind: heading
+    level: 1
+    text: ざっくりとPhanのできること
+  - kind: para
+    text: 存在しないクラスやメソッドの使用
+  - kind: para
+    text: 引数の型のミスマッチや過不足
+  - kind: para
+    text: コードとPHPDocの不整合
+  - kind: para
+    text: 存在しないプロパティのアクセス
+  - kind: para
+    text: PHP7と非互換な文法
+  - kind: para
+    text: 非推奨な機能の使用 (@deprecated)
+  p47:
+  - kind: heading
+    level: 1
+    text: 比較的最近実装された機能
+  - kind: para
+    text: LSP (Language Server Protocol)
+  - kind: para
+    text: VSCなどから利用できる
+  - kind: para
+    text: 設定ファイルの自動生成
+  - kind: para
+    text: composer.jsonからの設定取り込み
+  - kind: para
+    text: 未使用変数・デッドコード検出機能
+  p48:
+  - kind: heading
+    level: 1
+    text: 型
+  - kind: para
+    text: PSR-5(abandoned) 型表記を実装
+  - kind: para
+    text: '@param, @return, @var, @method@property に優先する @phan-付きのPHPDocタグが追加'
+  - kind: para
+    text: 独自の拡張形式で型を記述できる
+  - kind: para
+    text: 'Closure(int|array): (int[])'
+  - kind: para
+    text: '@phan-param array{field:string}'
+  p49:
+  - kind: para
+    text: Phanを導入しよう
+  p50:
+  - kind: para
+    text: 三択
+  p51:
+  - kind: heading
+    level: 1
+    text: A. Pharアーカイブ
+  - kind: para
+    text: (超おてがる)
+  - kind: heading
+    level: 1
+    text: B. Docker
+  - kind: para
+    text: (ただしバージョン古すぎる)
+  - kind: heading
+    level: 1
+    text: C. Composer
+  - kind: para
+    text: (依存関係の管理がだるい)
+  p52:
+  - kind: heading
+    level: 1
+    text: A. Pharアーカイブ
+  - kind: para
+    text: (超おてがる)
+  - kind: heading
+    level: 1
+    text: B. Docker
+  - kind: para
+    text: (ただしバージョン古すぎる)
+  - kind: heading
+    level: 1
+    text: C. Composer
+  - kind: para
+    text: (依存関係の管理がだるい)
+  p53: []
+  p54:
+  - kind: heading
+    level: 1
+    text: Pharアーカイブのメリット
+  - kind: para
+    text: 導入も更新もPharファイルをダウンロードするだけ！ 超カンタン
+  - kind: para
+    text: ただし、PHPの実行環境は必要
+  - kind: para
+    text: ファイルをダウンロードしてmv phan.phar ~/local/bin/phan chmod +x ~/local/bin/phan
+  p55:
+  - kind: heading
+    level: 1
+    text: Dockerのメリット
+  - kind: para
+    text: Dokcerの動く環境なら超カンタン！
+  - kind: para
+    text: Phan 0.9.4を最後に音沙汰がない…まあPHP7.1サポートされてるし動くけど…
+  p56:
+  - kind: heading
+    level: 1
+    text: Composerのメリット
+  - kind: para
+    text: あるかなあ… (疑問)
+  - kind: para
+    text: どうしてもPhanのHEADを攻めたいならComposerで入れる
+  - kind: para
+    text: composer require --dev でプロジェクトに入れるのはオススメしない
+  - kind: para
+    text: やるなら composer global require
+  p57:
+  - kind: para
+    text: どうやって動かすの
+  p58:
+  - kind: heading
+    level: 1
+    text: Composerの初期設定
+  - kind: para
+    text: プロジェクトルートがある場所でphan --init を実行すると.phan/config.php が自動生成されるphan -o phan.log
+      のように実行するとphan.logに行区切りのレポートが表示される
+  p59:
+  - kind: para
+    text: Phan以外の最近の動向
+  p60:
+  - kind: para
+    text: PHPStan
+  p61:
+  - kind: heading
+    level: 1
+    text: PHPStan
+  - kind: para
+    text: Phanとキャラかぶりしてるので比較されがち
+  - kind: para
+    text: Phanが全体を解析するのが基本で遅いけど、PHPStanはファイルごとに解析するとかに向いてる
+  p62:
+  - kind: heading
+    level: 1
+    text: PHPStan
+  - kind: para
+    text: PullRequestごとにテストするならPhanよりもPHPStan
+  - kind: para
+    text: 高速に解析できるので、作業中に常時解析しまくってもよい
+  - kind: para
+    text: Emacsで編集中に表示するとPhpStormっぽくなるぞ！！！１
+  - kind: para
+    text: https://github.com/emacs-php/phpstan.el
+  p63:
+  - kind: para
+    text: Phpactor
+  p64: []
+  p65:
+  - kind: heading
+    level: 1
+    text: Phpactor
+  - kind: para
+    text: これも静的解析ツールだけど、補完や定義ジャンプ、定義の挿入やリファクタリングなどのエディタ向けのツールセットを提供
+  - kind: para
+    text: いままでリファクタリングはPhpStorm独擅場だったが、これを崩せるポテンシャルがある
+  p66:
+  - kind: heading
+    level: 1
+    text: Phpactor
+  - kind: para
+    text: エディタに依存しない操作
+  - kind: para
+    text: 標準でvimプラグインがある
+  - kind: para
+    text: Emacs版の実装は私が開発中
+  - kind: para
+    text: https://github.com/emacs-php/phpactor.el
+  - kind: para
+    text: オレオレ
+  - kind: para
+    text: 開発中感はあるけど、いちおう動く
+  p67:
+  - kind: para
+    text: 最後に
+  p68: []
 size:
   max_width: 1024
   max_height: 768
@@ -49,830 +368,3 @@ links:
   p68:
   - url: https://www.pixiv.net/fanbox/creator/105589
     title: にゃんだーすわん｜pixivFANBOX
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: で
-    - node: bold
-      content: ' コード静的解析'
-  - node: p
-    children:
-    - node: text
-      content: Phan PHP 2018
-  - node: p
-    children:
-    - node: bold
-      content: Static analysis of PHP code using Phan.
-  - node: p
-    children:
-    - node: text
-      content: '2018-05-30 PHP勉強会@東京 '
-    - node: bold
-      content: '#phpstudy'
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
-  p3: []
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: We are hiring!
-  p5:
-  - node: p
-    children:
-    - node: bold
-      content: 近況報告
-  p6: []
-  p7: []
-  p8: []
-  p9:
-  - node: p
-    children:
-    - node: bold
-      content: そして
-  p10: []
-  p11:
-  - node: p
-    children:
-    - node: bold
-      content: って何
-  - node: p
-    children:
-    - node: text
-      content: Phan
-  p12: []
-  p13: []
-  p14:
-  - node: p
-    children:
-    - node: bold
-      content: 今回は最近の
-  - node: p
-    children:
-    - node: bold
-      content: Phanについて
-    - node: br
-    - node: bold
-      content: 軽くまとめます
-  p15:
-  - node: p
-    children:
-    - node: bold
-      content: 最近のPhanの
-    - node: br
-    - node: bold
-      content: 動向
-  p16:
-  - node: p
-    children:
-    - node: bold
-      content: 相変らず恐しいペー
-    - node: text
-      content: ' '
-    - node: bold
-      content: スで開発が進んでる
-  p17: []
-  p18:
-  - node: p
-    children:
-    - node: bold
-      content: 連想配列の
-    - node: br
-    - node: bold
-      content: 静的解析の鬼
-  p19:
-  - node: p
-    children:
-    - node: bold
-      content: LSPの実装
-  p20:
-  - node: p
-    children:
-    - node: bold
-      content: 復讐
-  p21:
-  - node: p
-    children:
-    - node: bold
-      content: 静的解析とは
-  p22: []
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: 実行して
-  - node: p
-    children:
-    - node: text
-      content: 調べるのが
-    - node: br
-    - node: bold
-      content: 動的解析
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: 実行せず
-  - node: p
-    children:
-    - node: text
-      content: 調べるのが
-    - node: br
-    - node: bold
-      content: 静的解析
-  p25:
-  - node: p
-    children:
-    - node: bold
-      content: Xdebug, phpdbg
-  - node: p
-    children:
-    - node: text
-      content: などのデバッガは
-    - node: br
-    - node: bold
-      content: 動的解析
-  p26:
-  - node: p
-    children:
-    - node: bold
-      content: PHPUnit
-    - node: text
-      content: などの
-  - node: p
-    children:
-    - node: text
-      content: テスティングフレームワークも
-    - node: br
-    - node: bold
-      content: 動的解析
-  p27:
-  - node: p
-    children:
-    - node: bold
-      content: ' '
-    - node: text
-      content: は
-  - node: p
-    children:
-    - node: text
-      content: php -l
-    - node: br
-    - node: bold
-      content: 静的解析
-  p28: []
-  p29:
-  - node: p
-    children:
-    - node: bold
-      content: PHPStan
-    - node: text
-      content: は
-    - node: br
-    - node: bold
-      content: 実行時情報を使って
-    - node: br
-    - node: bold
-      content: 静的解析する
-  p30:
-  - node: p
-    children:
-    - node: bold
-      content: Phan
-    - node: text
-      content: は
-  - node: p
-    children:
-    - node: bold
-      content: コードを実行せず
-    - node: br
-    - node: bold
-      content: 静的解析する
-  p31:
-  - node: p
-    children:
-    - node: bold
-      content: 得意なことが
-    - node: br
-    - node: bold
-      content: ちょっと異なる
-  p32:
-  - node: p
-    children:
-    - node: bold
-      content: 導入しやすさも
-    - node: text
-      content: ' '
-    - node: bold
-      content: ちょっと異なる
-  p33:
-  - node: p
-    children:
-    - node: bold
-      content: '@tadsanは'
-  - node: p
-    children:
-    - node: text
-      content: も も
-  - node: p
-    children:
-    - node: text
-      content: PHPStan Phan
-    - node: br
-    - node: bold
-      content: 両方使ってます
-  p34:
-  - node: p
-    children:
-    - node: bold
-      content: 詳しいことは
-    - node: br
-    - node: bold
-      content: 直接きいて
-  p35:
-  - node: p
-    children:
-    - node: bold
-      content: (ここまで5分)
-  p36:
-  - node: p
-    children:
-    - node: bold
-      content: Phanを使って
-    - node: br
-    - node: bold
-      content: できること
-  p37:
-  - node: p
-    children:
-    - node: bold
-      content: 説明
-  p38:
-  - node: p
-    children:
-    - node: bold
-      content: '“Phan is a static analyzer for PHP that '
-  - node: p
-    children:
-    - node: bold
-      content: 'prefers to minimize false-positives. '
-    - node: br
-    - node: bold
-      content: 'Phan attempts to prove incorrectness rather '
-    - node: br
-    - node: bold
-      content: than correctness.”
-  - node: p
-    children:
-    - node: bold
-      content: https://github.com/phan/phan
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: Phanは偽陽性を最小化することを
-    - node: br
-    - node: bold
-      content: “
-  - node: p
-    children:
-    - node: text
-      content: 好むPHP静的解析器です。
-  - node: p
-    children:
-    - node: text
-      content: Phanは正しいと証明することよりも
-    - node: br
-    - node: text
-      content: 誤りであることを証明しようとします。
-  - node: p
-    children:
-    - node: bold
-      content: ”
-  - node: p
-    children:
-    - node: bold
-      content: https://github.com/phan/phan
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: Phanでエラーが
-  - node: p
-    children:
-    - node: text
-      content: 検出されなければ
-  - node: p
-    children:
-    - node: text
-      content: 正しく動く…
-    - node: bold
-      content: ' わけではない'
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: Phanでエラーが
-  - node: p
-    children:
-    - node: text
-      content: 検出されるから
-  - node: p
-    children:
-    - node: text
-      content: コードは動かない…
-    - node: bold
-      content: ' '
-    - node: br
-    - node: bold
-      content: わけではない
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: 「動かないかもしれない」
-  - node: p
-    children:
-    - node: text
-      content: ちゃんとしてないコード
-    - node: br
-    - node: text
-      content: から怪しい箇所を検出する
-    - node: br
-    - node: text
-      content: のに強い
-  p43:
-  - node: p
-    children:
-    - node: bold
-      content: で、Phanは何を
-    - node: text
-      content: ' '
-    - node: bold
-      content: やってくれるの？
-  p44:
-  - node: p
-    children:
-    - node: bold
-      content: ざっくり
-  p45:
-  - node: p
-    children:
-    - node: bold
-      content: 要はPhpStormを
-    - node: text
-      content: ' '
-    - node: bold
-      content: 使ってできるよう
-    - node: br
-    - node: bold
-      content: な検査ができる
-  p46:
-  - node: p
-    children:
-    - node: bold
-      content: ざっくりとPhanのできること
-  - node: p
-    children:
-    - node: text
-      content: '存在しないクラスやメソッドの使用 '
-    - node: br
-    - node: text
-      content: '引数の型のミスマッチや過不足 '
-    - node: br
-    - node: text
-      content: 'コードとPHPDocの不整合 '
-    - node: br
-    - node: text
-      content: '存在しないプロパティのアクセス '
-    - node: br
-    - node: text
-      content: 'PHP7と非互換な文法 '
-    - node: br
-    - node: text
-      content: 非推奨な機能の使用 (@deprecated)
-  p47:
-  - node: p
-    children:
-    - node: bold
-      content: 比較的最近実装された機能
-  - node: p
-    children:
-    - node: text
-      content: 'LSP (Language Server Protocol) '
-    - node: br
-    - node: text
-      content: 'VSCなどから利用できる '
-    - node: br
-    - node: text
-      content: '設定ファイルの自動生成 '
-    - node: br
-    - node: text
-      content: 'composer.jsonからの設定取り込み '
-    - node: br
-    - node: text
-      content: 未使用変数・デッドコード検出機能
-  p48:
-  - node: p
-    children:
-    - node: bold
-      content: 型
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-5(abandoned) 型表記を実装 '
-  - node: p
-    children:
-    - node: text
-      content: '@param @return @var @method'
-  - node: p
-    children:
-    - node: text
-      content: ',  ,  ,   '
-  - node: p
-    children:
-    - node: text
-      content: '@property @phan-'
-  - node: p
-    children:
-    - node: text
-      content: ' に優先する   '
-  - node: p
-    children:
-    - node: text
-      content: '付きのPHPDocタグが追加 '
-    - node: br
-    - node: text
-      content: '独自の拡張形式で型を記述できる '
-  - node: p
-    children:
-    - node: text
-      content: 'Closure(int|array): (int[]) '
-    - node: br
-    - node: text
-      content: '@phan-param array{field:string}'
-  p49:
-  - node: p
-    children:
-    - node: bold
-      content: Phanを
-    - node: br
-    - node: bold
-      content: 導入しよう
-  p50:
-  - node: p
-    children:
-    - node: bold
-      content: 三択
-  p51:
-  - node: p
-    children:
-    - node: bold
-      content: A. Phar
-  - node: p
-    children:
-    - node: bold
-      content: アーカイブ
-  - node: p
-    children:
-    - node: bold
-      content: (超おてがる)
-  - node: p
-    children:
-    - node: bold
-      content: B. Docker
-    - node: br
-    - node: bold
-      content: '(ただしバージョン古すぎる) '
-  - node: p
-    children:
-    - node: bold
-      content: C. Composer
-  - node: p
-    children:
-    - node: bold
-      content: (依存関係の管理がだるい)
-  p52:
-  - node: p
-    children:
-    - node: bold
-      content: A. Phar
-  - node: p
-    children:
-    - node: bold
-      content: アーカイブ
-  - node: p
-    children:
-    - node: bold
-      content: (超おてがる)
-  - node: p
-    children:
-    - node: bold
-      content: B. Docker
-    - node: br
-    - node: bold
-      content: '(ただしバージョン古すぎる) '
-  - node: p
-    children:
-    - node: bold
-      content: C. Composer
-  - node: p
-    children:
-    - node: bold
-      content: (依存関係の管理がだるい)
-  p53: []
-  p54:
-  - node: p
-    children:
-    - node: bold
-      content: Pharアーカイブのメリット
-  - node: p
-    children:
-    - node: text
-      content: 導入も更新もPharファイルを
-    - node: br
-    - node: text
-      content: 'ダウンロードするだけ！ '
-    - node: bold
-      content: 超カンタン
-    - node: text
-      content: ' '
-  - node: p
-    children:
-    - node: text
-      content: 'ただし、PHPの実行環境は必要 '
-  - node: p
-    children:
-    - node: text
-      content: ファイルをダウンロードして
-  - node: p
-    children:
-    - node: text
-      content: mv phan.phar ~/local/bin/phan
-  - node: p
-    children:
-    - node: text
-      content: chmod +x ~/local/bin/phan
-  p55:
-  - node: p
-    children:
-    - node: bold
-      content: Dockerのメリット
-  - node: p
-    children:
-    - node: text
-      content: 'Dokcerの動く環境なら超カンタン！ '
-  - node: p
-    children:
-    - node: text
-      content: Phan 0.9.4を最後に音沙汰がない… まあPHP7.1サポートされてるし動く
-    - node: br
-    - node: text
-      content: けど…
-  p56:
-  - node: p
-    children:
-    - node: bold
-      content: Composerのメリット
-  - node: p
-    children:
-    - node: text
-      content: 'あるかなあ… (疑問) '
-  - node: p
-    children:
-    - node: text
-      content: 'どうしてもPhanのHEADを '
-    - node: br
-    - node: text
-      content: '攻めたいならComposerで入れる '
-  - node: p
-    children:
-    - node: text
-      content: composer require --dev
-  - node: p
-    children:
-    - node: text
-      content: ' でプロジェ'
-  - node: p
-    children:
-    - node: text
-      content: クトに入れるのは
-    - node: bold
-      content: オススメしない
-    - node: text
-      content: ' '
-  - node: p
-    children:
-    - node: text
-      content: composer global require
-  - node: p
-    children:
-    - node: text
-      content: 'やるなら '
-  p57:
-  - node: p
-    children:
-    - node: bold
-      content: どうやって
-    - node: br
-    - node: bold
-      content: 動かすの
-  p58:
-  - node: p
-    children:
-    - node: bold
-      content: Composerの初期設定
-  - node: p
-    children:
-    - node: text
-      content: プロジェクトルートがある場所で
-  - node: p
-    children:
-    - node: text
-      content: phan --init
-  - node: p
-    children:
-    - node: text
-      content: ' を実行すると'
-  - node: p
-    children:
-    - node: text
-      content: .phan/config.php
-  - node: p
-    children:
-    - node: text
-      content: ' が自動生成される '
-  - node: p
-    children:
-    - node: text
-      content: phan -o phan.log
-  - node: p
-    children:
-    - node: text
-      content: ' のように実行する'
-  - node: p
-    children:
-    - node: text
-      content: phan.log
-    - node: br
-    - node: text
-      content: と に行区切りのレポートが
-    - node: br
-    - node: text
-      content: 表示される
-  p59:
-  - node: p
-    children:
-    - node: bold
-      content: Phan以外の
-    - node: text
-      content: ' '
-    - node: bold
-      content: 最近の動向
-  p60:
-  - node: p
-    children:
-    - node: bold
-      content: PHPStan
-  p61:
-  - node: p
-    children:
-    - node: bold
-      content: PHPStan
-  - node: p
-    children:
-    - node: text
-      content: Phanとキャラかぶりしてるので
-    - node: br
-    - node: text
-      content: '比較されがち '
-    - node: br
-    - node: text
-      content: Phanが全体を解析するのが基本で遅 いけど、PHPStanはファイルごとに
-    - node: br
-    - node: text
-      content: 解析するとかに向いてる
-  p62:
-  - node: p
-    children:
-    - node: bold
-      content: PHPStan
-  - node: p
-    children:
-    - node: text
-      content: PullRequestごとにテストするなら
-    - node: br
-    - node: text
-      content: 'PhanよりもPHPStan '
-  - node: p
-    children:
-    - node: text
-      content: 高速に解析できるので、作業中に
-    - node: br
-    - node: text
-      content: '常時解析しまくってもよい '
-    - node: br
-    - node: text
-      content: Emacsで編集中に表示すると
-  - node: p
-    children:
-    - node: text
-      content: PhpStormっぽくなるぞ！！！１
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/emacs-php/phpstan.el
-  p63:
-  - node: p
-    children:
-    - node: bold
-      content: Phpactor
-  p64: []
-  p65:
-  - node: p
-    children:
-    - node: bold
-      content: Phpactor
-  - node: p
-    children:
-    - node: text
-      content: これも静的解析ツールだけど、
-    - node: br
-    - node: text
-      content: 補完や定義ジャンプ、定義の挿入や リファクタリングなどのエディタ向
-    - node: br
-    - node: text
-      content: 'けのツールセットを提供 '
-    - node: br
-    - node: text
-      content: いままでリファクタリングは
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm独擅場だったが、
-    - node: br
-    - node: text
-      content: これを崩せるポテンシャルがある
-  p66:
-  - node: p
-    children:
-    - node: bold
-      content: Phpactor
-  - node: p
-    children:
-    - node: text
-      content: 'エディタに依存しない操作 標準でvimプラグインがある Emacs版の実装は私が開発中 '
-  - node: p
-    children:
-    - node: text
-      content: 'https://github.com/emacs-php/phpactor.el '
-    - node: br
-    - node: text
-      content: 'オレオレ '
-    - node: br
-    - node: text
-      content: 開発中感はあるけど、いちおう動く
-  p67:
-  - node: p
-    children:
-    - node: bold
-      content: 最後に
-  p68: []

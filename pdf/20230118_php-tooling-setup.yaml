@@ -1,518 +1,229 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 'めんどくさくない '
-    - node: br
-    - node: text
-      content: PHP開発ツール導入
-  - node: p
-    children:
-    - node: text
-      content: Avoid the hassle and install QA tools in your PHP project
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-01-18  '
-    - node: br
-    - node: bold
-      content: PHP勉強会@東京
+  - kind: heading
+    level: 1
+    text: めんどくさくない
+  - kind: heading
+    level: 1
+    text: PHP開発ツール導入
+  - kind: heading
+    level: 2
+    text: Avoid the hassle and install QA tools in your PHP project
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2023-01-18 PHP勉強会@東京
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p4:
-  - node: p
-    children:
-    - node: text
-      content: 'あなたの会社では '
-    - node: br
-    - node: text
-      content: 'PHPで書かれたツールを '
-    - node: br
-    - node: text
-      content: 利用してますか？
+  - kind: para
+    text: あなたの会社ではPHPで書かれたツールを利用してますか？
   p5:
-  - node: p
-    children:
-    - node: text
-      content: えっPHPってホームページ を作る言語というかHTML のテンプレートエンジンじゃ ないのそんな言語でツールて
+  - kind: para
+    text: えっPHPってホームページを作る言語というかHTMLのテンプレートエンジンじゃないのそんな言語でツールて
   p6:
-  - node: p
-    children:
-    - node: text
-      content: …ということを思って
-    - node: br
-    - node: text
-      content: るひともまだ居そう
+  - kind: para
+    text: …ということを思ってるひともまだ居そう
   p7:
-  - node: p
-    children:
-    - node: text
-      content: わかる
+  - kind: heading
+    level: 1
+    text: わかる
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 'が､現実には既に '
-    - node: br
-    - node: text
-      content: いっぱい使われている
+  - kind: para
+    text: が、現実には既にいっぱい使われている
   p9:
-  - node: p
-    children:
-    - node: text
-      content: PHPのツールはPHPで書こうね
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Composer … 依存マネージャー(パッケージ管理ツール)
-    - node: li
-      children:
-      - node: text
-        content: PHPUnit … xUnitテスティングフレームワーク
-    - node: li
-      children:
-      - node: text
-        content: PHP-CS-Fixer, PHP_CodeSniffer … コードフォーマッター
-    - node: li
-      children:
-      - node: text
-        content: PHPStan, Psalm … 静的解析ツール (型チェッカー)
-    - node: li
-      children:
-      - node: text
-        content: Deployer … アプリケーションデプロイツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: そのほかいろいろ！
+  - kind: para
+    text: PHPのツールはPHPで書こうね
+  - kind: list
+    items:
+    - Composer … 依存マネージャー(パッケージ管理ツール)
+    - PHPUnit … xUnitテスティングフレームワーク
+    - PHP-CS-Fixer, PHP_CodeSniffer … コードフォーマッター
+    - PHPStan, Psalm … 静的解析ツール (型チェッカー)
+    - Deployer … アプリケーションデプロイツール
+    - そのほかいろいろ！
   p10:
-  - node: p
-    children:
-    - node: text
-      content: PHP vs tooling
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPはWebサーバだけでなくコマンドラインで動く
-    - node: li
-      children:
-      - node: text
-        content: PHPのためのCLIアプリケーションフレームワークがある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はSymfony Consoleが主流だと思う
-    - node: li
-      children:
-      - node: text
-        content: PHPで書かれたPHPパーサーがある
-    - node: li
-      children:
-      - node: text
-        content: PHPで書けばPHPに詳しいPHPerが貢献できる
-    - node: li
-      children:
-      - node: text
-        content: PHPで書けばライブラリとして相互運用もできる
+  - kind: para
+    text: PHP vs tooling
+  - kind: list
+    items:
+    - PHPはWebサーバだけでなくコマンドラインで動く
+    - PHPのためのCLIアプリケーションフレームワークがある
+    - 最近はSymfony Consoleが主流だと思う
+    - PHPで書かれたPHPパーサーがある
+    - PHPで書けばPHPに詳しいPHPerが貢献できる
+    - PHPで書けばライブラリとして相互運用もできる
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 他言語 vs tooling
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'PhpStorm: Java (OSSではない)'
-    - node: li
-      children:
-      - node: text
-        content: 'Intephense: Node.js (npmにあるがOSSでない)'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: php-parser (OSS)
-    - node: li
-      children:
-      - node: text
-        content: PHP Rust Tools (OSS)
-    - node: li
-      children:
-      - node: text
-        content: 'NoVerify: Go (OSS)'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: VKCOM/php-parser
+  - kind: para
+    text: 他言語 vs tooling
+  - kind: list
+    items:
+    - 'PhpStorm: Java (OSSではない)'
+    - 'Intephense: Node.js (npmにあるがOSSでない)'
+    - php-parser (OSS)
+    - PHP Rust Tools (OSS)
+    - 'NoVerify: Go (OSS)'
+    - VKCOM/php-parser
   p12:
-  - node: p
-    children:
-    - node: text
-      content: どうやってツールを インストールするか
+  - kind: para
+    text: どうやってツールをインストールするか
   p13:
-  - node: p
-    children:
-    - node: text
-      content: Composer
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 対象のプロジェクトと依存対象を並列な「パッケージ」として扱える
-    - node: li
-      children:
-      - node: text
-        content: 単体ファイルのcomposerコマンド(composer.phar)として利用できる
-    - node: li
-      children:
-      - node: text
-        content: インストール方法は   に書いてある
-  - node: p
-    children:
-    - node: text
-      content: https://getcomposer.org/doc/00-intro.md
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Windows向けにはインストーラー がある
-  - node: p
-    children:
-    - node: text
-      content: (Composer-Setup.exe)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 実行ファイル(bin)も管理でき、プロジェクトの vendor/bin/ に
-      - node: br
-      - node: text
-        content: 配置されて実行できる (Windowsでも動くように工夫されている!)
+  - kind: para
+    text: Composer
+  - kind: list
+    items:
+    - 対象のプロジェクトと依存対象を並列な「パッケージ」として扱える
+    - 単体ファイルのcomposerコマンド(composer.phar)として利用できる
+    - インストール方法は https://getcomposer.org/doc/00-intro.md に書いてある
+    - Windows向けにはインストーラー(Composer-Setup.exe)がある
+    - 実行ファイル(bin)も管理でき、プロジェクトの vendor/bin/ に
+  - kind: para
+    text: 配置されて実行できる (Windowsでも動くように工夫されている!)
   p14:
-  - node: p
-    children:
-    - node: text
-      content: composer global
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プロジェクトに依存しないパッケージをインストールできる
-    - node: li
-      children:
-      - node: text
-        content: 基本的にはシステムワイドではなく、 ユーザーごとにインストールされる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 場所は composer global con(cid:238)g -l などで検索できる
-        - node: li
-          children:
-          - node: text
-            content: インストール先をPATH環境変数に追加すると通常のコマンドとして使える
-        - node: li
-          children:
-          - node: text
-            content: たとえば PATH=$HOME/.composer/vendor/bin:$PATH など
+  - kind: heading
+    level: 1
+    text: composer global
+  - kind: list
+    items:
+    - プロジェクトに依存しないパッケージをインストールできる
+    - 基本的にはシステムワイドではなく、 ユーザーごとにインストールされる
+    - 場所は composer global config -l などで検索できる
+    - インストール先をPATH環境変数に追加すると通常のコマンドとして使える
+    - たとえば PATH=$HOME/.composer/vendor/bin:$PATH など
   p15:
-  - node: p
-    children:
-    - node: text
-      content: Composerで 管理する問題
+  - kind: para
+    text: Composerで管理する問題
   p16:
-  - node: p
-    children:
-    - node: text
-      content: '依存バージョンが '
-    - node: br
-    - node: text
-      content: 衝突する！
+  - kind: para
+    text: 依存バージョンが衝突する！
   p17: []
   p18: []
   p19:
-  - node: p
-    children:
-    - node: text
-      content: バージョン衝突問題
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プロジェクト本体で使いたいパッケージとツールが要求するパッケージの
-      - node: br
-      - node: text
-        content: 'バージョンを合わせないといけない '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP-CS-FixerはPHP-ParserやSymfonyパッケージに依存しているの
-          - node: br
-          - node: text
-            content: 'で、全部のパッケージを最新に合わせ続けないと簡単に衝突する '
-        - node: li
-          children:
-          - node: text
-            content: いろんな事情で古いSymfonyコンポーネントに依存している
-          - node: br
-          - node: text
-            content: ライブラリを使わざるを得ない事情があると詰む or バージョン上がらない
+  - kind: heading
+    level: 1
+    text: バージョン衝突問題
+  - kind: list
+    items:
+    - プロジェクト本体で使いたいパッケージとツールが要求するパッケージの
+  - kind: para
+    text: バージョンを合わせないといけない
+  - kind: list
+    items:
+    - PHP-CS-FixerはPHP-ParserやSymfonyパッケージに依存しているの
+  - kind: para
+    text: で、全部のパッケージを最新に合わせ続けないと簡単に衝突する
+  - kind: list
+    items:
+    - いろんな事情で古いSymfonyコンポーネントに依存している
+  - kind: para
+    text: ライブラリを使わざるを得ない事情があると詰む or バージョン上がらない
   p20:
-  - node: p
-    children:
-    - node: text
-      content: ＼(^o^)／
+  - kind: heading
+    level: 1
+    text: ＼(^o^)／
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 解決策はある
+  - kind: heading
+    level: 1
+    text: 解決策はある
   p22:
-  - node: p
-    children:
-    - node: text
-      content: Pharアーカイブ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 複数ファイルのPHPを一個のファイルに固めたもの
-    - node: li
-      children:
-      - node: text
-        content: 普通のスクリプトとして実行できるようにできる
-    - node: li
-      children:
-      - node: text
-        content: プロジェクトメンバー全員に使わせるにはどうすればいいか
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ダウンロードスクリプトを作成して実行してもらう / ファイル自体をGit追加
-        - node: li
-          children:
-          - node: text
-            content: PhiveというPharインストールツールもある
-        - node: li
-          children:
-          - node: text
-            content: 手動でインストールしないといけないので細かいバージョンが揃わない問題
+  - kind: para
+    text: Pharアーカイブ
+  - kind: list
+    items:
+    - 複数ファイルのPHPを一個のファイルに固めたもの
+    - 普通のスクリプトとして実行できるようにできる
+    - プロジェクトメンバー全員に使わせるにはどうすればいいか
+    - ダウンロードスクリプトを作成して実行してもらう / ファイル自体をGit追加
+    - PhiveというPharインストールツールもある
+    - 手動でインストールしないといけないので細かいバージョンが揃わない問題
   p23:
-  - node: p
-    children:
-    - node: text
-      content: composer bin-plugin
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://github.com/bamarni/composer-bin-plugin
-    - node: li
-      children:
-      - node: text
-        content: プロジェクト自体とは隔離したディレクトリでcomposerの依存を管理する
-    - node: li
-      children:
-      - node: text
-        content: プラグイン側でサブディレクトリにインストールしたツールと
-      - node: br
-      - node: text
-        content: 'メインプロジェクト側の vendor/bin/ ディレクトリを同期してくれる '
-    - node: li
-      children:
-      - node: text
-        content: 通常の composer install とは別管理なのでちょっとめんどくさい
+  - kind: para
+    text: composer bin-plugin
+  - kind: list
+    items:
+    - https://github.com/bamarni/composer-bin-plugin
+    - プロジェクト自体とは隔離したディレクトリでcomposerの依存を管理する
+    - プラグイン側でサブディレクトリにインストールしたツールと
+  - kind: para
+    text: メインプロジェクト側の vendor/bin/ ディレクトリを同期してくれる
+  - kind: list
+    items:
+    - 通常の composer install とは別管理なのでちょっとめんどくさい
   p24:
-  - node: p
-    children:
-    - node: text
-      content: これでいいのでは
+  - kind: heading
+    level: 1
+    text: これでいいのでは
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '依存バージョンを '
-    - node: br
-    - node: text
-      content: 合わせられない問題
+  - kind: para
+    text: 依存バージョンを合わせられない問題
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanの '
-    - node: br
-    - node: text
-      content: 開発者曰く
+  - kind: para
+    text: PHPStanの開発者曰く
   p27: []
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStanを入れるなら '
-  - node: p
-    children:
-    - node: text
-      content: composer require --dev
-    - node: br
-    - node: text
-      content: を使え
+  - kind: para
+    text: PHPStanを入れるならcomposer require --devを使え
   p29:
-  - node: p
-    children:
-    - node: text
-      content: どういうことか
+  - kind: heading
+    level: 1
+    text: どういうことか
   p30: []
   p31:
-  - node: p
-    children:
-    - node: text
-      content: '依存が… ない… '
-    - node: br
-    - node: text
-      content: (PHPのバージョン制約だけ)
+  - kind: heading
+    level: 1
+    text: 依存が… ない…
+  - kind: heading
+    level: 2
+    text: (PHPのバージョン制約だけ)
   p32:
-  - node: p
-    children:
-    - node: text
-      content: どういうことか
+  - kind: heading
+    level: 1
+    text: どういうことか
   p33: []
   p34:
-  - node: p
-    children:
-    - node: text
-      content: ここにコードはない
+  - kind: heading
+    level: 1
+    text: ここにコードはない
   p35: []
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 'GitにPharファイルを '
-    - node: br
-    - node: text
-      content: 直接コミット!?
+  - kind: para
+    text: GitにPharファイルを直接コミット!?
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 話は長くなるので
+  - kind: heading
+    level: 1
+    text: 話は長くなるので
   p38: []
   p39:
-  - node: p
-    children:
-    - node: text
-      content: Composerパッケージは Packagistで検索できる
+  - kind: para
+    text: ComposerパッケージはPackagistで検索できる
   p40: []
   p41: []
   p42: []
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 'shimとかpharとか '
-    - node: br
-    - node: text
-      content: 'distで検索すると '
-    - node: br
-    - node: text
-      content: 'コンフリクトしない '
-    - node: br
-    - node: text
-      content: 'バージョンが公開されている '
-    - node: br
-    - node: text
-      content: (こともある)
+  - kind: para
+    text: shimとかpharとかdistで検索するとコンフリクトしないバージョンが公開されている(こともある)
   p44:
-  - node: p
-    children:
-    - node: text
-      content: コンフリクトを避ける上
-    - node: br
-    - node: text
-      content: 'では依存ライブラリの '
-    - node: br
-    - node: text
-      content: '名前空間隔離という '
-    - node: br
-    - node: text
-      content: 技術が不可欠
+  - kind: para
+    text: コンフリクトを避ける上では依存ライブラリの名前空間隔離という技術が不可欠
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 'みんなも '
-    - node: br
-    - node: text
-      content: 'コンフリクトフリーな '
-    - node: br
-    - node: text
-      content: ツールを量産しよう
+  - kind: para
+    text: みんなもコンフリクトフリーなツールを量産しよう
 size:
   max_width: 1920
   max_height: 1080

@@ -1,1345 +1,425 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: どうして言語は一つにならないの？
+  - kind: heading
+    level: 2
+    text: ～相対化して学ぶプログラミング言語論
+  - kind: heading
+    level: 3
+    text: Is there a "Best" programming language?
+  - kind: heading
+    level: 3
+    text: A comparative look at How they work
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2025-07-25 #techramen25conf旭川リサーチセンター - TechRAMEN 2025 Conference'
+  p2:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3:
+  - kind: heading
+    level: 1
+    text: 出身地は札幌と旭川の間
+  p4:
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス
+  p5:
+  - kind: heading
+    level: 1
+    text: 昨年のTechRAMEN
+  p6:
+  - kind: heading
+    level: 1
+    text: プログラミング言語史
+  p7:
+  - kind: heading
+    level: 1
+    text: あした後日祭やります
+  p8:
+  - kind: heading
+    level: 1
+    text: 今回のお題
+  p9: []
+  p10:
+  - kind: para
+    text: 会社の飲み会で同僚に言われました
+  p11:
+  - kind: para
+    text: Q.「えっと、tadsanがやってる言語ってなんだっけ？」
+  p12:
+  - kind: para
+    text: 僕はプログラミング言語が趣味みたいな人間なのでいっぱいやってます
+  p13:
+  - kind: para
+    text: 僕はプログラミング言語が趣味みたいな人間なのでいっぱいやってます
+  p14:
+  - kind: para
+    text: A.「外部でよく発表してるのはPHP」
+  p15:
+  - kind: para
+    text: Q.「なんで言語っていっぱいあるの？ そのうち一個にならない？」
+  p16:
+  - kind: heading
+    level: 1
+    text: A.「いい質問ですね!」
+  p17:
+  - kind: para
+    text: 特に初心者は覚えることが多い
+  p18:
+  - kind: heading
+    level: 1
+    text: Web開発は多言語を要求しがち
+  - kind: list
+    items:
+    - バックエンド言語どれか
+    - JavaScript(Node.js), Ruby, Python, Java, C#, PHP, ...etc.
+    - フロントエンド
+    - HTML, JavaScript, TypeScript, CSS, ...etc.
+    - その他
+    - SQL, 正規表現, シェルスクリプト ...etc.
+  p19:
+  - kind: para
+    text: どれか1つにならんかと願いたくなる気持ちはわかる
+  p20:
+  - kind: para
+    text: 言語を1個だけ覚えたらなんでも作れる！
+  p21:
+  - kind: para
+    text: ゲームも作れるしシステム開発もできる
+  p22:
+  - kind: para
+    text: そうなったらいいのにな…
+  p23:
+  - kind: heading
+    level: 1
+    text: ところで
+  p24:
+  - kind: heading
+    level: 1
+    text: 「言語」#とは
+  p25:
+  - kind: para
+    text: 「自然言語」人間が日常的に使う
+  p26:
+  - kind: para
+    text: 「人工言語」人間が目的をもって設計した言語
+  p27:
+  - kind: para
+    text: Q.(自然言語)何言語知っていますか？
+  p28:
+  - kind: para
+    text: 日本語、英語、中国語、韓国語ドイツ語、フランス語、タイ語ヒンディー語、マレー語…
+  p29:
+  - kind: para
+    text: 言語って結構いっぱいある
+  p30:
+  - kind: para
+    text: 日本人は結構「何か国語」「母国語」って言っちゃいがち
+  p31:
+  - kind: heading
+    level: 1
+    text: 国≠言語
+  p32:
+  - kind: para
+    text: 公用語エスノローグ調べ
+  - kind: para
+    text: (手話を除く)
+  - kind: para
+    text: 日本
+  - kind: para
+    text: (事実上)
+  - kind: para
+    text: インド
+  - kind: para
+    text: EU加盟国
+  p33:
+  - kind: para
+    text: 公用語エスノローグ調べ
+  - kind: para
+    text: (手話を除く)
+  - kind: para
+    text: 日本
+  - kind: para
+    text: (事実上)
+  - kind: para
+    text: インド
+  - kind: para
+    text: EU加盟国
+  p34:
+  - kind: para
+    text: 国際SILという団体による言語調査
+  - kind: para
+    text: 公用語エスノローグ調べ
+  - kind: para
+    text: (手話を除く)
+  - kind: para
+    text: 日本
+  - kind: para
+    text: (事実上)
+  - kind: para
+    text: インド
+  - kind: para
+    text: EU加盟国
+  p35:
+  - kind: para
+    text: 国際SILという団体による言語調査
+  - kind: para
+    text: 公用語エスノローグ調べ
+  - kind: para
+    text: (手話を除く)
+  - kind: para
+    text: 日本
+  - kind: para
+    text: (事実上)
+  - kind: para
+    text: インド
+  - kind: para
+    text: EU加盟国
+  p36:
+  - kind: para
+    text: 国際SILという団体による言語調査
+  - kind: para
+    text: 公用語エスノローグ調べ
+  - kind: para
+    text: (手話を除く)
+  - kind: para
+    text: 日本
+  - kind: para
+    text: (事実上)
+  - kind: para
+    text: インド
+  - kind: para
+    text: EU加盟国
+  p37:
+  - kind: para
+    text: 国際SILという団体による言語調査
+  - kind: para
+    text: 公用語エスノローグ調べ
+  - kind: para
+    text: (手話を除く)
+  - kind: para
+    text: 日本
+  - kind: para
+    text: (事実上)
+  - kind: para
+    text: インド
+  - kind: para
+    text: EU加盟国
+  p38:
+  - kind: para
+    text: Q.(自然言語)何言語しゃべれますか？
+  p39:
+  - kind: para
+    text: 私は日本語しかしゃべれません
+  - kind: para
+    text: ＼(^o^)／
+  p40:
+  - kind: para
+    text: 世界にプログラミング言語は何種類あるでしょうか
+  p41:
+  - kind: heading
+    level: 1
+    text: 151種類！
+  p42:
+  - kind: para
+    text: …と断言してくれるオーキド博士がいてくれたらよかったのですが… そのように明快な回答は出せない
+  p43:
+  - kind: para
+    text: (計算機言語)何言語言えますか？
+  p44:
+  - kind: heading
+    level: 1
+    text: GitHubの言語検出
+  p45:
+  - kind: heading
+    level: 2
+    text: '594'
+  - kind: heading
+    level: 1
+    text: GitHubの言語検出
+  p46:
+  - kind: heading
+    level: 1
+    text: コンピュータ言語
+  - kind: list
+    items:
+    - 人工的に作られた言語のうち、コンピュータで処理することを
+  - kind: para
+    text: 前提に設計された言語
+  - kind: list
+    items:
+    - データ記述言語 (HTML, XML, JSON, Markdown, ...etc.)
+    - 問い合わせ言語 (SQL, SPARQL, …etc.)
+    - スタイルシート言語 (CSS, XSL, …etc.)
+    - プログラミング言語 (C言語, JavaScript, Ruby, Python, ...etc.)
+  p47:
+  - kind: para
+    text: このトークでは言語の種類を厳密には区別しない…
+  p48:
+  - kind: para
+    text: が、分類する必要性が生じている時点で統一無理そうという予感がしてくる
+  p49:
+  - kind: heading
+    level: 1
+    text: プログラムで全てを司る
+  - kind: list
+    items:
+    - 汎用のプログラミング言語、だいたい何でも書ける
+    - データも記述できる
+    - 問い合わせもできる
+    - スタイルシートも埋め込める
+    - もちろんプログラムも書ける (それはそう)
+  p50:
+  - kind: heading
+    level: 1
+    text: データ記述言語もなんでもできる
+  - kind: list
+    items:
+    - '例: GitHub Actions (YAML)'
+    - GitHubで処理させることをYAMLで記述する
+    - 制御構造を持っていて、ほかのActionsを呼び出せる
+    - 構文としてはYAMLだが、これって独自のプログラミング言語では？
+  p51:
+  - kind: heading
+    level: 1
+    text: データと処理の世界を往復する
+  - kind: list
+    items:
+    - Lispという言語はプログラムをS式というリスト形式で記述する
+    - 関数は (format “string”) のような形式で記述する
+    - マクロという言語機能によって、コンパイル過程でプログラムを生成できる
+    - データとプログラムが同じ構造をとっている (同図像性)
+    - eval という機能でリストをプログラムとして実行できる
+    - Julia, Elixirなどの言語はS式ではないが、この性質を受け継いでいる
+  p52: []
+  p53: []
+  p54: []
+  p55: []
+  p56:
+  - kind: heading
+    level: 1
+    text: eval
+  - kind: list
+    items:
+    - evaluation (評価)
+    - プログラムの実行中に文字列やリスト形式のプログラムを実行することで、
+  - kind: para
+    text: 柔軟な実行時処理を実現できる
+  - kind: list
+    items:
+    - 非常に強力だが、多用しすぎると処理が追いにくい意味不明なプログラムに
+  - kind: para
+    text: なりがち
+  - kind: list
+    items:
+    - 現代となっては(Lisp以外の世界では)使うなという風評になっている
+  p57:
+  - kind: para
+    text: なんでもできるは難しい
+  p58:
+  - kind: heading
+    level: 1
+    text: プログラムで全てを司る
+  - kind: list
+    items:
+    - 汎用のプログラミング言語、だいたい何でも書ける
+    - 良いことも、悪いことも、なんでも記述できる
+    - 意図しない記述で無限ループに陥るとか
+    - 「大いなる力には大いなる責任が伴う」
+    - LispやRubyなどはこういう考えが前提にありそう
+  p59:
+  - kind: para
+    text: 式言語 (expression language)
+  - kind: list
+    items:
+    - ユーザーに計算式やロジックなどを入力させたいケースがある
+    - 汎用のプログラミング言語よりもシンプルな計算式や数学関数だけを持つ
+  - kind: para
+    text: 「式言語」を提供することで、プログラミング
+  - kind: list
+    items:
+    - プログラミング言語そのものを入力させると
+  - kind: para
+    text: 任意コード実行(ACE： Arbitrary Code Execution)が成立しうる
+  - kind: list
+    items:
+    - 悪意がなくても、うっかりで停止しないプログラムを書けてしまう
+  p60:
+  - kind: para
+    text: Excel数式
+  - kind: list
+    items:
+    - スプレッドシートのセルに数式を書くと、計算結果が画面に表示される
+    - 基本的には「命令」は書けなかった (過去形)
+    - 近年はExcelではPythonプログラムを書けたり、
+  - kind: para
+    text: Google SpreadsheetsではJavaScriptを書けるようになった
+  p61:
+  - kind: heading
+    level: 1
+    text: Write once, run anywhereの夢
+  - kind: list
+    items:
+    - Javaは「一度書けばどこでも動く」マルチプラットフォーム性を謳っていた
+    - 汎用的なライブラリなどは共通化できるが、アプリケーションとしては
+  - kind: para
+    text: 環境固有の実装が必要
+  - kind: list
+    items:
+    - 現代でもReact Native(JavaScript), Flutter(Dart), KMP(Kotlin
+  - kind: para
+    text: Multiplatform) などマルチプラットフォームの環境は多い
+  - kind: list
+    items:
+    - WebAssembly(WASM)
+  p62:
+  - kind: para
+    text: プログラミング言語のパラダイム
+  p63:
+  - kind: heading
+    level: 1
+    text: なんちゃら型、なんちゃら指向
+  - kind: list
+    items:
+    - 一般に普及しているプログラムは「手順」を順番に記述する (手続型)
+    - C言語(手続き型)→C++, Java, C#(オブジェクト指向)
+    - どれもC言語を発展させたような言語と捉えられる(互換性はない)が、
+  - kind: para
+    text: それぞれのアプローチは非常に違っている
+  - kind: list
+    items:
+    - 関数を基本的な単位とするパラダイム (関数型)
+  p64:
+  - kind: para
+    text: PHPはどこでも65点がとれる言語
+  - kind: list
+    items:
+    - '「現代におけるプロダクト開発とPHPを選定するワケ #phpkansai」'
+    - By @potato4d (PHPカンファレンス関西2017)
+    - 小難しいことを考えずに簡単にWebアプリを書ける(HTML+α)の言語
+    - なんだかんだいってWEB+DB連携がさくっとできる言語ランタイムとして
+  - kind: para
+    text: の存在感は健在
+  - kind: list
+    items:
+    - 求められているのは素晴らしい言語ではなく簡単に使える言語
 size:
   max_width: 1920
   max_height: 1080
 links: {}
-text:
-  p1:
-    - node: p
-      children:
-        - node: text
-          content: どうして言語は一つにならないの？
-    - node: p
-      children:
-        - node: text
-          content: 〜相対化して学ぶプログラミング言語論
-    - node: p
-      children:
-        - node: text
-          content: Is there a "Best" programming language?
-    - node: p
-      children:
-        - node: text
-          content: A comparative look at How they work
-    - node: p
-      children:
-        - node: text
-          content: pixiv Inc.
-    - node: p
-      children:
-        - node: text
-          content: USAMI Kenta
-    - node: p
-      children:
-        - node: text
-          content: '2025-07-25 #techramen25conf'
-    - node: p
-      children:
-        - node: text
-          content: 1                                     旭川リサーチセンター - TechRAMEN 2025 Conference
-  p2:
-    - node: p
-      children:
-        - node: text
-          content: お前誰よ
-    - node: p
-      children:
-        - node: text
-          content: • うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: p
-      children:
-        - node: text
-          content: • ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
-    - node: p
-      children:
-        - node: text
-          content: • 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-    - node: p
-      children:
-        - node: text
-          content: • 最近チームが再編されてインフラっぽい仕事もしてます
-    - node: p
-      children:
-        - node: text
-          content: • Emacs PHP Modeを開発しています (2017年-)
-    - node: p
-      children:
-        - node: text
-          content: • プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
-    - node: p
-      children:
-        - node: text
-          content: '2'
-  p3:
-    - node: p
-      children:
-        - node: text
-          content: 出身地は札幌と旭川の間
-    - node: p
-      children:
-        - node: text
-          content: '3'
-  p4:
-    - node: p
-      children:
-        - node: text
-          content: PHPカンファレンス
-    - node: p
-      children:
-        - node: text
-          content: '4'
-  p5:
-    - node: p
-      children:
-        - node: text
-          content: 昨年のTechRAMEN
-    - node: p
-      children:
-        - node: text
-          content: '5'
-  p6:
-    - node: p
-      children:
-        - node: text
-          content: プログラミング言語史
-    - node: p
-      children:
-        - node: text
-          content: '6'
-  p7:
-    - node: p
-      children:
-        - node: text
-          content: あした後日祭やります
-    - node: p
-      children:
-        - node: text
-          content: '7'
-  p8:
-    - node: p
-      children:
-        - node: text
-          content: 今回のお題
-    - node: p
-      children:
-        - node: text
-          content: '8'
-  p9:
-    - node: p
-      children:
-        - node: text
-          content: '9'
-  p10:
-    - node: p
-      children:
-        - node: text
-          content: 会社の飲み会で
-    - node: p
-      children:
-        - node: text
-          content: 同僚に言われました
-    - node: p
-      children:
-        - node: text
-          content: '10'
-  p11:
-    - node: p
-      children:
-        - node: text
-          content: Q. えっと tadsanが
-    - node: p
-      children:
-        - node: text
-          content: やってる言語って
-    - node: p
-      children:
-        - node: text
-          content: なんだっけ？
-    - node: p
-      children:
-        - node: text
-          content: '11'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 、
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p12:
-    - node: p
-      children:
-        - node: text
-          content: 僕はプログラミング
-    - node: p
-      children:
-        - node: text
-          content: 言語が趣味みたいな
-    - node: p
-      children:
-        - node: text
-          content: 人間なので
-    - node: p
-      children:
-        - node: text
-          content: いっぱいやってます
-    - node: p
-      children:
-        - node: text
-          content: '12'
-  p13:
-    - node: p
-      children:
-        - node: text
-          content: 僕はプログラミング
-    - node: p
-      children:
-        - node: text
-          content: 言語が趣味みたいな
-    - node: p
-      children:
-        - node: text
-          content: 人間なので
-    - node: p
-      children:
-        - node: text
-          content: いっぱいやってます
-    - node: p
-      children:
-        - node: text
-          content: '13'
-  p14:
-    - node: p
-      children:
-        - node: text
-          content: A. 外部でよく発表
-    - node: p
-      children:
-        - node: text
-          content: してるのはPHP
-    - node: p
-      children:
-        - node: text
-          content: '14'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p15:
-    - node: p
-      children:
-        - node: text
-          content: Q. なんで言語っていっぱい
-    - node: p
-      children:
-        - node: text
-          content: あるの？ そのうち
-    - node: p
-      children:
-        - node: text
-          content: 一個にならない？
-    - node: p
-      children:
-        - node: text
-          content: '15'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p16:
-    - node: p
-      children:
-        - node: text
-          content: A. いい質問ですね!
-    - node: p
-      children:
-        - node: text
-          content: '16'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p17:
-    - node: p
-      children:
-        - node: text
-          content: 特に初心者は
-    - node: p
-      children:
-        - node: text
-          content: 覚えることが多い
-    - node: p
-      children:
-        - node: text
-          content: '17'
-  p18:
-    - node: p
-      children:
-        - node: text
-          content: Web開発は多言語を要求しがち
-    - node: p
-      children:
-        - node: text
-          content: • バックエンド言語どれか
-    - node: p
-      children:
-        - node: text
-          content: • JavaScript(Node.js), Ruby, Python, Java, C#, PHP, ...etc.
-    - node: p
-      children:
-        - node: text
-          content: • フロントエンド
-    - node: p
-      children:
-        - node: text
-          content: • HTML, JavaScript, TypeScript, CSS, ...etc.
-    - node: p
-      children:
-        - node: text
-          content: • その他
-    - node: p
-      children:
-        - node: text
-          content: • SQL, 正規表現, シェルスクリプト ...etc.
-    - node: p
-      children:
-        - node: text
-          content: '18'
-  p19:
-    - node: p
-      children:
-        - node: text
-          content: どれか1つにならんか
-    - node: p
-      children:
-        - node: text
-          content: と願いたくなる
-    - node: p
-      children:
-        - node: text
-          content: 気持ちはわかる
-    - node: p
-      children:
-        - node: text
-          content: '19'
-  p20:
-    - node: p
-      children:
-        - node: text
-          content: 言語を1個だけ覚えたら
-    - node: p
-      children:
-        - node: text
-          content: なんでも作れる！
-    - node: p
-      children:
-        - node: text
-          content: '20'
-  p21:
-    - node: p
-      children:
-        - node: text
-          content: ゲームも作れるし
-    - node: p
-      children:
-        - node: text
-          content: システム開発もできる
-    - node: p
-      children:
-        - node: text
-          content: '21'
-  p22:
-    - node: p
-      children:
-        - node: text
-          content: そうなったら
-    - node: p
-      children:
-        - node: text
-          content: いいのにな…
-    - node: p
-      children:
-        - node: text
-          content: '22'
-  p23:
-    - node: p
-      children:
-        - node: text
-          content: ところで
-    - node: p
-      children:
-        - node: text
-          content: '23'
-  p24:
-    - node: p
-      children:
-        - node: text
-          content: '言語 #とは'
-    - node: p
-      children:
-        - node: text
-          content: '24'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p25:
-    - node: p
-      children:
-        - node: text
-          content: 自然言語
-    - node: p
-      children:
-        - node: text
-          content: 人間が日常的に使う
-    - node: p
-      children:
-        - node: text
-          content: '25'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p26:
-    - node: p
-      children:
-        - node: text
-          content: 人工言語
-    - node: p
-      children:
-        - node: text
-          content: 人間が目的をもって
-    - node: p
-      children:
-        - node: text
-          content: 設計した言語
-    - node: p
-      children:
-        - node: text
-          content: '26'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p27:
-    - node: p
-      children:
-        - node: text
-          content: Q.
-    - node: p
-      children:
-        - node: text
-          content: (自然言語)何言語
-    - node: p
-      children:
-        - node: text
-          content: 知っていますか？
-    - node: p
-      children:
-        - node: text
-          content: '27'
-  p28:
-    - node: p
-      children:
-        - node: text
-          content: 日本語 英語 中国語 韓国語
-    - node: p
-      children:
-        - node: text
-          content: ドイツ語 フランス語 タイ語
-    - node: p
-      children:
-        - node: text
-          content: ヒンディー語 マレー語…
-    - node: p
-      children:
-        - node: text
-          content: '28'
-    - node: p
-      children:
-        - node: text
-          content: 、
-    - node: p
-      children:
-        - node: text
-          content: 、
-    - node: p
-      children:
-        - node: text
-          content: 、
-    - node: p
-      children:
-        - node: text
-          content: 、
-    - node: p
-      children:
-        - node: text
-          content: 、
-    - node: p
-      children:
-        - node: text
-          content: 、
-  p29:
-    - node: p
-      children:
-        - node: text
-          content: 言語って
-    - node: p
-      children:
-        - node: text
-          content: 結構いっぱいある
-    - node: p
-      children:
-        - node: text
-          content: '29'
-  p30:
-    - node: p
-      children:
-        - node: text
-          content: 日本人は結構
-    - node: p
-      children:
-        - node: text
-          content: 何か国語 母国語
-    - node: p
-      children:
-        - node: text
-          content: って言っちゃいがち
-    - node: p
-      children:
-        - node: text
-          content: '30'
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-    - node: p
-      children:
-        - node: text
-          content: 」
-    - node: p
-      children:
-        - node: text
-          content: 「
-  p31:
-    - node: p
-      children:
-        - node: text
-          content: 国≠言語
-    - node: p
-      children:
-        - node: text
-          content: '31'
-  p32:
-    - node: p
-      children:
-        - node: text
-          content: エスノローグ調べ
-    - node: p
-      children:
-        - node: text
-          content: 公用語
-    - node: p
-      children:
-        - node: text
-          content: (手話を除く)
-    - node: p
-      children:
-        - node: text
-          content: '1'
-    - node: p
-      children:
-        - node: text
-          content: 日本                13
-    - node: p
-      children:
-        - node: text
-          content: (事実上)
-    - node: p
-      children:
-        - node: text
-          content: インド      22        717
-    - node: p
-      children:
-        - node: text
-          content: EU加盟国    24        153
-    - node: p
-      children:
-        - node: text
-          content: '32'
-  p33:
-    - node: p
-      children:
-        - node: text
-          content: エスノローグ調べ
-    - node: p
-      children:
-        - node: text
-          content: 公用語
-    - node: p
-      children:
-        - node: text
-          content: (手話を除く)
-    - node: p
-      children:
-        - node: text
-          content: '1'
-    - node: p
-      children:
-        - node: text
-          content: 日本                13
-    - node: p
-      children:
-        - node: text
-          content: (事実上)
-    - node: p
-      children:
-        - node: text
-          content: インド      22        717
-    - node: p
-      children:
-        - node: text
-          content: EU加盟国    24        153
-    - node: p
-      children:
-        - node: text
-          content: '32'
-  p34:
-    - node: p
-      children:
-        - node: text
-          content: 国際SILという団体に
-    - node: p
-      children:
-        - node: text
-          content: よる言語調査
-    - node: p
-      children:
-        - node: text
-          content: エスノローグ調べ
-    - node: p
-      children:
-        - node: text
-          content: 公用語
-    - node: p
-      children:
-        - node: text
-          content: (手話を除く)
-    - node: p
-      children:
-        - node: text
-          content: '1'
-    - node: p
-      children:
-        - node: text
-          content: 日本                13
-    - node: p
-      children:
-        - node: text
-          content: (事実上)
-    - node: p
-      children:
-        - node: text
-          content: インド      22        717
-    - node: p
-      children:
-        - node: text
-          content: EU加盟国    24        153
-    - node: p
-      children:
-        - node: text
-          content: '32'
-  p35:
-    - node: p
-      children:
-        - node: text
-          content: 国際SILという団体に
-    - node: p
-      children:
-        - node: text
-          content: よる言語調査
-    - node: p
-      children:
-        - node: text
-          content: エスノローグ調べ
-    - node: p
-      children:
-        - node: text
-          content: 公用語
-    - node: p
-      children:
-        - node: text
-          content: (手話を除く)
-    - node: p
-      children:
-        - node: text
-          content: '1'
-    - node: p
-      children:
-        - node: text
-          content: 日本                13
-    - node: p
-      children:
-        - node: text
-          content: (事実上)
-    - node: p
-      children:
-        - node: text
-          content: インド      22        717
-    - node: p
-      children:
-        - node: text
-          content: EU加盟国    24        153
-    - node: p
-      children:
-        - node: text
-          content: '32'
-  p36:
-    - node: p
-      children:
-        - node: text
-          content: 国際SILという団体に
-    - node: p
-      children:
-        - node: text
-          content: よる言語調査
-    - node: p
-      children:
-        - node: text
-          content: エスノローグ調べ
-    - node: p
-      children:
-        - node: text
-          content: 公用語
-    - node: p
-      children:
-        - node: text
-          content: (手話を除く)
-    - node: p
-      children:
-        - node: text
-          content: '1'
-    - node: p
-      children:
-        - node: text
-          content: 日本                13
-    - node: p
-      children:
-        - node: text
-          content: (事実上)
-    - node: p
-      children:
-        - node: text
-          content: インド      22        717
-    - node: p
-      children:
-        - node: text
-          content: EU加盟国    24        153
-    - node: p
-      children:
-        - node: text
-          content: '32'
-  p37:
-    - node: p
-      children:
-        - node: text
-          content: 国際SILという団体に
-    - node: p
-      children:
-        - node: text
-          content: よる言語調査
-    - node: p
-      children:
-        - node: text
-          content: エスノローグ調べ
-    - node: p
-      children:
-        - node: text
-          content: 公用語
-    - node: p
-      children:
-        - node: text
-          content: (手話を除く)
-    - node: p
-      children:
-        - node: text
-          content: '1'
-    - node: p
-      children:
-        - node: text
-          content: 日本                13
-    - node: p
-      children:
-        - node: text
-          content: (事実上)
-    - node: p
-      children:
-        - node: text
-          content: インド      22        717
-    - node: p
-      children:
-        - node: text
-          content: EU加盟国    24        153
-    - node: p
-      children:
-        - node: text
-          content: '32'
-  p38:
-    - node: p
-      children:
-        - node: text
-          content: Q.
-    - node: p
-      children:
-        - node: text
-          content: (自然言語)何言語
-    - node: p
-      children:
-        - node: text
-          content: しゃべれますか？
-    - node: p
-      children:
-        - node: text
-          content: '33'
-  p39:
-    - node: p
-      children:
-        - node: text
-          content: 私は日本語しか
-    - node: p
-      children:
-        - node: text
-          content: しゃべれません
-    - node: p
-      children:
-        - node: text
-          content: ＼(^o^)／
-    - node: p
-      children:
-        - node: text
-          content: '34'
-  p40:
-    - node: p
-      children:
-        - node: text
-          content: 世界にプログラミング
-    - node: p
-      children:
-        - node: text
-          content: 言語は何種類あるで
-    - node: p
-      children:
-        - node: text
-          content: しょうか
-    - node: p
-      children:
-        - node: text
-          content: '35'
-  p41:
-    - node: p
-      children:
-        - node: text
-          content: 151種類！
-    - node: p
-      children:
-        - node: text
-          content: '36'
-  p42:
-    - node: p
-      children:
-        - node: text
-          content: …と断言してくれるオーキ
-    - node: p
-      children:
-        - node: text
-          content: ド博士がいてくれたらよ
-    - node: p
-      children:
-        - node: text
-          content: かったのですが… そのよう
-    - node: p
-      children:
-        - node: text
-          content: に明快な回答は出せない
-    - node: p
-      children:
-        - node: text
-          content: '37'
-  p43:
-    - node: p
-      children:
-        - node: text
-          content: (計算機言語)何言語
-    - node: p
-      children:
-        - node: text
-          content: 言えますか？
-    - node: p
-      children:
-        - node: text
-          content: '38'
-  p44:
-    - node: p
-      children:
-        - node: text
-          content: GitHubの言語検出
-    - node: p
-      children:
-        - node: text
-          content: '39'
-  p45:
-    - node: p
-      children:
-        - node: text
-          content: GitHubの言語検出   594
-    - node: p
-      children:
-        - node: text
-          content: '39'
-  p46:
-    - node: p
-      children:
-        - node: text
-          content: コンピュータ言語
-    - node: p
-      children:
-        - node: text
-          content: • 人工的に作られた言語のうち、コンピュータで処理することを
-    - node: p
-      children:
-        - node: text
-          content: 前提に設計された言語
-    - node: p
-      children:
-        - node: text
-          content: • データ記述言語 (HTML, XML, JSON, Markdown, ...etc.)
-    - node: p
-      children:
-        - node: text
-          content: • 問い合わせ言語 (SQL, SPARQL, …etc.)
-    - node: p
-      children:
-        - node: text
-          content: • スタイルシート言語 (CSS, XSL, …etc.)
-    - node: p
-      children:
-        - node: text
-          content: • プログラミング言語 (C言語, JavaScript, Ruby, Python, ...etc.)
-    - node: p
-      children:
-        - node: text
-          content: '40'
-  p47:
-    - node: p
-      children:
-        - node: text
-          content: このトークでは言語の種類
-    - node: p
-      children:
-        - node: text
-          content: を厳密には区別しない…
-    - node: p
-      children:
-        - node: text
-          content: '41'
-  p48:
-    - node: p
-      children:
-        - node: text
-          content: が、分類する必要性が生じ
-    - node: p
-      children:
-        - node: text
-          content: ている時点で統一無理そう
-    - node: p
-      children:
-        - node: text
-          content: という予感がしてくる
-    - node: p
-      children:
-        - node: text
-          content: '42'
-  p49:
-    - node: p
-      children:
-        - node: text
-          content: プログラムで全てを司る
-    - node: p
-      children:
-        - node: text
-          content: • 汎用のプログラミング言語、だいたい何でも書ける
-    - node: p
-      children:
-        - node: text
-          content: • データも記述できる
-    - node: p
-      children:
-        - node: text
-          content: • 問い合わせもできる
-    - node: p
-      children:
-        - node: text
-          content: • スタイルシートも埋め込める
-    - node: p
-      children:
-        - node: text
-          content: • もちろんプログラムも書ける (それはそう)
-    - node: p
-      children:
-        - node: text
-          content: '43'
-  p50:
-    - node: p
-      children:
-        - node: text
-          content: データ記述言語もなんでもできる
-    - node: p
-      children:
-        - node: text
-          content: '• 例: GitHub Actions (YAML)'
-    - node: p
-      children:
-        - node: text
-          content: • GitHubで処理させることをYAMLで記述する
-    - node: p
-      children:
-        - node: text
-          content: • 制御構造を持っていて、ほかのActionsを呼び出せる
-    - node: p
-      children:
-        - node: text
-          content: • 構文としてはYAMLだが、これって独自のプログラミング言語では？
-    - node: p
-      children:
-        - node: text
-          content: '44'
-  p51:
-    - node: p
-      children:
-        - node: text
-          content: データと処理の世界を往復する
-    - node: p
-      children:
-        - node: text
-          content: • Lispという言語はプログラムをS式というリスト形式で記述する
-    - node: p
-      children:
-        - node: text
-          content: • 関数は (format “string”) のような形式で記述する
-    - node: p
-      children:
-        - node: text
-          content: • マクロという言語機能によって、コンパイル過程でプログラムを生成できる
-    - node: p
-      children:
-        - node: text
-          content: • データとプログラムが同じ構造をとっている (同図像性)
-    - node: p
-      children:
-        - node: text
-          content: • eval という機能でリストをプログラムとして実行できる
-    - node: p
-      children:
-        - node: text
-          content: • Julia, Elixirなどの言語はS式ではないが、この性質を受け継いでいる
-    - node: p
-      children:
-        - node: text
-          content: '45'
-  p52:
-    - node: p
-      children:
-        - node: text
-          content: '46'
-  p53:
-    - node: p
-      children:
-        - node: text
-          content: '46'
-  p54:
-    - node: p
-      children:
-        - node: text
-          content: '46'
-  p55:
-    - node: p
-      children:
-        - node: text
-          content: '46'
-  p56:
-    - node: p
-      children:
-        - node: text
-          content: eval
-    - node: p
-      children:
-        - node: text
-          content: • evaluation (評価)
-    - node: p
-      children:
-        - node: text
-          content: • プログラムの実行中に文字列やリスト形式のプログラムを実行することで、
-    - node: p
-      children:
-        - node: text
-          content: 柔軟な実行時処理を実現できる
-    - node: p
-      children:
-        - node: text
-          content: • 非常に強力だが、多用しすぎると処理が追いにくい意味不明なプログラムに
-    - node: p
-      children:
-        - node: text
-          content: なりがち
-    - node: p
-      children:
-        - node: text
-          content: • 現代となっては(Lisp以外の世界では)使うなという風評になっている
-    - node: p
-      children:
-        - node: text
-          content: '47'
-  p57:
-    - node: p
-      children:
-        - node: text
-          content: なんでもできる
-    - node: p
-      children:
-        - node: text
-          content: は
-    - node: p
-      children:
-        - node: text
-          content: 難しい
-    - node: p
-      children:
-        - node: text
-          content: '48'
-  p58:
-    - node: p
-      children:
-        - node: text
-          content: プログラムで全てを司る
-    - node: p
-      children:
-        - node: text
-          content: • 汎用のプログラミング言語、だいたい何でも書ける
-    - node: p
-      children:
-        - node: text
-          content: • 良いことも、悪いことも、なんでも記述できる
-    - node: p
-      children:
-        - node: text
-          content: • 意図しない記述で無限ループに陥るとか
-    - node: p
-      children:
-        - node: text
-          content: • 「大いなる力には大いなる責任が伴う」
-    - node: p
-      children:
-        - node: text
-          content: • LispやRubyなどはこういう考えが前提にありそう
-    - node: p
-      children:
-        - node: text
-          content: '49'
-  p59:
-    - node: p
-      children:
-        - node: text
-          content: 式言語 (expression language)
-    - node: p
-      children:
-        - node: text
-          content: •   ユーザーに計算式やロジックなどを入力させたいケースがある
-    - node: p
-      children:
-        - node: text
-          content: • 汎用のプログラミング言語よりもシンプルな計算式や数学関数だけを持つ
-    - node: p
-      children:
-        - node: text
-          content: 「式言語」を提供することで、プログラミング
-    - node: p
-      children:
-        - node: text
-          content: •   プログラミング言語そのものを入力させると
-    - node: p
-      children:
-        - node: text
-          content: 任意コード実行(ACE： Arbitrary Code Execution)が成立しうる
-    - node: p
-      children:
-        - node: text
-          content: • 悪意がなくても、うっかりで停止しないプログラムを書けてしまう
-    - node: p
-      children:
-        - node: text
-          content: '50'
-  p60:
-    - node: p
-      children:
-        - node: text
-          content: Excel数式
-    - node: p
-      children:
-        - node: text
-          content: •   スプレッドシートのセルに数式を書くと、計算結果が画面に表示される
-    - node: p
-      children:
-        - node: text
-          content: • 基本的には「命令」は書けなかった (過去形)
-    - node: p
-      children:
-        - node: text
-          content: •   近年はExcelではPythonプログラムを書けたり、
-    - node: p
-      children:
-        - node: text
-          content: Google SpreadsheetsではJavaScriptを書けるようになった
-    - node: p
-      children:
-        - node: text
-          content: '51'
-  p61:
-    - node: p
-      children:
-        - node: text
-          content: Write once, run anywhereの夢
-    - node: p
-      children:
-        - node: text
-          content: • Javaは「一度書けばどこでも動く」マルチプラットフォーム性を謳っていた
-    - node: p
-      children:
-        - node: text
-          content: • 汎用的なライブラリなどは共通化できるが、アプリケーションとしては
-    - node: p
-      children:
-        - node: text
-          content: 環境固有の実装が必要
-    - node: p
-      children:
-        - node: text
-          content: • 現代でもReact Native(JavaScript), Flutter(Dart), KMP(Kotlin
-    - node: p
-      children:
-        - node: text
-          content: Multiplatform) などマルチプラットフォームの環境は多い
-    - node: p
-      children:
-        - node: text
-          content: • WebAssembly(WASM)
-    - node: p
-      children:
-        - node: text
-          content: '52'
-  p62:
-    - node: p
-      children:
-        - node: text
-          content: プログラミング言語の
-    - node: p
-      children:
-        - node: text
-          content: パラダイム
-    - node: p
-      children:
-        - node: text
-          content: '53'
-  p63:
-    - node: p
-      children:
-        - node: text
-          content: なんちゃら型、なんちゃら指向
-    - node: p
-      children:
-        - node: text
-          content: • 一般に普及しているプログラムは「手順」を順番に記述する (手続型)
-    - node: p
-      children:
-        - node: text
-          content: • C言語(手続き型)→C++, Java, C#(オブジェクト指向)
-    - node: p
-      children:
-        - node: text
-          content: • どれもC言語を発展させたような言語と捉えられる(互換性はない)が、
-    - node: p
-      children:
-        - node: text
-          content: それぞれのアプローチは非常に違っている
-    - node: p
-      children:
-        - node: text
-          content: • 関数を基本的な単位とするパラダイム (関数型)
-    - node: p
-      children:
-        - node: text
-          content: '54'
-  p64:
-    - node: p
-      children:
-        - node: text
-          content: PHPはどこでも65点がとれる言語
-    - node: p
-      children:
-        - node: text
-          content: '•   「現代におけるプロダクト開発とPHPを選定するワケ #phpkansai」'
-    - node: p
-      children:
-        - node: text
-          content: • By @potato4d (PHPカンファレンス関西2017)
-    - node: p
-      children:
-        - node: text
-          content: •   小難しいことを考えずに簡単にWebアプリを書ける(HTML+α)の言語
-    - node: p
-      children:
-        - node: text
-          content: • なんだかんだいってWEB+DB連携がさくっとできる言語ランタイムとして
-    - node: p
-      children:
-        - node: text
-          content: の存在感は健在
-    - node: p
-      children:
-        - node: text
-          content: •   求められているのは素晴らしい言語ではなく簡単に使える言語
-    - node: p
-      children:
-        - node: text
-          content: '55'

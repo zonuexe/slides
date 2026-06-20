@@ -1,398 +1,174 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: RubyとLispの切っても切れない関係
-  - node: p
-    children:
-    - node: text
-      content: Why Emacs Lisp is an acceptable Ruby?
-  - node: p
-    children:
-    - node: text
-      content: '平成Ruby会議01 '
-  - node: p
-    children:
-    - node: text
-      content: '2019-12-14 #heiseirubykaigi'
+  - kind: heading
+    level: 1
+    text: RubyとLispの
+  - kind: heading
+    level: 1
+    text: 切っても切れない関係
+  - kind: para
+    text: Why Emacs Lisp is an acceptable Ruby?
+  - kind: para
+    text: '平成Ruby会議01 2019-12-14 #heiseirubykaigi'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-    - node: br
-    - node: text
-      content: 'うさみけんた (@tadsan)  '
-  - node: p
-    children:
-    - node: text
-      content: ' / Zonu.EXE'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer, Rubyist
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer, Rubyist
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3: []
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: いちおう2010年頃にparse.yを 弄って遊んでたり闇ルビヰ會議
-    - node: br
-    - node: text
-      content: 2011で初めて人前でしゃべった り2012年くらいまでRuby札幌 方面に居たりしたルビーストです
+  - kind: para
+    text: いちおう2010年頃にparse.yを弄って遊んでたり闇ルビヰ會議2011で初めて人前でしゃべったり2012年くらいまでRuby札幌方面に居たりしたルビーストです
   p7: []
   p8:
-  - node: p
-    children:
-    - node: text
-      content: これは重要な
-    - node: br
-    - node: text
-      content: ことですが
+  - kind: para
+    text: これは重要なことですが
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 平成元年1月 生まれです
+  - kind: para
+    text: 平成元年1月生まれです
   p10: []
   p11:
-  - node: p
-    children:
-    - node: text
-      content: ちなみにスライドの本文書体はゲームプラットフォームenza様で絶賛運営されているアイドルマスター シャイニーカラーズというゲームで採用されている FOT-ハミング Stdです
+  - kind: para
+    text: ちなみにスライドの本文書体はゲームプラットフォーム様でenza絶賛運営されているアイドルマスター シャイニーカラーズというゲームで採用されているFOT-ハミング
+      Stdです
   p12:
-  - node: p
-    children:
-    - node: text
-      content: 事前知識
+  - kind: para
+    text: 事前知識
   p13:
-  - node: p
-    children:
-    - node: text
-      content: この話で言及して いる“Lisp”は複数 の言語の総称です
+  - kind: para
+    text: この話で言及している“Lisp”は複数の言語の総称です
   p14:
-  - node: p
-    children:
-    - node: text
-      content: C言語
-  - node: p
-    children:
-    - node: text
-      content: puts("foo")
+  - kind: para
+    text: C言語
+  - kind: heading
+    level: 1
+    text: puts("foo")
   p15:
-  - node: p
-    children:
-    - node: text
-      content: Ruby
-  - node: p
-    children:
-    - node: text
-      content: puts "foo"
+  - kind: para
+    text: Ruby(
+  - kind: heading
+    level: 1
+    text: puts "foo"
   p16:
-  - node: p
-    children:
-    - node: text
-      content: Lisp
-  - node: p
-    children:
-    - node: text
-      content: (puts "foo")
+  - kind: para
+    text: Lisp(
+  - kind: heading
+    level: 1
+    text: (puts "foo")
   p17:
-  - node: p
-    children:
-    - node: text
-      content: (imaginary)
-  - node: p
-    children:
-    - node: text
-      content: (((((LISP)))))
+  - kind: para
+    text: (imaginary)
+  - kind: heading
+    level: 1
+    text: (((((LISP)))))
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'Common Lisp, '
-    - node: br
-    - node: text
-      content: 'Scheme, Clojure, '
-    - node: br
-    - node: text
-      content: Emacs Lisp
+  - kind: para
+    text: Common Lisp,Scheme, Clojure,Emacs Lisp
   p19:
-  - node: p
-    children:
-    - node: text
-      content: それぞれの言語は C#とJavaくらい
-    - node: br
-    - node: text
-      content: 離れている
+  - kind: para
+    text: それぞれの言語はC#とJavaくらい離れている
   p20:
-  - node: p
-    children:
-    - node: text
-      content: あとLTなのでかっ
-    - node: br
-    - node: text
-      content: とばしてきます
+  - kind: para
+    text: あとLTなのでかっとばしてきます
   p21:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: para
+    text: さて
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '‒TextbringerでつくるTextbringer '
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/shugo/heiseirk01/blob/master/README.md
+  - kind: para
+    text: ‒TextbringerでつくるTextbringer https://github.com/shugo/heiseirk01/blob/master/README.md
   p23:
-  - node: p
-    children:
-    - node: text
-      content: shugoさんの発表 楽しかったですね
+  - kind: para
+    text: shugoさんの発表楽しかったですね
   p24: []
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '‒TextbringerでつくるTextbringer '
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/shugo/heiseirk01/blob/master/README.md
+  - kind: para
+    text: ‒TextbringerでつくるTextbringer https://github.com/shugo/heiseirk01/blob/master/README.md
   p26:
-  - node: p
-    children:
-    - node: text
-      content: もっと強い混沌の 力を手に入れたく
-    - node: br
-    - node: text
-      content: はないか？
+  - kind: para
+    text: もっと強い混沌の力を手に入れたくはないか？
   p27: []
   p28:
-  - node: p
-    children:
-    - node: text
-      content: '‒TextbringerでつくるTextbringer '
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/shugo/heiseirk01/blob/master/README.md
+  - kind: para
+    text: ‒TextbringerでつくるTextbringer https://github.com/shugo/heiseirk01/blob/master/README.md
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 'Textbringerの '
-    - node: br
-    - node: text
-      content: あらゆる機能はRuby
-    - node: br
-    - node: text
-      content: で実装されている
+  - kind: para
+    text: Textbringerのあらゆる機能はRubyで実装されている
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 'Emacsの '
-    - node: br
-    - node: text
-      content: あらゆる機能はLisp
-    - node: br
-    - node: text
-      content: で実装されている
+  - kind: para
+    text: Emacsのあらゆる機能はLispで実装されている
   p31:
-  - node: p
-    children:
-    - node: text
-      content: Textbringerの機能開発 時はeval_bufferで編集
-    - node: br
-    - node: text
-      content: '中のコードを評価して '
-    - node: br
-    - node: text
-      content: 動かしながら開発できる
+  - kind: para
+    text: Textbringerの機能開発時はeval_bufferで編集中のコードを評価して動かしながら開発できる
   p32:
-  - node: p
-    children:
-    - node: text
-      content: Emacsの機能開発時は eval-bufferで編集中の
-    - node: br
-    - node: text
-      content: 'コードを評価して '
-    - node: br
-    - node: text
-      content: 動かしながら開発できる
+  - kind: para
+    text: Emacsの機能開発時はeval-bufferで編集中のコードを評価して動かしながら開発できる
   p33:
-  - node: p
-    children:
-    - node: text
-      content: ためしにTextbringer
-    - node: br
-    - node: text
-      content: 'のコードをEmacs '
-    - node: br
-    - node: text
-      content: Lispで書いてみよう
+  - kind: para
+    text: ためしにTextbringerのコードをEmacs Lispで書いてみよう
   p34: []
   p35: []
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 'ねっ､そっくり '
-  - node: p
-    children:
-    - node: text
-      content: '[要出典]'
-  - node: p
-    children:
-    - node: text
-      content: でしょ？
+  - kind: para
+    text: ねっ､そっくり[要出典]でしょ？
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 🤔
+  - kind: para
+    text: 🤔
   p38:
-  - node: p
-    children:
-    - node: text
-      content: たぶん皆様が感じたよりはそっくり
-    - node: br
-    - node: text
-      content: 'なのですが､RubyとLispの '
-    - node: br
-    - node: text
-      content: 構文レベルの相似性というよりも TextbringerがEmacsを参考にし たAPIを提供していることが大きい
+  - kind: para
+    text: たぶん皆様が感じたよりはそっくりなのですが､RubyとLispの構文レベルの相似性というよりもTextbringerがEmacsを参考にしたAPIを提供していることが大きい
   p39:
-  - node: p
-    children:
-    - node: text
-      content: ところで
+  - kind: para
+    text: ところで
   p40:
-  - node: p
-    children:
-    - node: text
-      content: Ruby作者のMatz
-    - node: br
-    - node: text
-      content: が言語おたくである
-    - node: br
-    - node: text
-      content: ことは比較的有名
+  - kind: para
+    text: Ruby作者のMatzが言語おたくであることは比較的有名
   p41:
-  - node: p
-    children:
-    - node: text
-      content: 'Rubyist Magazine - Rubyist Hotlinks 第1回 まつもとゆきひろ '
-  - node: p
-    children:
-    - node: text
-      content: https://magazine.rubyist.net/articles/0001/0001-Hotlinks.html
+  - kind: para
+    text: Rubyist Magazine - Rubyist Hotlinks 第1回 まつもとゆきひろhttps://magazine.rubyist.net/articles/0001/0001-Hotlinks.html
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'Gihyo.jp RubyKaigi 2013レポート '
-  - node: p
-    children:
-    - node: text
-      content: https://gihyo.jp/news/report/01/rubykaigi2013/0001
+  - kind: para
+    text: Gihyo.jp RubyKaigi 2013レポートhttps://gihyo.jp/news/report/01/rubykaigi2013/0001
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 'amazon.co.jp - まつもとゆきひろ 言語のしくみ '
-  - node: p
-    children:
-    - node: text
-      content: https://www.amazon.co.jp/dp/B01N7JZXMD/
+  - kind: para
+    text: amazon.co.jp - まつもとゆきひろ 言語のしくみhttps://www.amazon.co.jp/dp/B01N7JZXMD/
   p44:
-  - node: p
-    children:
-    - node: text
-      content: '時計の針は '
-    - node: br
-    - node: text
-      content: 平成6年に戻る
+  - kind: para
+    text: 時計の針は平成6年に戻る
   p45: []
   p46:
-  - node: p
-    children:
-    - node: text
-      content: '‒「まつもとゆきひろ 言語のしくみ」 2016 まつもとゆきひろ, 日経BP '
-  - node: p
-    children:
-    - node: text
-      content: https://books.google.co.jp/books?id=h9KjDwAAQBAJ&pg=PT67
+  - kind: para
+    text: ‒「まつもとゆきひろ 言語のしくみ」 2016 まつもとゆきひろ, 日経BP https://books.google.co.jp/books?id=h9KjDwAAQBAJ&pg=PT67
   p47:
-  - node: p
-    children:
-    - node: text
-      content: RubyにSymbolとか when/unless文とか
-    - node: br
-    - node: text
-      content: Kernel.#requireがあるのは (Emacs)Lispの影響だと思う
+  - kind: para
+    text: RubyにSymbolとかwhen/unless文とかKernel.#requireがあるのは(Emacs)Lispの影響だと思う
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'Matzから '
-    - node: br
-    - node: text
-      content: 離れて
+  - kind: para
+    text: Matzから離れて
   p49:
-  - node: p
-    children:
-    - node: text
-      content: RuboCop
+  - kind: para
+    text: RuboCop
   p50: []
   p51: []
   p52: []
   p53:
-  - node: p
-    children:
-    - node: text
-      content: Rubyから Lispを学ぶ
+  - kind: para
+    text: RubyからLispを学ぶ
   p54: []
   p55: []
   p56: []
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 最後に私が5年前に 書いたRubyコード を紹介して終ります
+  - kind: para
+    text: 最後に私が5年前に書いたRubyコードを紹介して終ります
   p58: []
 size:
   max_width: 1024

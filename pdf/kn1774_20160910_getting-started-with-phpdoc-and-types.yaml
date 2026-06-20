@@ -1,3 +1,291 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: はじめてのPHPDocと型
+  - kind: para
+    text: My first PHPDoc and Type
+  - kind: para
+    text: 2016-09-09 ピクシブ社内勉強会
+  p2:
+  - kind: para
+    text: 型とは何か
+  p3:
+  - kind: heading
+    level: 1
+    text: 型… 型…
+  - kind: list
+    items:
+    - 一言で誤解を恐れずに表現すると
+  - kind: para
+    text: プログラミング言語が1 + [] (数字と配列のたしざん)みたいなのを叱れるようにする基盤
+  - kind: list
+    items:
+    - コンパイルするときに型を付けるか
+  - kind: para
+    text: 動かすとき(runtime)に調べるかが、静的型付きと動的型検査の大きな差
+  p4:
+  - kind: heading
+    level: 1
+    text: 動的型検査
+  - kind: list
+    items:
+    - プログラムを動かしながら
+  - kind: para
+    text: 手さぐりで型を調べる
+  - kind: list
+    items:
+    - 「$aの型はintだな、$bの型はstring…
+  - kind: para
+    text: だけど数字だから足しざんできるね！」みたいな茶番を毎回やってる
+  p5:
+  - kind: para
+    text: 静的検査
+  p6:
+  - kind: heading
+    level: 1
+    text: 動かす前に把握する
+  - kind: list
+    items:
+    - 実際に動かさなくても人間は整合性
+  - kind: para
+    text: をとりながらPHPを書ける
+  - kind: list
+    items:
+    - 人間がわかるってことは、機械にも
+  - kind: para
+    text: やってれないことはない
+  p7:
+  - kind: heading
+    level: 1
+    text: 型を推測してみよう（型推論）
+  - kind: para
+    text: // 絶対int返すマンfunction x() { return 1; }// 絶対array返すマンfunction y() { return
+      []; }// たしざん// $n1, $n2 は数字っぽい値が欲しいfunction add($n1, $n2) { return $n1 + $2;
+      }$a = x(); // x()がintを返すからたぶんintのはず$b = y(); // y()がarrayを返すからたぶんarrayのはず$c
+      = add($a, $b);// 数字っぽい値以外を渡すとエラーが発生することは// 理窟の上では動かさなくても明らか
+  p8:
+  - kind: heading
+    level: 1
+    text: 型がない関数の問題
+  - kind: list
+    items:
+    - 引数に何渡せばいいの… 何返ってくるの
+    - 時間は有限なので、既存コードを読む
+  - kind: para
+    text: 時間は最小限にできるとウレシイ
+  - kind: list
+    items:
+    - ほんとに「見ればわかる」シンプルさなら
+  - kind: para
+    text: いいけど、現実は甘くない
+  - kind: list
+    items:
+    - 型が特定できないことも多い
+  p9:
+  - kind: heading
+    level: 1
+    text: 適当なコメント（Before）
+  - kind: para
+    text: // 絶対int返すマンfunction x() { return 1; }// 絶対array返すマンfunction y() { return
+      []; }// たしざん// $n1, $n2 は数字っぽい値が欲しいfunction add($n1, $n2) { return $n1 + $2;
+      }$a = x(); // x()がintを返すからたぶんintのはず$b = y(); // y()がarrayを返すからたぶんarrayのはず$c
+      = add($a, $b);// 数字っぽい値以外を渡すとエラーが発生することは// 理窟の上では動かさなくても明らか
+  p10:
+  - kind: heading
+    level: 1
+    text: PHPDocで型を付ける（After）
+  - kind: para
+    text: /** @return int */function x() { return 1; }/** @return array */function
+      y() { return []; }/*** @param int $n1* @param int $n2*/function add($n1, $n2)
+      { return $n1 + $2; }
+  p11:
+  - kind: para
+    text: PHPDoc
+  p12:
+  - kind: heading
+    level: 1
+    text: DocComment
+  - kind: list
+    items:
+    - PHPのリフレクションで実行時に
+  - kind: para
+    text: 取得できる特別な形式のコメント
+  - kind: list
+    items:
+    - メソッドとかクラスの定義に
+  - kind: para
+    text: /** 〜 */ って書くと文字列になる
+  - kind: list
+    items:
+    - 開始記号は必ず /** にすること
+  - kind: para
+    text: (/* では無効なので注意！！！！)
+  p13:
+  - kind: heading
+    level: 1
+    text: DocCommentを取得する
+  - kind: para
+    text: <?php/** こんにちは〜〜〜〜 */function hello() { throw new \Exception(); }$ref =
+      new \ReflectionFunction('hello');echo $ref->getDocComment(), PHP_EOL;exit;
+  p14:
+  - kind: heading
+    level: 1
+    text: APIドキュメントを生成する
+  - kind: list
+    items:
+    - ソースコード中のコメントを基に、
+  - kind: para
+    text: HTMLドキュメントを生成できる
+  - kind: list
+    items:
+    - JavaDocにインスパイヤされた
+  - kind: para
+    text: PHPDocって形式がある
+  - kind: list
+    items:
+    - phpDocumentorプロジェクトが
+  - kind: para
+    text: デファクト https://phpdoc.org/docs/latest/index.html
+  p15:
+  - kind: heading
+    level: 1
+    text: PHPDocの型
+  - kind: list
+    items:
+    - 基本はPHPの型かクラス名を書く
+    - 複合型
+    - 「intまたは文字列」 int|string
+    - 値が並んだ配列
+    - 「intが並んだ配列」 int[]
+    - https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
+  - kind: para
+    text: types.html
+  p16:
+  - kind: heading
+    level: 1
+    text: これだけ覚えて帰ってね
+  - kind: para
+    text: タグ名
+  - kind: para
+    text: 意味
+  - kind: para
+    text: 例
+  - kind: para
+    text: '@param引数を定義@param int $n1'
+  - kind: para
+    text: '@return返り値を定義@return int[]'
+  - kind: para
+    text: '@var変数/プロパティを定義@var int'
+  - kind: para
+    text: '@propertyマジックプロパティを定義@property int $id'
+  p17:
+  - kind: heading
+    level: 1
+    text: '型: arrayについて'
+  - kind: list
+    items:
+    - array と mixed[] は意味が同じなのでは
+    - PHPのarrayは
+  - kind: para
+    text: リストでもあり連想配列でもある
+  - kind: list
+    items:
+    - 標準化された用例ではないが、
+  - kind: para
+    text: tadsanは連想配列をarrayと書く
+  - kind: list
+    items:
+    - 0はじまりの連番の配列は
+  - kind: para
+    text: mixed[] とか User[] みたいに書く
+  p18:
+  - kind: heading
+    level: 1
+    text: 標準化について
+  - kind: list
+    items:
+    - 前述の通り、デファクトは
+  - kind: para
+    text: phpDocumentor2の仕様 (phpdoc.org)
+  - kind: list
+    items:
+    - 日本語 https://zonuexe.github.io/phpDocumentor2-ja/
+    - 使ってるツールはいろいろある
+    - PhpStorm, Phan, ApiGen, phpDox…
+    - PSR-5で提案されてるけど… どうなる?
+  p19:
+  - kind: para
+    text: PHPの型宣言
+  p20:
+  - kind: heading
+    level: 1
+    text: タイプヒント改め「型宣言」
+  - kind: list
+    items:
+    - PHP5では「タイプヒント」と呼ばれ、
+  - kind: para
+    text: 引数に特定のキーワードかクラス名を書くことができた
+  - kind: list
+    items:
+    - function getWorksByUser(UserModel $user)
+  - kind: para
+    text: みたいな
+  - kind: list
+    items:
+    - array, callable, resource
+    - PHP7では「型宣言」になって返り値の型が
+  - kind: para
+    text: 書ける
+  p21:
+  - kind: heading
+    level: 1
+    text: 型宣言の難しさ
+  - kind: list
+    items:
+    - PHP5はstringとかintとか書けなかった
+    - そんなの簡単だろさっさと実装しろや…
+  - kind: para
+    text: みたいな単純な問題ではない
+  - kind: list
+    items:
+    - function hoge(int $n) を hoge("12")
+  - kind: para
+    text: で呼び出したときにどうするの…?
+  - kind: list
+    items:
+    - パンドラの箱を開けてしまった感
+    - declare(strict_types=1) って書く
+  p22:
+  - kind: heading
+    level: 1
+    text: キャストの難しさ
+  - kind: para
+    text: '<?php declare(strict_types=0);function myint(int $v) { return $v;}myint(1.1);
+      // => 1 myint(true); // => 1 myint("1"); // => 1 myint(floatval(PHP_INT_MAX
+      - 512)); // int(9223372036854774784)myint(12345678901234567890.0);// PHP Fatal
+      error: Uncaught TypeError: Argument 1// passed to myint() must be of the type
+      integer, float given myint("12345678901234567890");// PHP Fatal error: Uncaught
+      TypeError: Argument 1// passed to myint() must be of the type integer, string
+      given'
+  p23:
+  - kind: para
+    text: Phan
+  p24:
+  - kind: heading
+    level: 1
+    text: etsy/phan (次回豫告)
+  - kind: list
+    items:
+    - 静的解析ツール
+    - PHPDocの定義を手がかりに、
+  - kind: para
+    text: 型が違ってるところを指摘してくれる
+  - kind: list
+    items:
+    - 11/3にPHPカンファレンスで
+  - kind: para
+    text: 詳しくしゃべってきます (30分枠)
 size:
   max_width: 1024
   max_height: 768
@@ -13,830 +301,3 @@ links:
     title: Home | phpDocumentor
   - url: https://zonuexe.github.io/phpDocumentor2-ja/
     title: Learn about phpDocumentor — phpDocumentor
-text:
-  p1:
-  - node: p
-    children:
-    - node: bold
-      content: はじめてのPHPDocと型
-  - node: p
-    children:
-    - node: bold
-      content: My first PHPDoc and Type
-  - node: p
-    children:
-    - node: bold
-      content: ' ピクシブ社内勉強会'
-  - node: p
-    children:
-    - node: bold
-      content: '2016-09-09'
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: 型とは何か
-  p3:
-  - node: p
-    children:
-    - node: bold
-      content: 型… 型…
-  - node: p
-    children:
-    - node: text
-      content: 一言で誤解を恐れずに表現すると
-  - node: p
-    children:
-    - node: text
-      content: プログラミング言語が
-  - node: p
-    children:
-    - node: text
-      content: '1 + [] '
-  - node: p
-    children:
-    - node: text
-      content: (数字と配列のたしざん)
-    - node: br
-    - node: text
-      content: 'みたいなのを叱れるようにする基盤 '
-  - node: p
-    children:
-    - node: text
-      content: コンパイルするときに型を付けるか
-  - node: p
-    children:
-    - node: text
-      content: 動かすとき に調べるかが、
-  - node: p
-    children:
-    - node: text
-      content: (runtime)
-    - node: br
-    - node: bold
-      content: 静的型付き
-    - node: text
-      content: と
-    - node: bold
-      content: 動的型検査
-    - node: text
-      content: の大きな差
-  p4:
-  - node: p
-    children:
-    - node: bold
-      content: 動的型検査
-  - node: p
-    children:
-    - node: text
-      content: プログラムを動かしながら
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 手さぐりで型を調べる
-  - node: p
-    children:
-    - node: text
-      content: $a int $b string
-    - node: br
-    - node: text
-      content: 'の型は だな、 の型は … '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 「
-  - node: p
-    children:
-    - node: text
-      content: ね
-  - node: p
-    children:
-    - node: text
-      content: ' だけど数字だから足しざんできる ！'
-  - node: p
-    children:
-    - node: text
-      content: 」
-  - node: p
-    children:
-    - node: text
-      content: みたいな
-    - node: bold
-      content: 茶番
-    - node: text
-      content: を毎回やってる
-  p5:
-  - node: p
-    children:
-    - node: bold
-      content: 静的検査
-  p6:
-  - node: p
-    children:
-    - node: bold
-      content: 動かす前に把握する
-  - node: p
-    children:
-    - node: text
-      content: 実際に動かさなくても人間は整合性
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: をとりながらPHPを書ける
-      - node: br
-      - node: text
-        content: 人間がわかるってことは、機械にも
-    - node: li
-      children:
-      - node: text
-        content: やってれないことはない
-  p7:
-  - node: p
-    children:
-    - node: bold
-      content: 型を推測してみよう（型推論）
-  - node: p
-    children:
-    - node: bold
-      content: // 絶対int返すマン
-  - node: p
-    children:
-    - node: bold
-      content: function x() { return 1; }
-  - node: p
-    children:
-    - node: bold
-      content: // 絶対array返すマン
-  - node: p
-    children:
-    - node: bold
-      content: function y() { return []; }
-  - node: p
-    children:
-    - node: bold
-      content: // たしざん
-  - node: p
-    children:
-    - node: bold
-      content: // $n1, $n2 は数字っぽい値が欲しい
-  - node: p
-    children:
-    - node: bold
-      content: function add($n1, $n2) { return $n1 + $2; }
-  - node: p
-    children:
-    - node: bold
-      content: $a = x(); // x()がintを返すからたぶんintのはず
-  - node: p
-    children:
-    - node: bold
-      content: $b = y(); // y()がarrayを返すからたぶんarrayのはず
-  - node: p
-    children:
-    - node: bold
-      content: $c = add($a, $b);
-  - node: p
-    children:
-    - node: bold
-      content: // 数字っぽい値以外を渡すとエラーが発生することは
-  - node: p
-    children:
-    - node: bold
-      content: // 理窟の上では動かさなくても明らか
-  p8:
-  - node: p
-    children:
-    - node: bold
-      content: 型がない関数の問題
-  - node: p
-    children:
-    - node: text
-      content: '引数に何渡せばいいの… 何返ってくるの '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 時間は有限なので、既存コードを読む
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 時間は最小限にできるとウレシイ
-  - node: p
-    children:
-    - node: text
-      content: ほんとに 見ればわかる シンプルさなら
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 「 」
-      - node: br
-      - node: text
-        content: 'いいけど、現実は甘くない '
-      - node: br
-      - node: text
-        content: 型が特定できないことも多い
-  p9:
-  - node: p
-    children:
-    - node: bold
-      content: 適当なコメント（Before）
-  - node: p
-    children:
-    - node: bold
-      content: // 絶対int返すマン
-  - node: p
-    children:
-    - node: bold
-      content: function x() { return 1; }
-  - node: p
-    children:
-    - node: bold
-      content: // 絶対array返すマン
-  - node: p
-    children:
-    - node: bold
-      content: function y() { return []; }
-  - node: p
-    children:
-    - node: bold
-      content: // たしざん
-  - node: p
-    children:
-    - node: bold
-      content: // $n1, $n2 は数字っぽい値が欲しい
-  - node: p
-    children:
-    - node: bold
-      content: function add($n1, $n2) { return $n1 + $2; }
-  - node: p
-    children:
-    - node: bold
-      content: $a = x(); // x()がintを返すからたぶんintのはず
-  - node: p
-    children:
-    - node: bold
-      content: $b = y(); // y()がarrayを返すからたぶんarrayのはず
-  - node: p
-    children:
-    - node: bold
-      content: $c = add($a, $b);
-  - node: p
-    children:
-    - node: bold
-      content: // 数字っぽい値以外を渡すとエラーが発生することは
-  - node: p
-    children:
-    - node: bold
-      content: // 理窟の上では動かさなくても明らか
-  p10:
-  - node: p
-    children:
-    - node: bold
-      content: PHPDocで型を付ける（After）
-  - node: p
-    children:
-    - node: bold
-      content: /** @return int */
-  - node: p
-    children:
-    - node: bold
-      content: function x() { return 1; }
-  - node: p
-    children:
-    - node: bold
-      content: /** @return array */
-  - node: p
-    children:
-    - node: bold
-      content: function y() { return []; }
-  - node: p
-    children:
-    - node: bold
-      content: /**
-  - node: p
-    children:
-    - node: bold
-      content: ' * @param int $n1'
-  - node: p
-    children:
-    - node: bold
-      content: ' * @param int $n2'
-  - node: p
-    children:
-    - node: bold
-      content: ' */'
-  - node: p
-    children:
-    - node: bold
-      content: function add($n1, $n2) { return $n1 + $2; }
-  p11:
-  - node: p
-    children:
-    - node: bold
-      content: PHPDoc
-  p12:
-  - node: p
-    children:
-    - node: bold
-      content: DocComment
-  - node: p
-    children:
-    - node: text
-      content: PHPのリフレクションで実行時に
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 取得できる特別な形式のコメント
-  - node: p
-    children:
-    - node: text
-      content: メソッドとかクラスの定義に
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: /** 〜 */
-  - node: p
-    children:
-    - node: text
-      content: ' って書くと文字列になる '
-  - node: p
-    children:
-    - node: text
-      content: '/** '
-    - node: br
-    - node: text
-      content: 開始記号は必ず  にすること
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: /*
-      - node: br
-      - node: text
-        content: ( では無効なので注意！！！！)
-  p13:
-  - node: p
-    children:
-    - node: bold
-      content: DocCommentを取得する
-  - node: p
-    children:
-    - node: bold
-      content: <?php
-  - node: p
-    children:
-    - node: bold
-      content: /** こんにちは〜〜〜〜 */
-  - node: p
-    children:
-    - node: bold
-      content: 'function hello() { throw new \Exception(); } '
-  - node: p
-    children:
-    - node: bold
-      content: $ref = new \ReflectionFunction('hello');
-  - node: p
-    children:
-    - node: bold
-      content: echo $ref->getDocComment(), PHP_EOL;
-  - node: p
-    children:
-    - node: bold
-      content: exit;
-  p14:
-  - node: p
-    children:
-    - node: bold
-      content: APIドキュメントを生成する
-  - node: p
-    children:
-    - node: text
-      content: ソースコード中のコメントを基に、
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTMLドキュメントを生成できる
-  - node: p
-    children:
-    - node: text
-      content: JavaDocにインスパイヤされた
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPDocって形式がある
-  - node: p
-    children:
-    - node: text
-      content: phpDocumentorプロジェクトが
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: デファクト
-  - node: p
-    children:
-    - node: text
-      content: https://phpdoc.org/docs/latest/index.html
-  p15:
-  - node: p
-    children:
-    - node: bold
-      content: PHPDocの型
-  - node: p
-    children:
-    - node: text
-      content: '基本はPHPの型かクラス名を書く '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 複合型
-    - node: li
-      children:
-      - node: text
-        content: int int|string
-      - node: br
-      - node: text
-        content: '「 または文字列」   '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 値が並んだ配列
-    - node: li
-      children:
-      - node: text
-        content: int int[]
-      - node: br
-      - node: text
-        content: '「 が並んだ配列」 '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
-    - node: li
-      children:
-      - node: text
-        content: types.html
-  p16:
-  - node: p
-    children:
-    - node: bold
-      content: これだけ覚えて帰ってね
-  - node: p
-    children:
-    - node: bold
-      content: タグ名 意味 例
-  - node: p
-    children:
-    - node: bold
-      content: '@param'
-    - node: text
-      content: ' 引数を定義'
-  - node: p
-    children:
-    - node: text
-      content: '@param int $n1 '
-  - node: p
-    children:
-    - node: bold
-      content: '@return'
-    - node: text
-      content: ' 返り値を定義'
-  - node: p
-    children:
-    - node: text
-      content: '@return int[]'
-  - node: p
-    children:
-    - node: bold
-      content: '@var'
-    - node: text
-      content: ' 変数/プロパティを定義'
-  - node: p
-    children:
-    - node: text
-      content: '@var int'
-  - node: p
-    children:
-    - node: bold
-      content: '@property'
-    - node: text
-      content: ' マジックプロパティを定義'
-  - node: p
-    children:
-    - node: text
-      content: '@property int $id'
-  p17:
-  - node: p
-    children:
-    - node: bold
-      content: array
-    - node: br
-    - node: bold
-      content: '型:  について'
-  - node: p
-    children:
-    - node: text
-      content: array mixed[]
-  - node: p
-    children:
-    - node: text
-      content: ' と   は意味が同じなのでは '
-  - node: p
-    children:
-    - node: text
-      content: array
-    - node: br
-    - node: text
-      content: PHPの は
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: リストでもあり連想配列でもある
-  - node: p
-    children:
-    - node: text
-      content: 標準化された用例ではないが、
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: array
-      - node: br
-      - node: text
-        content: 'tadsanは連想配列を と書く '
-  - node: p
-    children:
-    - node: text
-      content: '0'
-    - node: br
-    - node: text
-      content: はじまりの連番の配列は
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: mixed[] User[]
-  - node: p
-    children:
-    - node: text
-      content: ' とか   みたいに書く'
-  p18:
-  - node: p
-    children:
-    - node: bold
-      content: 標準化について
-  - node: p
-    children:
-    - node: text
-      content: 前述の通り、デファクトは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: phpDocumentor2の仕様 (phpdoc.org)
-      - node: br
-      - node: text
-        content: '日本語 https://zonuexe.github.io/phpDocumentor2-ja/ '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 使ってるツールはいろいろある
-    - node: li
-      children:
-      - node: text
-        content: PhpStorm, Phan, ApiGen, phpDox…
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PSR-5で提案されてるけど… どうなる?
-  p19:
-  - node: p
-    children:
-    - node: bold
-      content: PHPの型宣言
-  p20:
-  - node: p
-    children:
-    - node: bold
-      content: タイプヒント改め「型宣言」
-  - node: p
-    children:
-    - node: text
-      content: PHP5では「タイプヒント」と呼ばれ、
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 引数に特定のキーワードかクラス名を書く
-      - node: br
-      - node: text
-        content: 'ことができた '
-  - node: p
-    children:
-    - node: text
-      content: function getWorksByUser(UserModel $user)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: みたいな
-      - node: br
-      - node: text
-        content: array callable resource
-  - node: p
-    children:
-    - node: text
-      content: ',  ,   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP7では「型宣言」になって返り値の型が
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 書ける
-  p21:
-  - node: p
-    children:
-    - node: bold
-      content: 型宣言の難しさ
-  - node: p
-    children:
-    - node: text
-      content: string int
-  - node: p
-    children:
-    - node: text
-      content: 'PHP5は とか とか書けなかった '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そんなの簡単だろさっさと実装しろや…
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: みたいな単純な問題ではない
-  - node: p
-    children:
-    - node: text
-      content: ' を '
-  - node: p
-    children:
-    - node: text
-      content: function hoge(int $n) hoge("12")
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: で呼び出したときにどうするの…?
-      - node: br
-      - node: text
-        content: 'パンドラの箱を開けてしまった感 '
-  - node: p
-    children:
-    - node: bold
-      content: って書く
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: declare(strict_types=1)
-  p22:
-  - node: p
-    children:
-    - node: bold
-      content: キャストの難しさ
-  - node: p
-    children:
-    - node: bold
-      content: <?php declare(strict_types=0);
-  - node: p
-    children:
-    - node: bold
-      content: function myint(int $v) { return $v;}
-  - node: p
-    children:
-    - node: bold
-      content: myint(1.1);  // => 1
-  - node: p
-    children:
-    - node: bold
-      content: myint(true); // => 1
-  - node: p
-    children:
-    - node: bold
-      content: myint("1");  // => 1
-  - node: p
-    children:
-    - node: bold
-      content: myint(floatval(PHP_INT_MAX - 512)); // int(9223372036854774784)
-  - node: p
-    children:
-    - node: bold
-      content: myint(12345678901234567890.0);
-  - node: p
-    children:
-    - node: bold
-      content: '// PHP Fatal error:  Uncaught TypeError: Argument 1 '
-  - node: p
-    children:
-    - node: bold
-      content: // passed to myint() must be of the type integer, float given
-  - node: p
-    children:
-    - node: bold
-      content: myint("12345678901234567890");
-  - node: p
-    children:
-    - node: bold
-      content: '// PHP Fatal error:  Uncaught TypeError: Argument 1 '
-  - node: p
-    children:
-    - node: bold
-      content: // passed to myint() must be of the type integer, string given
-  p23:
-  - node: p
-    children:
-    - node: bold
-      content: Phan
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: etsy/phan
-  - node: p
-    children:
-    - node: bold
-      content: (次回豫告)
-  - node: p
-    children:
-    - node: text
-      content: '静的解析ツール '
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの定義を手がかりに、
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 型が違ってるところを指摘してくれる
-  - node: p
-    children:
-    - node: text
-      content: 11/3にPHPカンファレンスで
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 詳しくしゃべってきます (30分枠)

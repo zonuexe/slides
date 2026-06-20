@@ -1,1039 +1,452 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 文字列をイテレーションする
-  - node: p
-    children:
-    - node: text
-      content: Iterate over "elements" of a string.
-  - node: p
-    children:
-    - node: text
-      content: 第138回 PHP勉強会＠東京
-  - node: p
-    children:
-    - node: text
-      content: '2019年5月29日 #phpstudy'
+  - kind: heading
+    level: 1
+    text: 文字列をイテレーションする
+  - kind: para
+    text: Iterate over "elements" of a string.
+  - kind: para
+    text: '第138回 PHP勉強会＠東京2019年5月29日 #phpstudy'
   p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv運営本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv運営本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 宣伝
+  - kind: para
+    text: 宣伝
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 先に
+  - kind: para
+    text: 先に
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 今回話す内容は
-  - node: p
-    children:
-    - node: text
-      content: 平成最後のLT大会で
-  - node: p
-    children:
-    - node: text
-      content: 発表した内容に由来
+  - kind: para
+    text: 今回話す内容は平成最後のLT大会で発表した内容に由来
   p8: []
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 今回話す実装は
-  - node: p
-    children:
-    - node: text
-      content: 既にライブラリ化
-    - node: br
-    - node: text
-      content: しました
+  - kind: para
+    text: 今回話す実装は既にライブラリ化しました
   p10: []
   p11:
-  - node: p
-    children:
-    - node: text
-      content: おさらい
+  - kind: para
+    text: おさらい
   p12:
-  - node: p
-    children:
-    - node: text
-      content: イテレータ
-  - node: p
-    children:
-    - node: text
-      content: とは何か
+  - kind: para
+    text: イテレータとは何か
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 任意の処理を
-  - node: p
-    children:
-    - node: text
-      content: 繰り返しの構造 に落とし込める
+  - kind: para
+    text: 任意の処理を繰り返しの構造に落とし込める
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 繰り返し？
+  - kind: para
+    text: 繰り返し？
   p15:
-  - node: p
-    children:
-    - node: text
-      content: みんなだいすき
-  - node: p
-    children:
-    - node: text
-      content: foreach
+  - kind: para
+    text: みんなだいすきforeach
   p16:
-  - node: p
-    children:
-    - node: text
-      content: どうするの？
+  - kind: para
+    text: どうするの？
   p17:
-  - node: p
-    children:
-    - node: text
-      content: Iterator
-    - node: br
-    - node: text
-      content: インターフェイス
+  - kind: para
+    text: Iteratorインターフェイス
   p18: []
   p19: []
   p20: []
   p21:
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータ
+  - kind: para
+    text: ジェネレータ
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 関数で
-  - node: p
-    children:
-    - node: text
-      content: イテレータを
-  - node: p
-    children:
-    - node: text
-      content: つくれる
+  - kind: para
+    text: 関数でイテレータをつくれる
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 時間がない
-  - node: p
-    children:
-    - node: text
-      content: ので割愛
+  - kind: para
+    text: 時間がないので割愛
   p24:
-  - node: p
-    children:
-    - node: text
-      content: このあと
-  - node: p
-    children:
-    - node: text
-      content: さんざん出ます
+  - kind: para
+    text: このあとさんざん出ます
   p25:
-  - node: p
-    children:
-    - node: text
-      content: さて本題
+  - kind: para
+    text: さて本題
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 文字列をイテレーションする
-  - node: p
-    children:
-    - node: text
-      content: Iterate over "elements" of a string.
-  - node: p
-    children:
-    - node: text
-      content: 第138回 PHP勉強会＠東京
-  - node: p
-    children:
-    - node: text
-      content: '2019年5月29日 #phpstudy'
+  - kind: heading
+    level: 1
+    text: 文字列をイテレーションする
+  - kind: para
+    text: Iterate over "elements" of a string.
+  - kind: para
+    text: '第138回 PHP勉強会＠東京2019年5月29日 #phpstudy'
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 問題です
+  - kind: para
+    text: 問題です
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 入力した文字列を 1文字ごとに改行 区切りで出力せよ
+  - kind: para
+    text: 入力した文字列を1文字ごとに改行区切りで出力せよ
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 簡単じゃん
+  - kind: para
+    text: 簡単じゃん
   p30: []
   p31: []
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 簡単でしょ？
-  - node: p
-    children:
-    - node: text
-      content: 😄
+  - kind: para
+    text: 簡単でしょ？
+  - kind: heading
+    level: 1
+    text: 😄
   p33: []
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 本当に？
-  - node: p
-    children:
-    - node: text
-      content: 🤔
+  - kind: para
+    text: 本当に？
+  - kind: heading
+    level: 1
+    text: 🤔
   p35: []
   p36:
-  - node: p
-    children:
-    - node: text
-      content: (どう表示される かは環境による)
+  - kind: para
+    text: (どう表示されるかは環境による)
   p37:
-  - node: p
-    children:
-    - node: text
-      content: …………
-  - node: p
-    children:
-    - node: text
-      content: 🙃
+  - kind: para
+    text: …………
+  - kind: heading
+    level: 1
+    text: 🙃
   p38:
-  - node: p
-    children:
-    - node: text
-      content: どうしてこんな
-  - node: p
-    children:
-    - node: text
-      content: ことがおこるのか
+  - kind: para
+    text: どうしてこんなことがおこるのか
   p39:
-  - node: p
-    children:
-    - node: text
-      content: '前提1:'
-  - node: p
-    children:
-    - node: text
-      content: PHPの は
-  - node: p
-    children:
-    - node: text
-      content: string
-    - node: br
-    - node: text
-      content: 「文字」を知らない
+  - kind: para
+    text: 前提1:PHPのstringは「文字」を知らない
   p40:
-  - node: p
-    children:
-    - node: text
-      content: stringは
-  - node: p
-    children:
-    - node: text
-      content: ただのバイト列
+  - kind: para
+    text: stringはただのバイト列
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '$s = ''abc''; echo $s[0]; '
-  - node: p
-    children:
-    - node: text
-      content: これは先頭1文字ではなく
-  - node: p
-    children:
-    - node: text
-      content: 1バイトを取り出す
+  - kind: para
+    text: $s = 'abc';echo $s[0];
+  - kind: para
+    text: これは先頭1文字ではなく1バイトを取り出す
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 逆に言うとstring にはどんなバイナ
-    - node: br
-    - node: text
-      content: リも格納できる
+  - kind: para
+    text: 逆に言うとstringにはどんなバイナリも格納できる
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '例:'
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: $s = file_get_contents('flower.png');
-  - node: p
-    children:
-    - node: text
-      content: 'header(''Content-Type: image/png''); '
-    - node: br
-    - node: text
-      content: echo $s;
+  - kind: heading
+    level: 1
+    text: '例:'
+  - kind: para
+    text: '<?php$s = file_get_contents(''flower.png'');header(''Content-Type: image/png'');echo
+      $s;'
   p44:
-  - node: p
-    children:
-    - node: text
-      content: mb関数が
-  - node: p
-    children:
-    - node: text
-      content: あるのでは？
+  - kind: para
+    text: mb関数があるのでは？
   p45: []
   p46:
-  - node: p
-    children:
-    - node: text
-      content: mb関数はencodingを常に
-    - node: br
-    - node: text
-      content: 指定しないと
-  - node: p
-    children:
-    - node: text
-      content: (環境依存せず)
-  - node: p
-    children:
-    - node: text
-      content: 確実に処理できない
-  - node: p
-    children:
-    - node: text
-      content: 🤔
+  - kind: para
+    text: mb関数はencodingを常に指定しないと(環境依存せず)確実に処理できない
+  - kind: heading
+    level: 1
+    text: 🤔
   p47:
-  - node: p
-    children:
-    - node: text
-      content: PHP5.6以降では
-  - node: p
-    children:
-    - node: text
-      content: の
-  - node: p
-    children:
-    - node: text
-      content: default_charset
-    - node: br
-    - node: text
-      content: デフォルト値が"UTF-8"に、
-  - node: p
-    children:
-    - node: text
-      content: が
-  - node: p
-    children:
-    - node: text
-      content: mbstring.internal_encoding
-    - node: br
-    - node: text
-      content: 非推奨になったのは嬉しい
+  - kind: para
+    text: PHP5.6以降ではdefault_charsetのデフォルト値が"UTF-8"に、mbstring.internal_encodingが非推奨になったのは嬉しい
   p48:
-  - node: p
-    children:
-    - node: text
-      content: それはencodingを明示的に 指定しなくても安全に処理
-    - node: br
-    - node: text
-      content: できることを意味しない
-  - node: p
-    children:
-    - node: text
-      content: 🙃
+  - kind: para
+    text: それはencodingを明示的に指定しなくても安全に処理できることを意味しない
+  - kind: heading
+    level: 1
+    text: 🙃
   p49:
-  - node: p
-    children:
-    - node: text
-      content: '前提2:'
-  - node: p
-    children:
-    - node: text
-      content: UTF-8は
-  - node: p
-    children:
-    - node: text
-      content: 可変長バイト
+  - kind: para
+    text: 前提2:UTF-8は可変長バイト
   p50:
-  - node: p
-    children:
-    - node: text
-      content: ひとつの符号位置を
-  - node: p
-    children:
-    - node: text
-      content: 表すために
-    - node: br
-    - node: text
-      content: 1〜4バイト
+  - kind: para
+    text: ひとつの符号位置を表すために
+  - kind: heading
+    level: 1
+    text: 1〜4バイト
   p51:
-  - node: p
-    children:
-    - node: text
-      content: まだ日本語文字を
-  - node: p
-    children:
-    - node: text
-      content: 「2バイト文字」と 呼んだりしませんね？
+  - kind: para
+    text: まだ日本語文字を「2バイト文字」と呼んだりしませんね？
   p52:
-  - node: p
-    children:
-    - node: text
-      content: Unicodeより
-    - node: br
-    - node: text
-      content: 前の時代
+  - kind: para
+    text: Unicodeより前の時代
   p53:
-  - node: p
-    children:
-    - node: text
-      content: Shift_JISでは
-  - node: p
-    children:
-    - node: text
-      content: ガ (2バイト)
-  - node: p
-    children:
-    - node: text
-      content: ｶﾞ (1バイト+1バイト)
+  - kind: para
+    text: Shift_JISではガ (2バイト)
+  - kind: para
+    text: ｶﾞ (1バイト+1バイト)
   p54:
-  - node: p
-    children:
-    - node: text
-      content: この頃は半角カナ で情報量が半分に なることもあった
+  - kind: para
+    text: この頃は半角カナで情報量が半分になることもあった
   p55:
-  - node: p
-    children:
-    - node: text
-      content: UTF-8では
-  - node: p
-    children:
-    - node: text
-      content: ガ (3バイト)
-  - node: p
-    children:
-    - node: text
-      content: ｶﾞ (3バイト+3バイト)
+  - kind: para
+    text: UTF-8ではガ (3バイト)
+  - kind: para
+    text: ｶﾞ (3バイト+3バイト)
   p56:
-  - node: p
-    children:
-    - node: text
-      content: Unicode(UTF-8)で
-    - node: br
-    - node: text
-      content: 表現すると
-  - node: p
-    children:
-    - node: text
-      content: 半角カナは単純に
-  - node: p
-    children:
-    - node: text
-      content: バイト数が倍になる
+  - kind: para
+    text: Unicode(UTF-8)で表現すると半角カナは単純にバイト数が倍になる
   p57:
-  - node: p
-    children:
-    - node: text
-      content: たいへんですね
-  - node: p
-    children:
-    - node: text
-      content: ☺
+  - kind: para
+    text: たいへんですね
+  - kind: heading
+    level: 1
+    text: ☺
   p58:
-  - node: p
-    children:
-    - node: text
-      content: その上で
-  - node: p
-    children:
-    - node: text
-      content: Unicode時代の今日
-  - node: p
-    children:
-    - node: text
-      content: 何を「文字」と
-  - node: p
-    children:
-    - node: text
-      content: 呼ぶかを考える
+  - kind: para
+    text: その上でUnicode時代の今日何を「文字」と呼ぶかを考える
   p59:
-  - node: p
-    children:
-    - node: text
-      content: 1. バイトごと
-  - node: p
-    children:
-    - node: text
-      content: 2. コードポイントごと
-  - node: p
-    children:
-    - node: text
-      content: 3. 書記素クラスタごと
+  - kind: para
+    text: 1. バイトごと2. コードポイントごと3. 書記素クラスタごと
   p60:
-  - node: p
-    children:
-    - node: text
-      content: バイトごと
+  - kind: para
+    text: バイトごと
   p61: []
   p62:
-  - node: p
-    children:
-    - node: text
-      content: これがまさに
-  - node: p
-    children:
-    - node: text
-      content: バイトごとの
-  - node: p
-    children:
-    - node: text
-      content: イテレーション
+  - kind: para
+    text: これがまさにバイトごとのイテレーション
   p63:
-  - node: p
-    children:
-    - node: text
-      content: これを
-  - node: p
-    children:
-    - node: text
-      content: ジェネレータに
-    - node: br
-    - node: text
-      content: 変換
+  - kind: para
+    text: これをジェネレータに変換
   p64: []
   p65: []
   p66:
-  - node: p
-    children:
-    - node: text
-      content: ライブラリとしては
-    - node: br
-    - node: text
-      content: ｢foreachできるオブジェクト｣
-  - node: p
-    children:
-    - node: text
-      content: (＝ジェネレータ)として提供
+  - kind: para
+    text: ライブラリとしては｢foreachできるオブジェクト｣(＝ジェネレータ)として提供
   p67:
-  - node: p
-    children:
-    - node: text
-      content: そうすることで 汎用的に利用で きるようになる
+  - kind: para
+    text: そうすることで汎用的に利用できるようになる
   p68: []
   p69:
-  - node: p
-    children:
-    - node: text
-      content: '例: '
-  - node: p
-    children:
-    - node: text
-      content: 数を集計する
+  - kind: para
+    text: 例:数を集計する
   p70: []
   p71:
-  - node: p
-    children:
-    - node: text
-      content: コードポイント
-  - node: p
-    children:
-    - node: text
-      content: ごと
+  - kind: para
+    text: コードポイントごと
   p72:
-  - node: p
-    children:
-    - node: text
-      content: コードポイント
-  - node: p
-    children:
-    - node: text
-      content: (符号位置)
+  - kind: para
+    text: コードポイント(符号位置)
   p73: []
   p74:
-  - node: p
-    children:
-    - node: text
-      content: PHP はUnicodeを
-  - node: p
-    children:
-    - node: text
-      content: (コア言語)
-  - node: p
-    children:
-    - node: text
-      content: 知らないが､PCRE関数
-  - node: p
-    children:
-    - node: text
-      content: はUnicodeを
-  - node: p
-    children:
-    - node: text
-      content: preg_match()
-    - node: br
-    - node: text
-      content: 知ってる (  修飾子)
-  - node: p
-    children:
-    - node: text
-      content: '/u '
+  - kind: para
+    text: PHP(コア言語)はUnicodeを知らないが､PCRE関数preg_match()はUnicodeを知ってる ( /u 修飾子)
   p75: []
   p76:
-  - node: p
-    children:
-    - node: text
-      content: 書記素クラスタ
-  - node: p
-    children:
-    - node: text
-      content: ごと
+  - kind: para
+    text: 書記素クラスタごと
   p77:
-  - node: p
-    children:
-    - node: text
-      content: 書記素とは？
+  - kind: para
+    text: 書記素とは？
   p78:
-  - node: p
-    children:
-    - node: text
-      content: 人間の目に
-  - node: p
-    children:
-    - node: text
-      content: 1文字に見える
-    - node: br
-    - node: text
-      content: 単位
+  - kind: para
+    text: 人間の目に1文字に見える単位
   p79:
-  - node: p
-    children:
-    - node: text
-      content: あ
-  - node: p
-    children:
-    - node: text
-      content: 漢
-  - node: p
-    children:
-    - node: text
-      content: ガ
+  - kind: para
+    text: あ漢ガ
   p80:
-  - node: p
-    children:
-    - node: text
-      content: どれも単独の
-    - node: br
-    - node: text
-      content: 書記素
+  - kind: para
+    text: どれも単独の書記素
   p81:
-  - node: p
-    children:
-    - node: text
-      content: ところでUnicodeに は「ガ」の複数の
-  - node: p
-    children:
-    - node: text
-      content: 表現方法が存在する
+  - kind: para
+    text: ところでUnicodeには「ガ」の複数の表現方法が存在する
   p82:
-  - node: p
-    children:
-    - node: text
-      content: ガ (U+30AC)
-  - node: p
-    children:
-    - node: text
-      content: ガ (U+30AB U+3099) ｶﾞ (U+FF76 U+FF9E)
+  - kind: para
+    text: ガ (U+30AC)
+  - kind: para
+    text: ガ (U+30AB U+3099)
+  - kind: para
+    text: ｶﾞ (U+FF76 U+FF9E)
   p83:
-  - node: p
-    children:
-    - node: text
-      content: 結合したガ
-  - node: p
-    children:
-    - node: text
-      content: ガ (U+30AC)
-  - node: p
-    children:
-    - node: text
-      content: カ ゛
-  - node: p
-    children:
-    - node: text
-      content: (結合文字)
-  - node: p
-    children:
-    - node: text
-      content: ' + '
-  - node: p
-    children:
-    - node: text
-      content: ガ (U+30AB U+3099)
-  - node: p
-    children:
-    - node: text
-      content: 半角ｶ
-  - node: p
-    children:
-    - node: text
-      content: ' + ﾞ'
-  - node: p
-    children:
-    - node: text
-      content: ｶﾞ (U+FF76 U+FF9E)
+  - kind: para
+    text: 結合したガカ + ゛(結合文字)
+  - kind: heading
+    level: 1
+    text: ガ (U+30AC)
+  - kind: para
+    text: 半角ｶ + ﾞ
+  - kind: heading
+    level: 1
+    text: ガ (U+30AB U+3099)
+  - kind: heading
+    level: 1
+    text: ｶﾞ (U+FF76 U+FF9E)
   p84:
-  - node: p
-    children:
-    - node: text
-      content: Unicode正規化
+  - kind: para
+    text: Unicode正規化
   p85:
-  - node: p
-    children:
-    - node: text
-      content: '余談: ファイル名に濁点のつい た文字をGitで管理するとMacと そのほかのファイルシステムで 諸々の厄介な事態が起こるので 禁忌。これはAppleのファイルシ
-        ステムが伝統的にファイル名を Unicode正規化することが問題'
+  - kind: para
+    text: '余談: ファイル名に濁点のついた文字をGitで管理するとMacとそのほかのファイルシステムで諸々の厄介な事態が起こるので禁忌。これはAppleのファイルシステムが伝統的にファイル名をUnicode正規化することが問題'
   p86:
-  - node: p
-    children:
-    - node: text
-      content: (本筋から逸れ るので各自ggr)
+  - kind: para
+    text: (本筋から逸れるので各自ggr)
   p87:
-  - node: p
-    children:
-    - node: text
-      content: 書記素クラスタ のターンはまだ まだ終らないぜ
+  - kind: para
+    text: 書記素クラスタのターンはまだまだ終らないぜ
   p88:
-  - node: p
-    children:
-    - node: text
-      content: 絵文字が
-  - node: p
-    children:
-    - node: text
-      content: 開いてしまった
-  - node: p
-    children:
-    - node: text
-      content: パンドラの匣
+  - kind: para
+    text: 絵文字が開いてしまったパンドラの匣
   p89:
-  - node: p
-    children:
-    - node: text
-      content: 'Case1: 国旗'
+  - kind: para
+    text: 'Case1: 国旗'
   p90:
-  - node: p
-    children:
-    - node: text
-      content: 絵文字には
-  - node: p
-    children:
-    - node: text
-      content: 国旗が充実
+  - kind: para
+    text: 絵文字には国旗が充実
   p91:
-  - node: p
-    children:
-    - node: text
-      content: '%&’()*+,- ./0123456'
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
+  - kind: para
+    text: 
   p92:
-  - node: p
-    children:
-    - node: text
-      content: ……と
-  - node: p
-    children:
-    - node: text
-      content: 思うじゃん？
+  - kind: para
+    text: ……と思うじゃん？
   p93:
-  - node: p
-    children:
-    - node: text
-      content: 実態
+  - kind: para
+    text: 実態
   p94: []
   p95:
-  - node: p
-    children:
-    - node: text
-      content: 国旗専用文字の[J] と[P]を並べて配置 すると に化ける
-  - node: p
-    children:
-    - node: text
-      content: ','
+  - kind: para
+    text: 国旗専用文字の[J]と[P]を並べて配置するとに化ける
   p96:
-  - node: p
-    children:
-    - node: text
-      content: 'Case2: 家族'
-  p97: []
+  - kind: para
+    text: 'Case2: 家族'
+  p97:
+  - kind: para
+    text: 
   p98:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のバイト数
-  - node: p
-    children:
-    - node: text
-      content: strlen(' ');
+  - kind: para
+    text: この絵文字のバイト数
+  - kind: para
+    text: strlen('
+  - kind: para
+    text: ');
   p99:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のバイト数
-  - node: p
-    children:
-    - node: text
-      content: strlen(' ');
-  - node: p
-    children:
-    - node: text
-      content: '7'
-    - node: br
-    - node: text
-      content: // => 25
+  - kind: para
+    text: この絵文字のバイト数
+  - kind: para
+    text: strlen('
+  - kind: para
+    text: ');// => 25
   p100:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のUTF-8文字数
-  - node: p
-    children:
-    - node: text
-      content: mb_strlen(' ', 'UTF-8');
+  - kind: para
+    text: この絵文字のUTF-8文字数
+  - kind: para
+    text: mb_strlen('
+  - kind: para
+    text: ', 'UTF-8');
   p101:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のUTF-8文字数
-  - node: p
-    children:
-    - node: text
-      content: mb_strlen(' ', 'UTF-8');
-  - node: p
-    children:
-    - node: text
-      content: '7'
-    - node: br
-    - node: text
-      content: // => 7
-  p102: []
+  - kind: para
+    text: この絵文字のUTF-8文字数
+  - kind: para
+    text: mb_strlen('
+  - kind: para
+    text: ', 'UTF-8');// => 7
+  p102:
+  - kind: para
+    text: 
   p103:
-  - node: p
-    children:
-    - node: text
-      content: '| | |'
-    - node: br
-    - node: text
-      content: 👨👩👦👦
+  - kind: para
+    text: 👨|
+  - kind: para
+    text: 👩|
+  - kind: para
+    text: 👦|
+  - kind: para
+    text: 👦
   p104:
-  - node: p
-    children:
-    - node: text
-      content: 'Zero Width '
-    - node: br
-    - node: text
-      content: Joiner
+  - kind: para
+    text: Zero Width Joiner
   p105:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: para
+    text: さて
   p106:
-  - node: p
-    children:
-    - node: text
-      content: そんな文字でも
-  - node: p
-    children:
-    - node: text
-      content: 一安心
+  - kind: para
+    text: そんな文字でも一安心
   p107: []
   p108:
-  - node: p
-    children:
-    - node: text
-      content: ICU に依存
-  - node: p
-    children:
-    - node: text
-      content: (intl)
-    - node: br
-    - node: text
-      content: (常に正しく計算するにはシ ステムに最新のUnicode定義
-    - node: br
-    - node: text
-      content: が実装されたICUが必要)
+  - kind: heading
+    level: 1
+    text: ICU(intl)に依存
+  - kind: para
+    text: (常に正しく計算するにはシステムに最新のUnicode定義が実装されたICUが必要)
   p109:
-  - node: p
-    children:
-    - node: text
-      content: 今回の話題は
-  - node: p
-    children:
-    - node: text
-      content: ただのトリビアか？
+  - kind: para
+    text: 今回の話題はただのトリビアか？
   p110:
-  - node: p
-    children:
-    - node: text
-      content: 'No'
+  - kind: para
+    text: 'No'
   p111:
-  - node: p
-    children:
-    - node: text
-      content: Webアプリとしては 「文字数」を制限し
-    - node: br
-    - node: text
-      content: なければいけない
-  - node: p
-    children:
-    - node: text
-      content: 場合が多々ある
+  - kind: para
+    text: Webアプリとしては「文字数」を制限しなければいけない場合が多々ある
   p112:
-  - node: p
-    children:
-    - node: text
-      content: サービス都合の制限
-  - node: p
-    children:
-    - node: text
-      content: ストレージ(DB)都合制限
+  - kind: para
+    text: サービス都合の制限ストレージ(DB)都合制限
   p113:
-  - node: p
-    children:
-    - node: text
-      content: 自分がどういう理由で
-  - node: p
-    children:
-    - node: text
-      content: 文字数を制限しようと しているのか考えよう
+  - kind: para
+    text: 自分がどういう理由で文字数を制限しようとしているのか考えよう
   p114:
-  - node: p
-    children:
-    - node: text
-      content: '例: '
-  - node: p
-    children:
-    - node: text
-      content: MySQLのインデックス長のデ フォルト設定が767バイトだか らutf8mb4のカラムの文字数を
-    - node: br
-    - node: text
-      content: VARCHAR(191)以下にしたい
+  - kind: para
+    text: 例:MySQLのインデックス長のデフォルト設定が767バイトだからutf8mb4のカラムの文字数をVARCHAR(191)以下にしたい
   p115:
-  - node: p
-    children:
-    - node: text
-      content: '例: '
-  - node: p
-    children:
-    - node: text
-      content: 長いユーザー名は画面 に収まりきらないから
-    - node: br
-    - node: text
-      content: 30文字以下にしたい
+  - kind: para
+    text: 例:長いユーザー名は画面に収まりきらないから30文字以下にしたい
   p116:
-  - node: p
-    children:
-    - node: text
-      content: たいていは
-  - node: p
-    children:
-    - node: text
-      content: mb_strlen($s, 'UTF-8')
-  - node: p
-    children:
-    - node: text
-      content: で片がつく
+  - kind: para
+    text: たいていはmb_strlen($s, 'UTF-8')
+  - kind: para
+    text: で片がつく
   p117:
-  - node: p
-    children:
-    - node: text
-      content: 「文字数」と「表示幅」は
-    - node: br
-    - node: text
-      content: 全然違う概念なので厄介
-  - node: p
-    children:
-    - node: text
-      content: (なので、今回紹介した
-    - node: br
-    - node: text
-      content: each_grapheme()を使って計算して
-    - node: br
-    - node: text
-      content: もうまくいかない)
+  - kind: heading
+    level: 1
+    text: 「文字数」と「表示幅」は
+  - kind: heading
+    level: 1
+    text: 全然違う概念なので厄介
+  - kind: para
+    text: (なので、今回紹介したeach_grapheme()を使って計算してもうまくいかない)
   p118:
-  - node: p
-    children:
-    - node: text
-      content: オチはないけど各位 よく考えて「文字」
-    - node: br
-    - node: text
-      content: 単位とつきあって
-  - node: p
-    children:
-    - node: text
-      content: いきましょう
+  - kind: para
+    text: オチはないけど各位よく考えて「文字」単位とつきあっていきましょう
   p119:
-  - node: p
-    children:
-    - node: text
-      content: ちなみにTwitterの140 文字制限がDBの制約 ではないことは明白
+  - kind: para
+    text: ちなみにTwitterの140文字制限がDBの制約ではないことは明白
 size:
   max_width: 1024
   max_height: 768

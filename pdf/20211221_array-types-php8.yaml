@@ -1,904 +1,326 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: PHP8時代にarray型と向き合う
-  - node: p
-    children:
-    - node: text
-      content: Faced with array type in the PHP 8.x era
-  - node: p
-    children:
-    - node: text
-      content: pixiv Inc.
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: text
-      content: 2021-12-21
-  - node: p
-    children:
-    - node: bold
-      content: PHPerKaigi petit - PHP8.1リリース祝賀会
+  - kind: heading
+    level: 1
+    text: PHP8時代に
+  - kind: heading
+    level: 1
+    text: array型と向き合う
+  - kind: heading
+    level: 2
+    text: Faced with array type in the PHP 8.x era
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2021-12-21 PHPerKaigi petit - PHP8.1リリース祝賀会
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: PHPカンファレンス実行委員、PHPerKaigi コアスタッフ
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています (PSR-15!)
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - PHPカンファレンス実行委員、PHPerKaigi コアスタッフ
   p3:
-  - node: p
-    children:
-    - node: text
-      content: tadsanのあれこれが読める場所
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://tadsan.fanbox.cc/
-    - node: li
-      children:
-      - node: text
-        content: https://scrapbox.io/php/
-    - node: li
-      children:
-      - node: text
-        content: https://www.phper.ninja/
-    - node: li
-      children:
-      - node: text
-        content: https://zenn.dev/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://qiita.com/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://github.com/bag2php
+  - kind: para
+    text: tadsanのあれこれが読める場所
+  - kind: list
+    items:
+    - https://tadsan.fanbox.cc/
+    - https://scrapbox.io/php/
+    - https://www.phper.ninja/
+    - https://zenn.dev/tadsan
+    - https://qiita.com/tadsan
+    - https://github.com/bag2php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB PRESS総集編
+  - kind: heading
+    level: 1
+    text: WEB+DB PRESS総集編
   p5:
-  - node: p
-    children:
-    - node: text
-      content: Software Design 11月号
+  - kind: heading
+    level: 1
+    text: Software Design 11月号
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 前回までのあらすじ
+  - kind: heading
+    level: 1
+    text: 前回までのあらすじ
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 最後のPHP勉強会
-  - node: p
-    children:
-    - node: text
-      content: (2020年)
+  - kind: heading
+    level: 1
+    text: 最後のPHP勉強会(2020年)
   p8:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス沖縄2021
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス沖縄2021
   p9:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス2021
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス2021
   p10:
-  - node: p
-    children:
-    - node: text
-      content: なんかいろいろ 話してきました
+  - kind: para
+    text: なんかいろいろ話してきました
   p11:
-  - node: p
-    children:
-    - node: text
-      content: PHPの進化は 型宣言の進化
+  - kind: para
+    text: PHPの進化は型宣言の進化
   p12:
-  - node: p
-    children:
-    - node: text
-      content: 型がついていない関数(PHP5)
-  - node: p
-    children:
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 型がついていない関数(PHP5)
+  - kind: para
+    text: function add($a, $b) {return $a + $b;}
   p13:
-  - node: p
-    children:
-    - node: text
-      content: スカラー型宣言(PHP7)
-  - node: p
-    children:
-    - node: text
-      content: 'int + intって '
-    - node: br
-    - node: text
-      content: 本当にintなの？
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: スカラー型宣言(PHP7)
+  - kind: para
+    text: int + intって本当にintなの？
+  - kind: para
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 広い値をとるにはﬂoatが必要
-  - node: p
-    children:
-    - node: text
-      content: 'ひとつの解決策では '
-    - node: br
-    - node: text
-      content: あるが… 不必要にfloat
-    - node: br
-    - node: text
-      content: を強制するのか
-  - node: p
-    children:
-    - node: text
-      content: 'function add(float $a, float $b): float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 広い値をとるにはfloatが必要
+  - kind: para
+    text: ひとつの解決策ではあるが… 不必要にfloatを強制するのか
+  - kind: para
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p15:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの型注釈
-  - node: p
-    children:
-    - node: text
-      content: (アノテーション)
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @param int|float $a'
-  - node: p
-    children:
-    - node: text
-      content: あえて型宣言を省略する
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int|float $b'
-    - node: br
-    - node: text
-      content: ' * @return int|float'
-    - node: br
-    - node: text
-      content: ' */         '
-    - node: br
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p16:
-  - node: p
-    children:
-    - node: text
-      content: ユニオン型宣言 (PHP8.0)
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int|float $a, int|float $b): int|float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: ユニオン型宣言 (PHP8.0)
+  - kind: para
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 'クラスの型も '
-    - node: br
-    - node: text
-      content: PHP7→8で進化
+  - kind: para
+    text: クラスの型もPHP7→8で進化
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 著者を持つBookクラス
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    /** @var Author */         '
-    - node: br
-    - node: text
-      content: '    private $author         '
-    - node: br
-    - node: text
-      content: '    public function __construct(Author $author) {         '
-    - node: br
-    - node: text
-      content: '        $this->author = $author;'
-    - node: br
-    - node: text
-      content: '   }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: 著者を持つBookクラス
+  - kind: para
+    text: class Book{/** @var Author */private $author public function __construct(Author
+      $author) {$this->author = $author;}}
   p19:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.4でプロパティ型宣言
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    /** @var Author */         '
-    - node: br
-    - node: text
-      content: '    private Author $author         '
-    - node: br
-    - node: text
-      content: '    public function __construct(Author $author) {         '
-    - node: br
-    - node: text
-      content: '        $this->author = $author;'
-    - node: br
-    - node: text
-      content: '   }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: PHP 7.4でプロパティ型宣言
+  - kind: para
+    text: class Book{/** @var Author */private Author $author public function __construct(Author
+      $author) {$this->author = $author;}}
   p20:
-  - node: p
-    children:
-    - node: text
-      content: コンストラクタプロモーション
-  - node: p
-    children:
-    - node: text
-      content: (PHP8)
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        private Author $author         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 何も書かなくてもプロパティに代入される
-  - node: p
-    children:
-    - node: text
-      content: '        //           '
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: コンストラクタプロモーション(PHP8)
+  - kind: para
+    text: class Book{function __construct(private Author $author) {// 何も書かなくてもプロパティに代入される
+  - kind: para
+    text: '}}'
   p21:
-  - node: p
-    children:
-    - node: text
-      content: readonlyプロパティ
-  - node: p
-    children:
-    - node: text
-      content: (PHP8.1)
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        public readonly Author $author         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 何も書かなくてもプロパティに代入される
-  - node: p
-    children:
-    - node: text
-      content: '        //           '
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: readonlyプロパティ(PHP8.1)
+  - kind: para
+    text: class Book{function __construct(public readonly Author $author) {// 何も書かなくてもプロパティに代入される
+  - kind: para
+    text: '}}'
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 'かくしてPHP '
-    - node: br
-    - node: text
-      content: 'PHPDocの型が '
-    - node: br
-    - node: text
-      content: 不要な世界に
+  - kind: para
+    text: かくしてPHP PHPDocの型が不要な世界に
   p23:
-  - node: p
-    children:
-    - node: text
-      content: Bookクラスは著者を持つ
-  - node: p
-    children:
-    - node: text
-      content: '上司 '
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-  - node: p
-    children:
-    - node: text
-      content: 「共著を想定できてる？」
-  - node: p
-    children:
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        private Author $author         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 何も書かなくてもプロパティに代入される
-  - node: p
-    children:
-    - node: text
-      content: '        //           '
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: Bookクラスは著者を持つ
+  - kind: para
+    text: 上司「共著を想定できてる？」
+  - kind: para
+    text: class Book{function __construct(private Author $author) {// 何も書かなくてもプロパティに代入される
+  - kind: para
+    text: '}}'
   p24:
-  - node: p
-    children:
-    - node: text
-      content: Bookクラスは複数の著者を持つ
-  - node: p
-    children:
-    - node: text
-      content: 'arrayにすることで '
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-  - node: p
-    children:
-    - node: text
-      content: 複数であることを表現
-  - node: p
-    children:
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct('
-    - node: br
-    - node: text
-      content: '        private array $authors         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 何も書かなくてもプロパティに代入される
-  - node: p
-    children:
-    - node: text
-      content: '        //           '
-  - node: p
-    children:
-    - node: text
-      content: 'Authorクラスの '
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: 情報が減ってる…
-  - node: p
-    children:
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: Bookクラスは複数の著者を持つ
+  - kind: para
+    text: arrayにすることで複数であることを表現
+  - kind: para
+    text: class Book{function __construct(private array $authors) {// 何も書かなくてもプロパティに代入される
+  - kind: para
+    text: Authorクラスの情報が減ってる…
+  - kind: para
+    text: '}}'
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 著者一覧を出力したい
-  - node: p
-    children:
-    - node: text
-      content: 'Book::$authors : array 中身が何かわからない！'
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function printAuthors($fp): void {'
-    - node: br
-    - node: text
-      content: '       foreach ($this->authors as $author) {                     fwrite($fp, $author->getName());         '
-    - node: br
-    - node: text
-      content: '       }         '
-  - node: p
-    children:
-    - node: text
-      content: 'Authorクラスの '
-  - node: p
-    children:
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: メソッドを補完できない
-  - node: p
-    children:
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: 著者一覧を出力したい
+  - kind: para
+    text: 'Book::$authors : array'
+  - kind: para
+    text: 中身が何かわからない！
+  - kind: para
+    text: Authorクラスのメソッドを補完できない
+  - kind: para
+    text: 'class Book{function printAuthors($fp): void {foreach ($this->authors as
+      $author) {fwrite($fp, $author->getName());}}}'
   p26:
-  - node: p
-    children:
-    - node: text
-      content: '何か大事なものを '
-    - node: br
-    - node: text
-      content: '失ってしまった '
-    - node: br
-    - node: text
-      content: 気がする
+  - kind: para
+    text: 何か大事なものを失ってしまった気がする
   p27:
-  - node: p
-    children:
-    - node: text
-      content: '今回は配列に絞って '
-    - node: br
-    - node: text
-      content: 話します
+  - kind: para
+    text: 今回は配列に絞って話します
   p28:
-  - node: p
-    children:
-    - node: text
-      content: PHPの配列は万能
+  - kind: heading
+    level: 1
+    text: PHPの配列は万能
   p29:
-  - node: p
-    children:
-    - node: text
-      content: PHPの配列はなんでもできる
+  - kind: heading
+    level: 1
+    text: PHPの配列はなんでもできる
   p30:
-  - node: p
-    children:
-    - node: text
-      content: PHPマニュアルより引用
+  - kind: heading
+    level: 1
+    text: PHPマニュアルより引用
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPの配列は '
-    - node: br
-    - node: text
-      content: ハッシュテーブル
+  - kind: para
+    text: PHPの配列はハッシュテーブル
   p32:
-  - node: p
-    children:
-    - node: text
-      content: JavaScript/Rubyの場合
+  - kind: heading
+    level: 1
+    text: JavaScript/Rubyの場合
   p33:
-  - node: p
-    children:
-    - node: text
-      content: PHPの場合
+  - kind: heading
+    level: 1
+    text: PHPの場合
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 何が違うのか
+  - kind: heading
+    level: 1
+    text: 何が違うのか
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 他の言語における配列(array)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: C言語における配列はメモリ上の連続した領域に並べたもの
-      - node: br
-      - node: text
-        content: '(ポインタとかアドレスとかの概念が絡んでくる) '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: インデックスは0が始点、長さ(値の数)は最初に決める
-    - node: li
-      children:
-      - node: text
-        content: JavaScriptやRubyでの配列は複数の値を格納できるオブジェクト
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: インデックスは0が始点、動的に拡張される
-        - node: li
-          children:
-          - node: text
-            content: 長さ以上のインデックスに代入されると、間の値はnull的な値で埋められる
+  - kind: heading
+    level: 1
+    text: 他の言語における配列(array)
+  - kind: list
+    items:
+    - C言語における配列はメモリ上の連続した領域に並べたもの
+  - kind: para
+    text: (ポインタとかアドレスとかの概念が絡んでくる)
+  - kind: list
+    items:
+    - インデックスは0が始点、長さ(値の数)は最初に決める
+    - JavaScriptやRubyでの配列は複数の値を格納できるオブジェクト
+    - インデックスは0が始点、動的に拡張される
+    - 長さ以上のインデックスに代入されると、間の値はnull的な値で埋められる
   p36:
-  - node: p
-    children:
-    - node: text
-      content: PHPの配列はハッシュテーブル
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの配列は基本的にハッシュテーブルというデータ構造
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 任意の int または string の値をキーにできる
-        - node: li
-          children:
-          - node: text
-            content: 長さ以上に代入しても間がnullで埋められることはない
-    - node: li
-      children:
-      - node: text
-        content: 連続していない前提の配列を特に「連想配列」と呼ぶ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 英語ではassociative array (略してassoc)などと呼ばれる
-    - node: li
-      children:
-      - node: text
-        content: PHPだけではなくLuaという言語も似た仕様
+  - kind: para
+    text: PHPの配列はハッシュテーブル
+  - kind: list
+    items:
+    - PHPの配列は基本的にハッシュテーブルというデータ構造
+    - 任意の int または string の値をキーにできる
+    - 長さ以上に代入しても間がnullで埋められることはない
+    - 連続していない前提の配列を特に「連想配列」と呼ぶ
+    - 英語ではassociative array (略してassoc)などと呼ばれる
+    - PHPだけではなくLuaという言語も似た仕様
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PHP7の内部実装から学ぶ性能改善テクニック
+  - kind: heading
+    level: 1
+    text: PHP7の内部実装から学ぶ性能改善テクニック
   p38:
-  - node: p
-    children:
-    - node: text
-      content: PHP7から内部的に「配列」が入った
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2015年リリースのPHP 7.0ではデータ構造に大きく手が入った
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: $a = [1, 2, 3] のような値は(C言語的な意味)の配列として保持される
-        - node: li
-          children:
-          - node: text
-            content: 既存の配列に $a['str'] = 'val' のように追加するとき
-          - node: br
-          - node: text
-            content: ハッシュテーブルに詰め替えられる
+  - kind: heading
+    level: 1
+    text: PHP7から内部的に「配列」が入った
+  - kind: list
+    items:
+    - 2015年リリースのPHP 7.0ではデータ構造に大きく手が入った
+    - $a = [1, 2, 3] のような値は(C言語的な意味)の配列として保持される
+    - 既存の配列に $a['str'] = 'val' のように追加するとき
+  - kind: para
+    text: ハッシュテーブルに詰め替えられる
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 連想配列 vs リスト
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPでは区別されないが、たとえば値をjson_encode()する時など
-      - node: br
-      - node: text
-        content: '連想配列と連続した値を厳密に比較したいことはありうる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: JSONでは歯抜けの値があると [] ではなく {} になってしまう
-        - node: li
-          children:
-          - node: text
-            content: array_9lter() の結果など
-    - node: li
-      children:
-      - node: text
-        content: array_values() で歯抜けのない配列に変換できる
-    - node: li
-      children:
-      - node: text
-        content: PHP 8.1で array_is_list() で判定できる
+  - kind: para
+    text: 連想配列 vs リスト
+  - kind: list
+    items:
+    - PHPでは区別されないが、たとえば値をjson_encode()する時など
+  - kind: para
+    text: 連想配列と連続した値を厳密に比較したいことはありうる
+  - kind: list
+    items:
+    - JSONでは歯抜けの値があると [] ではなく {} になってしまう
+    - array_filter() の結果など
+    - array_values() で歯抜けのない配列に変換できる
+    - PHP 8.1で array_is_list() で判定できる
   p40:
-  - node: p
-    children:
-    - node: text
-      content: array_is_list()について
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP 8.1で追加された関数
-    - node: li
-      children:
-      - node: text
-        content: 従来は 0 から順にforeachして歯抜けがないかチェックする必要があった
-    - node: li
-      children:
-      - node: text
-        content: 静的解析ツール(PHPStan, Psalmなど)ではPHPDocに
-      - node: br
-      - node: text
-        content: 'array<int,string> の代りに list<string>と書ける '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近のPhpStormでは(検査は不十分だが)認識してくれる
-        - node: li
-          children:
-          - node: text
-            content: Intelephenseは未実装
+  - kind: para
+    text: array_is_list()について
+  - kind: list
+    items:
+    - PHP 8.1で追加された関数
+    - 従来は 0 から順にforeachして歯抜けがないかチェックする必要があった
+    - 静的解析ツール(PHPStan, Psalmなど)ではPHPDocに
+  - kind: para
+    text: array<int,string> の代りに list<string>と書ける
+  - kind: list
+    items:
+    - 最近のPhpStormでは(検査は不十分だが)認識してくれる
+    - Intelephenseは未実装
   p41:
-  - node: p
-    children:
-    - node: text
-      content: Authorsはどうなれば
-    - node: br
-    - node: text
-      content: よかったのか
+  - kind: para
+    text: Authorsはどうなればよかったのか
   p42:
-  - node: p
-    children:
-    - node: text
-      content: Bookクラスは複数の著者を持つ
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct(         '
-  - node: p
-    children:
-    - node: text
-      content: '        private array $authors         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 何も書かなくてもプロパティに代入される
-  - node: p
-    children:
-    - node: text
-      content: '        //           '
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: Bookクラスは複数の著者を持つ
+  - kind: para
+    text: class Book{function __construct(
+  - kind: para
+    text: private array $authors) {// 何も書かなくてもプロパティに代入される
+  - kind: para
+    text: '}}'
   p43:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの帰還
-  - node: p
-    children:
-    - node: text
-      content: 'class Book         '
-    - node: br
-    - node: text
-      content: '{         '
-    - node: br
-    - node: text
-      content: '    function __construct(         '
-    - node: br
-    - node: text
-      content: '        /** @var list<Authors> */'
-    - node: br
-    - node: text
-      content: '        private array $authors         '
-    - node: br
-    - node: text
-      content: '    ) {'
-  - node: p
-    children:
-    - node: text
-      content: 何も書かなくてもプロパティに代入される
-  - node: p
-    children:
-    - node: text
-      content: '        //           '
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}         '
+  - kind: heading
+    level: 1
+    text: PHPDocの帰還
+  - kind: para
+    text: class Book{function __construct(/** @var list<Authors> */private array $authors)
+      {// 何も書かなくてもプロパティに代入される
+  - kind: para
+    text: '}}'
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 配列はひとつ！じゃない！！
-  - node: p
-    children:
-    - node: text
-      content: list<int>
-  - node: p
-    children:
-    - node: text
-      content: array<int,string>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDがならんだリスト ［123, 456］
-    - node: li
-      children:
-      - node: text
-        content: ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
-    - node: li
-      children:
-      - node: text
-        content: ユーザを表す構造体がならんだリスト
-  - node: p
-    children:
-    - node: text
-      content: array{id:int, name:string}
-  - node: p
-    children:
-    - node: text
-      content: '[ '
-    - node: br
-    - node: text
-      content: '    [''id'' => 123, ''name'' => ''野比のび太''], '
-    - node: br
-    - node: text
-      content: '    [''id'' => 234, ''name'' => ''源静香''], '
-  - node: p
-    children:
-    - node: text
-      content: '] '
-  - node: p
-    children:
-    - node: text
-      content: list<array{id:int, name:string}>
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: list
+    items:
+    - ユーザIDがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
+  - kind: para
+    text: list<array{id:int, name:string}>
 size:
   max_width: 1920
   max_height: 1080

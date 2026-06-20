@@ -1,202 +1,93 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: PHP1.0とは何だったのか
-  - node: p
-    children:
-    - node: text
-      content: Untold PHP 1.0
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-10-08 '
-  - node: p
-    children:
-    - node: bold
-      content: PHP Conference Japan 2023 懇親会LT
+  - kind: heading
+    level: 1
+    text: PHP1.0とは何だったのか
+  - kind: heading
+    level: 2
+    text: Untold PHP 1.0
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2023-10-08 PHP Conference Japan 2023 懇親会LT
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職でPHPを書いているWebプログラマ
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職でPHPを書いているWebプログラマ
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 明日イベントやります
+  - kind: heading
+    level: 1
+    text: 明日イベントやります
   p4: []
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 'みなさん '
-  - node: p
-    children:
-    - node: text
-      content: 'PHP '
-    - node: br
-    - node: text
-      content: 使ってますか？
+  - kind: para
+    text: みなさんPHP使ってますか？
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 'みなさん '
-  - node: p
-    children:
-    - node: text
-      content: 'PHP 8.2 '
-    - node: br
-    - node: text
-      content: 使ってますか？
+  - kind: para
+    text: みなさんPHP 8.2使ってますか？
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 'みなさん '
-  - node: p
-    children:
-    - node: text
-      content: 'PHP 1.0 '
-    - node: br
-    - node: text
-      content: 使ってますか？
+  - kind: para
+    text: みなさんPHP 1.0使ってますか？
   p8:
-  - node: p
-    children:
-    - node: text
-      content: PHPの歴史
+  - kind: heading
+    level: 1
+    text: PHPの歴史
   p9: []
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'ソースコードが '
-    - node: br
-    - node: text
-      content: あります！
+  - kind: para
+    text: ソースコードがあります！
   p11: []
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: PHP 1.0.8?
+  - kind: heading
+    level: 1
+    text: PHP 1.0.8?
   p14:
-  - node: p
-    children:
-    - node: text
-      content: フォームを記録する
-  - node: p
-    children:
-    - node: text
-      content: アクセス解析(統計)
-  - node: p
-    children:
-    - node: text
-      content: フォームログ閲覧
-  - node: p
-    children:
-    - node: text
-      content: フォーム表示
+  - kind: para
+    text: フォームを記録する
+  - kind: para
+    text: アクセス解析(統計)
+  - kind: para
+    text: フォームログ閲覧
+  - kind: para
+    text: フォーム表示
   p15:
-  - node: p
-    children:
-    - node: text
-      content: ディレクトリトラバーサル
-    - node: br
-    - node: text
-      content: 対策されてる
+  - kind: para
+    text: ディレクトリトラバーサル対策されてる
   p16:
-  - node: p
-    children:
-    - node: text
-      content: '肝腎の '
-    - node: br
-    - node: text
-      content: パーサー部分は？
+  - kind: para
+    text: 肝腎のパーサー部分は？
   p17: []
   p18:
-  - node: p
-    children:
-    - node: text
-      content: UA文字列判定
-  - node: p
-    children:
-    - node: text
-      content: mSQL組込
-    - node: br
-    - node: text
-      content: (SQLi大丈夫?)
-  - node: p
-    children:
-    - node: text
-      content: これはエスケープ
-    - node: br
-    - node: text
-      content: されるらしい
-  - node: p
-    children:
-    - node: text
-      content: すごいSSIっぽい
+  - kind: para
+    text: UA文字列判定
+  - kind: para
+    text: mSQL組込(SQLi大丈夫?)
+  - kind: para
+    text: これはエスケープされるらしい
+  - kind: para
+    text: すごいSSIっぽい
   p19: []
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '調べたけど '
-    - node: br
-    - node: text
-      content: わかりませんでした
+  - kind: para
+    text: 調べたけどわかりませんでした
   p21:
-  - node: p
-    children:
-    - node: text
-      content: いかがでしたか？
+  - kind: heading
+    level: 1
+    text: いかがでしたか？
   p22:
-  - node: p
-    children:
-    - node: text
-      content: キミも考古学者になって
-    - node: br
-    - node: text
-      content: 'PHPの闇の歴史に '
-    - node: br
-    - node: text
-      content: 光を照らせ！
+  - kind: para
+    text: キミも考古学者になってPHPの闇の歴史に光を照らせ！
   p23: []
 size:
   max_width: 1920

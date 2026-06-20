@@ -1,1309 +1,472 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: ふつうのpixivのつくりかた
-  - node: p
-    children:
-    - node: text
-      content: An introduction to building pixiv for ordinary PHPers
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-07-26 '
-  - node: p
-    children:
-    - node: bold
-      content: PHP の今を語る！4社合同勉強会
+  - kind: heading
+    level: 1
+    text: ふつうのpixivのつくりかた
+  - kind: heading
+    level: 2
+    text: An introduction to building pixiv for ordinary PHPers
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2023-07-26 PHP の今を語る！4社合同勉強会
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人
   p3:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス沖縄2023
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス沖縄2023
   p4:
-  - node: p
-    children:
-    - node: text
-      content: LLイベント
+  - kind: heading
+    level: 1
+    text: LLイベント
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 　　   の紹介
+  - kind: heading
+    level: 1
+    text: の紹介
   p6:
-  - node: p
-    children:
-    - node: text
-      content: pixiv.netとは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: “好き”に出会えるイラスト・マンガ・小説作品の投稿プラットフォーム
-    - node: li
-      children:
-      - node: text
-        content: 2007年9月10日に開始
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '累計登録ユーザー数: 約9300万ID'
-        - node: li
-          children:
-          - node: text
-            content: '累計作品投稿作品数: 約1.2億作品 (うち小説1900万作品)'
-        - node: li
-          children:
-          - node: text
-            content: 'イラストブックマーク: 約200億件'
-    - node: li
-      children:
-      - node: text
-        content: Web・スマートフォンアプリで展開
+  - kind: para
+    text: pixiv.netとは
+  - kind: list
+    items:
+    - “好き”に出会えるイラスト・マンガ・小説作品の投稿プラットフォーム
+    - 2007年9月10日に開始
+    - '累計登録ユーザー数: 約9300万ID'
+    - '累計作品投稿作品数: 約1.2億作品 (うち小説1900万作品)'
+    - 'イラストブックマーク: 約200億件'
+    - Web・スマートフォンアプリで展開
   p7:
-  - node: p
-    children:
-    - node: text
-      content: ThePHPF
+  - kind: heading
+    level: 1
+    text: ThePHPF
   p8:
-  - node: p
-    children:
-    - node: text
-      content: OSPO
+  - kind: heading
+    level: 1
+    text: OSPO
   p9:
-  - node: p
-    children:
-    - node: text
-      content: ふつう
-  - node: p
-    children:
-    - node: text
-      content: '#とは'
+  - kind: heading
+    level: 1
+    text: 'ふつう #とは'
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'フレームワークが '
-    - node: br
-    - node: text
-      content: 使われていない
+  - kind: para
+    text: フレームワークが使われていない
   p11:
-  - node: p
-    children:
-    - node: text
-      content: ただのPHP
+  - kind: heading
+    level: 1
+    text: ただのPHP
   p12:
-  - node: p
-    children:
-    - node: text
-      content: ※諸説あります
+  - kind: heading
+    level: 1
+    text: ※諸説あります
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '諸説ありますが 難しい構造には '
-    - node: br
-    - node: text
-      content: なってない
+  - kind: para
+    text: 諸説ありますが難しい構造にはなってない
   p14:
-  - node: p
-    children:
-    - node: text
-      content: メタプログラミングは
-    - node: br
-    - node: text
-      content: '基本的に '
-    - node: br
-    - node: text
-      content: あまりやらない
+  - kind: para
+    text: メタプログラミングは基本的にあまりやらない
   p15:
-  - node: p
-    children:
-    - node: text
-      content: (こっそり使ってる 部分もありますが 大筋は追えるはず)
+  - kind: para
+    text: (こっそり使ってる部分もありますが大筋は追えるはず)
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP詳しくない人でも 雰囲気に従って書けば セキュリティの問題は '
-    - node: br
-    - node: text
-      content: 起こさないように
+  - kind: para
+    text: PHP詳しくない人でも雰囲気に従って書けばセキュリティの問題は起こさないように
   p17:
-  - node: p
-    children:
-    - node: text
-      content: pixivのPHP
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPはApache+mod_php (一時fpmを使っていたこともある)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: nginxからリバースプロキシしてApacheにリクエスト
-        - node: li
-          children:
-          - node: text
-            content: PHPそのものは独自でビルドしてはいるがプレーン
-    - node: li
-      children:
-      - node: text
-        content: DocumentRootにある.phpファイルから処理を辿っていけば全部わかる
-    - node: li
-      children:
-      - node: text
-        content: LinuxとかMySQLとかよくあるLAMPスタックに載っている
+  - kind: para
+    text: pixivのPHP
+  - kind: list
+    items:
+    - PHPはApache+mod_php (一時fpmを使っていたこともある)
+    - nginxからリバースプロキシしてApacheにリクエスト
+    - PHPそのものは独自でビルドしてはいるがプレーン
+    - DocumentRootにある.phpファイルから処理を辿っていけば全部わかる
+    - LinuxとかMySQLとかよくあるLAMPスタックに載っている
   p18:
-  - node: p
-    children:
-    - node: text
-      content: よくある質問
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: フレームワークは使ってないの？
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 使ってません。マイクロフレームワークのようなものはいくつかある
-        - node: li
-          children:
-          - node: text
-            content: べんりユーティリティの集合でフレームワークに似ているが実態はラッパー
-    - node: li
-      children:
-      - node: text
-        content: フレームワーク／言語の移行やフルスクラッチしないの…？
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 直近での予定はありません。過去に痛い目にも遭ってるし
+  - kind: heading
+    level: 1
+    text: よくある質問
+  - kind: list
+    items:
+    - フレームワークは使ってないの？
+    - 使ってません。マイクロフレームワークのようなものはいくつかある
+    - べんりユーティリティの集合でフレームワークに似ているが実態はラッパー
+    - フレームワーク／言語の移行やフルスクラッチしないの…？
+    - 直近での予定はありません。過去に痛い目にも遭ってるし
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 10年前のコードのイメージ
-  - node: p
-    children:
-    - node: text
-      content: <?php // www.pixiv.net/htdocs/hoge.php
-    - node: br
-    - node: text
-      content: require_once __DIR__ . '/../inc/bootstrap.php';
-  - node: p
-    children:
-    - node: text
-      content: include_onceいっぱい
-  - node: p
-    children:
-    - node: text
-      content: include_once INC_PATH . '/Hoge/Fuga.php';
-    - node: br
-    - node: text
-      content: include_once INC_PATH . '/Hoge/Piyo.class.php';
-    - node: br
-    - node: text
-      content: try {
-    - node: br
-    - node: text
-      content: '    display()'
-  - node: p
-    children:
-    - node: text
-      content: 'エラーハンドリング '
-  - node: p
-    children:
-    - node: text
-      content: '} catch (Exception $e) {'
-  - node: p
-    children:
-    - node: text
-      content: (してないページもあった)
-  - node: p
-    children:
-    - node: text
-      content: '    error::exception_error($e);'
-    - node: br
-    - node: text
-      content: '}'
-  - node: p
-    children:
-    - node: text
-      content: この下にもいっぱい
-  - node: p
-    children:
-    - node: text
-      content: function display() {
-  - node: p
-    children:
-    - node: text
-      content: ファイルローカルな
-  - node: p
-    children:
-    - node: text
-      content: '    // ...'
-  - node: p
-    children:
-    - node: text
-      content: グローバル関数
+  - kind: heading
+    level: 1
+    text: 10年前のコードのイメージ
+  - kind: para
+    text: include_onceいっぱい
+  - kind: para
+    text: エラーハンドリング(してないページもあった)
+  - kind: para
+    text: <?php // www.pixiv.net/htdocs/hoge.php require_once __DIR__ . '/../inc/bootstrap.php';include_once
+      INC_PATH . '/Hoge/Fuga.php';include_once INC_PATH . '/Hoge/Piyo.class.php';try
+      {display()} catch (Exception $e) {error::exception_error($e);}
+  - kind: para
+    text: この下にもいっぱい
+  - kind: para
+    text: ファイルローカルな
+  - kind: para
+    text: function display() {// ...
+  - kind: para
+    text: グローバル関数
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 2015年のコードのイメージ
-  - node: p
-    children:
-    - node: text
-      content: <?php // www.pixiv.net/htdocs/hoge.php
-    - node: br
-    - node: text
-      content: require_once __DIR__ . '/../inc/bootstrap.php';
-  - node: p
-    children:
-    - node: text
-      content: include_once一個だけ
-  - node: p
-    children:
-    - node: text
-      content: AppRunner::execute(new Www_HogeController);
-  - node: p
-    children:
-    - node: text
-      content: 'このクラスは '
-    - node: br
-    - node: text
-      content: 自動ロードされる
+  - kind: heading
+    level: 1
+    text: 2015年のコードのイメージ
+  - kind: para
+    text: <?php // www.pixiv.net/htdocs/hoge.php require_once __DIR__ . '/../inc/bootstrap.php';
+  - kind: para
+    text: include_once一個だけ
+  - kind: para
+    text: AppRunner::execute(new Www_HogeController);
+  - kind: para
+    text: このクラスは自動ロードされる
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 2018年のコードのイメージ
-  - node: p
-    children:
-    - node: text
-      content: final class Controller_WwwRoutes {
-  - node: p
-    children:
-    - node: text
-      content: htdocs/hoge.phpは消滅
-  - node: p
-    children:
-    - node: text
-      content: '   public static function getRoutes() {'
-    - node: br
-    - node: text
-      content: '        $route_map = ['
-    - node: br
-    - node: text
-      content: '            ''/'' => ['
-    - node: br
-    - node: text
-      content: '                ''action'' => function () {'
-  - node: p
-    children:
-    - node: text
-      content: URLとファイルは切り離され　
-  - node: p
-    children:
-    - node: text
-      content: '                    Www_IndexController::main();'
-  - node: p
-    children:
-    - node: text
-      content: マップの一要素に
-  - node: p
-    children:
-    - node: text
-      content: '                },'
-    - node: br
-    - node: text
-      content: '            ],'
-    - node: br
-    - node: text
-      content: '            ''/hoge.php'' => ['
-    - node: br
-    - node: text
-      content: '                ''action'' => function () {'
-  - node: p
-    children:
-    - node: text
-      content: 全URLが1ファイルに
-  - node: p
-    children:
-    - node: text
-      content: '                    Www_HogeController::main();'
-    - node: br
-    - node: text
-      content: '                },'
+  - kind: heading
+    level: 1
+    text: 2018年のコードのイメージ
+  - kind: para
+    text: htdocs/hoge.phpは消滅
+  - kind: para
+    text: URLとファイルは切り離され
+  - kind: para
+    text: マップの一要素に
+  - kind: para
+    text: 全URLが1ファイルに
+  - kind: para
+    text: final class Controller_WwwRoutes {public static function getRoutes() {$route_map
+      = ['/' => ['action' => function () {Www_IndexController::main();},],'/hoge.php'
+      => ['action' => function () {Www_HogeController::main();},
   p22:
-  - node: p
-    children:
-    - node: text
-      content: カンファレンス で発表
-  - node: p
-    children:
-    - node: bold
-      content: PHP 2017
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス2017で発表
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 2023年こうなりたい
-  - node: p
-    children:
-    - node: text
-      content: <?php // WwwRoutes.php
-  - node: p
-    children:
-    - node: text
-      content: '... ですっきり'
-  - node: p
-    children:
-    - node: text
-      content: '    public static function getRoutes() {'
-    - node: br
-    - node: text
-      content: '        return ['
-    - node: br
-    - node: text
-      content: '            ''/'' => Www_View_IndexController::main(...),'
-    - node: br
-    - node: text
-      content: '            ''/hoge'' => Www_View_HogeController::main(...),'
-    - node: br
-    - node: text
-      content: '            ''/.well-known/change-password'' => fn() =>         '
-    - node: br
-    - node: text
-      content: '                Util_Http::redirect_and_exit(         '
-    - node: br
-    - node: text
-      content: '                    ReverseRoute::fullAccountsPasswordChange([])'
-    - node: br
-    - node: text
-      content: '                ),'
-    - node: br
-    - node: text
-      content: '            ],'
+  - kind: heading
+    level: 1
+    text: 2023年こうなりたい
+  - kind: para
+    text: '... ですっきり'
+  - kind: para
+    text: <?php // WwwRoutes.php public static function getRoutes() {return ['/' =>
+      Www_View_IndexController::main(...),'/hoge' => Www_View_HogeController::main(...),'/.well-known/change-password'
+      => fn() =>Util_Http::redirect_and_exit(ReverseRoute::fullAccountsPasswordChange([])),],
   p24:
-  - node: p
-    children:
-    - node: text
-      content: コントローラをdispatchする処理
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: final class PCAppRunner {
-    - node: br
-    - node: text
-      content: '    public static function execute(Closure $action) {'
-    - node: br
-    - node: text
-      content: '        try {'
-  - node: p
-    children:
-    - node: text
-      content: whoops
-  - node: p
-    children:
-    - node: text
-      content: '            Controller_Util::turnOnWhoops();'
-    - node: br
-    - node: text
-      content: '            Controller_Util::redirectToHttps();'
-  - node: p
-    children:
-    - node: text
-      content: '            $action();'
-  - node: p
-    children:
-    - node: text
-      content: パソコン版
-  - node: p
-    children:
-    - node: text
-      content: '        } catch (\Throwable $exception) {'
-    - node: br
-    - node: text
-      content: '            PCAppRunner::setHttpStatus(500);'
-    - node: br
-    - node: text
-      content: '            Controller_Util::displayWhoops($exception);'
+  - kind: heading
+    level: 1
+    text: コントローラをdispatchする処理
+  - kind: para
+    text: <?php
+  - kind: para
+    text: whoops
+  - kind: para
+    text: final class PCAppRunner {public static function execute(Closure $action)
+      {try {Controller_Util::turnOnWhoops();Controller_Util::redirectToHttps();
+  - kind: para
+    text: パソコン版
+  - kind: para
+    text: $action();} catch (\Throwable $exception) {PCAppRunner::setHttpStatus(500);Controller_Util::displayWhoops($exception);
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 開発しやすさの ための取り組み
+  - kind: para
+    text: 開発しやすさのための取り組み
   p26:
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: text
-      content: ' (Jenkins, GitLab CI)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: GitLabにブランチをpush、MergeRequestを作るとCIが走る
-    - node: li
-      children:
-      - node: text
-        content: PHPUnit、PHPStanと独自の正規表現ベースのlinterでチェック
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPStanは2018年から運用開始
-        - node: li
-          children:
-          - node: text
-            content: 時間帯にもよるけどpushして10分かからずに結果がコメントされる
+  - kind: para
+    text: CI (Jenkins, GitLab CI)
+  - kind: list
+    items:
+    - GitLabにブランチをpush、MergeRequestを作るとCIが走る
+    - PHPUnit、PHPStanと独自の正規表現ベースのlinterでチェック
+    - PHPStanは2018年から運用開始
+    - 時間帯にもよるけどpushして10分かからずに結果がコメントされる
   p27:
-  - node: p
-    children:
-    - node: text
-      content: PHPで開発しにくいところ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 外部入力(クエリパラメータ・フォーム・JSON)の取得・検証
-    - node: li
-      children:
-      - node: text
-        content: PDOの機能の貧弱さ
-    - node: li
-      children:
-      - node: text
-        content: テンプレートエンジンとURLの問題
-    - node: li
-      children:
-      - node: text
-        content: RailsやLaravelにあるようなカッコイイ機能がない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: かっこいいエラー表示
-        - node: li
-          children:
-          - node: text
-            content: 対話環境/REPL (rails console)
+  - kind: para
+    text: PHPで開発しにくいところ
+  - kind: list
+    items:
+    - 外部入力(クエリパラメータ・フォーム・JSON)の取得・検証
+    - PDOの機能の貧弱さ
+    - テンプレートエンジンとURLの問題
+    - RailsやLaravelにあるようなカッコイイ機能がない
+    - かっこいいエラー表示
+    - 対話環境/REPL (rails console)
   p28:
-  - node: p
-    children:
-    - node: text
-      content: クエリパラメータの問題
-  - node: p
-    children:
-    - node: text
-      content: $id = $_GET['user_id'];
-    - node: br
-    - node: text
-      content: if (is_numeric($id))  User_Common::getById($id);
-  - node: p
-    children:
-    - node: text
-      content: 不正な入力です
-  - node: p
-    children:
-    - node: text
-      content: else error(" ");
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: こういうコードを書いてはいけない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: クエリパラメータに数字ではない値が入ってくる可能性
-        - node: li
-          children:
-          - node: text
-            content: 入力が空、入力が任意の文字列、入力が不正な数字列、入力が配列
-          - node: br
-          - node: text
-            content: Mlter_input() をかけると安全にはなるが、それでも面倒
+  - kind: heading
+    level: 1
+    text: クエリパラメータの問題
+  - kind: para
+    text: $id = $_GET['user_id'];if (is_numeric($id)) User_Common::getById($id);else
+      error("不正な入力です");
+  - kind: list
+    items:
+    - こういうコードを書いてはいけない
+    - クエリパラメータに数字ではない値が入ってくる可能性
+    - 入力が空、入力が任意の文字列、入力が不正な数字列、入力が配列
+  - kind: heading
+    level: 2
+    text: filter_input() をかけると安全にはなるが、それでも面倒
   p29:
-  - node: p
-    children:
-    - node: text
-      content: ParamHelper
-  - node: p
-    children:
-    - node: text
-      content: $id = ParamHelper::get('id')->asPositiveInt();
-    - node: br
-    - node: text
-      content: $user = User_Common::getById($id);
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 外部入力から値を取り出すヘルパー
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: クエリパラメータ・フォーム・URL・JSONなどに対応・拡張可能
-    - node: li
-      children:
-      - node: text
-        content: 未入力や不正な入力があると例外を投げる
-    - node: li
-      children:
-      - node: text
-        content: キャッチしてエラー画面を描画する
+  - kind: para
+    text: ParamHelper
+  - kind: para
+    text: $id = ParamHelper::get('id')->asPositiveInt();$user = User_Common::getById($id);
+  - kind: list
+    items:
+    - 外部入力から値を取り出すヘルパー
+    - クエリパラメータ・フォーム・URL・JSONなどに対応・拡張可能
+    - 未入力や不正な入力があると例外を投げる
+    - キャッチしてエラー画面を描画する
   p30:
-  - node: p
-    children:
-    - node: text
-      content: ParamHelper
-  - node: p
-    children:
-    - node: text
-      content: $mode = ParamHelper::get('mode')->asStringInArray['hoge', 'fuga']);
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ?mode=hoge または ?mode=fuga のみを期待するようなパターン
-    - node: li
-      children:
-      - node: text
-        content: 不正な形式や ?mode=piyo のような期待しない入力で例外を投げる
-    - node: li
-      children:
-      - node: text
-        content: PHPStan拡張で 'hoge'|'fuga' という型をつけている
-    - node: li
-      children:
-      - node: text
-        content: 型安全と実行時安全の両立！ (PHPカンファレンス沖縄で話します)
+  - kind: para
+    text: ParamHelper
+  - kind: para
+    text: $mode = ParamHelper::get('mode')->asStringInArray['hoge', 'fuga']);
+  - kind: list
+    items:
+    - ?mode=hoge または ?mode=fuga のみを期待するようなパターン
+    - 不正な形式や ?mode=piyo のような期待しない入力で例外を投げる
+    - PHPStan拡張で 'hoge'|'fuga' という型をつけている
+    - 型安全と実行時安全の両立！ (PHPカンファレンス沖縄で話します)
   p31:
-  - node: p
-    children:
-    - node: text
-      content: テンプレートとURL生成の問題
-  - node: p
-    children:
-    - node: text
-      content: <a href="{$smarty.const.SYSTEM_URL_WWW|escape}member_illust.php?id={$user.id|
-    - node: br
-    - node: text
-      content: escape}">{$user.name|escape}</a>
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: こういうコードを書くと事故が入り込みやすい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 純粋にtypoの危険性
-        - node: li
-          children:
-          - node: text
-            content: idなどのパラメータに不正な値を入れるリスク
+  - kind: heading
+    level: 1
+    text: テンプレートとURL生成の問題
+  - kind: para
+    text: <a href="{$smarty.const.SYSTEM_URL_WWW|escape}member_illust.php?id={$user.id|escape}">{$user.name|escape}</a>
+  - kind: list
+    items:
+    - こういうコードを書くと事故が入り込みやすい
+    - 純粋にtypoの危険性
+    - idなどのパラメータに不正な値を入れるリスク
   p32:
-  - node: p
-    children:
-    - node: text
-      content: → ReverseRoute
-  - node: p
-    children:
-    - node: text
-      content: '<a href="{reverse_route page=''fullWwwMemberProfile'' id=$user.id}">         '
-    - node: br
-    - node: text
-      content: '{$user.name|escape}</a>'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: あるページに名前をつけて、reverse_route関数に page 引数で渡す
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 生成結果は変更前と同じ
-        - node: li
-          children:
-          - node: text
-            content: ルーティングの逆関数にあたるので、一部のフレームワークは
-          - node: br
-          - node: text
-            content: ReverseRoutingやURLヘルパーなどの名前でサポートしてる
+  - kind: list
+    items:
+    - ReverseRoute
+  - kind: para
+    text: <a href="{reverse_route page='fullWwwMemberProfile' id=$user.id}">{$user.name|escape}</a>
+  - kind: list
+    items:
+    - あるページに名前をつけて、reverse_route関数に page 引数で渡す
+    - 生成結果は変更前と同じ
+    - ルーティングの逆関数にあたるので、一部のフレームワークは
+  - kind: heading
+    level: 1
+    text: ReverseRoutingやURLヘルパーなどの名前でサポートしてる
   p33:
-  - node: p
-    children:
-    - node: text
-      content: → ReverseRoute
-  - node: p
-    children:
-    - node: text
-      content: '    /**'
-    - node: br
-    - node: text
-      content: '     * @route\example https://www.pixiv.net/member.php?id=12345 {id:
-        12345}'
-    - node: br
-    - node: text
-      content: '     * @route\example https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx '
-    - node: br
-    - node: text
-      content: '{id: 12345, utm_source: "xxxxx"}'
-    - node: br
-    - node: text
-      content: '     */'
-    - node: br
-    - node: text
-      content: '    public static function fullWwwMemberProfile(array $params)'
-    - node: br
-    - node: text
-      content: '    {'
-    - node: br
-    - node: text
-      content: '        Util_Assert::num($params[''id'']);'
-  - node: p
-    children:
-    - node: text
-      content: '        return ReverseRoute::buildUrl(SYSTEM_URL_WWW, ''/member.php'',
-        [''id''], '
-    - node: br
-    - node: text
-      content: $params);
-    - node: br
-    - node: text
-      content: '    }'
+  - kind: list
+    items:
+    - ReverseRoute
+  - kind: para
+    text: '/*** @route\example https://www.pixiv.net/member.php?id=12345 {id: 12345}*
+      @route\example https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx{id:
+      12345, utm_source: "xxxxx"}*/public static function fullWwwMemberProfile(array
+      $params){Util_Assert::num($params[''id'']);'
+  - kind: para
+    text: return ReverseRoute::buildUrl(SYSTEM_URL_WWW, '/member.php', ['id'],$params);}
   p34:
-  - node: p
-    children:
-    - node: text
-      content: → Attribute最高！！
-  - node: p
-    children:
-    - node: text
-      content: '    #[RouteExample(''https://www.pixiv.net/member.php?id=12345'',
-        [''id''=> 12345])     #[RouteExample(''https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx, '
-    - node: br
-    - node: text
-      content: '[''id'' => 12345, ''utm_source'' => ''xxxxx''])'
-    - node: br
-    - node: text
-      content: '    public static function fullWwwMemberProfile(array $params)'
-    - node: br
-    - node: text
-      content: '    {'
-    - node: br
-    - node: text
-      content: '        Util_Assert::num($params[''id'']);'
-  - node: p
-    children:
-    - node: text
-      content: '        return ReverseRoute::buildUrl(SYSTEM_URL_WWW, ''/member.php'',
-        [''id''], '
-    - node: br
-    - node: text
-      content: $params);
-    - node: br
-    - node: text
-      content: '    }'
+  - kind: list
+    items:
+    - Attribute最高！！
+  - kind: para
+    text: '#[RouteExample(''https://www.pixiv.net/member.php?id=12345'', [''id''=>
+      12345])#[RouteExample(''https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx,[''id''
+      => 12345, ''utm_source'' => ''xxxxx''])public static function fullWwwMemberProfile(array
+      $params){Util_Assert::num($params[''id'']);'
+  - kind: para
+    text: return ReverseRoute::buildUrl(SYSTEM_URL_WWW, '/member.php', ['id'],$params);}
   p35:
-  - node: p
-    children:
-    - node: text
-      content: に書きました
-  - node: p
-    children:
-    - node: bold
-      content: 'blog  '
-  - node: p
-    children:
-    - node: bold
-      content: https://devpixiv.hatenablog.com/entry/2016/10/25/093000
+  - kind: heading
+    level: 1
+    text: blogに書きました
+  - kind: heading
+    level: 2
+    text: https://devpixiv.hatenablog.com/entry/2016/10/25/093000
   p36:
-  - node: p
-    children:
-    - node: text
-      content: PDOの問題
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: SQLは自動生成じゃなくて手で書きたい…
-      - node: br
-      - node: text
-        content: 'でもPDOで複雑なクエリを書こうとすると文字列結合が避けられない… '
-    - node: li
-      children:
-      - node: text
-        content: 'PDOで書きにくいクエリの代表例: id IN (1, 2, 3)'
-    - node: li
-      children:
-      - node: text
-        content: もう ? を並べてインデックスをインクリメントしながらbindValueはやだ…
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PDOのクエリのplaceholderに ? を書くか :hoge で書くか問題
-        - node: li
-          children:
-          - node: text
-            content: 型チェックできるように書くのもちょっとめんどう
-        - node: li
-          children:
-          - node: text
-            content: だからテンプレートエンジンを作ろう → PxvSql
+  - kind: heading
+    level: 1
+    text: PDOの問題
+  - kind: list
+    items:
+    - SQLは自動生成じゃなくて手で書きたい…
+  - kind: para
+    text: でもPDOで複雑なクエリを書こうとすると文字列結合が避けられない…
+  - kind: list
+    items:
+    - 'PDOで書きにくいクエリの代表例: id IN (1, 2, 3)'
+    - もう ? を並べてインデックスをインクリメントしながらbindValueはやだ…
+    - PDOのクエリのplaceholderに ? を書くか :hoge で書くか問題
+    - 型チェックできるように書くのもちょっとめんどう
+    - だからテンプレートエンジンを作ろう → PxvSql
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PxvSql
+  - kind: heading
+    level: 1
+    text: PxvSql
   p38:
-  - node: p
-    children:
-    - node: text
-      content: PxvSql
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 文字列結合を一切やらなくてもクエリが書けるようになった
-    - node: li
-      children:
-      - node: text
-        content: 実行時に型検査をするのでnullなどの不穏な値は入り込まない
-    - node: li
-      children:
-      - node: text
-        content: エラーチェックのボイラープレートがｸﾞｯと減る SQLi(脆弱性)のリスクなし
-    - node: li
-      children:
-      - node: text
-        content: :hoge@int  で整数の埋め込み、 :fuga_ids@int[] で複数の整数を展開
-      - node: br
-      - node: text
-        content: する %if や %for の記法で条件分岐や複数SETなども可能
+  - kind: para
+    text: PxvSql
+  - kind: list
+    items:
+    - 文字列結合を一切やらなくてもクエリが書けるようになった
+    - 実行時に型検査をするのでnullなどの不穏な値は入り込まない
+    - エラーチェックのボイラープレートがｸﾞｯと減る SQLi(脆弱性)のリスクなし
+    - :hoge@int で整数の埋め込み、 :fuga_ids@int[] で複数の整数を展開
+  - kind: para
+    text: する %if や %for の記法で条件分岐や複数SETなども可能
   p39:
-  - node: p
-    children:
-    - node: text
-      content: PxvSql
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 問題意識はQiitaに書いた
+  - kind: para
+    text: PxvSql
+  - kind: list
+    items:
+    - 問題意識はQiitaに書いた
   p40:
-  - node: p
-    children:
-    - node: text
-      content: TetoSQL
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: tadsanが個人の責任で再実装したバージョン (PHP≧5.4)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: https://github.com/BaguettePHP/TetoSQL
-    - node: li
-      children:
-      - node: text
-        content: 記法を自由に拡張できるように作られている
-    - node: li
-      children:
-      - node: text
-        content: 各社で必要な記法や型を柔軟に実装することも可能！
+  - kind: para
+    text: TetoSQL
+  - kind: list
+    items:
+    - tadsanが個人の責任で再実装したバージョン (PHP≧5.4)
+    - https://github.com/BaguettePHP/TetoSQL
+    - 記法を自由に拡張できるように作られている
+    - 各社で必要な記法や型を柔軟に実装することも可能！
   p41:
-  - node: p
-    children:
-    - node: text
-      content: PDOのラッパー
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: これは、少なくとも2011年以前からあった仕組み
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 書き込み用(master)と読み込み用(slave)を明示的に分けて利用可能
-        - node: li
-          children:
-          - node: text
-            content: slaveにINSERTやUPDATEなどのクエリを発行しようとすると例外
-    - node: li
-      children:
-      - node: text
-        content: 全クエリにSQLのクエリ単一行にして、トレースをコメントにして埋め込む
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: スロークエリのログにどのコントローラに起因するか集計しやすいスロークエ
-          - node: br
-          - node: text
-            content: 'リを一覧できるビューアーもある '
-        - node: li
-          children:
-          - node: text
-            content: 最近ではDatadogのAPMを使えば不要になるかもしれない
+  - kind: heading
+    level: 1
+    text: PDOのラッパー
+  - kind: list
+    items:
+    - これは、少なくとも2011年以前からあった仕組み
+    - 書き込み用(master)と読み込み用(slave)を明示的に分けて利用可能
+    - slaveにINSERTやUPDATEなどのクエリを発行しようとすると例外
+    - 全クエリにSQLのクエリ単一行にして、トレースをコメントにして埋め込む
+    - スロークエリのログにどのコントローラに起因するか集計しやすいスロークエ
+  - kind: para
+    text: リを一覧できるビューアーもある
+  - kind: list
+    items:
+    - 最近ではDatadogのAPMを使えば不要になるかもしれない
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 新機能のリリース時にどうする？
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'A: 新機能が実装されたブランチをリリースするときマージする'
-    - node: li
-      children:
-      - node: text
-        content: 'B: リリース前にあらかじめマージして、実行されないようにしておく'
-    - node: li
-      children:
-      - node: text
-        content: よくある問題
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Aは機能の規模が大きいとビッグバンマージを引き起こし、
-          - node: br
-          - node: text
-            content: '予期せぬ問題を引き起こすことがある (コンフリクト解決が大変) '
-        - node: li
-          children:
-          - node: text
-            content: 理想としてはBで、一般ユーザー向けに実行されないとしても
-          - node: br
-          - node: text
-            content: 鮮度のよいうちにマージしておきたい (リリース時の変更を最小限に)
+  - kind: heading
+    level: 1
+    text: 新機能のリリース時にどうする？
+  - kind: list
+    items:
+    - 'A: 新機能が実装されたブランチをリリースするときマージする'
+    - 'B: リリース前にあらかじめマージして、実行されないようにしておく'
+    - よくある問題
+    - Aは機能の規模が大きいとビッグバンマージを引き起こし、
+  - kind: para
+    text: 予期せぬ問題を引き起こすことがある (コンフリクト解決が大変)
+  - kind: list
+    items:
+    - 理想としてはBで、一般ユーザー向けに実行されないとしても
+  - kind: para
+    text: 鮮度のよいうちにマージしておきたい (リリース時の変更を最小限に)
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 機能の有効化／無効化
-  - node: p
-    children:
-    - node: text
-      content: if ($_SERVER['REMOTE_ADDR'] === OFFICE_IP) {
-    - node: br
-    - node: text
-      content: '    hogehoge();'
-    - node: br
-    - node: text
-      content: '}'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 新しい機能をサービスに実装して、社内でだけ有効化したいとする
-    - node: li
-      children:
-      - node: text
-        content: 無造作にこんなコードを書かれると後から意味不明になるそもそも社外と社
-      - node: br
-      - node: text
-        content: 内での挙動が別物になるので嫌な予感しかしない
+  - kind: heading
+    level: 1
+    text: 機能の有効化／無効化
+  - kind: para
+    text: if ($_SERVER['REMOTE_ADDR'] === OFFICE_IP) {hogehoge();}
+  - kind: list
+    items:
+    - 新しい機能をサービスに実装して、社内でだけ有効化したいとする
+    - 無造作にこんなコードを書かれると後から意味不明になるそもそも社外と社
+  - kind: heading
+    level: 2
+    text: 内での挙動が別物になるので嫌な予感しかしない
   p44:
-  - node: p
-    children:
-    - node: text
-      content: フィーチャートグル
-  - node: p
-    children:
-    - node: text
-      content: if (ABTest_DevToggle::isEnabledDevToggle('hogeFunc')) {
-    - node: br
-    - node: text
-      content: '    hogehoge();'
-    - node: br
-    - node: text
-      content: '}'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 専用のコンソール画面でボタンを押すことで有効化／無効化される
-    - node: li
-      children:
-      - node: text
-        content: 設定を一行足すだけで一般ユーザーに対してリリースできる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: リリース後に障害などが発生しないことが確認できたらifを消す
-    - node: li
-      children:
-      - node: text
-        content: 元はA/Bテストのための機構だった (一般ユーザーに対して確率で適用)
+  - kind: heading
+    level: 1
+    text: フィーチャートグル
+  - kind: para
+    text: if (ABTest_DevToggle::isEnabledDevToggle('hogeFunc')) {hogehoge();}
+  - kind: list
+    items:
+    - 専用のコンソール画面でボタンを押すことで有効化／無効化される
+    - 設定を一行足すだけで一般ユーザーに対してリリースできる
+    - リリース後に障害などが発生しないことが確認できたらifを消す
+    - 元はA/Bテストのための機構だった (一般ユーザーに対して確率で適用)
   p45:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: heading
+    level: 1
+    text: まとめ
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 何もない野原に秩序をつくる
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: べんり機能を導入すると、部分的に生産性が体感で数倍になったりする
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 一からサービスを作るとしたら同じことを繰り返せるかは、悩む
-        - node: li
-          children:
-          - node: text
-            content: いまならLaravelを入れるかもしれないが、それは未来人だからできる発言
-        - node: li
-          children:
-          - node: text
-            content: サービスの価値はコードではなく、その結果のユーザー体験
-        - node: li
-          children:
-          - node: text
-            content: フレームワークがなかったとしても、
-          - node: br
-          - node: text
-            content: pixivが2007年からユーザーに価値を提供してきた結果は変らない
+  - kind: heading
+    level: 1
+    text: 何もない野原に秩序をつくる
+  - kind: list
+    items:
+    - べんり機能を導入すると、部分的に生産性が体感で数倍になったりする
+    - 一からサービスを作るとしたら同じことを繰り返せるかは、悩む
+    - いまならLaravelを入れるかもしれないが、それは未来人だからできる発言
+    - サービスの価値はコードではなく、その結果のユーザー体験
+    - フレームワークがなかったとしても、
+  - kind: para
+    text: pixivが2007年からユーザーに価値を提供してきた結果は変らない
   p47:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 今回の内容はPHPカンファレンス関西2018で発表したスライド
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2018年以来、良くも悪くもAPIが非常に安定している
-    - node: li
-      children:
-      - node: text
-        content: そろそろPHP 8.2に全面移行できるので、次のスタンダードを考えたい
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: AttributesはPHP 8に全面移行できていなくても使えるので先行導入
-    - node: li
-      children:
-      - node: text
-        content: pixivで開発者体験と安全性のフォーカスしたアプリケーションを
-      - node: br
-      - node: text
-        content: いっしょに開発していきましょう！！！！
+  - kind: para
+    text: まとめ
+  - kind: list
+    items:
+    - 今回の内容はPHPカンファレンス関西2018で発表したスライド
+    - 2018年以来、良くも悪くもAPIが非常に安定している
+    - そろそろPHP 8.2に全面移行できるので、次のスタンダードを考えたい
+    - AttributesはPHP 8に全面移行できていなくても使えるので先行導入
+    - pixivで開発者体験と安全性のフォーカスしたアプリケーションを
+  - kind: para
+    text: いっしょに開発していきましょう！！！！
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 続きは で
-  - node: p
-    children:
-    - node: bold
-      content: Web
-  - node: p
-    children:
-    - node: text
-      content: あと
-  - node: p
-    children:
-    - node: text
-      content: ' ('
-    - node: bold
-      content: ' WEB+DB PRESS'
-    - node: text
-      content: )
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: pixiv FANBOX @tadsan
-    - node: li
-      children:
-      - node: text
-        content: pixiv inside
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: で のユニットテストの書きやすさを劇的に改善する手法
-          - node: br
-          - node: text
-            content: 'DocComment PHP  '
-        - node: li
-          children:
-          - node: text
-            content: 連載『 大規模開発入門』を振り返る
-          - node: br
-          - node: text
-            content: 'WEB+DB PRESS PHP   '
-        - node: li
-          children:
-          - node: text
-            content: の基盤ノウハウ大公開！ カンファレンス 登壇レポート
-          - node: br
-          - node: text
-            content: pixiv PHP 2017
+  - kind: heading
+    level: 1
+    text: 続きはWebで (あとWEB+DB PRESS)
+  - kind: list
+    items:
+    - pixiv FANBOX @tadsan
+    - pixiv inside
+    - DocCommentでPHPのユニットテストの書きやすさを劇的に改善する手法
+    - WEB+DB PRESS連載『PHP大規模開発入門』を振り返る
+    - pixivの基盤ノウハウ大公開！PHPカンファレンス2017登壇レポート
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 続きは で
-  - node: p
-    children:
-    - node: bold
-      content: Web
-  - node: p
-    children:
-    - node: text
-      content: あと
-  - node: p
-    children:
-    - node: text
-      content: ' ('
-    - node: bold
-      content: ' WEB+DB PRESS'
-    - node: text
-      content: )
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Qiita
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 憂鬱な のためのアレ、または と仲良くして枕を高くしてねむる
-  - node: p
-    children:
-    - node: text
-      content: 'SQL PDO   '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: の誤解
-      - node: br
-      - node: text
-        content: 'PSR  '
-    - node: li
-      children:
-      - node: text
-        content: インスパイヤされて掲示板を作りたくなったシリーズ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: って書きたくない僕たちのためのオートローディングと
-      - node: br
-      - node: text
-        content: 'include Composer '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: GitHub
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: やエラー処理の例
-          - node: br
-          - node: text
-            content: whoops  https://github.com/zonuexe/wdb-php-96-sample
+  - kind: heading
+    level: 1
+    text: 続きはWebで (あとWEB+DB PRESS)
+  - kind: list
+    items:
+    - Qiita
+    - 憂鬱なSQLのためのアレ、またはPDOと仲良くして枕を高くしてねむる
+    - PSRの誤解
+    - インスパイヤされて掲示板を作りたくなった シリーズ
+    - includeって書きたくない僕たちのためのオートローディングとComposer
+    - GitHub
+    - whoopsやエラー処理の例 https://github.com/zonuexe/wdb-php-96-sample
   p50:
-  - node: p
-    children:
-    - node: text
-      content: 続きは で
-  - node: p
-    children:
-    - node: bold
-      content: Web
-  - node: p
-    children:
-    - node: text
-      content: あと
-  - node: p
-    children:
-    - node: text
-      content: ' ('
-    - node: bold
-      content: ' WEB+DB PRESS'
-    - node: text
-      content: )
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: これ一冊を購入すれば歴代の 連載が全部
-  - node: p
-    children:
-    - node: text
-      content: 'PHP  '
-  - node: p
-    children:
-    - node: text
-      content: 読めるのでおすすめ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: まとめ
-  - node: p
-    children:
-    - node: text
-      content: ' https://inside.pixiv.blog/tadsan/3991 '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 今回の内容に近いものだと
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: vol.81, vol.87, vol.91, vol.94, vol. 96
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 買って読んでね！ にサンプルコードもあるよ
-  - node: p
-    children:
-    - node: text
-      content: ' Web'
+  - kind: heading
+    level: 1
+    text: 続きはWebで (あとWEB+DB PRESS)
+  - kind: list
+    items:
+    - これ一冊を購入すれば歴代のPHP連載が全部
+  - kind: para
+    text: 読めるのでおすすめ
+  - kind: list
+    items:
+    - まとめ https://inside.pixiv.blog/tadsan/3991
+    - 今回の内容に近いものだと
+    - vol.81, vol.87, vol.91, vol.94, vol. 96
+    - 買って読んでね！ Webにサンプルコードもあるよ
 size:
   max_width: 1920
   max_height: 1080

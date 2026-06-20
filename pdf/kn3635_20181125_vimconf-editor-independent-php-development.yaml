@@ -1,3 +1,435 @@
+text:
+  p1:
+  - kind: para
+    text: エディタ中立なPHP開発環境の現在
+  - kind: para
+    text: 公開版
+  - kind: heading
+    level: 1
+    text: Modern editor-independent
+  - kind: heading
+    level: 1
+    text: development
+  - kind: heading
+    level: 1
+    text: environment for PHP
+  - kind: para
+    text: 2018-11-23 Akiba Tokyo, Japan
+  - kind: para
+    text: 'VimConf 2018 #vimconf'
+  p2:
+  - kind: heading
+    level: 1
+    text: 日本語でおｋ
+  - kind: para
+    text: 筆者の英語は残念なので発表済みの日本語資料を先に読むことをおすすめ
+  p3:
+  - kind: para
+    text: aka @tadsan
+  - kind: para
+    text: Who am I...?
+  - kind: para
+    text: Kenta Usami (うさみけんた, @zonuexe)
+  - kind: para
+    text: Language hobbyist, I love Lisp.
+  - kind: para
+    text: Web programmer @pixiv
+  - kind: para
+    text: Founder of Emacs-PHP
+  - kind: para
+    text: https://github.com/emacs-php
+  p4:
+  - kind: para
+    text: My favorite text editors
+  - kind: para
+    text: Maruo Editor (秀丸)
+  - kind: para
+    text: Mery
+  p5:
+  - kind: para
+    text: I usually use Emacs
+  - kind: para
+    text: That's because it's a Lisp machine that is easy for me to hack.
+  - kind: para
+    text: There are reasons for each person to choose an editor.
+  - kind: para
+    text: I am a professional programmer so I would like to raise development efficiency.
+  p6:
+  - kind: para
+    text: First of all...
+  p7:
+  - kind: para
+    text: We hate“Religious War”
+  - kind: para
+    text: 宗教戦争
+  p8:
+  - kind: para
+    text: Code of Conduct
+  p9:
+  - kind: para
+    text: Windows vs UNIX
+  p10:
+  - kind: para
+    text: Tab vs Space
+  p11:
+  - kind: para
+    text: Statically typed vs Dynamic typing
+  p12:
+  - kind: para
+    text: '...and'
+  p13:
+  - kind: para
+    text: Emacs vs vi
+  p14:
+  - kind: para
+    text: 'No'
+  - kind: para
+    text: It was a joke?It violates professionalism.
+  - kind: heading
+    level: 1
+    text: 
+  p15:
+  - kind: para
+    text: おｋ？
+  - kind: para
+    text: Even outside the conference.
+  - kind: para
+    text: Is that okay?
+  p16:
+  - kind: para
+    text: リスペクト
+  - kind: para
+    text: Text editor and Plugin developers and power users respect each other and
+      incorporate the trends of other text editors.
+  p17:
+  - kind: para
+    text: Rainbow Brackets
+  p18:
+  - kind: para
+    text: ElePHPant
+  p19:
+  - kind: para
+    text: <?php
+  - kind: para
+    text: What's PHP?
+  - kind: para
+    text: It is a kind of Web platform.
+  - kind: para
+    text: Small sites, many CMS, large scale SNS are built with PHP.
+  - kind: para
+    text: It is also a general purpose programming language.
+  p20:
+  - kind: para
+    text: 手続き？
+  - kind: para
+    text: PHP as a Language
+  - kind: para
+    text: PHP is procedural and it has object-oriented feature.
+  - kind: para
+    text: Weak typing and dynamic type-checking.
+  - kind: para
+    text: PHP is relatively suitable for static analysis in dynamic langs.
+  p21:
+  - kind: para
+    text: 知らんけど
+  - kind: para
+    text: “We have things like protected properties.We have abstract methods. We have
+      all this stuff that your computer science teacher told you you should be using.I
+      don't care about this crap at all.”
+  - kind: para
+    text: –Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+  p22:
+  - kind: para
+    text: なんでもできる
+  - kind: para
+    text: Abstract class, Trait, Interface,Generator, Iterator, Closure, Dynamic function
+      call, Anonymous class, eval,Type declaration, Associative array(Hash table),
+      Reflection API, Self-documentation, Standard I/O, REPL,Lazy class loading, etc...
+  p23:
+  - kind: para
+    text: ばらばら
+  - kind: para
+    text: PHP coding styles
+  - kind: para
+    text: PHP can be run on cheap hosting servers.
+  - kind: para
+    text: PHP as a HTML template,PHP as a CGI script,PHP as a OOP language...
+  - kind: para
+    text: Various people share PHP.
+  p24:
+  - kind: para
+    text: くぁwせdrftgy
+  - kind: para
+    text: PHP needs IDE?
+  - kind: para
+    text: In the early days of my career,there was no one around me developing with
+      IDE.
+  - kind: para
+    text: However, the scale of our code was huge and it was obvious that tool assistance
+      is necessary.
+  p25:
+  - kind: para
+    text: ふじこｌｐ；＠
+  - kind: para
+    text: PHP with text editor
+  - kind: para
+    text: The usual way to code PHP with a text editor is tag jump.
+  - kind: para
+    text: But project has multiple methods with the same name in OOP.
+  - kind: para
+    text: There is no smart input completion.
+  p26:
+  - kind: para
+    text: むりぽ
+  - kind: para
+    text: Refactoring...?
+  - kind: para
+    text: The important thing is sed and a visual check.
+  - kind: para
+    text: Must allow the possibility of a run-time error due to refactoring.
+  p27:
+  - kind: para
+    text: Photoshop
+  - kind: heading
+    level: 1
+    text: PhpStorm
+  p28:
+  - kind: para
+    text: つよい
+  - kind: para
+    text: JetBrains IDE
+  - kind: para
+    text: PhpStorm is an IDE derived from IntelliJ IDEA (Java IDE).
+  - kind: para
+    text: JetBrains' IDE is good at static analysis and refactoring.
+  - kind: para
+    text: The PHP static analysis features of PhpStorm is practical.
+  p29:
+  - kind: para
+    text: 解析できるぞ
+  - kind: para
+    text: Static Analysis
+  - kind: para
+    text: Static analysis is required for error detection of code path not executed
+      in test.
+  - kind: para
+    text: PhpStorm can check mistakes with high accuracy if conditions for specifying
+      types are available.
+  p30:
+  - kind: para
+    text: ミスがわかる
+  - kind: heading
+    level: 1
+    text: Coding on PhpStorm
+  p31:
+  - kind: para
+    text: スマート
+  - kind: heading
+    level: 1
+    text: Coding on PhpStorm
+  - kind: heading
+    level: 2
+    text: Typed
+  p32:
+  - kind: para
+    text: わかりやすい
+  - kind: para
+    text: Coding on PhpStorm
+  - kind: para
+    text: Popup signature
+  p33:
+  - kind: para
+    text: Awesome!
+  - kind: para
+    text: PhpStorm
+  p34:
+  - kind: para
+    text: But, do we have to purchase PhpStorm to write PHP?
+  p35:
+  - kind: para
+    text: No, No.
+  p36:
+  - kind: para
+    text: Since we are developers,we can create FREE implementations other than PhpStorm.
+  p37:
+  - kind: para
+    text: クォリティﾀｶｽ
+  - kind: para
+    text: PHP QA Projects
+  p38:
+  - kind: para
+    text: Several PHP static analyzer projects are active
+  p39:
+  - kind: para
+    text: Phan PHPStan Phpactor
+  p40:
+  - kind: para
+    text: 鬼強い
+  - kind: para
+    text: Phan
+  - kind: para
+    text: https://github.com/phan/phan
+  - kind: para
+    text: Static analyzer
+  - kind: para
+    text: Slow, but it inspects the entire project precisely
+  - kind: para
+    text: It's included LSP Server
+  p41:
+  - kind: para
+    text: 鬼速い
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: https://github.com/phpstan/phpstan
+  - kind: para
+    text: Dynamic and Static hybrid
+  - kind: para
+    text: Very fast and accurate
+  - kind: para
+    text: Specific RPC and LSP
+  p42:
+  - kind: para
+    text: 互換性
+  - kind: heading
+    level: 1
+    text: PSR-5 (PHPDoc)
+  - kind: para
+    text: PHP Standard Recommendation(Draft)
+  - kind: para
+    text: PHPDoc is the de facto standard for writing type definitions in DocComment.They
+      are working on the standard specification of that tag and type definition
+  p43:
+  - kind: para
+    text: 鬼速い
+  - kind: para
+    text: Phpactor
+  - kind: para
+    text: http://phpactor.github.io/phpactor/
+  - kind: para
+    text: Phpactor provide code jump,completion, refactoring
+  - kind: para
+    text: This is under development and is now inferior to PhpStorm, but it is promising
+      in the future.
+  p44:
+  - kind: para
+    text: 各位仲良く
+  - kind: para
+    text: Editor-independent Movements
+  p45:
+  - kind: para
+    text: スマート
+  - kind: heading
+    level: 1
+    text: LSP
+  - kind: heading
+    level: 1
+    text: Language Server Protocol
+  - kind: para
+    text: https://microsoft.github.io/language-server-protocol/
+  - kind: para
+    text: A Language Server is meant to provide the language-specific smarts and communicate
+      with development tools over a protocol that enables inter-process communication.
+  p46:
+  - kind: para
+    text: Tab vs Space
+  - kind: para
+    text: EditorConfig
+  - kind: para
+    text: https://editorconfig.org/
+  - kind: para
+    text: Indent and Newline code can be set for each file name and extension.
+  p47:
+  - kind: para
+    text: エディタ横断
+  - kind: heading
+    level: 1
+    text: EditorConfig
+  - kind: para
+    text: '# Unix-style newlines with a newline ending every file[*]end_of_line =
+      lf insert_final_newline = true'
+  - kind: para
+    text: '# Set default charset[*.{js,py}]charset = utf-8'
+  - kind: para
+    text: '# 4 space indentation[*.py]indent_style = space indent_size = 4'
+  - kind: para
+    text: '# Tab indentation (no size specified)[Makefile]indent_style = tab'
+  p48: []
+  p49:
+  - kind: para
+    text: vim
+  - kind: heading
+    level: 1
+    text: On Vim
+  p50:
+  - kind: para
+    text: 編集中にわかる
+  - kind: heading
+    level: 1
+    text: ALE
+  - kind: para
+    text: Asynchronous Lint Engine https://github.com/w0rp/ale ALE supports PHP syntax
+      checker,PHPStan, Phan, Psalm, PHP CS,PHP-CS-Fixer and LSP
+  p51:
+  - kind: para
+    text: ミスがわかる
+  - kind: heading
+    level: 1
+    text: Coding on Vim+ALE
+  p52:
+  - kind: para
+    text: 型付けされてる
+  - kind: heading
+    level: 1
+    text: Coding on Vim+ALE
+  - kind: para
+    text: https://camo.qiitausercontent.com/63f80f6472f7de44d28a25cf275c2f80d782d94e/68747470733a2f2f71696974612d696d6167652d73746f7265
+      2e73332e616d617a6f6e6177732e636f6d2f302f343132312f3 8373535663234332d353532662d663939302d373266332d
+      3561303835643563643334392e706e67
+  - kind: heading
+    level: 2
+    text: Typed
+  p53:
+  - kind: para
+    text: リファクタ
+  - kind: heading
+    level: 1
+    text: Phpactor
+  - kind: para
+    text: Phpactor Vim Plugin Provides
+  - kind: para
+    text: Context menu
+  - kind: para
+    text: Code Navigation
+  - kind: para
+    text: Completion (It supports Vim's Omni-completion, Deoplete,NeoVim's NCM and
+      NCM 2)
+  p54:
+  - kind: para
+    text: なにそれ
+  - kind: heading
+    level: 1
+    text: Veonim
+  p55:
+  - kind: para
+    text: やばい
+  - kind: heading
+    level: 1
+    text: Veonim
+  - kind: para
+    text: veonim is a simple modal IDE built on neovim.https://github.com/veonim/veonim
+      That is integrated with LSP and has a graphical interface like IDE.Veonim realized
+      almost all the functions I wanted as ideal Vim.
+  p56:
+  - kind: para
+    text: やばい
+  - kind: heading
+    level: 1
+    text: Veonim
+  - kind: para
+    text: I learned Veonim by @ShougoMatsu two weeks ago.He said that I do not use
+      yet because my plugins does not work.I have not finished studying Veonim yet,
+      but this may be a wonderful IDE
 size:
   max_width: 1024
   max_height: 768
@@ -61,1051 +493,3 @@ links:
   p55:
   - url: https://github.com/veonim/veonim
     title: github.com
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: エディタ中立なPHP開発環境の現在
-  - node: p
-    children:
-    - node: bold
-      content: 'Modern editor-independent  '
-    - node: br
-    - node: bold
-      content: 'development  '
-  - node: p
-    children:
-    - node: bold
-      content: 公開版
-  - node: p
-    children:
-    - node: bold
-      content: environment for PHP
-  - node: p
-    children:
-    - node: text
-      content: 2018-11-23 Akiba Tokyo, Japan
-  - node: p
-    children:
-    - node: text
-      content: 'VimConf 2018 '
-  - node: p
-    children:
-    - node: bold
-      content: '#vimconf'
-  p2:
-  - node: p
-    children:
-    - node: text
-      content: 日本語でおｋ
-  - node: p
-    children:
-    - node: text
-      content: 筆者の英語は残念なので
-  - node: p
-    children:
-    - node: text
-      content: 発表済みの日本語資料を
-  - node: p
-    children:
-    - node: text
-      content: 先に読むことをおすすめ
-  p3:
-  - node: p
-    children:
-    - node: text
-      content: aka @tadsan
-  - node: p
-    children:
-    - node: text
-      content: Who am I...?
-  - node: p
-    children:
-    - node: text
-      content: 'Kenta Usami '
-  - node: p
-    children:
-    - node: text
-      content: (うさみけんた, @zonuexe)
-  - node: p
-    children:
-    - node: text
-      content: Language hobbyist, I love Lisp.
-    - node: br
-    - node: text
-      content: Web programmer @pixiv FounderofEmacs-PHP
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/emacs-php
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: My favorite text editors
-  - node: p
-    children:
-    - node: text
-      content: Maruo Editor (秀丸)
-  - node: p
-    children:
-    - node: text
-      content: Mery
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: I usually use Emacs
-  - node: p
-    children:
-    - node: text
-      content: 'That''s because it''s a Lisp '
-    - node: br
-    - node: text
-      content: 'machine that is easy for me to '
-    - node: br
-    - node: text
-      content: hack.
-    - node: br
-    - node: text
-      content: There are reasons for each person to choose an editor.
-    - node: br
-    - node: text
-      content: 'I am a professional programmer, '
-    - node: br
-    - node: text
-      content: so I would like to raise development efficiency.
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: First of all...
-  p7:
-  - node: p
-    children:
-    - node: text
-      content: We hate
-  - node: p
-    children:
-    - node: text
-      content: “Religious War”
-    - node: br
-    - node: text
-      content: 宗教戦争
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: Code of Conduct
-  p9:
-  - node: p
-    children:
-    - node: text
-      content: Windows
-  - node: p
-    children:
-    - node: text
-      content: vs
-  - node: p
-    children:
-    - node: text
-      content: UNIX
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: Tab
-  - node: p
-    children:
-    - node: text
-      content: vs
-  - node: p
-    children:
-    - node: text
-      content: Space
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: Statically typed
-  - node: p
-    children:
-    - node: text
-      content: vs
-  - node: p
-    children:
-    - node: text
-      content: Dynamic typing
-  p12:
-  - node: p
-    children:
-    - node: text
-      content: '...and'
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: Emacs
-  - node: p
-    children:
-    - node: text
-      content: vs
-  - node: p
-    children:
-    - node: text
-      content: vi
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: 'No'
-  - node: p
-    children:
-    - node: text
-      content: It was a joke?
-  - node: p
-    children:
-    - node: text
-      content: It violates professionalism.
-  - node: p
-    children:
-    - node: text
-      content: '!'
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: おｋ？
-  - node: p
-    children:
-    - node: text
-      content: 'Even outside '
-    - node: br
-    - node: text
-      content: the conference.
-    - node: br
-    - node: text
-      content: Is that okay?
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: リスペクト
-  - node: p
-    children:
-    - node: text
-      content: 'Text editor and Plugin '
-    - node: br
-    - node: text
-      content: 'developers and power users '
-    - node: br
-    - node: text
-      content: 'respect each other and '
-    - node: br
-    - node: text
-      content: 'incorporate the trends of '
-    - node: br
-    - node: text
-      content: other text editors.
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: Rainbow Brackets
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: ElePHPant
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: What's PHP?
-  - node: p
-    children:
-    - node: text
-      content: It is a kind of Web platform.
-  - node: p
-    children:
-    - node: text
-      content: Small sites, many CMS, large scale SNS are built with PHP.
-  - node: p
-    children:
-    - node: text
-      content: 'It is also a general purpose '
-    - node: br
-    - node: text
-      content: programming language.
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: 手続き？
-  - node: p
-    children:
-    - node: text
-      content: PHP as a Language
-  - node: p
-    children:
-    - node: text
-      content: 'PHP is procedural and it has '
-    - node: br
-    - node: text
-      content: object-oriented feature.
-  - node: p
-    children:
-    - node: text
-      content: Weak typing and dynamic type-
-    - node: br
-    - node: text
-      content: checking.
-  - node: p
-    children:
-    - node: text
-      content: 'PHP is relatively suitable for '
-    - node: br
-    - node: text
-      content: static analysis in dynamic langs.
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: 知らんけど
-  - node: p
-    children:
-    - node: bold
-      content: '“We have things like protected properties. '
-    - node: br
-    - node: bold
-      content: 'We have abstract methods. We have all '
-    - node: br
-    - node: bold
-      content: 'this stuff that your computer science '
-  - node: p
-    children:
-    - node: bold
-      content: 'teacher told you you should be using. '
-    - node: br
-    - node: bold
-      content: I don't care about this crap at all.”
-  - node: p
-    children:
-    - node: bold
-      content: –Rasmus Lerdorf
-    - node: br
-    - node: bold
-      content: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: なんでもできる
-  - node: p
-    children:
-    - node: bold
-      content: 'Abstract class, Trait, Interface, '
-    - node: br
-    - node: bold
-      content: 'Generator, Iterator, Closure, Dynamic '
-    - node: br
-    - node: bold
-      content: function call, Anonymous class, eval, Type declaration, Associative
-        array (Hash table), Reflection API, Self-
-    - node: text
-      content: ' '
-    - node: bold
-      content: 'documentation, Standard I/O, REPL, '
-    - node: br
-    - node: bold
-      content: Lazy class loading, etc...
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: ばらばら
-  - node: p
-    children:
-    - node: text
-      content: PHP coding styles
-  - node: p
-    children:
-    - node: text
-      content: 'PHP can be run on cheap '
-    - node: br
-    - node: text
-      content: hosting servers.
-  - node: p
-    children:
-    - node: text
-      content: PHP as a HTML template,
-  - node: p
-    children:
-    - node: text
-      content: PHP as a CGI script,
-  - node: p
-    children:
-    - node: text
-      content: PHP as a OOP language...
-  - node: p
-    children:
-    - node: text
-      content: Various people share PHP.
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: くぁwせdrftgy
-  - node: p
-    children:
-    - node: text
-      content: PHP needs IDE?
-  - node: p
-    children:
-    - node: text
-      content: 'In the early days of my career, '
-    - node: br
-    - node: text
-      content: 'there was no one around me '
-    - node: br
-    - node: text
-      content: developing with IDE.
-  - node: p
-    children:
-    - node: text
-      content: 'However, the scale of our code was huge and it was obvious that '
-    - node: br
-    - node: text
-      content: tool assistance is necessary.
-  p25:
-  - node: p
-    children:
-    - node: text
-      content: 'ふじこｌｐ；＠ '
-  - node: p
-    children:
-    - node: text
-      content: PHP with text editor
-  - node: p
-    children:
-    - node: text
-      content: 'The usual way to code PHP with a '
-    - node: br
-    - node: text
-      content: text editor is tag jump.
-  - node: p
-    children:
-    - node: text
-      content: But project has multiple methods
-  - node: p
-    children:
-    - node: text
-      content: with the same name in OOP.
-  - node: p
-    children:
-    - node: text
-      content: 'There is no smart input '
-    - node: br
-    - node: text
-      content: completion.
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: むりぽ
-  - node: p
-    children:
-    - node: text
-      content: Refactoring...?
-  - node: p
-    children:
-    - node: text
-      content: 'The important thing is sed and a '
-    - node: br
-    - node: text
-      content: visual check.
-  - node: p
-    children:
-    - node: text
-      content: 'Must allow the possibility of a '
-    - node: br
-    - node: text
-      content: 'run-time error due to '
-    - node: br
-    - node: text
-      content: refactoring.
-  p27:
-  - node: p
-    children:
-    - node: text
-      content: Photoshop
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: つよい
-  - node: p
-    children:
-    - node: text
-      content: JetBrains IDE
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStorm is an IDE derived from '
-    - node: br
-    - node: text
-      content: IntelliJ IDEA (Java IDE).
-  - node: p
-    children:
-    - node: text
-      content: 'JetBrains'' IDE is good at static '
-    - node: br
-    - node: text
-      content: analysis and refactoring.
-  - node: p
-    children:
-    - node: text
-      content: 'The PHP static analysis features '
-    - node: br
-    - node: text
-      content: of PhpStorm is practical.
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: 解析できるぞ
-  - node: p
-    children:
-    - node: text
-      content: Static Analysis
-  - node: p
-    children:
-    - node: text
-      content: 'Static analysis is required for '
-    - node: br
-    - node: text
-      content: 'error detection of code path not '
-    - node: br
-    - node: text
-      content: executed in test.
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm can check mistakes with high accuracy if conditions for specifying
-        types are available.
-  p30:
-  - node: p
-    children:
-    - node: text
-      content: ミスがわかる
-  - node: p
-    children:
-    - node: text
-      content: Coding on PhpStorm
-  p31:
-  - node: p
-    children:
-    - node: text
-      content: スマート
-  - node: p
-    children:
-    - node: text
-      content: Coding on PhpStorm
-  - node: p
-    children:
-    - node: text
-      content: Typed
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: わかりやすい
-  - node: p
-    children:
-    - node: text
-      content: Coding on PhpStorm
-  - node: p
-    children:
-    - node: text
-      content: 'Popup '
-    - node: br
-    - node: text
-      content: signature
-  p33:
-  - node: p
-    children:
-    - node: text
-      content: Awesome!
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: 'But, do we have to purchase PhpStorm '
-    - node: br
-    - node: text
-      content: to write PHP?
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: No, No.
-  p36:
-  - node: p
-    children:
-    - node: text
-      content: 'Since we are developers, '
-    - node: br
-    - node: text
-      content: 'we can create FREE '
-    - node: br
-    - node: text
-      content: 'implementations other '
-    - node: br
-    - node: text
-      content: than PhpStorm.
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: クォリティﾀｶｽ
-  - node: p
-    children:
-    - node: text
-      content: PHP QA Projects
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: 'Several PHP static analyzer projects '
-    - node: br
-    - node: text
-      content: are active
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: Phan
-    - node: br
-    - node: text
-      content: PHPStan Phpactor
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: 鬼強い
-  - node: p
-    children:
-    - node: text
-      content: Phan
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/phan/phan
-  - node: p
-    children:
-    - node: text
-      content: Static analyzer
-  - node: p
-    children:
-    - node: text
-      content: 'Slow, but it inspects the entire '
-    - node: br
-    - node: text
-      content: project precisely
-  - node: p
-    children:
-    - node: text
-      content: It's included LSP Server
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: 鬼速い
-  - node: p
-    children:
-    - node: text
-      content: PHPStan
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/phpstan/phpstan
-  - node: p
-    children:
-    - node: text
-      content: Dynamic and Static hybrid
-  - node: p
-    children:
-    - node: text
-      content: Very fast and accurate
-  - node: p
-    children:
-    - node: text
-      content: Specific RPC and LSP
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: 互換性
-  - node: p
-    children:
-    - node: text
-      content: PSR-5 (PHPDoc)
-  - node: p
-    children:
-    - node: text
-      content: PHP Standard Recommendation(Draft)
-  - node: p
-    children:
-    - node: text
-      content: 'PHPDoc is the de facto standard for '
-    - node: br
-    - node: text
-      content: 'writing type definitions in '
-    - node: br
-    - node: text
-      content: DocComment.
-  - node: p
-    children:
-    - node: text
-      content: 'They are working on the standard specification of that tag and type '
-    - node: br
-    - node: text
-      content: definition
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: 鬼速い
-  - node: p
-    children:
-    - node: text
-      content: Phpactor
-  - node: p
-    children:
-    - node: text
-      content: http://phpactor.github.io/phpactor/
-  - node: p
-    children:
-    - node: text
-      content: 'Phpactor provide code jump, '
-    - node: br
-    - node: text
-      content: completion, refactoring
-  - node: p
-    children:
-    - node: text
-      content: 'This is under development and is now inferior to PhpStorm, but it '
-    - node: br
-    - node: text
-      content: is promising in the future.
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: 各位仲良く
-  - node: p
-    children:
-    - node: text
-      content: Editor-independent
-    - node: br
-    - node: text
-      content: Movements
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: スマート
-  - node: p
-    children:
-    - node: text
-      content: LSP
-  - node: p
-    children:
-    - node: text
-      content: Language Server Protocol
-  - node: p
-    children:
-    - node: text
-      content: https://microsoft.github.io/language-server-protocol/
-  - node: p
-    children:
-    - node: text
-      content: 'A Language Server is meant to provide '
-    - node: br
-    - node: text
-      content: 'the language-specific smarts and '
-    - node: br
-    - node: text
-      content: 'communicate with development tools '
-    - node: br
-    - node: text
-      content: over a protocol that enables inter-
-    - node: br
-    - node: text
-      content: process communication.
-  p46:
-  - node: p
-    children:
-    - node: text
-      content: Tab vs Space
-  - node: p
-    children:
-    - node: text
-      content: EditorConfig
-  - node: p
-    children:
-    - node: text
-      content: https://editorconfig.org/
-  - node: p
-    children:
-    - node: text
-      content: 'Indent and Newline code can be '
-    - node: br
-    - node: text
-      content: 'set for each file name and '
-    - node: br
-    - node: text
-      content: extension.
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: エディタ横断
-  - node: p
-    children:
-    - node: text
-      content: EditorConfig
-  - node: p
-    children:
-    - node: text
-      content: '# Unix-style newlines with a newline ending every file '
-    - node: br
-    - node: text
-      content: '[*] '
-    - node: br
-    - node: text
-      content: 'end_of_line = lf '
-    - node: br
-    - node: text
-      content: 'insert_final_newline = true '
-  - node: p
-    children:
-    - node: text
-      content: '# Set default charset '
-    - node: br
-    - node: text
-      content: '[*.{js,py}] '
-    - node: br
-    - node: text
-      content: 'charset = utf-8 '
-  - node: p
-    children:
-    - node: text
-      content: '# 4 space indentation '
-    - node: br
-    - node: text
-      content: '[*.py] '
-    - node: br
-    - node: text
-      content: 'indent_style = space '
-    - node: br
-    - node: text
-      content: 'indent_size = 4 '
-  - node: p
-    children:
-    - node: text
-      content: '# Tab indentation (no size specified) '
-    - node: br
-    - node: text
-      content: '[Makefile] '
-    - node: br
-    - node: text
-      content: indent_style = tab
-  p48: []
-  p49:
-  - node: p
-    children:
-    - node: text
-      content: vim
-  - node: p
-    children:
-    - node: text
-      content: On Vim
-  p50:
-  - node: p
-    children:
-    - node: text
-      content: 編集中にわかる
-  - node: p
-    children:
-    - node: text
-      content: ALE
-  - node: p
-    children:
-    - node: text
-      content: Asynchronous Lint Engine
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/w0rp/ale
-  - node: p
-    children:
-    - node: text
-      content: 'ALE supports PHP syntax checker, '
-    - node: br
-    - node: text
-      content: PHPStan, Phan, Psalm, PHP CS,
-  - node: p
-    children:
-    - node: text
-      content: PHP-CS-Fixer and LSP
-  p51:
-  - node: p
-    children:
-    - node: text
-      content: ミスがわかる
-  - node: p
-    children:
-    - node: text
-      content: Coding on Vim+ALE
-  p52:
-  - node: p
-    children:
-    - node: text
-      content: 型付けされてる
-  - node: p
-    children:
-    - node: text
-      content: Coding on Vim+ALE
-  - node: p
-    children:
-    - node: bold
-      content: https://camo.qiitausercontent.com/
-    - node: br
-    - node: bold
-      content: 63f80f6472f7de44d28a25cf275c2f80d782d94e/
-    - node: br
-    - node: bold
-      content: 68747470733a2f2f71696974612d696d6167652d73746f7265
-    - node: text
-      content: ' '
-    - node: bold
-      content: 2e73332e616d617a6f6e6177732e636f6d2f302f343132312f3
-    - node: text
-      content: ' '
-    - node: bold
-      content: 8373535663234332d353532662d663939302d373266332d
-    - node: br
-    - node: bold
-      content: 3561303835643563643334392e706e67
-  - node: p
-    children:
-    - node: text
-      content: Typed
-  p53:
-  - node: p
-    children:
-    - node: text
-      content: リファクタ
-  - node: p
-    children:
-    - node: text
-      content: Phpactor
-  - node: p
-    children:
-    - node: text
-      content: Phpactor Vim Plugin Provides
-  - node: p
-    children:
-    - node: text
-      content: Context menu
-  - node: p
-    children:
-    - node: text
-      content: Code Navigation
-  - node: p
-    children:
-    - node: text
-      content: Completion (It supports Vim's Omni-completion, Deoplete, NeoVim's NCM
-        and NCM 2)
-  p54:
-  - node: p
-    children:
-    - node: text
-      content: なにそれ
-  - node: p
-    children:
-    - node: text
-      content: Veonim
-  p55:
-  - node: p
-    children:
-    - node: text
-      content: やばい
-  - node: p
-    children:
-    - node: text
-      content: Veonim
-  - node: p
-    children:
-    - node: text
-      content: 'veonim is a simple modal IDE built on '
-    - node: br
-    - node: text
-      content: neovim.
-  - node: p
-    children:
-    - node: text
-      content: https://github.com/veonim/veonim
-  - node: p
-    children:
-    - node: text
-      content: 'That is integrated with LSP and has a '
-    - node: br
-    - node: text
-      content: graphical interface like IDE.
-  - node: p
-    children:
-    - node: text
-      content: Veonim realized almost all the functions I wanted as ideal Vim.
-  p56:
-  - node: p
-    children:
-    - node: text
-      content: やばい
-  - node: p
-    children:
-    - node: text
-      content: Veonim
-  - node: p
-    children:
-    - node: text
-      content: 'I learned Veonim by @ShougoMatsu '
-    - node: br
-    - node: text
-      content: two weeks ago.
-  - node: p
-    children:
-    - node: text
-      content: 'He said that I do not use yet '
-    - node: br
-    - node: text
-      content: because my plugins does not work.
-  - node: p
-    children:
-    - node: text
-      content: I have not finished studying Veonim yet, but this may be a wonderful
-        IDE

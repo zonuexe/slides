@@ -1,1173 +1,483 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: Analyzing PHP
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2023-08-30 '
-  - node: p
-    children:
-    - node: bold
-      content: 'TechFeed Expert Night '
+  - kind: heading
+    level: 1
+    text: Analyzing PHP
+  - kind: heading
+    level: 2
+    text: pixiv Inc.
+  - kind: heading
+    level: 2
+    text: USAMI Kenta
+  - kind: para
+    text: 2023-08-30 TechFeed Expert Night
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: emacs-php
+  - kind: heading
+    level: 1
+    text: emacs-php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス沖縄2023
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス沖縄2023
   p5:
-  - node: p
-    children:
-    - node: text
-      content: LLイベント
+  - kind: heading
+    level: 1
+    text: LLイベント
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPって '
-    - node: br
-    - node: text
-      content: どんな言語？
+  - kind: para
+    text: PHPってどんな言語？
   p7:
-  - node: p
-    children:
-    - node: text
-      content: みなさんの想像する
-    - node: br
-    - node: text
-      content: PHPとは
+  - kind: para
+    text: みなさんの想像するPHPとは
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '脆弱性 ゆるふわ 弱い型 動的         '
-    - node: br
-    - node: text
-      content: クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当
-    - node: br
-    - node: text
-      content: PHPについてのパブリックイメージ
+  - kind: para
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
+  - kind: para
+    text: PHPについてのパブリックイメージ
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '脆弱性 ゆるふわ 弱い型 動的         '
-    - node: br
-    - node: text
-      content: クソザコ 型なし 意味不明 弱い 自動変換 貧弱 Perlっぽい 適当
-    - node: br
-    - node: text
-      content: PHPについての認識は概ね間違い
+  - kind: para
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
+  - kind: para
+    text: PHPについての認識は概ね間違い
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'ソースコードで '
-    - node: br
-    - node: text
-      content: 見ると
+  - kind: para
+    text: ソースコードで見ると
   p11:
-  - node: p
-    children:
-    - node: text
-      content: A
-  - node: p
-    children:
-    - node: text
-      content: '<!DOCTYPE html> '
-    - node: br
-    - node: text
-      content: '<html><head><title>Hello, PHP!</title></head> '
-    - node: br
-    - node: text
-      content: '<p> '
-    - node: br
-    - node: text
-      content: '<?php if (date(''H'') < 19): ?> '
-    - node: br
-    - node: text
-      content: '     こんにちは '
-  - node: p
-    children:
-    - node: text
-      content: '<?php else: ?>      こんばんは '
-  - node: p
-    children:
-    - node: text
-      content: '<?php endif; ?> '
-    - node: br
-    - node: text
-      content: '</p> '
-    - node: br
-    - node: text
-      content: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+  - kind: heading
+    level: 1
+    text: A
+  - kind: para
+    text: '<!DOCTYPE html><html><head><title>Hello, PHP!</title></head><p><?php if
+      (date(''H'') < 19): ?>こんにちは<?php else: ?>こんばんは<?php endif; ?></p><p>今は<?= htmlspecialchars(date(''H''))
+      ?>時です</p>'
   p12:
-  - node: p
-    children:
-    - node: text
-      content: B
-  - node: p
-    children:
-    - node: text
-      content: '<?php require ''bootstrap.php''; '
-  - node: p
-    children:
-    - node: text
-      content: '$db = mysqli_connect(); '
-    - node: br
-    - node: text
-      content: '$stmt = mysqli_prepare($db, ''SELECT * FROM books''); '
-    - node: br
-    - node: text
-      content: 'mysqli_stmt_execute($stmt); print ''<h1>本の一覧</h1>''; '
-  - node: p
-    children:
-    - node: text
-      content: 'print ''<ul>''; '
-    - node: br
-    - node: text
-      content: 'foreach ($stmt as $s) { '
-    - node: br
-    - node: text
-      content: '    print ''<li>''; print $s->name; print ''</li>''; '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: print '</ul>';
+  - kind: heading
+    level: 1
+    text: B
+  - kind: para
+    text: <?php require 'bootstrap.php';$db = mysqli_connect();$stmt = mysqli_prepare($db,
+      'SELECT * FROM books');mysqli_stmt_execute($stmt);print '<h1>本の一覧</h1>';print
+      '<ul>';foreach ($stmt as $s) {print '<li>'; print $s->name; print '</li>';}print
+      '</ul>';
   p13:
-  - node: p
-    children:
-    - node: text
-      content: C
-  - node: p
-    children:
-    - node: text
-      content: '<?php declare(strict_types=1); '
-  - node: p
-    children:
-    - node: text
-      content: 'namespace Foo\Http\Controller; '
-  - node: p
-    children:
-    - node: text
-      content: 'class BooksController extends BaseController { '
-    - node: br
-    - node: text
-      content: '    public function index() { '
-    - node: br
-    - node: text
-      content: '        $books = Books::getAll(); '
-  - node: p
-    children:
-    - node: text
-      content: '        $this->render(compact("books")); '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: C
+  - kind: para
+    text: <?php declare(strict_types=1);namespace Foo\Http\Controller;
+  - kind: para
+    text: class BooksController extends BaseController {public function index() {$books
+      = Books::getAll();
+  - kind: para
+    text: $this->render(compact("books"));}}
   p14:
-  - node: p
-    children:
-    - node: bold
-      content: P H P の原作者
-    - node: br
-    - node: text
-      content: ラスマスかく語りき
+  - kind: heading
+    level: 2
+    text: P H P の原作者
+  - kind: heading
+    level: 1
+    text: ラスマスかく語りき
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 2007年 MySQL Conference
-  - node: p
-    children:
-    - node: bold
-      content: '“We have things like protected properties. We have abstract methods.
-        We have all this stuff that your computer science teacher told '
-    - node: br
-    - node: bold
-      content: 'you you should be using.  '
-    - node: br
-    - node: bold
-      content: I don't care about this crap at all.”
-  - node: p
-    children:
-    - node: bold
-      content: '–Rasmus Lerdorf '
-    - node: br
-    - node: bold
-      content: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+  - kind: heading
+    level: 1
+    text: 2007年 MySQL Conference
+  - kind: para
+    text: “We have things like protected properties.We have abstract methods. We have
+      all this stuff that your computer science teacher told you you should be using.I
+      don't care about this crap at all.”–Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 2007年 MySQL Conference
-  - node: p
-    children:
-    - node: text
-      content: には プロパティも
-    - node: br
-    - node: bold
-      content: '“PHP protected  '
-    - node: br
-    - node: text
-      content: 抽象メソッドもありますよ。計算機科学の
-    - node: br
-    - node: text
-      content: 教授が「使え」と言ってるものは全部。
-  - node: p
-    children:
-    - node: text
-      content: そんなことはクソ興味ないですけど
-  - node: p
-    children:
-    - node: bold
-      content: ”
-  - node: p
-    children:
-    - node: bold
-      content: (tadsan )
-  - node: p
-    children:
-    - node: bold
-      content: '–Rasmus Lerdorf '
-  - node: p
-    children:
-    - node: text
-      content: による超訳
+  - kind: heading
+    level: 1
+    text: 2007年 MySQL Conference
+  - kind: para
+    text: “PHPにはprotectedプロパティも抽象メソッドもありますよ。計算機科学の教授が「使え」と言ってるものは全部。そんなことはクソ興味ないですけど”–Rasmus
+      Lerdorf (tadsanによる超訳)
   p17:
-  - node: p
-    children:
-    - node: text
-      content: '変数に$があって '
-    - node: br
-    - node: text
-      content: Perlっぽくて
+  - kind: para
+    text: 変数に$があってPerlっぽくて
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 'C言語っぽい '
-    - node: br
-    - node: text
-      content: '関数と '
-    - node: br
-    - node: text
-      content: -> があって
+  - kind: para
+    text: C言語っぽい関数と-> があって
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 雰囲気Javaっぽい オブジェクト指向で
+  - kind: para
+    text: 雰囲気Javaっぽいオブジェクト指向で
   p20:
-  - node: p
-    children:
-    - node: text
-      content: PHPは見る人の心を映す
+  - kind: heading
+    level: 1
+    text: PHPは見る人の心を映す
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 整理しましょう
+  - kind: heading
+    level: 1
+    text: 整理しましょう
   p22:
-  - node: p
-    children:
-    - node: text
-      content: PHPは汎用プログラミング言語
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPはHTTP(≒Webサービス)を言語レベルでサポートしている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ほかの言語ではCGIライブラリとしてサポートしている機能が組み込み
-    - node: li
-      children:
-      - node: text
-        content: 各Webサーバとの連携はSAPI(Server API)として定義されている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: どのサーバー上でもCGI風の動作をする
-        - node: li
-          children:
-          - node: text
-            content: コマンドラインスクリプトとして実行するモード(CLI)もSAPIのひとつ
+  - kind: heading
+    level: 1
+    text: PHPは汎用プログラミング言語
+  - kind: list
+    items:
+    - PHPはHTTP(≒Webサービス)を言語レベルでサポートしている
+    - ほかの言語ではCGIライブラリとしてサポートしている機能が組み込み
+    - 各Webサーバとの連携はSAPI(Server API)として定義されている
+    - どのサーバー上でもCGI風の動作をする
+    - コマンドラインスクリプトとして実行するモード(CLI)もSAPIのひとつ
   p23:
-  - node: p
-    children:
-    - node: text
-      content: Perl
-  - node: p
-    children:
-    - node: text
-      content: 'use DBI; '
-  - node: p
-    children:
-    - node: text
-      content: '$db = DBI->connect(''...''); '
-    - node: br
-    - node: text
-      content: '$stmt = $db->prepare(''SELECT * FROM books''); '
-    - node: br
-    - node: text
-      content: '$stmt->execute; '
-    - node: br
-    - node: text
-      content: 'print ''<h1>本の一覧</h1>''; print ''<ul>''; '
-  - node: p
-    children:
-    - node: text
-      content: 'for ($i = 0; $I < $sth->rows; $i++) { '
-    - node: br
-    - node: text
-      content: '    @row = $sth->fetchrow_array; '
-    - node: br
-    - node: text
-      content: '    print ''<li>''; print $row[0]; print ''</li>''; '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: print '</ul>';
+  - kind: heading
+    level: 1
+    text: Perl
+  - kind: para
+    text: use DBI;
+  - kind: para
+    text: $db = DBI->connect('...');$stmt = $db->prepare('SELECT * FROM books');$stmt->execute;print
+      '<h1>本の一覧</h1>'; print '<ul>';for ($i = 0; $I < $sth->rows; $i++) {@row = $sth->fetchrow_array;print
+      '<li>'; print $row[0]; print '</li>';}print '</ul>';
   p24:
-  - node: p
-    children:
-    - node: text
-      content: B = CGIスタイル
-  - node: p
-    children:
-    - node: text
-      content: '<?php require ''bootstrap.php''; '
-  - node: p
-    children:
-    - node: text
-      content: '$db = mysqli_connect(); '
-    - node: br
-    - node: text
-      content: '$stmt = mysqli_prepare($db, ''SELECT * FROM books''); '
-    - node: br
-    - node: text
-      content: 'mysqli_stmt_execute($stmt); print ''<h1>本の一覧</h1>''; '
-  - node: p
-    children:
-    - node: text
-      content: 'print ''<ul>''; '
-    - node: br
-    - node: text
-      content: 'foreach ($stmt as $s) { '
-    - node: br
-    - node: text
-      content: '    print ''<li>''; print $s->name; print ''</li>''; '
-    - node: br
-    - node: text
-      content: '} '
-    - node: br
-    - node: text
-      content: print '</ul>';
+  - kind: heading
+    level: 1
+    text: B = CGIスタイル
+  - kind: para
+    text: <?php require 'bootstrap.php';$db = mysqli_connect();$stmt = mysqli_prepare($db,
+      'SELECT * FROM books');mysqli_stmt_execute($stmt);print '<h1>本の一覧</h1>';print
+      '<ul>';foreach ($stmt as $s) {print '<li>'; print $s->name; print '</li>';}print
+      '</ul>';
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 現在でも動くCGI
+  - kind: heading
+    level: 1
+    text: 現在でも動くCGI
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 言語としてのPHP
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: よくあるC言語風の制御構文と標準関数をもったスクリプト言語
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: if, else, switch, while, for, goto
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: PHPのgotoは綺麗なgoto
-    - node: li
-      children:
-      - node: text
-        content: 関数定義、クラス定義(class, interface, trait, enum)
-    - node: li
-      children:
-      - node: text
-        content: クラスや関数の再定義(オープンクラス・モンキーパッチ)はできない
+  - kind: para
+    text: 言語としてのPHP
+  - kind: list
+    items:
+    - よくあるC言語風の制御構文と標準関数をもったスクリプト言語
+    - if, else, switch, while, for, goto
+    - PHPのgotoは綺麗なgoto
+    - 関数定義、クラス定義(class, interface, trait, enum)
+    - クラスや関数の再定義(オープンクラス・モンキーパッチ)はできない
   p27:
-  - node: p
-    children:
-    - node: text
-      content: PHPの実行フロー
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: いわゆるVM(仮想機械)型のインタプリタ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: RubyをはじめPerl, Pythonなど現代的な言語は基本的にこれ
-    - node: li
-      children:
-      - node: text
-        content: 字句解析→構文解析→オペコードコンパイル
+  - kind: para
+    text: PHPの実行フロー
+  - kind: list
+    items:
+    - いわゆるVM(仮想機械)型のインタプリタ
+    - RubyをはじめPerl, Pythonなど現代的な言語は基本的にこれ
+    - 字句解析→構文解析→オペコードコンパイル
   p28: []
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 仮想機械？
+  - kind: heading
+    level: 1
+    text: 仮想機械？
   p30: []
   p31: []
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 'I am CPU. '
+  - kind: heading
+    level: 1
+    text: I am CPU.
   p33:
-  - node: p
-    children:
-    - node: text
-      content: つまり？
+  - kind: heading
+    level: 1
+    text: つまり？
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 自分のことをCPU だと思い込んだ象
+  - kind: para
+    text: 自分のことをCPUだと思い込んだ象
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 'CPUの言葉でしゃべれ '
+  - kind: heading
+    level: 1
+    text: CPUの言葉でしゃべれ
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 'Zend Engine '
-    - node: br
-    - node: text
-      content: オ ペ コ ー ド
-  - node: p
-    children:
-    - node: text
-      content: opcode
+  - kind: heading
+    level: 1
+    text: Zend Engine
+  - kind: para
+    text: オペコード
+  - kind: heading
+    level: 1
+    text: opcode
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo 1; ECHO                 1
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo 1;
+  - kind: para
+    text: ECHO 1
   p38:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo 'foo'; ECHO             'foo'
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo 'foo';
+  - kind: para
+    text: ECHO 'foo'
   p39:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: print 'foo'; ECHO             'foo'
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: print 'foo';
+  - kind: para
+    text: ECHO 'foo'
   p40:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: echo 1 + 2; ECHO                 3
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php
+  - kind: para
+    text: echo 1 + 2;
+  - kind: para
+    text: ECHO 3
   p41:
-  - node: p
-    children:
-    - node: text
-      content: PHPはオペコードにコンパイルされる
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: '$a = 1; ASSIGN           !0, 1         '
-  - node: p
-    children:
-    - node: text
-      content: 'ADD          ~2  !0, 2         '
-  - node: p
-    children:
-    - node: text
-      content: echo $a + 2;
-  - node: p
-    children:
-    - node: text
-      content: ECHO                ~2
+  - kind: heading
+    level: 1
+    text: PHPはオペコードにコンパイルされる
+  - kind: para
+    text: <?php$a = 1;echo $a + 2;
+  - kind: para
+    text: ASSIGN !0, 1 ADD ~2 !0, 2 ECHO ~2
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'opcodeでおｋ '
-  - node: p
-    children:
-    - node: text
-      content: <?php echo "foo";
-  - node: p
-    children:
-    - node: text
-      content: 'ECHO ''foo'' '
+  - kind: para
+    text: opcodeでおｋ
+  - kind: para
+    text: <?php echo "foo";
+  - kind: para
+    text: ECHO 'foo'
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 'なんで '
-    - node: br
-    - node: text
-      content: こんなことするの
+  - kind: para
+    text: なんでこんなことするの
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP '
-    - node: br
-    - node: text
-      content: 高度な構文解析が必要 な高級なシンタックス
+  - kind: para
+    text: PHP高度な構文解析が必要な高級なシンタックス
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 'opcode '
-    - node: br
-    - node: text
-      content: '構文解析不要な '
-    - node: br
-    - node: text
-      content: シンプルな命令セット
+  - kind: para
+    text: opcode構文解析不要なシンプルな命令セット
   p46:
-  - node: p
-    children:
-    - node: text
-      content: '分けて開発することで '
-    - node: br
-    - node: text
-      content: 最適化しやすくなる
+  - kind: para
+    text: 分けて開発することで最適化しやすくなる
   p47:
-  - node: p
-    children:
-    - node: text
-      content: PHPと型宣言
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: いわゆる動的型付け(dynamic typing)のランタイム
-    - node: li
-      children:
-      - node: text
-        content: 関数やプロパティ定義構文に型宣言があり、構文上で宣言されたものは
-      - node: br
-      - node: text
-        content: '実行時に確実にその型であることが保障される '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ただし array などのコンテナは中に何が入っているか明示できない
-    - node: li
-      children:
-      - node: text
-        content: 現状では変数には型がない (なんでも入る)
+  - kind: para
+    text: PHPと型宣言
+  - kind: list
+    items:
+    - いわゆる動的型付け(dynamic typing)のランタイム
+    - 関数やプロパティ定義構文に型宣言があり、構文上で宣言されたものは
+  - kind: para
+    text: 実行時に確実にその型であることが保障される
+  - kind: list
+    items:
+    - ただし array などのコンテナは中に何が入っているか明示できない
+    - 現状では変数には型がない (なんでも入る)
   p48:
-  - node: p
-    children:
-    - node: text
-      content: PHPとDocComment型注釈
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: クラスや関数定義の真上のコメント内 /** ... */に型について注釈を書く
-    - node: li
-      children:
-      - node: text
-        content: もちろんコメントなのでPHP実行中には解釈されないが、
-      - node: br
-      - node: text
-        content: 'PhpStormのようなIDEや静的解析ツールなどが参照してくれる '
-    - node: li
-      children:
-      - node: text
-        content: 'array<Book> や array{name: string} のようにランタイムでは'
-      - node: br
-      - node: text
-        content: 保障されない型が書ける
+  - kind: para
+    text: PHPとDocComment型注釈
+  - kind: list
+    items:
+    - クラスや関数定義の真上のコメント内 /** ... */に型について注釈を書く
+    - もちろんコメントなのでPHP実行中には解釈されないが、
+  - kind: para
+    text: PhpStormのようなIDEや静的解析ツールなどが参照してくれる
+  - kind: list
+    items:
+    - 'array<Book> や array{name: string} のようにランタイムでは'
+  - kind: para
+    text: 保障されない型が書ける
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 静的解析しやすい特徴
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: クラスや関数が再定義されることは基本的にない
-    - node: li
-      children:
-      - node: text
-        content: Java風のクラス継承(class, interface)
-    - node: li
-      children:
-      - node: text
-        content: 関数呼び出しは全て () がつく、文末は必ず ;
+  - kind: para
+    text: 静的解析しやすい特徴
+  - kind: list
+    items:
+    - クラスや関数が再定義されることは基本的にない
+    - Java風のクラス継承(class, interface)
+    - 関数呼び出しは全て () がつく、文末は必ず ;
   p50:
-  - node: p
-    children:
-    - node: text
-      content: PHPの進化は 型宣言の進化
+  - kind: para
+    text: PHPの進化は型宣言の進化
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 'いまやPHPは '
-    - node: br
-    - node: text
-      content: 静的型付きと言っても
-    - node: br
-    - node: text
-      content: '過言ではない '
-    - node: br
-    - node: text
-      content: (本当か…？)
+  - kind: para
+    text: いまやPHPは静的型付きと言っても過言ではない(本当か…？)
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 型がついていない関数(PHP5)
-  - node: p
-    children:
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 型がついていない関数(PHP5)
+  - kind: para
+    text: function add($a, $b) {return $a + $b;}
   p53:
-  - node: p
-    children:
-    - node: text
-      content: スカラー型宣言(PHP7)
-  - node: p
-    children:
-    - node: text
-      content: 'int + intって '
-    - node: br
-    - node: text
-      content: 本当にintなの？
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int $a, int $b): int {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: スカラー型宣言(PHP7)
+  - kind: para
+    text: int + intって本当にintなの？
+  - kind: para
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 広い値をとるにはﬂoatが必要
-  - node: p
-    children:
-    - node: text
-      content: 'ひとつの解決策では '
-    - node: br
-    - node: text
-      content: あるが… 不必要に5oat
-    - node: br
-    - node: text
-      content: を強制するのか
-  - node: p
-    children:
-    - node: text
-      content: 'function add(float $a, float $b): float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: 広い値をとるにはfloatが必要
+  - kind: para
+    text: ひとつの解決策ではあるが… 不必要にfloatを強制するのか
+  - kind: para
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p55:
-  - node: p
-    children:
-    - node: text
-      content: PHPDocの型注釈
-  - node: p
-    children:
-    - node: text
-      content: (アノテーション)
-  - node: p
-    children:
-    - node: text
-      content: /**
-    - node: br
-    - node: text
-      content: ' * @param int|float $a'
-  - node: p
-    children:
-    - node: text
-      content: あえて型宣言を省略する
-  - node: p
-    children:
-    - node: text
-      content: ' * @param int|float $b'
-    - node: br
-    - node: text
-      content: ' * @return int|float'
-    - node: br
-    - node: text
-      content: ' */         '
-    - node: br
-    - node: text
-      content: function add($a, $b) {
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p56:
-  - node: p
-    children:
-    - node: text
-      content: ユニオン型宣言 (PHP8.0)
-  - node: p
-    children:
-    - node: text
-      content: 'function add(int|float $a, int|float $b): int|float {'
-    - node: br
-    - node: text
-      content: '    return $a + $b;'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: ユニオン型宣言 (PHP8.0)
+  - kind: para
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p57:
-  - node: p
-    children:
-    - node: text
-      content: LL言語としてのPHP vs エディタ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2000年代のCGIやLL言語(Lightweight Language)という用語が
-      - node: br
-      - node: text
-        content: よく使われていた頃は「重厚鈍重なIDEが必要な言語」のアンチテーゼとして
-      - node: br
-      - node: text
-        content: 'シンプルなスクリプト言語とエディタが好まれていた (ように思う) '
-    - node: li
-      children:
-      - node: text
-        content: 時は流れ、Webアプリケーションは巨大になり、ファイルは増え、シンプルなエ
-      - node: br
-      - node: text
-        content: 'ディタでは開発のオーバーヘッドが無視しがたくなってきた '
-    - node: li
-      children:
-      - node: text
-        content: PhpStorm(JetBrains社のIDE)が静的解析とインテリジェントな編集機能
-      - node: br
-      - node: text
-        content: を提供してくれるようになった
+  - kind: heading
+    level: 1
+    text: LL言語としてのPHP vs エディタ
+  - kind: list
+    items:
+    - 2000年代のCGIやLL言語(Lightweight Language)という用語が
+  - kind: para
+    text: よく使われていた頃は「重厚鈍重なIDEが必要な言語」のアンチテーゼとしてシンプルなスクリプト言語とエディタが好まれていた (ように思う)
+  - kind: list
+    items:
+    - 時は流れ、Webアプリケーションは巨大になり、ファイルは増え、シンプルなエ
+  - kind: para
+    text: ディタでは開発のオーバーヘッドが無視しがたくなってきた
+  - kind: list
+    items:
+    - PhpStorm(JetBrains社のIDE)が静的解析とインテリジェントな編集機能
+  - kind: para
+    text: を提供してくれるようになった
   p58:
-  - node: p
-    children:
-    - node: text
-      content: PHPと静的解析
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP組み込みで提供されているのは php -l (syntax check) のみ
-    - node: li
-      children:
-      - node: text
-        content: 「静的解析ツール」と呼ばれうるものは2000年代からあった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ドキュメント生成、コーディングスタイルのチェック
-    - node: li
-      children:
-      - node: text
-        content: 2010年代後半になってPhpStormの普及を呼び水にして、
-      - node: br
-      - node: text
-        content: 型システムや変数スコープを正確に扱えるツールが開発され始めた
+  - kind: para
+    text: PHPと静的解析
+  - kind: list
+    items:
+    - PHP組み込みで提供されているのは php -l (syntax check) のみ
+    - 「静的解析ツール」と呼ばれうるものは2000年代からあった
+    - ドキュメント生成、コーディングスタイルのチェック
+    - 2010年代後半になってPhpStormの普及を呼び水にして、
+  - kind: para
+    text: 型システムや変数スコープを正確に扱えるツールが開発され始めた
   p59:
-  - node: p
-    children:
-    - node: text
-      content: PHP Static Analysis Tool
+  - kind: heading
+    level: 1
+    text: PHP Static Analysis Tool
   p60:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanとは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2016年から開発されているPHPの静的解析ツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Ondřej Mirtesさんの個人プロジェクト、2021年からフルタイム開発
-    - node: li
-      children:
-      - node: text
-        content: 開発当初は純粋な静的解析ではなく実行時リフレクションを用いることで
-      - node: br
-      - node: text
-        content: '高速な解析を実現していた '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 現在は静的解析がデフォルトで、レガシープロジェクトに導入しやすくなった
-    - node: li
-      children:
-      - node: text
-        content: その他のPHP静的解析ツールにはPsalm, Phan, Qodana(PhpStorm)
+  - kind: para
+    text: PHPStanとは
+  - kind: list
+    items:
+    - 2016年から開発されているPHPの静的解析ツール
+    - Ondřej Mirtesさんの個人プロジェクト、2021年からフルタイム開発
+    - 開発当初は純粋な静的解析ではなく実行時リフレクションを用いることで
+  - kind: para
+    text: 高速な解析を実現していた
+  - kind: list
+    items:
+    - 現在は静的解析がデフォルトで、レガシープロジェクトに導入しやすくなった
+    - その他のPHP静的解析ツールにはPsalm, Phan, Qodana(PhpStorm)
   p61:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの提供する型
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの組み込み型、クラス名、インターフェイス名
-    - node: li
-      children:
-      - node: text
-        content: '修飾型: non-empty-string, non-empty-array'
-    - node: li
-      children:
-      - node: text
-        content: 'ユニオン型: A|B'
-    - node: li
-      children:
-      - node: text
-        content: 'ジェネリクス: array<T>, ArrayObject<T>'
-    - node: li
-      children:
-      - node: text
-        content: '定数型: 123, "foo", Foo::BAR'
+  - kind: para
+    text: PHPStanの提供する型
+  - kind: list
+    items:
+    - PHPの組み込み型、クラス名、インターフェイス名
+    - '修飾型: non-empty-string, non-empty-array'
+    - 'ユニオン型: A|B'
+    - 'ジェネリクス: array<T>, ArrayObject<T>'
+    - '定数型: 123, "foo", Foo::BAR'
   p62:
-  - node: p
-    children:
-    - node: text
-      content: PHP処理系
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'ソースコード: https://github.com/php/php-src'
-    - node: li
-      children:
-      - node: text
-        content: 処理系のソースコードはC言語で書かれている(一部のみC++)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: パーサーはYacc(Bison)で記述されている
-        - node: li
-          children:
-          - node: text
-            content: 基礎知識は『Rubyソースコード完全解説』の知識が役に立つ
-    - node: li
-      children:
-      - node: text
-        content: 議論はメーリングリストがメインだが、GitHub issueやPull Requestも
-      - node: br
-      - node: text
-        content: 受け付けてくれる
+  - kind: para
+    text: PHP処理系
+  - kind: list
+    items:
+    - 'ソースコード: https://github.com/php/php-src'
+    - 処理系のソースコードはC言語で書かれている(一部のみC++)
+    - パーサーはYacc(Bison)で記述されている
+    - 基礎知識は『Rubyソースコード完全解説』の知識が役に立つ
+    - 議論はメーリングリストがメインだが、GitHub issueやPull Requestも
+  - kind: para
+    text: 受け付けてくれる
   p63:
-  - node: p
-    children:
-    - node: text
-      content: PHPの開発体制
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Request for Comments https://wiki.php.net/rfc
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 言語機能の改廃提案と投票プロセス、リリース周期が明文化
-    - node: li
-      children:
-      - node: text
-        content: 機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意する
-    - node: li
-      children:
-      - node: text
-        content: PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない
-    - node: li
-      children:
-      - node: text
-        content: PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 品質保障のためのfeature freeze、RC版なども定められた
+  - kind: para
+    text: PHPの開発体制
+  - kind: list
+    items:
+    - Request for Comments https://wiki.php.net/rfc
+    - 言語機能の改廃提案と投票プロセス、リリース周期が明文化
+    - 機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意する
+    - PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない
+    - PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着
+    - 品質保障のためのfeature freeze、RC版なども定められた
   p64:
-  - node: p
-    children:
-    - node: text
-      content: EmacsとPHP
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 実はEmacsは標準でPHP編集機能を持っていない
-    - node: li
-      children:
-      - node: text
-        content: サードパーティパッケージとしてPHP Modeを開発している
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacsが提供するCc Modeという機能を基盤にしている
-        - node: li
-          children:
-          - node: text
-            content: 「Cっぽい言語」をサポートするための巨大なフレームワークのようなもの
-    - node: li
-      children:
-      - node: text
-        content: ほかの言語にある機能はキーワードを設定するだけ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ない機能は… 地道にサポートするしかない
+  - kind: para
+    text: EmacsとPHP
+  - kind: list
+    items:
+    - 実はEmacsは標準でPHP編集機能を持っていない
+    - サードパーティパッケージとしてPHP Modeを開発している
+    - Emacsが提供するCc Modeという機能を基盤にしている
+    - 「Cっぽい言語」をサポートするための巨大なフレームワークのようなもの
+    - ほかの言語にある機能はキーワードを設定するだけ
+    - ない機能は… 地道にサポートするしかない
   p65:
-  - node: p
-    children:
-    - node: text
-      content: Emacs PHP Modeのサポート範囲
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTMLテンプレートのようなPHPコードはサポートしていない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 表示できない、まともにインデントできない
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: C言語族用のフレームワークがベースになっているため
-        - node: li
-          children:
-          - node: text
-            content: 別のHTMLテンプレート用のモードを使うことを推奨
+  - kind: heading
+    level: 1
+    text: Emacs PHP Modeのサポート範囲
+  - kind: list
+    items:
+    - HTMLテンプレートのようなPHPコードはサポートしていない
+    - 表示できない、まともにインデントできない
+    - C言語族用のフレームワークがベースになっているため
+    - 別のHTMLテンプレート用のモードを使うことを推奨
   p66:
-  - node: p
-    children:
-    - node: text
-      content: php-modeの未解決issue
+  - kind: heading
+    level: 1
+    text: php-modeの未解決issue
   p67:
-  - node: p
-    children:
-    - node: text
-      content: 最近のEmacs
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Emacs 29でLSPクライアントとTree-sitterが統合されるようになった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 既にいくつかの言語についてTree-sitterベースの編集モードが同梱
-    - node: li
-      children:
-      - node: text
-        content: Tree-sitterはエラー耐性のあるincremental parsing library
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 言語ごとのtreesitter-xxxのようなライブラリをインストールする必要
+  - kind: para
+    text: 最近のEmacs
+  - kind: list
+    items:
+    - Emacs 29でLSPクライアントとTree-sitterが統合されるようになった
+    - 既にいくつかの言語についてTree-sitterベースの編集モードが同梱
+    - Tree-sitterはエラー耐性のあるincremental parsing library
+    - 言語ごとのtreesitter-xxxのようなライブラリをインストールする必要
   p68:
-  - node: p
-    children:
-    - node: text
-      content: php-ts-mode
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Emacs本体に同梱をされることを目標に開発中のパッケージ
-    - node: li
-      children:
-      - node: text
-        content: tree-sitter-phpが提供してくれる構文木をベースに色付け・インデント
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ライブラリをロードしたら簡単に提供できる… かと思ったが、
-          - node: br
-          - node: text
-            content: 'それほど簡単ではなかった '
-    - node: li
-      children:
-      - node: text
-        content: 既存のphp-modeとの相互運用や基本的な問題を解決して、
-      - node: br
-      - node: text
-        content: 9月後半にリリースすることを目標に準備しています
+  - kind: para
+    text: php-ts-mode
+  - kind: list
+    items:
+    - Emacs本体に同梱をされることを目標に開発中のパッケージ
+    - tree-sitter-phpが提供してくれる構文木をベースに色付け・インデント
+    - ライブラリをロードしたら簡単に提供できる… かと思ったが、
+  - kind: para
+    text: それほど簡単ではなかった
+  - kind: list
+    items:
+    - 既存のphp-modeとの相互運用や基本的な問題を解決して、
+  - kind: para
+    text: 9月後半にリリースすることを目標に準備しています
 size:
   max_width: 1920
   max_height: 1080

@@ -1,791 +1,396 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: コードを自在に操るための
-    - node: br
-    - node: text
-      content: PHP文法入門
-  - node: p
-    children:
-    - node: text
-      content: Introduction to PHP syntax for mastering code manipulation
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 'PHPCon Kansai '
-  - node: p
-    children:
-    - node: bold
-      content: 2023-02-08 At Grand Front Osaka
+  - kind: heading
+    level: 1
+    text: コードを自在に操るための
+  - kind: heading
+    level: 1
+    text: PHP文法入門
+  - kind: heading
+    level: 2
+    text: Introduction to PHP syntax for mastering code manipulation
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: PHPCon Kansai 2023-02-08 At Grand Front Osaka
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 Webエンジニアリングチーム PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近はピクシブ百科事典(dic.pixiv.net)も開発しています
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
   p3:
-  - node: p
-    children:
-    - node: text
-      content: emacs-php
+  - kind: heading
+    level: 1
+    text: emacs-php
   p4:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス関西2017
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス関西2017
   p5:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス関西2018
+  - kind: heading
+    level: 1
+    text: PHPカンファレンス関西2018
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p7:
-  - node: p
-    children:
-    - node: text
-      content: '世はまさに '
-    - node: br
-    - node: text
-      content: 静的解析時代！
+  - kind: para
+    text: 世はまさに静的解析時代！
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '静的解析 '
-    - node: br
-    - node: text
-      content: 'プログラムの性質を '
-    - node: br
-    - node: text
-      content: 'プログラムを実行せずに '
-    - node: br
-    - node: text
-      content: 検査する技術の総称
+  - kind: para
+    text: 静的解析プログラムの性質をプログラムを実行せずに検査する技術の総称
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '2010年〜 '
-    - node: br
-    - node: text
-      content: PhpStormリリース
+  - kind: para
+    text: 2010年～PhpStormリリース
   p10: []
   p11:
-  - node: p
-    children:
-    - node: text
-      content: '2018年〜 '
-    - node: br
-    - node: text
-      content: PHPStanの普及
+  - kind: para
+    text: 2018年～PHPStanの普及
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの特徴
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPで書かれたオープンソースの静的解析ツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ルールや型付けなどの拡張をPHPで柔軟に記述可能
-    - node: li
-      children:
-      - node: text
-        content: 変数スコープや型推論が実装されており、プログラムを実行しなくても
-      - node: br
-      - node: text
-        content: '実行時の状態をかなり正確に推測できる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: レガシーコードを解析するために実行時情報(ランタイムリフレクション)を
-          - node: br
-          - node: text
-            content: 利用することもできる
+  - kind: heading
+    level: 1
+    text: PHPStanの特徴
+  - kind: list
+    items:
+    - PHPで書かれたオープンソースの静的解析ツール
+    - ルールや型付けなどの拡張をPHPで柔軟に記述可能
+    - 変数スコープや型推論が実装されており、プログラムを実行しなくても
+  - kind: para
+    text: 実行時の状態をかなり正確に推測できる
+  - kind: list
+    items:
+    - レガシーコードを解析するために実行時情報(ランタイムリフレクション)を
+  - kind: para
+    text: 利用することもできる
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPを正確に '
-    - node: br
-    - node: text
-      content: 理解したいと思った ことはありますか？
+  - kind: para
+    text: PHPを正確に理解したいと思ったことはありますか？
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPを正確に '
-    - node: br
-    - node: text
-      content: 理解したいと思った ことはありますか？
+  - kind: para
+    text: PHPを正確に理解したいと思ったことはありますか？
   p16:
-  - node: p
-    children:
-    - node: text
-      content: '正確じゃない理解 '
-    - node: br
-    - node: text
-      content: '#とは'
+  - kind: para
+    text: 正確じゃない理解
+  - kind: para
+    text: '#とは'
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 'ソースコードを '
-    - node: br
-    - node: text
-      content: リファクタリングする
-    - node: br
-    - node: text
-      content: ことを考えましょう
+  - kind: para
+    text: ソースコードをリファクタリングすることを考えましょう
   p18:
-  - node: p
-    children:
-    - node: text
-      content: '例えば: '
-    - node: br
-    - node: text
-      content: クラス名を変更したい
+  - kind: para
+    text: 例えば:クラス名を変更したい
   p19:
-  - node: p
-    children:
-    - node: text
-      content: パッケージ全部ではなく 1クラスだけ移動したい
-  - node: p
-    children:
-    - node: bold
-      content: 'Hakone\Runner '
-    - node: br
-    - node: text
-      content: '↓ '
-    - node: br
-    - node: bold
-      content: ' Olympic\Athlete'
+  - kind: para
+    text: パッケージ全部ではなく1クラスだけ移動したい
+  - kind: heading
+    level: 1
+    text: Hakone\Runner
+  - kind: heading
+    level: 1
+    text: ↓
+  - kind: heading
+    level: 1
+    text: Olympic\Athlete
   p20:
-  - node: p
-    children:
-    - node: text
-      content: シェル芸で一発
-  - node: p
-    children:
-    - node: text
-      content: '$ find . -type f -name "*.php" -exec gsed -I \ '
-    - node: br
-    - node: text
-      content: '    ''s/Hakone\\\\Runner/Olympic\\\\Athlete/g'' {} +'
+  - kind: heading
+    level: 1
+    text: シェル芸で一発
+  - kind: para
+    text: $ find . -type f -name "*.php" -exec gsed -I \'s/Hakone\\\\Runner/Olympic\\\\Athlete/g'
+      {} +
   p21:
-  - node: p
-    children:
-    - node: text
-      content: シェル芸で一発
-  - node: p
-    children:
-    - node: text
-      content: '$ find . -type f -name "*.php" -exec gsed -I \ '
-    - node: br
-    - node: text
-      content: '    ''s/Hakone\\\\Runner/Olympic\\\\Athlete/g'' {} +'
-    - node: br
-    - node: text
-      content: 完
+  - kind: heading
+    level: 2
+    text: シェル芸で一発
+  - kind: para
+    text: $ find . -type f -name "*.php" -exec gsed -I \'s/Hakone\\\\Runner/Olympic\\\\Athlete/g'
+      {} +
+  - kind: heading
+    level: 1
+    text: 完
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '…そう簡単には '
-    - node: br
-    - node: text
-      content: いきませんよね？
+  - kind: para
+    text: …そう簡単にはいきませんよね？
   p23:
-  - node: p
-    children:
-    - node: text
-      content: なぜ単純に置換してはいけないのか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 単純置換でいける場合もある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: クラス名が常にFQCN(完全修飾クラス名)で書かれているなら
-    - node: li
-      children:
-      - node: text
-        content: PHPのクラス名は常にFQCNが書かれるわけではない
-    - node: li
-      children:
-      - node: text
-        content: そもそも、ただの出力文字列としてコードに書かれたものと区別ができない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 例：クラスについてのHTMLドキュメントをPHPファイルに埋め込む
+  - kind: para
+    text: なぜ単純に置換してはいけないのか
+  - kind: list
+    items:
+    - 単純置換でいける場合もある
+    - クラス名が常にFQCN(完全修飾クラス名)で書かれているなら
+    - PHPのクラス名は常にFQCNが書かれるわけではない
+    - そもそも、ただの出力文字列としてコードに書かれたものと区別ができない
+    - 例：クラスについてのHTMLドキュメントをPHPファイルに埋め込む
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP名前空間の '
-    - node: br
-    - node: text
-      content: クラス名解決
+  - kind: para
+    text: PHP名前空間のクラス名解決
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'namespace Foo; '
-  - node: p
-    children:
-    - node: text
-      content: '$now = new Date(); '
-    - node: br
-    - node: text
-      content: '// Fatal error: Uncaught Error: Class "Foo\DateTime" not found'
+  - kind: para
+    text: <?php namespace Foo;
+  - kind: para
+    text: $now = new Date();
+  - kind: para
+    text: '// Fatal error: Uncaught Error: Class "Foo\DateTime" not found'
   p26:
-  - node: p
-    children:
-    - node: text
-      content: クラス名の絶対参照
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'namespace Foo; '
-  - node: p
-    children:
-    - node: text
-      content: '$now = new \Date(); '
-    - node: br
-    - node: text
-      content: // No errors.
+  - kind: para
+    text: クラス名の絶対参照
+  - kind: heading
+    level: 1
+    text: <?php
+  - kind: heading
+    level: 1
+    text: namespace Foo;
+  - kind: heading
+    level: 1
+    text: $now = new \Date();
+  - kind: para
+    text: // No errors.
   p27:
-  - node: p
-    children:
-    - node: text
-      content: クラスのインポート
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: 'namespace Foo; '
-    - node: br
-    - node: text
-      content: 'use Date; '
-    - node: br
-    - node: text
-      content: '$now = new Date(); '
-    - node: br
-    - node: text
-      content: // No errors.
+  - kind: para
+    text: クラスのインポート
+  - kind: para
+    text: <?php namespace Foo;use Date;$now = new Date();
+  - kind: para
+    text: // No errors.
   p28: []
   p29: []
   p30:
-  - node: p
-    children:
-    - node: text
-      content: もっと簡単に
+  - kind: heading
+    level: 1
+    text: もっと簡単に
   p31: []
   p32:
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm最高！
+  - kind: heading
+    level: 1
+    text: PhpStorm最高！
   p33:
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm最高！
+  - kind: heading
+    level: 1
+    text: PhpStorm最高！
   p34:
-  - node: p
-    children:
-    - node: text
-      content: '2024年､全PHPerは '
-    - node: br
-    - node: text
-      content: 'リファクタリングの '
-    - node: br
-    - node: text
-      content: 全フローをPhpStorm に委ねるしかないのか？
+  - kind: para
+    text: 2024年、全PHPerはリファクタリングの全フローをPhpStormに委ねるしかないのか？
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 'そうではない '
-    - node: br
-    - node: text
-      content: '(もちろんPhpStormも '
-    - node: br
-    - node: text
-      content: 優れた製品だが)
+  - kind: heading
+    level: 1
+    text: そうではない
+  - kind: para
+    text: (もちろんPhpStormも優れた製品だが)
   p36:
-  - node: p
-    children:
-    - node: text
-      content: ということで
+  - kind: heading
+    level: 1
+    text: ということで
   p37:
-  - node: p
-    children:
-    - node: text
-      content: Rectorを使おう
+  - kind: heading
+    level: 1
+    text: Rectorを使おう
   p38: []
   p39:
-  - node: p
-    children:
-    - node: text
-      content: Rectorとは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Tomas Votruba氏が開発する自動リファクタリングツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ソースコード https://github.com/rectorphp/rector-src
-    - node: li
-      children:
-      - node: text
-        content: Composerで簡単に導入できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP 7.2以上で動作し、PHPStan以外への依存関係を持たない
-    - node: li
-      children:
-      - node: text
-        content: 非常に数多くのルールを内蔵しているので、そのままで多くのユースケースに
-      - node: br
-      - node: text
-        content: 対応できる (PHPやPHPUnitのバージョンアップなど)
+  - kind: para
+    text: Rectorとは
+  - kind: list
+    items:
+    - Tomas Votruba氏が開発する自動リファクタリングツール
+    - ソースコード https://github.com/rectorphp/rector-src
+    - Composerで簡単に導入できる
+    - PHP 7.2以上で動作し、PHPStan以外への依存関係を持たない
+    - 非常に数多くのルールを内蔵しているので、そのままで多くのユースケースに
+  - kind: para
+    text: 対応できる (PHPやPHPUnitのバージョンアップなど)
   p40:
-  - node: p
-    children:
-    - node: text
-      content: Rectorの特徴
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP-ParserとPHPStanをベースにカスタムルールを構築できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 単純な構文木を扱えるだけでなく、PHPStanが分析する変数スコープや 型情報にアクセスできるため、(コードに適切な型がついているという前提に
-          - node: br
-          - node: text
-            content: 'おいて)かなり信頼性の高いリファクタリングが可能 '
-    - node: li
-      children:
-      - node: text
-        content: あくまで構文木を扱うツールなので、出力されるコードの細かいスタイルの 制御には対応していない (ほかのフォーマットツールや同作者のECSを併用)
+  - kind: heading
+    level: 1
+    text: Rectorの特徴
+  - kind: list
+    items:
+    - PHP-ParserとPHPStanをベースにカスタムルールを構築できる
+    - 単純な構文木を扱えるだけでなく、PHPStanが分析する変数スコープや
+  - kind: para
+    text: 型情報にアクセスできるため、(コードに適切な型がついているという前提において)かなり信頼性の高いリファクタリングが可能
+  - kind: list
+    items:
+    - あくまで構文木を扱うツールなので、出力されるコードの細かいスタイルの
+  - kind: para
+    text: 制御には対応していない (ほかのフォーマットツールや同作者のECSを併用)
   p41:
-  - node: p
-    children:
-    - node: text
-      content: こうぶんき
-    - node: br
-    - node: text
-      content: 構文木ってなんだ
+  - kind: heading
+    level: 2
+    text: こうぶんき
+  - kind: heading
+    level: 1
+    text: 構文木ってなんだ
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'プログラムは '
-    - node: br
-    - node: text
-      content: どうやって動くの？
+  - kind: para
+    text: プログラムはどうやって動くの？
   p43:
-  - node: p
-    children:
-    - node: text
-      content: ソースコード
+  - kind: heading
+    level: 1
+    text: ソースコード
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 字句解析(tokenize)
+  - kind: heading
+    level: 1
+    text: 字句解析(tokenize)
   p45: []
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 構文解析(parsing)
-  - node: p
-    children:
-    - node: text
-      content: if条件式
-    - node: br
-    - node: text
-      content: if文 ==比較式
-  - node: p
-    children:
-    - node: text
-      content: echo文
+  - kind: heading
+    level: 1
+    text: 構文解析(parsing)
+  - kind: para
+    text: if文if条件式==比較式
+  - kind: para
+    text: echo文
   p47:
-  - node: p
-    children:
-    - node: text
-      content: トークン列
-  - node: p
-    children:
-    - node: text
-      content: PHPはじまったな
-  - node: p
-    children:
-    - node: text
-      content: if文はじまったな
-  - node: p
-    children:
-    - node: text
-      content: 条件式はじまったな
-  - node: p
-    children:
-    - node: text
-      content: こいつの前後は==比較だな
-  - node: p
-    children:
-    - node: text
-      content: 条件式終了のお知らせ
-  - node: p
-    children:
-    - node: text
-      content: ここからブロックだな
-  - node: p
-    children:
-    - node: text
-      content: echoだな
-  - node: p
-    children:
-    - node: text
-      content: 文字列だな
-  - node: p
-    children:
-    - node: text
-      content: ; で echo ＼(^o^)／ ｵﾜﾀ
-  - node: p
-    children:
-    - node: text
-      content: '} で if文 ＼(^o^)／ ｵﾜﾀ'
+  - kind: heading
+    level: 1
+    text: トークン列
+  - kind: para
+    text: PHPはじまったな
+  - kind: para
+    text: if文はじまったな
+  - kind: para
+    text: 条件式はじまったな
+  - kind: para
+    text: こいつの前後は==比較だな
+  - kind: para
+    text: 条件式終了のお知らせ
+  - kind: para
+    text: ここからブロックだな
+  - kind: para
+    text: echoだな
+  - kind: para
+    text: 文字列だな
+  - kind: para
+    text: ; で echo ＼(^o^)／ ｵﾜﾀ
+  - kind: para
+    text: '} で if文 ＼(^o^)／ ｵﾜﾀ'
   p48: []
   p49:
-  - node: p
-    children:
-    - node: text
-      content: PHP-Parser
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPの(元)コア開発者のNikita PopovによるPHP構文解析ライブラリ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPで書かれておりComposerで導入可能
-        - node: li
-          children:
-          - node: text
-            content: PHPStan, Rector, PHPUnitなどはじめ多くのツールの基盤
-    - node: li
-      children:
-      - node: text
-        content: 2024年1月8日にPHP-Parser 5.0がリリースされた
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ただし現行のPHPStan, RectorはまだPHP-Parser 4.xを利用
-        - node: li
-          children:
-          - node: text
-            content: PHPStanは2024年内にリリース予定の2.0で5.xに移行予定
+  - kind: heading
+    level: 1
+    text: PHP-Parser
+  - kind: list
+    items:
+    - PHPの(元)コア開発者のNikita PopovによるPHP構文解析ライブラリ
+    - PHPで書かれておりComposerで導入可能
+    - PHPStan, Rector, PHPUnitなどはじめ多くのツールの基盤
+    - 2024年1月8日にPHP-Parser 5.0がリリースされた
+    - ただし現行のPHPStan, RectorはまだPHP-Parser 4.xを利用
+    - PHPStanは2024年内にリリース予定の2.0で5.xに移行予定
   p50:
-  - node: p
-    children:
-    - node: text
-      content: 構文木 (4.x)
+  - kind: heading
+    level: 1
+    text: 構文木 (4.x)
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 構文解析(parsing)
-  - node: p
-    children:
-    - node: text
-      content: if条件式
-    - node: br
-    - node: text
-      content: if文 ==比較式
-  - node: p
-    children:
-    - node: text
-      content: echo文
+  - kind: heading
+    level: 1
+    text: 構文解析(parsing)
+  - kind: para
+    text: if文if条件式==比較式
+  - kind: para
+    text: echo文
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 構文木 (4.x)
+  - kind: heading
+    level: 1
+    text: 構文木 (4.x)
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 構文木 (5.x)
+  - kind: heading
+    level: 1
+    text: 構文木 (5.x)
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 構文木 (syntax tree)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: プログラムの構造を解析した結果を木構造にしたもの
-    - node: li
-      children:
-      - node: text
-        content: PHPの場合は <?php foo(); bar(); のように ; 区切りでいくつも文を書
-      - node: br
-      - node: text
-        content: 'けるので、トップレベル(一番外側)は配列 [] になっている '
-    - node: li
-      children:
-      - node: text
-        content: その内側に入っているものの一個一個のことを「ノード」と呼ぶ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPのクラスとして定義されている
-    - node: li
-      children:
-      - node: text
-        content: PHP-Parserのノードの種類はGitHubで見るのがわかりやすい
+  - kind: para
+    text: 構文木 (syntax tree)
+  - kind: list
+    items:
+    - プログラムの構造を解析した結果を木構造にしたもの
+    - PHPの場合は <?php foo(); bar(); のように ; 区切りでいくつも文を書
+  - kind: para
+    text: けるので、トップレベル(一番外側)は配列 [] になっている
+  - kind: list
+    items:
+    - その内側に入っているものの一個一個のことを「ノード」と呼ぶ
+    - PHPのクラスとして定義されている
+    - PHP-Parserのノードの種類はGitHubで見るのがわかりやすい
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 'expression '
-    - node: br
-    - node: text
-      content: = 式
-  - node: p
-    children:
-    - node: text
-      content: 'Statement '
-    - node: br
-    - node: text
-      content: = 文
+  - kind: para
+    text: expression
+  - kind: para
+    text: = 式
+  - kind: para
+    text: Statement
+  - kind: para
+    text: = 文
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP構文での echoとprintの '
-    - node: br
-    - node: text
-      content: 違いは？
+  - kind: para
+    text: PHP構文でのechoとprintの違いは？
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 式 vs 文
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: '式 (expressions) : 演算子や関数呼び出しなど組み合わせて書ける'
-    - node: li
-      children:
-      - node: text
-        content: '文 (statement) : 制御構造など、式の内側に書けないもの'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: if/switchのような制御構造やclass、functionの宣言文など
-        - node: li
-          children:
-          - node: text
-            content: var_dump($v);  関数呼び出しや代入式だけの文は「式文」と呼ばれる
+  - kind: para
+    text: 式 vs 文
+  - kind: list
+    items:
+    - '式 (expressions) : 演算子や関数呼び出しなど組み合わせて書ける'
+    - '文 (statement) : 制御構造など、式の内側に書けないもの'
+    - if/switchのような制御構造やclass、functionの宣言文など
+    - var_dump($v); 関数呼び出しや代入式だけの文は「式文」と呼ばれる
   p58: []
   p59: []
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 式と文と式文
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: $a = 1 「代入文」と呼ばれがちだが、代入そのもの式
-    - node: li
-      children:
-      - node: text
-        content: include_once や require_once も実は式ではなく文
-    - node: li
-      children:
-      - node: text
-        content: PHP 8系では fn() や match () {} など式が使いやすくなった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP 7までは「throw文」だったが、PHP 8からは「throw式」になった
-    - node: li
-      children:
-      - node: text
-        content: var_dump($v);  関数呼び出しや代入式だけの文は「式文」と呼ばれる
+  - kind: para
+    text: 式と文と式文
+  - kind: list
+    items:
+    - $a = 1 「代入文」と呼ばれがちだが、代入そのもの式
+    - include_once や require_once も実は式ではなく文
+    - PHP 8系では fn() や match () {} など式が使いやすくなった
+    - PHP 7までは「throw文」だったが、PHP 8からは「throw式」になった
+    - var_dump($v); 関数呼び出しや代入式だけの文は「式文」と呼ばれる
   p61:
-  - node: p
-    children:
-    - node: text
-      content: PHP-Parser 4.x → 5.0
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 実行環境要件としてPHP 7.4以上を要求
-    - node: li
-      children:
-      - node: text
-        content: PHP 5.x専用パーサーを削除
-    - node: li
-      children:
-      - node: text
-        content: 変な名前のクラスをわかりやすいようにリネーム
+  - kind: para
+    text: PHP-Parser 4.x → 5.0
+  - kind: list
+    items:
+    - 実行環境要件としてPHP 7.4以上を要求
+    - PHP 5.x専用パーサーを削除
+    - 変な名前のクラスをわかりやすいようにリネーム
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP7 vs 8: トークナイズの違い'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://wiki.php.net/rfc/namespaced_names_as_token
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP 8.0からnamespaceの一部に予約語を含められるようになった
-        - node: li
-          children:
-          - node: text
-            content: その代りにトークンの間にスペース空けるのが許容されなくなった
-    - node: li
-      children:
-      - node: text
-        content: PHP-Parser 5.0ではこのトークナイズの結果が反映される
+  - kind: para
+    text: 'PHP7 vs 8: トークナイズの違い'
+  - kind: list
+    items:
+    - https://wiki.php.net/rfc/namespaced_names_as_token
+    - PHP 8.0からnamespaceの一部に予約語を含められるようになった
+    - その代りにトークンの間にスペース空けるのが許容されなくなった
+    - PHP-Parser 5.0ではこのトークナイズの結果が反映される
   p63:
-  - node: p
-    children:
-    - node: text
-      content: token_get_all()の違い
+  - kind: heading
+    level: 1
+    text: token_get_all()の違い
   p64:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.xで動いてたコード
+  - kind: heading
+    level: 1
+    text: PHP 7.xで動いてたコード
   p65:
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.xで動くコード
+  - kind: heading
+    level: 1
+    text: PHP 8.xで動くコード
   p66:
-  - node: p
-    children:
-    - node: text
-      content: スライドここまで
+  - kind: heading
+    level: 1
+    text: スライドここまで
   p67:
-  - node: p
-    children:
-    - node: text
-      content: '隣の世界でも '
-    - node: br
-    - node: text
-      content: 構文解析時代の到来
+  - kind: para
+    text: 隣の世界でも構文解析時代の到来
   p68: []
   p69: []
   p70: []

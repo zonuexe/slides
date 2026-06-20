@@ -1,838 +1,407 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 【令和最新版】
-  - node: p
-    children:
-    - node: text
-      content: 開発者フレンドリーな HTTP SDK作るには
-  - node: p
-    children:
-    - node: text
-      content: Creating Developer-Friendly HTTP SDKs
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2022-06-24 '
-  - node: p
-    children:
-    - node: bold
-      content: PHP Conference Fukuoka
+  - kind: heading
+    level: 1
+    text: 【令和最新版】
+  - kind: heading
+    level: 1
+    text: 開発者フレンドリーな
+  - kind: heading
+    level: 1
+    text: HTTP SDK作るには
+  - kind: heading
+    level: 2
+    text: Creating Developer-Friendly HTTP SDKs
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2022-06-24 PHP Conference Fukuoka
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人
   p3:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p4:
-  - node: p
-    children:
-    - node: text
-      content: '内容を詰め込んでるの でメモとかは無理です '
-    - node: br
-    - node: text
-      content: 後日詳細なフォロー アップを公開します
+  - kind: para
+    text: 内容を詰め込んでるのでメモとかは無理です
+  - kind: para
+    text: 後日詳細なフォローアップを公開します
   p5:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p6:
-  - node: p
-    children:
-    - node: text
-      content: つまり…？
+  - kind: heading
+    level: 1
+    text: つまり…？
   p7:
-  - node: p
-    children:
-    - node: text
-      content: そういう話です
-    - node: br
-    - node: text
-      content: 🤖
+  - kind: heading
+    level: 1
+    text: 🤖そういう話です
   p8:
-  - node: p
-    children:
-    - node: text
-      content: そういう話です
-    - node: br
-    - node: text
-      content: 🤖
+  - kind: heading
+    level: 1
+    text: 🤖そういう話です
   p9:
-  - node: p
-    children:
-    - node: text
-      content: 'テストの話はしますが '
-    - node: br
-    - node: text
-      content: '主題には '
-    - node: br
-    - node: text
-      content: なりませんでした
+  - kind: para
+    text: テストの話はしますが主題にはなりませんでした
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'SDKを書く前に おさえておきたい '
-    - node: br
-    - node: text
-      content: 'PHPでのHTTPの '
-    - node: br
-    - node: text
-      content: 使いかた
+  - kind: para
+    text: SDKを書く前におさえておきたいPHPでのHTTPの使いかた
   p11:
-  - node: p
-    children:
-    - node: text
-      content: '大昔に別の '
-    - node: br
-    - node: text
-      content: 'アプローチについて '
-    - node: br
-    - node: text
-      content: 書いたこともあります
+  - kind: para
+    text: 大昔に別のアプローチについて書いたこともあります
   p12:
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB PRESS Vol.96
-  - node: p
-    children:
-    - node: text
-      content: (2016年)
+  - kind: heading
+    level: 1
+    text: WEB+DB PRESS Vol.96(2016年)
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '関数ベースの処理は '
-    - node: br
-    - node: text
-      content: 'イケてないから '
-    - node: br
-    - node: text
-      content: 'Guzzle使おうぜ！ '
-    - node: br
-    - node: text
-      content: …という内容
+  - kind: para
+    text: 関数ベースの処理はイケてないからGuzzle使おうぜ！…という内容
   p14:
-  - node: p
-    children:
-    - node: text
-      content: Zennに再掲しました
-  - node: p
-    children:
-    - node: text
-      content: (2016年版)
+  - kind: heading
+    level: 1
+    text: Zennに再掲しました(2016年版)
   p15:
-  - node: p
-    children:
-    - node: text
-      content: '今回しない話 '
-  - node: p
-    children:
-    - node: text
-      content: (発表時間15分なので)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: OpenAPI(Swagger)の定義からコードを自動生成するとか
-    - node: li
-      children:
-      - node: text
-        content: 具体的なSDKの実装方法
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: もうちょっと手前のHTTPの話が中心です
-        - node: li
-          children:
-          - node: text
-            content: 後日、私がいままで作ったSDKをいくつか紹介します
-    - node: li
-      children:
-      - node: text
-        content: 具体的なテスト手法について… 間に合いませんでした！
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: スライドじゃなくていい感じにするライブラリをちょこちょこ書いてます
+  - kind: para
+    text: 今回しない話 (発表時間15分なので)
+  - kind: list
+    items:
+    - OpenAPI(Swagger)の定義からコードを自動生成するとか
+    - 具体的なSDKの実装方法
+    - もうちょっと手前のHTTPの話が中心です
+    - 後日、私がいままで作ったSDKをいくつか紹介します
+    - 具体的なテスト手法について… 間に合いませんでした！
+    - スライドじゃなくていい感じにするライブラリをちょこちょこ書いてます
   p16:
-  - node: p
-    children:
-    - node: text
-      content: '超ざっくり '
-  - node: p
-    children:
-    - node: text
-      content: PHP vs HTTP
+  - kind: para
+    text: 超ざっくりPHP vs HTTP
   p17:
-  - node: p
-    children:
-    - node: text
-      content: PHPからHTTPリクエスト
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: グローバル関数を使うと超かんたんにHTTPリクエストを発行できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Ole_get_contents($url)
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: 名前に反してPOSTなど任意のメソッドのリクエストを発行できる(!)
-        - node: li
-          children:
-          - node: text
-            content: cURL関数 [curl_init(), curl_exec(), ...]
-        - node: li
-          children:
-          - node: text
-            content: こいつらは事実上の標準関数みたいな感じで外部ライブラリも要らないし
-          - node: br
-          - node: text
-            content: 簡単だけどリクエスト・レスポンスの組み立てがちょっとめんどい
+  - kind: heading
+    level: 1
+    text: PHPからHTTPリクエスト
+  - kind: list
+    items:
+    - グローバル関数を使うと超かんたんにHTTPリクエストを発行できる
+    - file_get_contents($url)
+    - 名前に反してPOSTなど任意のメソッドのリクエストを発行できる(!)
+    - cURL関数 [curl_init(), curl_exec(), ...]
+    - こいつらは事実上の標準関数みたいな感じで外部ライブラリも要らないし
+  - kind: para
+    text: 簡単だけどリクエスト・レスポンスの組み立てがちょっとめんどい
   p18:
-  - node: p
-    children:
-    - node: text
-      content: そうだ､HTTPクライアントを使おう
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 実際にはuopzで可能
-      - node: br
-      - node: text
-        content: '「リクエスト関数」から「クライアントオブジェクト」へ '
-  - node: p
-    children:
-    - node: text
-      content: '(例: clock-mock)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHPではグローバル関数をモックすることはちょっと大変
-    - node: li
-      children:
-      - node: text
-        content: インスタンスを外部から受け取ることで、HTTP通信が置換可能になる
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ガ ズ ル シ ン フ ォ ニ ー
-      - node: br
-      - node: text
-        content: 'よく知られた実装: Guzzle, Symfony HTTP Client'
+  - kind: heading
+    level: 1
+    text: そうだ、HTTPクライアントを使おう
+  - kind: heading
+    level: 2
+    text: 実際にはuopzで可能
+  - kind: heading
+    level: 3
+    text: '(例: clock-mock)'
+  - kind: para
+    text: ガズルシンフォニー
+  - kind: list
+    items:
+    - 「リクエスト関数」から「クライアントオブジェクト」へ
+    - PHPではグローバル関数をモックすることはちょっと大変
+    - インスタンスを外部から受け取ることで、HTTP通信が置換可能になる
+    - 'よく知られた実装: Guzzle, Symfony HTTP Client'
   p19:
-  - node: p
-    children:
-    - node: text
-      content: Guzzle
+  - kind: heading
+    level: 1
+    text: Guzzle
   p20:
-  - node: p
-    children:
-    - node: text
-      content: つまり…？
+  - kind: heading
+    level: 1
+    text: つまり…？
   p21:
-  - node: p
-    children:
-    - node: text
-      content: PSRとは何か
+  - kind: heading
+    level: 1
+    text: PSRとは何か
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 'PHP-FIGとかいう '
-    - node: br
-    - node: text
-      content: 有志の団体が勧告して
-    - node: br
-    - node: text
-      content: いる標準仕様
+  - kind: para
+    text: PHP-FIGとかいう有志の団体が勧告している標準仕様
   p23:
-  - node: p
-    children:
-    - node: bold
-      content: F
-    - node: text
-      content: ramework
-    - node: bold
-      content: ' '
-    - node: br
-    - node: bold
-      content: I
-    - node: text
-      content: nterop
-    - node: bold
-      content: ' '
-    - node: br
-    - node: bold
-      content: G
-    - node: text
-      content: roup
+  - kind: para
+    text: Framework Interop Group
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 'フレームワークを 作ってる人たちの '
-    - node: br
-    - node: text
-      content: 寄合所帯
+  - kind: para
+    text: フレームワークを作ってる人たちの寄合所帯
   p25:
-  - node: p
-    children:
-    - node: text
-      content: PSRの誤解
+  - kind: heading
+    level: 1
+    text: PSRの誤解
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 'ワシのPSRは '
-    - node: br
-    - node: text
-      content: 20式まであるぞ
-  - node: p
-    children:
-    - node: text
-      content: 一般的にはオートロードや コーディング規約が知られ
-    - node: br
-    - node: text
-      content: 'ていると思う '
-  - node: p
-    children:
-    - node: text
-      content: (たぶん)
+  - kind: para
+    text: ワシのPSRは20式まであるぞ
+  - kind: heading
+    level: 1
+    text: 一般的にはオートロードや
+  - kind: heading
+    level: 1
+    text: コーディング規約が知られ
+  - kind: heading
+    level: 1
+    text: ていると思う (たぶん)
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 'PSRではHTTPに 関連する仕様も多く '
-    - node: br
-    - node: text
-      content: 勧告されている
+  - kind: para
+    text: PSRではHTTPに関連する仕様も多く勧告されている
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 最重要資料
+  - kind: heading
+    level: 1
+    text: 最重要資料
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-18は '
-    - node: br
-    - node: text
-      content: HTTP Clientの インターフェイス
+  - kind: para
+    text: PSR-18はHTTP Clientのインターフェイス
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-18は '
-    - node: br
-    - node: text
-      content: 'PSR-15と似ているが '
-    - node: br
-    - node: text
-      content: よりシンプル
+  - kind: para
+    text: PSR-18はPSR-15と似ているがよりシンプル
   p31:
-  - node: p
-    children:
-    - node: text
-      content: PSR-15 vs PSR-18
+  - kind: heading
+    level: 1
+    text: PSR-15 vs PSR-18
   p32:
-  - node: p
-    children:
-    - node: text
-      content: ＿人人人人人人人人人人人人人人人人人＿ ＞　僕の知ってるHTTPClientと違う　＜ ￣Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^￣
+  - kind: para
+    text: ＿人人人人人人人人人人人人人人人人人＿＞ 僕の知ってるHTTPClientと違う ＜‾Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^Y^‾
   p33:
-  - node: p
-    children:
-    - node: text
-      content: '僕の知ってる '
-    - node: br
-    - node: text
-      content: HTTP Clientって？
+  - kind: para
+    text: 僕の知ってるHTTP Clientって？
   p34:
-  - node: p
-    children:
-    - node: text
-      content: GuzzleのREADMEに書いてる
+  - kind: heading
+    level: 1
+    text: GuzzleのREADMEに書いてる
   p35:
-  - node: p
-    children:
-    - node: text
-      content: それに引き換えなんだこのPSR-18
-  - node: p
-    children:
-    - node: text
-      content: シンプルすぎる
+  - kind: heading
+    level: 1
+    text: それに引き換えなんだこのPSR-18
+  - kind: heading
+    level: 2
+    text: シンプルすぎる
   p36:
-  - node: p
-    children:
-    - node: text
-      content: だがそれがいい
+  - kind: heading
+    level: 1
+    text: だがそれがいい
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7/18 vs Guzzle (1)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSRはフレームワークの相互運用できる共通部品となるべく設計された
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PSR-7/18はHTTPの仕様を(PHPで扱える範囲で)そのまま表現できる
-    - node: li
-      children:
-      - node: text
-        content: Guzzleはエンドユーザーが使いやすいように設計されていて、
-      - node: br
-      - node: text
-        content: 'ユーザーはHTTPやPSRの仕様を考えなくても簡単に使えるようになってる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: リクエスト生成やHTTPヘッダの組み立てなどの実装も含んでいる
+  - kind: heading
+    level: 1
+    text: PSR-7/18 vs Guzzle (1)
+  - kind: list
+    items:
+    - PSRはフレームワークの相互運用できる共通部品となるべく設計された
+    - PSR-7/18はHTTPの仕様を(PHPで扱える範囲で)そのまま表現できる
+    - Guzzleはエンドユーザーが使いやすいように設計されていて、
+  - kind: para
+    text: ユーザーはHTTPやPSRの仕様を考えなくても簡単に使えるようになってる
+  - kind: list
+    items:
+    - リクエスト生成やHTTPヘッダの組み立てなどの実装も含んでいる
   p38:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7/18 vs Guzzle (2)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-7/18は仕様がコンパクトなので気のきいた機能は定義されてない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: HTTPを理解していないと正しくリクエストを送れないこともありうる
-    - node: li
-      children:
-      - node: text
-        content: Guzzleは充実した便利機能を内包しているので、少ない記述量で
-      - node: br
-      - node: text
-        content: '複数のHTTPリクエストを発行できる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: なおかつPSR-18のClientInterfaceも実装している
-        - node: li
-          children:
-          - node: text
-            content: Guzzle独自の便利メソッドとPSR-18のシンプルメソッド両方使える
+  - kind: heading
+    level: 1
+    text: PSR-7/18 vs Guzzle (2)
+  - kind: list
+    items:
+    - PSR-7/18は仕様がコンパクトなので気のきいた機能は定義されてない
+    - HTTPを理解していないと正しくリクエストを送れないこともありうる
+    - Guzzleは充実した便利機能を内包しているので、少ない記述量で
+  - kind: para
+    text: 複数のHTTPリクエストを発行できる
+  - kind: list
+    items:
+    - なおかつPSR-18のClientInterfaceも実装している
+    - Guzzle独自の便利メソッドとPSR-18のシンプルメソッド両方使える
   p39:
-  - node: p
-    children:
-    - node: text
-      content: PSR-15 vs PSR-18
+  - kind: heading
+    level: 1
+    text: PSR-15 vs PSR-18
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 一年前に話した
+  - kind: heading
+    level: 1
+    text: 一年前に話した
   p41:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
   p42:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RReeqquueessttHHaannddlleerr
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '特定の場合に '
-    - node: br
-    - node: text
-      content: '処理を横取りできると '
-    - node: br
-    - node: text
-      content: うれしいことがある
+  - kind: para
+    text: 特定の場合に処理を横取りできるとうれしいことがある
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 例：ユニットテスト
+  - kind: heading
+    level: 1
+    text: 例：ユニットテスト
   p45:
-  - node: p
-    children:
-    - node: text
-      content: HttpClient呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: 外部API
-  - node: p
-    children:
-    - node: bold
-      content: HttpClient
-  - node: p
-    children:
-    - node: text
-      content: Request
-  - node: p
-    children:
-    - node: text
-      content: Response
+  - kind: heading
+    level: 1
+    text: HttpClient呼び出しイメージ
+  - kind: para
+    text: 外部API
+  - kind: para
+    text: HttpClient
+  - kind: heading
+    level: 2
+    text: Request
+  - kind: heading
+    level: 2
+    text: Response
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 外部にリクエストを送らない
-  - node: p
-    children:
-    - node: bold
-      content: 外部API
-  - node: p
-    children:
-    - node: text
-      content: リクエスト送らない
-  - node: p
-    children:
-    - node: bold
-      content: MockHttpClient
-  - node: p
-    children:
-    - node: text
-      content: Request
-  - node: p
-    children:
-    - node: text
-      content: Response
+  - kind: heading
+    level: 1
+    text: 外部にリクエストを送らない
+  - kind: para
+    text: 外部API
+  - kind: heading
+    level: 2
+    text: リクエスト送らない
+  - kind: para
+    text: MockHttpClient
+  - kind: heading
+    level: 3
+    text: Request
+  - kind: heading
+    level: 3
+    text: Response
   p47:
-  - node: p
-    children:
-    - node: text
-      content: 外部にリクエストが送られないように
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-18の場合、仕様がとてもシンプルなのでClientInterfaceを実装し
-      - node: br
-      - node: text
-        content: 'たシンプルな無名クラスを作ってしまうのが簡単 '
-    - node: li
-      children:
-      - node: text
-        content: Guzzleの場合、MockHandlerというハンドラを有効化して
-      - node: br
-      - node: text
-        content: 'テスト用に任意のレスポンスを返す関数を登録してやることができる '
-    - node: li
-      children:
-      - node: text
-        content: '重要: アプリケーション内に不用意に new Guzzle Client()とか書かない'
-  - node: p
-    children:
-    - node: text
-      content: \
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 普通の方法で処理を横取りできなくなってしまう
+  - kind: para
+    text: 外部にリクエストが送られないように
+  - kind: list
+    items:
+    - PSR-18の場合、仕様がとてもシンプルなのでClientInterfaceを実装し
+  - kind: para
+    text: たシンプルな無名クラスを作ってしまうのが簡単
+  - kind: list
+    items:
+    - Guzzleの場合、MockHandlerというハンドラを有効化して
+  - kind: para
+    text: テスト用に任意のレスポンスを返す関数を登録してやることができる
+  - kind: list
+    items:
+    - '重要: アプリケーション内に不用意に new Guzzle\Client()とか書かない'
+    - 普通の方法で処理を横取りできなくなってしまう
   p48:
-  - node: p
-    children:
-    - node: text
-      content: '依存の注入 '
-  - node: p
-    children:
-    - node: text
-      content: (Dependency Injection)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: オブジェクトはメソッド内でその都度生成するのではなく、
-      - node: br
-      - node: text
-        content: '呼び出し側(もしくはさらに上位のモジュール)から入れ込むことで 共通のインターフェイスを持ったものに交換できることを保証する '
-    - node: li
-      children:
-      - node: text
-        content: 同一機能を持った別のライブラリに乗り換えることもできるし、
-      - node: br
-      - node: text
-        content: 'テスト時に決まった値を返すモックオブジェクトに差し替えることも簡単 '
-    - node: li
-      children:
-      - node: text
-        content: くわしくは「ちょうぜつソフトウェア設計入門」を読んで！
+  - kind: heading
+    level: 1
+    text: 依存の注入 (Dependency Injection)
+  - kind: list
+    items:
+    - オブジェクトはメソッド内でその都度生成するのではなく、
+  - kind: para
+    text: 呼び出し側(もしくはさらに上位のモジュール)から入れ込むことで共通のインターフェイスを持ったものに交換できることを保証する
+  - kind: list
+    items:
+    - 同一機能を持った別のライブラリに乗り換えることもできるし、
+  - kind: para
+    text: テスト時に決まった値を返すモックオブジェクトに差し替えることも簡単
+  - kind: list
+    items:
+    - くわしくは「ちょうぜつソフトウェア設計入門」を読んで！
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 'ここまでで '
-    - node: br
-    - node: text
-      content: 準備ができた
+  - kind: para
+    text: ここまでで準備ができた
   p50: []
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '概ねいままで '
-    - node: br
-    - node: text
-      content: '言ってきたことをやるな '
-    - node: br
-    - node: text
-      content: という話
+  - kind: para
+    text: 概ねいままで言ってきたことをやるなという話
   p52:
-  - node: p
-    children:
-    - node: text
-      content: Guzzle便利なのはいいんだけど
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 世の中、Guzzleを使いたいひとばかりではない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 僕はkriswallsmith/Buzzという素朴なPSR-18実装が好きです
-    - node: li
-      children:
-      - node: text
-        content: SDKとしてはpsr/http-clientとpsr/http-factoryにだけ
-      - node: br
-      - node: text
-        content: '依存するのが理想 '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: SDKの実装としてはGuzzleの便利機能に頼れないのを不便に感じること
-          - node: br
-          - node: text
-            content: はあるかもしれない
+  - kind: heading
+    level: 1
+    text: Guzzle便利なのはいいんだけど
+  - kind: list
+    items:
+    - 世の中、Guzzleを使いたいひとばかりではない
+    - 僕はkriswallsmith/Buzzという素朴なPSR-18実装が好きです
+    - SDKとしてはpsr/http-clientとpsr/http-factoryにだけ
+  - kind: para
+    text: 依存するのが理想
+  - kind: list
+    items:
+    - SDKの実装としてはGuzzleの便利機能に頼れないのを不便に感じること
+  - kind: para
+    text: はあるかもしれない
   p53:
-  - node: p
-    children:
-    - node: text
-      content: ユーザーの利便性 vs 依存の注入
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザーがSDKを使いはじめるときに事前準備が多すぎると辟易させる
-    - node: li
-      children:
-      - node: text
-        content: プログラミングがあんまり得意じゃないユーザーにも使ってもらうことを考え
-      - node: br
-      - node: text
-        content: 'ると、事前準備は少なければ少ないほどいい '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 一方で、依存を注入してテストで差し替えたいという
-          - node: br
-          - node: text
-            content: 利用者の邪魔をしてはいけない
+  - kind: heading
+    level: 1
+    text: ユーザーの利便性 vs 依存の注入
+  - kind: list
+    items:
+    - ユーザーがSDKを使いはじめるときに事前準備が多すぎると辟易させる
+    - プログラミングがあんまり得意じゃないユーザーにも使ってもらうことを考え
+  - kind: para
+    text: ると、事前準備は少なければ少ないほどいい
+  - kind: list
+    items:
+    - 一方で、依存を注入してテストで差し替えたいという
+  - kind: para
+    text: 利用者の邪魔をしてはいけない
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 利用者の邪魔をするパターン
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: SDKの実装の中で new Guzzle Client() って書く
-  - node: p
-    children:
-    - node: text
-      content: \
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: SDKの実装の中で file_get_contents() とか curl 関数を呼ぶ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ただしこれらのパターンはPHP-VCRというテスト用ライブラリを
-          - node: br
-          - node: text
-            content: 活用することで通信をフックして任意のレスポンスに書き換えたりすること
-          - node: br
-          - node: text
-            content: もできなくはない
+  - kind: heading
+    level: 1
+    text: 利用者の邪魔をするパターン
+  - kind: list
+    items:
+    - SDKの実装の中で new Guzzle\Client() って書く
+    - SDKの実装の中で file_get_contents() とか curl 関数を呼ぶ
+    - ただしこれらのパターンはPHP-VCRというテスト用ライブラリを
+  - kind: para
+    text: 活用することで通信をフックして任意のレスポンスに書き換えたりすることもできなくはない
   p55:
-  - node: p
-    children:
-    - node: text
-      content: php-http/discovery
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: php-httpという団体が提供しているライブラリ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 動作実績のとれているHTTPライブラリがハードコードされている
-    - node: li
-      children:
-      - node: text
-        content: インストール済みのPSR-HTTPライブラリを検出して自動で生成してくれる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: これはstaticに状態を持っておりDIパターンではないが、
-          - node: br
-          - node: text
-            content: 'DIが使えない環境における強い味方 '
-    - node: li
-      children:
-      - node: text
-        content: 欠点：ドキュメントが不親切め
+  - kind: heading
+    level: 1
+    text: php-http/discovery
+  - kind: list
+    items:
+    - php-httpという団体が提供しているライブラリ
+    - 動作実績のとれているHTTPライブラリがハードコードされている
+    - インストール済みのPSR-HTTPライブラリを検出して自動で生成してくれる
+    - これはstaticに状態を持っておりDIパターンではないが、
+  - kind: para
+    text: DIが使えない環境における強い味方
+  - kind: list
+    items:
+    - 欠点：ドキュメントが不親切め
   p56:
-  - node: p
-    children:
-    - node: text
-      content: ユーザーを邪魔しない
-    - node: br
-    - node: text
-      content: '使いやすいSDKを '
-    - node: br
-    - node: text
-      content: 作ろう
+  - kind: para
+    text: ユーザーを邪魔しない使いやすいSDKを作ろう
   p57: []
 size:
   max_width: 1920

@@ -1,1095 +1,485 @@
-size:
-  max_width: 1024
-  max_height: 768
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: P++とは何だったのか
-  - node: p
-    children:
-    - node: text
-      content: Bring peace to the galaxy with P++
-  - node: p
-    children:
-    - node: text
-      content: '[2019-08-28] '
-  - node: p
-    children:
-    - node: text
-      content: 第141回 PHP勉強会＠東京
-  - node: p
-    children:
-    - node: text
-      content: '#phpstudy'
+  - kind: heading
+    level: 1
+    text: P++とは何だったのか
+  - kind: heading
+    level: 2
+    text: Bring peace to the galaxy with P++
+  - kind: para
+    text: '[2019-08-28]第141回 PHP勉強会＠東京'
+  - kind: para
+    text: '#phpstudy'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-    - node: br
-    - node: text
-      content: 'うさみけんた (@tadsan)  '
-  - node: p
-    children:
-    - node: text
-      content: ' / Zonu.EXE'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv事業本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv事業本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3: []
   p4: []
   p5:
-  - node: p
-    children:
-    - node: text
-      content: P++とは何か
+  - kind: para
+    text: P++とは何か
   p6: []
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 言ってること
-    - node: br
-    - node: text
-      content: は正しい
+  - kind: para
+    text: 言ってることは正しい
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 情報は
-  - node: p
-    children:
-    - node: text
-      content: 間違ってる
+  - kind: para
+    text: 情報は間違ってる
   p9:
-  - node: p
-    children:
-    - node: text
-      content: どういう
-  - node: p
-    children:
-    - node: text
-      content: ことか
+  - kind: para
+    text: どういうことか
   p10:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: para
+    text: さて
   p11:
-  - node: p
-    children:
-    - node: text
-      content: アンケート
+  - kind: para
+    text: アンケート
   p12:
-  - node: p
-    children:
-    - node: text
-      content: 君の想像するPHP
-    - node: br
-    - node: text
-      content: はどんなやつ？
+  - kind: para
+    text: 君の想像するPHPはどんなやつ？
   p13:
-  - node: p
-    children:
-    - node: bold
-      content: A
-  - node: p
-    children:
-    - node: text
-      content: <!DOCTYPE html>
-  - node: p
-    children:
-    - node: text
-      content: '<html><head><title>Hello, PHP!</title></head> '
-    - node: br
-    - node: text
-      content: '<p> '
-    - node: br
-    - node: text
-      content: '<?php if (date(''H'') < 19): ?> '
-    - node: br
-    - node: text
-      content: '     こんにちは'
-  - node: p
-    children:
-    - node: text
-      content: '<?php else: ?>'
-  - node: p
-    children:
-    - node: text
-      content: '     こんばんは'
-  - node: p
-    children:
-    - node: text
-      content: <?php endif; ?>
-  - node: p
-    children:
-    - node: text
-      content: '</p> '
-    - node: br
-    - node: text
-      content: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+  - kind: heading
+    level: 1
+    text: A
+  - kind: para
+    text: '<!DOCTYPE html><html><head><title>Hello, PHP!</title></head><p><?php if
+      (date(''H'') < 19): ?>こんにちは<?php else: ?>こんばんは<?php endif; ?></p><p>今は<?= htmlspecialchars(date(''H''))
+      ?>時です</p>'
   p14:
-  - node: p
-    children:
-    - node: bold
-      content: B
-  - node: p
-    children:
-    - node: text
-      content: <?php require 'bootstrap.php';
-  - node: p
-    children:
-    - node: text
-      content: '$db = mysqli_connect(); '
-    - node: br
-    - node: text
-      content: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
-  - node: p
-    children:
-    - node: text
-      content: mysqli_stmt_execute($stmt);
-  - node: p
-    children:
-    - node: text
-      content: print '<h1>本の一覧</h1><ul>';
-  - node: p
-    children:
-    - node: text
-      content: 'foreach ($stmt as $s) { '
-    - node: br
-    - node: text
-      content: '    print ''<li>''; print $s->name; print ''</li>'';'
-  - node: p
-    children:
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: B
+  - kind: para
+    text: <?php require 'bootstrap.php';
+  - kind: para
+    text: $db = mysqli_connect();
+  - kind: para
+    text: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
+  - kind: para
+    text: mysqli_stmt_execute($stmt);
+  - kind: para
+    text: print '<h1>本の一覧</h1><ul>';
+  - kind: para
+    text: foreach ($stmt as $s) {
+  - kind: para
+    text: print '<li>'; print $s->name; print '</li>';
+  - kind: para
+    text: '}'
   p15:
-  - node: p
-    children:
-    - node: bold
-      content: C
-  - node: p
-    children:
-    - node: text
-      content: '<?php '
-    - node: br
-    - node: text
-      content: namespace Hoge\Http\Controller;
-  - node: p
-    children:
-    - node: text
-      content: 'class BooksController extends BaseController { '
-    - node: br
-    - node: text
-      content: '    public function index() { '
-    - node: br
-    - node: text
-      content: '        $books = Books::getAll(); '
-  - node: p
-    children:
-    - node: text
-      content: '        $this->render(compact("books")); '
-    - node: br
-    - node: text
-      content: '    } '
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: C
+  - kind: para
+    text: <?php namespace Hoge\Http\Controller;
+  - kind: para
+    text: class BooksController extends BaseController {public function index() {$books
+      = Books::getAll();
+  - kind: para
+    text: $this->render(compact("books"));}}
   p16:
-  - node: p
-    children:
-    - node: text
-      content: A?
-  - node: p
-    children:
-    - node: text
-      content: B?
-  - node: p
-    children:
-    - node: text
-      content: C?
+  - kind: para
+    text: A?
+  - kind: para
+    text: B?
+  - kind: para
+    text: C?
   p17:
-  - node: p
-    children:
-    - node: text
-      content: PHPはどんな
-  - node: p
-    children:
-    - node: text
-      content: 速度で変化してるか
+  - kind: para
+    text: PHPはどんな速度で変化してるか
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 速い？
-  - node: p
-    children:
-    - node: text
-      content: 遅い？
+  - kind: para
+    text: 速い？
+  - kind: para
+    text: 遅い？
   p19:
-  - node: p
-    children:
-    - node: text
-      content: PHPは
-  - node: p
-    children:
-    - node: text
-      content: 変わったと思う？
+  - kind: para
+    text: PHPは変わったと思う？
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 速くなったと
-  - node: p
-    children:
-    - node: text
-      content: したらいつから？
+  - kind: para
+    text: 速くなったとしたらいつから？
   p21:
-  - node: p
-    children:
-    - node: text
-      content: これ何の数か
-    - node: br
-    - node: text
-      content: わかる？
+  - kind: para
+    text: これ何の数かわかる？
   p22:
-  - node: p
-    children:
-    - node: text
-      content: PHP7.0… 46
-  - node: p
-    children:
-    - node: text
-      content: PHP7.1… 28
-  - node: p
-    children:
-    - node: text
-      content: PHP7.2… 22
-  - node: p
-    children:
-    - node: text
-      content: PHP7.3… 13
-  - node: p
-    children:
-    - node: text
-      content: PHP7.4… 26
+  - kind: para
+    text: PHP7.0…
+  - kind: para
+    text: PHP7.1…
+  - kind: para
+    text: PHP7.2…
+  - kind: para
+    text: PHP7.3…
+  - kind: para
+    text: PHP7.4…
   p23:
-  - node: p
-    children:
-    - node: text
-      content: お前はPHP7以降 追加された機能の 数を覚えているか
+  - kind: para
+    text: お前はPHP7以降追加された機能の数を覚えているか
   p24:
-  - node: p
-    children:
-    - node: text
-      content: せいかい
-  - node: p
-    children:
-    - node: text
-      content: バージョンごとに
-  - node: p
-    children:
-    - node: text
-      content: 受理されたRFC数
+  - kind: para
+    text: せいかい
+  - kind: para
+    text: バージョンごとに受理されたRFC数
   p25:
-  - node: p
-    children:
-    - node: text
-      content: RFC?
+  - kind: para
+    text: RFC?
   p26: []
   p27:
-  - node: p
-    children:
-    - node: text
-      content: PHP7の機能追 加や改廃の提案
+  - kind: para
+    text: PHP7の機能追加や改廃の提案
   p28:
-  - node: p
-    children:
-    - node: text
-      content: Pythonでの PEPに相当
+  - kind: para
+    text: PythonでのPEPに相当
   p29:
-  - node: p
-    children:
-    - node: text
-      content: RFCの提案をもとに、
-  - node: p
-    children:
-    - node: text
-      content: PHP開発者
-  - node: p
-    children:
-    - node: text
-      content: が
-  - node: p
-    children:
-    - node: text
-      content: (php.netのVCSアカウント所有者)
-    - node: br
-    - node: text
-      content: 一人一票を投じる仕組み
+  - kind: para
+    text: RFCの提案をもとに、PHP開発者(php.netのVCSアカウント所有者)が一人一票を投じる仕組み
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 単純に
-  - node: p
-    children:
-    - node: text
-      content: ｢追加された数｣
-  - node: p
-    children:
-    - node: text
-      content: ではないが
+  - kind: para
+    text: 単純に｢追加された数｣ではないが
   p31:
-  - node: p
-    children:
-    - node: text
-      content: PHPの行く末を
-  - node: p
-    children:
-    - node: text
-      content: 知りたければ
-    - node: bold
-      content: RFCを
-    - node: text
-      content: ' '
-    - node: bold
-      content: ウォッチ
-    - node: text
-      content: すればよい
+  - kind: para
+    text: PHPの行く末を知りたければRFCをウォッチすればよい
   p32:
-  - node: p
-    children:
-    - node: bold
-      content: https://wiki.php.net/rfc
+  - kind: para
+    text: https://wiki.php.net/rfc
   p33:
-  - node: p
-    children:
-    - node: bold
-      content: https://php-rfc-watch.beberlei.de/
+  - kind: para
+    text: https://php-rfc-watch.beberlei.de/
   p34: []
   p35:
-  - node: p
-    children:
-    - node: bold
-      content: https://wiki.php.net/rfc
+  - kind: para
+    text: https://wiki.php.net/rfc
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 改めて数を
-  - node: p
-    children:
-    - node: text
-      content: 見てみよう
+  - kind: para
+    text: 改めて数を見てみよう
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PHP7.0… 46
-  - node: p
-    children:
-    - node: text
-      content: PHP7.1… 28
-  - node: p
-    children:
-    - node: text
-      content: PHP7.2… 22
-  - node: p
-    children:
-    - node: text
-      content: PHP7.3… 13
-  - node: p
-    children:
-    - node: text
-      content: PHP7.4… 26
+  - kind: para
+    text: PHP7.0…
+  - kind: para
+    text: PHP7.1…
+  - kind: para
+    text: PHP7.2…
+  - kind: para
+    text: PHP7.3…
+  - kind: para
+    text: PHP7.4…
   p38:
-  - node: p
-    children:
-    - node: text
-      content: 意外に変わってる なって感じはする
+  - kind: para
+    text: 意外に変わってるなって感じはする
   p39:
-  - node: p
-    children:
-    - node: text
-      content: とてもざっくり言うとレガ シー仕様は消え､不条理な 挙動は是正され､他言語に あるようなカッコイイ機能
-    - node: br
-    - node: text
-      content: が追加提案されてる
+  - kind: para
+    text: とてもざっくり言うとレガシー仕様は消え､不条理な挙動は是正され､他言語にあるようなカッコイイ機能が追加提案されてる
   p40:
-  - node: p
-    children:
-    - node: text
-      content: 😇
+  - kind: para
+    text: 😇
   p41:
-  - node: p
-    children:
-    - node: text
-      content: ところで
-  - node: p
-    children:
-    - node: text
-      content: Rasmusは
-  - node: p
-    children:
-    - node: text
-      content: こう言った
+  - kind: para
+    text: ところでRasmusはこう言った
   p42:
-  - node: p
-    children:
-    - node: bold
-      content: '“We have things like protected properties. '
-    - node: br
-    - node: bold
-      content: 'We have abstract methods. We have all '
-    - node: br
-    - node: bold
-      content: 'this stuff that your computer science '
-  - node: p
-    children:
-    - node: bold
-      content: 'teacher told you you should be using. '
-    - node: br
-    - node: bold
-      content: I don't care about this crap at all.”
-  - node: p
-    children:
-    - node: bold
-      content: –Rasmus Lerdorf
-    - node: br
-    - node: bold
-      content: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+  - kind: para
+    text: “We have things like protected properties.We have abstract methods. We have
+      all this stuff that your computer science teacher told you you should be using.I
+      don't care about this crap at all.”
+  - kind: para
+    text: –Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p43:
-  - node: p
-    children:
-    - node: text
-      content: には プロパティも抽象メ
-  - node: p
-    children:
-    - node: bold
-      content: “PHP protected
-    - node: br
-    - node: text
-      content: ソッドもありますよ。計算機科学の教授が
-    - node: br
-    - node: text
-      content: 「使え」と言ってるものは全部。
-  - node: p
-    children:
-    - node: text
-      content: そんなことはクソ興味ないですけど
-  - node: p
-    children:
-    - node: bold
-      content: ”
-  - node: p
-    children:
-    - node: bold
-      content: –Rasmus Lerdorf
+  - kind: para
+    text: “PHPにはprotectedプロパティも抽象メソッドもありますよ。計算機科学の教授が「使え」と言ってるものは全部。そんなことはクソ興味ないですけど”–Rasmus
+      Lerdorf
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 改めてPHPの言語 仕様が追加された時
-    - node: br
-    - node: text
-      content: 系列を見てみよう
+  - kind: para
+    text: 改めてPHPの言語仕様が追加された時系列を見てみよう
   p45:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.4
-  - node: p
-    children:
-    - node: text
-      content: 'Arrow functions 2.0 '
-    - node: br
-    - node: text
-      content: 'JavaScriptなど '
-  - node: p
-    children:
-    - node: text
-      content: 'Typed Property '
-    - node: br
-    - node: text
-      content: 'Javaなどの静的型付き言語 '
-  - node: p
-    children:
-    - node: text
-      content: 'Numeric Literal Separator '
-    - node: br
-    - node: text
-      content: Ada, Ruby, JavaScriptなど
+  - kind: heading
+    level: 1
+    text: PHP 7.4
+  - kind: para
+    text: Arrow functions 2.0
+  - kind: para
+    text: JavaScriptなど
+  - kind: para
+    text: Typed Property
+  - kind: para
+    text: Javaなどの静的型付き言語
+  - kind: para
+    text: Numeric Literal Separator
+  - kind: para
+    text: Ada, Ruby, JavaScriptなど
   p46:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.3
-  - node: p
-    children:
-    - node: text
-      content: 'Flexible Heredoc and Nowdoc '
-    - node: br
-    - node: text
-      content: 'Rubyにも似た記法はある '
-  - node: p
-    children:
-    - node: text
-      content: 'list() Reference Assignment '
-    - node: br
-    - node: text
-      content: これはPHP独自に近い
+  - kind: heading
+    level: 1
+    text: PHP 7.3
+  - kind: para
+    text: Flexible Heredoc and Nowdoc
+  - kind: para
+    text: Rubyにも似た記法はある
+  - kind: para
+    text: list() Reference Assignment
+  - kind: para
+    text: これはPHP独自に近い
   p47:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.2
-  - node: p
-    children:
-    - node: text
-      content: 'Trailing Commas In List Syntax '
-    - node: br
-    - node: text
-      content: カンマ(,)を並べて書く記法のほぼ全
-    - node: br
-    - node: text
-      content: 'てで余分につけてもよくなった '
-  - node: p
-    children:
-    - node: text
-      content: 'Parameter Type Widening '
-    - node: br
-    - node: text
-      content: 継承したクラスで引数の型省略
+  - kind: heading
+    level: 1
+    text: PHP 7.2
+  - kind: para
+    text: Trailing Commas In List Syntax
+  - kind: para
+    text: カンマ(,)を並べて書く記法のほぼ全てで余分につけてもよくなった
+  - kind: para
+    text: Parameter Type Widening
+  - kind: para
+    text: 継承したクラスで引数の型省略
   p48:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.1
-  - node: p
-    children:
-    - node: text
-      content: 'Nullable Types '
-    - node: br
-    - node: text
-      content: 'Void Return Type '
-    - node: br
-    - node: text
-      content: 'Multi catch '
-    - node: br
-    - node: text
-      content: Allow specifying keys in list()
+  - kind: heading
+    level: 1
+    text: PHP 7.1
+  - kind: para
+    text: Nullable Types
+  - kind: para
+    text: Void Return Type
+  - kind: para
+    text: Multi catch
+  - kind: para
+    text: Allow specifying keys in list()
   p49:
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.0
-  - node: p
-    children:
-    - node: text
-      content: 'Anonymous Class '
-    - node: br
-    - node: text
-      content: Generator Delegation
-  - node: p
-    children:
-    - node: text
-      content: '(yield from) '
-  - node: p
-    children:
-    - node: text
-      content: 'Return Type Declaration Null Coalesce Operator '
-    - node: br
-    - node: text
-      content: Scalar type hints
+  - kind: heading
+    level: 1
+    text: PHP 7.0
+  - kind: para
+    text: Anonymous Class
+  - kind: para
+    text: Generator Delegation(yield from)
+  - kind: para
+    text: Return Type Declaration
+  - kind: para
+    text: Null Coalesce Operator
+  - kind: para
+    text: Scalar type hints
   p50:
-  - node: p
-    children:
-    - node: text
-      content: PHP 5.6
-  - node: p
-    children:
-    - node: text
-      content: 'Exponential Operator(pow**) '
-    - node: br
-    - node: text
-      content: 'Importing named function '
-    - node: br
-    - node: text
-      content: 'Variadic function argument (...) '
-    - node: br
-    - node: text
-      content: '配列を引数として展開 '
-  - node: p
-    children:
-    - node: text
-      content: 'Argument unpacking(...) '
-    - node: br
-    - node: text
-      content: 可変長引数を配列として取得
+  - kind: heading
+    level: 1
+    text: PHP 5.6
+  - kind: para
+    text: Exponential Operator(pow**)
+  - kind: para
+    text: Importing named function
+  - kind: para
+    text: Variadic function argument (...)
+  - kind: para
+    text: 配列を引数として展開
+  - kind: para
+    text: Argument unpacking(...)
+  - kind: para
+    text: 可変長引数を配列として取得
   p51:
-  - node: p
-    children:
-    - node: text
-      content: PHP 5.5
-  - node: p
-    children:
-    - node: text
-      content: 'Generator '
-    - node: br
-    - node: text
-      content: ﬁnally keyword (try-catch-...) Const array/string dereference Allow
-        non-scalar keys in foreach
+  - kind: heading
+    level: 1
+    text: PHP 5.5
+  - kind: para
+    text: Generator
+  - kind: para
+    text: ﬁnally keyword (try-catch-...)
+  - kind: para
+    text: Const array/string dereference
+  - kind: para
+    text: Allow non-scalar keys in foreach
   p52:
-  - node: p
-    children:
-    - node: text
-      content: PHP 5.4
-  - node: p
-    children:
-    - node: text
-      content: 'Traits '
-    - node: br
-    - node: text
-      content: 'Short array syntax '
-    - node: br
-    - node: text
-      content: callable type hint
+  - kind: heading
+    level: 1
+    text: PHP 5.4
+  - kind: para
+    text: Traits
+  - kind: para
+    text: Short array syntax
+  - kind: para
+    text: callable type hint
   p53:
-  - node: p
-    children:
-    - node: text
-      content: PHP 5.3
-  - node: p
-    children:
-    - node: text
-      content: 'Closures (function expression) '
-    - node: br
-    - node: text
-      content: '関数式、クロージャ、またはラムダ式 '
-    - node: br
-    - node: text
-      content: JavaScriptのfunctionに似てる が、レキシカルスコープ(変数の捕 捉)のためにuseキーワードが必要
+  - kind: heading
+    level: 1
+    text: PHP 5.3
+  - kind: para
+    text: Closures (function expression)
+  - kind: para
+    text: 関数式、クロージャ、またはラムダ式
+  - kind: para
+    text: JavaScriptのfunctionに似てるが、レキシカルスコープ(変数の捕捉)のためにuseキーワードが必要
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 抽象クラス, トレイト, インター
-    - node: br
-    - node: text
-      content: フェイス, ジェネレータ, イテレー タ, クロージャ, 函数の動的呼び出 し, 無名クラス, eval, 型宣言, 連 想配列, リフレクションAPI,
-        自己
-    - node: br
-    - node: text
-      content: '文書化, 標準入出力の読み書き, '
-    - node: br
-    - node: text
-      content: REPL, クラスの遅延ロード
+  - kind: para
+    text: 抽象クラス, トレイト, インターフェイス, ジェネレータ, イテレータ, クロージャ, 函数の動的呼び出し, 無名クラス, eval, 型宣言,
+      連想配列, リフレクションAPI, 自己文書化, 標準入出力の読み書き,REPL, クラスの遅延ロード
   p55:
-  - node: p
-    children:
-    - node: text
-      content: これらの新機能をフルに 活用してコードを書いて る人はどれだけ居るの？
+  - kind: para
+    text: これらの新機能をフルに活用してコードを書いてる人はどれだけ居るの？
   p56:
-  - node: p
-    children:
-    - node: text
-      content: (そういう人は居るけど､
-  - node: p
-    children:
-    - node: text
-      content: そうじゃない人たちと二
-    - node: br
-    - node: text
-      content: 極化してるのは確実)
+  - kind: para
+    text: (そういう人は居るけど､そうじゃない人たちと二極化してるのは確実)
   p57:
-  - node: p
-    children:
-    - node: text
-      content: PHPの古参開発 者たちは冷ややか
+  - kind: para
+    text: PHPの古参開発者たちは冷ややか
   p58:
-  - node: p
-    children:
-    - node: text
-      content: PHP以外の言語に 触れてた経験のない
-    - node: br
-    - node: text
-      content: みんなもポカーソ
+  - kind: para
+    text: PHP以外の言語に触れてた経験のないみんなもポカーソ
   p59:
-  - node: p
-    children:
-    - node: text
-      content: そういうとこやぞ
+  - kind: para
+    text: そういうとこやぞ
   p60:
-  - node: p
-    children:
-    - node: text
-      content: クールな新機能や
-  - node: p
-    children:
-    - node: text
-      content: 静的解析しやすい
-  - node: p
-    children:
-    - node: text
-      content: 仕様に興味あるひと
+  - kind: para
+    text: クールな新機能や静的解析しやすい仕様に興味あるひと
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 従来のコードが動け ば十分で破壊的進化
-    - node: br
-    - node: text
-      content: は望まないひと
+  - kind: para
+    text: 従来のコードが動けば十分で破壊的進化は望まないひと
   p62:
-  - node: p
-    children:
-    - node: text
-      content: そのほかにもPHP ユーザには様々な立 場のひとたちが居る
+  - kind: para
+    text: そのほかにもPHPユーザには様々な立場のひとたちが居る
   p63:
-  - node: p
-    children:
-    - node: text
-      content: その見えない溝が 可視化されたのが
-    - node: br
-    - node: text
-      content: 今回の一件
+  - kind: para
+    text: その見えない溝が可視化されたのが今回の一件
   p64:
-  - node: p
-    children:
-    - node: text
-      content: さらにひきがねを 引く事件があった
+  - kind: para
+    text: さらにひきがねを引く事件があった
   p65: []
   p66:
-  - node: p
-    children:
-    - node: text
-      content: Deprecate PHP's short open tags, again
-  - node: p
-    children:
-    - node: text
-      content: 一般的なPHPタグは<?php ... ?>
-  - node: p
-    children:
-    - node: text
-      content: または<?= ... ?> だが、<? ... ?>と
-    - node: br
-    - node: text
-      content: 'いう形式もある '
-    - node: br
-    - node: text
-      content: php.iniで有効無効を切替られる 環境によってOnだったりOffだっ
-    - node: br
-    - node: text
-      content: たり
+  - kind: para
+    text: Deprecate PHP's short open tags, again一般的なPHPタグは<?php ... ?>または<?= ... ?>
+      だが、<? ... ?>という形式もあるphp.iniで有効無効を切替られる環境によってOnだったりOffだったり
   p67:
-  - node: p
-    children:
-    - node: text
-      content: Deprecate PHP's short open tags, again
-  - node: p
-    children:
-    - node: text
-      content: 'XML宣言との相性がとても悪い '
-    - node: br
-    - node: text
-      content: そんな半端モンは引導を渡してやろう
-    - node: br
-    - node: text
-      content: 'ぜ！ ということで提案された '
-    - node: br
-    - node: text
-      content: 構文がシンプルになるし、機械的に変 換もできるから良いだろ、という主旨
+  - kind: para
+    text: Deprecate PHP's short open tags, again
+  - kind: para
+    text: XML宣言との相性がとても悪いそんな半端モンは引導を渡してやろうぜ！ ということで提案された
+  - kind: para
+    text: 構文がシンプルになるし、機械的に変換もできるから良いだろ、という主旨
   p68:
-  - node: p
-    children:
-    - node: text
-      content: Zeevによる
-  - node: p
-    children:
-    - node: text
-      content: 反論
+  - kind: para
+    text: Zeevによる反論
   p69: []
   p70:
-  - node: p
-    children:
-    - node: text
-      content: Zeev Suraski
-  - node: p
-    children:
-    - node: text
-      content: 'PHP3・4の開発者 '
-    - node: br
-    - node: text
-      content: 相方のAndi Gutmansとともに
-  - node: p
-    children:
-    - node: text
-      content: 'VM型処理系のZend Engine開発 '
-    - node: br
-    - node: text
-      content: PHPでよくあるZend…は
-  - node: p
-    children:
-    - node: text
-      content: 'ZeevとAndiに由来 '
-    - node: br
-    - node: text
-      content: PHPコードに未だに影響を残す
+  - kind: heading
+    level: 1
+    text: Zeev Suraski
+  - kind: para
+    text: PHP3・4の開発者
+  - kind: para
+    text: 相方のAndi Gutmansとともに
+  - kind: para
+    text: VM型処理系のZend Engine開発
+  - kind: para
+    text: PHPでよくあるZend…はZeevとAndiに由来
+  - kind: para
+    text: PHPコードに未だに影響を残す
   p71:
-  - node: p
-    children:
-    - node: text
-      content: Rasmus Lardorf
-  - node: p
-    children:
-    - node: text
-      content: 'オリジナルのPHP(PHP/FI)作者 '
-    - node: br
-    - node: text
-      content: '言語の原作者は最終的な決定権を担っ ていることがある(BDFL:優しい終身 の独裁者)が､Rasmusはそうではない '
-    - node: br
-    - node: text
-      content: 必要な場面では発言するが権限は
-    - node: br
-    - node: text
-      content: 'RFCの一票しか持ってない '
-    - node: br
-    - node: text
-      content: 今回の一件にはあまり関与してない
+  - kind: heading
+    level: 1
+    text: Rasmus Lardorf
+  - kind: para
+    text: オリジナルのPHP(PHP/FI)作者
+  - kind: para
+    text: 言語の原作者は最終的な決定権を担っていることがある(BDFL:優しい終身の独裁者)が､Rasmusはそうではない
+  - kind: para
+    text: 必要な場面では発言するが権限はRFCの一票しか持ってない
+  - kind: para
+    text: 今回の一件にはあまり関与してない
   p72:
-  - node: p
-    children:
-    - node: text
-      content: Nikita Popov
-  - node: p
-    children:
-    - node: text
-      content: '近年のPHPの中核的な開発者 '
-    - node: br
-    - node: text
-      content: 'PHP5.5以降､非常に多数の言語機能 を実装してPHPに取り入れてきた '
-    - node: br
-    - node: text
-      content: 'PHP-Parserなどの作者 '
-    - node: br
-    - node: text
-      content: 去年の大学院を卒業し今年JetBrains に入社してPhpStormチームに参加
+  - kind: heading
+    level: 1
+    text: Nikita Popov
+  - kind: para
+    text: 近年のPHPの中核的な開発者
+  - kind: para
+    text: PHP5.5以降､非常に多数の言語機能を実装してPHPに取り入れてきた
+  - kind: para
+    text: PHP-Parserなどの作者
+  - kind: para
+    text: 去年の大学院を卒業し今年JetBrainsに入社してPhpStormチームに参加
   p73:
-  - node: p
-    children:
-    - node: text
-      content: 📛
+  - kind: para
+    text: 📛
   p74:
-  - node: p
-    children:
-    - node: text
-      content: 🔥
+  - kind: para
+    text: 🔥
   p75:
-  - node: p
-    children:
-    - node: text
-      content: 燃えた
+  - kind: para
+    text: 燃えた
   p76:
-  - node: p
-    children:
-    - node: text
-      content: めちゃくちゃ
-  - node: p
-    children:
-    - node: text
-      content: 燃えた
+  - kind: para
+    text: めちゃくちゃ燃えた
   p77:
-  - node: p
-    children:
-    - node: text
-      content: Deprecate PHP's short open tags, again
-  - node: p
-    children:
-    - node: text
-      content: <? ... ?> 使ってないひとは使ってな いし、廃止したからと言って文法が簡
-    - node: br
-    - node: text
-      content: '単になるか…？ '
-    - node: br
-    - node: text
-      content: この仕様を削除してもパフォーマンス は特に向上しないし、コードもちょっ
-    - node: br
-    - node: text
-      content: としか消えない
+  - kind: para
+    text: Deprecate PHP's short open tags, again<? ... ?> 使ってないひとは使ってないし、廃止したからと言って文法が簡単になるか…？この仕様を削除してもパフォーマンスは特に向上しないし、コードもちょっとしか消えない
   p78:
-  - node: p
-    children:
-    - node: text
-      content: Deprecate PHP's short open tags, again
-  - node: p
-    children:
-    - node: text
-      content: '大山鳴動して鼠一匹 '
-    - node: br
-    - node: text
-      content: 大騒ぎして文法変更する割に得られる
-    - node: br
-    - node: text
-      content: 'メリットが少なすぎないか…？ '
-    - node: br
-    - node: text
-      content: 'だからと言って負債になった文法は ずっと変えられないままなのか？！ '
-    - node: br
-    - node: text
-      content: 喧喧諤諤非難轟々
+  - kind: para
+    text: Deprecate PHP's short open tags, again大山鳴動して鼠一匹大騒ぎして文法変更する割に得られるメリットが少なすぎないか…？だからと言って負債になった文法はずっと変えられないままなのか？！
+  - kind: para
+    text: 喧喧諤諤非難轟々
   p79:
-  - node: p
-    children:
-    - node: text
-      content: 再び立ち上がった
+  - kind: para
+    text: 再び立ち上がった
   p80: []
   p81:
-  - node: p
-    children:
-    - node: text
-      content: PHPコミュニティ 内の革新vs保守の 対立を解決したい
+  - kind: para
+    text: PHPコミュニティ内の革新vs保守の対立を解決したい
   p82:
-  - node: p
-    children:
-    - node: text
-      content: ここで提案
-  - node: p
-    children:
-    - node: text
-      content: されたのがP++
+  - kind: para
+    text: ここで提案されたのがP++
   p83:
-  - node: p
-    children:
-    - node: text
-      content: 概要は最初の
-  - node: p
-    children:
-    - node: text
-      content: 本の虫の記事で
-  - node: p
-    children:
-    - node: text
-      content: 紹介された通り
+  - kind: para
+    text: 概要は最初の本の虫の記事で紹介された通り
   p84: []
   p85:
-  - node: p
-    children:
-    - node: text
-      content: 誰も何も決定して ないことを除けば
+  - kind: para
+    text: 誰も何も決定してないことを除けば
   p86:
-  - node: p
-    children:
-    - node: text
-      content: PHPの意思決定機関が 開発者によるRFCの多 数決であることを知って いれば誤解はしないはず
+  - kind: para
+    text: PHPの意思決定機関が開発者によるRFCの多数決であることを知っていれば誤解はしないはず
   p87:
-  - node: p
-    children:
-    - node: text
-      content: 本の虫で紹介された ｢ソース｣はメーリン グリストでの議論の
-    - node: br
-    - node: text
-      content: ためのメモ書き
+  - kind: para
+    text: 本の虫で紹介された｢ソース｣はメーリングリストでの議論のためのメモ書き
   p88:
-  - node: p
-    children:
-    - node: text
-      content: 燃え拡がる
-  - node: p
-    children:
-    - node: text
-      content: $
-  - node: p
-    children:
-    - node: text
-      content: 誤解…！
-    - node: br
-    - node: text
-      content: 🔥
-    - node: br
-    - node: text
-      content: 🔥
-    - node: br
-    - node: text
-      content: 🔥
+  - kind: para
+    text: 燃え拡がる
+  - kind: para
+    text: 誤解…！
+  - kind: para
+    text: 
+  - kind: para
+    text: 🔥
+  - kind: para
+    text: 🔥
+  - kind: para
+    text: 🔥
   p89: []
   p90:
-  - node: p
-    children:
-    - node: text
-      content: その後の経緯 はこの記事に
-    - node: br
-    - node: text
-      content: 書いた通り
+  - kind: para
+    text: その後の経緯はこの記事に書いた通り
   p91: []
   p92:
-  - node: p
-    children:
-    - node: text
-      content: 理想はわかるが…
-  - node: p
-    children:
-    - node: text
-      content: 現実的ではない…
+  - kind: para
+    text: 理想はわかるが…現実的ではない…
   p93:
-  - node: p
-    children:
-    - node: text
-      content: Zeevの予言…
+  - kind: para
+    text: Zeevの予言…
   p94: []
   p95:
-  - node: p
-    children:
-    - node: text
-      content: PHPの明日 はどっちだ
+  - kind: para
+    text: PHPの明日はどっちだ
   p96:
-  - node: p
-    children:
-    - node: text
-      content: 救いとしてはそれ以降も 別のRFCで建設的な議 論は続いてるし、Zeev もNikitaも参加している
+  - kind: para
+    text: 救いとしてはそれ以降も別のRFCで建設的な議論は続いてるし、ZeevもNikitaも参加している
   p97:
-  - node: p
-    children:
-    - node: text
-      content: PHP先生の
-  - node: p
-    children:
-    - node: text
-      content: 次回作(PHP8)に
-  - node: p
-    children:
-    - node: text
-      content: ご期待ください！
+  - kind: para
+    text: PHP先生の次回作(PHP8)にご期待ください！
+size:
+  max_width: 1024
+  max_height: 768
 links:
   p2:
   - url: https://github.com/emacs-php/php-mode

@@ -1,3 +1,241 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: Language Update PHP
+  - kind: para
+    text: Learn Language 2025
+  - kind: para
+    text: pixiv Inc.USAMI Kenta
+  - kind: para
+    text: '2025-09-05'
+  p2:
+  - kind: heading
+    level: 2
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた / にゃんだーすわん
+    - 'GitHub: @zonuexe'
+    - 2012年11月から現職
+    - ピクシブ株式会社 Platform Div PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなとこ
+    - 最近はインフラっぽい仕事してます
+  - kind: heading
+    level: 1
+    text: tadsan
+  - kind: list
+    items:
+    - Emacs PHP Modeを開発しています (2017年-)
+  - kind: para
+    text: PHPer
+  - kind: list
+    items:
+    - プログラミング言語にちょっとこだわりのある素人
+  - kind: para
+    text: (spcamp2010)
+  p3:
+  - kind: heading
+    level: 1
+    text: みなさんご存じですね？
+  p4:
+  - kind: heading
+    level: 1
+    text: <?php
+  p5:
+  - kind: heading
+    level: 1
+    text: どのくらいご存じかは人による
+  - kind: list
+    items:
+    - 2000年前後から世界中でWeb開発に活用されてきた
+    - いわゆる動的型付けのスクリプト言語
+    - とにかくいろいろな場面で使われてきた
+    - Webアプリだけでなく汎用言語として多くのタスクをこなせる
+    - 現代で有名なのは「WordPress」「Laravel」「Wikipedia」
+    - PHPが嫌いでもPHPを避けて生活するのが難しいくらい
+  p6:
+  - kind: heading
+    level: 1
+    text: PHP以前 (1990年代)
+  - kind: list
+    items:
+    - Webアプリケーション ≒ CGI
+    - 必ずしもそうではないが、ほとんどはそうだったはず
+    - '例外：普通のやつらの上を行け Paul Graham: Common Lisp'
+    - CGIは任意の言語で書ける… が、
+    - Perl = パフォーマンスの問題
+    - C言語 = メモリ安全に書くのが著しく難しい
+    - シェルスクリプト = 非常に多くの課題がある
+  p7:
+  - kind: heading
+    level: 1
+    text: PHPは何を解決したか (1990年代前半)
+  - kind: list
+    items:
+    - CGIではなくApacheのモジュールとして提供
+    - 現実にはレンタルサーバの権限の問題でCGIモードで運用も多い
+    - HTMLと統合されたテンプレート言語
+    - コードとHTMLの親子関係が逆転する
+    - ライブラリではなく言語レベルでHTTPをサポートしている
+    - 他言語のCGIサポートはライブラリレベルなので、正しく使わない
+  - kind: para
+    text: とヘッダインジェクションのリスクがあった
+  p8:
+  - kind: heading
+    level: 1
+    text: Webはどうなったか (2010年代)
+  - kind: list
+    items:
+    - CGIではなくApacheのモジュールとして提供
+    - CGIが廃れ、共用レンタルサーバの存在感が相対的に低下
+    - HTMLと統合されたテンプレート言語
+    - 各言語でテンプレートライブラリが普及、使うのが当たり前
+    - ライブラリではなく言語レベルでHTTPをサポートしている
+    - CGIのような潜在的に危険なプロトコルが利用されなくなったの
+  - kind: para
+    text: で、フレームワークに乗って作る限り問題は起こらない
+  p9: []
+  p10:
+  - kind: heading
+    level: 1
+    text: 他言語のWeb開発の断絶
+  - kind: list
+    items:
+    - CGIはリクエストごとにプロセスを起動し、HTTPを標準入出力と環境変
+  - kind: para
+    text: 数に置き換える
+  - kind: list
+    items:
+    - アーキテクチャなど考えず、シンプルな「スクリプト」でよかった
+    - 2000年代にインターフェイス／サーバ／アプリケーション分離の風潮
+    - 'Python: WSGI, Ruby: Rack, Perl: PSGI'
+    - PHPはトレンドに乗らず、CGI／レンタルサーバも健在であり続けた
+    - Apacheのmod_perl, mod_rubyも存在するが、主流にはならず
+  p11:
+  - kind: heading
+    level: 1
+    text: グレートリセットが起こらなかったPHP
+  - kind: list
+    items:
+    - Railsの普及により、Rubyでは事実上Railsに「標準化」された
+    - Rack以前からあったRedmine, tDiaryなどはRackアプリケーション
+  - kind: para
+    text: に移行
+  - kind: list
+    items:
+    - Python/Perlはフレームワークの寡占はないが、CGI世代と完全に断絶
+    - PHPはLaravelが一般化しているが、フレームワークなしも混住
+    - よくも悪くも2000年代始めの世界観を捨てきれていない
+    - PHPにとっては「足枷」「便利ライブラリの集合」に過ぎない
+  p12:
+  - kind: heading
+    level: 1
+    text: 21世紀のCGI
+  p13:
+  - kind: heading
+    level: 1
+    text: 21世紀のSSI
+  p14:
+  - kind: heading
+    level: 1
+    text: そんな言語でも進化は続く
+  p15:
+  - kind: heading
+    level: 1
+    text: PHPの開発体制
+  - kind: list
+    items:
+    - Request for Comments https://wiki.php.net/rfc
+    - 言語機能の改廃提案と投票プロセス、リリース周期が明文化
+    - 機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意
+    - PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない
+    - PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着
+    - 品質保障のためのfeature freeze、RC版なども定められた
+  p16:
+  - kind: heading
+    level: 1
+    text: The PHP Foundation
+  - kind: list
+    items:
+    - PHPの著作権は「The PHP Group」という団体が持っている
+    - 2021年にPHPの継続的な開発を支援する財団が設立された
+    - PHPのメイン開発者だったNikita Popovの引退が契機
+    - 各社からの協賛金を集め、数人のPHP「コア開発者」を雇っている
+    - 日本からは高町咲衣さんが参加 (PHP 8.4 リリースマネージャ)
+  p17:
+  - kind: heading
+    level: 1
+    text: PHPの言語仕様の進化
+  - kind: list
+    items:
+    - 最新版はPHP 8.4 (2024年11月リリース)
+    - PHPユーザーの多様性
+    - 開発文化 vs Web制作文化
+    - 基本的にはかなり保守的だが、有用な機能はじわじわ追加されている
+    - PHP 8.xで追加された構文を使えばかなり簡潔に書けることが多い
+    - BC Breakは… そこそこある
+    - 基本的には「なぜこんなコードが動くんだ」という変なケースが潰
+  - kind: para
+    text: される
+  p18:
+  - kind: heading
+    level: 1
+    text: '#[Attribute] (PHP 8.0)'
+  - kind: list
+    items:
+    - PHPは歴史的にDoc commentにメタデータを書く文化が発達していた
+    - リフレクションAPIで文字列を取得できる
+    - 構造化データは独自に構文解析する必要がある
+    - '#[Attribute] はPHPのシンタックスの一部としてパースされる'
+  p19:
+  - kind: heading
+    level: 1
+    text: クラスの改善
+  - kind: list
+    items:
+    - readonlyプロパティ (PHP 8.1)
+    - readonlyクラス (PHP 8.2)
+    - プロパティフック (PHP 8.4)
+    - C#のプロパティと同じようにプロパティの読み込みと書き込みに
+  - kind: para
+    text: 処理を書ける
+  - kind: list
+    items:
+    - 非対称プロパティ (PHP 8.4)
+  p20:
+  - kind: heading
+    level: 1
+    text: '#[Attribute] (PHP 8.0)'
+  - kind: list
+    items:
+    - PHPは歴史的にDoc commentにメタデータを書く文化が発達していた
+    - リフレクションAPIで文字列を取得できる
+    - 構造化データは独自に構文解析する必要がある
+    - '#[Attribute] はPHPのシンタックスの一部としてパースされる'
+    - 誰もが使うというよりはフレームワークなどの機能として活用できる
+  p21:
+  - kind: heading
+    level: 1
+    text: match式 (PHP 8.0)
+  - kind: list
+    items:
+    - 式バージョンのswitch
+    - 従来のswitch文の使いにくさが改善されている
+    - 残念ながら、高機能なパターンマッチ機能は未実装
+  p22:
+  - kind: heading
+    level: 1
+    text: PHPのライセンス変更 (PHP 9.0?)
+  - kind: list
+    items:
+    - 'PHP RFC: PHP License Update'
+    - 本日時点ではまだ未確定だが、独自の PHP License からBSDライセンス
+  - kind: para
+    text: に移行する提案
+  - kind: list
+    items:
+    - さまざまな歴史的経緯がまとめられていて読みごたえがある
 size:
   max_width: 720
   max_height: 405
@@ -17,902 +255,3 @@ links:
   p22:
   - url: https://wiki.php.net/rfc/php_license_update
     title: 'PHP RFC: PHP License Update'
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: Language Update PHP
-  - node: p
-    children:
-    - node: text
-      content: Learn Language 2025
-  - node: p
-    children:
-    - node: text
-      content: pixiv Inc.
-    - node: br
-    - node: bold
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2025-09-05'
-  p2:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-  - node: p
-    children:
-    - node: text
-      content: うさみけんた / にゃんだーすわん
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'GitHub: @zonuexe'
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 2012年11月から現職
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: ピクシブ株式会社 Platform Div PHPer
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 2012年末から現職、APIとかCIとかいろいろなとこ
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 最近はインフラっぽい仕事してます
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: bold
-      content: tadsan
-  - node: p
-    children:
-    - node: text
-      content: Emacs PHP Modeを開発しています (2017年-)
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: bold
-      content: PHPer
-  - node: p
-    children:
-    - node: text
-      content: 'プログラミング言語にちょっとこだわりのある素人 '
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: (spcamp2010)
-  p3:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: みなさんご存じですね？
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: <?php
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: どのくらいご存じかは人による
-  - node: p
-    children:
-    - node: text
-      content: 2000年前後から世界中でWeb開発に活用されてきた
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: いわゆる動的型付けのスクリプト言語
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: とにかくいろいろな場面で使われてきた
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Webアプリだけでなく汎用言語として多くのタスクをこなせる
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 現代で有名なのは「WordPress」「Laravel」「Wikipedia」
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHPが嫌いでもPHPを避けて生活するのが難しいくらい
-  - node: p
-    children:
-    - node: text
-      content: ○
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: PHP以前 (1990年代)
-  - node: p
-    children:
-    - node: text
-      content: Webアプリケーション ≒ CGI
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 必ずしもそうではないが、ほとんどはそうだったはず
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: '例外：普通のやつらの上を行け Paul Graham: Common Lisp'
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'CGIは任意の言語で書ける… '
-    - node: bold
-      content: が、
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Perl = パフォーマンスの問題
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: C言語 = メモリ安全に書くのが著しく難しい
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: シェルスクリプト = 非常に多くの課題がある
-  - node: p
-    children:
-    - node: text
-      content: ○
-  p7:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: PHPは何を解決したか (1990年代前半)
-  - node: p
-    children:
-    - node: text
-      content: CGIではなくApacheのモジュールとして提供
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 現実にはレンタルサーバの権限の問題でCGIモードで運用も多い
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: HTMLと統合されたテンプレート言語
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: コードとHTMLの親子関係が逆転する
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: ライブラリではなく言語レベルでHTTPをサポートしている
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 他言語のCGIサポートはライブラリレベルなので、正しく使わない
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: とヘッダインジェクションのリスクがあった
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: Webはどうなったか (2010年代)
-  - node: p
-    children:
-    - node: text
-      content: CGIではなくApacheのモジュールとして提供
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: CGIが廃れ、共用レンタルサーバの存在感が相対的に低下
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: HTMLと統合されたテンプレート言語
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 各言語でテンプレートライブラリが普及、使うのが当たり前
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: ライブラリではなく言語レベルでHTTPをサポートしている
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: CGIのような潜在的に危険なプロトコルが利用されなくなったの
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: で、フレームワークに乗って作る限り問題は起こらない
-  p9: []
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: 他言語のWeb開発の断絶
-  - node: p
-    children:
-    - node: text
-      content: CGIはリクエストごとにプロセスを起動し、HTTPを標準入出力と環境変
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 数に置き換える
-  - node: p
-    children:
-    - node: text
-      content: アーキテクチャなど考えず、シンプルな「スクリプト」でよかった
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 2000年代にインターフェイス／サーバ／アプリケーション分離の風潮
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'Python: WSGI, Ruby: Rack, Perl: PSGI'
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: PHPはトレンドに乗らず、CGI／レンタルサーバも健在であり続けた
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Apacheのmod_perl, mod_rubyも存在するが、主流にはならず
-  - node: p
-    children:
-    - node: text
-      content: ○
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: グレートリセットが起こらなかったPHP
-  - node: p
-    children:
-    - node: text
-      content: Railsの普及により、Rubyでは事実上Railsに「標準化」された
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Rack以前からあったRedmine, tDiaryなどはRackアプリケーション
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: に移行
-  - node: p
-    children:
-    - node: text
-      content: Python/Perlはフレームワークの寡占はないが、CGI世代と完全に断絶
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHPはLaravelが一般化しているが、フレームワークなしも混住
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: よくも悪くも2000年代始めの世界観を捨てきれていない
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: PHPにとっては「足枷」「便利ライブラリの集合」に過ぎない
-  - node: p
-    children:
-    - node: text
-      content: ○
-  p12:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: 21世紀のCGI
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: 21世紀のSSI
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: そんな言語でも進化は続く
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: PHPの開発体制
-  - node: p
-    children:
-    - node: text
-      content: Request for Comments https://wiki.php.net/rfc
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 言語機能の改廃提案と投票プロセス、リリース周期が明文化
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 機能提案する人は仕様をまとめてMLで議論、実装も責任を持って用意
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHP原作者のRasmus Lardorfは開発者としての1票しか行使しない
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHP 7.0(2015年)以降、11月末〜12月初頭にリリースが定着
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 品質保障のためのfeature freeze、RC版なども定められた
-  - node: p
-    children:
-    - node: text
-      content: ○
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: The PHP Foundation
-  - node: p
-    children:
-    - node: text
-      content: PHPの著作権は「The PHP Group」という団体が持っている
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 2021年にPHPの継続的な開発を支援する財団が設立された
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHPのメイン開発者だったNikita Popovの引退が契機
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 各社からの協賛金を集め、数人のPHP「コア開発者」を雇っている
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 日本からは高町咲衣さんが参加 (PHP 8.4 リリースマネージャ)
-  - node: p
-    children:
-    - node: text
-      content: ○
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: PHPの言語仕様の進化
-  - node: p
-    children:
-    - node: text
-      content: 最新版はPHP 8.4 (2024年11月リリース)
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHPユーザーの多様性
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 開発文化 vs Web制作文化
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 基本的にはかなり保守的だが、有用な機能はじわじわ追加されている
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHP 8.xで追加された構文を使えばかなり簡潔に書けることが多い
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: BC Breakは… そこそこある
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 基本的には「なぜこんなコードが動くんだ」という変なケースが潰
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: される
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: '#[Attribute] (PHP 8.0)'
-  - node: p
-    children:
-    - node: text
-      content: PHPは歴史的にDoc commentにメタデータを書く文化が発達していた
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: リフレクションAPIで文字列を取得できる
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: 構造化データは独自に構文解析する必要がある
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '#[Attribute] はPHPのシンタックスの一部としてパースされる'
-  - node: p
-    children:
-    - node: text
-      content: ●
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: クラスの改善
-  - node: p
-    children:
-    - node: text
-      content: readonlyプロパティ (PHP 8.1)
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: readonlyクラス (PHP 8.2)
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: プロパティフック (PHP 8.4)
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: C#のプロパティと同じようにプロパティの読み込みと書き込みに
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: 処理を書ける
-    - node: br
-    - node: text
-      content: 非対称プロパティ (PHP 8.4)
-  - node: p
-    children:
-    - node: text
-      content: ●
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: '#[Attribute] (PHP 8.0)'
-  - node: p
-    children:
-    - node: text
-      content: PHPは歴史的にDoc commentにメタデータを書く文化が発達していた
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: リフレクションAPIで文字列を取得できる
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: 構造化データは独自に構文解析する必要がある
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '#[Attribute] はPHPのシンタックスの一部としてパースされる'
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 誰もが使うというよりはフレームワークなどの機能として活用できる
-  - node: p
-    children:
-    - node: text
-      content: ●
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: match式 (PHP 8.0)
-  - node: p
-    children:
-    - node: text
-      content: 式バージョンのswitch
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 従来のswitch文の使いにくさが改善されている
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 残念ながら、高機能なパターンマッチ機能は未実装
-  - node: p
-    children:
-    - node: text
-      content: ●
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: PHPのライセンス変更 (PHP 9.0?)
-  - node: p
-    children:
-    - node: text
-      content: 'PHP RFC: PHP License Update'
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: '本日時点ではまだ未確定だが、独自の '
-    - node: bold
-      content: PHP License
-    - node: text
-      content: ' からBSDライセンス'
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: に移行する提案
-    - node: br
-    - node: text
-      content: さまざまな歴史的経緯がまとめられていて読みごたえがある
-  - node: p
-    children:
-    - node: text
-      content: ●

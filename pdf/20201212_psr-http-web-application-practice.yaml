@@ -1,2630 +1,817 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: PSRで学ぶHTTP Webアプリケーションの実践
-  - node: p
-    children:
-    - node: text
-      content: '2020-12-12 PHPカンファレンス2020 #phpcon         '
-  - node: p
-    children:
-    - node: text
-      content: pixiv Inc.
-    - node: br
-    - node: bold
-      content: USAMI Kenta
+  - kind: heading
+    level: 1
+    text: PSRで学ぶHTTP
+  - kind: heading
+    level: 1
+    text: Webアプリケーションの実践
+  - kind: heading
+    level: 2
+    text: '2020-12-12 PHPカンファレンス2020 #phpcon'
+  - kind: para
+    text: pixiv Inc.USAMI Kenta
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: p
-    children:
-    - node: text
-      content: うさみけんた
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: ピクシブ株式会社 事業本部
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: ' pixiv'
-    - node: br
-    - node: text
-      content: 現職には 年から所属
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: '2012'
-    - node: br
-    - node: text
-      content: は 年頃から
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: PHP 2013
-  - node: p
-    children:
-    - node: text
-      content: 現行メンテナー
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Emacs PHP Mode
-  - node: p
-    children:
-    - node: bold
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: text
-      content: 対応 まだです
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: PHP8  Attribute
-  - node: p
-    children:
-    - node: bold
-      content: '@tadsan'
-  - node: p
-    children:
-    - node: text
-      content: カンファレンス終わったら
-  - node: p
-    children:
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: PHP …
-  - node: p
-    children:
-    - node: text
-      content: などのコミュニティ
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Emacs JP, php-users-ja
+  - kind: heading
+    level: 2
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた
+    - ピクシブ株式会社 pixiv事業本部
+    - 現職には2012年から所属
+    - PHPは2013年頃から
+    - Emacs PHP Mode現行メンテナー
+  - kind: heading
+    level: 1
+    text: USAMI Kenta
+  - kind: list
+    items:
+    - PHP8対応 Attributeまだです
+  - kind: para
+    text: '@tadsan'
+  - kind: list
+    items:
+    - PHPカンファレンス終わったら…
+    - Emacs JP, php-users-jaなどのコミュニティ
   p3:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 技術など
-  - node: p
-    children:
-    - node: text
-      content: 年以前は を書いてました
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 2012 Ruby
-    - node: br
-    - node: text
-      content: 現職入社以後は社内 およびフレームワークの開
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: API
-  - node: p
-    children:
-    - node: text
-      content: 発・メンテナンスなどを担当
-    - node: br
-    - node: text
-      content: いままでのカンファレンスでは や 静的
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Composer PHP
-  - node: p
-    children:
-    - node: bold
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: text
-      content: 解析・言語機能などを紹介してきました
-    - node: br
-    - node: text
-      content: 趣味では や や などを
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHP PHP Emacs Lisp
-  - node: p
-    children:
-    - node: bold
-      content: '@tadsan'
-  - node: p
-    children:
-    - node: text
-      content: 書いてます
+  - kind: heading
+    level: 2
+    text: 技術など
+  - kind: list
+    items:
+    - 2012年以前はRubyを書いてました
+    - 現職入社以後は社内APIおよびフレームワークの開
+  - kind: para
+    text: 発・メンテナンスなどを担当
+  - kind: list
+    items:
+    - いままでのカンファレンスではComposerやPHP静的
+  - kind: para
+    text: 解析・言語機能などを紹介してきました
+  - kind: heading
+    level: 1
+    text: USAMI Kenta
+  - kind: list
+    items:
+    - 趣味ではPHPやPHPやEmacs Lispなどを
+  - kind: para
+    text: '@tadsan書いてます'
   p4:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '今回のお題         '
+  - kind: heading
+    level: 1
+    text: 今回のお題
   p5: []
   p6: []
   p7:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 基本的には既存の素晴らしい資料を
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: '読めば全部書いてある         '
-    - node: br
-    - node: text
-      content: しかしPHPとHTTPとオブジェクト指向
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: の理解がないと、何が嬉しいのか納
-    - node: br
-    - node: text
-      content: '得しがたい         '
+  - kind: list
+    items:
+    - 基本的には既存の素晴らしい資料を
+  - kind: para
+    text: 読めば全部書いてある
+  - kind: list
+    items:
+    - しかしPHPとHTTPとオブジェクト指向
+  - kind: para
+    text: の理解がないと、何が嬉しいのか納得しがたい
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 特にPSR-15に関しては今年の頭に
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: 'PHPerKaigiのために手を動かしてみる まで、いまいちぴんときていなかった         '
+  - kind: list
+    items:
+    - 特にPSR-15に関しては今年の頭に
+  - kind: para
+    text: PHPerKaigiのために手を動かしてみるまで、いまいちぴんときていなかった
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 「抽象的な話はわかった 。で、
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: (わからん)
-  - node: p
-    children:
-    - node: text
-      content: '結局何すればいいの」という         '
-    - node: br
-    - node: text
-      content: 理解のギャップを埋めることを目標とし
-    - node: br
-    - node: text
-      content: 'ています         '
-    - node: br
-    - node: text
-      content: 発表後に資料の復習と実践を推奨しま
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: 'す         '
+  - kind: list
+    items:
+    - 「抽象的な話はわかった(わからん)。で、
+  - kind: para
+    text: 結局何すればいいの」という理解のギャップを埋めることを目標としています
+  - kind: list
+    items:
+    - 発表後に資料の復習と実践を推奨しま
+  - kind: para
+    text: す
   p10:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'アジェンダ         '
+  - kind: heading
+    level: 1
+    text: アジェンダ
   p11:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '1. HTTPの概説とPHPの制約         '
-  - node: p
-    children:
-    - node: text
-      content: '2. HTTPとフレームワークとPSR         '
-  - node: p
-    children:
-    - node: text
-      content: '3. PSR-7/15/17ベースの実装と勘所         '
+  - kind: para
+    text: 1. HTTPの概説とPHPの制約
+  - kind: para
+    text: 2. HTTPとフレームワークとPSR
+  - kind: para
+    text: 3. PSR-7/15/17ベースの実装と勘所
   p12:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '1. HTTPの概説と         '
-    - node: br
-    - node: text
-      content: 'PHPの制約         '
+  - kind: para
+    text: 1. HTTPの概説とPHPの制約
   p13:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ネットの         '
-    - node: br
-    - node: text
-      content: 'アドレスのやつ？         '
-  - node: p
-    children:
-    - node: text
-      content: 'HTTPとは何か         '
+  - kind: para
+    text: ネットのアドレスのやつ？
+  - kind: heading
+    level: 1
+    text: HTTPとは何か
   p14: []
   p15:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol '
-    - node: br
-    - node: text
-      content: 最終更新 年 月 日 火
-  - node: p
-    children:
-    - node: text
-      content: ' 2020 11 3  ( ) 13:19 '
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用最終更新 2020年11月3日
+      (火) 13:19
   p16:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ネットじゃん         '
-  - node: p
-    children:
-    - node: text
-      content: 'Hypertextって…？         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'リンクとかクリックすると         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '別のページに飛べたりする文書         '
-  - node: p
-    children:
-    - node: text
-      content: '要はHTMLとかのこと         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: para
+    text: ネットじゃん
+  - kind: list
+    items:
+    - Hypertextって…？
+    - リンクとかクリックすると
+  - kind: para
+    text: 別のページに飛べたりする文書
+  - kind: list
+    items:
+    - 要はHTMLとかのこと
   p17:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol '
-    - node: br
-    - node: text
-      content: 最終更新 年 月 日 火
-  - node: p
-    children:
-    - node: text
-      content: ' 2020 11 3  ( ) 13:19 '
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用最終更新 2020年11月3日
+      (火) 13:19
   p18:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: テキストだけじゃな
-    - node: br
-    - node: text
-      content: 'いじゃん         '
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol '
-    - node: br
-    - node: text
-      content: 最終更新 年 月 日 火
-  - node: p
-    children:
-    - node: text
-      content: ' 2020 11 3  ( ) 13:19 '
+  - kind: heading
+    level: 1
+    text: テキストだけじゃな
+  - kind: heading
+    level: 1
+    text: いじゃん
+  - kind: para
+    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用最終更新 2020年11月3日
+      (火) 13:19
   p19:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: Enterを押すとHTTP
-    - node: br
-    - node: text
-      content: '通信が走る         '
+  - kind: para
+    text: Enterを押すとHTTP通信が走る
   p20:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'HTTP/3は         '
-  - node: p
-    children:
-    - node: text
-      content: 'HTTPはTCPベースの通信         '
-  - node: p
-    children:
-    - node: text
-      content: '違いますが…         '
-  - node: p
-    children:
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'TCPはバイトの並びを送れる         '
-    - node: br
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: 'HTTP/1はTCPでテキストを         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '特定のルールで区切って送信する         '
+  - kind: para
+    text: HTTP/3は違いますが…
+  - kind: list
+    items:
+    - HTTPはTCPベースの通信
+    - TCPはバイトの並びを送れる
+    - HTTP/1はTCPでテキストを
+  - kind: para
+    text: 特定のルールで区切って送信する
   p21:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '一般的なPHPでのHTTP通信         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'file_get_contents() 関数         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'cURL 関数         '
-    - node: br
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: 'GuzzleやPSR-18で抽象化         '
-    - node: br
-    - node: text
-      content: ■
+  - kind: list
+    items:
+    - 一般的なPHPでのHTTP通信
+    - file_get_contents() 関数
+    - cURL 関数
+    - GuzzleやPSR-18で抽象化
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'HTTPのやりとりの基本         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: '送信された要求(request)には         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '返答(response)を返す         '
-    - node: br
-    - node: text
-      content: HTML, CSS, JavaScript, JSON, そ
-    - node: br
-    - node: text
-      content: ■
-    - node: br
-    - node: text
-      content: 'のほかなんでも         '
+  - kind: list
+    items:
+    - HTTPのやりとりの基本
+    - 送信された要求(request)には
+  - kind: para
+    text: 返答(response)を返す
+  - kind: list
+    items:
+    - HTML, CSS, JavaScript, JSON, そ
+  - kind: para
+    text: のほかなんでも
   p23:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'HTTPリクエスト         '
+  - kind: heading
+    level: 1
+    text: HTTPリクエスト
   p24:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: リクエスト
-  - node: p
-    children:
-    - node: bold
-      content: HTTP
-  - node: p
-    children:
-    - node: text
-      content: 'リクエスト行         '
-  - node: p
-    children:
-    - node: text
-      content: POST /post HTTP/1.1
-    - node: br
-    - node: text
-      content: 'Host: httpbin.org'
-    - node: br
-    - node: text
-      content: 'Accept: application/json'
-    - node: br
-    - node: text
-      content: 'Content-Type: application/json'
-  - node: p
-    children:
-    - node: text
-      content: 'ヘッダフィールド         '
-  - node: p
-    children:
-    - node: text
-      content: 'Connection: close'
-  - node: p
-    children:
-    - node: text
-      content: '{"foo":"bar"}'
-  - node: p
-    children:
-    - node: text
-      content: 'リクエストボディ         '
-  - node: p
-    children:
-    - node: text
-      content: 'リクエスト行・ヘッダ の区切りはCR+LF '
-  - node: p
-    children:
-    - node: text
-      content: '(\r\n)         '
+  - kind: heading
+    level: 1
+    text: HTTPリクエスト
+  - kind: para
+    text: リクエスト行
+  - kind: para
+    text: ヘッダフィールド
+  - kind: para
+    text: 'POST /post HTTP/1.1 Host: httpbin.org Accept: application/json Content-Type:
+      application/json Connection: close'
+  - kind: para
+    text: リクエストボディ
+  - kind: para
+    text: '{"foo":"bar"}'
+  - kind: para
+    text: リクエスト行・ヘッダの区切りはCR+LF(\r\n)
   p25:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: http://httpbin.org/post
-  - node: p
-    children:
-    - node: text
-      content: POST /post HTTP/1.1
-    - node: br
-    - node: text
-      content: 'Host: httpbin.org'
-    - node: br
-    - node: text
-      content: 'Accept: application/json'
-    - node: br
-    - node: text
-      content: 'Content-Type: application/json'
-    - node: br
-    - node: text
-      content: 'Connection: close'
-  - node: p
-    children:
-    - node: text
-      content: '{"foo":"bar"}'
+  - kind: heading
+    level: 1
+    text: http://httpbin.org/post
+  - kind: para
+    text: 'POST /post HTTP/1.1 Host: httpbin.org Accept: application/json Content-Type:
+      application/json Connection: close'
+  - kind: para
+    text: '{"foo":"bar"}'
   p26:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ソケットが         '
-    - node: br
-    - node: text
-      content: '使える         '
-  - node: p
-    children:
-    - node: text
-      content: 'このルール通りにテキストを組み立てて         '
-    - node: br
-    - node: text
-      content: 'TCPでいい感じに送ればHTTP通信できる         '
+  - kind: para
+    text: ソケットが使える
+  - kind: heading
+    level: 1
+    text: このルール通りにテキストを組み立てて
+  - kind: heading
+    level: 1
+    text: TCPでいい感じに送ればHTTP通信できる
   p27:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'httpbin.org         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: HTTPリクエストに対してさまざまな返
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '答してくれるWebサービス         '
-    - node: br
-    - node: text
-      content: 'ブラウザ上からもテストできる         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: list
+    items:
+    - httpbin.org
+    - HTTPリクエストに対してさまざまな返
+  - kind: para
+    text: 答してくれるWebサービス
+  - kind: list
+    items:
+    - ブラウザ上からもテストできる
   p28:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: リクエスト リクエスト組み立て
-  - node: p
-    children:
-    - node: bold
-      content: HTTP  ( )
-  - node: p
-    children:
-    - node: text
-      content: 'リクエスト行         '
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: $request = implode("\r\n", [
-    - node: br
-    - node: text
-      content: '    ''POST /post HTTP/1.1'','
-  - node: p
-    children:
-    - node: text
-      content: 'ヘッダフィールド         '
-  - node: p
-    children:
-    - node: text
-      content: '    ''Host: httpbin.org'','
-    - node: br
-    - node: text
-      content: '    ''Accept: application/json'','
-    - node: br
-    - node: text
-      content: '    ''Content-Type: application/json'','
-  - node: p
-    children:
-    - node: text
-      content: 'リクエストボディ         '
-  - node: p
-    children:
-    - node: text
-      content: '    ''Connection: close'','
-    - node: br
-    - node: text
-      content: '    '''','
-  - node: p
-    children:
-    - node: text
-      content: リクエスト行・ヘッダ
-  - node: p
-    children:
-    - node: text
-      content: '    json_encode([''foo'' => ''bar'']),'
-  - node: p
-    children:
-    - node: text
-      content: 'の区切りはCR+LF '
-  - node: p
-    children:
-    - node: text
-      content: ']);'
-  - node: p
-    children:
-    - node: text
-      content: '(\r\n)         '
+  - kind: heading
+    level: 1
+    text: HTTPリクエスト (リクエスト組み立て)
+  - kind: para
+    text: リクエスト行
+  - kind: para
+    text: <?php
+  - kind: para
+    text: ヘッダフィールド
+  - kind: para
+    text: リクエストボディ
+  - kind: para
+    text: リクエスト行・ヘッダ
+  - kind: para
+    text: の区切りはCR+LF
+  - kind: para
+    text: '$request = implode("\r\n", [''POST /post HTTP/1.1'',''Host: httpbin.org'',''Accept:
+      application/json'',''Content-Type: application/json'',''Connection: close'','''',json_encode([''foo''
+      => ''bar'']),]);'
+  - kind: para
+    text: (\r\n)
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: リクエスト ソケット読み書き
-  - node: p
-    children:
-    - node: bold
-      content: HTTP  ( )
-  - node: p
-    children:
-    - node: text
-      content: '名前解決         '
-  - node: p
-    children:
-    - node: text
-      content: $ip = dns_get_record('httpbin.org', DNS_A)[0]['ip']; $sock = socket_create(AF_INET,
-        SOCK_STREAM, SOL_TCP);
-    - node: br
-    - node: text
-      content: 'socket_connect($sock, $ip, 80) or '
-  - node: p
-    children:
-    - node: text
-      content: 'ソケット接続         '
-  - node: p
-    children:
-    - node: text
-      content: die(socket_strerror(socket_last_error()));
-  - node: p
-    children:
-    - node: text
-      content: 'ソケット書込(リクエスト)          '
-  - node: p
-    children:
-    - node: text
-      content: socket_write($sock, $request);
-  - node: p
-    children:
-    - node: text
-      content: 'ソケット読込(レスポンス)          '
-  - node: p
-    children:
-    - node: text
-      content: $response = '';
-    - node: br
-    - node: text
-      content: do {
-    - node: br
-    - node: text
-      content: '    $responses .= ($buf = socket_read($sock, 2048));'
-    - node: br
-    - node: text
-      content: '} while ($buf !== '''');'
+  - kind: heading
+    level: 1
+    text: HTTPリクエスト (ソケット読み書き)
+  - kind: para
+    text: 名前解決
+  - kind: para
+    text: ソケット接続
+  - kind: para
+    text: $ip = dns_get_record('httpbin.org', DNS_A)[0]['ip'];$sock = socket_create(AF_INET,
+      SOCK_STREAM, SOL_TCP);socket_connect($sock, $ip, 80) or die(socket_strerror(socket_last_error()));
+  - kind: para
+    text: ソケット書込(リクエスト)
+  - kind: para
+    text: socket_write($sock, $request);
+  - kind: para
+    text: ソケット読込(レスポンス)
+  - kind: para
+    text: $response = '';do {$responses .= ($buf = socket_read($sock, 2048));} while
+      ($buf !== '');
   p30:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ご安心ください         '
-  - node: p
-    children:
-    - node: text
-      content: 'ところで、この方法で簡単に         '
-    - node: br
-    - node: text
-      content: '通信できるのはHTTP/1.1以下だけ。         '
-    - node: br
-    - node: text
-      content: 'HTTPSやHTTP/2では困難。         '
+  - kind: para
+    text: ご安心ください
+  - kind: para
+    text: ところで、この方法で簡単に通信できるのはHTTP/1.1以下だけ。
+  - kind: para
+    text: HTTPSやHTTP/2では困難。
   p31:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'HTTPSだろうと          ブラウザからは         '
-    - node: br
-    - node: text
-      content: '通信は簡単に見れる         '
+  - kind: para
+    text: HTTPSだろうとブラウザからは通信は簡単に見れる
   p32:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'Webブラウザの          開発者ツール         '
+  - kind: para
+    text: Webブラウザの開発者ツール
   p33:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'さて         '
+  - kind: heading
+    level: 1
+    text: さて
   p34:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'リクエストを送る人が居れば          リクエストを受け取る人も居る         '
+  - kind: para
+    text: リクエストを送る人が居ればリクエストを受け取る人も居る
   p35:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '実際にはGoかも         '
-    - node: br
-    - node: text
-      content: しれないしRubyかも
-    - node: br
-    - node: text
-      content: 'しれない…         '
-  - node: p
-    children:
-    - node: text
-      content: 'そうですPHPです         '
+  - kind: para
+    text: 実際にはGoかもしれないしRubyかもしれない…
+  - kind: heading
+    level: 1
+    text: そうですPHPです
   p36:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: ブラウザでPHPの実行結果 が見えるということはPHPが HTTPリクエストを受け取って
-    - node: br
-    - node: text
-      content: 'レスポンスを         '
-    - node: br
-    - node: text
-      content: '返しているにほかならない         '
+  - kind: para
+    text: ブラウザでPHPの実行結果が見えるということはPHPがHTTPリクエストを受け取ってレスポンスを返しているにほかならない
   p37:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'スーパー         '
-    - node: br
-    - node: text
-      content: 'グローバル変数         '
-  - node: p
-    children:
-    - node: text
-      content: '$_SERVER         '
-    - node: br
-    - node: text
-      content: '$_GET, $_POST         '
+  - kind: para
+    text: スーパーグローバル変数
+  - kind: heading
+    level: 1
+    text: $_SERVER
+  - kind: heading
+    level: 1
+    text: $_GET, $_POST
   p38:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: リクエスト
-  - node: p
-    children:
-    - node: text
-      content: '$_GET         '
-  - node: p
-    children:
-    - node: bold
-      content: HTTP
-  - node: p
-    children:
-    - node: text
-      content: POST /post?hoge=1&fuga=2 HTTP/1.1
-    - node: br
-    - node: text
-      content: 'Host: httpbin.org'
-    - node: br
-    - node: text
-      content: 'Accept: application/json'
-    - node: br
-    - node: text
-      content: 'Content-Type: application/x-www-form-urlencoded'
-    - node: br
-    - node: text
-      content: 'Connection: close'
-  - node: p
-    children:
-    - node: text
-      content: foo=3&bar=4
-  - node: p
-    children:
-    - node: text
-      content: '$_SERVER         '
-  - node: p
-    children:
-    - node: text
-      content: '$_POST         '
+  - kind: para
+    text: $_GET
+  - kind: heading
+    level: 1
+    text: HTTPリクエスト
+  - kind: para
+    text: 'POST /post?hoge=1&fuga=2 HTTP/1.1 Host: httpbin.org Accept: application/json
+      Content-Type: application/x-www-form-urlencoded Connection: close'
+  - kind: para
+    text: foo=3&bar=4
+  - kind: para
+    text: $_SERVER
+  - kind: para
+    text: $_POST
   p39:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://www.php.net/manual/ja/reserved.variables.server.php '
-  - node: p
-    children:
-    - node: text
-      content: 年 月 日閲覧
-  - node: p
-    children:
-    - node: text
-      content: '2020 12 12  '
+  - kind: para
+    text: https://www.php.net/manual/ja/reserved.variables.server.php より引用2020年12月12日
+      閲覧
   p40:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'CGI '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: '(Common Gateway Interface)         '
-  - node: p
-    children:
-    - node: text
-      content: 'かつては掲示板のような         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'Webアプリ = CGIだった         '
-    - node: br
-    - node: text
-      content: リクエストごとにプロセス起動し標準
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '入出力と環境変数で受け渡し         '
+  - kind: list
+    items:
+    - CGI (Common Gateway Interface)
+    - かつては掲示板のような
+  - kind: para
+    text: Webアプリ = CGIだった
+  - kind: list
+    items:
+    - リクエストごとにプロセス起動し標準
+  - kind: para
+    text: 入出力と環境変数で受け渡し
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: CGIから$_SERVER
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: $_SERVER['REQUEST_URI']
-    - node: br
-    - node: text
-      content: 'ヘッダを全て大文字 - を_に変換         '
-    - node: br
-    - node: text
-      content: ○ ○
-    - node: br
-    - node: text
-      content: 'Content-Type ⇒ '
-    - node: br
-    - node: text
-      content: '$_SERVER[''HTTP_CONTENT_TYPE'']         '
+  - kind: list
+    items:
+    - CGIから$_SERVER
+    - $_SERVER['REQUEST_URI']
+    - ヘッダを全て大文字 - を_に変換
+    - Content-Type ⇒
+  - kind: para
+    text: $_SERVER['HTTP_CONTENT_TYPE']
   p42:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: PHPとSAPI (ServerAPI)
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'PHPはサーバーの実行環境の差を          ServerAPIという層で吸収している         '
-  - node: p
-    children:
-    - node: text
-      content: 'cgi-fcgi, apache, fpm-fcgi, cli-sever...         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 環境ごとにコードを書き換える必要性が限り
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'なく小さい         '
+  - kind: list
+    items:
+    - PHPとSAPI (ServerAPI)
+    - PHPはサーバーの実行環境の差を
+  - kind: para
+    text: ServerAPIという層で吸収している
+  - kind: list
+    items:
+    - cgi-fcgi, apache, fpm-fcgi, cli-sever...
+    - 環境ごとにコードを書き換える必要性が限り
+  - kind: para
+    text: なく小さい
   p43:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'HTTPレスポンス         '
+  - kind: heading
+    level: 1
+    text: HTTPレスポンス
   p44:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: レスポンス
-  - node: p
-    children:
-    - node: bold
-      content: HTTP
-  - node: p
-    children:
-    - node: text
-      content: 'バージョン/ステータス         '
-  - node: p
-    children:
-    - node: text
-      content: HTTP/1.1 200 OK
-    - node: br
-    - node: text
-      content: 'Date: Fri, 11 Dec 2020 16:20:18 GMT'
-    - node: br
-    - node: text
-      content: 'Content-Type: application/json'
-    - node: br
-    - node: text
-      content: 'Content-Length: 339'
-  - node: p
-    children:
-    - node: text
-      content: 'ヘッダフィールド         '
-  - node: p
-    children:
-    - node: text
-      content: 'Connection: close'
-    - node: br
-    - node: text
-      content: 'Server: gunicorn/19.9.0'
-    - node: br
-    - node: text
-      content: 'Access-Control-Allow-Origin: *'
-    - node: br
-    - node: text
-      content: 'Access-Control-Allow-Credentials: true'
-  - node: p
-    children:
-    - node: text
-      content: 'レスポンスボディ         '
-  - node: p
-    children:
-    - node: text
-      content: '{"json":"response..."}'
+  - kind: heading
+    level: 1
+    text: HTTPレスポンス
+  - kind: para
+    text: バージョン/ステータス
+  - kind: para
+    text: ヘッダフィールド
+  - kind: para
+    text: 'HTTP/1.1 200 OK Date: Fri, 11 Dec 2020 16:20:18 GMT Content-Type: application/json
+      Content-Length: 339 Connection: close Server: gunicorn/19.9.0 Access-Control-Allow-Origin:
+      *Access-Control-Allow-Credentials: true'
+  - kind: para
+    text: レスポンスボディ
+  - kind: para
+    text: '{"json":"response..."}'
   p45:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: レスポンス
-  - node: p
-    children:
-    - node: bold
-      content: HTTP
-  - node: p
-    children:
-    - node: text
-      content: 'バージョン/ステータス         '
-  - node: p
-    children:
-    - node: text
-      content: HTTP/1.1 200 OK
-    - node: br
-    - node: text
-      content: 'Date: Fri, 11 Dec 2020 16:20:18 GMT'
-    - node: br
-    - node: text
-      content: 'Content-Type: text/html'
-    - node: br
-    - node: text
-      content: 'Content-Length: 339'
-  - node: p
-    children:
-    - node: text
-      content: 'ヘッダフィールド         '
-  - node: p
-    children:
-    - node: text
-      content: 'Connection: close'
-    - node: br
-    - node: text
-      content: 'Access-Control-Allow-Origin: *'
-    - node: br
-    - node: text
-      content: 'Access-Control-Allow-Credentials: true'
-  - node: p
-    children:
-    - node: text
-      content: <!DOCTYPE html>
-  - node: p
-    children:
-    - node: text
-      content: 'レスポンスボディ         '
-  - node: p
-    children:
-    - node: text
-      content: <html>
-    - node: br
-    - node: text
-      content: '    <head>'
+  - kind: heading
+    level: 1
+    text: HTTPレスポンス
+  - kind: para
+    text: バージョン/ステータス
+  - kind: para
+    text: ヘッダフィールド
+  - kind: para
+    text: 'HTTP/1.1 200 OK Date: Fri, 11 Dec 2020 16:20:18 GMT Content-Type: text/html
+      Content-Length: 339 Connection: close Access-Control-Allow-Origin: *Access-Control-Allow-Credentials:
+      true'
+  - kind: para
+    text: レスポンスボディ
+  - kind: para
+    text: <!DOCTYPE html><html><head>
   p46:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'PHPではechoなどで出力したものは         '
-    - node: br
-    - node: text
-      content: 'そのままレスポンスボディになる         '
-    - node: br
-    - node: text
-      content: '(レスポンスヘッダは、ボディを         '
-    - node: br
-    - node: text
-      content: 'echoする前にheader()を呼んでおく)         '
+  - kind: para
+    text: PHPではechoなどで出力したものはそのままレスポンスボディになる
+  - kind: para
+    text: (レスポンスヘッダは、ボディをechoする前にheader()を呼んでおく)
   p47:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: では基本的にこれだけ
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: 'header(''Content-Type: application/json''); header(''Access-Control-Allow-Origin:
-        *'');'
-    - node: br
-    - node: text
-      content: 'header(''Access-Control-Allow-Credentials: true'');'
-  - node: p
-    children:
-    - node: text
-      content: echo json_encode($data);
+  - kind: heading
+    level: 1
+    text: PHPでは基本的にこれだけ
+  - kind: para
+    text: '<?php header(''Content-Type: application/json'');header(''Access-Control-Allow-Origin:
+      *'');header(''Access-Control-Allow-Credentials: true'');'
+  - kind: para
+    text: echo json_encode($data);
   p48:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: では基本的にこれだけ
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: 'header(''Content-Type: text/html'');'
-    - node: br
-    - node: text
-      content: 'header(''Access-Control-Allow-Origin: *'');'
-    - node: br
-    - node: text
-      content: 'header(''Access-Control-Allow-Credentials: true'');'
-    - node: br
-    - node: text
-      content: ?>
-    - node: br
-    - node: text
-      content: <!DOCTYPE html>
-    - node: br
-    - node: text
-      content: <html>
-    - node: br
-    - node: text
-      content: '    <head>...'
+  - kind: heading
+    level: 1
+    text: PHPでは基本的にこれだけ
+  - kind: para
+    text: '<?php header(''Content-Type: text/html'');header(''Access-Control-Allow-Origin:
+      *'');header(''Access-Control-Allow-Credentials: true'');?><!DOCTYPE html><html><head>...'
   p49:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: では基本的にこれだけ
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: 'header(''Content-Type: image/png'');'
-    - node: br
-    - node: text
-      content: 'header(''Access-Control-Allow-Origin: *'');'
-    - node: br
-    - node: text
-      content: 'header(''Access-Control-Allow-Credentials: true'');'
-  - node: p
-    children:
-    - node: text
-      content: 画像ファイルをそのまま返すこともできる
-  - node: p
-    children:
-    - node: text
-      content: '// '
-    - node: br
-    - node: text
-      content: readfile(__DIR__ . '/../storage/flower.png');
+  - kind: heading
+    level: 1
+    text: PHPでは基本的にこれだけ
+  - kind: para
+    text: '<?php header(''Content-Type: image/png'');header(''Access-Control-Allow-Origin:
+      *'');header(''Access-Control-Allow-Credentials: true'');'
+  - kind: para
+    text: // 画像ファイルをそのまま返すこともできるreadfile(__DIR__ . '/../storage/flower.png');
   p50:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: PerlやRubyなどの言語のCGI機能はあ
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: くまでもライブラリだが、PHPはServer APIとしてHTTP処理が言語処理系と統
-    - node: br
-    - node: text
-      content: '合されている         '
+  - kind: list
+    items:
+    - PerlやRubyなどの言語のCGI機能はあ
+  - kind: para
+    text: くまでもライブラリだが、PHPはServer APIとしてHTTP処理が言語処理系と統合されている
   p51:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'スーパーグローバル変数         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: '$_GET, $_POST, $_REQUEST         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '$_SERVER, $_COOKIE, $FILES         '
-    - node: br
-    - node: text
-      content: 'グローバル関数         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'header(), setcookie(), session         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: list
+    items:
+    - スーパーグローバル変数
+    - $_GET, $_POST, $_REQUEST
+  - kind: para
+    text: $_SERVER, $_COOKIE, $FILES
+  - kind: list
+    items:
+    - グローバル関数
+    - header(), setcookie(), session
   p52:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ならPHPの基本機能をそのまま          使うのが一番自然でいいのでは         '
+  - kind: para
+    text: ならPHPの基本機能をそのまま使うのが一番自然でいいのでは
   p53:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'そうともいかない事情がある         '
+  - kind: heading
+    level: 1
+    text: そうともいかない事情がある
   p54:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'グローバルは         '
-    - node: br
-    - node: text
-      content: テストとひたすら相
-  - node: p
-    children:
-    - node: text
-      content: 'スーパーグローバル変数         '
-    - node: br
-    - node: bold
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: '性が悪い         '
-  - node: p
-    children:
-    - node: text
-      content: '$_GET, $_POST, $_REQUEST         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '$_SERVER, $_COOKIE, $FILES         '
-    - node: br
-    - node: text
-      content: 'グローバル関数         '
-    - node: br
-    - node: bold
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'header(), setcookie(), session         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: para
+    text: グローバルはテストとひたすら相性が悪い
+  - kind: list
+    items:
+    - スーパーグローバル変数
+    - $_GET, $_POST, $_REQUEST
+  - kind: para
+    text: $_SERVER, $_COOKIE, $FILES
+  - kind: list
+    items:
+    - グローバル関数
+    - header(), setcookie(), session
   p55:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'なぜテストと相性が悪いのか         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 一般的なユニットテストはテスト対象
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: に引数を与えて、その返り値をア
-    - node: br
-    - node: text
-      content: 'サーションする         '
-    - node: br
-    - node: text
-      content: 実装が引数以外のものに依存すると
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'テストしにくい         '
+  - kind: list
+    items:
+    - なぜテストと相性が悪いのか
+    - 一般的なユニットテストはテスト対象
+  - kind: para
+    text: に引数を与えて、その返り値をアサーションする
+  - kind: list
+    items:
+    - 実装が引数以外のものに依存すると
+  - kind: para
+    text: テストしにくい
   p56:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: とはいえグローバル変数はどうにかな
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: 'る         '
-    - node: br
-    - node: text
-      content: PHPUnitならテストケース実行前の
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: setUp()で確実にリセットしておけばい
-    - node: br
-    - node: text
-      content: 'い         '
+  - kind: list
+    items:
+    - とはいえグローバル変数はどうにかな
+  - kind: para
+    text: る
+  - kind: list
+    items:
+    - PHPUnitならテストケース実行前の
+  - kind: para
+    text: setUp()で確実にリセットしておけばいい
   p57:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'header()/setcookieとCLIの相性         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHPUnitのテスト対象で呼ばれると
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'Warningで止まる         '
-    - node: br
-    - node: text
-      content: '○ Warning: Cannot modify header '
-  - node: p
-    children:
-    - node: text
-      content: information
+  - kind: list
+    items:
+    - header()/setcookieとCLIの相性
+    - PHPUnitのテスト対象で呼ばれると
+  - kind: para
+    text: Warningで止まる
+  - kind: list
+    items:
+    - 'Warning: Cannot modify header'
+  - kind: para
+    text: information
   p58:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'header()/setcookieとCLIの相性         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 「特定の場合にヘッダ／Cookieが送
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 信されること」のようなアサーションは
-    - node: br
-    - node: text
-      content: '書けない         '
-    - node: br
-    - node: text
-      content: 'ラッパー関数などの工夫で可能         '
-    - node: br
-    - node: text
-      content: ■
-    - node: br
-    - node: text
-      content: '弊社ではStaticMockで対応         '
-    - node: br
-    - node: text
-      content: ■
+  - kind: list
+    items:
+    - header()/setcookieとCLIの相性
+    - 「特定の場合にヘッダ／Cookieが送
+  - kind: para
+    text: 信されること」のようなアサーションは書けない
+  - kind: list
+    items:
+    - ラッパー関数などの工夫で可能
+    - 弊社ではStaticMockで対応
   p59:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 2. HTTPとフレームワー
-    - node: br
-    - node: text
-      content: 'クとPSR         '
+  - kind: para
+    text: 2. HTTPとフレームワークとPSR
   p60:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ここまでの問題点を         '
-    - node: br
-    - node: text
-      content: '整理しよう         '
+  - kind: para
+    text: ここまでの問題点を整理しよう
   p61:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'PHPのHTTP機能はグローバルな         '
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: '状態と密結合している         '
-    - node: br
-    - node: text
-      content: '操作できないグローバルな状態が         '
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: '存在すると引数と返り値による          アサーションに落とし込めない         '
+  - kind: list
+    items:
+    - PHPのHTTP機能はグローバルな
+  - kind: para
+    text: 状態と密結合している
+  - kind: list
+    items:
+    - 操作できないグローバルな状態が
+  - kind: para
+    text: 存在すると引数と返り値によるアサーションに落とし込めない
   p62:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'それならHTTPを         '
-    - node: br
-    - node: text
-      content: '引数と返り値で扱える         '
-    - node: br
-    - node: text
-      content: '場所に持ってくればいい         '
+  - kind: para
+    text: それならHTTPを引数と返り値で扱える場所に持ってくればいい
   p63:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: HTTPの構造は決まってる
-    - node: br
-    - node: text
-      content: 'わけじゃないですか         '
+  - kind: para
+    text: HTTPの構造は決まってるわけじゃないですか
   p64:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: リクエスト
-  - node: p
-    children:
-    - node: bold
-      content: HTTP
-  - node: p
-    children:
-    - node: text
-      content: 'リクエスト行         '
-  - node: p
-    children:
-    - node: text
-      content: POST /post HTTP/1.1
-    - node: br
-    - node: text
-      content: 'Host: httpbin.org'
-    - node: br
-    - node: text
-      content: 'Accept: application/json'
-    - node: br
-    - node: text
-      content: 'Content-Type: application/json'
-  - node: p
-    children:
-    - node: text
-      content: 'ヘッダフィールド         '
-  - node: p
-    children:
-    - node: text
-      content: 'Connection: close'
-  - node: p
-    children:
-    - node: text
-      content: '{"foo":"bar"}'
-  - node: p
-    children:
-    - node: text
-      content: 'リクエストボディ         '
+  - kind: heading
+    level: 1
+    text: HTTPリクエスト
+  - kind: para
+    text: リクエスト行
+  - kind: para
+    text: ヘッダフィールド
+  - kind: para
+    text: 'POST /post HTTP/1.1 Host: httpbin.org Accept: application/json Content-Type:
+      application/json Connection: close'
+  - kind: para
+    text: リクエストボディ
+  - kind: para
+    text: '{"foo":"bar"}'
   p65:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: レスポンス
-  - node: p
-    children:
-    - node: bold
-      content: HTTP
-  - node: p
-    children:
-    - node: text
-      content: 'バージョン/ステータス         '
-  - node: p
-    children:
-    - node: text
-      content: HTTP/1.1 200 OK
-    - node: br
-    - node: text
-      content: 'Date: Fri, 11 Dec 2020 16:20:18 GMT'
-    - node: br
-    - node: text
-      content: 'Content-Type: application/json'
-    - node: br
-    - node: text
-      content: 'Content-Length: 339'
-  - node: p
-    children:
-    - node: text
-      content: 'ヘッダフィールド         '
-  - node: p
-    children:
-    - node: text
-      content: 'Connection: close'
-    - node: br
-    - node: text
-      content: 'Server: gunicorn/19.9.0'
-    - node: br
-    - node: text
-      content: 'Access-Control-Allow-Origin: *'
-    - node: br
-    - node: text
-      content: 'Access-Control-Allow-Credentials: true'
-  - node: p
-    children:
-    - node: text
-      content: 'レスポンスボディ         '
-  - node: p
-    children:
-    - node: text
-      content: '{"json":"response..."}'
+  - kind: heading
+    level: 1
+    text: HTTPレスポンス
+  - kind: para
+    text: バージョン/ステータス
+  - kind: para
+    text: ヘッダフィールド
+  - kind: para
+    text: 'HTTP/1.1 200 OK Date: Fri, 11 Dec 2020 16:20:18 GMT Content-Type: application/json
+      Content-Length: 339 Connection: close Server: gunicorn/19.9.0 Access-Control-Allow-Origin:
+      *Access-Control-Allow-Credentials: true'
+  - kind: para
+    text: レスポンスボディ
+  - kind: para
+    text: '{"json":"response..."}'
   p66:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'いかにもクラスに         '
-    - node: br
-    - node: text
-      content: 'できそう         '
+  - kind: para
+    text: いかにもクラスにできそう
   p67:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'システムの奥深くでグローバル         '
-    - node: br
-    - node: text
-      content: '変数を参照されたら困るなら          リクエストオブジェクトを渡して         '
-    - node: br
-    - node: text
-      content: 'そこから状態を取得させればいい         '
+  - kind: para
+    text: システムの奥深くでグローバル変数を参照されたら困るならリクエストオブジェクトを渡してそこから状態を取得させればいい
   p68:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: header()関数をコールされたら困る
-    - node: br
-    - node: text
-      content: 'なら、送信したいヘッダを         '
-    - node: br
-    - node: text
-      content: レスポンスオブジェクトに記録して受
-    - node: br
-    - node: text
-      content: 'け渡していけばいい         '
+  - kind: para
+    text: header()関数をコールされたら困るなら、送信したいヘッダをレスポンスオブジェクトに記録して受け渡していけばいい
   p69:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'そりゃみんな         '
-    - node: br
-    - node: text
-      content: 'やりますよね…         '
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: Rob Allen HTTP, PSR-7 and Middleware
+  - kind: heading
+    level: 1
+    text: そりゃみんな
+  - kind: heading
+    level: 1
+    text: やりますよね…
+  - kind: para
+    text: Rob Allen HTTP, PSR-7 and Middlewareより引用
   p70:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'いろいろあった         '
+  - kind: heading
+    level: 1
+    text: いろいろあった
   p71:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 2013年にはこういう
-    - node: br
-    - node: text
-      content: 'のもあった         '
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://stackphp.com/ '
+  - kind: heading
+    level: 1
+    text: 2013年にはこういう
+  - kind: heading
+    level: 1
+    text: のもあった
+  - kind: para
+    text: https://stackphp.com/ より引用
   p72:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://stackphp.com/ '
+  - kind: heading
+    level: 1
+    text: https://stackphp.com/ より引用
   p73:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: より引用
-  - node: p
-    children:
-    - node: text
-      content: 'https://stackphp.com/ '
+  - kind: heading
+    level: 1
+    text: https://stackphp.com/ より引用
   p74:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'そこで出てくるのが         '
-    - node: br
-    - node: text
-      content: 'PHP-FIGとPSR         '
+  - kind: para
+    text: そこで出てくるのがPHP-FIGとPSR
   p75:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'PHP-FIG         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'PHP Framework Interop Group         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '(フレームワーク相互運用グループ)         '
-  - node: p
-    children:
-    - node: text
-      content: 'PSR         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: PHP Standard Recommendation
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '(PHP標準勧告)         '
+  - kind: list
+    items:
+    - PHP-FIG
+    - PHP Framework Interop Group
+  - kind: para
+    text: (フレームワーク相互運用グループ)
+  - kind: list
+    items:
+    - PSR
+    - PHP Standard Recommendation
+  - kind: para
+    text: (PHP標準勧告)
   p76:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '経緯はsasezakiさんの         '
-    - node: br
-    - node: text
-      content: '「憂鬱な希望としての PSR-7」を参照         '
+  - kind: para
+    text: 経緯はsasezakiさんの「憂鬱な希望としての PSR-7」を参照
   p77:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 時は流れて2018年
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-15:          '
-  - node: p
-    children:
-    - node: text
-      content: ' HTTP Server Request Handlers'
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-17: HTTP Factories'
-    - node: br
-    - node: text
-      content: 'が受理         '
+  - kind: heading
+    level: 1
+    text: 時は流れて2018年
+  - kind: para
+    text: 'PSR-15: HTTP Server Request Handlers'
+  - kind: para
+    text: 'PSR-17: HTTP Factories'
+  - kind: heading
+    level: 1
+    text: が受理
   p78:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: これで晴れて具象への依存を避けつつPSR ベースのWebアプリを書けるようになったとい
-    - node: br
-    - node: text
-      content: 'う話は、田中ひさてるさんの         '
-    - node: br
-    - node: text
-      content: PHP-FIGのHTTP処理標準の設計はなぜ
-    - node: br
-    - node: text
-      content: 'PSR-7/15/17になったのか         '
-    - node: br
-    - node: text
-      content: 'を参照ください         '
+  - kind: para
+    text: これで晴れて具象への依存を避けつつPSRベースのWebアプリを書けるようになったという話は、田中ひさてるさんのPHP-FIGのHTTP処理標準の設計はなぜPSR-7/15/17になったのかを参照ください
   p79:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 3. PSR-7/15/17ベー
-    - node: br
-    - node: text
-      content: 'スの実装と勘所         '
+  - kind: para
+    text: 3. PSR-7/15/17ベースの実装と勘所
   p80:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'お待たせしました         '
-    - node: br
-    - node: text
-      content: 'ここからWebアプリを         '
-    - node: br
-    - node: text
-      content: '作りはじめましょう         '
+  - kind: para
+    text: お待たせしましたここからWebアプリを作りはじめましょう
   p81:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '実装を選ぶ         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'PSRは飽くまでインターフェイス         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'オブジェクトは別に必要         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: list
+    items:
+    - 実装を選ぶ
+    - PSRは飽くまでインターフェイス
+    - オブジェクトは別に必要
   p82:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-7/PSR-17         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'を使う         '
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: Guzzleもいいがnyholm/psr7
-  - node: p
-    children:
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: 'SAPIとの入出力         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'nyholm/psr7-server         '
-    - node: br
-    - node: text
-      content: 'narrowspark/http-emitter         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: list
+    items:
+    - PSR-7/PSR-17
+    - Guzzleもいいがnyholm/psr7を使う
+    - SAPIとの入出力
+    - nyholm/psr7-server
+    - narrowspark/http-emitter
   p83:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequestInterface         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: Requestにスーパーグローバル
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '($_GETなど)相当+Attributeを         '
-    - node: br
-    - node: text
-      content: '付与して引き回せる         '
+  - kind: list
+    items:
+    - ServerRequestInterface
+    - Requestにスーパーグローバル
+  - kind: para
+    text: ($_GETなど)相当+Attributeを付与して引き回せる
   p84:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'Emitter         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: 'Responseオブジェクトを出力         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '(echo)         '
-    - node: br
-    - node: text
-      content: HTTPヘッダに合わせてheader()関数
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'を呼ぶ         '
+  - kind: list
+    items:
+    - Emitter
+    - Responseオブジェクトを出力
+  - kind: para
+    text: (echo)
+  - kind: list
+    items:
+    - HTTPヘッダに合わせてheader()関数
+  - kind: para
+    text: を呼ぶ
   p85:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: プロジェクト初期化
-  - node: p
-    children:
-    - node: text
-      content: 'https://github.com/zonuexe/phpcon-psr-app '
-  - node: p
-    children:
-    - node: text
-      content: '% composer require nyholm/psr7 nyholm/psr7-server'
-    - node: br
-    - node: text
-      content: '% composer require narrowspark/http-emitter'
-  - node: p
-    children:
-    - node: text
-      content: サーバー起動
-  - node: p
-    children:
-    - node: text
-      content: '# '
-    - node: br
-    - node: text
-      content: '% php -S localhost:3939 -t public/ ./public/index.php'
+  - kind: heading
+    level: 1
+    text: プロジェクト初期化
+  - kind: heading
+    level: 2
+    text: https://github.com/zonuexe/phpcon-psr-app
+  - kind: para
+    text: '% composer require nyholm/psr7 nyholm/psr7-server% composer require narrowspark/http-emitter'
+  - kind: para
+    text: '# サーバー起動% php -S localhost:3939 -t public/ ./public/index.php'
   p86:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: public/index.php
-  - node: p
-    children:
-    - node: text
-      content: <?php declare(strict_types=1);
-    - node: br
-    - node: text
-      content: use Narrowspark\HttpEmitter\SapiEmitter;
-    - node: br
-    - node: text
-      content: use Nyholm\Psr7\Factory\Psr17Factory;
-    - node: br
-    - node: text
-      content: use Nyholm\Psr7Server\ServerRequestCreator; require __DIR__ . '/../vendor/autoload.php';
-  - node: p
-    children:
-    - node: text
-      content: $psr17Factory = new Psr17Factory(); $creator = new ServerRequestCreator(
-    - node: br
-    - node: text
-      content: '    $psr17Factory, // ServerRequestFactory'
-    - node: br
-    - node: text
-      content: '    $psr17Factory, // UriFactory'
-    - node: br
-    - node: text
-      content: '    $psr17Factory, // UploadedFileFactory'
-    - node: br
-    - node: text
-      content: '    $psr17Factory  // StreamFactory'
-    - node: br
-    - node: text
-      content: );
+  - kind: heading
+    level: 1
+    text: public/index.php
+  - kind: para
+    text: <?php declare(strict_types=1);use Narrowspark\HttpEmitter\SapiEmitter;use
+      Nyholm\Psr7\Factory\Psr17Factory;use Nyholm\Psr7Server\ServerRequestCreator;require
+      __DIR__ . '/../vendor/autoload.php';
+  - kind: para
+    text: $psr17Factory = new Psr17Factory();$creator = new ServerRequestCreator($psr17Factory,
+      // ServerRequestFactory$psr17Factory, // UriFactory$psr17Factory, // UploadedFileFactory$psr17Factory
+      // StreamFactory);
   p87:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $serverRequest = $creator->fromGlobals();
-  - node: p
-    children:
-    - node: text
-      content: ；
-  - node: p
-    children:
-    - node: text
-      content: $response = $psr17Factory->createResponse()
-    - node: br
-    - node: text
-      content: '    ->withHeader(''Content-Type'', ''text/plain'')'
-    - node: br
-    - node: text
-      content: '    ->withBody($psr17Factory->createStream(''Hello!''));'
-  - node: p
-    children:
-    - node: text
-      content: $emitter = new SapiEmitter();
-    - node: br
-    - node: text
-      content: $emitter->emit($response);
+  - kind: heading
+    level: 1
+    text: public/index.php
+  - kind: para
+    text: $serverRequest = $creator->fromGlobals();
+  - kind: para
+    text: $response = $psr17Factory->createResponse()；->withHeader('Content-Type',
+      'text/plain')->withBody($psr17Factory->createStream('Hello!'));
+  - kind: para
+    text: $emitter = new SapiEmitter();$emitter->emit($response);
   p88:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ControllerでResponseを返してみる         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: RequestHandlerで実装するとLaravel
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: 'の っぽくなる         '
-  - node: p
-    children:
-    - node: text
-      content: Single Action Controller
-    - node: br
-    - node: text
-      content: '__invoke()ではなくhandle()に         '
-    - node: br
-    - node: text
-      content: ○
+  - kind: list
+    items:
+    - ControllerでResponseを返してみる
+    - RequestHandlerで実装するとLaravel
+  - kind: para
+    text: のSingle Action Controllerっぽくなる
+  - kind: list
+    items:
+    - __invoke()ではなくhandle()に
   p89:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '注意: 今回はControllerを'
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: 'RequestHandlerにしているが、         '
-    - node: br
-    - node: text
-      content: '別の方法で安全に起動できる手段が         '
-    - node: br
-    - node: text
-      content: 'あれば他の方法でもよい         '
+  - kind: list
+    items:
+    - '注意: 今回はControllerを'
+  - kind: para
+    text: RequestHandlerにしているが、別の方法で安全に起動できる手段があれば他の方法でもよい
   p90:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: src/Http/RequestHandler/Hello.php
-    - node: br
-    - node: text
-      content: final class Hello implements RequestHandlerInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  private StreamFactory $stream_factory;'
-    - node: br
-    - node: text
-      content: '  private ResponseFactory $response_factory;'
-  - node: p
-    children:
-    - node: text
-      content: '  public function __construct('
-    - node: br
-    - node: text
-      content: '    ResponseFactory $response_factory,'
-    - node: br
-    - node: text
-      content: '    StreamFactory $stream_factory'
-    - node: br
-    - node: text
-      content: '  ) {'
-    - node: br
-    - node: text
-      content: '    $this->response_factory = $response_factory;'
-    - node: br
-    - node: text
-      content: '    $this->stream_factory = $stream_factory;'
-    - node: br
-    - node: text
-      content: '  }'
+  - kind: heading
+    level: 1
+    text: src/Http/RequestHandler/Hello.php
+  - kind: para
+    text: final class Hello implements RequestHandlerInterface{private StreamFactory
+      $stream_factory;private ResponseFactory $response_factory;
+  - kind: para
+    text: public function __construct(ResponseFactory $response_factory,StreamFactory
+      $stream_factory) {$this->response_factory = $response_factory;$this->stream_factory
+      = $stream_factory;}
   p91:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: src/Http/RequestHandler/Hello.php
-  - node: p
-    children:
-    - node: text
-      content: '  public function handle(Request $request): Response'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    return $this->response_factory->createResponse()'
-    - node: br
-    - node: text
-      content: '      ->withHeader(''Content-Type'', ''text/plain'')'
-    - node: br
-    - node: text
-      content: '      ->withBody('
-    - node: br
-    - node: text
-      content: '        $this->stream_factory->createStream(''Hello!'')'
-    - node: br
-    - node: text
-      content: '      );'
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: src/Http/RequestHandler/Hello.php
+  - kind: para
+    text: 'public function handle(Request $request): Response{return $this->response_factory->createResponse()->withHeader(''Content-Type'',
+      ''text/plain'')->withBody($this->stream_factory->createStream(''Hello!''));}}'
   p92:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $serverRequest = $creator->fromGlobals();
-  - node: p
-    children:
-    - node: text
-      content: $hello = new Hello($psr17Factory, $psr17Factory);
-    - node: br
-    - node: text
-      content: $response = $hello->handle($serverRequest);
-  - node: p
-    children:
-    - node: text
-      content: $emitter = new SapiEmitter();
-    - node: br
-    - node: text
-      content: $emitter->emit($response);
+  - kind: heading
+    level: 1
+    text: public/index.php
+  - kind: para
+    text: $serverRequest = $creator->fromGlobals();
+  - kind: para
+    text: $hello = new Hello($psr17Factory, $psr17Factory);$response = $hello->handle($serverRequest);
+  - kind: para
+    text: $emitter = new SapiEmitter();$emitter->emit($response);
   p93:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'せっかくなので、超簡単な         '
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: 'ルーターも作っていきましょう         '
+  - kind: list
+    items:
+    - せっかくなので、超簡単な
+  - kind: para
+    text: ルーターも作っていきましょう
   p94:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $router = new StaticRouter([
-    - node: br
-    - node: text
-      content: '  ''/'' => [''GET''=>fn() => new Index($psr17, $psr17)],'
-    - node: br
-    - node: text
-      content: '  ''/hello'' => [''GET''=>fn()=> new Hello($psr17, $psr17)], ], fn()
-        => new ErrorPage($psr17Factory, $psr17Factory));'
-  - node: p
-    children:
-    - node: text
-      content: $response = $router->handle($serverRequest);
-  - node: p
-    children:
-    - node: text
-      content: $emitter = new SapiEmitter();
-    - node: br
-    - node: text
-      content: $emitter->emit($response);
+  - kind: heading
+    level: 1
+    text: public/index.php
+  - kind: para
+    text: $router = new StaticRouter(['/' => ['GET'=>fn() => new Index($psr17, $psr17)],'/hello'
+      => ['GET'=>fn()=> new Hello($psr17, $psr17)],], fn() => new ErrorPage($psr17Factory,
+      $psr17Factory));
+  - kind: para
+    text: $response = $router->handle($serverRequest);
+  - kind: para
+    text: $emitter = new SapiEmitter();$emitter->emit($response);
   p95:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: src/Http/RequestHandler/StaticRouter.php
-    - node: br
-    - node: text
-      content: 'final class StaticRouter implements '
-    - node: br
-    - node: text
-      content: RequestHandlerInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  private array $routes;'
-    - node: br
-    - node: text
-      content: '  private Closure $error_page;'
-  - node: p
-    children:
-    - node: text
-      content: '  public function __construct(array $routes, Closure '
-    - node: br
-    - node: text
-      content: $error_page)
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $this->routes = $routes;'
-    - node: br
-    - node: text
-      content: '    $this->error_page = $error_page;'
-    - node: br
-    - node: text
-      content: '  }'
+  - kind: heading
+    level: 1
+    text: src/Http/RequestHandler/StaticRouter.php
+  - kind: para
+    text: final class StaticRouter implements RequestHandlerInterface{private array
+      $routes;private Closure $error_page;
+  - kind: para
+    text: public function __construct(array $routes, Closure$error_page){$this->routes
+      = $routes;$this->error_page = $error_page;}
   p96:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: bold
-      content: src/Http/RequestHandler/StaticRouter.php
-    - node: br
-    - node: text
-      content: '  public function handle(Request $request): Response'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $path = $request->getUri()->getPath();'
-    - node: br
-    - node: text
-      content: '    $method = $request->getMethod();'
-  - node: p
-    children:
-    - node: text
-      content: '    return ('
-    - node: br
-    - node: text
-      content: '      $this->routes[$path][$method]'
-    - node: br
-    - node: text
-      content: '      ?? $this->error_page     )()->handle($request);'
-    - node: br
-    - node: text
-      content: '  }'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: src/Http/RequestHandler/StaticRouter.php
+  - kind: para
+    text: 'public function handle(Request $request): Response{$path = $request->getUri()->getPath();$method
+      = $request->getMethod();'
+  - kind: para
+    text: return ($this->routes[$path][$method]?? $this->error_page)()->handle($request);}}
   p97:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: '既存のミドルウェアを導入していく         '
-    - node: br
-    - node: text
-      content: ●
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: https://github.com/middlewares/psr15-middle
-    - node: br
-    - node: text
-      content: ' のプロジェクトがさまざまなミド'
-  - node: p
-    children:
-    - node: text
-      content: wares
-    - node: br
-    - node: text
-      content: 'ルウェアを既に実装している         '
+  - kind: list
+    items:
+    - 既存のミドルウェアを導入していく
+    - https://github.com/middlewares/psr15-middle
+  - kind: para
+    text: wares のプロジェクトがさまざまなミドルウェアを既に実装している
   p98:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'オブジェクトの生成をどうするか         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: '今回は数が少ないのですべて         '
-    - node: br
-    - node: text
-      content: ○
-  - node: p
-    children:
-    - node: text
-      content: ' では'
-  - node: p
-    children:
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: https://github.com/phppg/phperkaigi-golf
-    - node: br
-    - node: text
-      content: PHP-DIにオブジェクトの生成とディス
-    - node: br
-    - node: text
-      content: 'パッチを任せている         '
+  - kind: list
+    items:
+    - オブジェクトの生成をどうするか
+    - 今回は数が少ないのですべて
+    - https://github.com/phppg/phperkaigi-golf では
+  - kind: para
+    text: PHP-DIにオブジェクトの生成とディスパッチを任せている
   p99:
-  - node: p
-    children:
-    - node: text
-      content: '2540'
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequestと型付けの問題         '
-    - node: br
-    - node: text
-      content: ●
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest::getParsedBody()や
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: getQueryParams()から値を取り出す
-    - node: br
-    - node: text
-      content: 'のは$_GETと大差ない          getAttributeの値も現状         '
-    - node: br
-    - node: text
-      content: ○
-    - node: br
-    - node: text
-      content: '@varなどで明示的に型付けが必要         '
+  - kind: list
+    items:
+    - ServerRequestと型付けの問題
+    - ServerRequest::getParsedBody()や
+  - kind: para
+    text: getQueryParams()から値を取り出すのは$_GETと大差ない
+  - kind: list
+    items:
+    - getAttributeの値も現状
+  - kind: para
+    text: '@varなどで明示的に型付けが必要'
 size:
   max_width: 720
   max_height: 405

@@ -1,509 +1,226 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: 「ふつうのPHP」がpixivになるまで前史
-  - node: p
-    children:
-    - node: text
-      content: pixiv.inc @tadsan
-  - node: p
-    children:
-    - node: text
-      content: 2020.02.17 PIXIV TECH FES.
+  - kind: heading
+    level: 1
+    text: 「ふつうのPHP」が
+  - kind: heading
+    level: 1
+    text: pixivになるまで前史
+  - kind: para
+    text: pixiv.inc@tadsan
+  - kind: para
+    text: 2020.02.17 PIXIV TECH FES.
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 2012年11月にアルバイトとして入社
-    - node: li
-      children:
-      - node: text
-        content: 2013年3月に正社員として入社、 API開発
-    - node: li
-      children:
-      - node: text
-        content: 2013年10月からpixiv本体の開発に携わる
-    - node: li
-      children:
-      - node: text
-        content: 2014年グロースチーム
-    - node: li
-      children:
-      - node: text
-        content: 2015年フィーチャーフォン向け pixiv小説開発
-    - node: li
-      children:
-      - node: text
-        content: 2016年メンテナンスチーム
-    - node: li
-      children:
-      - node: text
-        content: 2019年から開発支援チーム
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - 2012年11月にアルバイトとして入社
+    - 2013年3月に正社員として入社、API開発
+    - 2013年10月からpixiv本体の開発に携わる
+    - 2014年グロースチーム
+    - 2015年フィーチャーフォン向けpixiv小説開発
+    - 2016年メンテナンスチーム
+    - 2019年から開発支援チーム
   p3:
-  - node: p
-    children:
-    - node: text
-      content: 何をしてきたのか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 公開APIおよびフレームワークのメンテ
-    - node: li
-      children:
-      - node: text
-        content: 2013年 pixivのアカウント基盤統合
-    - node: li
-      children:
-      - node: text
-        content: pixivの翻訳入稿フロー実装
-    - node: li
-      children:
-      - node: text
-        content: pixiv年オートロード化、ドメイン統合設計
-    - node: li
-      children:
-      - node: text
-        content: 2018年PHPStan CIの本番導入
-    - node: li
-      children:
-      - node: text
-        content: 2019年ピクシブ百科事典メンテ引き継ぎ
+  - kind: heading
+    level: 1
+    text: 何をしてきたのか
+  - kind: list
+    items:
+    - 公開APIおよびフレームワークのメンテ
+    - 2013年pixivのアカウント基盤統合
+    - pixivの翻訳入稿フロー実装
+    - 2015年オートロード化、ドメイン統合設計
+    - 2018年PHPStan CIの本番導入
+    - 2019年ピクシブ百科事典メンテ引き継ぎ
   p4:
-  - node: p
-    children:
-    - node: text
-      content: 2012年入社
+  - kind: para
+    text: 2012年入社
   p5:
-  - node: p
-    children:
-    - node: text
-      content: PHPは入社してから （それ以前はRuby）
+  - kind: para
+    text: PHPは入社してから（それ以前はRuby）
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
+  - kind: para
+    text: 今回のお題
   p7:
-  - node: p
-    children:
-    - node: bold
-      content: 「ふつうのPHP」が pixivになるまで前史
+  - kind: para
+    text: 「ふつうのPHP」がpixivになるまで前史
   p8:
-  - node: p
-    children:
-    - node: text
-      content: 前史？
+  - kind: para
+    text: 前史？
   p9: []
   p10:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス関西2018
+  - kind: para
+    text: PHPカンファレンス関西2018
   p11: []
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 'このときは2012年 '
-    - node: br
-    - node: text
-      content: '以後に改善したことを '
-    - node: br
-    - node: text
-      content: 主に話しました
+  - kind: para
+    text: このときは2012年以後に改善したことを主に話しました
   p14:
-  - node: p
-    children:
-    - node: text
-      content: '今回は私の入社時 '
-    - node: br
-    - node: text
-      content: '（2012年以前）に既に '
-    - node: br
-    - node: text
-      content: 'あったものについて '
-    - node: br
-    - node: text
-      content: 紹介していきます
+  - kind: para
+    text: 今回は私の入社時（2012年以前）に既にあったものについて紹介していきます
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 前提を揃えましょう
+  - kind: para
+    text: 前提を揃えましょう
   p16:
-  - node: p
-    children:
-    - node: text
-      content: ふつうのPHP？
+  - kind: para
+    text: ふつうのPHP？
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 'URLに.phpが '
-    - node: br
-    - node: text
-      content: 入っている
+  - kind: para
+    text: URLに.phpが入っている
   p18:
-  - node: p
-    children:
-    - node: text
-      content: http://www.pixiv.net
-    - node: br
-    - node: text
-      content: /member.php?id=105589
+  - kind: para
+    text: http://www.pixiv.net/member.php?id=105589
   p19:
-  - node: p
-    children:
-    - node: text
-      content: http://www.pixiv.net
-    - node: br
-    - node: text
-      content: /member.php?id=105589
+  - kind: para
+    text: http://www.pixiv.net/member.php?id=105589
   p20:
-  - node: p
-    children:
-    - node: text
-      content: http
-    - node: bold
-      content: s
-    - node: text
-      content: ://www.pixiv.net
-    - node: br
-    - node: text
-      content: /users/105589
+  - kind: para
+    text: https://www.pixiv.net/users/105589
   p21:
-  - node: p
-    children:
-    - node: text
-      content: 'URLとスクリプト ファイルが1:1で '
-    - node: br
-    - node: text
-      content: 対応する時代だった
+  - kind: para
+    text: URLとスクリプトファイルが1:1で対応する時代だった
   p22:
-  - node: p
-    children:
-    - node: text
-      content: '（当時の世間では） Webアプリ (cid:15496) CGI '
-  - node: p
-    children:
-    - node: text
-      content: (cid:15496) Perl or PHP
+  - kind: para
+    text: （当時の世間では）Webアプリ ≒ CGI≒ Perl or PHP
   p23:
-  - node: p
-    children:
-    - node: text
-      content: 'pixivリリースの '
-    - node: br
-    - node: text
-      content: '2007年は '
-    - node: br
-    - node: text
-      content: まだそういう時代
+  - kind: para
+    text: pixivリリースの2007年はまだそういう時代
   p24:
-  - node: p
-    children:
-    - node: text
-      content: 参考までにRails2.0 が出て日本で注目さ れだしたのが2008年
+  - kind: para
+    text: 参考までにRails2.0が出て日本で注目されだしたのが2008年
   p25:
-  - node: p
-    children:
-    - node: text
-      content: Ruby関係者に怒られないよ う言及するとRails以前にも tDiaryのようなRuby CGIな Webアプリもあったし現在 もRackでばっちり動きます
+  - kind: para
+    text: Ruby関係者に怒られないよう言及するとRails以前にもtDiaryのようなRuby CGIなWebアプリもあったし現在もRackでばっちり動きます
   p26:
-  - node: p
-    children:
-    - node: text
-      content: '重要なこと： '
-    - node: br
-    - node: text
-      content: 'ファイル=URLのCGI的な 構造でFWに依存してない '
-    - node: br
-    - node: text
-      content: （これは2015年まで続く）
+  - kind: para
+    text: 重要なこと：ファイル=URLのCGI的な構造でFWに依存してない（これは2015年まで続く）
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 'というわけで '
-    - node: br
-    - node: text
-      content: 話を本筋に戻して
+  - kind: para
+    text: というわけで話を本筋に戻して
   p28:
-  - node: p
-    children:
-    - node: text
-      content: 温故知新
+  - kind: para
+    text: 温故知新
   p29:
-  - node: p
-    children:
-    - node: text
-      content: ふつうのPHP？
+  - kind: para
+    text: ふつうのPHP？
   p30:
-  - node: p
-    children:
-    - node: text
-      content: LAMPスタック
+  - kind: para
+    text: LAMPスタック
   p31:
-  - node: p
-    children:
-    - node: text
-      content: Linux, Apache, MySQL, P言語
+  - kind: para
+    text: Linux, Apache,MySQL, P言語
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 'UTF-8 '
-    - node: br
-    - node: text
-      content: （リリース当時はUTF-8 じゃなかったらしいけど 2007年中には移行完了）
+  - kind: heading
+    level: 1
+    text: UTF-8
+  - kind: para
+    text: （リリース当時はUTF-8じゃなかったらしいけど2007年中には移行完了）
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 'Git '
-    - node: br
-    - node: text
-      content: '(2012年は普及時期だけど '
-    - node: br
-    - node: text
-      content: '会社としてSVNから完全 '
-    - node: br
-    - node: text
-      content: 移行したのは割と早め)
+  - kind: heading
+    level: 1
+    text: Git
+  - kind: para
+    text: (2012年は普及時期だけど会社としてSVNから完全移行したのは割と早め)
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 'あとは制限時間で 打ち切られるまで '
-    - node: br
-    - node: text
-      content: 個別要素を語っていくぞ
+  - kind: para
+    text: あとは制限時間で打ち切られるまで個別要素を語っていくぞ
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv開発メンバーでも何 が一般的で何がpixiv独自 要素なのか把握できてる '
-    - node: br
-    - node: text
-      content: ひとは多くないと思う
+  - kind: para
+    text: pixiv開発メンバーでも何が一般的で何がpixiv独自要素なのか把握できてるひとは多くないと思う
   p36:
-  - node: p
-    children:
-    - node: text
-      content: 'PDO '
-    - node: br
-    - node: text
-      content: (PHP Database Object)
+  - kind: heading
+    level: 1
+    text: PDO
+  - kind: para
+    text: (PHP Database Object)
   p37:
-  - node: p
-    children:
-    - node: text
-      content: 入社時には僅かなmysql関数も残ってたけど、ほぼPDO化が済んでた
-  - node: p
-    children:
-    - node: text
-      content: （時代的にはPEAR::DBやMDB2でもおかしくない）
+  - kind: para
+    text: 入社時には僅かなmysql関数も残ってたけど、ほぼPDO化が済んでた（時代的にはPEAR::DBやMDB2でもおかしくない）
   p38:
-  - node: p
-    children:
-    - node: text
-      content: 'SQLのクエリ末尾にスタッ クトレースを付加すること でスロークエリの発生箇所 '
-    - node: br
-    - node: text
-      content: を容易に特定できる
+  - kind: para
+    text: SQLのクエリ末尾にスタックトレースを付加することでスロークエリの発生箇所を容易に特定できる
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 'それもPDOを生で使わず '
-    - node: br
-    - node: text
-      content: にラッパークラスを設けて 使ってたのが本当にすごい
+  - kind: para
+    text: それもPDOを生で使わずにラッパークラスを設けて使ってたのが本当にすごい
   p40:
-  - node: p
-    children:
-    - node: text
-      content: '基本は_call()をつかった '
-    - node: br
-    - node: text
-      content: 'Proxyクラス '
-    - node: br
-    - node: text
-      content: +べんりメソッドの追加
+  - kind: para
+    text: 基本は_call()をつかった
+  - kind: para
+    text: Proxyクラス+べんりメソッドの追加
   p41:
-  - node: p
-    children:
-    - node: text
-      content: '系統とmaster/slaveごと にPDOのシングルトンを '
-    - node: br
-    - node: text
-      content: 管理するクラス
+  - kind: para
+    text: 系統とmaster/slaveごとにPDOのシングルトンを管理するクラス
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 'slaveに対して書き込み '
-    - node: br
-    - node: text
-      content: 'クエリが発行されることを '
-    - node: br
-    - node: text
-      content: 事前に防ぐ構造を提供
+  - kind: para
+    text: slaveに対して書き込みクエリが発行されることを事前に防ぐ構造を提供
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 'Smarty '
-    - node: br
-    - node: text
-      content: (HTMLテンプレートエンジン)
+  - kind: heading
+    level: 1
+    text: Smarty
+  - kind: para
+    text: (HTMLテンプレートエンジン)
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 'SmartyはPHPの定番テ '
-    - node: br
-    - node: text
-      content: 'ンプレートエンジンだが、 それ自体はXSS耐性がなく '
-    - node: br
-    - node: text
-      content: 全ての値を明示的にエス ケープしないといけない
+  - kind: para
+    text: SmartyはPHPの定番テンプレートエンジンだが、それ自体はXSS耐性がなく全ての値を明示的にエスケープしないといけない
   p45:
-  - node: p
-    children:
-    - node: text
-      content: 'pixivではSmarty_ '
-    - node: br
-    - node: text
-      content: 'Compilerを拡張して '
-    - node: br
-    - node: text
-      content: attributeで明示的にエス ケープしない出力を拒否
+  - kind: para
+    text: pixivではSmarty_Compilerを拡張してattributeで明示的にエスケープしない出力を拒否
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'SmartyはPHPスクリプトとして 変換されるものが実行され(コン パイルキャッシュ)、チェッカー が走るのはコンパイル時のみで '
-    - node: br
-    - node: text
-      content: 実行時コストは掛からない
+  - kind: para
+    text: SmartyはPHPスクリプトとして変換されるものが実行され(コンパイルキャッシュ)、チェッカーが走るのはコンパイル時のみで実行時コストは掛からない
   p47:
-  - node: p
-    children:
-    - node: text
-      content: フレームワーク
+  - kind: para
+    text: フレームワーク
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv本体はフレームワー '
-    - node: br
-    - node: text
-      content: クに依存していない
+  - kind: para
+    text: pixiv本体はフレームワークに依存していない
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 'が、部分的に薄いフレーム '
-    - node: br
-    - node: text
-      content: 'ワークのような機能を持つ層 '
-    - node: br
-    - node: text
-      content: は複数あった
+  - kind: para
+    text: が、部分的に薄いフレームワークのような機能を持つ層は複数あった
   p50:
-  - node: p
-    children:
-    - node: text
-      content: '独自フレームワーク '
-    - node: br
-    - node: text
-      content: そのものも複数あった
+  - kind: para
+    text: 独自フレームワークそのものも複数あった
   p51: []
   p52:
-  - node: p
-    children:
-    - node: text
-      content: '(いわゆる)RESTful APIの pixiv内における初期事例 '
-    - node: br
-    - node: text
-      content: (PHPカンファレンス2013)
+  - kind: para
+    text: (いわゆる)RESTful APIのpixiv内における初期事例(PHPカンファレンス2013)
   p53:
-  - node: p
-    children:
-    - node: text
-      content: '身近に24ファイル程度の 読めるフレームワークが あったのはPHPの理解に '
-    - node: br
-    - node: text
-      content: 非常に大きく役立った
+  - kind: para
+    text: 身近に24ファイル程度の読めるフレームワークがあったのはPHPの理解に非常に大きく役立った
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 'タグジャンプできない '
-    - node: br
-    - node: text
-      content: '(=静的解析しにくい)制約は 反面教師として現在の改善に '
-    - node: br
-    - node: text
-      content: 活かされている
+  - kind: para
+    text: タグジャンプできない(=静的解析しにくい)制約は反面教師として現在の改善に活かされている
   p55:
-  - node: p
-    children:
-    - node: text
-      content: 総括
+  - kind: para
+    text: 総括
   p56:
-  - node: p
-    children:
-    - node: text
-      content: '今回は2012年以前の 前期pixivから現在も '
-    - node: br
-    - node: text
-      content: 現役の実装を紹介した
+  - kind: para
+    text: 今回は2012年以前の前期pixivから現在も現役の実装を紹介した
   p57:
-  - node: p
-    children:
-    - node: text
-      content: 前期pixivの内部実装について情報が外に出る機会は少なかった
+  - kind: para
+    text: 前期pixivの内部実装について情報が外に出る機会は少なかった
   p58:
-  - node: p
-    children:
-    - node: text
-      content: CGI時代の空気を色濃く残していたコードは2015年頃にフレームワーク的な構造に移植されている
+  - kind: para
+    text: CGI時代の空気を色濃く残していたコードは2015年頃にフレームワーク的な構造に移植されている
   p59:
-  - node: p
-    children:
-    - node: text
-      content: 良いアーキテクチャとは言いがたいが、実装面としてユニークなものは多くある
+  - kind: para
+    text: 良いアーキテクチャとは言いがたいが、実装面としてユニークなものは多くある
   p60:
-  - node: p
-    children:
-    - node: text
-      content: 良い遺産だからと全肯定して残したいわけではない
+  - kind: para
+    text: 良い遺産だからと全肯定して残したいわけではない
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 歴史から学んでもっと良いもので 置き換えていこう
+  - kind: para
+    text: 歴史から学んでもっと良いもので置き換えていこう
   p62:
-  - node: p
-    children:
-    - node: text
-      content: 温故知新
-    - node: br
-    - node: text
-      content: ご静聴ありがとうございました
+  - kind: heading
+    level: 1
+    text: 温故知新
+  - kind: para
+    text: ご静聴ありがとうございました
 size:
   max_width: 1920
   max_height: 1080

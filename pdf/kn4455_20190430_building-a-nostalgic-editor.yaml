@@ -1,3 +1,294 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: 平成時代に憧れてた
+  - kind: heading
+    level: 1
+    text: あのエディタを実装してみる
+  - kind: para
+    text: Implement the text editor I admired in Heisei era
+  - kind: para
+    text: 新元号決定！平成最後のLT大会＆PARTY
+  - kind: para
+    text: '2019年4月30日 #engineers_lt'
+  p2:
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 サービスプラットフォーム事業部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
+  p3:
+  - kind: para
+    text: 時は遡る
+  p4:
+  - kind: para
+    text: Laravel JP Conference直後
+  p5: []
+  p6:
+  - kind: para
+    text: 何か話さないと…
+  p7: []
+  p8:
+  - kind: para
+    text: そうだ、テキストエディタ作ろう
+  - kind: para
+    text: '|＼ __ ／ ﾋﾟｺｰﾝ＿ （ｍ） ＿|ミ|／ ｀´ ＼(''A`)ノヽノヽくく'
+  p9:
+  - kind: para
+    text: 最初に考えてた内容
+  p10:
+  - kind: para
+    text: 秀丸上にEmacsを実現しよう
+  p11:
+  - kind: para
+    text: 先行実装
+  p12: []
+  p13: []
+  p14:
+  - kind: para
+    text: 昨晩手をつけてみた
+  p15:
+  - kind: para
+    text: もう20年アップデートされてないし、現代風に書き直してみたら楽しいのでは？？？
+  p16:
+  - kind: para
+    text: めちゃくちゃ手間がかかるし予想以上におもしろくない
+  p17:
+  - kind: para
+    text: 🤔
+  p18:
+  - kind: para
+    text: はてさてどうしよう
+  p19:
+  - kind: heading
+    level: 1
+    text: 第2案発動
+  - kind: para
+    text: (本当に手をつけるつもりはなかった)
+  p20:
+  - kind: heading
+    level: 1
+    text: 平成時代に憧れてた
+  - kind: heading
+    level: 1
+    text: あのエディタを実装してみる
+  - kind: para
+    text: Implement the text editor I admired in Heisei era
+  - kind: para
+    text: 新元号決定！平成最後のLT大会＆PARTY
+  - kind: para
+    text: '2019年4月30日 #engineers_lt'
+  p21:
+  - kind: heading
+    level: 1
+    text: 平成時代に憧れてた
+  - kind: heading
+    level: 1
+    text: あのエディタを実装してみる
+  - kind: para
+    text: Implement a text editor I admired in Heisei era
+  - kind: para
+    text: 新元号決定！平成最後のLT大会＆PARTY
+  - kind: para
+    text: '2019年4月30日 #engineers_lt'
+  p22:
+  - kind: para
+    text: そうだ、PHPでエディタ作ろう
+  - kind: para
+    text: '|＼ __ ／ ﾋﾟｺｰﾝ＿ （ｍ） ＿|ミ|／ ｀´ ＼(''A`)ノヽノヽくく'
+  p23:
+  - kind: para
+    text: ということで今朝起きてから実装を始めました
+  p24:
+  - kind: para
+    text: そもそもテキストエディタとは何か
+  p25:
+  - kind: para
+    text: 歴史的にはed, ex,MS-DOSのEDLINのようなラインエディタがあった
+  p26:
+  - kind: para
+    text: ファイルを部分的にプリントして編集していくスタイル
+  p27:
+  - kind: para
+    text: (今日「プリント」は画面上に文字を出力することを意味するが、1970年代前半ではテレタイプ端末で本当に印刷されてたらしい)
+  p28:
+  - kind: para
+    text: 話がそれた
+  p29:
+  - kind: para
+    text: 本質的な仕事
+  p30:
+  - kind: para
+    text: (ファイルを読み込む)↓ユーザにごにょごにょさせる↓ファイルに書き戻す
+  p31:
+  - kind: para
+    text: 僕にもできそう
+  p32:
+  - kind: para
+    text: どうやって「ごにょごにょ」させるかが問題
+  p33:
+  - kind: para
+    text: 方針
+  p34:
+  - kind: para
+    text: PHPでやる
+  p35:
+  - kind: para
+    text: 端末でやる
+  p36:
+  - kind: para
+    text: 定石
+  - kind: para
+    text: '||ncursesを使う'
+  p37:
+  - kind: heading
+    level: 1
+    text: 
+  - kind: para
+    text: やったことない
+  p38:
+  - kind: para
+    text: 簡単な方法
+  p39:
+  - kind: para
+    text: 画面を全部消す↓内容を全部出力↓無限に繰り返し…
+  p40:
+  - kind: heading
+    level: 1
+    text: 
+  - kind: para
+    text: 簡単じゃん
+  p41:
+  - kind: para
+    text: PHPでやるにはどうすればいいか
+  p42:
+  - kind: para
+    text: 概ねいい感じにできる
+  p43:
+  - kind: para
+    text: 基本はWebアプリケーションフレームワークの実装と同じ
+  p44:
+  - kind: para
+    text: HTTPじゃなくて端末の入力に対して処理していく
+  p45: []
+  p46:
+  - kind: para
+    text: 画面を消す
+  - kind: para
+    text: '||'
+  - kind: para
+    text: Hoa\Console\Console::clear()
+  p47:
+  - kind: para
+    text: 文字列を貯めるバッファの実装はとことん楽をする
+  p48:
+  - kind: para
+    text: 余談:エディタはテキストファイルの途中に文字を消したり追加したりするので、文字列(＝文字の配列)と相性が悪い(途中挿入・削除コスト高)
+  p49:
+  - kind: para
+    text: そんなわけで実装していきましょう
+  p50: []
+  p51: []
+  p52: []
+  p53: []
+  p54: []
+  p55: []
+  p56:
+  - kind: para
+    text: 実装しなかったけど面倒くさかったところ
+  p57:
+  - kind: para
+    text: カーソル
+  p58:
+  - kind: para
+    text: UTF-8は可変長
+  p59:
+  - kind: para
+    text: カーソルを移動させるためには一文字づつ表示幅を調べないといけない
+  p60:
+  - kind: para
+    text: 「カーソル」位置を文字数で持つかバイト数で持つか
+  p61:
+  - kind: para
+    text: 文字列をUTF-32で持てば固定長になるのでは？？？
+  p62:
+  - kind: heading
+    level: 1
+    text: 🙃
+  - kind: para
+    text: だめです
+  p63:
+  - kind: para
+    text: Unicodeの書記素クラスタ
+  p64:
+  - kind: para
+    text: 
+  p65:
+  - kind: para
+    text: この絵文字のバイト数
+  - kind: para
+    text: strlen('
+  - kind: para
+    text: ');
+  p66:
+  - kind: para
+    text: この絵文字のバイト数
+  - kind: para
+    text: strlen('
+  - kind: para
+    text: ');// => 25
+  p67:
+  - kind: para
+    text: この絵文字のUTF-8文字数
+  - kind: para
+    text: mb_strlen('
+  - kind: para
+    text: ', 'UTF-8');
+  p68:
+  - kind: para
+    text: この絵文字のUTF-8文字数
+  - kind: para
+    text: mb_strlen('
+  - kind: para
+    text: ', 'UTF-8');// => 7
+  p69:
+  - kind: para
+    text: 
+  p70:
+  - kind: para
+    text: 👨|
+  - kind: para
+    text: 👩|
+  - kind: para
+    text: 👦|
+  - kind: para
+    text: 👦
+  p71:
+  - kind: para
+    text: Zero Width Joiner
+  p72:
+  - kind: para
+    text: Unicodeにおいて、1バイト1コードポイント人間に見える文字
+  p73:
+  - kind: para
+    text: まったく一致しません
+  p74:
+  - kind: para
+    text: エディタは完成してないです！！
+  p75:
+  - kind: para
+    text: でも行きあたりばったりで設計しながら実装していくのは楽しい
+  p76:
+  - kind: para
+    text: 私からは異常です
 size:
   max_width: 1024
   max_height: 768
@@ -12,716 +303,3 @@ links:
   p7:
   - url: https://tokyo-emacs.connpass.com/event/128038/
     title: 東京Emacs勉強会 端午の節句 - connpass
-text:
-  p1:
-  - node: p
-    children:
-    - node: text
-      content: 平成時代に憧れてた
-  - node: p
-    children:
-    - node: text
-      content: あのエディタを実装してみる
-  - node: p
-    children:
-    - node: text
-      content: Implement the text editor I admired in Heisei era
-  - node: p
-    children:
-    - node: text
-      content: 新元号決定！平成最後のLT大会＆PARTY
-  - node: p
-    children:
-    - node: text
-      content: '2019年4月30日 #engineers_lt'
-  p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 サービスプラットフォーム事業部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
-  p3:
-  - node: p
-    children:
-    - node: text
-      content: 時は遡る
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: Laravel JP
-  - node: p
-    children:
-    - node: text
-      content: Conference
-  - node: p
-    children:
-    - node: text
-      content: 直後
-  p5: []
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: 何か話さな
-    - node: br
-    - node: text
-      content: いと…
-  p7: []
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: '　 　　　　 | '
-    - node: br
-    - node: text
-      content: '　 　＼　　__　　／ ﾋﾟｺｰﾝ '
-    - node: br
-    - node: text
-      content: '　 　＿　（ｍ）　＿　　 '
-  - node: p
-    children:
-    - node: text
-      content: そうだ、テキストエディタ作ろう
-  - node: p
-    children:
-    - node: text
-      content: '　 　　　　|ミ| '
-    - node: br
-    - node: text
-      content: '　 　 ／ 　｀´　 ＼ '
-    - node: br
-    - node: text
-      content: '　　　　　(''A`) '
-    - node: br
-    - node: text
-      content: '　　　　　ノヽノヽ 　　　　　　　くく '
-  p9:
-  - node: p
-    children:
-    - node: text
-      content: 最初に考え
-    - node: br
-    - node: text
-      content: てた内容
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: 秀丸上にEmacs
-    - node: br
-    - node: text
-      content: を実現しよう
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: 先行実装
-  p12: []
-  p13: []
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: 昨晩手を
-  - node: p
-    children:
-    - node: text
-      content: つけてみた
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: もう20年アップデートされて ないし、現代風に書き直して
-    - node: br
-    - node: text
-      content: みたら楽しいのでは？？？
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: めちゃくちゃ手間が かかるし予想以上に
-    - node: br
-    - node: text
-      content: おもしろくない
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: 🤔
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: はてさて
-  - node: p
-    children:
-    - node: text
-      content: どうしよう
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: 第2案発動
-  - node: p
-    children:
-    - node: text
-      content: (本当に手をつける
-  - node: p
-    children:
-    - node: text
-      content: つもりはなかった)
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: 平成時代に憧れてた
-  - node: p
-    children:
-    - node: text
-      content: あのエディタを実装してみる
-  - node: p
-    children:
-    - node: text
-      content: Implement the text editor I admired in Heisei era
-  - node: p
-    children:
-    - node: text
-      content: 新元号決定！平成最後のLT大会＆PARTY
-  - node: p
-    children:
-    - node: text
-      content: '2019年4月30日 #engineers_lt'
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: 平成時代に憧れてた
-  - node: p
-    children:
-    - node: text
-      content: あのエディタを実装してみる
-  - node: p
-    children:
-    - node: text
-      content: Implement a text editor I admired in Heisei era
-  - node: p
-    children:
-    - node: text
-      content: 新元号決定！平成最後のLT大会＆PARTY
-  - node: p
-    children:
-    - node: text
-      content: '2019年4月30日 #engineers_lt'
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: '　 　　　　 | '
-    - node: br
-    - node: text
-      content: '　 　＼　　__　　／ ﾋﾟｺｰﾝ '
-    - node: br
-    - node: text
-      content: '　 　＿　（ｍ）　＿　　 '
-  - node: p
-    children:
-    - node: text
-      content: そうだ、PHPでエディタ作ろう
-  - node: p
-    children:
-    - node: text
-      content: '　 　　　　|ミ| '
-    - node: br
-    - node: text
-      content: '　 　 ／ 　｀´　 ＼ '
-    - node: br
-    - node: text
-      content: '　　　　　(''A`) '
-    - node: br
-    - node: text
-      content: '　　　　　ノヽノヽ 　　　　　　　くく '
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: ということで今朝 起きてから実装を
-    - node: br
-    - node: text
-      content: 始めました
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: そもそもテキスト エディタとは何か
-  p25:
-  - node: p
-    children:
-    - node: text
-      content: 歴史的にはed, ex,
-  - node: p
-    children:
-    - node: text
-      content: のような
-  - node: p
-    children:
-    - node: text
-      content: MS-DOSのEDLIN
-    - node: br
-    - node: text
-      content: ラインエディタがあった
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: ファイルを部分的に プリントして編集し
-    - node: br
-    - node: text
-      content: ていくスタイル
-  p27:
-  - node: p
-    children:
-    - node: text
-      content: (今日「プリント」は画面上 に文字を出力することを意 味するが、1970年代前半で はテレタイプ端末で本当に
-    - node: br
-    - node: text
-      content: 印刷されてたらしい)
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: 話がそれた
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: 本質的な
-  - node: p
-    children:
-    - node: text
-      content: 仕事
-  p30:
-  - node: p
-    children:
-    - node: text
-      content: (ファイルを読み込む)
-  - node: p
-    children:
-    - node: text
-      content: ' ↓'
-  - node: p
-    children:
-    - node: text
-      content: ユーザにごにょごにょさせる
-  - node: p
-    children:
-    - node: text
-      content: ' ↓'
-  - node: p
-    children:
-    - node: text
-      content: ファイルに書き戻す
-  p31:
-  - node: p
-    children:
-    - node: text
-      content: 僕にも
-  - node: p
-    children:
-    - node: text
-      content: できそう
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: どうやって
-  - node: p
-    children:
-    - node: text
-      content: 「ごにょごにょ」
-  - node: p
-    children:
-    - node: text
-      content: させるかが問題
-  p33:
-  - node: p
-    children:
-    - node: text
-      content: 方針
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: PHPでやる
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: 端末でやる
-  p36:
-  - node: p
-    children:
-    - node: text
-      content: 定石
-  - node: p
-    children:
-    - node: text
-      content: '||'
-  - node: p
-    children:
-    - node: text
-      content: ncursesを使う
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: '"'
-    - node: br
-    - node: text
-      content: やったことない
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: 簡単な方法
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: 画面を全部消す
-    - node: br
-    - node: text
-      content: ↓
-  - node: p
-    children:
-    - node: text
-      content: 内容を全部出力
-    - node: br
-    - node: text
-      content: ↓
-  - node: p
-    children:
-    - node: text
-      content: 無限に繰り返し…
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: '#'
-    - node: br
-    - node: text
-      content: 簡単じゃん
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: PHPでやるには
-  - node: p
-    children:
-    - node: text
-      content: どうすればいいか
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: 概ねいい
-  - node: p
-    children:
-    - node: text
-      content: 感じにできる
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: 基本はWebアプリ
-    - node: br
-    - node: text
-      content: ケーションフレーム ワークの実装と同じ
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: HTTPじゃなくて 端末の入力に対し
-    - node: br
-    - node: text
-      content: て処理していく
-  p45: []
-  p46:
-  - node: p
-    children:
-    - node: text
-      content: 画面を消す
-  - node: p
-    children:
-    - node: text
-      content: '||'
-  - node: p
-    children:
-    - node: text
-      content: Hoa\Console\Console::clear()
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: 文字列を貯める
-    - node: br
-    - node: text
-      content: バッファの実装は とことん楽をする
-  p48:
-  - node: p
-    children:
-    - node: text
-      content: 余談:エディタはテキストファ イルの途中に文字を消したり 追加したりするので、文字列 (＝文字の配列)と相性が悪い
-  - node: p
-    children:
-    - node: text
-      content: (途中挿入・削除コスト高)
-  p49:
-  - node: p
-    children:
-    - node: text
-      content: そんなわけで実装 していきましょう
-  p50: []
-  p51: []
-  p52: []
-  p53: []
-  p54: []
-  p55: []
-  p56:
-  - node: p
-    children:
-    - node: text
-      content: 実装しなかったけど
-  - node: p
-    children:
-    - node: text
-      content: 面倒くさかったところ
-  p57:
-  - node: p
-    children:
-    - node: text
-      content: カーソル
-  p58:
-  - node: p
-    children:
-    - node: text
-      content: UTF-8は
-  - node: p
-    children:
-    - node: text
-      content: 可変長
-  p59:
-  - node: p
-    children:
-    - node: text
-      content: カーソルを移動させるた めには一文字づつ表示幅
-    - node: br
-    - node: text
-      content: を調べないといけない
-  p60:
-  - node: p
-    children:
-    - node: text
-      content: 「カーソル」位置を
-  - node: p
-    children:
-    - node: text
-      content: 文字数で持つか
-  - node: p
-    children:
-    - node: text
-      content: バイト数で持つか
-  p61:
-  - node: p
-    children:
-    - node: text
-      content: 文字列をUTF-32 で持てば固定長に なるのでは？？？
-  p62:
-  - node: p
-    children:
-    - node: text
-      content: 🙃
-    - node: br
-    - node: text
-      content: だめです
-  p63:
-  - node: p
-    children:
-    - node: text
-      content: Unicodeの
-  - node: p
-    children:
-    - node: text
-      content: 書記素クラスタ
-  p64:
-  - node: p
-    children:
-    - node: text
-      content: '%'
-  p65:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のバイト数
-  - node: p
-    children:
-    - node: text
-      content: strlen(' ');
-  - node: p
-    children:
-    - node: text
-      content: '%'
-  p66:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のバイト数
-  - node: p
-    children:
-    - node: text
-      content: strlen(' ');
-  - node: p
-    children:
-    - node: text
-      content: '%'
-    - node: br
-    - node: text
-      content: // => 25
-  p67:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のUTF-8文字数
-  - node: p
-    children:
-    - node: text
-      content: mb_strlen(' ', 'UTF-8');
-  - node: p
-    children:
-    - node: text
-      content: '%'
-  p68:
-  - node: p
-    children:
-    - node: text
-      content: この絵文字のUTF-8文字数
-  - node: p
-    children:
-    - node: text
-      content: mb_strlen(' ', 'UTF-8');
-  - node: p
-    children:
-    - node: text
-      content: '%'
-    - node: br
-    - node: text
-      content: // => 7
-  p69:
-  - node: p
-    children:
-    - node: text
-      content: '%'
-  p70:
-  - node: p
-    children:
-    - node: text
-      content: '| | |'
-    - node: br
-    - node: text
-      content: 👨👩👦👦
-  p71:
-  - node: p
-    children:
-    - node: text
-      content: 'Zero Width '
-    - node: br
-    - node: text
-      content: Joiner
-  p72:
-  - node: p
-    children:
-    - node: text
-      content: Unicodeにおいて、
-  - node: p
-    children:
-    - node: text
-      content: 1バイト
-  - node: p
-    children:
-    - node: text
-      content: 1コードポイント
-  - node: p
-    children:
-    - node: text
-      content: 人間に見える文字
-  p73:
-  - node: p
-    children:
-    - node: text
-      content: まったく
-  - node: p
-    children:
-    - node: text
-      content: 一致しません
-  p74:
-  - node: p
-    children:
-    - node: text
-      content: エディタは完成
-  - node: p
-    children:
-    - node: text
-      content: してないです！！
-  p75:
-  - node: p
-    children:
-    - node: text
-      content: でも行きあたりばったり
-    - node: br
-    - node: text
-      content: で設計しながら
-  - node: p
-    children:
-    - node: text
-      content: 実装していくのは楽しい
-  p76:
-  - node: p
-    children:
-    - node: text
-      content: 私からは
-  - node: p
-    children:
-    - node: text
-      content: 異常です

@@ -1,1009 +1,453 @@
-size:
-  max_width: 1024
-  max_height: 768
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 'PHPプロジェクトに '
-    - node: br
-    - node: text
-      content: ' 静的解析を新規導入する'
-  - node: p
-    children:
-    - node: text
-      content: Introduce static analyzers to PHP project
+  - kind: para
+    text: PHPプロジェクトに静的解析を新規導入するIntroduce static analyzers to PHP project
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-    - node: br
-    - node: text
-      content: 'うさみけんた (@tadsan)  '
-  - node: p
-    children:
-    - node: text
-      content: ' / Zonu.EXE'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社 pixiv事業本部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社 pixiv事業本部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3: []
   p4: []
   p5: []
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 本日のお題
+  - kind: para
+    text: 本日のお題
   p7: []
   p8: []
   p9: []
   p10:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: para
+    text: さて
   p11:
-  - node: p
-    children:
-    - node: text
-      content: PHPカンファレンス
+  - kind: para
+    text: PHPカンファレンス2016
   p12: []
   p13:
-  - node: p
-    children:
-    - node: text
-      content: まだユニットテストと同 様に｢あって当然｣のもの とまでは普及できてない
+  - kind: para
+    text: まだユニットテストと同様に｢あって当然｣のものとまでは普及できてない
   p14: []
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 既存のプロジェクトに
-    - node: br
-    - node: text
-      content: '導入する話は '
-    - node: br
-    - node: text
-      content: あまりできてなかった
+  - kind: para
+    text: 既存のプロジェクトに導入する話はあまりできてなかった
   p16: []
   p17:
-  - node: p
-    children:
-    - node: text
-      content: なぜ静的解析を
-    - node: br
-    - node: text
-      content: するのか
+  - kind: para
+    text: なぜ静的解析をするのか
   p18:
-  - node: p
-    children:
-    - node: text
-      content: 関数がどのような引数
-    - node: br
-    - node: text
-      content: を期待しどんな値を 返すのか明示したい
+  - kind: para
+    text: 関数がどのような引数を期待しどんな値を返すのか明示したい
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 'プログラムが '
-    - node: br
-    - node: text
-      content: '間違ってることを '
-    - node: br
-    - node: text
-      content: 実行前に検証したい
+  - kind: para
+    text: プログラムが間違ってることを実行前に検証したい
   p20:
-  - node: p
-    children:
-    - node: text
-      content: それ以上に
+  - kind: para
+    text: それ以上に
   p21:
-  - node: p
-    children:
-    - node: text
-      content: オブジェクトのメソッド
-    - node: br
-    - node: text
-      content: 'やプロパティが適切に '
-    - node: br
-    - node: text
-      content: 補完されると気持ち良い
+  - kind: para
+    text: オブジェクトのメソッドやプロパティが適切に補完されると気持ち良い
   p22:
-  - node: p
-    children:
-    - node: text
-      content: 補完がきちんと機能 するようにPHPに 型をつけていこう
+  - kind: para
+    text: 補完がきちんと機能するようにPHPに型をつけていこう
   p23:
-  - node: p
-    children:
-    - node: text
-      content: ただし
+  - kind: para
+    text: ただし
   p24:
-  - node: p
-    children:
-    - node: text
-      content: '静的解析は､現に '
-    - node: br
-    - node: text
-      content: ｢動いている｣事実を
-    - node: br
-    - node: text
-      content: 覆すものではない
+  - kind: para
+    text: 静的解析は､現に｢動いている｣事実を覆すものではない
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 'エラーとして見えないが '
-    - node: br
-    - node: text
-      content: '｢たまたま動いている｣ '
-    - node: br
-    - node: text
-      content: 現実を炙り出すことはある
+  - kind: para
+    text: エラーとして見えないが｢たまたま動いている｣現実を炙り出すことはある
   p26:
-  - node: p
-    children:
-    - node: text
-      content: 変更によって動かなく
-    - node: br
-    - node: text
-      content: 'なってしまうことを '
-    - node: br
-    - node: text
-      content: ｢動かさずに｣発見できる
-    - node: br
-    - node: text
-      content: かもしれない
+  - kind: para
+    text: 変更によって動かなくなってしまうことを｢動かさずに｣発見できるかもしれない
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 静的解析基盤を整えた 瞬間に致命的な問題を 検出できることはまれ
+  - kind: para
+    text: 静的解析基盤を整えた瞬間に致命的な問題を検出できることはまれ
   p28:
-  - node: p
-    children:
-    - node: text
-      content: ということで静的 解析をしましょう
+  - kind: para
+    text: ということで静的解析をしましょう
   p29:
-  - node: p
-    children:
-    - node: text
-      content: '静的解析 '
-    - node: br
-    - node: text
-      content: ツールの種類
+  - kind: para
+    text: 静的解析ツールの種類
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 現行の高度な静的解析ツール
-  - node: p
-    children:
-    - node: text
-      content: 'PhpStorm (IDE) '
-  - node: p
-    children:
-    - node: text
-      content: 'Phan '
-  - node: p
-    children:
-    - node: text
-      content: 'PHPStan '
-  - node: p
-    children:
-    - node: text
-      content: Psalm
+  - kind: para
+    text: 現行の高度な静的解析ツール
+  - kind: para
+    text: PhpStorm (IDE)
+  - kind: para
+    text: Phan
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: Psalm
   p31:
-  - node: p
-    children:
-    - node: text
-      content: PhpStorm
-  - node: p
-    children:
-    - node: text
-      content: 'よいところ '
-    - node: br
-    - node: text
-      content: '導入が最も簡単 '
-    - node: br
-    - node: text
-      content: '十分な精度のエラー検出 '
-    - node: br
-    - node: text
-      content: 'よくないところ '
-    - node: br
-    - node: text
-      content: エラーの列挙ができないので CIのフローに組み込めない
+  - kind: para
+    text: PhpStorm
+  - kind: para
+    text: よいところ
+  - kind: para
+    text: 導入が最も簡単
+  - kind: para
+    text: 十分な精度のエラー検出
+  - kind: para
+    text: よくないところ
+  - kind: para
+    text: エラーの列挙ができないのでCIのフローに組み込めない
   p32:
-  - node: p
-    children:
-    - node: text
-      content: Phan
-  - node: p
-    children:
-    - node: text
-      content: 'よいところ '
-    - node: br
-    - node: text
-      content: '導入は比較的簡単 '
-    - node: br
-    - node: text
-      content: 'とても高い精度のエラー検出 '
-    - node: br
-    - node: text
-      content: 'よくないところ '
-    - node: br
-    - node: text
-      content: 大規模プロジェクトでは解析
-    - node: br
-    - node: text
-      content: に時間がかかる
+  - kind: para
+    text: Phan
+  - kind: para
+    text: よいところ
+  - kind: para
+    text: 導入は比較的簡単
+  - kind: para
+    text: とても高い精度のエラー検出
+  - kind: para
+    text: よくないところ
+  - kind: para
+    text: 大規模プロジェクトでは解析に時間がかかる
   p33:
-  - node: p
-    children:
-    - node: text
-      content: PHPStan
-  - node: p
-    children:
-    - node: text
-      content: 'よいところ '
-    - node: br
-    - node: text
-      content: '実行時情報を使用し高速 高い精度のエラー検出 '
-    - node: br
-    - node: text
-      content: 'よくないところ '
-    - node: br
-    - node: text
-      content: Composer以外の依存関係 があると導入にコツが要る
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: よいところ
+  - kind: para
+    text: 実行時情報を使用し高速
+  - kind: para
+    text: 高い精度のエラー検出
+  - kind: para
+    text: よくないところ
+  - kind: para
+    text: Composer以外の依存関係があると導入にコツが要る
   p34:
-  - node: p
-    children:
-    - node: text
-      content: Psalm
-  - node: p
-    children:
-    - node: text
-      content: 'よいところ '
-    - node: br
-    - node: text
-      content: '独自の引数アサーション 高い精度のエラー検出 '
-    - node: br
-    - node: text
-      content: 'よくないところ '
-    - node: br
-    - node: text
-      content: 大規模プロジェクトでは解析
-    - node: br
-    - node: text
-      content: に時間がかかる
+  - kind: para
+    text: Psalm
+  - kind: para
+    text: よいところ
+  - kind: para
+    text: 独自の引数アサーション
+  - kind: para
+    text: 高い精度のエラー検出
+  - kind: para
+    text: よくないところ
+  - kind: para
+    text: 大規模プロジェクトでは解析に時間がかかる
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 静的解析の選択軸
-  - node: p
-    children:
-    - node: text
-      content: Phan PHPStan
-  - node: p
-    children:
-    - node: text
-      content: '定義のみ実行が必要 '
-  - node: p
-    children:
-    - node: text
-      content: 解析方法
-  - node: p
-    children:
-    - node: text
-      content: 実行しない(静的)
-  - node: p
-    children:
-    - node: text
-      content: (静的と動的のmix)
-  - node: p
-    children:
-    - node: text
-      content: 'php-ast (高速/C拡張) '
-    - node: br
-    - node: text
-      content: 依存関係 PHP-Parser
-    - node: br
-    - node: text
-      content: Tolerant PHP Parser(低速)
-  - node: p
-    children:
-    - node: text
-      content: 'プロジェクトおよび  対象ファイルを '
-  - node: p
-    children:
-    - node: text
-      content: 解析単位
-  - node: p
-    children:
-    - node: text
-      content: 依存ライブラリ全体 個別指定
+  - kind: heading
+    level: 1
+    text: 静的解析の選択軸
+  - kind: para
+    text: Phan PHPStan
+  - kind: para
+    text: 定義のみ実行が必要
+  - kind: para
+    text: 解析方法
+  - kind: para
+    text: 実行しない(静的)
+  - kind: para
+    text: (静的と動的のmix)
+  - kind: para
+    text: 依存関係
+  - kind: para
+    text: php-ast (高速/C拡張)
+  - kind: para
+    text: Tolerant PHP Parser(低速)
+  - kind: para
+    text: PHP-Parser
+  - kind: para
+    text: 対象ファイルを
+  - kind: para
+    text: 解析単位プロジェクトおよび依存ライブラリ全体
+  - kind: para
+    text: 個別指定
   p36:
-  - node: p
-    children:
-    - node: text
-      content: つまりどれがいいのか (CI)
-  - node: p
-    children:
-    - node: text
-      content: 現時点ではそれぞれのツール で検出項目に一長一短がある
-    - node: br
-    - node: text
-      content: 'ため、使い分けるとよい '
-    - node: br
-    - node: text
-      content: PHPStanは高速なのでGitで ブランチにpushするごとに検 査するようなCIと相性がよい
+  - kind: para
+    text: つまりどれがいいのか (CI)
+  - kind: para
+    text: 現時点ではそれぞれのツールで検出項目に一長一短があるため、使い分けるとよい
+  - kind: para
+    text: PHPStanは高速なのでGitでブランチにpushするごとに検査するようなCIと相性がよい
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの制約
-  - node: p
-    children:
-    - node: text
-      content: クラス/関数/定数の定義と副作 用のある処理は明確に分かれ
-    - node: br
-    - node: text
-      content: 'ていないといけない '
-    - node: br
-    - node: text
-      content: 'つまり、PSR-1 '
-    - node: br
-    - node: text
-      content: 'Phanなら定義と処理が混在 '
-    - node: br
-    - node: text
-      content: したファイルも解析できる
+  - kind: para
+    text: PHPStanの制約
+  - kind: para
+    text: クラス/関数/定数の定義と副作用のある処理は明確に分かれていないといけない
+  - kind: para
+    text: つまり、PSR-1
+  - kind: para
+    text: Phanなら定義と処理が混在したファイルも解析できる
   p38:
-  - node: p
-    children:
-    - node: text
-      content: こういうコードはPHPStanで解析できない
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: include __DIR__ . '/config.php';
-  - node: p
-    children:
-    - node: text
-      content: $connection = new PDO(DSN);
-    - node: br
-    - node: text
-      content: drop_table($connection);
-    - node: br
-    - node: text
-      content: exit;
-  - node: p
-    children:
-    - node: text
-      content: function drop_table($connection)
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '    $connection->exec(''DROP TABLE `users`;'');'
-    - node: br
-    - node: text
-      content: '}'
+  - kind: heading
+    level: 1
+    text: こういうコードはPHPStanで解析できない
+  - kind: para
+    text: <?php include __DIR__ . '/config.php';
+  - kind: para
+    text: $connection = new PDO(DSN);drop_table($connection);exit;
+  - kind: para
+    text: function drop_table($connection){$connection->exec('DROP TABLE `users`;');}
   p39:
-  - node: p
-    children:
-    - node: text
-      content: 静的解析を 導入しよう
+  - kind: para
+    text: 静的解析を導入しよう
   p40: []
   p41: []
   p42: []
   p43:
-  - node: p
-    children:
-    - node: text
-      content: 'CakePHP 4.0.0では PHPStanとPsalmで '
-    - node: br
-    - node: text
-      content: '型定義が大幅に改善 '
-    - node: br
-    - node: text
-      content: (現在RC1)
+  - kind: para
+    text: CakePHP 4.0.0ではPHPStanとPsalmで型定義が大幅に改善(現在RC1)
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 'じゃあPhanを '
-    - node: br
-    - node: text
-      content: 入れるか
+  - kind: para
+    text: じゃあPhanを入れるか
   p45:
-  - node: p
-    children:
-    - node: text
-      content: '基本は か '
-  - node: p
-    children:
-    - node: text
-      content: composer require
-    - node: br
-    - node: text
-      content: 'Pharファイルを '
-    - node: br
-    - node: text
-      content: ダウンロードするだけ
+  - kind: para
+    text: 基本はかcomposer require Pharファイルをダウンロードするだけ
   p46:
-  - node: p
-    children:
-    - node: text
-      content: 'forteeはレガシー を自称しているが '
-  - node: p
-    children:
-    - node: text
-      content: Docker Compose
+  - kind: para
+    text: forteeはレガシーを自称しているがDocker Compose
   p47:
-  - node: p
-    children:
-    - node: text
-      content: Docker Compose
-    - node: br
-    - node: text
-      content: 使ったことない僕の方が レガシーなんですけど…
+  - kind: para
+    text: Docker Compose使ったことない僕の方がレガシーなんですけど…
   p48:
-  - node: p
-    children:
-    - node: text
-      content: 'Docker Phan '
-    - node: br
-    - node: text
-      content: '[検索]'
+  - kind: para
+    text: Docker Phan
+  - kind: para
+    text: '[検索]'
   p49:
-  - node: p
-    children:
-    - node: text
-      content: 🙅
-    - node: br
-    - node: text
-      content: だめです
+  - kind: heading
+    level: 1
+    text: 🙅
+  - kind: para
+    text: だめです
   p50: []
   p51: []
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 古すぎる！
+  - kind: para
+    text: 古すぎる！
   p53:
-  - node: p
-    children:
-    - node: text
-      content: 'Phanはほぼ毎週 '
-    - node: br
-    - node: text
-      content: 'アップデートされて '
-    - node: br
-    - node: text
-      content: さまざまな改善がある
+  - kind: para
+    text: Phanはほぼ毎週アップデートされてさまざまな改善がある
   p54:
-  - node: p
-    children:
-    - node: text
-      content: 最新のPhanだけが
-    - node: br
-    - node: text
-      content: 良いPhanだ
+  - kind: para
+    text: 最新のPhanだけが良いPhanだ
   p55:
-  - node: p
-    children:
-    - node: text
-      content: Phanの要求環境
-  - node: p
-    children:
-    - node: text
-      content: '基本的に普通のPHPイメージ '
-    - node: br
-    - node: text
-      content: 'ext-ast (PECL ast)は必須 '
-    - node: br
-    - node: text
-      content: 'Xdebugは無効化したい '
-    - node: br
-    - node: text
-      content: 'パフォーマンスに影響する '
-  - node: p
-    children:
-    - node: text
-      content: 'ext-pcntl, ext-iconv,  '
-    - node: br
-    - node: text
-      content: ext-mbstringも推奨
+  - kind: para
+    text: Phanの要求環境
+  - kind: para
+    text: 基本的に普通のPHPイメージ
+  - kind: para
+    text: ext-ast (PECL ast)は必須
+  - kind: para
+    text: Xdebugは無効化したい
+  - kind: para
+    text: パフォーマンスに影響する
+  - kind: para
+    text: ext-pcntl, ext-iconv,ext-mbstringも推奨
   p56:
-  - node: p
-    children:
-    - node: text
-      content: Dockerﬁleにphp-astを足す
-  - node: p
-    children:
-    - node: text
-      content: RUN pecl install ast \
-    - node: br
-    - node: text
-      content: '    && docker-php-ext-enable ast'
+  - kind: heading
+    level: 1
+    text: Dockerﬁleにphp-astを足す
+  - kind: para
+    text: RUN pecl install ast \&& docker-php-ext-enable ast
   p57:
-  - node: p
-    children:
-    - node: text
-      content: astをデフォルト有効化したくなければ
-  - node: p
-    children:
-    - node: text
-      content: RUN pecl install ast
+  - kind: heading
+    level: 1
+    text: astをデフォルト有効化したくなければ
+  - kind: para
+    text: RUN pecl install ast
   p58:
-  - node: p
-    children:
-    - node: text
-      content: 別のコンテナイメー ジに分割したい場合
+  - kind: para
+    text: 別のコンテナイメージに分割したい場合
   p59:
-  - node: p
-    children:
-    - node: text
-      content: docker/phan/Dockerﬁle
-  - node: p
-    children:
-    - node: text
-      content: FROM php:7.3-cli
-    - node: br
-    - node: text
-      content: RUN apt-get update -y \
-    - node: br
-    - node: text
-      content: '    && apt-get install -y --no-install-recommends \'
-    - node: br
-    - node: text
-      content: '        libicu-dev \'
-    - node: br
-    - node: text
-      content: '        unzip'
-    - node: br
-    - node: text
-      content: RUN docker-php-ext-install -j$(nproc) intl pcntl
-  - node: p
-    children:
-    - node: text
-      content: RUN pecl install ast && docker-php-ext-enable ast
-  - node: p
-    children:
-    - node: text
-      content: 'COPY --from=composer /usr/bin/composer \         '
-    - node: br
-    - node: text
-      content: '    /usr/bin/composer'
-  - node: p
-    children:
-    - node: text
-      content: 'RUN composer global require phan/phan         '
-    - node: br
-    - node: text
-      content: ENTRYPOINT php /root/.composer/vendor/bin/phan
-    - node: br
-    - node: text
-      content: WORKDIR /var/www/html
+  - kind: heading
+    level: 1
+    text: docker/phan/Dockerﬁle
+  - kind: para
+    text: FROM php:7.3-cli RUN apt-get update -y \&& apt-get install -y --no-install-recommends
+      \libicu-dev \unzip RUN docker-php-ext-install -j$(nproc) intl pcntl
+  - kind: para
+    text: RUN pecl install ast && docker-php-ext-enable ast
+  - kind: para
+    text: COPY --from=composer /usr/bin/composer \/usr/bin/composer
+  - kind: para
+    text: RUN composer global require phan/phan ENTRYPOINT php /root/.composer/vendor/bin/phan
+      WORKDIR /var/www/html
   p60:
-  - node: p
-    children:
-    - node: text
-      content: docker-compose.yml
-  - node: p
-    children:
-    - node: text
-      content: 'version: "3.7"'
-    - node: br
-    - node: text
-      content: 'services:'
-    - node: br
-    - node: text
-      content: '  phan:'
-    - node: br
-    - node: text
-      content: '    build: ./docker/phan'
-    - node: br
-    - node: text
-      content: '    volumes:'
-    - node: br
-    - node: text
-      content: '      - ./:/var/www/html:cached'
-    - node: br
-    - node: text
-      content: '    entrypoint: php /root/.composer/vendor/bin/phan'
-    - node: br
-    - node: text
-      content: '    working_dir: /var/www/html         '
+  - kind: heading
+    level: 1
+    text: docker-compose.yml
+  - kind: para
+    text: 'version: "3.7"services:phan:build: ./docker/phan volumes:- ./:/var/www/html:cached
+      entrypoint: php /root/.composer/vendor/bin/phan working_dir: /var/www/html'
   p61:
-  - node: p
-    children:
-    - node: text
-      content: '独立したコンテナに分ける '
-    - node: br
-    - node: text
-      content: 'メリットも大きくない気がする ので既存のPHP用コンテナに '
-    - node: br
-    - node: text
-      content: 混ぜ込めばいいと思います
+  - kind: para
+    text: 独立したコンテナに分けるメリットも大きくない気がするので既存のPHP用コンテナに混ぜ込めばいいと思います
   p62:
-  - node: p
-    children:
-    - node: text
-      content: composer require --devを使うべき？
-  - node: p
-    children:
-    - node: text
-      content: '好みでどうぞ '
-    - node: br
-    - node: text
-      content: 'アプリケーションと依存関係が '
-    - node: br
-    - node: text
-      content: 混ざるのでメンテ難しいと思います 僕はサブディレクトリにcomposer.json作ります composer-bin-pluginを使ってもいいかも
+  - kind: para
+    text: composer require --devを使うべき？
+  - kind: para
+    text: 好みでどうぞ
+  - kind: para
+    text: アプリケーションと依存関係が混ざるのでメンテ難しいと思います
+  - kind: para
+    text: 僕はサブディレクトリにcomposer.json作ります
+  - kind: para
+    text: composer-bin-pluginを使ってもいいかも
   p63:
-  - node: p
-    children:
-    - node: text
-      content: 以後./phan という ラッパースクリプト を使うことにします
+  - kind: para
+    text: 以後./phan というラッパースクリプトを使うことにします
   p64:
-  - node: p
-    children:
-    - node: text
-      content: ./phan
-  - node: p
-    children:
-    - node: text
-      content: '#!/usr/bin'
-    - node: br
-    - node: text
-      content: 'docker-compose run --rm php-cli \         '
-    - node: br
-    - node: text
-      content: '    .phan/vendor/bin/phan "$@"'
-  - node: p
-    children:
-    - node: text
-      content: Windowsならphan.batってファイ ルを作って   あたりでパラメータ展
-  - node: p
-    children:
-    - node: bold
-      content: '%*'
-  - node: p
-    children:
-    - node: text
-      content: 開すれば動くと思うけど、詳しいこと はWindowsに詳しいひとに任せた！
+  - kind: heading
+    level: 1
+    text: ./phan
+  - kind: para
+    text: '#!/usr/bin docker-compose run --rm php-cli \.phan/vendor/bin/phan "$@"'
+  - kind: para
+    text: Windowsならphan.batってファイルを作って %* あたりでパラメータ展開すれば動くと思うけど、詳しいことはWindowsに詳しいひとに任せた！
   p65:
-  - node: p
-    children:
-    - node: text
-      content: phan --initで初期化できる
-  - node: p
-    children:
-    - node: text
-      content: '.phan/config.phpが生成される '
-    - node: br
-    - node: text
-      content: 自動追加されなかった
-    - node: br
-    - node: text
-      content: 'directory_listを追加していく '
-    - node: br
-    - node: text
-      content: 'composer requireで直接 依存するパッケージだけが '
-    - node: br
-    - node: text
-      content: 自動追加される
+  - kind: para
+    text: phan --initで初期化できる
+  - kind: para
+    text: .phan/config.phpが生成される
+  - kind: para
+    text: 自動追加されなかったdirectory_listを追加していく
+  - kind: para
+    text: composer requireで直接依存するパッケージだけが自動追加される
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 基本的な使いかた
-  - node: p
-    children:
-    - node: text
-      content: './phan '
-    - node: br
-    - node: text
-      content: '-o phan.log '
-    - node: br
-    - node: text
-      content: ' 結果をphan.logに書き出す '
-  - node: p
-    children:
-    - node: text
-      content: '-j 4 '
-    - node: br
-    - node: text
-      content: 並列実行数。CPUのコア数を 指定するのが良い (諸説あり)
+  - kind: para
+    text: 基本的な使いかた
+  - kind: para
+    text: ./phan
+  - kind: para
+    text: -o phan.log結果をphan.logに書き出す
+  - kind: para
+    text: -j 4並列実行数。CPUのコア数を指定するのが良い (諸説あり)
   p67:
-  - node: p
-    children:
-    - node: text
-      content: baseline
-  - node: p
-    children:
-    - node: text
-      content: --save-baseline=.phan/
-    - node: br
-    - node: text
-      content: baseline.php を付けて実行する
-    - node: br
-    - node: text
-      content: とファイルごとに検出された
-    - node: br
-    - node: text
-      content: 'Issueを保存できる '
-    - node: br
-    - node: text
-      content: --load-baseline で実行すると新 たに増えたものだけ報告される
+  - kind: para
+    text: baseline
+  - kind: para
+    text: --save-baseline=.phan/baseline.php を付けて実行するとファイルごとに検出されたIssueを保存できる
+  - kind: para
+    text: --load-baseline で実行すると新たに増えたものだけ報告される
   p68:
-  - node: p
-    children:
-    - node: text
-      content: suppress_issue_types
-  - node: p
-    children:
-    - node: text
-      content: '報告しないIssueをリストアップ '
-    - node: br
-    - node: text
-      content: 'フレームワーク側に問題があ るなら握り潰すしかない… ある程度の妥協も時には必要 '
-    - node: br
-    - node: text
-      content: 'CakePHP 4.0になれば '
-    - node: br
-    - node: text
-      content: おそらくほぼ消せるでしょう
+  - kind: para
+    text: suppress_issue_types
+  - kind: para
+    text: 報告しないIssueをリストアップ
+  - kind: para
+    text: フレームワーク側に問題があるなら握り潰すしかない…
+  - kind: para
+    text: ある程度の妥協も時には必要
+  - kind: para
+    text: CakePHP 4.0になればおそらくほぼ消せるでしょう
   p69:
-  - node: p
-    children:
-    - node: text
-      content: tadsanのよくやる手法
-  - node: p
-    children:
-    - node: text
-      content: masterブランチの内容をphan-
-    - node: br
-    - node: text
-      content: 'master.logに書き出す '
-    - node: br
-    - node: text
-      content: 'リファクタリングして変更の都度 解析結果をphan.logに書き出す '
-  - node: p
-    children:
-    - node: text
-      content: diff -u phan-master.log phan.log
+  - kind: para
+    text: tadsanのよくやる手法
+  - kind: para
+    text: masterブランチの内容をphan-master.logに書き出す
+  - kind: para
+    text: リファクタリングして変更の都度解析結果をphan.logに書き出す
+  - kind: para
+    text: diff -u phan-master.log phan.log
   p70:
-  - node: p
-    children:
-    - node: text
-      content: 実際に検出 されたミス
+  - kind: para
+    text: 実際に検出されたミス
   p71:
-  - node: p
-    children:
-    - node: text
-      content: 未定義変数の検出
-  - node: p
-    children:
-    - node: text
-      content: $part変数が未定義
+  - kind: heading
+    level: 1
+    text: 未定義変数の検出
+  - kind: para
+    text: $part変数が未定義
   p72:
-  - node: p
-    children:
-    - node: text
-      content: 未定義変数の検出
-  - node: p
-    children:
-    - node: text
-      content: $videoEmbedHtmlと
-    - node: br
-    - node: text
-      content: $slideEmbedHtmlが未定義
+  - kind: heading
+    level: 1
+    text: 未定義変数の検出
+  - kind: para
+    text: $videoEmbedHtmlと$slideEmbedHtmlが未定義
   p73:
-  - node: p
-    children:
-    - node: text
-      content: deprecatedコードの検出
-  - node: p
-    children:
-    - node: text
-      content: 'CakePHP 4.0.0で '
-    - node: br
-    - node: text
-      content: 'プロパティにアクセス '
-    - node: br
-    - node: text
-      content: できなくなる
+  - kind: heading
+    level: 1
+    text: deprecatedコードの検出
+  - kind: para
+    text: CakePHP 4.0.0でプロパティにアクセスできなくなる
   p74:
-  - node: p
-    children:
-    - node: text
-      content: 未定義クラスの検出
-  - node: p
-    children:
-    - node: text
-      content: use Exceptionがないので 現在の名前空間を指してる
+  - kind: heading
+    level: 1
+    text: 未定義クラスの検出
+  - kind: para
+    text: use Exceptionがないので現在の名前空間を指してる
   p75:
-  - node: p
-    children:
-    - node: text
-      content: 'おまけ: 謎のException'
-  - node: p
-    children:
-    - node: text
-      content: '3箇所くらいで登場 '
-    - node: br
-    - node: text
-      content: どれもAuraを直接使ってない たぶんPhpStormの自動挿入
+  - kind: para
+    text: 'おまけ: 謎のException'
+  - kind: para
+    text: 3箇所くらいで登場
+  - kind: para
+    text: どれもAuraを直接使ってない
+  - kind: para
+    text: たぶんPhpStormの自動挿入
   p76:
-  - node: p
-    children:
-    - node: text
-      content: コンストラクタで値を返す
-  - node: p
-    children:
-    - node: text
-      content: '値を返せない '
-    - node: br
-    - node: text
-      content: (単にreturn;でよい)
+  - kind: heading
+    level: 1
+    text: コンストラクタで値を返す
+  - kind: para
+    text: 値を返せない(単にreturn;でよい)
   p77:
-  - node: p
-    children:
-    - node: text
-      content: そろそろまとめ
+  - kind: para
+    text: そろそろまとめ
   p78:
-  - node: p
-    children:
-    - node: text
-      content: 実際稼動しているアプリ
-    - node: br
-    - node: text
-      content: なので致命的な問題は なかなか見つからない
+  - kind: para
+    text: 実際稼動しているアプリなので致命的な問題はなかなか見つからない
   p79:
-  - node: p
-    children:
-    - node: text
-      content: 'リファクタリングや '
-    - node: br
-    - node: text
-      content: 'フレームワークの '
-    - node: br
-    - node: text
-      content: 'バージョンアップでは '
-    - node: br
-    - node: text
-      content: 大きな武器になる
+  - kind: para
+    text: リファクタリングやフレームワークのバージョンアップでは大きな武器になる
   p80:
-  - node: p
-    children:
-    - node: text
-      content: '地味なものも '
-    - node: br
-    - node: text
-      content: '目立つが地道に '
-    - node: br
-    - node: text
-      content: 潰していこう
+  - kind: para
+    text: 地味なものも目立つが地道に潰していこう
   p81:
-  - node: p
-    children:
-    - node: text
-      content: おまけ
+  - kind: para
+    text: おまけ
   p82:
-  - node: p
-    children:
-    - node: text
-      content: '今回forteeのコードで '
-    - node: br
-    - node: text
-      content: 初めてDocker Compose で構築されたPHPアプリ
-    - node: br
-    - node: text
-      content: ケーションに触れた
+  - kind: para
+    text: 今回forteeのコードで初めてDocker Composeで構築されたPHPアプリケーションに触れた
   p83:
-  - node: p
-    children:
-    - node: text
-      content: 🤔
-    - node: br
-    - node: text
-      content: なるほどわからん
+  - kind: heading
+    level: 1
+    text: 🤔
+  - kind: para
+    text: なるほどわからん
   p84:
-  - node: p
-    children:
-    - node: text
-      content: 手持ちのレガシーPHP をDocker Compose
-    - node: br
-    - node: text
-      content: に載せてみるか
+  - kind: para
+    text: 手持ちのレガシーPHPをDocker Composeに載せてみるか
   p85: []
   p86: []
   p87:
-  - node: p
-    children:
-    - node: text
-      content: 'Vagrant → '
-    - node: br
-    - node: text
-      content: Docker Compose
+  - kind: para
+    text: Vagrant →Docker Compose
   p88:
-  - node: p
-    children:
-    - node: text
-      content: 'phpdotenv '
-    - node: br
-    - node: text
-      content: .env → conf/.env
+  - kind: para
+    text: phpdotenv
+  - kind: para
+    text: .env → conf/.env
   p89:
-  - node: p
-    children:
-    - node: text
-      content: 'docker-composeを '
-    - node: br
-    - node: text
-      content: 噛ませてsetupスクリプト
-    - node: br
-    - node: text
-      content: 'を実行できるように '
-    - node: br
-    - node: text
-      content: 場所を変更
+  - kind: para
+    text: docker-composeを噛ませてsetupスクリプトを実行できるように場所を変更
   p90:
-  - node: p
-    children:
-    - node: text
-      content: 'php -S → '
-    - node: br
-    - node: text
-      content: Apache HTTP
+  - kind: para
+    text: php -S →Apache HTTP
   p91:
-  - node: p
-    children:
-    - node: text
-      content: '初めてでも '
-    - node: br
-    - node: text
-      content: できちゃった
+  - kind: para
+    text: 初めてでもできちゃった
+size:
+  max_width: 1024
+  max_height: 768
 links:
   p2:
   - url: https://github.com/emacs-php/php-mode

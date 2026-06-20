@@ -1,556 +1,263 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: text
-      content: 正しいプログラムは 綺麗なコードに宿る
-  - node: p
-    children:
-    - node: text
-      content: A good program resides in clean code.
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 'WPHPerKaigi 2023 - PHPerのためのゆるいLT会 - '
-  - node: p
-    children:
-    - node: bold
-      content: '2022-04-18'
+  - kind: heading
+    level: 1
+    text: 正しいプログラムは
+  - kind: heading
+    level: 1
+    text: 綺麗なコードに宿る
+  - kind: heading
+    level: 2
+    text: A good program resides in clean code.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: WPHPerKaigi 2023 - PHPerのためのゆるいLT会 -
+  - kind: para
+    text: '2022-04-18'
   p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: プログラミング言語にちょっとこだわりのある素人
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人
   p3:
-  - node: p
-    children:
-    - node: text
-      content: ふだんはEmacsとか PHPとかやってます
+  - kind: para
+    text: ふだんはEmacsとかPHPとかやってます
   p4:
-  - node: p
-    children:
-    - node: text
-      content: さて
+  - kind: heading
+    level: 1
+    text: さて
   p5:
-  - node: p
-    children:
-    - node: text
-      content: '綺麗なコード '
-    - node: br
-    - node: text
-      content: 書いてますか？
+  - kind: para
+    text: 綺麗なコード書いてますか？
   p6:
-  - node: p
-    children:
-    - node: text
-      content: 'コードの乱れは '
-    - node: br
-    - node: text
-      content: 心の乱れ
+  - kind: para
+    text: コードの乱れは心の乱れ
   p7:
-  - node: p
-    children:
-    - node: text
-      content: 正しいプログラムは 綺麗なコードに宿る
+  - kind: para
+    text: 正しいプログラムは綺麗なコードに宿る
   p8:
-  - node: p
-    children:
-    - node: text
-      content: '綺麗なコードが '
-    - node: br
-    - node: text
-      content: モダーンなコード
+  - kind: para
+    text: 綺麗なコードがモダーンなコード
   p9:
-  - node: p
-    children:
-    - node: text
-      content: '美しいコードを書くのは '
-    - node: br
-    - node: text
-      content: 靴を脱いで揃えるのと同じ
+  - kind: para
+    text: 美しいコードを書くのは靴を脱いで揃えるのと同じ
   p10:
-  - node: p
-    children:
-    - node: text
-      content: 'きたないコードは '
-    - node: br
-    - node: text
-      content: 争いを生む
+  - kind: para
+    text: きたないコードは争いを生む
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 'さあ美しいコードを '
-    - node: br
-    - node: text
-      content: 書きましょう…
+  - kind: para
+    text: さあ美しいコードを書きましょう…
   p12:
-  - node: p
-    children:
-    - node: text
-      content: そう思いませんか？
+  - kind: heading
+    level: 1
+    text: そう思いませんか？
   p13:
-  - node: p
-    children:
-    - node: text
-      content: どうやってコードをインデントする？
-  - node: p
-    children:
-    - node: bold
-      content: https://www.emacswiki.org/pics/static/TabsSpacesBoth.png より
+  - kind: heading
+    level: 1
+    text: どうやってコードをインデントする？
+  - kind: para
+    text: https://www.emacswiki.org/pics/static/TabsSpacesBoth.png より
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 均整でないソースコードの弊害
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: チーム内での認知的な摩擦
-    - node: li
-      children:
-      - node: text
-        content: 同じリポジトリ内でも「ナワバリ」によってフォーマットの慣習が違う(!)
-    - node: li
-      children:
-      - node: text
-        content: コードレビューで「ここにスペースを入れてください」「ここで改行してくださ
-      - node: br
-      - node: text
-        content: 'い」などの不毛すぎる指摘をする羽目に… '
-    - node: li
-      children:
-      - node: text
-        content: 「レビュー対応」というコードスタイルを直すだけの最悪のコミットが履歴に積
-      - node: br
-      - node: text
-        content: まれる (そういう些細な変更は‰xupで直して…という意見はある)
+  - kind: para
+    text: 均整でないソースコードの弊害
+  - kind: list
+    items:
+    - チーム内での認知的な摩擦
+    - 同じリポジトリ内でも「ナワバリ」によってフォーマットの慣習が違う(!)
+    - コードレビューで「ここにスペースを入れてください」「ここで改行してくださ
+  - kind: para
+    text: い」などの不毛すぎる指摘をする羽目に…
+  - kind: list
+    items:
+    - 「レビュー対応」というコードスタイルを直すだけの最悪のコミットが履歴に積
+  - kind: para
+    text: まれる (そういう些細な変更はfixupで直して…という意見はある)
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 誰がコードを書いても 同じスタイルにしたい
+  - kind: para
+    text: 誰がコードを書いても同じスタイルにしたい
   p16:
-  - node: p
-    children:
-    - node: text
-      content: Code Formatter
-  - node: p
-    children:
-    - node: text
-      content: コードスタイルを整形
-    - node: br
-    - node: text
-      content: するツールの総称
+  - kind: para
+    text: Code Formatterコードスタイルを整形するツールの総称
   p17:
-  - node: p
-    children:
-    - node: text
-      content: 'フォーマッター導入 '
-    - node: br
-    - node: text
-      content: 待ったなし
+  - kind: para
+    text: フォーマッター導入待ったなし
   p18: []
   p19: []
   p20:
-  - node: p
-    children:
-    - node: text
-      content: 退屈なことは機械にやらせよう
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ツールを呼び出すとフォーマッタが全てのコードを整形してくれる
-    - node: li
-      children:
-      - node: text
-        content: 人間が細かいところに気をつけながらコーディングしなくていい
-    - node: li
-      children:
-      - node: text
-        content: 最悪、人間がコードフォーマットをまったく把握してなくてもいい
-    - node: li
-      children:
-      - node: text
-        content: コミットする前にフォーマッターをかけてくれることだけ徹底してくれれば
+  - kind: para
+    text: 退屈なことは機械にやらせよう
+  - kind: list
+    items:
+    - ツールを呼び出すとフォーマッタが全てのコードを整形してくれる
+    - 人間が細かいところに気をつけながらコーディングしなくていい
+    - 最悪、人間がコードフォーマットをまったく把握してなくてもいい
+    - コミットする前にフォーマッターをかけてくれることだけ徹底してくれれば
   p21:
-  - node: p
-    children:
-    - node: text
-      content: それでだ
+  - kind: heading
+    level: 1
+    text: それでだ
   p22:
-  - node: p
-    children:
-    - node: text
-      content: モダーンな言語の定義
+  - kind: heading
+    level: 1
+    text: モダーンな言語の定義
   p23:
-  - node: p
-    children:
-    - node: text
-      content: '言語標準の '
-    - node: br
-    - node: text
-      content: フォーマッターがある
+  - kind: para
+    text: 言語標準のフォーマッターがある
   p24:
-  - node: p
-    children:
-    - node: bold
-      content: 'go fmt '
-    - node: br
-    - node: bold
-      content: 'dart format '
-    - node: br
-    - node: bold
-      content: rustfmt
+  - kind: para
+    text: go fmt dart format rustfmt
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 'われらが最新最高言語 '
-    - node: br
-    - node: text
-      content: PHPはどうだ
+  - kind: para
+    text: われらが最新最高言語PHPはどうだ
   p26: []
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 'ただ普及してる '
-    - node: br
-    - node: text
-      content: フォーマッターはある
+  - kind: para
+    text: ただ普及してるフォーマッターはある
   p28:
-  - node: p
-    children:
-    - node: bold
-      content: 'PHP-CS-Fixer '
-    - node: br
-    - node: bold
-      content: PHP_CodeSiffer
+  - kind: para
+    text: PHP-CS-Fixer PHP_CodeSiffer
   p29:
-  - node: p
-    children:
-    - node: text
-      content: ＿人人人人人人＿  ＞　二つある　＜  ￣Y^Y^Y^Y^Y￣
+  - kind: para
+    text: ＿人人人人人人＿＞ 二つある ＜‾Y^Y^Y^Y^Y‾
   p30:
-  - node: p
-    children:
-    - node: text
-      content: '語ると長いが… '
-    - node: br
-    - node: text
-      content: 設計思想の違いがある
+  - kind: para
+    text: 語ると長いが…設計思想の違いがある
   p31:
-  - node: p
-    children:
-    - node: text
-      content: (設定ファイル名も ややこしかった…)
-  - node: p
-    children:
-    - node: bold
-      content: phpcs.xml
-    - node: text
-      content: ' vs '
-    - node: bold
-      content: .php_cs
+  - kind: para
+    text: (設定ファイル名もややこしかった…)
+  - kind: para
+    text: phpcs.xml vs .php_cs
   p32:
-  - node: p
-    children:
-    - node: text
-      content: 'まじめなプロジェクトでは '
-    - node: br
-    - node: text
-      content: どちらかを選んで使う
+  - kind: para
+    text: まじめなプロジェクトではどちらかを選んで使う
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 二つのツールで同じような
-    - node: br
-    - node: text
-      content: '設定をしても結果が '
-    - node: br
-    - node: text
-      content: 一致しなかったりする
+  - kind: para
+    text: 二つのツールで同じような設定をしても結果が一致しなかったりする
   p34:
-  - node: p
-    children:
-    - node: text
-      content: '≒ 似た設定をしても フォーマット結果が '
-    - node: br
-    - node: text
-      content: 競合しかねない
+  - kind: para
+    text: ≒ 似た設定をしてもフォーマット結果が競合しかねない
   p35:
-  - node: p
-    children:
-    - node: text
-      content: 'プロジェクト内で '
-    - node: br
-    - node: text
-      content: 'フォーマットツールを '
-    - node: br
-    - node: text
-      content: 統一する必要がある
+  - kind: para
+    text: プロジェクト内でフォーマットツールを統一する必要がある
   p36:
-  - node: p
-    children:
-    - node: text
-      content: で､あんたは どっち派？
+  - kind: para
+    text: で、あんたはどっち派？
   p37:
-  - node: p
-    children:
-    - node: text
-      content: どうやってコードをインデントする？
-  - node: p
-    children:
-    - node: text
-      content: CodeSniﬀer
-  - node: p
-    children:
-    - node: text
-      content: CS-Fixer
-  - node: p
-    children:
-    - node: text
-      content: 両方
-  - node: p
-    children:
-    - node: text
-      content: もちつけ
-  - node: p
-    children:
-    - node: text
-      content: tadsan
-  - node: p
-    children:
-    - node: bold
-      content: https://www.emacswiki.org/pics/static/TabsSpacesBoth.png より
+  - kind: heading
+    level: 1
+    text: どうやってコードをインデントする？
+  - kind: para
+    text: CS-Fixer CodeSniffer
+  - kind: para
+    text: 両方
+  - kind: para
+    text: もちつけ
+  - kind: para
+    text: tadsan
+  - kind: para
+    text: https://www.emacswiki.org/pics/static/TabsSpacesBoth.png より
   p38:
-  - node: p
-    children:
-    - node: text
-      content: そこで出てくるのが
+  - kind: heading
+    level: 1
+    text: そこで出てくるのが
   p39: []
   p40:
-  - node: p
-    children:
-    - node: text
-      content: ということで
+  - kind: heading
+    level: 1
+    text: ということで
   p41:
-  - node: p
-    children:
-    - node: text
-      content: ECS！
+  - kind: heading
+    level: 1
+    text: ECS！
   p42:
-  - node: p
-    children:
-    - node: text
-      content: 最速最強コードフォーマッター
-  - node: p
-    children:
-    - node: text
-      content: E  C  S
-    - node: br
-    - node: text
-      content: asy oding tandard
-  - node: p
-    children:
-    - node: text
-      content: ECS - The fastest and strongest code formatter
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: 'WPHPerKaigi 2023 - PHPerのためのゆるいLT会 - '
-  - node: p
-    children:
-    - node: bold
-      content: '2022-04-18'
+  - kind: heading
+    level: 2
+    text: 最速最強コードフォーマッター
+  - kind: heading
+    level: 1
+    text: Easy Coding Standard
+  - kind: heading
+    level: 3
+    text: ECS - The fastest and strongest code formatter
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: WPHPerKaigi 2023 - PHPerのためのゆるいLT会 -
+  - kind: para
+    text: '2022-04-18'
   p43: []
   p44:
-  - node: p
-    children:
-    - node: text
-      content: ECSってなあに?
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Tomas Votruba氏が開発しているスタイルチェック/フォーマットツール
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: RectorというPHPStanベースのリファクタリングツールも作っている
-    - node: li
-      children:
-      - node: text
-        content: 内部的にPHP-CS-FixerとPHP_CodeSnifferを使っている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 両方のツールに内蔵されたルールが使える！
-    - node: li
-      children:
-      - node: text
-        content: 並列実行してくれて爆速！ 一度実行したらキャッシュされるので待たせない
-    - node: li
-      children:
-      - node: text
-        content: ひとつのツール内で両方のルールを合せてくれるのでツール間で喧嘩しない
+  - kind: para
+    text: ECSってなあに?
+  - kind: list
+    items:
+    - Tomas Votruba氏が開発しているスタイルチェック/フォーマットツール
+    - RectorというPHPStanベースのリファクタリングツールも作っている
+    - 内部的にPHP-CS-FixerとPHP_CodeSnifferを使っている
+    - 両方のツールに内蔵されたルールが使える！
+    - 並列実行してくれて爆速！ 一度実行したらキャッシュされるので待たせない
+    - ひとつのツール内で両方のルールを合せてくれるのでツール間で喧嘩しない
   p45:
-  - node: p
-    children:
-    - node: text
-      content: インストール方法
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 非常に簡単！
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: composer require --dev symplify/easy-coding-standard:"^11.2"
-        - node: li
-          children:
-          - node: text
-            content: バージョン指定しないとインストール時にかなり待たされるので注意
-    - node: li
-      children:
-      - node: text
-        content: ./vendor/bin/ecs で実行できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 初回実行時に勝手に設定ファイル(ecs.php)が作成される
-        - node: li
-          children:
-          - node: text
-            content: PHP-CS-FixerやPHP_CodeSnifferのルールを指定する
+  - kind: heading
+    level: 1
+    text: インストール方法
+  - kind: list
+    items:
+    - 非常に簡単！
+    - composer require --dev symplify/easy-coding-standard:"^11.2"
+    - バージョン指定しないとインストール時にかなり待たされるので注意
+    - ./vendor/bin/ecs で実行できる
+    - 初回実行時に勝手に設定ファイル(ecs.php)が作成される
+    - PHP-CS-FixerやPHP_CodeSnifferのルールを指定する
   p46: []
   p47:
-  - node: p
-    children:
-    - node: text
-      content: '清浄なコードベースを '
-    - node: br
-    - node: text
-      content: 保つには
+  - kind: para
+    text: 清浄なコードベースを保つには
   p48:
-  - node: p
-    children:
-    - node: text
-      content: こきたないコードをマージさせない
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: コードベース全体を (勇気をもって) 全フォーマットする
-    - node: li
-      children:
-      - node: text
-        content: メンバー全員に「コミットする直前に」必ずフォーマットすることを根付かせる
-    - node: li
-      children:
-      - node: text
-        content: CIでECSを呼び出してスタイルが合ってないファイルがあれば失敗させる
-    - node: li
-      children:
-      - node: text
-        content: 僕は編集中にテキストエディタから非同期フォーマットを実行するようにする
-      - node: br
-      - node: text
-        content: 拡張を書きました
+  - kind: para
+    text: こきたないコードをマージさせない
+  - kind: list
+    items:
+    - コードベース全体を (勇気をもって) 全フォーマットする
+    - メンバー全員に「コミットする直前に」必ずフォーマットすることを根付かせる
+    - CIでECSを呼び出してスタイルが合ってないファイルがあれば失敗させる
+    - 僕は編集中にテキストエディタから非同期フォーマットを実行するようにする
+  - kind: para
+    text: 拡張を書きました
   p49:
-  - node: p
-    children:
-    - node: text
-      content: '完璧主義の '
-    - node: br
-    - node: text
-      content: 'みなさんにも '
-    - node: br
-    - node: text
-      content: 安心！
+  - kind: para
+    text: 完璧主義のみなさんにも安心！
   p50:
-  - node: p
-    children:
-    - node: text
-      content: おまえら
-    - node: br
-    - node: text
-      content: 'pixivは '
-    - node: br
-    - node: text
-      content: どうなのかって？
+  - kind: para
+    text: おまえら
+  - kind: heading
+    level: 1
+    text: pixivは
+  - kind: heading
+    level: 1
+    text: どうなのかって？
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 俺たちの戦いは これからだ！！
+  - kind: para
+    text: 俺たちの戦いはこれからだ！！
   p52:
-  - node: p
-    children:
-    - node: text
-      content: 続きはWebで
+  - kind: heading
+    level: 1
+    text: 続きはWebで
 size:
   max_width: 1920
   max_height: 1080

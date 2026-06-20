@@ -1,1530 +1,555 @@
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: PHPゆるふわCI入門
-  - node: p
-    children:
-    - node: text
-      content: A casually guide for PHP Continuous Integration
-  - node: p
-    children:
-    - node: text
-      content: 2019-03-30 PHPerKaigi 2019 Day 1
-    - node: br
-    - node: text
-      content: Nerima Coconeri Hall
-  - node: p
-    children:
-    - node: bold
-      content: '#phperkaigi'
+  - kind: heading
+    level: 1
+    text: ゆるふわCI入門
+  - kind: para
+    text: A casually guide for PHP Continuous Integration
+  - kind: para
+    text: 2019-03-30 PHPerKaigi 2019 Day 1
+  - kind: para
+    text: 'Nerima Coconeri Hall #phperkaigi'
   p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'GitHub/Packagistでは id: zonuexe'
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社サービスプラットフォーム事業部
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-    - node: li
-      children:
-      - node: text
-        content: Emacs PHP Modeのメンテナ引き継ぎました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 好きなリスプはEmacs Lispです
-        - node: li
-          children:
-          - node: text
-            content: Qiitaに記事を書いたり変なコメントしてるよ
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - 'GitHub/Packagistでは id: zonuexe'
+    - ピクシブ株式会社サービスプラットフォーム事業部
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeのメンテナ引き継ぎました
+    - 好きなリスプはEmacs Lispです
+    - Qiitaに記事を書いたり変なコメントしてるよ
   p3:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: '2013年頃から仕事でPHPを書いてます '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: その前はRubyをちょっとやってました
-    - node: li
-      children:
-      - node: text
-        content: 普段はPHP勉強会＠東京などでふざけた話をします
-    - node: li
-      children:
-      - node: text
-        content: 今回は実用的な話をします
-    - node: li
-      children:
-      - node: text
-        content: 去年は前夜祭トークでふざけた話をしました
-  - node: p
-    children:
-    - node: bold
-      content: 今回の発表の内容とは
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'あんまり関連ないです '
-      - node: bold
-        content: 無関係ではないけど
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - 2013年頃から仕事でPHPを書いてます
+    - その前はRubyをちょっとやってました
+    - 普段はPHP勉強会＠東京などでふざけた話をします
+    - 今回は実用的な話をします
+    - 去年は前夜祭トークでふざけた話をしました
+    - 今回の発表の内容とは
+  - kind: para
+    text: あんまり関連ないです
+  - kind: list
+    items:
+    - 無関係ではないけど
   p4: []
   p5: []
   p6: []
   p7:
-  - node: p
-    children:
-    - node: text
-      content: アジェンダ
+  - kind: para
+    text: アジェンダ
   p8:
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: 'とは何か '
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: 'で何ができるか '
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: '実行環境の種類 '
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: ゆるふわに を始める 実際の事例について
+  - kind: para
+    text: CIとは何かCIで何ができるかCI実行環境の種類ゆるふわにCIを始める実際の事例について
   p9:
-  - node: p
-    children:
-    - node: text
-      content: CodeIgniter
-  - node: p
-    children:
-    - node: text
-      content: の
-  - node: p
-    children:
-    - node: text
-      content: (Web Framework) 話はしません
+  - kind: para
+    text: CodeIgniter(Web Framework)の話はしません
   p10:
-  - node: p
-    children:
-    - node: text
-      content: CD
-    - node: br
-    - node: text
-      content: '(Continuous '
-  - node: p
-    children:
-    - node: text
-      content: delivery/deployment)
-    - node: br
-    - node: text
-      content: の
-  - node: p
-    children:
-    - node: text
-      content: 話もしません
+  - kind: para
+    text: CD (Continuous delivery/deployment)の話もしません
   p11:
-  - node: p
-    children:
-    - node: text
-      content: 個別の 製品の
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: text
-      content: 設定の話も
-  - node: p
-    children:
-    - node: text
-      content: しません
+  - kind: para
+    text: 個別のCI製品の設定の話もしません
   p12:
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: 'とは何か '
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: 'で何ができるか '
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: '実行環境の種類 '
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: bold
-      content: ゆるふわに を始める 実際の事例について
+  - kind: para
+    text: CIとは何かCIで何ができるかCI実行環境の種類ゆるふわにCIを始める実際の事例について
   p13:
-  - node: p
-    children:
-    - node: text
-      content: 本題の前に
+  - kind: para
+    text: 本題の前に
   p14:
-  - node: p
-    children:
-    - node: text
-      content: 今回紹介するツールと
-    - node: br
-    - node: text
-      content: GitLab CIの設定をまとめて セットアップできるプロジェ
-    - node: br
-    - node: text
-      content: クトを用意してます
-  - node: p
-    children:
-    - node: text
-      content: https://gitlab.com/zonuexe/phperkaigi-ci
+  - kind: para
+    text: 今回紹介するツールとGitLab CIの設定をまとめてセットアップできるプロジェクトを用意してます
+  - kind: para
+    text: https://gitlab.com/zonuexe/phperkaigi-ci
   p15:
-  - node: p
-    children:
-    - node: text
-      content: 予め断っておきますが この構成では規模の大 きなプロジェクトでは
-  - node: p
-    children:
-    - node: text
-      content: パフォーマンス目立ち
-    - node: br
-    - node: text
-      content: ます(断言)
+  - kind: para
+    text: 予め断っておきますがこの構成では規模の大きなプロジェクトではパフォーマンス目立ちます(断言)
   p16:
-  - node: p
-    children:
-    - node: text
-      content: 実プロジェクトに 導入する際は各自 の責任で取捨選択
-    - node: br
-    - node: text
-      content: してください
+  - kind: para
+    text: 実プロジェクトに導入する際は各自の責任で取捨選択してください
   p17:
-  - node: p
-    children:
-    - node: text
-      content: あとすみません Windowsでは
-  - node: p
-    children:
-    - node: text
-      content: たぶん動きません
+  - kind: para
+    text: あとすみませんWindowsではたぶん動きません
   p18:
-  - node: p
-    children:
-    - node: text
-      content: とは何か
-  - node: p
-    children:
-    - node: bold
-      content: CI
+  - kind: para
+    text: CIとは何か
   p19:
-  - node: p
-    children:
-    - node: text
-      content: 単にシーアイ
-  - node: p
-    children:
-    - node: text
-      content: とは
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: と呼びます
-  - node: p
-    children:
-    - node: text
-      content: Continuous Integration
-  - node: p
-    children:
-    - node: text
-      content: (継続的インテグレーション)の略
-    - node: br
-    - node: text
-      content: もともとはXP
-  - node: p
-    children:
-    - node: text
-      content: (エクストリームプログラミング)
-  - node: p
-    children:
-    - node: text
-      content: コミュニティで明文化されたもの
-  - node: p
-    children:
-    - node: text
-      content: …らしい
-    - node: br
-    - node: text
-      content: 有名な文章は2000年に書かれた
+  - kind: para
+    text: 単にシーアイと呼びます
+  - kind: para
+    text: CIとは
+  - kind: para
+    text: Continuous Integration(継続的インテグレーション)の略
+  - kind: para
+    text: もともとはXP(エクストリームプログラミング)コミュニティで明文化されたもの…らしい
+  - kind: para
+    text: 有名な文章は2000年に書かれた
   p20:
-  - node: p
-    children:
-    - node: bold
-      content: 議論には登るが、実⾏に移されることの少
-    - node: text
-      content: ' '
-    - node: bold
-      content: ない「ベストプラクティス」がソフトウェア
-    - node: text
-      content: ' '
-    - node: bold
-      content: 開発にはいっぱいある。その中でも、もっと
-    - node: text
-      content: ' '
-    - node: bold
-      content: も基本的かつ重要なもの⼀つが、「完全に
-    - node: text
-      content: ' '
-    - node: bold
-      content: ⾃動化されたビルドとテストプロセス」だ。
-    - node: text
-      content: ' '
-    - node: bold
-      content: これは、プロジェクトチームが⾃分のソフト
-    - node: text
-      content: ' '
-    - node: bold
-      content: ウェアのビルドやテストを⼀⽇に何度も⾏
-    - node: br
-    - node: bold
-      content: うことを可能にするものである。
-  - node: p
-    children:
-    - node: text
-      content: 継続的インテグレーション オブラブ訳
-  - node: p
-    children:
-    - node: bold
-      content: –Martin Fowler,   ( )
-  - node: p
-    children:
-    - node: bold
-      content: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
+  - kind: para
+    text: 議論には登るが、実⾏に移されることの少ない「ベストプラクティス」がソフトウェア開発にはいっぱいある。その中でも、もっとも基本的かつ重要なもの⼀つが、「完全に⾃動化されたビルドとテストプロセス」だ。これは、プロジェクトチームが⾃分のソフトウェアのビルドやテストを⼀⽇に何度も⾏うことを可能にするものである。
+  - kind: para
+    text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
+  - kind: para
+    text: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
   p21: []
   p22:
-  - node: p
-    children:
-    - node: text
-      content: テスト自動化に必要なこと
-  - node: p
-    children:
-    - node: text
-      content: ' (引用)'
-  - node: p
-    children:
-    - node: text
-      content: 全てのソースコードが格納され、誰でも最新の(そして 過去の)ソースを取り出すことが可能な、ただ一つの出
-    - node: br
-    - node: text
-      content: 入口を設定すること
-    - node: br
-    - node: text
-      content: ビルドプロセスを自動化して、誰でも、コマンド一つで
-    - node: br
-    - node: text
-      content: ソースからシステムを作り出すことができること
-    - node: br
-    - node: text
-      content: テスト作業を自動化して、コマンド一つでいつでもテス
-    - node: br
-    - node: text
-      content: トスィートを実行できるようにすること
-    - node: br
-    - node: text
-      content: 現行の実行可能モジュールで、もっとも適切であると 自信を持てるようなものを、誰でも入手可能であるよう
-    - node: br
-    - node: text
-      content: にすること
-  - node: p
-    children:
-    - node: text
-      content: 継続的インテグレーション オブラブ訳
-  - node: p
-    children:
-    - node: bold
-      content: –Martin Fowler,   ( )
-    - node: br
-    - node: bold
-      content: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
+  - kind: heading
+    level: 1
+    text: テスト自動化に必要なこと (引用)
+  - kind: para
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
+  - kind: para
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
+  - kind: para
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
+  - kind: para
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
+  - kind: para
+    text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
+  - kind: para
+    text: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
   p23:
-  - node: p
-    children:
-    - node: text
-      content: テスト自動化に必要なこと
-  - node: p
-    children:
-    - node: text
-      content: ' (引用)'
-  - node: p
-    children:
-    - node: text
-      content: Git/GitHub
-  - node: p
-    children:
-    - node: text
-      content: 全てのソースコードが格納され、誰でも最新の(そして 過去の)ソースを取り出すことが可能な、ただ一つの出
-  - node: p
-    children:
-    - node: text
-      content: Composer
-  - node: p
-    children:
-    - node: text
-      content: 入口を設定すること
-    - node: br
-    - node: text
-      content: ビルドプロセスを自動化して、誰でも、コマンド一つで
-    - node: br
-    - node: text
-      content: テスティング
-  - node: p
-    children:
-    - node: text
-      content: ソースからシステムを作り出すことができること
-    - node: br
-    - node: text
-      content: フレームワーク
-  - node: p
-    children:
-    - node: text
-      content: テスト作業を自動化して、コマンド一つでいつでもテス
-    - node: br
-    - node: text
-      content: トスィートを実行できるようにすること
-  - node: p
-    children:
-    - node: text
-      content: git tag / master
-  - node: p
-    children:
-    - node: text
-      content: 現行の実行可能モジュールで、もっとも適切であると 自信を持てるようなものを、誰でも入手可能であるよう
-    - node: br
-    - node: text
-      content: にすること
-  - node: p
-    children:
-    - node: text
-      content: 継続的インテグレーション オブラブ訳
-  - node: p
-    children:
-    - node: bold
-      content: –Martin Fowler,   ( )
-    - node: br
-    - node: bold
-      content: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
+  - kind: heading
+    level: 1
+    text: テスト自動化に必要なこと (引用)
+  - kind: para
+    text: Git/GitHub
+  - kind: para
+    text: Composer
+  - kind: para
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
+  - kind: para
+    text: テスティングフレームワーク
+  - kind: para
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
+  - kind: para
+    text: git tag / master
+  - kind: para
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
+  - kind: para
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
+  - kind: para
+    text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
+  - kind: para
+    text: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
   p24:
-  - node: p
-    children:
-    - node: text
-      content: テスト自動化に必要なこと
-  - node: p
-    children:
-    - node: text
-      content: ' (引用)'
-  - node: p
-    children:
-    - node: text
-      content: Git/GitHub
-  - node: p
-    children:
-    - node: text
-      content: 全てのソースコードが格納され、誰でも最新の(そして
-    - node: br
-    - node: text
-      content: CIの前提となる
-  - node: p
-    children:
-    - node: text
-      content: 過去の)ソースを取り出すことが可能な、ただ一つの出
-  - node: p
-    children:
-    - node: text
-      content: Composer
-  - node: p
-    children:
-    - node: text
-      content: 入口を設定すること
-  - node: p
-    children:
-    - node: text
-      content: 環境は揃ってるので
-  - node: p
-    children:
-    - node: text
-      content: ビルドプロセスを自動化して、誰でも、コマンド一つで
-    - node: br
-    - node: text
-      content: テスティング
-  - node: p
-    children:
-    - node: text
-      content: ソースからシステムを作り出すことができること
-    - node: br
-    - node: text
-      content: フレームワーク
-  - node: p
-    children:
-    - node: text
-      content: 基本的に組み合せで
-  - node: p
-    children:
-    - node: text
-      content: テスト作業を自動化して、コマンド一つでいつでもテス
-    - node: br
-    - node: text
-      content: かなりいける
-  - node: p
-    children:
-    - node: text
-      content: トスィートを実行できるようにすること
-  - node: p
-    children:
-    - node: text
-      content: git tag / master
-  - node: p
-    children:
-    - node: text
-      content: 現行の実行可能モジュールで、もっとも適切であると 自信を持てるようなものを、誰でも入手可能であるよう
-    - node: br
-    - node: text
-      content: にすること
-  - node: p
-    children:
-    - node: text
-      content: 継続的インテグレーション オブラブ訳
-  - node: p
-    children:
-    - node: bold
-      content: –Martin Fowler,   ( )
-    - node: br
-    - node: bold
-      content: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
+  - kind: heading
+    level: 2
+    text: テスト自動化に必要なこと (引用)
+  - kind: para
+    text: Git/GitHub
+  - kind: heading
+    level: 1
+    text: CIの前提となる
+  - kind: para
+    text: Composer
+  - kind: para
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
+  - kind: heading
+    level: 1
+    text: 環境は揃ってるので
+  - kind: para
+    text: テスティングフレームワーク
+  - kind: para
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
+  - kind: heading
+    level: 1
+    text: 基本的に組み合せで
+  - kind: para
+    text: git tag / master
+  - kind: para
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
+  - kind: heading
+    level: 1
+    text: かなりいける
+  - kind: para
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
+  - kind: para
+    text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
+  - kind: para
+    text: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
   p25:
-  - node: p
-    children:
-    - node: text
-      content: 銀の弾丸はない
-  - node: p
-    children:
-    - node: text
-      content: コードの規模や構造によって 導入できるツール・できない
-    - node: br
-    - node: text
-      content: ツールがある
-    - node: br
-    - node: text
-      content: 大規模なコードになるほど
-  - node: p
-    children:
-    - node: text
-      content: 実行時間が掛かるようになり
-    - node: br
-    - node: text
-      content: 工夫が必要になってくる
+  - kind: para
+    text: 銀の弾丸はない
+  - kind: para
+    text: コードの規模や構造によって導入できるツール・できないツールがある
+  - kind: para
+    text: 大規模なコードになるほど実行時間が掛かるようになり工夫が必要になってくる
   p26:
-  - node: p
-    children:
-    - node: text
-      content: で何ができるか
-  - node: p
-    children:
-    - node: bold
-      content: CI
+  - kind: para
+    text: CIで何ができるか
   p27:
-  - node: p
-    children:
-    - node: text
-      content: 継続的にされてると嬉しいこと
-  - node: p
-    children:
-    - node: text
-      content: いろいろあるだろうが、基本的 にはコードが正常に保たれてる
-    - node: br
-    - node: text
-      content: ことは確認し続けたい
-  - node: p
-    children:
-    - node: text
-      content: (コード上の異常発生を迅速に知る) そのほか属人化してる項目や 忘れられがちなプロセスを盛
-    - node: br
-    - node: text
-      content: り込めるとよい
+  - kind: para
+    text: 継続的にされてると嬉しいこと
+  - kind: para
+    text: いろいろあるだろうが、基本的にはコードが正常に保たれてることは確認し続けたい(コード上の異常発生を迅速に知る)
+  - kind: para
+    text: そのほか属人化してる項目や忘れられがちなプロセスを盛り込めるとよい
   p28:
-  - node: p
-    children:
-    - node: text
-      content: コードの異常を検知するには
-  - node: p
-    children:
-    - node: text
-      content: 実行してチェックする
-    - node: br
-    - node: text
-      content: 自動テスト
-  - node: p
-    children:
-    - node: text
-      content: (ユニットテスト, 受け入れテスト)
-  - node: p
-    children:
-    - node: text
-      content: 人間が動作確認
-    - node: br
-    - node: text
-      content: 実行せずコードの品質を検査する
-    - node: br
-    - node: text
-      content: 「QAツール」と総称される
+  - kind: para
+    text: コードの異常を検知するには
+  - kind: para
+    text: 実行してチェックする
+  - kind: para
+    text: 自動テスト(ユニットテスト, 受け入れテスト)
+  - kind: para
+    text: 人間が動作確認
+  - kind: para
+    text: 実行せずコードの品質を検査する
+  - kind: para
+    text: 「QAツール」と総称される
   p29:
-  - node: p
-    children:
-    - node: text
-      content: 自動テスト(ユニットテスト)
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit, phpspecなど
-    - node: br
-    - node: text
-      content: 小さな単位でテストすることが 理想だが、コードが古く結合度 が高いプロジェクトではユニッ トテストに表現することが困難
-    - node: br
-    - node: text
-      content: なこともある
+  - kind: para
+    text: 自動テスト(ユニットテスト)
+  - kind: para
+    text: PHPUnit, phpspecなど
+  - kind: para
+    text: 小さな単位でテストすることが理想だが、コードが古く結合度が高いプロジェクトではユニットテストに表現することが困難なこともある
   p30:
-  - node: p
-    children:
-    - node: text
-      content: 自動テスト(受け入れテスト)
-  - node: p
-    children:
-    - node: text
-      content: Codeception
-    - node: br
-    - node: text
-      content: 実際にHTTPリクエストを行っ てテストできるフレームワーク 古くテストが少ないプロジェク トではこちらの方が導入しやす
-    - node: br
-    - node: text
-      content: いかもしれない
+  - kind: para
+    text: 自動テスト(受け入れテスト)
+  - kind: para
+    text: Codeception
+  - kind: para
+    text: 実際にHTTPリクエストを行ってテストできるフレームワーク
+  - kind: para
+    text: 古くテストが少ないプロジェクトではこちらの方が導入しやすいかもしれない
   p31:
-  - node: p
-    children:
-    - node: text
-      content: 'QAツール '
-  - node: p
-    children:
-    - node: text
-      content: (Quality Assurance)
-  - node: p
-    children:
-    - node: text
-      content: 大まかに二種類に大別できる
-    - node: br
-    - node: text
-      content: 字句解析ベースで主にスタイル
-    - node: br
-    - node: text
-      content: を検査するもの
-    - node: br
-    - node: text
-      content: 再帰的な型検査を行うもの
+  - kind: para
+    text: QAツール (Quality Assurance)
+  - kind: para
+    text: 大まかに二種類に大別できる
+  - kind: para
+    text: 字句解析ベースで主にスタイルを検査するもの
+  - kind: para
+    text: 再帰的な型検査を行うもの
   p32:
-  - node: p
-    children:
-    - node: text
-      content: コーディングスタイルベース
-  - node: p
-    children:
-    - node: text
-      content: コードを字句的に解釈する
-  - node: p
-    children:
-    - node: text
-      content: PHPMD (PHP Mess Detector) PHP_CodeSniffer & phpcbf PHP Coding Standards
-        Fixer
-    - node: br
-    - node: text
-      content: 修正までやってくれるやつ
+  - kind: para
+    text: コーディングスタイルベース
+  - kind: para
+    text: コードを字句的に解釈する
+  - kind: para
+    text: PHPMD (PHP Mess Detector)
+  - kind: para
+    text: PHP_CodeSniffer & phpcbf
+  - kind: para
+    text: PHP Coding Standards Fixer
+  - kind: para
+    text: 修正までやってくれるやつ
   p33:
-  - node: p
-    children:
-    - node: text
-      content: 型検査を含む精密な型検査
-  - node: p
-    children:
-    - node: text
-      content: 字句的な静的解析ツールはオブ ジェクトの未定義メソッド検出 などはできないのに対して、最 近開発が活発なツールはコード パスを詳細に解析して、さまざ
-    - node: br
-    - node: text
-      content: まな情報を出してくれる
+  - kind: para
+    text: 型検査を含む精密な型検査
+  - kind: para
+    text: 字句的な静的解析ツールはオブジェクトの未定義メソッド検出などはできないのに対して、最近開発が活発なツールはコードパスを詳細に解析して、さまざまな情報を出してくれる
   p34:
-  - node: p
-    children:
-    - node: text
-      content: 型検査を含む精密な型検査
-  - node: p
-    children:
-    - node: text
-      content: それぞれ開発が活発なツール
-  - node: p
-    children:
-    - node: text
-      content: PHPStan, Psalm, Phan
-    - node: br
-    - node: text
-      content: ぶっちゃけキャラが被ってるけ ど、それぞれ検出してくれるポ
-    - node: br
-    - node: text
-      content: イントが違ったりする
+  - kind: para
+    text: 型検査を含む精密な型検査
+  - kind: para
+    text: それぞれ開発が活発なツール
+  - kind: para
+    text: PHPStan, Psalm, Phan
+  - kind: para
+    text: ぶっちゃけキャラが被ってるけど、それぞれ検出してくれるポイントが違ったりする
   p35: []
   p36:
-  - node: p
-    children:
-    - node: text
-      content: PHPStan vs Phan
-  - node: p
-    children:
-    - node: text
-      content: Phanは純粋な静的解析
-    - node: br
-    - node: text
-      content: プロジェクト全体スキャン
-    - node: br
-    - node: text
-      content: PHPStanは実行時情報も利用
-    - node: br
-    - node: text
-      content: し必要なファイルのみ解析
-    - node: br
-    - node: text
-      content: 高速に結果を返したい場合は
-    - node: br
-    - node: text
-      content: PHPStanの方が有利
+  - kind: para
+    text: PHPStan vs Phan
+  - kind: para
+    text: Phanは純粋な静的解析
+  - kind: para
+    text: プロジェクト全体スキャン
+  - kind: para
+    text: PHPStanは実行時情報も利用し必要なファイルのみ解析
+  - kind: para
+    text: 高速に結果を返したい場合はPHPStanの方が有利
   p37:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの制約
-  - node: p
-    children:
-    - node: text
-      content: クラスや関数・定数の定義を 予め(または遅延)読み込みでき
-    - node: br
-    - node: text
-      content: るようにする必要がある
-    - node: br
-    - node: text
-      content: PSR-1(定義だけのファイルと 副作用の処理を分離すること)
-    - node: br
-    - node: text
-      content: が重要
+  - kind: para
+    text: PHPStanの制約
+  - kind: para
+    text: クラスや関数・定数の定義を予め(または遅延)読み込みできるようにする必要がある
+  - kind: para
+    text: PSR-1(定義だけのファイルと副作用の処理を分離すること)が重要
   p38:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの制約
-  - node: p
-    children:
-    - node: text
-      content: ComposerとかPSR-1を考慮し てない時代のPHPプロジェクトに は厳しいが、ハードルを越えれば
-    - node: br
-    - node: text
-      content: 高速で頻繁なビルドが可能
+  - kind: para
+    text: PHPStanの制約
+  - kind: para
+    text: ComposerとかPSR-1を考慮してない時代のPHPプロジェクトには厳しいが、ハードルを越えれば高速で頻繁なビルドが可能
   p39:
-  - node: p
-    children:
-    - node: text
-      content: PHPStanの効能
-  - node: p
-    children:
-    - node: text
-      content: 今回の本題とは少し離れるが、 EmacsやVimでチェッカーのバッ クエンドとして適切に設定す ると、PhpStormを凌ぐ情報量
-    - node: br
-    - node: text
-      content: がリアルタイムで得られる
+  - kind: para
+    text: PHPStanの効能
+  - kind: para
+    text: 今回の本題とは少し離れるが、EmacsやVimでチェッカーのバックエンドとして適切に設定すると、PhpStormを凌ぐ情報量がリアルタイムで得られる
   p40: []
   p41:
-  - node: p
-    children:
-    - node: text
-      content: Vim+ALE
+  - kind: para
+    text: Vim+ALE
   p42:
-  - node: p
-    children:
-    - node: text
-      content: の実行環境
-  - node: p
-    children:
-    - node: bold
-      content: CI
-    - node: br
-    - node: text
-      content: いろいろ
+  - kind: para
+    text: CIの実行環境
+  - kind: para
+    text: いろいろ
   p43:
-  - node: p
-    children:
-    - node: text
-      content: はいつ実行する
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: 「たくさんやるほうが望ましい」 多くの サービスでGitHubと
-  - node: p
-    children:
-    - node: text
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: 連携して、Pull Requestを作成 したブランチにPushするたびに
-    - node: br
-    - node: text
-      content: 毎回ビルドを行うのが普通
-    - node: br
-    - node: text
-      content: 結果はPRのページに表示される
+  - kind: para
+    text: CIはいつ実行する
+  - kind: para
+    text: 「たくさんやるほうが望ましい」
+  - kind: para
+    text: 多くのCIサービスでGitHubと連携して、Pull Requestを作成したブランチにPushするたびに毎回ビルドを行うのが普通
+  - kind: para
+    text: 結果はPRのページに表示される
   p44:
-  - node: p
-    children:
-    - node: text
-      content: 汎用 の実行環境
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: テストプログラムを｢自動的｣かつ ｢継続的｣に実行する必要がある 汎用の と特定用途の がある
-  - node: p
-    children:
-    - node: text
-      content: CI CI
-    - node: br
-    - node: text
-      content: 現実的には下記のどちらか
-    - node: br
-    - node: text
-      content: 各種  SaaS 契約
-  - node: p
-    children:
-    - node: text
-      content: のどれかと
-  - node: p
-    children:
-    - node: bold
-      content: CI
-    - node: br
-    - node: text
-      content: 用のサーバを自前で用意
-  - node: p
-    children:
-    - node: bold
-      content: CI
+  - kind: para
+    text: 汎用CIの実行環境
+  - kind: para
+    text: テストプログラムを｢自動的｣かつ｢継続的｣に実行する必要がある
+  - kind: para
+    text: 汎用のCIと特定用途のCIがある
+  - kind: para
+    text: 現実的には下記のどちらか
+  - kind: para
+    text: 各種CI SaaSのどれかと契約
+  - kind: para
+    text: CI用のサーバを自前で用意
   p45:
-  - node: p
-    children:
-    - node: text
-      content: SaaS (hosted)
-  - node: p
-    children:
-    - node: bold
-      content: 'CI '
-  - node: p
-    children:
-    - node: text
-      content: サーバ自前管理の必要がない 典型的にはGitHubなどと連携
-    - node: br
-    - node: text
-      content: 側が用意したOS環境を利用す
-  - node: p
-    children:
-    - node: text
-      content: CI
-    - node: br
-    - node: text
-      content: るものと、Dockerイメージを利
-    - node: br
-    - node: text
-      content: 用するものがある
+  - kind: para
+    text: CI SaaS (hosted)
+  - kind: para
+    text: サーバ自前管理の必要がない
+  - kind: para
+    text: 典型的にはGitHubなどと連携
+  - kind: para
+    text: CI側が用意したOS環境を利用するものと、Dockerイメージを利用するものがある
   p46: []
   p47:
-  - node: p
-    children:
-    - node: text
-      content: SaaSの制約
-  - node: p
-    children:
-    - node: bold
-      content: 'CI '
-  - node: p
-    children:
-    - node: text
-      content: GitHub Enterpriseやオンプレ
-    - node: br
-    - node: text
-      content: のGitLabは連携できない
-    - node: br
-    - node: text
-      content: 各種 のオンプレ版(有償)を利
-  - node: p
-    children:
-    - node: text
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: 用することで利用できるが、 サーバの調達・管理は自前で
-  - node: p
-    children:
-    - node: text
-      content: 行う必要がある
+  - kind: para
+    text: CI SaaSの制約
+  - kind: para
+    text: GitHub EnterpriseやオンプレのGitLabは連携できない
+  - kind: para
+    text: 各種CIのオンプレ版(有償)を利用することで利用できるが、サーバの調達・管理は自前で行う必要がある
   p48:
-  - node: p
-    children:
-    - node: text
-      content: オンプレミスの
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: サーバを自前で調達・管理する
-    - node: br
-    - node: text
-      content: 必要がある
-    - node: br
-    - node: text
-      content: 無料の製品ではJenkinsの牙城
-    - node: br
-    - node: text
-      content: だった
-  - node: p
-    children:
-    - node: text
-      content: 自前でGitLab CEを 機能を持っ
-  - node: p
-    children:
-    - node: text
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: てるので連携することもできる
+  - kind: para
+    text: オンプレミスのCI
+  - kind: para
+    text: サーバを自前で調達・管理する必要がある
+  - kind: para
+    text: 無料の製品ではJenkinsの牙城だった
+  - kind: para
+    text: 自前でGitLab CEをCI機能を持ってるので連携することもできる
   p49:
-  - node: p
-    children:
-    - node: text
-      content: GitLabの場合
-  - node: p
-    children:
-    - node: text
-      content: GitLabには複数ある
-    - node: br
-    - node: text
-      content: SaaS版のGitLab.com オンプレ版のGitLab
-    - node: br
-    - node: text
-      content: それぞれの有料・無料版
-    - node: br
-    - node: text
-      content: どちらも 機能が統合されてる
-  - node: p
-    children:
-    - node: text
-      content: CI
+  - kind: para
+    text: GitLabの場合
+  - kind: para
+    text: GitLabには複数ある
+  - kind: para
+    text: SaaS版のGitLab.com
+  - kind: para
+    text: オンプレ版のGitLab
+  - kind: para
+    text: それぞれの有料・無料版
+  - kind: para
+    text: どちらもCI機能が統合されてる
   p50:
-  - node: p
-    children:
-    - node: text
-      content: GitLab.com
-  - node: p
-    children:
-    - node: text
-      content: 無料でプライベートリポジトリ可
-    - node: br
-    - node: text
-      content: 無料版でも 機能が利用可能
-  - node: p
-    children:
-    - node: text
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: グループあたり月2000分まで
-    - node: br
-    - node: text
-      content: 設定ファイルに書くだけで
-    - node: br
-    - node: text
-      content: Dockerでビルドが実行される
+  - kind: para
+    text: GitLab.com
+  - kind: para
+    text: 無料でプライベートリポジトリ可
+  - kind: para
+    text: 無料版でもCI機能が利用可能
+  - kind: para
+    text: グループあたり月2000分まで
+  - kind: para
+    text: 設定ファイルに書くだけでDockerでビルドが実行される
   p51:
-  - node: p
-    children:
-    - node: text
-      content: 特定用途の
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: PHP解析
-  - node: p
-    children:
-    - node: text
-      content: 'SensioLabsInsight '
-    - node: br
-    - node: text
-      content: Scrutinizer
-    - node: br
-    - node: text
-      content: コーディングスタイル
-  - node: p
-    children:
-    - node: text
-      content: StyleCI
+  - kind: para
+    text: 特定用途のCI
+  - kind: para
+    text: PHP解析
+  - kind: para
+    text: SensioLabsInsight
+  - kind: para
+    text: Scrutinizer
+  - kind: para
+    text: コーディングスタイル
+  - kind: para
+    text: StyleCI
   p52:
-  - node: p
-    children:
-    - node: bold
-      content: 御託はわかった
+  - kind: para
+    text: 御託はわかった
   p53:
-  - node: p
-    children:
-    - node: bold
-      content: で、結局いろいろ準備
-  - node: p
-    children:
-    - node: bold
-      content: しなくちゃいけなくて
-    - node: text
-      content: ' '
-    - node: bold
-      content: めんどくさいんでしょ？
+  - kind: para
+    text: で、結局いろいろ準備しなくちゃいけなくてめんどくさいんでしょ？
   p54:
-  - node: p
-    children:
-    - node: text
-      content: ゆるふわに始める
-  - node: p
-    children:
-    - node: bold
-      content: CI
+  - kind: para
+    text: ゆるふわに始めるCI
   p55:
-  - node: p
-    children:
-    - node: text
-      content: もっと気軽に手を
-  - node: p
-    children:
-    - node: text
-      content: 付けられるところから
-  - node: p
-    children:
-    - node: text
-      content: やっていきましょう
+  - kind: para
+    text: もっと気軽に手を付けられるところからやっていきましょう
   p56:
-  - node: p
-    children:
-    - node: text
-      content: 継続して動かせる
-    - node: br
-    - node: text
-      content: サーバがない
-  - node: p
-    children:
-    - node: text
-      content: さてどうするか
+  - kind: para
+    text: 継続して動かせるサーバがないさてどうするか
   p57:
-  - node: p
-    children:
-    - node: text
-      content: テスト自動化に必要なこと
-  - node: p
-    children:
-    - node: text
-      content: ' (引用)'
-  - node: p
-    children:
-    - node: text
-      content: 全てのソースコードが格納され、誰でも最新の(そして 過去の)ソースを取り出すことが可能な、ただ一つの出
-    - node: br
-    - node: text
-      content: 入口を設定すること
-    - node: br
-    - node: text
-      content: ビルドプロセスを自動化して、誰でも、コマンド一つで
-    - node: br
-    - node: text
-      content: ソースからシステムを作り出すことができること
-    - node: br
-    - node: text
-      content: テスト作業を自動化して、コマンド一つでいつでもテス
-    - node: br
-    - node: text
-      content: トスィートを実行できるようにすること
-    - node: br
-    - node: text
-      content: 現行の実行可能モジュールで、もっとも適切であると 自信を持てるようなものを、誰でも入手可能であるよう
-    - node: br
-    - node: text
-      content: にすること
-  - node: p
-    children:
-    - node: text
-      content: 継続的インテグレーション オブラブ訳
-  - node: p
-    children:
-    - node: bold
-      content: –Martin Fowler,   ( )
-    - node: br
-    - node: bold
-      content: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
+  - kind: heading
+    level: 1
+    text: テスト自動化に必要なこと (引用)
+  - kind: para
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
+  - kind: para
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
+  - kind: para
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
+  - kind: para
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
+  - kind: para
+    text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
+  - kind: para
+    text: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
   p58:
-  - node: p
-    children:
-    - node: text
-      content: 複雑な反復作業があれば、
-  - node: p
-    children:
-    - node: text
-      content: 一個のコマンド で
-  - node: p
-    children:
-    - node: text
-      content: (スクリプト)
-  - node: p
-    children:
-    - node: text
-      content: まとめてみることから始める
+  - kind: para
+    text: 複雑な反復作業があれば、一個のコマンド(スクリプト)でまとめてみることから始める
   p59:
-  - node: p
-    children:
-    - node: text
-      content: ところで
+  - kind: para
+    text: ところで
   p60:
-  - node: p
-    children:
-    - node: text
-      content: みなさんSyntaxErrorのPHP スクリプトを本番に反映して 事故ったことはありますか？
+  - kind: para
+    text: みなさんSyntaxErrorのPHPスクリプトを本番に反映して事故ったことはありますか？
   p61:
-  - node: p
-    children:
-    - node: text
-      content: 私はたくさんあります
-  - node: p
-    children:
-    - node: text
-      content: '!'
+  - kind: para
+    text: 私はたくさんあります
+  - kind: heading
+    level: 1
+    text: 
   p62:
-  - node: p
-    children:
-    - node: text
-      content: Syntax Errorになる
-  - node: p
-    children:
-    - node: text
-      content: ファイルを確実に
-  - node: p
-    children:
-    - node: text
-      content: 捕捉してみましょう
+  - kind: para
+    text: Syntax Errorになるファイルを確実に捕捉してみましょう
   p63:
-  - node: p
-    children:
-    - node: text
-      content: git ls-files '*\.php' |
-  - node: p
-    children:
-    - node: text
-      content: ' xargs -I{} php -l {}'
+  - kind: para
+    text: git ls-files '*\.php' |xargs -I{} php -l {}
   p64:
-  - node: p
-    children:
-    - node: text
-      content: xargs
-  - node: p
-    children:
-    - node: bold
-      content: Windowsには が
-  - node: p
-    children:
-    - node: bold
-      content: ない のでPHPで
-    - node: br
-    - node: bold
-      content: (たぶん)
-  - node: p
-    children:
-    - node: text
-      content: https://gist.github.com/zonuexe/a513afd1d6933b3cc5cca0eb866f2834
+  - kind: para
+    text: Windowsにはxargsがない(たぶん)のでPHPでhttps://gist.github.com/zonuexe/a513afd1d6933b3cc5cca0eb866f2834
   p65:
-  - node: p
-    children:
-    - node: bold
-      content: ファイルが数十個単位ならす
-    - node: text
-      content: ' '
-    - node: bold
-      content: ぐに終るが、数千単位になる
-  - node: p
-    children:
-    - node: bold
-      content: と全数の検査はかなり
-    - node: text
-      content: ' '
-    - node: bold
-      content: 時間が掛かるので注意
+  - kind: para
+    text: ファイルが数十個単位ならすぐに終るが、数千単位になると全数の検査はかなり時間が掛かるので注意
   p66:
-  - node: p
-    children:
-    - node: text
-      content: 弊社での事例に
-    - node: br
-    - node: text
-      content: ついて
+  - kind: para
+    text: 弊社での事例について
   p67: []
   p68:
-  - node: p
-    children:
-    - node: text
-      content: 'ファイル数 '
-  - node: p
-    children:
-    - node: text
-      content: '6264'
-  - node: p
-    children:
-    - node: text
-      content: '行数     '
+  - kind: para
+    text: ファイル数 6264
+  - kind: para
+    text: 行数 974419
   p69:
-  - node: p
-    children:
-    - node: text
-      content: 毎回全ファイルを チェックするのは
-  - node: p
-    children:
-    - node: text
-      content: さすがにつらい
+  - kind: para
+    text: 毎回全ファイルをチェックするのはさすがにつらい
   p70:
-  - node: p
-    children:
-    - node: text
-      content: デプロイ時に常にgit tagをつける
-  - node: p
-    children:
-    - node: text
-      content: デプロイスクリプトで、
-  - node: p
-    children:
-    - node: text
-      content: デプロイ成功したら日時と作 業者名を含むタグを生成して
-    - node: br
-    - node: text
-      content: originにpushする
+  - kind: para
+    text: デプロイ時に常にgit tagをつけるデプロイスクリプトで、デプロイ成功したら日時と作業者名を含むタグを生成してoriginにpushする
   p71:
-  - node: p
-    children:
-    - node: text
-      content: 最新のリリースタグとの差分をとる
-  - node: p
-    children:
-    - node: text
-      content: これで最新デプロイと手元の
-  - node: p
-    children:
-    - node: text
-      content: 差分があるファイル抽出できる
+  - kind: para
+    text: 最新のリリースタグとの差分をとるこれで最新デプロイと手元の差分があるファイル抽出できる
   p72:
-  - node: p
-    children:
-    - node: text
-      content: デプロイ時に を行う
-  - node: p
-    children:
-    - node: bold
-      content: php -l
-  - node: p
-    children:
-    - node: text
-      content: 差分のあるファイル全部に対し てチェックを実施し、一つでも エラーのファイルがあったらデ
-    - node: br
-    - node: text
-      content: プロイ処理を中断する
-    - node: br
-    - node: text
-      content: 中断されるとtagはつかないの で、差分が隠れることはない
+  - kind: para
+    text: デプロイ時にphp -lを行う差分のあるファイル全部に対してチェックを実施し、一つでもエラーのファイルがあったらデプロイ処理を中断する中断されるとtagはつかないので、差分が隠れることはない
   p73:
-  - node: p
-    children:
-    - node: text
-      content: MergeRequestと二種類のビルド
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit
-    - node: br
-    - node: text
-      content: PHPStanおよび独自Linter
-    - node: br
-    - node: text
-      content: それぞれ実行時間は1分ちょっと
+  - kind: para
+    text: MergeRequestと二種類のビルド
+  - kind: para
+    text: PHPUnit
+  - kind: para
+    text: PHPStanおよび独自Linter
+  - kind: para
+    text: それぞれ実行時間は1分ちょっと
   p74:
-  - node: p
-    children:
-    - node: text
-      content: PHPStan
-  - node: p
-    children:
-    - node: text
-      content: PHPStan本運用のためbootstrap 処理の軽いリファクタリングをした
-  - node: p
-    children:
-    - node: text
-      content: _autoloader_for_static_analysis.php この作業によってPhpactorと
-    - node: br
-    - node: text
-      content: いう別ツールも利用可能に
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: PHPStan本運用のためbootstrap処理の軽いリファクタリングをした
+  - kind: para
+    text: _autoloader_for_static_analysis.php
+  - kind: para
+    text: この作業によってPhpactorという別ツールも利用可能に
   p75:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit
-  - node: p
-    children:
-    - node: text
-      content: 直列実行で10分前後かかっていた テストが依存するMySQLを複数起 動し、PHPUnitのプロセスを並列
-    - node: br
-    - node: text
-      content: 実行することで1分程度で完了
+  - kind: para
+    text: PHPUnit
+  - kind: para
+    text: 直列実行で10分前後かかっていた
+  - kind: para
+    text: テストが依存するMySQLを複数起動し、PHPUnitのプロセスを並列実行することで1分程度で完了
   p76:
-  - node: p
-    children:
-    - node: text
-      content: masterブランチへのテスト
-  - node: p
-    children:
-    - node: text
-      content: MRのテストを無視してmaster にマージされたときの防波堤 この段階で失敗したテストは
-    - node: br
-    - node: text
-      content: Slackで報告される
-    - node: br
-    - node: text
-      content: 時刻に依存したテストのランダ ムフェイルがたまに報告される
+  - kind: para
+    text: masterブランチへのテスト
+  - kind: para
+    text: MRのテストを無視してmasterにマージされたときの防波堤
+  - kind: para
+    text: この段階で失敗したテストはSlackで報告される
+  - kind: para
+    text: 時刻に依存したテストのランダムフェイルがたまに報告される
   p77:
-  - node: p
-    children:
-    - node: text
-      content: 実行環境
-  - node: p
-    children:
-    - node: text
-      content: GitLab CI + Jenkins
-    - node: br
-    - node: text
-      content: 以前はPHPStanの警告はGitLab
-    - node: br
-    - node: text
-      content: のMRへのコメントで報告 現在は 実行はAWSまたは
-  - node: p
-    children:
-    - node: text
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: Jenkinsで、それぞれの結果を GitLabのパイプラインに統合
+  - kind: para
+    text: 実行環境
+  - kind: para
+    text: GitLab CI + Jenkins
+  - kind: para
+    text: 以前はPHPStanの警告はGitLabのMRへのコメントで報告
+  - kind: para
+    text: 現在はCI実行はAWSまたはJenkinsで、それぞれの結果をGitLabのパイプラインに統合
   p78:
-  - node: p
-    children:
-    - node: text
-      content: まとめ
+  - kind: para
+    text: まとめ
   p79:
-  - node: p
-    children:
-    - node: text
-      content: どのような を導入するか
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: プロジェクトの現状・性質による
-    - node: br
-    - node: text
-      content: テストが書ける密結合度か
-    - node: br
-    - node: text
-      content: 定義ファイルは分離されてるか (同名の関数や定数が複数定義
-    - node: br
-    - node: text
-      content: されてるとはまる)
+  - kind: para
+    text: どのようなCIを導入するか
+  - kind: para
+    text: プロジェクトの現状・性質による
+  - kind: para
+    text: テストが書ける密結合度か
+  - kind: para
+    text: 定義ファイルは分離されてるか
+  - kind: para
+    text: (同名の関数や定数が複数定義されてるとはまる)
   p80:
-  - node: p
-    children:
-    - node: text
-      content: 発表時に書き
-  - node: p
-    children:
-    - node: text
-      content: そびれたこと
+  - kind: para
+    text: 発表時に書きそびれたこと
   p81:
-  - node: p
-    children:
-    - node: text
-      content: 小姑
-  - node: p
-    children:
-    - node: bold
-      content: CI
-  - node: p
-    children:
-    - node: text
-      content: コーディングスタイルのような重 箱の隅は人間がコードレビューで
-  - node: p
-    children:
-    - node: text
-      content: 小うるさく責めるより、Botが鉄の
-    - node: br
-    - node: text
-      content: 心で指摘した方が角が立たない PHP-CS-Fixerやphpcbfのよう なコマンド一撃で修正されるよう
-    - node: br
-    - node: text
-      content: にすれば手間もかからない
+  - kind: para
+    text: 小姑CI
+  - kind: para
+    text: コーディングスタイルのような重箱の隅は人間がコードレビューで小うるさく責めるより、Botが鉄の心で指摘した方が角が立たない
+  - kind: para
+    text: PHP-CS-Fixerやphpcbfのようなコマンド一撃で修正されるようにすれば手間もかからない
   p82:
-  - node: p
-    children:
-    - node: text
-      content: どんな場合も静的解析を導入すべきか
-  - node: p
-    children:
-    - node: text
-      content: 普通の既存プロジェクトをPHPStan やPhanで解析すると異常な量の 型の不整合の警告が出るのが普通 多すぎる警告を目のあたりにする
-    - node: br
-    - node: text
-      content: と、人間は無力感に苛まれる
-  - node: p
-    children:
-    - node: text
-      content: (学習性無力感)
+  - kind: para
+    text: どんな場合も静的解析を導入すべきか
+  - kind: para
+    text: 普通の既存プロジェクトをPHPStanやPhanで解析すると異常な量の型の不整合の警告が出るのが普通
+  - kind: para
+    text: 多すぎる警告を目のあたりにすると、人間は無力感に苛まれる(学習性無力感)
   p83:
-  - node: p
-    children:
-    - node: text
-      content: 警告を深刻に受け止めない
-  - node: p
-    children:
-    - node: text
-      content: そのプロダクトが実際は動いてる のであれば、現状をあまり深刻に
-    - node: br
-    - node: text
-      content: 感じる必要はない
-    - node: br
-    - node: text
-      content: 警告は記述の不整合や曖昧な点を 教えてくれてるだけなので、「警 告を減らす」ことに価値がある
+  - kind: para
+    text: 警告を深刻に受け止めない
+  - kind: para
+    text: そのプロダクトが実際は動いてるのであれば、現状をあまり深刻に感じる必要はない
+  - kind: para
+    text: 警告は記述の不整合や曖昧な点を教えてくれてるだけなので、「警告を減らす」ことに価値がある
   p84:
-  - node: p
-    children:
-    - node: text
-      content: 注目する警告を減らす
-  - node: p
-    children:
-    - node: text
-      content: Phanであればmasterでのログ 出力とブランチでの出力が減る
-  - node: p
-    children:
-    - node: text
-      content: (増えない)ことだけに注目する PHPStanであれば、ブランチで変
-    - node: br
-    - node: text
-      content: 更したファイル
-  - node: p
-    children:
-    - node: text
-      content: (と、そのクラス/関数を
-    - node: br
-    - node: text
-      content: だけを対象にしてみる
-  - node: p
-    children:
-    - node: text
-      content: 使ったファイル)
+  - kind: para
+    text: 注目する警告を減らす
+  - kind: para
+    text: Phanであればmasterでのログ出力とブランチでの出力が減る(増えない)ことだけに注目する
+  - kind: para
+    text: PHPStanであれば、ブランチで変更したファイル(と、そのクラス/関数を使ったファイル)だけを対象にしてみる
   p85:
-  - node: p
-    children:
-    - node: text
-      content: 解析に怯えすぎず
-  - node: p
-    children:
-    - node: text
-      content: ご安全に
+  - kind: para
+    text: 解析に怯えすぎずご安全に
 size:
   max_width: 1024
   max_height: 768

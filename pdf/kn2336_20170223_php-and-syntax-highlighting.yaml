@@ -1,209 +1,85 @@
-size:
-  max_width: 1024
-  max_height: 768
-links:
-  p8:
-  - url: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
-    title: 型の定義 — phpDocumentor
 text:
   p1:
-  - node: p
-    children:
-    - node: bold
-      content: PHP
-    - node: text
-      content: と
-    - node: bold
-      content: syntax highlighting
-  - node: p
-    children:
-    - node: bold
-      content: PHP Editor and IDEs
-  - node: p
-    children:
-    - node: bold
-      content: '2017-2-23 PHP BLT #6'
+  - kind: heading
+    level: 1
+    text: PHPとsyntax highlighting
+  - kind: para
+    text: PHP Editor and IDEs
+  - kind: para
+    text: '2017-2-23 PHP BLT #6'
   p2:
-  - node: p
-    children:
-    - node: bold
-      content: お前誰よ
-    - node: br
-    - node: bold
-      content: 'うさみけんた (@tadsan) / Zonu.EXE '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: GitHub/Packagistでは id:zonuexe
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ピクシブ株式会社でひたすらPHPやってる p(ixi)v
-    - node: li
-      children:
-      - node: text
-        content: フレームワークなき道にフレームを作るおしごと
-    - node: li
-      children:
-      - node: text
-        content: 最近やってること
-    - node: li
-      children:
-      - node: text
-        content: 会社にPhpStormを導入しました
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacsのphp-modeとかの改善やってます
+  - kind: heading
+    level: 1
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE
+    - GitHub/Packagistでは id:zonuexe
+    - ピクシブ株式会社でひたすらPHPやってる p(ixi)v
+    - フレームワークなき道にフレームを作るおしごと
+    - 最近やってること
+    - 会社にPhpStormを導入しました
+    - Emacsのphp-modeとかの改善やってます
   p3:
-  - node: p
-    children:
-    - node: bold
-      content: いままでの復習
+  - kind: para
+    text: いままでの復習
   p4: []
   p5: []
   p6: []
   p7:
-  - node: p
-    children:
-    - node: bold
-      content: 要点
+  - kind: para
+    text: 要点
   p8:
-  - node: p
-    children:
-    - node: bold
-      content: PHPDocの型
-  - node: p
-    children:
-    - node: text
-      content: '基本はPHPの型かクラス名を書く '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 複合型
-    - node: li
-      children:
-      - node: text
-        content: int int|string
-      - node: br
-      - node: text
-        content: '「 または文字列」   '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 値が並んだ配列
-    - node: li
-      children:
-      - node: text
-        content: int int[]
-      - node: br
-      - node: text
-        content: '「 が並んだ配列」 '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
-    - node: li
-      children:
-      - node: text
-        content: types.html
+  - kind: heading
+    level: 1
+    text: PHPDocの型
+  - kind: list
+    items:
+    - 基本はPHPの型かクラス名を書く
+    - 複合型
+    - 「intまたは文字列」 int|string
+    - 値が並んだ配列
+    - 「intが並んだ配列」 int[]
+    - https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/
+  - kind: para
+    text: types.html
   p9:
-  - node: p
-    children:
-    - node: bold
-      content: ところで、PHPの開発環境
-  - node: p
-    children:
-    - node: bold
-      content: はいろいろある
-  - node: p
-    children:
-    - node: bold
-      content: (エディタ/IDE)
+  - kind: para
+    text: ところで、PHPの開発環境(エディタ/IDE)はいろいろある
   p10:
-  - node: p
-    children:
-    - node: bold
-      content: みなさんは何を使ってますか？
-  - node: p
-    children:
-    - node: bold
-      content: 'vi? Emacs? Vim? Spacemacs? NeoVim? '
-  - node: p
-    children:
-    - node: bold
-      content: 'Sublime Text? Atom? VisualStudio Code? '
-  - node: p
-    children:
-    - node: bold
-      content: 'PhpStorm? IntelliJ IDEA? '
-  - node: p
-    children:
-    - node: bold
-      content: 'NetBeans? Eclipse? '
-  - node: p
-    children:
-    - node: bold
-      content: nano? micro? 秀丸? TeraPad?
+  - kind: heading
+    level: 1
+    text: みなさんは何を使ってますか？
+  - kind: para
+    text: vi? Emacs? Vim? Spacemacs? NeoVim?
+  - kind: para
+    text: Sublime Text? Atom? VisualStudio Code?
+  - kind: para
+    text: PhpStorm? IntelliJ IDEA?
+  - kind: para
+    text: NetBeans? Eclipse?
+  - kind: para
+    text: nano? micro? 秀丸? TeraPad?
   p11:
-  - node: p
-    children:
-    - node: bold
-      content: Syntax highlighting!
+  - kind: para
+    text: Syntax highlighting!
   p12:
-  - node: p
-    children:
-    - node: bold
-      content: 各種エディタでPHPを強調表示するには
-  - node: p
-    children:
-    - node: text
-      content: php-mode
-    - node: br
-    - node: bold
-      content: 'Emacs →   入れる '
-  - node: p
-    children:
-    - node: text
-      content: StanAngeloff/php.vim
-    - node: br
-    - node: bold
-      content: 'Vim →   入れる '
-  - node: p
-    children:
-    - node: bold
-      content: 'Eclipse, NetBeans '
-    - node: br
-    - node: bold
-      content: '→ PHPが入ってるエディションを入れる '
-  - node: p
-    children:
-    - node: bold
-      content: IntelliJ IDEA → PHPパッケージ入れる
+  - kind: para
+    text: 各種エディタでPHPを強調表示するには
+  - kind: para
+    text: Emacs → php-mode 入れる
+  - kind: para
+    text: Vim → StanAngeloff/php.vim 入れる
+  - kind: para
+    text: Eclipse, NetBeans
+  - kind: list
+    items:
+    - PHPが入ってるエディションを入れる
+  - kind: para
+    text: IntelliJ IDEA → PHPパッケージ入れる
   p13:
-  - node: p
-    children:
-    - node: bold
-      content: 各種最新版に
-  - node: p
-    children:
-    - node: bold
-      content: アップデートすべし
-    - node: br
-    - node: bold
-      content: (PHP BLTで毎回言ってる気がする…)
+  - kind: para
+    text: 各種最新版にアップデートすべし(PHP BLTで毎回言ってる気がする…)
   p14: []
   p15: []
   p16: []
@@ -211,34 +87,25 @@ text:
   p18: []
   p19: []
   p20:
-  - node: p
-    children:
-    - node: bold
-      content: 悲しみ
+  - kind: para
+    text: 悲しみ
   p21:
-  - node: p
-    children:
-    - node: bold
-      content: だいたいPHPDocを
-    - node: br
-    - node: bold
-      content: 無視しやがる
+  - kind: para
+    text: だいたいPHPDocを無視しやがる
   p22:
-  - node: p
-    children:
-    - node: bold
-      content: Emacsのphp-modeなら
-    - node: br
-    - node: bold
-      content: 手を出せるので直した
+  - kind: para
+    text: Emacsのphp-modeなら手を出せるので直した
   p23: []
   p24:
-  - node: p
-    children:
-    - node: bold
-      content: ありがちなミスを防ぐ工夫
+  - kind: para
+    text: ありがちなミスを防ぐ工夫
   p25:
-  - node: p
-    children:
-    - node: bold
-      content: (スライドここまで)
+  - kind: para
+    text: (スライドここまで)
+size:
+  max_width: 1024
+  max_height: 768
+links:
+  p8:
+  - url: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
+    title: 型の定義 — phpDocumentor

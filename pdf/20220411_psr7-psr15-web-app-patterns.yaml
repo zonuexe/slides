@@ -1,3 +1,1963 @@
+text:
+  p1:
+  - kind: heading
+    level: 2
+    text: PSR-7とPSR-15による
+  - kind: heading
+    level: 1
+    text: Webアプリケーション実装パターン
+  - kind: heading
+    level: 3
+    text: Web application implementation pattern based on PSR-7 and15
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2022-04-11 PHPerKaigi Day 2
+  p2:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 pixiv事業本部 エンジニア
+    - 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
+    - Emacs Lisper, PHPer
+    - Emacs PHP Modeを開発しています (2017年-)
+    - PHPerKaigi コアスタッフ、PHPカンファレンス実行委員
+  p3:
+  - kind: para
+    text: tadsanのあれこれが読める場所
+  - kind: list
+    items:
+    - https://tadsan.fanbox.cc/
+    - https://scrapbox.io/php/
+    - https://www.phper.ninja/
+    - https://zenn.dev/tadsan
+    - https://qiita.com/tadsan
+    - https://github.com/bag2php
+  p4:
+  - kind: heading
+    level: 1
+    text: 前回のPHPerKaigi
+  p5:
+  - kind: heading
+    level: 1
+    text: 去年のPHPカンファレンス
+  p6:
+  - kind: heading
+    level: 1
+    text: 一昨年のPHPカンファレンス
+  p7:
+  - kind: heading
+    level: 1
+    text: Software Design 11月号
+  p8:
+  - kind: heading
+    level: 1
+    text: WEB+DB PRESS総集編
+  p9:
+  - kind: heading
+    level: 1
+    text: WEB+DB PRESS Vol.96(2016年)
+  p10:
+  - kind: heading
+    level: 1
+    text: WEB+DB PRESS Vol.96(2017年)
+  p11:
+  - kind: heading
+    level: 1
+    text: 仕事の話
+  p12:
+  - kind: heading
+    level: 1
+    text: Powered by PSR-15
+  p13:
+  - kind: heading
+    level: 1
+    text: PIXIV SPRING BOOT CAMP
+  p14:
+  - kind: heading
+    level: 1
+    text: たぶん近日中に夏インターンも募集
+  p15:
+  - kind: para
+    text: それそろフレームワークとしての突っ込みどころ改善ポイントが枯渇しつつあるので参加したい学生はお早めに
+  p16:
+  - kind: heading
+    level: 1
+    text: 今回のお題
+  p17:
+  - kind: heading
+    level: 1
+    text: プロポーザル
+  p18:
+  - kind: heading
+    level: 1
+    text: 日本語のPSR-HTTP関連資料集
+  p19:
+  - kind: para
+    text: Webフレームワークを作りたい人や内部構造を理解したい人向け
+  p20:
+  - kind: para
+    text: 前半はフレームワーク一般の概念の話もします
+  p21:
+  - kind: para
+    text: 後半もPSR-15入門とテスト方法みたいな話に終始します
+  p22:
+  - kind: para
+    text: 最後のスライド(予告)
+  p23:
+  - kind: heading
+    level: 1
+    text: 俺たちのPSR-15道は
+  - kind: heading
+    level: 1
+    text: これからだ！
+  - kind: para
+    text: (ご静聴ありがとうございました。tadsanの次回作にご期待ください)
+  p24:
+  - kind: heading
+    level: 1
+    text: さて
+  p25:
+  - kind: para
+    text: 誰がPSR-15を使うのか
+  - kind: list
+    items:
+    - PSR標準に準拠したフレームワークを開発したい人
+    - CakePHPのようなPSR-15準拠フレームワークでミドルウェアを書く必要
+  - kind: para
+    text: に迫られた人
+  - kind: list
+    items:
+    - シンプルなライブラリを組み合わせだけで、
+  - kind: para
+    text: リーンでクリーンなWebアプリを開発したい人
+  p26:
+  - kind: heading
+    level: 1
+    text: PSRとは
+  p27:
+  - kind: heading
+    level: 1
+    text: PHP-FIG
+  p28:
+  - kind: heading
+    level: 1
+    text: PSRs
+  p29:
+  - kind: para
+    text: PSR (PHP Standard Recommendation)
+  - kind: list
+    items:
+    - PHP-FIG(PHP相互運用グループ)という団体が策定する標準勧告
+    - コーディング規約やインターフェイス定義などが定められている
+    - フレームワークやCMSの開発団体間で共通仕様を策定して
+  - kind: para
+    text: コンポーネントを相互運用できるようにすることが目的
+  - kind: list
+    items:
+    - 本来はメンバー間での相互運用が目的なのだが、
+  - kind: para
+    text: われわれ下々の一般PHPerもその成果物の恩恵に与っている恰好
+  p30:
+  - kind: para
+    text: よく知られたPSR
+  - kind: list
+    items:
+    - PSR-4 オートローディング
+    - 名前空間とディレクトリをマッピングするルール。Composerで利用可能
+    - PSR-1 基本コーディング標準
+    - ファイル名はUTF-8で、定義とスクリプトのファイル分離など基本ルール
+    - PSR-12 拡張コーディングスタイルガイド
+    - 改行やスペース位置などのスタイル策定のベースになるガイド
+  p31:
+  - kind: para
+    text: PSR interfaces
+  - kind: list
+    items:
+    - PSR-3 ロガー
+    - syslog風の汎用ロギングインターフェイス
+    - PSR-11 コンテナ
+    - DIコンテナと例外送出のインターフェイス
+    - PSR-6 キャッシュ / PSR-16 単純なキャッシュ(SimpleCache)
+    - TTL(寿命)付きで値を保持するクラスのインターフェイス
+  p32:
+  - kind: para
+    text: インターフェイス(interface) 概要
+  - kind: list
+    items:
+    - class定義に似ているが、クラスが備えるべきメソッドの型だけ宣言したもの
+    - interface名は型宣言(パラメータや戻り値、プロパティなど)に利用できる
+    - クラスは複数のインターフェイスを実装(implements)できる
+    - PHPのクラスは一つだけ継承(extends)できるのと対照的
+    - class定義と分けることで、具体的な実装と抽象を分離できる
+    - 同じインターフェイスを実装したクラスに交換可能になる
+  p33:
+  - kind: heading
+    level: 1
+    text: 余談：PSRへの誤解
+  - kind: list
+    items:
+    - PSRは全PHP開発者が守らなければいけない標準という性質ではない
+    - PHP-FIG参加メンバーも勧告に従うかどうかは任意
+    - PSR-2/PSR-12(スタイルガイド)は規約ではなく、
+  - kind: para
+    text: プロジェクトごとにスタイルを策定するためのガイドラインです
+  - kind: list
+    items:
+    - カスタマイズする場合でも、PHP-CS-FixerやPHP_CodeSnifferのよう
+  - kind: para
+    text: なツールでPSR-12からの差分で定義できるというのがメリット
+  p34:
+  - kind: para
+    text: PSR vs HTTP
+  - kind: list
+    items:
+    - PSRではHTTPに関連するオブジェクトのインターフェイスを定義している
+    - PSR-7 HTTPメッセージ
+    - リクエスト、レスポンス、URI、ストリームなどのインターフェイスを定義
+    - PSR-17でこれらメッセージオブジェクトのファクトリが定義されている
+    - PSR-15 HTTPハンドラ(ミドルウェア)
+    - リクエストハンドラとミドルウェアのインターフェイスを定義
+  p35:
+  - kind: heading
+    level: 1
+    text: PSRのコンセプトについて最重要資料
+  p36:
+  - kind: heading
+    level: 1
+    text: PSR-7のおさらい
+  p37:
+  - kind: heading
+    level: 1
+    text: PSR-7 HTTP Messages
+  - kind: list
+    items:
+    - 不変(イミュータブル)が基本 (Streamを除く)
+    - setXXXのようなメソッドは存在しない
+    - 継承関係がある
+    - Psr\Http\MessageInterface (レスポンスとリクエストの共通集合)
+  - kind: para
+    text: ├─ RequestInterface(HTTPリクエスト)│ └─ ServerRequestInterface (↑+追加情報)└─ ResponseInterface(HTTPレスポンス)
+  p38:
+  - kind: para
+    text: 不変性(immutability)
+  - kind: list
+    items:
+    - 一度作ったオブジェクト内部の状態が変わることはない
+    - 状態を付加したいときは $res->setHeader()のような操作はできず、
+  - kind: para
+    text: $res = $res->withHeader() のように追記する
+  - kind: list
+    items:
+    - この性質により、一度作ったインスタンスオブジェクトが別の場所で
+  - kind: para
+    text: 意図せず書き換えられる可能性を避けられるので非常に安全
+  p39:
+  - kind: heading
+    level: 1
+    text: PSR-7 Packages
+  - kind: list
+    items:
+    - PSR-7を実装するパッケージは複数あり、基本的には交換可能
+  - kind: para
+    text: https://packagist.org/providers/psr/http-message-implementation
+  - kind: list
+    items:
+    - 基本的にはWebフレームワークとHTTPクライアントどちらでも使える
+    - guzzlehttp/psr7, nyholm/psr7,
+  - kind: para
+    text: laminas/laminas-diactoros, slim/psr7などがある
+  - kind: list
+    items:
+    - Guzzleのstreamは機能豊富、Nyholmは軽量などの特徴がある
+  p40:
+  - kind: heading
+    level: 1
+    text: ServerRequestInterface
+  - kind: list
+    items:
+    - RequestInterfaceを継承したインターフェイス
+    - $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES相当の
+  - kind: para
+    text: データを扱うメソッドが追加されている
+  - kind: list
+    items:
+    - withCookieParams()などは$_COOKIE相当のデータを付加するが、
+  - kind: para
+    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
+  - kind: list
+    items:
+    - withAttribute()/getAttribute()という、事実上なんでも入れていい
+  - kind: para
+    text: 収納スペースがある
+  p41:
+  - kind: heading
+    level: 1
+    text: ServerRequest::withAttribute()
+  - kind: list
+    items:
+    - アトリビュート(属性)という名前が付いているが、PHP 8で追加された
+  - kind: para
+    text: '#[Attributes] とは何の関係もなく、単に付加的な情報を持たせる'
+  - kind: list
+    items:
+    - 型的には文字列をキーにして、本当にあらゆるものが付与できてしまう
+    - 原則何を入れてもいいのだが、ユーザーのリクエストと関連のあるものに
+  - kind: para
+    text: 限って含めた方がとり回しがよくなるはず
+  - kind: list
+    items:
+    - キーにも任意の値をセットできるが、クラス名文字列を活用すると明示的
+    - $req->withAttribute(Session::class, new ConcreteSession())
+    - 個人的には単なるスカラー値よりオブジェクトで統一するのが安全と思う
+  p42:
+  - kind: heading
+    level: 1
+    text: ResponseInterface
+  - kind: list
+    items:
+    - RequestInterfaceとは異なり、Server…版は存在しない
+    - レスポンスボディは文字列ではなく、StreamInterfaceを実装した
+  - kind: para
+    text: オブジェクトで表現する
+  - kind: list
+    items:
+    - ボディをセットするには $response->withBody()を使う方法と
+  - kind: para
+    text: $response->getBody()->write()する方法がある
+  - kind: list
+    items:
+    - 後者は追記になってしまうので、前者の方が確実
+  p43:
+  - kind: para
+    text: PSR-17 HTTP Factories
+  - kind: list
+    items:
+    - PSR-7オブジェクトを生成する役割のインターフェイス
+    - $res = new GuzzleHttp\Psr7\Response()と書く代りに
+  - kind: para
+    text: $res = $response_factory->createResponse()でオブジェクトを生成できる
+  - kind: list
+    items:
+    - これがなぜ重要なのかは田中ひさてるさんの発表を見てください
+    - 個別の実装が具体的なライブラリに依存しなくなるようにできます
+  p44:
+  - kind: para
+    text: 不変性(immutability)
+  - kind: list
+    items:
+    - 一度作ったオブジェクト内部の状態が変わることはない
+    - 状態を付加したいときは $res->setHeader()のような操作はできず、
+  - kind: para
+    text: $res = $res->withHeader() のように追記する
+  - kind: list
+    items:
+    - この性質により、一度作ったインスタンスオブジェクトが別の場所で
+  - kind: para
+    text: 意図せず書き換えられる可能性を避けられるので非常に安全
+  p45:
+  - kind: para
+    text: Nyholm Psr17Factory
+  - kind: list
+    items:
+    - PSR-7オブジェクトを生成する役割のインターフェイス
+    - PSR-17の全部のinterfaceをオールインワンにまとめている
+    - なんちゃらインターフェイスを要求する引数にこのオブジェクト渡せばいい
+  p46:
+  - kind: heading
+    level: 1
+    text: Nyholm/psr7のREADMEより
+  p47:
+  - kind: para
+    text: PSR-7とフレームワークの関係
+  - kind: list
+    items:
+    - PHP-FIGメンバーだからと言って全て従うわけではない
+    - SlimやLaminas mezzioはPSR-7を採用している
+    - CakePHP 4.xのHTTPメッセージ(cakephp/http)は
+  - kind: para
+    text: PSR-7とCakePHP 3互換のインターフェイス両方を持っている
+  - kind: list
+    items:
+    - symfony/http-foundationはPSR-7ではないが、symfony/psr-
+  - kind: para
+    text: http-message-bridgeというアダプターを噛ますとLaravelでも使える
+  p48:
+  - kind: heading
+    level: 1
+    text: PHPの実行環境
+  p49:
+  - kind: heading
+    level: 1
+    text: 従来型のPHP実行環境
+  - kind: list
+    items:
+    - HTTPリクエストを受け付けるたびに全てがリセットされる ⇒ 超短命
+    - クラス定義・関数定義・変数・定数… あらゆるものがまっさらになる
+    - Apache(mod_php), PHP-FPM, ビルトインサーバ(php -S), CGIなど、
+  - kind: para
+    text: 既存のPHPが動いてきた環境のほとんどがこの動作をする
+  - kind: list
+    items:
+    - どんな環境でもCGIと互換性のあるスクリプトが動いてきたのが
+  - kind: para
+    text: PHPが長年しぶとく生きのびた秘訣。
+  - kind: list
+    items:
+    - Perl、RubyやPythonはCGIとの断絶を経験している
+  p50:
+  - kind: heading
+    level: 1
+    text: フレームワークを使わないPHP
+  - kind: list
+    items:
+    - ユーザーからのHTTPリクエスト情報はスーパーグローバル変数に格納
+    - 宣言なしでどこからでもアクセスできる特殊なグローバル変数
+    - $_SERVER $_GET $_POST $_COOKIE $_FILES $_SESSION
+    - リクエストボディはfile_get_contents('php://input')で取得可能
+    - header()関数などでセットしたものがHTTPレスポンスヘッダとして、
+  - kind: para
+    text: echoしたものがHTTPレスポンスボディとして出力される
+  p51:
+  - kind: heading
+    level: 1
+    text: フレームワークを使わないPHP
+  - kind: para
+    text: '<?php$name = $_GET[''name''];$title = "Hello, {$name}!";header(''Content-Type:
+      application/html; charset=UTF-8'');?><title><?= htmlspecialchars($title) ?></title><h1><?=
+      htmlspecialchars($title) ?></h1>'
+  - kind: para
+    text: <p>現在は
+  - kind: para
+    text: <time><?= htmlspecialchars(date('Y年m月d日 H時i分s秒')) ?></time>
+  - kind: para
+    text: です</p>
+  p52:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: なんかいろんな関数を呼んだりファイルをincludeしたりする
+  - kind: para
+    text: $_SERVER
+  p53:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: heading
+    level: 2
+    text: $_SERVER
+  p54:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: heading
+    level: 2
+    text: header()
+  - kind: heading
+    level: 2
+    text: $_SERVER
+  p55:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: header()ob_start()
+  - kind: para
+    text: $_SERVER
+  p56:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: header()ob_start()echo
+  - kind: para
+    text: $_SERVER
+  p57:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: header()ob_start()echo echo
+  - kind: para
+    text: $_SERVER
+  p58:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: header()ob_start()echo echoset_cookie()
+  - kind: para
+    text: $_SERVER
+  p59:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: header()ob_start()echo echoset_cookie() ob_end_flush()
+  - kind: para
+    text: $_SERVER
+  p60:
+  - kind: heading
+    level: 1
+    text: よくある従来のPHPスクリプト(CGI型)
+  - kind: list
+    items:
+    - どこでもユーザー入力をグローバル変数から参照する
+  - kind: para
+    text: ($_GET, $_SERVER, $_COOKIEなど)
+  - kind: list
+    items:
+    - どこでもheader()関数でHTTPヘッダを設定したり、
+  - kind: para
+    text: どこでもechoしてHTMLを出力したりすることができる
+  - kind: list
+    items:
+    - 呼ばれた関数の処理の奥底で何気なくheader()や
+  - kind: para
+    text: setcookie()関数を呼んでセットされてたりするやつ
+  - kind: list
+    items:
+    - 処理を全部追わないと最終的な出力 (レスポンスヘッダ・ボディ)がわからん
+  p61:
+  - kind: para
+    text: こういう世界とどうやって整合性を合わせるのか
+  p62:
+  - kind: para
+    text: PSR-7の出力 (emit)
+  - kind: list
+    items:
+    - ResponseInterfaceを出力する役割 (PSR-7の仕様外)
+    - ApacheやPHP-FPMで動かしているなら自作することも
+  - kind: para
+    text: 割と簡単にできるが、できればライブラリに任せた方がいい
+  - kind: list
+    items:
+    - 従来型環境での定番は laminas/laminas-httphandlerrunner
+    - SapiEmitterとSapiStreamEmitterの2種類がある
+    - 一回で出力するか、リソースから読み込めた都度出力するかの違い
+  p63:
+  - kind: heading
+    level: 1
+    text: PSR-7の出力 (emit)
+  - kind: para
+    text: // 概念的なざっくり実装。ほんとはもうちょっと考慮事項がある
+  - kind: para
+    text: 'function emitResponse(ResponseInterface $response): void{http_response_code($response->getStatusCode());foreach
+      ($response->getHeaders() as $name => $values) {foreach ((array)$values as $value)
+      {header("{$name}: {$value}");}}'
+  - kind: para
+    text: echo $response->getBody();}
+  p64:
+  - kind: para
+    text: PSR-7の入力 (ServerRequestの錬成)
+  - kind: list
+    items:
+    - ServerRequestはどこから来るの？
+    - 各PSR-7ライブラリとかがグローバル変数から情報をひっこぬいて
+  - kind: para
+    text: ServerRequestを作ってくれる便利クラスを提供してる(fromGlobals)
+  - kind: list
+    items:
+    - Guzzleの場合はServerRequest::fromGlobals()と呼ぶだけ
+    - Nyholmはnyholm/psr7-serverという別パッケージに分離されてる
+    - 基本的に一箇所で一回だけ生成するようにした方がいい
+  p65:
+  - kind: heading
+    level: 1
+    text: Good old PHP
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: なんかいろんな関数を呼んだりファイルをincludeしたりする
+  - kind: para
+    text: $_SERVER
+  p66:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER
+  p67:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p68:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: SapiEmitter
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p69:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: SapiEmitter
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER echo header
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p70:
+  - kind: para
+    text: フレームワークの光と影
+  - kind: list
+    items:
+    - そもそもPHPはフレームワークがなくてもWebアプリが書ける
+  p71:
+  - kind: para
+    text: フレームワークの光と影
+  - kind: list
+    items:
+    - そもそもPHPはフレームワークがなくてもWebアプリが書ける
+    - PHPにとってのWebフレームワークには二つの性質がある
+  p72:
+  - kind: para
+    text: フレームワークの光と影
+  - kind: list
+    items:
+    - そもそもPHPはフレームワークがなくてもWebアプリが書ける
+    - PHPにとってのWebフレームワークには二つの性質がある
+    - PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
+  p73:
+  - kind: heading
+    level: 1
+    text: フレームワークの光と影
+  - kind: list
+    items:
+    - そもそもPHPはフレームワークがなくてもWebアプリが書ける
+    - PHPにとってのWebフレームワークには二つの性質がある
+    - PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
+    - フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を
+  - kind: para
+    text: 与えることで秩序をもたらす拘束具
+  p74:
+  - kind: para
+    text: フレームワークの光と影
+  - kind: list
+    items:
+    - そもそもPHPはフレームワークがなくてもWebアプリが書ける
+    - PHPにとってのWebフレームワークには二つの性質がある
+    - PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
+    - フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を
+  - kind: para
+    text: 与えることで秩序をもたらす拘束具
+  - kind: list
+    items:
+    - PSR-7/15は従来型のPHPにとって縛りプレイのための異物に過ぎない
+  p75:
+  - kind: heading
+    level: 1
+    text: 縛ることによって得られるもの
+  - kind: list
+    items:
+    - $_GETのようなグローバル変数やheader()のような関数を排斥することで
+  - kind: para
+    text: 入出力が明確に分離されてコードの見通しがよくなり、テストしやすくなる
+  - kind: list
+    items:
+    - Long-livingなPHPとの親和性
+    - 従来のPHPはリクエストごとに全ての状態がリセットされるのに対して、
+  - kind: para
+    text: RoadRunnerやSwooleでHTTPサーバを立てると毎回リセットされない
+  - kind: list
+    items:
+    - そのような環境ではCLI SAPIで動作するので、$_GETや関数からリクエス
+  - kind: para
+    text: ト情報が得られないし、echoしてもHTTPレスポンスにならない
+  p76:
+  - kind: heading
+    level: 1
+    text: Long-living PHPとの互換性
+  - kind: list
+    items:
+    - 入口と出口、つまりServerRequestを作る部分とエミッタを差し替えれば
+  - kind: para
+    text: ApacheやPHP-FPMなど従来型のPHP環境でも動かせるようになる
+  - kind: list
+    items:
+    - 最近はフレームワークが実行環境の差異を吸収してくれるようになった
+    - Symfony Runtime + https://github.com/php-runtime
+    - Laravel Octane
+  p77:
+  - kind: heading
+    level: 1
+    text: CyberAgent白井さんの発表
+  p78:
+  - kind: para
+    text: Long-living PHPの世界
+  - kind: list
+    items:
+    - 従来環境とはオブジェクトの初期化や生存期間の概念が変わるので注意
+    - $_SERVER, $_GETのようなグローバル変数や
+  - kind: para
+    text: header()、setcookie()のような関数が今まで通りの動きをしない
+  - kind: list
+    items:
+    - Laravelでもこれらの機能を使うことはできたが、動かなくなる
+    - 定数、グローバル変数、静的プロパティなどもリセットされなくなる
+    - グローバルな状態を持たず引数と戻り値に閉じていれば問題ない
+  p79:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER
+  p80:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p81:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: SapiEmitter
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p82:
+  - kind: heading
+    level: 1
+    text: 従来型環境でPSR-7を使う概念
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: SapiEmitter
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER echo header
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p83:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p84:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p85:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p86:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p87:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p88:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p89:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  p90:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p91:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p92:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  - kind: para
+    text: ServerRequest Response
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p93:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  - kind: para
+    text: ServerRequest Response
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p94:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  - kind: para
+    text: ServerRequest Response
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p95:
+  - kind: heading
+    level: 1
+    text: 従来型環境
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: SapiEmitter
+  - kind: para
+    text: (fromGlobals)
+  - kind: para
+    text: /var/www/example.com/public/index.php
+  - kind: para
+    text: $_SERVER echo header
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p96:
+  - kind: heading
+    level: 1
+    text: RoadRunner
+  - kind: para
+    text: ServerRequest Response
+  - kind: para
+    text: なんかいろんな関数を呼んだりしてResponse作る
+  p97:
+  - kind: heading
+    level: 1
+    text: 入出力を端に揃えると交換可能に
+  p98:
+  - kind: heading
+    level: 1
+    text: 入出力を端に揃えると交換可能に
+  - kind: para
+    text: 両端の構造が合っていれば従来型とも共通化しやすそう
+  p99:
+  - kind: heading
+    level: 1
+    text: 外の世界の事情を無視できる
+  p100:
+  - kind: heading
+    level: 1
+    text: 外の世界の事情を無視できる
+  - kind: para
+    text: どこで動いてようがあまり関係なくなる
+  p101:
+  - kind: heading
+    level: 1
+    text: ユニットテストで実行もできる
+  p102:
+  - kind: heading
+    level: 1
+    text: ユニットテストで実行もできる
+  - kind: para
+    text: 値を渡して戻り値を検査する
+  p103:
+  - kind: para
+    text: もうちょっと具体的に
+  p104:
+  - kind: heading
+    level: 1
+    text: PSR-15
+  p105:
+  - kind: para
+    text: PSR-15 HTTP Handlers
+  - kind: list
+    items:
+    - Psr\Http\Server\名前空間に2種類のインターフェイスが定義されている
+    - RequestHandlerInterface
+    - レスポンスを生成する (例外送出するかもしれない)
+    - MiddlewareInterface
+    - リクエストハンドラを呼び出すか、呼び出さずにレスポンスを生成してもよい
+  p106:
+  - kind: heading
+    level: 1
+    text: 「ミドルウェア」という語について
+  - kind: list
+    items:
+    - コンピュータ用語の中でも意味が一貫していないことで有名
+    - なんかの中間で何かを処理するという非常に漠然としたニュアンス
+    - OSでもハードウェアでもない、ソフトウェアとやりとりする何者かが
+  - kind: para
+    text: ミドルウェアと呼ばれることがある(Webサーバとかファイルシステムとか)
+  - kind: list
+    items:
+    - Webフレームワークでは最終的に呼び出されるやつ(RequestHandler)
+  - kind: para
+    text: の間に入って何か処理するものをミドルウェアと呼ぶ
+  p107:
+  - kind: para
+    text: ほかの世界のミドルウェア
+  - kind: list
+    items:
+    - 結構いろんな言語のHTTP仕様に入っている
+    - Ruby(Rails含む)ではRack、PythonではWSGIなど
+    - PHPでもStackPHPという仕様が提案されていたこともあった
+    - CakePHP 3では独自インターフェイスのミドルウェアがあったが、
+  - kind: para
+    text: CakePHP 4でPSR-15互換に移行された
+  p108:
+  - kind: heading
+    level: 1
+    text: RequestHandlerInterface
+  - kind: para
+    text: <?php
+  - kind: para
+    text: namespace Psr\Http\Server;
+  - kind: para
+    text: use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;
+  - kind: para
+    text: 'interface RequestHandlerInterface{public function handle(ServerRequestInterface
+      $request): ResponseInterface;}'
+  p109:
+  - kind: heading
+    level: 1
+    text: MiddlewareInterface
+  - kind: para
+    text: <?php
+  - kind: para
+    text: namespace Psr\Http\Server;
+  - kind: para
+    text: use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;
+  - kind: para
+    text: 'interface MiddlewareInterface{public function process(ServerRequestInterface
+      $request,RequestHandlerInterface $handler): ResponseInterface;}'
+  p110:
+  - kind: heading
+    level: 1
+    text: PSR Middlewares
+  - kind: list
+    items:
+    - GitHubのmiddlewares Organizationに実装済みのミドルウェアがある
+    - https://github.com/middlewares/psr15-middlewares
+    - https://github.com/middlewares/awesome-psr15-middlewares
+    - 私は音楽性の合わない部分があるので使ってませんが便利だと思います
+    - PSR-17に対応してないからです
+  p111:
+  - kind: heading
+    level: 1
+    text: 簡単なRequestHandlerを作ってみる
+  - kind: list
+    items:
+    - 以後、スライド上に出すコードは簡潔にするために適宜省略しています
+    - namespaceやuseは省略しています
+    - RequestFactoryInterfaceなどの末尾もasで省略します
+    - 完全なソースコードはGitHub上で確認してください
+    - https://github.com/zonuexe/phperkaigi-psr15
+  p112:
+  - kind: heading
+    level: 1
+    text: HelloWorldっぽいレスポンスを返す
+  - kind: para
+    text: class HelloJsonHandler implements RequestHandlerInterface {public function
+      __construct(private StreamFactory $stream_factory,private ResponseFactory $response_factory){}
+  - kind: para
+    text: 'public function handle(ServerRequest $request): Response {$body = $this->stream_factory->createStream(json_encode([''Hello''
+      => ''World'']);return $this->response_factory->createResponse(200)->withHeader(''Content-Type'',
+      [''application/json''])->withBody($body);}}'
+  p113:
+  - kind: heading
+    level: 1
+    text: GETのときにHelloWorldを返す
+  - kind: para
+    text: // 前略
+  - kind: para
+    text: 'public function handle(ServerRequestInterface $request): ResponseInterface
+      {if ($request->getMethod() !== ''GET'') {return $this->response_factory->createResponse(404);}'
+  - kind: para
+    text: // 後はさっきと同じ
+  - kind: para
+    text: $body = $this->stream_factory->createStream(json_encode(['Hello' => 'World']);return
+      $this->response_factory->createResponse(200)->withHeader('Content-Type', ['application/json'])->withBody($body);}
+  p114:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  p115:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
+  p116:
+  - kind: para
+    text: テストしてみよう
+  - kind: para
+    text: テストケース自身がFactoryの機能を持っていると書き心地が良くなる
+  - kind: list
+    items:
+    - シンプルにPHPUnitを使える
+    - ResponseHanlderのインスタンスを用意する
+    - ServerRequestのインスタンスを用意する
+    - $response = $handler->handler($request) のように呼び出す
+    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
+  - kind: para
+    text: assertEquals()などで比較してみる
+  p117:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
+  p118:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: RequestHandler
+  p119:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: heading
+    level: 2
+    text: create
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: para
+    text: RequestHandler
+  p120:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: create ServerRequest
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: ServerRequest
+  p121:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: create ServerRequest
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: ServerRequest Response
+  p122:
+  - kind: heading
+    level: 1
+    text: RequestHandler呼び出しイメージ
+  - kind: para
+    text: assertEquals()
+  - kind: para
+    text: create ServerRequest
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: ServerRequest Response
+  p123:
+  - kind: heading
+    level: 1
+    text: テストの準備 (HttpFactoryTrait)
+  - kind: para
+    text: use Nyholm\Psr7\Factory\Psr17Factory;
+  - kind: para
+    text: 'trait HttpFactoryTrait{private function psr17factory(): Psr17Factory{return
+      new Psr17Factory();}'
+  p124:
+  - kind: heading
+    level: 1
+    text: テストの準備 (HttpFactoryTrait)
+  - kind: para
+    text: 'public function getRequestFactory(): RequestFactoryInterface{return $this->psr17factory();}'
+  - kind: para
+    text: 'public function getResponseFactory(): ResponseFactoryInterface{return $this->psr17factory();}'
+  - kind: para
+    text: 'public function getServerRequestFactory(): ServerRequestFactoryInterface{'
+  p125:
+  - kind: heading
+    level: 1
+    text: テストの準備 (HttpFactoryTrait)
+  - kind: para
+    text: '/*** Create a new stream from a string.** The stream SHOULD be created
+      with a temporary resource.** @param string $content String content with which
+      to populate the stream.*/public function createStream(string $contents): StreamInterface{return
+      $this->getStreamFactory()->createStream($contents);}'
+  p126:
+  - kind: heading
+    level: 1
+    text: HttpFactoryTraitの特徴
+  - kind: list
+    items:
+    - 特定のPSR-7ライブラリにあえて強く依存している
+    - Nyholm Psr17Factoryは状態を持たないのでオブジェクトをキャッシュ
+  - kind: para
+    text: してもいいが、そもそも状態をまったく持たない軽量なオブジェクトなので必要な都度新しいインスタンスを作ってもボトルネックにならない
+  - kind: list
+    items:
+    - 正攻法であればsetUpやsetUpBeforeClassで注入する形をとるが、
+  - kind: para
+    text: dataProviderから依存できるようにあえて割り切っている
+  p127:
+  - kind: heading
+    level: 1
+    text: テストしてみよう (setup)
+  - kind: para
+    text: class HelloJsonHandlerTest extends \PHPUnit\Framework\TestCase{use Helper\HttpFactoryTrait;
+  - kind: para
+    text: private HelloJsonHandler $subject;
+  - kind: para
+    text: 'public function setUp(): void {parent::setUp();'
+  - kind: para
+    text: $this->subject = new HelloJsonHandler($this->getStreamFactory(), $this->getResponseFactory());}
+  p128:
+  - kind: heading
+    level: 1
+    text: テスト
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->handle($request);'
+  - kind: para
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
+  p129:
+  - kind: heading
+    level: 1
+    text: テスト (dataProvider)
+  - kind: para
+    text: 'public function requestProvider(): iterable{yield ''GET'' => [$this->createServerRequest(''GET'',
+      ''/dummy''),[''status_code'' => 200,''headers'' => [''Content-Type'' => [''application/json''],],''body''
+      => ''{"Hello":"World"}'',],];'
+  p130:
+  - kind: heading
+    level: 1
+    text: テスト (再掲)
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->handle($request);'
+  - kind: para
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
+  p131:
+  - kind: heading
+    level: 1
+    text: テスト (dataProviderを追加)
+  - kind: para
+    text: $default_expected = ['status_code' => 404, 'headers' => [], 'body' => ''];
+  - kind: para
+    text: $http_methods = ['POST', 'PUT', 'DELETE'];
+  - kind: para
+    text: foreach ($http_methods as $method) {yield $method => [$this->createServerRequest($method,
+      '/dummy'),$default_expected,];}
+  p132:
+  - kind: heading
+    level: 1
+    text: テスト (dataProviderを追加)
+  - kind: para
+    text: $default_expected = ['status_code' => 404, 'headers' => [], 'body' => ''];
+  - kind: para
+    text: $http_methods = ['POST', 'PUT', 'DELETE'];
+  - kind: heading
+    level: 2
+    text: GET以外のメソッドは
+  - kind: heading
+    level: 2
+    text: すべて結果は同じになる
+  - kind: para
+    text: foreach ($http_methods as $method) {yield $method => [$this->createServerRequest($method,
+      '/dummy'),$default_expected,];}
+  p133:
+  - kind: heading
+    level: 1
+    text: PHPUnit実行結果
+  p134:
+  - kind: para
+    text: RequestHandlerテストの要点
+  - kind: list
+    items:
+    - テストケースの内容はごく薄くする
+    - 「この値を渡したときに必ずこの値を返す」という構造に落とし込む
+    - そうなっていないなら依存の分離がうまくいっていない
+    - 戻り値となるResponseオブジェクトからは、特に
+  - kind: para
+    text: getStatusCode(), getHeaders(), getBody()に注目する
+  - kind: list
+    items:
+    - bodyが巨大な場合は必ずしもassertSame()で比較する必要はない
+  p135:
+  - kind: heading
+    level: 1
+    text: MiddlewareInterface
+  - kind: para
+    text: <?php
+  - kind: para
+    text: namespace Psr\Http\Server;
+  - kind: para
+    text: use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;
+  - kind: para
+    text: 'interface MiddlewareInterface{public function process(ServerRequestInterface
+      $request,RequestHandlerInterface $handler): ResponseInterface;}'
+  p136:
+  - kind: heading
+    level: 1
+    text: 簡単なMiddlewareを作ってみる
+  - kind: list
+    items:
+    - Middlewareは結構なんでもできる
+    - RequestHandlerに渡す前にServerRequestを加工する
+    - RequestHandlerから戻ってきたResponseを加工する
+    - RequestHandlerが発生したエラーをキャッチしてハンドリングする
+  p137:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
+  p138:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
+  p139:
+  - kind: heading
+    level: 1
+    text: 何もしないミドルウェア(ストロー)
+  - kind: para
+    text: 'class StrawMiddleware implements MiddlewareInterface{public function process(ServerRequest
+      $request, RequestHandler $handler): Response{return $handler->handle($request);'
+  - kind: para
+    text: '}}'
+  p140:
+  - kind: heading
+    level: 1
+    text: 全レスポンスに規定のヘッダを付与
+  - kind: para
+    text: 'class StrawMiddleware implements MiddlewareInterface{public function process(ServerRequest
+      $request, RequestHandler $handler): Response{return $handler->handle($request)->withHeader(''X-Content-Type-Options'',
+      [''nosniff'']);}}'
+  p141:
+  - kind: heading
+    level: 1
+    text: HTTPSにリダイレクト
+  - kind: para
+    text: 'class HttpsRedirectMiddleware implements MiddlewareInterface{public function
+      process(ServerRequest $request, RequestHandler $handler): Response{$uri = $request->getUri();if
+      (strtolower($uri->getScheme()) !== ''https'') {return $this->response_factory->createResponse(302)->withHeader(''Location'',
+      [(string)$uri->withScheme(''https'')]);}return $handler->handle($request);}}'
+  p142:
+  - kind: heading
+    level: 1
+    text: 例外に対して標準エラーページ
+  - kind: para
+    text: 'class ErrorPageMiddleware implements MiddlewareInterface{public function
+      process(ServerRequest $request, RequestHandler $handler): Response{try {return
+      $handler->handle;} catch (HttpException $e) {return $this->renderHtmlErrorPage($e);}}}'
+  p143:
+  - kind: heading
+    level: 1
+    text: RequestHandlerのテスト(再掲)
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->handle($request);'
+  - kind: para
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
+  p144:
+  - kind: para
+    text: ResponseHandlerのテスト (再掲)
+  - kind: list
+    items:
+    - シンプルにPHPUnitを使える
+    - ResponseHanlderのインスタンスを用意する
+    - ServerRequestのインスタンスを用意する
+    - $response = $handler->handler($request) のように呼び出す
+    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
+  - kind: para
+    text: assertEquals()などで比較してみる
+  p145:
+  - kind: para
+    text: Middlewareのテスト
+  - kind: list
+    items:
+    - もちろんPHPUnitを使える
+    - テスト対象のMiddlewareのインスタンスを用意する
+    - ServerRequestとResponseHanlderのインスタンスを用意する
+    - $response = $middleware->process($request, $handler)
+  - kind: para
+    text: のように呼び出す
+  - kind: list
+    items:
+    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
+  - kind: para
+    text: assertEquals()などで比較してみる
+  p146:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
+  p147:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  - kind: heading
+    level: 2
+    text: ServerRequest
+  - kind: heading
+    level: 2
+    text: Response
+  p148:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: create ServerRequest
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: Response
+  p149:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: assertEquals()
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: create ServerRequest
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: Response
+  p150:
+  - kind: heading
+    level: 1
+    text: Middleware呼び出しイメージ
+  - kind: para
+    text: assertEquals()
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: create ServerRequest
+  - kind: para
+    text: RequestHandler
+  - kind: para
+    text: ServerRequest
+  - kind: para
+    text: Response
+  p151:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト(?)
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->process($request,
+      $handler);'
+  - kind: para
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
+  p152:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->process($request,
+      $handler);'
+  - kind: para
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
+  p153:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
+  p154:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト
+  - kind: heading
+    level: 2
+    text: 固定のレスポンスを返すだけ
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
+  p155:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト
+  - kind: heading
+    level: 2
+    text: 固定のレスポンスを返すだけ
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
+  - kind: heading
+    level: 2
+    text: 3行で実装できるが…
+  - kind: heading
+    level: 2
+    text: まあまあだるい
+  p156:
+  - kind: para
+    text: 大雑把な処理の流れ
+  - kind: list
+    items:
+    - どうにかしてServerRequestオブジェクトを用意する
+    - 最終的に処理するRequestHandlerオブジェクトを用意する
+    - 間に処理するMiddlewareのオブジェクトを用意する
+    - Middleware::process($request, $handler)として呼び出すと
+  - kind: para
+    text: 最終的なResponseが帰ってくる
+  - kind: list
+    items:
+    - エミッタがResponseをどうにか出力する
+  p157:
+  - kind: heading
+    level: 1
+    text: テストの準備 (RawHandler)
+  - kind: para
+    text: class RawHandler implements RequestHandlerInterface {/*** @psalm-var list<ServerRequest>*
+      @psalm-readonly-allow-private-mutation*/public $received_server_requests = [];public
+      function __construct(private Response $response) {}
+  - kind: para
+    text: 'public function handle(ServerRequest $request): Response {$this->received_server_requests[]
+      = $request;return $this->response;}'
+  p158:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト (無名クラス)
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
+  p159:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト (RawHandler)
+  - kind: para
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok_handler = new RawHandler($this->createResponse(200));$actual
+      = $this->subject->process($ok_handler);'
+  - kind: para
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
+  p160:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト (RawHandler)
+  - kind: para
+    text: 'public function test(ServerRequest $request, array $expected): void{$ok_handler
+      = new RawHandler($this->createResponse(200));$actual = $this->subject->process($ok_handler);'
+  - kind: para
+    text: $this->assertEquals($expected, ['status_code' => $actual->getStatusCode());'headers'=>
+      $actual->getHeaders(),'body' => (string)$actual->getBody(),'not_redirected_count'
+      => count($ok_handler->received_server_requests),);}
+  p161:
+  - kind: heading
+    level: 1
+    text: Middlewareのテスト (RawHandler)
+  - kind: para
+    text: 'public function test(ServerRequest $request, array $expected): void{$ok_handler
+      = new RawHandler($this->createResponse(200));$actual = $this->subject->process($ok_handler);'
+  - kind: heading
+    level: 2
+    text: $ok_handlerが
+  - kind: heading
+    level: 2
+    text: コールされた回数
+  - kind: para
+    text: $this->assertEquals($expected, ['status_code' => $actual->getStatusCode());'headers'=>
+      $actual->getHeaders(),'body' => (string)$actual->getBody(),'not_redirected_count'
+      => count($ok_handler->received_server_requests),);}
+  p162:
+  - kind: heading
+    level: 1
+    text: Middlewareテストの要点
+  - kind: list
+    items:
+    - 基本はRequestHandlerと同様にシンプルかつ明瞭にする
+    - どのようなハンドラを渡せばMiddlewareが正常に動作しているか
+  - kind: para
+    text: 判断できるかを見極める
+  - kind: list
+    items:
+    - テスト用ハンドラはこだわらなくてもパターン化しやすい
+    - リクエストに影響を及ぼすハンドラならリクエストの内容もチェックする
+    - 実アプリケーションで呼ばれる他のハンドラに依存すると
+  - kind: para
+    text: 何をテストしたいのかぶれるので基本的には避ける
+  p163:
+  - kind: heading
+    level: 1
+    text: その他のハンドラ (関数のラッパー)
+  - kind: para
+    text: class CallbackHandler implements RequestHandlerInterface {/*** @psalm-var
+      list<ServerRequest>* @psalm-readonly-allow-private-mutation*/public $received_server_requests
+      = [];public function __construct(private Closure $callback) {}
+  - kind: para
+    text: 'public function handle(ServerRequest $request): Response {$this->received_server_requests[]
+      = $request;return ($this->callback)($request);}'
+  p164:
+  - kind: heading
+    level: 1
+    text: その他のハンドラ (例外を投げる君)
+  - kind: para
+    text: class ThrowingHandler implements RequestHandlerInterface {/*** @psalm-var
+      list<ServerRequest>* @psalm-readonly-allow-private-mutation*/Public $received_server_requests
+      = [];public function __construct(private Throwable $e) {}
+  - kind: para
+    text: 'public function handle(ServerRequest $request): Response {$this->received_server_requests[]
+      = $request;throw $this->e;}'
+  p165:
+  - kind: para
+    text: 実アプリケーションへの適用を考える
+  p166:
+  - kind: para
+    text: 大雑把な処理の流れ
+  - kind: list
+    items:
+    - どうにかしてServerRequestオブジェクトを用意する
+    - 最終的に処理するRequestHandlerオブジェクトを用意する
+    - 間に処理するMiddlewareのオブジェクトを用意する
+    - $middleware->process($request, $handler)として呼び出すと
+  - kind: para
+    text: 最終的なResponseが帰ってくる
+  - kind: list
+    items:
+    - エミッタがResponseをどうにか出力する
+  p167:
+  - kind: para
+    text: nyholm/psr7-server
+  - kind: para
+    text: 大雑把な処理の流れ
+  - kind: list
+    items:
+    - どうにかしてServerRequestオブジェクトを用意する
+    - 最終的に処理するRequestHandlerオブジェクトを用意する
+    - 間に処理するMiddlewareのオブジェクトを用意する
+    - $middleware->process($request, $handler)として呼び出すと
+  - kind: para
+    text: 最終的なResponseが帰ってくる
+  - kind: list
+    items:
+    - エミッタがResponseをどうにか出力する
+  p168:
+  - kind: para
+    text: nyholm/psr7-server
+  - kind: para
+    text: 大雑把な処理の流れ
+  - kind: para
+    text: ちくちく定義する
+  - kind: list
+    items:
+    - どうにかしてServerRequestオブジェクトを用意する
+    - 最終的に処理するRequestHandlerオブジェクトを用意する
+    - 間に処理するMiddlewareのオブジェクトを用意する
+    - $middleware->process($request, $handler)として呼び出すと
+  - kind: para
+    text: 最終的なResponseが帰ってくる
+  - kind: list
+    items:
+    - エミッタがResponseをどうにか出力する
+  p169:
+  - kind: para
+    text: nyholm/psr7-server
+  - kind: heading
+    level: 1
+    text: 大雑把な処理の流れ
+  - kind: para
+    text: ちくちく定義する
+  - kind: list
+    items:
+    - どうにかしてServerRequestオブジェクトを用意する
+    - 最終的に処理するRequestHandlerオブジェクトを用意する
+    - 間に処理するMiddlewareのオブジェクトを用意する
+    - $middleware->process($request, $handler)として呼び出すと
+  - kind: para
+    text: 最終的なResponseが帰ってくる
+  - kind: list
+    items:
+    - エミッタがResponseをどうにか出力する
+  - kind: para
+    text: Laminasのエミッタを使う
+  p170:
+  - kind: para
+    text: nyholm/psr7-server
+  - kind: heading
+    level: 1
+    text: 大雑把な処理の流れ
+  - kind: para
+    text: ちくちく定義する
+  - kind: para
+    text: この$middleware何者
+  - kind: list
+    items:
+    - どうにかしてServerRequestオブジェクトを用意する
+    - 最終的に処理するRequestHandlerオブジェクトを用意する
+    - 間に処理するMiddlewareのオブジェクトを用意する
+    - $middleware->process($request, $handler)として呼び出すと
+  - kind: para
+    text: 最終的なResponseが帰ってくる
+  - kind: list
+    items:
+    - エミッタがResponseをどうにか出力する
+  - kind: para
+    text: Laminasのエミッタを使う
+  p171:
+  - kind: heading
+    level: 1
+    text: assertEquals()
+  - kind: para
+    text: Middleware
+  - kind: heading
+    level: 1
+    text: create
+  - kind: heading
+    level: 1
+    text: ServerRequest
+  - kind: para
+    text: RequestHandler
+  p172:
+  - kind: para
+    text: これまではMiddleware1個Handler1個しか考えてない
+  p173:
+  - kind: heading
+    level: 1
+    text: いままでのミドルウェア実行イメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  p174:
+  - kind: para
+    text: せっかくの既存ミドルウェアたくさん重ねたくないですか
+  p175:
+  - kind: heading
+    level: 1
+    text: いままでのミドルウェア実行イメージ
+  - kind: para
+    text: Middleware
+  - kind: para
+    text: RequestHandler
+  p176:
+  - kind: heading
+    level: 1
+    text: ミドルウェアを重ねたい
+  - kind: heading
+    level: 2
+    text: Middlewares
+  - kind: para
+    text: RequestHandler
+  p177:
+  - kind: heading
+    level: 1
+    text: 複数のミドルウェアを扱う
+  - kind: list
+    items:
+    - MiddlewareはServerRequestとRequestHandlerを受け取り、
+  - kind: para
+    text: $request_handler->handle($request)のように呼び出す
+  - kind: list
+    items:
+    - このままではミドルウェア1個ハンドラ1個しか受け付けない…?
+    - 「次のMiddleware」をラップしたRequestHandlerを用意する
+    - PSR-15のメタドキュメントでは「キュー」と「デコレータ」の2種類が紹介
+    - 特に理由がなければRelayというやつを選ぶといい感じ
+    - 自作しても全然よい
+  p178:
+  - kind: heading
+    level: 1
+    text: セッションってどうするの？
+  - kind: list
+    items:
+    - SessionMiddleware的なものを作る
+    - RequestのCookieなどのセッションIDからDBなどを引く
+    - session_start()や$_SESSIONのようなグローバルを参照する部分は
+  - kind: para
+    text: さらに別のクラスに分けるとテストしやすくできる
+  - kind: list
+    items:
+    - $request->withAttribute()で付加することで後続のMiddlewareや
+  - kind: para
+    text: RequestHandlerで $request->getAttribute()で取り出せる
+  p179:
+  - kind: heading
+    level: 1
+    text: セッションを参照する
+  - kind: para
+    text: // 前略
+  - kind: para
+    text: 'public function handle(ServerRequestInterface $request): ResponseInterface
+      {$session = $request->getAttribute(Session::class);assert($session instanceof
+      Session);'
+  - kind: para
+    text: // $session を使った処理を書く
+  - kind: para
+    text: if ($session instanceof LoggedIn) {// ...}}
+  p180:
+  - kind: para
+    text: どうやってユーザーにコードを書かせるか
+  p181:
+  - kind: heading
+    level: 1
+    text: 「心に棚を作れ」(by 炎の転校生)
+  - kind: list
+    items:
+    - 独自FWを作るとき、全体的な枠組みを作るのもアプリ実装するのも自分
+    - 「この変な設計したやつは誰だ」「俺だ」
+    - 「規約を守れず腑抜けたアプリケーションを書くのは誰だ」「俺だ」
+    - 「それはそれ、これはこれ」 by 逆境ナイン
+    - 微妙におかしな設計をする自分と設計意図通りにアプリケーションを
+  - kind: para
+    text: 実装できない自分がいる
+  - kind: list
+    items:
+    - 妥協せずにバトルさせたあとに使いやすいフレームワークができる(気がする)
+  p182:
+  - kind: para
+    text: ここまでできれば外の枠組みは結構できてきた
+  p183:
+  - kind: para
+    text: アプリケーションってどこにあるの？
+  p184:
+  - kind: para
+    text: いわゆるコントローラやアクション
+  - kind: list
+    items:
+    - URLごとに対応して起動される関数やメソッドをどうする？
+    - 基本はRequestHandlerから、どうにか関数決めて起動してやればいい
+    - RequestHandlerはLaravelのSingleActionControllerと
+  - kind: para
+    text: 概念的に近いものだと考えることもできる
+  - kind: list
+    items:
+    - ただし引数や戻り値のインターフェイスが厳密
+    - PHP-DIのようなライブラリを組み合せることでインスタンス生成や
+  - kind: para
+    text: 関数呼び出しを簡略化することもできる
+  p185:
+  - kind: heading
+    level: 1
+    text: phperkaigi-golf
+  - kind: list
+    items:
+    - https://github.com/phppg/phperkaigi-golf
+    - PHPerKaigi 2020のときに実装したWebアプリケーション
+    - PSR-7/PSR-15ベース / Relayを使用
+    - PHP-DIを使用
+    - ルーティングに無名関数(クロージャ)を登録して実行する
+  - kind: para
+    text: マイクロフレームワーク風の実装
+  p186:
+  - kind: heading
+    level: 1
+    text: Index.phpのルーティング定義(抜萃)
+  p187:
+  - kind: heading
+    level: 1
+    text: Index.phpのルーティング定義(抜萃)
+  p188:
+  - kind: heading
+    level: 1
+    text: Index.phpのミドルウェア定義(1/2)
+  p189:
+  - kind: heading
+    level: 1
+    text: Index.phpのミドルウェア定義(2/2)
+  p190:
+  - kind: heading
+    level: 1
+    text: ピクシブ百科事典
+  - kind: list
+    items:
+    - http://dic.pixiv.net/
+    - 2009年から運営されているWebサービス
+    - PSR-7/PSR-15ベース / Relay / PHP-DIを使用
+    - もともとCakePHP風のController/Modelの独自フレームワーク
+    - 現在はPSR-15でコントローラを書けるようにしている
+    - 全体的な雰囲気は「百科事典 インターン PSR-7」とかで
+  - kind: para
+    text: Google検索してもらうと概観がわかってもらえると思います
+  p191:
+  - kind: heading
+    level: 1
+    text: Cookieを扱う難しさ
+  - kind: list
+    items:
+    - withCookieParams()などは$_COOKIE相当のデータを付加するが、
+  - kind: para
+    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
+  - kind: list
+    items:
+    - プレーンなPHPではsetcookie()すればよかったが、
+  - kind: para
+    text: PSR-7ベースではプリミティブすぎて、setHeaderで直接書かないといけない
+  p192:
+  - kind: heading
+    level: 1
+    text: PSR-7がプリミティブすぎる件
+  - kind: list
+    items:
+    - 外部からの入力を型安全に受け取るには工夫が必要
+    - filter_var()とか使うのが一番安全
+    - 最近ではPSLというライブラリもいい感じ
+    - ParamHelperにPSR-7とValueObject の力を授けた話
+    - マルチパートってどうやって扱えばいいの…？
+    - いいライブラリあれば誰か教えてください
+  p193:
+  - kind: heading
+    level: 1
+    text: ParamHelperにPSR-7とValueObject の力を授けた話
+  p194:
+  - kind: para
+    text: 今回の発表の参照実装とか便利なライブラリとかそのうちいろいろ出します！！！！
+  p195:
+  - kind: heading
+    level: 1
+    text: 俺たちのPSR-15道は
+  - kind: heading
+    level: 1
+    text: これからだ！
+  - kind: para
+    text: (ご静聴ありがとうございました。tadsanの次回作にご期待ください)
 size:
   max_width: 1920
   max_height: 1080
@@ -58,4749 +2018,3 @@ links:
   p192:
   - url: https://inside.pixiv.blog/2022/03/30/150000
     title: ParamHelperにPSR-7とValueObject の力を授けた話 - pixiv inside
-text:
-  p1:
-  - node: p
-    children:
-    - node: bold
-      content: PSR-7とPSR-15によるWebアプリケーション実装パターン
-  - node: p
-    children:
-    - node: text
-      content: Web application implementation pattern based on PSR-7 and15
-  - node: p
-    children:
-    - node: text
-      content: 'pixiv Inc. '
-    - node: br
-    - node: text
-      content: USAMI Kenta
-  - node: p
-    children:
-    - node: bold
-      content: '2022-04-11 '
-  - node: p
-    children:
-    - node: bold
-      content: PHPerKaigi Day 2
-  p2:
-  - node: p
-    children:
-    - node: text
-      content: お前誰よ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
-    - node: li
-      children:
-      - node: text
-        content: ピクシブ株式会社 pixiv事業本部 エンジニア
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 最近はピクシブ百科事典(dic.pixiv.net)を開発しています
-    - node: li
-      children:
-      - node: text
-        content: Emacs Lisper, PHPer
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Emacs PHP Modeを開発しています (2017年-)
-    - node: li
-      children:
-      - node: text
-        content: PHPerKaigi コアスタッフ、PHPカンファレンス実行委員
-  p3:
-  - node: p
-    children:
-    - node: text
-      content: tadsanのあれこれが読める場所
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://tadsan.fanbox.cc/
-    - node: li
-      children:
-      - node: text
-        content: https://scrapbox.io/php/
-    - node: li
-      children:
-      - node: text
-        content: https://www.phper.ninja/
-    - node: li
-      children:
-      - node: text
-        content: https://zenn.dev/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://qiita.com/tadsan
-    - node: li
-      children:
-      - node: text
-        content: https://github.com/bag2php
-  p4:
-  - node: p
-    children:
-    - node: text
-      content: 前回のPHPerKaigi
-  p5:
-  - node: p
-    children:
-    - node: text
-      content: 去年のPHPカンファレンス
-  p6:
-  - node: p
-    children:
-    - node: text
-      content: 一昨年のPHPカンファレンス
-  p7:
-  - node: p
-    children:
-    - node: text
-      content: Software Design 11月号
-  p8:
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB PRESS総集編
-  p9:
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB PRESS Vol.96
-  - node: p
-    children:
-    - node: text
-      content: (2016年)
-  p10:
-  - node: p
-    children:
-    - node: text
-      content: WEB+DB PRESS Vol.96
-  - node: p
-    children:
-    - node: text
-      content: (2017年)
-  p11:
-  - node: p
-    children:
-    - node: text
-      content: 仕事の話
-  p12:
-  - node: p
-    children:
-    - node: text
-      content: Powered by PSR-15
-  p13:
-  - node: p
-    children:
-    - node: text
-      content: PIXIV SPRING BOOT CAMP
-  p14:
-  - node: p
-    children:
-    - node: text
-      content: たぶん近日中に夏インターンも募集
-  p15:
-  - node: p
-    children:
-    - node: text
-      content: それそろフレームワークとしての
-  - node: p
-    children:
-    - node: text
-      content: '改善ポイントが '
-  - node: p
-    children:
-    - node: text
-      content: 突っ込みどころ
-    - node: br
-    - node: text
-      content: '枯渇しつつあるので '
-    - node: br
-    - node: text
-      content: 参加したい学生はお早めに
-  p16:
-  - node: p
-    children:
-    - node: text
-      content: 今回のお題
-  p17:
-  - node: p
-    children:
-    - node: text
-      content: プロポーザル
-  p18:
-  - node: p
-    children:
-    - node: text
-      content: 日本語のPSR-HTTP関連資料集
-  p19:
-  - node: p
-    children:
-    - node: text
-      content: Webフレームワークを 作りたい人や内部構造
-    - node: br
-    - node: text
-      content: を理解したい人向け
-  p20:
-  - node: p
-    children:
-    - node: text
-      content: 前半はフレームワーク
-    - node: br
-    - node: text
-      content: 一般 概念 話
-  - node: p
-    children:
-    - node: text
-      content: の の もします
-  p21:
-  - node: p
-    children:
-    - node: text
-      content: 後半もPSR-15入門 とテスト方法みたいな
-    - node: br
-    - node: text
-      content: 話に終始します
-  p22:
-  - node: p
-    children:
-    - node: text
-      content: '最後のスライド '
-    - node: br
-    - node: text
-      content: (予告)
-  p23:
-  - node: p
-    children:
-    - node: text
-      content: 俺たちのPSR-15道は
-    - node: br
-    - node: text
-      content: 'これからだ！ '
-    - node: br
-    - node: text
-      content: (ご静聴ありがとうございました。 tadsanの次回作にご期待ください)
-  p24:
-  - node: p
-    children:
-    - node: text
-      content: さて
-  p25:
-  - node: p
-    children:
-    - node: text
-      content: 誰がPSR-15を使うのか
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR標準に準拠したフレームワークを開発したい人
-    - node: li
-      children:
-      - node: text
-        content: CakePHPのようなPSR-15準拠フレームワークでミドルウェアを書く必要
-      - node: br
-      - node: text
-        content: 'に迫られた人 '
-    - node: li
-      children:
-      - node: text
-        content: シンプルなライブラリを組み合わせだけで、
-      - node: br
-      - node: text
-        content: リーンでクリーンなWebアプリを開発したい人
-  p26:
-  - node: p
-    children:
-    - node: text
-      content: PSRとは
-  p27:
-  - node: p
-    children:
-    - node: text
-      content: PHP-FIG
-  p28:
-  - node: p
-    children:
-    - node: text
-      content: PSRs
-  p29:
-  - node: p
-    children:
-    - node: text
-      content: PSR
-  - node: p
-    children:
-    - node: text
-      content: (PHP Standard Recommendation)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP-FIG(PHP相互運用グループ)という団体が策定する標準勧告
-    - node: li
-      children:
-      - node: text
-        content: コーディング規約やインターフェイス定義などが定められている
-    - node: li
-      children:
-      - node: text
-        content: フレームワークやCMSの開発団体間で共通仕様を策定して
-      - node: br
-      - node: text
-        content: 'コンポーネントを相互運用できるようにすることが目的 '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 本来はメンバー間での相互運用が目的なのだが、
-          - node: br
-          - node: text
-            content: われわれ下々の一般PHPerもその成果物の恩恵に与っている恰好
-  p30:
-  - node: p
-    children:
-    - node: text
-      content: よく知られたPSR
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-4 オートローディング
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 名前空間とディレクトリをマッピングするルール。Composerで利用可能
-    - node: li
-      children:
-      - node: text
-        content: PSR-1 基本コーディング標準
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ファイル名はUTF-8で、定義とスクリプトのファイル分離など基本ルール
-    - node: li
-      children:
-      - node: text
-        content: PSR-12 拡張コーディングスタイルガイド
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 改行やスペース位置などのスタイル策定のベースになるガイド
-  p31:
-  - node: p
-    children:
-    - node: text
-      content: PSR interfaces
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-3 ロガー
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: syslog風の汎用ロギングインターフェイス
-    - node: li
-      children:
-      - node: text
-        content: PSR-11 コンテナ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: DIコンテナと例外送出のインターフェイス
-    - node: li
-      children:
-      - node: text
-        content: PSR-6 キャッシュ / PSR-16 単純なキャッシュ(SimpleCache)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: TTL(寿命)付きで値を保持するクラスのインターフェイス
-  p32:
-  - node: p
-    children:
-    - node: text
-      content: インターフェイス 概要
-  - node: p
-    children:
-    - node: text
-      content: '(interface) '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: class定義に似ているが、クラスが備えるべきメソッドの型だけ宣言したもの
-    - node: li
-      children:
-      - node: text
-        content: interface名は型宣言(パラメータや戻り値、プロパティなど)に利用できる
-    - node: li
-      children:
-      - node: text
-        content: クラスは複数のインターフェイスを実装(implements)できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPのクラスは一つだけ継承(extends)できるのと対照的
-    - node: li
-      children:
-      - node: text
-        content: class定義と分けることで、具体的な実装と抽象を分離できる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 同じインターフェイスを実装したクラスに交換可能になる
-  p33:
-  - node: p
-    children:
-    - node: text
-      content: 余談：PSRへの誤解
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSRは全PHP開発者が守らなければいけない標準という性質ではない
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP-FIG参加メンバーも勧告に従うかどうかは任意
-    - node: li
-      children:
-      - node: text
-        content: PSR-2/PSR-12(スタイルガイド)は規約ではなく、
-      - node: br
-      - node: text
-        content: 'プロジェクトごとにスタイルを策定するためのガイドラインです '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: カスタマイズする場合でも、PHP-CS-FixerやPHP_CodeSnifferのよう
-          - node: br
-          - node: text
-            content: 'なツールでPSR-12からの差分で定義できるというのがメリット '
-  p34:
-  - node: p
-    children:
-    - node: text
-      content: PSR vs HTTP
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSRではHTTPに関連するオブジェクトのインターフェイスを定義している
-    - node: li
-      children:
-      - node: text
-        content: PSR-7 HTTPメッセージ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: リクエスト、レスポンス、URI、ストリームなどのインターフェイスを定義
-        - node: li
-          children:
-          - node: text
-            content: PSR-17でこれらメッセージオブジェクトのファクトリが定義されている
-    - node: li
-      children:
-      - node: text
-        content: PSR-15 HTTPハンドラ(ミドルウェア)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: リクエストハンドラとミドルウェアのインターフェイスを定義
-  p35:
-  - node: p
-    children:
-    - node: text
-      content: PSRのコンセプトについて最重要資料
-  p36:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7のおさらい
-  p37:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7 HTTP Messages
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 不変(イミュータブル)が基本 (Streamを除く)
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: setXXXのようなメソッドは存在しない
-    - node: li
-      children:
-      - node: text
-        content: 継承関係がある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Psr Http MessageInterface (レスポンスとリクエストの共通集合)
-          - node: br
-          - node: text
-            content: \ \
-          - node: br
-          - node: text
-            content: ├─ RequestInterface       (HTTPリクエスト) │ 　└─ ServerRequestInterface
-              (↑+追加情報) └─ ResponseInterface      (HTTPレスポンス)
-  p38:
-  - node: p
-    children:
-    - node: text
-      content: 不変性
-  - node: p
-    children:
-    - node: text
-      content: (immutability)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 一度作ったオブジェクト内部の状態が変わることはない
-    - node: li
-      children:
-      - node: text
-        content: 状態を付加したいときは $res->setHeader()のような操作はできず、
-      - node: br
-      - node: text
-        content: '$res = $res->withHeader() のように追記する '
-    - node: li
-      children:
-      - node: text
-        content: この性質により、一度作ったインスタンスオブジェクトが別の場所で
-      - node: br
-      - node: text
-        content: 意図せず書き換えられる可能性を避けられるので非常に安全
-  p39:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7 Packages
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-7を実装するパッケージは複数あり、基本的には交換可能
-  - node: p
-    children:
-    - node: text
-      content: https://packagist.org/providers/psr/http-message-implementation
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本的にはWebフレームワークとHTTPクライアントどちらでも使える
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: guzzlehttp/psr7, nyholm/psr7,
-          - node: br
-          - node: text
-            content: 'laminas/laminas-diactoros, slim/psr7などがある '
-        - node: li
-          children:
-          - node: text
-            content: Guzzleのstreamは機能豊富、Nyholmは軽量などの特徴がある
-  p40:
-  - node: p
-    children:
-    - node: text
-      content: ServerRequestInterface
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: RequestInterfaceを継承したインターフェイス
-    - node: li
-      children:
-      - node: text
-        content: $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES相当の
-      - node: br
-      - node: text
-        content: 'データを扱うメソッドが追加されている '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: withCookieParams()などは$_COOKIE相当のデータを付加するが、 内部で保持するHTTPヘッダを書き換えてはならない(MUST
-              NOT)と仕
-          - node: br
-          - node: text
-            content: '様で明言されている '
-        - node: li
-          children:
-          - node: text
-            content: withAttribute()/getAttribute()という、事実上なんでも入れていい
-          - node: br
-          - node: text
-            content: 収納スペースがある
-  p41:
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest::withAttribute()
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'アトリビュート(属性)という名前が付いているが、PHP 8で追加された #[Attributes] とは何の関係もなく、単に付加的な情報を持たせる '
-    - node: li
-      children:
-      - node: text
-        content: 型的には文字列をキーにして、本当にあらゆるものが付与できてしまう
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 原則何を入れてもいいのだが、ユーザーのリクエストと関連のあるものに
-          - node: br
-          - node: text
-            content: '限って含めた方がとり回しがよくなるはず '
-        - node: li
-          children:
-          - node: text
-            content: キーにも任意の値をセットできるが、クラス名文字列を活用すると明示的
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: $req->withAttribute(Session::class, new ConcreteSession())
-            - node: li
-              children:
-              - node: text
-                content: 個人的には単なるスカラー値よりオブジェクトで統一するのが安全と思う
-  p42:
-  - node: p
-    children:
-    - node: text
-      content: ResponseInterface
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: RequestInterfaceとは異なり、Server…版は存在しない
-    - node: li
-      children:
-      - node: text
-        content: レスポンスボディは文字列ではなく、StreamInterfaceを実装した
-      - node: br
-      - node: text
-        content: 'オブジェクトで表現する '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ボディをセットするには $response->withBody()を使う方法と
-          - node: br
-          - node: text
-            content: '$response->getBody()->write()する方法がある '
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: 後者は追記になってしまうので、前者の方が確実
-  p43:
-  - node: p
-    children:
-    - node: text
-      content: PSR-17 HTTP Factories
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-7オブジェクトを生成する役割のインターフェイス
-    - node: li
-      children:
-      - node: text
-        content: $res = new GuzzleHttp Psr7 Response()と書く代りに
-  - node: p
-    children:
-    - node: text
-      content: \ \
-  - node: p
-    children:
-    - node: text
-      content: $res = $response_factory->createResponse()でオブジェクトを
-    - node: br
-    - node: text
-      content: '生成できる '
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: これがなぜ重要なのかは田中ひさてるさんの発表を見てください
-    - node: li
-      children:
-      - node: text
-        content: 個別の実装が具体的なライブラリに依存しなくなるようにできます
-  p44:
-  - node: p
-    children:
-    - node: text
-      content: 不変性
-  - node: p
-    children:
-    - node: text
-      content: (immutability)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 一度作ったオブジェクト内部の状態が変わることはない
-    - node: li
-      children:
-      - node: text
-        content: 状態を付加したいときは $res->setHeader()のような操作はできず、
-      - node: br
-      - node: text
-        content: '$res = $res->withHeader() のように追記する '
-    - node: li
-      children:
-      - node: text
-        content: この性質により、一度作ったインスタンスオブジェクトが別の場所で
-      - node: br
-      - node: text
-        content: 意図せず書き換えられる可能性を避けられるので非常に安全
-  p45:
-  - node: p
-    children:
-    - node: text
-      content: Nyholm Psr17Factory
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PSR-7オブジェクトを生成する役割のインターフェイス
-    - node: li
-      children:
-      - node: text
-        content: PSR-17の全部のinterfaceをオールインワンにまとめている
-    - node: li
-      children:
-      - node: text
-        content: なんちゃらインターフェイスを要求する引数にこのオブジェクト渡せばいい
-  p46:
-  - node: p
-    children:
-    - node: text
-      content: Nyholm/psr7のREADMEより
-  p47:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7とフレームワークの関係
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: PHP-FIGメンバーだからと言って全て従うわけではない
-    - node: li
-      children:
-      - node: text
-        content: SlimやLaminas mezzioはPSR-7を採用している
-    - node: li
-      children:
-      - node: text
-        content: CakePHP 4.xのHTTPメッセージ(cakephp/http)は
-      - node: br
-      - node: text
-        content: 'PSR-7とCakePHP 3互換のインターフェイス両方を持っている '
-    - node: li
-      children:
-      - node: text
-        content: symfony/http-foundationはPSR-7ではないが、symfony/psr-
-      - node: br
-      - node: text
-        content: http-message-bridgeというアダプターを噛ますとLaravelでも使える
-  p48:
-  - node: p
-    children:
-    - node: text
-      content: PHPの実行環境
-  p49:
-  - node: p
-    children:
-    - node: text
-      content: 従来型のPHP実行環境
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: HTTPリクエストを受け付けるたびに全てがリセットされる ⇒ 超短命
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: クラス定義・関数定義・変数・定数… あらゆるものがまっさらになる
-    - node: li
-      children:
-      - node: text
-        content: Apache(mod_php), PHP-FPM, ビルトインサーバ(php -S), CGIなど、
-      - node: br
-      - node: text
-        content: '既存のPHPが動いてきた環境のほとんどがこの動作をする '
-    - node: li
-      children:
-      - node: text
-        content: どんな環境でもCGIと互換性のあるスクリプトが動いてきたのが
-      - node: br
-      - node: text
-        content: 'PHPが長年しぶとく生きのびた秘訣。 '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Perl、RubyやPythonはCGIとの断絶を経験している
-  p50:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークを使わないPHP
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ユーザーからのHTTPリクエスト情報はスーパーグローバル変数に格納
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 宣言なしでどこからでもアクセスできる特殊なグローバル変数
-        - node: li
-          children:
-          - node: text
-            content: $_SERVER $_GET $_POST $_COOKIE $_FILES $_SESSION
-        - node: li
-          children:
-          - node: text
-            content: リクエストボディは(cid:224)le_get_contents('php://input')で取得可能
-    - node: li
-      children:
-      - node: text
-        content: header()関数などでセットしたものがHTTPレスポンスヘッダとして、
-      - node: br
-      - node: text
-        content: echoしたものがHTTPレスポンスボディとして出力される
-  p51:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークを使わないPHP
-  - node: p
-    children:
-    - node: text
-      content: <?php
-    - node: br
-    - node: text
-      content: $name = $_GET['name'];
-    - node: br
-    - node: text
-      content: $title = "Hello, {$name}!";
-    - node: br
-    - node: text
-      content: 'header(''Content-Type: application/html; charset=UTF-8'');'
-    - node: br
-    - node: text
-      content: ?>
-    - node: br
-    - node: text
-      content: <title><?= htmlspecialchars($title) ?></title>
-    - node: br
-    - node: text
-      content: <h1><?= htmlspecialchars($title) ?></h1>
-  - node: p
-    children:
-    - node: text
-      content: 現在は
-  - node: p
-    children:
-    - node: text
-      content: <p>
-  - node: p
-    children:
-    - node: text
-      content: 年 月 日 時 分 秒
-  - node: p
-    children:
-    - node: text
-      content: <time><?= htmlspecialchars(date('Y m d  H i s ')) ?></time>
-  - node: p
-    children:
-    - node: text
-      content: です
-  - node: p
-    children:
-    - node: text
-      content: </p>
-  p52:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりファイルをincludeしたりする
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p53:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p54:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: header()
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p55:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: header()
-  - node: p
-    children:
-    - node: text
-      content: ob_start()
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p56:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: header()
-  - node: p
-    children:
-    - node: text
-      content: ob_start()
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p57:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: header()
-  - node: p
-    children:
-    - node: text
-      content: ob_start()
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p58:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: set_cookie()
-  - node: p
-    children:
-    - node: text
-      content: header()
-  - node: p
-    children:
-    - node: text
-      content: ob_start()
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p59:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: set_cookie()
-  - node: p
-    children:
-    - node: text
-      content: ob_end_ﬂush()
-  - node: p
-    children:
-    - node: text
-      content: header()
-  - node: p
-    children:
-    - node: text
-      content: ob_start()
-  - node: p
-    children:
-    - node: text
-      content: echo
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p60:
-  - node: p
-    children:
-    - node: text
-      content: よくある従来のPHPスクリプト
-  - node: p
-    children:
-    - node: text
-      content: (CGI型)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どこでもユーザー入力をグローバル変数から参照する
-      - node: br
-      - node: text
-        content: '($_GET, $_SERVER, $_COOKIEなど) '
-    - node: li
-      children:
-      - node: text
-        content: どこでもheader()関数でHTTPヘッダを設定したり、
-      - node: br
-      - node: text
-        content: 'どこでもechoしてHTMLを出力したりすることができる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: '呼ばれた関数の処理の奥底で何気なくheader()や setcookie()関数を呼んでセットされてたりするやつ '
-        - node: li
-          children:
-          - node: text
-            content: 処理を全部追わないと最終的な出力 (レスポンスヘッダ・ボディ)がわからん
-  p61:
-  - node: p
-    children:
-    - node: text
-      content: 'こういう世界と '
-    - node: br
-    - node: text
-      content: 'どうやって整合性を '
-    - node: br
-    - node: text
-      content: 合わせるのか
-  p62:
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-7の出力 '
-  - node: p
-    children:
-    - node: text
-      content: (emit)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ResponseInterfaceを出力する役割 (PSR-7の仕様外)
-    - node: li
-      children:
-      - node: text
-        content: 'ApacheやPHP-FPMで動かしているなら自作することも 割と簡単にできるが、できればライブラリに任せた方がいい '
-    - node: li
-      children:
-      - node: text
-        content: 従来型環境での定番は laminas/laminas-httphandlerrunner
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: SapiEmitterとSapiStreamEmitterの2種類がある
-        - node: li
-          children:
-          - node: text
-            content: 一回で出力するか、リソースから読み込めた都度出力するかの違い
-  p63:
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-7の出力 '
-  - node: p
-    children:
-    - node: text
-      content: (emit)
-  - node: p
-    children:
-    - node: text
-      content: 概念的なざっくり実装。ほんとはもうちょっと考慮事項がある
-  - node: p
-    children:
-    - node: text
-      content: '// '
-  - node: p
-    children:
-    - node: text
-      content: 'function emitResponse(ResponseInterface $response): void'
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '    http_response_code($response->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    foreach ($response->getHeaders() as $name => $values) {'
-    - node: br
-    - node: text
-      content: '        foreach ((array)$values as $value) {'
-    - node: br
-    - node: text
-      content: '            header("{$name}: {$value}");'
-    - node: br
-    - node: text
-      content: '        }'
-    - node: br
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '    echo $response->getBody();'
-    - node: br
-    - node: text
-      content: '}'
-  p64:
-  - node: p
-    children:
-    - node: text
-      content: 'PSR-7の入力 '
-  - node: p
-    children:
-    - node: text
-      content: (ServerRequestの錬成)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: ServerRequestはどこから来るの？
-    - node: li
-      children:
-      - node: text
-        content: 各PSR-7ライブラリとかがグローバル変数から情報をひっこぬいて
-      - node: br
-      - node: text
-        content: 'ServerRequestを作ってくれる便利クラスを提供してる(fromGlobals) '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Guzzleの場合はServerRequest::fromGlobals()と呼ぶだけ
-        - node: li
-          children:
-          - node: text
-            content: Nyholmはnyholm/psr7-serverという別パッケージに分離されてる
-    - node: li
-      children:
-      - node: text
-        content: 基本的に一箇所で一回だけ生成するようにした方がいい
-  p65:
-  - node: p
-    children:
-    - node: text
-      content: Good old PHP
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりファイルをincludeしたりする
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p66:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p67:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p68:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequest '
-  - node: p
-    children:
-    - node: text
-      content: SapiEmitter
-  - node: p
-    children:
-    - node: text
-      content: (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p69:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequest '
-  - node: p
-    children:
-    - node: text
-      content: SapiEmitter
-  - node: p
-    children:
-    - node: text
-      content: (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: 'echo '
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: header
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p70:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークの光と影
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そもそもPHPはフレームワークがなくてもWebアプリが書ける
-  p71:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークの光と影
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そもそもPHPはフレームワークがなくてもWebアプリが書ける
-    - node: li
-      children:
-      - node: text
-        content: PHPにとってのWebフレームワークには二つの性質がある
-  p72:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークの光と影
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そもそもPHPはフレームワークがなくてもWebアプリが書ける
-    - node: li
-      children:
-      - node: text
-        content: PHPにとってのWebフレームワークには二つの性質がある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
-  p73:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークの光と影
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そもそもPHPはフレームワークがなくてもWebアプリが書ける
-    - node: li
-      children:
-      - node: text
-        content: PHPにとってのWebフレームワークには二つの性質がある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
-        - node: li
-          children:
-          - node: text
-            content: フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を
-          - node: br
-          - node: text
-            content: 与えることで秩序をもたらす拘束具
-  p74:
-  - node: p
-    children:
-    - node: text
-      content: フレームワークの光と影
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: そもそもPHPはフレームワークがなくてもWebアプリが書ける
-    - node: li
-      children:
-      - node: text
-        content: PHPにとってのWebフレームワークには二つの性質がある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
-        - node: li
-          children:
-          - node: text
-            content: フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を
-          - node: br
-          - node: text
-            content: 与えることで秩序をもたらす拘束具
-    - node: li
-      children:
-      - node: text
-        content: PSR-7/15は従来型のPHPにとって縛りプレイのための異物に過ぎない
-  p75:
-  - node: p
-    children:
-    - node: text
-      content: 縛ることによって得られるもの
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: $_GETのようなグローバル変数やheader()のような関数を排斥することで
-      - node: br
-      - node: text
-        content: '入出力が明確に分離されてコードの見通しがよくなり、テストしやすくなる '
-    - node: li
-      children:
-      - node: text
-        content: Long-livingなPHPとの親和性
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 従来のPHPはリクエストごとに全ての状態がリセットされるのに対して、
-          - node: br
-          - node: text
-            content: 'RoadRunnerやSwooleでHTTPサーバを立てると毎回リセットされない '
-        - node: li
-          children:
-          - node: text
-            content: そのような環境ではCLI SAPIで動作するので、$_GETや関数からリクエス
-          - node: br
-          - node: text
-            content: ト情報が得られないし、echoしてもHTTPレスポンスにならない
-  p76:
-  - node: p
-    children:
-    - node: text
-      content: Long-living PHPとの互換性
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 入口と出口、つまりServerRequestを作る部分とエミッタを差し替えれば
-      - node: br
-      - node: text
-        content: 'ApacheやPHP-FPMなど従来型のPHP環境でも動かせるようになる '
-    - node: li
-      children:
-      - node: text
-        content: 最近はフレームワークが実行環境の差異を吸収してくれるようになった
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Symfony Runtime + https://github.com/php-runtime
-        - node: li
-          children:
-          - node: text
-            content: Laravel Octane
-  p77:
-  - node: p
-    children:
-    - node: text
-      content: CyberAgent白井さんの発表
-  p78:
-  - node: p
-    children:
-    - node: text
-      content: Long-living PHPの世界
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 従来環境とはオブジェクトの初期化や生存期間の概念が変わるので注意
-    - node: li
-      children:
-      - node: text
-        content: $_SERVER, $_GETのようなグローバル変数や
-      - node: br
-      - node: text
-        content: 'header()、setcookie()のような関数が今まで通りの動きをしない '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Laravelでもこれらの機能を使うことはできたが、動かなくなる
-    - node: li
-      children:
-      - node: text
-        content: 定数、グローバル変数、静的プロパティなどもリセットされなくなる
-    - node: li
-      children:
-      - node: text
-        content: グローバルな状態を持たず引数と戻り値に閉じていれば問題ない
-  p79:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  p80:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p81:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequest '
-  - node: p
-    children:
-    - node: text
-      content: SapiEmitter
-  - node: p
-    children:
-    - node: text
-      content: (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p82:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境でPSR-7を使う概念
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequest '
-  - node: p
-    children:
-    - node: text
-      content: SapiEmitter
-  - node: p
-    children:
-    - node: text
-      content: (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: 'echo '
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: header
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p83:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p84:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p85:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p86:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p87:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p88:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p89:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  p90:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p91:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p92:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p93:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p94:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p95:
-  - node: p
-    children:
-    - node: text
-      content: 従来型環境
-  - node: p
-    children:
-    - node: text
-      content: 'ServerRequest '
-  - node: p
-    children:
-    - node: text
-      content: SapiEmitter
-  - node: p
-    children:
-    - node: text
-      content: (fromGlobals)
-  - node: p
-    children:
-    - node: bold
-      content: /var/www/example.com/public/index.php
-  - node: p
-    children:
-    - node: text
-      content: 'echo '
-  - node: p
-    children:
-    - node: text
-      content: $_SERVER
-  - node: p
-    children:
-    - node: text
-      content: header
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p96:
-  - node: p
-    children:
-    - node: text
-      content: RoadRunner
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: 'なんかいろんな関数を '
-    - node: br
-    - node: text
-      content: 呼んだりしてResponse作る
-  p97:
-  - node: p
-    children:
-    - node: text
-      content: 入出力を端に揃えると交換可能に
-  p98:
-  - node: p
-    children:
-    - node: text
-      content: 入出力を端に揃えると交換可能に
-  - node: p
-    children:
-    - node: text
-      content: '両端の構造が合っていれば '
-    - node: br
-    - node: text
-      content: 従来型とも共通化しやすそう
-  p99:
-  - node: p
-    children:
-    - node: text
-      content: 外の世界の事情を無視できる
-  p100:
-  - node: p
-    children:
-    - node: text
-      content: 外の世界の事情を無視できる
-  - node: p
-    children:
-    - node: text
-      content: どこで動いてようが あまり関係なくなる
-  p101:
-  - node: p
-    children:
-    - node: text
-      content: ユニットテストで実行もできる
-  p102:
-  - node: p
-    children:
-    - node: text
-      content: ユニットテストで実行もできる
-  - node: p
-    children:
-    - node: text
-      content: '値を渡して '
-    - node: br
-    - node: text
-      content: 戻り値を検査する
-  p103:
-  - node: p
-    children:
-    - node: text
-      content: 'もうちょっと '
-    - node: br
-    - node: text
-      content: 具体的に
-  p104:
-  - node: p
-    children:
-    - node: text
-      content: PSR-15
-  p105:
-  - node: p
-    children:
-    - node: text
-      content: PSR-15 HTTP Handlers
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Psr Http Server 名前空間に2種類のインターフェイスが定義されている
-      - node: br
-      - node: text
-        content: \ \ \
-    - node: li
-      children:
-      - node: text
-        content: RequestHandlerInterface
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: レスポンスを生成する (例外送出するかもしれない)
-    - node: li
-      children:
-      - node: text
-        content: MiddlewareInterface
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: リクエストハンドラを呼び出すか、呼び出さずにレスポンスを生成してもよい
-  p106:
-  - node: p
-    children:
-    - node: text
-      content: 「ミドルウェア」という語について
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: コンピュータ用語の中でも意味が一貫していないことで有名
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: なんかの中間で何かを処理するという非常に漠然としたニュアンス
-        - node: li
-          children:
-          - node: text
-            content: OSでもハードウェアでもない、ソフトウェアとやりとりする何者かが
-          - node: br
-          - node: text
-            content: 'ミドルウェアと呼ばれることがある(Webサーバとかファイルシステムとか) '
-    - node: li
-      children:
-      - node: text
-        content: Webフレームワークでは最終的に呼び出されるやつ(RequestHandler)
-      - node: br
-      - node: text
-        content: の間に入って何か処理するものをミドルウェアと呼ぶ
-  p107:
-  - node: p
-    children:
-    - node: text
-      content: ほかの世界のミドルウェア
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 結構いろんな言語のHTTP仕様に入っている
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: Ruby(Rails含む)ではRack、PythonではWSGIなど
-    - node: li
-      children:
-      - node: text
-        content: PHPでもStackPHPという仕様が提案されていたこともあった
-    - node: li
-      children:
-      - node: text
-        content: CakePHP 3では独自インターフェイスのミドルウェアがあったが、
-      - node: br
-      - node: text
-        content: CakePHP 4でPSR-15互換に移行された
-  p108:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandlerInterface
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: namespace Psr\Http\Server;
-  - node: p
-    children:
-    - node: text
-      content: use Psr\Http\Message\ResponseInterface;
-    - node: br
-    - node: text
-      content: use Psr\Http\Message\ServerRequestInterface;
-  - node: p
-    children:
-    - node: text
-      content: interface RequestHandlerInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '   public function handle(ServerRequestInterface $request): ResponseInterface;'
-    - node: br
-    - node: text
-      content: '}'
-  p109:
-  - node: p
-    children:
-    - node: text
-      content: MiddlewareInterface
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: namespace Psr\Http\Server;
-  - node: p
-    children:
-    - node: text
-      content: use Psr\Http\Message\ResponseInterface;
-    - node: br
-    - node: text
-      content: use Psr\Http\Message\ServerRequestInterface;
-  - node: p
-    children:
-    - node: text
-      content: interface MiddlewareInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '   public function process(ServerRequestInterface $request,         '
-    - node: br
-    - node: text
-      content: '                           RequestHandlerInterface $handler): ResponseInterface;'
-    - node: br
-    - node: text
-      content: '}'
-  p110:
-  - node: p
-    children:
-    - node: text
-      content: PSR Middlewares
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: GitHubのmiddlewares Organizationに実装済みのミドルウェアがある
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: https://github.com/middlewares/psr15-middlewares
-        - node: li
-          children:
-          - node: text
-            content: https://github.com/middlewares/awesome-psr15-middlewares
-        - node: li
-          children:
-          - node: text
-            content: 私は音楽性の合わない部分があるので使ってませんが便利だと思います
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: PSR-17に対応してないからです
-  p111:
-  - node: p
-    children:
-    - node: text
-      content: 簡単なRequestHandlerを作ってみる
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 以後、スライド上に出すコードは簡潔にするために適宜省略しています
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: namespaceやuseは省略しています
-        - node: li
-          children:
-          - node: text
-            content: RequestFactoryInterfaceなどの末尾もasで省略します
-    - node: li
-      children:
-      - node: text
-        content: 完全なソースコードはGitHub上で確認してください
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: https://github.com/zonuexe/phperkaigi-psr15
-  p112:
-  - node: p
-    children:
-    - node: text
-      content: HelloWorldっぽいレスポンスを返す
-  - node: p
-    children:
-    - node: text
-      content: class HelloJsonHandler implements RequestHandlerInterface {
-    - node: br
-    - node: text
-      content: '  public function __construct('
-    - node: br
-    - node: text
-      content: '    private StreamFactory $stream_factory,         '
-    - node: br
-    - node: text
-      content: '    private ResponseFactory $response_factory         '
-    - node: br
-    - node: text
-      content: '  ){}'
-  - node: p
-    children:
-    - node: text
-      content: '  public function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '    $body = $this->stream_factory->createStream(json_encode([''Hello''
-        => ''World'']);'
-    - node: br
-    - node: text
-      content: '    return $this->response_factory->createResponse(200)                ->withHeader(''Content-Type'', [''application/json''])'
-    - node: br
-    - node: text
-      content: '      ->withBody($body);'
-    - node: br
-    - node: text
-      content: '  }'
-    - node: br
-    - node: text
-      content: '}'
-  p113:
-  - node: p
-    children:
-    - node: text
-      content: GETのときにHelloWorldを返す
-  - node: p
-    children:
-    - node: text
-      content: 前略
-  - node: p
-    children:
-    - node: text
-      content: ' // '
-  - node: p
-    children:
-    - node: text
-      content: ' public function handle(ServerRequestInterface $request): ResponseInterface
-        {'
-    - node: br
-    - node: text
-      content: '    if ($request->getMethod() !== ''GET'') {'
-    - node: br
-    - node: text
-      content: '        return $this->response_factory->createResponse(404);'
-    - node: br
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: 後はさっきと同じ
-  - node: p
-    children:
-    - node: text
-      content: '    // '
-  - node: p
-    children:
-    - node: text
-      content: '    $body = $this->stream_factory->createStream(json_encode([''Hello''
-        => ''World'']);'
-    - node: br
-    - node: text
-      content: '    return $this->response_factory->createResponse(200)                ->withHeader(''Content-Type'', [''application/json''])'
-    - node: br
-    - node: text
-      content: '      ->withBody($body);'
-    - node: br
-    - node: text
-      content: '  }'
-  p114:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  p115:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  p116:
-  - node: p
-    children:
-    - node: text
-      content: テストしてみよう
-  - node: p
-    children:
-    - node: text
-      content: テストケース自身が
-    - node: br
-    - node: text
-      content: Factoryの機能を持っている
-    - node: br
-    - node: text
-      content: と書き心地が良くなる
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: シンプルにPHPUnitを使える
-    - node: li
-      children:
-      - node: text
-        content: ResponseHanlderのインスタンスを用意する
-    - node: li
-      children:
-      - node: text
-        content: ServerRequestのインスタンスを用意する
-    - node: li
-      children:
-      - node: text
-        content: $response = $handler->handler($request) のように呼び出す
-    - node: li
-      children:
-      - node: text
-        content: $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
-      - node: br
-      - node: text
-        content: assertEquals()などで比較してみる
-  p117:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  p118:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  p119:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-    - node: br
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  p120:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-    - node: br
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  p121:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-    - node: br
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  p122:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandler呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-  - node: p
-    children:
-    - node: text
-      content: assertEquals()
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: Response
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  p123:
-  - node: p
-    children:
-    - node: text
-      content: テストの準備
-  - node: p
-    children:
-    - node: text
-      content: ' (HttpFactoryTrait)'
-  - node: p
-    children:
-    - node: text
-      content: use Nyholm\Psr7\Factory\Psr17Factory;
-  - node: p
-    children:
-    - node: text
-      content: trait HttpFactoryTrait
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  private function psr17factory(): Psr17Factory'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '     return new Psr17Factory();'
-    - node: br
-    - node: text
-      content: '  }'
-  p124:
-  - node: p
-    children:
-    - node: text
-      content: テストの準備
-  - node: p
-    children:
-    - node: text
-      content: ' (HttpFactoryTrait)'
-  - node: p
-    children:
-    - node: text
-      content: '    public function getRequestFactory(): RequestFactoryInterface'
-    - node: br
-    - node: text
-      content: '    {'
-    - node: br
-    - node: text
-      content: '        return $this->psr17factory();'
-    - node: br
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '    public function getResponseFactory(): ResponseFactoryInterface'
-    - node: br
-    - node: text
-      content: '    {'
-    - node: br
-    - node: text
-      content: '        return $this->psr17factory();'
-    - node: br
-    - node: text
-      content: '    }'
-  - node: p
-    children:
-    - node: text
-      content: '    public function getServerRequestFactory(): ServerRequestFactoryInterface'
-    - node: br
-    - node: text
-      content: '    {'
-  p125:
-  - node: p
-    children:
-    - node: text
-      content: テストの準備
-  - node: p
-    children:
-    - node: text
-      content: ' (HttpFactoryTrait)'
-  - node: p
-    children:
-    - node: text
-      content: '    /**'
-    - node: br
-    - node: text
-      content: '     * Create a new stream from a string.'
-    - node: br
-    - node: text
-      content: '     *'
-    - node: br
-    - node: text
-      content: '     * The stream SHOULD be created with a temporary resource.'
-    - node: br
-    - node: text
-      content: '     *'
-    - node: br
-    - node: text
-      content: '     * @param string $content String content with which to populate
-        the stream.'
-    - node: br
-    - node: text
-      content: '     */'
-    - node: br
-    - node: text
-      content: '    public function createStream(string $contents): StreamInterface'
-    - node: br
-    - node: text
-      content: '    {'
-    - node: br
-    - node: text
-      content: '        return $this->getStreamFactory()->createStream($contents);'
-    - node: br
-    - node: text
-      content: '    }'
-  p126:
-  - node: p
-    children:
-    - node: text
-      content: HttpFactoryTraitの特徴
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 特定のPSR-7ライブラリにあえて強く依存している
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 'Nyholm Psr17Factoryは状態を持たないのでオブジェクトをキャッシュ してもいいが、そもそも状態をまったく持たない軽量なオブジェクトなので '
-          - node: br
-          - node: text
-            content: '必要な都度新しいインスタンスを作ってもボトルネックにならない '
-        - node: li
-          children:
-          - node: text
-            content: 正攻法であればsetUpやsetUpBeforeClassで注入する形をとるが、
-          - node: br
-          - node: text
-            content: dataProviderから依存できるようにあえて割り切っている
-  p127:
-  - node: p
-    children:
-    - node: text
-      content: テストしてみよう
-  - node: p
-    children:
-    - node: text
-      content: ' (setup)'
-  - node: p
-    children:
-    - node: text
-      content: class HelloJsonHandlerTest extends \PHPUnit\Framework\TestCase
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  use Helper\HttpFactoryTrait;'
-  - node: p
-    children:
-    - node: text
-      content: '  private HelloJsonHandler $subject;'
-  - node: p
-    children:
-    - node: text
-      content: '  public function setUp(): void {'
-    - node: br
-    - node: text
-      content: '    parent::setUp();'
-  - node: p
-    children:
-    - node: text
-      content: '    $this->subject = new HelloJsonHandler('
-    - node: br
-    - node: text
-      content: '       $this->getStreamFactory(), $this->getResponseFactory());'
-    - node: br
-    - node: text
-      content: '  }'
-  p128:
-  - node: p
-    children:
-    - node: text
-      content: テスト
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $actual = $this->subject->handle($request);'
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertSame($expected[''status_code''], $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    $this->assertEquals($expected[''headers''], $actual->getHeaders());     $this->assertSame($expected[''body''],
-        (string)$actual->getBody());'
-    - node: br
-    - node: text
-      content: ' }'
-  p129:
-  - node: p
-    children:
-    - node: text
-      content: テスト
-  - node: p
-    children:
-    - node: text
-      content: ' (dataProvider)'
-  - node: p
-    children:
-    - node: text
-      content: '  public function requestProvider(): iterable'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    yield ''GET'' => ['
-    - node: br
-    - node: text
-      content: '      $this->createServerRequest(''GET'', ''/dummy''),'
-    - node: br
-    - node: text
-      content: '      ['
-    - node: br
-    - node: text
-      content: '        ''status_code'' => 200,'
-    - node: br
-    - node: text
-      content: '        ''headers'' => ['
-    - node: br
-    - node: text
-      content: '          ''Content-Type'' => [''application/json''],'
-    - node: br
-    - node: text
-      content: '        ],'
-    - node: br
-    - node: text
-      content: '        ''body'' => ''{"Hello":"World"}'','
-    - node: br
-    - node: text
-      content: '      ],'
-    - node: br
-    - node: text
-      content: '  ];'
-  p130:
-  - node: p
-    children:
-    - node: text
-      content: テスト
-  - node: p
-    children:
-    - node: text
-      content: ' (再掲)'
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $actual = $this->subject->handle($request);'
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertSame($expected[''status_code''], $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    $this->assertEquals($expected[''headers''], $actual->getHeaders());     $this->assertSame($expected[''body''],
-        (string)$actual->getBody());'
-    - node: br
-    - node: text
-      content: ' }'
-  p131:
-  - node: p
-    children:
-    - node: text
-      content: テスト
-  - node: p
-    children:
-    - node: text
-      content: ' (dataProviderを追加)'
-  - node: p
-    children:
-    - node: text
-      content: '  $default_expected = [''status_code'' => 404, ''headers'' => [],
-        ''body'' => ''''];'
-  - node: p
-    children:
-    - node: text
-      content: '  $http_methods = [''POST'', ''PUT'', ''DELETE''];'
-  - node: p
-    children:
-    - node: text
-      content: '  foreach ($http_methods as $method) {'
-    - node: br
-    - node: text
-      content: '    yield $method => ['
-    - node: br
-    - node: text
-      content: '      $this->createServerRequest($method, ''/dummy''),'
-    - node: br
-    - node: text
-      content: '      $default_expected,'
-    - node: br
-    - node: text
-      content: '    ];'
-    - node: br
-    - node: text
-      content: '  }'
-  p132:
-  - node: p
-    children:
-    - node: text
-      content: テスト
-  - node: p
-    children:
-    - node: text
-      content: ' (dataProviderを追加)'
-  - node: p
-    children:
-    - node: text
-      content: '  $default_expected = [''status_code'' => 404, ''headers'' => [],
-        ''body'' => ''''];'
-  - node: p
-    children:
-    - node: text
-      content: '  $http_methods = [''POST'', ''PUT'', ''DELETE''];'
-  - node: p
-    children:
-    - node: text
-      content: '  foreach ($http_methods as $method) {'
-    - node: br
-    - node: text
-      content: '    yield $method => ['
-    - node: br
-    - node: text
-      content: '      $this->createServerRequest($method, ''/dummy''),'
-  - node: p
-    children:
-    - node: text
-      content: 'GET以外のメソッドは '
-  - node: p
-    children:
-    - node: text
-      content: '      $default_expected,'
-  - node: p
-    children:
-    - node: text
-      content: すべて結果は同じになる
-  - node: p
-    children:
-    - node: text
-      content: '    ];'
-    - node: br
-    - node: text
-      content: '  }'
-  p133:
-  - node: p
-    children:
-    - node: text
-      content: PHPUnit実行結果
-  p134:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandlerテストの要点
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: テストケースの内容はごく薄くする
-    - node: li
-      children:
-      - node: text
-        content: 「この値を渡したときに必ずこの値を返す」という構造に落とし込む
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: そうなっていないなら依存の分離がうまくいっていない
-    - node: li
-      children:
-      - node: text
-        content: 戻り値となるResponseオブジェクトからは、特に
-      - node: br
-      - node: text
-        content: 'getStatusCode(), getHeaders(), getBody()に注目する '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: bodyが巨大な場合は必ずしもassertSame()で比較する必要はない
-  p135:
-  - node: p
-    children:
-    - node: text
-      content: MiddlewareInterface
-  - node: p
-    children:
-    - node: text
-      content: <?php
-  - node: p
-    children:
-    - node: text
-      content: namespace Psr\Http\Server;
-  - node: p
-    children:
-    - node: text
-      content: use Psr\Http\Message\ResponseInterface;
-    - node: br
-    - node: text
-      content: use Psr\Http\Message\ServerRequestInterface;
-  - node: p
-    children:
-    - node: text
-      content: interface MiddlewareInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '   public function process(ServerRequestInterface $request,         '
-    - node: br
-    - node: text
-      content: '                           RequestHandlerInterface $handler): ResponseInterface;'
-    - node: br
-    - node: text
-      content: '}'
-  p136:
-  - node: p
-    children:
-    - node: text
-      content: 簡単なMiddlewareを作ってみる
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: Middlewareは結構なんでもできる
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: RequestHandlerに渡す前にServerRequestを加工する
-        - node: li
-          children:
-          - node: text
-            content: RequestHandlerから戻ってきたResponseを加工する
-        - node: li
-          children:
-          - node: text
-            content: RequestHandlerが発生したエラーをキャッチしてハンドリングする
-  p137:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p138:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p139:
-  - node: p
-    children:
-    - node: text
-      content: 何もしないミドルウェア(ストロー)
-  - node: p
-    children:
-    - node: text
-      content: class StrawMiddleware implements MiddlewareInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  public function process(         '
-    - node: br
-    - node: text
-      content: '    ServerRequest $request, RequestHandler $handler): Response         '
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    return $handler->handle($request);'
-  - node: p
-    children:
-    - node: text
-      content: '  }'
-    - node: br
-    - node: text
-      content: '}'
-  p140:
-  - node: p
-    children:
-    - node: text
-      content: 全レスポンスに規定のヘッダを付与
-  - node: p
-    children:
-    - node: text
-      content: class StrawMiddleware implements MiddlewareInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  public function process(         '
-    - node: br
-    - node: text
-      content: '    ServerRequest $request, RequestHandler $handler): Response         '
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    return $handler->handle($request)'
-    - node: br
-    - node: text
-      content: '      ->withHeader(''X-Content-Type-Options'', [''nosniff'']);'
-    - node: br
-    - node: text
-      content: '  }'
-    - node: br
-    - node: text
-      content: '}'
-  p141:
-  - node: p
-    children:
-    - node: text
-      content: HTTPSにリダイレクト
-  - node: p
-    children:
-    - node: text
-      content: class HttpsRedirectMiddleware implements MiddlewareInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  public function process(         '
-    - node: br
-    - node: text
-      content: '    ServerRequest $request, RequestHandler $handler): Response         '
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $uri = $request->getUri();'
-    - node: br
-    - node: text
-      content: '    if (strtolower($uri->getScheme()) !== ''https'') {'
-    - node: br
-    - node: text
-      content: '      return $this->response_factory->createResponse(302)'
-    - node: br
-    - node: text
-      content: '        ->withHeader(''Location'', [(string)$uri->withScheme(''https'')]);'
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '    return $handler->handle($request);'
-    - node: br
-    - node: text
-      content: '  }'
-    - node: br
-    - node: text
-      content: '}'
-  p142:
-  - node: p
-    children:
-    - node: text
-      content: 例外に対して標準エラーページ
-  - node: p
-    children:
-    - node: text
-      content: class ErrorPageMiddleware implements MiddlewareInterface
-    - node: br
-    - node: text
-      content: '{'
-    - node: br
-    - node: text
-      content: '  public function process(         '
-    - node: br
-    - node: text
-      content: '    ServerRequest $request, RequestHandler $handler): Response         '
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    try {'
-    - node: br
-    - node: text
-      content: '      return $handler->handle;'
-    - node: br
-    - node: text
-      content: '    } catch (HttpException $e) {'
-    - node: br
-    - node: text
-      content: '      return $this->renderHtmlErrorPage($e);'
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: '  }'
-    - node: br
-    - node: text
-      content: '}'
-  p143:
-  - node: p
-    children:
-    - node: text
-      content: RequestHandlerのテスト
-  - node: p
-    children:
-    - node: text
-      content: (再掲)
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $actual = $this->subject->handle($request);'
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertSame($expected[''status_code''], $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    $this->assertEquals($expected[''headers''], $actual->getHeaders());     $this->assertSame($expected[''body''],
-        (string)$actual->getBody());'
-    - node: br
-    - node: text
-      content: ' }'
-  p144:
-  - node: p
-    children:
-    - node: text
-      content: ResponseHandlerのテスト
-  - node: p
-    children:
-    - node: text
-      content: ' (再掲)'
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: シンプルにPHPUnitを使える
-    - node: li
-      children:
-      - node: text
-        content: ResponseHanlderのインスタンスを用意する
-    - node: li
-      children:
-      - node: text
-        content: ServerRequestのインスタンスを用意する
-    - node: li
-      children:
-      - node: text
-        content: $response = $handler->handler($request) のように呼び出す
-    - node: li
-      children:
-      - node: text
-        content: $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
-      - node: br
-      - node: text
-        content: assertEquals()などで比較してみる
-  p145:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: もちろんPHPUnitを使える
-    - node: li
-      children:
-      - node: text
-        content: テスト対象のMiddlewareのインスタンスを用意する
-    - node: li
-      children:
-      - node: text
-        content: ServerRequestとResponseHanlderのインスタンスを用意する
-    - node: li
-      children:
-      - node: text
-        content: $response = $middleware->process($request, $handler)
-      - node: br
-      - node: text
-        content: 'のように呼び出す '
-    - node: li
-      children:
-      - node: text
-        content: $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
-      - node: br
-      - node: text
-        content: assertEquals()などで比較してみる
-  p146:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p147:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p148:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p149:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-  - node: p
-    children:
-    - node: text
-      content: assertEquals()
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p150:
-  - node: p
-    children:
-    - node: text
-      content: Middleware呼び出しイメージ
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-  - node: p
-    children:
-    - node: text
-      content: assertEquals()
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: text
-      content: Response
-  p151:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: (?)
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $actual = $this->subject->process($request, $handler);'
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertSame($expected[''status_code''], $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    $this->assertEquals($expected[''headers''], $actual->getHeaders());     $this->assertSame($expected[''body''],
-        (string)$actual->getBody());'
-    - node: br
-    - node: text
-      content: ' }'
-  p152:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $actual = $this->subject->process($request, $handler);'
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertSame($expected[''status_code''], $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    $this->assertEquals($expected[''headers''], $actual->getHeaders());     $this->assertSame($expected[''body''],
-        (string)$actual->getBody());'
-    - node: br
-    - node: text
-      content: ' }'
-  p153:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok = $this->createResponse(200);'
-    - node: br
-    - node: text
-      content: '    $actual = '
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($request, new class($ok) implements RequestHandler
-        {
-  - node: p
-    children:
-    - node: text
-      content: '      public function __construct(private Response $response) {}       public
-        function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '        return $this->response;'
-    - node: br
-    - node: text
-      content: '      }     });'
-  p154:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: 固定のレスポンスを返すだけ
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok = $this->createResponse(200);'
-    - node: br
-    - node: text
-      content: '    $actual = '
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($request, new class($ok) implements RequestHandler
-        {
-  - node: p
-    children:
-    - node: text
-      content: '      public function __construct(private Response $response) {}       public
-        function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '        return $this->response;'
-    - node: br
-    - node: text
-      content: '      }     });'
-  p155:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: 固定のレスポンスを返すだけ
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok = $this->createResponse(200);'
-    - node: br
-    - node: text
-      content: '    $actual = '
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($request, new class($ok) implements RequestHandler
-        {
-  - node: p
-    children:
-    - node: text
-      content: '      public function __construct(private Response $response) {}       public
-        function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '        return $this->response;'
-    - node: br
-    - node: text
-      content: '      }     });'
-  - node: p
-    children:
-    - node: text
-      content: '3行で実装できるが… '
-    - node: br
-    - node: text
-      content: まあまあだるい
-  p156:
-  - node: p
-    children:
-    - node: text
-      content: 大雑把な処理の流れ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どうにかしてServerRequestオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 最終的に処理するRequestHandlerオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 間に処理するMiddlewareのオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: Middleware::process($request, $handler)として呼び出すと
-      - node: br
-      - node: text
-        content: '最終的なResponseが帰ってくる '
-    - node: li
-      children:
-      - node: text
-        content: エミッタがResponseをどうにか出力する
-  p157:
-  - node: p
-    children:
-    - node: text
-      content: テストの準備
-  - node: p
-    children:
-    - node: text
-      content: ' (RawHandler)'
-  - node: p
-    children:
-    - node: text
-      content: class RawHandler implements RequestHandlerInterface {
-    - node: br
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @psalm-var list<ServerRequest>'
-    - node: br
-    - node: text
-      content: '   * @psalm-readonly-allow-private-mutation'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public $received_server_requests = [];'
-    - node: br
-    - node: text
-      content: '  public function __construct(private Response $response) {}'
-  - node: p
-    children:
-    - node: text
-      content: '  public function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '    $this->received_server_requests[] = $request;'
-    - node: br
-    - node: text
-      content: '    return $this->response;'
-    - node: br
-    - node: text
-      content: '  }'
-  p158:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: ' (無名クラス)'
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok = $this->createResponse(200);'
-    - node: br
-    - node: text
-      content: '    $actual = '
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($request, new class($ok) implements RequestHandler
-        {
-  - node: p
-    children:
-    - node: text
-      content: '      public function __construct(private Response $response) {}       public
-        function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '        return $this->response;'
-    - node: br
-    - node: text
-      content: '      }     });'
-  p159:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: ' (RawHandler)'
-  - node: p
-    children:
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @dataProvider requestProvider'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok_handler = new RawHandler($this->createResponse(200));'
-    - node: br
-    - node: text
-      content: '    $actual =  );'
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($ok_handler
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertSame($expected[''status_code''], $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '    $this->assertEquals($expected[''headers''], $actual->getHeaders());     $this->assertSame($expected[''body''],
-        (string)$actual->getBody());'
-    - node: br
-    - node: text
-      content: ' }'
-  p160:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: ' (RawHandler)'
-  - node: p
-    children:
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok_handler = new RawHandler($this->createResponse(200));'
-    - node: br
-    - node: text
-      content: '    $actual =  );'
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($ok_handler
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertEquals($expected, ['
-    - node: br
-    - node: text
-      content: '      ''status_code'' => $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '      ''headers''=> $actual->getHeaders(),'
-    - node: br
-    - node: text
-      content: '      ''body'' => (string)$actual->getBody(),'
-    - node: br
-    - node: text
-      content: '      ''not_redirected_count'' => count($ok_handler->received_server_requests),'
-    - node: br
-    - node: text
-      content: '    );'
-    - node: br
-    - node: text
-      content: ' }'
-  p161:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareのテスト
-  - node: p
-    children:
-    - node: text
-      content: ' (RawHandler)'
-  - node: p
-    children:
-    - node: text
-      content: '  public function test(ServerRequest $request, array $expected): void'
-    - node: br
-    - node: text
-      content: '  {'
-    - node: br
-    - node: text
-      content: '    $ok_handler = new RawHandler($this->createResponse(200));'
-    - node: br
-    - node: text
-      content: '    $actual =  );'
-  - node: p
-    children:
-    - node: text
-      content: $this->subject->process($ok_handler
-  - node: p
-    children:
-    - node: text
-      content: $ok_handlerが コールされた回数
-  - node: p
-    children:
-    - node: text
-      content: '    $this->assertEquals($expected, ['
-    - node: br
-    - node: text
-      content: '      ''status_code'' => $actual->getStatusCode());'
-    - node: br
-    - node: text
-      content: '      ''headers''=> $actual->getHeaders(),'
-    - node: br
-    - node: text
-      content: '      ''body'' => (string)$actual->getBody(),'
-    - node: br
-    - node: text
-      content: '      ''not_redirected_count'' => count($ok_handler->received_server_requests),'
-    - node: br
-    - node: text
-      content: '    );'
-    - node: br
-    - node: text
-      content: ' }'
-  p162:
-  - node: p
-    children:
-    - node: text
-      content: Middlewareテストの要点
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 基本はRequestHandlerと同様にシンプルかつ明瞭にする
-    - node: li
-      children:
-      - node: text
-        content: どのようなハンドラを渡せばMiddlewareが正常に動作しているか
-      - node: br
-      - node: text
-        content: '判断できるかを見極める '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: テスト用ハンドラはこだわらなくてもパターン化しやすい
-        - node: li
-          children:
-          - node: text
-            content: リクエストに影響を及ぼすハンドラならリクエストの内容もチェックする
-    - node: li
-      children:
-      - node: text
-        content: 実アプリケーションで呼ばれる他のハンドラに依存すると
-      - node: br
-      - node: text
-        content: 何をテストしたいのかぶれるので基本的には避ける
-  p163:
-  - node: p
-    children:
-    - node: text
-      content: その他のハンドラ
-  - node: p
-    children:
-    - node: text
-      content: ' (関数のラッパー)'
-  - node: p
-    children:
-    - node: text
-      content: class CallbackHandler implements RequestHandlerInterface {
-    - node: br
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @psalm-var list<ServerRequest>'
-    - node: br
-    - node: text
-      content: '   * @psalm-readonly-allow-private-mutation'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  public $received_server_requests = [];'
-    - node: br
-    - node: text
-      content: '  public function __construct(private Closure $callback) {}'
-  - node: p
-    children:
-    - node: text
-      content: '  public function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '      $this->received_server_requests[] = $request;'
-    - node: br
-    - node: text
-      content: '      return ($this->callback)($request);'
-    - node: br
-    - node: text
-      content: '  }'
-  p164:
-  - node: p
-    children:
-    - node: text
-      content: その他のハンドラ
-  - node: p
-    children:
-    - node: text
-      content: ' (例外を投げる君)'
-  - node: p
-    children:
-    - node: text
-      content: class ThrowingHandler implements RequestHandlerInterface {
-    - node: br
-    - node: text
-      content: '  /**'
-    - node: br
-    - node: text
-      content: '   * @psalm-var list<ServerRequest>'
-    - node: br
-    - node: text
-      content: '   * @psalm-readonly-allow-private-mutation'
-    - node: br
-    - node: text
-      content: '   */'
-    - node: br
-    - node: text
-      content: '  Public $received_server_requests = [];'
-    - node: br
-    - node: text
-      content: '  public function __construct(private Throwable $e) {}'
-  - node: p
-    children:
-    - node: text
-      content: '  public function handle(ServerRequest $request): Response {'
-    - node: br
-    - node: text
-      content: '      $this->received_server_requests[] = $request;'
-    - node: br
-    - node: text
-      content: '      throw $this->e;'
-    - node: br
-    - node: text
-      content: '  }'
-  p165:
-  - node: p
-    children:
-    - node: text
-      content: '実アプリケーション '
-    - node: br
-    - node: text
-      content: への適用を考える
-  p166:
-  - node: p
-    children:
-    - node: text
-      content: 大雑把な処理の流れ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どうにかしてServerRequestオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 最終的に処理するRequestHandlerオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 間に処理するMiddlewareのオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: $middleware->process($request, $handler)として呼び出すと
-      - node: br
-      - node: text
-        content: '最終的なResponseが帰ってくる '
-    - node: li
-      children:
-      - node: text
-        content: エミッタがResponseをどうにか出力する
-  p167:
-  - node: p
-    children:
-    - node: text
-      content: 'nyholm/ '
-  - node: p
-    children:
-    - node: text
-      content: 大雑把な処理の流れ
-  - node: p
-    children:
-    - node: text
-      content: psr7-server
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どうにかしてServerRequestオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 最終的に処理するRequestHandlerオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 間に処理するMiddlewareのオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: $middleware->process($request, $handler)として呼び出すと
-      - node: br
-      - node: text
-        content: '最終的なResponseが帰ってくる '
-    - node: li
-      children:
-      - node: text
-        content: エミッタがResponseをどうにか出力する
-  p168:
-  - node: p
-    children:
-    - node: text
-      content: 'nyholm/ '
-  - node: p
-    children:
-    - node: text
-      content: 大雑把な処理の流れ
-  - node: p
-    children:
-    - node: text
-      content: psr7-server
-  - node: p
-    children:
-    - node: text
-      content: ちくちく定義する
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どうにかしてServerRequestオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 最終的に処理するRequestHandlerオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 間に処理するMiddlewareのオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: $middleware->process($request, $handler)として呼び出すと
-      - node: br
-      - node: text
-        content: '最終的なResponseが帰ってくる '
-    - node: li
-      children:
-      - node: text
-        content: エミッタがResponseをどうにか出力する
-  p169:
-  - node: p
-    children:
-    - node: text
-      content: 'nyholm/ '
-  - node: p
-    children:
-    - node: text
-      content: 大雑把な処理の流れ
-  - node: p
-    children:
-    - node: text
-      content: psr7-server
-  - node: p
-    children:
-    - node: text
-      content: ちくちく定義する
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どうにかしてServerRequestオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 最終的に処理するRequestHandlerオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 間に処理するMiddlewareのオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: $middleware->process($request, $handler)として呼び出すと
-      - node: br
-      - node: text
-        content: '最終的なResponseが帰ってくる '
-    - node: li
-      children:
-      - node: text
-        content: エミッタがResponseをどうにか出力する
-  - node: p
-    children:
-    - node: text
-      content: Laminasのエミッタを使う
-  p170:
-  - node: p
-    children:
-    - node: text
-      content: 'nyholm/ '
-  - node: p
-    children:
-    - node: text
-      content: 大雑把な処理の流れ
-  - node: p
-    children:
-    - node: text
-      content: psr7-server
-  - node: p
-    children:
-    - node: text
-      content: ちくちく定義する
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: どうにかしてServerRequestオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 最終的に処理するRequestHandlerオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: 間に処理するMiddlewareのオブジェクトを用意する
-    - node: li
-      children:
-      - node: text
-        content: $middleware->process($request, $handler)として呼び出すと
-      - node: br
-      - node: text
-        content: '最終的なResponseが帰ってくる '
-    - node: li
-      children:
-      - node: text
-        content: この$middleware何者
-      - node: br
-      - node: text
-        content: エミッタがResponseをどうにか出力する
-  - node: p
-    children:
-    - node: text
-      content: Laminasのエミッタを使う
-  p171:
-  - node: p
-    children:
-    - node: text
-      content: 'create '
-  - node: p
-    children:
-    - node: text
-      content: assertEquals()
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: text
-      content: ServerRequest
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  p172:
-  - node: p
-    children:
-    - node: text
-      content: 'これまでは '
-    - node: br
-    - node: text
-      content: 'Middleware1個 '
-    - node: br
-    - node: text
-      content: 'Handler1個 '
-    - node: br
-    - node: text
-      content: しか考えてない
-  p173:
-  - node: p
-    children:
-    - node: text
-      content: いままでのミドルウェア実行イメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  p174:
-  - node: p
-    children:
-    - node: text
-      content: 'せっかくの既存 '
-    - node: br
-    - node: text
-      content: 'ミドルウェアたくさん '
-    - node: br
-    - node: text
-      content: 重ねたくないですか
-  p175:
-  - node: p
-    children:
-    - node: text
-      content: いままでのミドルウェア実行イメージ
-  - node: p
-    children:
-    - node: bold
-      content: Middleware
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  p176:
-  - node: p
-    children:
-    - node: text
-      content: ミドルウェアを重ねたい
-  - node: p
-    children:
-    - node: bold
-      content: Middlewares
-  - node: p
-    children:
-    - node: bold
-      content: RequestHandler
-  p177:
-  - node: p
-    children:
-    - node: text
-      content: 複数のミドルウェアを扱う
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: MiddlewareはServerRequestとRequestHandlerを受け取り、
-      - node: br
-      - node: text
-        content: '$request_handler->handle($request)のように呼び出す '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: このままではミドルウェア1個ハンドラ1個しか受け付けない…?
-    - node: li
-      children:
-      - node: text
-        content: 「次のMiddleware」をラップしたRequestHandlerを用意する
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PSR-15のメタドキュメントでは「キュー」と「デコレータ」の2種類が紹介
-    - node: li
-      children:
-      - node: text
-        content: 特に理由がなければRelayというやつを選ぶといい感じ
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 自作しても全然よい
-  p178:
-  - node: p
-    children:
-    - node: text
-      content: セッションってどうするの？
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: SessionMiddleware的なものを作る
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: RequestのCookieなどのセッションIDからDBなどを引く
-        - node: li
-          children:
-          - node: text
-            content: session_start()や$_SESSIONのようなグローバルを参照する部分は
-          - node: br
-          - node: text
-            content: 'さらに別のクラスに分けるとテストしやすくできる '
-    - node: li
-      children:
-      - node: text
-        content: $request->withAttribute()で付加することで後続のMiddlewareや
-      - node: br
-      - node: text
-        content: RequestHandlerで $request->getAttribute()で取り出せる
-  p179:
-  - node: p
-    children:
-    - node: text
-      content: セッションを参照する
-  - node: p
-    children:
-    - node: text
-      content: 前略
-  - node: p
-    children:
-    - node: text
-      content: ' // '
-  - node: p
-    children:
-    - node: text
-      content: ' public function handle(ServerRequestInterface $request): ResponseInterface
-        {'
-    - node: br
-    - node: text
-      content: '    $session = $request->getAttribute(Session::class);'
-    - node: br
-    - node: text
-      content: '    assert($session instanceof Session);'
-  - node: p
-    children:
-    - node: text
-      content: を使った処理を書く
-  - node: p
-    children:
-    - node: text
-      content: '    // $session '
-  - node: p
-    children:
-    - node: text
-      content: '    if ($session instanceof LoggedIn) {'
-    - node: br
-    - node: text
-      content: '        // ...'
-    - node: br
-    - node: text
-      content: '    }'
-    - node: br
-    - node: text
-      content: ' }'
-  p180:
-  - node: p
-    children:
-    - node: text
-      content: どうやってユーザーに
-    - node: br
-    - node: text
-      content: コードを書かせるか
-  p181:
-  - node: p
-    children:
-    - node: text
-      content: 「心に棚を作れ」
-  - node: p
-    children:
-    - node: text
-      content: (by 炎の転校生)
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 独自FWを作るとき、全体的な枠組みを作るのもアプリ実装するのも自分
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 「この変な設計したやつは誰だ」「俺だ」
-        - node: li
-          children:
-          - node: text
-            content: 「規約を守れず腑抜けたアプリケーションを書くのは誰だ」「俺だ」
-    - node: li
-      children:
-      - node: text
-        content: 「それはそれ、これはこれ」 by 逆境ナイン
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 微妙におかしな設計をする自分と設計意図通りにアプリケーションを
-          - node: br
-          - node: text
-            content: '実装できない自分がいる '
-        - node: li
-          children:
-          - node: text
-            content: 妥協せずにバトルさせたあとに使いやすいフレームワークができる(気がする)
-  p182:
-  - node: p
-    children:
-    - node: text
-      content: 'ここまでできれば '
-    - node: br
-    - node: text
-      content: '外の枠組みは '
-    - node: br
-    - node: text
-      content: 結構できてきた
-  p183:
-  - node: p
-    children:
-    - node: text
-      content: アプリケーションって
-    - node: br
-    - node: text
-      content: どこにあるの？
-  p184:
-  - node: p
-    children:
-    - node: text
-      content: いわゆるコントローラやアクション
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: URLごとに対応して起動される関数やメソッドをどうする？
-    - node: li
-      children:
-      - node: text
-        content: 基本はRequestHandlerから、どうにか関数決めて起動してやればいい
-    - node: li
-      children:
-      - node: text
-        content: RequestHandlerはLaravelのSingleActionControllerと
-      - node: br
-      - node: text
-        content: '概念的に近いものだと考えることもできる '
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: ただし引数や戻り値のインターフェイスが厳密
-    - node: li
-      children:
-      - node: text
-        content: PHP-DIのようなライブラリを組み合せることでインスタンス生成や
-      - node: br
-      - node: text
-        content: 関数呼び出しを簡略化することもできる
-  p185:
-  - node: p
-    children:
-    - node: text
-      content: phperkaigi-golf
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: https://github.com/phppg/phperkaigi-golf
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: PHPerKaigi 2020のときに実装したWebアプリケーション
-        - node: li
-          children:
-          - node: text
-            content: PSR-7/PSR-15ベース / Relayを使用
-        - node: li
-          children:
-          - node: text
-            content: PHP-DIを使用
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: ルーティングに無名関数(クロージャ)を登録して実行する
-              - node: br
-              - node: text
-                content: マイクロフレームワーク風の実装
-  p186:
-  - node: p
-    children:
-    - node: text
-      content: Index.php
-  - node: p
-    children:
-    - node: text
-      content: のルーティング定義(抜萃)
-  p187:
-  - node: p
-    children:
-    - node: text
-      content: Index.php
-  - node: p
-    children:
-    - node: text
-      content: のルーティング定義(抜萃)
-  p188:
-  - node: p
-    children:
-    - node: text
-      content: Index.php
-  - node: p
-    children:
-    - node: text
-      content: のミドルウェア定義(1/2)
-  p189:
-  - node: p
-    children:
-    - node: text
-      content: Index.php
-  - node: p
-    children:
-    - node: text
-      content: のミドルウェア定義(2/2)
-  p190:
-  - node: p
-    children:
-    - node: text
-      content: ピクシブ百科事典
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: http://dic.pixiv.net/
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: 2009年から運営されているWebサービス
-        - node: li
-          children:
-          - node: text
-            content: PSR-7/PSR-15ベース / Relay / PHP-DIを使用
-          - node: ul
-            children:
-            - node: li
-              children:
-              - node: text
-                content: もともとCakePHP風のController/Modelの独自フレームワーク
-            - node: li
-              children:
-              - node: text
-                content: 現在はPSR-15でコントローラを書けるようにしている
-    - node: li
-      children:
-      - node: text
-        content: 全体的な雰囲気は「百科事典 インターン PSR-7」とかで
-      - node: br
-      - node: text
-        content: Google検索してもらうと概観がわかってもらえると思います
-  p191:
-  - node: p
-    children:
-    - node: text
-      content: Cookieを扱う難しさ
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 'withCookieParams()などは$_COOKIE相当のデータを付加するが、 内部で保持するHTTPヘッダを書き換えてはならない(MUST
-          NOT)と '
-      - node: br
-      - node: text
-        content: '仕様で明言されている '
-    - node: li
-      children:
-      - node: text
-        content: プレーンなPHPではsetcookie()すればよかったが、
-      - node: br
-      - node: text
-        content: PSR-7ベースではプリミティブすぎて、 setHeaderで直接書かないといけない
-  p192:
-  - node: p
-    children:
-    - node: text
-      content: PSR-7がプリミティブすぎる件
-  - node: ul
-    children:
-    - node: li
-      children:
-      - node: text
-        content: 外部からの入力を型安全に受け取るには工夫が必要
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: (cid:224)lter_var()とか使うのが一番安全
-        - node: li
-          children:
-          - node: text
-            content: 最近ではPSLというライブラリもいい感じ
-        - node: li
-          children:
-          - node: text
-            content: ParamHelperにPSR-7とValueObject の力を授けた話
-    - node: li
-      children:
-      - node: text
-        content: マルチパートってどうやって扱えばいいの…？
-      - node: ul
-        children:
-        - node: li
-          children:
-          - node: text
-            content: いいライブラリあれば誰か教えてください
-  p193:
-  - node: p
-    children:
-    - node: text
-      content: ParamHelperにPSR-7とValueObject の力を授けた話
-  p194:
-  - node: p
-    children:
-    - node: text
-      content: 今回の発表の参照実装 とか便利なライブラリ とかそのうちいろいろ
-    - node: br
-    - node: text
-      content: 出します！！！！
-  p195:
-  - node: p
-    children:
-    - node: text
-      content: 俺たちのPSR-15道は
-    - node: br
-    - node: text
-      content: 'これからだ！ '
-    - node: br
-    - node: text
-      content: (ご静聴ありがとうございました。 tadsanの次回作にご期待ください)
