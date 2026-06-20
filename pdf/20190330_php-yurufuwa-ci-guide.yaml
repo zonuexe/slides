@@ -47,15 +47,7 @@ text:
     text: アジェンダ
   p8:
   - kind: para
-    text: CIとは何か
-  - kind: para
-    text: CIで何ができるか
-  - kind: para
-    text: CI実行環境の種類
-  - kind: para
-    text: ゆるふわにCIを始める
-  - kind: para
-    text: 実際の事例について
+    text: CIとは何かCIで何ができるかCI実行環境の種類ゆるふわにCIを始める実際の事例について
   p9:
   - kind: para
     text: CodeIgniter
@@ -69,9 +61,7 @@ text:
   - kind: para
     text: delivery/deployment)
   - kind: para
-    text: の
-  - kind: para
-    text: 話もしません
+    text: の話もしません
   p11:
   - kind: para
     text: 個別のCI製品の
@@ -81,56 +71,32 @@ text:
     text: しません
   p12:
   - kind: para
-    text: CIとは何か
-  - kind: para
-    text: CIで何ができるか
-  - kind: para
-    text: CI実行環境の種類
-  - kind: para
-    text: ゆるふわにCIを始める
-  - kind: para
-    text: 実際の事例について
+    text: CIとは何かCIで何ができるかCI実行環境の種類ゆるふわにCIを始める実際の事例について
   p13:
   - kind: para
     text: 本題の前に
   p14:
   - kind: para
-    text: 今回紹介するツールと
-  - kind: para
-    text: GitLab CIの設定をまとめて
-  - kind: para
-    text: セットアップできるプロジェ
+    text: 今回紹介するツールとGitLab CIの設定をまとめてセットアップできるプロジェ
   - kind: para
     text: クトを用意してます
   - kind: para
     text: https://gitlab.com/zonuexe/phperkaigi-ci
   p15:
   - kind: para
-    text: 予め断っておきますが
-  - kind: para
-    text: この構成では規模の大
-  - kind: para
-    text: きなプロジェクトでは
-  - kind: para
-    text: パフォーマンス目立ち
+    text: 予め断っておきますがこの構成では規模の大きなプロジェクトではパフォーマンス目立ち
   - kind: para
     text: ます(断言)
   p16:
   - kind: para
-    text: 実プロジェクトに
-  - kind: para
-    text: 導入する際は各自
-  - kind: para
-    text: の責任で取捨選択
+    text: 実プロジェクトに導入する際は各自の責任で取捨選択
   - kind: para
     text: してください
   p17:
   - kind: para
     text: あとすみません
   - kind: para
-    text: Windowsでは
-  - kind: para
-    text: たぶん動きません
+    text: Windowsではたぶん動きません
   p18:
   - kind: para
     text: CIとは何か
@@ -142,34 +108,14 @@ text:
   - kind: para
     text: CIとは
   - kind: para
-    text: Continuous Integration
+    text: Continuous Integration(継続的インテグレーション)の略
   - kind: para
-    text: (継続的インテグレーション)の略
-  - kind: para
-    text: もともとはXP(エクストリームプログラミング)
-  - kind: para
-    text: コミュニティで明文化されたもの
-  - kind: para
-    text: …らしい
+    text: もともとはXP(エクストリームプログラミング)コミュニティで明文化されたもの…らしい
   - kind: para
     text: 有名な文章は2000年に書かれた
   p20:
   - kind: para
-    text: 議論には登るが、実⾏に移されることの少
-  - kind: para
-    text: ない「ベストプラクティス」がソフトウェア
-  - kind: para
-    text: 開発にはいっぱいある。その中でも、もっと
-  - kind: para
-    text: も基本的かつ重要なもの⼀つが、「完全に
-  - kind: para
-    text: ⾃動化されたビルドとテストプロセス」だ。
-  - kind: para
-    text: これは、プロジェクトチームが⾃分のソフト
-  - kind: para
-    text: ウェアのビルドやテストを⼀⽇に何度も⾏
-  - kind: para
-    text: うことを可能にするものである。
+    text: 議論には登るが、実⾏に移されることの少ない「ベストプラクティス」がソフトウェア開発にはいっぱいある。その中でも、もっとも基本的かつ重要なもの⼀つが、「完全に⾃動化されたビルドとテストプロセス」だ。これは、プロジェクトチームが⾃分のソフトウェアのビルドやテストを⼀⽇に何度も⾏うことを可能にするものである。
   - kind: para
     text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
   - kind: para
@@ -180,25 +126,13 @@ text:
     level: 1
     text: テスト自動化に必要なこと (引用)
   - kind: para
-    text: 全てのソースコードが格納され、誰でも最新の(そして
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
   - kind: para
-    text: 過去の)ソースを取り出すことが可能な、ただ一つの出
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
   - kind: para
-    text: 入口を設定すること
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
   - kind: para
-    text: ビルドプロセスを自動化して、誰でも、コマンド一つで
-  - kind: para
-    text: ソースからシステムを作り出すことができること
-  - kind: para
-    text: テスト作業を自動化して、コマンド一つでいつでもテス
-  - kind: para
-    text: トスィートを実行できるようにすること
-  - kind: para
-    text: 現行の実行可能モジュールで、もっとも適切であると
-  - kind: para
-    text: 自信を持てるようなものを、誰でも入手可能であるよう
-  - kind: para
-    text: にすること
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
   - kind: para
     text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
   - kind: para
@@ -212,31 +146,17 @@ text:
   - kind: para
     text: Composer
   - kind: para
-    text: 全てのソースコードが格納され、誰でも最新の(そして
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
   - kind: para
-    text: 過去の)ソースを取り出すことが可能な、ただ一つの出
+    text: テスティングフレームワーク
   - kind: para
-    text: 入口を設定すること
-  - kind: para
-    text: テスティング
-  - kind: para
-    text: フレームワーク
-  - kind: para
-    text: ビルドプロセスを自動化して、誰でも、コマンド一つで
-  - kind: para
-    text: ソースからシステムを作り出すことができること
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
   - kind: para
     text: git tag / master
   - kind: para
-    text: テスト作業を自動化して、コマンド一つでいつでもテス
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
   - kind: para
-    text: トスィートを実行できるようにすること
-  - kind: para
-    text: 現行の実行可能モジュールで、もっとも適切であると
-  - kind: para
-    text: 自信を持てるようなものを、誰でも入手可能であるよう
-  - kind: para
-    text: にすること
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
   - kind: para
     text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
   - kind: para
@@ -253,40 +173,26 @@ text:
   - kind: para
     text: Composer
   - kind: para
-    text: 全てのソースコードが格納され、誰でも最新の(そして
-  - kind: para
-    text: 過去の)ソースを取り出すことが可能な、ただ一つの出
-  - kind: para
-    text: 入口を設定すること
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
   - kind: heading
     level: 1
     text: 環境は揃ってるので
   - kind: para
-    text: テスティング
+    text: テスティングフレームワーク
   - kind: para
-    text: フレームワーク
-  - kind: para
-    text: ビルドプロセスを自動化して、誰でも、コマンド一つで
-  - kind: para
-    text: ソースからシステムを作り出すことができること
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
   - kind: heading
     level: 1
     text: 基本的に組み合せで
   - kind: para
     text: git tag / master
   - kind: para
-    text: テスト作業を自動化して、コマンド一つでいつでもテス
-  - kind: para
-    text: トスィートを実行できるようにすること
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
   - kind: heading
     level: 1
     text: かなりいける
   - kind: para
-    text: 現行の実行可能モジュールで、もっとも適切であると
-  - kind: para
-    text: 自信を持てるようなものを、誰でも入手可能であるよう
-  - kind: para
-    text: にすること
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
   - kind: para
     text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
   - kind: para
@@ -295,17 +201,9 @@ text:
   - kind: para
     text: 銀の弾丸はない
   - kind: para
-    text: コードの規模や構造によって
+    text: コードの規模や構造によって導入できるツール・できないツールがある
   - kind: para
-    text: 導入できるツール・できない
-  - kind: para
-    text: ツールがある
-  - kind: para
-    text: 大規模なコードになるほど
-  - kind: para
-    text: 実行時間が掛かるようになり
-  - kind: para
-    text: 工夫が必要になってくる
+    text: 大規模なコードになるほど実行時間が掛かるようになり工夫が必要になってくる
   p26:
   - kind: para
     text: CIで何ができるか
@@ -313,19 +211,11 @@ text:
   - kind: para
     text: 継続的にされてると嬉しいこと
   - kind: para
-    text: いろいろあるだろうが、基本的
-  - kind: para
-    text: にはコードが正常に保たれてる
-  - kind: para
-    text: ことは確認し続けたい
+    text: いろいろあるだろうが、基本的にはコードが正常に保たれてることは確認し続けたい
   - kind: para
     text: (コード上の異常発生を迅速に知る)
   - kind: para
-    text: そのほか属人化してる項目や
-  - kind: para
-    text: 忘れられがちなプロセスを盛
-  - kind: para
-    text: り込めるとよい
+    text: そのほか属人化してる項目や忘れられがちなプロセスを盛り込めるとよい
   p28:
   - kind: para
     text: コードの異常を検知するには
@@ -345,39 +235,23 @@ text:
   - kind: para
     text: PHPUnit, phpspecなど
   - kind: para
-    text: 小さな単位でテストすることが
-  - kind: para
-    text: 理想だが、コードが古く結合度
-  - kind: para
-    text: が高いプロジェクトではユニッ
-  - kind: para
-    text: トテストに表現することが困難
-  - kind: para
-    text: なこともある
+    text: 小さな単位でテストすることが理想だが、コードが古く結合度が高いプロジェクトではユニットテストに表現することが困難なこともある
   p30:
   - kind: para
     text: 自動テスト(受け入れテスト)
   - kind: para
     text: Codeception
   - kind: para
-    text: 実際にHTTPリクエストを行っ
+    text: 実際にHTTPリクエストを行ってテストできるフレームワーク
   - kind: para
-    text: てテストできるフレームワーク
-  - kind: para
-    text: 古くテストが少ないプロジェク
-  - kind: para
-    text: トではこちらの方が導入しやす
-  - kind: para
-    text: いかもしれない
+    text: 古くテストが少ないプロジェクトではこちらの方が導入しやすいかもしれない
   p31:
   - kind: para
     text: QAツール (Quality Assurance)
   - kind: para
     text: 大まかに二種類に大別できる
   - kind: para
-    text: 字句解析ベースで主にスタイル
-  - kind: para
-    text: を検査するもの
+    text: 字句解析ベースで主にスタイルを検査するもの
   - kind: para
     text: 再帰的な型検査を行うもの
   p32:
@@ -397,17 +271,7 @@ text:
   - kind: para
     text: 型検査を含む精密な型検査
   - kind: para
-    text: 字句的な静的解析ツールはオブ
-  - kind: para
-    text: ジェクトの未定義メソッド検出
-  - kind: para
-    text: などはできないのに対して、最
-  - kind: para
-    text: 近開発が活発なツールはコード
-  - kind: para
-    text: パスを詳細に解析して、さまざ
-  - kind: para
-    text: まな情報を出してくれる
+    text: 字句的な静的解析ツールはオブジェクトの未定義メソッド検出などはできないのに対して、最近開発が活発なツールはコードパスを詳細に解析して、さまざまな情報を出してくれる
   p34:
   - kind: para
     text: 型検査を含む精密な型検査
@@ -416,11 +280,7 @@ text:
   - kind: para
     text: PHPStan, Psalm, Phan
   - kind: para
-    text: ぶっちゃけキャラが被ってるけ
-  - kind: para
-    text: ど、それぞれ検出してくれるポ
-  - kind: para
-    text: イントが違ったりする
+    text: ぶっちゃけキャラが被ってるけど、それぞれ検出してくれるポイントが違ったりする
   p35: []
   p36:
   - kind: para
@@ -430,52 +290,26 @@ text:
   - kind: para
     text: プロジェクト全体スキャン
   - kind: para
-    text: PHPStanは実行時情報も利用
+    text: PHPStanは実行時情報も利用し必要なファイルのみ解析
   - kind: para
-    text: し必要なファイルのみ解析
-  - kind: para
-    text: 高速に結果を返したい場合は
-  - kind: para
-    text: PHPStanの方が有利
+    text: 高速に結果を返したい場合はPHPStanの方が有利
   p37:
   - kind: para
     text: PHPStanの制約
   - kind: para
-    text: クラスや関数・定数の定義を
+    text: クラスや関数・定数の定義を予め(または遅延)読み込みできるようにする必要がある
   - kind: para
-    text: 予め(または遅延)読み込みでき
-  - kind: para
-    text: るようにする必要がある
-  - kind: para
-    text: PSR-1(定義だけのファイルと
-  - kind: para
-    text: 副作用の処理を分離すること)
-  - kind: para
-    text: が重要
+    text: PSR-1(定義だけのファイルと副作用の処理を分離すること)が重要
   p38:
   - kind: para
     text: PHPStanの制約
   - kind: para
-    text: ComposerとかPSR-1を考慮し
-  - kind: para
-    text: てない時代のPHPプロジェクトに
-  - kind: para
-    text: は厳しいが、ハードルを越えれば
-  - kind: para
-    text: 高速で頻繁なビルドが可能
+    text: ComposerとかPSR-1を考慮してない時代のPHPプロジェクトには厳しいが、ハードルを越えれば高速で頻繁なビルドが可能
   p39:
   - kind: para
     text: PHPStanの効能
   - kind: para
-    text: 今回の本題とは少し離れるが、
-  - kind: para
-    text: EmacsやVimでチェッカーのバッ
-  - kind: para
-    text: クエンドとして適切に設定す
-  - kind: para
-    text: ると、PhpStormを凌ぐ情報量
-  - kind: para
-    text: がリアルタイムで得られる
+    text: 今回の本題とは少し離れるが、EmacsやVimでチェッカーのバックエンドとして適切に設定すると、PhpStormを凌ぐ情報量がリアルタイムで得られる
   p40: []
   p41:
   - kind: para
@@ -491,22 +325,14 @@ text:
   - kind: para
     text: 「たくさんやるほうが望ましい」
   - kind: para
-    text: 多くのCIサービスでGitHubと
-  - kind: para
-    text: 連携して、Pull Requestを作成
-  - kind: para
-    text: したブランチにPushするたびに
-  - kind: para
-    text: 毎回ビルドを行うのが普通
+    text: 多くのCIサービスでGitHubと連携して、Pull Requestを作成したブランチにPushするたびに毎回ビルドを行うのが普通
   - kind: para
     text: 結果はPRのページに表示される
   p44:
   - kind: para
     text: 汎用CIの実行環境
   - kind: para
-    text: テストプログラムを｢自動的｣かつ
-  - kind: para
-    text: ｢継続的｣に実行する必要がある
+    text: テストプログラムを｢自動的｣かつ｢継続的｣に実行する必要がある
   - kind: para
     text: 汎用のCIと特定用途のCIがある
   - kind: para
@@ -523,42 +349,24 @@ text:
   - kind: para
     text: 典型的にはGitHubなどと連携
   - kind: para
-    text: CI側が用意したOS環境を利用す
-  - kind: para
-    text: るものと、Dockerイメージを利
-  - kind: para
-    text: 用するものがある
+    text: CI側が用意したOS環境を利用するものと、Dockerイメージを利用するものがある
   p46: []
   p47:
   - kind: para
     text: CI SaaSの制約
   - kind: para
-    text: GitHub Enterpriseやオンプレ
+    text: GitHub EnterpriseやオンプレのGitLabは連携できない
   - kind: para
-    text: のGitLabは連携できない
-  - kind: para
-    text: 各種CIのオンプレ版(有償)を利
-  - kind: para
-    text: 用することで利用できるが、
-  - kind: para
-    text: サーバの調達・管理は自前で
-  - kind: para
-    text: 行う必要がある
+    text: 各種CIのオンプレ版(有償)を利用することで利用できるが、サーバの調達・管理は自前で行う必要がある
   p48:
   - kind: para
     text: オンプレミスのCI
   - kind: para
-    text: サーバを自前で調達・管理する
+    text: サーバを自前で調達・管理する必要がある
   - kind: para
-    text: 必要がある
+    text: 無料の製品ではJenkinsの牙城だった
   - kind: para
-    text: 無料の製品ではJenkinsの牙城
-  - kind: para
-    text: だった
-  - kind: para
-    text: 自前でGitLab CEをCI機能を持っ
-  - kind: para
-    text: てるので連携することもできる
+    text: 自前でGitLab CEをCI機能を持ってるので連携することもできる
   p49:
   - kind: para
     text: GitLabの場合
@@ -582,9 +390,7 @@ text:
   - kind: para
     text: グループあたり月2000分まで
   - kind: para
-    text: 設定ファイルに書くだけで
-  - kind: para
-    text: Dockerでビルドが実行される
+    text: 設定ファイルに書くだけでDockerでビルドが実行される
   p51:
   - kind: para
     text: 特定用途のCI
@@ -605,9 +411,7 @@ text:
   - kind: para
     text: で、結局いろいろ準備
   - kind: para
-    text: しなくちゃいけなくて
-  - kind: para
-    text: めんどくさいんでしょ？
+    text: しなくちゃいけなくてめんどくさいんでしょ？
   p54:
   - kind: para
     text: ゆるふわに始める
@@ -615,53 +419,33 @@ text:
     text: CI
   p55:
   - kind: para
-    text: もっと気軽に手を
-  - kind: para
-    text: 付けられるところから
+    text: もっと気軽に手を付けられるところから
   - kind: para
     text: やっていきましょう
   p56:
   - kind: para
     text: 継続して動かせる
   - kind: para
-    text: サーバがない
-  - kind: para
-    text: さてどうするか
+    text: サーバがないさてどうするか
   p57:
   - kind: heading
     level: 1
     text: テスト自動化に必要なこと (引用)
   - kind: para
-    text: 全てのソースコードが格納され、誰でも最新の(そして
+    text: 全てのソースコードが格納され、誰でも最新の(そして過去の)ソースを取り出すことが可能な、ただ一つの出入口を設定すること
   - kind: para
-    text: 過去の)ソースを取り出すことが可能な、ただ一つの出
+    text: ビルドプロセスを自動化して、誰でも、コマンド一つでソースからシステムを作り出すことができること
   - kind: para
-    text: 入口を設定すること
+    text: テスト作業を自動化して、コマンド一つでいつでもテストスィートを実行できるようにすること
   - kind: para
-    text: ビルドプロセスを自動化して、誰でも、コマンド一つで
-  - kind: para
-    text: ソースからシステムを作り出すことができること
-  - kind: para
-    text: テスト作業を自動化して、コマンド一つでいつでもテス
-  - kind: para
-    text: トスィートを実行できるようにすること
-  - kind: para
-    text: 現行の実行可能モジュールで、もっとも適切であると
-  - kind: para
-    text: 自信を持てるようなものを、誰でも入手可能であるよう
-  - kind: para
-    text: にすること
+    text: 現行の実行可能モジュールで、もっとも適切であると自信を持てるようなものを、誰でも入手可能であるようにすること
   - kind: para
     text: –Martin Fowler, 継続的インテグレーション (オブラブ訳)
   - kind: para
     text: http://objectclub.jp/community/XP-jp/xp_relate/cont-j
   p58:
   - kind: para
-    text: 複雑な反復作業があれば、
-  - kind: para
-    text: 一個のコマンド(スクリプト)で
-  - kind: para
-    text: まとめてみることから始める
+    text: 複雑な反復作業があれば、一個のコマンド(スクリプト)でまとめてみることから始める
   p59:
   - kind: para
     text: ところで
@@ -669,9 +453,7 @@ text:
   - kind: para
     text: みなさんSyntaxErrorのPHP
   - kind: para
-    text: スクリプトを本番に反映して
-  - kind: para
-    text: 事故ったことはありますか？
+    text: スクリプトを本番に反映して事故ったことはありますか？
   p61:
   - kind: para
     text: 私はたくさんあります
@@ -682,30 +464,20 @@ text:
   - kind: para
     text: Syntax Errorになる
   - kind: para
-    text: ファイルを確実に
-  - kind: para
-    text: 捕捉してみましょう
+    text: ファイルを確実に捕捉してみましょう
   p63:
   - kind: para
-    text: git ls-files '*\.php' |
-  - kind: para
-    text: xargs -I{} php -l {}
+    text: git ls-files '*\.php' |xargs -I{} php -l {}
   p64:
   - kind: para
-    text: Windowsにはxargsが
-  - kind: para
-    text: ない(たぶん)のでPHPで
+    text: Windowsにはxargsがない(たぶん)のでPHPで
   - kind: para
     text: https://gist.github.com/zonuexe/a513afd1d6933b3cc5cca0eb866f2834
   p65:
   - kind: para
-    text: ファイルが数十個単位ならす
+    text: ファイルが数十個単位ならすぐに終るが、数千単位になる
   - kind: para
-    text: ぐに終るが、数千単位になる
-  - kind: para
-    text: と全数の検査はかなり
-  - kind: para
-    text: 時間が掛かるので注意
+    text: と全数の検査はかなり時間が掛かるので注意
   p66:
   - kind: para
     text: 弊社での事例に
@@ -719,44 +491,24 @@ text:
     text: 行数 974419
   p69:
   - kind: para
-    text: 毎回全ファイルを
-  - kind: para
-    text: チェックするのは
-  - kind: para
-    text: さすがにつらい
+    text: 毎回全ファイルをチェックするのはさすがにつらい
   p70:
   - kind: para
     text: デプロイ時に常にgit tagをつける
   - kind: para
-    text: デプロイスクリプトで、
-  - kind: para
-    text: デプロイ成功したら日時と作
-  - kind: para
-    text: 業者名を含むタグを生成して
-  - kind: para
-    text: originにpushする
+    text: デプロイスクリプトで、デプロイ成功したら日時と作業者名を含むタグを生成してoriginにpushする
   p71:
   - kind: para
     text: 最新のリリースタグとの差分をとる
   - kind: para
-    text: これで最新デプロイと手元の
-  - kind: para
-    text: 差分があるファイル抽出できる
+    text: これで最新デプロイと手元の差分があるファイル抽出できる
   p72:
   - kind: para
     text: デプロイ時にphp -lを行う
   - kind: para
-    text: 差分のあるファイル全部に対し
+    text: 差分のあるファイル全部に対してチェックを実施し、一つでもエラーのファイルがあったらデプロイ処理を中断する
   - kind: para
-    text: てチェックを実施し、一つでも
-  - kind: para
-    text: エラーのファイルがあったらデ
-  - kind: para
-    text: プロイ処理を中断する
-  - kind: para
-    text: 中断されるとtagはつかないの
-  - kind: para
-    text: で、差分が隠れることはない
+    text: 中断されるとtagはつかないので、差分が隠れることはない
   p73:
   - kind: para
     text: MergeRequestと二種類のビルド
@@ -770,56 +522,36 @@ text:
   - kind: para
     text: PHPStan
   - kind: para
-    text: PHPStan本運用のためbootstrap
-  - kind: para
-    text: 処理の軽いリファクタリングをした
+    text: PHPStan本運用のためbootstrap処理の軽いリファクタリングをした
   - kind: para
     text: _autoloader_for_static_analysis.php
   - kind: para
-    text: この作業によってPhpactorと
-  - kind: para
-    text: いう別ツールも利用可能に
+    text: この作業によってPhpactorという別ツールも利用可能に
   p75:
   - kind: para
     text: PHPUnit
   - kind: para
     text: 直列実行で10分前後かかっていた
   - kind: para
-    text: テストが依存するMySQLを複数起
-  - kind: para
-    text: 動し、PHPUnitのプロセスを並列
-  - kind: para
-    text: 実行することで1分程度で完了
+    text: テストが依存するMySQLを複数起動し、PHPUnitのプロセスを並列実行することで1分程度で完了
   p76:
   - kind: para
     text: masterブランチへのテスト
   - kind: para
-    text: MRのテストを無視してmaster
+    text: MRのテストを無視してmasterにマージされたときの防波堤
   - kind: para
-    text: にマージされたときの防波堤
+    text: この段階で失敗したテストはSlackで報告される
   - kind: para
-    text: この段階で失敗したテストは
-  - kind: para
-    text: Slackで報告される
-  - kind: para
-    text: 時刻に依存したテストのランダ
-  - kind: para
-    text: ムフェイルがたまに報告される
+    text: 時刻に依存したテストのランダムフェイルがたまに報告される
   p77:
   - kind: para
     text: 実行環境
   - kind: para
     text: GitLab CI + Jenkins
   - kind: para
-    text: 以前はPHPStanの警告はGitLab
+    text: 以前はPHPStanの警告はGitLabのMRへのコメントで報告
   - kind: para
-    text: のMRへのコメントで報告
-  - kind: para
-    text: 現在はCI実行はAWSまたは
-  - kind: para
-    text: Jenkinsで、それぞれの結果を
-  - kind: para
-    text: GitLabのパイプラインに統合
+    text: 現在はCI実行はAWSまたはJenkinsで、それぞれの結果をGitLabのパイプラインに統合
   p78:
   - kind: para
     text: まとめ
@@ -833,74 +565,38 @@ text:
   - kind: para
     text: 定義ファイルは分離されてるか
   - kind: para
-    text: (同名の関数や定数が複数定義
-  - kind: para
-    text: されてるとはまる)
+    text: (同名の関数や定数が複数定義されてるとはまる)
   p80:
   - kind: para
-    text: 発表時に書き
-  - kind: para
-    text: そびれたこと
+    text: 発表時に書きそびれたこと
   p81:
   - kind: para
     text: 小姑CI
   - kind: para
-    text: コーディングスタイルのような重
+    text: コーディングスタイルのような重箱の隅は人間がコードレビューで小うるさく責めるより、Botが鉄の心で指摘した方が角が立たない
   - kind: para
-    text: 箱の隅は人間がコードレビューで
-  - kind: para
-    text: 小うるさく責めるより、Botが鉄の
-  - kind: para
-    text: 心で指摘した方が角が立たない
-  - kind: para
-    text: PHP-CS-Fixerやphpcbfのよう
-  - kind: para
-    text: なコマンド一撃で修正されるよう
-  - kind: para
-    text: にすれば手間もかからない
+    text: PHP-CS-Fixerやphpcbfのようなコマンド一撃で修正されるようにすれば手間もかからない
   p82:
   - kind: para
     text: どんな場合も静的解析を導入すべきか
   - kind: para
-    text: 普通の既存プロジェクトをPHPStan
+    text: 普通の既存プロジェクトをPHPStanやPhanで解析すると異常な量の型の不整合の警告が出るのが普通
   - kind: para
-    text: やPhanで解析すると異常な量の
-  - kind: para
-    text: 型の不整合の警告が出るのが普通
-  - kind: para
-    text: 多すぎる警告を目のあたりにする
-  - kind: para
-    text: と、人間は無力感に苛まれる
-  - kind: para
-    text: (学習性無力感)
+    text: 多すぎる警告を目のあたりにすると、人間は無力感に苛まれる(学習性無力感)
   p83:
   - kind: para
     text: 警告を深刻に受け止めない
   - kind: para
-    text: そのプロダクトが実際は動いてる
+    text: そのプロダクトが実際は動いてるのであれば、現状をあまり深刻に感じる必要はない
   - kind: para
-    text: のであれば、現状をあまり深刻に
-  - kind: para
-    text: 感じる必要はない
-  - kind: para
-    text: 警告は記述の不整合や曖昧な点を
-  - kind: para
-    text: 教えてくれてるだけなので、「警
-  - kind: para
-    text: 告を減らす」ことに価値がある
+    text: 警告は記述の不整合や曖昧な点を教えてくれてるだけなので、「警告を減らす」ことに価値がある
   p84:
   - kind: para
     text: 注目する警告を減らす
   - kind: para
-    text: Phanであればmasterでのログ
+    text: Phanであればmasterでのログ出力とブランチでの出力が減る(増えない)ことだけに注目する
   - kind: para
-    text: 出力とブランチでの出力が減る
-  - kind: para
-    text: (増えない)ことだけに注目する
-  - kind: para
-    text: PHPStanであれば、ブランチで変
-  - kind: para
-    text: 更したファイル(と、そのクラス/関数を
+    text: PHPStanであれば、ブランチで変更したファイル(と、そのクラス/関数を
   - kind: para
     text: 使ったファイル)だけを対象にしてみる
   p85:

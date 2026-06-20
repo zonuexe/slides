@@ -23,48 +23,34 @@ text:
     text: (*出典： 『初めての人のためのLISP』)
   p3:
   - kind: para
-    text: 普段はEmacsという
-  - kind: para
-    text: Lisp専用OSでPHP開発
+    text: 普段はEmacsというLisp専用OSでPHP開発
   - kind: para
     text: する環境を作ってます
   p4:
   - kind: para
-    text: こういうバック
-  - kind: para
-    text: グラウンドなので
-  - kind: para
-    text: 関数型よくわからない…
+    text: こういうバックグラウンドなので関数型よくわからない…
   p5:
   - kind: para
-    text: map/reduceが
-  - kind: para
-    text: 関数プログラミング
+    text: map/reduceが関数プログラミング
   - kind: para
     text: なんでしょ
   p6:
   - kind: para
     text: 僕はあらゆるループを
   - kind: para
-    text: LispのLOOPマクロ
-  - kind: para
-    text: で書きたい派なんで…
+    text: LispのLOOPマクロで書きたい派なんで…
   p7:
   - kind: para
     text: ちなみにLispはElixir
   - kind: para
-    text: と同様に、基本的に
-  - kind: para
-    text: returnを書けません
+    text: と同様に、基本的にreturnを書けません
   p8:
   - kind: heading
     level: 1
     text: さて
   p9:
   - kind: para
-    text: PHPって
-  - kind: para
-    text: どういう言語
+    text: PHPってどういう言語
   p10:
   - kind: heading
     level: 1
@@ -78,16 +64,11 @@ text:
     level: 1
     text: PHPスクリプト
   - kind: para
-    text: <?php
-  - kind: para
-    text: echo "<!DOCTYPE html public>\n\n";
-  - kind: para
-    text: echo "<p>現在は", date('%H時%i分%s秒です'), "</p>\n";
+    text: <?php echo "<!DOCTYPE html public>\n\n";echo "<p>現在は", date('%H時%i分%s秒です'),
+      "</p>\n";
   p12:
   - kind: para
-    text: こういうノリで
-  - kind: para
-    text: Webアプリがサクっと
+    text: こういうノリでWebアプリがサクっと
   - kind: para
     text: 書ける素朴な言語
   p13:
@@ -143,11 +124,7 @@ text:
     - 明示しなくても キャプチャできて便利
   p18:
   - kind: para
-    text: これだけ知れば
-  - kind: para
-    text: おもしろいこと
-  - kind: para
-    text: いろいろできそう
+    text: これだけ知ればおもしろいこといろいろできそう
   p19:
   - kind: heading
     level: 1
@@ -156,9 +133,7 @@ text:
   - kind: para
     text: 世の中にはいろんな
   - kind: para
-    text: 制約を課した
-  - kind: para
-    text: プログラミングがある
+    text: 制約を課したプログラミングがある
   p21:
   - kind: para
     text: セミコロンなしで
@@ -219,9 +194,7 @@ text:
     text: https://horosora.hatenablog.com/entry/2018/08/03/162147より引用
   p30:
   - kind: para
-    text: ; だけじゃなくて
-  - kind: para
-    text: '{} も縛りたくない？'
+    text: ; だけじゃなくて{} も縛りたくない？
   p31:
   - kind: heading
     level: 1
@@ -240,19 +213,13 @@ text:
     text: ; を削れる
   p33:
   - kind: para
-    text: すべての処理を
-  - kind: para
-    text: <?= に押し込む
+    text: すべての処理を<?= に押し込む
   p34:
   - kind: para
-    text: できれば一個の
-  - kind: para
-    text: <?= に押し込む
+    text: できれば一個の<?= に押し込む
   p35:
   - kind: para
-    text: PHPは式指向
-  - kind: para
-    text: プログラミングできる
+    text: PHPは式指向プログラミングできる
   - kind: para
     text: 下地はいろいろある
   p36:
@@ -268,11 +235,7 @@ text:
     - ループは array_map(), array_reduce() でどうにか
   p37:
   - kind: para
-    text: これだけできれば
-  - kind: para
-    text: チューリング完全
-  - kind: para
-    text: であることは自明
+    text: これだけできればチューリング完全であることは自明
   p38:
   - kind: heading
     level: 1
@@ -288,22 +251,13 @@ text:
   - kind: para
     text: 1から100をFizzBuzzに変換して改行区切りで出力
   - kind: para
-    text: <?= implode(array_map(
-  - kind: para
-    text: 'fn(int $n): string => [[$n, ''Buzz''],'
-  - kind: para
-    text: '[''Fizz'', ''FizzBuzz'']][$n%3==0][$n%5==0],'
-  - kind: para
-    text: range(1, 100), "\n") ?>
+    text: '<?= implode(array_map(fn(int $n): string => [[$n, ''Buzz''],[''Fizz'',
+      ''FizzBuzz'']][$n%3==0][$n%5==0],range(1, 100), "\n") ?>'
   p40:
   - kind: para
-    text: こういうノリで
+    text: こういうノリでmap/reduceに
   - kind: para
-    text: map/reduceに
-  - kind: para
-    text: 変形できれば
-  - kind: para
-    text: 任意の処理が可能
+    text: 変形できれば任意の処理が可能
   p41:
   - kind: para
     text: パイプライン演算子が
@@ -317,9 +271,7 @@ text:
     text: これはLispですね
   p43:
   - kind: para
-    text: そう思ったことが
-  - kind: para
-    text: 私にもありました
+    text: そう思ったことが私にもありました
   p44:
   - kind: heading
     level: 1
@@ -349,9 +301,7 @@ text:
     text: この路線の限界
   p50:
   - kind: para
-    text: array_map/
-  - kind: para
-    text: array_reduceは
+    text: array_map/array_reduceは
   - kind: para
     text: あくまで配列処理
   p51:
@@ -371,15 +321,8 @@ text:
   - kind: para
     text: いけない
   - kind: para
-    text: $fib = function (int $n) use (&$fib) {
-  - kind: para
-    text: return ($n < 2)
-  - kind: para
-    text: '? 1'
-  - kind: para
-    text: ': $fib($n - 1) + $fib($n -2);'
-  - kind: para
-    text: '};'
+    text: '$fib = function (int $n) use (&$fib) {return ($n < 2)? 1: $fib($n - 1)
+      + $fib($n -2);};'
   p53:
   - kind: heading
     level: 1
@@ -393,13 +336,7 @@ text:
   - kind: para
     text: ので束縛できない
   - kind: para
-    text: $fib = fn (int $n) =>
-  - kind: para
-    text: ($n < 2)
-  - kind: para
-    text: '? 1'
-  - kind: para
-    text: ': $fib($n - 1) + $fib($n -2);'
+    text: '$fib = fn (int $n) =>($n < 2)? 1: $fib($n - 1) + $fib($n -2);'
   p54:
   - kind: heading
     level: 1
@@ -414,9 +351,7 @@ text:
     text: 不動点演算子
   p57:
   - kind: para
-    text: いわゆる
-  - kind: para
-    text: Yコンビネータ
+    text: いわゆるYコンビネータ
   - kind: para
     text: (Zコンビネータ)
   p58:
@@ -445,16 +380,12 @@ text:
     text: まとめ
   p64:
   - kind: para
-    text: PHPはLispじゃない
-  - kind: para
-    text: 式指向プログラミング
+    text: PHPはLispじゃない式指向プログラミング
   - kind: para
     text: は大変
   p65:
   - kind: para
-    text: エクストリーム
-  - kind: para
-    text: スポーツを楽しもう
+    text: エクストリームスポーツを楽しもう
   p66:
   - kind: para
     text: ご静聴ありがとう
@@ -462,11 +393,7 @@ text:
     text: ございました
   p67:
   - kind: para
-    text: あとPHPでもかなり
-  - kind: para
-    text: 実用的な静的型検査が
-  - kind: para
-    text: できるようになってる
+    text: あとPHPでもかなり実用的な静的型検査ができるようになってる
   p68:
   - kind: para
     text: 関連記事

@@ -19,9 +19,7 @@ text:
     level: 2
     text: USAMI Kenta
   - kind: para
-    text: '2024-07-18 #orekobe'
-  - kind: para
-    text: 'PHP"オレ"カンファレンス神戸 #1'
+    text: '2024-07-18 #orekobe PHP"オレ"カンファレンス神戸 #1'
   p2:
   - kind: para
     text: お前誰よ
@@ -50,24 +48,16 @@ text:
     text: さて
   p5:
   - kind: para
-    text: 2024年は
-  - kind: para
-    text: いろいろありました
+    text: 2024年はいろいろありました
   p6: []
   p7:
   - kind: para
-    text: どうして
-  - kind: para
-    text: こんなことに
+    text: どうしてこんなことに
   - kind: para
     text: なったのか
   p8:
   - kind: para
-    text: 話は
-  - kind: para
-    text: 1993年に
-  - kind: para
-    text: さかのぼる
+    text: 話は1993年にさかのぼる
   p9:
   - kind: heading
     level: 1
@@ -87,21 +77,14 @@ text:
     text: はじまります
   p12:
   - kind: para
-    text: PHPは
-  - kind: para
-    text: どこから来たのか
+    text: PHPはどこから来たのか
   p13:
   - kind: para
-    text: PHPを
-  - kind: para
-    text: 作ったのは
-  - kind: para
-    text: 誰でしょうか
+    text: PHPを作ったのは誰でしょうか
   p14:
   - kind: para
-    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用'
-  - kind: para
-    text: https://ja.wikipedia.org/wiki/ラスマス・ラードフ 2021-07-01T14:10:55版
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用https://ja.wikipedia.org/wiki/ラスマス・ラードフ
+      2021-07-01T14:10:55版'
   p15:
   - kind: para
     text: '出典: 伝説のPHP作者「Rasmus Lerdorf」名言集を聞くと嫌PHP厨がファビョる'
@@ -109,17 +92,13 @@ text:
     text: https://web.archive.org/web/20100501140915/http://anond.hatelabo.jp/20100427231539
   p16:
   - kind: para
-    text: 出典:伝説の喫煙者「黒木 灰次郎」名言集を聞くと嫌煙がファビョる
-  - kind: para
-    text: http://blog.livedoor.jp/hokanisurukotoha/archives/1121714.html
+    text: 出典:伝説の喫煙者「黒木 灰次郎」名言集を聞くと嫌煙がファビョるhttp://blog.livedoor.jp/hokanisurukotoha/archives/1121714.html
   p17:
   - kind: para
     text: '出典: ウィキクォート https://ja.wikiquote.org/wiki/ラスマス・ラードフ'
   p18:
   - kind: para
-    text: PHPは多くの人から疎まれ、
-  - kind: para
-    text: まじめなプログラミング言語として
+    text: PHPは多くの人から疎まれ、まじめなプログラミング言語として
   - kind: para
     text: 考察対象とされていない節がある
   p19:
@@ -178,26 +157,17 @@ text:
   - kind: para
     text: A. 異常に行動力があるRasmus
   - kind: para
-    text: さんが自分のためにPHPを作っ
-  - kind: para
-    text: て、何回か書き直した後に利己的
-  - kind: para
-    text: な動機でソースコード公開したら
-  - kind: para
-    text: 世界的に開発が盛り上がっちゃった
+    text: さんが自分のためにPHPを作って、何回か書き直した後に利己的な動機でソースコード公開したら世界的に開発が盛り上がっちゃった
   p41: []
   p42:
   - kind: para
-    text: イスラエルの大学生
-  - kind: para
-    text: ZeevとAndiが仲間に
+    text: イスラエルの大学生ZeevとAndiが仲間に
   - kind: para
     text: なって大革新を遂げる
   p43:
   - kind: para
-    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用'
-  - kind: para
-    text: https://ja.wikipedia.org/wiki/ラスマス・ラードフ 2021-07-01T14:10:55版
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用https://ja.wikipedia.org/wiki/ラスマス・ラードフ
+      2021-07-01T14:10:55版'
   p44:
   - kind: para
     text: Rasmusは一般的な意
@@ -225,87 +195,41 @@ text:
     level: 1
     text: A
   - kind: para
-    text: <!DOCTYPE html>
-  - kind: para
-    text: <html><head><title>Hello, PHP!</title></head>
-  - kind: para
-    text: <p>
-  - kind: para
-    text: '<?php if (date(''H'') < 19): ?>'
-  - kind: para
-    text: こんにちは
-  - kind: para
-    text: '<?php else: ?>'
-  - kind: para
-    text: こんばんは
-  - kind: para
-    text: <?php endif; ?>
-  - kind: para
-    text: </p>
-  - kind: para
-    text: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+    text: '<!DOCTYPE html><html><head><title>Hello, PHP!</title></head><p><?php if
+      (date(''H'') < 19): ?>こんにちは<?php else: ?>こんばんは<?php endif; ?></p><p>今は<?= htmlspecialchars(date(''H''))
+      ?>時です</p>'
   p51:
   - kind: heading
     level: 1
     text: B
   - kind: para
-    text: <?php require 'bootstrap.php';
-  - kind: para
-    text: $db = mysqli_connect();
-  - kind: para
-    text: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
-  - kind: para
-    text: mysqli_stmt_execute($stmt);
-  - kind: para
-    text: print '<h1>本の一覧</h1>';
-  - kind: para
-    text: print '<ul>';
-  - kind: para
-    text: foreach ($stmt as $s) {
-  - kind: para
-    text: print '<li>'; print $s->name; print '</li>';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: print '</ul>';
+    text: <?php require 'bootstrap.php';$db = mysqli_connect();$stmt = mysqli_prepare($db,
+      'SELECT * FROM books');mysqli_stmt_execute($stmt);print '<h1>本の一覧</h1>';print
+      '<ul>';foreach ($stmt as $s) {print '<li>'; print $s->name; print '</li>';}print
+      '</ul>';
   p52:
   - kind: heading
     level: 1
     text: C
   - kind: para
-    text: <?php declare(strict_types=1);
+    text: <?php declare(strict_types=1);namespace Foo\Http\Controller;
   - kind: para
-    text: namespace Foo\Http\Controller;
+    text: class BooksController extends BaseController {public function index() {$books
+      = Books::getAll();
   - kind: para
-    text: class BooksController extends BaseController {
-  - kind: para
-    text: public function index() {
-  - kind: para
-    text: $books = Books::getAll();
-  - kind: para
-    text: $this->render(compact("books"));
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: $this->render(compact("books"));}}
   p53:
   - kind: para
     text: 前提が「プログラミング」
   - kind: para
-    text: 「システム開発」
-  - kind: para
-    text: ではないユーザーも多い
+    text: 「システム開発」ではないユーザーも多い
   p54: []
   p55: []
   p56: []
   p57: []
   p58:
   - kind: para
-    text: Q. 日本でPHP系の
-  - kind: para
-    text: カンファレンスは何回
-  - kind: para
-    text: 開催されたのでしょうか
+    text: Q. 日本でPHP系のカンファレンスは何回開催されたのでしょうか
   p59:
   - kind: para
     text: A. 数えかたにもよるが、
@@ -322,26 +246,16 @@ text:
     text: Q. どうしてこうなったのか
   p64:
   - kind: para
-    text: A. コロナ禍明けで
-  - kind: para
-    text: 直接会って会話する楽しさ
+    text: A. コロナ禍明けで直接会って会話する楽しさ
   - kind: para
     text: を思い出してしまった
   p65:
   - kind: para
-    text: A. 自分も発表したり
-  - kind: para
-    text: イベントを開催したいと
-  - kind: para
-    text: 思う人口の裾野が拡がった
+    text: A. 自分も発表したりイベントを開催したいと思う人口の裾野が拡がった
   p66: []
   p67:
   - kind: para
-    text: YAPC
-  - kind: para
-    text: RubyKaigi
-  - kind: para
-    text: PyCon JP
+    text: YAPC RubyKaigi PyCon JP
   - kind: para
     text: etc...
   p68:
@@ -351,23 +265,15 @@ text:
     text: 事情がいろいろある
   p69:
   - kind: para
-    text: PHPerは
-  - kind: para
-    text: どこへ行くのか
+    text: PHPerはどこへ行くのか
   p70:
   - kind: para
-    text: よくも悪くも
+    text: よくも悪くもコミュニティの盛り上がりで
   - kind: para
-    text: コミュニティの盛り上がりで
-  - kind: para
-    text: カンファレンス発表の
-  - kind: para
-    text: ハードルが上がってしまった
+    text: カンファレンス発表のハードルが上がってしまった
   p71:
   - kind: para
-    text: コミュニケーションの場は
-  - kind: para
-    text: カンファレンスだけじゃない
+    text: コミュニケーションの場はカンファレンスだけじゃない
   p72: []
   p73: []
   p74:
@@ -379,44 +285,30 @@ text:
   p76: []
   p77:
   - kind: para
-    text: 情報を他者に教えられる
-  - kind: para
-    text: レベルに整理することで
+    text: 情報を他者に教えられるレベルに整理することで
   - kind: para
     text: 自分の理解を深めたい
   p78:
   - kind: para
-    text: 個人的な思想：
-  - kind: para
-    text: 直接的な勉強より
-  - kind: para
-    text: 多角的な視点を得たい
+    text: 個人的な思想：直接的な勉強より多角的な視点を得たい
   p79:
   - kind: para
     text: PHP && 技術
   - kind: para
-    text: ではなく
-  - kind: para
-    text: PHP愛 || 技術
+    text: ではなくPHP愛 || 技術
   p80:
   - kind: para
     text: 発表内容を「勉強」として
   - kind: para
-    text: 完全理解することに
-  - kind: para
-    text: こだわる必要はない
+    text: 完全理解することにこだわる必要はない
   p81:
   - kind: para
-    text: 記憶のフックを作って
-  - kind: para
-    text: いつか役立ててほしい
+    text: 記憶のフックを作っていつか役立ててほしい
   p82:
   - kind: para
     text: PHPにお世話になっている
   - kind: para
-    text: からといって全員が
-  - kind: para
-    text: PHPエコシステムに貢献し
+    text: からといって全員がPHPエコシステムに貢献し
   - kind: para
     text: ないといけないことはない
   p83:

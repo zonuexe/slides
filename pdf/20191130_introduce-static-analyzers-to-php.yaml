@@ -87,9 +87,7 @@ text:
   - kind: para
     text: オブジェクトのメソッド
   - kind: para
-    text: やプロパティが適切に
-  - kind: para
-    text: 補完されると気持ち良い
+    text: やプロパティが適切に補完されると気持ち良い
   p22:
   - kind: para
     text: 補完がきちんと機能
@@ -185,9 +183,7 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: エラーの列挙ができないので
-  - kind: para
-    text: CIのフローに組み込めない
+    text: エラーの列挙ができないのでCIのフローに組み込めない
   p32:
   - kind: para
     text: Phan
@@ -200,9 +196,7 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: 大規模プロジェクトでは解析
-  - kind: para
-    text: に時間がかかる
+    text: 大規模プロジェクトでは解析に時間がかかる
   p33:
   - kind: para
     text: PHPStan
@@ -215,9 +209,7 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: Composer以外の依存関係
-  - kind: para
-    text: があると導入にコツが要る
+    text: Composer以外の依存関係があると導入にコツが要る
   p34:
   - kind: para
     text: Psalm
@@ -230,17 +222,13 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: 大規模プロジェクトでは解析
-  - kind: para
-    text: に時間がかかる
+    text: 大規模プロジェクトでは解析に時間がかかる
   p35:
   - kind: heading
     level: 1
     text: 静的解析の選択軸
   - kind: para
-    text: Phan
-  - kind: para
-    text: PHPStan
+    text: Phan PHPStan
   - kind: para
     text: 定義のみ実行が必要
   - kind: para
@@ -260,65 +248,35 @@ text:
   - kind: para
     text: 対象ファイルを
   - kind: para
-    text: 解析単位
-  - kind: para
-    text: プロジェクトおよび
-  - kind: para
-    text: 依存ライブラリ全体
+    text: 解析単位プロジェクトおよび依存ライブラリ全体
   - kind: para
     text: 個別指定
   p36:
   - kind: para
     text: つまりどれがいいのか (CI)
   - kind: para
-    text: 現時点ではそれぞれのツール
+    text: 現時点ではそれぞれのツールで検出項目に一長一短があるため、使い分けるとよい
   - kind: para
-    text: で検出項目に一長一短がある
-  - kind: para
-    text: ため、使い分けるとよい
-  - kind: para
-    text: PHPStanは高速なのでGitで
-  - kind: para
-    text: ブランチにpushするごとに検
-  - kind: para
-    text: 査するようなCIと相性がよい
+    text: PHPStanは高速なのでGitでブランチにpushするごとに検査するようなCIと相性がよい
   p37:
   - kind: para
     text: PHPStanの制約
   - kind: para
-    text: クラス/関数/定数の定義と副作
-  - kind: para
-    text: 用のある処理は明確に分かれ
-  - kind: para
-    text: ていないといけない
+    text: クラス/関数/定数の定義と副作用のある処理は明確に分かれていないといけない
   - kind: para
     text: つまり、PSR-1
   - kind: para
-    text: Phanなら定義と処理が混在
-  - kind: para
-    text: したファイルも解析できる
+    text: Phanなら定義と処理が混在したファイルも解析できる
   p38:
   - kind: heading
     level: 1
     text: こういうコードはPHPStanで解析できない
   - kind: para
-    text: <?php
+    text: <?php include __DIR__ . '/config.php';
   - kind: para
-    text: include __DIR__ . '/config.php';
+    text: $connection = new PDO(DSN);drop_table($connection);exit;
   - kind: para
-    text: $connection = new PDO(DSN);
-  - kind: para
-    text: drop_table($connection);
-  - kind: para
-    text: exit;
-  - kind: para
-    text: function drop_table($connection)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $connection->exec('DROP TABLE `users`;');
-  - kind: para
-    text: '}'
+    text: function drop_table($connection){$connection->exec('DROP TABLE `users`;');}
   p39:
   - kind: para
     text: 静的解析を
@@ -408,17 +366,13 @@ text:
   - kind: para
     text: パフォーマンスに影響する
   - kind: para
-    text: ext-pcntl, ext-iconv,
-  - kind: para
-    text: ext-mbstringも推奨
+    text: ext-pcntl, ext-iconv,ext-mbstringも推奨
   p56:
   - kind: heading
     level: 1
     text: Dockerﬁleにphp-astを足す
   - kind: para
-    text: RUN pecl install ast \
-  - kind: para
-    text: '&& docker-php-ext-enable ast'
+    text: RUN pecl install ast \&& docker-php-ext-enable ast
   p57:
   - kind: heading
     level: 1
@@ -435,49 +389,22 @@ text:
     level: 1
     text: docker/phan/Dockerﬁle
   - kind: para
-    text: FROM php:7.3-cli
-  - kind: para
-    text: RUN apt-get update -y \
-  - kind: para
-    text: '&& apt-get install -y --no-install-recommends \'
-  - kind: para
-    text: libicu-dev \
-  - kind: para
-    text: unzip
-  - kind: para
-    text: RUN docker-php-ext-install -j$(nproc) intl pcntl
+    text: FROM php:7.3-cli RUN apt-get update -y \&& apt-get install -y --no-install-recommends
+      \libicu-dev \unzip RUN docker-php-ext-install -j$(nproc) intl pcntl
   - kind: para
     text: RUN pecl install ast && docker-php-ext-enable ast
   - kind: para
-    text: COPY --from=composer /usr/bin/composer \
+    text: COPY --from=composer /usr/bin/composer \/usr/bin/composer
   - kind: para
-    text: /usr/bin/composer
-  - kind: para
-    text: RUN composer global require phan/phan
-  - kind: para
-    text: ENTRYPOINT php /root/.composer/vendor/bin/phan
-  - kind: para
-    text: WORKDIR /var/www/html
+    text: RUN composer global require phan/phan ENTRYPOINT php /root/.composer/vendor/bin/phan
+      WORKDIR /var/www/html
   p60:
   - kind: heading
     level: 1
     text: docker-compose.yml
   - kind: para
-    text: 'version: "3.7"'
-  - kind: para
-    text: 'services:'
-  - kind: para
-    text: 'phan:'
-  - kind: para
-    text: 'build: ./docker/phan'
-  - kind: para
-    text: 'volumes:'
-  - kind: para
-    text: '- ./:/var/www/html:cached'
-  - kind: para
-    text: 'entrypoint: php /root/.composer/vendor/bin/phan'
-  - kind: para
-    text: 'working_dir: /var/www/html'
+    text: 'version: "3.7"services:phan:build: ./docker/phan volumes:- ./:/var/www/html:cached
+      entrypoint: php /root/.composer/vendor/bin/phan working_dir: /var/www/html'
   p61:
   - kind: para
     text: 独立したコンテナに分ける
@@ -493,9 +420,7 @@ text:
   - kind: para
     text: 好みでどうぞ
   - kind: para
-    text: アプリケーションと依存関係が
-  - kind: para
-    text: 混ざるのでメンテ難しいと思います
+    text: アプリケーションと依存関係が混ざるのでメンテ難しいと思います
   - kind: para
     text: 僕はサブディレクトリにcomposer.json作ります
   - kind: para
@@ -512,90 +437,52 @@ text:
     level: 1
     text: ./phan
   - kind: para
-    text: '#!/usr/bin'
+    text: '#!/usr/bin docker-compose run --rm php-cli \.phan/vendor/bin/phan "$@"'
   - kind: para
-    text: docker-compose run --rm php-cli \
-  - kind: para
-    text: .phan/vendor/bin/phan "$@"
-  - kind: para
-    text: Windowsならphan.batってファイ
-  - kind: para
-    text: ルを作って %* あたりでパラメータ展
-  - kind: para
-    text: 開すれば動くと思うけど、詳しいこと
-  - kind: para
-    text: はWindowsに詳しいひとに任せた！
+    text: Windowsならphan.batってファイルを作って %* あたりでパラメータ展開すれば動くと思うけど、詳しいことはWindowsに詳しいひとに任せた！
   p65:
   - kind: para
     text: phan --initで初期化できる
   - kind: para
     text: .phan/config.phpが生成される
   - kind: para
-    text: 自動追加されなかった
+    text: 自動追加されなかったdirectory_listを追加していく
   - kind: para
-    text: directory_listを追加していく
-  - kind: para
-    text: composer requireで直接
-  - kind: para
-    text: 依存するパッケージだけが
-  - kind: para
-    text: 自動追加される
+    text: composer requireで直接依存するパッケージだけが自動追加される
   p66:
   - kind: para
     text: 基本的な使いかた
   - kind: para
     text: ./phan
   - kind: para
-    text: -o phan.log
+    text: -o phan.log結果をphan.logに書き出す
   - kind: para
-    text: 結果をphan.logに書き出す
-  - kind: para
-    text: -j 4
-  - kind: para
-    text: 並列実行数。CPUのコア数を
-  - kind: para
-    text: 指定するのが良い (諸説あり)
+    text: -j 4並列実行数。CPUのコア数を指定するのが良い (諸説あり)
   p67:
   - kind: para
     text: baseline
   - kind: para
-    text: --save-baseline=.phan/
+    text: --save-baseline=.phan/baseline.php を付けて実行するとファイルごとに検出されたIssueを保存できる
   - kind: para
-    text: baseline.php を付けて実行する
-  - kind: para
-    text: とファイルごとに検出された
-  - kind: para
-    text: Issueを保存できる
-  - kind: para
-    text: --load-baseline で実行すると新
-  - kind: para
-    text: たに増えたものだけ報告される
+    text: --load-baseline で実行すると新たに増えたものだけ報告される
   p68:
   - kind: para
     text: suppress_issue_types
   - kind: para
     text: 報告しないIssueをリストアップ
   - kind: para
-    text: フレームワーク側に問題があ
-  - kind: para
-    text: るなら握り潰すしかない…
+    text: フレームワーク側に問題があるなら握り潰すしかない…
   - kind: para
     text: ある程度の妥協も時には必要
   - kind: para
-    text: CakePHP 4.0になれば
-  - kind: para
-    text: おそらくほぼ消せるでしょう
+    text: CakePHP 4.0になればおそらくほぼ消せるでしょう
   p69:
   - kind: para
     text: tadsanのよくやる手法
   - kind: para
-    text: masterブランチの内容をphan-
+    text: masterブランチの内容をphan-master.logに書き出す
   - kind: para
-    text: master.logに書き出す
-  - kind: para
-    text: リファクタリングして変更の都度
-  - kind: para
-    text: 解析結果をphan.logに書き出す
+    text: リファクタリングして変更の都度解析結果をphan.logに書き出す
   - kind: para
     text: diff -u phan-master.log phan.log
   p70:
@@ -614,17 +501,13 @@ text:
     level: 1
     text: 未定義変数の検出
   - kind: para
-    text: $videoEmbedHtmlと
-  - kind: para
-    text: $slideEmbedHtmlが未定義
+    text: $videoEmbedHtmlと$slideEmbedHtmlが未定義
   p73:
   - kind: heading
     level: 1
     text: deprecatedコードの検出
   - kind: para
-    text: CakePHP 4.0.0で
-  - kind: para
-    text: プロパティにアクセス
+    text: CakePHP 4.0.0でプロパティにアクセス
   - kind: para
     text: できなくなる
   p74:
@@ -649,9 +532,7 @@ text:
     level: 1
     text: コンストラクタで値を返す
   - kind: para
-    text: 値を返せない
-  - kind: para
-    text: (単にreturn;でよい)
+    text: 値を返せない(単にreturn;でよい)
   p77:
   - kind: para
     text: そろそろまとめ

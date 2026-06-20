@@ -115,19 +115,8 @@ text:
     level: 2
     text: 並べていく
   - kind: para
-    text: '['
-  - kind: para
-    text: '''level'' => ''error'','
-  - kind: para
-    text: '''desc'' => ''mt_srand() は使用禁止'','
-  - kind: para
-    text: '''pattern'' => ['
-  - kind: para
-    text: '''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false,'
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '],'
+    text: '[''level'' => ''error'',''desc'' => ''mt_srand() は使用禁止'',''pattern'' =>
+      [''/[^a-zA-Z0-9_$:>]mt_srand *\(/i'' => false,],],'
   p14:
   - kind: para
     text: そのほか
@@ -198,17 +187,13 @@ text:
     - 最近夜な夜な作ってるツール
     - 実行時情報(Reflection)を使って
   - kind: para
-    text: いろいろ指図してくれるように
-  - kind: para
-    text: するつもり
+    text: いろいろ指図してくれるようにするつもり
   - kind: list
     items:
     - タグジャンプの代替にしたい
     - 静的解析はしないつもりだったけど、
   - kind: para
-    text: どうにもならないところは
-  - kind: para
-    text: がんばって構文解析してる
+    text: どうにもならないところはがんばって構文解析してる
 size:
   max_width: 1024
   max_height: 768

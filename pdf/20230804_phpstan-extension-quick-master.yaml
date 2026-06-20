@@ -52,14 +52,10 @@ text:
     text: LLイベント
   p8:
   - kind: para
-    text: PHPって
-  - kind: para
-    text: どんな言語？
+    text: PHPってどんな言語？
   p9:
   - kind: para
-    text: PHPの型にどのような
-  - kind: para
-    text: 印象を持っていますか？
+    text: PHPの型にどのような印象を持っていますか？
   p10:
   - kind: heading
     level: 2
@@ -69,19 +65,12 @@ text:
     text: ラスマスかく語りき
   p11:
   - kind: para
-    text: “We have things like protected properties.
+    text: “We have things like protected properties.We have abstract methods. We have
+      all this stuff that your computer science teacher told
   - kind: para
-    text: We have abstract methods. We have all this
+    text: you you should be using.I don't care about this crap at all.”
   - kind: para
-    text: stuff that your computer science teacher told
-  - kind: para
-    text: you you should be using.
-  - kind: para
-    text: I don't care about this crap at all.”
-  - kind: para
-    text: –Rasmus Lerdorf
-  - kind: para
-    text: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+    text: –Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p12:
   - kind: para
     text: “PHPにはprotectedプロパティも
@@ -95,20 +84,12 @@ text:
     text: –Rasmus Lerdorf
   p13:
   - kind: para
-    text: 脆弱性 ゆるふわ 弱い型 動的
-  - kind: para
-    text: クソザコ 型なし 意味不明 弱い
-  - kind: para
-    text: 自動変換 貧弱 Perlっぽい 適当
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
   - kind: para
     text: PHPについてのパブリックイメージ
   p14:
   - kind: para
-    text: 脆弱性 ゆるふわ 弱い型 動的
-  - kind: para
-    text: クソザコ 型なし 意味不明 弱い
-  - kind: para
-    text: 自動変換 貧弱 Perlっぽい 適当
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
   - kind: para
     text: PHPについての認識は概ね間違い
   p15:
@@ -121,41 +102,25 @@ text:
     level: 1
     text: 型がついていない関数(PHP5)
   - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add($a, $b) {return $a + $b;}
   p17:
   - kind: heading
     level: 1
     text: スカラー型宣言(PHP7)
   - kind: para
-    text: int + intって
+    text: int + intって本当にintなの？
   - kind: para
-    text: 本当にintなの？
-  - kind: para
-    text: 'function add(int $a, int $b): int {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p18:
   - kind: heading
     level: 1
     text: 広い値をとるにはfloatが必要
   - kind: para
-    text: ひとつの解決策では
-  - kind: para
-    text: あるが… 不必要にfloat
+    text: ひとつの解決策ではあるが… 不必要にfloat
   - kind: para
     text: を強制するのか
   - kind: para
-    text: 'function add(float $a, float $b): float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p19:
   - kind: heading
     level: 1
@@ -163,31 +128,14 @@ text:
   - kind: para
     text: あえて型宣言を省略する
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p20:
   - kind: heading
     level: 1
     text: ユニオン型宣言 (PHP8.0)
   - kind: para
-    text: 'function add(int|float $a, int|float $b): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p21:
   - kind: para
     text: PHPは強く実行時に保証される型
@@ -212,11 +160,7 @@ text:
   - kind: para
     text: 絶対にありえない
   - kind: para
-    text: 'function add(int|float $a, int|float $b): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p23:
   - kind: heading
     level: 1
@@ -228,40 +172,21 @@ text:
   - kind: para
     text: (口約束)
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p24:
   - kind: para
-    text: 201X年、PHPは
-  - kind: para
-    text: 型の炎に包まれた!!
+    text: 201X年、PHPは型の炎に包まれた!!
   p25:
   - kind: para
-    text: いまやPHPは
-  - kind: para
-    text: 静的型付きと言っても
+    text: いまやPHPは静的型付きと言っても
   - kind: para
     text: 過言ではない
   - kind: para
     text: (本当か…？)
   p26:
   - kind: para
-    text: だが型なしは
-  - kind: para
-    text: 滅びていなかった
+    text: だが型なしは滅びていなかった
   p27:
   - kind: para
     text: 型宣言では配列要素の
@@ -290,25 +215,11 @@ text:
   - kind: para
     text: 複数であることを表現
   - kind: para
-    text: class Book
+    text: class Book{function __construct(private array $authors) {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
+    text: Authorクラスの情報が減ってる…
   - kind: para
-    text: function __construct(
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: Authorクラスの
-  - kind: para
-    text: 情報が減ってる…
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p30:
   - kind: heading
     level: 1
@@ -320,23 +231,10 @@ text:
   - kind: para
     text: 配列の形状はコメントで書く
   - kind: para
-    text: class Book
+    text: class Book{function __construct(/** @var list<Authors> */private array $authors)
+      {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: /** @var list<Authors> */
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p32:
   - kind: heading
     level: 1
@@ -403,9 +301,7 @@ text:
     - https://github.com/phpstan/phpstan-src/tree/1.10.x/src/Type
     - PHPの組み込み型、Union/Intersectionなどの複合的な型、
   - kind: para
-    text: 組み込み型を継承した定数型、これらの型とintersectionで組み合わせて
-  - kind: para
-    text: 複合的な型を表現するAccessory型などがある
+    text: 組み込み型を継承した定数型、これらの型とintersectionで組み合わせて複合的な型を表現するAccessory型などがある
   - kind: list
     items:
     - たとえばリスト(連番の配列) ArrayType&AccessoryArrayListType

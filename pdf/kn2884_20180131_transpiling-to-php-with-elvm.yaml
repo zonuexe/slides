@@ -7,9 +7,7 @@ text:
     level: 1
     text: PHPに変換しよう
   - kind: para
-    text: Let's convert from
-  - kind: para
-    text: any language to PHP by ELVM
+    text: Let's convert from any language to PHP by ELVM
   - kind: para
     text: '2018-01-31 PHP勉強会@東京 #phpstudy'
   p2:
@@ -27,36 +25,26 @@ text:
     - Qiitaに記事を書いたり変なコメントしてるよ
   p3:
   - kind: para
-    text: 好きな言語構
-  - kind: para
-    text: 造はgotoです
+    text: 好きな言語構造はgotoです
   p4:
   - kind: para
     text: 宣伝
   p5:
   - kind: para
-    text: 昨晩書いた
-  - kind: para
-    text: まじめ記事
+    text: 昨晩書いたまじめ記事
   - kind: para
     text: (当社比)
   p6: []
   p7:
   - kind: para
-    text: 今日は
-  - kind: para
-    text: 話しません
+    text: 今日は話しません
   p8: []
   p9:
   - kind: para
-    text: 前夜祭で
-  - kind: para
-    text: 話します
+    text: 前夜祭で話します
   p10:
   - kind: para
-    text: チケット
-  - kind: para
-    text: 購入しよう
+    text: チケット購入しよう
   p11:
   - kind: para
     text: はじめに
@@ -68,9 +56,7 @@ text:
     level: 1
     text: PHPに変換しよう
   - kind: para
-    text: Let's convert from
-  - kind: para
-    text: any language to PHP by ELVM
+    text: Let's convert from any language to PHP by ELVM
   - kind: para
     text: '2018-01-31 PHP勉強会@東京 #phpstudy'
   p13:
@@ -80,26 +66,16 @@ text:
     text: はオーバー
   p14:
   - kind: para
-    text: '|←樹海|'
-  - kind: para
-    text: .￣.||￣ ｵﾜﾀ┗(^o^ )┓三
-  - kind: para
-    text: '|| ┏┗ 三'
-  - kind: para
-    text: ￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
+    text: '|←樹海|.￣.||￣ ｵﾜﾀ┗(^o^ )┓三|| ┏┗ 三￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣'
   p15:
   - kind: para
-    text: まあ話を
-  - kind: para
-    text: 聞いてくれ
+    text: まあ話を聞いてくれ
   p16:
   - kind: para
     text: 計算可能性
   p17:
   - kind: para
-    text: コンピュータ
-  - kind: para
-    text: で解ける問題
+    text: コンピュータで解ける問題
   p18:
   - kind: para
     text: チューリング
@@ -110,11 +86,7 @@ text:
     text: https://www.google.com/doodles/alan-turings-100th-birthday
   p20:
   - kind: para
-    text: チューリングさんが
-  - kind: para
-    text: 計算の可能性をつき
-  - kind: para
-    text: つめたらこうなった
+    text: チューリングさんが計算の可能性をつきつめたらこうなった
   p21:
   - kind: para
     text: 計算機で計算できる函数
@@ -126,16 +98,12 @@ text:
   - kind: para
     text: パソコンで計算できる
   - kind: para
-    text: '||'
-  - kind: para
-    text: チューリング機械と同じ
+    text: '||チューリング機械と同じ'
   p23:
   - kind: para
     text: チューリングマシンを使っ
   - kind: para
-    text: てチューリングマシンと
-  - kind: para
-    text: 同等のものを構成できる
+    text: てチューリングマシンと同等のものを構成できる
   p24:
   - kind: para
     text: 万能チューリ
@@ -143,11 +111,7 @@ text:
     text: ングマシン
   p25:
   - kind: para
-    text: ある計算機言語を使って万能
-  - kind: para
-    text: チューリングマシンを構成で
-  - kind: para
-    text: きるとき、その言語はチュー
+    text: ある計算機言語を使って万能チューリングマシンを構成できるとき、その言語はチュー
   - kind: para
     text: リング完全であると呼ぶ
   p26:
@@ -157,11 +121,7 @@ text:
   - kind: para
     text: ディスクにデータを書き込むと
   - kind: para
-    text: か、現在の時刻を知るとか、
-  - kind: para
-    text: TCPパケットを送るとか、そう
-  - kind: para
-    text: いう魔法のような機械のことは
+    text: か、現在の時刻を知るとか、TCPパケットを送るとか、そういう魔法のような機械のことは
   - kind: para
     text: 想定してない
   p28:
@@ -172,76 +132,46 @@ text:
     text: Brainfuck
   p30:
   - kind: para
-    text: < > + - . , [ ]
-  - kind: para
-    text: 言語仕様8命令だけ
+    text: < > + - . , [ ]言語仕様8命令だけ
   p31:
   - kind: para
-    text: トークン
+    text: トークン意味
   - kind: para
-    text: 意味
+    text: <ポインタを1進める
   - kind: para
-    text: <
+    text: '>ポインタを1戻す'
   - kind: para
-    text: ポインタを1進める
+    text: +ポインタ位置の値を1加算
   - kind: para
-    text: '>'
+    text: -ポインタ位置の値を1減算
   - kind: para
-    text: ポインタを1戻す
+    text: .ポインタ位置に値を出力
   - kind: para
-    text: +
+    text: ',1バイト読込ポインタ位置に代入'
   - kind: para
-    text: ポインタ位置の値を1加算
+    text: '[ポインタ位置の値が0なら]にジャンプ'
   - kind: para
-    text: '-'
-  - kind: para
-    text: ポインタ位置の値を1減算
-  - kind: para
-    text: .
-  - kind: para
-    text: ポインタ位置に値を出力
-  - kind: para
-    text: ','
-  - kind: para
-    text: 1バイト読込ポインタ位置に代入
-  - kind: para
-    text: '['
-  - kind: para
-    text: ポインタ位置の値が0なら]にジャンプ
-  - kind: para
-    text: ']'
-  - kind: para
-    text: ポインタ位置の値が0でなければ[にジャンプ
+    text: ']ポインタ位置の値が0でなければ[にジャンプ'
   p32:
   - kind: para
-    text: '>+++++++++[<++++++++>-]<.>++++++'
-  - kind: para
-    text: +[<++++>-]<+.+++++++..+++.[-]>++
-  - kind: para
-    text: ++++++[<++++>-]<.>+++++++++++[<+
+    text: '>+++++++++[<++++++++>-]<.>+++++++[<++++>-]<+.+++++++..+++.[-]>++++++++[<++++>-]<.>+++++++++++[<+'
   - kind: para
     text: ++++>-]<.>++++++++[<+++>-]<.++
   - kind: para
     text: http://www.kmonos.net/alang/etc/brainfuck.php
   p33:
   - kind: para
-    text: (神記事なのでゆっ
-  - kind: para
-    text: くり読んでほしい)
+    text: (神記事なのでゆっくり読んでほしい)
   p34:
   - kind: para
     text: Brainfuckは言語仕様
   - kind: para
-    text: が非常に小さいので
-  - kind: para
-    text: 覚えるのは非常に簡単！
+    text: が非常に小さいので覚えるのは非常に簡単！
   p35:
   - kind: para
     text: 言語が簡単
   - kind: para
-    text: '||'
-  - kind: para
-    text: その言語で書くのが簡単
+    text: '||その言語で書くのが簡単'
   p36:
   - kind: para
     text: そんなわけは
@@ -249,9 +179,7 @@ text:
     text: ない
   p37:
   - kind: para
-    text: 言語の簡単さと人
-  - kind: para
-    text: 間の読み書きの容
+    text: 言語の簡単さと人間の読み書きの容
   - kind: para
     text: 易さは一致しない
   p38:
@@ -261,9 +189,7 @@ text:
     text: グ言語(Esolang)
   p39:
   - kind: para
-    text: Brainfuckのよう
-  - kind: para
-    text: なへんてこ言語を
+    text: Brainfuckのようなへんてこ言語を
   - kind: para
     text: Esolangと呼ぶ
   - kind: para
@@ -282,21 +208,15 @@ text:
     text: 話を戻す
   p42:
   - kind: para
-    text: Brainfuckは
-  - kind: para
-    text: チューリング機械
+    text: Brainfuckはチューリング機械
   - kind: para
     text: と同等
   p43:
   - kind: para
-    text: Brainfuckは万能
-  - kind: para
-    text: チューリング機械
+    text: Brainfuckは万能チューリング機械
   p44:
   - kind: para
-    text: Brainfuckは
-  - kind: para
-    text: チューリング完全
+    text: Brainfuckはチューリング完全
   p45:
   - kind: para
     text: つまり
@@ -304,19 +224,13 @@ text:
   - kind: para
     text: Brainfuckを実装で
   - kind: para
-    text: きる言語は
-  - kind: para
-    text: チューリング完全
+    text: きる言語はチューリング完全
   p47:
   - kind: para
-    text: PHPはチューリ
-  - kind: para
-    text: ング完全かな？
+    text: PHPはチューリング完全かな？
   p48:
   - kind: para
-    text: PHPを使って
-  - kind: para
-    text: Brainfuckを実装
+    text: PHPを使ってBrainfuckを実装
   - kind: para
     text: してみよう
   p49:
@@ -324,9 +238,7 @@ text:
     text: ELVM
   p50:
   - kind: para
-    text: ようやく話が
-  - kind: para
-    text: ここまできた
+    text: ようやく話がここまできた
   p51:
   - kind: heading
     level: 1
@@ -344,9 +256,7 @@ text:
   - kind: para
     text: ELVMバイトコード
   - kind: para
-    text: から任意の言語に
-  - kind: para
-    text: コンパイルできる
+    text: から任意の言語にコンパイルできる
   p54:
   - kind: para
     text: http://shinh.skr.jp/slide/elvm/009.html
@@ -354,9 +264,7 @@ text:
   - kind: para
     text: PHPターゲットが
   - kind: para
-    text: なかったので
-  - kind: para
-    text: 追加しました
+    text: なかったので追加しました
   p56:
   - kind: heading
     level: 1
@@ -365,23 +273,17 @@ text:
     text: https://github.com/shinh/elvm/blob/master/target/php.c
   p57:
   - kind: para
-    text: ご存じの通り
-  - kind: para
-    text: JavaScriptはPHP
+    text: ご存じの通りJavaScriptはPHP
   - kind: para
     text: にそっくり！！
   p58:
   - kind: para
-    text: JavaScriptをPHPっ
-  - kind: para
-    text: ぽく直せばそれだけ
+    text: JavaScriptをPHPっぽく直せばそれだけ
   - kind: para
     text: で動くはず
   p59:
   - kind: para
-    text: そう思ってた頃が
-  - kind: para
-    text: 私にもありました
+    text: そう思ってた頃が私にもありました
   p60:
   - kind: para
     text: なぜなのか
@@ -390,21 +292,9 @@ text:
     text: JS版実装
   p62:
   - kind: para
-    text: static void js_emit_func_prologue(int func_id) {
-  - kind: para
-    text: emit_line("");
-  - kind: para
-    text: emit_line("var func%d = function() {", func_id);
-  - kind: para
-    text: inc_indent();
-  - kind: para
-    text: emit_line("while (%d <= pc && pc < %d && running) {",
-  - kind: para
-    text: func_id * CHUNKED_FUNC_SIZE, (func_id + 1) *
-  - kind: para
-    text: CHUNKED_FUNC_SIZE);
-  - kind: para
-    text: inc_indent();
+    text: static void js_emit_func_prologue(int func_id) {emit_line("");emit_line("var
+      func%d = function() {", func_id);inc_indent();emit_line("while (%d <= pc &&
+      pc < %d && running) {",func_id * CHUNKED_FUNC_SIZE, (func_id + 1) *CHUNKED_FUNC_SIZE);inc_indent();
   p63:
   - kind: para
     text: func1, func2のよ
@@ -414,21 +304,14 @@ text:
     text: 作られる
   p64:
   - kind: para
-    text: 'PHP Notice: Undefined variable: func0 in /'
-  - kind: para
-    text: Users/megurine/repo/elvm/out/00exit.eir.php on
-  - kind: para
-    text: line 39
+    text: 'PHP Notice: Undefined variable: func0 in /Users/megurine/repo/elvm/out/00exit.eir.php
+      on line 39'
   p65:
   - kind: para
     text: 変数束縛
   p66:
   - kind: para
-    text: PHPは明示的に use
-  - kind: para
-    text: ($var) と書かないとレ
-  - kind: para
-    text: キシカルスコープを捕捉
+    text: PHPは明示的に use($var) と書かないとレキシカルスコープを捕捉
   - kind: para
     text: できない
   p67:
@@ -441,26 +324,12 @@ text:
     text: くはないけど
   p69:
   - kind: para
-    text: いちばん楽
-  - kind: para
-    text: だったのは
+    text: いちばん楽だったのは
   p70:
   - kind: para
-    text: '|'
+    text: '|＼ __ ／ ﾋﾟｺｰﾝ＿ （ｍ） ＿ そうだ、goto'
   - kind: para
-    text: ＼ __ ／ ﾋﾟｺｰﾝ
-  - kind: para
-    text: ＿ （ｍ） ＿ そうだ、goto
-  - kind: para
-    text: '|ミ|'
-  - kind: para
-    text: ／ ｀´ ＼
-  - kind: para
-    text: ('A`)
-  - kind: para
-    text: ノヽノヽ
-  - kind: para
-    text: くく
+    text: '|ミ|／ ｀´ ＼(''A`)ノヽノヽくく'
   p71: []
   p72: []
   p73:
@@ -468,9 +337,7 @@ text:
     text: ネストが浅い！
   p74:
   - kind: para
-    text: コールスタック
-  - kind: para
-    text: が深くならない
+    text: コールスタックが深くならない
   p75:
   - kind: para
     text: goto最高！

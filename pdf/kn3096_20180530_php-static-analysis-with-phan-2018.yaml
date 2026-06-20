@@ -41,11 +41,7 @@ text:
   p13: []
   p14:
   - kind: para
-    text: 今回は最近の
-  - kind: para
-    text: Phanについて
-  - kind: para
-    text: 軽くまとめます
+    text: 今回は最近のPhanについて軽くまとめます
   p15:
   - kind: para
     text: 最近のPhanの
@@ -53,15 +49,11 @@ text:
     text: 動向
   p16:
   - kind: para
-    text: 相変らず恐しいペー
-  - kind: para
-    text: スで開発が進んでる
+    text: 相変らず恐しいペースで開発が進んでる
   p17: []
   p18:
   - kind: para
-    text: 連想配列の
-  - kind: para
-    text: 静的解析の鬼
+    text: 連想配列の静的解析の鬼
   p19:
   - kind: para
     text: LSPの実装
@@ -74,23 +66,17 @@ text:
   p22: []
   p23:
   - kind: para
-    text: 実行して
-  - kind: para
-    text: 調べるのが
+    text: 実行して調べるのが
   - kind: para
     text: 動的解析
   p24:
   - kind: para
-    text: 実行せず
-  - kind: para
-    text: 調べるのが
+    text: 実行せず調べるのが
   - kind: para
     text: 静的解析
   p25:
   - kind: para
-    text: Xdebug, phpdbg
-  - kind: para
-    text: などのデバッガは
+    text: Xdebug, phpdbgなどのデバッガは
   - kind: para
     text: 動的解析
   p26:
@@ -108,33 +94,23 @@ text:
   p28: []
   p29:
   - kind: para
-    text: PHPStanは
-  - kind: para
-    text: 実行時情報を使って
+    text: PHPStanは実行時情報を使って
   - kind: para
     text: 静的解析する
   p30:
   - kind: para
-    text: Phanは
-  - kind: para
-    text: コードを実行せず
+    text: Phanはコードを実行せず
   - kind: para
     text: 静的解析する
   p31:
   - kind: para
-    text: 得意なことが
-  - kind: para
-    text: ちょっと異なる
+    text: 得意なことがちょっと異なる
   p32:
   - kind: para
-    text: 導入しやすさも
-  - kind: para
-    text: ちょっと異なる
+    text: 導入しやすさもちょっと異なる
   p33:
   - kind: para
-    text: '@tadsanは'
-  - kind: para
-    text: PHPStanもPhanも
+    text: '@tadsanはPHPStanもPhanも'
   - kind: para
     text: 両方使ってます
   p34:
@@ -157,9 +133,8 @@ text:
   - kind: para
     text: “Phan is a static analyzer for PHP that
   - kind: para
-    text: prefers to minimize false-positives.
-  - kind: para
-    text: Phan attempts to prove incorrectness rather
+    text: prefers to minimize false-positives.Phan attempts to prove incorrectness
+      rather
   - kind: para
     text: than correctness.”
   - kind: para
@@ -168,53 +143,37 @@ text:
   - kind: para
     text: “Phanは偽陽性を最小化することを
   - kind: para
-    text: 好むPHP静的解析器です。
-  - kind: para
-    text: Phanは正しいと証明することよりも
-  - kind: para
-    text: 誤りであることを証明しようとします。”
+    text: 好むPHP静的解析器です。Phanは正しいと証明することよりも誤りであることを証明しようとします。”
   - kind: para
     text: https://github.com/phan/phan
   p40:
   - kind: para
-    text: Phanでエラーが
+    text: Phanでエラーが検出されなければ
   - kind: para
-    text: 検出されなければ
-  - kind: para
-    text: 正しく動く…
-  - kind: para
-    text: わけではない
+    text: 正しく動く…わけではない
   p41:
   - kind: para
     text: Phanでエラーが
   - kind: para
-    text: 検出されるから
-  - kind: para
-    text: コードは動かない…
+    text: 検出されるからコードは動かない…
   - kind: para
     text: わけではない
   p42:
   - kind: para
     text: 「動かないかもしれない」
   - kind: para
-    text: ちゃんとしてないコード
-  - kind: para
-    text: から怪しい箇所を検出する
+    text: ちゃんとしてないコードから怪しい箇所を検出する
   - kind: para
     text: のに強い
   p43:
   - kind: para
-    text: で、Phanは何を
-  - kind: para
-    text: やってくれるの？
+    text: で、Phanは何をやってくれるの？
   p44:
   - kind: para
     text: ざっくり
   p45:
   - kind: para
-    text: 要はPhpStormを
-  - kind: para
-    text: 使ってできるよう
+    text: 要はPhpStormを使ってできるよう
   - kind: para
     text: な検査ができる
   p46:
@@ -254,11 +213,7 @@ text:
   - kind: para
     text: PSR-5(abandoned) 型表記を実装
   - kind: para
-    text: '@param, @return, @var, @method'
-  - kind: para
-    text: '@property に優先する @phan-'
-  - kind: para
-    text: 付きのPHPDocタグが追加
+    text: '@param, @return, @var, @method@property に優先する @phan-付きのPHPDocタグが追加'
   - kind: para
     text: 独自の拡張形式で型を記述できる
   - kind: para
@@ -267,9 +222,7 @@ text:
     text: '@phan-param array{field:string}'
   p49:
   - kind: para
-    text: Phanを
-  - kind: para
-    text: 導入しよう
+    text: Phanを導入しよう
   p50:
   - kind: para
     text: 三択
@@ -311,17 +264,11 @@ text:
     level: 1
     text: Pharアーカイブのメリット
   - kind: para
-    text: 導入も更新もPharファイルを
-  - kind: para
-    text: ダウンロードするだけ！ 超カンタン
+    text: 導入も更新もPharファイルをダウンロードするだけ！ 超カンタン
   - kind: para
     text: ただし、PHPの実行環境は必要
   - kind: para
-    text: ファイルをダウンロードして
-  - kind: para
-    text: mv phan.phar ~/local/bin/phan
-  - kind: para
-    text: chmod +x ~/local/bin/phan
+    text: ファイルをダウンロードしてmv phan.phar ~/local/bin/phan chmod +x ~/local/bin/phan
   p55:
   - kind: heading
     level: 1
@@ -329,11 +276,7 @@ text:
   - kind: para
     text: Dokcerの動く環境なら超カンタン！
   - kind: para
-    text: Phan 0.9.4を最後に音沙汰がない…
-  - kind: para
-    text: まあPHP7.1サポートされてるし動く
-  - kind: para
-    text: けど…
+    text: Phan 0.9.4を最後に音沙汰がない…まあPHP7.1サポートされてるし動くけど…
   p56:
   - kind: heading
     level: 1
@@ -341,13 +284,9 @@ text:
   - kind: para
     text: あるかなあ… (疑問)
   - kind: para
-    text: どうしてもPhanのHEADを
+    text: どうしてもPhanのHEADを攻めたいならComposerで入れる
   - kind: para
-    text: 攻めたいならComposerで入れる
-  - kind: para
-    text: composer require --dev でプロジェ
-  - kind: para
-    text: クトに入れるのはオススメしない
+    text: composer require --dev でプロジェクトに入れるのはオススメしない
   - kind: para
     text: やるなら composer global require
   p57:
@@ -360,17 +299,11 @@ text:
     level: 1
     text: Composerの初期設定
   - kind: para
-    text: プロジェクトルートがある場所で
-  - kind: para
-    text: phan --init を実行すると
-  - kind: para
-    text: .phan/config.php が自動生成される
+    text: プロジェクトルートがある場所でphan --init を実行すると.phan/config.php が自動生成される
   - kind: para
     text: phan -o phan.log のように実行する
   - kind: para
-    text: とphan.logに行区切りのレポートが
-  - kind: para
-    text: 表示される
+    text: とphan.logに行区切りのレポートが表示される
   p59:
   - kind: para
     text: Phan以外の
@@ -384,31 +317,19 @@ text:
     level: 1
     text: PHPStan
   - kind: para
-    text: Phanとキャラかぶりしてるので
+    text: Phanとキャラかぶりしてるので比較されがち
   - kind: para
-    text: 比較されがち
-  - kind: para
-    text: Phanが全体を解析するのが基本で遅
-  - kind: para
-    text: いけど、PHPStanはファイルごとに
-  - kind: para
-    text: 解析するとかに向いてる
+    text: Phanが全体を解析するのが基本で遅いけど、PHPStanはファイルごとに解析するとかに向いてる
   p62:
   - kind: heading
     level: 1
     text: PHPStan
   - kind: para
-    text: PullRequestごとにテストするなら
+    text: PullRequestごとにテストするならPhanよりもPHPStan
   - kind: para
-    text: PhanよりもPHPStan
+    text: 高速に解析できるので、作業中に常時解析しまくってもよい
   - kind: para
-    text: 高速に解析できるので、作業中に
-  - kind: para
-    text: 常時解析しまくってもよい
-  - kind: para
-    text: Emacsで編集中に表示すると
-  - kind: para
-    text: PhpStormっぽくなるぞ！！！１
+    text: Emacsで編集中に表示するとPhpStormっぽくなるぞ！！！１
   - kind: para
     text: https://github.com/emacs-php/phpstan.el
   p63:
@@ -420,19 +341,9 @@ text:
     level: 1
     text: Phpactor
   - kind: para
-    text: これも静的解析ツールだけど、
+    text: これも静的解析ツールだけど、補完や定義ジャンプ、定義の挿入やリファクタリングなどのエディタ向けのツールセットを提供
   - kind: para
-    text: 補完や定義ジャンプ、定義の挿入や
-  - kind: para
-    text: リファクタリングなどのエディタ向
-  - kind: para
-    text: けのツールセットを提供
-  - kind: para
-    text: いままでリファクタリングは
-  - kind: para
-    text: PhpStorm独擅場だったが、
-  - kind: para
-    text: これを崩せるポテンシャルがある
+    text: いままでリファクタリングはPhpStorm独擅場だったが、これを崩せるポテンシャルがある
   p66:
   - kind: heading
     level: 1

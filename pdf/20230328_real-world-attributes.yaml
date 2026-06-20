@@ -10,9 +10,7 @@ text:
     level: 2
     text: USAMI Kenta
   - kind: para
-    text: '2023-03-28'
-  - kind: para
-    text: PHPTechCafe
+    text: 2023-03-28 PHPTechCafe
   p2:
   - kind: para
     text: お前誰よ
@@ -47,9 +45,7 @@ text:
     text: って？
   p7:
   - kind: para
-    text: キミだけの最強の活用
-  - kind: para
-    text: 法を見付けだせ！！！
+    text: キミだけの最強の活用法を見付けだせ！！！
   p8:
   - kind: para
     text: ご静聴ありがとう
@@ -57,9 +53,7 @@ text:
     text: ございました！
   p9:
   - kind: para
-    text: …というひどい
-  - kind: para
-    text: 発表をしてきた
+    text: …というひどい発表をしてきた
   p10:
   - kind: heading
     level: 1
@@ -68,9 +62,7 @@ text:
     level: 1
     text: 謎記法が出てきた
   - kind: para
-    text: …ということだけ、
-  - kind: para
-    text: お見知りおきください
+    text: …ということだけ、お見知りおきください
   p11:
   - kind: para
     text: 誰が使うんだ？
@@ -80,35 +72,17 @@ text:
   - kind: para
     text: PHPUnitの実行制御
   - kind: para
-    text: /**
+    text: /*** @dataProvider idsProvider*/
   - kind: para
-    text: '* @dataProvider idsProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test($id, $expected):'
-  - kind: para
-    text: void {
+    text: public function test($id, $expected):void {
   p13:
   - kind: heading
     level: 1
     text: '@dataProvider'
   - kind: para
-    text: /**
+    text: /*** [$id, $expected]*/
   - kind: para
-    text: '* [$id, $expected]'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: public function idsProvider() {
-  - kind: para
-    text: return [
-  - kind: para
-    text: '[1, ''value''],'
-  - kind: para
-    text: '[2, ''value''],'
-  - kind: para
-    text: '];'
+    text: public function idsProvider() {return [[1, 'value'],[2, 'value'],];
   p14:
   - kind: para
     text: PHPUnit 10 vs Attribute

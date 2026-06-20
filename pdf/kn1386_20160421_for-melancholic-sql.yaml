@@ -13,9 +13,7 @@ text:
     items:
     - PHPカンファレンス北海道で喋ってきました
   - kind: para
-    text: 「仕事で使えるComposer」
-  - kind: para
-    text: http://niconare.nicovideo.jp/watch/kn1371
+    text: 「仕事で使えるComposer」http://niconare.nicovideo.jp/watch/kn1371
   - kind: list
     items:
     - WEB+DB Press Vol. 92に
@@ -38,9 +36,7 @@ text:
     items:
     - スレッドフロート掲示板を作りたかった少年時
   - kind: para
-    text: 代の代償行為として、モダンPHP、ただし
-  - kind: para
-    text: フレームワーク抜きで書き始めました
+    text: 代の代償行為として、モダンPHP、ただしフレームワーク抜きで書き始めました
   - kind: para
     text: http://qiita.com/tadsan/items/cdbbb5b08591af2b110d
   p4:
@@ -82,15 +78,8 @@ text:
     level: 1
     text: Real World PHP
   - kind: para
-    text: $names = ["taro","jiro","saburo"];
-  - kind: para
-    text: $str = implode(",", array_map($name){
-  - kind: para
-    text: return sprintf('"%s"', $name);
-  - kind: para
-    text: '});'
-  - kind: para
-    text: $sql = "SELECT * FROM users WHERE name IN ($str)";
+    text: $names = ["taro","jiro","saburo"];$str = implode(",", array_map($name){return
+      sprintf('"%s"', $name);});$sql = "SELECT * FROM users WHERE name IN ($str)";
   - kind: para
     text: // ↑典型的な漏れのあるロジックの例
   p8:
@@ -111,80 +100,25 @@ text:
     text: https://github.com/BaguettePHP/TetoSQL
   p10:
   - kind: para
-    text: <?php
+    text: <?php namespace InspireBBS\Model;use Teto\SQL;
   - kind: para
-    text: namespace InspireBBS\Model;
+    text: '/*** 板を表現するモデル* @copyright 2016 USAMI Kenta* @license WTFPL*/final class
+      Board {/*** @return Board[]*/public static function findAll() {$data = SQL\Query::execute(db(),
+      self::findAll_query, [])->fetchAll(\PDO::FETCH_ASSOC) ?: [];'
   - kind: para
-    text: use Teto\SQL;
+    text: $boards = [];foreach ($data as $b) {$boards[] = new Board($b);}
   - kind: para
-    text: /**
-  - kind: para
-    text: '* 板を表現するモデル'
-  - kind: para
-    text: '* @copyright 2016 USAMI Kenta'
-  - kind: para
-    text: '* @license WTFPL'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: final class Board {
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @return Board[]'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: public static function findAll() {
-  - kind: para
-    text: $data = SQL\Query::execute(db(), self::findAll_query, [])
-  - kind: para
-    text: '->fetchAll(\PDO::FETCH_ASSOC) ?: [];'
-  - kind: para
-    text: $boards = [];
-  - kind: para
-    text: foreach ($data as $b) {
-  - kind: para
-    text: $boards[] = new Board($b);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: return $boards;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: const findAll_query = 'SELECT `id`, `name`, `text` FROM `boards`';
-  - kind: para
-    text: '}'
+    text: return $boards;}const findAll_query = 'SELECT `id`, `name`, `text` FROM
+      `boards`';}
   p11:
   - kind: para
-    text: use Teto\SQL;
+    text: 'use Teto\SQL;public static function find($id) {$data = SQL\Query::execute(db(),
+      self::findAll_query, ['':id'' => $id,])->fetchAll(\PDO::FETCH_ASSOC) ?: [];'
   - kind: para
-    text: public static function find($id) {
+    text: $boards = [];foreach ($data as $b) {$boards[] = new Board($b);}
   - kind: para
-    text: $data = SQL\Query::execute(db(), self::findAll_query, [
-  - kind: para
-    text: ''':id'' => $id,'
-  - kind: para
-    text: '])->fetchAll(\PDO::FETCH_ASSOC) ?: [];'
-  - kind: para
-    text: $boards = [];
-  - kind: para
-    text: foreach ($data as $b) {
-  - kind: para
-    text: $boards[] = new Board($b);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: return $boards;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: const find_query = ‘
-  - kind: para
-    text: SELECT `id`, `name`, `text` FROM `boards` WHERE `id` = $id@int
-  - kind: para
-    text: ''';'
+    text: return $boards;}const find_query = ‘SELECT `id`, `name`, `text` FROM `boards`
+      WHERE `id` = $id@int';
   p12:
   - kind: heading
     level: 1

@@ -10,9 +10,7 @@ text:
     level: 2
     text: Kill your PHP code by hitting 10 combos
   - kind: para
-    text: '[2019-09-21]'
-  - kind: para
-    text: PHPカンファレンス北海道2019
+    text: '[2019-09-21]PHPカンファレンス北海道2019'
   - kind: para
     text: '#phpcondo'
   p2:
@@ -104,9 +102,7 @@ text:
     level: 3
     text: Kill your PHP code by hitting 10 combos
   - kind: para
-    text: '[2019-07-31]'
-  - kind: para
-    text: 第140回 PHP勉強会＠東京
+    text: '[2019-07-31]第140回 PHP勉強会＠東京'
   - kind: para
     text: '#phpstudy'
   p20:
@@ -116,11 +112,7 @@ text:
   - kind: para
     text: <?
   - kind: para
-    text: $id = $_REQUEST['id'];
-  - kind: para
-    text: if (!is_numeric($id))
-  - kind: para
-    text: printf("<p>{$id}は正しいIDではありません</p>");
+    text: $id = $_REQUEST['id'];if (!is_numeric($id))printf("<p>{$id}は正しいIDではありません</p>");
   - kind: para
     text: ?>,
   p21:
@@ -136,11 +128,7 @@ text:
   - kind: para
     text: <?
   - kind: para
-    text: $id = $_REQUEST['id'];
-  - kind: para
-    text: if (!is_numeric($id))
-  - kind: para
-    text: printf("<p>{$id}は正しいIDではありません</p>");
+    text: $id = $_REQUEST['id'];if (!is_numeric($id))printf("<p>{$id}は正しいIDではありません</p>");
   - kind: para
     text: ?>,
   p22:
@@ -362,29 +350,11 @@ text:
     level: 1
     text: 例題2
   - kind: para
-    text: const VALIDATE_PATTERN = "/
+    text: 'const VALIDATE_PATTERN = "/^ # begin([a-zA-Z0-9])+([a-zA-Z0-9\._-])* #
+      localpart@ # at mark([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host$ # end/x";'
   - kind: para
-    text: '^ # begin'
-  - kind: para
-    text: '([a-zA-Z0-9])+([a-zA-Z0-9\._-])* # localpart'
-  - kind: para
-    text: '@ # at mark'
-  - kind: para
-    text: '([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host'
-  - kind: para
-    text: '$ # end'
-  - kind: para
-    text: /x";
-  - kind: para
-    text: $email = filter_input(INPUT_GET, 'email');
-  - kind: para
-    text: if (!preg_match(VALIDATE_PATTERN, $email)) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: register_account(strtolower($email), $password);
+    text: $email = filter_input(INPUT_GET, 'email');if (!preg_match(VALIDATE_PATTERN,
+      $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p29:
   - kind: para
     text: PCRE正規表現は /x 修飾子を付ける
@@ -394,29 +364,11 @@ text:
     level: 1
     text: 例題2
   - kind: para
-    text: const VALIDATE_PATTERN = "/
+    text: 'const VALIDATE_PATTERN = "/^ # begin([a-zA-Z0-9])+([a-zA-Z0-9\._-])* #
+      localpart@ # at mark([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host$ # end/x";'
   - kind: para
-    text: '^ # begin'
-  - kind: para
-    text: '([a-zA-Z0-9])+([a-zA-Z0-9\._-])* # localpart'
-  - kind: para
-    text: '@ # at mark'
-  - kind: para
-    text: '([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host'
-  - kind: para
-    text: '$ # end'
-  - kind: para
-    text: /x";
-  - kind: para
-    text: $email = filter_input(INPUT_GET, 'email');
-  - kind: para
-    text: if (!preg_match(VALIDATE_PATTERN, $email)) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: register_account(strtolower($email), $password);
+    text: $email = filter_input(INPUT_GET, 'email');if (!preg_match(VALIDATE_PATTERN,
+      $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p30:
   - kind: para
     text: PCRE正規表現は /x 修飾子を付ける
@@ -430,29 +382,11 @@ text:
   - kind: para
     text: ために正規表現で判定するのはだめ！！！
   - kind: para
-    text: const VALIDATE_PATTERN = "/
+    text: 'const VALIDATE_PATTERN = "/^ # begin([a-zA-Z0-9])+([a-zA-Z0-9\._-])* #
+      localpart@ # at mark([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host$ # end/x";'
   - kind: para
-    text: '^ # begin'
-  - kind: para
-    text: '([a-zA-Z0-9])+([a-zA-Z0-9\._-])* # localpart'
-  - kind: para
-    text: '@ # at mark'
-  - kind: para
-    text: '([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host'
-  - kind: para
-    text: '$ # end'
-  - kind: para
-    text: /x";
-  - kind: para
-    text: $email = filter_input(INPUT_GET, 'email');
-  - kind: para
-    text: if (!preg_match(VALIDATE_PATTERN, $email)) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: register_account(strtolower($email), $password);
+    text: $email = filter_input(INPUT_GET, 'email');if (!preg_match(VALIDATE_PATTERN,
+      $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p31:
   - kind: para
     text: PCRE正規表現は /x 修飾子を付ける
@@ -470,29 +404,11 @@ text:
   - kind: para
     text: フラグを使えば取得と同時に検証できる
   - kind: para
-    text: const VALIDATE_PATTERN = "/
+    text: 'const VALIDATE_PATTERN = "/^ # begin([a-zA-Z0-9])+([a-zA-Z0-9\._-])* #
+      localpart@ # at mark([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host$ # end/x";'
   - kind: para
-    text: '^ # begin'
-  - kind: para
-    text: '([a-zA-Z0-9])+([a-zA-Z0-9\._-])* # localpart'
-  - kind: para
-    text: '@ # at mark'
-  - kind: para
-    text: '([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host'
-  - kind: para
-    text: '$ # end'
-  - kind: para
-    text: /x";
-  - kind: para
-    text: $email = filter_input(INPUT_GET, 'email');
-  - kind: para
-    text: if (!preg_match(VALIDATE_PATTERN, $email)) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: register_account(strtolower($email), $password);
+    text: $email = filter_input(INPUT_GET, 'email');if (!preg_match(VALIDATE_PATTERN,
+      $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p32:
   - kind: para
     text: PCRE正規表現は /x 修飾子を付ける
@@ -512,31 +428,13 @@ text:
   - kind: para
     text: フラグを使えば取得と同時に検証できる
   - kind: para
-    text: const VALIDATE_PATTERN = "/
-  - kind: para
-    text: '^ # begin'
-  - kind: para
-    text: '([a-zA-Z0-9])+([a-zA-Z0-9\._-])* # localpart'
-  - kind: para
-    text: '@ # at mark'
-  - kind: para
-    text: '([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host'
-  - kind: para
-    text: '$ # end'
-  - kind: para
-    text: /x";
+    text: 'const VALIDATE_PATTERN = "/^ # begin([a-zA-Z0-9])+([a-zA-Z0-9\._-])* #
+      localpart@ # at mark([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+ # host$ # end/x";'
   - kind: para
     text: 停止できてない！！！！
   - kind: para
-    text: $email = filter_input(INPUT_GET, 'email');
-  - kind: para
-    text: if (!preg_match(VALIDATE_PATTERN, $email)) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: register_account(strtolower($email), $password);
+    text: $email = filter_input(INPUT_GET, 'email');if (!preg_match(VALIDATE_PATTERN,
+      $email)) {echo "Bad mail address!!";}register_account(strtolower($email), $password);
   p33:
   - kind: para
     text: PCRE正規表現は /x 修飾子を付ける
@@ -609,21 +507,11 @@ text:
     level: 2
     text: // これならどうだ！
   - kind: para
-    text: $email = filter_input(INPUT_GET, 'email',
+    text: $email = filter_input(INPUT_GET, 'email',FILTER_VALIDATE_EMAIL);if ($email
+      !== false) {echo "Bad mail address!!";exit;}
   - kind: para
-    text: FILTER_VALIDATE_EMAIL);
-  - kind: para
-    text: if ($email !== false) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: exit;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '[$local, $host] = explode(''@'', $email);'
-  - kind: para
-    text: $normalized = $local . '@' . strtolower($host);
+    text: '[$local, $host] = explode(''@'', $email);$normalized = $local . ''@'' .
+      strtolower($host);'
   - kind: para
     text: register_account($email, $password);
   p35:
@@ -640,24 +528,14 @@ text:
     level: 3
     text: 良くないことがあるので続きは懇親
   - kind: para
-    text: $email = filter_input(INPUT_GET, 'email',
-  - kind: para
-    text: FILTER_VALIDATE_EMAIL);
-  - kind: para
-    text: if ($email !== false) {
-  - kind: para
-    text: echo "Bad mail address!!";
-  - kind: para
-    text: exit;
-  - kind: para
-    text: '}'
+    text: $email = filter_input(INPUT_GET, 'email',FILTER_VALIDATE_EMAIL);if ($email
+      !== false) {echo "Bad mail address!!";exit;}
   - kind: heading
     level: 3
     text: 会で！！！！！！！！
   - kind: para
-    text: '[$local, $host] = explode(''@'', $email);'
-  - kind: para
-    text: $normalized = $local . '@' . strtolower($host);
+    text: '[$local, $host] = explode(''@'', $email);$normalized = $local . ''@'' .
+      strtolower($host);'
   - kind: para
     text: register_account($email, $password);
 size:

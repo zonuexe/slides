@@ -47,16 +47,12 @@ text:
     text: いくつあるでしょうか
   p7:
   - kind: para
-    text: ヒント：
-  - kind: para
-    text: Python 3.10は71個
+    text: ヒント：Python 3.10は71個
   - kind: para
     text: (型を除くと56個くらい)
   p8:
   - kind: para
-    text: 答え：
-  - kind: para
-    text: わかんない
+    text: 答え：わかんない
   p9: []
   p10:
   - kind: heading
@@ -71,9 +67,7 @@ text:
     text: 理解する必要がある
   p12:
   - kind: para
-    text: 関数は
-  - kind: para
-    text: どこからくるの？
+    text: 関数はどこからくるの？
   p13:
   - kind: heading
     level: 1
@@ -91,14 +85,10 @@ text:
     level: 1
     text: C言語で定義されています
   - kind: para
-    text: ここを抜き出せば
-  - kind: para
-    text: 関数一覧を作れる？
+    text: ここを抜き出せば関数一覧を作れる？
   p17:
   - kind: para
-    text: rg -g '*.c' -o
-  - kind: para
-    text: '''^(?:ZEND|PHP)_FUNCTION\(.+\)'' |'
+    text: rg -g '*.c' -o'^(?:ZEND|PHP)_FUNCTION\(.+\)' |
   - kind: para
     text: 'cut -d: -f2 | sort -u | wc -l'
   - kind: heading
@@ -154,9 +144,7 @@ text:
     level: 1
     text: PHPには関数がいっぱい
   - kind: para
-    text: われわれの知る
-  - kind: para
-    text: 標準関数はこのへん
+    text: われわれの知る標準関数はこのへん
   p27:
   - kind: heading
     level: 1
@@ -194,9 +182,7 @@ text:
     level: 1
     text: Debianではモジュールごとのapt
   - kind: para
-    text: よく使われるモジュールも
-  - kind: para
-    text: 明示的にインストールが必要
+    text: よく使われるモジュールも明示的にインストールが必要
   p32:
   - kind: heading
     level: 1
@@ -218,14 +204,10 @@ text:
     text: 話を戻しましょう
   p36:
   - kind: para
-    text: 狭義の標準関数=
-  - kind: para
-    text: コア拡張に属する関数
+    text: 狭義の標準関数=コア拡張に属する関数
   p37:
   - kind: para
-    text: 取材班は関数の数を
-  - kind: para
-    text: 数えるためJSONに
+    text: 取材班は関数の数を数えるためJSONに
   - kind: para
     text: 向き合うことにした
   p38:
@@ -262,11 +244,7 @@ text:
     text: 😇
   p45:
   - kind: para
-    text: 数が多すぎるので
-  - kind: para
-    text: 馴染みのない関数を
-  - kind: para
-    text: 調べる方が筋がいい
+    text: 数が多すぎるので馴染みのない関数を調べる方が筋がいい
   p46:
   - kind: heading
     level: 1
@@ -298,9 +276,7 @@ text:
     text: 追っていく
   p53:
   - kind: para
-    text: たとえば
-  - kind: para
-    text: 配列を処理したい
+    text: たとえば配列を処理したい
   p54:
   - kind: heading
     level: 1

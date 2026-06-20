@@ -13,9 +13,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2023-07-26'
-  - kind: para
-    text: PHP の今を語る！4社合同勉強会
+    text: 2023-07-26 PHP の今を語る！4社合同勉強会
   p2:
   - kind: para
     text: お前誰よ
@@ -77,32 +75,24 @@ text:
     text: ※諸説あります
   p13:
   - kind: para
-    text: 諸説ありますが
-  - kind: para
-    text: 難しい構造には
+    text: 諸説ありますが難しい構造には
   - kind: para
     text: なってない
   p14:
   - kind: para
     text: メタプログラミングは
   - kind: para
-    text: 基本的に
-  - kind: para
-    text: あまりやらない
+    text: 基本的にあまりやらない
   p15:
   - kind: para
     text: (こっそり使ってる
   - kind: para
-    text: 部分もありますが
-  - kind: para
-    text: 大筋は追えるはず)
+    text: 部分もありますが大筋は追えるはず)
   p16:
   - kind: para
     text: PHP詳しくない人でも
   - kind: para
-    text: 雰囲気に従って書けば
-  - kind: para
-    text: セキュリティの問題は
+    text: 雰囲気に従って書けばセキュリティの問題は
   - kind: para
     text: 起こさないように
   p17:
@@ -133,35 +123,17 @@ text:
   - kind: para
     text: include_onceいっぱい
   - kind: para
-    text: エラーハンドリング
+    text: エラーハンドリング(してないページもあった)
   - kind: para
-    text: (してないページもあった)
-  - kind: para
-    text: <?php // www.pixiv.net/htdocs/hoge.php
-  - kind: para
-    text: require_once __DIR__ . '/../inc/bootstrap.php';
-  - kind: para
-    text: include_once INC_PATH . '/Hoge/Fuga.php';
-  - kind: para
-    text: include_once INC_PATH . '/Hoge/Piyo.class.php';
-  - kind: para
-    text: try {
-  - kind: para
-    text: display()
-  - kind: para
-    text: '} catch (Exception $e) {'
-  - kind: para
-    text: error::exception_error($e);
-  - kind: para
-    text: '}'
+    text: <?php // www.pixiv.net/htdocs/hoge.php require_once __DIR__ . '/../inc/bootstrap.php';include_once
+      INC_PATH . '/Hoge/Fuga.php';include_once INC_PATH . '/Hoge/Piyo.class.php';try
+      {display()} catch (Exception $e) {error::exception_error($e);}
   - kind: para
     text: この下にもいっぱい
   - kind: para
     text: ファイルローカルな
   - kind: para
-    text: function display() {
-  - kind: para
-    text: // ...
+    text: function display() {// ...
   - kind: para
     text: グローバル関数
   p20:
@@ -169,17 +141,13 @@ text:
     level: 1
     text: 2015年のコードのイメージ
   - kind: para
-    text: <?php // www.pixiv.net/htdocs/hoge.php
-  - kind: para
-    text: require_once __DIR__ . '/../inc/bootstrap.php';
+    text: <?php // www.pixiv.net/htdocs/hoge.php require_once __DIR__ . '/../inc/bootstrap.php';
   - kind: para
     text: include_once一個だけ
   - kind: para
     text: AppRunner::execute(new Www_HogeController);
   - kind: para
-    text: このクラスは
-  - kind: para
-    text: 自動ロードされる
+    text: このクラスは自動ロードされる
   p21:
   - kind: heading
     level: 1
@@ -193,29 +161,9 @@ text:
   - kind: para
     text: 全URLが1ファイルに
   - kind: para
-    text: final class Controller_WwwRoutes {
-  - kind: para
-    text: public static function getRoutes() {
-  - kind: para
-    text: $route_map = [
-  - kind: para
-    text: '''/'' => ['
-  - kind: para
-    text: '''action'' => function () {'
-  - kind: para
-    text: Www_IndexController::main();
-  - kind: para
-    text: '},'
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '''/hoge.php'' => ['
-  - kind: para
-    text: '''action'' => function () {'
-  - kind: para
-    text: Www_HogeController::main();
-  - kind: para
-    text: '},'
+    text: final class Controller_WwwRoutes {public static function getRoutes() {$route_map
+      = ['/' => ['action' => function () {Www_IndexController::main();},],'/hoge.php'
+      => ['action' => function () {Www_HogeController::main();},
   p22:
   - kind: heading
     level: 1
@@ -227,25 +175,9 @@ text:
   - kind: para
     text: '... ですっきり'
   - kind: para
-    text: <?php // WwwRoutes.php
-  - kind: para
-    text: public static function getRoutes() {
-  - kind: para
-    text: return [
-  - kind: para
-    text: '''/'' => Www_View_IndexController::main(...),'
-  - kind: para
-    text: '''/hoge'' => Www_View_HogeController::main(...),'
-  - kind: para
-    text: '''/.well-known/change-password'' => fn() =>'
-  - kind: para
-    text: Util_Http::redirect_and_exit(
-  - kind: para
-    text: ReverseRoute::fullAccountsPasswordChange([])
-  - kind: para
-    text: ),
-  - kind: para
-    text: '],'
+    text: <?php // WwwRoutes.php public static function getRoutes() {return ['/' =>
+      Www_View_IndexController::main(...),'/hoge' => Www_View_HogeController::main(...),'/.well-known/change-password'
+      => fn() =>Util_Http::redirect_and_exit(ReverseRoute::fullAccountsPasswordChange([])),],
   p24:
   - kind: heading
     level: 1
@@ -255,30 +187,15 @@ text:
   - kind: para
     text: whoops
   - kind: para
-    text: final class PCAppRunner {
-  - kind: para
-    text: public static function execute(Closure $action) {
-  - kind: para
-    text: try {
-  - kind: para
-    text: Controller_Util::turnOnWhoops();
-  - kind: para
-    text: Controller_Util::redirectToHttps();
+    text: final class PCAppRunner {public static function execute(Closure $action)
+      {try {Controller_Util::turnOnWhoops();Controller_Util::redirectToHttps();
   - kind: para
     text: パソコン版
   - kind: para
-    text: $action();
-  - kind: para
-    text: '} catch (\Throwable $exception) {'
-  - kind: para
-    text: PCAppRunner::setHttpStatus(500);
-  - kind: para
-    text: Controller_Util::displayWhoops($exception);
+    text: $action();} catch (\Throwable $exception) {PCAppRunner::setHttpStatus(500);Controller_Util::displayWhoops($exception);
   p25:
   - kind: para
-    text: 開発しやすさの
-  - kind: para
-    text: ための取り組み
+    text: 開発しやすさのための取り組み
   p26:
   - kind: para
     text: CI (Jenkins, GitLab CI)
@@ -304,11 +221,8 @@ text:
     level: 1
     text: クエリパラメータの問題
   - kind: para
-    text: $id = $_GET['user_id'];
-  - kind: para
-    text: if (is_numeric($id)) User_Common::getById($id);
-  - kind: para
-    text: else error("不正な入力です");
+    text: $id = $_GET['user_id'];if (is_numeric($id)) User_Common::getById($id);else
+      error("不正な入力です");
   - kind: list
     items:
     - こういうコードを書いてはいけない
@@ -321,9 +235,7 @@ text:
   - kind: para
     text: ParamHelper
   - kind: para
-    text: $id = ParamHelper::get('id')->asPositiveInt();
-  - kind: para
-    text: $user = User_Common::getById($id);
+    text: $id = ParamHelper::get('id')->asPositiveInt();$user = User_Common::getById($id);
   - kind: list
     items:
     - 外部入力から値を取り出すヘルパー
@@ -346,9 +258,7 @@ text:
     level: 1
     text: テンプレートとURL生成の問題
   - kind: para
-    text: <a href="{$smarty.const.SYSTEM_URL_WWW|escape}member_illust.php?id={$user.id|
-  - kind: para
-    text: escape}">{$user.name|escape}</a>
+    text: <a href="{$smarty.const.SYSTEM_URL_WWW|escape}member_illust.php?id={$user.id|escape}">{$user.name|escape}</a>
   - kind: list
     items:
     - こういうコードを書くと事故が入り込みやすい
@@ -359,9 +269,7 @@ text:
     items:
     - ReverseRoute
   - kind: para
-    text: <a href="{reverse_route page='fullWwwMemberProfile' id=$user.id}">
-  - kind: para
-    text: '{$user.name|escape}</a>'
+    text: <a href="{reverse_route page='fullWwwMemberProfile' id=$user.id}">{$user.name|escape}</a>
   - kind: list
     items:
     - あるページに名前をつけて、reverse_route関数に page 引数で渡す
@@ -375,50 +283,23 @@ text:
     items:
     - ReverseRoute
   - kind: para
-    text: /**
+    text: '/*** @route\example https://www.pixiv.net/member.php?id=12345 {id: 12345}*
+      @route\example https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx{id:
+      12345, utm_source: "xxxxx"}*/public static function fullWwwMemberProfile(array
+      $params){Util_Assert::num($params[''id'']);'
   - kind: para
-    text: '* @route\example https://www.pixiv.net/member.php?id=12345 {id: 12345}'
-  - kind: para
-    text: '* @route\example https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx'
-  - kind: para
-    text: '{id: 12345, utm_source: "xxxxx"}'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: public static function fullWwwMemberProfile(array $params)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: Util_Assert::num($params['id']);
-  - kind: para
-    text: return ReverseRoute::buildUrl(SYSTEM_URL_WWW, '/member.php', ['id'],
-  - kind: para
-    text: $params);
-  - kind: para
-    text: '}'
+    text: return ReverseRoute::buildUrl(SYSTEM_URL_WWW, '/member.php', ['id'],$params);}
   p34:
   - kind: list
     items:
     - Attribute最高！！
   - kind: para
     text: '#[RouteExample(''https://www.pixiv.net/member.php?id=12345'', [''id''=>
-      12345])'
+      12345])#[RouteExample(''https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx,[''id''
+      => 12345, ''utm_source'' => ''xxxxx''])public static function fullWwwMemberProfile(array
+      $params){Util_Assert::num($params[''id'']);'
   - kind: para
-    text: '#[RouteExample(''https://www.pixiv.net/member.php?id=12345&utm_source=xxxxx,'
-  - kind: para
-    text: '[''id'' => 12345, ''utm_source'' => ''xxxxx''])'
-  - kind: para
-    text: public static function fullWwwMemberProfile(array $params)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: Util_Assert::num($params['id']);
-  - kind: para
-    text: return ReverseRoute::buildUrl(SYSTEM_URL_WWW, '/member.php', ['id'],
-  - kind: para
-    text: $params);
-  - kind: para
-    text: '}'
+    text: return ReverseRoute::buildUrl(SYSTEM_URL_WWW, '/member.php', ['id'],$params);}
   p35:
   - kind: heading
     level: 1
@@ -510,11 +391,7 @@ text:
     level: 1
     text: 機能の有効化／無効化
   - kind: para
-    text: if ($_SERVER['REMOTE_ADDR'] === OFFICE_IP) {
-  - kind: para
-    text: hogehoge();
-  - kind: para
-    text: '}'
+    text: if ($_SERVER['REMOTE_ADDR'] === OFFICE_IP) {hogehoge();}
   - kind: list
     items:
     - 新しい機能をサービスに実装して、社内でだけ有効化したいとする
@@ -527,11 +404,7 @@ text:
     level: 1
     text: フィーチャートグル
   - kind: para
-    text: if (ABTest_DevToggle::isEnabledDevToggle('hogeFunc')) {
-  - kind: para
-    text: hogehoge();
-  - kind: para
-    text: '}'
+    text: if (ABTest_DevToggle::isEnabledDevToggle('hogeFunc')) {hogehoge();}
   - kind: list
     items:
     - 専用のコンソール画面でボタンを押すことで有効化／無効化される

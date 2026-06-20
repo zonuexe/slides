@@ -16,9 +16,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2025-06-28 #phpcon'
-  - kind: para
-    text: PHPConference Japan 2025
+    text: '2025-06-28 #phpcon PHPConference Japan 2025'
   p2:
   - kind: para
     text: お前誰よ
@@ -77,28 +75,12 @@ text:
     level: 1
     text: f(x) = 2x
   - kind: para
-    text: f(x)
-  - kind: para
-    text: f(0)
-  - kind: para
-    text: f(1)
-  - kind: para
-    text: f(2)
-  - kind: para
-    text: f(3)
+    text: f(x)f(0)f(1)f(2)f(3)
   - kind: para
     text: 2x
   p14:
   - kind: para
-    text: f(x)
-  - kind: para
-    text: f(0)
-  - kind: para
-    text: f(1)
-  - kind: para
-    text: f(2)
-  - kind: para
-    text: f(3)
+    text: f(x)f(0)f(1)f(2)f(3)
   - kind: para
     text: 2x
   p15: []
@@ -125,11 +107,7 @@ text:
     level: 1
     text: f(x) = 2x
   - kind: para
-    text: $f = function($x) {
-  - kind: para
-    text: return 2 * $x;
-  - kind: para
-    text: '};'
+    text: $f = function($x) {return 2 * $x;};
   p20:
   - kind: heading
     level: 1
@@ -146,15 +124,7 @@ text:
     level: 1
     text: f(x) = 2x
   - kind: para
-    text: f(x)
-  - kind: para
-    text: f(0)
-  - kind: para
-    text: f(1)
-  - kind: para
-    text: f(2)
-  - kind: para
-    text: f(3)
+    text: f(x)f(0)f(1)f(2)f(3)
   - kind: para
     text: 2x
   p23:
@@ -168,15 +138,7 @@ text:
     level: 1
     text: array_map($f, [0, 1, 2, 3]);
   - kind: para
-    text: f(x)
-  - kind: para
-    text: f(0)
-  - kind: para
-    text: f(1)
-  - kind: para
-    text: f(2)
-  - kind: para
-    text: f(3)
+    text: f(x)f(0)f(1)f(2)f(3)
   - kind: para
     text: 2x
   p24: []
@@ -186,16 +148,12 @@ text:
   - kind: para
     text: PHP関数
   - kind: para
-    text: ＝
-  - kind: para
-    text: 数学の関数
+    text: ＝数学の関数
   p28:
   - kind: para
     text: PHP関数
   - kind: para
-    text: ≠
-  - kind: para
-    text: 数学の関数
+    text: ≠数学の関数
   p29:
   - kind: heading
     level: 1
@@ -203,41 +161,29 @@ text:
   - kind: para
     text: $f = fn($x) => 2 * $x;
   - kind: para
-    text: echo "f(2) = ", $f(2);
-  - kind: para
-    text: echo "sin(0) = ", sin(0);
+    text: echo "f(2) = ", $f(2);echo "sin(0) = ", sin(0);
   p30:
   - kind: heading
     level: 1
     text: 関数の結果を画面に表示する
   - kind: para
-    text: われわれは
-  - kind: para
-    text: var_dump() も
-  - kind: para
-    text: 関数と呼んでいる
+    text: われわれはvar_dump() も関数と呼んでいる
   - kind: para
     text: $f = fn($x) => 2 * $x;
   - kind: para
-    text: var_dump(["f(2)" => $f(2)]);
-  - kind: para
-    text: var_dump(["sin(0)" => sin(0));
+    text: var_dump(["f(2)" => $f(2)]);var_dump(["sin(0)" => sin(0));
   p31:
   - kind: heading
     level: 1
     text: 関数の結果を画面に表示… しない
   - kind: para
-    text: 計算した結果を
-  - kind: para
-    text: どこにも使わない
+    text: 計算した結果をどこにも使わない
   - kind: para
     text: $f = fn($x) => 2 * $x;
   - kind: para
     text: 計算資源の無駄！
   - kind: para
-    text: $f(2);
-  - kind: para
-    text: sin(0);
+    text: $f(2);sin(0);
   - kind: para
     text: SDGsに反する！
   p32:
@@ -252,9 +198,7 @@ text:
   - kind: para
     text: 文字列を生成して
   - kind: para
-    text: printf("Hello, world!");
-  - kind: para
-    text: sprintf("Hello, world!");
+    text: printf("Hello, world!");sprintf("Hello, world!");
   - kind: para
     text: 捨てている！
   p33:
@@ -263,9 +207,7 @@ text:
   - kind: para
     text: (or HTTP出力)
   - kind: para
-    text: 作った文字列は
-  - kind: para
-    text: 受け取らないと意味ない
+    text: 作った文字列は受け取らないと意味ない
   p34:
   - kind: heading
     level: 1
@@ -304,9 +246,7 @@ text:
     - どこかに何かの影響を及ぼす
   p38:
   - kind: para
-    text: 休
-  - kind: para
-    text: 憩
+    text: 休憩
   p39:
   - kind: heading
     level: 1
@@ -322,9 +262,7 @@ text:
     text: 好きですか？
   p42:
   - kind: para
-    text: 好きかはともかく
-  - kind: para
-    text: お得なことはいっぱい
+    text: 好きかはともかくお得なことはいっぱい
   p43:
   - kind: heading
     level: 1
@@ -332,35 +270,18 @@ text:
   - kind: para
     text: テスト対象の関数
   - kind: para
-    text: 'function twice(int $n): int {'
-  - kind: para
-    text: return $n * 2;
-  - kind: para
-    text: '}'
+    text: 'function twice(int $n): int {return $n * 2;}'
   p44:
   - kind: heading
     level: 1
     text: ユニットテストの基本スタイル
   - kind: para
-    text: 期待値と結果を
+    text: 期待値と結果を比較してチェック
   - kind: para
-    text: 比較してチェック
+    text: 'function twice(int $n): int {return $n * 2;}'
   - kind: para
-    text: 'function twice(int $n): int {'
-  - kind: para
-    text: return $n * 2;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: class TwiceFuncTest extends TestCase {
-  - kind: para
-    text: 'function test(): void {'
-  - kind: para
-    text: $this->assertEquals(4, twice(2));
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class TwiceFuncTest extends TestCase {function test(): void {$this->assertEquals(4,
+      twice(2));}}'
   p45:
   - kind: heading
     level: 1
@@ -389,9 +310,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2025-06-28 #phpcon'
-  - kind: para
-    text: PHPConference Japan 2025
+    text: '2025-06-28 #phpcon PHPConference Japan 2025'
   p48:
   - kind: heading
     level: 1
@@ -410,16 +329,12 @@ text:
     - どこかに何かの影響を及ぼす
   p49:
   - kind: para
-    text: いつの間にか
-  - kind: para
-    text: どこかの何かに
+    text: いつの間にかどこかの何かに
   - kind: para
     text: 影響を及ぼす
   p50:
   - kind: para
-    text: あるいは勝手に
-  - kind: para
-    text: どこかの何かの
+    text: あるいは勝手にどこかの何かの
   - kind: para
     text: 影響を受ける
   p51:
@@ -456,9 +371,7 @@ text:
   - kind: para
     text: 不規則に副作用を
   - kind: para
-    text: 起こすコードは
-  - kind: para
-    text: 容易に制御不能になる
+    text: 起こすコードは容易に制御不能になる
   p56:
   - kind: para
     text: 秩序のないコードが
@@ -466,18 +379,10 @@ text:
     text: 人間に牙を剥く
   p57:
   - kind: para
-    text: 閑
-  - kind: para
-    text: 話
-  - kind: para
-    text: 休
-  - kind: para
-    text: 題
+    text: 閑話休題
   p58:
   - kind: para
-    text: ドラえもん
-  - kind: para
-    text: ご存じですか？
+    text: ドラえもんご存じですか？
   p59:
   - kind: heading
     level: 1
@@ -492,44 +397,25 @@ text:
     level: 1
     text: 戦力化を提案する野比のび太
   - kind: para
-    text: 『大長編ドラえもん(7) のび太と鉄人兵団』
-  - kind: para
-    text: 著： 藤子・F・不二雄／藤子プロ
-  - kind: para
-    text: 1987年2月25日初版第1刷、2011年第86刷
-  - kind: para
-    text: Kindle版 p97, p102より引用
+    text: 『大長編ドラえもん(7) のび太と鉄人兵団』著： 藤子・F・不二雄／藤子プロ1987年2月25日初版第1刷、2011年第86刷Kindle版 p97,
+      p102より引用
   p60:
   - kind: para
-    text: みたことのある回路に
-  - kind: para
-    text: なおしゃいいんだよ！
+    text: みたことのある回路になおしゃいいんだよ！
   p61:
   - kind: para
-    text: のび太は
-  - kind: para
-    text: 技術者の鑑
+    text: のび太は技術者の鑑
   p62:
   - kind: para
     text: 制御できないものは
   - kind: para
-    text: 制御できる部分に
-  - kind: para
-    text: ブレークダウンする
+    text: 制御できる部分にブレークダウンする
   p63:
   - kind: para
-    text: ヘキサゴナルアーキテクチャ(Hexagonal architecture翻訳)
-  - kind: para
-    text: Alistair Cockburn著、tai2訳
-  - kind: para
-    text: 2015年10月9日公開、2025年6月28日閲覧より引用
+    text: ヘキサゴナルアーキテクチャ(Hexagonal architecture翻訳)Alistair Cockburn著、tai2訳2015年10月9日公開、2025年6月28日閲覧より引用
   p64:
   - kind: para
-    text: クリーンアーキテクチャ(The Clean Architecture翻訳)
-  - kind: para
-    text: Robert Martin著、tai2訳
-  - kind: para
-    text: 2015年10月9日公開、2025年6月28日閲覧より引用
+    text: クリーンアーキテクチャ(The Clean Architecture翻訳)Robert Martin著、tai2訳2015年10月9日公開、2025年6月28日閲覧より引用
   p65:
   - kind: heading
     level: 1
@@ -552,23 +438,17 @@ text:
   - kind: para
     text: 制御できないものは
   - kind: para
-    text: 制御できる部分に
-  - kind: para
-    text: ブレークダウンする
+    text: 制御できる部分にブレークダウンする
   p70:
   - kind: para
     text: 「なんたらアーキテクチャ」は
   - kind: para
-    text: 構造をわかりやすく
-  - kind: para
-    text: 図示してくれるが、
+    text: 構造をわかりやすく図示してくれるが、
   - kind: para
     text: 必須ではない
   p71:
   - kind: para
-    text: プログラム上で
-  - kind: para
-    text: 制御しやすい基本単位
+    text: プログラム上で制御しやすい基本単位
   - kind: para
     text: '#とは'
   p72:
@@ -613,17 +493,13 @@ text:
     level: 1
     text: 関数の結果を画面に表示… されない
   - kind: para
-    text: 計算した結果を
-  - kind: para
-    text: どこにも使わない
+    text: 計算した結果をどこにも使わない
   - kind: para
     text: $f = fn($x) => 2 * $x;
   - kind: para
     text: 計算資源の無駄！
   - kind: para
-    text: $f(2);
-  - kind: para
-    text: sin(0);
+    text: $f(2);sin(0);
   - kind: para
     text: SDGsに反する！
   p77: []
@@ -688,9 +564,7 @@ text:
   - kind: para
     text: CurlHandler/リソースは
   - kind: para
-    text: 外部から観測できない
-  - kind: para
-    text: 内部状態に依存するので
+    text: 外部から観測できない内部状態に依存するので
   - kind: para
     text: 純粋と言いがたい
   p90:
@@ -718,21 +592,15 @@ text:
     level: 1
     text: 関数の結果を画面に表示… されない
   - kind: para
-    text: 計算した結果を
-  - kind: para
-    text: どこにも使わない
+    text: 計算した結果をどこにも使わない
   - kind: para
     text: $f = fn($x) => 2 * $x;
   - kind: para
     text: 計算資源の無駄！
   - kind: para
-    text: $f(2);
+    text: $f(2);sin(0);
   - kind: para
-    text: sin(0);
-  - kind: para
-    text: SDGsに反する！
-  - kind: para
-    text: 無駄なので除去する
+    text: SDGsに反する！無駄なので除去する
   - kind: para
     text: 最適化
   p92:
@@ -751,41 +619,27 @@ text:
     text: 警告されるべき
   p95:
   - kind: para
-    text: 純粋な呼び出しなので
-  - kind: para
-    text: 警告されるべきではない
+    text: 純粋な呼び出しなので警告されるべきではない
   p96:
   - kind: para
-    text: 原因はわかっていて
-  - kind: para
-    text: 書きかけのPRがある
+    text: 原因はわかっていて書きかけのPRがある
   p97: []
   p98:
   - kind: para
-    text: ＿人人人人人人人人人＿
-  - kind: para
-    text: ＞ 僕の怠惰が原因 ＜
-  - kind: para
-    text: ‾Y^Y^Y^Y^Y^Y^Y‾
+    text: ＿人人人人人人人人人＿＞ 僕の怠惰が原因 ＜‾Y^Y^Y^Y^Y^Y^Y‾
   p99:
   - kind: para
-    text: 正直、体調不良と
-  - kind: para
-    text: 若干の燃えつきが
+    text: 正直、体調不良と若干の燃えつきが
   - kind: para
     text: 重なっていた
   p100:
   - kind: para
-    text: PHPStanを
-  - kind: para
-    text: 理解している人は
+    text: PHPStanを理解している人は
   - kind: para
     text: 限られている
   p101:
   - kind: para
-    text: ガチでPHPStanを
-  - kind: para
-    text: 極めてみたい仲間を
+    text: ガチでPHPStanを極めてみたい仲間を
   - kind: para
     text: 増やしたい！！！
   p102:

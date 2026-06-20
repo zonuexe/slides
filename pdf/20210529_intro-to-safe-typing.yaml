@@ -45,28 +45,16 @@ text:
   - kind: para
     text: 今回含まないもの
   - kind: para
-    text: 各静的解析ツールやIDE
+    text: 各静的解析ツールやIDE(PhpStorm)固有の型・機能
   - kind: para
-    text: (PhpStorm)固有の型・機能
-  - kind: para
-    text: メタプログラミングに
-  - kind: para
-    text: 対応した型付け
+    text: メタプログラミングに対応した型付け
   p8:
   - kind: para
     text: 用語について
   - kind: para
-    text: 単に関数と呼ぶとき、
+    text: 単に関数と呼ぶとき、メソッドとクロージャを含む
   - kind: para
-    text: メソッドとクロージャを含む
-  - kind: para
-    text: 定義に直接記述する型を型宣言
-  - kind: para
-    text: (type declaration)、
-  - kind: para
-    text: PHPDocを型注釈
-  - kind: para
-    text: (annotation)と呼びます
+    text: 定義に直接記述する型を型宣言(type declaration)、PHPDocを型注釈(annotation)と呼びます
   p9:
   - kind: para
     text: PHPの型について
@@ -90,9 +78,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $a = 1;
-  - kind: para
-    text: $b = 2;
+    text: $a = 1;$b = 2;
   - kind: para
     text: echo $a + $b;
   p14:
@@ -102,9 +88,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $a = 1;
-  - kind: para
-    text: $b = 2;
+    text: $a = 1;$b = 2;
   - kind: para
     text: echo $a + $b;
   p15:
@@ -121,9 +105,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $a = 1;
-  - kind: para
-    text: $b = 2;
+    text: $a = 1;$b = 2;
   - kind: para
     text: echo $a + $b;
   p17:
@@ -133,13 +115,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function print_add($a, $b)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo $a + $b;
-  - kind: para
-    text: '}'
+    text: function print_add($a, $b){echo $a + $b;}
   - kind: para
     text: print_add(1, 2);
   p18:
@@ -156,17 +132,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: こいつらが
+    text: こいつらが何者かわからん
   - kind: para
-    text: 何者かわからん
-  - kind: para
-    text: function print_add($a, $b)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo $a + $b;
-  - kind: para
-    text: '}'
+    text: function print_add($a, $b){echo $a + $b;}
   - kind: para
     text: print_add(1, 2);
   p20: []
@@ -182,13 +150,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function print_add($a, $b)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo $a + $b;
-  - kind: para
-    text: '}'
+    text: function print_add($a, $b){echo $a + $b;}
   - kind: para
     text: print_add(1, 2);
   p23:
@@ -202,11 +164,7 @@ text:
   - kind: para
     text: PHPで使える値の種類のこと
   - kind: para
-    text: あたい
-  - kind: para
-    text: へんすう
-  - kind: para
-    text: ていすう
+    text: あたいへんすうていすう
   - kind: para
     text: 値＝変数･定数にセットしたり､
   - kind: para
@@ -217,30 +175,18 @@ text:
   - kind: para
     text: PHPと型
   - kind: para
-    text: PHPは型システムの分類とし
+    text: PHPは型システムの分類として弱い動的型付けあるいは「型なし」と分類されがち
   - kind: para
-    text: て弱い動的型付けあるいは
-  - kind: para
-    text: 「型なし」と分類されがち
-  - kind: para
-    text: しかしPHPは単なる型なしと
-  - kind: para
-    text: 呼ぶには型を使ってできるこ
-  - kind: para
-    text: とが多い
+    text: しかしPHPは単なる型なしと呼ぶには型を使ってできることが多い
   p26:
   - kind: para
     text: PHPの実行時型検査
   - kind: para
-    text: 関数のパラメータと戻り値、
-  - kind: para
-    text: プロパティに型宣言できる
+    text: 関数のパラメータと戻り値、プロパティに型宣言できる
   - kind: para
     text: 強力な実行時型検査
   - kind: para
-    text: 実行時にコードの型宣言通り
-  - kind: para
-    text: 型で実行されることが保障
+    text: 実行時にコードの型宣言通り型で実行されることが保障
   - kind: para
     text: TSやPythonとは異なる
   p27:
@@ -249,54 +195,36 @@ text:
   - kind: para
     text: Type Hintingと呼ばれてた
   - kind: para
-    text: array, callableあるいは
+    text: array, callableあるいはクラス/インターフェイスしか書けなかった
   - kind: para
-    text: クラス/インターフェイスしか
-  - kind: para
-    text: 書けなかった
-  - kind: para
-    text: PHP7.0以降ではスカラー型
-  - kind: para
-    text: に対応し、型宣言に改称
+    text: PHP7.0以降ではスカラー型に対応し、型宣言に改称
   p28:
   - kind: para
     text: PHPの静的型検査
   - kind: para
-    text: Psalm, PHPStanなどの検査
+    text: Psalm, PHPStanなどの検査ツールが豊富
   - kind: para
-    text: ツールが豊富
+    text: PhpStormは検査能力は劣るが簡単に導入できる
   - kind: para
-    text: PhpStormは検査能力は劣る
-  - kind: para
-    text: が簡単に導入できる
-  - kind: para
-    text: 今回の発表では個別のツール
-  - kind: para
-    text: の導入方法には触れません
+    text: 今回の発表では個別のツールの導入方法には触れません
   p29:
   - kind: para
     text: データ型(1) int 整数型
   - kind: para
     text: 0, 1, 2や-100のような数
   - kind: para
-    text: 最大値はPHP_INT_MAXで
-  - kind: para
-    text: 最小値はPHP_INT_MIN
+    text: 最大値はPHP_INT_MAXで最小値はPHP_INT_MIN
   p30:
   - kind: para
     text: データ型(2) string 文字列型
   - kind: para
-    text: '"a" "xyz" "あいう" のような'
-  - kind: para
-    text: 文字の並びだと思ってください
+    text: '"a" "xyz" "あいう" のような文字の並びだと思ってください'
   - kind: para
     text: から
   - kind: para
     text: 長さ0の "" (空文字列)も存在する
   - kind: para
-    text: PHPの文字列値はエンコーディングを持
-  - kind: para
-    text: たないバイト列
+    text: PHPの文字列値はエンコーディングを持たないバイト列
   p31:
   - kind: para
     text: ここで簡単な
@@ -313,29 +241,17 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: 細かくいうと$a = 1
+    text: 細かくいうと$a = 1のような変数代入も式
   - kind: para
-    text: のような変数代入も式
-  - kind: para
-    text: 値
-  - kind: para
-    text: '"2"'
+    text: 値"2"
   - kind: para
     text: 値%
   - kind: para
-    text: 値
+    text: 値"2"
   - kind: para
-    text: '"2"'
+    text: $a = 1;$b = "2";$c = $a + $b;
   - kind: para
-    text: $a = 1;
-  - kind: para
-    text: $b = "2";
-  - kind: para
-    text: $c = $a + $b;
-  - kind: para
-    text: 式
-  - kind: para
-    text: 1 + "2"
+    text: 式1 + "2"
   - kind: para
     text: echo $c;
   - kind: para
@@ -346,15 +262,11 @@ text:
   - kind: para
     text: リテラルと式
   - kind: para
-    text: コードに直接書く値を
-  - kind: para
-    text: リテラル(literal)といいます
+    text: コードに直接書く値をリテラル(literal)といいます
   - kind: para
     text: 1 2.3 "abc" みたいなの
   - kind: para
-    text: $a + $b のようなコードを
-  - kind: para
-    text: 式(expression)といいます
+    text: $a + $b のようなコードを式(expression)といいます
   p34:
   - kind: heading
     level: 1
@@ -370,15 +282,9 @@ text:
   - kind: para
     text: string("2")
   - kind: para
-    text: $a = 1;
+    text: $a = 1;$b = "2";$c = $a + $b;
   - kind: para
-    text: $b = "2";
-  - kind: para
-    text: $c = $a + $b;
-  - kind: para
-    text: 式
-  - kind: para
-    text: 1 + "2"
+    text: 式1 + "2"
   - kind: para
     text: echo $c;
   - kind: para
@@ -389,39 +295,27 @@ text:
   - kind: para
     text: データ型(3) ﬂoat 浮動小数点数型
   - kind: para
-    text: 0.1, 10.0, -0.3, INF, -INF
+    text: 0.1, 10.0, -0.3, INF, -INFのような値
   - kind: para
-    text: のような値
-  - kind: para
-    text: PHPでは整数の範囲を外れた
-  - kind: para
-    text: 数はfloatになる
+    text: PHPでは整数の範囲を外れた数はfloatになる
   - kind: para
     text: PHP_INT_MAX+1 は ﬂoat
   p36:
   - kind: para
     text: データ型(4) bool 論理型
   - kind: para
-    text: true と false の二種類だけ
+    text: true と false の二種類だけの値からなる型
   - kind: para
-    text: の値からなる型
-  - kind: para
-    text: $a==$b や $a < $b のような
-  - kind: para
-    text: 比較式の結果はbool
+    text: $a==$b や $a < $b のような比較式の結果はbool
   - kind: para
     text: PHPでは $a && $b もbool
   p37:
   - kind: para
     text: スカラー型のまとめ
   - kind: para
-    text: bool, int, float, stringの
+    text: bool, int, float, stringの4種をスカラー(scalar)と呼ぶ
   - kind: para
-    text: 4種をスカラー(scalar)と呼ぶ
-  - kind: para
-    text: 後述する複合型でも特殊型で
-  - kind: para
-    text: もないものという共通性
+    text: 後述する複合型でも特殊型でもないものという共通性
   p38:
   - kind: para
     text: 複合型
@@ -432,16 +326,12 @@ text:
   - kind: para
     text: object (オブジェクト)
   - kind: para
-    text: ※ PHPマニュアルはcallable特殊型と
-  - kind: para
-    text: iterable特殊型も複合型として記載
+    text: ※ PHPマニュアルはcallable特殊型とiterable特殊型も複合型として記載
   p39:
   - kind: para
     text: データ型(5) array 配列型
   - kind: para
-    text: 他言語のリストと辞書(ハッシュ)
-  - kind: para
-    text: を兼ねた型だが､基本は辞書的
+    text: 他言語のリストと辞書(ハッシュ)を兼ねた型だが､基本は辞書的
   - kind: para
     text: '[1, 2, 3] や [] (空配列)'
   - kind: para
@@ -452,9 +342,7 @@ text:
   - kind: para
     text: データ型(5) array 配列型
   - kind: para
-    text: 作成時にキーを指定しないと0
-  - kind: para
-    text: からの連番になる
+    text: 作成時にキーを指定しないと0からの連番になる
   - kind: para
     text: '[1]と [0 => 1] は同じ'
   - kind: para
@@ -465,43 +353,27 @@ text:
   - kind: para
     text: データ型(6) object
   - kind: para
-    text: プロパティ(メンバー変数)を持
+    text: プロパティ(メンバー変数)を持ち､$obj->prop のような構文でアクセスできる値の型
   - kind: para
-    text: ち､$obj->prop のような構文
-  - kind: para
-    text: でアクセスできる値の型
-  - kind: para
-    text: objectには属するクラスがあ
-  - kind: para
-    text: り、組み込みクラス、ユー
-  - kind: para
-    text: ザー定義、stdClassがある
+    text: objectには属するクラスがあり、組み込みクラス、ユーザー定義、stdClassがある
   p42:
   - kind: para
     text: 型宣言とクラス
   - kind: para
-    text: 型宣言にはクラス名または
-  - kind: para
-    text: インターフェイスを記述できる
+    text: 型宣言にはクラス名またはインターフェイスを記述できる
   - kind: para
     text: 事実上のユーザー定義型
   - kind: para
-    text: インターフェイスを活用する
-  - kind: para
-    text: と実装と宣言を分離できる
+    text: インターフェイスを活用すると実装と宣言を分離できる
   - kind: para
     text: 依存性逆転の原則(DIP)
   p43:
   - kind: para
     text: 全てinterfaceで指定すべきか
   - kind: para
-    text: 抽象化でたしかに実装詳細へ
+    text: 抽象化でたしかに実装詳細への依存を避けることができる
   - kind: para
-    text: の依存を避けることができる
-  - kind: para
-    text: 全ての依存をインターフェイ
-  - kind: para
-    text: スにすべきかは悩ましい
+    text: 全ての依存をインターフェイスにすべきかは悩ましい
   - kind: para
     text: DTOやValueObjectなど
   - kind: para
@@ -516,9 +388,7 @@ text:
   - kind: para
     text: null (空値)
   - kind: para
-    text: ※ nullはnullableの一部やPHP8の
-  - kind: para
-    text: ユニオン型の一部として記述可能
+    text: ※ nullはnullableの一部やPHP8のユニオン型の一部として記述可能
   p45:
   - kind: para
     text: 型ではないが特殊な戻り値
@@ -527,13 +397,9 @@ text:
   - kind: para
     text: 値を返さないことを示す
   - kind: para
-    text: 値を返さないということは、
+    text: 値を返さないということは、副作用があるというマーク
   - kind: para
-    text: 副作用があるというマーク
-  - kind: para
-    text: DBにデータを記録する、
-  - kind: para
-    text: メールを送る、例外送出
+    text: DBにデータを記録する、メールを送る、例外送出
   p46:
   - kind: para
     text: 複合的な型表記
@@ -546,9 +412,7 @@ text:
   - kind: para
     text: A|Bとかstring|falseとか
   - kind: para
-    text: PHP7ではPHPDocコメントに
-  - kind: para
-    text: 書く必要がある
+    text: PHP7ではPHPDocコメントに書く必要がある
   p47:
   - kind: para
     text: クラスの型付けを
@@ -558,11 +422,7 @@ text:
   - kind: para
     text: Book (本)
   - kind: para
-    text: プロパティ(メンバー変数)とし
-  - kind: para
-    text: て、name(書名)とAuthor(著
-  - kind: para
-    text: 者オブジェクト)を持つ
+    text: プロパティ(メンバー変数)として、name(書名)とAuthor(著者オブジェクト)を持つ
   - kind: para
     text: メソッドは今回は割愛
   p49:
@@ -572,27 +432,9 @@ text:
   - kind: para
     text: <?php // PHP 5.x～7.3
   - kind: para
-    text: class Book {
-  - kind: para
-    text: /** @var string */
-  - kind: para
-    text: private $name;
-  - kind: para
-    text: /** @var Author */
-  - kind: para
-    text: private $author;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: $this->name = $name;
-  - kind: para
-    text: $this->author = $author;
-  - kind: para
-    text: '}'
+    text: class Book {/** @var string */private $name;/** @var Author */private $author;public
+      function __construct(string $name, Author $author) {$this->name = $name;$this->author
+      = $author;}
   p50:
   - kind: heading
     level: 1
@@ -600,25 +442,8 @@ text:
   - kind: para
     text: <?php // PHP 7.4
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private string $name;
-  - kind: para
-    text: private Author $author;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: $this->name = $name;
-  - kind: para
-    text: $this->author = $author;
-  - kind: para
-    text: '}'
+    text: class Book{private string $name;private Author $author;public function __construct(string
+      $name, Author $author) {$this->name = $name;$this->author = $author;}
   p51:
   - kind: heading
     level: 1
@@ -626,25 +451,10 @@ text:
   - kind: para
     text: <?php // PHP 8.0以降
   - kind: para
-    text: class Book
+    text: class Book{public function __construct(private string $name,private Author
+      $author) {// プロパティ代入は不要
   - kind: para
-    text: '{'
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: private string $name,
-  - kind: para
-    text: private Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // プロパティ代入は不要
-  - kind: para
-    text: // $this->name = $name;
-  - kind: para
-    text: // $this->author = $author;
-  - kind: para
-    text: '}'
+    text: // $this->name = $name;// $this->author = $author;}
   p52:
   - kind: para
     text: 仕様変更
@@ -676,25 +486,8 @@ text:
   - kind: para
     text: <?php // PHP 7.4
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private string $name;
-  - kind: para
-    text: private Author $author;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: $this->name = $name;
-  - kind: para
-    text: $this->author = $author;
-  - kind: para
-    text: '}'
+    text: class Book{private string $name;private Author $author;public function __construct(string
+      $name, Author $author) {$this->name = $name;$this->author = $author;}
   p57:
   - kind: heading
     level: 1
@@ -702,40 +495,19 @@ text:
   - kind: para
     text: <?php // PHP 7.4
   - kind: para
-    text: arrayって…
+    text: arrayって…情報量減っちゃってね？
   - kind: para
-    text: 情報量減っちゃってね？
-  - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private string $name;
-  - kind: para
-    text: private array $authors;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: class Book{private string $name;private array $authors;public function __construct(string
+      $name, array $authors) {// ...}
   p58:
   - kind: para
     text: array型宣言は結構困る
   - kind: para
-    text: 今回欲しいのはAuthorだけが
-  - kind: para
-    text: 入った配列
+    text: 今回欲しいのはAuthorだけが入った配列
   - kind: para
     text: arrayだけでは不十分
   - kind: para
-    text: '[''name''=>''太宰治'']みたいな'
-  - kind: para
-    text: 配列がほしいわけではない
+    text: '[''name''=>''太宰治'']みたいな配列がほしいわけではない'
   p59:
   - kind: para
     text: ここで出てくる
@@ -748,23 +520,8 @@ text:
   - kind: para
     text: <?php // PHP 7.4
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private string $name;
-  - kind: para
-    text: private array $authors;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: class Book{private string $name;private array $authors;public function __construct(string
+      $name, array $authors) {// ...}
   p61:
   - kind: heading
     level: 1
@@ -772,25 +529,8 @@ text:
   - kind: para
     text: <?php // PHP 7.4
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private string $name;
-  - kind: para
-    text: /** @var Authors[] */
-  - kind: para
-    text: private array $authors;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: class Book{private string $name;/** @var Authors[] */private array $authors;public
+      function __construct(string $name, array $authors) {// ...}
   p62:
   - kind: heading
     level: 1
@@ -798,44 +538,16 @@ text:
   - kind: para
     text: <?php // PHP 7.4
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private string $name;
-  - kind: para
-    text: /** @var Authors[] */
-  - kind: para
-    text: private array $authors;
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @param Authors[] $authors'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: string $name, array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
+    text: class Book{private string $name;/** @var Authors[] */private array $authors;/***
+      @param Authors[] $authors*/public function __construct(string $name, array $authors)
+      {// ...
   p63:
   - kind: para
     text: PHPDoc(型注釈)について
   - kind: para
-    text: DocComment /** … */に
+    text: DocComment /** … */に型情報を書くことで、型宣言できない詳細な型を付ける
   - kind: para
-    text: 型情報を書くことで、型宣言
-  - kind: para
-    text: できない詳細な型を付ける
-  - kind: para
-    text: PHPが対応しない型や、
-  - kind: para
-    text: 実行時に検査しにくい型を
-  - kind: para
-    text: 記述できる
+    text: PHPが対応しない型や、実行時に検査しにくい型を記述できる
   p64:
   - kind: para
     text: PHPDoc(型注釈)にしか書けない型
@@ -844,20 +556,14 @@ text:
   - kind: para
     text: ジェネリクス
   - kind: para
-    text: ユニオン型はPHPDocで
-  - kind: para
-    text: 長年使われていたがPHP8で
-  - kind: para
-    text: 型宣言に取り入れられた
+    text: ユニオン型はPHPDocで長年使われていたがPHP8で型宣言に取り入れられた
   p65:
   - kind: para
     text: PHPDoc(型注釈)にしか書けない型
   - kind: para
     text: リテラル型・定数型
   - kind: para
-    text: array-shapes
-  - kind: para
-    text: (Object-like arrays)
+    text: array-shapes(Object-like arrays)
   p66:
   - kind: heading
     level: 1
@@ -865,17 +571,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: /**
+    text: /*** 検索エンジンを単語検索する
   - kind: para
-    text: '* 検索エンジンを単語検索する'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function search(string $word, string $mode) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: '*/function search(string $word, string $mode) {// ...}'
   - kind: para
     text: ユーザーが検索したいワード
   - kind: para
@@ -891,19 +589,10 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: /**
+    text: /*** 検索エンジンを単語検索する
   - kind: para
-    text: '* 検索エンジンを単語検索する'
-  - kind: para
-    text: '* @phpstan-param ''exact''|''partial'' $mode'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function search(string $word, string $mode) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: '* @phpstan-param ''exact''|''partial'' $mode*/function search(string $word,
+      string $mode) {// ...}'
   - kind: para
     text: 期待値をResultでそのまま書
   - kind: para
@@ -913,25 +602,12 @@ text:
     level: 1
     text: パラメータの定数プレフィクス型
   - kind: para
-    text: <?php
+    text: <?php const SEARCH_MODE_EXACT = 'exact';const SEARCH_MODE_PARTIAL = 'partial';
   - kind: para
-    text: const SEARCH_MODE_EXACT = 'exact';
+    text: /*** 検索エンジンを単語検索する
   - kind: para
-    text: const SEARCH_MODE_PARTIAL = 'partial';
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* 検索エンジンを単語検索する'
-  - kind: para
-    text: '* @phpstan-param SEARCH_MODE_* $mode'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function search(string $word, string $mode) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: '* @phpstan-param SEARCH_MODE_* $mode*/function search(string $word, string
+      $mode) {// ...}'
   - kind: para
     text: ユーザーが検索したいワード
   - kind: para
@@ -957,13 +633,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: 'function print_add(int $a, int $b): int|float'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function print_add(int $a, int $b): int|float{echo $a + $b;}'
   - kind: para
     text: print_add(1, 2);
   p72:
@@ -973,21 +643,13 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: 'function print_add(int $a, int $b): int|float'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function print_add(int $a, int $b): int|float{echo $a + $b;}'
   - kind: para
     text: print_add($_GET['a'], $_GET['b']);
   - kind: para
     text: 期待する形式の値が渡
   - kind: para
-    text: クエリが
-  - kind: para
-    text: きちんと渡されたら動く
+    text: クエリがきちんと渡されたら動く
   - kind: para
     text: されなければエラー
   p73:
@@ -995,17 +657,9 @@ text:
     level: 1
     text: 厳密な入力
   - kind: para
-    text: <?php
+    text: <?php declare(strict_types=1);
   - kind: para
-    text: declare(strict_types=1);
-  - kind: para
-    text: 'function print_add(int $a, int $b): int|float'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function print_add(int $a, int $b): int|float{echo $a + $b;}'
   - kind: para
     text: print_add($_GET['a'], $_GET['b']);
   - kind: para
@@ -1018,26 +672,16 @@ text:
   - kind: para
     text: DB(PDO)から取得した型
   - kind: para
-    text: PDOはデフォルトでプリペア
+    text: PDOはデフォルトでプリペアドステートメントのエミュレーションが有効
   - kind: para
-    text: ドステートメントのエミュ
-  - kind: para
-    text: レーションが有効
-  - kind: para
-    text: その場合は全てのカラムが
-  - kind: para
-    text: 文字列になってしまう
+    text: その場合は全てのカラムが文字列になってしまう
   p75:
   - kind: para
     text: デシリアライズした値
   - kind: para
-    text: unserialize(),
+    text: unserialize(),json_decode()など
   - kind: para
-    text: json_decode()など
-  - kind: para
-    text: これらも何が入っているか
-  - kind: para
-    text: わからない
+    text: これらも何が入っているかわからない
   p76:
   - kind: para
     text: まとめ
@@ -1059,9 +703,7 @@ text:
     text: てきます
   p79:
   - kind: para
-    text: '‒arrayの型と向き合う #phpstudy'
-  - kind: para
-    text: https://tadsan.fanbox.cc/posts/854598
+    text: '‒arrayの型と向き合う #phpstudy https://tadsan.fanbox.cc/posts/854598'
   p80:
   - kind: para
     text: ‒array shapes記法(Object-like arrays)と旧PSR-5記法で型をつける
@@ -1069,9 +711,7 @@ text:
     text: https://qiita.com/tadsan/items/bfa9465166c351da37e5
   p81:
   - kind: para
-    text: ‒このPHPがテンプレートエンジンのくせに慎重すぎる (前篇)
-  - kind: para
-    text: https://qiita.com/tadsan/items/bf61520eb2d455e0e8b4
+    text: ‒このPHPがテンプレートエンジンのくせに慎重すぎる (前篇)https://qiita.com/tadsan/items/bf61520eb2d455e0e8b4
 size:
   max_width: 1024
   max_height: 768

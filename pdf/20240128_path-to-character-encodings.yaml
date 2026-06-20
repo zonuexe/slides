@@ -37,9 +37,7 @@ text:
     text: さて
   p5:
   - kind: para
-    text: コンピュータ内の
-  - kind: para
-    text: データのイメージ
+    text: コンピュータ内のデータのイメージ
   p6:
   - kind: heading
     level: 1
@@ -51,9 +49,7 @@ text:
     level: 2
     text: = データを格納する箱が並んでいる
   - kind: para
-    text: …
-  - kind: para
-    text: 1,073,741,824
+    text: …1,073,741,824
   - kind: heading
     level: 3
     text: (1GBメモリ)
@@ -68,17 +64,7 @@ text:
     level: 2
     text: 16個単位で折り返すことがよくある
   - kind: para
-    text: A
-  - kind: para
-    text: B
-  - kind: para
-    text: C
-  - kind: para
-    text: D
-  - kind: para
-    text: E
-  - kind: para
-    text: F
+    text: A B C D E F
   - kind: para
     text: 1x
   - kind: para
@@ -109,32 +95,22 @@ text:
     level: 1
     text: 文字列 "Abc12"
   - kind: para
-    text: A
-  - kind: para
-    text: b
-  - kind: para
-    text: c
+    text: A b c
   p9:
   - kind: para
     text: ところでコンピュータって
   - kind: para
-    text: 0と1の世界
-  - kind: para
-    text: なのでは…？
+    text: 0と1の世界なのでは…？
   p10:
   - kind: heading
     level: 1
     text: 0と1の世界
   p11:
   - kind: para
-    text: 0と1の世界
-  - kind: para
-    text: = binary (2進法)
+    text: 0と1の世界= binary (2進法)
   p12:
   - kind: para
-    text: 0と1の世界
-  - kind: para
-    text: = binary (2進法)
+    text: 0と1の世界= binary (2進法)
   - kind: para
     text: = bit (2値データ)
   p13:
@@ -170,11 +146,7 @@ text:
     level: 1
     text: 文字列 "Abc12"
   - kind: para
-    text: A
-  - kind: para
-    text: b
-  - kind: para
-    text: c
+    text: A b c
   - kind: para
     text: 数字に置き換えて箱に入れる
   p17:
@@ -191,15 +163,7 @@ text:
   - kind: para
     text: 日本語文字列をメモリに入れよう
   - kind: para
-    text: あ
-  - kind: para
-    text: い
-  - kind: para
-    text: う
-  - kind: para
-    text: え
-  - kind: para
-    text: お
+    text: あいうえお
   - kind: para
     text: 数字に置き換える方法を…
   - kind: heading
@@ -218,23 +182,13 @@ text:
     level: 1
     text: 英語の文字をデータにしてみよう
   - kind: para
-    text: 2進数
+    text: 2進数10進数文字
   - kind: para
-    text: 10進数
+    text: 00000 A
   - kind: para
-    text: 文字
+    text: 00001 B
   - kind: para
-    text: '00000'
-  - kind: para
-    text: A
-  - kind: para
-    text: '00001'
-  - kind: para
-    text: B
-  - kind: para
-    text: '00010'
-  - kind: para
-    text: C
+    text: 00010 C
   - kind: list
     items:
     - A, B, C, ... Z までのアルファベットだけを扱う
@@ -243,169 +197,95 @@ text:
     level: 2
     text: 5bit = 25 =32(種類)で表現できる
   - kind: para
-    text: '00011'
+    text: 00011 D
   - kind: para
-    text: D
+    text: 00100 E
   - kind: para
-    text: '00100'
+    text: 00101 F
   - kind: para
-    text: E
+    text: 00110 G
   - kind: para
-    text: '00101'
+    text: 00111 H
   - kind: para
-    text: F
+    text: ……
   - kind: para
-    text: '00110'
-  - kind: para
-    text: G
-  - kind: para
-    text: '00111'
-  - kind: para
-    text: H
-  - kind: para
-    text: …
-  - kind: para
-    text: …
-  - kind: para
-    text: '11001'
-  - kind: para
-    text: Z
+    text: 11001 Z
   p21:
   - kind: heading
     level: 1
     text: ひらがなをデータにしてみよう
   - kind: para
-    text: 2進数
+    text: 2進数10進数文字
   - kind: para
-    text: 10進数
+    text: 000000あ
   - kind: para
-    text: 文字
-  - kind: para
-    text: '000000'
-  - kind: para
-    text: あ
-  - kind: para
-    text: '000001'
-  - kind: para
-    text: い
+    text: 000001い
   - kind: list
     items:
     - あいうえお… わ を ん までの五十音を扱えるように
     - 6bit = 26 =64(種類)に収まる
   - kind: para
-    text: '000010'
+    text: 000010う
   - kind: para
-    text: う
+    text: 000011え
   - kind: para
-    text: '000011'
+    text: 000100お
   - kind: para
-    text: え
+    text: ………
   - kind: para
-    text: '000100'
+    text: 101100わ
   - kind: para
-    text: お
+    text: 101101を
   - kind: para
-    text: …
-  - kind: para
-    text: …
-  - kind: para
-    text: …
-  - kind: para
-    text: '101100'
-  - kind: para
-    text: わ
-  - kind: para
-    text: '101101'
-  - kind: para
-    text: を
-  - kind: para
-    text: '101110'
-  - kind: para
-    text: ん
+    text: 101110ん
   p22:
   - kind: heading
     level: 1
     text: ひらがなをデータにしてみよう
   - kind: para
-    text: 2進数
+    text: 2進数10進数文字
   - kind: para
-    text: 10進数
+    text: 000000あ
   - kind: para
-    text: 文字
+    text: 000001い
   - kind: para
-    text: '000000'
-  - kind: para
-    text: あ
-  - kind: para
-    text: '000001'
-  - kind: para
-    text: い
-  - kind: para
-    text: '000010'
-  - kind: para
-    text: う
+    text: 000010う
   - kind: list
     items:
     - あいうえお… わ を ん までの五十音を扱えるように
     - 6bit = 26 =64(種類)に収まる
     - カタカナや濁点を扱うには… どうすれば？
   - kind: para
-    text: '000011'
+    text: 000011え
   - kind: para
-    text: え
+    text: 000100お
   - kind: para
-    text: '000100'
+    text: ………
   - kind: para
-    text: お
+    text: 101100わ
   - kind: para
-    text: …
+    text: 101101を
   - kind: para
-    text: …
-  - kind: para
-    text: …
-  - kind: para
-    text: '101100'
-  - kind: para
-    text: わ
-  - kind: para
-    text: '101101'
-  - kind: para
-    text: を
-  - kind: para
-    text: '101110'
-  - kind: para
-    text: ん
+    text: 101110ん
   p23:
   - kind: heading
     level: 1
     text: ひらがなをデータにしてみよう
   - kind: para
-    text: 2進数
+    text: 2進数10進数文字
   - kind: para
-    text: 10進数
+    text: 000000あ
   - kind: para
-    text: 文字
+    text: 000001い
   - kind: para
-    text: '000000'
-  - kind: para
-    text: あ
-  - kind: para
-    text: '000001'
-  - kind: para
-    text: い
-  - kind: para
-    text: '000010'
-  - kind: para
-    text: う
+    text: 000010う
   - kind: list
     items:
     - あいうえお… わ を ん までの五十音を扱えるように
     - 6bit = 26 =64(種類)に収まる
     - カタカナや濁点を扱うには… どうすれば？
   - kind: para
-    text: '000011'
-  - kind: para
-    text: え
+    text: 000011え
   - kind: heading
     level: 2
     text: 💡 ＼ﾋﾟｺｰｿ／ そうだ、先頭ビットを濁点とカタカナに
@@ -415,54 +295,32 @@ text:
   - kind: para
     text: お
   - kind: para
-    text: …
+    text: ………
   - kind: para
-    text: …
+    text: 101100わ
   - kind: para
-    text: …
+    text: 101101を
   - kind: para
-    text: '101100'
-  - kind: para
-    text: わ
-  - kind: para
-    text: '101101'
-  - kind: para
-    text: を
-  - kind: para
-    text: '101110'
-  - kind: para
-    text: ん
+    text: 101110ん
   p24:
   - kind: heading
     level: 1
     text: ひらがなをデータにしてみよう
   - kind: para
-    text: 2進数
+    text: 2進数10進数文字
   - kind: para
-    text: 10進数
+    text: 000000あ
   - kind: para
-    text: 文字
+    text: 000001い
   - kind: para
-    text: '000000'
-  - kind: para
-    text: あ
-  - kind: para
-    text: '000001'
-  - kind: para
-    text: い
-  - kind: para
-    text: '000010'
-  - kind: para
-    text: う
+    text: 000010う
   - kind: list
     items:
     - あいうえお… わ を ん までの五十音を扱えるように
     - 6bit = 26 =64(種類)に収まる
     - カタカナや濁点を扱うには… どうすれば？
   - kind: para
-    text: '000011'
-  - kind: para
-    text: え
+    text: 000011え
   - kind: heading
     level: 2
     text: 💡 ＼ﾋﾟｺｰｿ／ そうだ、先頭ビットを濁点とカタカナに
@@ -472,26 +330,16 @@ text:
   - kind: para
     text: お
   - kind: para
-    text: …
-  - kind: para
-    text: …
-  - kind: para
-    text: …
+    text: ………
   - kind: list
     items:
     - ↑ 小文字とか半濁点のこと考えてないよね…
   - kind: para
-    text: '101100'
+    text: 101100わ
   - kind: para
-    text: わ
+    text: 101101を
   - kind: para
-    text: '101101'
-  - kind: para
-    text: を
-  - kind: para
-    text: '101110'
-  - kind: para
-    text: ん
+    text: 101110ん
   p25:
   - kind: heading
     level: 1
@@ -507,14 +355,10 @@ text:
     - エンコーディングのバイトデータと文字の対応表
   p26:
   - kind: para
-    text: そういうことを考えると
-  - kind: para
-    text: 文字コードを設計できる
+    text: そういうことを考えると文字コードを設計できる
   p27:
   - kind: para
-    text: 現在のコンピュータは
-  - kind: para
-    text: どうやって文字を扱うか
+    text: 現在のコンピュータはどうやって文字を扱うか
   p28:
   - kind: para
     text: ASCII (アスキー)
@@ -556,11 +400,7 @@ text:
     text: 制御文字
   p32:
   - kind: para
-    text: 21世紀の環境で
-  - kind: para
-    text: Unicode以外を
-  - kind: para
-    text: 採用する動機は激減
+    text: 21世紀の環境でUnicode以外を採用する動機は激減
   p33:
   - kind: para
     text: かつてはそうでは
@@ -577,13 +417,7 @@ text:
     level: 1
     text: 有名な逸話
   - kind: para
-    text: 『しんでしまうとは なにごとだ!』 堀井雄二(編集・執筆)
-  - kind: para
-    text: 株式会社スクウェア・エニックス
-  - kind: para
-    text: デジタル版 Ver.1.00 2018年9月1日(Kindle)
-  - kind: para
-    text: p11より引用
+    text: 『しんでしまうとは なにごとだ!』 堀井雄二(編集・執筆)株式会社スクウェア・エニックスデジタル版 Ver.1.00 2018年9月1日(Kindle)p11より引用
   p36:
   - kind: heading
     level: 1
@@ -650,18 +484,14 @@ text:
   - kind: para
     text: 今や文字コードを独自設計し
   - kind: para
-    text: たり、フォントをビット単位
-  - kind: para
-    text: で押し込めるような時代では
+    text: たり、フォントをビット単位で押し込めるような時代では
   - kind: para
     text: なくなった
   p44:
   - kind: para
     text: サイズ削減のためバンドルするフォント
   - kind: para
-    text: ファイルの文字種を削ったり、
-  - kind: para
-    text: 独自の文字を表示するためにUnicodeの
+    text: ファイルの文字種を削ったり、独自の文字を表示するためにUnicodeの
   - kind: para
     text: 私用領域を使うことはあると思う
 size:

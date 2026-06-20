@@ -49,18 +49,14 @@ text:
     level: 1
     text: おことわり
   - kind: para
-    text: 発表者は現時点において
-  - kind: para
-    text: 現職のID設計判断や実装に
+    text: 発表者は現時点において現職のID設計判断や実装に
   - kind: para
     text: 関わっていません！
   p8:
   - kind: para
     text: ID、Auth、アカウント基盤など
   - kind: para
-    text: AAA(Authentication,
-  - kind: para
-    text: Authorization, Accounting)
+    text: AAA(Authentication,Authorization, Accounting)
   - kind: para
     text: は高度な専門技術領域
   p9:
@@ -80,9 +76,7 @@ text:
     items:
     - これらの考慮事項には唯一の正解はなく、ビジネス要件や
   - kind: para
-    text: ユーザーのニーズに応じて取捨選択する必要があるということを理解し、
-  - kind: para
-    text: 必要十分なものを設計・実装できること
+    text: ユーザーのニーズに応じて取捨選択する必要があるということを理解し、必要十分なものを設計・実装できること
   p11:
   - kind: para
     text: ゴールではないこと
@@ -97,27 +91,21 @@ text:
     text: 場合があるので、適切に依存を分割・注入することは読者への課題とする
   p12:
   - kind: para
-    text: 今回は専門職ではない
-  - kind: para
-    text: 我々が実装するための
+    text: 今回は専門職ではない我々が実装するための
   - kind: para
     text: お話をします
   p13:
   - kind: para
     text: 初心者の方も
   - kind: para
-    text: 怖がらずに
-  - kind: para
-    text: お聞きください
+    text: 怖がらずにお聞きください
   p14:
   - kind: heading
     level: 1
     text: さて
   p15:
   - kind: para
-    text: 難しいことは置いておいて
-  - kind: para
-    text: ユーザーからメールアドレスを
+    text: 難しいことは置いておいてユーザーからメールアドレスを
   - kind: para
     text: 収集したい(せざるを得ない)
   - kind: para
@@ -132,9 +120,7 @@ text:
     - Webサービスのログイン機能のIDとして
     - Laravelのようなフレームワークは基本機能として持っていて、
   - kind: para
-    text: スキャッフォールド(コードの自動生成)で最低限のものは簡単に作れる
-  - kind: para
-    text: (生成されるので実装の必要すらない)
+    text: スキャッフォールド(コードの自動生成)で最低限のものは簡単に作れる(生成されるので実装の必要すらない)
   - kind: list
     items:
     - ログイン通知 (心あたりのないログインでないかユーザ自身に知らせる)
@@ -161,25 +147,17 @@ text:
     text: おいといて
   p19:
   - kind: para
-    text: DBに入れるだけだし
-  - kind: para
-    text: フレームワークとか要らん
+    text: DBに入れるだけだしフレームワークとか要らん
   p20:
   - kind: heading
     level: 1
     text: ですよね？[要出典]
   p21:
   - kind: para
-    text: すごくシンプルな
-  - kind: para
-    text: ログインシステムを
-  - kind: para
-    text: 作っていきましょう
+    text: すごくシンプルなログインシステムを作っていきましょう
   p22:
   - kind: para
-    text: '[要件1]'
-  - kind: para
-    text: 変な形式の文字列が
+    text: '[要件1]変な形式の文字列が'
   - kind: para
     text: 登録できないこと
   p23:
@@ -193,9 +171,7 @@ text:
   p25: []
   p26:
   - kind: para
-    text: ググったら最適解が
-  - kind: para
-    text: 出てくる良い時代…
+    text: ググったら最適解が出てくる良い時代…
   p27:
   - kind: heading
     level: 1
@@ -208,9 +184,7 @@ text:
     text: どういうこと？
   p31:
   - kind: para
-    text: そもそも
-  - kind: para
-    text: メールアドレスとは
+    text: そもそもメールアドレスとは
   p32:
   - kind: heading
     level: 1
@@ -257,11 +231,7 @@ text:
   - kind: para
     text: 一般的なメールアドレス
   - kind: para
-    text: を収集する用途で
-  - kind: para
-    text: addr-spec以外が
-  - kind: para
-    text: 必要になることはない
+    text: を収集する用途でaddr-spec以外が必要になることはない
   p41:
   - kind: para
     text: 基本的にaddr-spec
@@ -275,9 +245,7 @@ text:
     text: 改めて
   p43:
   - kind: para
-    text: ローカルパート
-  - kind: para
-    text: ドメイン名
+    text: ローカルパートドメイン名
   - kind: heading
     level: 1
     text: tadsan@pixiv.com
@@ -311,9 +279,7 @@ text:
   p49: []
   p50:
   - kind: para
-    text: PHPでは
-  - kind: para
-    text: これを使えば
+    text: PHPではこれを使えば
   - kind: para
     text: 安全！
   p51:
@@ -323,11 +289,7 @@ text:
     text: 範囲では
   p52:
   - kind: para
-    text: '[要件2]'
-  - kind: para
-    text: 存在しないドメインの
-  - kind: para
-    text: メールアドレス登録を
+    text: '[要件2]存在しないドメインのメールアドレス登録を'
   - kind: para
     text: 弾きたい
   p53:
@@ -336,30 +298,16 @@ text:
     text: a@b.c
   p54:
   - kind: para
-    text: filter_var('a@b.c',
-  - kind: para
-    text: FILTER_VALIDATE_EMAIL)
+    text: filter_var('a@b.c',FILTER_VALIDATE_EMAIL)
   p55:
   - kind: para
-    text: filter_var('a@b.c',
-  - kind: para
-    text: FILTER_VALIDATE_EMAIL)
-  - kind: para
-    text: // => "a@b.c"
+    text: filter_var('a@b.c',FILTER_VALIDATE_EMAIL)// => "a@b.c"
   p56:
   - kind: para
-    text: 定石：
-  - kind: para
-    text: 入力されたアドレスに
-  - kind: para
-    text: 送信してメール内の
-  - kind: para
-    text: コードを入力させる
+    text: 定石：入力されたアドレスに送信してメール内のコードを入力させる
   p57:
   - kind: para
-    text: 実メール送る前に
-  - kind: para
-    text: どうしても確認したい
+    text: 実メール送る前にどうしても確認したい
   - kind: para
     text: のだとしましょう
   p58: []
@@ -370,11 +318,7 @@ text:
   p60: []
   p61:
   - kind: para
-    text: この方法で
-  - kind: para
-    text: 良いといえば良い
-  - kind: para
-    text: だめといえばだめ
+    text: この方法で良いといえば良いだめといえばだめ
   p62:
   - kind: heading
     level: 1
@@ -396,9 +340,7 @@ text:
     text: 独自運用されている傾向にあるのでAレコードもサポートするかは各自判断
   p64:
   - kind: para
-    text: DNSではなくSMTP
-  - kind: para
-    text: でチェックする別解も
+    text: DNSではなくSMTPでチェックする別解も
   - kind: para
     text: あるが…
   p65:
@@ -408,9 +350,7 @@ text:
     text: ので言葉を濁す)
   p66:
   - kind: para
-    text: ついでに
-  - kind: para
-    text: メールアドレス
+    text: ついでにメールアドレス
   p67:
   - kind: heading
     level: 2
@@ -420,27 +360,17 @@ text:
     text: a@0.0.0.0
   p68:
   - kind: para
-    text: filter_var('a@0.0.0.0',
-  - kind: para
-    text: FILTER_VALIDATE_EMAIL)
+    text: filter_var('a@0.0.0.0',FILTER_VALIDATE_EMAIL)
   p69:
   - kind: para
-    text: filter_var('a@0.0.0.0',
-  - kind: para
-    text: FILTER_VALIDATE_EMAIL)
-  - kind: para
-    text: // => "a@0.0.0.0"
+    text: filter_var('a@0.0.0.0',FILTER_VALIDATE_EMAIL)// => "a@0.0.0.0"
   p70:
   - kind: heading
     level: 1
     text: ドメインがIP
   p71:
   - kind: para
-    text: '[要件3]'
-  - kind: para
-    text: メールアドレスの
-  - kind: para
-    text: 重複登録を弾きたい！
+    text: '[要件3]メールアドレスの重複登録を弾きたい！'
   p72:
   - kind: heading
     level: 1
@@ -485,25 +415,17 @@ text:
   p80: []
   p81:
   - kind: para
-    text: unicode_ciは
-  - kind: para
-    text: 大文字小文字を
+    text: unicode_ciは大文字小文字を
   - kind: para
     text: 同一視する
   p82:
   - kind: para
-    text: utf8mb4_binで
-  - kind: para
-    text: 厳密チェックすれば
+    text: utf8mb4_binで厳密チェックすれば
   - kind: para
     text: いいのか？
   p83:
   - kind: para
-    text: もっとひどい穴を
-  - kind: para
-    text: 簡単に作れるので
-  - kind: para
-    text: binで比較はやめた
+    text: もっとひどい穴を簡単に作れるのでbinで比較はやめた
   - kind: para
     text: 方がいいと思う
   p84:
@@ -515,9 +437,7 @@ text:
     text: (これが無難)
   p85:
   - kind: para
-    text: この問題を騙り尽すには
-  - kind: para
-    text: 15分枠はあまりに短い…
+    text: この問題を騙り尽すには15分枠はあまりに短い…
   p86:
   - kind: para
     text: Gmailエイリアス沼

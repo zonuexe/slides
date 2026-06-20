@@ -16,9 +16,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2024-01-13'
-  - kind: para
-    text: PHPカンファレンス北海道2024
+    text: 2024-01-13 PHPカンファレンス北海道2024
   p2:
   - kind: para
     text: お前誰よ
@@ -56,16 +54,10 @@ text:
     text: <?php
   p6:
   - kind: para
-    text: さて
-  - kind: para
-    text: PHPは何ができる
-  - kind: para
-    text: 言語なのでしょうか
+    text: さてPHPは何ができる言語なのでしょうか
   p7:
   - kind: para
-    text: とにかく毀誉褒貶が
-  - kind: para
-    text: 激しい言語ランタイム
+    text: とにかく毀誉褒貶が激しい言語ランタイム
   p8:
   - kind: heading
     level: 1
@@ -113,69 +105,29 @@ text:
     level: 1
     text: A
   - kind: para
-    text: <!DOCTYPE html>
-  - kind: para
-    text: <html><head><title>Hello, PHP!</title></head>
-  - kind: para
-    text: <p>
-  - kind: para
-    text: '<?php if (date(''H'') < 19): ?>'
-  - kind: para
-    text: こんにちは
-  - kind: para
-    text: '<?php else: ?>'
-  - kind: para
-    text: こんばんは
-  - kind: para
-    text: <?php endif; ?>
-  - kind: para
-    text: </p>
-  - kind: para
-    text: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+    text: '<!DOCTYPE html><html><head><title>Hello, PHP!</title></head><p><?php if
+      (date(''H'') < 19): ?>こんにちは<?php else: ?>こんばんは<?php endif; ?></p><p>今は<?= htmlspecialchars(date(''H''))
+      ?>時です</p>'
   p17:
   - kind: heading
     level: 1
     text: B
   - kind: para
-    text: <?php require 'bootstrap.php';
-  - kind: para
-    text: $db = mysqli_connect();
-  - kind: para
-    text: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
-  - kind: para
-    text: mysqli_stmt_execute($stmt);
-  - kind: para
-    text: print '<h1>本の一覧</h1>';
-  - kind: para
-    text: print '<ul>';
-  - kind: para
-    text: foreach ($stmt as $s) {
-  - kind: para
-    text: print '<li>'; print $s->name; print '</li>';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: print '</ul>';
+    text: <?php require 'bootstrap.php';$db = mysqli_connect();$stmt = mysqli_prepare($db,
+      'SELECT * FROM books');mysqli_stmt_execute($stmt);print '<h1>本の一覧</h1>';print
+      '<ul>';foreach ($stmt as $s) {print '<li>'; print $s->name; print '</li>';}print
+      '</ul>';
   p18:
   - kind: heading
     level: 1
     text: C
   - kind: para
-    text: <?php declare(strict_types=1);
+    text: <?php declare(strict_types=1);namespace Foo\Http\Controller;
   - kind: para
-    text: namespace Foo\Http\Controller;
+    text: class BooksController extends BaseController {public function index() {$books
+      = Books::getAll();
   - kind: para
-    text: class BooksController extends BaseController {
-  - kind: para
-    text: public function index() {
-  - kind: para
-    text: $books = Books::getAll();
-  - kind: para
-    text: $this->render(compact("books"));
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: $this->render(compact("books"));}}
   p19:
   - kind: heading
     level: 2
@@ -188,19 +140,12 @@ text:
     level: 1
     text: 2007年 MySQL Conference
   - kind: para
-    text: “We have things like protected properties.
+    text: “We have things like protected properties.We have abstract methods. We have
+      all this stuff that your computer science teacher told
   - kind: para
-    text: We have abstract methods. We have all this
+    text: you you should be using.I don't care about this crap at all.”
   - kind: para
-    text: stuff that your computer science teacher told
-  - kind: para
-    text: you you should be using.
-  - kind: para
-    text: I don't care about this crap at all.”
-  - kind: para
-    text: –Rasmus Lerdorf
-  - kind: para
-    text: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+    text: –Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p21:
   - kind: heading
     level: 1
@@ -224,14 +169,10 @@ text:
   - kind: para
     text: C言語っぽい
   - kind: para
-    text: 関数と
-  - kind: para
-    text: -> があって
+    text: 関数と-> があって
   p24:
   - kind: para
-    text: 雰囲気Javaっぽい
-  - kind: para
-    text: オブジェクト指向で
+    text: 雰囲気Javaっぽいオブジェクト指向で
   p25:
   - kind: heading
     level: 1
@@ -245,25 +186,9 @@ text:
     level: 1
     text: A=SSIスタイル
   - kind: para
-    text: <!DOCTYPE html>
-  - kind: para
-    text: <html><head><title>Hello, PHP!</title></head>
-  - kind: para
-    text: <p>
-  - kind: para
-    text: '<?php if (date(''H'') < 19): ?>'
-  - kind: para
-    text: こんにちは
-  - kind: para
-    text: '<?php else: ?>'
-  - kind: para
-    text: こんばんは
-  - kind: para
-    text: <?php endif; ?>
-  - kind: para
-    text: </p>
-  - kind: para
-    text: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+    text: '<!DOCTYPE html><html><head><title>Hello, PHP!</title></head><p><?php if
+      (date(''H'') < 19): ?>こんにちは<?php else: ?>こんばんは<?php endif; ?></p><p>今は<?= htmlspecialchars(date(''H''))
+      ?>時です</p>'
   p28:
   - kind: heading
     level: 1
@@ -271,67 +196,29 @@ text:
   - kind: para
     text: use DBI;
   - kind: para
-    text: $db = DBI->connect('...');
-  - kind: para
-    text: $stmt = $db->prepare('SELECT * FROM books');
-  - kind: para
-    text: $stmt->execute;
-  - kind: para
-    text: print '<h1>本の一覧</h1>'; print '<ul>';
-  - kind: para
-    text: for ($i = 0; $I < $sth->rows; $i++) {
-  - kind: para
-    text: '@row = $sth->fetchrow_array;'
-  - kind: para
-    text: print '<li>'; print $row[0]; print '</li>';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: print '</ul>';
+    text: $db = DBI->connect('...');$stmt = $db->prepare('SELECT * FROM books');$stmt->execute;print
+      '<h1>本の一覧</h1>'; print '<ul>';for ($i = 0; $I < $sth->rows; $i++) {@row = $sth->fetchrow_array;print
+      '<li>'; print $row[0]; print '</li>';}print '</ul>';
   p29:
   - kind: heading
     level: 1
     text: B=CGIスタイル
   - kind: para
-    text: <?php require 'bootstrap.php';
-  - kind: para
-    text: $db = mysqli_connect();
-  - kind: para
-    text: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
-  - kind: para
-    text: mysqli_stmt_execute($stmt);
-  - kind: para
-    text: print '<h1>本の一覧</h1>';
-  - kind: para
-    text: print '<ul>';
-  - kind: para
-    text: foreach ($stmt as $s) {
-  - kind: para
-    text: print '<li>'; print $s->name; print '</li>';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: print '</ul>';
+    text: <?php require 'bootstrap.php';$db = mysqli_connect();$stmt = mysqli_prepare($db,
+      'SELECT * FROM books');mysqli_stmt_execute($stmt);print '<h1>本の一覧</h1>';print
+      '<ul>';foreach ($stmt as $s) {print '<li>'; print $s->name; print '</li>';}print
+      '</ul>';
   p30:
   - kind: heading
     level: 1
     text: C=OOPスタイル
   - kind: para
-    text: <?php declare(strict_types=1);
+    text: <?php declare(strict_types=1);namespace Foo\Http\Controller;
   - kind: para
-    text: namespace Foo\Http\Controller;
+    text: class BooksController extends BaseController {public function index() {$books
+      = Books::getAll();
   - kind: para
-    text: class BooksController extends BaseController {
-  - kind: para
-    text: public function index() {
-  - kind: para
-    text: $books = Books::getAll();
-  - kind: para
-    text: $this->render(compact("books"));
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: $this->render(compact("books"));}}
   p31:
   - kind: heading
     level: 1
@@ -391,35 +278,12 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: class Book {
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: public readonly string $name,
-  - kind: para
-    text: ) {
-  - kind: para
-    text: '}'
+    text: class Book {public function __construct(public readonly string $name,) {}
   - kind: para
     text: '...'
   - kind: para
-    text: class Book {
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @var string'
-  - kind: para
-    text: '* @readonly'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: private $name;
-  - kind: para
-    text: /** @param string $name */
-  - kind: para
-    text: public function __construct($name) {
-  - kind: para
-    text: $this->name = $name;
+    text: class Book {/*** @var string* @readonly*/private $name;/** @param string
+      $name */public function __construct($name) {$this->name = $name;
   - kind: para
     text: '...'
   p37:
@@ -437,9 +301,7 @@ text:
     text: 型宣言の進化
   p39:
   - kind: para
-    text: いまやPHPは
-  - kind: para
-    text: 静的型付きと言っても
+    text: いまやPHPは静的型付きと言っても
   - kind: para
     text: 過言ではない
   - kind: para
@@ -449,41 +311,25 @@ text:
     level: 1
     text: 型がついていない関数(PHP5)
   - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add($a, $b) {return $a + $b;}
   p41:
   - kind: heading
     level: 1
     text: スカラー型宣言(PHP7)
   - kind: para
-    text: int + intって
+    text: int + intって本当にintなの？
   - kind: para
-    text: 本当にintなの？
-  - kind: para
-    text: 'function add(int $a, int $b): int {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p42:
   - kind: heading
     level: 1
     text: 広い値をとるにはfloatが必要
   - kind: para
-    text: ひとつの解決策では
-  - kind: para
-    text: あるが… 不必要にfloat
+    text: ひとつの解決策ではあるが… 不必要にfloat
   - kind: para
     text: を強制するのか
   - kind: para
-    text: 'function add(float $a, float $b): float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p43:
   - kind: heading
     level: 1
@@ -491,31 +337,14 @@ text:
   - kind: para
     text: あえて型宣言を省略する
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p44:
   - kind: heading
     level: 1
     text: ユニオン型宣言 (PHP8.0)
   - kind: para
-    text: 'function add(int|float $a, int|float $b): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p45:
   - kind: heading
     level: 1
@@ -524,9 +353,7 @@ text:
     items:
     - 2000年代のCGIやLL言語(Lightweight Language)という用語が
   - kind: para
-    text: よく使われていた頃は「重厚鈍重なIDEが必要な言語」のアンチテーゼとして
-  - kind: para
-    text: シンプルなスクリプト言語とエディタが好まれていた (ように思う)
+    text: よく使われていた頃は「重厚鈍重なIDEが必要な言語」のアンチテーゼとしてシンプルなスクリプト言語とエディタが好まれていた (ように思う)
   - kind: list
     items:
     - 時は流れ、Webアプリケーションは巨大になり、ファイルは増え、シンプルなエ
@@ -659,9 +486,7 @@ text:
     - 求められているのは素晴らしい言語ではなく簡単に使える言語
   p59:
   - kind: para
-    text: PHP先生の
-  - kind: para
-    text: 雑草のような生命力に
+    text: PHP先生の雑草のような生命力に
   - kind: para
     text: ご期待ください！
 size:

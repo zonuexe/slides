@@ -32,9 +32,7 @@ text:
     text: さて
   p5:
   - kind: para
-    text: PHPerKaigiの
-  - kind: para
-    text: チケットを買うと
+    text: PHPerKaigiのチケットを買うと
   - kind: para
     text: パンフレットがもらえる
   p6: []
@@ -42,42 +40,26 @@ text:
   - kind: para
     text: PHPStan
   - kind: para
-    text: '='
-  - kind: para
-    text: Static Analyzer
+    text: =Static Analyzer
   p8:
   - kind: para
-    text: 実行しなくても
-  - kind: para
-    text: バグの可能性を
+    text: 実行しなくてもバグの可能性を
   - kind: para
     text: 検知できる
   p9:
   - kind: para
-    text: 全8ページで
-  - kind: para
-    text: PHPStanの
-  - kind: para
-    text: 基礎を押えられる
+    text: 全8ページでPHPStanの基礎を押えられる
   p10:
   - kind: para
-    text: 実務で最低限使うため
-  - kind: para
-    text: に知っておきたいこと
+    text: 実務で最低限使うために知っておきたいこと
   - kind: para
     text: を詰め込んだ… はず
   p11:
   - kind: para
-    text: PHP本来の型のコン
-  - kind: para
-    text: セプトからPHPDoc
-  - kind: para
-    text: による拡張までを網羅
+    text: PHP本来の型のコンセプトからPHPDocによる拡張までを網羅
   p12:
   - kind: para
-    text: 僕と契約して
-  - kind: para
-    text: PHPStanを完全に
+    text: 僕と契約してPHPStanを完全に
   - kind: para
     text: マスターしてよ
   p13:
@@ -87,59 +69,31 @@ text:
     text: のではない
   p14:
   - kind: para
-    text: PHPStanは
-  - kind: para
-    text: 完全無料なので
-  - kind: para
-    text: いますぐ入れよう
+    text: PHPStanは完全無料なのでいますぐ入れよう
   p15:
   - kind: para
-    text: これからプロになりた
-  - kind: para
-    text: い人に本当に伝えたい
+    text: これからプロになりたい人に本当に伝えたい
   - kind: para
     text: PHPDocの書きかた
   p16:
   - kind: para
-    text: その1
-  - kind: para
-    text: 配列は使い分ける
+    text: その1配列は使い分ける
   p17:
   - kind: para
-    text: 世の中には
-  - kind: para
-    text: いろんな配列がある
+    text: 世の中にはいろんな配列がある
   p18:
   - kind: heading
     level: 1
     text: '[1, 2, 3]'
   p19:
   - kind: para
-    text: '['
-  - kind: para
-    text: '''name'' => ''Miku'','
-  - kind: para
-    text: '''age'' => 14,'
-  - kind: para
-    text: ']'
+    text: '[''name'' => ''Miku'',''age'' => 14,]'
   p20:
   - kind: para
-    text: '['
-  - kind: para
-    text: '''Miku'', ''Rin'', ''Luka'','
-  - kind: para
-    text: ']'
+    text: '[''Miku'', ''Rin'', ''Luka'',]'
   p21:
   - kind: para
-    text: '['
-  - kind: para
-    text: '''main'' => ''Miku'','
-  - kind: para
-    text: '''sub'' => ''Rin'','
-  - kind: para
-    text: '''chorus'' => ''Luka'','
-  - kind: para
-    text: ']'
+    text: '[''main'' => ''Miku'',''sub'' => ''Rin'',''chorus'' => ''Luka'',]'
   p22:
   - kind: para
     text: 単なる型で書くと
@@ -147,46 +101,24 @@ text:
     text: array
   p23:
   - kind: para
-    text: interface X
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'function a(): array;'
-  - kind: para
-    text: '}'
+    text: 'interface X{function a(): array;}'
   p24:
   - kind: para
-    text: function (X $obj) {
-  - kind: para
-    text: $a = $obj->a();
-  - kind: para
-    text: '};'
+    text: function (X $obj) {$a = $obj->a();};
   p25:
   - kind: para
-    text: function (X $x) {
-  - kind: para
-    text: $a = $x->a();
-  - kind: para
-    text: $v = $a[0];
-  - kind: para
-    text: '};'
+    text: function (X $x) {$a = $x->a();$v = $a[0];};
   p26:
   - kind: para
-    text: 配列から取り出した
-  - kind: para
-    text: 要素の型がわからない
+    text: 配列から取り出した要素の型がわからない
   - kind: para
     text: のは都合が悪い
   p27:
   - kind: para
-    text: array<int>
-  - kind: para
-    text: array<string>
+    text: array<int>array<string>
   p28:
   - kind: para
-    text: ちょっと前は
-  - kind: para
-    text: int[] とか string[]
+    text: ちょっと前はint[] とか string[]
   - kind: para
     text: とか書かれてた
   p29:
@@ -217,46 +149,24 @@ text:
     text: 繰り返す配列
   p32:
   - kind: para
-    text: キーによって
-  - kind: para
-    text: 別の意味の値が
-  - kind: para
-    text: 入っている配列
+    text: キーによって別の意味の値が入っている配列
   p33:
   - kind: para
-    text: $a = [
-  - kind: para
-    text: '''name'' => ''初音ミク'','
-  - kind: para
-    text: '''age'' => 16,'
-  - kind: para
-    text: '];'
+    text: $a = ['name' => '初音ミク','age' => 16,];
   - kind: para
     text: '// array{name:string, age: int}'
   p34:
   - kind: para
-    text: array{
-  - kind: para
-    text: 'name: string,'
-  - kind: para
-    text: 'age: int'
-  - kind: para
-    text: '}'
+    text: 'array{name: string,age: int}'
   p35:
   - kind: para
-    text: $a = ['初音ミク', 16];
-  - kind: para
-    text: '// array{0: string, 1: int}'
+    text: '$a = [''初音ミク'', 16];// array{0: string, 1: int}'
   p36:
   - kind: para
-    text: 繰り返すなら<>
-  - kind: para
-    text: キーごとに違うなら{}
+    text: 繰り返すなら<>キーごとに違うなら{}
   p37:
   - kind: para
-    text: その2
-  - kind: para
-    text: 型は入出力に宿る
+    text: その2型は入出力に宿る
   p38:
   - kind: para
     text: クエリパラメータから
@@ -264,13 +174,7 @@ text:
     text: 値をとりたい
   p39:
   - kind: para
-    text: 'function getById(int $id): Article'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: //
-  - kind: para
-    text: '}'
+    text: 'function getById(int $id): Article{//}'
   p40:
   - kind: para
     text: クエリパラメータから
@@ -287,19 +191,13 @@ text:
     text: $article = getById($id);
   p42:
   - kind: para
-    text: // ?id=1
-  - kind: para
-    text: $_GET['id'] === '1';
+    text: // ?id=1$_GET['id'] === '1';
   p43:
   - kind: para
-    text: // ?id=a
-  - kind: para
-    text: $_GET['id'] === 'a';
+    text: // ?id=a$_GET['id'] === 'a';
   p44:
   - kind: para
-    text: // ?id[]=a
-  - kind: para
-    text: $_GET['id'] === ['a'];
+    text: // ?id[]=a$_GET['id'] === ['a'];
   p45:
   - kind: para
     text: 危険ではないが
@@ -314,23 +212,13 @@ text:
   - kind: para
     text: int|false
   - kind: para
-    text: $id = filter_var(
-  - kind: para
-    text: $_GET['id'] ?? '',
-  - kind: para
-    text: FILTER_VALIDATE_INT
-  - kind: para
-    text: );
+    text: $id = filter_var($_GET['id'] ?? '',FILTER_VALIDATE_INT);
   p47:
   - kind: para
-    text: その3
-  - kind: para
-    text: むやみに@var書かない
+    text: その3むやみに@var書かない
   p48:
   - kind: para
-    text: 初心者殺しなことに
-  - kind: para
-    text: '@varには複数の用法'
+    text: 初心者殺しなことに@varには複数の用法
   p49:
   - kind: para
     text: '@varはプロパティに'
@@ -338,55 +226,23 @@ text:
     text: 付けて書くもの
   p50:
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var string */
-  - kind: para
-    text: public $name;
-  - kind: para
-    text: '}'
+    text: class Book{/** @var string */public $name;}
   p51:
   - kind: para
-    text: class Book
+    text: class Book{
   - kind: para
-    text: '{'
-  - kind: para
-    text: public string $name;
-  - kind: para
-    text: '}'
+    text: public string $name;}
   p52:
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var list<Author> */
-  - kind: para
-    text: public $authors;
-  - kind: para
-    text: '}'
+    text: class Book{/** @var list<Author> */public $authors;}
   p53:
   - kind: para
-    text: class Book
+    text: class Book{
   - kind: para
-    text: '{'
-  - kind: para
-    text: public list<Author> $authors;
-  - kind: para
-    text: '}'
+    text: public list<Author> $authors;}
   p54:
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var list<Author> */
-  - kind: para
-    text: public array $authors;
-  - kind: para
-    text: '}'
+    text: class Book{/** @var list<Author> */public array $authors;}
   p55:
   - kind: para
     text: '@varはconstには'
@@ -394,30 +250,14 @@ text:
     text: 基本的に付けない
   p56:
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var list<int> */
-  - kind: para
-    text: const IDS = [1, 2, 3];
-  - kind: para
-    text: '}'
+    text: class Book{/** @var list<int> */const IDS = [1, 2, 3];}
   p57:
   - kind: para
     text: できれば
   - kind: para
     text: つけない方がいい
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var list<int> */
-  - kind: para
-    text: const IDS = [1, 2, 3];
-  - kind: para
-    text: '}'
+    text: class Book{/** @var list<int> */const IDS = [1, 2, 3];}
   p58:
   - kind: para
     text: '@varを'
@@ -453,19 +293,13 @@ text:
     text: '@varを書く'
   p61:
   - kind: para
-    text: できれば
-  - kind: para
-    text: 書かないでくれ！！
+    text: できれば書かないでくれ！！
   p62:
   - kind: para
-    text: むやみに
-  - kind: para
-    text: '@varを書かないテク'
+    text: むやみに@varを書かないテク
   p63:
   - kind: para
-    text: そのうちどこかに
-  - kind: para
-    text: ちゃんと書きます…
+    text: そのうちどこかにちゃんと書きます…
 size:
   max_width: 1920
   max_height: 1080

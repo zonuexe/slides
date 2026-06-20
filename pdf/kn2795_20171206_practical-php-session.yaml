@@ -21,18 +21,14 @@ text:
     text: 注意
   p4:
   - kind: para
-    text: この発表は新規のWebサイト
-  - kind: para
-    text: Webアプリケーションフレー
+    text: この発表は新規のWebサイトWebアプリケーションフレー
   - kind: para
     text: ムワークに依存しないPHP開
   - kind: para
     text: 発を推奨する目的ではない
   p5:
   - kind: para
-    text: ※今回ログイン
-  - kind: para
-    text: の話はしません
+    text: ※今回ログインの話はしません
   p6:
   - kind: para
     text: セッション
@@ -40,16 +36,12 @@ text:
     text: とは何か
   p7:
   - kind: para
-    text: この用語(セッション)
-  - kind: para
-    text: が意味するところは
+    text: この用語(セッション)が意味するところは
   - kind: para
     text: いろいろあるけど
   p8:
   - kind: para
-    text: ここではWebで、
-  - kind: para
-    text: ユーザーと継続的に
+    text: ここではWebで、ユーザーと継続的に
   - kind: para
     text: 通信する機構
   p9:
@@ -60,9 +52,7 @@ text:
     level: 1
     text: はじめて訪問したとき
   - kind: para
-    text: こんにちは
-  - kind: para
-    text: 「ゲスト」さん！
+    text: こんにちは「ゲスト」さん！
   - kind: para
     text: あなたは誰ですか？
   - kind: para
@@ -81,9 +71,7 @@ text:
     level: 1
     text: 次に訪問したとき
   - kind: para
-    text: こんにちは
-  - kind: para
-    text: 「tadsan」さん！
+    text: こんにちは「tadsan」さん！
   - kind: para
     text: また来ましたね！
   - kind: para
@@ -92,9 +80,7 @@ text:
   - kind: para
     text: Webブラウザでセッションを
   - kind: para
-    text: 実現するには、一般的には
-  - kind: para
-    text: Cookie(クッキー)が利用される
+    text: 実現するには、一般的にはCookie(クッキー)が利用される
   p14:
   - kind: para
     text: あとで話すよ
@@ -103,11 +89,7 @@ text:
     text: 注意
   p16:
   - kind: para
-    text: セッションの実装は
-  - kind: para
-    text: Webサイトのプライバシー
-  - kind: para
-    text: ポリシーと密接に関連する
+    text: セッションの実装はWebサイトのプライバシーポリシーと密接に関連する
   p17:
   - kind: para
     text: pixivのプライバシーポリシー
@@ -117,14 +99,10 @@ text:
   - kind: para
     text: Cookieを使ったセッション
   - kind: para
-    text: を利用するときはプライバ
-  - kind: para
-    text: シーポリシーを明記しよう
+    text: を利用するときはプライバシーポリシーを明記しよう
   p19:
   - kind: para
-    text: PHPで
-  - kind: para
-    text: セッション
+    text: PHPでセッション
   p20:
   - kind: para
     text: 超かんたん
@@ -137,13 +115,8 @@ text:
   - kind: para
     text: session_start();
   - kind: para
-    text: // これで別ページでも session_start() すれば
-  - kind: para
-    text: // $_SESSION['name'] として参照できるようになる
-  - kind: para
-    text: $_SESSION['name'] = '太郎';
-  - kind: para
-    text: 'header(''Location: /betsu.php'');'
+    text: '// これで別ページでも session_start() すれば// $_SESSION[''name''] として参照できるようになる$_SESSION[''name'']
+      = ''太郎'';header(''Location: /betsu.php'');'
   p22:
   - kind: heading
     level: 1
@@ -151,41 +124,25 @@ text:
   - kind: para
     text: <?php session_start() ?>
   - kind: para
-    text: <p>
-  - kind: para
-    text: こんにちは<?= htmlspecialchars($_SESSION['name']) ?>さん
-  - kind: para
-    text: </p>
+    text: <p>こんにちは<?= htmlspecialchars($_SESSION['name']) ?>さん</p>
   p23:
   - kind: heading
     level: 1
     text: TIPS
   - kind: para
-    text: PHPのフレームワークはセッション機構
+    text: PHPのフレームワークはセッション機構がいい感じに統合されてることがある。ただし、マイクロフレームワークではオ
   - kind: para
-    text: がいい感じに統合されてることがある。
-  - kind: para
-    text: ただし、マイクロフレームワークではオ
-  - kind: para
-    text: ミットされてることが多くPHPデフォル
-  - kind: para
-    text: トのセッションを気にする必要がある。
+    text: ミットされてることが多くPHPデフォルトのセッションを気にする必要がある。
   p24:
   - kind: para
     text: TIPS
   - kind: para
-    text: session_start()および後述す
-  - kind: para
-    text: るセッション設定は個別のペー
-  - kind: para
-    text: ジで呼ぶのではなく、共通初期
+    text: session_start()および後述するセッション設定は個別のページで呼ぶのではなく、共通初期
   - kind: para
     text: 化スクリプトに記述すること
   p25:
   - kind: para
-    text: まあとりあえず
-  - kind: para
-    text: session_start()で
+    text: まあとりあえずsession_start()で
   - kind: para
     text: 簡単にできる
   p26:
@@ -204,9 +161,7 @@ text:
     text: だと思ったか
   p30:
   - kind: para
-    text: どうして
-  - kind: para
-    text: セッションは
+    text: どうしてセッションは
   - kind: para
     text: 動くのか
   p31:
@@ -214,9 +169,7 @@ text:
     level: 1
     text: よし、Webサイトを見よう
   - kind: para
-    text: GET /index HTTP/1.1
-  - kind: para
-    text: 'Host: example.com'
+    text: 'GET /index HTTP/1.1 Host: example.com'
   - kind: para
     text: Webサイト
   p32:
@@ -296,18 +249,12 @@ text:
     text: Webサイト
   p35:
   - kind: para
-    text: RFC 6265
-  - kind: para
-    text: HTTP State
-  - kind: para
-    text: Management Mechanism
+    text: RFC 6265 HTTP State Management Mechanism
   p36:
   - kind: para
     text: HTTP上でWebサイトと
   - kind: para
-    text: UA(ブラウザ)が状態を
-  - kind: para
-    text: 共有するためのしくみ
+    text: UA(ブラウザ)が状態を共有するためのしくみ
   p37:
   - kind: para
     text: 状態？
@@ -318,13 +265,7 @@ text:
   - kind: para
     text: Cookieに対応したユーザーエー
   - kind: para
-    text: ジェント(Webブラウザ)が
-  - kind: para
-    text: Set-Cookieを受け取ると、
-  - kind: para
-    text: 次からそのサイトにリクエス
-  - kind: para
-    text: トするときにCookieヘッダを
+    text: ジェント(Webブラウザ)がSet-Cookieを受け取ると、次からそのサイトにリクエストするときにCookieヘッダを
   - kind: para
     text: 付加する
   p40:
@@ -332,11 +273,7 @@ text:
     level: 1
     text: 次回に訪問するとき
   - kind: para
-    text: GET /index HTTP/1.1
-  - kind: para
-    text: 'Host: example.com'
-  - kind: para
-    text: 'Cookie:'
+    text: 'GET /index HTTP/1.1 Host: example.com Cookie:'
   - kind: para
     text: PHPSESSID=xxxxx
   - kind: para
@@ -350,11 +287,7 @@ text:
   - kind: para
     text: 「こんちわー またきたね」
   - kind: para
-    text: GET /index HTTP/1.1
-  - kind: para
-    text: 'Host: example.com'
-  - kind: para
-    text: 'Cookie:'
+    text: 'GET /index HTTP/1.1 Host: example.com Cookie:'
   - kind: para
     text: PHPSESSID=xxxxx
   - kind: para
@@ -376,18 +309,14 @@ text:
     text: Webサイト
   p43:
   - kind: para
-    text: どうして
-  - kind: para
-    text: セッションは
+    text: どうしてセッションは
   - kind: para
     text: 動くのか
   p44:
   - kind: para
     text: Ｑ.どうしてセッショ
   - kind: para
-    text: ンは特に設定しなく
-  - kind: para
-    text: ても動くのはなぜ？
+    text: ンは特に設定しなくても動くのはなぜ？
   p45:
   - kind: para
     text: Ａ.PHPはきみのことを
@@ -409,9 +338,7 @@ text:
     text: 😇
   p50:
   - kind: para
-    text: session_save_path()
-  - kind: para
-    text: 保存するディレクトリ
+    text: session_save_path()保存するディレクトリ
   - kind: para
     text: を設定できる
   p51:
@@ -422,9 +349,7 @@ text:
     text: 🙃
   p53:
   - kind: para
-    text: Ｑ.ファイルの
-  - kind: para
-    text: 問題点とは何か？
+    text: Ｑ.ファイルの問題点とは何か？
   p54:
   - kind: para
     text: 🤔
@@ -432,22 +357,16 @@ text:
   - kind: para
     text: Ａ.サーバーまたいで
   - kind: para
-    text: セッションを
-  - kind: para
-    text: 共有できない！
+    text: セッションを共有できない！
   p56:
   - kind: para
     text: 🙃
   p57:
   - kind: para
-    text: Ｑ.具体的に
-  - kind: para
-    text: 何が起こる？
+    text: Ｑ.具体的に何が起こる？
   p58:
   - kind: para
-    text: Ａ.サーバーを増やして
-  - kind: para
-    text: 分散させた瞬間に、セッ
+    text: Ａ.サーバーを増やして分散させた瞬間に、セッ
   - kind: para
     text: ションが消えたりする
   p59:
@@ -455,9 +374,7 @@ text:
     text: ／(^o^)＼
   p60:
   - kind: para
-    text: 実用PHP
-  - kind: para
-    text: セッション
+    text: 実用PHPセッション
   p61:
   - kind: para
     text: 本題はここから
@@ -477,13 +394,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: class MySessHandler implements SessionHandlerInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: // 実装…
-  - kind: para
-    text: '}'
+    text: class MySessHandler implements SessionHandlerInterface{// 実装…}
   p66:
   - kind: heading
     level: 1
@@ -491,9 +402,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $handler = new MySessHandler();
-  - kind: para
-    text: session_set_save_handler($handler, true);
+    text: $handler = new MySessHandler();session_set_save_handler($handler, true);
   - kind: para
     text: session_start();
   p67:
@@ -501,9 +410,7 @@ text:
     text: 登録できる
   p68:
   - kind: para
-    text: 実装って何を
-  - kind: para
-    text: すればいいの？
+    text: 実装って何をすればいいの？
   p69:
   - kind: para
     text: Redis/Memcached/
@@ -511,17 +418,13 @@ text:
     text: SQLなどに保存する
   p70:
   - kind: para
-    text: 極端な話、データベー
-  - kind: para
-    text: スじゃなくてもいい
+    text: 極端な話、データベースじゃなくてもいい
   p71:
   - kind: heading
     level: 1
     text: 例)Cookie
   - kind: para
-    text: (セキュリティの面で
-  - kind: para
-    text: 面倒なのでおすすめはしない)
+    text: (セキュリティの面で面倒なのでおすすめはしない)
   p72:
   - kind: para
     text: 設定
@@ -560,39 +463,27 @@ text:
   - kind: para
     text: session_name('hoge_session_id');
   - kind: para
-    text: $handler = new MySessHandler();
-  - kind: para
-    text: session_set_save_handler($handler, true);
+    text: $handler = new MySessHandler();session_set_save_handler($handler, true);
   - kind: para
     text: session_start();
   p80:
   - kind: para
     text: php.ini
   - kind: para
-    text: VS
-  - kind: para
-    text: PHP関数
+    text: VS PHP関数
   p81:
   - kind: para
-    text: セッション系の設定
-  - kind: para
-    text: 設定ファイル(*.ini)と
-  - kind: para
-    text: PHP両方で設定できる
+    text: セッション系の設定設定ファイル(*.ini)とPHP両方で設定できる
   p82:
   - kind: para
     text: 環境によってphp.iniは手を入
   - kind: para
-    text: れにくいので、実行時にPHP
-  - kind: para
-    text: スクリプトで設定関数を呼ぶ
+    text: れにくいので、実行時にPHPスクリプトで設定関数を呼ぶ
   - kind: para
     text: ようにする方がおすすめ
   p83:
   - kind: para
-    text: 関数で書いてやれば
-  - kind: para
-    text: (同じコードである限り)
+    text: 関数で書いてやれば(同じコードである限り)
   - kind: para
     text: 事故が起きにくい
   p84:
@@ -607,18 +498,12 @@ text:
     text: 実装方法
   p86:
   - kind: para
-    text: ログイン処理を実装するため
-  - kind: para
-    text: にはセキュリティ的に考慮す
+    text: ログイン処理を実装するためにはセキュリティ的に考慮す
   - kind: para
     text: べき事柄がいろいろあるよ
   p87:
   - kind: para
-    text: この発表の
-  - kind: para
-    text: 反響があったら
-  - kind: para
-    text: 続きを書くよ！
+    text: この発表の反響があったら続きを書くよ！
 size:
   max_width: 1024
   max_height: 768

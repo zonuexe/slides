@@ -16,15 +16,7 @@ text:
   - kind: para
     text: 開催されたPHPカンファレンス関
   - kind: para
-    text: 西2017で当日募集された本篇LT
-  - kind: para
-    text: にて話したスライドに調整および
-  - kind: para
-    text: 加筆を施したものです。口頭で補
-  - kind: para
-    text: 足したもの、文字だけではわかり
-  - kind: para
-    text: にくいものを補ったほか、後半部
+    text: 西2017で当日募集された本篇LTにて話したスライドに調整および加筆を施したものです。口頭で補足したもの、文字だけではわかりにくいものを補ったほか、後半部
   - kind: para
     text: 分に文章の追加があります。
   p3:
@@ -53,20 +45,14 @@ text:
   - kind: para
     text: このLTは特定のアーキ
   - kind: para
-    text: テクチャの導入を
-  - kind: para
-    text: 勧誘するものではなく、
-  - kind: para
-    text: その是非については自分
+    text: テクチャの導入を勧誘するものではなく、その是非については自分
   - kind: para
     text: で判断してください。
   p7:
   - kind: para
     text: 対処が難しかった事例を
   - kind: para
-    text: 寄せ集めただけで、
-  - kind: para
-    text: 特定の実装の話ではない
+    text: 寄せ集めただけで、特定の実装の話ではない
   p8:
   - kind: para
     text: オチは特にない
@@ -80,9 +66,7 @@ text:
     text: さて
   p11:
   - kind: para
-    text: あるメソッドの
-  - kind: para
-    text: API(引数・返り値)を
+    text: あるメソッドのAPI(引数・返り値)を
   - kind: para
     text: 変更したいとします
   p12:
@@ -92,9 +76,7 @@ text:
     text: できますか？
   p13:
   - kind: para
-    text: そのメソッドの
-  - kind: para
-    text: 呼び出し箇所を列挙
+    text: そのメソッドの呼び出し箇所を列挙
   - kind: para
     text: できますか？
   p14:
@@ -105,32 +87,17 @@ text:
     text: git grep '\->setName('
   p16:
   - kind: para
-    text: 本当にそれで
-  - kind: para
-    text: 全部ですか？
+    text: 本当にそれで全部ですか？
   p17:
   - kind: para
-    text: $obj = new FugaClass;
-  - kind: para
-    text: $f = [$obj, 'setName'];
-  - kind: para
-    text: call_user_func($f, $n);
+    text: $obj = new FugaClass;$f = [$obj, 'setName'];call_user_func($f, $n);
   p18:
   - kind: para
     text: 🙃
   p19:
   - kind: para
-    text: $obj = new FugaClass;
-  - kind: para
-    text: $obj->setName($v);
-  - kind: para
-    text: // ↑探したいのはこっち
-  - kind: para
-    text: $obj2 = new HogeClass;
-  - kind: para
-    text: $obj->setName($x, $y);
-  - kind: para
-    text: // ↑同名の関係ないメソッド
+    text: $obj = new FugaClass;$obj->setName($v);// ↑探したいのはこっち$obj2 = new HogeClass;$obj->setName($x,
+      $y);// ↑同名の関係ないメソッド
   p20:
   - kind: para
     text: 誤爆
@@ -139,9 +106,7 @@ text:
     text: 結果を絞ろう
   p22:
   - kind: para
-    text: '# newの次行にsetNameがある前提'
-  - kind: para
-    text: git grep -a1 'new FugaClass' |
+    text: '# newの次行にsetNameがある前提git grep -a1 ''new FugaClass'' |'
   - kind: para
     text: grep '\->setName('
   p23:
@@ -149,24 +114,18 @@ text:
     text: これで完璧
   p24:
   - kind: para
-    text: // DIコンテナ
-  - kind: para
-    text: $app['fuga']->setName($n);
+    text: // DIコンテナ$app['fuga']->setName($n);
   p25:
   - kind: para
     text: 🙃
   p26:
   - kind: para
-    text: こんなことが続くと
-  - kind: para
-    text: 人間は無気力になる
+    text: こんなことが続くと人間は無気力になる
   - kind: para
     text: (学習性無力感)
   p27:
   - kind: para
-    text: (そのあとも動的な性質
-  - kind: para
-    text: による悩みは絶えない)
+    text: (そのあとも動的な性質による悩みは絶えない)
   p28:
   - kind: para
     text: ソリューション
@@ -175,24 +134,14 @@ text:
     level: 1
     text: new staticおじさんedition
   - kind: para
-    text: class FugaClass {
-  - kind: para
-    text: private $name;
-  - kind: para
-    text: private function __construct(){}
+    text: class FugaClass {private $name;private function __construct(){}
   - kind: para
     text: public static function setName(FugaClass $that, $name) {
   - kind: para
-    text: $that->name = $name;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: // ...
+    text: $that->name = $name;}// ...
   p30:
   - kind: para
-    text: git grep
-  - kind: para
-    text: '''FugaClass::setName'''
+    text: git grep'FugaClass::setName'
   p31:
   - kind: para
     text: これでいいのか
@@ -223,9 +172,7 @@ text:
     text: PhpStorm
   p38:
   - kind: para
-    text: FindUsageと
-  - kind: para
-    text: Refactor機能
+    text: FindUsageとRefactor機能
   - kind: para
     text: 最強説
   p39:
@@ -233,16 +180,12 @@ text:
     text: 型
   p40:
   - kind: para
-    text: 型が推測できなく
-  - kind: para
-    text: なるような複雑な
+    text: 型が推測できなくなるような複雑な
   - kind: para
     text: 書き方をしない
   p41:
   - kind: para
-    text: 型を確定できないと
-  - kind: para
-    text: ころは地道にPHPDoc
+    text: 型を確定できないところは地道にPHPDoc
   - kind: para
     text: で型をつけていく
   p42:
@@ -259,47 +202,23 @@ text:
   - kind: para
     text: 例
   - kind: para
-    text: '@param'
+    text: '@param引数を定義@param int $n1'
   - kind: para
-    text: 引数を定義
+    text: '@return返り値を定義@return int[]'
   - kind: para
-    text: '@param int $n1'
+    text: '@var変数/プロパティを定義@var int'
   - kind: para
-    text: '@return'
-  - kind: para
-    text: 返り値を定義
-  - kind: para
-    text: '@return int[]'
-  - kind: para
-    text: '@var'
-  - kind: para
-    text: 変数/プロパティを定義
-  - kind: para
-    text: '@var int'
-  - kind: para
-    text: '@property'
-  - kind: para
-    text: マジックプロパティを定義
-  - kind: para
-    text: '@property int $id'
+    text: '@propertyマジックプロパティを定義@property int $id'
   p44:
   - kind: para
-    text: DI/IoC
-  - kind: para
-    text: コンテナは？
+    text: DI/IoCコンテナは？
   p45:
   - kind: para
-    text: (日本語での説明、ただしサンプルコードが旧形式)
-  - kind: para
-    text: PhpStorm の PHPSTORM_META でサービスロケーター
-  - kind: para
-    text: とかを入力補完 - ngyukiの日記
+    text: (日本語での説明、ただしサンプルコードが旧形式)PhpStorm の PHPSTORM_META でサービスロケーターとかを入力補完 - ngyukiの日記
   - kind: para
     text: http://ngyuki.hatenablog.com/entry/2015/02/20/134239
   - kind: para
-    text: (公式資料・新形式のコード例が載ってる)
-  - kind: para
-    text: PhpStorm Advanced Metadata
+    text: (公式資料・新形式のコード例が載ってる)PhpStorm Advanced Metadata
   - kind: para
     text: https://confluence.jetbrains.com/display/PhpStorm/
   - kind: para
@@ -308,16 +227,10 @@ text:
   - kind: para
     text: 某社の回し者ではないの
   - kind: para
-    text: で、PhpStorm以外に良
-  - kind: para
-    text: いツールあれば知りたい！
+    text: で、PhpStorm以外に良いツールあれば知りたい！
   p47:
   - kind: para
-    text: そもそも
-  - kind: para
-    text: staticおじさんになっ
-  - kind: para
-    text: た理由はコレジャナイ
+    text: そもそもstaticおじさんになった理由はコレジャナイ
   p48:
   - kind: heading
     level: 1
@@ -330,33 +243,21 @@ text:
   - kind: para
     text: Webサービスを作る人間
   - kind: para
-    text: ＝
-  - kind: para
-    text: オブジェクト指向の達人
+    text: ＝オブジェクト指向の達人
   p50:
   - kind: para
     text: ではない
   p51:
   - kind: para
-    text: 素朴に作られたクラス
-  - kind: para
-    text: は余計な状態を抱えこ
-  - kind: para
-    text: んで渾沌が肥大化する
+    text: 素朴に作られたクラスは余計な状態を抱えこんで渾沌が肥大化する
   p52:
   - kind: para
-    text: 多すぎる引数…
-  - kind: para
-    text: 謎のメソッド…
-  - kind: para
-    text: 不要なプロパティ…
+    text: 多すぎる引数…謎のメソッド…不要なプロパティ…
   p53:
   - kind: para
     text: それでもコードは動き、
   - kind: para
-    text: 今の自分たちを生かし
-  - kind: para
-    text: てくれてる (=収益源)
+    text: 今の自分たちを生かしてくれてる (=収益源)
   p54:
   - kind: para
     text: 作られた当時は
@@ -368,126 +269,78 @@ text:
   - kind: para
     text: 動いてきたコードへの
   - kind: para
-    text: リスペクトを
-  - kind: para
-    text: 見失ってはならない
+    text: リスペクトを見失ってはならない
   p56:
   - kind: para
-    text: それでもサービスを成長さ
-  - kind: para
-    text: せる足枷にならないように
-  - kind: para
-    text: リファクタリングしていく
+    text: それでもサービスを成長させる足枷にならないようにリファクタリングしていく
   p57:
   - kind: para
     text: 混沌としたクラスから
   - kind: para
-    text: staticおじさんに
-  - kind: para
-    text: 身を堕としたのは
-  - kind: para
-    text: カオスを収束させるため
+    text: staticおじさんに身を堕としたのはカオスを収束させるため
   p58:
   - kind: para
     text: カオスを収束させた後な
   - kind: para
-    text: らば、未来に向かって
-  - kind: para
-    text: 「あるべき姿」を再定義
+    text: らば、未来に向かって「あるべき姿」を再定義
   - kind: para
     text: することができる
   p59:
   - kind: para
-    text: カオスを収束させずに夢を見
-  - kind: para
-    text: てアーキテクチャの再設計を
-  - kind: para
-    text: 試みると理想と現実のギャッ
+    text: カオスを収束させずに夢を見てアーキテクチャの再設計を試みると理想と現実のギャッ
   - kind: para
     text: プと物量に圧し潰されて氏ぬ
   p60:
   - kind: para
-    text: 重要な事実：
-  - kind: para
-    text: オブジェクト指向を多少かじっ
+    text: 重要な事実：オブジェクト指向を多少かじっ
   - kind: para
     text: た程度では、ベターなOO設計
   - kind: para
     text: ができる大先生にはなれない
   p61:
   - kind: para
-    text: 設計のエキスパートではなく
-  - kind: para
-    text: ても多くのパタンに触れてい
-  - kind: para
-    text: けば現在の身のたけに合った
-  - kind: para
-    text: ものを選びとることはできる
+    text: 設計のエキスパートではなくても多くのパタンに触れていけば現在の身のたけに合ったものを選びとることはできる
   p62:
   - kind: para
     text: オブジェクト指向プログラミングに
   - kind: para
-    text: 基いたリファクタリングが常に
-  - kind: para
-    text: 最適解ではなくて、手続き型なら
-  - kind: para
-    text: 手続き型としてのやりかたはある。
+    text: 基いたリファクタリングが常に最適解ではなくて、手続き型なら手続き型としてのやりかたはある。
   - kind: para
     text: (staticおじさんの再肯定)
   p63:
   - kind: para
-    text: 設計に失敗したらやり直
-  - kind: para
-    text: しが利くように疎結合に
+    text: 設計に失敗したらやり直しが利くように疎結合に
   - kind: para
     text: していくことも大事。
   p64:
   - kind: para
-    text: (疎結合にする試みそのものが
-  - kind: para
-    text: 負債を生むこと往々にしてある。
-  - kind: para
-    text: 一足飛ばしで変更しすぎるのもよ
+    text: (疎結合にする試みそのものが負債を生むこと往々にしてある。一足飛ばしで変更しすぎるのもよ
   - kind: para
     text: くない)
   p65:
   - kind: para
-    text: 現実を直視して分析し、
-  - kind: para
-    text: 自分たちに合った現実解
+    text: 現実を直視して分析し、自分たちに合った現実解
   - kind: para
     text: を地道に適用していく
   p66:
   - kind: para
     text: どんなことにも長所と短所がある。
   - kind: para
-    text: 世の中ではオブジェクト指向が先
-  - kind: para
-    text: 進的、手続き型はレガシーのよう
-  - kind: para
-    text: な風潮もあるが、手続き型がベター
+    text: 世の中ではオブジェクト指向が先進的、手続き型はレガシーのような風潮もあるが、手続き型がベター
   - kind: para
     text: と結論することもある。
   p67:
   - kind: para
     text: しかし｢オブジェクト指向はわかり
   - kind: para
-    text: にくい｣｢インスタンスを作るとリ
-  - kind: para
-    text: ファクタリングしにくい｣といった
+    text: にくい｣｢インスタンスを作るとリファクタリングしにくい｣といった
   - kind: para
     text: 風評はPhpStormなどのIDEで解決
   - kind: para
-    text: できる。ツールを知ることでサー
-  - kind: para
-    text: ビスの成長改善につなげられる。
+    text: できる。ツールを知ることでサービスの成長改善につなげられる。
   p68:
   - kind: para
-    text: 良いツールを知らないと「リ
-  - kind: para
-    text: ファクタリング対象をリスト
-  - kind: para
-    text: アップするときにgrepコマン
+    text: 良いツールを知らないと「リファクタリング対象をリストアップするときにgrepコマン
   - kind: para
     text: ドでテキスト検索するしかな
   - kind: para
@@ -496,17 +349,9 @@ text:
     text: (最初の問題提起)
   p69:
   - kind: para
-    text: スタートアップ期のコードでは設
+    text: スタートアップ期のコードでは設計に悩み留まって製品をリリースできないことは賢明ではない。リ
   - kind: para
-    text: 計に悩み留まって製品をリリース
-  - kind: para
-    text: できないことは賢明ではない。リ
-  - kind: para
-    text: リースされた後も機能追加に注力
-  - kind: para
-    text: すべきだが、機能追加と既存機能
-  - kind: para
-    text: の安定性を両立しようとすると、
+    text: リースされた後も機能追加に注力すべきだが、機能追加と既存機能の安定性を両立しようとすると、
   - kind: para
     text: どこかで決断の時は来る。
   p70:

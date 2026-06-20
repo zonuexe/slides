@@ -68,23 +68,15 @@ text:
     level: 1
     text: 値をそのまま返す関数
   - kind: para
-    text: 'function id(mixed $value): mixed {'
-  - kind: para
-    text: return $value;
-  - kind: para
-    text: '}'
+    text: 'function id(mixed $value): mixed {return $value;}'
   p10:
   - kind: heading
     level: 1
     text: 値をそのまま返す関数
   - kind: para
-    text: PhpStormとかで
+    text: PhpStormとかでメソッド名補完がきく
   - kind: para
-    text: メソッド名補完がきく
-  - kind: para
-    text: $date = new DateTimeImmutable();
-  - kind: para
-    text: $date->diff(
+    text: $date = new DateTimeImmutable();$date->diff(
   p11:
   - kind: heading
     level: 1
@@ -96,9 +88,7 @@ text:
   - kind: para
     text: き…かない
   - kind: para
-    text: $date = new DateTimeImmutable();
-  - kind: para
-    text: id($date)->diff(
+    text: $date = new DateTimeImmutable();id($date)->diff(
   p12:
   - kind: heading
     level: 1
@@ -108,32 +98,20 @@ text:
   - kind: para
     text: なんでも返す
   - kind: para
-    text: 'function id(mixed $value): mixed {'
-  - kind: para
-    text: return $value;
-  - kind: para
-    text: '}'
+    text: 'function id(mixed $value): mixed {return $value;}'
   p13:
   - kind: para
-    text: 本日の目標は
-  - kind: para
-    text: こういうときに怯えず
+    text: 本日の目標はこういうときに怯えず
   - kind: para
     text: 型を付けることです
   p14:
   - kind: para
     text: 個々の静的解析ツール
   - kind: para
-    text: 導入方法などは
-  - kind: para
-    text: 今回は扱いません
+    text: 導入方法などは今回は扱いません
   p15:
   - kind: para
-    text: ただし最新のPhpStorm
-  - kind: para
-    text: 2021.2では静的解析ツー
-  - kind: para
-    text: ルを導入しなくてもすんな
+    text: ただし最新のPhpStorm 2021.2では静的解析ツールを導入しなくてもすんな
   - kind: para
     text: り動くと思います
   p16:
@@ -206,9 +184,7 @@ text:
   - kind: para
     text: '$b : int'
   - kind: para
-    text: そもそも
-  - kind: para
-    text: 計算できない
+    text: そもそも計算できない
   - kind: heading
     level: 2
     text: $a = [];
@@ -280,41 +256,25 @@ text:
     level: 1
     text: 型がついていない関数
   - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add($a, $b) {return $a + $b;}
   p30:
   - kind: heading
     level: 1
     text: 型宣言すればいい？
   - kind: para
-    text: int + intって
+    text: int + intって本当にintなの？
   - kind: para
-    text: 本当にintなの？
-  - kind: para
-    text: function add(int $a, int $b):int {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add(int $a, int $b):int {return $a + $b;}
   p31:
   - kind: heading
     level: 1
     text: ﬂoatにすればいい？
   - kind: para
-    text: ひとつの解決策では
-  - kind: para
-    text: あるが… 不必要にËoat
+    text: ひとつの解決策ではあるが… 不必要にËoat
   - kind: para
     text: を強制するのか
   - kind: para
-    text: function add(float $a, float $b):float {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add(float $a, float $b):float {return $a + $b;}
   p32:
   - kind: heading
     level: 1
@@ -322,46 +282,17 @@ text:
   - kind: para
     text: あえて型宣言を省略する
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p33:
   - kind: heading
     level: 1
     text: Union型宣言(PHP8.0)
   - kind: para
-    text: function add(
-  - kind: para
-    text: int|float $a,
-  - kind: para
-    text: int|float $b
-  - kind: para
-    text: '): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a,int|float $b): int|float {return $a + $b;}'
   p34:
   - kind: para
-    text: かくしてPHPは
-  - kind: para
-    text: PHPDocなんか
-  - kind: para
-    text: 書かなくても良い
-  - kind: para
-    text: 平和な世界になりました
+    text: かくしてPHPはPHPDocなんか書かなくても良い平和な世界になりました
   p35:
   - kind: heading
     level: 1
@@ -383,21 +314,7 @@ text:
   - kind: para
     text: 「共著を想定できてる？」
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: private Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class Book{function __construct(private Author $author) {// ...}}
   p39:
   - kind: heading
     level: 1
@@ -407,25 +324,9 @@ text:
   - kind: para
     text: 複数であることを表現
   - kind: para
-    text: Authorクラスの
+    text: Authorクラスの情報が減ってる…
   - kind: para
-    text: 情報が減ってる…
-  - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class Book{function __construct(private array $authors) {// ...}}
   p40:
   - kind: heading
     level: 1
@@ -435,25 +336,10 @@ text:
   - kind: para
     text: 中身が何かわからない！
   - kind: para
-    text: Authorクラスの
+    text: Authorクラスのメソッドを補完できない
   - kind: para
-    text: メソッドを補完できない
-  - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'function printAuthors($fp): void {'
-  - kind: para
-    text: foreach ($this->authors as $author) {
-  - kind: para
-    text: fwrite($fp, $author->getName());
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class Book{function printAuthors($fp): void {foreach ($this->authors as
+      $author) {fwrite($fp, $author->getName());}}}'
   p41:
   - kind: heading
     level: 1
@@ -463,25 +349,9 @@ text:
   - kind: para
     text: 複数であることを表現
   - kind: para
-    text: Authorクラスの
+    text: Authorクラスの情報が減ってる…
   - kind: para
-    text: 情報が減ってる…
-  - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class Book{function __construct(private array $authors) {// ...}}
   p42:
   - kind: heading
     level: 1
@@ -489,21 +359,8 @@ text:
   - kind: para
     text: PHPDocの復活
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: /** @var array<Author> */
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
+    text: class Book{function __construct(/** @var array<Author> */private array $authors)
+      {// ...}
   p43:
   - kind: heading
     level: 1
@@ -513,25 +370,10 @@ text:
   - kind: para
     text: array<Author>
   - kind: para
-    text: Authorクラスの
+    text: Authorクラスのメソッドが補完できる
   - kind: para
-    text: メソッドが補完できる
-  - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'function printAuthors($fp): void {'
-  - kind: para
-    text: foreach ($this->authors as $author) {
-  - kind: para
-    text: fwrite($fp, $author->getName());
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class Book{function printAuthors($fp): void {foreach ($this->authors as
+      $author) {fwrite($fp, $author->getName());}}}'
   p44:
   - kind: heading
     level: 1
@@ -560,13 +402,7 @@ text:
     - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
     - ユーザを表す構造体がならんだリスト
   - kind: para
-    text: '['
-  - kind: para
-    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
-  - kind: para
-    text: '[''id'' => 234, ''name'' => ''源静香''],'
-  - kind: para
-    text: ']'
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
   - kind: para
     text: list<array{id:int, name:string}>
   p46:
@@ -600,31 +436,14 @@ text:
     level: 1
     text: '再掲: 値をそのまま返す関数'
   - kind: para
-    text: 'function id(mixed $value): mixed {'
-  - kind: para
-    text: return $value;
-  - kind: para
-    text: '}'
+    text: 'function id(mixed $value): mixed {return $value;}'
   p52:
   - kind: heading
     level: 1
     text: '再掲: 値をそのまま返す関数'
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @template T'
-  - kind: para
-    text: '* @phpstan-param T $value'
-  - kind: para
-    text: '* @phpstan-return T'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'function id(mixed $value): mixed {'
-  - kind: para
-    text: return $value;
-  - kind: para
-    text: '}'
+    text: '/*** @template T* @phpstan-param T $value* @phpstan-return T*/function
+      id(mixed $value): mixed {return $value;}'
   p53:
   - kind: heading
     level: 1
@@ -632,13 +451,9 @@ text:
   - kind: para
     text: PhpStormとかで
   - kind: para
-    text: メソッド名補完が
+    text: メソッド名補完がきくようになった
   - kind: para
-    text: きくようになった
-  - kind: para
-    text: $date = new DateTimeImmutable();
-  - kind: para
-    text: id($date)->diff(
+    text: $date = new DateTimeImmutable();id($date)->diff(
   p54:
   - kind: heading
     level: 1
@@ -648,69 +463,29 @@ text:
     level: 1
     text: 配列の先頭要素をとる関数
   - kind: para
-    text: /**
+    text: '/*** @template T* @param array<T> $XS* @param T $default* @return T*/function
+      first(array $xs, string $default): mixed {return $value;}'
   - kind: para
-    text: '* @template T'
-  - kind: para
-    text: '* @param array<T> $XS'
-  - kind: para
-    text: '* @param T $default'
-  - kind: para
-    text: '* @return T'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'function first(array $xs, string $default): mixed {'
-  - kind: para
-    text: return $value;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: 'function first(array $xs, mixed $default): mixed {'
-  - kind: para
-    text: foreach ($xs as $x) return $x;
-  - kind: para
-    text: return $default;
-  - kind: para
-    text: '}'
+    text: 'function first(array $xs, mixed $default): mixed {foreach ($xs as $x) return
+      $x;return $default;}'
   p56:
   - kind: heading
     level: 1
     text: 配列の先頭要素をとる関数
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @template T'
-  - kind: para
-    text: '* @param array<T> $xs'
-  - kind: para
-    text: '* @param T $default'
-  - kind: para
-    text: '* @return T'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'function first(array $xs, mixed $default): mixed {'
-  - kind: para
-    text: foreach ($xs as $x) return $x;
-  - kind: para
-    text: return $default;
+    text: '/*** @template T* @param array<T> $xs* @param T $default* @return T*/function
+      first(array $xs, mixed $default): mixed {foreach ($xs as $x) return $x;return
+      $default;'
   p57:
   - kind: heading
     level: 1
     text: 配列の先頭要素を受け取る
   - kind: para
-    text: PhpStormとかで
-  - kind: para
-    text: メソッド名補完がきく
+    text: PhpStormとかでメソッド名補完がきく
   - kind: para
     text: // list<DateTimeImmutable> を返す関数
   - kind: para
-    text: $dates = get_dates();
-  - kind: para
-    text: $first = first($dates, new DateTimeImmutable);
-  - kind: para
-    text: $first->diff(
+    text: $dates = get_dates();$first = first($dates, new DateTimeImmutable);$first->diff(
   p58:
   - kind: heading
     level: 1

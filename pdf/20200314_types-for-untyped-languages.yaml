@@ -6,9 +6,7 @@ text:
   - kind: para
     text: Type in untyped languages
   - kind: para
-    text: '#virtual_study_group'
-  - kind: para
-    text: バーチャル空間勉強会#0
+    text: '#virtual_study_groupバーチャル空間勉強会#0'
   p2:
   - kind: heading
     level: 1
@@ -247,19 +245,11 @@ text:
   - kind: para
     text: '#include <stdio.h>'
   - kind: para
-    text: long add(long a, long b) {
+    text: long add(long a, long b) {return a + b;}
   - kind: para
-    text: return a + b;
+    text: int main(void) {unsigned int x = 1, y = 2;
   - kind: para
-    text: '}'
-  - kind: para
-    text: int main(void) {
-  - kind: para
-    text: unsigned int x = 1, y = 2;
-  - kind: para
-    text: printf("%d + %d = %d\n", x, y, add(x, y));
-  - kind: para
-    text: '}'
+    text: printf("%d + %d = %d\n", x, y, add(x, y));}
   p48:
   - kind: para
     text: 私たちFラン情報科学生は
@@ -288,11 +278,7 @@ text:
   - kind: para
     text: // JavaScript
   - kind: para
-    text: function add(a, b) {
-  - kind: para
-    text: return a + b;
-  - kind: para
-    text: '}'
+    text: function add(a, b) {return a + b;}
   - kind: para
     text: const x = 1, y = 2;
   - kind: para
@@ -304,11 +290,7 @@ text:
   - kind: para
     text: '# Ruby'
   - kind: para
-    text: def add(a, b)
-  - kind: para
-    text: a + b
-  - kind: para
-    text: end
+    text: def add(a, b)a + b end
   - kind: para
     text: x = 1; y = 2
   - kind: para
@@ -337,11 +319,7 @@ text:
   - kind: para
     text: '# to_sオブジェクトが生えてたら何でもいい'
   - kind: para
-    text: def show(obj)
-  - kind: para
-    text: puts obj.to_s
-  - kind: para
-    text: end
+    text: def show(obj)puts obj.to_s end
   p57:
   - kind: heading
     level: 1
@@ -353,17 +331,9 @@ text:
   - kind: para
     text: '# ジェネリクスとかなくてもいいｗ'
   - kind: para
-    text: def add(a, b)
+    text: def add(a, b)a + b end
   - kind: para
-    text: a + b
-  - kind: para
-    text: end
-  - kind: para
-    text: def show(obj)
-  - kind: para
-    text: puts obj.to_s
-  - kind: para
-    text: end
+    text: def show(obj)puts obj.to_s end
   p58:
   - kind: heading
     level: 1
@@ -379,17 +349,7 @@ text:
   - kind: para
     text: '# Ruby'
   - kind: para
-    text: obj = palpunte(
-  - kind: para
-    text: user_id,
-  - kind: para
-    text: ????,
-  - kind: para
-    text: ????,
-  - kind: para
-    text: ????,
-  - kind: para
-    text: )
+    text: obj = palpunte(user_id,????,????,????,)
   - kind: para
     text: p obj
   p60:
@@ -406,13 +366,7 @@ text:
   - kind: para
     text: '# 実装を見ないと期待するオプションに何を渡せばいいのか'
   - kind: para
-    text: def palpunte (id, foo, bar, buz)
-  - kind: para
-    text: p [id, foo, bar, buz]
-  - kind: para
-    text: end
-  - kind: para
-    text: '# というか見てもよくわからない'
+    text: def palpunte (id, foo, bar, buz)p [id, foo, bar, buz]end# というか見てもよくわからない
   p62:
   - kind: heading
     level: 1
@@ -422,19 +376,11 @@ text:
   - kind: para
     text: '# 実際にはキーワード引数だけで表現できる'
   - kind: para
-    text: 'def palpunte (id: nil, **options)'
+    text: 'def palpunte (id: nil, **options)raise TypeError if id.nil?'
   - kind: para
-    text: raise TypeError if id.nil?
+    text: foo ||= "default foo"bar ||= "default bar"buz ||= "default buz"
   - kind: para
-    text: foo ||= "default foo"
-  - kind: para
-    text: bar ||= "default bar"
-  - kind: para
-    text: buz ||= "default buz"
-  - kind: para
-    text: p [id, foo, bar, bar]]
-  - kind: para
-    text: end
+    text: p [id, foo, bar, bar]]end
   p63:
   - kind: heading
     level: 1
@@ -442,11 +388,8 @@ text:
   - kind: para
     text: '# Ruby'
   - kind: para
-    text: raise TypeError unless foo.instance_of?(String)
-  - kind: para
-    text: raise TypeError unless bar.instance_of?(String)
-  - kind: para
-    text: raise TypeError unless buz.instance_of?(String)
+    text: raise TypeError unless foo.instance_of?(String)raise TypeError unless bar.instance_of?(String)raise
+      TypeError unless buz.instance_of?(String)
   p64:
   - kind: para
     text: い
@@ -497,23 +440,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: /**
+    text: /*** @param mixed $a 可能性は無限大
   - kind: para
-    text: '* @param mixed $a 可能性は無限大'
-  - kind: para
-    text: '* @param mixed $b'
-  - kind: para
-    text: '* @return mixed'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: '* @param mixed $b* @return mixed*/function add($a, $b){return $a + $b;}'
   p72:
   - kind: heading
     level: 1
@@ -521,17 +450,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function add()
+    text: function add(){$args = func_get_args();
   - kind: para
-    text: '{'
-  - kind: para
-    text: $args = func_get_args();
-  - kind: para
-    text: return array_pop($args)
-  - kind: para
-    text: + array_pop($args);
-  - kind: para
-    text: '}'
+    text: return array_pop($args)+ array_pop($args);}
   p73:
   - kind: para
     text: 無限大じゃ
@@ -562,15 +483,10 @@ text:
   - kind: para
     text: var_dump(add('1', '2')); // => int(3) 許容範囲
   - kind: para
-    text: var_dump(add('', '')); // => int(0) ?????
+    text: var_dump(add('', '')); // => int(0) ?????var_dump(add(1, 2, 3)); // => int(3)
+      ?????var_dump(add([], [])); // => [] えっ?????
   - kind: para
-    text: var_dump(add(1, 2, 3)); // => int(3) ?????
-  - kind: para
-    text: var_dump(add([], [])); // => [] えっ?????
-  - kind: para
-    text: var_dump(add(PHP_INT_MAX, 1));
-  - kind: para
-    text: // => float(9.2233720368548E+18)
+    text: var_dump(add(PHP_INT_MAX, 1));// => float(9.2233720368548E+18)
   p77:
   - kind: para
     text: 実行時に
@@ -611,37 +527,16 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param mixed $a 可能性は無限大'
+    text: /*** @param mixed $a 可能性は無限大
   - kind: para
     text: '* @param mixed $b 可能性は無限大'
   - kind: para
-    text: '* @return mixed'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: if (!is_int($a)) {
-  - kind: para
-    text: throw new TypeError('Error');
-  - kind: para
-    text: '}'
-  - kind: para
-    text: if (!is_int($b)) {
-  - kind: para
-    text: throw new TypeError('Error');
-  - kind: para
-    text: '}'
+    text: '* @return mixed*/function add($a, $b){if (!is_int($a)) {throw new TypeError(''Error'');}if
+      (!is_int($b)) {throw new TypeError(''Error'');}'
   - kind: para
     text: // 実装するときに int 以外の値が渡ってくる可能性を考えなくて良い
   - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: return $a + $b;}
   p83:
   - kind: para
     text: 実行時に変な値に対
@@ -674,13 +569,7 @@ text:
   - kind: para
     text: // 渡ってくる可能性は考えなくてよい
   - kind: para
-    text: 'function add(int $a, int $b): int'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int{return $a + $b;}'
   p87:
   - kind: para
     text: 静的 =

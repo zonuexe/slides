@@ -10,9 +10,7 @@ text:
     level: 3
     text: ެ։ิగ൛
   - kind: para
-    text: ピクシブ株式会社
-  - kind: para
-    text: うさみけんた @tadsan
+    text: ピクシブ株式会社うさみけんた @tadsan
   - kind: para
     text: JAPAN phpcon 2016, 3rd November
   p2:
@@ -34,13 +32,9 @@ text:
     text: おしごと
   p4:
   - kind: para
-    text: 現実に動いている
+    text: 現実に動いている(ユーザーさんが利用している)
   - kind: para
-    text: (ユーザーさんが利用している)
-  - kind: para
-    text: サービスを破壊せずに
-  - kind: para
-    text: コードの健全さを向上したい
+    text: サービスを破壊せずにコードの健全さを向上したい
   p5: []
   p6:
   - kind: para
@@ -102,9 +96,7 @@ text:
   - kind: para
     text: 手さぐりで型を調べる (←型検査)
   - kind: para
-    text: $a = 13; $b = "2";
-  - kind: para
-    text: echo $a + $b;
+    text: $a = 13; $b = "2";echo $a + $b;
   - kind: list
     items:
     - 「$aの型はintだな、$bの型はstring…
@@ -131,9 +123,7 @@ text:
     items:
     - 整数(int) 浮動小数点数(float) 論理値(bool)
   - kind: para
-    text: 文字列(string) 配列(array) リソース(resource)
-  - kind: para
-    text: オブジェクト(object) ヌル値(null)
+    text: 文字列(string) 配列(array) リソース(resource)オブジェクト(object) ヌル値(null)
   - kind: list
     items:
     - PHP5ではarrayのみ宣言に記述できる
@@ -149,23 +139,10 @@ text:
     level: 2
     text: 引数と返り値に型を定義することができる
   - kind: para
-    text: // PHP 5
+    text: // PHP 5 function trapezoid($h, $a, $b) {return $h * ($a + $b) / 2;}
   - kind: para
-    text: function trapezoid($h, $a, $b) {
-  - kind: para
-    text: return $h * ($a + $b) / 2;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: // PHP 7
-  - kind: para
-    text: 'function trapezoid(float $h, float $a, float $b): float'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $h * ($a + $b) / 2;
-  - kind: para
-    text: '}'
+    text: '// PHP 7 function trapezoid(float $h, float $a, float $b): float{return
+      $h * ($a + $b) / 2;}'
   p15:
   - kind: heading
     level: 1
@@ -174,23 +151,9 @@ text:
     items:
     - プログラムを動かしてみないとわからない
   - kind: para
-    text: $a = 13; $b = [];
-  - kind: para
-    text: // 環境依存の分岐 (本番環境じゃないと動かない)
-  - kind: para
-    text: if (is_production()) {
-  - kind: para
-    text: echo $a + $b; // 検出できない
-  - kind: para
-    text: echo 1 + []; // ←これはPHP7で検出できるようになった
-  - kind: para
-    text: '}'
-  - kind: para
-    text: 'function f(): int {'
-  - kind: para
-    text: return []; // これも検出できない
-  - kind: para
-    text: '}'
+    text: '$a = 13; $b = [];// 環境依存の分岐 (本番環境じゃないと動かない)if (is_production()) {echo $a
+      + $b; // 検出できないecho 1 + []; // ←これはPHP7で検出できるようになった}function f(): int {return
+      []; // これも検出できない}'
   p16:
   - kind: para
     text: PHPDoc#とは何か
@@ -208,17 +171,8 @@ text:
     level: 2
     text: 文字列として取得することができる(DocComment)
   - kind: para
-    text: /** ここはDocCommentだよ */
-  - kind: para
-    text: function hoge() {
-  - kind: para
-    text: '}'
-  - kind: para
-    text: $ref = new \ReflectionFunction('hoge');
-  - kind: para
-    text: echo $ref->getDocComment();
-  - kind: para
-    text: // => "/** ここはDocCommentだよ */"
+    text: /** ここはDocCommentだよ */function hoge() {}$ref = new \ReflectionFunction('hoge');echo
+      $ref->getDocComment();// => "/** ここはDocCommentだよ */"
   p18:
   - kind: heading
     level: 1
@@ -230,23 +184,8 @@ text:
     level: 2
     text: PhpStormやPhanが解釈してくれる。
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param float $h'
-  - kind: para
-    text: '* @param float $a'
-  - kind: para
-    text: '* @param float $b'
-  - kind: para
-    text: '* @return float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function trapezoid($h, $a, $b) {
-  - kind: para
-    text: return $h * ($a + $b) / 2;
-  - kind: para
-    text: '}'
+    text: /*** @param float $h* @param float $a* @param float $b* @return float*/function
+      trapezoid($h, $a, $b) {return $h * ($a + $b) / 2;}
   p19:
   - kind: para
     text: PhpStormの型表示
@@ -294,29 +233,13 @@ text:
   - kind: para
     text: 例
   - kind: para
-    text: '@param'
+    text: '@param引数を定義@param int $n1'
   - kind: para
-    text: 引数を定義
+    text: '@return返り値を定義@return int[]'
   - kind: para
-    text: '@param int $n1'
+    text: '@var変数/プロパティを定義@var int'
   - kind: para
-    text: '@return'
-  - kind: para
-    text: 返り値を定義
-  - kind: para
-    text: '@return int[]'
-  - kind: para
-    text: '@var'
-  - kind: para
-    text: 変数/プロパティを定義
-  - kind: para
-    text: '@var int'
-  - kind: para
-    text: '@property'
-  - kind: para
-    text: マジックプロパティを定義
-  - kind: para
-    text: '@property int $id'
+    text: '@propertyマジックプロパティを定義@property int $id'
   - kind: heading
     level: 2
     text: ふつうのプロパティは@propertyじゃなくて
@@ -331,21 +254,8 @@ text:
     level: 2
     text: ふつうのプロパティの場合は @var を使って書く
   - kind: para
-    text: final class Book {
-  - kind: para
-    text: /** @var string */
-  - kind: para
-    text: public $title;
-  - kind: para
-    text: /** @var \MyApp\Author[] */
-  - kind: para
-    text: public $authors;
-  - kind: para
-    text: /** @var \MyApp\ISBN */
-  - kind: para
-    text: public $isbn;
-  - kind: para
-    text: '}'
+    text: final class Book {/** @var string */public $title;/** @var \MyApp\Author[]
+      */public $authors;/** @var \MyApp\ISBN */public $isbn;}
   p24:
   - kind: heading
     level: 1
@@ -354,31 +264,10 @@ text:
     level: 2
     text: 拙作のzonuexe/objectsystemを使った場合
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @property string $title'
-  - kind: para
-    text: '* @property \MyApp\Author[] $authors'
-  - kind: para
-    text: '* @property \MyApp\ISBN $isbn'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: final class Book {
-  - kind: para
-    text: use \Teto\Object\TypedProperty;
-  - kind: para
-    text: protected static $property_types = [
-  - kind: para
-    text: '''title'' => ''string'','
-  - kind: para
-    text: '''authors'' => ''MyApp\Author[]'','
-  - kind: para
-    text: '''isbn'' => ''?MyApp\ISBN'','
-  - kind: para
-    text: '];'
-  - kind: para
-    text: '}'
+    text: /*** @property string $title* @property \MyApp\Author[] $authors* @property
+      \MyApp\ISBN $isbn*/final class Book {use \Teto\Object\TypedProperty;protected
+      static $property_types = ['title' => 'string','authors' => 'MyApp\Author[]','isbn'
+      => '?MyApp\ISBN',];}
   p25:
   - kind: heading
     level: 1
@@ -387,25 +276,9 @@ text:
     level: 2
     text: 複合型とコレクション(型の配列)を組み合せる
   - kind: para
-    text: /** @return Book[]|\ArrayObject */
-  - kind: para
-    text: function getBooks() {
-  - kind: para
-    text: $data = hogehoge();
-  - kind: para
-    text: return new \ArrayObject($data);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: $books = getBooks();
-  - kind: para
-    text: $books->▍ // ここで \ArrayObject の補完が効く
-  - kind: para
-    text: foreach ($books as $book) {
-  - kind: para
-    text: $book->▍ // ここで Book の補完が効く
-  - kind: para
-    text: '}'
+    text: /** @return Book[]|\ArrayObject */function getBooks() {$data = hogehoge();return
+      new \ArrayObject($data);}$books = getBooks();$books->▍ // ここで \ArrayObject の補完が効くforeach
+      ($books as $book) {$book->▍ // ここで Book の補完が効く}
   p26:
   - kind: para
     text: Phanの紹介
@@ -417,9 +290,7 @@ text:
     items:
     - ハンドメイドマーケットを運営する
   - kind: para
-    text: アメリカのEtsy社が開発する静的解析ツール
-  - kind: para
-    text: https://github.com/etsy/phan
+    text: アメリカのEtsy社が開発する静的解析ツールhttps://github.com/etsy/phan
   - kind: list
     items:
     - 現在PHP作者のRasmus Lerdorf が所属し、
@@ -445,9 +316,7 @@ text:
   - kind: para
     text: サービスがPHP7で稼動してなくても動かせる
   - kind: para
-    text: '#!/bin/sh'
-  - kind: para
-    text: /path/to/php7/bin/php ${PHAN_BIN:-/path/to/bin/phan} "$@"
+    text: '#!/bin/sh/path/to/php7/bin/php ${PHAN_BIN:-/path/to/bin/phan} "$@"'
   p29:
   - kind: heading
     level: 1
@@ -461,23 +330,8 @@ text:
   - kind: para
     text: https://github.com/etsy/phan/wiki/Getting-Started#creating-a-config-file
   - kind: para
-    text: // ディレクトリホワイトリスト
-  - kind: para
-    text: '''directory_list'' => ['
-  - kind: para
-    text: '''src'','
-  - kind: para
-    text: '''vendor/symfony/console'','
-  - kind: para
-    text: '],'
-  - kind: para
-    text: // ディレクトリブラックリスト
-  - kind: para
-    text: '"exclude_analysis_directory_list" => ['
-  - kind: para
-    text: '''vendor/'''
-  - kind: para
-    text: '],'
+    text: // ディレクトリホワイトリスト'directory_list' => ['src','vendor/symfony/console',],//
+      ディレクトリブラックリスト"exclude_analysis_directory_list" => ['vendor/'],
   p30:
   - kind: heading
     level: 1
@@ -505,9 +359,7 @@ text:
     - -j, --processes <int> 並列実行数
     - -p, --progress-bar 進捗バーを表示
   - kind: para
-    text: ./phan-wrapper -m csv -o phan.csv -x -j4 \
-  - kind: para
-    text: --progress-bar --backward-compatibility-checks
+    text: ./phan-wrapper -m csv -o phan.csv -x -j4 \--progress-bar --backward-compatibility-checks
   p32:
   - kind: heading
     level: 1
@@ -516,15 +368,10 @@ text:
     items:
     - デフォルトの場合の出力
   - kind: para
-    text: pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal
-  - kind: para
-    text: Argument 1 (month) is string but \checkdate() takes int
-  - kind: para
-    text: pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal
-  - kind: para
-    text: Argument 2 (day) is string but \checkdate() takes int
-  - kind: para
-    text: path/to/file.php:333 PhanTypeMismatchArgumentInternal This is message.
+    text: pixiv-lib/Illust/Common.php:738 PhanTypeMismatchArgumentInternal Argument
+      1 (month) is string but \checkdate() takes int pixiv-lib/Illust/Common.php:738
+      PhanTypeMismatchArgumentInternal Argument 2 (day) is string but \checkdate()
+      takes int path/to/file.php:333 PhanTypeMismatchArgumentInternal This is message.
   - kind: list
     items:
     - PhanTypeMismatchArgumentInternal はIssueと呼ばれる
@@ -549,23 +396,8 @@ text:
     level: 2
     text: 存在しないクラスでキャッチしようとしてないか
   - kind: para
-    text: // PHP 5
-  - kind: para
-    text: namespace MyApp;
-  - kind: para
-    text: try {
-  - kind: para
-    text: foo();
-  - kind: para
-    text: '} catch (RuntimeException $e) {'
-  - kind: para
-    text: // ↑ \MyApp\RuntimeException
-  - kind: para
-    text: '} catch (\Excaption $e) {'
-  - kind: para
-    text: // ↑ \Exception が正しい
-  - kind: para
-    text: '}'
+    text: // PHP 5 namespace MyApp;try {foo();} catch (RuntimeException $e) {// ↑
+      \MyApp\RuntimeException} catch (\Excaption $e) {// ↑ \Exception が正しい}
   p35:
   - kind: heading
     level: 1
@@ -574,19 +406,9 @@ text:
     level: 2
     text: 存在しないクラスでinstanceofしてないか
   - kind: para
-    text: namespace MyApp;
-  - kind: para
-    text: $e = get_error();
-  - kind: para
-    text: if ($e instanceof RuntimeException) {
-  - kind: para
-    text: // ↑ \MyApp\RuntimeException
-  - kind: para
-    text: '} elseif ($e instanceof \Excaption) {'
-  - kind: para
-    text: // ↑ \Exception が正しい
-  - kind: para
-    text: '}'
+    text: namespace MyApp;$e = get_error();if ($e instanceof RuntimeException) {//
+      ↑ \MyApp\RuntimeException} elseif ($e instanceof \Excaption) {// ↑ \Exception
+      が正しい}
   p36:
   - kind: heading
     level: 1
@@ -595,15 +417,7 @@ text:
     level: 2
     text: foreachできない値をforeachしようとしてる
   - kind: para
-    text: $iter = null;
-  - kind: para
-    text: // E_WARNING
-  - kind: para
-    text: foreach ($iter as $i) {
-  - kind: para
-    text: echo $i;
-  - kind: para
-    text: '}'
+    text: $iter = null;// E_WARNING foreach ($iter as $i) {echo $i;}
   p37:
   - kind: heading
     level: 1
@@ -612,19 +426,7 @@ text:
     level: 2
     text: 定義と違った型の値を返してる
   - kind: para
-    text: /** @return void */
-  - kind: para
-    text: function f() {
-  - kind: para
-    text: return null;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: function g():int {
-  - kind: para
-    text: return [];
-  - kind: para
-    text: '}'
+    text: /** @return void */function f() {return null;}function g():int {return [];}
   p38:
   - kind: heading
     level: 1
@@ -633,13 +435,7 @@ text:
     level: 2
     text: 特定の型を返すべきだが、何も返していない
   - kind: para
-    text: /** @return int */
-  - kind: para
-    text: function g(){
-  - kind: para
-    text: return;
-  - kind: para
-    text: '}'
+    text: /** @return int */function g(){return;}
   p39:
   - kind: heading
     level: 1
@@ -654,11 +450,7 @@ text:
     level: 2
     text: い
   - kind: para
-    text: /** @return void */
-  - kind: para
-    text: function g(){ return; }
-  - kind: para
-    text: $result = g();
+    text: /** @return void */function g(){ return; }$result = g();
   p40:
   - kind: heading
     level: 1
@@ -667,23 +459,9 @@ text:
     level: 2
     text: 無意味なコードを検出する
   - kind: para
-    text: // 代入しない配列 PhanNoopArray
-  - kind: para
-    text: '[1, 2, 3];'
-  - kind: para
-    text: // 代入も実行もしないクロージャ PhanNoopClosure
-  - kind: para
-    text: function(){ return awesome(); };
-  - kind: para
-    text: // returnしていないので無意味 PhanNoopProperty
-  - kind: para
-    text: class C {
-  - kind: para
-    text: public $p;
-  - kind: para
-    text: function f() { $this->p; }
-  - kind: para
-    text: '}'
+    text: // 代入しない配列 PhanNoopArray[1, 2, 3];// 代入も実行もしないクロージャ PhanNoopClosure function(){
+      return awesome(); };// returnしていないので無意味 PhanNoopProperty class C {public $p;function
+      f() { $this->p; }}
   p41:
   - kind: heading
     level: 1
@@ -698,13 +476,8 @@ text:
     level: 2
     text: '@deprecated を付けておくと洗い出せてべんり'
   - kind: para
-    text: function newAwesomeFunc(){}
-  - kind: para
-    text: /** @deprecated */
-  - kind: para
-    text: function oldFunc(){}
-  - kind: para
-    text: oldFunc(); // PhpStormは取り消し線で表示
+    text: function newAwesomeFunc(){}/** @deprecated */function oldFunc(){}oldFunc();
+      // PhpStormは取り消し線で表示
   p42:
   - kind: heading
     level: 1
@@ -716,17 +489,8 @@ text:
     level: 2
     text: クラス・メソッドなどの範囲でIssueを無効化する
   - kind: para
-    text: /** @suppress PhanUndeclaredConstant */
-  - kind: para
-    text: class C {
-  - kind: para
-    text: function f() { return AWESOME_CONSTANT; }
-  - kind: para
-    text: /** @supress PhanUndeclaredProperty */
-  - kind: para
-    text: function g() { return $this->p; }
-  - kind: para
-    text: '}'
+    text: /** @suppress PhanUndeclaredConstant */class C {function f() { return AWESOME_CONSTANT;
+      }/** @supress PhanUndeclaredProperty */function g() { return $this->p; }}
   p43:
   - kind: heading
     level: 1
@@ -735,21 +499,9 @@ text:
     level: 2
     text: '@template 型変数(ジェネリック)'
   - kind: para
-    text: /** @template T1 */
-  - kind: para
-    text: class Container {
-  - kind: para
-    text: /** @var T1 */
-  - kind: para
-    text: private $value;
-  - kind: para
-    text: public function __construct($value){ $this->value =
-  - kind: para
-    text: $value; }
-  - kind: para
-    text: function getValue() { return $value; }
-  - kind: para
-    text: '}'
+    text: /** @template T1 */class Container {/** @var T1 */private $value;public
+      function __construct($value){ $this->value =$value; }function getValue() { return
+      $value; }}
   p44:
   - kind: heading
     level: 1

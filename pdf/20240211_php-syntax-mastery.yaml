@@ -16,9 +16,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: PHPCon Kansai
-  - kind: para
-    text: 2023-02-08 At Grand Front Osaka
+    text: PHPCon Kansai 2023-02-08 At Grand Front Osaka
   p2:
   - kind: para
     text: お前誰よ
@@ -48,29 +46,21 @@ text:
     text: 今回のお題
   p7:
   - kind: para
-    text: 世はまさに
-  - kind: para
-    text: 静的解析時代！
+    text: 世はまさに静的解析時代！
   p8:
   - kind: para
     text: 静的解析
   - kind: para
-    text: プログラムの性質を
-  - kind: para
-    text: プログラムを実行せずに
+    text: プログラムの性質をプログラムを実行せずに
   - kind: para
     text: 検査する技術の総称
   p9:
   - kind: para
-    text: 2010年～
-  - kind: para
-    text: PhpStormリリース
+    text: 2010年～PhpStormリリース
   p10: []
   p11:
   - kind: para
-    text: 2018年～
-  - kind: para
-    text: PHPStanの普及
+    text: 2018年～PHPStanの普及
   p12: []
   p13:
   - kind: heading
@@ -90,18 +80,10 @@ text:
     text: 利用することもできる
   p14:
   - kind: para
-    text: PHPを正確に
-  - kind: para
-    text: 理解したいと思った
-  - kind: para
-    text: ことはありますか？
+    text: PHPを正確に理解したいと思ったことはありますか？
   p15:
   - kind: para
-    text: PHPを正確に
-  - kind: para
-    text: 理解したいと思った
-  - kind: para
-    text: ことはありますか？
+    text: PHPを正確に理解したいと思ったことはありますか？
   p16:
   - kind: para
     text: 正確じゃない理解
@@ -109,16 +91,12 @@ text:
     text: '#とは'
   p17:
   - kind: para
-    text: ソースコードを
-  - kind: para
-    text: リファクタリングする
+    text: ソースコードをリファクタリングする
   - kind: para
     text: ことを考えましょう
   p18:
   - kind: para
-    text: '例えば:'
-  - kind: para
-    text: クラス名を変更したい
+    text: 例えば:クラス名を変更したい
   p19:
   - kind: para
     text: パッケージ全部ではなく
@@ -138,25 +116,21 @@ text:
     level: 1
     text: シェル芸で一発
   - kind: para
-    text: $ find . -type f -name "*.php" -exec gsed -I \
-  - kind: para
-    text: '''s/Hakone\\\\Runner/Olympic\\\\Athlete/g'' {} +'
+    text: $ find . -type f -name "*.php" -exec gsed -I \'s/Hakone\\\\Runner/Olympic\\\\Athlete/g'
+      {} +
   p21:
   - kind: heading
     level: 2
     text: シェル芸で一発
   - kind: para
-    text: $ find . -type f -name "*.php" -exec gsed -I \
-  - kind: para
-    text: '''s/Hakone\\\\Runner/Olympic\\\\Athlete/g'' {} +'
+    text: $ find . -type f -name "*.php" -exec gsed -I \'s/Hakone\\\\Runner/Olympic\\\\Athlete/g'
+      {} +
   - kind: heading
     level: 1
     text: 完
   p22:
   - kind: para
-    text: …そう簡単には
-  - kind: para
-    text: いきませんよね？
+    text: …そう簡単にはいきませんよね？
   p23:
   - kind: para
     text: なぜ単純に置換してはいけないのか
@@ -174,9 +148,7 @@ text:
     text: クラス名解決
   p25:
   - kind: para
-    text: <?php
-  - kind: para
-    text: namespace Foo;
+    text: <?php namespace Foo;
   - kind: para
     text: $now = new Date();
   - kind: para
@@ -199,13 +171,7 @@ text:
   - kind: para
     text: クラスのインポート
   - kind: para
-    text: <?php
-  - kind: para
-    text: namespace Foo;
-  - kind: para
-    text: use Date;
-  - kind: para
-    text: $now = new Date();
+    text: <?php namespace Foo;use Date;$now = new Date();
   - kind: para
     text: // No errors.
   p28: []
@@ -227,11 +193,7 @@ text:
   - kind: para
     text: 2024年、全PHPerは
   - kind: para
-    text: リファクタリングの
-  - kind: para
-    text: 全フローをPhpStorm
-  - kind: para
-    text: に委ねるしかないのか？
+    text: リファクタリングの全フローをPhpStormに委ねるしかないのか？
   p35:
   - kind: heading
     level: 1
@@ -270,9 +232,7 @@ text:
     - PHP-ParserとPHPStanをベースにカスタムルールを構築できる
     - 単純な構文木を扱えるだけでなく、PHPStanが分析する変数スコープや
   - kind: para
-    text: 型情報にアクセスできるため、(コードに適切な型がついているという前提に
-  - kind: para
-    text: おいて)かなり信頼性の高いリファクタリングが可能
+    text: 型情報にアクセスできるため、(コードに適切な型がついているという前提において)かなり信頼性の高いリファクタリングが可能
   - kind: list
     items:
     - あくまで構文木を扱うツールなので、出力されるコードの細かいスタイルの
@@ -287,9 +247,7 @@ text:
     text: 構文木ってなんだ
   p42:
   - kind: para
-    text: プログラムは
-  - kind: para
-    text: どうやって動くの？
+    text: プログラムはどうやって動くの？
   p43:
   - kind: heading
     level: 1
@@ -304,11 +262,7 @@ text:
     level: 1
     text: 構文解析(parsing)
   - kind: para
-    text: if文
-  - kind: para
-    text: if条件式
-  - kind: para
-    text: ==比較式
+    text: if文if条件式==比較式
   - kind: para
     text: echo文
   p47:
@@ -357,11 +311,7 @@ text:
     level: 1
     text: 構文解析(parsing)
   - kind: para
-    text: if文
-  - kind: para
-    text: if条件式
-  - kind: para
-    text: ==比較式
+    text: if文if条件式==比較式
   - kind: para
     text: echo文
   p52:
@@ -397,9 +347,7 @@ text:
     text: = 文
   p56:
   - kind: para
-    text: PHP構文での
-  - kind: para
-    text: echoとprintの
+    text: PHP構文でのechoとprintの
   - kind: para
     text: 違いは？
   p57:
@@ -458,9 +406,7 @@ text:
     text: スライドここまで
   p67:
   - kind: para
-    text: 隣の世界でも
-  - kind: para
-    text: 構文解析時代の到来
+    text: 隣の世界でも構文解析時代の到来
   p68: []
   p69: []
   p70: []

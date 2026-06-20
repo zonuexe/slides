@@ -16,9 +16,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2022-01-25'
-  - kind: para
-    text: Qiita Night ～PHP～
+    text: 2022-01-25 Qiita Night ～PHP～
   p2:
   - kind: para
     text: お前誰よ
@@ -49,14 +47,10 @@ text:
     text: ジェネリックプログラミング - Wikipedia(2022-05-02T17:30:09の版)より引用
   p10:
   - kind: para
-    text: データ型に
-  - kind: para
-    text: 依存しない…？
+    text: データ型に依存しない…？
   p11:
   - kind: para
-    text: 抽象的かつ
-  - kind: para
-    text: 汎用的…？
+    text: 抽象的かつ汎用的…？
   p12: []
   p13:
   - kind: para
@@ -78,9 +72,7 @@ text:
     - $b = 1 + 2 の結果は int(3)
   p15:
   - kind: para
-    text: 型付けの具体例を
-  - kind: para
-    text: 見ていきましょう
+    text: 型付けの具体例を見ていきましょう
   p16:
   - kind: para
     text: まずはジェネリクスと
@@ -95,41 +87,25 @@ text:
   - kind: para
     text: ＝ mixed
   - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add($a, $b) {return $a + $b;}
   p18:
   - kind: heading
     level: 1
     text: スカラー型宣言(PHP7)
   - kind: para
-    text: int + intって
+    text: int + intって本当にintなの？
   - kind: para
-    text: 本当にintなの？
-  - kind: para
-    text: 'function add(int $a, int $b): int {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p19:
   - kind: heading
     level: 1
     text: 広い値をとるにはfloatが必要
   - kind: para
-    text: ひとつの解決策では
-  - kind: para
-    text: あるが… 不必要にfloat
+    text: ひとつの解決策ではあるが… 不必要にfloat
   - kind: para
     text: を強制するのか
   - kind: para
-    text: 'function add(float $a, float $b): float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p20:
   - kind: heading
     level: 1
@@ -137,31 +113,14 @@ text:
   - kind: para
     text: あえて型宣言を省略する
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p21:
   - kind: heading
     level: 1
     text: ユニオン型宣言 (PHP8.0)
   - kind: para
-    text: 'function add(int|float $a, int|float $b): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p22:
   - kind: heading
     level: 1
@@ -176,29 +135,19 @@ text:
     - 型定義をしない (または mixed)
   p23:
   - kind: para
-    text: かくして世界は
-  - kind: para
-    text: 型の炎に包まれた
+    text: かくして世界は型の炎に包まれた
   p24:
   - kind: para
-    text: だが型なしは
-  - kind: para
-    text: 死滅していなかった
+    text: だが型なしは死滅していなかった
   p25:
   - kind: para
-    text: 別の例を
-  - kind: para
-    text: 考えてみましょう
+    text: 別の例を考えてみましょう
   p26:
   - kind: heading
     level: 1
     text: 配列の先頭要素を返す関数
   - kind: para
-    text: 'function first(array $a, mixed $default): mixed {'
-  - kind: para
-    text: return $a[0] ?? $default;
-  - kind: para
-    text: '}'
+    text: 'function first(array $a, mixed $default): mixed {return $a[0] ?? $default;}'
   - kind: para
     text: $vの型は何？
   - kind: para
@@ -208,11 +157,7 @@ text:
     level: 1
     text: int専用関数をつくろう
   - kind: para
-    text: 'function first_int(array $a): ?int {'
-  - kind: para
-    text: return $a[0] ?? null;
-  - kind: para
-    text: '}'
+    text: 'function first_int(array $a): ?int {return $a[0] ?? null;}'
   - kind: para
     text: $v = first_int([0, 1, 2]) ?? 'default';
   p28:
@@ -220,11 +165,7 @@ text:
     level: 1
     text: string専用関数をつくろう
   - kind: para
-    text: 'function first_string(array $a): ?string'
-  - kind: para
-    text: return $a[0] ?? null;
-  - kind: para
-    text: '}'
+    text: 'function first_string(array $a): ?string return $a[0] ?? null;}'
   - kind: para
     text: $v = first_string(['a', 'b', 'c']) ?? 'default';
   p29:
@@ -232,18 +173,12 @@ text:
     level: 1
     text: DateTime専用関数をつくろう
   - kind: para
-    text: 'function first_DateTime(array $a): ?DateTime'
-  - kind: para
-    text: return $a[0] ?? null;
-  - kind: para
-    text: '}'
+    text: 'function first_DateTime(array $a): ?DateTime return $a[0] ?? null;}'
   - kind: para
     text: $v = first_DataTime([]) ?? 'default';
   p30:
   - kind: para
-    text: 関数量産は
-  - kind: para
-    text: めんどくさい
+    text: 関数量産はめんどくさい
   p31:
   - kind: heading
     level: 1
@@ -251,20 +186,14 @@ text:
   - kind: para
     text: なんでDateTimeとか
   - kind: para
-    text: 'function first(array $a): int|string|DateTime|null {'
-  - kind: para
-    text: return $a[0] ?? $default;
-  - kind: para
-    text: '}'
+    text: 'function first(array $a): int|string|DateTime|null {return $a[0] ?? $default;}'
   - kind: para
     text: 出てくるの？
   - kind: para
     text: $v = first([0, 1, 2], 'default');
   p32:
   - kind: para
-    text: ?DateTimeとか
-  - kind: para
-    text: int|falseくらいなら
+    text: ?DateTimeとかint|falseくらいなら
   - kind: para
     text: 問題ない
   p33:
@@ -274,9 +203,7 @@ text:
     text: PHPDoc
   p34:
   - kind: para
-    text: PHPDocタグ
-  - kind: para
-    text: いくついえるかな
+    text: PHPDocタグいくついえるかな
   p35:
   - kind: heading
     level: 1
@@ -302,21 +229,9 @@ text:
     level: 1
     text: '@template は型変数'
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @template TValue'
-  - kind: para
-    text: '* @template TDefault'
-  - kind: para
-    text: '* @param array<TValue> $a'
-  - kind: para
-    text: '* @param TDefault $default'
-  - kind: para
-    text: '* @return TValue|TDefault'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function first(array $a, mixed $default) {
+    text: /*** @template TValue* @template TDefault* @param array<TValue> $a* @param
+      TDefault $default* @return TValue|TDefault*/function first(array $a, mixed $default)
+      {
   p41: []
   p42: []
   p43:
@@ -329,21 +244,15 @@ text:
   - kind: para
     text: いまは内部型表現の
   - kind: para
-    text: 制約でシンプルな
-  - kind: para
-    text: 型しか付かないが
+    text: 制約でシンプルな型しか付かないが
   p47:
   - kind: para
-    text: そのうち
-  - kind: para
-    text: 万病に効くようになる
+    text: そのうち万病に効くようになる
   p48: []
   p49: []
   p50:
   - kind: para
-    text: テンプレートは
-  - kind: para
-    text: クラスにも書ける
+    text: テンプレートはクラスにも書ける
   p51: []
   p52:
   - kind: para
@@ -353,9 +262,7 @@ text:
   p53: []
   p54:
   - kind: para
-    text: コレクションも
-  - kind: para
-    text: 簡単に定義できる
+    text: コレクションも簡単に定義できる
   p55: []
   p56:
   - kind: heading
@@ -376,38 +283,26 @@ text:
     text: やってない
   p61:
   - kind: para
-    text: 試行錯誤したことが
-  - kind: para
-    text: ない技術が難しいのは
+    text: 試行錯誤したことがない技術が難しいのは
   - kind: para
     text: あたりまえ
   p62:
   - kind: para
-    text: PHPStanは
-  - kind: para
-    text: Webでこねこね
-  - kind: para
-    text: 試行錯誤がやりやすい
+    text: PHPStanはWebでこねこね試行錯誤がやりやすい
   p63:
   - kind: para
-    text: PHPStan
-  - kind: para
-    text: 完全にマスターしよう
+    text: PHPStan完全にマスターしよう
   p64: []
   p65:
   - kind: para
-    text: 今回はひたすら
-  - kind: para
-    text: 実例を詰め込んで
+    text: 今回はひたすら実例を詰め込んで
   - kind: para
     text: 話しました
   p66:
   - kind: para
     text: ジェネリクスの知識は
   - kind: para
-    text: なくても
-  - kind: para
-    text: PHPStanは使える
+    text: なくてもPHPStanは使える
   p67: []
   p68:
   - kind: heading

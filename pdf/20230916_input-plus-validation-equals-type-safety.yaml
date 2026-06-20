@@ -13,9 +13,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2023-09-16'
-  - kind: para
-    text: PHPカンファレンス沖縄2023
+    text: 2023-09-16 PHPカンファレンス沖縄2023
   p2:
   - kind: para
     text: お前誰よ
@@ -47,41 +45,25 @@ text:
     level: 1
     text: 型がついていない関数(PHP5)
   - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add($a, $b) {return $a + $b;}
   p9:
   - kind: heading
     level: 1
     text: スカラー型宣言(PHP7)
   - kind: para
-    text: int + intって
+    text: int + intって本当にintなの？
   - kind: para
-    text: 本当にintなの？
-  - kind: para
-    text: 'function add(int $a, int $b): int {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p10:
   - kind: heading
     level: 1
     text: 広い値をとるにはfloatが必要
   - kind: para
-    text: ひとつの解決策では
-  - kind: para
-    text: あるが… 不必要にfloat
+    text: ひとつの解決策ではあるが… 不必要にfloat
   - kind: para
     text: を強制するのか
   - kind: para
-    text: 'function add(float $a, float $b): float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p11:
   - kind: heading
     level: 1
@@ -89,36 +71,17 @@ text:
   - kind: para
     text: あえて型宣言を省略する
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p12:
   - kind: heading
     level: 1
     text: ユニオン型宣言 (PHP8.0)
   - kind: para
-    text: 'function add(int|float $a, int|float $b): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p13:
   - kind: para
-    text: いたるところに型が
-  - kind: para
-    text: 書けるようになった
+    text: いたるところに型が書けるようになった
   p14:
   - kind: heading
     level: 1
@@ -140,28 +103,20 @@ text:
   p16: []
   p17:
   - kind: para
-    text: 201X年、PHPは
-  - kind: para
-    text: 型の炎に包まれた!!
+    text: 201X年、PHPは型の炎に包まれた!!
   p18:
   - kind: para
-    text: いまやPHPは
-  - kind: para
-    text: 静的型付きと言っても
+    text: いまやPHPは静的型付きと言っても
   - kind: para
     text: 過言ではない
   - kind: para
     text: (本当か…？)
   p19:
   - kind: para
-    text: だが型なしは
-  - kind: para
-    text: 滅びていなかった
+    text: だが型なしは滅びていなかった
   p20:
   - kind: para
-    text: 型なしは
-  - kind: para
-    text: どこからくるの？
+    text: 型なしはどこからくるの？
   p21:
   - kind: heading
     level: 1
@@ -176,9 +131,7 @@ text:
     text: 今回のお題
   p24:
   - kind: para
-    text: みなさんに
-  - kind: para
-    text: 覚えておいて
+    text: みなさんに覚えておいて
   - kind: para
     text: ほしいこと
   p25:
@@ -203,9 +156,7 @@ text:
     text: Escape
   p29:
   - kind: para
-    text: これは気に
-  - kind: para
-    text: しなくていい
+    text: これは気にしなくていい
   - kind: heading
     level: 1
     text: Validation
@@ -217,9 +168,7 @@ text:
     text: Escape
   p30:
   - kind: para
-    text: 自信をもって
-  - kind: para
-    text: 説明できますか？
+    text: 自信をもって説明できますか？
   p31:
   - kind: heading
     level: 1
@@ -231,15 +180,7 @@ text:
     text: ID値をとりたい
   p33:
   - kind: para
-    text: /** IDから記事を取得 */
-  - kind: para
-    text: 'function getById(int $id): Article'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: // 中でデータベースに問い合わせ
-  - kind: para
-    text: '}'
+    text: '/** IDから記事を取得 */function getById(int $id): Article{// 中でデータベースに問い合わせ}'
   p34:
   - kind: para
     text: 実際あぶない
@@ -282,26 +223,16 @@ text:
     text: PDOStatement::fetch()
   p38:
   - kind: para
-    text: // ?id=1
-  - kind: para
-    text: $_GET['id'] === '1';
+    text: // ?id=1$_GET['id'] === '1';
   p39:
   - kind: para
-    text: // ?id=a
-  - kind: para
-    text: $_GET['id'] === 'a';
+    text: // ?id=a$_GET['id'] === 'a';
   p40:
   - kind: para
-    text: // ?id[]=a
-  - kind: para
-    text: $_GET['id'] === ['a'];
+    text: // ?id[]=a$_GET['id'] === ['a'];
   p41:
   - kind: para
-    text: // ?id[foo]=bar
-  - kind: para
-    text: $_GET['id'] ===
-  - kind: para
-    text: '[''foo'' => ''bar''];'
+    text: // ?id[foo]=bar$_GET['id'] ===['foo' => 'bar'];
   p42:
   - kind: para
     text: キャストすれば
@@ -317,33 +248,23 @@ text:
     text: $id = (int)$_GET['id'];
   p44:
   - kind: para
-    text: // ?id=32x
-  - kind: para
-    text: $id = (int)$_GET['id'];
-  - kind: para
-    text: $id === 32;
+    text: // ?id=32x$id = (int)$_GET['id'];$id === 32;
   p45:
   - kind: para
     text: if (is_numeric($_GET['id'])) {
   - kind: para
     text: throw new BadRequestException();
   - kind: para
-    text: '}'
-  - kind: para
-    text: $id = (int)$_GET['id'];
+    text: '}$id = (int)$_GET[''id''];'
   p46:
   - kind: heading
     level: 1
     text: is_numeric()
   p47:
   - kind: para
-    text: 整数 123
+    text: 整数 123小数 1.23
   - kind: para
-    text: 小数 1.23
-  - kind: para
-    text: 指数表記
-  - kind: para
-    text: '1.844674407371E+1'
+    text: 指数表記1.844674407371E+1
   - kind: para
     text: 前後にスペース
   p48:
@@ -353,45 +274,26 @@ text:
     text: 正の整数だけ
   p49:
   - kind: para
-    text: // ?id=1.23
-  - kind: para
-    text: if (is_numeric($_GET['id'])) {
+    text: // ?id=1.23 if (is_numeric($_GET['id'])) {
   - kind: para
     text: throw new BadRequestException();
   - kind: para
-    text: '}'
-  - kind: para
-    text: $id = (int)$_GET['id'];
+    text: '}$id = (int)$_GET[''id''];'
   p50:
   - kind: para
     text: 安全に
   - kind: para
     text: int|false
   - kind: para
-    text: $id = filter_var(
-  - kind: para
-    text: $_GET['id'] ?? '',
-  - kind: para
-    text: FILTER_VALIDATE_INT
-  - kind: para
-    text: );
+    text: $id = filter_var($_GET['id'] ?? '',FILTER_VALIDATE_INT);
   p51:
   - kind: para
     text: 安全に
   - kind: para
     text: int|false
   - kind: para
-    text: $id = filter_var(
-  - kind: para
-    text: $_GET['id'] ?? '',
-  - kind: para
-    text: FILTER_VALIDATE_INT,
-  - kind: para
-    text: '[''options'' => ['
-  - kind: para
-    text: '''min_range'' => 1,'
-  - kind: para
-    text: ']]);'
+    text: $id = filter_var($_GET['id'] ?? '',FILTER_VALIDATE_INT,['options' => ['min_range'
+      => 1,]]);
   p52:
   - kind: heading
     level: 1
@@ -406,9 +308,7 @@ text:
     text: filter_var()
   p54:
   - kind: para
-    text: うまいこと値の
-  - kind: para
-    text: バリデーションできる
+    text: うまいこと値のバリデーションできる
   - kind: para
     text: 標準関数
   p55:
@@ -453,14 +353,10 @@ text:
     - だからfilter関数作ったよ！ サニタイズすれば絶対にXSS起こらない！
   p60:
   - kind: para
-    text: フィルタには
-  - kind: para
-    text: サニタイズ機能もある
+    text: フィルタにはサニタイズ機能もある
   p61:
   - kind: para
-    text: フィルタには
-  - kind: para
-    text: サニタイズ機能もある
+    text: フィルタにはサニタイズ機能もある
   - kind: para
     text: 使わないで！！
   p62:
@@ -481,27 +377,19 @@ text:
     text: 今年書いた記事
   p66:
   - kind: para
-    text: フィルタ関数を
-  - kind: para
-    text: 使えば解決するのか
+    text: フィルタ関数を使えば解決するのか
   p67:
   - kind: heading
     level: 1
     text: 今年書いた記事
   p68:
   - kind: para
-    text: なんだよ
-  - kind: para
-    text: 外部公開してない
-  - kind: para
-    text: ライブラリの自慢かよ
+    text: なんだよ外部公開してないライブラリの自慢かよ
   p69:
   - kind: para
     text: キタカミの里から
   - kind: para
-    text: 帰ってきたら
-  - kind: para
-    text: 公開したい！！
+    text: 帰ってきたら公開したい！！
   p70:
   - kind: para
     text: 対応予定

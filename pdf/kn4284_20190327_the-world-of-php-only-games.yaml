@@ -4,9 +4,7 @@ text:
     level: 1
     text: PHP縛りゲーの世界
   - kind: para
-    text: 第136回 PHP勉強会＠東京
-  - kind: para
-    text: '2019年3月27日 #phpstudy'
+    text: '第136回 PHP勉強会＠東京2019年3月27日 #phpstudy'
   p2:
   - kind: heading
     level: 1
@@ -30,9 +28,7 @@ text:
     text: 宣伝
   p7:
   - kind: para
-    text: 今週末は
-  - kind: para
-    text: PHPerKaigiです
+    text: 今週末はPHPerKaigiです
   p8:
   - kind: para
     text: CIとか静的解析
@@ -40,16 +36,12 @@ text:
     text: の話をします
   p9:
   - kind: para
-    text: チケットを持って
-  - kind: para
-    text: ない人は今すぐ購
+    text: チケットを持ってない人は今すぐ購
   - kind: para
     text: 入
   p10:
   - kind: para
-    text: さて
-  - kind: para
-    text: みなさん
+    text: さてみなさん
   p11:
   - kind: para
     text: プログラミングは
@@ -62,9 +54,7 @@ text:
     text: 楽しいですか？
   p13:
   - kind: para
-    text: もっと楽しくし
-  - kind: para
-    text: たくないですか？
+    text: もっと楽しくしたくないですか？
   p14:
   - kind: para
     text: そうですね
@@ -73,9 +63,7 @@ text:
     text: 制約を課すべし
   p16:
   - kind: para
-    text: ゲームをプレイする際、本来ゲーム側から
-  - kind: para
-    text: は設定されていない制限（縛り）を自ら科
+    text: ゲームをプレイする際、本来ゲーム側からは設定されていない制限（縛り）を自ら科
   - kind: para
     text: す事によって、より難易度の高いゲームを
   - kind: para
@@ -83,9 +71,7 @@ text:
   - kind: para
     text: –ニコニコ大百科
   - kind: para
-    text: https://dic.nicovideo.jp/a/
-  - kind: para
-    text: '%E7%B8%9B%E3%82%8A%E3%83%97%E3%83%AC%E3%82%A4'
+    text: https://dic.nicovideo.jp/a/%E7%B8%9B%E3%82%8A%E3%83%97%E3%83%AC%E3%82%A4
   p17:
   - kind: para
     text: 他言語における
@@ -95,30 +81,16 @@ text:
   - kind: para
     text: セミコロンレスJava
   - kind: para
-    text: 常識的なJavaは、式文の
+    text: 常識的なJavaは、式文の末尾にセミコロン(;)を要求
   - kind: para
-    text: 末尾にセミコロン(;)を要求
-  - kind: para
-    text: ところが、工夫することで ;
-  - kind: para
-    text: の挿入を回避して
-  - kind: para
-    text: コードを書くことが可能
+    text: ところが、工夫することで ;の挿入を回避してコードを書くことが可能
   p19:
   - kind: para
     text: Pythonワンライナー
   - kind: para
-    text: Pythonはインデントベースの
+    text: Pythonはインデントベースの文法(オフサイドルール)を持つため、改行を要求する文法が多い
   - kind: para
-    text: 文法(オフサイドルール)を持
-  - kind: para
-    text: つため、改行を要求する文法
-  - kind: para
-    text: が多い
-  - kind: para
-    text: ……が、さまざまなテクを駆
-  - kind: para
-    text: 使することでこの制約を回避
+    text: ……が、さまざまなテクを駆使することでこの制約を回避
   p20:
   - kind: para
     text: それならPHPは
@@ -126,28 +98,18 @@ text:
   - kind: para
     text: セミコロンレスPHP
   - kind: para
-    text: PHPもJavaと同じく式文の末
+    text: PHPもJavaと同じく式文の末尾にセミコロン(;)を要求する
   - kind: para
-    text: 尾にセミコロン(;)を要求する
-  - kind: para
-    text: だが実はPHPは ?> 直前の ; を
-  - kind: para
-    text: 省略できる
+    text: だが実はPHPは ?> 直前の ; を省略できる
   - kind: para
     text: ?> も禁止することで成立する
   p22:
   - kind: para
     text: ワンライナーPHP
   - kind: para
-    text: PHPは改行が文法的な意味を
+    text: PHPは改行が文法的な意味を(ほぼ)持たず ; で区切って複数の式文を一行に書ける
   - kind: para
-    text: (ほぼ)持たず ; で区切って
-  - kind: para
-    text: 複数の式文を一行に書ける
-  - kind: para
-    text: Pythonと同等の難易度には
-  - kind: para
-    text: ならない
+    text: Pythonと同等の難易度にはならない
   p23:
   - kind: para
     text: どうしよう
@@ -164,13 +126,9 @@ text:
   - kind: para
     text: PHPにおける $ とは
   - kind: para
-    text: 言わずと知れた変数のシンボ
+    text: 言わずと知れた変数のシンボル(sigil)
   - kind: para
-    text: ル(sigil)
-  - kind: para
-    text: おそらくPerlに由来するが、
-  - kind: para
-    text: Perlの意味とはまったく異なる
+    text: おそらくPerlに由来するが、Perlの意味とはまったく異なる
   - kind: para
     text: 実際いろんなところで必須
   p28:
@@ -180,19 +138,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function foo($a, $b) {
+    text: function foo($a, $b) {$name = "hoge"; // 変数代入var_dump($_SERVER); // ← スーパーグローバル変数
   - kind: para
-    text: $name = "hoge"; // 変数代入
-  - kind: para
-    text: var_dump($_SERVER); // ← スーパーグローバル変数
-  - kind: para
-    text: foreach (piyo() as $p) { // ← 省略できない
-  - kind: para
-    text: echo $piyo->$name; // ← 可変プロパティ
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: foreach (piyo() as $p) { // ← 省略できないecho $piyo->$name; // ← 可変プロパティ}}
   p29:
   - kind: para
     text: どうしよう
@@ -201,9 +149,7 @@ text:
     text: (２回め)
   p31:
   - kind: para
-    text: 変数を利用できない＝
-  - kind: para
-    text: 状態の更新ができない
+    text: 変数を利用できない＝状態の更新ができない
   p32:
   - kind: para
     text: 🙃
@@ -228,47 +174,25 @@ text:
     level: 1
     text: PHPにおける $
   - kind: para
-    text: <?php
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
-  - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
-  - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p38:
   - kind: heading
     level: 1
     text: PHPにおける $
   - kind: para
-    text: <?php
-  - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
-  - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
     text: 定数定義 ($不要)
   - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p39:
   - kind: heading
     level: 1
@@ -276,23 +200,12 @@ text:
   - kind: para
     text: 無名関数を起動
   - kind: para
-    text: <?php
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
-  - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
-  - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p40:
   - kind: heading
     level: 1
@@ -300,116 +213,62 @@ text:
   - kind: para
     text: FizzBuzzのロジック
   - kind: para
-    text: <?php
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
-  - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
-  - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p41:
   - kind: heading
     level: 1
     text: PHPにおける $
   - kind: para
-    text: <?php
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
+    text: 100から0になるまで、自分自身の関数を呼び出す
   - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
-  - kind: para
-    text: 100から0になるまで、
-  - kind: para
-    text: 自分自身の関数を呼び出す
-  - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p42:
   - kind: heading
     level: 1
     text: PHPにおける $
   - kind: para
-    text: <?php
-  - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
-  - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
     text: FizzBuzzをプリント
   - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p43:
   - kind: heading
     level: 1
     text: PHPにおける $
   - kind: para
-    text: <?php
-  - kind: para
-    text: const FB = ['FizzBuzz', null, null, 'Fizz', null,
-  - kind: para
-    text: '''Buzz'', ''Fizz'', null, null, ''Fizz'', ''Buzz'', null,'
-  - kind: para
-    text: '''Fizz'', null, null];'
+    text: <?php const FB = ['FizzBuzz', null, null, 'Fizz', null,'Buzz', 'Fizz', null,
+      null, 'Fizz', 'Buzz', null,'Fizz', null, null];
   - kind: para
     text: 引数をとる
   - kind: para
-    text: call_user_func(new class { function __invoke() {
-  - kind: para
-    text: if (func_get_arg(0) -1 )
-  - kind: para
-    text: call_user_func(__METHOD__, func_get_arg(0) - 1);
-  - kind: para
-    text: echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";
-  - kind: para
-    text: '}}, 100);'
+    text: call_user_func(new class { function __invoke() {if (func_get_arg(0) -1 )call_user_func(__METHOD__,
+      func_get_arg(0) - 1);echo FB[func_get_arg(0) % 15] ?? func_get_arg(0), "\n";}},
+      100);
   p44:
   - kind: para
     text: 変数禁止って言ってんのに
   - kind: para
-    text: func_get_arg(0)
-  - kind: para
-    text: 使ってるのずるくね？
+    text: func_get_arg(0)使ってるのずるくね？
   p45:
   - kind: para
-    text: ずるい
-  - kind: para
-    text: とってもずるい
+    text: ずるいとってもずるい
   p46:
   - kind: para
-    text: しかしfunc_get_arg()を
-  - kind: para
-    text: 禁止すると関数が完全に利用不
-  - kind: para
-    text: 能になるので難易度急上昇↑↑
+    text: しかしfunc_get_arg()を禁止すると関数が完全に利用不能になるので難易度急上昇↑↑
   p47:
   - kind: para
     text: 今回は妥協
@@ -442,9 +301,7 @@ text:
   - kind: para
     text: define(), constant()
   - kind: para
-    text: 更新不能のグローバル変数と
-  - kind: para
-    text: して状態を持てるため
+    text: 更新不能のグローバル変数として状態を持てるため
   - kind: para
     text: 禁止する文字を増やす
   - kind: para

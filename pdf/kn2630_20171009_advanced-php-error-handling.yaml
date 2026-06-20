@@ -14,11 +14,7 @@ text:
     text: 'Kamata Tokyo, PiO #phpcon2017'
   p2:
   - kind: para
-    text: 2017年10月8日に開催された
-  - kind: para
-    text: PHPカンファレンスで発表した
-  - kind: para
-    text: 「ここで差がつくエラー処理」の
+    text: 2017年10月8日に開催されたPHPカンファレンスで発表した「ここで差がつくエラー処理」の
   - kind: para
     text: 発表資料を補訂した完全版です
   p3:
@@ -53,21 +49,15 @@ text:
   p10: []
   p11:
   - kind: para
-    text: 本番サービスで
-  - kind: para
-    text: 見せちゃってませんか
+    text: 本番サービスで見せちゃってませんか
   p12: []
   p13:
   - kind: para
-    text: HTML 出力途中で
-  - kind: para
-    text: 落ちたりしませんか
+    text: HTML 出力途中で落ちたりしませんか
   p14: []
   p15:
   - kind: para
-    text: エラーになっても
-  - kind: para
-    text: Webサイトの体裁は
+    text: エラーになってもWebサイトの体裁は
   - kind: para
     text: なんとか保ちたい
   - kind: para
@@ -82,11 +72,7 @@ text:
     text: アジェンダ
   p18:
   - kind: para
-    text: 1. 例外・エラーの種類
-  - kind: para
-    text: 2. 本番環境でのエラー処理
-  - kind: para
-    text: 3. 開発環境でのエラー処理
+    text: 1. 例外・エラーの種類2. 本番環境でのエラー処理3. 開発環境でのエラー処理
   p19:
   - kind: para
     text: 具体的にはこんな話をします
@@ -142,9 +128,7 @@ text:
   - kind: para
     text: エラー・例外とは
   - kind: para
-    text: プログラムが正常ではないときに、
-  - kind: para
-    text: それを通知する仕組み
+    text: プログラムが正常ではないときに、それを通知する仕組み
   - kind: para
     text: PHPではエラーと例外がある
   - kind: para
@@ -153,11 +137,7 @@ text:
     text: PHP7で例外を投げることが増えた
   p24:
   - kind: para
-    text: 1. 例外・エラーの種類
-  - kind: para
-    text: 2. 本番環境でのエラー処理
-  - kind: para
-    text: 3. 開発環境でのエラー処理
+    text: 1. 例外・エラーの種類2. 本番環境でのエラー処理3. 開発環境でのエラー処理
   p25:
   - kind: para
     text: エラー
@@ -165,13 +145,9 @@ text:
   - kind: para
     text: エラー
   - kind: para
-    text: 従来のPHPで異常状態を通知する
+    text: 従来のPHPで異常状態を通知するための仕組み
   - kind: para
-    text: ための仕組み
-  - kind: para
-    text: 関数呼び出し、未定義変数の参照
-  - kind: para
-    text: 結構いろんなところで発生する
+    text: 関数呼び出し、未定義変数の参照結構いろんなところで発生する
   - kind: para
     text: PHP7で種類が整理された
   p27:
@@ -193,15 +169,11 @@ text:
   - kind: para
     text: Notice
   - kind: para
-    text: 配列の未定義位置から値を取り出
-  - kind: para
-    text: そうとしたときなどに発生する
+    text: 配列の未定義位置から値を取り出そうとしたときなどに発生する
   - kind: para
     text: 信号無視みたいな軽犯罪
   - kind: para
-    text: ただしバグの温床になるので、
-  - kind: para
-    text: 無視せずきちんと対処を強く推奨
+    text: ただしバグの温床になるので、無視せずきちんと対処を強く推奨
   p29:
   - kind: heading
     level: 1
@@ -218,13 +190,9 @@ text:
   - kind: para
     text: 何かが「間違ってる」ときに発生
   - kind: para
-    text: デフォルトの挙動ではWarningで
+    text: デフォルトの挙動ではWarningでは停止せずに進む
   - kind: para
-    text: は停止せずに進む
-  - kind: para
-    text: 一貫性がないが、どちらも異常状
-  - kind: para
-    text: 態なので無視せず直した方がよい
+    text: 一貫性がないが、どちらも異常状態なので無視せず直した方がよい
   p31:
   - kind: heading
     level: 1
@@ -257,15 +225,9 @@ text:
     level: 1
     text: Deprecated, Strictの例(一部)
   - kind: para
-    text: class Hoge {
+    text: class Hoge {/** 古いスタイルのコンストラクタ */
   - kind: para
-    text: /** 古いスタイルのコンストラクタ */
-  - kind: para
-    text: function Hoge() {
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: function Hoge() {}}
   p34:
   - kind: heading
     level: 1
@@ -273,9 +235,7 @@ text:
   - kind: para
     text: //** PHP5.3でDeprecatedエラー、7で削除
   - kind: para
-    text: $a = split(',', '1,2,3');
-  - kind: para
-    text: // エラー抑制演算子、通称なると
+    text: $a = split(',', '1,2,3');// エラー抑制演算子、通称なると
   - kind: para
     text: // エラーを握り潰せるべんりで危険なやつ
   - kind: para
@@ -286,9 +246,7 @@ text:
   - kind: para
     text: これ以上は続行できないエラー
   - kind: para
-    text: 同名のクラスや関数を
-  - kind: para
-    text: 多重定義しようとしたとき
+    text: 同名のクラスや関数を多重定義しようとしたとき
   - kind: para
     text: ファイルをrequireできなかったとき
   - kind: para
@@ -302,17 +260,9 @@ text:
   - kind: para
     text: // タイミングが異なるコード
   - kind: para
-    text: $i = mt_rand(1, 2);
+    text: $i = mt_rand(1, 2);echo $i;if ($i === 1) {// 数値と配列は加算できない
   - kind: para
-    text: echo $i;
-  - kind: para
-    text: if ($i === 1) {
-  - kind: para
-    text: // 数値と配列は加算できない
-  - kind: para
-    text: $x = 1 + [];
-  - kind: para
-    text: '}'
+    text: $x = 1 + [];}
   p37:
   - kind: heading
     level: 1
@@ -324,24 +274,12 @@ text:
   - kind: para
     text: 'PHP7: 何も出力されずFatal'
   - kind: para
-    text: 'それ以外: 「1」とFatal'
+    text: 'それ以外: 「1」とFatalまたは「2」のみ'
   - kind: para
-    text: または「2」のみ
-  - kind: para
-    text: $i = mt_rand(1, 2);
-  - kind: para
-    text: echo $i;
-  - kind: para
-    text: if ($i === 1) {
-  - kind: para
-    text: $x = 1 + [];
-  - kind: para
-    text: '}'
+    text: $i = mt_rand(1, 2);echo $i;if ($i === 1) {$x = 1 + [];}
   p38:
   - kind: para
-    text: PHP7は賢いので、実際に
-  - kind: para
-    text: 実行されることがなくても
+    text: PHP7は賢いので、実際に実行されることがなくても
   - kind: para
     text: (絶対実行されないifの中だろうと)
   - kind: para
@@ -366,49 +304,29 @@ text:
   - kind: para
     text: 例外オブジェクト
   - kind: para
-    text: PHP5ではExceptionまたは、
+    text: PHP5ではExceptionまたは、Exceptionを継承したクラス
   - kind: para
-    text: Exceptionを継承したクラス
-  - kind: para
-    text: PHP7ではThrowableインターフェ
-  - kind: para
-    text: イスと、Exceptionを継承しない
-  - kind: para
-    text: Errorとその派生クラスが追加
+    text: PHP7ではThrowableインターフェイスと、Exceptionを継承しないErrorとその派生クラスが追加
   - kind: para
     text: 便宜上まとめて「例外」と呼ぶ
   p42:
   - kind: para
     text: ErrorとエラーとE_ERROR
   - kind: para
-    text: PHP5系でエラーが発生したものが、
+    text: PHP5系でエラーが発生したものが、7系では例外(Errorクラス)をthrowするように徐々に移行
   - kind: para
-    text: 7系では例外(Errorクラス)を
-  - kind: para
-    text: throwするように徐々に移行
-  - kind: para
-    text: すべての移行されたわけではなく、
-  - kind: para
-    text: まだエラーと例外の概念を両方
-  - kind: para
-    text: 知っておく必要がある
+    text: すべての移行されたわけではなく、まだエラーと例外の概念を両方知っておく必要がある
   - kind: para
     text: E_ERRORレベルのエラー…ややこしい
   p43:
   - kind: para
-    text: エラー
-  - kind: para
-    text: ハンドリング
+    text: エラーハンドリング
   p44:
   - kind: heading
     level: 1
     text: 伝統的なエラー処理手法
   - kind: para
-    text: // MySQLに接続失敗したら異常終了
-  - kind: para
-    text: $db = mysql_connect() or die("接続に失敗しまし
-  - kind: para
-    text: た");
+    text: // MySQLに接続失敗したら異常終了$db = mysql_connect() or die("接続に失敗しました");
   - kind: heading
     level: 2
     text: die() は exit() と同じ意味
@@ -422,23 +340,13 @@ text:
   - kind: para
     text: せめて例外に
   - kind: para
-    text: if (do_something() === false) {
+    text: if (do_something() === false) {throw new FooException('do_something() が失敗した');}
   - kind: para
-    text: throw new FooException('do_something() が失敗した');
+    text: 現在実行中の処理を中断して、try…catch まで遡る
   - kind: para
-    text: '}'
+    text: catchできなかったら、そこでおとなしく野垂れ死ぬしかない…?
   - kind: para
-    text: 現在実行中の処理を中断して、
-  - kind: para
-    text: try…catch まで遡る
-  - kind: para
-    text: catchできなかったら、そこで
-  - kind: para
-    text: おとなしく野垂れ死ぬしかない…?
-  - kind: para
-    text: ただちに終了されないので、
-  - kind: para
-    text: まだ挽回の余地がある
+    text: ただちに終了されないので、まだ挽回の余地がある
   p46:
   - kind: para
     text: エラーハンドリング
@@ -465,9 +373,7 @@ text:
   - kind: para
     text: せめてログだけでも…
   - kind: para
-    text: なんとか共通ナビゲーションと
-  - kind: para
-    text: ロゴだけは表示してほしい…
+    text: なんとか共通ナビゲーションとロゴだけは表示してほしい…
   p49:
   - kind: para
     text: 我々に三回のチャンスがある
@@ -483,9 +389,7 @@ text:
   - kind: para
     text: 「出力するエラーの種類を設定する」
   - kind: para
-    text: どのエラーレベルに対応するか
-  - kind: para
-    text: ビットフラグで設定する
+    text: どのエラーレベルに対応するかビットフラグで設定する
   - kind: para
     text: 引数なしで呼ぶと現在の値を返す
   - kind: para
@@ -495,49 +399,27 @@ text:
     level: 1
     text: error_reporting() 設定方法
   - kind: para
-    text: // 無視できるもの全部無視
+    text: // 無視できるもの全部無視error_reporting(0);// 全部のエラーを捕捉する
   - kind: para
-    text: error_reporting(0);
+    text: error_reporting(E_ALL);error_reporting(E_ALL | E_STRICT); // PHP 5.3以下//
+      Noticeのみ無視
   - kind: para
-    text: // 全部のエラーを捕捉する
-  - kind: para
-    text: error_reporting(E_ALL);
-  - kind: para
-    text: error_reporting(E_ALL | E_STRICT); // PHP 5.3以下
-  - kind: para
-    text: // Noticeのみ無視
-  - kind: para
-    text: error_reporting(E_ALL & ~E_NOTICE);
-  - kind: para
-    text: // NoticeとDeprecatedを無視
-  - kind: para
-    text: error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+    text: error_reporting(E_ALL & ~E_NOTICE);// NoticeとDeprecatedを無視error_reporting(E_ALL
+      & ~E_NOTICE & ~E_DEPRECATED);
   p52:
   - kind: para
     text: set_error_handler()
   - kind: para
-    text: エラーが発生したときに、
+    text: エラーが発生したときに、set_error_hanlder() に登録した関数が呼ばれる
   - kind: para
-    text: set_error_hanlder() に登録した
-  - kind: para
-    text: 関数が呼ばれる
-  - kind: para
-    text: エラーに応じて処理を続行させる
-  - kind: para
-    text: こともできるし終了させてもいい
+    text: エラーに応じて処理を続行させることもできるし終了させてもいい
   - kind: para
     text: Fatal errorは捕捉できない！
   p53:
   - kind: para
     text: set_exception_handler()
   - kind: para
-    text: 例外がtry-catchでも捕捉されな
-  - kind: para
-    text: かったときに、
-  - kind: para
-    text: set_exception_hanlder() に
-  - kind: para
-    text: 登録した関数が呼ばれる
+    text: 例外がtry-catchでも捕捉されなかったときに、set_exception_hanlder() に登録した関数が呼ばれる
   - kind: para
     text: 関数が実行された後は停止する
   - kind: para
@@ -546,15 +428,9 @@ text:
   - kind: para
     text: register_shutdown_function()
   - kind: para
-    text: PHPスクリプト終了時に必ず
+    text: PHPスクリプト終了時に必ず呼ばれる関数を登録する
   - kind: para
-    text: 呼ばれる関数を登録する
-  - kind: para
-    text: set_error_handler()に来ない
-  - kind: para
-    text: Fatal Error(致命的エラー)を
-  - kind: para
-    text: 捕捉してロギングできるチャンス
+    text: set_error_handler()に来ないFatal Error(致命的エラー)を捕捉してロギングできるチャンス
   - kind: para
     text: 最後のエメラルドスプラッシュ
   p55:
@@ -566,13 +442,9 @@ text:
   - kind: para
     text: デフォルトのエラー出力を切る
   - kind: para
-    text: エラーは例外に変換して、
+    text: エラーは例外に変換して、未捕捉の例外とまとめて処理する
   - kind: para
-    text: 未捕捉の例外とまとめて処理する
-  - kind: para
-    text: 処理すべきエラーかどうかの判定
-  - kind: para
-    text: にerror_reporting()を利用する
+    text: 処理すべきエラーかどうかの判定にerror_reporting()を利用する
   p57:
   - kind: para
     text: デフォルトのエラー出力
@@ -592,69 +464,35 @@ text:
   - kind: para
     text: // 例外をハンドリング
   - kind: para
-    text: set_exception_handler(function ($e){
+    text: set_exception_handler(function ($e){// 例外をログに記録
   - kind: para
-    text: // 例外をログに記録
+    text: YourApp::logException($e);// エラー時の画面を表示
   - kind: para
-    text: YourApp::logException($e);
-  - kind: para
-    text: // エラー時の画面を表示
-  - kind: para
-    text: YourApp::displayErrorPage($e);
-  - kind: para
-    text: '});'
+    text: YourApp::displayErrorPage($e);});
   p60:
   - kind: para
     text: エラー抑制とerror_reporting
   - kind: para
-    text: ＠(エラー抑制演算子)は一時的に
+    text: ＠(エラー抑制演算子)は一時的にerror_reporting(0)に設定して処理を実行するだけ
   - kind: para
-    text: error_reporting(0)に設定して
-  - kind: para
-    text: 処理を実行するだけ
-  - kind: para
-    text: 独自設定したエラーハンドラが
-  - kind: para
-    text: error_reporting()を考慮してくれ
-  - kind: para
-    text: ないと、エラーが握り潰されない
+    text: 独自設定したエラーハンドラがerror_reporting()を考慮してくれないと、エラーが握り潰されない
   p61:
   - kind: heading
     level: 1
     text: set_error_handler() 設定方法
   - kind: para
-    text: set_error_handler('my_error_handler');
+    text: set_error_handler('my_error_handler');function my_error_handler ($level,
+      $message, $file = null, $line = null) {// エラーレベルのAND(ビット積)をとる
   - kind: para
-    text: function my_error_handler (
-  - kind: para
-    text: $level, $message, $file = null, $line = null) {
-  - kind: para
-    text: // エラーレベルのAND(ビット積)をとる
-  - kind: para
-    text: if (error_reporting() & $level > 0) {
-  - kind: para
-    text: throw new ErrorException(
-  - kind: para
-    text: $message, 0, $level, $file, $line);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: if (error_reporting() & $level > 0) {throw new ErrorException($message,
+      0, $level, $file, $line);}}
   p62:
   - kind: para
     text: error_reporting()
   - kind: para
-    text: error_reporting()で設定した
+    text: error_reporting()で設定したエラーレベルはデフォルトのエラーハンドラで利用される
   - kind: para
-    text: エラーレベルはデフォルトの
-  - kind: para
-    text: エラーハンドラで利用される
-  - kind: para
-    text: 自作のエラーハンドラを設定する
-  - kind: para
-    text: ときは、error_reporting()を
-  - kind: para
-    text: 考慮して実装しなければならない
+    text: 自作のエラーハンドラを設定するときは、error_reporting()を考慮して実装しなければならない
   - kind: para
     text: 実際グローバル変数みたいなもの
   p63:
@@ -662,42 +500,25 @@ text:
     level: 1
     text: register_shutdown_function() 設定方法
   - kind: para
-    text: register_shutdown_function(function(){
-  - kind: para
-    text: if (empty($error = error_get_last())) return;
-  - kind: para
-    text: // エラーハンドラーで捕捉できないエラーを判定
+    text: register_shutdown_function(function(){if (empty($error = error_get_last()))
+      return;// エラーハンドラーで捕捉できないエラーを判定
   - kind: para
     text: $fatal = E_ERROR | E_PARSE | E_COMPILE_WARNING
   - kind: para
-    text: '| E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR;'
-  - kind: para
-    text: if (($error['level'] & $fatal_errors) > 0) {
-  - kind: para
-    text: $e = new ErrorException($error['message'], 0,
-  - kind: para
-    text: $error['type'], $error['file'], $error['line']);
-  - kind: para
-    text: my_error_handler($e);
-  - kind: para
-    text: '}'
+    text: '| E_CORE_ERROR|E_CORE_WARNING|E_COMPILE_ERROR;if (($error[''level''] &
+      $fatal_errors) > 0) {$e = new ErrorException($error[''message''], 0,$error[''type''],
+      $error[''file''], $error[''line'']);my_error_handler($e);}'
   - kind: para
     text: '})；'
   p64:
   - kind: para
     text: 例外のロギング
   - kind: para
-    text: PHPの標準機能error_log()は、
-  - kind: para
-    text: ちょっと弱い
+    text: PHPの標準機能error_log()は、ちょっと弱い
   - kind: para
     text: rollbar, faultlineなどに送る
   - kind: para
-    text: pixivの場合は例外情報をバックト
-  - kind: para
-    text: レースも含めてJSONエンコードし
-  - kind: para
-    text: てファイルに追記、Fluentdで収集
+    text: pixivの場合は例外情報をバックトレースも含めてJSONエンコードしてファイルに追記、Fluentdで収集
   p65:
   - kind: para
     text: http://k1low.hatenablog.com/entry/2017/06/13/083000
@@ -712,43 +533,25 @@ text:
   - kind: para
     text: '例: 本番ではDeprecatedを無視'
   - kind: para
-    text: ただしプロジェクト全体にNotice
+    text: ただしプロジェクト全体にNotice発生箇所が多い場合は無理しない
   - kind: para
-    text: 発生箇所が多い場合は無理しない
-  - kind: para
-    text: 一気にリファクタリングしようと
-  - kind: para
-    text: してエンバグする方がずっと怖い
+    text: 一気にリファクタリングしようとしてエンバグする方がずっと怖い
   p68:
   - kind: para
     text: エラー設定は初期化処理で実行する
   - kind: para
-    text: error_reportingはphp.iniでも
+    text: error_reportingはphp.iniでも設定可能だが、PHPで明示的に設定すれば環境依存がなくなる
   - kind: para
-    text: 設定可能だが、PHPで明示的に
-  - kind: para
-    text: 設定すれば環境依存がなくなる
-  - kind: para
-    text: 深いところで仕方なく変更する
-  - kind: para
-    text: 必要に迫られたときは、小さな
-  - kind: para
-    text: スコープで変更してすぐに戻す
+    text: 深いところで仕方なく変更する必要に迫られたときは、小さなスコープで変更してすぐに戻す
   p69:
   - kind: para
     text: 段階的にエラーレベルを上げる
   - kind: para
-    text: pixivの開発時にもまだNoticeが
+    text: pixivの開発時にもまだNoticeが発生する箇所が残ってる…
   - kind: para
-    text: 発生する箇所が残ってる…
+    text: やむを得ず変更する際は浅い位置(例:コントローラ)で設定する
   - kind: para
-    text: やむを得ず変更する際は浅い位置
-  - kind: para
-    text: (例:コントローラ)で設定する
-  - kind: para
-    text: Deprecatedはユニットテストで
-  - kind: para
-    text: 追い詰めていく
+    text: Deprecatedはユニットテストで追い詰めていく
   p70:
   - kind: heading
     level: 1
@@ -772,51 +575,20 @@ text:
     level: 1
     text: べんりヘルパー関数
   - kind: para
-    text: /**
+    text: /*** 開発時のみエラーレベルを最大に上げる
   - kind: para
-    text: '* 開発時のみエラーレベルを最大に上げる'
+    text: '** 本番(運用環境)には影響しない*/'
   - kind: para
-    text: '*'
-  - kind: para
-    text: '* 本番(運用環境)には影響しない'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function setErrorReportingAll() {
-  - kind: para
-    text: if (is_development()) {
-  - kind: para
-    text: error_reporting(E_ALL);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: function setErrorReportingAll() {if (is_development()) {error_reporting(E_ALL);}}
   p72:
   - kind: heading
     level: 1
     text: 深いところで一時的にエラーレベルを変更
   - kind: para
-    text: /** mcryptは7.1で非推奨、7.2で削除予定 */
+    text: /** mcryptは7.1で非推奨、7.2で削除予定 */function mcrypt_wrapper($text) {$err = error_reporting();error_reporting(E_ALL
+      & ~E_DEPRECATED);try {// mcryptを使った処理
   - kind: para
-    text: function mcrypt_wrapper($text) {
-  - kind: para
-    text: $err = error_reporting();
-  - kind: para
-    text: error_reporting(E_ALL & ~E_DEPRECATED);
-  - kind: para
-    text: try {
-  - kind: para
-    text: // mcryptを使った処理
-  - kind: para
-    text: '} finally {'
-  - kind: para
-    text: error_reporting($err);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: return $result;
-  - kind: para
-    text: '}'
+    text: '} finally {error_reporting($err);}return $result;}'
   p73:
   - kind: heading
     level: 1
@@ -824,25 +596,9 @@ text:
   - kind: para
     text: /** なんかエラー吐きまくる古いSDKのラッパー */
   - kind: para
-    text: function hoge_legacy_wrapper($text) {
-  - kind: para
-    text: $err = error_reporting();
-  - kind: para
-    text: error_reporting(E_ALL &~E_NOTICE & ~E_DEPRECATED);
-  - kind: para
-    text: try {
-  - kind: para
-    text: $result = \Hoge\Legacy\SDK::proc();
-  - kind: para
-    text: '} finally {'
-  - kind: para
-    text: error_reporting($err);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: return $result;
-  - kind: para
-    text: '}'
+    text: function hoge_legacy_wrapper($text) {$err = error_reporting();error_reporting(E_ALL
+      &~E_NOTICE & ~E_DEPRECATED);try {$result = \Hoge\Legacy\SDK::proc();} finally
+      {error_reporting($err);}return $result;}
   p74:
   - kind: para
     text: whoops!
@@ -854,46 +610,26 @@ text:
   - kind: para
     text: エラー処理用フレームワーク
   - kind: para
-    text: set_exception_handler()は
-  - kind: para
-    text: ひとつしかハンドラを登録できな
-  - kind: para
-    text: いが、whoopsは複数登録できる
+    text: set_exception_handler()はひとつしかハンドラを登録できないが、whoopsは複数登録できる
   p76: []
   p77:
   - kind: para
     text: whoops! ハンドラー
   - kind: para
-    text: ハンドラー(関数)は複数登録できる
+    text: ハンドラー(関数)は複数登録できるスタック (FIFO, 後入れ先出し)
   - kind: para
-    text: スタック (FIFO, 後入れ先出し)
+    text: ロギング・デバッグだけでなくエラー画面の表示にも利用できる
   - kind: para
-    text: ロギング・デバッグだけでなく
-  - kind: para
-    text: エラー画面の表示にも利用できる
-  - kind: para
-    text: WEB+DB Press Vol.96サンプルに
-  - kind: para
-    text: whoopsを使った設定例書きました
+    text: WEB+DB Press Vol.96サンプルにwhoopsを使った設定例書きました
   - kind: para
     text: http://gihyo.jp/magazine/wdpress/archive/2017/vol96
   p78:
   - kind: para
     text: whoops! 注意点
   - kind: para
-    text: PrettyPageHandlerはべんりだが
+    text: PrettyPageHandlerはべんりだがもし本番環境で有効化されてしまうと脆弱性や情報漏洩の原因にすらなりかねない
   - kind: para
-    text: もし本番環境で有効化されてしま
-  - kind: para
-    text: うと脆弱性や情報漏洩の原因にす
-  - kind: para
-    text: らなりかねない
-  - kind: para
-    text: 設定に自信がなければ、単に
-  - kind: para
-    text: 開発環境用のカッコイイエラー
-  - kind: para
-    text: 画面として割り切るのが安全
+    text: 設定に自信がなければ、単に開発環境用のカッコイイエラー画面として割り切るのが安全
   p79:
   - kind: heading
     level: 1
@@ -901,19 +637,8 @@ text:
   - kind: para
     text: // 開発時のみWhoopsを有効化する場合
   - kind: para
-    text: if (is_development()) {
-  - kind: para
-    text: $handler = (PHP_SAPI === 'cli')
-  - kind: para
-    text: '? new \Whoops\Handler\PlainTextHandler'
-  - kind: para
-    text: ': new \Whoops\Handler\PrettyPageHandler;'
-  - kind: para
-    text: $whoops = new \Whoops\Run;
-  - kind: para
-    text: $whoops->register();
-  - kind: para
-    text: '}'
+    text: 'if (is_development()) {$handler = (PHP_SAPI === ''cli'')? new \Whoops\Handler\PlainTextHandler:
+      new \Whoops\Handler\PrettyPageHandler;$whoops = new \Whoops\Run;$whoops->register();}'
   p80:
   - kind: para
     text: 落穂
@@ -921,46 +646,27 @@ text:
   - kind: para
     text: エラーレベルとビットフラグ
   - kind: para
-    text: エラー発生時のレベルと
+    text: エラー発生時のレベルとerror_reporting()はビットフラグ
   - kind: para
-    text: error_reporting()はビットフラグ
+    text: E_ALLは全種類のエラーのフラグを立てた状態
   - kind: para
-    text: E_ALLは全種類のエラーの
-  - kind: para
-    text: フラグを立てた状態
-  - kind: para
-    text: E_ALL & ~E_NOTICEのように
-  - kind: para
-    text: 反転してビット積をとるのが簡単
+    text: E_ALL & ~E_NOTICEのように反転してビット積をとるのが簡単
   p82:
   - kind: heading
     level: 1
     text: ビットフラグの確認方法
   - kind: para
-    text: printf('%015b', E_ALL);
-  - kind: para
-    text: // => "111111111111111"
-  - kind: para
-    text: printf('%015b', E_DEPRECATED);
-  - kind: para
-    text: // => "010000000000000"
-  - kind: para
-    text: printf('%015b', E_ALL & ~E_DEPRECATED);
-  - kind: para
-    text: // => "101111111111111"
+    text: printf('%015b', E_ALL);// => "111111111111111"printf('%015b', E_DEPRECATED);//
+      => "010000000000000"printf('%015b', E_ALL & ~E_DEPRECATED);// => "101111111111111"
   p83:
   - kind: para
     text: trigger_error()
   - kind: para
     text: エラーを意図的に発生させる
   - kind: para
-    text: ただし全てのエラーを発生させら
+    text: ただし全てのエラーを発生させられるわけではなくE_USER_系のみ
   - kind: para
-    text: れるわけではなくE_USER_系のみ
-  - kind: para
-    text: 今日エラーはあまり考慮されてな
-  - kind: para
-    text: いので、役立たないかも…
+    text: 今日エラーはあまり考慮されてないので、役立たないかも…
   - kind: para
     text: USERの有無は別のエラーなので
   p84:
@@ -968,57 +674,27 @@ text:
     level: 1
     text: trigger_error利用例
   - kind: para
-    text: // 関数をリネームしたいとき
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @deprecated {@see grant()} を使ってください'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function credential(array $data){
-  - kind: para
-    text: $msg = 'credential() is obsolete function. Use
-  - kind: para
-    text: grant() instead.';
-  - kind: para
-    text: trigger_error($msg, E_USER_DEPRECATED);
-  - kind: para
-    text: return grant($data);
-  - kind: para
-    text: '}'
+    text: // 関数をリネームしたいとき/*** @deprecated {@see grant()} を使ってください*/function credential(array
+      $data){$msg = 'credential() is obsolete function. Use grant() instead.';trigger_error($msg,
+      E_USER_DEPRECATED);return grant($data);}
   p85:
   - kind: para
     text: もうひとつのエラーハンドリング
   - kind: para
-    text: set_exception_handler()を使った
+    text: set_exception_handler()を使ったハンドリングは…実際(説明)難しい
   - kind: para
-    text: ハンドリングは…実際(説明)難しい
+    text: 細かなエラーハンドリングはtry-catchを使った方がやりやすい
   - kind: para
-    text: 細かなエラーハンドリングは
-  - kind: para
-    text: try-catchを使った方がやりやすい
-  - kind: para
-    text: エラーの仕組み(このセッションで説明
-  - kind: para
-    text: した内容！)よりは把握しやすい
+    text: エラーの仕組み(このセッションで説明した内容！)よりは把握しやすい
   - kind: para
     text: https://gist.github.com/zonuexe/577d089815e241d5da26
   p86:
   - kind: para
     text: pixivの場合 (AppRunnerパターン)
   - kind: para
-    text: アプリケーション(PC版, スマートフォン版,
+    text: アプリケーション(PC版, スマートフォン版,etc...)ごとにAppRunner(社内用語)と呼ばれるクラスを定義する
   - kind: para
-    text: etc...)ごとにAppRunner(社内用語)と
-  - kind: para
-    text: 呼ばれるクラスを定義する
-  - kind: para
-    text: 例外の種類ごとにcatchして、
-  - kind: para
-    text: 適切な処理(ロギング・エラー表示)
-  - kind: para
-    text: などをする
+    text: 例外の種類ごとにcatchして、適切な処理(ロギング・エラー表示)などをする
   - kind: para
     text: http://inside.pixiv.net/entry/2015/12/18/210721
   p87:
@@ -1031,9 +707,7 @@ text:
   - kind: para
     text: クエリパラメータの異常入力
   - kind: para
-    text: それらのアプリケーションの
-  - kind: para
-    text: 事情に沿ってロギングする
+    text: それらのアプリケーションの事情に沿ってロギングする
   p88:
   - kind: para
     text: 参考資料
@@ -1064,19 +738,11 @@ text:
     level: 1
     text: 参考(にすると良い)資料
   - kind: para
-    text: PHPのエラーと例外再入門
+    text: PHPのエラーと例外再入門by Hiraku NAKANO
   - kind: para
-    text: by Hiraku NAKANO
+    text: https://speakerdeck.com/hirak/php-error-and-exception
   - kind: para
-    text: https://speakerdeck.com/hirak/php-error-and-
-  - kind: para
-    text: exception
-  - kind: para
-    text: faultline/faultline-phpによるサーバ
-  - kind: para
-    text: 管理不要なエラートラッキングとその
-  - kind: para
-    text: 効果 by Ken'ichiro Oyama
+    text: faultline/faultline-phpによるサーバ管理不要なエラートラッキングとその効果 by Ken'ichiro Oyama
   - kind: para
     text: http://k1low.hatenablog.com/entry/2017/06/13/083000
   p91:
@@ -1085,9 +751,7 @@ text:
   - kind: para
     text: (ピクシブ株式会社 Advent Calendar 2015)
   - kind: para
-    text: 健全なpixivは健康なPHPに宿る〜
-  - kind: para
-    text: モダンPHPを保つ7つの鍵
+    text: 健全なpixivは健康なPHPに宿る〜モダンPHPを保つ7つの鍵
   - kind: para
     text: http://inside.pixiv.net/entry/2015/12/18/210721
   - kind: para
@@ -1103,13 +767,9 @@ text:
   - kind: para
     text: 知っておくとためにはなる…かも
   - kind: para
-    text: でも完全に理解してないといけな
+    text: でも完全に理解してないといけないわけではない
   - kind: para
-    text: いわけではない
-  - kind: para
-    text: とは言っても社内で誰かが知って
-  - kind: para
-    text: おかないと困ることではある
+    text: とは言っても社内で誰かが知っておかないと困ることではある
   - kind: para
     text: 「Noticeを潰せ」だけ周知したい
   p94: []
@@ -1125,9 +785,7 @@ text:
     text: 興味があるひとも
   p97:
   - kind: para
-    text: 今回の内容がいまいち
-  - kind: para
-    text: ぴんと来なくても大丈夫
+    text: 今回の内容がいまいちぴんと来なくても大丈夫
   p98:
   - kind: para
     text: PHP, JavaScript, Ruby,
@@ -1146,9 +804,7 @@ text:
   - kind: para
     text: Twitter @tadsan宛
   - kind: para
-    text: または
-  - kind: para
-    text: recruit.pixiv.net
+    text: またはrecruit.pixiv.net
   p101:
   - kind: heading
     level: 1
@@ -1163,53 +819,10 @@ text:
     level: 2
     text: Rounded M+ 2p
   - kind: para
-    text: ＿
-  - kind: para
-    text: ＼ヽ, ,、
-  - kind: para
-    text: '`''''|/ﾉ'
-  - kind: para
-    text: .|
-  - kind: para
-    text: ＿ |
-  - kind: para
-    text: ＼｀ヽ、|
-  - kind: para
-    text: ＼, V
-  - kind: para
-    text: '`L,,_'
-  - kind: para
-    text: '|ヽ､)'
-  - kind: para
-    text: .|
-  - kind: para
-    text: / ,､
-  - kind: para
-    text: / ヽYﾉ
-  - kind: para
-    text: .| r''ヽ、.|
-  - kind: para
-    text: '| `ｰ-ヽ|ヮ'
-  - kind: para
-    text: '| `|'
-  - kind: para
-    text: ヽ, ,r .|
-  - kind: para
-    text: ヽ,r'''ヽ!'-‐'''''ヽ､ﾉ
-  - kind: para
-    text: ',,,..---r''",r, , 、`ヽ､ ヾ'
-  - kind: para
-    text: ヽ､__/ ./ﾊﾚﾊ i`ヽ、 `''r`ミ_
-  - kind: para
-    text: .ﾚ//r,,,､ ﾚ'ﾚﾊヾ, L,,_ `ヽ、
-  - kind: para
-    text: '"ﾚ, l;;;l l;;;l`i.ﾘﾚ'' ﾘ￣~~'
-  - kind: para
-    text: ヽ､ ワ `"／-'`'`'
-  - kind: para
-    text: '`''''''''''''''''" ┼ヽ -|r‐､. ﾚ |'
-  - kind: para
-    text: ｄ⌒) ./| _ﾉ __ﾉ
+    text: ＿＼ヽ, ,、`''|/ﾉ.|＿ |＼｀ヽ、|＼, V`L,,_|ヽ､).|/ ,､/ ヽYﾉ.| r''ヽ、.|| `ｰ-ヽ|ヮ| `|ヽ,
+      ,r .|ヽ,r'''ヽ!'-‐'''''ヽ､ﾉ,,,..---r'",r, , 、`ヽ､ ヾヽ､__/ ./ﾊﾚﾊ i`ヽ、 `''r`ミ_.ﾚ//r,,,､
+      ﾚ'ﾚﾊヾ, L,,_ `ヽ、"ﾚ, l;;;l l;;;l`i.ﾘﾚ' ﾘ￣~~ヽ､ ワ `"／-'`'`'`''''''''" ┼ヽ -|r‐､.
+      ﾚ |ｄ⌒) ./| _ﾉ __ﾉ
 size:
   max_width: 1024
   max_height: 768

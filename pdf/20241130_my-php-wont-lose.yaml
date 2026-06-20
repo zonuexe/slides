@@ -42,14 +42,10 @@ text:
     text: Perlは魂の故郷
   p6:
   - kind: para
-    text: tadsanは
-  - kind: para
-    text: 動的言語が大好き
+    text: tadsanは動的言語が大好き
   p7:
   - kind: para
-    text: なぜtadsanは
-  - kind: para
-    text: PHPを書いているのか
+    text: なぜtadsanはPHPを書いているのか
   p8:
   - kind: para
     text: YAPCで就職したから
@@ -61,9 +57,7 @@ text:
     text: こないだもこういう話をした
   p10:
   - kind: para
-    text: 僕がPHP界隈で偉そうに
-  - kind: para
-    text: 話してるネタはYAPCとか
+    text: 僕がPHP界隈で偉そうに話してるネタはYAPCとか
   - kind: para
     text: ビルコンの二番煎じだ！
   - kind: para
@@ -85,20 +79,12 @@ text:
   - kind: para
     text: PHPについてのパブリックイメージ
   - kind: para
-    text: 脆弱性 ゆるふわ 弱い型 動的
-  - kind: para
-    text: クソザコ 型なし 意味不明 弱い
-  - kind: para
-    text: 自動変換 貧弱 Perlっぽい 適当
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
   p15:
   - kind: para
     text: PHPについての認識は概ね間違い
   - kind: para
-    text: 脆弱性 ゆるふわ 弱い型 動的
-  - kind: para
-    text: クソザコ 型なし 意味不明 弱い
-  - kind: para
-    text: 自動変換 貧弱 Perlっぽい 適当
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
   p16:
   - kind: heading
     level: 1
@@ -121,14 +107,10 @@ text:
   - kind: para
     text: C言語っぽい
   - kind: para
-    text: 関数と
-  - kind: para
-    text: -> があって
+    text: 関数と-> があって
   p21:
   - kind: para
-    text: 雰囲気Javaっぽい
-  - kind: para
-    text: オブジェクト指向で
+    text: 雰囲気Javaっぽいオブジェクト指向で
   p22:
   - kind: heading
     level: 1
@@ -156,9 +138,7 @@ text:
     text: あるので、小規模からある程度大規模なアプリケーションにもフィットする
   p25:
   - kind: para
-    text: そういうことは
-  - kind: para
-    text: 結構どうでもいい
+    text: そういうことは結構どうでもいい
   p26:
   - kind: para
     text: PHPはどこでも65点がとれる言語
@@ -212,16 +192,10 @@ text:
     text: Statically typed?
   p32:
   - kind: para
-    text: int n = 1;
-  - kind: para
-    text: int m = n + 2;
-  - kind: para
-    text: printf("%d\n");
+    text: int n = 1;int m = n + 2;printf("%d\n");
   p33:
   - kind: para
-    text: こんな当たり前の型をちんたら
-  - kind: para
-    text: 書いてられないと思った人たちが
+    text: こんな当たり前の型をちんたら書いてられないと思った人たちが
   - kind: para
     text: 作った言語がPerl(という認識)
   - kind: heading
@@ -242,101 +216,44 @@ text:
   - kind: para
     text: 型なんて人間が書かなくても
   - kind: para
-    text: コードを解析すれば
-  - kind: para
-    text: 一意に定まるじゃん、ワロス
+    text: コードを解析すれば一意に定まるじゃん、ワロス
   p37:
   - kind: para
-    text: PHPでも型宣言？
-  - kind: para
-    text: とかできますけど…
+    text: PHPでも型宣言？とかできますけど…
   p38:
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int $a'
-  - kind: para
-    text: '* @param int $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int $a* @param int $b* @return int|float*/function add($a, $b)
+      {return $a + $b;}
   p39:
   - kind: para
     text: DocCommentとかいう
   - kind: para
     text: 机上の空論
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int $a'
-  - kind: para
-    text: '* @param int $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int $a* @param int $b* @return int|float*/function add($a, $b)
+      {return $a + $b;}
   p40:
   - kind: para
     text: DocCommentとかいう
   - kind: para
     text: 机上の空論
   - kind: para
-    text: コーディング時の
-  - kind: para
-    text: ヒントとして役に立つ…
+    text: コーディング時のヒントとして役に立つ…
   - kind: para
     text: かもしれない
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int $a'
-  - kind: para
-    text: '* @param int $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int $a* @param int $b* @return int|float*/function add($a, $b)
+      {return $a + $b;}
   p41:
   - kind: para
-    text: 'function add(int $a, int $b): int|float'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int|float{return $a + $b;}'
   p42:
   - kind: para
     text: intしか渡されないことは
   - kind: para
     text: 実行時に保証される
   - kind: para
-    text: 'function add(int $a, int $b): int|float'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int|float{return $a + $b;}'
   p43:
   - kind: para
     text: intしか渡されないことは
@@ -355,14 +272,10 @@ text:
     level: 1
     text: '}'
   - kind: para
-    text: 型宣言に反する値が
-  - kind: para
-    text: 返されたら実行時エラー
+    text: 型宣言に反する値が返されたら実行時エラー
   p44:
   - kind: para
-    text: そうだけど
-  - kind: para
-    text: それだけじゃないんだ
+    text: そうだけどそれだけじゃないんだ
   p45: []
   p46: []
   p47: []
@@ -387,9 +300,7 @@ text:
     text: 型を絞り込んでくれる！！
   p55:
   - kind: para
-    text: その辺の静的言語とは
-  - kind: para
-    text: 別の方向に尖りつつある
+    text: その辺の静的言語とは別の方向に尖りつつある
   - kind: para
     text: PHPにご期待ください
 size:

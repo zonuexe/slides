@@ -6,9 +6,7 @@ text:
   - kind: para
     text: ピクシブ株式会社 / pixiv.git
   - kind: para
-    text: pixiv Inc.
-  - kind: para
-    text: うさみけんた / tadsan
+    text: pixiv Inc.うさみけんた / tadsan
   - kind: para
     text: '2019-02-18'
   p2:
@@ -111,45 +109,14 @@ text:
     - パターンのテストもあるのでチームメンバーが必要に応じて加除
   p9:
   - kind: para
-    text: '''@pixiv-lib/.*\.php$@'' => ['
-  - kind: para
-    text: '['
-  - kind: para
-    text: '''level'' => ''error'','
-  - kind: para
-    text: '''desc'' => ''pixiv-libで定義されているクラスは include_once しないこと'','
-  - kind: para
-    text: '''pattern'' => ['
-  - kind: para
-    text: '''/include_once[ \(] *INC_PATH /'' => false,'
-  - kind: para
-    text: '''@/stacc/api\.php@'' => true,'
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '''tests'' => ['
-  - kind: para
-    text: '[''pixiv-lib/foo.php'', "include_once INC_PATH . ''/Awesome/Class.php'';",'
-  - kind: para
-    text: true],
-  - kind: para
-    text: '[''pixiv-lib/foo.php'', "include_once INC_PATH . ''/stacc/api.php'';",'
-  - kind: para
-    text: false],
-  - kind: para
-    text: '[''pixiv-lib/foo.php'', "include_once INC_PATH . ''HogeClass.php'';", true],'
-  - kind: para
-    text: '[''foo.php'', "include_once INC_PATH . ''/Awesome/Class.php'';", false],'
-  - kind: para
-    text: '[''foo.php'', "include_once INC_PATH . ''/stacc/api.php'';", false],'
-  - kind: para
-    text: '[''foo.php'', "include_once INC_PATH . ''HogeClass.php'';", false],'
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '],'
+    text: '''@pixiv-lib/.*\.php$@'' => [[''level'' => ''error'',''desc'' => ''pixiv-libで定義されているクラスは
+      include_once しないこと'',''pattern'' => [''/include_once[ \(] *INC_PATH /'' => false,''@/stacc/api\.php@''
+      => true,],''tests'' => [[''pixiv-lib/foo.php'', "include_once INC_PATH . ''/Awesome/Class.php'';",true],[''pixiv-lib/foo.php'',
+      "include_once INC_PATH . ''/stacc/api.php'';",false],[''pixiv-lib/foo.php'',
+      "include_once INC_PATH . ''HogeClass.php'';", true],[''foo.php'', "include_once
+      INC_PATH . ''/Awesome/Class.php'';", false],[''foo.php'', "include_once INC_PATH
+      . ''/stacc/api.php'';", false],[''foo.php'', "include_once INC_PATH . ''HogeClass.php'';",
+      false],],],],'
   p10:
   - kind: heading
     level: 1

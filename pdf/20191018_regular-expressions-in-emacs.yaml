@@ -6,9 +6,7 @@ text:
   - kind: para
     text: Regular expressions in Emacs
   - kind: para
-    text: Regex Festa
-  - kind: para
-    text: '2019-10-18 #regexfesta'
+    text: 'Regex Festa 2019-10-18 #regexfesta'
   p2:
   - kind: heading
     level: 1
@@ -90,13 +88,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $subject = 'a\b';
+    text: $subject = 'a\b';preg_match('/(?<bs>\\\\)/', $subject, $m);
   - kind: para
-    text: preg_match('/(?<bs>\\\\)/', $subject, $m);
-  - kind: para
-    text: var_dump($m['bs']);
-  - kind: para
-    text: // string(1) "\"
+    text: var_dump($m['bs']);// string(1) "\"
   p13:
   - kind: heading
     level: 1
@@ -104,15 +98,11 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $subject = 'https://example.com/';
+    text: $subject = 'https://example.com/';// Bad pattern preg_match('/^https:\/\/([.+])/i',
+      $subject);
   - kind: para
-    text: // Bad pattern
-  - kind: para
-    text: preg_match('/^https:\/\/([.+])/i', $subject);
-  - kind: para
-    text: preg_match('@^https://([.+])@i', $subject);
-  - kind: para
-    text: preg_match('#^https://([.+])#i', $subject);
+    text: preg_match('@^https://([.+])@i', $subject);preg_match('#^https://([.+])#i',
+      $subject);
   p14:
   - kind: para
     text: 関数形式だがコンパ
@@ -186,72 +176,28 @@ text:
     text: (最小量指定子がある)
   p27:
   - kind: para
-    text: 基本
+    text: 基本拡張Emacs
   - kind: para
-    text: 拡張
+    text: グループ\(regexp\)(regexp)\(regexp\)
   - kind: para
-    text: Emacs
+    text: 繰り返し\{n,m}{n,m}\{n,m}
   - kind: para
-    text: グループ
+    text: 文字クラス[abc][abc][abc]
   - kind: para
-    text: \(regexp\)
+    text: 1回以上++
   - kind: para
-    text: (regexp)
-  - kind: para
-    text: \(regexp\)
-  - kind: para
-    text: 繰り返し
-  - kind: para
-    text: \{n,m}
-  - kind: para
-    text: '{n,m}'
-  - kind: para
-    text: \{n,m}
-  - kind: para
-    text: 文字クラス
-  - kind: para
-    text: '[abc]'
-  - kind: para
-    text: '[abc]'
-  - kind: para
-    text: '[abc]'
-  - kind: para
-    text: 1回以上
-  - kind: para
-    text: +
-  - kind: para
-    text: +
-  - kind: para
-    text: 選言
-  - kind: para
-    text: '|'
-  - kind: para
-    text: \|
+    text: 選言|\|
   p28:
   - kind: para
-    text: Perl
+    text: Perl Emacs
   - kind: para
-    text: Emacs
-  - kind: para
-    text: 先頭・末尾
-  - kind: para
-    text: \A \z
-  - kind: para
-    text: \` \'
+    text: 先頭・末尾\A \z\` \'
   - kind: para
     text: 単語構成文字
   - kind: para
-    text: ／単語境界
+    text: ／単語境界\w \b\w \b
   - kind: para
-    text: \w \b
-  - kind: para
-    text: \w \b
-  - kind: para
-    text: 空白文字
-  - kind: para
-    text: \s
-  - kind: para
-    text: '[[:space:]]'
+    text: 空白文字\s[[:space:]]
   - kind: para
     text: \s-
   p29:
@@ -344,72 +290,34 @@ text:
     text: 組み立てDSLがある
   p47:
   - kind: para
-    text: 文字列
+    text: 文字列rx
   - kind: para
-    text: rx
+    text: グループ\(regexp\)(group "regexp")
   - kind: para
-    text: グループ
+    text: 繰り返し\{n,m}(repeat n m pattern)
   - kind: para
-    text: \(regexp\)
+    text: 文字クラス[abc](in "abc")
   - kind: para
-    text: (group "regexp")
+    text: 1回以上+(+ pattern)
   - kind: para
-    text: 繰り返し
-  - kind: para
-    text: \{n,m}
-  - kind: para
-    text: (repeat n m pattern)
-  - kind: para
-    text: 文字クラス
-  - kind: para
-    text: '[abc]'
-  - kind: para
-    text: (in "abc")
-  - kind: para
-    text: 1回以上
-  - kind: para
-    text: +
-  - kind: para
-    text: (+ pattern)
-  - kind: para
-    text: 選言
-  - kind: para
-    text: \|
-  - kind: para
-    text: (or a b)
+    text: 選言\|(or a b)
   p48:
   - kind: para
-    text: 文字列
+    text: 文字列rx
   - kind: para
-    text: rx
-  - kind: para
-    text: 先頭・末尾
-  - kind: para
-    text: \` \'
-  - kind: para
-    text: string-start
+    text: 先頭・末尾\` \'string-start
   - kind: para
     text: string-end
   - kind: para
     text: 単語構成文字
   - kind: para
-    text: ／単語境界
+    text: ／単語境界\w \b wordchar word-boundary
   - kind: para
-    text: \w \b
-  - kind: para
-    text: wordchar
-  - kind: para
-    text: word-boundary
-  - kind: para
-    text: 空白文字
-  - kind: para
-    text: '[[:space:]]'
+    text: 空白文字[[:space:]]
   - kind: para
     text: \s-
   - kind: para
-    text: space
-  - kind: para
-    text: (syntax whitespace)
+    text: space(syntax whitespace)
   p49: []
   p50:
   - kind: para

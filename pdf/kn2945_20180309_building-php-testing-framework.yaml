@@ -30,9 +30,7 @@ text:
   - kind: para
     text: pixivのコードは
   - kind: para
-    text: 毎日どんどん
-  - kind: para
-    text: 刷新されてるよ
+    text: 毎日どんどん刷新されてるよ
   p5:
   - kind: para
     text: 明日のpixivを
@@ -81,29 +79,17 @@ text:
     text: オムニバス
   p16:
   - kind: para
-    text: 1. フレームワークなしのテスト
-  - kind: para
-    text: 2. できる！ フレームワーク
-  - kind: para
-    text: 3. PHPで注意すべき「状態」
+    text: 1. フレームワークなしのテスト2. できる！ フレームワーク3. PHPで注意すべき「状態」
   p17:
   - kind: para
-    text: 1. フレームワークなしのテスト
-  - kind: para
-    text: 2. できる！ フレームワーク
-  - kind: para
-    text: 3. PHPで注意すべき「状態」
-  - kind: para
-    text: ↑時間なくて収まらなかった
+    text: 1. フレームワークなしのテスト2. できる！ フレームワーク3. PHPで注意すべき「状態」↑時間なくて収まらなかった
   p18:
   - kind: para
     text: 本題の前に
   p19: []
   p20:
   - kind: para
-    text: pixivは主に
-  - kind: para
-    text: PHPUnitでテスト
+    text: pixivは主にPHPUnitでテスト
   p21:
   - kind: para
     text: 僕がテストを新規を増や
@@ -111,22 +97,13 @@ text:
     text: すならPHPUnitでテスト
   p22:
   - kind: para
-    text: '% cd ~/pixiv/tests'
-  - kind: para
-    text: '% git ls-files ''*Test.php'' | wc -l'
-  - kind: para
-    text: '1606'
-  - kind: para
-    text: '% git ls-files ''*Test.php'' | xargs cat | wc -l'
-  - kind: para
-    text: '191890'
+    text: '% cd ~/pixiv/tests% git ls-files ''*Test.php'' | wc -l 1606% git ls-files
+      ''*Test.php'' | xargs cat | wc -l 191890'
   p23:
   - kind: para
     text: どうすれば書きやすく
   - kind: para
-    text: メンテできる
-  - kind: para
-    text: テストが書けるか悩み
+    text: メンテできるテストが書けるか悩み
   p24:
   - kind: para
     text: 本題の前に
@@ -148,9 +125,7 @@ text:
   - kind: para
     text: 懸念の妥当性はともかく
   - kind: para
-    text: 依存パッケージの数が
-  - kind: para
-    text: それなりに多いのはたしか
+    text: 依存パッケージの数がそれなりに多いのはたしか
   p30:
   - kind: para
     text: 「簡単なテストだけ
@@ -167,9 +142,7 @@ text:
     text: その前に
   p34:
   - kind: para
-    text: ところでPHP標準のテス
-  - kind: para
-    text: ティングフレームワーク
+    text: ところでPHP標準のテスティングフレームワーク
   - kind: para
     text: がある
   p35:
@@ -177,9 +150,7 @@ text:
     text: http://qa.php.net/write-test.php
   p36:
   - kind: para
-    text: PHP本体の
-  - kind: para
-    text: テストコード
+    text: PHP本体のテストコード
   p37:
   - kind: para
     text: php-srcに入ってる
@@ -189,64 +160,21 @@ text:
     text: 実行できる
   p38:
   - kind: para
-    text: 実はPHPUnitでも
-  - kind: para
-    text: おまけ機能として
-  - kind: para
-    text: テスト実行できる
+    text: 実はPHPUnitでもおまけ機能としてテスト実行できる
   p39:
   - kind: heading
     level: 1
     text: バッファの出力をテストする
   - kind: para
-    text: --TEST--
+    text: --TEST--Compute 1 + 1 test--FILE--<?= 1 + 1 ?>--EXPECT--2
   - kind: para
-    text: Compute 1 + 1 test
-  - kind: para
-    text: --FILE--
-  - kind: para
-    text: <?= 1 + 1 ?>
-  - kind: para
-    text: --EXPECT--
-  - kind: para
-    text: '2'
-  - kind: para
-    text: --TEST--
-  - kind: para
-    text: GET $_ENV test
-  - kind: para
-    text: --ENV--
-  - kind: para
-    text: return <<<END
-  - kind: para
-    text: a=AAA
-  - kind: para
-    text: b=BBB
-  - kind: para
-    text: END;
-  - kind: para
-    text: --FILE--
-  - kind: para
-    text: <?php
-  - kind: para
-    text: echo getenv('a'), "\n";
-  - kind: para
-    text: echo getenv('b'), "\n";
-  - kind: para
-    text: ?>
-  - kind: para
-    text: --EXPECT--
-  - kind: para
-    text: AAA
-  - kind: para
-    text: BBB
+    text: --TEST--GET $_ENV test--ENV--return <<<END a=AAA b=BBB END;--FILE--<?php
+      echo getenv('a'), "\n";echo getenv('b'), "\n";?>--EXPECT--AAA BBB
   p40:
   - kind: para
     text: ただし(意図的なのか)
   - kind: para
-    text: 仕様を完全には
-  - kind: para
-    text: サポートしてません
+    text: 仕様を完全にはサポートしてません
   p41:
   - kind: para
     text: もしphptを採用する
@@ -256,14 +184,10 @@ text:
     text: を使った方がいい
   p42:
   - kind: para
-    text: テスト
-  - kind: para
-    text: スクリプト
+    text: テストスクリプト
   p43:
   - kind: para
-    text: なぜ人は
-  - kind: para
-    text: テストを書くのか
+    text: なぜ人はテストを書くのか
   p44:
   - kind: para
     text: 実装前に入出力の
@@ -271,11 +195,7 @@ text:
     text: 例を明示したい
   p45:
   - kind: para
-    text: 機能追加や
-  - kind: para
-    text: リファクタリングで
-  - kind: para
-    text: 意図した挙動が壊れな
+    text: 機能追加やリファクタリングで意図した挙動が壊れな
   - kind: para
     text: いことを保障したい
   p46:
@@ -286,9 +206,7 @@ text:
     text: そうすると
   p48:
   - kind: para
-    text: 関心がどうとか
-  - kind: para
-    text: って話になってくる
+    text: 関心がどうとかって話になってくる
   p49:
   - kind: para
     text: うるせえ
@@ -310,21 +228,13 @@ text:
     level: 1
     text: test.php
   - kind: para
-    text: <?php
+    text: <?php require_once __DIR__ . '/vendor/autoload.php';
   - kind: para
-    text: require_once __DIR__ . '/vendor/autoload.php';
+    text: '(2 === 1 + 1) or die("LINE: ". __LINE__);(3 === 1.5 + 1.5) or die("LINE:
+      ". __LINE__);$date = date(''Y-m-d'',4502304000);("2112-09-13" === $date) or
+      die("LINE: ". __LINE__);'
   - kind: para
-    text: '(2 === 1 + 1) or die("LINE: ". __LINE__);'
-  - kind: para
-    text: '(3 === 1.5 + 1.5) or die("LINE: ". __LINE__);'
-  - kind: para
-    text: $date = date('Y-m-d',4502304000);
-  - kind: para
-    text: '("2112-09-13" === $date) or die("LINE: ". __LINE__);'
-  - kind: para
-    text: $a = [1, 2, 3];
-  - kind: para
-    text: '(1 == array_shift($a)) or die("LINE: ". __LINE__);'
+    text: '$a = [1, 2, 3];(1 == array_shift($a)) or die("LINE: ". __LINE__);'
   - kind: para
     text: echo 'ok.', PHP_EOL;
   p54:
@@ -334,14 +244,10 @@ text:
     text: 出力されて終了
   p55:
   - kind: para
-    text: or die()
-  - kind: para
-    text: 書くのだるい
+    text: or die()書くのだるい
   p56:
   - kind: para
-    text: もうちょっと
-  - kind: para
-    text: わかりやすく
+    text: もうちょっとわかりやすく
   p57:
   - kind: para
     text: assert()
@@ -350,21 +256,10 @@ text:
     level: 1
     text: test.php
   - kind: para
-    text: '#!/usr/bin/env php'
+    text: '#!/usr/bin/env php<?php require_once __DIR__ . ''/vendor/autoload.php'';assert(2
+      === 1 + 1);assert(3 === 1.5 + 1.5);assert("2112-09-13" === date(''Y-m-d'', 4503168000));'
   - kind: para
-    text: <?php
-  - kind: para
-    text: require_once __DIR__ . '/vendor/autoload.php';
-  - kind: para
-    text: assert(2 === 1 + 1);
-  - kind: para
-    text: assert(3 === 1.5 + 1.5);
-  - kind: para
-    text: assert("2112-09-13" === date('Y-m-d', 4503168000));
-  - kind: para
-    text: $a = [1, 2, 3];
-  - kind: para
-    text: assert(1 == array_shift($a));
+    text: $a = [1, 2, 3];assert(1 == array_shift($a));
   p59:
   - kind: heading
     level: 1
@@ -376,31 +271,24 @@ text:
   - kind: para
     text: 'Warning: assert(): assert(3 === 1.5 + 1.5) failed in /Users/megurine/'
   - kind: para
-    text: repo/php/phperkaigi-test/assert-test.php on line 11
+    text: 'repo/php/phperkaigi-test/assert-test.php on line 11 PHP Warning: assert():
+      assert(''2112-09-03'' === date(''Y-m-d'','
   - kind: para
-    text: 'PHP Warning: assert(): assert(''2112-09-03'' === date(''Y-m-d'','
+    text: 4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-test.php
+      on line 12
   - kind: para
-    text: 4503168000)) failed in /Users/megurine/repo/php/phperkaigi-test/assert-
-  - kind: para
-    text: test.php on line 12
-  - kind: para
-    text: 'Warning: assert(): assert(''2112-09-03'' === date(''Y-m-d'', 4503168000))'
-  - kind: para
-    text: failed in /Users/megurine/repo/php/phperkaigi-test/assert-test.php on
+    text: 'Warning: assert(): assert(''2112-09-03'' === date(''Y-m-d'', 4503168000))failed
+      in /Users/megurine/repo/php/phperkaigi-test/assert-test.php on'
   - kind: para
     text: line 12
   p60:
   - kind: para
     text: エラーハンドリングの
   - kind: para
-    text: 設定をしないと
-  - kind: para
-    text: 出力が二重化される
+    text: 設定をしないと出力が二重化される
   p61:
   - kind: para
-    text: まあ雑だけど
-  - kind: para
-    text: テストにはなる
+    text: まあ雑だけどテストにはなる
   p62:
   - kind: para
     text: 完
@@ -409,14 +297,10 @@ text:
     text: ☺
   p64:
   - kind: para
-    text: 最低限ができると
-  - kind: para
-    text: 人間は欲が出てくる
+    text: 最低限ができると人間は欲が出てくる
   p65:
   - kind: para
-    text: できる！
-  - kind: para
-    text: フレームワーク
+    text: できる！フレームワーク
   p66:
   - kind: para
     text: フレームワーク
@@ -427,35 +311,25 @@ text:
     text: https://ja.wikipedia.org/wiki/ソフトウェアフレームワーク
   p68:
   - kind: para
-    text: 制御の反転が
-  - kind: para
-    text: ソフトウェアフレームワークの
+    text: 制御の反転がソフトウェアフレームワークの
   - kind: para
     text: 特徴
   p69:
   - kind: para
-    text: ふつうのライブラリは
-  - kind: para
-    text: あなたが書いたコードから
+    text: ふつうのライブラリはあなたが書いたコードから
   - kind: para
     text: 呼び出される
   p70:
   - kind: para
-    text: フレームワークは
-  - kind: para
-    text: あなたが書いたコードを
+    text: フレームワークはあなたが書いたコードを
   - kind: para
     text: 呼び出す
   p71:
   - kind: para
-    text: これが
-  - kind: para
-    text: 制御の反転
+    text: これが制御の反転
   p72:
   - kind: para
-    text: ここからは
-  - kind: para
-    text: どんどんいきます
+    text: ここからはどんどんいきます
   p73:
   - kind: heading
     level: 1
@@ -471,43 +345,17 @@ text:
     level: 1
     text: assert_tests/run
   - kind: para
-    text: '#!/usr/bin/env php'
-  - kind: para
-    text: <?php
-  - kind: para
-    text: require __DIR__ . '/../vendor/autoload.php';
-  - kind: para
-    text: $testing = include __DIR__ . '/bootstrap.php';
-  - kind: para
-    text: chdir(__DIR__);
-  - kind: para
-    text: foreach (glob('*_test.php') as $file) {
-  - kind: para
-    text: try {
-  - kind: para
-    text: include $file;
-  - kind: para
-    text: '} catch (\Throwable $e) {'
-  - kind: para
-    text: dump($e);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: $testing->finalize();
+    text: '#!/usr/bin/env php<?php require __DIR__ . ''/../vendor/autoload.php'';$testing
+      = include __DIR__ . ''/bootstrap.php'';chdir(__DIR__);foreach (glob(''*_test.php'')
+      as $file) {try {include $file;} catch (\Throwable $e) {dump($e);}}$testing->finalize();'
   p75:
   - kind: para
     text: assert()に失敗した
   - kind: para
-    text: ときの結果は
-  - kind: para
-    text: カスタマイズできる
+    text: ときの結果はカスタマイズできる
   p76:
   - kind: para
-    text: (実はPHP5方式と
-  - kind: para
-    text: PHP7方式で異なる)
+    text: (実はPHP5方式とPHP7方式で異なる)
   - kind: heading
     level: 1
     text: 今回はPHP5方式
@@ -516,27 +364,12 @@ text:
     level: 1
     text: bootstrap.php
   - kind: para
-    text: <?php
+    text: <?php require_once __DIR__ . '/define.php';ini_set('zend.assertions', 1);ini_set('assert.exception',
+      0);assert_options(ASSERT_ACTIVE, 1);assert_options(ASSERT_BAIL, 0);assert_options(ASSERT_QUIET_EVAL,
+      0);assert_options(ASSERT_WARNING, 0);
   - kind: para
-    text: require_once __DIR__ . '/define.php';
-  - kind: para
-    text: ini_set('zend.assertions', 1);
-  - kind: para
-    text: ini_set('assert.exception', 0);
-  - kind: para
-    text: assert_options(ASSERT_ACTIVE, 1);
-  - kind: para
-    text: assert_options(ASSERT_BAIL, 0);
-  - kind: para
-    text: assert_options(ASSERT_QUIET_EVAL, 0);
-  - kind: para
-    text: assert_options(ASSERT_WARNING, 0);
-  - kind: para
-    text: $testing = new Testing();
-  - kind: para
-    text: assert_options(ASSERT_CALLBACK, [$testing, 'handler']);
-  - kind: para
-    text: return $testing;
+    text: $testing = new Testing();assert_options(ASSERT_CALLBACK, [$testing, 'handler']);return
+      $testing;
   p78:
   - kind: heading
     level: 1
@@ -544,29 +377,21 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: class Testing {
+    text: class Testing {/** @var bool テスト失敗停止するか */
   - kind: para
-    text: /** @var bool テスト失敗停止するか */
-  - kind: para
-    text: private $stop_on_failure = false;
-  - kind: para
-    text: /** @var array[] 実行結果 */
+    text: private $stop_on_failure = false;/** @var array[] 実行結果 */
   - kind: para
     text: private $result = [];
   - kind: para
-    text: public function __construct(array $options) {
-  - kind: para
-    text: $this->stop_on_failure = $options['stop_on_failure'] ?? false;
+    text: public function __construct(array $options) {$this->stop_on_failure = $options['stop_on_failure']
+      ?? false;
   - kind: para
     text: '}'
   - kind: para
-    text: /** assert()の失敗時にこいつが呼ばれるように設定 */
+    text: /** assert()の失敗時にこいつが呼ばれるように設定 */public function handler($file, $line, $code,
+      $desc = null) {
   - kind: para
-    text: public function handler($file, $line, $code, $desc = null) {
-  - kind: para
-    text: $this->result[] = [$file, $line, $desc];
-  - kind: para
-    text: if ($this->stop_on_failure) $this->finalize();
+    text: $this->result[] = [$file, $line, $desc];if ($this->stop_on_failure) $this->finalize();
   - kind: para
     text: '}'
   p79:
@@ -574,53 +399,19 @@ text:
     level: 1
     text: Testing.php
   - kind: para
-    text: /** いままで失敗したテストをまとめて結果表示 */
-  - kind: para
-    text: 'public function finalize(): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: if ($this->result) {
-  - kind: para
-    text: foreach ($this->result as [$file, $line, $desc])
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $this->output($file, $line, $desc);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: exit(1); // エラー終了
-  - kind: para
-    text: '}'
-  - kind: para
-    text: $this->result = [];
-  - kind: para
-    text: echo 'ok.', PHP_EOL;
-  - kind: para
-    text: exit(0);
-  - kind: para
-    text: '}'
+    text: '/** いままで失敗したテストをまとめて結果表示 */public function finalize(): void{if ($this->result)
+      {foreach ($this->result as [$file, $line, $desc]){$this->output($file, $line,
+      $desc);}exit(1); // エラー終了}$this->result = [];echo ''ok.'', PHP_EOL;exit(0);}'
   p80:
   - kind: heading
     level: 1
     text: Testing.php
   - kind: para
-    text: 'private function output($file, $line, $desc): void'
+    text: 'private function output($file, $line, $desc): void{// ソースコードの該当行を取得$code
+      = trim(file($file)[$line-1]);'
   - kind: para
-    text: '{'
-  - kind: para
-    text: // ソースコードの該当行を取得
-  - kind: para
-    text: $code = trim(file($file)[$line-1]);
-  - kind: para
-    text: 'echo "FILE: {$file} ({$line})", PHP_EOL;'
-  - kind: para
-    text: 'echo "CODE: {$code}", PHP_EOL;'
-  - kind: para
-    text: 'echo "DESC: {$desc}", PHP_EOL;'
-  - kind: para
-    text: '}'
+    text: 'echo "FILE: {$file} ({$line})", PHP_EOL;echo "CODE: {$code}", PHP_EOL;echo
+      "DESC: {$desc}", PHP_EOL;}'
   p81:
   - kind: para
     text: 完成！
@@ -632,19 +423,9 @@ text:
     level: 1
     text: fizzbuzz_test.php
   - kind: para
-    text: <?php
-  - kind: para
-    text: // to_fizzbuzz() 関数は別に定義済みの想定
-  - kind: para
-    text: assert("1" === $actual = to_fizzbuzz(1));
-  - kind: para
-    text: assert("Fizz" === $actual = to_fizzbuzz(3));
-  - kind: para
-    text: assert("Buzz" === $actual = to_fizzbuzz(5));
-  - kind: para
-    text: assert("Buzz" === $actual = to_fizzbuzz(10));
-  - kind: para
-    text: assert("FizzBuzz" === $actual = to_fizzbuzz(15));
+    text: <?php// to_fizzbuzz() 関数は別に定義済みの想定assert("1" === $actual = to_fizzbuzz(1));assert("Fizz"
+      === $actual = to_fizzbuzz(3));assert("Buzz" === $actual = to_fizzbuzz(5));assert("Buzz"
+      === $actual = to_fizzbuzz(10));assert("FizzBuzz" === $actual = to_fizzbuzz(15));
   p84: []
   p85:
   - kind: heading
@@ -657,9 +438,7 @@ text:
     text: 😊
   p87:
   - kind: para
-    text: さらに
-  - kind: para
-    text: パワーアップ
+    text: さらにパワーアップ
   p88:
   - kind: heading
     level: 1
@@ -673,17 +452,13 @@ text:
     text: 一躍知られた
   p90:
   - kind: para
-    text: t-wadaさんの
-  - kind: para
-    text: power-assert.jsが有名
+    text: t-wadaさんのpower-assert.jsが有名
   p91:
   - kind: para
     text: http://hamcrest.org/
   p92:
   - kind: para
-    text: PHPでちゃんと
-  - kind: para
-    text: 作ろうとすると大変
+    text: PHPでちゃんと作ろうとすると大変
   p93:
   - kind: para
     text: それっぽいもの
@@ -695,9 +470,7 @@ text:
     text: 欠点
   p96:
   - kind: para
-    text: assert()では失敗しかフック
-  - kind: para
-    text: できないから、「98/100成功」
+    text: assert()では失敗しかフックできないから、「98/100成功」
   - kind: para
     text: のようなカウントができない
   p97:
@@ -713,21 +486,10 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: const collect_vars = 'return v(get_defined_vars()+
+    text: const collect_vars = 'return v(get_defined_vars()+["this"=>isset($this)?$this:null]);';
   - kind: para
-    text: '["this"=>isset($this)?$this:null]);'';'
-  - kind: para
-    text: 'function v(array $variables): string'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: // $GLOBALSは長大なので消しとく
-  - kind: para
-    text: unset($variables['GLOBALS']);
-  - kind: para
-    text: return \serialize($variables);
-  - kind: para
-    text: '}'
+    text: 'function v(array $variables): string{// $GLOBALSは長大なので消しとくunset($variables[''GLOBALS'']);return
+      \serialize($variables);}'
   p100:
   - kind: para
     text: 次のパターンに
@@ -767,87 +529,33 @@ text:
     level: 1
     text: assert_tests/run (1/3)
   - kind: para
-    text: '#!/usr/bin/env php'
-  - kind: para
-    text: <?php
-  - kind: para
-    text: require __DIR__ . '/../vendor/autoload.php';
+    text: '#!/usr/bin/env php<?php require __DIR__ . ''/../vendor/autoload.php'';'
   - kind: para
     text: \Hamcrest\Util::registerGlobalFunctions();
   - kind: para
-    text: chdir(__DIR__);
+    text: chdir(__DIR__);foreach (glob('*_test.php') as $file) {require_once $file;}
   - kind: para
-    text: foreach (glob('*_test.php') as $file) {
-  - kind: para
-    text: require_once $file;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: $failures = [];
-  - kind: para
-    text: $errors = [];
+    text: $failures = [];$errors = [];
   p105:
   - kind: heading
     level: 1
     text: assert_tests/run (2/3)
   - kind: para
-    text: foreach (get_defined_functions(true)['user'] as $func) {
-  - kind: para
-    text: if (strpos($func, 'test_') === 0) {
-  - kind: para
-    text: try {
-  - kind: para
-    text: $func();
-  - kind: para
-    text: echo '.';
-  - kind: para
-    text: '} catch (\Hamcrest\AssertionError $e) {'
-  - kind: para
-    text: $failures[] = $e;
-  - kind: para
-    text: echo 'F';
-  - kind: para
-    text: '}catch (\Throwable $e) {'
-  - kind: para
-    text: $errors[] = $e;
-  - kind: para
-    text: echo 'E';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: echo PHP_EOL;
+    text: foreach (get_defined_functions(true)['user'] as $func) {if (strpos($func,
+      'test_') === 0) {try {$func();echo '.';} catch (\Hamcrest\AssertionError $e)
+      {$failures[] = $e;echo 'F';}catch (\Throwable $e) {$errors[] = $e;echo 'E';}}}echo
+      PHP_EOL;
   p106:
   - kind: heading
     level: 1
     text: assert_tests/run (3/3)
   - kind: para
-    text: if ($failures) {
+    text: if ($failures) {echo "Failures:", PHP_EOL;
   - kind: para
-    text: echo "Failures:", PHP_EOL;
+    text: 'foreach ($failures as $f) {echo PHP_EOL;echo "FILE: {$f->getFile()} ({$f->getLine()})",
+      PHP_EOL;echo "DESC: {$f->getMessage()})", PHP_EOL;}}'
   - kind: para
-    text: foreach ($failures as $f) {
-  - kind: para
-    text: echo PHP_EOL;
-  - kind: para
-    text: 'echo "FILE: {$f->getFile()} ({$f->getLine()})", PHP_EOL;'
-  - kind: para
-    text: 'echo "DESC: {$f->getMessage()})", PHP_EOL;'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: if ($errors) {
-  - kind: para
-    text: echo "Errors:", PHP_EOL;
-  - kind: para
-    text: dump($errors);
-  - kind: para
-    text: '}'
+    text: if ($errors) {echo "Errors:", PHP_EOL;dump($errors);}
   p107:
   - kind: para
     text: また完成して
@@ -863,35 +571,19 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function test_fizzbuzz()
-  - kind: para
-    text: '{'
-  - kind: para
-    text: assertThat(to_fizzbuzz(1), equalTo("1"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(3), equalTo("Fizz"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(5), equalTo("Buzz"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(10), equalTo("Buzz"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(15), equalTo("FizzBuzz"));
-  - kind: para
-    text: '}'
+    text: function test_fizzbuzz(){assertThat(to_fizzbuzz(1), equalTo("1"));assertThat(to_fizzbuzz(3),
+      equalTo("Fizz"));assertThat(to_fizzbuzz(5), equalTo("Buzz"));assertThat(to_fizzbuzz(10),
+      equalTo("Buzz"));assertThat(to_fizzbuzz(15), equalTo("FizzBuzz"));}
   p110: []
   p111:
   - kind: para
     text: 🤔
   p112:
   - kind: para
-    text: 出力差分はわかるけど
-  - kind: para
-    text: いまいちわかりにくい
+    text: 出力差分はわかるけどいまいちわかりにくい
   p113:
   - kind: para
-    text: そうだ
-  - kind: para
-    text: パラメタライズテスト
+    text: そうだパラメタライズテスト
   - kind: para
     text: をしよう
   p114:
@@ -901,9 +593,7 @@ text:
     text: 同じテストをする
   p115:
   - kind: para
-    text: PHPUnitでの
-  - kind: para
-    text: '@dataProvider'
+    text: PHPUnitでの@dataProvider
   p116:
   - kind: para
     text: 名前も拝借して
@@ -916,100 +606,31 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function test_fizzbuzz()
-  - kind: para
-    text: '{'
-  - kind: para
-    text: assertThat(to_fizzbuzz(1), equalTo("1"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(3), equalTo("Fizz"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(5), equalTo("Buzz"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(10), equalTo("Buzz"));
-  - kind: para
-    text: assertThat(to_fizzbuzz(15), equalTo("FizzBuzz"));
-  - kind: para
-    text: '}'
+    text: function test_fizzbuzz(){assertThat(to_fizzbuzz(1), equalTo("1"));assertThat(to_fizzbuzz(3),
+      equalTo("Fizz"));assertThat(to_fizzbuzz(5), equalTo("Buzz"));assertThat(to_fizzbuzz(10),
+      equalTo("Buzz"));assertThat(to_fizzbuzz(15), equalTo("FizzBuzz"));}
   p118:
   - kind: heading
     level: 1
     text: fizzbuzz_test.php (After)
   - kind: para
-    text: <?php
+    text: <?php/*** @dataProvider fizzbuzz_number_provider*/function test_fizzbuzz2($expected,
+      $input){assertThat(to_fizzbuzz($input), equalTo($expected));}
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @dataProvider fizzbuzz_number_provider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function test_fizzbuzz2($expected, $input)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: assertThat(to_fizzbuzz($input), equalTo($expected));
-  - kind: para
-    text: '}'
-  - kind: para
-    text: function fizzbuzz_number_provider()
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return [
-  - kind: para
-    text: '["1", 1],'
-  - kind: para
-    text: '["Fizz", 3],'
-  - kind: para
-    text: '["Buzz", 5],'
-  - kind: para
-    text: '["Buzz", 10],'
-  - kind: para
-    text: '["FizzBuzz", 15],'
-  - kind: para
-    text: '];'
-  - kind: para
-    text: '}'
+    text: function fizzbuzz_number_provider(){return [["1", 1],["Fizz", 3],["Buzz",
+      5],["Buzz", 10],["FizzBuzz", 15],];}
   p119:
   - kind: para
-    text: 実行側も
-  - kind: para
-    text: 書き換えていきます
+    text: 実行側も書き換えていきます
   p120:
   - kind: heading
     level: 1
     text: assert_tests/run (2/3)
   - kind: para
-    text: foreach (get_defined_functions(true)['user'] as $func) {
-  - kind: para
-    text: if (strpos($func, 'test_') === 0) {
-  - kind: para
-    text: try {
-  - kind: para
-    text: $func();
-  - kind: para
-    text: echo '.';
-  - kind: para
-    text: '} catch (\Hamcrest\AssertionError $e) {'
-  - kind: para
-    text: $failures[] = $e;
-  - kind: para
-    text: echo 'F';
-  - kind: para
-    text: '}catch (\Throwable $e) {'
-  - kind: para
-    text: $errors[] = $e;
-  - kind: para
-    text: echo 'E';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: echo PHP_EOL;
+    text: foreach (get_defined_functions(true)['user'] as $func) {if (strpos($func,
+      'test_') === 0) {try {$func();echo '.';} catch (\Hamcrest\AssertionError $e)
+      {$failures[] = $e;echo 'F';}catch (\Throwable $e) {$errors[] = $e;echo 'E';}}}echo
+      PHP_EOL;
   p121:
   - kind: heading
     level: 1
@@ -1017,29 +638,16 @@ text:
   - kind: para
     text: foreach (get_defined_functions(true)['user'] as $func) {
   - kind: para
-    text: if (strpos($func, 'test_') === 0) {
+    text: 'if (strpos($func, ''test_'') === 0) {$provider = get_provider($func) ?:
+      function (){ yield []; };'
   - kind: para
-    text: '$provider = get_provider($func) ?: function (){ yield []; };'
+    text: foreach ($provider() as $args) {try {
   - kind: para
-    text: foreach ($provider() as $args) {
+    text: $func(...$args);echo '.';} catch (\Hamcrest\AssertionError $e) {
   - kind: para
-    text: try {
+    text: $failures[] = ['error' => $e, 'args' => $args];echo 'F';
   - kind: para
-    text: $func(...$args);
-  - kind: para
-    text: echo '.';
-  - kind: para
-    text: '} catch (\Hamcrest\AssertionError $e) {'
-  - kind: para
-    text: $failures[] = ['error' => $e, 'args' => $args];
-  - kind: para
-    text: echo 'F';
-  - kind: para
-    text: '}catch (\Throwable $e) {'
-  - kind: para
-    text: $errors[] = $e;
-  - kind: para
-    text: echo 'E';
+    text: '}catch (\Throwable $e) {$errors[] = $e;echo ''E'';'
   - kind: para
     text: '}'
   p122:
@@ -1047,41 +655,24 @@ text:
     level: 1
     text: assert_tests/run getProvider
   - kind: para
-    text: 'function get_provider(string $func_name): ?string'
+    text: 'function get_provider(string $func_name): ?string{$ref = new \ReflectionFunction($func_name);'
   - kind: para
-    text: '{'
+    text: // @dataProvider hogehoge を取り出すif (preg_match('/@dataProvider +(?<provider>\S+)/',$ref->getDocComment(),
+      $m)) {return trim($m['provider']);}
   - kind: para
-    text: $ref = new \ReflectionFunction($func_name);
-  - kind: para
-    text: // @dataProvider hogehoge を取り出す
-  - kind: para
-    text: if (preg_match('/@dataProvider +(?<provider>\S+)/',
-  - kind: para
-    text: $ref->getDocComment(), $m)) {
-  - kind: para
-    text: return trim($m['provider']);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: return null;
-  - kind: para
-    text: '}'
+    text: return null;}
   p123: []
   p124:
   - kind: para
     text: まとめると
   p125:
   - kind: para
-    text: 単にテストを実行する
-  - kind: para
-    text: フレームワークっぽいもの
+    text: 単にテストを実行するフレームワークっぽいもの
   - kind: para
     text: は意外と簡単に作れる
   p126:
   - kind: para
-    text: PHPでテスト
-  - kind: para
-    text: しにくい状態
+    text: PHPでテストしにくい状態
   p127:
   - kind: para
     text: ここまでは「理想的な」
@@ -1093,14 +684,10 @@ text:
   - kind: para
     text: 理想的
   - kind: para
-    text: '||'
-  - kind: para
-    text: 引数と返り値だけ
+    text: '||引数と返り値だけ'
   p129:
   - kind: para
-    text: PHPで書かれる
-  - kind: para
-    text: 「現実」のコードは
+    text: PHPで書かれる「現実」のコードは
   - kind: para
     text: それだけじゃない
   p130:
@@ -1109,21 +696,15 @@ text:
   - kind: para
     text: 外部HTTP API呼び出し、グロー
   - kind: para
-    text: バル変数、メール送信、HTTP
-  - kind: para
-    text: ヘッダ、クッキー…… などなど
+    text: バル変数、メール送信、HTTPヘッダ、クッキー…… などなど
   p131:
   - kind: para
     text: '例: CLIでcookie()とか'
   - kind: para
-    text: header()が呼び出され
-  - kind: para
-    text: るとFatal errorになる
+    text: header()が呼び出されるとFatal errorになる
   p132:
   - kind: para
-    text: これはテスティングフレーム
-  - kind: para
-    text: ワークだけではなくアプリケー
+    text: これはテスティングフレームワークだけではなくアプリケー
   - kind: para
     text: ションの構造も再設計しない
   - kind: para
@@ -1137,25 +718,19 @@ text:
   - kind: para
     text: 外部への依存を
   - kind: para
-    text: 抽象化して
-  - kind: para
-    text: 注入するとか
+    text: 抽象化して注入するとか
   p135:
   - kind: para
     text: テスト実行中に
   - kind: para
-    text: 専用のDBを
-  - kind: para
-    text: 起動して利用するとか
+    text: 専用のDBを起動して利用するとか
   p136:
   - kind: para
     text: テストしたいと思った
   - kind: para
     text: 瞬間に直さなきゃ
   - kind: para
-    text: いけないことが
-  - kind: para
-    text: 爆発的に発生して氏ぬ
+    text: いけないことが爆発的に発生して氏ぬ
   p137:
   - kind: para
     text: 😇
@@ -1164,9 +739,7 @@ text:
     text: 次回に続く…?
   p139:
   - kind: para
-    text: まじめにテスト
-  - kind: para
-    text: やりたいひとへ
+    text: まじめにテストやりたいひとへ
   p140:
   - kind: para
     text: おまけ

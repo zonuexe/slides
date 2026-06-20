@@ -6,7 +6,7 @@ import sys
 import unicodedata
 from pathlib import Path
 from statistics import median
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Optional
 
 import fitz  # PyMuPDF
 import yaml
@@ -26,6 +26,13 @@ MAX_HEADING_LEVEL = 3
 BULLET_CHARS = "•‣◦・·▪▫●○■□◆◇▶➤»›→✓✔"
 BULLET_PREFIX = re.compile(rf"^[{re.escape(BULLET_CHARS)}]+\s*")
 WHITESPACE = re.compile(r"\s+")
+
+
+def _join_wrapped(prev: str, nxt: str) -> str:
+    """Join two wrapped lines: space only between ASCII words, else no gap (CJK)."""
+    if prev and nxt and prev[-1].isascii() and prev[-1].isalnum() and nxt[0].isascii() and nxt[0].isalnum():
+        return f"{prev} {nxt}"
+    return f"{prev}{nxt}"
 
 
 class Line:
@@ -112,12 +119,17 @@ def _build_blocks(lines: List[Line]) -> PageBlocks:
     blocks: PageBlocks = []
     list_items: List[str] = []
     pending_bullet = False
+    # 直前に出した para ブロックの (dict, 元fitzブロック番号, サイズ)。
+    # 同一ブロック・同一サイズの連続 para 行は折り返しとみなして結合する。
+    last_para: Optional[Dict[str, Any]] = None
+    last_para_key: Optional[tuple] = None
 
     def flush_list() -> None:
-        nonlocal list_items
+        nonlocal list_items, last_para, last_para_key
         if list_items:
             blocks.append({"kind": "list", "items": list_items})
             list_items = []
+            last_para = last_para_key = None
 
     for line in lines:
         text = line.text
@@ -135,13 +147,21 @@ def _build_blocks(lines: List[Line]) -> PageBlocks:
             item = BULLET_PREFIX.sub("", text).strip()
             if item:
                 list_items.append(item)
+            last_para = last_para_key = None
             continue
 
         flush_list()
         if line.size in levels:
             blocks.append({"kind": "heading", "level": levels[line.size], "text": text})
+            last_para = last_para_key = None
         else:
-            blocks.append({"kind": "para", "text": text})
+            key = (line.block, line.size)
+            if last_para is not None and key == last_para_key:
+                last_para["text"] = _join_wrapped(last_para["text"], text)
+            else:
+                last_para = {"kind": "para", "text": text}
+                last_para_key = key
+                blocks.append(last_para)
 
     flush_list()
     return blocks

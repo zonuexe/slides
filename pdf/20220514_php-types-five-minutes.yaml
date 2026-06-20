@@ -26,9 +26,7 @@ text:
     - spcamp 2010 プログラミング言語組
   p3:
   - kind: para
-    text: PHPは簡単な言語だから
-  - kind: para
-    text: 上級テクニックなんてないよ笑
+    text: PHPは簡単な言語だから上級テクニックなんてないよ笑
   p4:
   - kind: heading
     level: 1
@@ -40,27 +38,17 @@ text:
     text: 言語が簡単なので素朴に書くとエントロピーが無限に増大する
   p5:
   - kind: para
-    text: PHPの型にどのような
-  - kind: para
-    text: 印象を持っていますか？
+    text: PHPの型にどのような印象を持っていますか？
   p6:
   - kind: para
-    text: 脆弱性 ゆるふわ 弱い型 動的
-  - kind: para
-    text: クソザコ 型なし 意味不明 弱い
-  - kind: para
-    text: 自動変換 貧弱 Perlっぽい 適当
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
   - kind: para
     text: PHPについてのパブリックイメージ
   p7:
   - kind: para
     text: ？
   - kind: para
-    text: 脆弱性 ゆるふわ 弱い型 動的
-  - kind: para
-    text: クソザコ 型なし 意味不明 弱い
-  - kind: para
-    text: 自動変換 貧弱 Perlっぽい 適当
+    text: 脆弱性 ゆるふわ 弱い型 動的クソザコ 型なし 意味不明 弱い自動変換 貧弱 Perlっぽい 適当
   - kind: para
     text: PHPについての認識は概ね間違い
   p8:
@@ -87,23 +75,17 @@ text:
     text: 過言です
   p12:
   - kind: para
-    text: 極論はさておいてPHP
-  - kind: para
-    text: ランタイムの型はこれだけ
+    text: 極論はさておいてPHPランタイムの型はこれだけ
   p13:
   - kind: para
-    text: 言語処理系の内部実装について
-  - kind: para
-    text: 「Rubyソースコード完全解説」
+    text: 言語処理系の内部実装について「Rubyソースコード完全解説」
   - kind: para
     text: が参考になる
   p14:
   - kind: para
     text: bool int float string
   - kind: para
-    text: array object null
-  - kind: para
-    text: resource (callable iterable mixed)
+    text: array object null resource (callable iterable mixed)
   - kind: para
     text: JSONで扱える型 + 特殊な型がある
   p15:
@@ -174,48 +156,30 @@ text:
     text: (徐々にobjectに置き換え)
   p21:
   - kind: para
-    text: 型はランタイムに
-  - kind: para
-    text: 確実に保証される
+    text: 型はランタイムに確実に保証される
   p22:
   - kind: para
-    text: 整数ではない文字列は
-  - kind: para
-    text: 型宣言通りに変換
+    text: 整数ではない文字列は型宣言通りに変換
   p23:
   - kind: para
-    text: 整数ではない文字列は
-  - kind: para
-    text: TypeErrorになる
+    text: 整数ではない文字列はTypeErrorになる
   p24:
   - kind: para
-    text: ファイル単位で
-  - kind: para
-    text: strict_types=1指定で
-  - kind: para
-    text: 自動変換を抑制
+    text: ファイル単位でstrict_types=1指定で自動変換を抑制
   p25:
   - kind: para
-    text: どちらにせよ受け取った
-  - kind: para
-    text: 関数の側ではintであることが
+    text: どちらにせよ受け取った関数の側ではintであることが
   - kind: para
     text: 保証される
   p26:
   - kind: para
-    text: PHPでは実行時に
-  - kind: para
-    text: 型情報がとれる
+    text: PHPでは実行時に型情報がとれる
   p27:
   - kind: para
-    text: ユニオン型宣言で
-  - kind: para
-    text: 適切に変換される
+    text: ユニオン型宣言で適切に変換される
   p28:
   - kind: para
-    text: classとinterfaceを
-  - kind: para
-    text: ユーザー定義型として利用可能
+    text: classとinterfaceをユーザー定義型として利用可能
   p29:
   - kind: heading
     level: 1
@@ -226,30 +190,22 @@ text:
     text: インターフェイスも指定できる
   p31:
   - kind: para
-    text: void型宣言で戻り値を
-  - kind: para
-    text: 返さないことを明示できる
+    text: void型宣言で戻り値を返さないことを明示できる
   - kind: para
     text: = その関数には副作用がある
   p32:
   - kind: para
-    text: never型宣言でメソッドが
-  - kind: para
-    text: 正常終了しないことを宣言
+    text: never型宣言でメソッドが正常終了しないことを宣言
   - kind: para
     text: = 異常状態が後続に漏れない
   p33:
   - kind: para
     text: WSGI/Rack/PSGI相当のWeb
   - kind: para
-    text: アプリケーションのI/Fも
-  - kind: para
-    text: 型宣言ベースで定義されている
+    text: アプリケーションのI/Fも型宣言ベースで定義されている
   p34:
   - kind: para
-    text: MIT License - Copyright (c) 2018 PHP-FIG
-  - kind: para
-    text: https://github.com/php-fig/http-factory/blob/1.0.1/src/ResponseFactoryInterface.php
+    text: MIT License - Copyright (c) 2018 PHP-FIG https://github.com/php-fig/http-factory/blob/1.0.1/src/ResponseFactoryInterface.php
   p35:
   - kind: heading
     level: 1
@@ -263,17 +219,13 @@ text:
   - kind: para
     text: 型が実行時に保証される点で
   - kind: para
-    text: PHPは他の動的言語とは
-  - kind: para
-    text: 一線を画しているといえる
+    text: PHPは他の動的言語とは一線を画しているといえる
   p37:
   - kind: heading
     level: 1
     text: 要するにPHPは
   - kind: para
-    text: statically
-  - kind: para
-    text: typed
+    text: statically typed
   - kind: heading
     level: 1
     text: 静的型付き…ってコト！？
@@ -283,36 +235,24 @@ text:
     text: 型なしはどこから来るの？
   p39:
   - kind: para
-    text: 動的言語を型なしと呼ぶのも
-  - kind: para
-    text: 別に誹謗中傷というわけではない
+    text: 動的言語を型なしと呼ぶのも別に誹謗中傷というわけではない
   p40:
   - kind: para
-    text: PHPではURLクエリを
-  - kind: para
-    text: グローバル変数から取り出せる
+    text: PHPではURLクエリをグローバル変数から取り出せる
   p41:
   - kind: para
-    text: いろんなところから湧き出す
-  - kind: para
-    text: 型の特定できないデータ
+    text: いろんなところから湧き出す型の特定できないデータ
   p42:
   - kind: para
-    text: arrayは無限の可能性を秘める
-  - kind: para
-    text: (悪い意味で)
+    text: arrayは無限の可能性を秘める(悪い意味で)
   p43:
   - kind: para
-    text: 扱う対象が複数になったのに
-  - kind: para
-    text: 型に反映されない
+    text: 扱う対象が複数になったのに型に反映されない
   p44:
   - kind: para
     text: PHPの組み込みの型機能では
   - kind: para
-    text: どんなに型推論しても
-  - kind: para
-    text: 静的に型が定まらない
+    text: どんなに型推論しても静的に型が定まらない
   p45:
   - kind: heading
     level: 1
@@ -324,23 +264,17 @@ text:
     text: https://www.php.net/array_map
   p46:
   - kind: para
-    text: 几帳面に型宣言だけを追うと
-  - kind: para
-    text: 人間にはわかる型も機械は理解できない
+    text: 几帳面に型宣言だけを追うと人間にはわかる型も機械は理解できない
   p47:
   - kind: para
     text: 無限の可能性を秘めたarrayを
   - kind: para
     text: 放置するとコード全体の
   - kind: para
-    text: エントロピーが増大し
-  - kind: para
-    text: プロジェクトは熱的死を迎える
+    text: エントロピーが増大しプロジェクトは熱的死を迎える
   p48:
   - kind: para
-    text: ランタイムに保証
-  - kind: para
-    text: されない型を書こう
+    text: ランタイムに保証されない型を書こう
   p49:
   - kind: heading
     level: 1
@@ -355,43 +289,31 @@ text:
     text: https://www.jetbrains.com/ja-jp/phpstorm/
   p52:
   - kind: para
-    text: /** */ のブロックに型を書く
-  - kind: para
-    text: 'array{key: type} で構造体'
-  - kind: para
-    text: のような型を記述できる
+    text: '/** */ のブロックに型を書くarray{key: type} で構造体のような型を記述できる'
   - kind: heading
     level: 1
     text: array-shapes
   p53:
   - kind: para
-    text: array<key, value>
-  - kind: para
-    text: list<value> のように型を書ける
+    text: array<key, value>list<value> のように型を書ける
   - kind: heading
     level: 1
     text: array<T>
   p54:
   - kind: para
-    text: 型パラメータで戻り値を
-  - kind: para
-    text: 可変にできる
+    text: 型パラメータで戻り値を可変にできる
   - kind: heading
     level: 1
     text: '@template'
   p55:
   - kind: para
-    text: ツール互換性のために
-  - kind: para
-    text: '@phpstan- を付けてもよい'
+    text: ツール互換性のために@phpstan- を付けてもよい
   - kind: heading
     level: 1
     text: '@template'
   p56:
   - kind: para
-    text: アプリケーションの
-  - kind: para
-    text: エントロピーを減少させて
+    text: アプリケーションのエントロピーを減少させて
   - kind: para
     text: 快適に開発しよう
 size:

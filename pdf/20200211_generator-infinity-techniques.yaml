@@ -129,9 +129,7 @@ text:
   - kind: para
     text: データを頭から辿っていくだけのものであるのに対して、ジェ
   - kind: para
-    text: ネレータは配列のキーや要素に相当するものを計算によって生
-  - kind: para
-    text: み出すことができるため、省メモリで効率のよい計算が可能で
+    text: ネレータは配列のキーや要素に相当するものを計算によって生み出すことができるため、省メモリで効率のよい計算が可能で
   - kind: para
     text: す。このトークではジェネレータの基礎概念と、実際に応用で
   - kind: para
@@ -152,9 +150,7 @@ text:
     text: していきます
   p28:
   - kind: para
-    text: 「PHPでforeachで反復できるものは何でしょう？」
-  - kind: para
-    text: 配列、オブジェクト、Iterator、そして“ジェネレータ”
+    text: 「PHPでforeachで反復できるものは何でしょう？」配列、オブジェクト、Iterator、そして“ジェネレータ”
   - kind: para
     text: です。
   - kind: para
@@ -169,35 +165,21 @@ text:
   - kind: para
     text: 全てを置き換えるものではない
   - kind: para
-    text: あくまでforeachで順次実行
+    text: あくまでforeachで順次実行するもののみ
   - kind: para
-    text: するもののみ
-  - kind: para
-    text: その他の反復可能オブジェクト
-  - kind: para
-    text: については今回触れません
+    text: その他の反復可能オブジェクトについては今回触れません
   p30:
   - kind: para
     text: iterable擬似型 (PHP 7.1)
   - kind: para
-    text: 擬似型とは実態のある一種類の
-  - kind: para
-    text: 型ではなく同じように扱える複
-  - kind: para
-    text: 数の型とクラスをひとまとめに
-  - kind: para
-    text: した便宜上のもの
+    text: 擬似型とは実態のある一種類の型ではなく同じように扱える複数の型とクラスをひとまとめにした便宜上のもの
   - kind: para
     text: iterable = foreachできる値
   p31:
   - kind: para
     text: 'おまけ: 擬似型'
   - kind: para
-    text: 前述したように特定の型ではな
-  - kind: para
-    text: いが、型宣言(引数・戻り値)の
-  - kind: para
-    text: 型として記述できる
+    text: 前述したように特定の型ではないが、型宣言(引数・戻り値)の型として記述できる
   - kind: para
     text: callable擬似型
   - kind: para
@@ -206,9 +188,7 @@ text:
   - kind: para
     text: 'おまけ: iterableと型定義'
   - kind: para
-    text: DocCommentに型を書くとき
-  - kind: para
-    text: キーと値の型を書ける
+    text: DocCommentに型を書くときキーと値の型を書ける
   - kind: para
     text: iterable<int,string>や
   - kind: para
@@ -221,15 +201,11 @@ text:
   - kind: para
     text: 'おまけ: iterableと型定義'
   - kind: para
-    text: iterableの型をちゃんと書いておくと
-  - kind: para
-    text: foreachの中身も静的解析できる
+    text: iterableの型をちゃんと書いておくとforeachの中身も静的解析できる
   - kind: para
     text: PHPStanは書かないと叱ってくれる
   - kind: para
-    text: JetBrainsさん早くPhpStorm対応し
-  - kind: para
-    text: て(deep-assocプラグインで補完可能)
+    text: JetBrainsさん早くPhpStorm対応して(deep-assocプラグインで補完可能)
   - kind: para
     text: 詳細は｢2018年のPHPDoc事情とPSR-5｣に書きました
   p34:
@@ -243,11 +219,7 @@ text:
   - kind: para
     text: $target_ids = [85490, 54352, 34242, 45090];
   - kind: para
-    text: foreach ($target_ids as $id) {
-  - kind: para
-    text: shori($id);
-  - kind: para
-    text: '}'
+    text: foreach ($target_ids as $id) {shori($id);}
   p35:
   - kind: heading
     level: 1
@@ -259,16 +231,10 @@ text:
   - kind: para
     text: $target_ids = function () { ... };
   - kind: para
-    text: foreach ($target_ids as $id) {
-  - kind: para
-    text: shori($id);
-  - kind: para
-    text: '}'
+    text: foreach ($target_ids as $id) {shori($id);}
   p36:
   - kind: para
-    text: ジェネレータは言語によってコルーチン、
-  - kind: para
-    text: semicoroutineやFiberとも呼ばれるものと同等の言
+    text: ジェネレータは言語によってコルーチン、semicoroutineやFiberとも呼ばれるものと同等の言
   - kind: para
     text: 語機能であり、
   - kind: para
@@ -279,30 +245,16 @@ text:
   - kind: para
     text: 用語 (呼ばれかた)
   - kind: para
-    text: 言語によって呼びかたや機能が
+    text: 言語によって呼びかたや機能が若干違います
   - kind: para
-    text: 若干違います
+    text: JavaScriptやPythonのジェネレータはPHPと似ています
   - kind: para
-    text: JavaScriptやPythonのジェ
-  - kind: para
-    text: ネレータはPHPと似ています
-  - kind: para
-    text: RubyにはEnumeratorと
-  - kind: para
-    text: Fiberというものがあります
+    text: RubyにはEnumeratorとFiberというものがあります
   p38:
   - kind: para
     text: コルーチン (coroutine)
   - kind: para
-    text: ジェネレータは古典的なコルー
-  - kind: para
-    text: チンと同等のものですが、現代
-  - kind: para
-    text: でコルーチンと呼ばれているも
-  - kind: para
-    text: のは意味がかなり拡大している
-  - kind: para
-    text: ので注意が必要です
+    text: ジェネレータは古典的なコルーチンと同等のものですが、現代でコルーチンと呼ばれているものは意味がかなり拡大しているので注意が必要です
   p39:
   - kind: para
     text: SICPのような計算機科学の教科書で説明されるスト
@@ -383,17 +335,11 @@ text:
   - kind: para
     text: ストリーム (遅延リスト)
   - kind: para
-    text: 配列・オブジェクトのようなも
-  - kind: para
-    text: のとクロージャがあれば実現で
-  - kind: para
-    text: きる
+    text: 配列・オブジェクトのようなものとクロージャがあれば実現できる
   - kind: para
     text: PHPで実装してみた
   - kind: para
-    text: https://github.com/zonuexe/phperkaigi-generator/blob/master/
-  - kind: para
-    text: stream.php
+    text: https://github.com/zonuexe/phperkaigi-generator/blob/master/stream.php
   p50:
   - kind: para
     text: ストリームでできる
@@ -405,9 +351,7 @@ text:
   - kind: para
     text: foreachループで配列を反復するのは既に作成済みの
   - kind: para
-    text: データを頭から辿っていくだけのものであるのに対し
-  - kind: para
-    text: て、ジェネレータは配列のキーや要素に相当するものを
+    text: データを頭から辿っていくだけのものであるのに対して、ジェネレータは配列のキーや要素に相当するものを
   - kind: para
     text: 計算によって生み出すことができるため、省メモリで効
   - kind: para
@@ -432,28 +376,16 @@ text:
   - kind: para
     text: ジェネレータ=特別な関数
   - kind: para
-    text: 関数定義(メソッド・クロー
+    text: 関数定義(メソッド・クロージャを含む)の中でyieldと書くとジェネレータになる
   - kind: para
-    text: ジャを含む)の中でyieldと書く
-  - kind: para
-    text: とジェネレータになる
-  - kind: para
-    text: yieldに渡した値はforeachの
-  - kind: para
-    text: 値として受け渡される
+    text: yieldに渡した値はforeachの値として受け渡される
   p55:
   - kind: para
     text: PHPUnit dataProvider
   - kind: para
-    text: テストケースに必要なパラメー
+    text: テストケースに必要なパラメータを生成するメソッド
   - kind: para
-    text: タを生成するメソッド
-  - kind: para
-    text: 配列を返すように作るのが一般
-  - kind: para
-    text: 的だが、実はジェネレータでも
-  - kind: para
-    text: 作れる
+    text: 配列を返すように作るのが一般的だが、実はジェネレータでも作れる
   p56:
   - kind: heading
     level: 1
@@ -463,15 +395,9 @@ text:
   - kind: para
     text: // どこかから取得してきたIDリスト
   - kind: para
-    text: f
+    text: f$target_ids = [85490, 54352, 34242, 45090];
   - kind: para
-    text: $target_ids = [85490, 54352, 34242, 45090];
-  - kind: para
-    text: foreach ($target_ids as $id) {
-  - kind: para
-    text: shori($id);
-  - kind: para
-    text: '}'
+    text: foreach ($target_ids as $id) {shori($id);}
   p57:
   - kind: heading
     level: 1
@@ -481,15 +407,9 @@ text:
   - kind: para
     text: // どこかから取得してきたIDリスト
   - kind: para
-    text: f
+    text: f$target_ids = [85490, 54352, 34242, 45090];
   - kind: para
-    text: $target_ids = [85490, 54352, 34242, 45090];
-  - kind: para
-    text: foreach ($target_ids as $id) {
-  - kind: para
-    text: shori($id);
-  - kind: para
-    text: '}'
+    text: foreach ($target_ids as $id) {shori($id);}
 size:
   max_width: 1024
   max_height: 768

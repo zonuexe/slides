@@ -6,9 +6,7 @@ text:
   - kind: para
     text: Iterate over "elements" of a string.
   - kind: para
-    text: 第138回 PHP勉強会＠東京
-  - kind: para
-    text: '2019年5月29日 #phpstudy'
+    text: '第138回 PHP勉強会＠東京2019年5月29日 #phpstudy'
   p2:
   - kind: heading
     level: 1
@@ -32,17 +30,13 @@ text:
     text: 先に
   p7:
   - kind: para
-    text: 今回話す内容は
-  - kind: para
-    text: 平成最後のLT大会で
+    text: 今回話す内容は平成最後のLT大会で
   - kind: para
     text: 発表した内容に由来
   p8: []
   p9:
   - kind: para
-    text: 今回話す実装は
-  - kind: para
-    text: 既にライブラリ化
+    text: 今回話す実装は既にライブラリ化
   - kind: para
     text: しました
   p10: []
@@ -56,11 +50,7 @@ text:
     text: とは何か
   p13:
   - kind: para
-    text: 任意の処理を
-  - kind: para
-    text: 繰り返しの構造
-  - kind: para
-    text: に落とし込める
+    text: 任意の処理を繰り返しの構造に落とし込める
   p14:
   - kind: para
     text: 繰り返し？
@@ -74,9 +64,7 @@ text:
     text: どうするの？
   p17:
   - kind: para
-    text: Iterator
-  - kind: para
-    text: インターフェイス
+    text: Iteratorインターフェイス
   p18: []
   p19: []
   p20: []
@@ -85,9 +73,7 @@ text:
     text: ジェネレータ
   p22:
   - kind: para
-    text: 関数で
-  - kind: para
-    text: イテレータを
+    text: 関数でイテレータを
   - kind: para
     text: つくれる
   p23:
@@ -97,9 +83,7 @@ text:
     text: ので割愛
   p24:
   - kind: para
-    text: このあと
-  - kind: para
-    text: さんざん出ます
+    text: このあとさんざん出ます
   p25:
   - kind: para
     text: さて本題
@@ -110,9 +94,7 @@ text:
   - kind: para
     text: Iterate over "elements" of a string.
   - kind: para
-    text: 第138回 PHP勉強会＠東京
-  - kind: para
-    text: '2019年5月29日 #phpstudy'
+    text: '第138回 PHP勉強会＠東京2019年5月29日 #phpstudy'
   p27:
   - kind: para
     text: 問題です
@@ -120,9 +102,7 @@ text:
   - kind: para
     text: 入力した文字列を
   - kind: para
-    text: 1文字ごとに改行
-  - kind: para
-    text: 区切りで出力せよ
+    text: 1文字ごとに改行区切りで出力せよ
   p29:
   - kind: para
     text: 簡単じゃん
@@ -144,9 +124,7 @@ text:
   p35: []
   p36:
   - kind: para
-    text: (どう表示される
-  - kind: para
-    text: かは環境による)
+    text: (どう表示されるかは環境による)
   p37:
   - kind: para
     text: …………
@@ -155,35 +133,23 @@ text:
     text: 🙃
   p38:
   - kind: para
-    text: どうしてこんな
-  - kind: para
-    text: ことがおこるのか
+    text: どうしてこんなことがおこるのか
   p39:
   - kind: para
-    text: '前提1:'
-  - kind: para
-    text: PHPのstringは
-  - kind: para
-    text: 「文字」を知らない
+    text: 前提1:PHPのstringは「文字」を知らない
   p40:
   - kind: para
-    text: stringは
-  - kind: para
-    text: ただのバイト列
+    text: stringはただのバイト列
   p41:
   - kind: para
-    text: $s = 'abc';
-  - kind: para
-    text: echo $s[0];
+    text: $s = 'abc';echo $s[0];
   - kind: para
     text: これは先頭1文字ではなく
   - kind: para
     text: 1バイトを取り出す
   p42:
   - kind: para
-    text: 逆に言うとstring
-  - kind: para
-    text: にはどんなバイナ
+    text: 逆に言うとstringにはどんなバイナ
   - kind: para
     text: リも格納できる
   p43:
@@ -191,24 +157,15 @@ text:
     level: 1
     text: '例:'
   - kind: para
-    text: <?php
-  - kind: para
-    text: $s = file_get_contents('flower.png');
-  - kind: para
-    text: 'header(''Content-Type: image/png'');'
-  - kind: para
-    text: echo $s;
+    text: '<?php$s = file_get_contents(''flower.png'');header(''Content-Type: image/png'');echo
+      $s;'
   p44:
   - kind: para
-    text: mb関数が
-  - kind: para
-    text: あるのでは？
+    text: mb関数があるのでは？
   p45: []
   p46:
   - kind: para
-    text: mb関数はencodingを常に
-  - kind: para
-    text: 指定しないと(環境依存せず)
+    text: mb関数はencodingを常に指定しないと(環境依存せず)
   - kind: para
     text: 確実に処理できない
   - kind: heading
@@ -216,20 +173,12 @@ text:
     text: 🤔
   p47:
   - kind: para
-    text: PHP5.6以降では
-  - kind: para
-    text: default_charsetの
-  - kind: para
-    text: デフォルト値が"UTF-8"に、
-  - kind: para
-    text: mbstring.internal_encodingが
+    text: PHP5.6以降ではdefault_charsetのデフォルト値が"UTF-8"に、mbstring.internal_encodingが
   - kind: para
     text: 非推奨になったのは嬉しい
   p48:
   - kind: para
-    text: それはencodingを明示的に
-  - kind: para
-    text: 指定しなくても安全に処理
+    text: それはencodingを明示的に指定しなくても安全に処理
   - kind: para
     text: できることを意味しない
   - kind: heading
@@ -237,11 +186,7 @@ text:
     text: 🙃
   p49:
   - kind: para
-    text: '前提2:'
-  - kind: para
-    text: UTF-8は
-  - kind: para
-    text: 可変長バイト
+    text: 前提2:UTF-8は可変長バイト
   p50:
   - kind: para
     text: ひとつの符号位置を
@@ -252,9 +197,7 @@ text:
     text: 1〜4バイト
   p51:
   - kind: para
-    text: まだ日本語文字を
-  - kind: para
-    text: 「2バイト文字」と
+    text: まだ日本語文字を「2バイト文字」と
   - kind: para
     text: 呼んだりしませんね？
   p52:
@@ -264,34 +207,22 @@ text:
     text: 前の時代
   p53:
   - kind: para
-    text: Shift_JISでは
-  - kind: para
-    text: ガ (2バイト)
+    text: Shift_JISではガ (2バイト)
   - kind: para
     text: ｶﾞ (1バイト+1バイト)
   p54:
   - kind: para
-    text: この頃は半角カナ
-  - kind: para
-    text: で情報量が半分に
-  - kind: para
-    text: なることもあった
+    text: この頃は半角カナで情報量が半分になることもあった
   p55:
   - kind: para
-    text: UTF-8では
-  - kind: para
-    text: ガ (3バイト)
+    text: UTF-8ではガ (3バイト)
   - kind: para
     text: ｶﾞ (3バイト+3バイト)
   p56:
   - kind: para
     text: Unicode(UTF-8)で
   - kind: para
-    text: 表現すると
-  - kind: para
-    text: 半角カナは単純に
-  - kind: para
-    text: バイト数が倍になる
+    text: 表現すると半角カナは単純にバイト数が倍になる
   p57:
   - kind: para
     text: たいへんですね
@@ -300,60 +231,38 @@ text:
     text: ☺
   p58:
   - kind: para
-    text: その上で
+    text: その上でUnicode時代の今日
   - kind: para
-    text: Unicode時代の今日
-  - kind: para
-    text: 何を「文字」と
-  - kind: para
-    text: 呼ぶかを考える
+    text: 何を「文字」と呼ぶかを考える
   p59:
   - kind: para
-    text: 1. バイトごと
-  - kind: para
-    text: 2. コードポイントごと
-  - kind: para
-    text: 3. 書記素クラスタごと
+    text: 1. バイトごと2. コードポイントごと3. 書記素クラスタごと
   p60:
   - kind: para
     text: バイトごと
   p61: []
   p62:
   - kind: para
-    text: これがまさに
-  - kind: para
-    text: バイトごとの
-  - kind: para
-    text: イテレーション
+    text: これがまさにバイトごとのイテレーション
   p63:
   - kind: para
-    text: これを
-  - kind: para
-    text: ジェネレータに
+    text: これをジェネレータに
   - kind: para
     text: 変換
   p64: []
   p65: []
   p66:
   - kind: para
-    text: ライブラリとしては
-  - kind: para
-    text: ｢foreachできるオブジェクト｣
+    text: ライブラリとしては｢foreachできるオブジェクト｣
   - kind: para
     text: (＝ジェネレータ)として提供
   p67:
   - kind: para
-    text: そうすることで
-  - kind: para
-    text: 汎用的に利用で
-  - kind: para
-    text: きるようになる
+    text: そうすることで汎用的に利用できるようになる
   p68: []
   p69:
   - kind: para
-    text: '例:'
-  - kind: para
-    text: 数を集計する
+    text: 例:数を集計する
   p70: []
   p71:
   - kind: para
@@ -370,9 +279,7 @@ text:
   - kind: para
     text: PHP(コア言語)はUnicodeを
   - kind: para
-    text: 知らないが､PCRE関数
-  - kind: para
-    text: preg_match()はUnicodeを
+    text: 知らないが､PCRE関数preg_match()はUnicodeを
   - kind: para
     text: 知ってる ( /u 修飾子)
   p75: []
@@ -386,18 +293,12 @@ text:
     text: 書記素とは？
   p78:
   - kind: para
-    text: 人間の目に
-  - kind: para
-    text: 1文字に見える
+    text: 人間の目に1文字に見える
   - kind: para
     text: 単位
   p79:
   - kind: para
-    text: あ
-  - kind: para
-    text: 漢
-  - kind: para
-    text: ガ
+    text: あ漢ガ
   p80:
   - kind: para
     text: どれも単独の
@@ -407,9 +308,7 @@ text:
   - kind: para
     text: ところでUnicodeに
   - kind: para
-    text: は「ガ」の複数の
-  - kind: para
-    text: 表現方法が存在する
+    text: は「ガ」の複数の表現方法が存在する
   p82:
   - kind: para
     text: ガ (U+30AC)
@@ -438,36 +337,22 @@ text:
     text: Unicode正規化
   p85:
   - kind: para
-    text: '余談: ファイル名に濁点のつい'
+    text: '余談: ファイル名に濁点のついた文字をGitで管理するとMacと'
   - kind: para
-    text: た文字をGitで管理するとMacと
-  - kind: para
-    text: そのほかのファイルシステムで
-  - kind: para
-    text: 諸々の厄介な事態が起こるので
-  - kind: para
-    text: 禁忌。これはAppleのファイルシ
+    text: そのほかのファイルシステムで諸々の厄介な事態が起こるので禁忌。これはAppleのファイルシ
   - kind: para
     text: ステムが伝統的にファイル名を
   - kind: para
     text: Unicode正規化することが問題
   p86:
   - kind: para
-    text: (本筋から逸れ
-  - kind: para
-    text: るので各自ggr)
+    text: (本筋から逸れるので各自ggr)
   p87:
   - kind: para
-    text: 書記素クラスタ
-  - kind: para
-    text: のターンはまだ
-  - kind: para
-    text: まだ終らないぜ
+    text: 書記素クラスタのターンはまだまだ終らないぜ
   p88:
   - kind: para
-    text: 絵文字が
-  - kind: para
-    text: 開いてしまった
+    text: 絵文字が開いてしまった
   - kind: para
     text: パンドラの匣
   p89:
@@ -475,9 +360,7 @@ text:
     text: 'Case1: 国旗'
   p90:
   - kind: para
-    text: 絵文字には
-  - kind: para
-    text: 国旗が充実
+    text: 絵文字には国旗が充実
   p91:
   - kind: para
     text: 
@@ -517,18 +400,14 @@ text:
     text: 
   p92:
   - kind: para
-    text: ……と
-  - kind: para
-    text: 思うじゃん？
+    text: ……と思うじゃん？
   p93:
   - kind: para
     text: 実態
   p94: []
   p95:
   - kind: para
-    text: 国旗専用文字の[J]
-  - kind: para
-    text: と[P]を並べて配置
+    text: 国旗専用文字の[J]と[P]を並べて配置
   - kind: para
     text: すると
   - kind: para
@@ -552,9 +431,7 @@ text:
   - kind: para
     text: strlen('
   - kind: para
-    text: ');
-  - kind: para
-    text: // => 25
+    text: ');// => 25
   p100:
   - kind: para
     text: この絵文字のUTF-8文字数
@@ -568,9 +445,7 @@ text:
   - kind: para
     text: mb_strlen('
   - kind: para
-    text: ', 'UTF-8');
-  - kind: para
-    text: // => 7
+    text: ', 'UTF-8');// => 7
   p102:
   - kind: para
     text: 
@@ -602,65 +477,41 @@ text:
     level: 1
     text: ICU(intl)に依存
   - kind: para
-    text: (常に正しく計算するにはシ
-  - kind: para
-    text: ステムに最新のUnicode定義
+    text: (常に正しく計算するにはシステムに最新のUnicode定義
   - kind: para
     text: が実装されたICUが必要)
   p109:
   - kind: para
-    text: 今回の話題は
-  - kind: para
-    text: ただのトリビアか？
+    text: 今回の話題はただのトリビアか？
   p110:
   - kind: para
     text: 'No'
   p111:
   - kind: para
-    text: Webアプリとしては
-  - kind: para
-    text: 「文字数」を制限し
+    text: Webアプリとしては「文字数」を制限し
   - kind: para
     text: なければいけない
   - kind: para
     text: 場合が多々ある
   p112:
   - kind: para
-    text: サービス都合の制限
-  - kind: para
-    text: ストレージ(DB)都合制限
+    text: サービス都合の制限ストレージ(DB)都合制限
   p113:
   - kind: para
-    text: 自分がどういう理由で
-  - kind: para
-    text: 文字数を制限しようと
-  - kind: para
-    text: しているのか考えよう
+    text: 自分がどういう理由で文字数を制限しようとしているのか考えよう
   p114:
   - kind: para
-    text: '例:'
-  - kind: para
-    text: MySQLのインデックス長のデ
-  - kind: para
-    text: フォルト設定が767バイトだか
-  - kind: para
-    text: らutf8mb4のカラムの文字数を
+    text: 例:MySQLのインデックス長のデフォルト設定が767バイトだからutf8mb4のカラムの文字数を
   - kind: para
     text: VARCHAR(191)以下にしたい
   p115:
   - kind: para
-    text: '例:'
-  - kind: para
-    text: 長いユーザー名は画面
-  - kind: para
-    text: に収まりきらないから
+    text: 例:長いユーザー名は画面に収まりきらないから
   - kind: para
     text: 30文字以下にしたい
   p116:
   - kind: para
-    text: たいていは
-  - kind: para
-    text: mb_strlen($s, 'UTF-8')
+    text: たいていはmb_strlen($s, 'UTF-8')
   - kind: para
     text: で片がつく
   p117:
@@ -671,16 +522,12 @@ text:
     level: 1
     text: 全然違う概念なので厄介
   - kind: para
-    text: (なので、今回紹介した
-  - kind: para
-    text: each_grapheme()を使って計算して
+    text: (なので、今回紹介したeach_grapheme()を使って計算して
   - kind: para
     text: もうまくいかない)
   p118:
   - kind: para
-    text: オチはないけど各位
-  - kind: para
-    text: よく考えて「文字」
+    text: オチはないけど各位よく考えて「文字」
   - kind: para
     text: 単位とつきあって
   - kind: para

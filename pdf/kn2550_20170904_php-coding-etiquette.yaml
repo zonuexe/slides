@@ -6,18 +6,14 @@ text:
   - kind: para
     text: Modern...? PHP manners guide
   - kind: para
-    text: pixiv SUMMER BOOT CAMP 2017
-  - kind: para
-    text: '東京都渋谷区千駄ヶ谷 #pixiv_BOOTCAMP'
+    text: 'pixiv SUMMER BOOT CAMP 2017東京都渋谷区千駄ヶ谷 #pixiv_BOOTCAMP'
   p2: []
   p3:
   - kind: para
     text: 講義資料です
   p4:
   - kind: para
-    text: このスライドは
-  - kind: para
-    text: Webで公開します
+    text: このスライドはWebで公開します
   - kind: para
     text: (メモはとらなくても良いです、の意味)
   p5:
@@ -34,9 +30,7 @@ text:
     - Qiitaに記事を書いたり変なコメントしてるよ
   p6:
   - kind: para
-    text: おぼえて
-  - kind: para
-    text: ほしいこと
+    text: おぼえてほしいこと
   p7:
   - kind: para
     text: コードは動けばええんや
@@ -80,9 +74,7 @@ text:
     text: 仕様変更に追従困難
   p12:
   - kind: para
-    text: 動けばの前提が崩れた
-  - kind: para
-    text: コードは価値が大暴落
+    text: 動けばの前提が崩れたコードは価値が大暴落
   p13:
   - kind: heading
     level: 1
@@ -101,16 +93,10 @@ text:
   - kind: para
     text: そのために「読める」
   - kind: para
-    text: コードの追求と
-  - kind: para
-    text: お作法の共有が必要
+    text: コードの追求とお作法の共有が必要
   p15:
   - kind: para
-    text: 今回は大仰な設計の話で
-  - kind: para
-    text: はなく、単にコーディン
-  - kind: para
-    text: グルールの共有をします
+    text: 今回は大仰な設計の話ではなく、単にコーディングルールの共有をします
   p16:
   - kind: para
     text: PSR?
@@ -142,9 +128,7 @@ text:
   - kind: para
     text: テストコード(tests/)でだけ使ってる
   - kind: para
-    text: pixiv.git内のプロジェクト単位では、
-  - kind: para
-    text: 利用されることもあります
+    text: pixiv.git内のプロジェクト単位では、利用されることもあります
   p20:
   - kind: para
     text: もしもnamespaceがなかったら
@@ -153,18 +137,14 @@ text:
   - kind: para
     text: namespaceとuseの解決は少し面倒
   - kind: para
-    text: 要はクラス名とファイル名の解決が
-  - kind: para
-    text: できればオートローディングできます
+    text: 要はクラス名とファイル名の解決ができればオートローディングできます
   - kind: para
     text: User_Common → User/Common.php
   p21:
   - kind: para
     text: require/include_onceは最低限だけ
   - kind: para
-    text: クラスローダーを登録することで、
-  - kind: para
-    text: 自動ローディングできる (遅延評価)
+    text: クラスローダーを登録することで、自動ローディングできる (遅延評価)
   - kind: para
     text: 1ファイルにつき1クラスを定義する
   - kind: para
@@ -185,9 +165,7 @@ text:
   - kind: para
     text: 不随意にコード中に変な文字が混入し
   - kind: para
-    text: たとき、文法エラーにもならず
-  - kind: para
-    text: 出力されかねないリスクがあります
+    text: たとき、文法エラーにもならず出力されかねないリスクがあります
   p23:
   - kind: heading
     level: 1
@@ -195,9 +173,7 @@ text:
   - kind: para
     text: クラスの概要を一行で要約すること
   - kind: para
-    text: 一行で説明が不可能なら、クラスが
-  - kind: para
-    text: 持つ責任は明らかに多すぎます
+    text: 一行で説明が不可能なら、クラスが持つ責任は明らかに多すぎます
   - kind: para
     text: クラス継承は慎重に設計してください
   - kind: para
@@ -209,31 +185,9 @@ text:
     level: 1
     text: PHPDocの構造
   - kind: para
-    text: /**
-  - kind: para
-    text: '* 概要(summary, 要約) ↓ 下は空行'
-  - kind: para
-    text: '*'
-  - kind: para
-    text: '* 説明文(description)。クラスの説明を書きます。'
-  - kind: para
-    text: '* ここには何行書いてもいいです。'
-  - kind: para
-    text: '*'
-  - kind: para
-    text: '* 説明不足よりも能弁を尊べ。'
-  - kind: para
-    text: '*'
-  - kind: para
-    text: '* @see https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/basic-syntax.html'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: final class Foo_BarModel implements ModelInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: // ...
+    text: /*** 概要(summary, 要約) ↓ 下は空行** 説明文(description)。クラスの説明を書きます。* ここには何行書いてもいいです。**
+      説明不足よりも能弁を尊べ。** @see https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/basic-syntax.html*/final
+      class Foo_BarModel implements ModelInterface{// ...
   p25:
   - kind: para
     text: クラスとPHPDoc
@@ -242,9 +196,7 @@ text:
     level: 1
     text: メソッド定義
   - kind: para
-    text: メソッドの概要を一行で要約し、
-  - kind: para
-    text: 引数と返り値の型をデザインします
+    text: メソッドの概要を一行で要約し、引数と返り値の型をデザインします
   - kind: para
     text: 一行で説明できないメソッドは
   - kind: para
@@ -270,29 +222,13 @@ text:
   - kind: para
     text: 例
   - kind: para
-    text: '@param'
+    text: '@param引数を定義@param int $n1'
   - kind: para
-    text: 引数を定義
+    text: '@return返り値を定義@return int[]'
   - kind: para
-    text: '@param int $n1'
+    text: '@var変数/プロパティを定義@var int'
   - kind: para
-    text: '@return'
-  - kind: para
-    text: 返り値を定義
-  - kind: para
-    text: '@return int[]'
-  - kind: para
-    text: '@var'
-  - kind: para
-    text: 変数/プロパティを定義
-  - kind: para
-    text: '@var int'
-  - kind: para
-    text: '@property'
-  - kind: para
-    text: マジックプロパティを定義
-  - kind: para
-    text: '@property int $id'
+    text: '@propertyマジックプロパティを定義@property int $id'
   p30:
   - kind: heading
     level: 1
@@ -324,9 +260,7 @@ text:
     text: https://zonuexe.github.io/phpDocumentor2-ja/references/phpdoc/types.html
   p32:
   - kind: para
-    text: なんでPHPなのに
-  - kind: para
-    text: わざわざ型を書くの
+    text: なんでPHPなのにわざわざ型を書くの
   p33:
   - kind: para
     text: バグるのと型書くの
@@ -340,22 +274,14 @@ text:
     level: 1
     text: PHPは動的プログラミング言語
   - kind: para
-    text: 静的型解析器(コンパイラ)は
-  - kind: para
-    text: 一般に実行前(コンパイル時)に
-  - kind: para
-    text: 変数や関数の型を特定する
+    text: 静的型解析器(コンパイラ)は一般に実行前(コンパイル時)に変数や関数の型を特定する
   - kind: para
     text: PHPのVM(インタプリタ)は、
   - kind: para
-    text: 変数や関数の型は基本的に特定せず、
-  - kind: para
-    text: 実行時に動的型解析する
+    text: 変数や関数の型は基本的に特定せず、実行時に動的型解析する
   p35:
   - kind: para
-    text: PHPの多くのバグは
-  - kind: para
-    text: 実行時まで遅延する
+    text: PHPの多くのバグは実行時まで遅延する
   p36:
   - kind: para
     text: 要は動かさないと
@@ -363,11 +289,7 @@ text:
     text: わからない
   p37:
   - kind: para
-    text: 動かさなくても
-  - kind: para
-    text: バグを検出できる
-  - kind: para
-    text: うれしみは大きい
+    text: 動かさなくてもバグを検出できるうれしみは大きい
   p38:
   - kind: para
     text: 引数一覧で型を表示するところ
@@ -376,9 +298,7 @@ text:
     text: 型がめったくそなの叱ってくれ
   p40:
   - kind: para
-    text: ループの
-  - kind: para
-    text: 話をしよう
+    text: ループの話をしよう
   p41:
   - kind: para
     text: PHPのfor文は原則禁止
@@ -422,9 +342,7 @@ text:
     level: 1
     text: PHP-FIG
   - kind: para
-    text: PHP Framework Interop Group
-  - kind: para
-    text: PHPフレームワーク相互運用グループ
+    text: PHP Framework Interop Group PHPフレームワーク相互運用グループ
   p50:
   - kind: para
     text: フレームワークや
@@ -437,27 +355,12 @@ text:
     level: 1
     text: 2017年8月現在のメンバー
   - kind: para
-    text: CakePHP, Composer, concrete5, Contao Open
-  - kind: para
-    text: Source CMS, Drupal, eZ Publish, Horde, IBM i
-  - kind: para
-    text: Toolkit, Icicle, Jackalope, Joomla, Lithium,
-  - kind: para
-    text: Magento, PEAR, Phalcon, Phing, phpBB,
-  - kind: para
-    text: phpDocumentor, PHPixie, Pimcore, PPI
-  - kind: para
-    text: Framework, PrestaShop, PyroCMS, ReactPHP,
-  - kind: para
-    text: Revive Adserver, Sculpin, SilverStripe, Slim,
-  - kind: para
-    text: Stash, Stormpath PHP SDK, SugarCRM,
-  - kind: para
-    text: Symfony, Neos and Flow, Wikibase and Semantic
-  - kind: para
-    text: MediaWiki, Yii framework, Zend Framework 2,
-  - kind: para
-    text: Zikula
+    text: CakePHP, Composer, concrete5, Contao Open Source CMS, Drupal, eZ Publish,
+      Horde, IBM i Toolkit, Icicle, Jackalope, Joomla, Lithium,Magento, PEAR, Phalcon,
+      Phing, phpBB,phpDocumentor, PHPixie, Pimcore, PPI Framework, PrestaShop, PyroCMS,
+      ReactPHP,Revive Adserver, Sculpin, SilverStripe, Slim,Stash, Stormpath PHP SDK,
+      SugarCRM,Symfony, Neos and Flow, Wikibase and Semantic MediaWiki, Yii framework,
+      Zend Framework 2,Zikula
   - kind: para
     text: http://www.php-ﬁg.org/members/
   p52:
@@ -470,9 +373,7 @@ text:
   - kind: para
     text: ばらばらに作ってたのを
   - kind: para
-    text: 仕様化して相互に
-  - kind: para
-    text: 利用しやすくしようぜ！
+    text: 仕様化して相互に利用しやすくしようぜ！
   - kind: para
     text: ……みたいな人類の夢
   p57:
@@ -518,11 +419,7 @@ text:
   - kind: para
     text: 具体的なコーディングスタイルガイド
   - kind: para
-    text: PSRに準拠したライブラリが必ず遵守
-  - kind: para
-    text: しなければいけないルールではなく、
-  - kind: para
-    text: プロジェクトごとにガイドラインを
+    text: PSRに準拠したライブラリが必ず遵守しなければいけないルールではなく、プロジェクトごとにガイドラインを
   - kind: para
     text: 決めるための叩き台
   - kind: para
@@ -532,59 +429,23 @@ text:
     level: 1
     text: クラスや関数など定義の{は改行
   - kind: para
-    text: final class Hoge implements Fizz
-  - kind: para
-    text: '{'
-  - kind: para
-    text: function hoge($a, $b)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: function foo()
-  - kind: para
-    text: '{'
+    text: final class Hoge implements Fizz{function hoge($a, $b){return $a + $b;}}function
+      foo(){
   p62:
   - kind: heading
     level: 1
     text: そのほかの文の{は改行しない
   - kind: para
-    text: $is_hoge = hoge();
-  - kind: para
-    text: if ($is_hoge) {
-  - kind: para
-    text: foo();
-  - kind: para
-    text: '} elseif (piyo($a)) {'
-  - kind: para
-    text: bar();
-  - kind: para
-    text: '}'
-  - kind: para
-    text: foreach ($values as $i => $v) {
-  - kind: para
-    text: $values[$i] = piyopiyo($v);
-  - kind: para
-    text: '}'
+    text: $is_hoge = hoge();if ($is_hoge) {foo();} elseif (piyo($a)) {bar();}foreach
+      ($values as $i => $v) {$values[$i] = piyopiyo($v);}
   p63:
   - kind: heading
     level: 1
     text: 演算子などは、きっちり空白
   - kind: para
-    text: $str = "もじれつ";
+    text: $str = "もじれつ";$str2 = $str . "！";
   - kind: para
-    text: $str2 = $str . "！";
-  - kind: para
-    text: $n = 2;
-  - kind: para
-    text: $m = 5;
-  - kind: para
-    text: return foo($n, $m) * 2;
+    text: $n = 2;$m = 5;return foo($n, $m) * 2;
   p64:
   - kind: heading
     level: 1
@@ -596,9 +457,7 @@ text:
   - kind: para
     text: \と_をDIRECTORY_SEPARATORに置換
   - kind: para
-    text: サブ名前空間とベースディレクトリの
-  - kind: para
-    text: 概念が導入
+    text: サブ名前空間とベースディレクトリの概念が導入
   p65:
   - kind: para
     text: わしのPSRは17まで
@@ -615,9 +474,7 @@ text:
     text: 😎
   p68:
   - kind: para
-    text: 所詮はフレームワーク
-  - kind: para
-    text: 開発者どもの間の規則
+    text: 所詮はフレームワーク開発者どもの間の規則
   - kind: heading
     level: 1
     text: 😎
@@ -625,18 +482,14 @@ text:
   - kind: para
     text: プライベートなプロ
   - kind: para
-    text: ジェクトがPSRに
-  - kind: para
-    text: 厳密に従っても得ら
+    text: ジェクトがPSRに厳密に従っても得ら
   - kind: para
     text: れるものは乏しい
   p70:
   - kind: para
     text: プライベートなプロ
   - kind: para
-    text: ジェクトがPSRに
-  - kind: para
-    text: 厳密に従っても得ら
+    text: ジェクトがPSRに厳密に従っても得ら
   - kind: para
     text: れるものは乏しい
   p71:
@@ -652,11 +505,7 @@ text:
     text: 😊
   p73:
   - kind: para
-    text: 規則とは理想的には
-  - kind: para
-    text: 自分たちの足を撃ち
-  - kind: para
-    text: 抜かないためにある
+    text: 規則とは理想的には自分たちの足を撃ち抜かないためにある
   p74:
   - kind: para
     text: 実態に即しない規則
@@ -685,21 +534,13 @@ text:
   - kind: para
     text: PSR-0, PSR-4は採用しない
   - kind: para
-    text: 相互運用されないアプリケーション
-  - kind: para
-    text: コードなどはvendorは厳密に意識し
-  - kind: para
-    text: なくても別に問題が起こらない
+    text: 相互運用されないアプリケーションコードなどはvendorは厳密に意識しなくても別に問題が起こらない
   p77:
   - kind: heading
     level: 1
     text: クラスのオートロード
   - kind: para
-    text: PSR-0, PSR-4の規約通りに配置する
-  - kind: para
-    text: だけで、Composerがいい感じにロー
-  - kind: para
-    text: ドできる
+    text: PSR-0, PSR-4の規約通りに配置するだけで、Composerがいい感じにロードできる
   - kind: para
     text: まあ文字列マッチしてるだけなので、
   - kind: para
@@ -714,17 +555,13 @@ text:
     level: 1
     text: まとめ
   - kind: para
-    text: (これに限らず)ルールやお作法は、
-  - kind: para
-    text: われわれ人類が自爆しないための鎖
+    text: (これに限らず)ルールやお作法は、われわれ人類が自爆しないための鎖
   - kind: para
     text: ルールが作られた背景には事情がある
   - kind: para
     text: ので、それを共有していくのが重要
   - kind: para
-    text: 「どうしてこうなってるの」と感じた
-  - kind: para
-    text: ら質問していこう
+    text: 「どうしてこうなってるの」と感じたら質問していこう
 size:
   max_width: 1024
   max_height: 768

@@ -13,9 +13,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: PHP勉強会in新潟！
-  - kind: para
-    text: '2024-06-07 #niigata _php'
+    text: 'PHP勉強会in新潟！2024-06-07 #niigata _php'
   p2:
   - kind: para
     text: お前誰よ
@@ -51,9 +49,7 @@ text:
     text: 寄りがち
   p8:
   - kind: para
-    text: PHPを使うなら
-  - kind: para
-    text: 誰も避けられないもの
+    text: PHPを使うなら誰も避けられないもの
   p9:
   - kind: heading
     level: 2
@@ -67,19 +63,13 @@ text:
     text: 標準関数は言語の魂
   p11:
   - kind: para
-    text: Ruby
-  - kind: para
-    text: 関数？そんなものはない
+    text: Ruby関数？そんなものはない
   p12:
   - kind: para
-    text: Python
-  - kind: para
-    text: 公開APIと型演算
+    text: Python公開APIと型演算
   p13:
   - kind: para
-    text: PHP
-  - kind: para
-    text: ？？？？？
+    text: PHP？？？？？
   p14:
   - kind: para
     text: PHPの標準関数の数は
@@ -87,16 +77,12 @@ text:
     text: いくつあるでしょうか
   p15:
   - kind: para
-    text: ヒント：
-  - kind: para
-    text: Python 3.10は71個
+    text: ヒント：Python 3.10は71個
   - kind: para
     text: (型を除くと56個くらい)
   p16:
   - kind: para
-    text: 答え：
-  - kind: para
-    text: わかんない
+    text: 答え：わかんない
   p17: []
   p18:
   - kind: heading
@@ -104,9 +90,7 @@ text:
     text: ？？？
   p19:
   - kind: para
-    text: 関数は
-  - kind: para
-    text: どこからくるの？
+    text: 関数はどこからくるの？
   p20:
   - kind: heading
     level: 1
@@ -124,16 +108,11 @@ text:
     level: 1
     text: C言語で定義されています
   - kind: para
-    text: ここを抜き出せば
-  - kind: para
-    text: 関数一覧を作れる？
+    text: ここを抜き出せば関数一覧を作れる？
   p24:
   - kind: para
-    text: rg -g '*.c' -o
-  - kind: para
-    text: '''^(?:ZEND|PHP)_FUNCTION\(.+\)'' |'
-  - kind: para
-    text: 'cut -d: -f2 | sort -u | uniq | wc -l'
+    text: 'rg -g ''*.c'' -o''^(?:ZEND|PHP)_FUNCTION\(.+\)'' |cut -d: -f2 | sort -u
+      | uniq | wc -l'
   - kind: heading
     level: 1
     text: '2009'
@@ -187,9 +166,7 @@ text:
     level: 1
     text: PHPには関数がいっぱい
   - kind: para
-    text: われわれの知る
-  - kind: para
-    text: 標準関数はこのへん
+    text: われわれの知る標準関数はこのへん
   p34:
   - kind: heading
     level: 1
@@ -227,9 +204,7 @@ text:
     level: 1
     text: Debianではモジュールごとのapt
   - kind: para
-    text: よく使われるモジュールも
-  - kind: para
-    text: 明示的にインストールが必要
+    text: よく使われるモジュールも明示的にインストールが必要
   p39:
   - kind: heading
     level: 1
@@ -251,14 +226,10 @@ text:
     text: 話を戻しましょう
   p43:
   - kind: para
-    text: 狭義の標準関数=
-  - kind: para
-    text: コア拡張に属する関数
+    text: 狭義の標準関数=コア拡張に属する関数
   p44:
   - kind: para
-    text: 取材班は関数の数を
-  - kind: para
-    text: 数えるためJSONに
+    text: 取材班は関数の数を数えるためJSONに
   - kind: para
     text: 向き合うことにした
   p45:
@@ -295,11 +266,7 @@ text:
     text: 😇
   p52:
   - kind: para
-    text: 数が多すぎるので
-  - kind: para
-    text: 馴染みのない関数を
-  - kind: para
-    text: 調べる方が筋がいい
+    text: 数が多すぎるので馴染みのない関数を調べる方が筋がいい
   p53:
   - kind: heading
     level: 1
@@ -331,9 +298,7 @@ text:
     text: 追っていく
   p60:
   - kind: para
-    text: たとえば
-  - kind: para
-    text: 配列を処理したい
+    text: たとえば配列を処理したい
   p61:
   - kind: heading
     level: 1
@@ -369,9 +334,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: PHP勉強会in新潟！
-  - kind: para
-    text: '2024-06-07 #niigata _php'
+    text: 'PHP勉強会in新潟！2024-06-07 #niigata _php'
   p65:
   - kind: heading
     level: 1
@@ -448,9 +411,7 @@ text:
     text: …………。
   p81:
   - kind: para
-    text: みなさんに
-  - kind: para
-    text: PHP 8.4最新関数を
+    text: みなさんにPHP 8.4最新関数を
   - kind: para
     text: お伝えしよう
   p82:

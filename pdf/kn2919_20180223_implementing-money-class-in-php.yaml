@@ -1,9 +1,7 @@
 text:
   p1:
   - kind: para
-    text: PHPで雑に通貨クラスを
-  - kind: para
-    text: 実装してみた結果
+    text: PHPで雑に通貨クラスを実装してみた結果
   - kind: para
     text: 🤑
   - kind: para
@@ -37,9 +35,7 @@ text:
     text: 貨幣は一円硬貨
   p7:
   - kind: para
-    text: USで流通する最低
-  - kind: para
-    text: 貨幣は一セント硬貨
+    text: USで流通する最低貨幣は一セント硬貨
   p8:
   - kind: para
     text: セントは1/100ドル
@@ -61,13 +57,9 @@ text:
   - kind: para
     text: PHPの整数は signed int
   - kind: para
-    text: ビット数はPHP_INT_SIZE
+    text: ビット数はPHP_INT_SIZE最大値はPHP_INT_MAXで定義
   - kind: para
-    text: 最大値はPHP_INT_MAXで定義
-  - kind: para
-    text: 概念上、この式で最大値が得られる
-  - kind: para
-    text: 2 ** (PHP_INT_SIZE * 8 - 1) - 1
+    text: 概念上、この式で最大値が得られる2 ** (PHP_INT_SIZE * 8 - 1) - 1
   p12:
   - kind: para
     text: 浮動小数点数型 (float)
@@ -76,19 +68,13 @@ text:
   - kind: para
     text: (IEEE 754 倍精度フォーマット)
   - kind: para
-    text: 型名としては(real)の別名もあ
-  - kind: para
-    text: るが、別に実数ではない
+    text: 型名としては(real)の別名もあるが、別に実数ではない
   p13:
   - kind: para
-    text: とても
-  - kind: para
-    text: 大事なこと
+    text: とても大事なこと
   p14:
   - kind: para
-    text: PHP_INT_MAX
-  - kind: para
-    text: '9223372036854775807'
+    text: PHP_INT_MAX 9223372036854775807
   p15:
   - kind: para
     text: PHP_INT_MAX + 1
@@ -96,16 +82,10 @@ text:
     text: どうなる？
   p16:
   - kind: para
-    text: var_dump(PHP_INT_MAX + 1);
-  - kind: para
-    text: //=> float(9.2233720368548E+18)
+    text: var_dump(PHP_INT_MAX + 1);//=> float(9.2233720368548E+18)
   p17:
   - kind: para
-    text: $bytes = PHP_INT_SIZE * 8;
-  - kind: para
-    text: var_dump(2**($bytes-1)-1);
-  - kind: para
-    text: //=> float(9.2233720368548E+18)
+    text: $bytes = PHP_INT_SIZE * 8;var_dump(2**($bytes-1)-1);//=> float(9.2233720368548E+18)
   p18:
   - kind: para
     text: 突然のfloat
@@ -124,14 +104,10 @@ text:
     text: 😩
   p22:
   - kind: para
-    text: もひとつ
-  - kind: para
-    text: 大事なこと
+    text: もひとつ大事なこと
   p23:
   - kind: para
-    text: 浮動小数点は
-  - kind: para
-    text: 「ぴったり」の数
+    text: 浮動小数点は「ぴったり」の数
   - kind: para
     text: を表現できない
   p24: []
@@ -147,16 +123,10 @@ text:
     text: 計算に向く
   p27:
   - kind: para
-    text: 誤差を許容
-  - kind: para
-    text: できない用途には
-  - kind: para
-    text: 使ってはならない
+    text: 誤差を許容できない用途には使ってはならない
   p28:
   - kind: para
-    text: われわれが欲するのは
-  - kind: para
-    text: 誤差が生じずに小数点
+    text: われわれが欲するのは誤差が生じずに小数点
   - kind: para
     text: 以下を表現できる数
   p29:
@@ -183,9 +153,7 @@ text:
   - kind: para
     text: 文字列で入出力を
   - kind: para
-    text: 表現すれば
-  - kind: para
-    text: 桁は落ちない
+    text: 表現すれば桁は落ちない
   p36:
   - kind: para
     text: $scaleオプション
@@ -195,9 +163,7 @@ text:
     text: 指定できる
   p37:
   - kind: para
-    text: 裸の文字列のまま
-  - kind: para
-    text: 取り回したくない…
+    text: 裸の文字列のまま取り回したくない…
   p38:
   - kind: para
     text: クラスを作ろう
@@ -215,46 +181,32 @@ text:
     text: https://martinfowler.com/eaaCatalog/money.html
   p43:
   - kind: para
-    text: よっしゃ
-  - kind: para
-    text: やってるで
+    text: よっしゃやってるで
   p44:
   - kind: para
-    text: Moneyは
-  - kind: para
-    text: Currency(通貨)と
+    text: MoneyはCurrency(通貨)と
   - kind: para
     text: 量(数)の組である
   p45: []
   p46:
   - kind: para
-    text: 数字から
-  - kind: para
-    text: 金を作る
+    text: 数字から金を作る
   p47: []
   p48:
   - kind: para
-    text: +, -, ×
-  - kind: para
-    text: どうやって実装
+    text: +, -, ×どうやって実装
   p49:
   - kind: para
-    text: まじめに書くと
-  - kind: para
-    text: 意外にめんどい
+    text: まじめに書くと意外にめんどい
   p50:
   - kind: para
     text: 🤔
   p51:
   - kind: para
-    text: キラッと
-  - kind: para
-    text: ひらめいた
+    text: キラッとひらめいた
   p52:
   - kind: para
-    text: 計算する処理は
-  - kind: para
-    text: MoneyCalculator
+    text: 計算する処理はMoneyCalculator
   - kind: para
     text: トレイトに分割
   p53: []
@@ -268,24 +220,16 @@ text:
     text: 書けるように
   p58:
   - kind: para
-    text: 二項演算を採用しな
-  - kind: para
-    text: かったので優先順位
+    text: 二項演算を採用しなかったので優先順位
   - kind: para
     text: の評価は一切不要
   p59:
   - kind: para
-    text: 副作用として
-  - kind: para
-    text: 複数引数の処理
-  - kind: para
-    text: が簡単になった
+    text: 副作用として複数引数の処理が簡単になった
   p60: []
   p61:
   - kind: para
-    text: 通貨計算では
-  - kind: para
-    text: LIStをProcessing
+    text: 通貨計算ではLIStをProcessing
   - kind: para
     text: する！
   p62:
@@ -299,17 +243,13 @@ text:
     text: 実用性はない
   p65:
   - kind: para
-    text: MoneyPHPを
-  - kind: para
-    text: 使ったほうがいい
+    text: MoneyPHPを使ったほうがいい
   p66:
   - kind: para
     text: http://moneyphp.org/en/latest/
   p67:
   - kind: para
-    text: PHPで雑に通貨クラスを
-  - kind: para
-    text: 実装してみた結果
+    text: PHPで雑に通貨クラスを実装してみた結果
   - kind: para
     text: 🤑
   - kind: para

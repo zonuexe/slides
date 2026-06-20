@@ -10,9 +10,7 @@ text:
     level: 2
     text: '2020-12-12 PHPカンファレンス2020 #phpcon'
   - kind: para
-    text: pixiv Inc.
-  - kind: para
-    text: USAMI Kenta
+    text: pixiv Inc.USAMI Kenta
   p2:
   - kind: heading
     level: 2
@@ -77,27 +75,19 @@ text:
     items:
     - しかしPHPとHTTPとオブジェクト指向
   - kind: para
-    text: の理解がないと、何が嬉しいのか納
-  - kind: para
-    text: 得しがたい
+    text: の理解がないと、何が嬉しいのか納得しがたい
   p8:
   - kind: list
     items:
     - 特にPSR-15に関しては今年の頭に
   - kind: para
-    text: PHPerKaigiのために手を動かしてみる
-  - kind: para
-    text: まで、いまいちぴんときていなかった
+    text: PHPerKaigiのために手を動かしてみるまで、いまいちぴんときていなかった
   p9:
   - kind: list
     items:
     - 「抽象的な話はわかった(わからん)。で、
   - kind: para
-    text: 結局何すればいいの」という
-  - kind: para
-    text: 理解のギャップを埋めることを目標とし
-  - kind: para
-    text: ています
+    text: 結局何すればいいの」という理解のギャップを埋めることを目標としています
   - kind: list
     items:
     - 発表後に資料の復習と実践を推奨しま
@@ -121,18 +111,15 @@ text:
     text: PHPの制約
   p13:
   - kind: para
-    text: ネットの
-  - kind: para
-    text: アドレスのやつ？
+    text: ネットのアドレスのやつ？
   - kind: heading
     level: 1
     text: HTTPとは何か
   p14: []
   p15:
   - kind: para
-    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用
-  - kind: para
-    text: 最終更新 2020年11月3日 (火) 13:19
+    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用最終更新 2020年11月3日
+      (火) 13:19
   p16:
   - kind: para
     text: ネットじゃん
@@ -147,9 +134,8 @@ text:
     - 要はHTMLとかのこと
   p17:
   - kind: para
-    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用
-  - kind: para
-    text: 最終更新 2020年11月3日 (火) 13:19
+    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用最終更新 2020年11月3日
+      (火) 13:19
   p18:
   - kind: heading
     level: 1
@@ -158,9 +144,8 @@ text:
     level: 1
     text: いじゃん
   - kind: para
-    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用
-  - kind: para
-    text: 最終更新 2020年11月3日 (火) 13:19
+    text: https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol より引用最終更新 2020年11月3日
+      (火) 13:19
   p19:
   - kind: para
     text: Enterを押すとHTTP
@@ -168,9 +153,7 @@ text:
     text: 通信が走る
   p20:
   - kind: para
-    text: HTTP/3は
-  - kind: para
-    text: 違いますが…
+    text: HTTP/3は違いますが…
   - kind: list
     items:
     - HTTPはTCPベースの通信
@@ -210,15 +193,8 @@ text:
   - kind: para
     text: ヘッダフィールド
   - kind: para
-    text: POST /post HTTP/1.1
-  - kind: para
-    text: 'Host: httpbin.org'
-  - kind: para
-    text: 'Accept: application/json'
-  - kind: para
-    text: 'Content-Type: application/json'
-  - kind: para
-    text: 'Connection: close'
+    text: 'POST /post HTTP/1.1 Host: httpbin.org Accept: application/json Content-Type:
+      application/json Connection: close'
   - kind: para
     text: リクエストボディ
   - kind: para
@@ -234,15 +210,8 @@ text:
     level: 1
     text: http://httpbin.org/post
   - kind: para
-    text: POST /post HTTP/1.1
-  - kind: para
-    text: 'Host: httpbin.org'
-  - kind: para
-    text: 'Accept: application/json'
-  - kind: para
-    text: 'Content-Type: application/json'
-  - kind: para
-    text: 'Connection: close'
+    text: 'POST /post HTTP/1.1 Host: httpbin.org Accept: application/json Content-Type:
+      application/json Connection: close'
   - kind: para
     text: '{"foo":"bar"}'
   p26:
@@ -283,23 +252,9 @@ text:
   - kind: para
     text: の区切りはCR+LF
   - kind: para
-    text: $request = implode("\r\n", [
-  - kind: para
-    text: '''POST /post HTTP/1.1'','
-  - kind: para
-    text: '''Host: httpbin.org'','
-  - kind: para
-    text: '''Accept: application/json'','
-  - kind: para
-    text: '''Content-Type: application/json'','
-  - kind: para
-    text: '''Connection: close'','
-  - kind: para
-    text: ''''','
-  - kind: para
-    text: json_encode(['foo' => 'bar']),
-  - kind: para
-    text: ']);'
+    text: '$request = implode("\r\n", [''POST /post HTTP/1.1'',''Host: httpbin.org'',''Accept:
+      application/json'',''Content-Type: application/json'',''Connection: close'','''',json_encode([''foo''
+      => ''bar'']),]);'
   - kind: para
     text: (\r\n)
   p29:
@@ -311,13 +266,8 @@ text:
   - kind: para
     text: ソケット接続
   - kind: para
-    text: $ip = dns_get_record('httpbin.org', DNS_A)[0]['ip'];
-  - kind: para
-    text: $sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-  - kind: para
-    text: socket_connect($sock, $ip, 80) or
-  - kind: para
-    text: die(socket_strerror(socket_last_error()));
+    text: $ip = dns_get_record('httpbin.org', DNS_A)[0]['ip'];$sock = socket_create(AF_INET,
+      SOCK_STREAM, SOL_TCP);socket_connect($sock, $ip, 80) or die(socket_strerror(socket_last_error()));
   - kind: para
     text: ソケット書込(リクエスト)
   - kind: para
@@ -325,29 +275,18 @@ text:
   - kind: para
     text: ソケット読込(レスポンス)
   - kind: para
-    text: $response = '';
-  - kind: para
-    text: do {
-  - kind: para
-    text: $responses .= ($buf = socket_read($sock, 2048));
-  - kind: para
-    text: '} while ($buf !== '''');'
+    text: $response = '';do {$responses .= ($buf = socket_read($sock, 2048));} while
+      ($buf !== '');
   p30:
   - kind: para
     text: ご安心ください
   - kind: para
-    text: ところで、この方法で簡単に
-  - kind: para
-    text: 通信できるのはHTTP/1.1以下だけ。
+    text: ところで、この方法で簡単に通信できるのはHTTP/1.1以下だけ。
   - kind: para
     text: HTTPSやHTTP/2では困難。
   p31:
   - kind: para
-    text: HTTPSだろうと
-  - kind: para
-    text: ブラウザからは
-  - kind: para
-    text: 通信は簡単に見れる
+    text: HTTPSだろうとブラウザからは通信は簡単に見れる
   p32:
   - kind: para
     text: Webブラウザの
@@ -359,14 +298,10 @@ text:
     text: さて
   p34:
   - kind: para
-    text: リクエストを送る人が居れば
-  - kind: para
-    text: リクエストを受け取る人も居る
+    text: リクエストを送る人が居ればリクエストを受け取る人も居る
   p35:
   - kind: para
-    text: 実際にはGoかも
-  - kind: para
-    text: しれないしRubyかも
+    text: 実際にはGoかもしれないしRubyかも
   - kind: para
     text: しれない…
   - kind: heading
@@ -374,20 +309,12 @@ text:
     text: そうですPHPです
   p36:
   - kind: para
-    text: ブラウザでPHPの実行結果
+    text: ブラウザでPHPの実行結果が見えるということはPHPがHTTPリクエストを受け取って
   - kind: para
-    text: が見えるということはPHPが
-  - kind: para
-    text: HTTPリクエストを受け取って
-  - kind: para
-    text: レスポンスを
-  - kind: para
-    text: 返しているにほかならない
+    text: レスポンスを返しているにほかならない
   p37:
   - kind: para
-    text: スーパー
-  - kind: para
-    text: グローバル変数
+    text: スーパーグローバル変数
   - kind: heading
     level: 1
     text: $_SERVER
@@ -401,15 +328,8 @@ text:
     level: 1
     text: HTTPリクエスト
   - kind: para
-    text: POST /post?hoge=1&fuga=2 HTTP/1.1
-  - kind: para
-    text: 'Host: httpbin.org'
-  - kind: para
-    text: 'Accept: application/json'
-  - kind: para
-    text: 'Content-Type: application/x-www-form-urlencoded'
-  - kind: para
-    text: 'Connection: close'
+    text: 'POST /post?hoge=1&fuga=2 HTTP/1.1 Host: httpbin.org Accept: application/json
+      Content-Type: application/x-www-form-urlencoded Connection: close'
   - kind: para
     text: foo=3&bar=4
   - kind: para
@@ -418,9 +338,8 @@ text:
     text: $_POST
   p39:
   - kind: para
-    text: https://www.php.net/manual/ja/reserved.variables.server.php より引用
-  - kind: para
-    text: 2020年12月12日 閲覧
+    text: https://www.php.net/manual/ja/reserved.variables.server.php より引用2020年12月12日
+      閲覧
   p40:
   - kind: list
     items:
@@ -468,21 +387,9 @@ text:
   - kind: para
     text: ヘッダフィールド
   - kind: para
-    text: HTTP/1.1 200 OK
-  - kind: para
-    text: 'Date: Fri, 11 Dec 2020 16:20:18 GMT'
-  - kind: para
-    text: 'Content-Type: application/json'
-  - kind: para
-    text: 'Content-Length: 339'
-  - kind: para
-    text: 'Connection: close'
-  - kind: para
-    text: 'Server: gunicorn/19.9.0'
-  - kind: para
-    text: 'Access-Control-Allow-Origin: *'
-  - kind: para
-    text: 'Access-Control-Allow-Credentials: true'
+    text: 'HTTP/1.1 200 OK Date: Fri, 11 Dec 2020 16:20:18 GMT Content-Type: application/json
+      Content-Length: 339 Connection: close Server: gunicorn/19.9.0 Access-Control-Allow-Origin:
+      *Access-Control-Allow-Credentials: true'
   - kind: para
     text: レスポンスボディ
   - kind: para
@@ -496,48 +403,27 @@ text:
   - kind: para
     text: ヘッダフィールド
   - kind: para
-    text: HTTP/1.1 200 OK
-  - kind: para
-    text: 'Date: Fri, 11 Dec 2020 16:20:18 GMT'
-  - kind: para
-    text: 'Content-Type: text/html'
-  - kind: para
-    text: 'Content-Length: 339'
-  - kind: para
-    text: 'Connection: close'
-  - kind: para
-    text: 'Access-Control-Allow-Origin: *'
-  - kind: para
-    text: 'Access-Control-Allow-Credentials: true'
+    text: 'HTTP/1.1 200 OK Date: Fri, 11 Dec 2020 16:20:18 GMT Content-Type: text/html
+      Content-Length: 339 Connection: close Access-Control-Allow-Origin: *Access-Control-Allow-Credentials:
+      true'
   - kind: para
     text: レスポンスボディ
   - kind: para
-    text: <!DOCTYPE html>
-  - kind: para
-    text: <html>
-  - kind: para
-    text: <head>
+    text: <!DOCTYPE html><html><head>
   p46:
   - kind: para
     text: PHPではechoなどで出力したものは
   - kind: para
     text: そのままレスポンスボディになる
   - kind: para
-    text: (レスポンスヘッダは、ボディを
-  - kind: para
-    text: echoする前にheader()を呼んでおく)
+    text: (レスポンスヘッダは、ボディをechoする前にheader()を呼んでおく)
   p47:
   - kind: heading
     level: 1
     text: PHPでは基本的にこれだけ
   - kind: para
-    text: <?php
-  - kind: para
-    text: 'header(''Content-Type: application/json'');'
-  - kind: para
-    text: 'header(''Access-Control-Allow-Origin: *'');'
-  - kind: para
-    text: 'header(''Access-Control-Allow-Credentials: true'');'
+    text: '<?php header(''Content-Type: application/json'');header(''Access-Control-Allow-Origin:
+      *'');header(''Access-Control-Allow-Credentials: true'');'
   - kind: para
     text: echo json_encode($data);
   p48:
@@ -545,37 +431,17 @@ text:
     level: 1
     text: PHPでは基本的にこれだけ
   - kind: para
-    text: <?php
-  - kind: para
-    text: 'header(''Content-Type: text/html'');'
-  - kind: para
-    text: 'header(''Access-Control-Allow-Origin: *'');'
-  - kind: para
-    text: 'header(''Access-Control-Allow-Credentials: true'');'
-  - kind: para
-    text: ?>
-  - kind: para
-    text: <!DOCTYPE html>
-  - kind: para
-    text: <html>
-  - kind: para
-    text: <head>...
+    text: '<?php header(''Content-Type: text/html'');header(''Access-Control-Allow-Origin:
+      *'');header(''Access-Control-Allow-Credentials: true'');?><!DOCTYPE html><html><head>...'
   p49:
   - kind: heading
     level: 1
     text: PHPでは基本的にこれだけ
   - kind: para
-    text: <?php
+    text: '<?php header(''Content-Type: image/png'');header(''Access-Control-Allow-Origin:
+      *'');header(''Access-Control-Allow-Credentials: true'');'
   - kind: para
-    text: 'header(''Content-Type: image/png'');'
-  - kind: para
-    text: 'header(''Access-Control-Allow-Origin: *'');'
-  - kind: para
-    text: 'header(''Access-Control-Allow-Credentials: true'');'
-  - kind: para
-    text: // 画像ファイルをそのまま返すこともできる
-  - kind: para
-    text: readfile(__DIR__ . '/../storage/flower.png');
+    text: // 画像ファイルをそのまま返すこともできるreadfile(__DIR__ . '/../storage/flower.png');
   p50:
   - kind: list
     items:
@@ -599,18 +465,14 @@ text:
     - header(), setcookie(), session
   p52:
   - kind: para
-    text: ならPHPの基本機能をそのまま
-  - kind: para
-    text: 使うのが一番自然でいいのでは
+    text: ならPHPの基本機能をそのまま使うのが一番自然でいいのでは
   p53:
   - kind: heading
     level: 1
     text: そうともいかない事情がある
   p54:
   - kind: para
-    text: グローバルは
-  - kind: para
-    text: テストとひたすら相
+    text: グローバルはテストとひたすら相
   - kind: para
     text: 性が悪い
   - kind: list
@@ -629,9 +491,7 @@ text:
     - なぜテストと相性が悪いのか
     - 一般的なユニットテストはテスト対象
   - kind: para
-    text: に引数を与えて、その返り値をア
-  - kind: para
-    text: サーションする
+    text: に引数を与えて、その返り値をアサーションする
   - kind: list
     items:
     - 実装が引数以外のものに依存すると
@@ -647,9 +507,7 @@ text:
     items:
     - PHPUnitならテストケース実行前の
   - kind: para
-    text: setUp()で確実にリセットしておけばい
-  - kind: para
-    text: い
+    text: setUp()で確実にリセットしておけばいい
   p57:
   - kind: list
     items:
@@ -668,9 +526,7 @@ text:
     - header()/setcookieとCLIの相性
     - 「特定の場合にヘッダ／Cookieが送
   - kind: para
-    text: 信されること」のようなアサーションは
-  - kind: para
-    text: 書けない
+    text: 信されること」のようなアサーションは書けない
   - kind: list
     items:
     - ラッパー関数などの工夫で可能
@@ -695,16 +551,10 @@ text:
     items:
     - 操作できないグローバルな状態が
   - kind: para
-    text: 存在すると引数と返り値による
-  - kind: para
-    text: アサーションに落とし込めない
+    text: 存在すると引数と返り値によるアサーションに落とし込めない
   p62:
   - kind: para
-    text: それならHTTPを
-  - kind: para
-    text: 引数と返り値で扱える
-  - kind: para
-    text: 場所に持ってくればいい
+    text: それならHTTPを引数と返り値で扱える場所に持ってくればいい
   p63:
   - kind: para
     text: HTTPの構造は決まってる
@@ -719,15 +569,8 @@ text:
   - kind: para
     text: ヘッダフィールド
   - kind: para
-    text: POST /post HTTP/1.1
-  - kind: para
-    text: 'Host: httpbin.org'
-  - kind: para
-    text: 'Accept: application/json'
-  - kind: para
-    text: 'Content-Type: application/json'
-  - kind: para
-    text: 'Connection: close'
+    text: 'POST /post HTTP/1.1 Host: httpbin.org Accept: application/json Content-Type:
+      application/json Connection: close'
   - kind: para
     text: リクエストボディ
   - kind: para
@@ -741,21 +584,9 @@ text:
   - kind: para
     text: ヘッダフィールド
   - kind: para
-    text: HTTP/1.1 200 OK
-  - kind: para
-    text: 'Date: Fri, 11 Dec 2020 16:20:18 GMT'
-  - kind: para
-    text: 'Content-Type: application/json'
-  - kind: para
-    text: 'Content-Length: 339'
-  - kind: para
-    text: 'Connection: close'
-  - kind: para
-    text: 'Server: gunicorn/19.9.0'
-  - kind: para
-    text: 'Access-Control-Allow-Origin: *'
-  - kind: para
-    text: 'Access-Control-Allow-Credentials: true'
+    text: 'HTTP/1.1 200 OK Date: Fri, 11 Dec 2020 16:20:18 GMT Content-Type: application/json
+      Content-Length: 339 Connection: close Server: gunicorn/19.9.0 Access-Control-Allow-Origin:
+      *Access-Control-Allow-Credentials: true'
   - kind: para
     text: レスポンスボディ
   - kind: para
@@ -769,18 +600,12 @@ text:
   - kind: para
     text: システムの奥深くでグローバル
   - kind: para
-    text: 変数を参照されたら困るなら
-  - kind: para
-    text: リクエストオブジェクトを渡して
-  - kind: para
-    text: そこから状態を取得させればいい
+    text: 変数を参照されたら困るならリクエストオブジェクトを渡してそこから状態を取得させればいい
   p68:
   - kind: para
     text: header()関数をコールされたら困る
   - kind: para
-    text: なら、送信したいヘッダを
-  - kind: para
-    text: レスポンスオブジェクトに記録して受
+    text: なら、送信したいヘッダをレスポンスオブジェクトに記録して受
   - kind: para
     text: け渡していけばいい
   p69:
@@ -833,9 +658,7 @@ text:
     text: (PHP標準勧告)
   p76:
   - kind: para
-    text: 経緯はsasezakiさんの
-  - kind: para
-    text: 「憂鬱な希望としての PSR-7」を参照
+    text: 経緯はsasezakiさんの「憂鬱な希望としての PSR-7」を参照
   p77:
   - kind: heading
     level: 1
@@ -849,13 +672,9 @@ text:
     text: が受理
   p78:
   - kind: para
-    text: これで晴れて具象への依存を避けつつPSR
+    text: これで晴れて具象への依存を避けつつPSRベースのWebアプリを書けるようになったとい
   - kind: para
-    text: ベースのWebアプリを書けるようになったとい
-  - kind: para
-    text: う話は、田中ひさてるさんの
-  - kind: para
-    text: PHP-FIGのHTTP処理標準の設計はなぜ
+    text: う話は、田中ひさてるさんのPHP-FIGのHTTP処理標準の設計はなぜ
   - kind: para
     text: PSR-7/15/17になったのか
   - kind: para
@@ -867,9 +686,7 @@ text:
     text: スの実装と勘所
   p80:
   - kind: para
-    text: お待たせしました
-  - kind: para
-    text: ここからWebアプリを
+    text: お待たせしましたここからWebアプリを
   - kind: para
     text: 作りはじめましょう
   p81:
@@ -892,9 +709,7 @@ text:
     - ServerRequestInterface
     - Requestにスーパーグローバル
   - kind: para
-    text: ($_GETなど)相当+Attributeを
-  - kind: para
-    text: 付与して引き回せる
+    text: ($_GETなど)相当+Attributeを付与して引き回せる
   p84:
   - kind: list
     items:
@@ -915,41 +730,21 @@ text:
     level: 2
     text: https://github.com/zonuexe/phpcon-psr-app
   - kind: para
-    text: '% composer require nyholm/psr7 nyholm/psr7-server'
+    text: '% composer require nyholm/psr7 nyholm/psr7-server% composer require narrowspark/http-emitter'
   - kind: para
-    text: '% composer require narrowspark/http-emitter'
-  - kind: para
-    text: '# サーバー起動'
-  - kind: para
-    text: '% php -S localhost:3939 -t public/ ./public/index.php'
+    text: '# サーバー起動% php -S localhost:3939 -t public/ ./public/index.php'
   p86:
   - kind: heading
     level: 1
     text: public/index.php
   - kind: para
-    text: <?php declare(strict_types=1);
+    text: <?php declare(strict_types=1);use Narrowspark\HttpEmitter\SapiEmitter;use
+      Nyholm\Psr7\Factory\Psr17Factory;use Nyholm\Psr7Server\ServerRequestCreator;require
+      __DIR__ . '/../vendor/autoload.php';
   - kind: para
-    text: use Narrowspark\HttpEmitter\SapiEmitter;
-  - kind: para
-    text: use Nyholm\Psr7\Factory\Psr17Factory;
-  - kind: para
-    text: use Nyholm\Psr7Server\ServerRequestCreator;
-  - kind: para
-    text: require __DIR__ . '/../vendor/autoload.php';
-  - kind: para
-    text: $psr17Factory = new Psr17Factory();
-  - kind: para
-    text: $creator = new ServerRequestCreator(
-  - kind: para
-    text: $psr17Factory, // ServerRequestFactory
-  - kind: para
-    text: $psr17Factory, // UriFactory
-  - kind: para
-    text: $psr17Factory, // UploadedFileFactory
-  - kind: para
-    text: $psr17Factory // StreamFactory
-  - kind: para
-    text: );
+    text: $psr17Factory = new Psr17Factory();$creator = new ServerRequestCreator($psr17Factory,
+      // ServerRequestFactory$psr17Factory, // UriFactory$psr17Factory, // UploadedFileFactory$psr17Factory
+      // StreamFactory);
   p87:
   - kind: heading
     level: 1
@@ -957,15 +752,10 @@ text:
   - kind: para
     text: $serverRequest = $creator->fromGlobals();
   - kind: para
-    text: $response = $psr17Factory->createResponse()；
+    text: $response = $psr17Factory->createResponse()；->withHeader('Content-Type',
+      'text/plain')->withBody($psr17Factory->createStream('Hello!'));
   - kind: para
-    text: ->withHeader('Content-Type', 'text/plain')
-  - kind: para
-    text: ->withBody($psr17Factory->createStream('Hello!'));
-  - kind: para
-    text: $emitter = new SapiEmitter();
-  - kind: para
-    text: $emitter->emit($response);
+    text: $emitter = new SapiEmitter();$emitter->emit($response);
   p88:
   - kind: list
     items:
@@ -981,59 +771,25 @@ text:
     items:
     - '注意: 今回はControllerを'
   - kind: para
-    text: RequestHandlerにしているが、
-  - kind: para
-    text: 別の方法で安全に起動できる手段が
-  - kind: para
-    text: あれば他の方法でもよい
+    text: RequestHandlerにしているが、別の方法で安全に起動できる手段があれば他の方法でもよい
   p90:
   - kind: heading
     level: 1
     text: src/Http/RequestHandler/Hello.php
   - kind: para
-    text: final class Hello implements RequestHandlerInterface
+    text: final class Hello implements RequestHandlerInterface{private StreamFactory
+      $stream_factory;private ResponseFactory $response_factory;
   - kind: para
-    text: '{'
-  - kind: para
-    text: private StreamFactory $stream_factory;
-  - kind: para
-    text: private ResponseFactory $response_factory;
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: ResponseFactory $response_factory,
-  - kind: para
-    text: StreamFactory $stream_factory
-  - kind: para
-    text: ) {
-  - kind: para
-    text: $this->response_factory = $response_factory;
-  - kind: para
-    text: $this->stream_factory = $stream_factory;
-  - kind: para
-    text: '}'
+    text: public function __construct(ResponseFactory $response_factory,StreamFactory
+      $stream_factory) {$this->response_factory = $response_factory;$this->stream_factory
+      = $stream_factory;}
   p91:
   - kind: heading
     level: 1
     text: src/Http/RequestHandler/Hello.php
   - kind: para
-    text: 'public function handle(Request $request): Response'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $this->response_factory->createResponse()
-  - kind: para
-    text: ->withHeader('Content-Type', 'text/plain')
-  - kind: para
-    text: ->withBody(
-  - kind: para
-    text: $this->stream_factory->createStream('Hello!')
-  - kind: para
-    text: );
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'public function handle(Request $request): Response{return $this->response_factory->createResponse()->withHeader(''Content-Type'',
+      ''text/plain'')->withBody($this->stream_factory->createStream(''Hello!''));}}'
   p92:
   - kind: heading
     level: 1
@@ -1041,13 +797,9 @@ text:
   - kind: para
     text: $serverRequest = $creator->fromGlobals();
   - kind: para
-    text: $hello = new Hello($psr17Factory, $psr17Factory);
+    text: $hello = new Hello($psr17Factory, $psr17Factory);$response = $hello->handle($serverRequest);
   - kind: para
-    text: $response = $hello->handle($serverRequest);
-  - kind: para
-    text: $emitter = new SapiEmitter();
-  - kind: para
-    text: $emitter->emit($response);
+    text: $emitter = new SapiEmitter();$emitter->emit($response);
   p93:
   - kind: list
     items:
@@ -1059,78 +811,39 @@ text:
     level: 1
     text: public/index.php
   - kind: para
-    text: $router = new StaticRouter([
-  - kind: para
-    text: '''/'' => [''GET''=>fn() => new Index($psr17, $psr17)],'
-  - kind: para
-    text: '''/hello'' => [''GET''=>fn()=> new Hello($psr17, $psr17)],'
-  - kind: para
-    text: '], fn() => new ErrorPage($psr17Factory, $psr17Factory));'
+    text: $router = new StaticRouter(['/' => ['GET'=>fn() => new Index($psr17, $psr17)],'/hello'
+      => ['GET'=>fn()=> new Hello($psr17, $psr17)],], fn() => new ErrorPage($psr17Factory,
+      $psr17Factory));
   - kind: para
     text: $response = $router->handle($serverRequest);
   - kind: para
-    text: $emitter = new SapiEmitter();
-  - kind: para
-    text: $emitter->emit($response);
+    text: $emitter = new SapiEmitter();$emitter->emit($response);
   p95:
   - kind: heading
     level: 1
     text: src/Http/RequestHandler/StaticRouter.php
   - kind: para
-    text: final class StaticRouter implements
+    text: final class StaticRouter implements RequestHandlerInterface{private array
+      $routes;private Closure $error_page;
   - kind: para
-    text: RequestHandlerInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: private array $routes;
-  - kind: para
-    text: private Closure $error_page;
-  - kind: para
-    text: public function __construct(array $routes, Closure
-  - kind: para
-    text: $error_page)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $this->routes = $routes;
-  - kind: para
-    text: $this->error_page = $error_page;
-  - kind: para
-    text: '}'
+    text: public function __construct(array $routes, Closure$error_page){$this->routes
+      = $routes;$this->error_page = $error_page;}
   p96:
   - kind: heading
     level: 1
     text: src/Http/RequestHandler/StaticRouter.php
   - kind: para
-    text: 'public function handle(Request $request): Response'
+    text: 'public function handle(Request $request): Response{$path = $request->getUri()->getPath();$method
+      = $request->getMethod();'
   - kind: para
-    text: '{'
-  - kind: para
-    text: $path = $request->getUri()->getPath();
-  - kind: para
-    text: $method = $request->getMethod();
-  - kind: para
-    text: return (
-  - kind: para
-    text: $this->routes[$path][$method]
-  - kind: para
-    text: ?? $this->error_page
-  - kind: para
-    text: )()->handle($request);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: return ($this->routes[$path][$method]?? $this->error_page)()->handle($request);}}
   p97:
   - kind: list
     items:
     - 既存のミドルウェアを導入していく
     - https://github.com/middlewares/psr15-middle
   - kind: para
-    text: wares のプロジェクトがさまざまなミド
-  - kind: para
-    text: ルウェアを既に実装している
+    text: wares のプロジェクトがさまざまなミドルウェアを既に実装している
   p98:
   - kind: list
     items:
@@ -1138,18 +851,14 @@ text:
     - 今回は数が少ないのですべて
     - https://github.com/phppg/phperkaigi-golf では
   - kind: para
-    text: PHP-DIにオブジェクトの生成とディス
-  - kind: para
-    text: パッチを任せている
+    text: PHP-DIにオブジェクトの生成とディスパッチを任せている
   p99:
   - kind: list
     items:
     - ServerRequestと型付けの問題
     - ServerRequest::getParsedBody()や
   - kind: para
-    text: getQueryParams()から値を取り出す
-  - kind: para
-    text: のは$_GETと大差ない
+    text: getQueryParams()から値を取り出すのは$_GETと大差ない
   - kind: list
     items:
     - getAttributeの値も現状

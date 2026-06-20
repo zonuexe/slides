@@ -25,36 +25,22 @@ text:
     text: はじめに
   p4:
   - kind: para
-    text: プログラムは
-  - kind: para
-    text: 様々な要素の
-  - kind: para
-    text: 組み合せで構成される
+    text: プログラムは様々な要素の組み合せで構成される
   p5:
   - kind: para
     text: 様々な要素？
   p6:
   - kind: para
-    text: PHPにおいては(ざっくり)、
-  - kind: para
-    text: 構文(文法), 数字, 文字列, 真理値,
-  - kind: para
-    text: 配列, リソース, 型, クラス, 関数,
+    text: PHPにおいては(ざっくり)、構文(文法), 数字, 文字列, 真理値,配列, リソース, 型, クラス, 関数,
   - kind: para
     text: オブジェクト, インターフェイス,
   - kind: para
-    text: トレイト, ファイル, 外部API,
-  - kind: para
-    text: データベース, HTMLテンプレート
+    text: トレイト, ファイル, 外部API,データベース, HTMLテンプレート
   - kind: para
     text: …etc.
   p7:
   - kind: para
-    text: われわれは
-  - kind: para
-    text: いろんなものを
-  - kind: para
-    text: 組み合せて作る
+    text: われわれはいろんなものを組み合せて作る
   p8:
   - kind: para
     text: どうやって？
@@ -63,25 +49,10 @@ text:
     level: 1
     text: いろんなものが現れる
   - kind: para
-    text: <?php require 'bootstrap.php';
-  - kind: para
-    text: $db = mysqli_connect();
-  - kind: para
-    text: $stmt = mysqli_prepare($db, 'SELECT * FROM books');
-  - kind: para
-    text: mysqli_stmt_execute($stmt);
-  - kind: para
-    text: print '<h1>本の一覧</h1>';
-  - kind: para
-    text: print '<ul>';
-  - kind: para
-    text: foreach ($stmt as $s){
-  - kind: para
-    text: print '<li>'; print $s->name; print ‘</li>';
-  - kind: para
-    text: '}'
-  - kind: para
-    text: print '</ul>';
+    text: <?php require 'bootstrap.php';$db = mysqli_connect();$stmt = mysqli_prepare($db,
+      'SELECT * FROM books');mysqli_stmt_execute($stmt);print '<h1>本の一覧</h1>';print
+      '<ul>';foreach ($stmt as $s){print '<li>'; print $s->name; print ‘</li>';}print
+      '</ul>';
   p10:
   - kind: para
     text: お気付きか
@@ -90,9 +61,7 @@ text:
     text: 階級制度
   p12:
   - kind: para
-    text: いろんな
-  - kind: para
-    text: ものがある
+    text: いろんなものがある
   p13: []
   p14:
   - kind: para
@@ -100,47 +69,29 @@ text:
   - kind: para
     text: class object）は、あるプログラミング言語において、たとえ
   - kind: para
-    text: ば生成、代入、演算、（引数・戻り値としての）受け渡しと
+    text: ば生成、代入、演算、（引数・戻り値としての）受け渡しといったその言語における基本的な操作を制限なしに使用でき
   - kind: para
-    text: いったその言語における基本的な操作を制限なしに使用でき
-  - kind: para
-    text: る対象のことである。ここで「オブジェクト」とは広く対象
-  - kind: para
-    text: 物・客体を意味し、必ずしもオブジェクト指向プログラミン
+    text: る対象のことである。ここで「オブジェクト」とは広く対象物・客体を意味し、必ずしもオブジェクト指向プログラミン
   - kind: para
     text: グにおけるオブジェクトを意味しない。”
   - kind: para
     text: –第一級オブジェクト (最終更新 2017-04-23 19:00:11)
   - kind: para
-    text: https://ja.wikipedia.org/wiki/
-  - kind: para
-    text: '%E7%AC%AC%E4%B8%80%E7%B4%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88'
+    text: https://ja.wikipedia.org/wiki/%E7%AC%AC%E4%B8%80%E7%B4%9A%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88
   p15:
   - kind: para
-    text: PHPは
-  - kind: para
-    text: どうかな？
+    text: PHPはどうかな？
   p16:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
+    text: 神配列のキーになれる
   - kind: para
-    text: 神
+    text: 貴族簡単に画面に出力できる
   - kind: para
-    text: 配列のキーになれる
+    text: 上級市民シリアライズできる
   - kind: para
-    text: 貴族
-  - kind: para
-    text: 簡単に画面に出力できる
-  - kind: para
-    text: 上級市民
-  - kind: para
-    text: シリアライズできる
-  - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: para
     text: 関数や構文を経由して一級市民になれる
   - kind: para
@@ -149,9 +100,7 @@ text:
     text: 相当がんばらないと操作できない
   p17:
   - kind: para
-    text: PHPは
-  - kind: para
-    text: どうかな？
+    text: PHPはどうかな？
   p18:
   - kind: para
     text: 明らかに一級市民
@@ -159,25 +108,15 @@ text:
     text: ではないもの
   p19:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
+    text: 神配列のキーになれる
   - kind: para
-    text: 神
+    text: 貴族簡単に画面に出力できる
   - kind: para
-    text: 配列のキーになれる
+    text: 上級市民シリアライズできる
   - kind: para
-    text: 貴族
-  - kind: para
-    text: 簡単に画面に出力できる
-  - kind: para
-    text: 上級市民
-  - kind: para
-    text: シリアライズできる
-  - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: para
     text: 関数や構文を経由して一級市民になれる
   - kind: para
@@ -205,28 +144,18 @@ text:
     text: 神
   p24:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
-  - kind: para
-    text: 神
-  - kind: para
-    text: 配列のキーになれる
+    text: 神配列のキーになれる
   - kind: heading
     level: 1
     text: ココ→
   - kind: para
-    text: 貴族
+    text: 貴族簡単に画面に出力できる
   - kind: para
-    text: 簡単に画面に出力できる
+    text: 上級市民シリアライズできる
   - kind: para
-    text: 上級市民
-  - kind: para
-    text: シリアライズできる
-  - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: para
     text: 関数や構文を経由して一級市民になれる
   - kind: para
@@ -263,38 +192,24 @@ text:
   - kind: para
     text: $a[0] みたいな感じでキーになれる
   - kind: para
-    text: PHP_INT_MINからPHP_INT_MAXの
-  - kind: para
-    text: 範囲のみ扱える (CPUのアーキテクチャ
-  - kind: para
-    text: 32bit, 64bitに依存)
+    text: PHP_INT_MINからPHP_INT_MAXの範囲のみ扱える (CPUのアーキテクチャ32bit, 64bitに依存)
   p28:
   - kind: para
     text: 上級市民
   p29:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
+    text: 神配列のキーになれる
   - kind: para
-    text: 神
-  - kind: para
-    text: 配列のキーになれる
-  - kind: para
-    text: 貴族
-  - kind: para
-    text: 簡単に画面に出力できる
+    text: 貴族簡単に画面に出力できる
   - kind: heading
     level: 1
     text: ココ→
   - kind: para
-    text: 上級市民
+    text: 上級市民シリアライズできる
   - kind: para
-    text: シリアライズできる
-  - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: para
     text: 関数や構文を経由して一級市民になれる
   - kind: para
@@ -314,9 +229,7 @@ text:
   - kind: para
     text: エラーにもならずintに化ける
   - kind: para
-    text: 基本的に等値比較(==, ===)
-  - kind: para
-    text: してはいけない
+    text: 基本的に等値比較(==, ===)してはいけない
   p31:
   - kind: heading
     level: 1
@@ -340,17 +253,7 @@ text:
   - kind: para
     text: if ($i == 1) echo '$iは1です';
   - kind: para
-    text: $is_success = do_something();
-  - kind: para
-    text: if ($is_success) {
-  - kind: para
-    text: echo "成功";
-  - kind: para
-    text: '} else {'
-  - kind: para
-    text: echo "しっぱい。。。";
-  - kind: para
-    text: '}'
+    text: $is_success = do_something();if ($is_success) {echo "成功";} else {echo "しっぱい。。。";}
   p33:
   - kind: heading
     level: 1
@@ -358,13 +261,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: function is_valid_keyword($key)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return in_array($key, ['public', 'private']);
-  - kind: para
-    text: '}'
+    text: function is_valid_keyword($key){return in_array($key, ['public', 'private']);}
   p34:
   - kind: para
     text: シリアライズ
@@ -372,28 +269,18 @@ text:
     text: できる
   p35:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
+    text: 神配列のキーになれる
   - kind: para
-    text: 神
+    text: 貴族簡単に画面に出力できる
   - kind: para
-    text: 配列のキーになれる
-  - kind: para
-    text: 貴族
-  - kind: para
-    text: 簡単に画面に出力できる
-  - kind: para
-    text: 上級市民
-  - kind: para
-    text: シリアライズできる
+    text: 上級市民シリアライズできる
   - kind: heading
     level: 1
     text: ココ→
   - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: para
     text: 関数や構文を経由して一級市民になれる
   - kind: para
@@ -405,15 +292,10 @@ text:
     level: 1
     text: array (配列)
   - kind: para
-    text: $a = array('a', 'b', 'c');
+    text: $a = array('a', 'b', 'c');$b = range(1, 10);$c = ['name' => $n , 'age' =>
+      $y];
   - kind: para
-    text: $b = range(1, 10);
-  - kind: para
-    text: $c = ['name' => $n , 'age' => $y];
-  - kind: para
-    text: ほかの言語の配列や辞書(ハッシュ, 連
-  - kind: para
-    text: 想配列)とか呼ばれるもの
+    text: ほかの言語の配列や辞書(ハッシュ, 連想配列)とか呼ばれるもの
   - kind: para
     text: 内容にほかの型の値を含められる
   p37:
@@ -425,9 +307,7 @@ text:
   - kind: para
     text: $o = (object)['name' => $n , 'age' => $y];
   - kind: para
-    text: クラスを実体化したもの
-  - kind: para
-    text: キャストするとstdClassになる
+    text: クラスを実体化したものキャストするとstdClassになる
   - kind: para
     text: 内容にほかの型の値を含められる
   p38:
@@ -435,19 +315,10 @@ text:
     level: 1
     text: シリアライズ
   - kind: para
-    text: <?php
+    text: <?php$s = serialize('string');// "s:6:"string";"$a = serialize(['apple',
+      'orange']);//=> "a:2:{i:0;s:5:"apple";i:1;s:6:"orange";}"
   - kind: para
-    text: $s = serialize('string');
-  - kind: para
-    text: // "s:6:"string";"
-  - kind: para
-    text: $a = serialize(['apple', 'orange']);
-  - kind: para
-    text: //=> "a:2:{i:0;s:5:"apple";i:1;s:6:"orange";}"
-  - kind: para
-    text: $obj = new stdClass;
-  - kind: para
-    text: $obj->name = 'ミク'; $obj->age = 16;
+    text: $obj = new stdClass;$obj->name = 'ミク'; $obj->age = 16;
   - kind: para
     text: //=> "O:8:"stdClass":2:{s:4:"name";s:6:"ミク";s:3:"age";i:16;}"
   p39:
@@ -455,25 +326,15 @@ text:
     text: 変数に代入できる
   p40:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
+    text: 神配列のキーになれる
   - kind: para
-    text: 神
+    text: 貴族簡単に画面に出力できる
   - kind: para
-    text: 配列のキーになれる
+    text: 上級市民シリアライズできる
   - kind: para
-    text: 貴族
-  - kind: para
-    text: 簡単に画面に出力できる
-  - kind: para
-    text: 上級市民
-  - kind: para
-    text: シリアライズできる
-  - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: heading
     level: 1
     text: ココ→
@@ -490,24 +351,16 @@ text:
   - kind: para
     text: $x2 = function ($n){return $n*2};
   - kind: para
-    text: ローカル変数として関数を
+    text: ローカル変数として関数を作ることができる
   - kind: para
-    text: 作ることができる
-  - kind: para
-    text: グローバル関数は一度定義すると
-  - kind: para
-    text: (同名で)作り直すことはできないが、
-  - kind: para
-    text: これは何回でも作って捨てられる！
+    text: グローバル関数は一度定義すると(同名で)作り直すことはできないが、これは何回でも作って捨てられる！
   p42:
   - kind: para
     text: リソース(何者である何か)
   - kind: para
     text: $c = curl_init(); $g = gmp_init();
   - kind: para
-    text: リソースって一括りにされてるけど
-  - kind: para
-    text: 互換性はない
+    text: リソースって一括りにされてるけど互換性はない
   - kind: para
     text: http://php.net/resource
   - kind: para
@@ -519,41 +372,26 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $f = function ($r) { var_dump($r); };
-  - kind: para
-    text: $g = function (resource $r) { var_dump($r); };
+    text: $f = function ($r) { var_dump($r); };$g = function (resource $r) { var_dump($r);
+      };
   - kind: para
     text: $x = fopen('php://temp', 'r');
   - kind: para
-    text: $f($x);
-  - kind: para
-    text: $g($x);
+    text: $f($x);$g($x);
   p44:
   - kind: para
-    text: 関数や構文を経由し
-  - kind: para
-    text: て一級市民になれる
+    text: 関数や構文を経由して一級市民になれる
   p45:
   - kind: para
-    text: 階層
+    text: 階層できること
   - kind: para
-    text: できること
+    text: 神配列のキーになれる
   - kind: para
-    text: 神
+    text: 貴族簡単に画面に出力できる
   - kind: para
-    text: 配列のキーになれる
+    text: 上級市民シリアライズできる
   - kind: para
-    text: 貴族
-  - kind: para
-    text: 簡単に画面に出力できる
-  - kind: para
-    text: 上級市民
-  - kind: para
-    text: シリアライズできる
-  - kind: para
-    text: 一級市民
-  - kind: para
-    text: 変数に代入できる・引数にできる
+    text: 一級市民変数に代入できる・引数にできる
   - kind: para
     text: 関数や構文を経由して一級市民になれる
   - kind: heading
@@ -572,13 +410,9 @@ text:
   - kind: para
     text: 単なる文字列・配列を紛れやすい
   - kind: para
-    text: 最近は引数で受け渡すときは
+    text: 最近は引数で受け渡すときはcallableよりも\Closureがオススメ
   - kind: para
-    text: callableよりも\Closureがオススメ
-  - kind: para
-    text: PHP 7.1〜 \Closure::fromCallable()
-  - kind: para
-    text: これでcallableをClosureに変換できる
+    text: PHP 7.1〜 \Closure::fromCallable()これでcallableをClosureに変換できる
   p47:
   - kind: heading
     level: 1
@@ -586,17 +420,11 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $p = 'printf';
+    text: $p = 'printf';$p('%s %s!', 'Hello', $p);
   - kind: para
-    text: $p('%s %s!', 'Hello', $p);
+    text: $c = \DateTimeImmutable::class;$dt = new $c;
   - kind: para
-    text: $c = \DateTimeImmutable::class;
-  - kind: para
-    text: $dt = new $c;
-  - kind: para
-    text: $m = [$dt, 'format'];
-  - kind: para
-    text: echo $m('Y-m-d H:i:s');
+    text: $m = [$dt, 'format'];echo $m('Y-m-d H:i:s');
   p48:
   - kind: heading
     level: 1
@@ -604,24 +432,12 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: if (is_development()) {
+    text: if (is_development()) {$fp = fopen('php://stderr');} else$fp = fopen('/path/to/log.txt');}
   - kind: para
-    text: $fp = fopen('php://stderr');
-  - kind: para
-    text: '} else'
-  - kind: para
-    text: $fp = fopen('/path/to/log.txt');
-  - kind: para
-    text: '}'
-  - kind: para
-    text: $logger = new MyLogger($fp);
-  - kind: para
-    text: $logger->write($data);
+    text: $logger = new MyLogger($fp);$logger->write($data);
   p49:
   - kind: para
-    text: ここから下は
-  - kind: para
-    text: 一級市民と呼び難い
+    text: ここから下は一級市民と呼び難い
   p50:
   - kind: para
     text: 😢
@@ -651,9 +467,7 @@ text:
     text: もう時間がない
   p54:
   - kind: para
-    text: Symfony\
-  - kind: para
-    text: VarDumper
+    text: Symfony\VarDumper
   p55:
   - kind: para
     text: PsySH
@@ -662,14 +476,10 @@ text:
     text: whoops!
   p57:
   - kind: para
-    text: いい感じに
-  - kind: para
-    text: 表示できる
+    text: いい感じに表示できる
   p58:
   - kind: para
-    text: 市民権を
-  - kind: para
-    text: 拡張しよう
+    text: 市民権を拡張しよう
 size:
   max_width: 1024
   max_height: 768

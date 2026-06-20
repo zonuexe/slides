@@ -19,9 +19,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2023-10-05'
-  - kind: para
-    text: '【Cybozu Tech Meetup #22】PHPカンファレンス 2023 リジェクトコン'
+    text: '2023-10-05【Cybozu Tech Meetup #22】PHPカンファレンス 2023 リジェクトコン'
   p2:
   - kind: para
     text: お前誰よ
@@ -46,13 +44,7 @@ text:
     text: 今回のお題
   p6:
   - kind: para
-    text: ※注意：
-  - kind: para
-    text: 本発表はレガシーPHPを
-  - kind: para
-    text: 使い続けることを推奨する
-  - kind: para
-    text: ものではございませぬぞ
+    text: ※注意：本発表はレガシーPHPを使い続けることを推奨するものではございませぬぞ
   p7:
   - kind: para
     text: みなさんライブラリを
@@ -71,9 +63,7 @@ text:
     text: PHPどこまで切るか
   p10:
   - kind: para
-    text: そもそも誰が
-  - kind: para
-    text: 使ってるの？
+    text: そもそも誰が使ってるの？
   p11:
   - kind: heading
     level: 1
@@ -93,9 +83,7 @@ text:
     - とはいえ、ある種の勢いが表現されていることは確か
   p16:
   - kind: para
-    text: 私が開発している
-  - kind: para
-    text: ライブラリの場合
+    text: 私が開発しているライブラリの場合
   p17:
   - kind: para
     text: 5.x
@@ -141,9 +129,7 @@ text:
     - 自分が(個人|会社)で使っているバージョンをサポートする
     - 現実的にサポート可能なバージョンは全てサポートする
   - kind: para
-    text: 一般論としてはバージョンが上がれば
-  - kind: para
-    text: 新しい機能や新しい構文が使えて嬉しい！！！
+    text: 一般論としてはバージョンが上がれば新しい機能や新しい構文が使えて嬉しい！！！
   p21: []
   p22:
   - kind: para
@@ -161,60 +147,31 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: class Book {
-  - kind: para
-    text: public function __construct(
-  - kind: para
-    text: public readonly string $name,
-  - kind: para
-    text: ) {
-  - kind: para
-    text: '}'
+    text: class Book {public function __construct(public readonly string $name,) {}
   - kind: para
     text: '...'
   - kind: para
-    text: class Book {
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @var string'
-  - kind: para
-    text: '* @readonly'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: private $name;
-  - kind: para
-    text: /** @param string $name */
-  - kind: para
-    text: public function __construct($name) {
-  - kind: para
-    text: $this->name = $name;
+    text: class Book {/*** @var string* @readonly*/private $name;/** @param string
+      $name */public function __construct($name) {$this->name = $name;
   - kind: para
     text: '...'
   p24:
   - kind: para
-    text: そういうおしゃれな
-  - kind: para
-    text: 言語機能は使えない！
+    text: そういうおしゃれな言語機能は使えない！
   p25:
   - kind: heading
     level: 1
     text: ここから本題
   p26:
   - kind: para
-    text: この後のコードは
-  - kind: para
-    text: zonuexe/tetosqlを
+    text: この後のコードはzonuexe/tetosqlを
   - kind: para
     text: ご参照ください
   p27:
   - kind: para
     text: むかしのバージョンの
   - kind: para
-    text: PHPは
-  - kind: para
-    text: どうすれば使えるか
+    text: PHPはどうすれば使えるか
   p28:
   - kind: para
     text: 古いPHPを動かす方法
@@ -231,19 +188,13 @@ text:
   p30: []
   p31:
   - kind: para
-    text: これで動かす
-  - kind: para
-    text: 環境はできた
+    text: これで動かす環境はできた
   p32:
   - kind: para
-    text: 新しいバージョン
-  - kind: para
-    text: 使えないと辛くない？
+    text: 新しいバージョン使えないと辛くない？
   p33:
   - kind: para
-    text: 辛いところもあるし
-  - kind: para
-    text: 辛くないこともある
+    text: 辛いところもあるし辛くないこともある
   p34:
   - kind: heading
     level: 1
@@ -253,9 +204,7 @@ text:
   p37: []
   p38:
   - kind: para
-    text: 古いPHPでも
-  - kind: para
-    text: 新しい関数は使える！
+    text: 古いPHPでも新しい関数は使える！
   p39:
   - kind: heading
     level: 1
@@ -263,29 +212,21 @@ text:
   p40: []
   p41:
   - kind: para
-    text: PHP 5.3〜8.2
-  - kind: para
-    text: 全部が動く都合のいい
-  - kind: para
-    text: PHPUnitなんてものはない
+    text: PHP 5.3〜8.2全部が動く都合のいいPHPUnitなんてものはない
   p42:
   - kind: heading
     level: 1
     text: ならどうするか
   p43:
   - kind: para
-    text: PHPUnit4.8を
-  - kind: para
-    text: PHP8で動くように
+    text: PHPUnit4.8をPHP8で動くように
   - kind: para
     text: 魔改造する
   - kind: para
     text: 😈
   p44:
   - kind: para
-    text: PHPUnit4.8を
-  - kind: para
-    text: PHP8で動くように
+    text: PHPUnit4.8をPHP8で動くように
   - kind: para
     text: 魔改造する
   - kind: para
@@ -305,9 +246,7 @@ text:
   p50: []
   p51:
   - kind: para
-    text: 不思議な力で
-  - kind: para
-    text: 複数バージョンの
+    text: 不思議な力で複数バージョンの
   - kind: para
     text: PHPUnitが動く
   p52: []
@@ -315,9 +254,7 @@ text:
   - kind: para
     text: 不思議な力で
   - kind: para
-    text: 互換性を
-  - kind: para
-    text: 合わせてくれる
+    text: 互換性を合わせてくれる
   - kind: para
     text: 😇
   p54: []
@@ -330,14 +267,10 @@ text:
   - kind: para
     text: TetoSQLは依存が
   - kind: para
-    text: 少ないので複数
-  - kind: para
-    text: サポートが簡単
+    text: 少ないので複数サポートが簡単
   p58:
   - kind: para
-    text: みんなは
-  - kind: para
-    text: 必要ないバージョンは
+    text: みんなは必要ないバージョンは
   - kind: para
     text: さくっと切ろうね！
 size:

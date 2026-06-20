@@ -20,16 +20,12 @@ text:
   - kind: para
     text: プログラミング言語が
   - kind: para
-    text: 1 + [] (数字と配列のたしざん)
-  - kind: para
-    text: みたいなのを叱れるようにする基盤
+    text: 1 + [] (数字と配列のたしざん)みたいなのを叱れるようにする基盤
   - kind: list
     items:
     - コンパイルするときに型を付けるか
   - kind: para
-    text: 動かすとき(runtime)に調べるかが、
-  - kind: para
-    text: 静的型付きと動的型検査の大きな差
+    text: 動かすとき(runtime)に調べるかが、静的型付きと動的型検査の大きな差
   p4:
   - kind: heading
     level: 1
@@ -43,9 +39,7 @@ text:
     items:
     - 「$aの型はintだな、$bの型はstring…
   - kind: para
-    text: だけど数字だから足しざんできるね！」
-  - kind: para
-    text: みたいな茶番を毎回やってる
+    text: だけど数字だから足しざんできるね！」みたいな茶番を毎回やってる
   p5:
   - kind: para
     text: 静的検査
@@ -68,29 +62,10 @@ text:
     level: 1
     text: 型を推測してみよう（型推論）
   - kind: para
-    text: // 絶対int返すマン
-  - kind: para
-    text: function x() { return 1; }
-  - kind: para
-    text: // 絶対array返すマン
-  - kind: para
-    text: function y() { return []; }
-  - kind: para
-    text: // たしざん
-  - kind: para
-    text: // $n1, $n2 は数字っぽい値が欲しい
-  - kind: para
-    text: function add($n1, $n2) { return $n1 + $2; }
-  - kind: para
-    text: $a = x(); // x()がintを返すからたぶんintのはず
-  - kind: para
-    text: $b = y(); // y()がarrayを返すからたぶんarrayのはず
-  - kind: para
-    text: $c = add($a, $b);
-  - kind: para
-    text: // 数字っぽい値以外を渡すとエラーが発生することは
-  - kind: para
-    text: // 理窟の上では動かさなくても明らか
+    text: // 絶対int返すマンfunction x() { return 1; }// 絶対array返すマンfunction y() { return
+      []; }// たしざん// $n1, $n2 は数字っぽい値が欲しいfunction add($n1, $n2) { return $n1 + $2;
+      }$a = x(); // x()がintを返すからたぶんintのはず$b = y(); // y()がarrayを返すからたぶんarrayのはず$c
+      = add($a, $b);// 数字っぽい値以外を渡すとエラーが発生することは// 理窟の上では動かさなくても明らか
   p8:
   - kind: heading
     level: 1
@@ -114,51 +89,18 @@ text:
     level: 1
     text: 適当なコメント（Before）
   - kind: para
-    text: // 絶対int返すマン
-  - kind: para
-    text: function x() { return 1; }
-  - kind: para
-    text: // 絶対array返すマン
-  - kind: para
-    text: function y() { return []; }
-  - kind: para
-    text: // たしざん
-  - kind: para
-    text: // $n1, $n2 は数字っぽい値が欲しい
-  - kind: para
-    text: function add($n1, $n2) { return $n1 + $2; }
-  - kind: para
-    text: $a = x(); // x()がintを返すからたぶんintのはず
-  - kind: para
-    text: $b = y(); // y()がarrayを返すからたぶんarrayのはず
-  - kind: para
-    text: $c = add($a, $b);
-  - kind: para
-    text: // 数字っぽい値以外を渡すとエラーが発生することは
-  - kind: para
-    text: // 理窟の上では動かさなくても明らか
+    text: // 絶対int返すマンfunction x() { return 1; }// 絶対array返すマンfunction y() { return
+      []; }// たしざん// $n1, $n2 は数字っぽい値が欲しいfunction add($n1, $n2) { return $n1 + $2;
+      }$a = x(); // x()がintを返すからたぶんintのはず$b = y(); // y()がarrayを返すからたぶんarrayのはず$c
+      = add($a, $b);// 数字っぽい値以外を渡すとエラーが発生することは// 理窟の上では動かさなくても明らか
   p10:
   - kind: heading
     level: 1
     text: PHPDocで型を付ける（After）
   - kind: para
-    text: /** @return int */
-  - kind: para
-    text: function x() { return 1; }
-  - kind: para
-    text: /** @return array */
-  - kind: para
-    text: function y() { return []; }
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int $n1'
-  - kind: para
-    text: '* @param int $n2'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($n1, $n2) { return $n1 + $2; }
+    text: /** @return int */function x() { return 1; }/** @return array */function
+      y() { return []; }/*** @param int $n1* @param int $n2*/function add($n1, $n2)
+      { return $n1 + $2; }
   p11:
   - kind: para
     text: PHPDoc
@@ -186,17 +128,8 @@ text:
     level: 1
     text: DocCommentを取得する
   - kind: para
-    text: <?php
-  - kind: para
-    text: /** こんにちは〜〜〜〜 */
-  - kind: para
-    text: function hello() { throw new \Exception(); }
-  - kind: para
-    text: $ref = new \ReflectionFunction('hello');
-  - kind: para
-    text: echo $ref->getDocComment(), PHP_EOL;
-  - kind: para
-    text: exit;
+    text: <?php/** こんにちは〜〜〜〜 */function hello() { throw new \Exception(); }$ref =
+      new \ReflectionFunction('hello');echo $ref->getDocComment(), PHP_EOL;exit;
   p14:
   - kind: heading
     level: 1
@@ -241,29 +174,13 @@ text:
   - kind: para
     text: 例
   - kind: para
-    text: '@param'
+    text: '@param引数を定義@param int $n1'
   - kind: para
-    text: 引数を定義
+    text: '@return返り値を定義@return int[]'
   - kind: para
-    text: '@param int $n1'
+    text: '@var変数/プロパティを定義@var int'
   - kind: para
-    text: '@return'
-  - kind: para
-    text: 返り値を定義
-  - kind: para
-    text: '@return int[]'
-  - kind: para
-    text: '@var'
-  - kind: para
-    text: 変数/プロパティを定義
-  - kind: para
-    text: '@var int'
-  - kind: para
-    text: '@property'
-  - kind: para
-    text: マジックプロパティを定義
-  - kind: para
-    text: '@property int $id'
+    text: '@propertyマジックプロパティを定義@property int $id'
   p17:
   - kind: heading
     level: 1
@@ -310,9 +227,7 @@ text:
     items:
     - PHP5では「タイプヒント」と呼ばれ、
   - kind: para
-    text: 引数に特定のキーワードかクラス名を書く
-  - kind: para
-    text: ことができた
+    text: 引数に特定のキーワードかクラス名を書くことができた
   - kind: list
     items:
     - function getWorksByUser(UserModel $user)
@@ -348,29 +263,13 @@ text:
     level: 1
     text: キャストの難しさ
   - kind: para
-    text: <?php declare(strict_types=0);
-  - kind: para
-    text: function myint(int $v) { return $v;}
-  - kind: para
-    text: myint(1.1); // => 1
-  - kind: para
-    text: myint(true); // => 1
-  - kind: para
-    text: myint("1"); // => 1
-  - kind: para
-    text: myint(floatval(PHP_INT_MAX - 512)); // int(9223372036854774784)
-  - kind: para
-    text: myint(12345678901234567890.0);
-  - kind: para
-    text: '// PHP Fatal error: Uncaught TypeError: Argument 1'
-  - kind: para
-    text: // passed to myint() must be of the type integer, float given
-  - kind: para
-    text: myint("12345678901234567890");
-  - kind: para
-    text: '// PHP Fatal error: Uncaught TypeError: Argument 1'
-  - kind: para
-    text: // passed to myint() must be of the type integer, string given
+    text: '<?php declare(strict_types=0);function myint(int $v) { return $v;}myint(1.1);
+      // => 1 myint(true); // => 1 myint("1"); // => 1 myint(floatval(PHP_INT_MAX
+      - 512)); // int(9223372036854774784)myint(12345678901234567890.0);// PHP Fatal
+      error: Uncaught TypeError: Argument 1// passed to myint() must be of the type
+      integer, float given myint("12345678901234567890");// PHP Fatal error: Uncaught
+      TypeError: Argument 1// passed to myint() must be of the type integer, string
+      given'
   p23:
   - kind: para
     text: Phan

@@ -13,9 +13,7 @@ text:
     level: 3
     text: 補訂公開版
   - kind: para
-    text: '[2019-06-29]'
-  - kind: para
-    text: PHPCon Fukuoka 2019
+    text: '[2019-06-29]PHPCon Fukuoka 2019'
   - kind: para
     text: 'FFBHall #phpconfuk'
   p2:
@@ -123,9 +121,7 @@ text:
   - kind: para
     text: 変数にはどんな値も代入可能
   - kind: para
-    text: PHP7の型には二種類の
-  - kind: para
-    text: モード(strict_types)がある
+    text: PHP7の型には二種類のモード(strict_types)がある
   p18:
   - kind: para
     text: PHPの型の種類
@@ -183,47 +179,25 @@ text:
   - kind: para
     text: declare(strict_types)
   - kind: para
-    text: ブロック(ファイル)単位でディレ
+    text: ブロック(ファイル)単位でディレクティブを設定するための構文
   - kind: para
-    text: クティブを設定するための構文
+    text: デフォルト(無指定時)はstrict_types=0
   - kind: para
-    text: デフォルト(無指定時)は
-  - kind: para
-    text: strict_types=0
-  - kind: para
-    text: 引数と返り値についてキャス
-  - kind: para
-    text: トとエラーの振舞に影響(後述)
+    text: 引数と返り値についてキャストとエラーの振舞に影響(後述)
   p24:
   - kind: para
     text: declare(strict_types=0)
   - kind: para
-    text: 引数や返り値のスカラー型宣
+    text: 引数や返り値のスカラー型宣言と実際の値が一致しなかったとき、変換可能な値なら暗黙的に型変換
   - kind: para
-    text: 言と実際の値が一致しなかっ
-  - kind: para
-    text: たとき、変換可能な値なら暗
-  - kind: para
-    text: 黙的に型変換
-  - kind: para
-    text: オブジェクトが暗黙的にキャ
-  - kind: para
-    text: ストされることはない
+    text: オブジェクトが暗黙的にキャストされることはない
   p25:
   - kind: para
     text: declare(strict_types=1)
   - kind: para
-    text: 引数や返り値の宣言と実際の
+    text: 引数や返り値の宣言と実際の値が一致しなかったときTypeErrorが発生
   - kind: para
-    text: 値が一致しなかったとき
-  - kind: para
-    text: TypeErrorが発生
-  - kind: para
-    text: スカラー型・その他の型・
-  - kind: para
-    text: クラス/インターフェイスで
-  - kind: para
-    text: 挙動に違いはない
+    text: スカラー型・その他の型・クラス/インターフェイスで挙動に違いはない
   p26:
   - kind: para
     text: PHPのどこに型を書けるか
@@ -243,9 +217,7 @@ text:
   - kind: para
     text: のように書ける
   - kind: para
-    text: 書けるのは一部の型・擬似型
-  - kind: para
-    text: とクラス・インターフェイス
+    text: 書けるのは一部の型・擬似型とクラス・インターフェイス
   p28:
   - kind: para
     text: 返り値の型宣言
@@ -256,37 +228,23 @@ text:
   - kind: para
     text: 基本は引数と同様
   - kind: para
-    text: '値を返さない場合に : void と'
-  - kind: para
-    text: 書ける
+    text: '値を返さない場合に : void と書ける'
   p29:
   - kind: para
     text: 型宣言のわかりにくい仕様
   - kind: para
     text: 書ける型と書けない型がある
   - kind: para
-    text: self, array, callable, bool,
-  - kind: para
-    text: ﬂoat, int, string,
-  - kind: para
-    text: iterable(7.1+), object(7.2+)
-  - kind: para
-    text: だけが特別な意味を持つ
+    text: self, array, callable, bool,ﬂoat, int, string,iterable(7.1+), object(7.2+)だけが特別な意味を持つ
   - kind: para
     text: それ以外はクラス/インターフェイス
   p30:
   - kind: para
     text: 型宣言に書けない型
   - kind: para
-    text: integer, boolean, double
+    text: integer, boolean, doubleなどの型の別名は記述不可
   - kind: para
-    text: などの型の別名は記述不可
-  - kind: para
-    text: ちなみにstrはstringの別名…
-  - kind: para
-    text: ではないので覚えておいてく
-  - kind: para
-    text: ださい (型宣言に限らず)
+    text: ちなみにstrはstringの別名…ではないので覚えておいてください (型宣言に限らず)
   - kind: para
     text: resourceは型宣言に書けない
   - kind: para
@@ -295,24 +253,14 @@ text:
   - kind: para
     text: PHPDocの型注釈記法
   - kind: para
-    text: クラスやメソッドの上にDoc
+    text: クラスやメソッドの上にDoc Commentを書くことで型を記述できる
   - kind: para
-    text: Commentを書くことで型を
-  - kind: para
-    text: 記述できる
-  - kind: para
-    text: あくまでコメントなのでコー
-  - kind: para
-    text: ドの実行に影響を及ぼさず、
-  - kind: para
-    text: IDEやツールの解析材料となる
+    text: あくまでコメントなのでコードの実行に影響を及ぼさず、IDEやツールの解析材料となる
   p32:
   - kind: para
     text: PHPDocの型注釈記法
   - kind: para
-    text: 型宣言では実現できない型が
-  - kind: para
-    text: 付けられる
+    text: 型宣言では実現できない型が付けられる
   - kind: para
     text: マジックメソッド/プロパティ
   - kind: para
@@ -323,15 +271,9 @@ text:
   - kind: para
     text: PSR-5 (Draft)
   - kind: para
-    text: array<string>や
+    text: array<string>やArrayObject<int,string>と書ける
   - kind: para
-    text: ArrayObject<int,string>と
-  - kind: para
-    text: 書ける
-  - kind: para
-    text: ……が、PhpStormは対応し
-  - kind: para
-    text: てない
+    text: ……が、PhpStormは対応してない
   - kind: para
     text: ArrayObject|string[]で代用
   p34:
@@ -355,9 +297,7 @@ text:
   - kind: para
     text: オブジェクトのメソッド
   - kind: para
-    text: やプロパティが適切に
-  - kind: para
-    text: 補完されると気持ち良い
+    text: やプロパティが適切に補完されると気持ち良い
   p38:
   - kind: para
     text: プログラムが
@@ -396,9 +336,7 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: エラーの列挙ができないので
-  - kind: para
-    text: CIのフローに組み込めない
+    text: エラーの列挙ができないのでCIのフローに組み込めない
   p45:
   - kind: para
     text: Phan
@@ -411,9 +349,7 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: 大規模プロジェクトでは解析
-  - kind: para
-    text: に時間がかかる
+    text: 大規模プロジェクトでは解析に時間がかかる
   p46:
   - kind: para
     text: Phanのすごいところ
@@ -422,13 +358,7 @@ text:
   - kind: para
     text: array-shapes記法
   - kind: para
-    text: 自動で型推論もしてくれるが
-  - kind: para
-    text: 解析がすごすぎてレガシーで
-  - kind: para
-    text: 長大な関数から恐ろしい型が
-  - kind: para
-    text: 吐かれたりする
+    text: 自動で型推論もしてくれるが解析がすごすぎてレガシーで長大な関数から恐ろしい型が吐かれたりする
   p47:
   - kind: para
     text: PHPStan
@@ -441,9 +371,7 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: Composer以外の依存関係
-  - kind: para
-    text: があると導入にコツが要る
+    text: Composer以外の依存関係があると導入にコツが要る
   p48:
   - kind: para
     text: Psalm
@@ -456,41 +384,23 @@ text:
   - kind: para
     text: よくないところ
   - kind: para
-    text: 大規模プロジェクトでは解析
-  - kind: para
-    text: に時間がかかる
+    text: 大規模プロジェクトでは解析に時間がかかる
   p49:
   - kind: para
     text: つまりどれがいいのか (CI)
   - kind: para
-    text: 現時点ではそれぞれのツール
+    text: 現時点ではそれぞれのツールで検出項目に一長一短があるため、使い分けるとよい
   - kind: para
-    text: で検出項目に一長一短がある
-  - kind: para
-    text: ため、使い分けるとよい
-  - kind: para
-    text: PHPStanは高速なのでGitで
-  - kind: para
-    text: ブランチにpushするごとに検
-  - kind: para
-    text: 査するようなCIと相性がよい
+    text: PHPStanは高速なのでGitでブランチにpushするごとに検査するようなCIと相性がよい
   p50:
   - kind: para
     text: (エディタ)
   - kind: para
     text: つまりどれがいいのか
   - kind: para
-    text: PhpStormは総合的に見て
+    text: PhpStormは総合的に見て簡単に導入できて強力
   - kind: para
-    text: 簡単に導入できて強力
-  - kind: para
-    text: 自分で自由にハックしたいと
-  - kind: para
-    text: か、どうしても予算が出ない
-  - kind: para
-    text: などの事情があればエディタ
-  - kind: para
-    text: とPHPStanがおすすめ
+    text: 自分で自由にハックしたいとか、どうしても予算が出ないなどの事情があればエディタとPHPStanがおすすめ
   p51: []
   p52:
   - kind: para
@@ -501,11 +411,8 @@ text:
     text: 実行前に検証したい
   p53:
   - kind: para
-    text: “Phan is a static analyzer for
-  - kind: para
-    text: PHP that prefers to minimize
-  - kind: para
-    text: false-positives. Phan attempts to
+    text: “Phan is a static analyzer for PHP that prefers to minimize false-positives.
+      Phan attempts to
   - kind: para
     text: prove incorrectness rather than
   - kind: para
@@ -552,9 +459,7 @@ text:
   - kind: para
     text: 代入される
   - kind: para
-    text: なんで
-  - kind: para
-    text: strlenに array を
+    text: なんでstrlenに array を
   - kind: para
     text: 渡してるの？
   - kind: para
@@ -564,9 +469,7 @@ text:
   - kind: para
     text: 代入される
   - kind: para
-    text: なんで
-  - kind: para
-    text: intと array を
+    text: なんでintと array を
   - kind: para
     text: 足してるの？
   - kind: heading
@@ -586,9 +489,7 @@ text:
     level: 1
     text: 関数の型付けを考える
   - kind: para
-    text: $aと$bって
-  - kind: para
-    text: 何を指定すればいいの？
+    text: $aと$bって何を指定すればいいの？
   - kind: heading
     level: 2
     text: <?php
@@ -616,17 +517,13 @@ text:
     level: 2
     text: '}'
   - kind: para
-    text: 文字列結合なので
-  - kind: para
-    text: 両辺の値はstring
+    text: 文字列結合なので両辺の値はstring
   p59:
   - kind: heading
     level: 1
     text: 単純に解決できない関数
   - kind: para
-    text: $aと$bって
-  - kind: para
-    text: 何を指定すればいいの？
+    text: $aと$bって何を指定すればいいの？
   - kind: heading
     level: 3
     text: '(number $x, number $b): number'
@@ -672,9 +569,7 @@ text:
   - kind: para
     text: PHPの型推論の限界
   - kind: para
-    text: 原理上コードの解析だけでは
-  - kind: para
-    text: 完全な静的検査は不可能
+    text: 原理上コードの解析だけでは完全な静的検査は不可能
   - kind: para
     text: 変数やプロパティの動的性
   - kind: para
@@ -690,110 +585,61 @@ text:
   - kind: para
     text: PHPDocで地道に型をつける
   - kind: para
-    text: 歴史あるコードは引数の仕様
+    text: 歴史あるコードは引数の仕様が形式化されたPHPDocで書かれてなかったり、崩れた形で書かれてたりする
   - kind: para
-    text: が形式化されたPHPDocで
-  - kind: para
-    text: 書かれてなかったり、崩れた
-  - kind: para
-    text: 形で書かれてたりする
-  - kind: para
-    text: CIやIDEに磨かれてないと
-  - kind: para
-    text: 高確率で誤りを含んでる
+    text: CIやIDEに磨かれてないと高確率で誤りを含んでる
   p63:
   - kind: heading
     level: 1
     text: PHPDocに則ってない
   - kind: para
-    text: //===========================
-  - kind: para
-    text: // @params str $a
-  - kind: para
-    text: // @return true または false
-  - kind: para
-    text: //===========================
-  - kind: para
-    text: function x($a, $b) {
+    text: //===========================// @params str $a// @return true または false//===========================function
+      x($a, $b) {
   p64:
   - kind: heading
     level: 1
     text: PHPDocに則るように修正
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param string $a'
-  - kind: para
-    text: '* @return bool'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function x($a, $b) {
+    text: /*** @param string $a* @return bool*/function x($a, $b) {
   p65:
   - kind: para
     text: 多態な関数設計を避ける
   - kind: para
-    text: 引数によって返り値の構造(型)
-  - kind: para
-    text: が変化するような関数は避ける
+    text: 引数によって返り値の構造(型)が変化するような関数は避ける
   - kind: para
     text: '例: parse_url()'
   - kind: para
     text: 引数一つなら連想配列を返す
   - kind: para
-    text: 第二引数に定数を渡すと文字
-  - kind: para
-    text: 列を返す
+    text: 第二引数に定数を渡すと文字列を返す
   p66:
   - kind: para
     text: mixed を避ける
   - kind: para
-    text: 引数や返り値が実装を見ない
+    text: 引数や返り値が実装を見ないとわからなくなる
   - kind: para
-    text: とわからなくなる
-  - kind: para
-    text: json_encodeやvar_dumpみ
-  - kind: para
-    text: たいに多様なものを受け付け
-  - kind: para
-    text: る関数以外はmixedと書くべ
-  - kind: para
-    text: き箇所は少ない
+    text: json_encodeやvar_dumpみたいに多様なものを受け付ける関数以外はmixedと書くべき箇所は少ない
   p67:
   - kind: para
     text: arrayも極力控える
   - kind: para
-    text: 単にarrayとだけ書くと、配列
-  - kind: para
-    text: の中身はmixed状態
+    text: 単にarrayとだけ書くと、配列の中身はmixed状態
   - kind: para
     text: ｢文字列が並ぶ配列｣はstring[]
   - kind: para
-    text: ｢決まったキーを持つ配列｣の
-  - kind: para
-    text: 記法は標準化されてない
+    text: ｢決まったキーを持つ配列｣の記法は標準化されてない
   p68:
   - kind: para
     text: '@phan-param, @phan-return'
   - kind: para
-    text: Phanのarray-shapes記法で
-  - kind: para
-    text: は
-  - kind: para
-    text: array{name:string,age:int}
-  - kind: para
-    text: のように記述できる
+    text: Phanのarray-shapes記法ではarray{name:string,age:int}のように記述できる
   p69:
   - kind: para
     text: 数値とインピーダンスミスマッチ
   - kind: para
     text: 何かにつけて鬼門
   - kind: para
-    text: クエリパラメータやルーター
-  - kind: para
-    text: の動的パラメータから数字列
-  - kind: para
-    text: を取得する処理
+    text: クエリパラメータやルーターの動的パラメータから数字列を取得する処理
   - kind: para
     text: PDOから取得してきた数値
   p70:
@@ -801,13 +647,7 @@ text:
     level: 1
     text: クエリパラメータ
   - kind: para
-    text: // 正の整数だけを期待
-  - kind: para
-    text: if (!is_numeric($_GET['user_id'])) {
-  - kind: para
-    text: throw new BadRequest;
-  - kind: para
-    text: '}'
+    text: // 正の整数だけを期待if (!is_numeric($_GET['user_id'])) {throw new BadRequest;}
   - kind: para
     text: $user_id = (int)$_GET['user_id'];
   p71:
@@ -815,9 +655,7 @@ text:
     level: 1
     text: URL動的パラメータ
   - kind: para
-    text: /user/000001 とか /user/0000000001
-  - kind: para
-    text: とか受け付けちゃって本当に大丈夫…?
+    text: /user/000001 とか /user/0000000001とか受け付けちゃって本当に大丈夫…?
   p72:
   - kind: para
     text: ﬁlter_var/ﬁlter_inputで安心？
@@ -829,60 +667,30 @@ text:
   - kind: para
     text: PHPの整数の範囲
   - kind: para
-    text: ビット数はアーキテクチャ依
+    text: ビット数はアーキテクチャ依存の符号付き整数値
   - kind: para
-    text: 存の符号付き整数値
-  - kind: para
-    text: 外部入力やDBの
-  - kind: para
-    text: UNSIGNED BIGINTなカラ
-  - kind: para
-    text: ムの値を(int)キャストして
-  - kind: para
-    text: 化ける
+    text: 外部入力やDBのUNSIGNED BIGINTなカラムの値を(int)キャストして化ける
   p74:
   - kind: para
     text: スカラー型宣言とstrict_types
   - kind: para
-    text: キャストとつきあっていく覚
+    text: キャストとつきあっていく覚悟が必要
   - kind: para
-    text: 悟が必要
-  - kind: para
-    text: 通常のキャストとも別のルー
-  - kind: para
-    text: ルで暗黙変換されることを認
-  - kind: para
-    text: 識しないと想定しない変換が
-  - kind: para
-    text: 走ることがある
+    text: 通常のキャストとも別のルールで暗黙変換されることを認識しないと想定しない変換が走ることがある
   p75:
   - kind: para
     text: strict_typesの範囲
   - kind: para
-    text: declare(strict_types)は
+    text: declare(strict_types)はファイルごとに指定される
   - kind: para
-    text: ファイルごとに指定される
-  - kind: para
-    text: 引数の型チェックは呼び出す
-  - kind: para
-    text: 側の指定が、返り値の型
-  - kind: para
-    text: チェックは定義側の指定が反
-  - kind: para
-    text: 映される
+    text: 引数の型チェックは呼び出す側の指定が、返り値の型チェックは定義側の指定が反映される
   p76:
   - kind: para
     text: レガシーコードとスカラー型
   - kind: para
-    text: 引数リストにむやみにstring
+    text: 引数リストにむやみにstringやintと書かない
   - kind: para
-    text: やintと書かない
-  - kind: para
-    text: PHPDocならキャストは起
-  - kind: para
-    text: こらないので動作に影響はし
-  - kind: para
-    text: ない
+    text: PHPDocならキャストは起こらないので動作に影響はしない
   p77:
   - kind: para
     text: 静的解析結果と
@@ -894,45 +702,23 @@ text:
   - kind: para
     text: 既存プロジェクトを検査すると
   - kind: para
-    text: 数千行にも及ぶおびただしい
+    text: 数千行にも及ぶおびただしい警告が出力されることもざら
   - kind: para
-    text: 警告が出力されることもざら
-  - kind: para
-    text: しかしそれよりも、そのコー
-  - kind: para
-    text: ドが「たしかに動いている」
-  - kind: para
-    text: 事実が重要
+    text: しかしそれよりも、そのコードが「たしかに動いている」事実が重要
   p79:
   - kind: para
     text: 大事なのは傷口を広げないこと
   - kind: para
-    text: 警告が出てるから間違った
+    text: 警告が出てるから間違ったコードではない
   - kind: para
-    text: コードではない
-  - kind: para
-    text: 警告の量が減ればメンテしや
-  - kind: para
-    text: すい状況に近付くのだと捉え
-  - kind: para
-    text: る
+    text: 警告の量が減ればメンテしやすい状況に近付くのだと捉える
   p80:
   - kind: para
     text: 差分を重要視する
   - kind: para
-    text: リファクタリングの前後で
+    text: リファクタリングの前後でPhanの出力ログのdiffをとり、行が増えなければ、間違った書き換えはしてない可能性は高い
   - kind: para
-    text: Phanの出力ログのdiffをと
-  - kind: para
-    text: り、行が増えなければ、間違っ
-  - kind: para
-    text: た書き換えはしてない可能性は
-  - kind: para
-    text: 高い
-  - kind: para
-    text: ロジックの正しさは保障できな
-  - kind: para
-    text: いのでテストなどは別途必要
+    text: ロジックの正しさは保障できないのでテストなどは別途必要
 size:
   max_width: 1024
   max_height: 768

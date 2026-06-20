@@ -7,9 +7,7 @@ text:
     level: 2
     text: Bring peace to the galaxy with P++
   - kind: para
-    text: '[2019-08-28]'
-  - kind: para
-    text: 第141回 PHP勉強会＠東京
+    text: '[2019-08-28]第141回 PHP勉強会＠東京'
   - kind: para
     text: '#phpstudy'
   p2:
@@ -62,25 +60,9 @@ text:
     level: 1
     text: A
   - kind: para
-    text: <!DOCTYPE html>
-  - kind: para
-    text: <html><head><title>Hello, PHP!</title></head>
-  - kind: para
-    text: <p>
-  - kind: para
-    text: '<?php if (date(''H'') < 19): ?>'
-  - kind: para
-    text: こんにちは
-  - kind: para
-    text: '<?php else: ?>'
-  - kind: para
-    text: こんばんは
-  - kind: para
-    text: <?php endif; ?>
-  - kind: para
-    text: </p>
-  - kind: para
-    text: <p>今は<?= htmlspecialchars(date('H')) ?>時です</p>
+    text: '<!DOCTYPE html><html><head><title>Hello, PHP!</title></head><p><?php if
+      (date(''H'') < 19): ?>こんにちは<?php else: ?>こんばんは<?php endif; ?></p><p>今は<?= htmlspecialchars(date(''H''))
+      ?>時です</p>'
   p14:
   - kind: heading
     level: 1
@@ -106,21 +88,12 @@ text:
     level: 1
     text: C
   - kind: para
-    text: <?php
+    text: <?php namespace Hoge\Http\Controller;
   - kind: para
-    text: namespace Hoge\Http\Controller;
+    text: class BooksController extends BaseController {public function index() {$books
+      = Books::getAll();
   - kind: para
-    text: class BooksController extends BaseController {
-  - kind: para
-    text: public function index() {
-  - kind: para
-    text: $books = Books::getAll();
-  - kind: para
-    text: $this->render(compact("books"));
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: $this->render(compact("books"));}}
   p16:
   - kind: para
     text: A?
@@ -222,11 +195,7 @@ text:
     text: ではないが
   p31:
   - kind: para
-    text: PHPの行く末を
-  - kind: para
-    text: 知りたければRFCを
-  - kind: para
-    text: ウォッチすればよい
+    text: PHPの行く末を知りたければRFCをウォッチすればよい
   p32:
   - kind: para
     text: https://wiki.php.net/rfc
@@ -293,15 +262,11 @@ text:
   - kind: para
     text: We have abstract methods. We have all
   - kind: para
-    text: this stuff that your computer science
-  - kind: para
-    text: teacher told you you should be using.
+    text: this stuff that your computer science teacher told you you should be using.
   - kind: para
     text: I don't care about this crap at all.”
   - kind: para
-    text: –Rasmus Lerdorf
-  - kind: para
-    text: https://en.wikiquote.org/wiki/Rasmus_Lerdorf
+    text: –Rasmus Lerdorf https://en.wikiquote.org/wiki/Rasmus_Lerdorf
   p43:
   - kind: para
     text: “PHPにはprotectedプロパティも抽象メ
@@ -442,15 +407,9 @@ text:
     text: 捉)のためにuseキーワードが必要
   p54:
   - kind: para
-    text: 抽象クラス, トレイト, インター
+    text: 抽象クラス, トレイト, インターフェイス, ジェネレータ, イテレータ, クロージャ, 函数の動的呼び出
   - kind: para
-    text: フェイス, ジェネレータ, イテレー
-  - kind: para
-    text: タ, クロージャ, 函数の動的呼び出
-  - kind: para
-    text: し, 無名クラス, eval, 型宣言, 連
-  - kind: para
-    text: 想配列, リフレクションAPI, 自己
+    text: し, 無名クラス, eval, 型宣言, 連想配列, リフレクションAPI, 自己
   - kind: para
     text: 文書化, 標準入出力の読み書き,
   - kind: para
@@ -577,15 +536,9 @@ text:
   - kind: para
     text: オリジナルのPHP(PHP/FI)作者
   - kind: para
-    text: 言語の原作者は最終的な決定権を担っ
+    text: 言語の原作者は最終的な決定権を担っていることがある(BDFL:優しい終身の独裁者)が､Rasmusはそうではない
   - kind: para
-    text: ていることがある(BDFL:優しい終身
-  - kind: para
-    text: の独裁者)が､Rasmusはそうではない
-  - kind: para
-    text: 必要な場面では発言するが権限は
-  - kind: para
-    text: RFCの一票しか持ってない
+    text: 必要な場面では発言するが権限はRFCの一票しか持ってない
   - kind: para
     text: 今回の一件にはあまり関与してない
   p72:
@@ -595,15 +548,11 @@ text:
   - kind: para
     text: 近年のPHPの中核的な開発者
   - kind: para
-    text: PHP5.5以降､非常に多数の言語機能
-  - kind: para
-    text: を実装してPHPに取り入れてきた
+    text: PHP5.5以降､非常に多数の言語機能を実装してPHPに取り入れてきた
   - kind: para
     text: PHP-Parserなどの作者
   - kind: para
-    text: 去年の大学院を卒業し今年JetBrains
-  - kind: para
-    text: に入社してPhpStormチームに参加
+    text: 去年の大学院を卒業し今年JetBrainsに入社してPhpStormチームに参加
   p73:
   - kind: para
     text: 📛

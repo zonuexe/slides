@@ -7,9 +7,7 @@ text:
     level: 1
     text: pixivになるまで前史
   - kind: para
-    text: pixiv.inc
-  - kind: para
-    text: '@tadsan'
+    text: pixiv.inc@tadsan
   - kind: para
     text: 2020.02.17 PIXIV TECH FES.
   p2:
@@ -42,17 +40,13 @@ text:
     text: 2012年入社
   p5:
   - kind: para
-    text: PHPは入社してから
-  - kind: para
-    text: （それ以前はRuby）
+    text: PHPは入社してから（それ以前はRuby）
   p6:
   - kind: para
     text: 今回のお題
   p7:
   - kind: para
-    text: 「ふつうのPHP」が
-  - kind: para
-    text: pixivになるまで前史
+    text: 「ふつうのPHP」がpixivになるまで前史
   p8:
   - kind: para
     text: 前史？
@@ -66,25 +60,19 @@ text:
   p12: []
   p13:
   - kind: para
-    text: このときは2012年
-  - kind: para
-    text: 以後に改善したことを
+    text: このときは2012年以後に改善したことを
   - kind: para
     text: 主に話しました
   p14:
   - kind: para
-    text: 今回は私の入社時
-  - kind: para
-    text: （2012年以前）に既に
+    text: 今回は私の入社時（2012年以前）に既に
   - kind: para
     text: あったものについて
   - kind: para
     text: 紹介していきます
   p15:
   - kind: para
-    text: 前提を
-  - kind: para
-    text: 揃えましょう
+    text: 前提を揃えましょう
   p16:
   - kind: para
     text: ふつうのPHP？
@@ -95,14 +83,10 @@ text:
     text: 入っている
   p18:
   - kind: para
-    text: http://www.pixiv.net
-  - kind: para
-    text: /member.php?id=105589
+    text: http://www.pixiv.net/member.php?id=105589
   p19:
   - kind: para
-    text: http://www.pixiv.net
-  - kind: para
-    text: /member.php?id=105589
+    text: http://www.pixiv.net/member.php?id=105589
   p20:
   - kind: para
     text: https://www.pixiv.net
@@ -112,9 +96,7 @@ text:
   - kind: para
     text: URLとスクリプト
   - kind: para
-    text: ファイルが1:1で
-  - kind: para
-    text: 対応する時代だった
+    text: ファイルが1:1で対応する時代だった
   p22:
   - kind: para
     text: （当時の世間では）
@@ -126,41 +108,23 @@ text:
   - kind: para
     text: pixivリリースの
   - kind: para
-    text: 2007年は
-  - kind: para
-    text: まだそういう時代
+    text: 2007年はまだそういう時代
   p24:
   - kind: para
-    text: 参考までにRails2.0
-  - kind: para
-    text: が出て日本で注目さ
-  - kind: para
-    text: れだしたのが2008年
+    text: 参考までにRails2.0が出て日本で注目されだしたのが2008年
   p25:
   - kind: para
     text: Ruby関係者に怒られないよ
   - kind: para
-    text: う言及するとRails以前にも
+    text: う言及するとRails以前にもtDiaryのようなRuby CGIな
   - kind: para
-    text: tDiaryのようなRuby CGIな
-  - kind: para
-    text: Webアプリもあったし現在
-  - kind: para
-    text: もRackでばっちり動きます
+    text: Webアプリもあったし現在もRackでばっちり動きます
   p26:
   - kind: para
-    text: 重要なこと：
-  - kind: para
-    text: ファイル=URLのCGI的な
-  - kind: para
-    text: 構造でFWに依存してない
-  - kind: para
-    text: （これは2015年まで続く）
+    text: 重要なこと：ファイル=URLのCGI的な構造でFWに依存してない（これは2015年まで続く）
   p27:
   - kind: para
-    text: というわけで
-  - kind: para
-    text: 話を本筋に戻して
+    text: というわけで話を本筋に戻して
   p28:
   - kind: para
     text: 温故知新
@@ -180,11 +144,7 @@ text:
     level: 1
     text: UTF-8
   - kind: para
-    text: （リリース当時はUTF-8
-  - kind: para
-    text: じゃなかったらしいけど
-  - kind: para
-    text: 2007年中には移行完了）
+    text: （リリース当時はUTF-8じゃなかったらしいけど2007年中には移行完了）
   p33:
   - kind: heading
     level: 1
@@ -197,16 +157,10 @@ text:
     text: 移行したのは割と早め)
   p34:
   - kind: para
-    text: あとは制限時間で
-  - kind: para
-    text: 打ち切られるまで
-  - kind: para
-    text: 個別要素を語っていくぞ
+    text: あとは制限時間で打ち切られるまで個別要素を語っていくぞ
   p35:
   - kind: para
-    text: pixiv開発メンバーでも何
-  - kind: para
-    text: が一般的で何がpixiv独自
+    text: pixiv開発メンバーでも何が一般的で何がpixiv独自
   - kind: para
     text: 要素なのか把握できてる
   - kind: para
@@ -230,25 +184,17 @@ text:
   - kind: para
     text: SQLのクエリ末尾にスタッ
   - kind: para
-    text: クトレースを付加すること
-  - kind: para
-    text: でスロークエリの発生箇所
+    text: クトレースを付加することでスロークエリの発生箇所
   - kind: para
     text: を容易に特定できる
   p39:
   - kind: para
-    text: それもPDOを生で使わず
-  - kind: para
-    text: にラッパークラスを設けて
-  - kind: para
-    text: 使ってたのが本当にすごい
+    text: それもPDOを生で使わずにラッパークラスを設けて使ってたのが本当にすごい
   p40:
   - kind: para
     text: 基本は_call()をつかった
   - kind: para
-    text: Proxyクラス
-  - kind: para
-    text: +べんりメソッドの追加
+    text: Proxyクラス+べんりメソッドの追加
   p41:
   - kind: para
     text: 系統とmaster/slaveごと
@@ -258,9 +204,7 @@ text:
     text: 管理するクラス
   p42:
   - kind: para
-    text: slaveに対して書き込み
-  - kind: para
-    text: クエリが発行されることを
+    text: slaveに対して書き込みクエリが発行されることを
   - kind: para
     text: 事前に防ぐ構造を提供
   p43:
@@ -271,22 +215,14 @@ text:
     text: (HTMLテンプレートエンジン)
   p44:
   - kind: para
-    text: SmartyはPHPの定番テ
-  - kind: para
-    text: ンプレートエンジンだが、
-  - kind: para
-    text: それ自体はXSS耐性がなく
+    text: SmartyはPHPの定番テンプレートエンジンだが、それ自体はXSS耐性がなく
   - kind: para
     text: 全ての値を明示的にエス
   - kind: para
     text: ケープしないといけない
   p45:
   - kind: para
-    text: pixivではSmarty_
-  - kind: para
-    text: Compilerを拡張して
-  - kind: para
-    text: attributeで明示的にエス
+    text: pixivではSmarty_Compilerを拡張してattributeで明示的にエス
   - kind: para
     text: ケープしない出力を拒否
   p46:
@@ -310,40 +246,28 @@ text:
     text: クに依存していない
   p49:
   - kind: para
-    text: が、部分的に薄いフレーム
-  - kind: para
-    text: ワークのような機能を持つ層
+    text: が、部分的に薄いフレームワークのような機能を持つ層
   - kind: para
     text: は複数あった
   p50:
   - kind: para
-    text: 独自フレームワーク
-  - kind: para
-    text: そのものも複数あった
+    text: 独自フレームワークそのものも複数あった
   p51: []
   p52:
   - kind: para
     text: (いわゆる)RESTful APIの
   - kind: para
-    text: pixiv内における初期事例
-  - kind: para
-    text: (PHPカンファレンス2013)
+    text: pixiv内における初期事例(PHPカンファレンス2013)
   p53:
   - kind: para
     text: 身近に24ファイル程度の
   - kind: para
-    text: 読めるフレームワークが
-  - kind: para
-    text: あったのはPHPの理解に
+    text: 読めるフレームワークがあったのはPHPの理解に
   - kind: para
     text: 非常に大きく役立った
   p54:
   - kind: para
-    text: タグジャンプできない
-  - kind: para
-    text: (=静的解析しにくい)制約は
-  - kind: para
-    text: 反面教師として現在の改善に
+    text: タグジャンプできない(=静的解析しにくい)制約は反面教師として現在の改善に
   - kind: para
     text: 活かされている
   p55:
@@ -353,44 +277,30 @@ text:
   - kind: para
     text: 今回は2012年以前の
   - kind: para
-    text: 前期pixivから現在も
-  - kind: para
-    text: 現役の実装を紹介した
+    text: 前期pixivから現在も現役の実装を紹介した
   p57:
   - kind: para
-    text: 前期pixivの内部実装
-  - kind: para
-    text: について情報が外に出
+    text: 前期pixivの内部実装について情報が外に出
   - kind: para
     text: る機会は少なかった
   p58:
   - kind: para
     text: CGI時代の空気を色濃く
   - kind: para
-    text: 残していたコードは
-  - kind: para
-    text: 2015年頃にフレームワーク
+    text: 残していたコードは2015年頃にフレームワーク
   - kind: para
     text: 的な構造に移植されている
   p59:
   - kind: para
-    text: 良いアーキテクチャとは言
-  - kind: para
-    text: いがたいが、実装面として
-  - kind: para
-    text: ユニークなものは多くある
+    text: 良いアーキテクチャとは言いがたいが、実装面としてユニークなものは多くある
   p60:
   - kind: para
-    text: 良い遺産だからと
-  - kind: para
-    text: 全肯定して残したい
+    text: 良い遺産だからと全肯定して残したい
   - kind: para
     text: わけではない
   p61:
   - kind: para
-    text: 歴史から学んで
-  - kind: para
-    text: もっと良いもので
+    text: 歴史から学んでもっと良いもので
   - kind: para
     text: 置き換えていこう
   p62:

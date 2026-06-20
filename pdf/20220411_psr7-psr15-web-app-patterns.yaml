@@ -16,9 +16,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2022-04-11'
-  - kind: para
-    text: PHPerKaigi Day 2
+    text: 2022-04-11 PHPerKaigi Day 2
   p2:
   - kind: para
     text: お前誰よ
@@ -91,9 +89,7 @@ text:
   - kind: para
     text: 突っ込みどころ改善ポイントが
   - kind: para
-    text: 枯渇しつつあるので
-  - kind: para
-    text: 参加したい学生はお早めに
+    text: 枯渇しつつあるので参加したい学生はお早めに
   p16:
   - kind: heading
     level: 1
@@ -115,14 +111,10 @@ text:
     text: を理解したい人向け
   p20:
   - kind: para
-    text: 前半はフレームワーク
-  - kind: para
-    text: 一般の概念の話もします
+    text: 前半はフレームワーク一般の概念の話もします
   p21:
   - kind: para
-    text: 後半もPSR-15入門
-  - kind: para
-    text: とテスト方法みたいな
+    text: 後半もPSR-15入門とテスト方法みたいな
   - kind: para
     text: 話に終始します
   p22:
@@ -138,9 +130,7 @@ text:
     level: 1
     text: これからだ！
   - kind: para
-    text: (ご静聴ありがとうございました。
-  - kind: para
-    text: tadsanの次回作にご期待ください)
+    text: (ご静聴ありがとうございました。tadsanの次回作にご期待ください)
   p24:
   - kind: heading
     level: 1
@@ -265,15 +255,7 @@ text:
     - 継承関係がある
     - Psr\Http\MessageInterface (レスポンスとリクエストの共通集合)
   - kind: para
-    text: ├─ RequestInterface
-  - kind: para
-    text: (HTTPリクエスト)
-  - kind: para
-    text: │ └─ ServerRequestInterface (↑+追加情報)
-  - kind: para
-    text: └─ ResponseInterface
-  - kind: para
-    text: (HTTPレスポンス)
+    text: ├─ RequestInterface(HTTPリクエスト)│ └─ ServerRequestInterface (↑+追加情報)└─ ResponseInterface(HTTPレスポンス)
   p38:
   - kind: para
     text: 不変性(immutability)
@@ -320,9 +302,7 @@ text:
     items:
     - withCookieParams()などは$_COOKIE相当のデータを付加するが、
   - kind: para
-    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕
-  - kind: para
-    text: 様で明言されている
+    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
   - kind: list
     items:
     - withAttribute()/getAttribute()という、事実上なんでも入れていい
@@ -463,19 +443,9 @@ text:
     level: 1
     text: フレームワークを使わないPHP
   - kind: para
-    text: <?php
-  - kind: para
-    text: $name = $_GET['name'];
-  - kind: para
-    text: $title = "Hello, {$name}!";
-  - kind: para
-    text: 'header(''Content-Type: application/html; charset=UTF-8'');'
-  - kind: para
-    text: ?>
-  - kind: para
-    text: <title><?= htmlspecialchars($title) ?></title>
-  - kind: para
-    text: <h1><?= htmlspecialchars($title) ?></h1>
+    text: '<?php$name = $_GET[''name''];$title = "Hello, {$name}!";header(''Content-Type:
+      application/html; charset=UTF-8'');?><title><?= htmlspecialchars($title) ?></title><h1><?=
+      htmlspecialchars($title) ?></h1>'
   - kind: para
     text: <p>現在は
   - kind: para
@@ -489,9 +459,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりファイルをincludeしたりする
+    text: なんかいろんな関数を呼んだりファイルをincludeしたりする
   - kind: para
     text: $_SERVER
   p53:
@@ -522,9 +490,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: header()
-  - kind: para
-    text: ob_start()
+    text: header()ob_start()
   - kind: para
     text: $_SERVER
   p56:
@@ -534,9 +500,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: header()
-  - kind: para
-    text: ob_start()echo
+    text: header()ob_start()echo
   - kind: para
     text: $_SERVER
   p57:
@@ -546,9 +510,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: header()
-  - kind: para
-    text: ob_start()echo echo
+    text: header()ob_start()echo echo
   - kind: para
     text: $_SERVER
   p58:
@@ -558,9 +520,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: header()
-  - kind: para
-    text: ob_start()echo echoset_cookie()
+    text: header()ob_start()echo echoset_cookie()
   - kind: para
     text: $_SERVER
   p59:
@@ -570,9 +530,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: header()
-  - kind: para
-    text: ob_start()echo echoset_cookie() ob_end_flush()
+    text: header()ob_start()echo echoset_cookie() ob_end_flush()
   - kind: para
     text: $_SERVER
   p60:
@@ -599,9 +557,7 @@ text:
     - 処理を全部追わないと最終的な出力 (レスポンスヘッダ・ボディ)がわからん
   p61:
   - kind: para
-    text: こういう世界と
-  - kind: para
-    text: どうやって整合性を
+    text: こういう世界とどうやって整合性を
   - kind: para
     text: 合わせるのか
   p62:
@@ -625,25 +581,11 @@ text:
   - kind: para
     text: // 概念的なざっくり実装。ほんとはもうちょっと考慮事項がある
   - kind: para
-    text: 'function emitResponse(ResponseInterface $response): void'
+    text: 'function emitResponse(ResponseInterface $response): void{http_response_code($response->getStatusCode());foreach
+      ($response->getHeaders() as $name => $values) {foreach ((array)$values as $value)
+      {header("{$name}: {$value}");}}'
   - kind: para
-    text: '{'
-  - kind: para
-    text: http_response_code($response->getStatusCode());
-  - kind: para
-    text: foreach ($response->getHeaders() as $name => $values) {
-  - kind: para
-    text: foreach ((array)$values as $value) {
-  - kind: para
-    text: 'header("{$name}: {$value}");'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: echo $response->getBody();
-  - kind: para
-    text: '}'
+    text: echo $response->getBody();}
   p64:
   - kind: para
     text: PSR-7の入力 (ServerRequestの錬成)
@@ -665,9 +607,7 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりファイルをincludeしたりする
+    text: なんかいろんな関数を呼んだりファイルをincludeしたりする
   - kind: para
     text: $_SERVER
   p66:
@@ -695,9 +635,7 @@ text:
   - kind: para
     text: $_SERVER
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p68:
   - kind: heading
     level: 1
@@ -713,9 +651,7 @@ text:
   - kind: para
     text: $_SERVER
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p69:
   - kind: heading
     level: 1
@@ -729,15 +665,9 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: $_SERVER
+    text: $_SERVER echo header
   - kind: para
-    text: echo
-  - kind: para
-    text: header
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p70:
   - kind: para
     text: フレームワークの光と影
@@ -862,9 +792,7 @@ text:
   - kind: para
     text: $_SERVER
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p81:
   - kind: heading
     level: 1
@@ -880,9 +808,7 @@ text:
   - kind: para
     text: $_SERVER
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p82:
   - kind: heading
     level: 1
@@ -896,15 +822,9 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: $_SERVER
+    text: $_SERVER echo header
   - kind: para
-    text: echo
-  - kind: para
-    text: header
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p83:
   - kind: heading
     level: 1
@@ -938,9 +858,7 @@ text:
     level: 1
     text: RoadRunner
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p91:
   - kind: heading
     level: 1
@@ -948,45 +866,31 @@ text:
   - kind: para
     text: ServerRequest
   - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p92:
   - kind: heading
     level: 1
     text: RoadRunner
   - kind: para
-    text: ServerRequest
+    text: ServerRequest Response
   - kind: para
-    text: Response
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p93:
   - kind: heading
     level: 1
     text: RoadRunner
   - kind: para
-    text: ServerRequest
+    text: ServerRequest Response
   - kind: para
-    text: Response
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p94:
   - kind: heading
     level: 1
     text: RoadRunner
   - kind: para
-    text: ServerRequest
+    text: ServerRequest Response
   - kind: para
-    text: Response
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p95:
   - kind: heading
     level: 1
@@ -1000,27 +904,17 @@ text:
   - kind: para
     text: /var/www/example.com/public/index.php
   - kind: para
-    text: $_SERVER
+    text: $_SERVER echo header
   - kind: para
-    text: echo
-  - kind: para
-    text: header
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p96:
   - kind: heading
     level: 1
     text: RoadRunner
   - kind: para
-    text: ServerRequest
+    text: ServerRequest Response
   - kind: para
-    text: Response
-  - kind: para
-    text: なんかいろんな関数を
-  - kind: para
-    text: 呼んだりしてResponse作る
+    text: なんかいろんな関数を呼んだりしてResponse作る
   p97:
   - kind: heading
     level: 1
@@ -1030,9 +924,7 @@ text:
     level: 1
     text: 入出力を端に揃えると交換可能に
   - kind: para
-    text: 両端の構造が合っていれば
-  - kind: para
-    text: 従来型とも共通化しやすそう
+    text: 両端の構造が合っていれば従来型とも共通化しやすそう
   p99:
   - kind: heading
     level: 1
@@ -1042,9 +934,7 @@ text:
     level: 1
     text: 外の世界の事情を無視できる
   - kind: para
-    text: どこで動いてようが
-  - kind: para
-    text: あまり関係なくなる
+    text: どこで動いてようがあまり関係なくなる
   p101:
   - kind: heading
     level: 1
@@ -1054,9 +944,7 @@ text:
     level: 1
     text: ユニットテストで実行もできる
   - kind: para
-    text: 値を渡して
-  - kind: para
-    text: 戻り値を検査する
+    text: 値を渡して戻り値を検査する
   p103:
   - kind: para
     text: もうちょっと
@@ -1112,17 +1000,10 @@ text:
   - kind: para
     text: namespace Psr\Http\Server;
   - kind: para
-    text: use Psr\Http\Message\ResponseInterface;
+    text: use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;
   - kind: para
-    text: use Psr\Http\Message\ServerRequestInterface;
-  - kind: para
-    text: interface RequestHandlerInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'public function handle(ServerRequestInterface $request): ResponseInterface;'
-  - kind: para
-    text: '}'
+    text: 'interface RequestHandlerInterface{public function handle(ServerRequestInterface
+      $request): ResponseInterface;}'
   p109:
   - kind: heading
     level: 1
@@ -1132,19 +1013,10 @@ text:
   - kind: para
     text: namespace Psr\Http\Server;
   - kind: para
-    text: use Psr\Http\Message\ResponseInterface;
+    text: use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;
   - kind: para
-    text: use Psr\Http\Message\ServerRequestInterface;
-  - kind: para
-    text: interface MiddlewareInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: public function process(ServerRequestInterface $request,
-  - kind: para
-    text: 'RequestHandlerInterface $handler): ResponseInterface;'
-  - kind: para
-    text: '}'
+    text: 'interface MiddlewareInterface{public function process(ServerRequestInterface
+      $request,RequestHandlerInterface $handler): ResponseInterface;}'
   p110:
   - kind: heading
     level: 1
@@ -1172,29 +1044,12 @@ text:
     level: 1
     text: HelloWorldっぽいレスポンスを返す
   - kind: para
-    text: class HelloJsonHandler implements RequestHandlerInterface {
+    text: class HelloJsonHandler implements RequestHandlerInterface {public function
+      __construct(private StreamFactory $stream_factory,private ResponseFactory $response_factory){}
   - kind: para
-    text: public function __construct(
-  - kind: para
-    text: private StreamFactory $stream_factory,
-  - kind: para
-    text: private ResponseFactory $response_factory
-  - kind: para
-    text: ){}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: $body = $this->stream_factory->createStream(json_encode(['Hello' => 'World']);
-  - kind: para
-    text: return $this->response_factory->createResponse(200)
-  - kind: para
-    text: ->withHeader('Content-Type', ['application/json'])
-  - kind: para
-    text: ->withBody($body);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'public function handle(ServerRequest $request): Response {$body = $this->stream_factory->createStream(json_encode([''Hello''
+      => ''World'']);return $this->response_factory->createResponse(200)->withHeader(''Content-Type'',
+      [''application/json''])->withBody($body);}}'
   p113:
   - kind: heading
     level: 1
@@ -1203,25 +1058,12 @@ text:
     text: // 前略
   - kind: para
     text: 'public function handle(ServerRequestInterface $request): ResponseInterface
-      {'
-  - kind: para
-    text: if ($request->getMethod() !== 'GET') {
-  - kind: para
-    text: return $this->response_factory->createResponse(404);
-  - kind: para
-    text: '}'
+      {if ($request->getMethod() !== ''GET'') {return $this->response_factory->createResponse(404);}'
   - kind: para
     text: // 後はさっきと同じ
   - kind: para
-    text: $body = $this->stream_factory->createStream(json_encode(['Hello' => 'World']);
-  - kind: para
-    text: return $this->response_factory->createResponse(200)
-  - kind: para
-    text: ->withHeader('Content-Type', ['application/json'])
-  - kind: para
-    text: ->withBody($body);
-  - kind: para
-    text: '}'
+    text: $body = $this->stream_factory->createStream(json_encode(['Hello' => 'World']);return
+      $this->response_factory->createResponse(200)->withHeader('Content-Type', ['application/json'])->withBody($body);}
   p114:
   - kind: heading
     level: 1
@@ -1247,9 +1089,7 @@ text:
   - kind: para
     text: テストしてみよう
   - kind: para
-    text: テストケース自身が
-  - kind: para
-    text: Factoryの機能を持っている
+    text: テストケース自身がFactoryの機能を持っている
   - kind: para
     text: と書き心地が良くなる
   - kind: list
@@ -1296,9 +1136,7 @@ text:
     level: 1
     text: RequestHandler呼び出しイメージ
   - kind: para
-    text: create
-  - kind: para
-    text: ServerRequest
+    text: create ServerRequest
   - kind: para
     text: RequestHandler
   - kind: para
@@ -1308,15 +1146,11 @@ text:
     level: 1
     text: RequestHandler呼び出しイメージ
   - kind: para
-    text: create
-  - kind: para
-    text: ServerRequest
+    text: create ServerRequest
   - kind: para
     text: RequestHandler
   - kind: para
-    text: ServerRequest
-  - kind: para
-    text: Response
+    text: ServerRequest Response
   p122:
   - kind: heading
     level: 1
@@ -1324,15 +1158,11 @@ text:
   - kind: para
     text: assertEquals()
   - kind: para
-    text: create
-  - kind: para
-    text: ServerRequest
+    text: create ServerRequest
   - kind: para
     text: RequestHandler
   - kind: para
-    text: ServerRequest
-  - kind: para
-    text: Response
+    text: ServerRequest Response
   p123:
   - kind: heading
     level: 1
@@ -1340,67 +1170,27 @@ text:
   - kind: para
     text: use Nyholm\Psr7\Factory\Psr17Factory;
   - kind: para
-    text: trait HttpFactoryTrait
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'private function psr17factory(): Psr17Factory'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return new Psr17Factory();
-  - kind: para
-    text: '}'
+    text: 'trait HttpFactoryTrait{private function psr17factory(): Psr17Factory{return
+      new Psr17Factory();}'
   p124:
   - kind: heading
     level: 1
     text: テストの準備 (HttpFactoryTrait)
   - kind: para
-    text: 'public function getRequestFactory(): RequestFactoryInterface'
+    text: 'public function getRequestFactory(): RequestFactoryInterface{return $this->psr17factory();}'
   - kind: para
-    text: '{'
+    text: 'public function getResponseFactory(): ResponseFactoryInterface{return $this->psr17factory();}'
   - kind: para
-    text: return $this->psr17factory();
-  - kind: para
-    text: '}'
-  - kind: para
-    text: 'public function getResponseFactory(): ResponseFactoryInterface'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $this->psr17factory();
-  - kind: para
-    text: '}'
-  - kind: para
-    text: 'public function getServerRequestFactory(): ServerRequestFactoryInterface'
-  - kind: para
-    text: '{'
+    text: 'public function getServerRequestFactory(): ServerRequestFactoryInterface{'
   p125:
   - kind: heading
     level: 1
     text: テストの準備 (HttpFactoryTrait)
   - kind: para
-    text: /**
-  - kind: para
-    text: '* Create a new stream from a string.'
-  - kind: para
-    text: '*'
-  - kind: para
-    text: '* The stream SHOULD be created with a temporary resource.'
-  - kind: para
-    text: '*'
-  - kind: para
-    text: '* @param string $content String content with which to populate the stream.'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function createStream(string $contents): StreamInterface'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $this->getStreamFactory()->createStream($contents);
-  - kind: para
-    text: '}'
+    text: '/*** Create a new stream from a string.** The stream SHOULD be created
+      with a temporary resource.** @param string $content String content with which
+      to populate the stream.*/public function createStream(string $contents): StreamInterface{return
+      $this->getStreamFactory()->createStream($contents);}'
   p126:
   - kind: heading
     level: 1
@@ -1410,9 +1200,7 @@ text:
     - 特定のPSR-7ライブラリにあえて強く依存している
     - Nyholm Psr17Factoryは状態を持たないのでオブジェクトをキャッシュ
   - kind: para
-    text: してもいいが、そもそも状態をまったく持たない軽量なオブジェクトなので
-  - kind: para
-    text: 必要な都度新しいインスタンスを作ってもボトルネックにならない
+    text: してもいいが、そもそも状態をまったく持たない軽量なオブジェクトなので必要な都度新しいインスタンスを作ってもボトルネックにならない
   - kind: list
     items:
     - 正攻法であればsetUpやsetUpBeforeClassで注入する形をとるが、
@@ -1423,99 +1211,41 @@ text:
     level: 1
     text: テストしてみよう (setup)
   - kind: para
-    text: class HelloJsonHandlerTest extends \PHPUnit\Framework\TestCase
-  - kind: para
-    text: '{'
-  - kind: para
-    text: use Helper\HttpFactoryTrait;
+    text: class HelloJsonHandlerTest extends \PHPUnit\Framework\TestCase{use Helper\HttpFactoryTrait;
   - kind: para
     text: private HelloJsonHandler $subject;
   - kind: para
-    text: 'public function setUp(): void {'
+    text: 'public function setUp(): void {parent::setUp();'
   - kind: para
-    text: parent::setUp();
-  - kind: para
-    text: $this->subject = new HelloJsonHandler(
-  - kind: para
-    text: $this->getStreamFactory(), $this->getResponseFactory());
-  - kind: para
-    text: '}'
+    text: $this->subject = new HelloJsonHandler($this->getStreamFactory(), $this->getResponseFactory());}
   p128:
   - kind: heading
     level: 1
     text: テスト
   - kind: para
-    text: /**
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->handle($request);'
   - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $actual = $this->subject->handle($request);
-  - kind: para
-    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());
-  - kind: para
-    text: $this->assertEquals($expected['headers'], $actual->getHeaders());
-  - kind: para
-    text: $this->assertSame($expected['body'], (string)$actual->getBody());
-  - kind: para
-    text: '}'
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
   p129:
   - kind: heading
     level: 1
     text: テスト (dataProvider)
   - kind: para
-    text: 'public function requestProvider(): iterable'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: yield 'GET' => [
-  - kind: para
-    text: $this->createServerRequest('GET', '/dummy'),
-  - kind: para
-    text: '['
-  - kind: para
-    text: '''status_code'' => 200,'
-  - kind: para
-    text: '''headers'' => ['
-  - kind: para
-    text: '''Content-Type'' => [''application/json''],'
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '''body'' => ''{"Hello":"World"}'','
-  - kind: para
-    text: '],'
-  - kind: para
-    text: '];'
+    text: 'public function requestProvider(): iterable{yield ''GET'' => [$this->createServerRequest(''GET'',
+      ''/dummy''),[''status_code'' => 200,''headers'' => [''Content-Type'' => [''application/json''],],''body''
+      => ''{"Hello":"World"}'',],];'
   p130:
   - kind: heading
     level: 1
     text: テスト (再掲)
   - kind: para
-    text: /**
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->handle($request);'
   - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $actual = $this->subject->handle($request);
-  - kind: para
-    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());
-  - kind: para
-    text: $this->assertEquals($expected['headers'], $actual->getHeaders());
-  - kind: para
-    text: $this->assertSame($expected['body'], (string)$actual->getBody());
-  - kind: para
-    text: '}'
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
   p131:
   - kind: heading
     level: 1
@@ -1525,17 +1255,8 @@ text:
   - kind: para
     text: $http_methods = ['POST', 'PUT', 'DELETE'];
   - kind: para
-    text: foreach ($http_methods as $method) {
-  - kind: para
-    text: yield $method => [
-  - kind: para
-    text: $this->createServerRequest($method, '/dummy'),
-  - kind: para
-    text: $default_expected,
-  - kind: para
-    text: '];'
-  - kind: para
-    text: '}'
+    text: foreach ($http_methods as $method) {yield $method => [$this->createServerRequest($method,
+      '/dummy'),$default_expected,];}
   p132:
   - kind: heading
     level: 1
@@ -1551,17 +1272,8 @@ text:
     level: 2
     text: すべて結果は同じになる
   - kind: para
-    text: foreach ($http_methods as $method) {
-  - kind: para
-    text: yield $method => [
-  - kind: para
-    text: $this->createServerRequest($method, '/dummy'),
-  - kind: para
-    text: $default_expected,
-  - kind: para
-    text: '];'
-  - kind: para
-    text: '}'
+    text: foreach ($http_methods as $method) {yield $method => [$this->createServerRequest($method,
+      '/dummy'),$default_expected,];}
   p133:
   - kind: heading
     level: 1
@@ -1589,19 +1301,10 @@ text:
   - kind: para
     text: namespace Psr\Http\Server;
   - kind: para
-    text: use Psr\Http\Message\ResponseInterface;
+    text: use Psr\Http\Message\ResponseInterface;use Psr\Http\Message\ServerRequestInterface;
   - kind: para
-    text: use Psr\Http\Message\ServerRequestInterface;
-  - kind: para
-    text: interface MiddlewareInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: public function process(ServerRequestInterface $request,
-  - kind: para
-    text: 'RequestHandlerInterface $handler): ResponseInterface;'
-  - kind: para
-    text: '}'
+    text: 'interface MiddlewareInterface{public function process(ServerRequestInterface
+      $request,RequestHandlerInterface $handler): ResponseInterface;}'
   p136:
   - kind: heading
     level: 1
@@ -1645,125 +1348,45 @@ text:
     level: 1
     text: 何もしないミドルウェア(ストロー)
   - kind: para
-    text: class StrawMiddleware implements MiddlewareInterface
+    text: 'class StrawMiddleware implements MiddlewareInterface{public function process(ServerRequest
+      $request, RequestHandler $handler): Response{return $handler->handle($request);'
   - kind: para
-    text: '{'
-  - kind: para
-    text: public function process(
-  - kind: para
-    text: 'ServerRequest $request, RequestHandler $handler): Response'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $handler->handle($request);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p140:
   - kind: heading
     level: 1
     text: 全レスポンスに規定のヘッダを付与
   - kind: para
-    text: class StrawMiddleware implements MiddlewareInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: public function process(
-  - kind: para
-    text: 'ServerRequest $request, RequestHandler $handler): Response'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $handler->handle($request)
-  - kind: para
-    text: ->withHeader('X-Content-Type-Options', ['nosniff']);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class StrawMiddleware implements MiddlewareInterface{public function process(ServerRequest
+      $request, RequestHandler $handler): Response{return $handler->handle($request)->withHeader(''X-Content-Type-Options'',
+      [''nosniff'']);}}'
   p141:
   - kind: heading
     level: 1
     text: HTTPSにリダイレクト
   - kind: para
-    text: class HttpsRedirectMiddleware implements MiddlewareInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: public function process(
-  - kind: para
-    text: 'ServerRequest $request, RequestHandler $handler): Response'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $uri = $request->getUri();
-  - kind: para
-    text: if (strtolower($uri->getScheme()) !== 'https') {
-  - kind: para
-    text: return $this->response_factory->createResponse(302)
-  - kind: para
-    text: ->withHeader('Location', [(string)$uri->withScheme('https')]);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: return $handler->handle($request);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class HttpsRedirectMiddleware implements MiddlewareInterface{public function
+      process(ServerRequest $request, RequestHandler $handler): Response{$uri = $request->getUri();if
+      (strtolower($uri->getScheme()) !== ''https'') {return $this->response_factory->createResponse(302)->withHeader(''Location'',
+      [(string)$uri->withScheme(''https'')]);}return $handler->handle($request);}}'
   p142:
   - kind: heading
     level: 1
     text: 例外に対して標準エラーページ
   - kind: para
-    text: class ErrorPageMiddleware implements MiddlewareInterface
-  - kind: para
-    text: '{'
-  - kind: para
-    text: public function process(
-  - kind: para
-    text: 'ServerRequest $request, RequestHandler $handler): Response'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: try {
-  - kind: para
-    text: return $handler->handle;
-  - kind: para
-    text: '} catch (HttpException $e) {'
-  - kind: para
-    text: return $this->renderHtmlErrorPage($e);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class ErrorPageMiddleware implements MiddlewareInterface{public function
+      process(ServerRequest $request, RequestHandler $handler): Response{try {return
+      $handler->handle;} catch (HttpException $e) {return $this->renderHtmlErrorPage($e);}}}'
   p143:
   - kind: heading
     level: 1
     text: RequestHandlerのテスト(再掲)
   - kind: para
-    text: /**
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->handle($request);'
   - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $actual = $this->subject->handle($request);
-  - kind: para
-    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());
-  - kind: para
-    text: $this->assertEquals($expected['headers'], $actual->getHeaders());
-  - kind: para
-    text: $this->assertSame($expected['body'], (string)$actual->getBody());
-  - kind: para
-    text: '}'
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
   p144:
   - kind: para
     text: ResponseHandlerのテスト (再掲)
@@ -1827,9 +1450,7 @@ text:
   - kind: para
     text: Middleware
   - kind: para
-    text: create
-  - kind: para
-    text: ServerRequest
+    text: create ServerRequest
   - kind: para
     text: RequestHandler
   - kind: para
@@ -1845,9 +1466,7 @@ text:
   - kind: para
     text: Middleware
   - kind: para
-    text: create
-  - kind: para
-    text: ServerRequest
+    text: create ServerRequest
   - kind: para
     text: RequestHandler
   - kind: para
@@ -1863,9 +1482,7 @@ text:
   - kind: para
     text: Middleware
   - kind: para
-    text: create
-  - kind: para
-    text: ServerRequest
+    text: create ServerRequest
   - kind: para
     text: RequestHandler
   - kind: para
@@ -1877,78 +1494,33 @@ text:
     level: 1
     text: Middlewareのテスト(?)
   - kind: para
-    text: /**
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->process($request,
+      $handler);'
   - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $actual = $this->subject->process($request, $handler);
-  - kind: para
-    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());
-  - kind: para
-    text: $this->assertEquals($expected['headers'], $actual->getHeaders());
-  - kind: para
-    text: $this->assertSame($expected['body'], (string)$actual->getBody());
-  - kind: para
-    text: '}'
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
   p152:
   - kind: heading
     level: 1
     text: Middlewareのテスト
   - kind: para
-    text: /**
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$actual = $this->subject->process($request,
+      $handler);'
   - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $actual = $this->subject->process($request, $handler);
-  - kind: para
-    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());
-  - kind: para
-    text: $this->assertEquals($expected['headers'], $actual->getHeaders());
-  - kind: para
-    text: $this->assertSame($expected['body'], (string)$actual->getBody());
-  - kind: para
-    text: '}'
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
   p153:
   - kind: heading
     level: 1
     text: Middlewareのテスト
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $ok = $this->createResponse(200);
-  - kind: para
-    text: $actual = $this->subject->process($request, new class($ok) implements RequestHandler
-      {
-  - kind: para
-    text: public function __construct(private Response $response) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: return $this->response;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '});'
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
   p154:
   - kind: heading
     level: 1
@@ -1957,30 +1529,11 @@ text:
     level: 2
     text: 固定のレスポンスを返すだけ
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $ok = $this->createResponse(200);
-  - kind: para
-    text: $actual = $this->subject->process($request, new class($ok) implements RequestHandler
-      {
-  - kind: para
-    text: public function __construct(private Response $response) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: return $this->response;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '});'
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
   p155:
   - kind: heading
     level: 1
@@ -1989,30 +1542,11 @@ text:
     level: 2
     text: 固定のレスポンスを返すだけ
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $ok = $this->createResponse(200);
-  - kind: para
-    text: $actual = $this->subject->process($request, new class($ok) implements RequestHandler
-      {
-  - kind: para
-    text: public function __construct(private Response $response) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: return $this->response;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '});'
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
   - kind: heading
     level: 2
     text: 3行で実装できるが…
@@ -2038,120 +1572,51 @@ text:
     level: 1
     text: テストの準備 (RawHandler)
   - kind: para
-    text: class RawHandler implements RequestHandlerInterface {
+    text: class RawHandler implements RequestHandlerInterface {/*** @psalm-var list<ServerRequest>*
+      @psalm-readonly-allow-private-mutation*/public $received_server_requests = [];public
+      function __construct(private Response $response) {}
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @psalm-var list<ServerRequest>'
-  - kind: para
-    text: '* @psalm-readonly-allow-private-mutation'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: public $received_server_requests = [];
-  - kind: para
-    text: public function __construct(private Response $response) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: $this->received_server_requests[] = $request;
-  - kind: para
-    text: return $this->response;
-  - kind: para
-    text: '}'
+    text: 'public function handle(ServerRequest $request): Response {$this->received_server_requests[]
+      = $request;return $this->response;}'
   p158:
   - kind: heading
     level: 1
     text: Middlewareのテスト (無名クラス)
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $ok = $this->createResponse(200);
-  - kind: para
-    text: $actual = $this->subject->process($request, new class($ok) implements RequestHandler
-      {
-  - kind: para
-    text: public function __construct(private Response $response) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: return $this->response;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '});'
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok = $this->createResponse(200);$actual =
+      $this->subject->process($request, new class($ok) implements RequestHandler {public
+      function __construct(private Response $response) {}public function handle(ServerRequest
+      $request): Response {return $this->response;}});'
   p159:
   - kind: heading
     level: 1
     text: Middlewareのテスト (RawHandler)
   - kind: para
-    text: /**
+    text: '/*** @dataProvider requestProvider*/public function test(ServerRequest
+      $request, array $expected): void{$ok_handler = new RawHandler($this->createResponse(200));$actual
+      = $this->subject->process($ok_handler);'
   - kind: para
-    text: '* @dataProvider requestProvider'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $ok_handler = new RawHandler($this->createResponse(200));
-  - kind: para
-    text: $actual = $this->subject->process($ok_handler);
-  - kind: para
-    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());
-  - kind: para
-    text: $this->assertEquals($expected['headers'], $actual->getHeaders());
-  - kind: para
-    text: $this->assertSame($expected['body'], (string)$actual->getBody());
-  - kind: para
-    text: '}'
+    text: $this->assertSame($expected['status_code'], $actual->getStatusCode());$this->assertEquals($expected['headers'],
+      $actual->getHeaders());$this->assertSame($expected['body'], (string)$actual->getBody());}
   p160:
   - kind: heading
     level: 1
     text: Middlewareのテスト (RawHandler)
   - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
+    text: 'public function test(ServerRequest $request, array $expected): void{$ok_handler
+      = new RawHandler($this->createResponse(200));$actual = $this->subject->process($ok_handler);'
   - kind: para
-    text: '{'
-  - kind: para
-    text: $ok_handler = new RawHandler($this->createResponse(200));
-  - kind: para
-    text: $actual = $this->subject->process($ok_handler);
-  - kind: para
-    text: $this->assertEquals($expected, [
-  - kind: para
-    text: '''status_code'' => $actual->getStatusCode());'
-  - kind: para
-    text: '''headers''=> $actual->getHeaders(),'
-  - kind: para
-    text: '''body'' => (string)$actual->getBody(),'
-  - kind: para
-    text: '''not_redirected_count'' => count($ok_handler->received_server_requests),'
-  - kind: para
-    text: );
-  - kind: para
-    text: '}'
+    text: $this->assertEquals($expected, ['status_code' => $actual->getStatusCode());'headers'=>
+      $actual->getHeaders(),'body' => (string)$actual->getBody(),'not_redirected_count'
+      => count($ok_handler->received_server_requests),);}
   p161:
   - kind: heading
     level: 1
     text: Middlewareのテスト (RawHandler)
   - kind: para
-    text: 'public function test(ServerRequest $request, array $expected): void'
-  - kind: para
-    text: '{'
-  - kind: para
-    text: $ok_handler = new RawHandler($this->createResponse(200));
-  - kind: para
-    text: $actual = $this->subject->process($ok_handler);
+    text: 'public function test(ServerRequest $request, array $expected): void{$ok_handler
+      = new RawHandler($this->createResponse(200));$actual = $this->subject->process($ok_handler);'
   - kind: heading
     level: 2
     text: $ok_handlerが
@@ -2159,19 +1624,9 @@ text:
     level: 2
     text: コールされた回数
   - kind: para
-    text: $this->assertEquals($expected, [
-  - kind: para
-    text: '''status_code'' => $actual->getStatusCode());'
-  - kind: para
-    text: '''headers''=> $actual->getHeaders(),'
-  - kind: para
-    text: '''body'' => (string)$actual->getBody(),'
-  - kind: para
-    text: '''not_redirected_count'' => count($ok_handler->received_server_requests),'
-  - kind: para
-    text: );
-  - kind: para
-    text: '}'
+    text: $this->assertEquals($expected, ['status_code' => $actual->getStatusCode());'headers'=>
+      $actual->getHeaders(),'body' => (string)$actual->getBody(),'not_redirected_count'
+      => count($ok_handler->received_server_requests),);}
   p162:
   - kind: heading
     level: 1
@@ -2194,53 +1649,23 @@ text:
     level: 1
     text: その他のハンドラ (関数のラッパー)
   - kind: para
-    text: class CallbackHandler implements RequestHandlerInterface {
+    text: class CallbackHandler implements RequestHandlerInterface {/*** @psalm-var
+      list<ServerRequest>* @psalm-readonly-allow-private-mutation*/public $received_server_requests
+      = [];public function __construct(private Closure $callback) {}
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @psalm-var list<ServerRequest>'
-  - kind: para
-    text: '* @psalm-readonly-allow-private-mutation'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: public $received_server_requests = [];
-  - kind: para
-    text: public function __construct(private Closure $callback) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: $this->received_server_requests[] = $request;
-  - kind: para
-    text: return ($this->callback)($request);
-  - kind: para
-    text: '}'
+    text: 'public function handle(ServerRequest $request): Response {$this->received_server_requests[]
+      = $request;return ($this->callback)($request);}'
   p164:
   - kind: heading
     level: 1
     text: その他のハンドラ (例外を投げる君)
   - kind: para
-    text: class ThrowingHandler implements RequestHandlerInterface {
+    text: class ThrowingHandler implements RequestHandlerInterface {/*** @psalm-var
+      list<ServerRequest>* @psalm-readonly-allow-private-mutation*/Public $received_server_requests
+      = [];public function __construct(private Throwable $e) {}
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @psalm-var list<ServerRequest>'
-  - kind: para
-    text: '* @psalm-readonly-allow-private-mutation'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: Public $received_server_requests = [];
-  - kind: para
-    text: public function __construct(private Throwable $e) {}
-  - kind: para
-    text: 'public function handle(ServerRequest $request): Response {'
-  - kind: para
-    text: $this->received_server_requests[] = $request;
-  - kind: para
-    text: throw $this->e;
-  - kind: para
-    text: '}'
+    text: 'public function handle(ServerRequest $request): Response {$this->received_server_requests[]
+      = $request;throw $this->e;}'
   p165:
   - kind: para
     text: 実アプリケーション
@@ -2262,9 +1687,7 @@ text:
     - エミッタがResponseをどうにか出力する
   p167:
   - kind: para
-    text: nyholm/
-  - kind: para
-    text: psr7-server
+    text: nyholm/psr7-server
   - kind: para
     text: 大雑把な処理の流れ
   - kind: list
@@ -2280,9 +1703,7 @@ text:
     - エミッタがResponseをどうにか出力する
   p168:
   - kind: para
-    text: nyholm/
-  - kind: para
-    text: psr7-server
+    text: nyholm/psr7-server
   - kind: para
     text: 大雑把な処理の流れ
   - kind: para
@@ -2300,9 +1721,7 @@ text:
     - エミッタがResponseをどうにか出力する
   p169:
   - kind: para
-    text: nyholm/
-  - kind: para
-    text: psr7-server
+    text: nyholm/psr7-server
   - kind: heading
     level: 1
     text: 大雑把な処理の流れ
@@ -2323,9 +1742,7 @@ text:
     text: Laminasのエミッタを使う
   p170:
   - kind: para
-    text: nyholm/
-  - kind: para
-    text: psr7-server
+    text: nyholm/psr7-server
   - kind: heading
     level: 1
     text: 大雑把な処理の流れ
@@ -2362,13 +1779,9 @@ text:
     text: RequestHandler
   p172:
   - kind: para
-    text: これまでは
+    text: これまではMiddleware1個
   - kind: para
-    text: Middleware1個
-  - kind: para
-    text: Handler1個
-  - kind: para
-    text: しか考えてない
+    text: Handler1個しか考えてない
   p173:
   - kind: heading
     level: 1
@@ -2379,9 +1792,7 @@ text:
     text: RequestHandler
   p174:
   - kind: para
-    text: せっかくの既存
-  - kind: para
-    text: ミドルウェアたくさん
+    text: せっかくの既存ミドルウェアたくさん
   - kind: para
     text: 重ねたくないですか
   p175:
@@ -2441,21 +1852,12 @@ text:
     text: // 前略
   - kind: para
     text: 'public function handle(ServerRequestInterface $request): ResponseInterface
-      {'
-  - kind: para
-    text: $session = $request->getAttribute(Session::class);
-  - kind: para
-    text: assert($session instanceof Session);
+      {$session = $request->getAttribute(Session::class);assert($session instanceof
+      Session);'
   - kind: para
     text: // $session を使った処理を書く
   - kind: para
-    text: if ($session instanceof LoggedIn) {
-  - kind: para
-    text: // ...
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: if ($session instanceof LoggedIn) {// ...}}
   p180:
   - kind: para
     text: どうやってユーザーに
@@ -2481,9 +1883,7 @@ text:
   - kind: para
     text: ここまでできれば
   - kind: para
-    text: 外の枠組みは
-  - kind: para
-    text: 結構できてきた
+    text: 外の枠組みは結構できてきた
   p183:
   - kind: para
     text: アプリケーションって
@@ -2556,16 +1956,12 @@ text:
     items:
     - withCookieParams()などは$_COOKIE相当のデータを付加するが、
   - kind: para
-    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と
-  - kind: para
-    text: 仕様で明言されている
+    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
   - kind: list
     items:
     - プレーンなPHPではsetcookie()すればよかったが、
   - kind: para
-    text: PSR-7ベースではプリミティブすぎて、
-  - kind: para
-    text: setHeaderで直接書かないといけない
+    text: PSR-7ベースではプリミティブすぎて、setHeaderで直接書かないといけない
   p192:
   - kind: heading
     level: 1
@@ -2584,11 +1980,7 @@ text:
     text: ParamHelperにPSR-7とValueObject の力を授けた話
   p194:
   - kind: para
-    text: 今回の発表の参照実装
-  - kind: para
-    text: とか便利なライブラリ
-  - kind: para
-    text: とかそのうちいろいろ
+    text: 今回の発表の参照実装とか便利なライブラリとかそのうちいろいろ
   - kind: para
     text: 出します！！！！
   p195:
@@ -2599,9 +1991,7 @@ text:
     level: 1
     text: これからだ！
   - kind: para
-    text: (ご静聴ありがとうございました。
-  - kind: para
-    text: tadsanの次回作にご期待ください)
+    text: (ご静聴ありがとうございました。tadsanの次回作にご期待ください)
 size:
   max_width: 1920
   max_height: 1080

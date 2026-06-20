@@ -13,9 +13,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: PHP勉強会 in 神戸
-  - kind: para
-    text: '2024-07-19 #関ガレ'
+    text: 'PHP勉強会 in 神戸2024-07-19 #関ガレ'
   p2:
   - kind: para
     text: お前誰よ
@@ -48,9 +46,7 @@ text:
     text: Now, everyone
   p5:
   - kind: para
-    text: 静的解析は
-  - kind: para
-    text: 好きですか？
+    text: 静的解析は好きですか？
   - kind: heading
     level: 1
     text: Do you like static
@@ -61,39 +57,29 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $v = [1, 2, 3];
-  - kind: para
-    text: echo json_decode($v);
+    text: $v = [1, 2, 3];echo json_decode($v);
   p7:
   - kind: para
     text: <?php
   - kind: para
-    text: $v = [1, 2, 3];
-  - kind: para
-    text: echo json_decode($v);
+    text: $v = [1, 2, 3];echo json_decode($v);
   p8:
   - kind: para
     text: <?php
   - kind: para
-    text: $v = [1, 2, 3];
-  - kind: para
-    text: echo json_encode($v);
+    text: $v = [1, 2, 3];echo json_encode($v);
   p9:
   - kind: para
     text: <?php
   - kind: para
-    text: $v = '[1, 2, 3]';
-  - kind: para
-    text: var_dump(json_decode($v));
+    text: $v = '[1, 2, 3]';var_dump(json_decode($v));
   p10:
   - kind: para
     text: 静的型検査万歳
   - kind: para
     text: 型チェッカーは常に愚かな我々に
   - kind: para
-    text: 先んじてプログラムのミスを
-  - kind: para
-    text: 指摘してくれる… そうですよね？
+    text: 先んじてプログラムのミスを指摘してくれる… そうですよね？
   p11:
   - kind: para
     text: 次のスライドのコードは
@@ -103,16 +89,12 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $v = file_get_contents('data.json');
-  - kind: para
-    text: var_dump(json_decode($v));
+    text: $v = file_get_contents('data.json');var_dump(json_decode($v));
   p13:
   - kind: para
     text: <?php
   - kind: para
-    text: $v = file_get_contents('data.json');
-  - kind: para
-    text: var_dump(json_decode($v));
+    text: $v = file_get_contents('data.json');var_dump(json_decode($v));
   p14: []
   p15:
   - kind: para
@@ -127,16 +109,10 @@ text:
   - kind: para
     text: デプロイのミス
   - kind: para
-    text: A-1.
-  - kind: para
-    text: 要求されたファイルが
-  - kind: para
-    text: 正しく配置されなかった
+    text: A-1.要求されたファイルが正しく配置されなかった
   p17:
   - kind: para
-    text: ファイルの存在
-  - kind: para
-    text: チェックしてない
+    text: ファイルの存在チェックしてない
   - kind: heading
     level: 1
     text: A-2.
@@ -155,48 +131,26 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: if (!file_exists('data.json')) {
+    text: if (!file_exists('data.json')) {return;}
   - kind: para
-    text: return;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: // maybe safe
-  - kind: para
-    text: $v = file_get_contents('data.json');
-  - kind: para
-    text: var_dump(json_decode($v));
+    text: // maybe safe$v = file_get_contents('data.json');var_dump(json_decode($v));
   p19:
   - kind: para
     text: <?php
   - kind: para
     text: この関数がfalseを返すこ
   - kind: para
-    text: とはない… たぶん…
+    text: とはない… たぶん…おそらく… きっと…
   - kind: para
-    text: おそらく… きっと…
+    text: if (!file_exists('data.json')) {return;}
   - kind: para
-    text: if (!file_exists('data.json')) {
-  - kind: para
-    text: return;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: // maybe safe?
-  - kind: para
-    text: $v = file_get_contents('data.json');
-  - kind: para
-    text: var_dump(json_decode($v));
+    text: // maybe safe?$v = file_get_contents('data.json');var_dump(json_decode($v));
   p20:
   - kind: heading
     level: 1
     text: <?php
   - kind: para
-    text: $vが絶対にfalseに
-  - kind: para
-    text: なっていないことを
-  - kind: para
-    text: アサーション(表明)
+    text: $vが絶対にfalseになっていないことをアサーション(表明)
   - kind: heading
     level: 1
     text: $v = file_get_contents('data.json');
@@ -208,15 +162,11 @@ text:
     text: var_dump(json_decode($v));
   p21:
   - kind: para
-    text: 実際にはfalseが返って
-  - kind: para
-    text: くる可能性を見て見ぬふり
+    text: 実際にはfalseが返ってくる可能性を見て見ぬふり
   - kind: para
     text: <?php
   - kind: para
-    text: /** @var string */
-  - kind: para
-    text: $v = file_get_contents('data.json');
+    text: /** @var string */$v = file_get_contents('data.json');
   - kind: para
     text: var_dump(json_decode($v));
   p22:
@@ -275,9 +225,7 @@ text:
   - kind: para
     text: $v = file_get_contents('data.json');
   - kind: para
-    text: assert($v !== false);
-  - kind: para
-    text: var_dump(json_decode($v));
+    text: assert($v !== false);var_dump(json_decode($v));
   p32:
   - kind: heading
     level: 2
@@ -299,9 +247,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: PHP勉強会 in 神戸
-  - kind: para
-    text: '2024-07-19 #関ガレ'
+    text: 'PHP勉強会 in 神戸2024-07-19 #関ガレ'
   p34:
   - kind: para
     text: 謎の型
@@ -355,15 +301,11 @@ text:
   p45: []
   p46:
   - kind: para
-    text: この型を使えば標準関数を
-  - kind: para
-    text: 使いやすくするラッパーも作れる
+    text: この型を使えば標準関数を使いやすくするラッパーも作れる
   p47: []
   p48:
   - kind: para
-    text: 便利っぽい…?
-  - kind: para
-    text: んだけど、使わないでね！
+    text: 便利っぽい…?んだけど、使わないでね！
   p49:
   - kind: heading
     level: 1
@@ -381,9 +323,7 @@ text:
     text: き。Javaのチェック例外みたいに。
   p50:
   - kind: para
-    text: 安全性を保ち
-  - kind: para
-    text: コードの繰り返しを防ぐには？
+    text: 安全性を保ちコードの繰り返しを防ぐには？
   p51: []
   p52: []
   p53: []
@@ -403,9 +343,7 @@ text:
     text: 構造化された例外を！！
   p58:
   - kind: para
-    text: みんなのコードでは
-  - kind: para
-    text: benevolent unionsを
+    text: みんなのコードではbenevolent unionsを
   - kind: para
     text: 使わないでね！
 size:

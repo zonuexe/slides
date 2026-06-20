@@ -13,9 +13,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2022-12-20'
-  - kind: para
-    text: PHP勉強会@東京
+    text: 2022-12-20 PHP勉強会@東京
   p2:
   - kind: para
     text: お前誰よ
@@ -115,17 +113,9 @@ text:
     level: 1
     text: PHPはオペコードにコンパイルされる
   - kind: para
-    text: <?php
+    text: <?php$a = 1;echo $a + 2;
   - kind: para
-    text: $a = 1;
-  - kind: para
-    text: echo $a + 2;
-  - kind: para
-    text: ASSIGN !0, 1
-  - kind: para
-    text: ADD ~2 !0, 2
-  - kind: para
-    text: ECHO ~2
+    text: ASSIGN !0, 1 ADD ~2 !0, 2 ECHO ~2
   p21:
   - kind: para
     text: opcodeでおｋ
@@ -135,23 +125,13 @@ text:
     text: ECHO 'foo'
   p22:
   - kind: para
-    text: なんで
-  - kind: para
-    text: こんなことするの
+    text: なんでこんなことするの
   p23:
   - kind: para
-    text: PHP
-  - kind: para
-    text: 高度な構文解析が必要
-  - kind: para
-    text: な高級なシンタックス
+    text: PHP高度な構文解析が必要な高級なシンタックス
   p24:
   - kind: para
-    text: opcode
-  - kind: para
-    text: 構文解析不要な
-  - kind: para
-    text: シンプルな命令セット
+    text: opcode構文解析不要なシンプルな命令セット
   p25:
   - kind: para
     text: 分けて開発することで
@@ -159,9 +139,7 @@ text:
     text: 最適化しやすくなる
   p26:
   - kind: para
-    text: これを極めれば
-  - kind: para
-    text: パフォーマンス改善に
+    text: これを極めればパフォーマンス改善に
   - kind: para
     text: 役立つのか？
   p27: []
@@ -178,16 +156,10 @@ text:
   - kind: para
     text: var_dump("foo");
   - kind: para
-    text: INIT_FCALL 'var_dump'
-  - kind: para
-    text: SEND_VAL 'foo'
-  - kind: para
-    text: DO_ICALL
+    text: INIT_FCALL 'var_dump'SEND_VAL 'foo'DO_ICALL
   p30:
   - kind: para
-    text: 関数呼び出しは
-  - kind: para
-    text: 関数呼び出しに
+    text: 関数呼び出しは関数呼び出しに
   p31:
   - kind: heading
     level: 1
@@ -201,13 +173,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: echo
+    text: echo is_int('foo');
   - kind: para
-    text: is_int('foo');
-  - kind: para
-    text: TYPE_CHECK 16 ~0 'foo'
-  - kind: para
-    text: ECHO ~0
+    text: TYPE_CHECK 16 ~0 'foo'ECHO ~0
   p33:
   - kind: para
     text: ！？
@@ -219,9 +187,7 @@ text:
   - kind: para
     text: ECHO 3
   - kind: para
-    text: echo
-  - kind: para
-    text: strlen('foo');
+    text: echo strlen('foo');
   p34:
   - kind: heading
     level: 1

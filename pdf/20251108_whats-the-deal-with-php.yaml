@@ -56,24 +56,16 @@ text:
   - kind: para
     text: Python…
   - kind: para
-    text: TypeScript…
-  - kind: para
-    text: Java…
+    text: TypeScript…Java…
   - kind: para
     text: Ruby on Rails…
   - kind: para
-    text: Smalltalk…
-  - kind: para
-    text: Kotlin…
-  - kind: para
-    text: Swift…
+    text: Smalltalk…Kotlin…Swift…
   p7:
   - kind: para
     text: いろいろな選択肢が
   - kind: para
-    text: あるのに我々は
-  - kind: para
-    text: PHPにしがみつくのか
+    text: あるのに我々はPHPにしがみつくのか
   p8:
   - kind: para
     text: 個人的には楽しい
@@ -99,9 +91,7 @@ text:
     text: 登壇は9年くらい
   p11:
   - kind: para
-    text: プログラミング言語と
-  - kind: para
-    text: Webとフレームワーク
+    text: プログラミング言語とWebとフレームワーク
   - kind: para
     text: にこだわりのある人間
   p12:
@@ -115,16 +105,11 @@ text:
     - 非同期I/OとWeb
   p13:
   - kind: para
-    text: 話は
-  - kind: para
-    text: 1993年に
-  - kind: para
-    text: さかのぼる
+    text: 話は1993年にさかのぼる
   p14:
   - kind: para
-    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用'
-  - kind: para
-    text: https://ja.wikipedia.org/wiki/ラスマス・ラードフ 2021-07-01T14:10:55版
+    text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』より引用https://ja.wikipedia.org/wiki/ラスマス・ラードフ
+      2021-07-01T14:10:55版'
   p15:
   - kind: para
     text: '出典: 伝説のPHP作者「Rasmus Lerdorf」名言集を聞くと嫌PHP厨がファビョる'
@@ -132,17 +117,13 @@ text:
     text: https://web.archive.org/web/20100501140915/http://anond.hatelabo.jp/20100427231539
   p16:
   - kind: para
-    text: 出典:伝説の喫煙者「黒木 灰次郎」名言集を聞くと嫌煙がファビョる
-  - kind: para
-    text: http://blog.livedoor.jp/hokanisurukotoha/archives/1121714.html
+    text: 出典:伝説の喫煙者「黒木 灰次郎」名言集を聞くと嫌煙がファビョるhttp://blog.livedoor.jp/hokanisurukotoha/archives/1121714.html
   p17:
   - kind: para
     text: '出典: ウィキクォート https://ja.wikiquote.org/wiki/ラスマス・ラードフ'
   p18:
   - kind: para
-    text: PHPは多くの人から疎まれ、
-  - kind: para
-    text: まじめなプログラミング言語として
+    text: PHPは多くの人から疎まれ、まじめなプログラミング言語として
   - kind: para
     text: 考察対象とされていない節がある
   p19:
@@ -233,13 +214,7 @@ text:
   - kind: para
     text: A. 異常に行動力があるRasmus
   - kind: para
-    text: さんが自分のためにPHPを作っ
-  - kind: para
-    text: て、何回か書き直した後に利己的
-  - kind: para
-    text: な動機でソースコード公開したら
-  - kind: para
-    text: 世界的に開発が盛り上がっちゃった
+    text: さんが自分のためにPHPを作って、何回か書き直した後に利己的な動機でソースコード公開したら世界的に開発が盛り上がっちゃった
   p43: []
   p44:
   - kind: para
@@ -254,23 +229,15 @@ text:
     - フリーソフトウェアとして公開された言語(の先行事例のひとつ)
   p45:
   - kind: para
-    text: 第2部
-  - kind: para
-    text: Webフレームワークの
+    text: 第2部Webフレームワークの
   - kind: para
     text: 中世期断絶
   p46:
   - kind: para
-    text: あるいは
-  - kind: para
-    text: 幼年期の終わり
+    text: あるいは幼年期の終わり
   p47:
   - kind: para
-    text: コードを書くと
-  - kind: para
-    text: 何らかの単位で
-  - kind: para
-    text: 抽象化したくなる
+    text: コードを書くと何らかの単位で抽象化したくなる
   p48:
   - kind: para
     text: コードが増えると
@@ -283,9 +250,7 @@ text:
     text: バグも減る
   p50:
   - kind: para
-    text: ライブラリ化
-  - kind: para
-    text: フレームワーク化
+    text: ライブラリ化フレームワーク化
   - kind: para
     text: レイヤー化
   p51:
@@ -405,32 +370,14 @@ text:
     text: 残しつつも明示的に設定させることでコードの追いやすさを意識
   p59:
   - kind: para
-    text: /data/www/www.pixiv.net (document root)
-  - kind: para
-    text: ├── index.php
-  - kind: para
-    text: ├── novel
-  - kind: para
-    text: │ └── show.php
-  - kind: para
-    text: ├── yyy.php
-  - kind: para
-    text: └── zzz.php
+    text: /data/www/www.pixiv.net (document root)├── index.php├── novel│ └── show.php├──
+      yyy.php└── zzz.php
   p60:
   - kind: para
     text: NovelController#show
   - kind: para
-    text: '# routes.rb'
-  - kind: para
-    text: 'get ''/'', to: ''index'''
-  - kind: para
-    text: 'get ''/n/:id'', to: ''novel#show'''
-  - kind: para
-    text: 'get ''/u/:id'', to: ''user#show'''
-  - kind: para
-    text: 'get ''/yyy'', to: ''yyy'''
-  - kind: para
-    text: 'get ''/zzz'', to: ''zzz'''
+    text: '# routes.rb get ''/'', to: ''index''get ''/n/:id'', to: ''novel#show''get
+      ''/u/:id'', to: ''user#show''get ''/yyy'', to: ''yyy''get ''/zzz'', to: ''zzz'''
   p61:
   - kind: para
     text: PHPにとってのFW
@@ -444,28 +391,16 @@ text:
     - PHP自体は依然としてCGI時代と地続き
   p62:
   - kind: para
-    text: PHP以外は
-  - kind: para
-    text: CGI時代との
-  - kind: para
-    text: 分断・断絶を経験
+    text: PHP以外はCGI時代との分断・断絶を経験
   p63:
   - kind: para
-    text: PHPは
-  - kind: para
-    text: FWが一般化後も
-  - kind: para
-    text: 断絶を経験してない
+    text: PHPはFWが一般化後も断絶を経験してない
   p64:
   - kind: para
-    text: ここまでは
-  - kind: para
-    text: 過去の栄光
+    text: ここまでは過去の栄光
   p65:
   - kind: para
-    text: PHPは現在も
-  - kind: para
-    text: パフォーマンス改善
+    text: PHPは現在もパフォーマンス改善
   - kind: para
     text: されているが、
   p66:
@@ -485,29 +420,19 @@ text:
   - kind: para
     text: Python…
   - kind: para
-    text: TypeScript…
-  - kind: para
-    text: Java…
+    text: TypeScript…Java…
   - kind: para
     text: Ruby on Rails…
   - kind: para
-    text: Smalltalk…
-  - kind: para
-    text: Kotlin…
-  - kind: para
-    text: Swift…
+    text: Smalltalk…Kotlin…Swift…
   p67:
   - kind: para
-    text: PHPよりもっと
-  - kind: para
-    text: 速い言語で書いた方が
+    text: PHPよりもっと速い言語で書いた方が
   - kind: para
     text: いいじゃん
   p68:
   - kind: para
-    text: PHPより
-  - kind: para
-    text: エレガントな言語で
+    text: PHPよりエレガントな言語で
   - kind: para
     text: 再構築すべきだ
   p69:
@@ -521,16 +446,10 @@ text:
   - kind: para
     text: コードをエレガントに
   - kind: para
-    text: 書き直すのは
-  - kind: para
-    text: 今やるべきなのか？
+    text: 書き直すのは今やるべきなのか？
   p73:
   - kind: para
-    text: 高速な言語で
-  - kind: para
-    text: 書き直すのは
-  - kind: para
-    text: 今やるべきなのか？
+    text: 高速な言語で書き直すのは今やるべきなのか？
   p74:
   - kind: para
     text: リソース配分
@@ -538,16 +457,12 @@ text:
     text: ⚖
   p75:
   - kind: para
-    text: PHPはどこでも
-  - kind: para
-    text: 65点を出せる言語
+    text: PHPはどこでも65点を出せる言語
   p76:
   - kind: para
     text: …と言いたいが、
   - kind: para
-    text: PHPにも歯が
-  - kind: para
-    text: 立たない局面もある
+    text: PHPにも歯が立たない局面もある
   p77:
   - kind: heading
     level: 1
@@ -561,40 +476,28 @@ text:
     text: 結果をリアルタイムに返す
   p79:
   - kind: para
-    text: WebSocket
-  - kind: para
-    text: Server-Sent Events
+    text: WebSocket Server-Sent Events
   p80:
   - kind: para
-    text: preforkモデル
-  - kind: para
-    text: (mod_php, PHP-FPM)は
+    text: preforkモデル(mod_php, PHP-FPM)は
   - kind: para
     text: 相性最悪
   p81:
   - kind: para
     text: PHPはこのまま
   - kind: para
-    text: 白旗を上げる
-  - kind: para
-    text: しかないのか
+    text: 白旗を上げるしかないのか
   p82: []
   p83:
   - kind: para
-    text: 勝った！
-  - kind: para
-    text: PHP大勝利
+    text: 勝った！PHP大勝利
   p84:
   - kind: heading
     level: 1
     text: ……とは行かない
   p85:
   - kind: para
-    text: グローバル変数や
-  - kind: para
-    text: 静的プロパティが
-  - kind: para
-    text: リセットされない
+    text: グローバル変数や静的プロパティがリセットされない
   p86:
   - kind: heading
     level: 1
@@ -611,30 +514,18 @@ text:
     - シェアードナッシング (並行して処理するリクエストと干渉しない)
   p87:
   - kind: para
-    text: この環境を全部
-  - kind: para
-    text: 捨てることになる
+    text: この環境を全部捨てることになる
   p88:
   - kind: para
     text: Notes on Programming in C
   - kind: para
-    text: 'ルール2: 計測すべし。計測する'
-  - kind: para
-    text: までは速度のための調整をしては
-  - kind: para
-    text: ならない。コードの一部が残りを
-  - kind: para
-    text: 圧倒しないのであれば、なおさら
-  - kind: para
-    text: である。
+    text: 'ルール2: 計測すべし。計測するまでは速度のための調整をしてはならない。コードの一部が残りを圧倒しないのであれば、なおさらである。'
   - kind: para
     text: ̶ Rob Pike
   - kind: para
     text: https://www.lysator.liu.se/c/pikestyle.html
   - kind: para
-    text: 訳語はUNIX哲学 - Wikipediaより引用
-  - kind: para
-    text: (2025年10日2日12:33:03版)
+    text: 訳語はUNIX哲学 - Wikipediaより引用(2025年10日2日12:33:03版)
   p89:
   - kind: para
     text: 問題になっていない
@@ -644,18 +535,14 @@ text:
     text: 仕方ない
   p90:
   - kind: para
-    text: 本当にPHPに
-  - kind: para
-    text: 不得意な仕事をさせる
+    text: 本当にPHPに不得意な仕事をさせる
   - kind: para
     text: 必要があるのか？
   p91:
   - kind: para
     text: 本質的な問題を
   - kind: para
-    text: 解決できる
-  - kind: para
-    text: 言語を使おう
+    text: 解決できる言語を使おう
 size:
   max_width: 1920
   max_height: 1080

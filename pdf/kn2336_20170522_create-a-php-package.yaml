@@ -26,9 +26,7 @@ text:
     - Mastodon API Client/SDK作ったよ
   p3:
   - kind: para
-    text: Mastodon
-  - kind: para
-    text: たのしいんですよ
+    text: Mastodonたのしいんですよ
   p4:
   - kind: para
     text: PHPからMastodonの
@@ -38,14 +36,10 @@ text:
     text: クラスを作った
   p5:
   - kind: para
-    text: $composer require
-  - kind: para
-    text: zonuexe/mastodon-api
+    text: $composer require zonuexe/mastodon-api
   p6:
   - kind: para
-    text: コンポーザーを手
-  - kind: para
-    text: 元に入れる方法は
+    text: コンポーザーを手元に入れる方法は
   - kind: para
     text: キータに書いた
   p7:
@@ -64,9 +58,7 @@ text:
     level: 1
     text: パッケージ名
   - kind: para
-    text: パッケージ名はvendor/package 形式
-  - kind: para
-    text: ([-0-9a-z]+ -と数字小文字のみ)
+    text: パッケージ名はvendor/package 形式([-0-9a-z]+ -と数字小文字のみ)
   - kind: para
     text: GitHubと一致させておくと親切
   - kind: para
@@ -90,15 +82,11 @@ text:
     level: 1
     text: ディレクトリ構成
   - kind: para
-    text: 拘りがなければsrc/とtests/に置く
-  - kind: para
-    text: git init; mkdir src/ tests/;
+    text: 拘りがなければsrc/とtests/に置くgit init; mkdir src/ tests/;
   - kind: para
     text: コマンドを配布したければ bin/ に
   - kind: para
-    text: docs/ にドキュメントを置くと、
-  - kind: para
-    text: GitHub Pagesに展開できて便利
+    text: docs/ にドキュメントを置くと、GitHub Pagesに展開できて便利
   p11:
   - kind: heading
     level: 1
@@ -110,37 +98,14 @@ text:
   - kind: para
     text: composer.jsonに設定を書く
   - kind: para
-    text: 起動スクリプトでだけ
-  - kind: para
-    text: autoload.phpを読み込むようにする
+    text: 起動スクリプトでだけautoload.phpを読み込むようにする
   p12:
   - kind: heading
     level: 1
     text: オートローディング(PSR-4)
   - kind: para
-    text: '{'
-  - kind: para
-    text: '"autoload": {'
-  - kind: para
-    text: '"psr-4": {'
-  - kind: para
-    text: '"Mastodon\\": "src/"'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '},'
-  - kind: para
-    text: 'autoload-dev": {'
-  - kind: para
-    text: '"psr-4": {'
-  - kind: para
-    text: '"Mastodon\\": "tests/"'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '{"autoload": {"psr-4": {"Mastodon\\": "src/"}},autoload-dev": {"psr-4":
+      {"Mastodon\\": "tests/"}}}'
   p13:
   - kind: heading
     level: 1
@@ -152,21 +117,8 @@ text:
     level: 2
     text: 関数はできないので読み込む
   - kind: para
-    text: '{'
-  - kind: para
-    text: '"autoload": {'
-  - kind: para
-    text: '"files": ["src/functions.php"]'
-  - kind: para
-    text: '},'
-  - kind: para
-    text: '"autoload-dev": {'
-  - kind: para
-    text: '"files": ["tests/helpers.php"]'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '{"autoload": {"files": ["src/functions.php"]},"autoload-dev": {"files":
+      ["tests/helpers.php"]}}'
   p14:
   - kind: heading
     level: 1
@@ -178,21 +130,7 @@ text:
     level: 2
     text: 一致しない雑なPHPも力強く読める
   - kind: para
-    text: '{'
-  - kind: para
-    text: '"autoload": {'
-  - kind: para
-    text: '"classmap": ["src/"]'
-  - kind: para
-    text: '},'
-  - kind: para
-    text: '"autoload-dev": {'
-  - kind: para
-    text: '"classmap": ["tests/"]'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '{"autoload": {"classmap": ["src/"]},"autoload-dev": {"classmap": ["tests/"]}}'
   p15:
   - kind: heading
     level: 1
@@ -200,13 +138,9 @@ text:
   - kind: para
     text: 二次利用させるためのガイドライン
   - kind: para
-    text: 好き勝手に利用させたいなら
+    text: 好き勝手に利用させたいならApache-2.0かMITがオススメ
   - kind: para
-    text: Apache-2.0かMITがオススメ
-  - kind: para
-    text: 他人が行なった変更を合法的に
-  - kind: para
-    text: 自分にも取り込みたいならGPL-3.0
+    text: 他人が行なった変更を合法的に自分にも取り込みたいならGPL-3.0
   p16:
   - kind: heading
     level: 1
@@ -214,18 +148,12 @@ text:
   - kind: para
     text: ライセンス(利用許諾)を明示せずに
   - kind: para
-    text: ソースコードをパブリックな場所に
+    text: ソースコードをパブリックな場所に置いてはいけない
   - kind: para
-    text: 置いてはいけない
-  - kind: para
-    text: そのソースコードを見付けたひとが
-  - kind: para
-    text: 合法的に再利用することができない
+    text: そのソースコードを見付けたひとが合法的に再利用することができない
   p17:
   - kind: para
-    text: よしこれで
-  - kind: para
-    text: 準備が整った
+    text: よしこれで準備が整った
   p18:
   - kind: heading
     level: 1
@@ -247,15 +175,12 @@ text:
   - kind: para
     text: composer.jsonのrequireは弄るな
   - kind: para
-    text: composer requireはコマンドで。
-  - kind: para
-    text: JSONファイルはいい感じに変更される
+    text: composer requireはコマンドで。JSONファイルはいい感じに変更される
   - kind: para
     text: バージョンはいい感じに解決される
   - kind: para
-    text: $ composer require guzzlehttp/guzzle respect/validation
-  - kind: para
-    text: $ composer require --dev phpunit/phpunit:^4.8
+    text: $ composer require guzzlehttp/guzzle respect/validation$ composer require
+      --dev phpunit/phpunit:^4.8
   p20:
   - kind: para
     text: SDKがやること
@@ -280,9 +205,7 @@ text:
     level: 2
     text: ひたすらひたすらひたすら写してく
   - kind: para
-    text: https://github.com/tootsuite/documentation/blob/
-  - kind: para
-    text: master/Using-the-API/API.md#entities
+    text: https://github.com/tootsuite/documentation/blob/master/Using-the-API/API.md#entities
   - kind: heading
     level: 2
     text: 自作のライブラリで型付け
@@ -296,21 +219,14 @@ text:
     level: 2
     text: ちょーかんたんっぽく
   - kind: para
-    text: <?php use Baguette\Mastodon as m;
-  - kind: para
-    text: $mastodon = m\session(
+    text: <?php use Baguette\Mastodon as m;$mastodon = m\session(
   - kind: para
     text: '''pawoo.net'', $client_id, $client_secret, ['
   - kind: para
     text: '''scope'' => ''read write follow'','
   - kind: para
-    text: '''grant'' => [''username'' => $mail, ''password'' => $passwd],'
-  - kind: para
-    text: ']);'
-  - kind: para
-    text: $account = $mastodon->getAccount(42);
-  - kind: para
-    text: $mastodon->postStatus(m\toot('トゥートゥー'));
+    text: '''grant'' => [''username'' => $mail, ''password'' => $passwd],]);$account
+      = $mastodon->getAccount(42);$mastodon->postStatus(m\toot(''トゥートゥー''));'
   p24:
   - kind: heading
     level: 1
@@ -319,25 +235,12 @@ text:
     level: 2
     text: Requestするメソッド
   - kind: para
-    text: public static function getAccount(
-  - kind: para
-    text: Client $client, SessionStorage $session, $id
-  - kind: para
-    text: ) {
-  - kind: para
-    text: v::intVal()->min(0)->assert($id);
-  - kind: para
-    text: return static::map(
-  - kind: para
-    text: Entity\Account::class,
-  - kind: para
-    text: $client->requestAPI('GET',
+    text: public static function getAccount(Client $client, SessionStorage $session,
+      $id) {v::intVal()->min(0)->assert($id);return static::map(Entity\Account::class,$client->requestAPI('GET',
   - kind: para
     text: sprintf('/api/v1/accounts/%d', $id), [], $session)
   - kind: para
-    text: );
-  - kind: para
-    text: '}'
+    text: );}
   p25:
   - kind: heading
     level: 1
@@ -346,32 +249,13 @@ text:
     level: 2
     text: APIの結果をデコードしてぶっこむ
   - kind: para
-    text: public function __construct(array $properties) {
-  - kind: para
-    text: $this->setProperties(mapValues($properties, [
-  - kind: para
-    text: '''account'' => Account::class,'
-  - kind: para
-    text: '''reblog'' => Status::class,'
-  - kind: para
-    text: '''created_at'' => \DateTimeImmutable::class,'
-  - kind: para
-    text: '''media_attachments'' => [Attachment::class],'
-  - kind: para
-    text: '''mentions'' => [Mention::class],'
-  - kind: para
-    text: '''tags'' => [Tag::class],'
-  - kind: para
-    text: '''application'' => Application::class,'
-  - kind: para
-    text: ']));'
-  - kind: para
-    text: '}'
+    text: public function __construct(array $properties) {$this->setProperties(mapValues($properties,
+      ['account' => Account::class,'reblog' => Status::class,'created_at' => \DateTimeImmutable::class,'media_attachments'
+      => [Attachment::class],'mentions' => [Mention::class],'tags' => [Tag::class],'application'
+      => Application::class,]));}
   p26:
   - kind: para
-    text: テストの
-  - kind: para
-    text: 書きかた
+    text: テストの書きかた
   p27:
   - kind: heading
     level: 1
@@ -384,14 +268,10 @@ text:
     text: HTTPリクエストはGuzzleで隠蔽
   p28:
   - kind: para
-    text: Mastodon
-  - kind: para
-    text: たのしいんですよ
+    text: Mastodonたのしいんですよ
   p29:
   - kind: para
-    text: まだ未実装なAPIは
-  - kind: para
-    text: たくさん／(^o^)＼
+    text: まだ未実装なAPIはたくさん／(^o^)＼
 size:
   max_width: 1024
   max_height: 768

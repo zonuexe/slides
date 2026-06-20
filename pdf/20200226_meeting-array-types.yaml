@@ -74,13 +74,9 @@ text:
   - kind: para
     text: mixedすると何が起こるか
   - kind: para
-    text: 間違って引数に渡しても
+    text: 間違って引数に渡しても誰も怒ってくれない
   - kind: para
-    text: 誰も怒ってくれない
-  - kind: para
-    text: PhpStormで補完が効かなくて
-  - kind: para
-    text: 非常に気持ち悪い
+    text: PhpStormで補完が効かなくて非常に気持ち悪い
   - kind: para
     text: 静的解析性も開発体験も損ねる
   p20:
@@ -160,17 +156,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: 'function getIds(): array {'
+    text: 'function getIds(): array {return ...}'
   - kind: para
-    text: return ...
-  - kind: para
-    text: '}'
-  - kind: para
-    text: foreach (getIds() as $id) {
-  - kind: para
-    text: $id
-  - kind: para
-    text: '}'
+    text: foreach (getIds() as $id) {$id}
   p35:
   - kind: heading
     level: 1
@@ -178,11 +166,7 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: 'function getIds(): array {'
-  - kind: para
-    text: return ...
-  - kind: para
-    text: '}'
+    text: 'function getIds(): array {return ...}'
   - kind: para
     text: foreach (getIds() as $id) {
   - kind: heading

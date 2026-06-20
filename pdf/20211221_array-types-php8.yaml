@@ -16,9 +16,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2021-12-21'
-  - kind: para
-    text: PHPerKaigi petit - PHP8.1リリース祝賀会
+    text: 2021-12-21 PHPerKaigi petit - PHP8.1リリース祝賀会
   p2:
   - kind: para
     text: お前誰よ
@@ -67,9 +65,7 @@ text:
     text: PHPカンファレンス2021
   p10:
   - kind: para
-    text: なんかいろいろ
-  - kind: para
-    text: 話してきました
+    text: なんかいろいろ話してきました
   p11:
   - kind: para
     text: PHPの進化は
@@ -80,41 +76,25 @@ text:
     level: 1
     text: 型がついていない関数(PHP5)
   - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: function add($a, $b) {return $a + $b;}
   p13:
   - kind: heading
     level: 1
     text: スカラー型宣言(PHP7)
   - kind: para
-    text: int + intって
+    text: int + intって本当にintなの？
   - kind: para
-    text: 本当にintなの？
-  - kind: para
-    text: 'function add(int $a, int $b): int {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
   p14:
   - kind: heading
     level: 1
     text: 広い値をとるにはfloatが必要
   - kind: para
-    text: ひとつの解決策では
-  - kind: para
-    text: あるが… 不必要にfloat
+    text: ひとつの解決策ではあるが… 不必要にfloat
   - kind: para
     text: を強制するのか
   - kind: para
-    text: 'function add(float $a, float $b): float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
   p15:
   - kind: heading
     level: 1
@@ -122,121 +102,50 @@ text:
   - kind: para
     text: あえて型宣言を省略する
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param int|float $a'
-  - kind: para
-    text: '* @param int|float $b'
-  - kind: para
-    text: '* @return int|float'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: function add($a, $b) {
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
   p16:
   - kind: heading
     level: 1
     text: ユニオン型宣言 (PHP8.0)
   - kind: para
-    text: 'function add(int|float $a, int|float $b): int|float {'
-  - kind: para
-    text: return $a + $b;
-  - kind: para
-    text: '}'
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
   p17:
   - kind: para
-    text: クラスの型も
-  - kind: para
-    text: PHP7→8で進化
+    text: クラスの型もPHP7→8で進化
   p18:
   - kind: heading
     level: 1
     text: 著者を持つBookクラス
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var Author */
-  - kind: para
-    text: private $author
-  - kind: para
-    text: public function __construct(Author $author) {
-  - kind: para
-    text: $this->author = $author;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class Book{/** @var Author */private $author public function __construct(Author
+      $author) {$this->author = $author;}}
   p19:
   - kind: heading
     level: 1
     text: PHP 7.4でプロパティ型宣言
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: /** @var Author */
-  - kind: para
-    text: private Author $author
-  - kind: para
-    text: public function __construct(Author $author) {
-  - kind: para
-    text: $this->author = $author;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class Book{/** @var Author */private Author $author public function __construct(Author
+      $author) {$this->author = $author;}}
   p20:
   - kind: heading
     level: 1
     text: コンストラクタプロモーション(PHP8)
   - kind: para
-    text: class Book
+    text: class Book{function __construct(private Author $author) {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: private Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p21:
   - kind: heading
     level: 1
     text: readonlyプロパティ(PHP8.1)
   - kind: para
-    text: class Book
+    text: class Book{function __construct(public readonly Author $author) {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: public readonly Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p22:
   - kind: para
-    text: かくしてPHP
-  - kind: para
-    text: PHPDocの型が
+    text: かくしてPHP PHPDocの型が
   - kind: para
     text: 不要な世界に
   p23:
@@ -248,21 +157,9 @@ text:
   - kind: para
     text: 「共著を想定できてる？」
   - kind: para
-    text: class Book
+    text: class Book{function __construct(private Author $author) {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: private Author $author
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p24:
   - kind: heading
     level: 1
@@ -272,25 +169,11 @@ text:
   - kind: para
     text: 複数であることを表現
   - kind: para
-    text: class Book
+    text: class Book{function __construct(private array $authors) {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
+    text: Authorクラスの情報が減ってる…
   - kind: para
-    text: function __construct(
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: Authorクラスの
-  - kind: para
-    text: 情報が減ってる…
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p25:
   - kind: heading
     level: 1
@@ -300,25 +183,10 @@ text:
   - kind: para
     text: 中身が何かわからない！
   - kind: para
-    text: Authorクラスの
+    text: Authorクラスのメソッドを補完できない
   - kind: para
-    text: メソッドを補完できない
-  - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'function printAuthors($fp): void {'
-  - kind: para
-    text: foreach ($this->authors as $author) {
-  - kind: para
-    text: fwrite($fp, $author->getName());
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class Book{function printAuthors($fp): void {foreach ($this->authors as
+      $author) {fwrite($fp, $author->getName());}}}'
   p26:
   - kind: para
     text: 何か大事なものを
@@ -345,9 +213,7 @@ text:
     text: PHPマニュアルより引用
   p31:
   - kind: para
-    text: PHPの配列は
-  - kind: para
-    text: ハッシュテーブル
+    text: PHPの配列はハッシュテーブル
   p32:
   - kind: heading
     level: 1
@@ -439,43 +305,20 @@ text:
     level: 1
     text: Bookクラスは複数の著者を持つ
   - kind: para
-    text: class Book
+    text: class Book{function __construct(
   - kind: para
-    text: '{'
+    text: private array $authors) {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: function __construct(
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p43:
   - kind: heading
     level: 1
     text: PHPDocの帰還
   - kind: para
-    text: class Book
+    text: class Book{function __construct(/** @var list<Authors> */private array $authors)
+      {// 何も書かなくてもプロパティに代入される
   - kind: para
-    text: '{'
-  - kind: para
-    text: function __construct(
-  - kind: para
-    text: /** @var list<Authors> */
-  - kind: para
-    text: private array $authors
-  - kind: para
-    text: ) {
-  - kind: para
-    text: // 何も書かなくてもプロパティに代入される
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p44:
   - kind: heading
     level: 1
@@ -493,13 +336,7 @@ text:
     - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
     - ユーザを表す構造体がならんだリスト
   - kind: para
-    text: '['
-  - kind: para
-    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
-  - kind: para
-    text: '[''id'' => 234, ''name'' => ''源静香''],'
-  - kind: para
-    text: ']'
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
   - kind: para
     text: list<array{id:int, name:string}>
 size:

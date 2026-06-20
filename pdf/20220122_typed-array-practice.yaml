@@ -13,9 +13,7 @@ text:
     level: 3
     text: USAMI Kenta
   - kind: para
-    text: '2022-01-22'
-  - kind: para
-    text: PHPerKaigi petit@福岡
+    text: 2022-01-22 PHPerKaigi petit@福岡
   p2:
   - kind: para
     text: お前誰よ
@@ -72,13 +70,7 @@ text:
     text: PHPerKaigi petit 8.1(2021年)
   p12:
   - kind: para
-    text: 要約：
-  - kind: para
-    text: 型宣言arrayだけでは
-  - kind: para
-    text: 不十分なので、もっと
-  - kind: para
-    text: 詳しく書かねばならぬ
+    text: 要約：型宣言arrayだけでは不十分なので、もっと詳しく書かねばならぬ
   p13:
   - kind: heading
     level: 1
@@ -92,30 +84,15 @@ text:
   - kind: para
     text: メソッドを補完できない
   - kind: para
-    text: class Book
-  - kind: para
-    text: '{'
-  - kind: para
-    text: 'function printAuthors($fp): void {'
-  - kind: para
-    text: foreach ($this->authors as $author) {
-  - kind: para
-    text: fwrite($fp, $author->getName());
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'class Book{function printAuthors($fp): void {foreach ($this->authors as
+      $author) {fwrite($fp, $author->getName());}}}'
   p14:
   - kind: heading
     level: 1
     text: りくつはわかった
   p15:
   - kind: para
-    text: ならぬと言われても
-  - kind: para
-    text: どう書けばいいのか
+    text: ならぬと言われてもどう書けばいいのか
   - kind: para
     text: わからん
   p16:
@@ -147,9 +124,7 @@ text:
     text: 一旦忘れてください
   p19:
   - kind: para
-    text: 重要なのは
-  - kind: para
-    text: データの持ちかた
+    text: 重要なのはデータの持ちかた
   p20:
   - kind: heading
     level: 1
@@ -167,13 +142,7 @@ text:
     - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
     - ユーザを表す構造体がならんだリスト
   - kind: para
-    text: '['
-  - kind: para
-    text: '[''id'' => 123, ''name'' => ''野比のび太''],'
-  - kind: para
-    text: '[''id'' => 234, ''name'' => ''源静香''],'
-  - kind: para
-    text: ']'
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
   - kind: para
     text: list<array{id:int, name:string}>
   p21:
@@ -235,13 +204,8 @@ text:
     - さらにfetch(の結果が並ぶ)
     - PDO::FETCH_ASSOC → [
   - kind: para
-    text: '[''id'' => ''1'', ''name'' => ''初音ミク''],'
-  - kind: para
-    text: '[''id'' => ''2'', ''name'' => ''鏡音リン''],'
-  - kind: para
-    text: '[''id'' => ''3'', ''name'' => ''鏡音レン''],'
-  - kind: para
-    text: ']'
+    text: '[''id'' => ''1'', ''name'' => ''初音ミク''],[''id'' => ''2'', ''name'' => ''鏡音リン''],[''id''
+      => ''3'', ''name'' => ''鏡音レン''],]'
   p27:
   - kind: heading
     level: 1
@@ -256,9 +220,7 @@ text:
     - '''user_name'', `user_addr` みたいなのを手で展開するより便利'
   p28:
   - kind: para
-    text: なぜ配列に
-  - kind: para
-    text: 型がつかないのか
+    text: なぜ配列に型がつかないのか
   p29:
   - kind: heading
     level: 1
@@ -303,9 +265,7 @@ text:
   - kind: para
     text: // こういうパラメータを渡されても困る
   - kind: para
-    text: $users = findUsers(['hoge' => 'fuga'])
-  - kind: para
-    text: // $idsというパラメータから推測しろ？ うーんわからん
+    text: $users = findUsers(['hoge' => 'fuga'])// $idsというパラメータから推測しろ？ うーんわからん
   p33:
   - kind: heading
     level: 1
@@ -329,21 +289,8 @@ text:
     level: 1
     text: 従来多用されていた記法
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param User[] $users'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'function printUsers(array $users): void {'
-  - kind: para
-    text: foreach ($users as $user) {
-  - kind: para
-    text: echo $user->name, "\n";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '/*** @param User[] $users*/function printUsers(array $users): void {foreach
+      ($users as $user) {echo $user->name, "\n";}}'
   p36:
   - kind: heading
     level: 1
@@ -377,41 +324,15 @@ text:
     level: 1
     text: 従来多用されていた記法
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param User[] $users'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'function printUsers(array $users): void {'
-  - kind: para
-    text: foreach ($users as $user) {
-  - kind: para
-    text: echo $user->name, "\n";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '/*** @param User[] $users*/function printUsers(array $users): void {foreach
+      ($users as $user) {echo $user->name, "\n";}}'
   p39:
   - kind: heading
     level: 1
     text: 旧PSR-5式の記法
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @param array<User> $users'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: 'function printUsers(array $users): void {'
-  - kind: para
-    text: foreach ($users as $user) {
-  - kind: para
-    text: echo $user->name, "\n";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '/*** @param array<User> $users*/function printUsers(array $users): void
+      {foreach ($users as $user) {echo $user->name, "\n";}}'
   p40:
   - kind: para
     text: 変数リテラルや定数は @var を避ける

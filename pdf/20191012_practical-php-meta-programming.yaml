@@ -6,9 +6,7 @@ text:
   - kind: para
     text: Practical PHP meta programming
   - kind: para
-    text: PHPカンファレンス沖縄2019
-  - kind: para
-    text: '2019-10-12 #phpconokinawa'
+    text: 'PHPカンファレンス沖縄2019 2019-10-12 #phpconokinawa'
   p2:
   - kind: heading
     level: 1
@@ -43,23 +41,17 @@ text:
   - kind: para
     text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』'
   - kind: para
-    text: https://ja.wikipedia.org/wiki/メタ
-  - kind: para
-    text: 最終更新 2019年1月10日 10:01 版
+    text: https://ja.wikipedia.org/wiki/メタ最終更新 2019年1月10日 10:01 版
   p11:
   - kind: para
     text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』'
   - kind: para
-    text: https://ja.wikipedia.org/wiki/メタ
-  - kind: para
-    text: 最終更新 2019年1月10日 10:01 版
+    text: https://ja.wikipedia.org/wiki/メタ最終更新 2019年1月10日 10:01 版
   p12:
   - kind: para
     text: '出典: フリー百科事典『ウィキペディア（Wikipedia）』'
   - kind: para
-    text: https://ja.wikipedia.org/wiki/メタ
-  - kind: para
-    text: 最終更新 2019年1月10日 10:01 版
+    text: https://ja.wikipedia.org/wiki/メタ最終更新 2019年1月10日 10:01 版
   p13:
   - kind: para
     text: メタプログラミング
@@ -145,9 +137,7 @@ text:
     text: Ruby
   p26:
   - kind: para
-    text: '出典: O''Reilly Japan - メタプログラミングRuby 第2版'
-  - kind: para
-    text: https://www.oreilly.co.jp/books/9784873117430/
+    text: '出典: O''Reilly Japan - メタプログラミングRuby 第2版https://www.oreilly.co.jp/books/9784873117430/'
   - kind: para
     text: Paolo Perrotta 著 / 角征典 訳 / 2015年10月 発行
   p27:
@@ -204,41 +194,19 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: foreach (range(1, 100) as $n) {
-  - kind: para
-    text: $s = '';
-  - kind: para
-    text: if ($n % 3 === 0) $s .= 'Fizz';
-  - kind: para
-    text: if ($n % 5 === 0) $s .= 'Buzz';
-  - kind: para
-    text: 'echo ($s === '''') ? $n : $s, "\n";'
-  - kind: para
-    text: '}'
+    text: 'foreach (range(1, 100) as $n) {$s = '''';if ($n % 3 === 0) $s .= ''Fizz'';if
+      ($n % 5 === 0) $s .= ''Buzz'';echo ($s === '''') ? $n : $s, "\n";}'
   p37:
   - kind: heading
     level: 1
     text: FizzBuzz模範回答 関数分割
   - kind: para
-    text: <?php
-  - kind: para
-    text: function to_fizzbuzz(int $n) {
-  - kind: para
-    text: $s = '';
-  - kind: para
-    text: if ($n % 3 === 0) $s .= 'Fizz';
-  - kind: para
-    text: if ($n % 5 === 0) $s .= 'Buzz';
-  - kind: para
-    text: 'return ($s === '''') ? $n : $s;'
+    text: '<?php function to_fizzbuzz(int $n) {$s = '''';if ($n % 3 === 0) $s .= ''Fizz'';if
+      ($n % 5 === 0) $s .= ''Buzz'';return ($s === '''') ? $n : $s;'
   - kind: para
     text: '}'
   - kind: para
-    text: foreach (range(1, 100) as $n) {
-  - kind: para
-    text: echo to_fizzbuzz($n), "\n";
-  - kind: para
-    text: '}'
+    text: foreach (range(1, 100) as $n) {echo to_fizzbuzz($n), "\n";}
   p38:
   - kind: heading
     level: 1
@@ -246,15 +214,8 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: assert(to_fizzbuzz(1) === "1");
-  - kind: para
-    text: assert(to_fizzbuzz(2) === "2");
-  - kind: para
-    text: assert(to_fizzbuzz(3) === "Fizz");
-  - kind: para
-    text: assert(to_fizzbuzz(4) === "4");
-  - kind: para
-    text: assert(to_fizzbuzz(5) === "Buzz");
+    text: assert(to_fizzbuzz(1) === "1");assert(to_fizzbuzz(2) === "2");assert(to_fizzbuzz(3)
+      === "Fizz");assert(to_fizzbuzz(4) === "4");assert(to_fizzbuzz(5) === "Buzz");
   p39:
   - kind: para
     text: 無茶振
@@ -276,25 +237,12 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: assert(fizzbuzz1() === "1");
+    text: assert(fizzbuzz1() === "1");assert(fizzbuzz2() === "2");assert(fizzbuzz3()
+      === "Fizz");assert(fizzbuzz4() === "4");assert(fizzbuzz5() === "Buzz");
   - kind: para
-    text: assert(fizzbuzz2() === "2");
-  - kind: para
-    text: assert(fizzbuzz3() === "Fizz");
-  - kind: para
-    text: assert(fizzbuzz4() === "4");
-  - kind: para
-    text: assert(fizzbuzz5() === "Buzz");
-  - kind: para
-    text: function fizzbuzz1() { return "1"; }
-  - kind: para
-    text: function fizzbuzz2() { return "2"; }
-  - kind: para
-    text: function fizzbuzz3() { return "Fizz"; }
-  - kind: para
-    text: function fizzbuzz4() { return "4"; }
-  - kind: para
-    text: function fizzbuzz5() { return "Buzz"; }
+    text: function fizzbuzz1() { return "1"; }function fizzbuzz2() { return "2"; }function
+      fizzbuzz3() { return "Fizz"; }function fizzbuzz4() { return "4"; }function fizzbuzz5()
+      { return "Buzz"; }
   p42:
   - kind: para
     text: 手書きで
@@ -307,23 +255,12 @@ text:
   - kind: para
     text: <?php // このコードはsyntax errorになります
   - kind: para
-    text: foreach (range(1, 100) as $n) {
-  - kind: para
-    text: $s = '';
-  - kind: para
-    text: if ($n % 3 === 0) $s .= 'Fizz';
-  - kind: para
-    text: if ($n % 5 === 0) $s .= 'Buzz';
+    text: foreach (range(1, 100) as $n) {$s = '';if ($n % 3 === 0) $s .= 'Fizz';if
+      ($n % 5 === 0) $s .= 'Buzz';
   - kind: para
     text: // 変数を使った関数定義はできない
   - kind: para
-    text: function fizzbuzz$n(){
-  - kind: para
-    text: 'return ($s === '''') ? $n : $s, "\n";'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: 'function fizzbuzz$n(){return ($s === '''') ? $n : $s, "\n";}}'
   p44:
   - kind: heading
     level: 1
@@ -331,25 +268,10 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: foreach (range(1, 100) as $n) {
+    text: 'foreach (range(1, 100) as $n) {$s = '''';if ($n % 3 === 0) $s .= ''Fizz'';if
+      ($n % 5 === 0) $s .= ''Buzz'';$s = ($s === '''') ? $n : $s;// evalを使えばいちおうできる'
   - kind: para
-    text: $s = '';
-  - kind: para
-    text: if ($n % 3 === 0) $s .= 'Fizz';
-  - kind: para
-    text: if ($n % 5 === 0) $s .= 'Buzz';
-  - kind: para
-    text: '$s = ($s === '''') ? $n : $s;'
-  - kind: para
-    text: // evalを使えばいちおうできる
-  - kind: para
-    text: eval("function fizzbuzz{$n} (){
-  - kind: para
-    text: return '{$s}';
-  - kind: para
-    text: '}");'
-  - kind: para
-    text: '}'
+    text: eval("function fizzbuzz{$n} (){return '{$s}';}");}
   p45:
   - kind: heading
     level: 1
@@ -380,27 +302,11 @@ text:
     level: 1
     text: クロージャを使えばできる
   - kind: para
-    text: <?php
+    text: '<?php$fizzbuzz = [];foreach (range(1, 100) as $n) {$s = '''';if ($n % 3
+      === 0) $s .= ''Fizz'';if ($n % 5 === 0) $s .= ''Buzz'';$s = ($s === '''') ?
+      (string)$n : $s;'
   - kind: para
-    text: $fizzbuzz = [];
-  - kind: para
-    text: foreach (range(1, 100) as $n) {
-  - kind: para
-    text: $s = '';
-  - kind: para
-    text: if ($n % 3 === 0) $s .= 'Fizz';
-  - kind: para
-    text: if ($n % 5 === 0) $s .= 'Buzz';
-  - kind: para
-    text: '$s = ($s === '''') ? (string)$n : $s;'
-  - kind: para
-    text: $fizzbuzz[$n] = function () use ($s) {
-  - kind: para
-    text: return $s;
-  - kind: para
-    text: '};'
-  - kind: para
-    text: '}'
+    text: $fizzbuzz[$n] = function () use ($s) {return $s;};}
   p48:
   - kind: para
     text: クロージャの特徴
@@ -435,15 +341,8 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: assert($fizzbuzz[1]() === "1");
-  - kind: para
-    text: assert($fizzbuzz[2]() === "2");
-  - kind: para
-    text: assert($fizzbuzz[3]() === "Fizz");
-  - kind: para
-    text: assert($fizzbuzz[4]() === "4");
-  - kind: para
-    text: assert($fizzbuzz[5]() === "Buzz");
+    text: assert($fizzbuzz[1]() === "1");assert($fizzbuzz[2]() === "2");assert($fizzbuzz[3]()
+      === "Fizz");assert($fizzbuzz[4]() === "4");assert($fizzbuzz[5]() === "Buzz");
   p50:
   - kind: para
     text: クロージャを使った
@@ -458,11 +357,8 @@ text:
   - kind: para
     text: $x2 = function ($n){ return $n * 2; };
   - kind: para
-    text: $a = range(1, 10);
-  - kind: para
-    text: var_dump(array_map($x2, $a));
-  - kind: para
-    text: // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+    text: $a = range(1, 10);var_dump(array_map($x2, $a));// [2, 4, 6, 8, 10, 12, 14,
+      16, 18, 20]
   p52:
   - kind: para
     text: クロージャをうまく使って
@@ -477,21 +373,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: $times = function ($n) {
+    text: $times = function ($n) {return function ($m) use ($n) {return $n * $m;};};
   - kind: para
-    text: return function ($m) use ($n) {
-  - kind: para
-    text: return $n * $m;
-  - kind: para
-    text: '};'
-  - kind: para
-    text: '};'
-  - kind: para
-    text: $a = range(1, 10);
-  - kind: para
-    text: echo json_encode(array_map($times(3), $a));
-  - kind: para
-    text: // [3,6,9,12,15,18,21,24,27,30]
+    text: $a = range(1, 10);echo json_encode(array_map($times(3), $a));// [3,6,9,12,15,18,21,24,27,30]
   p54:
   - kind: para
     text: マジックメソッド
@@ -512,25 +396,10 @@ text:
     level: 1
     text: アクセス不能プロパティを乗っ取る
   - kind: para
-    text: <?php
+    text: <?php class A {private $data = [];
   - kind: para
-    text: class A {
-  - kind: para
-    text: private $data = [];
-  - kind: para
-    text: public function __get($name) {
-  - kind: para
-    text: $this->data[$name];
-  - kind: para
-    text: '}'
-  - kind: para
-    text: public function __set($name, $value) {
-  - kind: para
-    text: $this->data[$name] = $value;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: public function __get($name) {$this->data[$name];}public function __set($name,
+      $value) {$this->data[$name] = $value;}}
   - kind: para
     text: __isset() と __unset() も定義すべき
   p58:
@@ -548,35 +417,10 @@ text:
     level: 1
     text: 外部から読み込みだけできる
   - kind: para
-    text: <?php
+    text: <?php trait PrivateRead {public function __get($name) {$this->$name;}}
   - kind: para
-    text: trait PrivateRead {
-  - kind: para
-    text: public function __get($name) {
-  - kind: para
-    text: $this->$name;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: /**
-  - kind: para
-    text: '* @property-read int $id'
-  - kind: para
-    text: '* @property-read int $name'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: class A {
-  - kind: para
-    text: use PrivateRead;
-  - kind: para
-    text: private $id;
-  - kind: para
-    text: private $name;
-  - kind: para
-    text: '}'
+    text: /*** @property-read int $id* @property-read int $name*/class A {use PrivateRead;private
+      $id;private $name;}
   p61:
   - kind: heading
     level: 1
@@ -584,21 +428,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: trait ReadOnly {
+    text: trait ReadOnly {public function __set($name, $value) {throw new OutOfRangeException();}}
   - kind: para
-    text: public function __set($name, $value) {
-  - kind: para
-    text: throw new OutOfRangeException();
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
-  - kind: para
-    text: class B {
-  - kind: para
-    text: use ReadOnly;
-  - kind: para
-    text: '}'
+    text: class B {use ReadOnly;}
   p62:
   - kind: para
     text: メソッドアクセスも
@@ -630,17 +462,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: class C {
+    text: class C {public function __call($name, $args){echo __CLASS__."::{$name}()が呼ばれた\n";
   - kind: para
-    text: public function __call($name, $args)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo __CLASS__."::{$name}()が呼ばれた\n";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p67:
   - kind: heading
     level: 1
@@ -648,31 +472,8 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @mixin Foo'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: class D {
-  - kind: para
-    text: private $foo;
-  - kind: para
-    text: public function (Foo $class) {
-  - kind: para
-    text: $this->foo = $class;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: public function __call($name, $args)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: return $this->foo->$name(...$args);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: /*** @mixin Foo*/class D {private $foo;public function (Foo $class) {$this->foo
+      = $class;}public function __call($name, $args){return $this->foo->$name(...$args);}}
   p68:
   - kind: para
     text: リフレクション
@@ -710,17 +511,9 @@ text:
   - kind: para
     text: <?php
   - kind: para
-    text: class C {
+    text: class C {public function __call($name, $args){echo __CLASS__."::{$name}()が呼ばれた\n";
   - kind: para
-    text: public function __call($name, $args)
-  - kind: para
-    text: '{'
-  - kind: para
-    text: echo __CLASS__."::{$name}()が呼ばれた\n";
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: '}}'
   p73:
   - kind: para
     text: まとめ

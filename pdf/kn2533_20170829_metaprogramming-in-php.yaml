@@ -9,9 +9,7 @@ text:
   - kind: para
     text: Meta programming for PHP
   - kind: para
-    text: '2017-08-20 NEEC Kamata #ll2017jp'
-  - kind: para
-    text: ODC 2017 Tokyo/ Learn Languages (LL2017)
+    text: '2017-08-20 NEEC Kamata #ll2017jp ODC 2017 Tokyo/ Learn Languages (LL2017)'
   p2:
   - kind: heading
     level: 1
@@ -25,23 +23,15 @@ text:
     - 動的言語はコンピューティングの真髄
   p3:
   - kind: para
-    text: 世の中にはいろんな
-  - kind: para
-    text: クールな言語がある
+    text: 世の中にはいろんなクールな言語がある
   p4:
   - kind: para
     text: PHPには毛ほども興味のな
   - kind: para
-    text: さそうな皆さまにPHPの動
-  - kind: para
-    text: 的な言語機能を紹介します
+    text: さそうな皆さまにPHPの動的な言語機能を紹介します
   p5:
   - kind: para
-    text: サンプルコードは言
-  - kind: para
-    text: 語機能を簡易に紹介
-  - kind: para
-    text: するためのものです
+    text: サンプルコードは言語機能を簡易に紹介するためのものです
   p6:
   - kind: para
     text: 利用の際は必要性と利便性
@@ -56,40 +46,24 @@ text:
     text: アジェンダ
   p8:
   - kind: para
-    text: 0. 前提
-  - kind: para
-    text: 1. 初級篇
-  - kind: para
-    text: 2. 中級篇
-  - kind: para
-    text: 3. 上級篇
+    text: 0. 前提1. 初級篇2. 中級篇3. 上級篇
   p9:
   - kind: para
     text: 前提
   p10:
   - kind: para
-    text: PHPは、所謂LLと
-  - kind: para
-    text: しては遊びが少ない
+    text: PHPは、所謂LLとしては遊びが少ない
   p11:
   - kind: para
-    text: 例) 原則として関数や
-  - kind: para
-    text: クラスを再定義できない
+    text: 例) 原則として関数やクラスを再定義できない
   - kind: para
     text: (致命的エラーが発生)
   p12:
   - kind: para
-    text: RubyやPythonと違って
-  - kind: para
-    text: オープンクラスではない
-  - kind: para
-    text: (モンキーパッチができない)
+    text: RubyやPythonと違ってオープンクラスではない(モンキーパッチができない)
   p13:
   - kind: para
-    text: 謎なタイミングで
-  - kind: para
-    text: クラス定義が変更される
+    text: 謎なタイミングでクラス定義が変更される
   - kind: para
     text: ことが(基本的には)ない
   p14:
@@ -99,9 +73,7 @@ text:
     text: 条件が揃ってる
   p15:
   - kind: para
-    text: その和を乱す邪悪な
-  - kind: para
-    text: 動的メタプログラミング
+    text: その和を乱す邪悪な動的メタプログラミング
   - kind: para
     text: テクニックが存在する
   p16:
@@ -115,60 +87,32 @@ text:
     text: callable
   p19:
   - kind: para
-    text: 関数として呼出し可
-  - kind: para
-    text: 能な値を表す擬似型
+    text: 関数として呼出し可能な値を表す擬似型
   p20:
   - kind: heading
     level: 1
     text: callable
   - kind: para
-    text: // After
+    text: '// After$f = $cond ? ''foo'' : ''bar'';call_user_func($f, $var);'
   - kind: para
-    text: '$f = $cond ? ''foo'' : ''bar'';'
+    text: // Before if ($cond) {foo($var);} else {bar($var);}
   - kind: para
-    text: call_user_func($f, $var);
-  - kind: para
-    text: // Before
-  - kind: para
-    text: if ($cond) {
-  - kind: para
-    text: foo($var);
-  - kind: para
-    text: '} else {'
-  - kind: para
-    text: bar($var);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: // こうやって書いてもいい
-  - kind: para
-    text: $f($var);
+    text: // こうやって書いてもいい$f($var);
   p21:
   - kind: heading
     level: 1
     text: map
   - kind: para
-    text: $ary = ["apple", "orange", "banana"];
+    text: $ary = ["apple", "orange", "banana"];//=> ["Apple", "Orange", "Banana"]
   - kind: para
-    text: //=> ["Apple", "Orange", "Banana"]
+    text: $bry = [];foreach ($ary as $i => $a) {
   - kind: para
-    text: $bry = [];
+    text: $cry =array_map('ucfirst', $ary);
   - kind: para
-    text: foreach ($ary as $i => $a) {
-  - kind: para
-    text: $cry =
-  - kind: para
-    text: array_map('ucfirst', $ary);
-  - kind: para
-    text: $bry[$i] => ucfirst($a);
-  - kind: para
-    text: '}'
+    text: $bry[$i] => ucfirst($a);}
   p22:
   - kind: para
-    text: compact()
-  - kind: para
-    text: extract()
+    text: compact()extract()
   p23:
   - kind: para
     text: 変数テーブルにアク
@@ -176,52 +120,32 @@ text:
     text: セスできる関数
   p24:
   - kind: para
-    text: compact()
-  - kind: para
-    text: 変数テーブルから
-  - kind: para
-    text: 取り出して配列にする
+    text: compact()変数テーブルから取り出して配列にする
   p25:
   - kind: heading
     level: 1
     text: compact()
   - kind: para
-    text: $foo = foo();
-  - kind: para
-    text: $bar = bar();
+    text: $foo = foo();$bar = bar();
   - kind: para
     text: hoge(compact('foo','bar'));
   - kind: para
-    text: hoge([
-  - kind: para
-    text: '''foo'' => $foo,'
-  - kind: para
-    text: '''bar'' => $bar'
-  - kind: para
-    text: ']);'
+    text: hoge(['foo' => $foo,'bar' => $bar]);
   p26:
   - kind: para
-    text: extract()
-  - kind: para
-    text: 変数テーブルから
-  - kind: para
-    text: 取り出して配列に
+    text: extract()変数テーブルから取り出して配列に
   p27:
   - kind: heading
     level: 1
     text: extract()
   - kind: para
-    text: function (array $vs)
-  - kind: para
-    text: '{'
+    text: function (array $vs){
   - kind: para
     text: extract($vs,
   - kind: para
     text: EXTR_PREFIX_ALL,
   - kind: para
-    text: $hoge_foo = $vs['foo'];
-  - kind: para
-    text: $hoge_bar = $vs['bar'];
+    text: $hoge_foo = $vs['foo'];$hoge_bar = $vs['bar'];
   - kind: para
     text: '''hoge'');'
   - kind: heading
@@ -229,43 +153,26 @@ text:
     text: 本当はissetでチェックすべき
   p28:
   - kind: para
-    text: extract()
-  - kind: para
-    text: 未使用変数の検出できない
+    text: extract()未使用変数の検出できない
   - kind: para
     text: 読みにくくなるので邪悪
   - kind: para
-    text: バグの温床であるばかりか、
-  - kind: para
-    text: ふつうに脆弱性の温床になる
+    text: バグの温床であるばかりか、ふつうに脆弱性の温床になる
   p29:
   - kind: para
     text: $$var
   p30:
   - kind: para
-    text: $$var
-  - kind: para
-    text: 可変変数
-  - kind: para
-    text: (variable variables)
+    text: $$var可変変数(variable variables)
   p31:
   - kind: heading
     level: 1
     text: 可変変数
   - kind: para
-    text: $world = "こんにちは世界";
+    text: $world = "こんにちは世界";$hello = "world";$v = "hello";
   - kind: para
-    text: $hello = "world";
-  - kind: para
-    text: $v = "hello";
-  - kind: para
-    text: var_dump($v); //=> "hello"
-  - kind: para
-    text: var_dump($$v); //=> "world"
-  - kind: para
-    text: var_dump($$$v); //=> "こんにちは世界"
-  - kind: para
-    text: // $$ はいくつ付けてもよい！！
+    text: var_dump($v); //=> "hello"var_dump($$v); //=> "world"var_dump($$$v); //=>
+      "こんにちは世界"// $$ はいくつ付けてもよい！！
   p32:
   - kind: para
     text: debug_backtrace()
@@ -273,9 +180,7 @@ text:
   - kind: para
     text: スタックトレースを
   - kind: para
-    text: 全部取得できる
-  - kind: para
-    text: (ファイル・引数含む)
+    text: 全部取得できる(ファイル・引数含む)
   p34:
   - kind: para
     text: (これを悪用すればどん
@@ -288,30 +193,18 @@ text:
     text: 中級編
   p36:
   - kind: para
-    text: マジック
-  - kind: para
-    text: メソッド
+    text: マジックメソッド
   p37:
   - kind: para
-    text: __get($name)
-  - kind: para
-    text: __set($name, $value)
+    text: __get($name)__set($name, $value)
   p38:
   - kind: para
-    text: __get()
-  - kind: para
-    text: アクセス不可プロパティ
-  - kind: para
-    text: を読み出そうとしたとき
+    text: __get()アクセス不可プロパティを読み出そうとしたとき
   - kind: para
     text: に呼ばれる
   p39:
   - kind: para
-    text: __set()
-  - kind: para
-    text: アクセス不可プロパティ
-  - kind: para
-    text: を書き込もうとしたとき
+    text: __set()アクセス不可プロパティを書き込もうとしたとき
   - kind: para
     text: に呼ばれる
   p40:
@@ -319,28 +212,11 @@ text:
     level: 1
     text: __get(), __set()
   - kind: para
-    text: class Hoge {
-  - kind: para
-    text: private $values = [];
-  - kind: para
-    text: public function __set($name, $value) {
-  - kind: para
-    text: $values[$name] = $value;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: public function __get($name) {
-  - kind: para
-    text: return $values[$name];
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class Hoge {private $values = [];public function __set($name, $value) {$values[$name]
+      = $value;}public function __get($name) {return $values[$name];}}
   p41:
   - kind: para
-    text: 「アクセス不可」は未定
-  - kind: para
-    text: 義プロパティだけはなく
+    text: 「アクセス不可」は未定義プロパティだけはなく
   - kind: para
     text: private, protected含む
   p42:
@@ -348,49 +224,21 @@ text:
     level: 1
     text: 読み出し専用プロパティ
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @property-read string $name'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: class Hoge {
-  - kind: para
-    text: private $name;
-  - kind: para
-    text: public function __construct($name) {
-  - kind: para
-    text: $this->name = $name;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: public function __get($name) {
-  - kind: para
-    text: return $values[$name];
-  - kind: para
-    text: '}'
+    text: /*** @property-read string $name*/class Hoge {private $name;public function
+      __construct($name) {$this->name = $name;}public function __get($name) {return
+      $values[$name];}
   p43:
   - kind: heading
     level: 1
     text: 書き込み禁止プロパティ
   - kind: para
-    text: public function __set($name) {
-  - kind: para
-    text: throw new OutOfRangeException();
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: public function __set($name) {throw new OutOfRangeException();}}
   p44:
   - kind: para
     text: __call($name, $args)
   p45:
   - kind: para
-    text: __call()
-  - kind: para
-    text: アクセス不可メソッドを
-  - kind: para
-    text: 起動しようとしたときに
+    text: __call()アクセス不可メソッドを起動しようとしたときに
   - kind: para
     text: 呼ばれる
   p46:
@@ -398,51 +246,17 @@ text:
     level: 1
     text: Proxyパターン
   - kind: para
-    text: class HogeProxy {
-  - kind: para
-    text: private $hoge;
-  - kind: para
-    text: public function __construct(Hoge $hoge) {
-  - kind: para
-    text: $this->hoge = $hoge;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: public function __call($name, $args) {
-  - kind: para
-    text: return call_user_func_array($name, $args);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '}'
+    text: class HogeProxy {private $hoge;public function __construct(Hoge $hoge) {$this->hoge
+      = $hoge;}public function __call($name, $args) {return call_user_func_array($name,
+      $args);}}
   p47:
   - kind: heading
     level: 1
     text: Proxyパターン (PHPDoc)
   - kind: para
-    text: /**
-  - kind: para
-    text: '* @method Foo getFoo()'
-  - kind: para
-    text: '* @method string format(string $tpl)'
-  - kind: para
-    text: '* @method void close()'
-  - kind: para
-    text: '*/'
-  - kind: para
-    text: class HogeProxy {
-  - kind: para
-    text: /** @var Hoge */
-  - kind: para
-    text: private $hoge;
-  - kind: para
-    text: public function __construct(Hoge $hoge) {
-  - kind: para
-    text: $this->hoge = $hoge;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: public function __call($name, $args) {
+    text: /*** @method Foo getFoo()* @method string format(string $tpl)* @method void
+      close()*/class HogeProxy {/** @var Hoge */private $hoge;public function __construct(Hoge
+      $hoge) {$this->hoge = $hoge;}public function __call($name, $args) {
   p48:
   - kind: para
     text: 上級編
@@ -453,11 +267,7 @@ text:
     text: _register()
   p50:
   - kind: para
-    text: クラスが定義された
-  - kind: para
-    text: ファイルを自動ロー
-  - kind: para
-    text: ドするための仕組み
+    text: クラスが定義されたファイルを自動ロードするための仕組み
   p51:
   - kind: para
     text: (ふつうはComposerが
@@ -470,19 +280,8 @@ text:
     level: 1
     text: ふつうのクラスローダー
   - kind: para
-    text: spl_autoload_register(function ($class) {
-  - kind: para
-    text: $file = strtr($class, '\\', '/') . '.php';
-  - kind: para
-    text: $path = __DIR__ . '/' . $file;
-  - kind: para
-    text: if (file_exists($path)) {
-  - kind: para
-    text: require $path;
-  - kind: para
-    text: '}'
-  - kind: para
-    text: '});'
+    text: spl_autoload_register(function ($class) {$file = strtr($class, '\\', '/')
+      . '.php';$path = __DIR__ . '/' . $file;if (file_exists($path)) {require $path;}});
   p53:
   - kind: para
     text: クラスが読み込まれ
@@ -493,47 +292,21 @@ text:
     level: 1
     text: 邪悪クラスローダー
   - kind: para
-    text: if (file_exists($path)) {
-  - kind: para
-    text: $evil_path = evil_path($path);
-  - kind: para
-    text: if (file_exists($evil_path)) {
-  - kind: para
-    text: $src = file_get_contents($path);
-  - kind: para
-    text: // ファイルを魔改造
-  - kind: para
-    text: $evil_src = evil_customize($src);
-  - kind: para
-    text: file_put_contents($evil_path, $evil_src);
-  - kind: para
-    text: '}'
-  - kind: para
-    text: require $evil_path;
-  - kind: para
-    text: '}'
+    text: if (file_exists($path)) {$evil_path = evil_path($path);if (file_exists($evil_path))
+      {$src = file_get_contents($path);// ファイルを魔改造$evil_src = evil_customize($src);file_put_contents($evil_path,
+      $evil_src);}require $evil_path;}
   p55:
   - kind: para
     text: まとめ
   p56:
   - kind: para
-    text: PHPは制限の大い言語
-  - kind: para
-    text: のようだが、遊べるポ
-  - kind: para
-    text: イントはいろいろある
+    text: PHPは制限の大い言語のようだが、遊べるポイントはいろいろある
   p57:
   - kind: para
-    text: 大いなる力には
-  - kind: para
-    text: 大いなる責任がry
+    text: 大いなる力には大いなる責任がry
   p58:
   - kind: para
-    text: PHPUnit, PsySH, そのほか
-  - kind: para
-    text: 一部のフレームワークなどは
-  - kind: para
-    text: メタプログラミングのテクニッ
+    text: PHPUnit, PsySH, そのほか一部のフレームワークなどはメタプログラミングのテクニッ
   - kind: para
     text: クを活用してる
   p59:
