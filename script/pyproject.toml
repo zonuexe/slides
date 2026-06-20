@@ -3,11 +3,10 @@ name = "pdf-link-extractor"
 version = "1.0.0"
 description = "指定したPDFからリンクを抽出してYAML形式で出力するツール"
 authors = [
-    {name = "USAMI Kenta", email = "usami@example.com"}
+    {name = "USAMI Kenta", email = "tadsan@zonu.me"}
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "PyPDF2>=3.0.0",
     "pdfplumber>=0.9.0",
     "pymupdf>=1.24.0",
     "requests>=2.31.0",
@@ -27,7 +26,5 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "pytest>=7.0.0",
-    "black>=23.0.0",
-    "flake8>=6.0.0",
+    "ruff>=0.6.0",
 ]

@@ -11,7 +11,7 @@ from typing import Dict, List, Any
 import logging
 
 try:
-    import PyPDF2
+    import fitz  # PyMuPDF
     import requests
     from bs4 import BeautifulSoup
     from urllib.parse import urlparse
@@ -88,46 +88,33 @@ def extract_links_from_pdf(
     url_title_cache = {}  # URLのタイトルをキャッシュ
 
     try:
-        with open(pdf_path, "rb") as file:
-            pdf_reader = PyPDF2.PdfReader(file)
-
-            for page_num, page_obj in enumerate(pdf_reader.pages, 1):
+        with fitz.open(pdf_path) as doc:
+            for page_num, page in enumerate(doc, 1):
                 page_links = []
                 seen_urls_in_page = set()  # ページ内での重複URLを避ける
 
-                if "/Annots" in page_obj:
-                    annotations = page_obj["/Annots"]
-                    for annotation in annotations:
-                        annotation_obj = annotation.get_object()
-                        if annotation_obj.get("/Subtype") == "/Link":
-                            if "/A" in annotation_obj:
-                                action = annotation_obj["/A"]
-                                if "/URI" in action:
-                                    uri = action["/URI"]
-                                    if hasattr(uri, "decode"):
-                                        url = uri.decode("utf-8")
-                                    else:
-                                        url = str(uri)
+                for link in page.get_links():
+                    if link.get("kind") != fitz.LINK_URI:
+                        continue
+                    url = link.get("uri")
+                    if not url:
+                        continue
 
-                                    # ページ内での重複をチェック
-                                    if url in seen_urls_in_page:
-                                        continue
-                                    seen_urls_in_page.add(url)
+                    # ページ内での重複をチェック
+                    if url in seen_urls_in_page:
+                        continue
+                    seen_urls_in_page.add(url)
 
-                                    # タイトルを取得（スキップオプションに応じて）
-                                    if skip_crawling:
-                                        title = url  # URLをそのまま使用
-                                    else:
-                                        # キャッシュを使用
-                                        pass
+                    # タイトルを取得（スキップオプションに応じて）
+                    if skip_crawling:
+                        title = url  # URLをそのまま使用
+                    elif url in url_title_cache:
+                        title = url_title_cache[url]
+                    else:
+                        title = get_page_title(url)
+                        url_title_cache[url] = title
 
-                                    if url not in url_title_cache:
-                                        title = get_page_title(url)
-                                        url_title_cache[url] = title
-                                    else:
-                                        title = url_title_cache[url]
-
-                                    page_links.append({"url": url, "title": title})
+                    page_links.append({"url": url, "title": title})
 
                 if page_links:
                     links_by_page[page_num] = page_links
@@ -178,14 +165,14 @@ def get_pdf_size(pdf_file: str) -> Dict[str, int]:
         サイズ情報の辞書 {"max_width": int, "max_height": int}
     """
     try:
-        import pdfplumber
-
-        with pdfplumber.open(pdf_file) as pdf:
-            if len(pdf.pages) > 0:
-                # 最初のページのサイズを取得
-                page = pdf.pages[0]
-                width = int(page.width)
-                height = int(page.height)
+        with fitz.open(pdf_file) as doc:
+            if doc.page_count > 0:
+                # 最初のページのサイズを取得（回転を考慮）
+                page = doc[0]
+                rect = page.rect
+                width, height = int(rect.width), int(rect.height)
+                if page.rotation in (90, 270):
+                    width, height = height, width
                 return {"max_width": width, "max_height": height}
             else:
                 return {"max_width": 1024, "max_height": 768}  # デフォルト値
