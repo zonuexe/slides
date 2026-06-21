@@ -129,14 +129,10 @@ text:
   - kind: list
     items:
     - PSR標準に準拠したフレームワークを開発したい人
-    - CakePHPのようなPSR-15準拠フレームワークでミドルウェアを書く必要
-  - kind: para
-    text: に迫られた人
+    - CakePHPのようなPSR-15準拠フレームワークでミドルウェアを書く必要に迫られた人
   - kind: list
     items:
-    - シンプルなライブラリを組み合わせだけで、
-  - kind: para
-    text: リーンでクリーンなWebアプリを開発したい人
+    - シンプルなライブラリを組み合わせだけで、リーンでクリーンなWebアプリを開発したい人
   p26:
   - kind: heading
     level: 1
@@ -156,14 +152,10 @@ text:
     items:
     - PHP-FIG(PHP相互運用グループ)という団体が策定する標準勧告
     - コーディング規約やインターフェイス定義などが定められている
-    - フレームワークやCMSの開発団体間で共通仕様を策定して
-  - kind: para
-    text: コンポーネントを相互運用できるようにすることが目的
+    - フレームワークやCMSの開発団体間で共通仕様を策定してコンポーネントを相互運用できるようにすることが目的
   - kind: list
     items:
-    - 本来はメンバー間での相互運用が目的なのだが、
-  - kind: para
-    text: われわれ下々の一般PHPerもその成果物の恩恵に与っている恰好
+    - 本来はメンバー間での相互運用が目的なのだが、われわれ下々の一般PHPerもその成果物の恩恵に与っている恰好
   p30:
   - kind: para
     text: よく知られたPSR
@@ -205,14 +197,10 @@ text:
     items:
     - PSRは全PHP開発者が守らなければいけない標準という性質ではない
     - PHP-FIG参加メンバーも勧告に従うかどうかは任意
-    - PSR-2/PSR-12(スタイルガイド)は規約ではなく、
-  - kind: para
-    text: プロジェクトごとにスタイルを策定するためのガイドラインです
+    - PSR-2/PSR-12(スタイルガイド)は規約ではなく、プロジェクトごとにスタイルを策定するためのガイドラインです
   - kind: list
     items:
-    - カスタマイズする場合でも、PHP-CS-FixerやPHP_CodeSnifferのよう
-  - kind: para
-    text: なツールでPSR-12からの差分で定義できるというのがメリット
+    - カスタマイズする場合でも、PHP-CS-FixerやPHP_CodeSnifferのようなツールでPSR-12からの差分で定義できるというのがメリット
   p34:
   - kind: para
     text: PSR vs HTTP
@@ -250,14 +238,10 @@ text:
   - kind: list
     items:
     - 一度作ったオブジェクト内部の状態が変わることはない
-    - 状態を付加したいときは $res->setHeader()のような操作はできず、
-  - kind: para
-    text: $res = $res->withHeader() のように追記する
+    - 状態を付加したいときは $res->setHeader()のような操作はできず、$res = $res->withHeader() のように追記する
   - kind: list
     items:
-    - この性質により、一度作ったインスタンスオブジェクトが別の場所で
-  - kind: para
-    text: 意図せず書き換えられる可能性を避けられるので非常に安全
+    - この性質により、一度作ったインスタンスオブジェクトが別の場所で意図せず書き換えられる可能性を避けられるので非常に安全
   p39:
   - kind: heading
     level: 1
@@ -270,9 +254,7 @@ text:
   - kind: list
     items:
     - 基本的にはWebフレームワークとHTTPクライアントどちらでも使える
-    - guzzlehttp/psr7, nyholm/psr7,
-  - kind: para
-    text: laminas/laminas-diactoros, slim/psr7などがある
+    - guzzlehttp/psr7, nyholm/psr7, laminas/laminas-diactoros, slim/psr7などがある
   - kind: list
     items:
     - Guzzleのstreamは機能豊富、Nyholmは軽量などの特徴がある
@@ -283,34 +265,22 @@ text:
   - kind: list
     items:
     - RequestInterfaceを継承したインターフェイス
-    - $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES相当の
-  - kind: para
-    text: データを扱うメソッドが追加されている
+    - $_SERVER, $_GET, $_POST, $_COOKIE, $_FILES相当のデータを扱うメソッドが追加されている
   - kind: list
     items:
-    - withCookieParams()などは$_COOKIE相当のデータを付加するが、
-  - kind: para
-    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
-  - kind: list
-    items:
-    - withAttribute()/getAttribute()という、事実上なんでも入れていい
-  - kind: para
-    text: 収納スペースがある
+    - withCookieParams()などは$_COOKIE相当のデータを付加するが、内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
+    - withAttribute()/getAttribute()という、事実上なんでも入れていい収納スペースがある
   p41:
   - kind: heading
     level: 1
     text: ServerRequest::withAttribute()
   - kind: list
     items:
-    - アトリビュート(属性)という名前が付いているが、PHP 8で追加された
-  - kind: para
-    text: '#[Attributes] とは何の関係もなく、単に付加的な情報を持たせる'
+    - アトリビュート(属性)という名前が付いているが、PHP 8で追加された#[Attributes] とは何の関係もなく、単に付加的な情報を持たせる
   - kind: list
     items:
     - 型的には文字列をキーにして、本当にあらゆるものが付与できてしまう
-    - 原則何を入れてもいいのだが、ユーザーのリクエストと関連のあるものに
-  - kind: para
-    text: 限って含めた方がとり回しがよくなるはず
+    - 原則何を入れてもいいのだが、ユーザーのリクエストと関連のあるものに限って含めた方がとり回しがよくなるはず
   - kind: list
     items:
     - キーにも任意の値をセットできるが、クラス名文字列を活用すると明示的
@@ -323,14 +293,10 @@ text:
   - kind: list
     items:
     - RequestInterfaceとは異なり、Server…版は存在しない
-    - レスポンスボディは文字列ではなく、StreamInterfaceを実装した
-  - kind: para
-    text: オブジェクトで表現する
+    - レスポンスボディは文字列ではなく、StreamInterfaceを実装したオブジェクトで表現する
   - kind: list
     items:
-    - ボディをセットするには $response->withBody()を使う方法と
-  - kind: para
-    text: $response->getBody()->write()する方法がある
+    - ボディをセットするには $response->withBody()を使う方法と$response->getBody()->write()する方法がある
   - kind: list
     items:
     - 後者は追記になってしまうので、前者の方が確実
@@ -340,9 +306,7 @@ text:
   - kind: list
     items:
     - PSR-7オブジェクトを生成する役割のインターフェイス
-    - $res = new GuzzleHttp\Psr7\Response()と書く代りに
-  - kind: para
-    text: $res = $response_factory->createResponse()でオブジェクトを生成できる
+    - $res = new GuzzleHttp\Psr7\Response()と書く代りに$res = $response_factory->createResponse()でオブジェクトを生成できる
   - kind: list
     items:
     - これがなぜ重要なのかは田中ひさてるさんの発表を見てください
@@ -353,14 +317,10 @@ text:
   - kind: list
     items:
     - 一度作ったオブジェクト内部の状態が変わることはない
-    - 状態を付加したいときは $res->setHeader()のような操作はできず、
-  - kind: para
-    text: $res = $res->withHeader() のように追記する
+    - 状態を付加したいときは $res->setHeader()のような操作はできず、$res = $res->withHeader() のように追記する
   - kind: list
     items:
-    - この性質により、一度作ったインスタンスオブジェクトが別の場所で
-  - kind: para
-    text: 意図せず書き換えられる可能性を避けられるので非常に安全
+    - この性質により、一度作ったインスタンスオブジェクトが別の場所で意図せず書き換えられる可能性を避けられるので非常に安全
   p45:
   - kind: para
     text: Nyholm Psr17Factory
@@ -380,14 +340,8 @@ text:
     items:
     - PHP-FIGメンバーだからと言って全て従うわけではない
     - SlimやLaminas mezzioはPSR-7を採用している
-    - CakePHP 4.xのHTTPメッセージ(cakephp/http)は
-  - kind: para
-    text: PSR-7とCakePHP 3互換のインターフェイス両方を持っている
-  - kind: list
-    items:
-    - symfony/http-foundationはPSR-7ではないが、symfony/psr-
-  - kind: para
-    text: http-message-bridgeというアダプターを噛ますとLaravelでも使える
+    - CakePHP 4.xのHTTPメッセージ(cakephp/http)はPSR-7とCakePHP 3互換のインターフェイス両方を持っている
+    - symfony/http-foundationはPSR-7ではないが、symfony/psr-http-message-bridgeというアダプターを噛ますとLaravelでも使える
   p48:
   - kind: heading
     level: 1
@@ -400,14 +354,8 @@ text:
     items:
     - HTTPリクエストを受け付けるたびに全てがリセットされる ⇒ 超短命
     - クラス定義・関数定義・変数・定数… あらゆるものがまっさらになる
-    - Apache(mod_php), PHP-FPM, ビルトインサーバ(php -S), CGIなど、
-  - kind: para
-    text: 既存のPHPが動いてきた環境のほとんどがこの動作をする
-  - kind: list
-    items:
-    - どんな環境でもCGIと互換性のあるスクリプトが動いてきたのが
-  - kind: para
-    text: PHPが長年しぶとく生きのびた秘訣。
+    - Apache(mod_php), PHP-FPM, ビルトインサーバ(php -S), CGIなど、既存のPHPが動いてきた環境のほとんどがこの動作をする
+    - どんな環境でもCGIと互換性のあるスクリプトが動いてきたのがPHPが長年しぶとく生きのびた秘訣。
   - kind: list
     items:
     - Perl、RubyやPythonはCGIとの断絶を経験している
@@ -421,9 +369,7 @@ text:
     - 宣言なしでどこからでもアクセスできる特殊なグローバル変数
     - $_SERVER $_GET $_POST $_COOKIE $_FILES $_SESSION
     - リクエストボディはfile_get_contents('php://input')で取得可能
-    - header()関数などでセットしたものがHTTPレスポンスヘッダとして、
-  - kind: para
-    text: echoしたものがHTTPレスポンスボディとして出力される
+    - header()関数などでセットしたものがHTTPレスポンスヘッダとして、echoしたものがHTTPレスポンスボディとして出力される
   p51:
   - kind: heading
     level: 1
@@ -525,19 +471,9 @@ text:
     text: よくある従来のPHPスクリプト(CGI型)
   - kind: list
     items:
-    - どこでもユーザー入力をグローバル変数から参照する
-  - kind: para
-    text: ($_GET, $_SERVER, $_COOKIEなど)
-  - kind: list
-    items:
-    - どこでもheader()関数でHTTPヘッダを設定したり、
-  - kind: para
-    text: どこでもechoしてHTMLを出力したりすることができる
-  - kind: list
-    items:
-    - 呼ばれた関数の処理の奥底で何気なくheader()や
-  - kind: para
-    text: setcookie()関数を呼んでセットされてたりするやつ
+    - どこでもユーザー入力をグローバル変数から参照する($_GET, $_SERVER, $_COOKIEなど)
+    - どこでもheader()関数でHTTPヘッダを設定したり、どこでもechoしてHTMLを出力したりすることができる
+    - 呼ばれた関数の処理の奥底で何気なくheader()やsetcookie()関数を呼んでセットされてたりするやつ
   - kind: list
     items:
     - 処理を全部追わないと最終的な出力 (レスポンスヘッダ・ボディ)がわからん
@@ -550,9 +486,7 @@ text:
   - kind: list
     items:
     - ResponseInterfaceを出力する役割 (PSR-7の仕様外)
-    - ApacheやPHP-FPMで動かしているなら自作することも
-  - kind: para
-    text: 割と簡単にできるが、できればライブラリに任せた方がいい
+    - ApacheやPHP-FPMで動かしているなら自作することも割と簡単にできるが、できればライブラリに任せた方がいい
   - kind: list
     items:
     - 従来型環境での定番は laminas/laminas-httphandlerrunner
@@ -576,9 +510,7 @@ text:
   - kind: list
     items:
     - ServerRequestはどこから来るの？
-    - 各PSR-7ライブラリとかがグローバル変数から情報をひっこぬいて
-  - kind: para
-    text: ServerRequestを作ってくれる便利クラスを提供してる(fromGlobals)
+    - 各PSR-7ライブラリとかがグローバル変数から情報をひっこぬいてServerRequestを作ってくれる便利クラスを提供してる(fromGlobals)
   - kind: list
     items:
     - Guzzleの場合はServerRequest::fromGlobals()と呼ぶだけ
@@ -682,9 +614,7 @@ text:
     - そもそもPHPはフレームワークがなくてもWebアプリが書ける
     - PHPにとってのWebフレームワークには二つの性質がある
     - PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
-    - フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を
-  - kind: para
-    text: 与えることで秩序をもたらす拘束具
+    - フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を与えることで秩序をもたらす拘束具
   p74:
   - kind: para
     text: フレームワークの光と影
@@ -693,11 +623,7 @@ text:
     - そもそもPHPはフレームワークがなくてもWebアプリが書ける
     - PHPにとってのWebフレームワークには二つの性質がある
     - PHP標準ではめんどくさい機能を実現する便利ライブラリの集合体
-    - フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を
-  - kind: para
-    text: 与えることで秩序をもたらす拘束具
-  - kind: list
-    items:
+    - フリーダムにどこでもなんでも書けてしまうPHPの機能に規則を与えることで秩序をもたらす拘束具
     - PSR-7/15は従来型のPHPにとって縛りプレイのための異物に過ぎない
   p75:
   - kind: heading
@@ -705,29 +631,17 @@ text:
     text: 縛ることによって得られるもの
   - kind: list
     items:
-    - $_GETのようなグローバル変数やheader()のような関数を排斥することで
-  - kind: para
-    text: 入出力が明確に分離されてコードの見通しがよくなり、テストしやすくなる
-  - kind: list
-    items:
+    - $_GETのようなグローバル変数やheader()のような関数を排斥することで入出力が明確に分離されてコードの見通しがよくなり、テストしやすくなる
     - Long-livingなPHPとの親和性
-    - 従来のPHPはリクエストごとに全ての状態がリセットされるのに対して、
-  - kind: para
-    text: RoadRunnerやSwooleでHTTPサーバを立てると毎回リセットされない
-  - kind: list
-    items:
-    - そのような環境ではCLI SAPIで動作するので、$_GETや関数からリクエス
-  - kind: para
-    text: ト情報が得られないし、echoしてもHTTPレスポンスにならない
+    - 従来のPHPはリクエストごとに全ての状態がリセットされるのに対して、RoadRunnerやSwooleでHTTPサーバを立てると毎回リセットされない
+    - そのような環境ではCLI SAPIで動作するので、$_GETや関数からリクエスト情報が得られないし、echoしてもHTTPレスポンスにならない
   p76:
   - kind: heading
     level: 1
     text: Long-living PHPとの互換性
   - kind: list
     items:
-    - 入口と出口、つまりServerRequestを作る部分とエミッタを差し替えれば
-  - kind: para
-    text: ApacheやPHP-FPMなど従来型のPHP環境でも動かせるようになる
+    - 入口と出口、つまりServerRequestを作る部分とエミッタを差し替えればApacheやPHP-FPMなど従来型のPHP環境でも動かせるようになる
   - kind: list
     items:
     - 最近はフレームワークが実行環境の差異を吸収してくれるようになった
@@ -743,9 +657,7 @@ text:
   - kind: list
     items:
     - 従来環境とはオブジェクトの初期化や生存期間の概念が変わるので注意
-    - $_SERVER, $_GETのようなグローバル変数や
-  - kind: para
-    text: header()、setcookie()のような関数が今まで通りの動きをしない
+    - $_SERVER, $_GETのようなグローバル変数やheader()、setcookie()のような関数が今まで通りの動きをしない
   - kind: list
     items:
     - Laravelでもこれらの機能を使うことはできたが、動かなくなる
@@ -954,14 +866,8 @@ text:
     items:
     - コンピュータ用語の中でも意味が一貫していないことで有名
     - なんかの中間で何かを処理するという非常に漠然としたニュアンス
-    - OSでもハードウェアでもない、ソフトウェアとやりとりする何者かが
-  - kind: para
-    text: ミドルウェアと呼ばれることがある(Webサーバとかファイルシステムとか)
-  - kind: list
-    items:
-    - Webフレームワークでは最終的に呼び出されるやつ(RequestHandler)
-  - kind: para
-    text: の間に入って何か処理するものをミドルウェアと呼ぶ
+    - OSでもハードウェアでもない、ソフトウェアとやりとりする何者かがミドルウェアと呼ばれることがある(Webサーバとかファイルシステムとか)
+    - Webフレームワークでは最終的に呼び出されるやつ(RequestHandler)の間に入って何か処理するものをミドルウェアと呼ぶ
   p107:
   - kind: para
     text: ほかの世界のミドルウェア
@@ -970,9 +876,7 @@ text:
     - 結構いろんな言語のHTTP仕様に入っている
     - Ruby(Rails含む)ではRack、PythonではWSGIなど
     - PHPでもStackPHPという仕様が提案されていたこともあった
-    - CakePHP 3では独自インターフェイスのミドルウェアがあったが、
-  - kind: para
-    text: CakePHP 4でPSR-15互換に移行された
+    - CakePHP 3では独自インターフェイスのミドルウェアがあったが、CakePHP 4でPSR-15互換に移行された
   p108:
   - kind: heading
     level: 1
@@ -1178,14 +1082,8 @@ text:
   - kind: list
     items:
     - 特定のPSR-7ライブラリにあえて強く依存している
-    - Nyholm Psr17Factoryは状態を持たないのでオブジェクトをキャッシュ
-  - kind: para
-    text: してもいいが、そもそも状態をまったく持たない軽量なオブジェクトなので必要な都度新しいインスタンスを作ってもボトルネックにならない
-  - kind: list
-    items:
-    - 正攻法であればsetUpやsetUpBeforeClassで注入する形をとるが、
-  - kind: para
-    text: dataProviderから依存できるようにあえて割り切っている
+    - Nyholm Psr17Factoryは状態を持たないのでオブジェクトをキャッシュしてもいいが、そもそも状態をまったく持たない軽量なオブジェクトなので必要な都度新しいインスタンスを作ってもボトルネックにならない
+    - 正攻法であればsetUpやsetUpBeforeClassで注入する形をとるが、dataProviderから依存できるようにあえて割り切っている
   p127:
   - kind: heading
     level: 1
@@ -1266,9 +1164,7 @@ text:
     - テストケースの内容はごく薄くする
     - 「この値を渡したときに必ずこの値を返す」という構造に落とし込む
     - そうなっていないなら依存の分離がうまくいっていない
-    - 戻り値となるResponseオブジェクトからは、特に
-  - kind: para
-    text: getStatusCode(), getHeaders(), getBody()に注目する
+    - 戻り値となるResponseオブジェクトからは、特にgetStatusCode(), getHeaders(), getBody()に注目する
   - kind: list
     items:
     - bodyが巨大な場合は必ずしもassertSame()で比較する必要はない
@@ -1376,9 +1272,7 @@ text:
     - ResponseHanlderのインスタンスを用意する
     - ServerRequestのインスタンスを用意する
     - $response = $handler->handler($request) のように呼び出す
-    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
-  - kind: para
-    text: assertEquals()などで比較してみる
+    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出してassertEquals()などで比較してみる
   p145:
   - kind: para
     text: Middlewareのテスト
@@ -1387,14 +1281,8 @@ text:
     - もちろんPHPUnitを使える
     - テスト対象のMiddlewareのインスタンスを用意する
     - ServerRequestとResponseHanlderのインスタンスを用意する
-    - $response = $middleware->process($request, $handler)
-  - kind: para
-    text: のように呼び出す
-  - kind: list
-    items:
-    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出して
-  - kind: para
-    text: assertEquals()などで比較してみる
+    - $response = $middleware->process($request, $handler)のように呼び出す
+    - $responseからステータスコード、HTTPヘッダ、ボディなどを取り出してassertEquals()などで比較してみる
   p146:
   - kind: heading
     level: 1
@@ -1541,11 +1429,7 @@ text:
     - どうにかしてServerRequestオブジェクトを用意する
     - 最終的に処理するRequestHandlerオブジェクトを用意する
     - 間に処理するMiddlewareのオブジェクトを用意する
-    - Middleware::process($request, $handler)として呼び出すと
-  - kind: para
-    text: 最終的なResponseが帰ってくる
-  - kind: list
-    items:
+    - Middleware::process($request, $handler)として呼び出すと最終的なResponseが帰ってくる
     - エミッタがResponseをどうにか出力する
   p157:
   - kind: heading
@@ -1614,16 +1498,10 @@ text:
   - kind: list
     items:
     - 基本はRequestHandlerと同様にシンプルかつ明瞭にする
-    - どのようなハンドラを渡せばMiddlewareが正常に動作しているか
-  - kind: para
-    text: 判断できるかを見極める
-  - kind: list
-    items:
+    - どのようなハンドラを渡せばMiddlewareが正常に動作しているか判断できるかを見極める
     - テスト用ハンドラはこだわらなくてもパターン化しやすい
     - リクエストに影響を及ぼすハンドラならリクエストの内容もチェックする
-    - 実アプリケーションで呼ばれる他のハンドラに依存すると
-  - kind: para
-    text: 何をテストしたいのかぶれるので基本的には避ける
+    - 実アプリケーションで呼ばれる他のハンドラに依存すると何をテストしたいのかぶれるので基本的には避ける
   p163:
   - kind: heading
     level: 1
@@ -1657,11 +1535,7 @@ text:
     - どうにかしてServerRequestオブジェクトを用意する
     - 最終的に処理するRequestHandlerオブジェクトを用意する
     - 間に処理するMiddlewareのオブジェクトを用意する
-    - $middleware->process($request, $handler)として呼び出すと
-  - kind: para
-    text: 最終的なResponseが帰ってくる
-  - kind: list
-    items:
+    - $middleware->process($request, $handler)として呼び出すと最終的なResponseが帰ってくる
     - エミッタがResponseをどうにか出力する
   p167:
   - kind: para
@@ -1673,11 +1547,7 @@ text:
     - どうにかしてServerRequestオブジェクトを用意する
     - 最終的に処理するRequestHandlerオブジェクトを用意する
     - 間に処理するMiddlewareのオブジェクトを用意する
-    - $middleware->process($request, $handler)として呼び出すと
-  - kind: para
-    text: 最終的なResponseが帰ってくる
-  - kind: list
-    items:
+    - $middleware->process($request, $handler)として呼び出すと最終的なResponseが帰ってくる
     - エミッタがResponseをどうにか出力する
   p168:
   - kind: para
@@ -1691,11 +1561,7 @@ text:
     - どうにかしてServerRequestオブジェクトを用意する
     - 最終的に処理するRequestHandlerオブジェクトを用意する
     - 間に処理するMiddlewareのオブジェクトを用意する
-    - $middleware->process($request, $handler)として呼び出すと
-  - kind: para
-    text: 最終的なResponseが帰ってくる
-  - kind: list
-    items:
+    - $middleware->process($request, $handler)として呼び出すと最終的なResponseが帰ってくる
     - エミッタがResponseをどうにか出力する
   p169:
   - kind: para
@@ -1710,11 +1576,7 @@ text:
     - どうにかしてServerRequestオブジェクトを用意する
     - 最終的に処理するRequestHandlerオブジェクトを用意する
     - 間に処理するMiddlewareのオブジェクトを用意する
-    - $middleware->process($request, $handler)として呼び出すと
-  - kind: para
-    text: 最終的なResponseが帰ってくる
-  - kind: list
-    items:
+    - $middleware->process($request, $handler)として呼び出すと最終的なResponseが帰ってくる
     - エミッタがResponseをどうにか出力する
   - kind: para
     text: Laminasのエミッタを使う
@@ -1733,11 +1595,7 @@ text:
     - どうにかしてServerRequestオブジェクトを用意する
     - 最終的に処理するRequestHandlerオブジェクトを用意する
     - 間に処理するMiddlewareのオブジェクトを用意する
-    - $middleware->process($request, $handler)として呼び出すと
-  - kind: para
-    text: 最終的なResponseが帰ってくる
-  - kind: list
-    items:
+    - $middleware->process($request, $handler)として呼び出すと最終的なResponseが帰ってくる
     - エミッタがResponseをどうにか出力する
   - kind: para
     text: Laminasのエミッタを使う
@@ -1792,9 +1650,7 @@ text:
     text: 複数のミドルウェアを扱う
   - kind: list
     items:
-    - MiddlewareはServerRequestとRequestHandlerを受け取り、
-  - kind: para
-    text: $request_handler->handle($request)のように呼び出す
+    - MiddlewareはServerRequestとRequestHandlerを受け取り、$request_handler->handle($request)のように呼び出す
   - kind: list
     items:
     - このままではミドルウェア1個ハンドラ1個しか受け付けない…?
@@ -1810,14 +1666,8 @@ text:
     items:
     - SessionMiddleware的なものを作る
     - RequestのCookieなどのセッションIDからDBなどを引く
-    - session_start()や$_SESSIONのようなグローバルを参照する部分は
-  - kind: para
-    text: さらに別のクラスに分けるとテストしやすくできる
-  - kind: list
-    items:
-    - $request->withAttribute()で付加することで後続のMiddlewareや
-  - kind: para
-    text: RequestHandlerで $request->getAttribute()で取り出せる
+    - session_start()や$_SESSIONのようなグローバルを参照する部分はさらに別のクラスに分けるとテストしやすくできる
+    - $request->withAttribute()で付加することで後続のMiddlewareやRequestHandlerで $request->getAttribute()で取り出せる
   p179:
   - kind: heading
     level: 1
@@ -1845,9 +1695,7 @@ text:
     - 「この変な設計したやつは誰だ」「俺だ」
     - 「規約を守れず腑抜けたアプリケーションを書くのは誰だ」「俺だ」
     - 「それはそれ、これはこれ」 by 逆境ナイン
-    - 微妙におかしな設計をする自分と設計意図通りにアプリケーションを
-  - kind: para
-    text: 実装できない自分がいる
+    - 微妙におかしな設計をする自分と設計意図通りにアプリケーションを実装できない自分がいる
   - kind: list
     items:
     - 妥協せずにバトルさせたあとに使いやすいフレームワークができる(気がする)
@@ -1864,15 +1712,9 @@ text:
     items:
     - URLごとに対応して起動される関数やメソッドをどうする？
     - 基本はRequestHandlerから、どうにか関数決めて起動してやればいい
-    - RequestHandlerはLaravelのSingleActionControllerと
-  - kind: para
-    text: 概念的に近いものだと考えることもできる
-  - kind: list
-    items:
+    - RequestHandlerはLaravelのSingleActionControllerと概念的に近いものだと考えることもできる
     - ただし引数や戻り値のインターフェイスが厳密
-    - PHP-DIのようなライブラリを組み合せることでインスタンス生成や
-  - kind: para
-    text: 関数呼び出しを簡略化することもできる
+    - PHP-DIのようなライブラリを組み合せることでインスタンス生成や関数呼び出しを簡略化することもできる
   p185:
   - kind: heading
     level: 1
@@ -1883,9 +1725,7 @@ text:
     - PHPerKaigi 2020のときに実装したWebアプリケーション
     - PSR-7/PSR-15ベース / Relayを使用
     - PHP-DIを使用
-    - ルーティングに無名関数(クロージャ)を登録して実行する
-  - kind: para
-    text: マイクロフレームワーク風の実装
+    - ルーティングに無名関数(クロージャ)を登録して実行するマイクロフレームワーク風の実装
   p186:
   - kind: heading
     level: 1
@@ -1913,23 +1753,15 @@ text:
     - PSR-7/PSR-15ベース / Relay / PHP-DIを使用
     - もともとCakePHP風のController/Modelの独自フレームワーク
     - 現在はPSR-15でコントローラを書けるようにしている
-    - 全体的な雰囲気は「百科事典 インターン PSR-7」とかで
-  - kind: para
-    text: Google検索してもらうと概観がわかってもらえると思います
+    - 全体的な雰囲気は「百科事典 インターン PSR-7」とかでGoogle検索してもらうと概観がわかってもらえると思います
   p191:
   - kind: heading
     level: 1
     text: Cookieを扱う難しさ
   - kind: list
     items:
-    - withCookieParams()などは$_COOKIE相当のデータを付加するが、
-  - kind: para
-    text: 内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
-  - kind: list
-    items:
-    - プレーンなPHPではsetcookie()すればよかったが、
-  - kind: para
-    text: PSR-7ベースではプリミティブすぎて、setHeaderで直接書かないといけない
+    - withCookieParams()などは$_COOKIE相当のデータを付加するが、内部で保持するHTTPヘッダを書き換えてはならない(MUST NOT)と仕様で明言されている
+    - プレーンなPHPではsetcookie()すればよかったが、PSR-7ベースではプリミティブすぎて、setHeaderで直接書かないといけない
   p192:
   - kind: heading
     level: 1

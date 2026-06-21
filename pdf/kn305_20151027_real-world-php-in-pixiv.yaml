@@ -27,9 +27,7 @@ text:
     items:
     - 時間配分は考慮してない
     - 開発楽しい！とかじゃなく淡々と羅列するだけ
-    - ゆっくり話すので、「お前何言ってんんだ」と
-  - kind: para
-    text: 感じたらつっこみを入れてください
+    - ゆっくり話すので、「お前何言ってんんだ」と感じたらつっこみを入れてください
   - kind: list
     items:
     - 資料はあとで公開します
@@ -58,14 +56,8 @@ text:
     text: 変遷
   - kind: list
     items:
-    - 以前(2013年頃まで)は、サブディレクトリ
-  - kind: para
-    text: ごとに独立したGitリポジトリで、共通部分をsubmoduleとして扱ってた
-  - kind: list
-    items:
-    - 共通部分の抽象化もうまくなされて居らず、
-  - kind: para
-    text: 重複・細部が異なるコードが分散してた
+    - 以前(2013年頃まで)は、サブディレクトリごとに独立したGitリポジトリで、共通部分をsubmoduleとして扱ってた
+    - 共通部分の抽象化もうまくなされて居らず、重複・細部が異なるコードが分散してた
   p8:
   - kind: heading
     level: 1
@@ -73,14 +65,8 @@ text:
   - kind: list
     items:
     - submoduleは疎結合なモジュールに適する
-    - 結合度が高いモジュールのリポジトリを分
-  - kind: para
-    text: 割すると、変更コストが極めて高い
-  - kind: list
-    items:
-    - リポジトリを統合することで凝集度を高め
-  - kind: para
-    text: るリファクタリングも断行しやすくなった
+    - 結合度が高いモジュールのリポジトリを分割すると、変更コストが極めて高い
+    - リポジトリを統合することで凝集度を高めるリファクタリングも断行しやすくなった
   - kind: list
     items:
     - 細部が異なる重複コード問題も根絶
@@ -91,14 +77,8 @@ text:
   - kind: list
     items:
     - 基本的にサーバー全台(xx台程度)にrsync
-    - 以前(2013年)はPHPファイルの増減を伴った
-  - kind: para
-    text: デプロイ時には(ページにもよるが)、xxx件程度のエラーが発生してしまってた
-  - kind: list
-    items:
-    - 現在はBlue-GreenDeploymentの確立で、
-  - kind: para
-    text: ファイルの追加/削除も怖いものではない
+    - 以前(2013年)はPHPファイルの増減を伴ったデプロイ時には(ページにもよるが)、xxx件程度のエラーが発生してしまってた
+    - 現在はBlue-GreenDeploymentの確立で、ファイルの追加/削除も怖いものではない
   p10: []
   p11:
   - kind: heading
@@ -110,9 +90,7 @@ text:
     - /.deploy ディレクトリにファイルを配置
     - bin/deploy スクリプトが実行される
     - readme.html で画面カスタマイズ可能
-    - Gitに依存するので、特定のバージョンを
-  - kind: para
-    text: チェックアウトして反映することも容易
+    - Gitに依存するので、特定のバージョンをチェックアウトして反映することも容易
   p12:
   - kind: heading
     level: 1
@@ -120,9 +98,7 @@ text:
   - kind: list
     items:
     - 開発・デプロイ環境の変遷 2014年春版
-    - 履歴を残したまま複数のgitリポジトリを統
-  - kind: para
-    text: 合する
+    - 履歴を残したまま複数のgitリポジトリを統合する
   - kind: list
     items:
     - pixivのデプロイを支えるpploy
@@ -134,9 +110,7 @@ text:
     text: pixivの開発環境
   - kind: list
     items:
-    - DBなどの依存が多く、ローカルに環境を構
-  - kind: para
-    text: 築することは容易ではない(不可能でもない)
+    - DBなどの依存が多く、ローカルに環境を構築することは容易ではない(不可能でもない)
   - kind: list
     items:
     - 共有の環境にSSHでログインして開発
@@ -186,14 +160,8 @@ text:
     items:
     - 既存のフレームワークに依存しない
     - 独自フレームワークを運用してる部分もある
-    - 口にすると顔をしかめられがちだが、
-  - kind: para
-    text: 用途に合せて設計ができるのは悪くない
-  - kind: list
-    items:
-    - どちらにしろ自分たちでセキュリティを
-  - kind: para
-    text: 担保しなければいけないのはおんなじ！
+    - 口にすると顔をしかめられがちだが、用途に合せて設計ができるのは悪くない
+    - どちらにしろ自分たちでセキュリティを担保しなければいけないのはおんなじ！
   p18:
   - kind: heading
     level: 1
@@ -215,9 +183,7 @@ text:
     - include_onceってたくさん書いてる！！
     - オートローダーの利用は限定的
     - pixiv-libでは現状は利用不可 (鋭意改善中)
-    - リポジトリ内に混在する都合上、
-  - kind: para
-    text: Composerのautoloadは利用しにくい
+    - リポジトリ内に混在する都合上、Composerのautoloadは利用しにくい
   - kind: list
     items:
     - 一部ではphpabで生成してinclude
@@ -227,9 +193,7 @@ text:
     text: pixivのPHPコード
   - kind: list
     items:
-    - コミットログやコード内コメントは、
-  - kind: para
-    text: 英語または日本語で各人の得意な方で
+    - コミットログやコード内コメントは、英語または日本語で各人の得意な方で
   - kind: list
     items:
     - 意識高く「全部英語で」など拘らない
@@ -258,9 +222,7 @@ text:
     - MySQL 5.5
     - 文字列結合によるSQL組立つらすぎ…
     - ORマッパー/自動クエリビルダーは利用せず
-    - 2015年の初旬からSQLに型をつけて安全に
-  - kind: para
-    text: 書けるライブラリを社内で運用
+    - 2015年の初旬からSQLに型をつけて安全に書けるライブラリを社内で運用
   - kind: list
     items:
     - 脆弱性対策の文脈で生まれたが書きやすい
@@ -307,24 +269,16 @@ text:
     - 基本的にPHPUnitでテストを書く
     - 2013年頃にテストを書く文化が定着した
     - GitlabのMRにpushしたら自動テスト走る
-    - うっかりmasterにpushされたら即座に
-  - kind: para
-    text: idobataに通知される
+    - うっかりmasterにpushされたら即座にidobataに通知される
   p28:
   - kind: heading
     level: 1
     text: pixivのレビュー体制
   - kind: list
     items:
-    - 毎週pixiv.gitに携る各チームのレビュアーで
-  - kind: para
-    text: 設計方針や最新の情報などを共有・相談
-  - kind: list
-    items:
+    - 毎週pixiv.gitに携る各チームのレビュアーで設計方針や最新の情報などを共有・相談
     - レビュアーが各チームに持ち帰る
-    - 各自メンバーに説明したり、レビュー過程
-  - kind: para
-    text: で指摘することで全体のコード品質を保つ
+    - 各自メンバーに説明したり、レビュー過程で指摘することで全体のコード品質を保つ
   - kind: list
     items:
     - ガイドラインや推奨スタイルの確立
