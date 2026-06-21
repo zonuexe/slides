@@ -2,6 +2,7 @@ import { resolve } from "node:path";
 import { mkdir, writeFile } from "node:fs/promises";
 import { generateSlidesData } from "../../../lib/slides-data.js";
 import { loadSiteConfig } from "../../../lib/site-config.js";
+import { buildEventGroups } from "../../../lib/event-groups.js";
 
 function normaliseBaseUrl(siteUrl) {
   if (!siteUrl) return "";
@@ -28,13 +29,22 @@ async function buildXml() {
   const baseLoc = buildLoc(siteUrl, basePath);
 
   const { enrichedSlides } = await generateSlidesData({ includePdfMeta: false });
+  const seriesGroups = buildEventGroups(enrichedSlides).filter((group) => group.isSeries);
 
   const entries = [
     { loc: `${baseLoc}`, lastmod: new Date().toISOString() },
+    { loc: `${baseLoc}event/`, lastmod: new Date().toISOString() },
     ...enrichedSlides.map((slide) => ({
       loc: `${baseLoc}${slide.slug}/`,
       lastmod: isoDate(slide.date),
     })),
+    ...seriesGroups.map((group) => {
+      const latest = group.events.reduce((acc, event) => (event.presented_at > acc ? event.presented_at : acc), "");
+      return {
+        loc: `${baseLoc}event/${group.id}/`,
+        lastmod: isoDate(latest),
+      };
+    }),
   ];
 
   return `<?xml version="1.0" encoding="UTF-8"?>

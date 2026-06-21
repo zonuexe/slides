@@ -3,6 +3,7 @@ import { computed, onMounted, watch, nextTick } from "vue";
 import { withBase, useData } from "vitepress";
 import { slides, siteConfig } from "virtual:slides-data";
 import { buildEventNarratives } from "../../../../lib/events.js";
+import { groupEvent } from "../../../../lib/event-groups.js";
 import SlideTextNodes from "./SlideTextNodes.vue";
 
 const props = defineProps({
@@ -42,6 +43,19 @@ const iframeUrl = computed(() => {
 });
 
 const eventNarratives = computed(() => buildEventNarratives(slide.value?.events ?? []));
+
+// この発表が属するイベントシリーズ (重複除去)。シリーズページへの導線に使う。
+const seriesGroups = computed(() => {
+  const found = new Map();
+  for (const event of slide.value?.events ?? []) {
+    const group = groupEvent(event?.name);
+    if (group && group.isSeries && !found.has(group.id)) {
+      found.set(group.id, group);
+    }
+  }
+  return [...found.values()];
+});
+const groupUrl = (id) => withBase(`/event/${id}/`);
 const relatedArticles = computed(() => slide.value?.related_articles ?? []);
 const hashtags = computed(() => slide.value?.hashtags ?? []);
 
@@ -165,6 +179,18 @@ function callGlobalFunction(fnName) {
         </p>
 
         <div v-if="eventNarratives.length" class="event-info" v-html="eventNarratives.map((entry) => entry.html).join('')" />
+
+        <div v-if="seriesGroups.length" class="event-series-links">
+          <span class="event-series-label">イベントシリーズ:</span>
+          <a
+            v-for="group in seriesGroups"
+            :key="group.id"
+            :href="groupUrl(group.id)"
+            class="event-series-link"
+          >
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i> {{ group.name }}
+          </a>
+        </div>
 
         <div v-if="relatedArticles.length" class="related-articles">
           <ul>

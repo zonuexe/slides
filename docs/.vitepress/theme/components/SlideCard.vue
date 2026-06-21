@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from "vue";
 import { withBase } from "vitepress";
+import { groupEvent } from "../../../../lib/event-groups.js";
 
 const props = defineProps({
   slide: {
@@ -69,6 +70,15 @@ const hasEvents = computed(() => events.value.some((event) => event?.name));
 const tags = computed(() => props.slide.tags ?? []);
 const detailUrl = computed(() => withBase(`/${props.slide.slug}/`));
 
+// 系列イベントに属する発表は、イベント名からそのシリーズページへ誘導する。
+function eventSeries(name) {
+  const group = groupEvent(name);
+  return group && group.isSeries ? group : null;
+}
+function groupUrl(id) {
+  return withBase(`/event/${id}/`);
+}
+
 const trimmedQuery = computed(() => props.query.trim());
 const snippetText = computed(() => {
   const content = props.slide.combinedContent || props.slide.snippet || "";
@@ -104,7 +114,12 @@ const showSnippet = computed(() => {
         class="slide-card-event h-event"
       >
         <i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>
-        <span class="p-name">{{ event?.name }}</span>
+        <a
+          v-if="eventSeries(event?.name)"
+          :href="groupUrl(eventSeries(event?.name).id)"
+          class="p-name slide-card-event-link"
+        >{{ event?.name }}</a>
+        <span v-else class="p-name">{{ event?.name }}</span>
         <template v-if="event?.presented_at">
           <time class="dt-start visually-hidden" :datetime="event.presented_at">{{ event.presented_at }}</time>
         </template>

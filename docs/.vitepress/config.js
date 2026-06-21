@@ -78,6 +78,7 @@ export default defineConfig(async () => {
       logo: "/zonuexe.png",
       nav: [
         { text: "Slides", link: "/" },
+        { text: "Events", link: "/event/" },
         { text: "About", link: site.author?.url ?? "https://twitter.com/tadsan" },
       ],
       socialLinks: site.author?.twitter
