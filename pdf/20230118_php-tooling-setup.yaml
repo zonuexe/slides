@@ -92,9 +92,7 @@ text:
     - 単体ファイルのcomposerコマンド(composer.phar)として利用できる
     - インストール方法は https://getcomposer.org/doc/00-intro.md に書いてある
     - Windows向けにはインストーラー(Composer-Setup.exe)がある
-    - 実行ファイル(bin)も管理でき、プロジェクトの vendor/bin/ に
-  - kind: para
-    text: 配置されて実行できる (Windowsでも動くように工夫されている!)
+    - 実行ファイル(bin)も管理でき、プロジェクトの vendor/bin/ に配置されて実行できる (Windowsでも動くように工夫されている!)
   p14:
   - kind: heading
     level: 1
@@ -120,19 +118,9 @@ text:
     text: バージョン衝突問題
   - kind: list
     items:
-    - プロジェクト本体で使いたいパッケージとツールが要求するパッケージの
-  - kind: para
-    text: バージョンを合わせないといけない
-  - kind: list
-    items:
-    - PHP-CS-FixerはPHP-ParserやSymfonyパッケージに依存しているの
-  - kind: para
-    text: で、全部のパッケージを最新に合わせ続けないと簡単に衝突する
-  - kind: list
-    items:
-    - いろんな事情で古いSymfonyコンポーネントに依存している
-  - kind: para
-    text: ライブラリを使わざるを得ない事情があると詰む or バージョン上がらない
+    - プロジェクト本体で使いたいパッケージとツールが要求するパッケージのバージョンを合わせないといけない
+    - PHP-CS-FixerはPHP-ParserやSymfonyパッケージに依存しているので、全部のパッケージを最新に合わせ続けないと簡単に衝突する
+    - いろんな事情で古いSymfonyコンポーネントに依存しているライブラリを使わざるを得ない事情があると詰む or バージョン上がらない
   p20:
   - kind: heading
     level: 1
@@ -159,9 +147,7 @@ text:
     items:
     - https://github.com/bamarni/composer-bin-plugin
     - プロジェクト自体とは隔離したディレクトリでcomposerの依存を管理する
-    - プラグイン側でサブディレクトリにインストールしたツールと
-  - kind: para
-    text: メインプロジェクト側の vendor/bin/ ディレクトリを同期してくれる
+    - プラグイン側でサブディレクトリにインストールしたツールとメインプロジェクト側の vendor/bin/ ディレクトリを同期してくれる
   - kind: list
     items:
     - 通常の composer install とは別管理なのでちょっとめんどくさい

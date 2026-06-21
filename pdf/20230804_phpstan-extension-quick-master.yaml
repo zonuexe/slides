@@ -128,15 +128,9 @@ text:
   - kind: list
     items:
     - PHPはいわゆる動的言語
-    - 構文で型宣言された言語要素(関数パラメータ、戻り値、プロパティ)は、
-  - kind: para
-    text: 実行時にその型の値であることが絶対に保証される
-  - kind: list
-    items:
+    - 構文で型宣言された言語要素(関数パラメータ、戻り値、プロパティ)は、実行時にその型の値であることが絶対に保証される
     - null安全 (明示的にnullableとして宣言しない限りnullは受け入れない)
-    - declare(strict_types=1) で実行時の振る舞いが少し変わるが、
-  - kind: para
-    text: 型安全性という意味ではあまり変わらないので今回は話しません
+    - declare(strict_types=1) で実行時の振る舞いが少し変わるが、型安全性という意味ではあまり変わらないので今回は話しません
   p22:
   - kind: heading
     level: 1
@@ -173,9 +167,7 @@ text:
     items:
     - array型やArrayObjectのような汎用的な型の要素の型がわからない
     - evalやjson_decode()などデシリアライズ結果の型がわからない
-    - ……これらの事情によりPHPコードをいくら静的解析しても、
-  - kind: para
-    text: 型が一意に決定されることはない
+    - ……これらの事情によりPHPコードをいくら静的解析しても、型が一意に決定されることはない
   - kind: list
     items:
     - 型宣言されてない既存コード、動的プロパティや動的メソッドが宣言できる
@@ -234,9 +226,7 @@ text:
     items:
     - 2016年から開発されているPHPの静的解析ツール
     - Ondřej Mirtesさんの個人プロジェクト、2021年からフルタイム開発
-    - 開発当初は純粋な静的解析ではなく実行時リフレクションを用いることで
-  - kind: para
-    text: 高速な解析を実現していた
+    - 開発当初は純粋な静的解析ではなく実行時リフレクションを用いることで高速な解析を実現していた
   - kind: list
     items:
     - 現在は静的解析がデフォルトで、レガシープロジェクトに導入しやすくなった
@@ -271,9 +261,7 @@ text:
     items:
     - 型はオブジェクトとして表現されているので実態はコードを読む
     - https://github.com/phpstan/phpstan-src/tree/1.10.x/src/Type
-    - PHPの組み込み型、Union/Intersectionなどの複合的な型、
-  - kind: para
-    text: 組み込み型を継承した定数型、これらの型とintersectionで組み合わせて複合的な型を表現するAccessory型などがある
+    - PHPの組み込み型、Union/Intersectionなどの複合的な型、組み込み型を継承した定数型、これらの型とintersectionで組み合わせて複合的な型を表現するAccessory型などがある
   - kind: list
     items:
     - たとえばリスト(連番の配列) ArrayType&AccessoryArrayListType
@@ -286,9 +274,7 @@ text:
     items:
     - 構文木から判断できること全部！
     - 渡されてきたScopeオブジェクトから型がとれる
-    - コード上に直接書かれた値や具体的に絞り込まれた型には
-  - kind: para
-    text: 実際の値もとれる
+    - コード上に直接書かれた値や具体的に絞り込まれた型には実際の値もとれる
   p40:
   - kind: para
     text: 実装するルールが対象とする構文木の
@@ -314,9 +300,7 @@ text:
     text: Type-Specifying拡張でできること
   - kind: list
     items:
-    - 関数呼び出しやメソッド呼び出し、プロパティなどに、
-  - kind: para
-    text: 型宣言やPHPDocで記述されていない型をつけることができる
+    - 関数呼び出しやメソッド呼び出し、プロパティなどに、型宣言やPHPDocで記述されていない型をつけることができる
   - kind: list
     items:
     - バリデーション関数で実行時に絞り込まれたときに型をつける
