@@ -3,7 +3,7 @@ import { computed, onMounted, watch, nextTick } from "vue";
 import { withBase, useData } from "vitepress";
 import { slides, siteConfig } from "virtual:slides-data";
 import { buildEventNarratives } from "../../../../lib/events.js";
-import { groupEvent } from "../../../../lib/event-groups.js";
+import { groupEvents } from "../../../../lib/event-groups.js";
 import SlideTextNodes from "./SlideTextNodes.vue";
 
 const props = defineProps({
@@ -48,9 +48,10 @@ const eventNarratives = computed(() => buildEventNarratives(slide.value?.events 
 const seriesGroups = computed(() => {
   const found = new Map();
   for (const event of slide.value?.events ?? []) {
-    const group = groupEvent(event?.name);
-    if (group && group.isSeries && !found.has(group.id)) {
-      found.set(group.id, group);
+    for (const group of groupEvents(event?.name)) {
+      if (group.isSeries && !found.has(group.id)) {
+        found.set(group.id, group);
+      }
     }
   }
   return [...found.values()];
