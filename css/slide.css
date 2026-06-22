@@ -183,6 +183,37 @@ body {
   border-left: 4px solid var(--event-border);
 }
 
+.event-series-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin: 0 0 16px;
+}
+
+.event-series-label {
+  color: var(--muted-text);
+  font-size: 0.9rem;
+}
+
+.event-series-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--event-bg);
+  border: 1px solid var(--event-border);
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  &:hover {
+    border-color: currentColor;
+  }
+}
+
 .related-articles {
   margin-bottom: 16px;
 
