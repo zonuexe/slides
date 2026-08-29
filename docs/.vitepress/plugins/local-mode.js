@@ -117,28 +117,102 @@ async function listLocalPdfs(root) {
   return local.sort((a, b) => b.mtime - a.mtime);
 }
 
-// 1 ページ目の /MediaBox からページ寸法を拾う。オブジェクトストリームに
-// 圧縮されていると読めないので、その場合は 16:9 に倒す。
-async function readPageSize(pdfPath) {
-  try {
-    const fileStat = await stat(pdfPath);
-    if (fileStat.size > MEDIABOX_SCAN_LIMIT) {
-      return DEFAULT_PAGE_SIZE;
-    }
-    const buffer = await readFile(pdfPath);
-    const match = buffer.toString("latin1").match(/\/MediaBox\s*\[\s*([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)\s*\]/);
-    if (!match) {
-      return DEFAULT_PAGE_SIZE;
-    }
-    const width = Math.abs(Number(match[3]) - Number(match[1]));
-    const height = Math.abs(Number(match[4]) - Number(match[2]));
-    if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) {
-      return DEFAULT_PAGE_SIZE;
-    }
-    return { width, height };
-  } catch {
-    return DEFAULT_PAGE_SIZE;
+function positiveSize(width, height) {
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width <= 0 || height <= 0) {
+    return null;
   }
+  return { width, height };
+}
+
+// poppler の pdfinfo。入っていればページ数と寸法の両方が一度に、確実に取れる。
+async function probePdfinfo(pdfPath) {
+  const { stdout } = await execFileAsync("pdfinfo", [pdfPath], { maxBuffer: 1024 * 1024 });
+  const pages = Number(stdout.match(/^Pages:\s+(\d+)$/m)?.[1]);
+  const sizeMatch = stdout.match(/^Page size:\s+([\d.]+) x ([\d.]+) pts/m);
+  return {
+    pages: Number.isInteger(pages) && pages > 0 ? pages : null,
+    pageSize: sizeMatch ? positiveSize(Number(sizeMatch[1]), Number(sizeMatch[2])) : null,
+  };
+}
+
+// macOS の Spotlight メタデータ。標準で入っているが、索引されていない
+// ファイルや PDF として読めないファイルでは "(null)" を返す。
+async function probeMdls(pdfPath) {
+  const { stdout } = await execFileAsync("mdls", ["-name", "kMDItemNumberOfPages", "-raw", pdfPath]);
+  const pages = Number(stdout.trim());
+  return { pages: Number.isInteger(pages) && pages > 0 ? pages : null, pageSize: null };
+}
+
+// Ghostscript。サムネイル生成で使うので add_new_slides.py が動く環境には必ずある。
+async function probeGhostscript(pdfPath) {
+  const { stdout } = await execFileAsync("gs", [
+    "-q",
+    "-dNODISPLAY",
+    "-dNOSAFER",
+    "-c",
+    `(${pdfPath}) (r) file runpdfbegin pdfpagecount = quit`,
+  ]);
+  const pages = Number(stdout.trim());
+  return { pages: Number.isInteger(pages) && pages > 0 ? pages : null, pageSize: null };
+}
+
+// 1 ページ目の /MediaBox を直接読む。オブジェクトストリームに圧縮されていると
+// 読めないので、外部コマンドが一つも使えないときの最後の砦。
+async function scanMediaBox(pdfPath, fileSize) {
+  if (fileSize > MEDIABOX_SCAN_LIMIT) {
+    return null;
+  }
+  const buffer = await readFile(pdfPath);
+  const match = buffer
+    .toString("latin1")
+    .match(/\/MediaBox\s*\[\s*([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)\s+([\d.+-]+)\s*\]/);
+  if (!match) {
+    return null;
+  }
+  return positiveSize(Math.abs(Number(match[3]) - Number(match[1])), Math.abs(Number(match[4]) - Number(match[2])));
+}
+
+// ページ数と寸法。外部コマンドを順に試し、どれも無ければ寸法だけ自前で拾う。
+// ページ数が取れないときは null のまま (推測した数字を出すより出さない)。
+async function inspectPdf(pdfPath, fileStat) {
+  let pages = null;
+  let pageSize = null;
+
+  for (const probe of [probePdfinfo, probeMdls, probeGhostscript]) {
+    try {
+      const result = await probe(pdfPath);
+      pages = pages ?? result.pages;
+      pageSize = pageSize ?? result.pageSize;
+    } catch {
+      // コマンドが無い / この PDF では失敗した。次を試す
+    }
+    if (pages && pageSize) break;
+  }
+
+  if (!pageSize) {
+    try {
+      pageSize = await scanMediaBox(pdfPath, fileStat.size);
+    } catch {
+      // 読めなければ既定値
+    }
+  }
+
+  return { pages, pageSize: pageSize ?? DEFAULT_PAGE_SIZE };
+}
+
+// 同じファイルを開き直すたびに外部コマンドを叩かないための小さなキャッシュ。
+// サイズか mtime が動けばキーが変わるので、差し替えた PDF は自動で読み直す。
+const inspectionCache = new Map();
+
+async function inspectPdfCached(pdfPath, fileStat) {
+  const key = `${pdfPath}:${fileStat.size}:${fileStat.mtimeMs}`;
+  const cached = inspectionCache.get(key);
+  if (cached) {
+    return cached;
+  }
+  const result = await inspectPdf(pdfPath, fileStat);
+  inspectionCache.set(key, result);
+  return result;
 }
 
 const PAGE_STYLE = `
@@ -180,16 +254,55 @@ const PAGE_STYLE = `
   .stage-frame { background: #000; border-radius: 8px; overflow: hidden; }
   .stage-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
   .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.5rem; }
-  .actions a {
+  .actions a, .actions button {
     padding: 0.4rem 0.9rem; border: 1px solid #3a3a40; border-radius: 6px;
     text-decoration: none; font-size: 0.85rem;
+    font-family: inherit; line-height: inherit;
+    background: transparent; color: #a8b1ff; cursor: pointer;
   }
-  .actions a:hover { border-color: #a8b1ff; }
-  .notice {
-    padding: 1rem 1.25rem; border: 1px solid #6b4a1f; border-radius: 8px;
-    background: #2a2117; font-size: 0.88rem;
-  }
-  .notice pre { overflow-x: auto; background: #1b1b1f; padding: 0.75rem; border-radius: 6px; }
+  .actions a:hover, .actions button:hover:not(:disabled) { border-color: #a8b1ff; }
+  .actions button:disabled { color: rgba(235, 235, 245, 0.4); cursor: not-allowed; }
+`;
+
+// 全画面はビューアの iframe 自体を対象にする。iframe が画面いっぱいになると
+// 中の slide-pdf.js が resize を拾ってページを描き直すので、こちら側で
+// レイアウトを作り込む必要がない。フォーカスも iframe に移すので、そのまま
+// 矢印キーでページを送れる。
+const PLAYER_SCRIPT = `
+  (function () {
+    var frame = document.getElementById("js-viewer");
+    var button = document.getElementById("js-fullscreen");
+    var request = frame.requestFullscreen || frame.webkitRequestFullscreen;
+    if (!request) {
+      button.disabled = true;
+      button.title = "このブラウザは全画面表示に対応していません";
+      return;
+    }
+    button.addEventListener("click", function () {
+      try {
+        // 返り値の Promise には頼らない。全画面を与えない環境 (埋め込みの
+        // ブラウザビューなど) では解決も棄却もせず宙吊りになる。実際に
+        // 全画面になったかどうかは fullscreenchange だけを見る。
+        var result = request.call(frame);
+        if (result && typeof result.catch === "function") {
+          result.catch(function (error) {
+            console.error("全画面表示に失敗しました", error);
+          });
+        }
+      } catch (error) {
+        console.error("全画面表示に失敗しました", error);
+      }
+    });
+    function onFullscreenChange() {
+      var current = document.fullscreenElement || document.webkitFullscreenElement;
+      if (current === frame) {
+        // フォーカスを iframe に移しておくと、そのまま矢印キーでページを送れる。
+        frame.focus();
+      }
+    }
+    document.addEventListener("fullscreenchange", onFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", onFullscreenChange);
+  })();
 `;
 
 function renderPage({ title, body }) {
@@ -233,7 +346,7 @@ ${list}
   });
 }
 
-function renderPlayerPage({ name, size, mtime, pageSize }) {
+function renderPlayerPage({ name, size, mtime, pages, pageSize }) {
   const encoded = encodeURIComponent(name);
   const pdfUrl = `${PDF_PREFIX}${encoded}`;
   const viewerUrl = `${VIEWER_PREFIX}?slide=${encodeURIComponent(pdfUrl)}`;
@@ -241,22 +354,28 @@ function renderPlayerPage({ name, size, mtime, pageSize }) {
   // (SlideDetailPage.vue と同じ考え方)。
   const maxHeightVh = 78;
   const heightBoundWidthVh = ((maxHeightVh * pageSize.width) / pageSize.height).toFixed(2);
+  const facts = [
+    pages ? `${pages} ページ` : null,
+    formatBytes(size),
+    formatDate(mtime),
+    `${pageSize.width}&times;${pageSize.height}`,
+  ].filter(Boolean);
 
   return renderPage({
     title: `${name} | ローカルモード`,
     body: `<div class="stage">
   <div class="stage-frame" style="width: min(100%, ${pageSize.width}px, ${heightBoundWidthVh}vh); aspect-ratio: ${pageSize.width} / ${pageSize.height};">
-    <iframe src="${escapeHtml(viewerUrl)}" title="${escapeHtml(name)}" scrolling="no" allowfullscreen></iframe>
+    <iframe id="js-viewer" src="${escapeHtml(viewerUrl)}" title="${escapeHtml(name)}" scrolling="no" allowfullscreen></iframe>
   </div>
 </div>
 <h1>${escapeHtml(name)}<span class="badge">dev only</span></h1>
-<p class="lede">${formatBytes(size)} / ${formatDate(mtime)} / ${pageSize.width}&times;${pageSize.height}</p>
+<p class="lede">${facts.join(" / ")}</p>
 <div class="actions">
-  <a href="${escapeHtml(pdfUrl)}" download="${escapeHtml(name)}">PDF をダウンロード</a>
-  <a href="${escapeHtml(viewerUrl)}" target="_blank">ビューアを単体で開く</a>
+  <button type="button" id="js-fullscreen">全画面で再生</button>
   <a href="${MOUNT}/">ローカルモードの一覧</a>
   <a href="/slides/">スライド一覧に戻る</a>
-</div>`,
+</div>
+<script>${PLAYER_SCRIPT}</script>`,
   });
 }
 
@@ -393,8 +512,9 @@ export function localModePlugin() {
             sendHtml(res, renderMissingPage(name), 404);
             return;
           }
-          const pageSize = await readPageSize(resolve(root, deck.name));
-          sendHtml(res, renderPlayerPage({ ...deck, pageSize }));
+          const pdfPath = resolve(root, deck.name);
+          const { pages, pageSize } = await inspectPdfCached(pdfPath, await stat(pdfPath));
+          sendHtml(res, renderPlayerPage({ ...deck, pages, pageSize }));
         };
 
         handler().catch(next);
