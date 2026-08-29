@@ -1,9 +1,11 @@
 import { createReadStream } from "node:fs";
 import { readdir, readFile, stat } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { execFile } from "node:child_process";
-import { extname, resolve, sep } from "node:path";
+import { extname, relative, resolve, sep } from "node:path";
 import { promisify } from "node:util";
 import { loadSiteConfig } from "../../../lib/site-config.js";
+import { loadLocalPaths, LOCAL_CONFIG_FILE } from "../../../lib/local-config.js";
 
 const execFileAsync = promisify(execFile);
 
@@ -90,31 +92,70 @@ async function gitPaths(root, args) {
   return stdout.split("\0").filter(Boolean);
 }
 
-// リポジトリルートにある未コミットの PDF を新しい順で返す。「未コミット」は
-// 追跡されていないものと、追跡済みでも HEAD から変更されているものの両方。
-// git が使えない場合はルートの PDF をすべてローカル扱いにする。
-async function listLocalPdfs(root) {
-  const entries = await readdir(root, { withFileTypes: true });
-  const rootPdfs = entries
-    .filter((entry) => entry.isFile() && entry.name.toLowerCase().endsWith(".pdf"))
-    .map((entry) => entry.name);
-
-  let committed = new Set();
+// リポジトリに「コミット済みでそのまま」の PDF のパス集合 (リポジトリ相対)。
+// これに載っているものだけ一覧から外す。つまり未追跡のものと、追跡済みでも
+// HEAD から変更されているものは残る。git が使えなければ null。
+async function committedPdfs(root) {
   try {
     const tracked = await gitPaths(root, ["ls-files", "-z", "--", "*.pdf"]);
     const dirty = new Set(await gitPaths(root, ["diff", "--name-only", "-z", "HEAD", "--", "*.pdf"]));
-    committed = new Set(tracked.filter((path) => !path.includes("/") && !dirty.has(path)));
+    return new Set(tracked.filter((path) => !dirty.has(path)));
   } catch {
-    // git が無い / リポジトリでない
+    return null;
+  }
+}
+
+// 設定された各ディレクトリの直下から PDF を集める。再帰はしない
+// (~/Documents のような大きなディレクトリを毎回走査したくない)。
+// リポジトリの中を指しているディレクトリにだけコミット済みの除外をかける。
+async function listLocalPdfs(root, sources) {
+  const committed = await committedPdfs(root);
+  const decks = [];
+  const seen = new Set();
+
+  for (const source of sources) {
+    let entries;
+    try {
+      entries = await readdir(source.dir, { withFileTypes: true });
+    } catch {
+      // 設定されていても存在しないディレクトリは黙って飛ばす
+      continue;
+    }
+
+    const insideRepo = source.dir === root || source.dir.startsWith(root + sep);
+
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.toLowerCase().endsWith(".pdf")) {
+        continue;
+      }
+      const path = resolve(source.dir, entry.name);
+      if (seen.has(path)) {
+        continue;
+      }
+      if (insideRepo && committed?.has(relative(root, path).split(sep).join("/"))) {
+        continue;
+      }
+      let fileStat;
+      try {
+        fileStat = await stat(path);
+      } catch {
+        continue;
+      }
+      seen.add(path);
+      decks.push({
+        // パスから引いた安定した ID。ファイル名だとディレクトリを跨いで
+        // 衝突しうるうえ、この ID 経由でしか配信しないので経路も塞げる。
+        id: createHash("sha1").update(path).digest("hex").slice(0, 12),
+        name: entry.name,
+        path,
+        source: source.entry,
+        size: fileStat.size,
+        mtime: fileStat.mtime,
+      });
+    }
   }
 
-  const local = [];
-  for (const name of rootPdfs) {
-    if (committed.has(name)) continue;
-    const fileStat = await stat(resolve(root, name));
-    local.push({ name, size: fileStat.size, mtime: fileStat.mtime });
-  }
-  return local.sort((a, b) => b.mtime - a.mtime);
+  return decks.sort((a, b) => b.mtime - a.mtime);
 }
 
 function positiveSize(width, height) {
@@ -324,31 +365,33 @@ ${body}
 `;
 }
 
-function renderIndexPage(decks) {
+function renderIndexPage(decks, sources) {
+  const sourceList = sources.map((source) => `<code>${escapeHtml(source.entry)}</code>`).join(" ");
   const list = decks.length
     ? `<ul class="deck-list">${decks
         .map(
-          (deck) => `<li class="deck-item"><a href="${MOUNT}/${encodeURIComponent(deck.name)}/">
+          (deck) => `<li class="deck-item"><a href="${MOUNT}/${deck.id}/">
   <div class="deck-name">${escapeHtml(deck.name)}</div>
-  <div class="deck-meta">${formatBytes(deck.size)} / ${formatDate(deck.mtime)}</div>
+  <div class="deck-meta">${escapeHtml(deck.source)} / ${formatBytes(deck.size)} / ${formatDate(deck.mtime)}</div>
 </a></li>`
         )
         .join("\n")}</ul>`
-    : `<p class="empty">リポジトリルートに未コミットの PDF がありません。公開したい PDF をリポジトリルート
-       (<code>${escapeHtml(process.cwd())}</code>) に置くとここに並びます。</p>`;
+    : `<p class="empty">再生できる PDF がありません。探索先は ${sourceList} です
+       (<code>${escapeHtml(LOCAL_CONFIG_FILE)}</code> の <code>paths</code>、または <code>_site.yaml</code> の
+       <code>local.paths</code> で変えられます)。</p>`;
 
   return renderPage({
     title: "ローカルモード | tadsan's slide deck",
     body: `<h1>ローカルモード<span class="badge">dev only</span></h1>
-<p class="lede">リポジトリルートにある未コミットの PDF を、公開前にそのまま再生します。このページはビルド出力には含まれません。</p>
+<p class="lede">手元の PDF を、公開前にそのまま再生します。探索先は ${sourceList}。
+リポジトリの中にあるものはコミット済みのものを除いた分だけ並びます。このページはビルド出力には含まれません。</p>
 ${list}
 <div class="actions" style="margin-top:2rem"><a href="/slides/">スライド一覧に戻る</a></div>`,
   });
 }
 
-function renderPlayerPage({ name, size, mtime, pages, pageSize }) {
-  const encoded = encodeURIComponent(name);
-  const pdfUrl = `${PDF_PREFIX}${encoded}`;
+function renderPlayerPage({ id, name, source, size, mtime, pages, pageSize }) {
+  const pdfUrl = `${PDF_PREFIX}${id}.pdf`;
   const viewerUrl = `${VIEWER_PREFIX}?slide=${encodeURIComponent(pdfUrl)}`;
   // 画面が低いときにアスペクト比を崩さないよう、高さの上限を幅の上限に換算する
   // (SlideDetailPage.vue と同じ考え方)。
@@ -359,6 +402,7 @@ function renderPlayerPage({ name, size, mtime, pages, pageSize }) {
     formatBytes(size),
     formatDate(mtime),
     `${pageSize.width}&times;${pageSize.height}`,
+    escapeHtml(source),
   ].filter(Boolean);
 
   return renderPage({
@@ -379,11 +423,11 @@ function renderPlayerPage({ name, size, mtime, pages, pageSize }) {
   });
 }
 
-function renderMissingPage(name) {
+function renderMissingPage() {
   return renderPage({
     title: "見つかりません | ローカルモード",
     body: `<h1>見つかりません</h1>
-<p class="lede"><code>${escapeHtml(name)}</code> はリポジトリルートの未コミット PDF の中にありません。</p>
+<p class="lede">この PDF は探索先から消えたか、リポジトリにコミットされたようです。</p>
 <div class="actions"><a href="${MOUNT}/">ローカルモードの一覧</a></div>`,
   });
 }
@@ -446,23 +490,20 @@ export function localModePlugin() {
     res.end(Buffer.from(await upstream.arrayBuffer()));
   }
 
-  async function serveLocalPdf(res, name) {
-    const target = resolveWithin(root, name);
-    if (!target || name.includes("/")) {
-      res.statusCode = 403;
-      res.end();
-      return;
-    }
-    const decks = await listLocalPdfs(root);
-    if (!decks.some((deck) => deck.name === name)) {
+  // 配信できるのは一覧に出ている PDF だけ。ID から実体を引くので、
+  // リクエストのパスがファイルシステムに触れることがない。
+  async function serveLocalPdf(res, id) {
+    const decks = await listLocalPdfs(root, await loadLocalPaths(root));
+    const deck = decks.find((entry) => entry.id === id);
+    if (!deck) {
       res.statusCode = 404;
       res.end();
       return;
     }
-    const fileStat = await stat(target);
+    const fileStat = await stat(deck.path);
     res.setHeader("Content-Type", "application/pdf");
     res.setHeader("Content-Length", fileStat.size);
-    createReadStream(target).pipe(res);
+    createReadStream(deck.path).pipe(res);
   }
 
   function sendHtml(res, html, statusCode = 200) {
@@ -495,25 +536,27 @@ export function localModePlugin() {
           }
 
           if (rawPath.startsWith(PDF_PREFIX)) {
-            await serveLocalPdf(res, decodeURIComponent(rawPath.slice(PDF_PREFIX.length)));
+            await serveLocalPdf(res, rawPath.slice(PDF_PREFIX.length).replace(/\.pdf$/, ""));
             return;
           }
 
-          const decks = await listLocalPdfs(root);
+          // 設定はリクエストごとに読み直す。local.yaml を書き換えたら
+          // dev サーバーを再起動せずに reload だけで反映される。
+          const sources = await loadLocalPaths(root);
+          const decks = await listLocalPdfs(root, sources);
 
           if (rawPath === `${MOUNT}/`) {
-            sendHtml(res, renderIndexPage(decks));
+            sendHtml(res, renderIndexPage(decks, sources));
             return;
           }
 
-          const name = decodeURIComponent(rawPath.slice(MOUNT.length + 1).replace(/\/$/, ""));
-          const deck = decks.find((entry) => entry.name === name);
+          const id = rawPath.slice(MOUNT.length + 1).replace(/\/$/, "");
+          const deck = decks.find((entry) => entry.id === id);
           if (!deck) {
-            sendHtml(res, renderMissingPage(name), 404);
+            sendHtml(res, renderMissingPage(), 404);
             return;
           }
-          const pdfPath = resolve(root, deck.name);
-          const { pages, pageSize } = await inspectPdfCached(pdfPath, await stat(pdfPath));
+          const { pages, pageSize } = await inspectPdfCached(deck.path, await stat(deck.path));
           sendHtml(res, renderPlayerPage({ ...deck, pages, pageSize }));
         };
 

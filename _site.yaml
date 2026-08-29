@@ -27,3 +27,11 @@ twitter:
 embed:
   base_url: "https://zonuexe.github.io/slide-pdf.js"
   slide_path: "https://zonuexe.github.io/slides/pdf"
+
+# ローカルモード (dev 専用) が PDF を探すディレクトリ。`~` はホーム、相対パスは
+# リポジトリルート起点。マシンごとに変えたいときは gitignore 済みの local.yaml に
+# `paths:` を書くと、こちらを上書きする。
+local:
+  paths:
+    - ~/Documents
+    - .

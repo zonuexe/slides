@@ -62,7 +62,10 @@ export function slidesDataPlugin() {
 
       const { enrichedSlides, slidesForClient } = await generateSlidesData({ includePdfMeta: true });
       await writeSlidesDataScript(slidesForClient);
-      const siteConfig = await loadSiteConfig();
+      // siteConfig はそのままブラウザに配信されるので、_site.yaml の `local`
+      // (ローカルモードが PDF を探す手元のディレクトリ) は落とす。dev 専用の
+      // 設定であり、手元のパスを公開バンドルに載せる筋合いがない。
+      const { local: _local, ...siteConfig } = await loadSiteConfig();
       return `export const slides = ${JSON.stringify(
         enrichedSlides
       )};\nexport const siteConfig = ${JSON.stringify(siteConfig)};\nexport default { slides, siteConfig };`;
