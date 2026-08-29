@@ -15,6 +15,7 @@
 ## Build, Test, and Development Commands
 - `npm install` hydrates Node dependencies before any local run.
 - `npm run dev` starts the VitePress dev server (base `/slides/`, defaults to `http://localhost:5173`); pass `--host --port` if you need a different origin.
+- `/slides/local/` is **local mode**: a dev-only page that plays any uncommitted `*.pdf` sitting in the repository root, so a deck can be reviewed before it is published. See "Local Mode" below.
 - `npm run build` emits the static site to `docs/.vitepress/dist`, and `npm run preview` serves that build for spot checks.
 - `make fetch-static` runs `script/fetch_static_slides.py` against a running site (defaults to `http://localhost:5173`) to scrape pages into the specified output dir.
 - `UV_CACHE_DIR=.uv-cache uv run python script/add_new_slides.py` processes staged PDFs, generates thumbnails, and writes `slides/${slug}.yaml`; append `--pdf pdf/new-talk.pdf` to target a specific file.
@@ -44,6 +45,13 @@
 - **Search** (`SlidesCatalog.vue` / `SlideCard.vue`): lazy-loads Fuse.js on demand with keys `title`, `slug`, `date`, `combinedContent`; query is mirrored to `?q=`. Snippets highlight matches and show events/tags only when present.
 - **Detail page** (`docs/[slug]/index.paths.js` + `SlideDetailPage.vue`): builds head tags and descriptions from `buildEventNarratives` (falling back to the site description). OGP/Twitter and alternate links for PDF + oEmbed are emitted, the viewer iframe uses `siteConfig.embed` to point at the PDF mirror, and `window.slideConfig` drives `docs/public/js/slide-functions.js` for sizing, fullscreen, sharing, and image download/copy controls. PDF text/links render from `pdfMeta` with page ordering preserved.
 - **Speaker view button** (`slide-pdf.js` embed): desktop-only; stays visible on page 1 and hides on later pages, opening `/slide-pdf.js/speaker.html` with the mirrored PDF for presenters.
+
+## Local Mode
+- `docs/.vitepress/plugins/local-mode.js` mounts `/slides/local/` **in `configureServer` only**, so nothing about it reaches `npm run build`; uncommitted local files must never leak into the published site.
+- It lists every uncommitted `*.pdf` in the repository root — untracked ones plus tracked ones modified since `HEAD` — newest first, and plays each at `/slides/local/<filename>/`. The root is the publishing inbox (see "Coding Style & Naming Conventions"), so this previews a deck before `add_new_slides.py` has run and before any `slides/*.yaml` exists. Without git it falls back to treating every root PDF as local.
+- **The production embed cannot be reused here.** `https://zonuexe.github.io/slide-pdf.js/` cannot fetch a `http://localhost` PDF: the browser blocks the request outright (`ERR_BLOCKED_BY_CLIENT`) before it reaches the server, and neither CORS nor Private Network Access headers change that. The viewer therefore has to be served from the dev origin, at `/slides/local/viewer/`.
+- That viewer comes from the sibling `../slide-pdf.js` checkout when one exists (works offline, and lets viewer changes be tried against real decks); otherwise the plugin proxies `embed.base_url` from `_site.yaml`. `slide-pdf.js` resolves `app.js`, `pdf.worker.mjs`, `cmaps/`, and `speaker.html` relative to its own URL, so mounting the directory as-is is enough.
+- The page is plain server-rendered HTML rather than a VitePress route, which is what keeps it out of the build. Page aspect ratio comes from a `/MediaBox` scan of the PDF, falling back to 16:9 when the page dict is inside a compressed object stream. Extracted text/links are deliberately not shown — that needs the Python extractor, which does not belong in the dev server.
 
 ## Event Grouping & Series Pages
 - `lib/event-groups.js` derives an event "series" from each `event.name` heuristically (pure function `groupEvent(name) -> {id, name, isSeries}`, plus `buildEventGroups(slides)` for aggregation). `slides/*.yaml` is never mutated for grouping — the series is computed at build time. Cases the rules cannot resolve are pinned in the `OVERRIDES` map; a new regional/series brand is usually a one-line addition to `PHP_CONFERENCE_REGIONS` or `SERIES_RULES`.
