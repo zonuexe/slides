@@ -220,13 +220,19 @@ function callGlobalFunction(fnName) {
 
         <div class="download-section">
           <a :href="downloadUrl" :download="slide.download" class="download-btn">
-            <i class="fa-solid fa-download"></i> Download PDF
+            <i class="fa-solid fa-download"></i>
+            <span class="btn-label-long">Download PDF</span>
+            <span class="btn-label-short">PDF</span>
           </a>
           <button class="download-image-btn" @click.prevent="callGlobalFunction('downloadCanvasAsImage')">
-            <i class="fa-solid fa-image"></i> Save Current Page
+            <i class="fa-solid fa-image"></i>
+            <span class="btn-label-long">Save Current Page</span>
+            <span class="btn-label-short">Save</span>
           </button>
           <button class="copy-image-btn" @click.prevent="callGlobalFunction('copyCanvasToClipboard')">
-            <i class="fa-solid fa-copy"></i> Copy Current Page
+            <i class="fa-solid fa-copy"></i>
+            <span class="btn-label-long">Copy Current Page</span>
+            <span class="btn-label-short">Copy</span>
           </button>
         </div>
 

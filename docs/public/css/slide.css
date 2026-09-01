@@ -286,6 +286,10 @@ body {
     box-shadow: 0 12px 20px rgba(23, 32, 49, 0.15);
   }
 
+  .btn-label-short {
+    display: none;
+  }
+
   .download-btn {
     background: var(--accent-blue);
   }
@@ -499,17 +503,94 @@ body {
     padding: 0 16px;
   }
 
-  .slide-info,
+  .slide-info {
+    padding: 16px;
+
+    .slide-title {
+      font-size: 1.6rem;
+    }
+  }
+
+  /* 操作ボタンはカード右上からスライド下の余白 (60px) 内へ。スライドとは重ねない */
+  .share-btn,
+  .fullscreen-info-btn {
+    top: -53px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+  }
+
+  .share-btn {
+    right: 70px;
+  }
+
+  .fullscreen-info-btn {
+    right: 12px;
+  }
+
+  .event-info {
+    padding: 14px 16px;
+  }
+
+  /* 入れ子の枠を畳んで本文の実効幅を確保する */
   .slide-content {
-    padding: 20px;
+    margin-top: 24px;
+    padding: 20px 0 0;
+    border: none;
+    border-top: 1px solid var(--content-pane-border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+
+    .text-pane,
+    .links-pane {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .page-content {
+      padding: 12px 0 0;
+      border-top: 1px solid var(--content-pane-border);
+      border-radius: 0;
+      background: transparent;
+
+      > h4 {
+        margin: 0 0 8px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted-text);
+      }
+    }
+  }
+
+  .download-section {
+    gap: 10px;
+
+    .download-btn,
+    .download-image-btn,
+    .copy-image-btn {
+      flex: 1;
+      justify-content: center;
+      padding: 12px 10px;
+    }
+
+    .btn-label-long {
+      display: none;
+    }
+
+    .btn-label-short {
+      display: inline;
+    }
   }
 
   #pdf-container {
     margin-top: 12px;
-  }
-
-  .download-section {
-    flex-direction: column;
+    margin-bottom: 60px;
   }
 
   .pdf-controls {
