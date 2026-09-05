@@ -1,0 +1,355 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: なぜ新しい型チェッカーを
+  - kind: heading
+    level: 1
+    text: 書きはじめたのか
+  - kind: heading
+    level: 2
+    text: How I Ended Up Writing a New Type Checker for Ruby
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2026-09-05 #rubykaigi_followup'
+  - kind: para
+    text: RubyKaigi 2026 follow up
+  p2:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3:
+  - kind: para
+    text: はじめましての方ははじめまして
+  p4:
+  - kind: para
+    text: 2014年くらいまでRuby界隈にも出入りしていました
+  p5:
+  - kind: para
+    text: 日本Ruby会議2011
+  - kind: para
+    text: 初めて参加
+  p6:
+  - kind: para
+    text: 札幌Ruby会議2012
+  - kind: para
+    text: レポート班
+  p7:
+  - kind: para
+    text: RubyKaigi 2013
+  - kind: para
+    text: レポート班
+  p8:
+  - kind: para
+    text: RubyKaigi 2014を最後にRubyと疎遠に
+  p9:
+  - kind: para
+    text: 趣味でいろんな動的言語をやってます(Lisp, shell, ...)
+  p10:
+  - kind: para
+    text: 特に動的言語／スクリプト言語が好き
+  p11:
+  - kind: para
+    text: 動的言語には無限の可能性()があります
+  p12:
+  - kind: para
+    text: みなさん型は書きたいですか！
+  p13:
+  - kind: para
+    text: 「素晴らしい」言語は世の中にいっぱいある
+  p14:
+  - kind: para
+    text: 動的言語でフリーダムに書かれたプロジェクトは熱的死を迎えて崩壊する
+  p15:
+  - kind: para
+    text: 業務で動的言語を正当化したい
+  p16: []
+  p17: []
+  p18:
+  - kind: para
+    text: PHP界隈で型の話を始めて10年くらい
+  p19: []
+  p20:
+  - kind: para
+    text: 10年前は遅くてCIで使うのも非実用
+  p21:
+  - kind: para
+    text: PHPでは10年くらいで型を書くのが当たり前に
+  p22: []
+  p23:
+  - kind: para
+    text: PHPStanは動的解析とハイブリッドで現実的速度
+  p24: []
+  p25: []
+  p26:
+  - kind: para
+    text: PHPStan extensions
+  - kind: para
+    text: PHPDoc
+  p27:
+  - kind: para
+    text: 型レベルでかなりのことができるように
+  p28:
+  - kind: para
+    text: PHPDocと拡張を書きまくれば
+  p29:
+  - kind: para
+    text: エージェントでPHPDocを増やしまくればいいのでは
+  p30:
+  - kind: para
+    text: RBSが普及してないのは実装と宣言が分離しているからでは
+  p31: []
+  p32:
+  - kind: para
+    text: 素晴らしいRubyでも型を書きましょう
+  p33:
+  - kind: heading
+    level: 1
+    text: 完
+  p34:
+  - kind: heading
+    level: 1
+    text: 時を遡って…
+  p35: []
+  p36:
+  - kind: para
+    text: RubyKaigi 2025でほぼ10年ぶりに参加
+  p37: []
+  p38: []
+  p39:
+  - kind: heading
+    level: 1
+    text: 楽しかったですね！
+  p40:
+  - kind: para
+    text: RubyKaigiはエコシステムを作っている人たちの成果発表会
+  p41:
+  - kind: para
+    text: 個人的におもしろかったこと
+  p42: []
+  p43: []
+  p44: []
+  p45:
+  - kind: heading
+    level: 1
+    text: その前に
+  p46: []
+  p47: []
+  p48:
+  - kind: para
+    text: もしかして…型って
+  p49:
+  - kind: para
+    text: シンプル
+  - kind: para
+    text: 型なし
+  p50:
+  - kind: para
+    text: 書かない方がいいのでは…？
+  p51: []
+  p52: []
+  p53:
+  - kind: para
+    text: 今年の年初までRBSは良くないと思ってた
+  p54:
+  - kind: para
+    text: RBS::Inlineの方が実装と分離しにくい
+  p55: []
+  p56:
+  - kind: para
+    text: 長年の経験則でどこから「型なし」が湧いてくるのか理解できていた
+  p57:
+  - kind: para
+    text: 既存のアプローチより良いやりかたがあるのでは？
+  p58: []
+  p59: []
+  p60: []
+  p61: []
+  p62: []
+  p63:
+  - kind: para
+    text: 型絞り込みになるヒントをかきあつめる
+  p64:
+  - kind: para
+    text: 具体的な型情報を保ち続ける
+  p65:
+  - kind: para
+    text: a = 1 b = 2 c = a + b
+  p66:
+  - kind: para
+    text: Rubyで任意の型推論ロジックを注入できる
+  p67:
+  - kind: para
+    text: ActiveRecord ActiveSupport
+  p68:
+  - kind: para
+    text: プラグインでひたすら型をつける
+  p69:
+  - kind: heading
+    level: 1
+    text: 100% Claude Code
+  p70:
+  - kind: para
+    text: 80% Claude Code
+  - kind: para
+    text: 10% Gemini
+  - kind: para
+    text: 10% Grok
+  p71:
+  - kind: para
+    text: リアルワールドのRailsアプリでテストしまくる
+  p72:
+  - kind: para
+    text: Fableのお蔭で最適化がめちゃ進んだ
+  p73:
+  - kind: heading
+    level: 1
+    text: 設計思想
+  p74:
+  - kind: para
+    text: AIエージェントにSKILLで判断させる
+  p75:
+  - kind: para
+    text: PHPStanで学んだ経験則
+  p76:
+  - kind: para
+    text: ユーザーは適切な設定を選べない
+  p77:
+  - kind: para
+    text: 無理してmaxレベルを目指そうとする
+  p78:
+  - kind: para
+    text: PHPStan自体も発展途上なのでコードを曲げることになりかねない
+  p79:
+  - kind: para
+    text: 偽陽性に対して過剰なコードを書かされる
+  p80: []
+  p81: []
+  p82: []
+  p83:
+  - kind: para
+    text: プロジェクトの段階によって無視していいエラーも存在する
+  p84:
+  - kind: para
+    text: 型とはつまりなんなのか
+  p85: []
+  p86:
+  - kind: para
+    text: 実行時にとりうる予測可能な状態
+  p87:
+  - kind: para
+    text: Rubyには構文上要求される型宣言はないのだからどう書いてもいいはず
+  p88:
+  - kind: para
+    text: RailsのCoCも人間が期待する型
+  p89:
+  - kind: para
+    text: 型チェッカーが人間の期待に応えられないのが悪い
+  p90: []
+  p91:
+  - kind: para
+    text: 理屈上は任意の項に型をつけられる
+  p92: []
+  p93:
+  - kind: para
+    text: プラグインの書き方は覚えなくていい
+  p94:
+  - kind: para
+    text: プログラムがとりうる作用は戻り値だけではない
+  p95:
+  - kind: heading
+    level: 1
+    text: Effect system
+  - kind: heading
+    level: 2
+    text: (実装済み)
+  p96:
+  - kind: heading
+    level: 1
+    text: Rigor最大の問題
+  p97:
+  - kind: para
+    text: tadsanはRuby開発者でもRails開発者でもない
+  p98:
+  - kind: para
+    text: 圧倒的当事者意識の欠如
+  p99:
+  - kind: para
+    text: 実際に使っている人のフィードバックが欲しい！
+  p100:
+  - kind: para
+    text: もっというとマジレスが欲しい！
+  p101: []
+  p102:
+  - kind: para
+    text: この記事でいちばん強調したかったこと
+  p103: []
+  p104:
+  - kind: para
+    text: 構造上メンテが高コスト
+  p105: []
+  p106:
+  - kind: para
+    text: Claude Max 20x
+  - kind: para
+    text: トークン消費を抑えながら作ってもちょっと足りない
+  p107:
+  - kind: para
+    text: 今月のClaude契約は今朝切れました！
+  p108:
+  - kind: heading
+    level: 1
+    text: それはさておき
+  p109:
+  - kind: para
+    text: Rigorステッカー持ってきています
+  p110: []
+  p111: []
+  p112:
+  - kind: heading
+    level: 1
+    text: rigor.typedduck.fail
+  p113:
+  - kind: para
+    text: 動的言語の未来にご期待ください
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p16:
+  - url: https://speakerdeck.com/sanfrecce_osaka/sekigahara01
+    title: '拙者、『型は欲しいが型は書きたくない』者たちとの和睦を結び、るびぃにおける型の領地安堵を実現せんと欲す者也 #sekigahara01/sekigahara01
+      - Speaker Deck'
+  p19:
+  - url: https://devpixiv.hatenablog.com/entry/2016/11/11/202656
+    title: Phan静的解析がもたらす大PHP型検査時代 - pixiv inside [archive]
+  p24:
+  - url: https://zenn.dev/pixiv/articles/7467448592862e
+    title: PHPStanクイックガイド2023
+  p37:
+  - url: https://speakerdeck.com/sinsoku/automatically-generating-types-by-running-tests
+    title: Automatically generating types by running tests - Speaker Deck
+  p42:
+  - url: https://speakerdeck.com/dak2/no-types-needed-just-callable-method-check
+    title: No Types Needed,  Just Callable Method Check - Speaker Deck
+  p43:
+  - url: https://speakerdeck.com/riseshia/good-enough-types-heuristic-type-inference-for-ruby
+    title: 'Good Enough Types: Heuristic Type Inference for Ruby - Speaker Deck'
+  p60:
+  - url: https://rigor.typedduck.fail/playground/
+    title: Rigor Playground (WASM)
+  p61:
+  - url: https://rigor.typedduck.fail/playground/?c=MQAgSglg5g9gTiACgGwIYE8pxgVwHYAmIAFAOoCCAygLICUIgKAQhz4DOIApngC4RwfJ0ICHhDpcCAEbYA7qw5wAdAChlBDgDMQWDh27E8qALYdaykCABEACQHIYAGisgA1CEMnlXAqpnxkRAC8zKiEIIHBAAwgAPxWLJLoliAAXFZ+cAGWyvysOMjc4dr8eiAZATkceQWKOAAOAMao8qqqQA
+    title: Rigor Playground (WASM)
