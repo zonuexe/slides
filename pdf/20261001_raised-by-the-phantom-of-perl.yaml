@@ -28,63 +28,71 @@ text:
     - 最近チームが再編されてインフラっぽい仕事もしてます
     - Emacs PHP Modeを開発しています (2017年-)
     - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
-  p3: []
-  p4:
+  p3:
+  - kind: para
+    text: PHPとかEmacs Lispをやらせていただいてます
+  p4: []
+  p5:
   - kind: para
     text: YAPC::Asia Tokyo
   - kind: para
     text: 2012-2015 YAPC::Hokkaido 2016 SAPPORO builderscon 2017-
-  p5: []
   p6: []
-  p7:
-  - kind: heading
-    level: 1
-    text: 時は2003年くらい
-  p8:
-  - kind: para
-    text: HTML/Web標準に興味がある学生
+  p7: []
+  p8: []
   p9:
   - kind: heading
     level: 1
-    text: 人生で初めて買った技術書
-  p10: []
-  p11:
+    text: わたしとパール
+  p10:
   - kind: heading
     level: 1
-    text: これはCSSの本だと誤解してもおかしくないのでは…？
+    text: 時は2003年くらい
+  p11:
+  - kind: para
+    text: HTML/Web標準に興味がある学生
   p12:
   - kind: heading
     level: 1
-    text: ど素人すぎる
-  p13:
-  - kind: para
-    text: よくわからんがKENT WEBは便利
+    text: 人生で初めて買った技術書
+  p13: []
   p14:
-  - kind: para
-    text: SNSがない時代俺たちはレンサバに掲示板を設置して交流を図っていた
+  - kind: heading
+    level: 1
+    text: これはCSSの本だと誤解してもおかしくないのでは…？
   p15:
-  - kind: para
-    text: たぶん現代でそれが可能なのはほぼPHP
+  - kind: heading
+    level: 1
+    text: ど素人すぎる
   p16:
   - kind: para
-    text: Perlに強い影響を受けて設計された言語を使い続けてきた
+    text: よくわからんがKENT WEBは便利
   p17:
   - kind: para
-    text: Perlの間接的なユーザーの立場で見守ってきた
+    text: SNSがない時代俺たちはレンサバに掲示板を設置して交流を図っていた
   p18:
   - kind: para
-    text: それぞれの言語がPerlから継いだ要素が三者三様すぎる
+    text: たぶん現代でそれが可能なのはほぼPHP
   p19:
   - kind: para
-    text: なぜPerlが重宝されたのか
+    text: Perlに強い影響を受けて設計された言語を使い続けてきた
   p20:
   - kind: para
-    text: Perlのキラーコンテンツ
+    text: Perlの間接的なユーザーの立場で見守ってきた
   p21:
+  - kind: para
+    text: それぞれの言語がPerlから継いだ要素が三者三様すぎる
+  p22:
+  - kind: para
+    text: なぜPerlが重宝されたのか
+  p23:
+  - kind: para
+    text: Perlのキラーコンテンツ
+  p24:
   - kind: heading
     level: 1
     text: CGI
-  p22:
+  p25:
   - kind: heading
     level: 1
     text: Common Gateway Interface
@@ -95,25 +103,25 @@ text:
     - プログラムがstdoutに出力したものがヘッダ・ボディになる
     - 標準入出力と環境変数さえ読み書きできれば言語はなんでもいい
     - 現代でもAWKとかBashとかでCGIを書く人がいたりする
-  p23:
-  - kind: para
-    text: C言語でWeb開発したくない
-  p24:
-  - kind: para
-    text: Webは本質的に入出力テキスト処理
-  p25:
-  - kind: para
-    text: 単純な好みだけでなくCでメモリ安全な文字列処理は難しい
   p26:
   - kind: para
-    text: Perlはもともとテキスト処理に向いていた
+    text: C言語でWeb開発したくない
   p27:
   - kind: para
-    text: リクエストごとにプロセスを起動するのでパフォーマンスの問題(時間/メモリ/C10K)
+    text: Webは本質的に入出力テキスト処理
   p28:
   - kind: para
-    text: CGIスクリプティング言語としてのPerlを先鋭化させたのがPHP
+    text: 単純な好みだけでなくCでメモリ安全な文字列処理は難しい
   p29:
+  - kind: para
+    text: Perlはもともとテキスト処理に向いていた
+  p30:
+  - kind: para
+    text: リクエストごとにプロセスを起動するのでパフォーマンスの問題(時間/メモリ/C10K)
+  p31:
+  - kind: para
+    text: CGIスクリプティング言語としてのPerlを先鋭化させたのがPHP
+  p32:
   - kind: heading
     level: 1
     text: CGI言語としてのPerl/PHP
@@ -125,10 +133,10 @@ text:
     - 'PHP: HTTP出力そのものが言語コアに統合されている'
     - 言語ランタイムがHTTPメッセージの入出力を担保してくれる
     - CGIではない環境でもCGIスタイルのスクリプトが基本
-  p30:
+  p33:
   - kind: para
     text: レンタルサーバにファイル転送するだけでデプロイ完了(CGI Perl, PHP)
-  p31:
+  p34:
   - kind: heading
     level: 1
     text: Web言語としてのインターフェイス
@@ -139,7 +147,7 @@ text:
     - 90年代のアプローチ： Apacheモジュールとして組み込む
     - 'mod_perl, mod_ruby: デフォルトでは同じプロセスで動き続ける'
     - 'mod_php: リクエストごとに状態が破棄されるCGI互換モードがデフォルト'
-  p32:
+  p35:
   - kind: heading
     level: 1
     text: プロセス内サーバインターフェイス
@@ -151,19 +159,19 @@ text:
     - CGI世代の「スクリプト」と「フレームワーク／アプリケーション」の分水嶺
     - 分離するとユニットテストが書きやすくなるなどのメリットは大きい
     - PHPにも共通インターフェイスはあるが、必須ではなく断絶を経験しない
-  p33:
-  - kind: para
-    text: 言語としてのPHP表面的に似ているのは$ と ; くらい
-  p34:
-  - kind: para
-    text: Perlが普及させたもの
-  p35:
-  - kind: para
-    text: Hash正規表現cpan (リポジトリ)
   p36:
   - kind: para
-    text: 意外とPerlの前からある気がする…？
+    text: 言語としてのPHP表面的に似ているのは$ と ; くらい
   p37:
+  - kind: para
+    text: Perlが普及させたもの
+  p38:
+  - kind: para
+    text: Hash正規表現cpan (リポジトリ)
+  p39:
+  - kind: para
+    text: 意外とPerlの前からある気がする…？
+  p40:
   - kind: para
     text: ハッシュ (連想配列)
   - kind: list
@@ -173,7 +181,7 @@ text:
     - Lisp系は連結リストベースの連想リスト・プロパティリストというものがある
     - ライブラリやユーザー定義のデータ構造として流行らせたのはPerlでは…？
     - 現代ではJSON(object)を経て、どんな言語でも扱えることが普通
-  p38:
+  p41:
   - kind: heading
     level: 1
     text: 正規表現
@@ -185,7 +193,7 @@ text:
     - 記号の意味が大きく違うというわけではないが、\ エスケープが反転
     - 現在普及している多くの『正規表現』は多かれ少なかれPerl風
     - Perlの全機能が網羅されているものはないが、しばしば実用される範囲での互換性はあると思う ／ PCREはPerl完全互換ではない
-  p39:
+  p42:
   - kind: para
     text: CPAN (Comprehensive Perl Archive Network)
   - kind: list
@@ -194,43 +202,46 @@ text:
     - ざっくりRubyGems, NPM, PyPI, crates.ioなどに繋がるもの
     - READMEに書くべき内容やテストの標準化など今も尊ばれるべきもの
     - Perl界隈でCPANオーサーがリスペクトされる文化が大好き
-  p40:
-  - kind: para
-    text: 先行するテキスト処理言語
-  p41:
-  - kind: para
-    text: sed, awk, shellからPerlが受けた影響
-  p42:
-  - kind: para
-    text: Perlと同世代の言語との比較
   p43:
   - kind: para
-    text: Perl vsオブジェクト指向
+    text: 先行するテキスト処理言語
   p44:
   - kind: para
-    text: GuidoはPerl 5の何を嫌ったのか
+    text: sed, awk, shellからPerlが受けた影響
   p45:
   - kind: para
-    text: Perl 6は結局なんだったのか
+    text: Perlと同世代の言語との比較
   p46:
+  - kind: para
+    text: Perl vsオブジェクト指向
+  p47:
+  - kind: para
+    text: GuidoはPerl 5の何を嫌ったのか
+  p48:
+  - kind: para
+    text: Perl 6は結局なんだったのか
+  p49:
   - kind: heading
     level: 1
     text: どこかで話したい!!
   - kind: heading
     level: 2
     text: (20分でも明らかに足りない)
-  p47:
+  p50:
   - kind: heading
     level: 1
     text: 採択されませんでした
-  p48:
+  p51:
   - kind: para
     text: ご静聴ありがとうございました
 size:
   max_width: 1920
   max_height: 1080
 links:
-  p6:
+  p7:
   - url: https://x.com/yapcjapan/status/807375066740592641
     title: 'yapcjapan on X: "札幌地域の降雪により、会場となる札幌産業振興センター近辺はかなり積雪しております。ご来場の際はお足元にご注意の上、お怪我などされないようお気をつけください
       #yapcjapan" / X'
+  p8:
+  - url: https://yapcasia8oji-2016mid.hachiojipm.org/
+    title: YAP(achimon)C::Asia Hachioji 2016 mid in Shinagawa
