@@ -1,0 +1,881 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: PHPの「型」は
+  - kind: heading
+    level: 1
+    text: どこまで戦えるか
+  - kind: heading
+    level: 2
+    text: Can PHP Types Still Compete?
+  - kind: heading
+    level: 2
+    text: Pushing the Limits of Static Analysis.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2026-10-03 #phpcon_ehime PHPカンファレンス愛媛 @愛媛大学 城北キャンパス'
+  p2:
+  - kind: para
+    text: みなさまはPHPの無限の可能性が好きですか？
+  p3:
+  - kind: heading
+    level: 1
+    text: 問題です
+  p4:
+  - kind: para
+    text: PHPの型についての質問で正しいものは？(全4問)
+  p5:
+  - kind: para
+    text: 1. PHPは型なし言語である
+  p6:
+  - kind: para
+    text: 2. PHPには型宣言がある
+  p7:
+  - kind: para
+    text: 3. PHPに書く型は実行時に保証されない
+  p8:
+  - kind: para
+    text: 4. PHPは静的型付きである
+  p9:
+  - kind: para
+    text: 正しいものは？ (複数回答可能)
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p10:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p11:
+  - kind: heading
+    level: 1
+    text: さて
+  p12:
+  - kind: para
+    text: 型がついている#とは
+  p13:
+  - kind: para
+    text: 型推論規則に従ってすべての項に矛盾なく型が割り当てられた状態
+  - kind: para
+    text: …ですが何か？
+  p14:
+  - kind: heading
+    level: 1
+    text: よくわからん
+  p15:
+  - kind: para
+    text: 覚えておいてほしい用語
+  p16:
+  - kind: heading
+    level: 1
+    text: 型付け
+  - kind: heading
+    level: 2
+    text: (Typing)
+  p17:
+  - kind: heading
+    level: 1
+    text: 型付き
+  - kind: heading
+    level: 2
+    text: (Typed)
+  p18:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: $a = 3;$b = 2;$c = pow($a, $b);
+  p19:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 3;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = pow($a, $b);
+  p20:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 3;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = pow($a, $b);
+  p21:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 3;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = pow($a, $b);
+  - kind: para
+    text: 引数ok
+  p22:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 3;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = pow($a, $b);
+  - kind: para
+    text: 引数ok
+  - kind: para
+    text: 引数ok
+  p23:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: int
+  - kind: para
+    text: int
+  - kind: heading
+    level: 1
+    text: $a = 3;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = pow($a, $b);
+  - kind: para
+    text: 引数ok
+  - kind: para
+    text: 引数ok
+  - kind: para
+    text: int
+  p24:
+  - kind: heading
+    level: 1
+    text: 型付け(typing) vs 型付き(typed)
+  - kind: list
+    items:
+    - プログラムを検査して、項(≒ 式, expression)のとりうる状態を
+  - kind: para
+    text: 分類するのが型付け(typing)。型を明示しなくても項の種類を特定する具体的な手続きが型推論(type inference)。
+  - kind: list
+    items:
+    - 実行時に値の型チェックを行なうことを、
+  - kind: para
+    text: 便宜的に動的型付け(dynamic typing)と呼ぶこともある
+  - kind: list
+    items:
+    - 静的な型付けによってとりうる状態が定まったプログラムのことを
+  - kind: para
+    text: 「型付き(typed)」と呼ぶ
+  p25:
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p26:
+  - kind: heading
+    level: 1
+    text: 健全性
+  - kind: heading
+    level: 2
+    text: (Soundness)
+  p27:
+  - kind: para
+    text: 静的解析が通れば実行時に(型に関する)エラーは起こらないという性質
+  p28:
+  - kind: para
+    text: いわゆる「型安全」(type safety)
+  - kind: list
+    items:
+    - 健全性(Soundness)と同じ意味
+    - 濫用されがちな用語だが、概ね型に関する記述に矛盾がないことを保証でき
+  - kind: para
+    text: るようになっていることを表わしている
+  - kind: list
+    items:
+    - 「健全性がある」 実行したときに、型に関するエラーが起こらないといえる
+    - 「健全性がない」 実行してみたときに、エラーが起こりかねない
+    - C言語全般、Javaの「ぬるぽ」、TypeScriptのany/asや配列など
+  p29:
+  - kind: para
+    text: 言語が静的か動的かとは[独自研究]
+  - kind: list
+    items:
+    - ある言語の仕様または標準的な処理系によって構造が事前に検証されている
+  - kind: para
+    text: ことが前提になっている言語が静的(型付き)
+  - kind: list
+    items:
+    - 事前検証が前提ではなく、実行時(run-time)に構造が決定されるのが動的
+    - 一般的にはコンパイラ vs インタプリタに一致するが、必ずしもそうではない
+    - 静的言語にも多かれ少なかれ動的な機能が存在し、グラデーションは大きい
+    - 動的言語でもPHP, Python, Ruby, JavaScriptで動的要素が全然違う
+  p30:
+  - kind: heading
+    level: 1
+    text: TypeScriptにとっての型
+  - kind: list
+    items:
+    - 型宣言をもとに型チェックを行なって、分析情報を報告
+    - 実行時には型情報は何も残らない
+    - JavaScriptにコンパイル ≒ 型定義の部分をひっぺがして実行
+    - Node.js 25.2ではType Strippingで直接実行できるようになった
+    - 実際にはTypeScript enum など別のコード生成をする機能もある
+    - 型がついたコードは実行時にはエラーが出ないでほしい(願望)
+  p31:
+  - kind: heading
+    level: 1
+    text: ファクトチェック
+  p32:
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p33:
+  - kind: heading
+    level: 1
+    text: 型理論から見たPHPインタプリタ
+  - kind: list
+    items:
+    - 型が合わない（Ill-typed）コードであっても、エラーとして弾かれず、
+  - kind: para
+    text: 正当なプログラム（構文木）として受理される → 実行時エラー
+  - kind: list
+    items:
+    - 関数は型宣言に拘らず、任意の値を返そうとすることができる
+    - プロパティは型宣言に拘らず、任意の値を代入しようとすることができる
+    - ローカル変数に型宣言はなく、任意の型の値を代入可能
+    - オペコードコンパイラは実行前にプログラムの健全性を「証明」しない
+  p34:
+  - kind: para
+    text: 実行時のインタプリタの振る舞い
+  - kind: list
+    items:
+    - PHP処理系(ZendVM)内では、zval構造体に型タグを保持している
+    - 常に is_int() のような関数で型を識別できる
+    - 型宣言と反した値が渡されると、キャストまたは実行時エラーが起こる
+    - いわゆる「強い型付け」であり、実行時に型がとり違えられることはない
+    - RTTI(実行時型情報)は型理論における(静的な)型ではない
+    - 言語セマンティクスとしては型なしだが、JITは静的型情報を活用する
+  p35:
+  - kind: heading
+    level: 1
+    text: ここまでのまとめ
+  p36:
+  - kind: para
+    text: PHPインタプリタは型なしである
+  p37:
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p38:
+  - kind: para
+    text: PHPと型宣言
+  - kind: list
+    items:
+    - 引数などのデータ型を表わす手段としてコメントにPHPDocを書く文化
+    - PHP 5.xで関数／メソッドのパラメータに「型ヒント」が書けるようになった
+    - array, callable, クラス名, インターフェイス名だけを書けた
+    - PHP 7.0で正式に「型宣言」としてスカラー型宣言と戻り値型が記述可能に
+    - PHP 8.0以降でユニオン型宣言などが機能追加
+  p39:
+  - kind: heading
+    level: 1
+    text: 型宣言がない関数(PHP5)
+  - kind: para
+    text: function add($a, $b) {return $a + $b;}
+  p40:
+  - kind: heading
+    level: 1
+    text: スカラー型宣言(PHP7)
+  - kind: para
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
+  p41:
+  - kind: heading
+    level: 1
+    text: スカラー型宣言(PHP7)
+  - kind: para
+    text: int + intって本当にintなの？
+  - kind: para
+    text: 'function add(int $a, int $b): int {return $a + $b;}'
+  p42:
+  - kind: heading
+    level: 1
+    text: 広い値をとるにはfloatが必要
+  - kind: para
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
+  p43:
+  - kind: heading
+    level: 1
+    text: 広い値をとるにはfloatが必要
+  - kind: para
+    text: ひとつの解決策ではあるが… 不必要にfloatを強制するのか
+  - kind: para
+    text: 'function add(float $a, float $b): float {return $a + $b;}'
+  p44:
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
+  p45:
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
+  p46:
+  - kind: heading
+    level: 1
+    text: ユニオン型宣言 (PHP8.0)
+  - kind: para
+    text: 'function add(int|float $a, int|float $b): int|float {return $a + $b;}'
+  p47:
+  - kind: heading
+    level: 1
+    text: PHPの型宣言の特徴
+  - kind: list
+    items:
+    - コードごとに declare(strict_types=1); が宣言できる
+    - 引数とデータ型の種類を厳密にチェックしてTypeErrorを出す
+    - デフォルト(無宣言)では、 add("1", "2”) を add(1, 2) としてキャスト
+    - add(“a”, “b”) のような数値ではない文字列はTypeErrorになり安心
+    - add((int) $a, (int) $b); のようなコードとは安全性のレベルが違う
+  p48:
+  - kind: heading
+    level: 1
+    text: ここまでのまとめ
+  p49:
+  - kind: heading
+    level: 1
+    text: PHPに型宣言はある
+  p50:
+  - kind: para
+    text: 型宣言された型は口約束ではなく実効性がある
+  p51:
+  - kind: para
+    text: 型理論としては型なしだががんばって動作確認するなら実用上ほぼ型付きと認められなくもなくなってきた
+  p52:
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p53:
+  - kind: para
+    text: PHPDocに型を書く文化もある
+  p54:
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
+  p55:
+  - kind: heading
+    level: 1
+    text: PHPDocの型注釈(アノテーション)
+  - kind: para
+    text: あえて型宣言を省略する
+  - kind: para
+    text: /*** @param int|float $a* @param int|float $b* @return int|float*/function
+      add($a, $b) {return $a + $b;}
+  p56:
+  - kind: heading
+    level: 1
+    text: いろんなところから湧き出す
+  - kind: heading
+    level: 1
+    text: 型の特定できないデータ
+  p57:
+  - kind: heading
+    level: 1
+    text: arrayは無限の可能性を秘める
+  - kind: heading
+    level: 1
+    text: (悪い意味で)
+  p58:
+  - kind: heading
+    level: 1
+    text: 扱う対象が複数になったのに
+  - kind: heading
+    level: 1
+    text: 型に反映されない
+  p59:
+  - kind: para
+    text: 型宣言にarrayとしか書かないと
+  - kind: list
+    items:
+    - メソッドに何を渡せばいいのかわからない
+    - どんな形式の配列を渡しても動くという関数は決して多くない
+    - 標準関数の count() のようなユーティリティが多め
+    - プロパティにも何が入ってるのかわからない
+    - 従来のLaravelは @var array まみれだった
+    - Laravel 9.xのコードベースでは配列の内部構造に型がついている
+  p60:
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: list
+    items:
+    - ユーザＩＤがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
+  p61:
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: list
+    items:
+    - ユーザＩＤがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
+  p62:
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: list
+    items:
+    - ユーザＩＤがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
+  p63:
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: list
+    items:
+    - ユーザＩＤがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
+  p64:
+  - kind: heading
+    level: 1
+    text: 配列はひとつ！じゃない！！
+  - kind: para
+    text: list<int>
+  - kind: para
+    text: array<int,string>
+  - kind: para
+    text: array{id:int, name:string}
+  - kind: list
+    items:
+    - ユーザＩＤがならんだリスト ［123, 456］
+    - ユーザIDと名前の対応表 [123 => '野比のび太', 234 => '源静香']
+    - ユーザを表す構造体 ['id' => 123, 'name' => '野比のび太']
+    - ユーザを表す構造体がならんだリスト
+  - kind: para
+    text: '[[''id'' => 123, ''name'' => ''野比のび太''],[''id'' => 234, ''name'' => ''源静香''],]'
+  - kind: para
+    text: list<array{id:int, name:string}>
+  p65:
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p66:
+  - kind: para
+    text: PHPの組み込みの型機能ではどんなに型推論しても静的に型が定まらない
+  p67:
+  - kind: para
+    text: 無限の可能性を秘めたarrayを放置するとコード全体のエントロピーが増大しプロジェクトは熱的死を迎える
+  p68:
+  - kind: heading
+    level: 1
+    text: 漸進的型付け
+  p69:
+  - kind: heading
+    level: 1
+    text: '56'
+  p70:
+  - kind: para
+    text: 型チェックをしたとしても実用的な推論結果にならない(こともある)
+  p71:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: '$a = ‘foo’;$b = rand() === 1 ? ‘foo’ : ‘bar’;$c = $a + $b;'
+  p72:
+  - kind: para
+    text: '''foo''PHPStan'
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p73:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: '''foo''''foo'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p74:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: '''foo''''foo''''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p75:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: '''foo''''foo''''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p76:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: '''foo''''foo''''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  - kind: para
+    text: '''foo''|''bar'''
+  p77:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: '''foo''''foo'''
+  - kind: para
+    text: '''bar'''
+  - kind: heading
+    level: 1
+    text: $a = ‘foo’;
+  - kind: heading
+    level: 1
+    text: '$b = rand() === 1 ? ‘foo’ : ‘bar’;'
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  - kind: para
+    text: '''foo''|''bar'''
+  - kind: para
+    text: '''foofoo''|''foobar'''
+  p78:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: $a = 1;$b = 2;$c = $a + $b;
+  p79:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: int(1)
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p80:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: int(1)
+  - kind: para
+    text: int(2)
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p81:
+  - kind: para
+    text: PHPStan
+  - kind: para
+    text: int(1)
+  - kind: para
+    text: int(2)
+  - kind: para
+    text: int(3)
+  - kind: heading
+    level: 1
+    text: $a = 1;
+  - kind: heading
+    level: 1
+    text: $b = 2;
+  - kind: heading
+    level: 1
+    text: $c = $a + $b;
+  p82:
+  - kind: para
+    text: 型チェッカー
+  - kind: para
+    text: $json = $_POST['json'];$a = json_decode($json);var_dump($a[‘name']);
+  p83:
+  - kind: para
+    text: mixed型チェッカー
+  - kind: heading
+    level: 1
+    text: $json = $_POST['json'];
+  - kind: heading
+    level: 1
+    text: $a = json_decode($json);
+  - kind: heading
+    level: 1
+    text: var_dump($a[‘name']);
+  p84:
+  - kind: para
+    text: mixed
+  - kind: para
+    text: string欲しいんだけど…型チェッカー
+  - kind: heading
+    level: 1
+    text: $json = $_POST['json'];
+  - kind: heading
+    level: 1
+    text: $a = json_decode($json);
+  - kind: heading
+    level: 1
+    text: var_dump($a[‘name']);
+  p85:
+  - kind: para
+    text: mixed
+  - kind: para
+    text: string欲しいんだけど…型チェッカー
+  - kind: heading
+    level: 1
+    text: $json = $_POST['json'];
+  - kind: heading
+    level: 1
+    text: $a = json_decode($json);
+  - kind: heading
+    level: 1
+    text: var_dump($a[‘name']);
+  - kind: para
+    text: ?array|int|float|string|bool
+  p86:
+  - kind: para
+    text: mixed
+  - kind: para
+    text: string欲しいんだけど…型チェッカー
+  - kind: heading
+    level: 1
+    text: $json = $_POST['json'];
+  - kind: heading
+    level: 1
+    text: $a = json_decode($json);
+  - kind: heading
+    level: 1
+    text: var_dump($a[‘name']);
+  - kind: para
+    text: ?array|int|float|string|boolこのキーあるの…？
+  p87:
+  - kind: heading
+    level: 1
+    text: つまり
+  p88:
+  - kind: heading
+    level: 1
+    text: つまり
+  p89:
+  - kind: para
+    text: そのため動的言語ではテストの重要性が高かった
+  p90:
+  - kind: para
+    text: 型は「ありうる」状態を記述する言語
+  p91:
+  - kind: para
+    text: 適切に推論できればテストを書くまでもなく変なコードが炙りだせる
+  p92: []
+  p93: []
+  p94: []
+  p95:
+  - kind: para
+    text: パラメータを厳しくするより戻り値を適切に
+  p96:
+  - kind: para
+    text: 戻り値が適切に記述されていれば呼び出し側で型をつける必要はない
+  p97:
+  - kind: para
+    text: PHPStanは普通にコードを書いて警告が増加しないレベルが適正
+  p98:
+  - kind: para
+    text: 複雑な型を書きまくるのが型付けではない
+  p99:
+  - kind: para
+    text: PHPコードの@returnが足りていない
+  p100:
+  - kind: para
+    text: 💡型を書きまくるSKILLを書こう
+  p101:
+  - kind: para
+    text: 特にarray-shapeを書きまくる必要が生じる
+  p102:
+  - kind: para
+    text: そこからレベルを上げるには拡張で解決したい
+  p103:
+  - kind: para
+    text: たぶんあんまりよくない
+  p104:
+  - kind: heading
+    level: 1
+    text: 型推論ロジックを記述できる
+  p105:
+  - kind: para
+    text: 理屈上は任意の項に型をつけられる
+  p106:
+  - kind: para
+    text: お使いのAIさんと相談しながらサクっと作れる時代になった
+  p107:
+  - kind: heading
+    level: 1
+    text: やるなら今
+  p108:
+  - kind: para
+    text: LLMにとってプログラミング言語と人間の言語は同列
+  p109:
+  - kind: para
+    text: 流暢なコードは効率よく処理しやすい
+  p110:
+  - kind: para
+    text: エントロピーを下げて人とAIに優しい予測可能なコードを育てよう
+  p111:
+  - kind: heading
+    level: 1
+    text: まとめ
+  p112:
+  - kind: para
+    text: 正しいものは？ (複数回答可能)
+  - kind: para
+    text: 1. PHPは型なし言語である2. PHPには型宣言がある3. PHPに書く型は実行時に保証されない4. PHPは静的型付きである
+  p113:
+  - kind: para
+    text: 正しいものは？ (複数回答可能)
+  - kind: para
+    text: ✅ PHPは型なし言語である
+  - kind: para
+    text: ✅ PHPには型宣言がある
+  - kind: para
+    text: ✅ PHPに書く型は実行時に保証されない
+  - kind: para
+    text: ✅ PHPは静的型付きである
+  p114:
+  - kind: para
+    text: 考え方によってはすべて正しい
+  p115:
+  - kind: heading
+    level: 1
+    text: PHPが静的型付きと言える条件
+  - kind: list
+    items:
+    - 静的解析やユニットテストなどのCIチェックした上でデプロイされている
+    - PHPStan, Psalm, Phan, Magoなど… Lv.maxかどうかは問わない
+    - ユニットテストで十分なカバレッジのテストが網羅されている
+    - ツールの種類×プロジェクトが静的に信頼に足る状況にできるかが大きい
+    - 静的型付きの言語を使っていても本番で健全性がないコードにできる
+    - PHPは動的言語の中では実行時バリデーションのお蔭で問題が隠れない
+  p116: []
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p92:
+  - url: https://zenn.dev/pixiv/articles/7467448592862e
+    title: PHPStanクイックガイド2023
+  p93:
+  - url: https://zenn.dev/pixiv/articles/09ae64aad4a2f6
+    title: PHPStan型付けマニュアル
+  p94:
+  - url: https://github.com/zonuexe/phpstan-typing-tutorial
+    title: GitHub - zonuexe/phpstan-typing-tutorial · GitHub
+  p116:
+  - url: https://zonuexe.github.io/slides/20260509_soft-and-hard-php/
+    title: やわPHP カタPHP | tadsan's slide deck
