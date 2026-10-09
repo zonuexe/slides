@@ -1,0 +1,251 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: ZARD
+  - kind: heading
+    level: 2
+    text: Yet another YARDoc.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2026-10-08 Proposals on Rails 2026
+  - kind: para
+    text: 'イタンジ株式会社 #roppongirb'
+  p2:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3:
+  - kind: para
+    text: はじめましての方ははじめまして
+  p4: []
+  p5: []
+  p6: []
+  p7: []
+  p8:
+  - kind: para
+    text: 便利なので使ってください
+  p9:
+  - kind: heading
+    level: 1
+    text: 今回はその話ではない
+  p10:
+  - kind: para
+    text: 現代の生成AIは大規模言語モデル
+  p11:
+  - kind: para
+    text: コーディングエージェントがいかに賢く振る舞っても確率からは逃れられない
+  p12:
+  - kind: para
+    text: モデルが持っている常識
+  - kind: para
+    text: ×プロジェクトの雰囲気
+  p13:
+  - kind: heading
+    level: 1
+    text: 水は低きに流れる
+  p14:
+  - kind: para
+    text: AIは常識を振りかざす前例主義者
+  p15:
+  - kind: heading
+    level: 1
+    text: 何が言いたいか
+  p16:
+  - kind: heading
+    level: 1
+    text: 大規模言語モデル
+  p17:
+  - kind: para
+    text: 生成AIは言語であれこれ語りたがる
+  p18:
+  - kind: para
+    text: コメントが多いプロジェクトは自然に雄弁になる
+  p19:
+  - kind: para
+    text: プログラミング言語
+  - kind: para
+    text: 自然言語
+  p20:
+  - kind: para
+    text: コメントはコードで表現できない行間を補う機能
+  p21:
+  - kind: para
+    text: パラメータ名で表現しきれない構造の評価
+  p22:
+  - kind: para
+    text: 歯止めを掛けないとAIはコードにポエムを書き散らす
+  - kind: para
+    text: ポエマーになる
+  p23:
+  - kind: para
+    text: コードにはあくまで行間を書いてほしい
+  p24: []
+  p25: []
+  p26: []
+  p27: []
+  p28: []
+  p29:
+  - kind: para
+    text: シンプル
+  - kind: para
+    text: 型なし
+  p30:
+  - kind: para
+    text: 完全な散文よりも構造化形式で書いておきたい
+  p31:
+  - kind: para
+    text: Rubyでは歴史的にいろんなフォーマットがあった
+  p32:
+  - kind: heading
+    level: 1
+    text: RD
+  p33:
+  - kind: heading
+    level: 1
+    text: RDoc
+  p34:
+  - kind: heading
+    level: 1
+    text: Yay! A Ruby Documentation Tool
+  p35:
+  - kind: heading
+    level: 1
+    text: rbs-inline (method)
+  p36:
+  - kind: heading
+    level: 1
+    text: rbs-inline (Doc style)
+  p37:
+  - kind: heading
+    level: 1
+    text: RubyMine
+  p38:
+  - kind: heading
+    level: 1
+    text: Rigorの思想
+  p39:
+  - kind: para
+    text: 人間に冗長な型をわざわざ明記させない
+  p40:
+  - kind: para
+    text: 型推論してRBSを生成してガードレールにする
+  p41:
+  - kind: para
+    text: 必要以上に詳細に型を書かせない
+  p42:
+  - kind: para
+    text: AIでちょんとセットアップすれば静的解析できる！
+  p43: []
+  p44: []
+  p45: []
+  p46: []
+  p47: []
+  p48:
+  - kind: para
+    text: Rubyに型を書きたくないのにDocに型を書かされる
+  p49:
+  - kind: heading
+    level: 1
+    text: ZARD
+  - kind: heading
+    level: 2
+    text: Yet another YARDoc.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2026-10-08 Proposals on Rails 2026
+  - kind: para
+    text: 'イタンジ株式会社 #roppongirb'
+  p50: []
+  p51:
+  - kind: para
+    text: '型は @rbsまたは #: に書く'
+  p52:
+  - kind: para
+    text: '型は @rbsまたは #: に書く'
+  - kind: para
+    text: '@param @returnにはコメントだけを書く'
+  p53:
+  - kind: para
+    text: '型は @rbsまたは #: に書く'
+  - kind: para
+    text: '@param @returnにはコメントだけを書く'
+  - kind: para
+    text: '@extrbs という怪しい型も書ける'
+  p54:
+  - kind: para
+    text: なぜrbs-inlineに一本化できないのか
+  - kind: list
+    items:
+    - '# @rbs は、あくまで型情報に -- でコメントを載せる記法'
+    - 主役は型だと認識している
+    - '#: はRBS系エコシステムだけでなくSorbetも読み取るので、'
+  - kind: para
+    text: RBS仕様外の型情報を載せるのはあまりよくない
+  - kind: list
+    items:
+    - Pythonの型宣言も実行時に読み飛ばされるが、ツールごとの非互換に弱い
+    - '# @extrbs にRigorのRBS::Extendedをコメントに載せられる'
+  p55:
+  - kind: para
+    text: 作り始めたばかりなので乞うご期待
+  p56: []
+  p57: []
+  p58: []
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p4:
+  - url: https://tadsan.fanbox.cc/posts/11959067
+    title: ちょっとすごいRubyの型チェッカーを作ってます｜にゃんだーすわん｜pixivFANBOX
+  p5:
+  - url: https://rigor.typedduck.fail/ja/
+    title: Rigor | Rigor
+  p24:
+  - url: https://x.com/t_wada/status/904916106153828352
+    title: 'Takuto Wada on X: "コードには How
+
+      テストコードには What
+
+      コミットログには Why
+
+      コードコメントには Why not
+
+
+      を書こうという話をした" / X'
+  p32:
+  - url: https://link.amazon/B06IuVBs7
+    title: 'Amazon.co.jp: Rubyを256倍使うための本 魔道編 : るびきち: 本'
+  p33:
+  - url: https://docs.ruby-lang.org/ja/latest/library/rdoc.html
+    title: library rdoc (Ruby 4.0 リファレンスマニュアル)
+  p34:
+  - url: https://yardoc.org/
+    title: YARD - A Ruby Documentation Tool
+  p37:
+  - url: https://www.jetbrains.com/ja-jp/help/ruby/documenting-source-code.html
+    title: コードのドキュメント化 | RubyMine ドキュメント
+  p54:
+  - url: https://rigor.typedduck.fail/ja/handbook/07-rbs-and-extended/
+    title: RBSと`RBS::Extended` | Rigor
+  p56:
+  - url: https://github.com/rigortype/zard
+    title: GitHub - rigortype/zard · GitHub
