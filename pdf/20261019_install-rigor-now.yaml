@@ -1,0 +1,188 @@
+text:
+  p1:
+  - kind: heading
+    level: 1
+    text: Rigorを入れろ今すぐに
+  - kind: heading
+    level: 2
+    text: Install Rigor as soon as possible
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: '2026-10-19 #afterkor2026_pixiv Kaigi on Rails 2026 After Event from ピクシブ'
+  p2:
+  - kind: para
+    text: お前誰よ
+  - kind: list
+    items:
+    - うさみけんた (@tadsan) / Zonu.EXE / にゃんだーすわん
+    - ピクシブ株式会社 Platform Div > WebTechnology Team PHPer
+    - 2012年末から現職、APIとかCIとかいろいろなところを見つめてきました
+    - 最近チームが再編されてインフラっぽい仕事もしてます
+    - Emacs PHP Modeを開発しています (2017年-)
+    - プログラミング言語にちょっとこだわりのある素人 (spcamp2010)
+  p3: []
+  p4:
+  - kind: heading
+    level: 1
+    text: PHPには型を書きたい
+  p5: []
+  p6: []
+  p7:
+  - kind: para
+    text: 2020年にRBSが導入されてから型は普及したか？
+  p8:
+  - kind: para
+    text: RBS? RBI?よくわからん…
+  p9:
+  - kind: heading
+    level: 1
+    text: PHPには型を書きたい
+  p10:
+  - kind: para
+    text: Rubyでも書きたい人は書けばいいと思っていた
+  p11: []
+  p12: []
+  p13:
+  - kind: para
+    text: 型に関するみんなのお気持ち
+  - kind: list
+    items:
+    - (シグネチャ) コードに無駄な記述を書きたい人は多くない
+    - →
+    - (型検査) 明記しなくても有用な静的検査ができるなら反対する人も少ない
+    - →
+    - (型推論) 型を書かなくても型推論で型が絞り込めるなら
+    - →
+  p14:
+  - kind: para
+    text: 型に関するみんなのお気持ち
+  - kind: list
+    items:
+    - (シグネチャ) コードに無駄な記述を書きたい人は多くない
+    - → 冗長だけど有用な記述をすべきか、という点で意見が分かれる
+    - (型検査) 明記しなくても有用な静的検査ができるなら反対する人も少ない
+    - → 偽陽性に煩わされるくらいなら検査なんか、するだけ無駄では？
+    - (型推論) 型を書かなくても型推論で型が絞り込めるなら
+    - → 型推論の結果が十分に絞り込まれていないと、却って冗長になる
+  p15:
+  - kind: para
+    text: 導入が難しい…運用が難しい…概念が難しい…
+  p16: []
+  p17: []
+  p18:
+  - kind: para
+    text: 難しいことをオブラートに包む
+  p19:
+  - kind: para
+    text: チームメンバーは型とか書かなくていい
+  p20:
+  - kind: para
+    text: AIエージェントにSKILLで判断させる
+  p21:
+  - kind: heading
+    level: 1
+    text: Rigorの思想
+  p22: []
+  p23: []
+  p24:
+  - kind: para
+    text: PHPStanで学んだ経験則
+  p25:
+  - kind: para
+    text: ユーザーは適切な設定を選べない
+  p26:
+  - kind: para
+    text: 無理してmaxレベルを目指そうとする
+  p27:
+  - kind: para
+    text: PHPStan自体も発展途上なのでコードを曲げることになりかねない
+  p28:
+  - kind: para
+    text: 偽陽性に対して過剰なコードを書かされる
+  p29: []
+  p30:
+  - kind: para
+    text: プロジェクトの段階によって無視していいエラーも存在する
+  p31: []
+  p32:
+  - kind: para
+    text: 実行時にとりうる予測可能な状態
+  p33:
+  - kind: para
+    text: Rubyには構文上要求される型宣言はないのだからどう書いてもいいはず
+  p34:
+  - kind: para
+    text: RailsのCoCも人間が期待する型
+  p35:
+  - kind: para
+    text: 型チェッカーが人間の期待に応えられないのが悪い
+  p36: []
+  p37:
+  - kind: para
+    text: 理屈上は任意の項に型をつけられる
+  p38: []
+  p39:
+  - kind: para
+    text: プラグインの書き方は覚えなくていい
+  p40:
+  - kind: para
+    text: プログラムがとりうる作用は戻り値だけではない
+  p41: []
+  p42: []
+  p43:
+  - kind: para
+    text: 実際に使っている人のフィードバックが欲しい！
+  p44:
+  - kind: para
+    text: もっというとマジレスが欲しい！
+  p45:
+  - kind: para
+    text: 作り始めたばかりなので乞うご期待
+  p46:
+  - kind: para
+    text: Rubyに型を書きたくないのにDocに型を書かされる
+  p47:
+  - kind: heading
+    level: 1
+    text: ZARD
+  - kind: heading
+    level: 2
+    text: Yet another YARDoc.
+  - kind: heading
+    level: 3
+    text: pixiv Inc.
+  - kind: heading
+    level: 3
+    text: USAMI Kenta
+  - kind: para
+    text: 2026-10-08 Proposals on Rails 2026
+  - kind: para
+    text: 'イタンジ株式会社 #roppongirb'
+  p48: []
+  p49: []
+  p50: []
+size:
+  max_width: 1920
+  max_height: 1080
+links:
+  p3:
+  - url: https://zonuexe.github.io/slides/20261003_how-far-php-types-can-go/
+    title: PHPの「型」はどこまで戦えるか | tadsan's slide deck
+  p11:
+  - url: https://speakerdeck.com/sanfrecce_osaka/sekigahara01
+    title: '拙者、『型は欲しいが型は書きたくない』者たちとの和睦を結び、るびぃにおける型の領地安堵を実現せんと欲す者也 #sekigahara01/sekigahara01
+      - Speaker Deck'
+  p16:
+  - url: https://tadsan.fanbox.cc/posts/11959067
+    title: ちょっとすごいRubyの型チェッカーを作ってます｜にゃんだーすわん｜pixivFANBOX
+  p17:
+  - url: https://zonuexe.github.io/slides/20260905_why-new-type-checker/
+    title: なぜ新しい型チェッカーを書きはじめたのか | tadsan's slide deck
+  p48:
+  - url: https://github.com/rigortype/zard
+    title: GitHub - rigortype/zard · GitHub
