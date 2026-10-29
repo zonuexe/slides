@@ -11,6 +11,8 @@ import shutil
 from pathlib import Path
 from typing import Iterable, List, Dict, Any, Optional
 
+from empty_page_thumbs import sync_empty_page_thumbs
+
 LINK_EXTRACTOR_CMD = [
     "uv",
     "run",
@@ -290,6 +292,8 @@ def main() -> int:
                 f"pdf_link_extractor failed for {pdf_path}: {exc}"
             ) from exc
 
+        sync_empty_page_thumbs(pdf_path, meta_path)
+
         with meta_path.open("r", encoding="utf-8") as handle:
             meta = yaml.safe_load(handle) or {}
 
@@ -321,9 +325,7 @@ def main() -> int:
 
     if processed_entries:
         write_slide_files(processed_entries)
-        print(
-            f"Wrote {len(processed_entries)} slide file(s) under slides/."
-        )
+        print(f"Wrote {len(processed_entries)} slide file(s) under slides/.")
     return 0
 
 

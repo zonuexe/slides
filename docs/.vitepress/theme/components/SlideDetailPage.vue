@@ -60,14 +60,34 @@ const groupUrl = (id) => withBase(`/event/${id}/`);
 const relatedArticles = computed(() => slide.value?.related_articles ?? []);
 const hashtags = computed(() => slide.value?.hashtags ?? []);
 
+function pageHasText(nodes) {
+  if (!Array.isArray(nodes) || nodes.length === 0) return false;
+  return nodes.some((block) => {
+    if (block?.kind === "list") {
+      return (block.items ?? []).some((item) => String(item).trim());
+    }
+    return String(block?.text ?? "").trim();
+  });
+}
+
+function pageThumbUrl(page) {
+  if (!slide.value?.file) return "";
+  const stem = slide.value.file.replace(/\.pdf$/i, "");
+  return withBase(`/${stem}/p${page}.png`);
+}
+
 const textPages = computed(() => {
   if (!slide.value?.pdfMeta?.text) return [];
   return Object.entries(slide.value.pdfMeta.text)
-    .map(([pageKey, nodes]) => ({
-      page: pageKey.replace(/^p/, ""),
-      order: Number(pageKey.replace(/\D/g, "")) || 0,
-      nodes: Array.isArray(nodes) ? nodes : [],
-    }))
+    .map(([pageKey, nodes]) => {
+      const list = Array.isArray(nodes) ? nodes : [];
+      return {
+        page: pageKey.replace(/^p/, ""),
+        order: Number(pageKey.replace(/\D/g, "")) || 0,
+        nodes: list,
+        hasText: pageHasText(list),
+      };
+    })
     .sort((a, b) => a.order - b.order);
 });
 
@@ -243,7 +263,16 @@ function callGlobalFunction(fnName) {
               <template v-if="textPages.length">
                 <div v-for="page in textPages" :key="`text-${page.page}`" class="page-content" :id="`page-${page.page}`">
                   <h4>Page {{ page.page }}</h4>
-                  <SlideTextNodes :nodes="page.nodes" />
+                  <img
+                    v-if="!page.hasText"
+                    class="page-thumb"
+                    :src="pageThumbUrl(page.page)"
+                    :alt="`${slide.title} ${page.page}ページ`"
+                    loading="lazy"
+                    decoding="async"
+                    width="480"
+                  />
+                  <SlideTextNodes v-else :nodes="page.nodes" />
                 </div>
               </template>
               <p v-else>テキスト情報がありません。</p>

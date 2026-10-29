@@ -53,6 +53,7 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/add_new_slides.py -
 
 - `pdf/<slug>.png`
 - `pdf/<slug>.yaml`
+- `pdf/<slug>/pN.png` — 抽出テキストが空のページの低解像度プレビュー (無ければディレクトリごと無し)
 - `slides/<slug>.yaml` に最低限のメタ (title / date / download / 検出された hashtags)。`file`/`meta`/`image` は書かない (slug から導出)
 
 スクリプトは内部で順に:
@@ -61,7 +62,8 @@ UV_CACHE_DIR=.uv-cache uv run --project script python script/add_new_slides.py -
 2. `zopflipng` があれば PNG を再圧縮
 3. `pdf_text_extractor.py` で本文を YAML 化
 4. `pdf_link_extractor.py` でハイパーリンクを既存 YAML にマージ
-5. `slides/<slug>.yaml` を書き出す
+5. `empty_page_thumbs.py` で文字なしページの `pdf/<slug>/pN.png` を同期
+6. `slides/<slug>.yaml` を書き出す
 
 を流す。**(1) のサムネイル生成が落ちると以降の手順まで走らない** ので、その場合は §3 でバラバラに再現する。
 
@@ -118,6 +120,7 @@ touch pdf/<slug>.yaml
 UV_CACHE_DIR=.uv-cache uv run --project script python script/pdf_text_extractor.py pdf/<slug>.pdf
 UV_CACHE_DIR=.uv-cache uv run --project script python script/pdf_link_extractor.py \
   --update-meta --meta-file pdf/<slug>.yaml pdf/<slug>.pdf
+UV_CACHE_DIR=.uv-cache uv run --project script python script/empty_page_thumbs.py pdf/<slug>.pdf
 ```
 
 仕上がり YAML には少なくとも `text` (各ページ p1/p2... の **ブロック配列**)、`links`、`size` が入る。`text` の各ブロックは `{kind: heading, level, text}` / `{kind: para, text}` / `{kind: list, items: [...]}` のいずれか (抽出は PyMuPDF ベース)。**`text` が空のまま build が通ると詳細ページが描画されない**ので必ず目視する。
@@ -183,7 +186,7 @@ git status -sb
 
 期待される変化:
 
-- 新規: `pdf/<slug>.pdf` / `pdf/<slug>.png` / `pdf/<slug>.yaml` / `slides/<slug>.yaml`
+- 新規: `pdf/<slug>.pdf` / `pdf/<slug>.png` / `pdf/<slug>.yaml` / `slides/<slug>.yaml` / (空ページがあれば) `pdf/<slug>/pN.png`
 - 変更: (`npm install` を回したなら `package-lock.json`)
 - 出てきても無視: `.uv-cache/` (uv キャッシュ、gitignore 済)
 

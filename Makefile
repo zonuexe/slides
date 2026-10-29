@@ -1,6 +1,6 @@
 # Makefile for slides project
 
-.PHONY: help script-format script-lint script-check fetch-static add-new-slides
+.PHONY: help script-format script-lint script-check fetch-static add-new-slides empty-page-thumbs
 
 # Default target
 help:
@@ -9,7 +9,8 @@ help:
 	@echo "  script-lint     - Lint Python files in script/ directory"
 	@echo "  script-check    - Run both format and lint checks"
 	@echo "  fetch-static    - Fetch slide pages from localhost into static files"
-	@echo "  add-new-slides  - Generate assets and register newly added PDFs"
+	@echo "  add-new-slides     - Generate assets and register newly added PDFs"
+	@echo "  empty-page-thumbs  - Render low-res PNGs for pages with no extracted text"
 
 # Format Python files using ruff
 script-format:
@@ -32,3 +33,7 @@ fetch-static:
 add-new-slides:
 	@echo "Generating assets for newly added slides..."
 	UV_CACHE_DIR=.uv-cache uv run python script/add_new_slides.py
+
+empty-page-thumbs:
+	@echo "Rendering empty-page thumbnails..."
+	UV_CACHE_DIR=.uv-cache uv run --project script python script/empty_page_thumbs.py

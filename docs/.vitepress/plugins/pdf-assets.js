@@ -1,6 +1,19 @@
 import { createReadStream } from "node:fs";
-import { resolve } from "node:path";
+import { extname, resolve } from "node:path";
 import { cp, rm, stat } from "node:fs/promises";
+
+const MIME_BY_EXT = {
+  ".pdf": "application/pdf",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".yaml": "text/yaml; charset=utf-8",
+  ".yml": "text/yaml; charset=utf-8",
+};
+
+function contentTypeFor(filePath) {
+  return MIME_BY_EXT[extname(filePath).toLowerCase()] || "application/octet-stream";
+}
 
 export function pdfAssetsPlugin() {
   const root = resolve(process.cwd());
@@ -32,7 +45,7 @@ export function pdfAssetsPlugin() {
             res.end();
             return;
           }
-          res.setHeader("Content-Type", "application/pdf");
+          res.setHeader("Content-Type", contentTypeFor(safePath));
           createReadStream(safePath).pipe(res);
         };
 
